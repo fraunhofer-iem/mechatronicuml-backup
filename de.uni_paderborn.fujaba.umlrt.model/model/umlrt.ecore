@@ -27,15 +27,11 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/component"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="referencingComponentParts"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/part/Part"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="partDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
@@ -118,7 +114,7 @@
             <eClassifiers xsi:type="ecore:EClass" name="NaturalNumber">
               <eOperations name="getValueAsObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
               <eOperations name="setValue">
-                <eParameters name="o" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity"/>
+                <eParameters name="o" eType="#//uni_paderborn/fujaba/umlrt/model/core/Infinity"/>
               </eOperations>
               <eOperations name="setValue">
                 <eParameters name="o" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -137,6 +133,18 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
             </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Infinity">
+              <eOperations name="byteValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EByte"/>
+              <eOperations name="doubleValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+              <eOperations name="floatValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat"/>
+              <eOperations name="intValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+              <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+              <eOperations name="shortValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EShort"/>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+              </eOperations>
+            </eClassifiers>
           </eSubpackages>
           <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/instance"
               nsPrefix="instance">
@@ -145,8 +153,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaceInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/ProvidedInterfaceInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaceInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/RequiredInterfaceInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
@@ -167,11 +173,8 @@
               <eOperations name="createUnparseModuleName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="innerDiag" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="solverId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="referencedComponentPart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart"/>
@@ -179,30 +182,13 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceDiagram">
-              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="wrapperComponent"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pI2PIDelegations"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblies" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
               <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="DeploymentElement" abstract="true"/>
             <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
               <eOperations name="makeSpecialEnvironment">
-                <eParameters name="instDiag" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+                <eParameters name="instDiag" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
               </eOperations>
               <eOperations name="makeSpecialEnvironment"/>
             </eClassifiers>
@@ -217,21 +203,12 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfacePart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="InterfaceInstanceLink">
-              <eOperations name="get_interface"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
-            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PatternInstance">
               <eOperations name="getFsaname" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -254,8 +231,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
@@ -263,11 +238,6 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingAssemblies"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PortLink">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortRoleInstance">
               <eOperations name="iteratorOfInterfaceInstance">
@@ -285,12 +255,6 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PortRoleInstanceLink">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
-            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterfaceInstance"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
             <eClassifiers xsi:type="ecore:EClass" name="RequiredInterfaceInstance"
@@ -304,8 +268,6 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
                   eType="#//uni_paderborn/fujaba/umlrt/model/part/DelegationType"/>
             </eClassifiers>
@@ -348,14 +310,6 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="partDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PartDiagram">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/Part"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/Part">
               <eStructuralFeatures xsi:type="ecore:EReference" name="portInstancess"
@@ -390,37 +344,17 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface"
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="diagram" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/channels"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface"
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ConstraintLink"/>
-            <eClassifiers xsi:type="ecore:EClass" name="Pattern">
+            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/pattern"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
-              <eOperations name="delete"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/diagram"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/patternDiagram"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/patternDiagram"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="ePackage" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="msgIFaces" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Role">
               <eOperations name="getMulti" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -428,11 +362,8 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/portRoles"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/portRoles"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/portRoles"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/portRoles"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstances"
@@ -442,10 +373,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface"
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PortRoleLink">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart"
@@ -462,18 +389,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="rtArguments"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeArgument"
                   containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Infinity">
-              <eOperations name="byteValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EByte"/>
-              <eOperations name="doubleValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
-              <eOperations name="floatValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat"/>
-              <eOperations name="intValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-              <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
-              <eOperations name="shortValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EShort"/>
-              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-              <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
-                <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
-              </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLBoolRealtimeAtom" abstract="true">
               <eOperations name="getFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
