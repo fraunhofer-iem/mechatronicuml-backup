@@ -1,0 +1,17 @@
+de.uni_paderborn.fujaba.umlrt.model
+
+HybridComponents4Eclipse
+HybridModelChecking
+HybridModelChecking4Eclipse
+TimedGTS
+UMLRT2CppCodeGenerator
+UMLRT2ForEclipse
+
+de.uni_paderborn.fujaba.umlrt.codegen.ui
+de.uni_paderborn.fujaba4eclipse.umlrt2.pattern.ui
+ModelBasedTesting
+PRTSCInstantiation
+RealtimeStatecharts4Eclipse
+UMLModelChecking
+UMLMOdelChecking4Eclipse
+UppaalPlugin

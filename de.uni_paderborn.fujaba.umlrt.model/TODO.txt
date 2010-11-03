@@ -1,0 +1,62 @@
+DONE
+====
+* Obere und untere Schranke in der Klasse Cardinality sollen durch Assoziationen auf die Klasse NaturalNumber umgesetzt werden.
+* NaturalNumber wird in das Package 'core' verschoben.
+* Assoziationen 'unassignedIncomingMessages' und
+'unassignedOutgoingMessages' in der Klasse Component fliegen raus.
+* MessageInterface werden als Unterklasse von EClass umgesetzt.
+* Die Klassen 'AbstractInterfaceLink' und 'InterfaceLink' fliegen raus.
+* Die Klassen 'Interface', 'ProvidedInterface' und 'RequiredInterface' fliegen raus.
+* Die Klasse Component soll von NamedElement und TypedElement erben. Die Klassen sind Basisklassen des neuen Story-Diagram-Meta-Modells. Die Assoziation von Component zu EClass kann dann beseitigt werden, da diese schon durch TypedElement umgesetzt wird.
+* Ports werden durch eine eine 1-zu-n-Aggregation zu einer abstraken Rollen-Klasse umgesetzt. Von der abstrakten Rollen-Klasse erben die jeweiligen Rollen, die diskrete, kontinuierliche oder Hardware-Funkionalität umsetzen.
+* Der Enum 'CompType' wird in 'CompKind' umbenannt.
+* Assoc zwischen Port und Component wird Containment-Beziehung
+* 'PortRole' im Package 'pattern' wird zu 'Role' umbenannt.
+* 'UMLRealtimeStatechart' soll von 'NamedElement' und
+'CommentableElement' erben.
+* 'getTopStatechart()' fliegt raus. Statdessen 'isEmbedded()'. Wird als
+derived umgesetzt in Abhängigkeit davon, ob eine Parent-SC existiert.
+* 'checkSyntax()' fliegt raus.
+* Die momentan noch seperaten Ecore-Dateien pro Package sollen in einer
+Ecore-Datei vereinigt werden.
+
+UNDONE
+======
+* Die Interfaces von Ports werden stattdessen durch 1-zu-n-Assoziationen 'required' und 'provided' zur Klasse 'MessageInterface' umgesetzt.
+* Durch OCL-Constraints wird sichergestellt, dass die Methoden keinen Rückgabewert besitzen und dass Objekte von MessageInterface Interfaces (im Sinne von EMF) sind.
+* Alle <bla>Diag-Klassen fliegen raus.
+* Der Name von ProtocolStatecharts wird anhand des zugehörigen Port-Namens hergeleitet (Umsetzung über 'derived'-Konstrukt).
+* Die Klasse 'PI2PIDelegation' wird in 'DelegationInstance' umbenannt.
+* 'InterfacePartLink' fliegt raus.
+* 'ASGElementRef'-Äquivalent im neuen MM heißt 'Extension'
+* Es wird in Zukunft Structured und Atomic Components geben.
+* Structured Components besitzen kein Statechart, Atomic Components
+besitzen Statecharts.
+* Interface werden nicht mehr an den Ports dargestellt.
+* Ports erhalten graphischen Repräsentation für die Richtung in From von
+ Pfeilen.
+* Typen und Parts sollten in der Doku kommentiert werden.
+* Das Komponenten-MM wird wie an der Tafel skizziert umgesetzt.
+* Für die Umsetzung von PortParts werden Phantom-Nodes verwendet.
+* Die Assoc von Component zu EClass bleibt, Component erbt nicht von
+TypedElement.
+* Aufgabenverteilung:
+** Julian: Kommentiert das MM.
+** Ingo: Arbeitet sich in GMF ein.
+* Zu GMF gibt es eine gutes Tutorial dessen Beispiel aus Schiffen und
+Routen besteht.
+* Für die qualifiziert Assoc von 'UMLRealtimeStatechart' zu 'UMLClock'
+überprüfen, ob diese tatsächlich qualifiziert sein muss. Falls nein,
+durch einfache Assoc austauschen.
+* 'observationMap' fliegt raus.
+* Für 'getFirstCalc()' und 'getRefinement()' betrachten und entscheiden,
+ob diese Methoden sind, die im MM untergebracht werden sollten.
+* Die Assocs von 'UMLRealtimeStatechart' zu 'UMLRealtimeState' und zu
+'UMLRealtimeTransition' werden zu Containment-Beziehungen. Allgemein
+werden alle Assocs von 'UMLRealtimeState'/'UMLRealtimeTransition' zu
+Elementen die zu Zuständen bzw. Transitionen gehören als
+Containtment-Beziehung umgesetzt.
+* Die verschiedenen Actions im RTSC-MM werden durch Enum-Typen umgesetzt.
+
+
+

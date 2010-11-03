@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="de"
+    nsURI="http:///de" nsPrefix="de.uni_paderborn.fujaba.umlrt.model">
+  <eSubpackages name="uni_paderborn" nsURI="http:///de/uni_paderborn" nsPrefix="uni_paderborn">
+    <eSubpackages name="fujaba" nsURI="http:///de/uni_paderborn/fujaba" nsPrefix="fujaba">
+      <eSubpackages name="umlrt" nsURI="http:///de/uni_paderborn/fujaba/umlrt" nsPrefix="umlrt">
+        <eSubpackages name="model" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model"
+            nsPrefix="model">
+          <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/behavior"
+              nsPrefix="behavior">
+            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="component" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/component"
+              nsPrefix="component">
+            <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" containment="true"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="referencingComponentParts"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/Part"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="partDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//uni_paderborn/fujaba/umlrt/model/component/CompKind"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ContinuousComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="xMLFileName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Delegation">
+              <eOperations name="getDirectionFromPortToPortInstance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/delegations"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Port">
+              <eOperations name="get_interfaces"/>
+              <eOperations name="getNewPortInstance" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="updateRealtimeStatechart"/>
+              <eOperations name="getProtocolStatechart"/>
+              <eOperations name="setProtocolStatechart"/>
+              <eOperations name="getContinuousPortType"/>
+              <eOperations name="setContinuousPortType"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegations"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Delegation/port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/ports"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="referencingPortParts"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationTypes"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/DelegationType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="specification"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EDataType" name="CompKind" instanceClassName="de.uni_paderborn.fujaba.umlrt.emf.model.component.Component$CompKind"/>
+            <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true"/>
+            <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortSpecification"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"/>
+            <eClassifiers xsi:type="ecore:EClass" name="DiscretePortSpecification"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"/>
+            <eClassifiers xsi:type="ecore:EClass" name="HartwarePortSpecification"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"/>
+          </eSubpackages>
+          <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
+              nsPrefix="constraint">
+            <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+              <eOperations name="getBackground" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getIsInternalConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getExtendAutomatically" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getTextAsComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getCorrectnessAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EDataType" name="Correctness" instanceClassName="de.uni_paderborn.fujaba.umlrt.emf.model.constraint.Constraint$Correctness"/>
+          </eSubpackages>
+          <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core"
+              nsPrefix="core">
+            <eClassifiers xsi:type="ecore:EClass" name="NaturalNumber">
+              <eOperations name="getValueAsObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+              <eOperations name="setValue">
+                <eParameters name="o" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity"/>
+              </eOperations>
+              <eOperations name="setValue">
+                <eParameters name="o" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              </eOperations>
+              <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="infinity" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/instance"
+              nsPrefix="instance">
+            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/DeploymentElement">
+              <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaceInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ProvidedInterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaceInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/RequiredInterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/AssemblyType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" abstract="true">
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="getCName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="getPortInstanceWhichBelongsToPort">
+                <eParameters name="p" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              </eOperations>
+              <eOperations name="createUnparseModuleName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="innerDiag" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="solverId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="referencedComponentPart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceDiagram">
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="wrapperComponent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pI2PIDelegations"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblies" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="DeploymentElement" abstract="true"/>
+            <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
+              <eOperations name="makeSpecialEnvironment">
+                <eParameters name="instDiag" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              </eOperations>
+              <eOperations name="makeSpecialEnvironment"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="InterfaceInstance" abstract="true">
+              <eOperations name="get_interface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacePart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="InterfaceInstanceLink">
+              <eOperations name="get_interface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PatternInstance">
+              <eOperations name="getFsaname" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true">
+              <eOperations name="getName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleDelegation"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegations"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePI2PIDelegations"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="targetPI2PIDelegations"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaceInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="ingoingAssemblies"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingAssemblies"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortLink">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortRoleInstance">
+              <eOperations name="iteratorOfInterfaceInstance">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+                </eGenericType>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortRoleInstanceLink">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterfaceInstance"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+            <eClassifiers xsi:type="ecore:EClass" name="RequiredInterfaceInstance"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+            <eClassifiers xsi:type="ecore:EClass" name="SoftwareComponentInstance"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+            <eClassifiers xsi:type="ecore:EDataType" name="Iterator" instanceClassName="java.util.Iterator">
+              <eTypeParameters name="T"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/DelegationType"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="part" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/part"
+              nsPrefix="part">
+            <eClassifiers xsi:type="ecore:EClass" name="AssemblyType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/ConnectorType">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfacePart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/ProvidedInterfacePart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfacePart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/RequiredInterfacePart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/Part">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/Part"/>
+            <eClassifiers xsi:type="ecore:EClass" name="DelegationType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/ConnectorType">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="InterfacePart" abstract="true"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/Part">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/AssemblyType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//uni_paderborn/fujaba/umlrt/model/part/PortPart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceType"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Part" abstract="true">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="partDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PartDiagram">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/Part"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/Part">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstancess"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portType" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacePartss"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="delegationTypess">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/part/DelegationType"/>
+                </eGenericType>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterfacePart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RequiredInterfacePart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
+              nsPrefix="pattern">
+            <eClassifiers xsi:type="ecore:EClass" name="Channel">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceClass"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="diagram" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/channels"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ConstraintLink"/>
+            <eClassifiers xsi:type="ecore:EClass" name="Pattern">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/pattern"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
+              <eOperations name="delete"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/diagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/patternDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/patternDiagram"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="ePackage" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="msgIFaces" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Role">
+              <eOperations name="getMulti" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/portRoles"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/portRoles"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/portRoles"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortRoleLink">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart"
+              nsPrefix="realtimestatechart">
+            <eClassifiers xsi:type="ecore:EClass" name="AbstractUMLRealtimeEvent"
+                abstract="true">
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventTypeName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="rtArguments"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeArgument"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Infinity">
+              <eOperations name="byteValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EByte"/>
+              <eOperations name="doubleValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+              <eOperations name="floatValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat"/>
+              <eOperations name="intValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+              <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+              <eOperations name="shortValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EShort"/>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+              </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLBoolRealtimeAtom" abstract="true">
+              <eOperations name="getFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getDisplayValuation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="setUpperBound">
+                <eParameters name="newUpperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+              </eOperations>
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBoundName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLBoolWithLowerBoundRealtimeAtom"
+                abstract="true" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom">
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBoundName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLClock">
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLBoolRealtimeAtoms"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLClocks"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLClockResetAtom">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"/>
+              </eOperations>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLComplexRealtimeState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+              <eOperations name="getCommitted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newComplexState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatecharts"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeDoAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeExitAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeEntryAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacedStates"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLCRStateToUMLInvariantAtomMapEntry"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLDeadlineAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLDeadlineAtom"/>
+              </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLInterfaceStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLParameterizedSynchronizationChannel"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeAction">
+              <eOperations name="getWcetSpecifiedByUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getDisplayValuation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpperBound"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLowerBound"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcetName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeDoAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeEntryAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeExitAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeArgument">
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eAttribute" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="abstractUMLRealtimeEvent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="revResultEvent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeInternalEvent"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEAttribute"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="rtArgumentOperator"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="rtArgumentStatement"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eParameter" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EParameter"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeEvent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent">
+              <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="getFullEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredUMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedUMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="messageType"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeFadingFunction">
+              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/uMLRealtimeFadingFunction"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/PortInstToPortInstMapEntry"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeFlatSwitching">
+              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/PortInstToPortInstMapEntry"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeInternalEvent"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent">
+              <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="getFullEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="getSignature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeInternalEvent"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eOperation" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EOperation"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="resultArg" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeArgument"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeStartState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+              <eOperations name="getNextState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eOperations name="addToExit">
+                <eParameters name="trans" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              </eOperations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newStartState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="historyKind"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                  defaultValueLiteral="0"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeState" abstract="true">
+              <eOperations name="getParentElement" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingUMLRealtimeTransitionss"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="incomingUMLRealtimeTransitionss"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeStatechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+              <eOperations name="getFirstCalculation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="hasInUMLSynchronizationChannel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="mapOfAllSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map"/>
+              <eOperations name="mapOfAllSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map">
+                <eParameters name="sender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="mapOfAllSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map">
+                <eParameters name="sender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+                <eParameters name="receiver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="mapOfAllSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map">
+                <eParameters name="sender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+                <eParameters name="receiver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+                <eParameters name="exclude" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              </eOperations>
+              <eOperations name="mapOfSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map"/>
+              <eOperations name="mapOfSyncChannels" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map">
+                <eParameters name="sender" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+                <eParameters name="receiver" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eOperations name="listOfChannels">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
+                  <eTypeArguments/>
+                </eGenericType>
+              </eOperations>
+              <eOperations name="enablePeriodNotification"/>
+              <eOperations name="getWcetDocumentPath" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="iteratorOfAllSubRealtimeStatecharts">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                </eGenericType>
+              </eOperations>
+              <eOperations name="addAllUMLRealtimeStates">
+                <eParameters name="set">
+                  <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Set">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+                  </eGenericType>
+                </eParameters>
+                <eParameters name="inclusiveStartStates" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="addComplexUMLRealtimeStates">
+                <eParameters name="set">
+                  <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Set">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+                  </eGenericType>
+                </eParameters>
+              </eOperations>
+              <eOperations name="addAllUMLRealtimeTransitions">
+                <eParameters name="set">
+                  <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Set">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+                  </eGenericType>
+                </eParameters>
+              </eOperations>
+              <eOperations name="iteratorOfAllUMLClocks">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+                </eGenericType>
+                <eParameters name="excludeNoClock" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="addAllUMLClocks">
+                <eParameters name="set">
+                  <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Set">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+                  </eGenericType>
+                </eParameters>
+                <eParameters name="excludeNoClock" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              </eOperations>
+              <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcetDocument"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityLevel"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+                  defaultValueLiteral="0"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="systemWcetMap"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilisation"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleDocument"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                  defaultValueLiteral="\&quot;schedule.xml\&quot;"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStates"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLSynchronizationChannels"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLInterfaceStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInterfaceStatechart"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="hasProvidedInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/StringToEClass"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="hasRequiredInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/StringToEClass"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEmbedded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+                  derived="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClocks" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeStatechart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeStopState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newStopState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStopState"/>
+              </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeTransition">
+              <eOperations name="getParameterized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="getUrgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eOperations name="setSourceConnector" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              </eOperations>
+              <eOperations name="getSourceConnector" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eOperations name="setTargetConnector" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              </eOperations>
+              <eOperations name="getTargetConnector" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eOperations name="hasClockInUMLClockResetAtom" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="clock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              </eOperations>
+              <eOperations name="calculateWorstCaseDeadlineAsNaturalNumber" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
+              <eOperations name="getDefaultName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eOperations name="getRevExit" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eOperations name="getRevEntry" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eOperations name="resetsClock" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eParameters name="clock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              </eOperations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newTransition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationType"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="uMLRealtimeTransitionMappingVector"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vector"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLSynchronizationChannel"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="senderSynchronizationChannel"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="receiverSynchronizationChannel"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClocks" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="targetUMLRealtimeState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="sourceUMLRealtimeState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assignmentsSets"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeArgument"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeFlatSwitching"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFlatSwitching"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeFadingFunction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/uMLRealtimeTransitions"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeInternalEvents"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeInternalEvent"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTriggerEvents"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedUMLRealtimeEvents"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockToUMLTimeguardAtom"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="deadlines" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockToUMLDeadlineAtom"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLSynchronizationChannel">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newChannel" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="senderTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="receiverTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom">
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
+              </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map"/>
+            <eClassifiers xsi:type="ecore:EDataType" name="Vector" instanceClassName="java.util.Vector"/>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLCRStateToUMLInvariantAtomMapEntry"
+                instanceClassName="java.util.Map$Entry">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortInstToPortInstMapEntry"
+                instanceClassName="java.util.Map$Entry">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="StringToEClass" instanceClassName="java.util.Map$Entry">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLClockToUMLTimeguardAtom"
+                instanceClassName="java.util.Map$Entry">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLClockToUMLDeadlineAtom"
+                instanceClassName="java.util.Map$Entry">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLDeadlineAtom"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EDataType" name="Set" instanceClassName="java.util.Set">
+              <eTypeParameters name="UMLClock"/>
+            </eClassifiers>
+            <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
+                nsPrefix="reconf">
+              <eClassifiers xsi:type="ecore:EClass" name="AssemblyReconf">
+                <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reqPortInstanceReconf"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="provPortInstanceReconf"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceReconf">
+                <eOperations name="getCName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="stateToBeActivated"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="DelegationReconf">
+                <eStructuralFeatures xsi:type="ecore:EReference" name="portReconf"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="delegation"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="portInstanceReconf"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="PortInstanceReconf">
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceReconf"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ComponentInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="PortReconf">
+                <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
+                <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              </eClassifiers>
+              <eClassifiers xsi:type="ecore:EClass" name="ReconfDiagram">
+                <eOperations name="iteratorOfComponentInstanceReconf" upperBound="-1"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ComponentInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="portInstanceReconfs"
+                    upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="delegationReconfs"
+                    upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/DelegationReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="portReconfs"
+                    upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyReconfs"
+                    upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf"/>
+                <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLComplexRealtimeState"/>
+              </eClassifiers>
+            </eSubpackages>
+          </eSubpackages>
+          <eSubpackages name="msgiface" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/msgiface"
+              nsPrefix="msgiface">
+            <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+          </eSubpackages>
+        </eSubpackages>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
