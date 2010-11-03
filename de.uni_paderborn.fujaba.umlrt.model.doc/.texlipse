@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Wed Nov 03 17:18:48 CET 2010
+builderNum=2
+outputDir=protocols/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=protocols/tex
+mainTexFile=template.tex
+outputFile=template.pdf
+langSpell=
+markDer=true
+srcDir=protocols/tex/

@@ -1,0 +1,34 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[11pt,a4paper]{article}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\huge Protokoll SHK-Treffen 20.10.10}\\[0.9cm]
+
+\end{center}
+
+\begin{itemize}
+\item  Obere und untere Schranke in der Klasse Cardinality sollen durch Assoziationen auf die Klasse NaturalNumber umgesetzt werden.
+\item  NaturalNumber wird in das Package 'core' verschoben.
+\item  Assoziationen 'unassignedIncomingMessages' und
+'unassignedOutgoingMessages' in der Klasse Component fliegen raus.
+\item  MessageInterface werden als Unterklasse von EClass umgesetzt. Durch OCL-Constraints wird sichergestellt, dass die Methoden keinen Rückgabewert besitzen und dass Objekte von MessageInterface Interfaces (im Sinne von EMF) sind.
+\item  Die Klasse Component soll von NamedElement und TypedElement erben. Die Klassen sind Basisklassen des neuen Story-Diagram-Meta-Modells. Die Assoziation von Component zu EClass kann dann beseitigt werden, da diese schon durch TypedElement umgesetzt wird.
+\item  Alle <bla>Diag-Klassen fliegen raus.
+\item  Ports werden durch eine eine 1-zu-n-Aggregation zu einer abstraken Rollen-Klasse umgesetzt. Von der abstrakten Rollen-Klasse erben die jeweiligen Rollen, die diskrete, kontinuierliche oder Hardware-Funkionalität umsetzen.
+\item  Der Name von ProtocolStatecharts wird anhand des zugehörigen Port-Namens hergeleitet (Umsetzung über 'derived'-Konstrukt).
+\item  Die Klassen 'AbstractInterfaceLink' und 'InterfaceLink' fliegen raus.
+\item  Die Klassen 'Interface', 'ProvidedInterface' und 'RequiredInterface' fliegen raus. Die Interfaces von Ports werden stattdessen durch 1-zu-n-Assoziationen 'required' und 'provided' zur Klasse 'MessageInterface' umgesetzt.
+\item  Der Enum 'CompType' wird in 'CompKind' umbenannt.
+\item  Die Klasse 'PI2PIDelegation' wird in 'DelegationInstance' umbenannt.
+\item  'InterfacePartLink' fliegt raus.
+\end{itemize}
+
+\end{document}
