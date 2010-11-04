@@ -60,7 +60,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationTypes"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/DelegationType"/>
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="specification"
@@ -85,7 +85,7 @@
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/parentComponent"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-            <eClassifiers xsi:type="ecore:EClass" name="AssemblyType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"/>
+            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector"/>
             <eClassifiers xsi:type="ecore:EClass" name="ComponentPart">
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
@@ -95,8 +95,8 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/embeddedParts"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true"/>
-            <eClassifiers xsi:type="ecore:EClass" name="DelegationType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
+            <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true"/>
+            <eClassifiers xsi:type="ecore:EClass" name="Delegation" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector">
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
@@ -166,7 +166,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/AssemblyType"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance"
@@ -270,7 +270,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/DelegationType"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
