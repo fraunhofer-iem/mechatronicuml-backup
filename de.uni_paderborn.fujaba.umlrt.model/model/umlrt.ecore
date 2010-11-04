@@ -31,7 +31,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="referencingComponentParts"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
@@ -52,8 +51,6 @@
               <eOperations name="getContinuousPortType"/>
               <eOperations name="setContinuousPortType"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="delegations"
-                  upperBound="-1"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
@@ -62,8 +59,6 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="referencingPortParts"
-                  upperBound="-1"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationTypes"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/DelegationType"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
@@ -90,16 +85,12 @@
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/parentComponent"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-            <eClassifiers xsi:type="ecore:EClass" name="AssemblyType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfacePart"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfacePart"/>
-            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="AssemblyType" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"/>
             <eClassifiers xsi:type="ecore:EClass" name="ComponentPart">
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" upperBound="-1"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/embeddedParts"/>
@@ -109,7 +100,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portPart"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
@@ -221,7 +211,6 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacePart"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PatternInstance">
               <eOperations name="getFsaname" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -235,9 +224,6 @@
               <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleDelegation"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="delegations"
-                  upperBound="-1"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePI2PIDelegations"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="targetPI2PIDelegations"
@@ -249,7 +235,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portPart"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="ingoingAssemblies"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingAssemblies"
@@ -860,7 +845,6 @@
               <eClassifiers xsi:type="ecore:EClass" name="DelegationReconf">
                 <eStructuralFeatures xsi:type="ecore:EReference" name="portReconf"
                     eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortReconf"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="delegation"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="portInstanceReconf"
                     eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
