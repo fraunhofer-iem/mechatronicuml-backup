@@ -22,38 +22,59 @@
             <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"
                 eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This is a component."/>
+                <details key="documentation" value="This abstract class is the super class of all classes representing concrete component types such as structured, atomic and continuous components."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The realtime statechart specifies the behavior of the component."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" containment="true"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/component"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/component">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="referencingComponentParts"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/componentType"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/componentType">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This association contains all component parts which have this component as their type."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//uni_paderborn/fujaba/umlrt/model/component/CompKind"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//uni_paderborn/fujaba/umlrt/model/component/CompKind">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ContinuousComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a continuous component on the modeling level. Its purpose is to store a XML file which is created by the CAMEL tool and describes the continuous behavior of the component."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="xMLFileName"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Port">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
+              </eAnnotations>
               <eOperations name="get_interfaces"/>
               <eOperations name="getNewPortInstance" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-              <eOperations name="updateRealtimeStatechart"/>
-              <eOperations name="getProtocolStatechart"/>
-              <eOperations name="setProtocolStatechart"/>
-              <eOperations name="getContinuousPortType"/>
-              <eOperations name="setContinuousPortType"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
