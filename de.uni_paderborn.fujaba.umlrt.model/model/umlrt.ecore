@@ -305,15 +305,20 @@
           <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
               nsPrefix="constraint">
             <eClassifiers xsi:type="ecore:EClass" name="Constraint">
-              <eOperations name="getBackground" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eOperations name="getIsInternalConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eOperations name="getExtendAutomatically" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
+              </eAnnotations>
               <eOperations name="getTextAsComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
               <eOperations name="getCorrectnessAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness"
                   eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalConstraint"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EDataType" name="Correctness" instanceClassName="de.uni_paderborn.fujaba.umlrt.emf.model.constraint.Constraint$Correctness"/>
           </eSubpackages>
