@@ -37,7 +37,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart specifies the behavior of the component."/>
+                  <details key="documentation" value="The realtime statechart specifies the behavior of this component."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
@@ -62,10 +62,18 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
-                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Don't know."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
-                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind">
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Don't know."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports."/>
                 </eAnnotations>
@@ -76,7 +84,11 @@
                 <details key="documentation" value="This class represents a continuous component on the modeling level. Its purpose is to store a XML file which is created by the CAMEL tool and describes the continuous behavior of the component."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="xMLFileName"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The XML file describing the continuous behavior of this component."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -84,7 +96,11 @@
               </eAnnotations>
               <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
-                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Don't know."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/ports">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -98,7 +114,11 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="I guess these were the port role instances in the application specific component diagram. It's likely that this assoc is not required anymore."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The port role this port is a realization of."/>
@@ -107,7 +127,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" eType="#//uni_paderborn/fujaba/umlrt/model/component/PortKind"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The type of the port which can be either discrete, continuous, hybrid or hardware."/>
+                  <details key="documentation" value="The kind of this port which can be either discrete, continuous, hybrid or hardware. This attribute can be derived by determining which port specifications the port possesses."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="specification"
@@ -149,30 +169,30 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This abstract class is the super class which all port specifications have in common."/>
+                <details key="documentation" value="This abstract class is the common super class of all port specifications."/>
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortSpecification"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This is concrete port specification which is to provide the continuous functionality of a port."/>
+                <details key="documentation" value="This class represents a concrete port specification which provides the continuous functionality of a port."/>
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="DiscretePortSpecification"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This is concrete port specification which is to provide the discrete functionality of a port."/>
+                <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="HardwarePortSpecification"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This is concrete port specification which is to provide the functionality a hardware port provides."/>
+                <details key="documentation" value="This is concrete port specification which provides the functionality of a hardware port."/>
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="StructuredComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a structured component which is capable of including arbitrary many component parts.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;composite&quot;. However structured components do not contain component types directly like in the original composite pattern. Instead the contain component parts which are typed by component types. The reason for this is to get a clear distinction between the component type level and the level of component parts."/>
+                <details key="documentation" value="This class represents a structured component which is capable of including arbitrary many component parts.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;composite&quot;. However structured components do not contain component types directly like in the original composite pattern. Instead they contain component parts which are typed by component types. The reason for this is to get a clear distinction between the component type level and the level of component parts."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
@@ -191,7 +211,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into further component parts. In contrast to structured components atomic components have their own behavior.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
+                <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector">
@@ -201,13 +221,13 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/toRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The component part to which the port part belongs to which this assembly leads."/>
+                  <details key="documentation" value="The component part of the port part to which this assembly leads."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/fromRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The component part to which the port part belongs from which this assembly originates."/>
+                  <details key="documentation" value="The component part of the port part from which this assembly originates."/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
@@ -238,7 +258,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="fromRev" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Assembly/from">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The assemblies originating in part parts of this component part."/>
+                  <details key="documentation" value="The assemblies originating in port parts of this component part."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="toRev" upperBound="-1"
@@ -257,7 +277,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="The assemblies leading to port parts of this component part."/>
+                <details key="documentation" value="This abstract class is the common super class of delegations and assemblies."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/fromPortRev">
@@ -281,7 +301,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Delegation" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a delegation connector. A delegation connector connects a port of structured component type and a port part of component part the structured component contains."/>
+                <details key="documentation" value="This class represents a delegation connector. A delegation connector connects a port of a structured component type and a port part of component part the structured component contains."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance">
@@ -293,7 +313,7 @@
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/delegation">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The component part to which the port part belongs which is connected by this delegation."/>
+                  <details key="documentation" value="The component part of the port part which is connected by this delegation."/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
