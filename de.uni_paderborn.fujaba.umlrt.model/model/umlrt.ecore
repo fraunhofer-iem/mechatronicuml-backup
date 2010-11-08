@@ -104,7 +104,8 @@
                   <details key="documentation" value="The port role this port is a realization of."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" eType="#//uni_paderborn/fujaba/umlrt/model/component/PortKind"
+                  derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The type of the port which can be either discrete, continuous, hybrid or hardware."/>
                 </eAnnotations>
@@ -145,11 +146,6 @@
                   <details key="documentation" value="This association stores the connector this port is the target of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
               </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EDataType" name="ComponentKind" instanceClassName="de.uni_paderborn.fujaba.umlrt.emf.model.component.Component$CompKind">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This enumeration type specifies which component kinds do exist."/>
-              </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -301,6 +297,17 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="ComponentKind">
+              <eLiterals name="SOFTWARE_COMPONENT" literal="software component"/>
+              <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component"/>
+              <eLiterals name="HARDWARE_COMPONENT" value="2" literal="hardware component"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="PortKind">
+              <eLiterals name="DISCRETE" literal="discrete"/>
+              <eLiterals name="CONTINUOUS" value="1" literal="continuous"/>
+              <eLiterals name="HYBRID" value="2" literal="hybrid"/>
+              <eLiterals name="HARDWARE" value="3" literal="hardware"/>
+            </eClassifiers>
           </eSubpackages>
           <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
               nsPrefix="constraint">
@@ -308,9 +315,21 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
               </eAnnotations>
-              <eOperations name="getTextAsComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eOperations name="getCorrectnessAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="getTextAsComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This operation yields the text of this constraint as a C comment e.g.&#xA;/*&#xA;&lt;constraint text>&#xA;*/&#xA;TODO: Find out for what this is required."/>
+                </eAnnotations>
+              </eOperations>
+              <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This operation yields &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
+                </eAnnotations>
+              </eOperations>
+              <eOperations name="getCorrectnessAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This operation returns a string representation of the current correctness of the constraint."/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness"
                   eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -319,8 +338,18 @@
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The actual constraint formulated in some constraint language such as LTL, CTL, TCTL, OCL etc."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EDataType" name="Correctness" instanceClassName="de.uni_paderborn.fujaba.umlrt.emf.model.constraint.Constraint$Correctness"/>
+            <eClassifiers xsi:type="ecore:EEnum" name="Correctness">
+              <eLiterals name="CORRECT" literal="correct"/>
+              <eLiterals name="VIOLATED" value="1" literal="violated"/>
+              <eLiterals name="UNSAFE" value="2" literal="unsafe"/>
+              <eLiterals name="UNKNOWN" value="3" literal="unknown"/>
+            </eClassifiers>
           </eSubpackages>
           <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core"
               nsPrefix="core">
