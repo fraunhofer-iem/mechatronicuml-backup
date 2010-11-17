@@ -179,7 +179,7 @@
               </eAnnotations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="DiscretePortSpecification"
-                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification">
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification #//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
               </eAnnotations>
@@ -370,7 +370,8 @@
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="textualExpression"
+                  eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The actual constraint formulated in some constraint language such as LTL, CTL, TCTL, OCL etc."/>
                 </eAnnotations>
@@ -485,6 +486,10 @@
               <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
                 <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
               </eOperations>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/instance"
@@ -608,24 +613,14 @@
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
               nsPrefix="pattern">
-            <eClassifiers xsi:type="ecore:EClass" name="Channel">
+            <eClassifiers xsi:type="ecore:EClass" name="RoleConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceClass"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The interface describing which messages can be exchanged over this channel. This seems to be redundant to the assocs &quot;providedInterface&quot; and &quot;requiredInterface&quot; and should probably be revised."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The name of this channel. This should probably be realised by inheritance of class &quot;NamedElement&quot;."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
@@ -633,36 +628,23 @@
                   <details key="documentation" value="The realtime statechart of this channel. It serves to model specific properties of real communication channels such as propagation delay, probability of message loss or message buffers which are restricted in size."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This message interface describes which messages are allowed to be sent by the source role over the channel."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This message interface describes which messages are allowed to be sent by the target role over the channel."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoles" upperBound="-1"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern">
+            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The name of the pattern."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -670,18 +652,12 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Role">
+            <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a role of a coordination pattern."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The name of this role."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//uni_paderborn/fujaba/umlrt/model/instance/Assembly"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/portRoles">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/source">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The channel which connects this role with another role."/>
                 </eAnnotations>
@@ -692,14 +668,6 @@
                   <details key="documentation" value="The coordination pattern this role belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The interface of this role. These probably has to be revised since there is no distinction betwee required and provided interfaces."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRoleInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -717,11 +685,8 @@
                   <details key="documentation" value="This is redundant to Port::interfaces and should be reworked."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="multi" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This attribute specifies whether there might exist multiple runtime instances of this role or just one. This should probably be revised and be realised by an association to class &quot;Cardinality&quot;."/>
-                </eAnnotations>
-              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart"
