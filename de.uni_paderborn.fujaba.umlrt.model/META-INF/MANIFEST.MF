@@ -10,3 +10,19 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore
 Bundle-ActivationPolicy: lazy
+Export-Package: de.uni_paderborn.fujaba.umlrt.model.behavior,
+ de.uni_paderborn.fujaba.umlrt.model.behavior.impl,
+ de.uni_paderborn.fujaba.umlrt.model.component,
+ de.uni_paderborn.fujaba.umlrt.model.component.impl,
+ de.uni_paderborn.fujaba.umlrt.model.constraint,
+ de.uni_paderborn.fujaba.umlrt.model.constraint.impl,
+ de.uni_paderborn.fujaba.umlrt.model.instance,
+ de.uni_paderborn.fujaba.umlrt.model.instance.impl,
+ de.uni_paderborn.fujaba.umlrt.model.part,
+ de.uni_paderborn.fujaba.umlrt.model.part.impl,
+ de.uni_paderborn.fujaba.umlrt.model.pattern,
+ de.uni_paderborn.fujaba.umlrt.model.pattern.impl,
+ de.uni_paderborn.fujaba.umlrt.model.realtimestatechart,
+ de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl,
+ de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf,
+ de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl
