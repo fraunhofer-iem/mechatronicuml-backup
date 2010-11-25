@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.umlrt.model.emf/src"
-    modelPluginID="de.uni_paderborn.fujaba.umlrt.model.emf" templateDirectory="/org.eclipse.ocl.examples.codegen/termplates"
-    dynamicTemplates="true" modelName="Umlrt" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.umlrt.model/src"
+    modelPluginID="de.uni_paderborn.fujaba.umlrt.model" modelName="Umlrt" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
   <foreignModel>umlrt.ecore</foreignModel>
-  <modelPluginVariables>OCL_ECORE=org.eclipse.ocl.ecore</modelPluginVariables>
-  <genPackages prefix="Umlrt" disposableProviderFactory="true" ecorePackage="umlrt.ecore#/">
+  <genPackages prefix="De" disposableProviderFactory="true" ecorePackage="umlrt.ecore#/">
     <nestedGenPackages prefix="Uni_paderborn" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn">
       <nestedGenPackages prefix="Fujaba" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba">
         <nestedGenPackages prefix="Umlrt" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt">
@@ -24,58 +22,43 @@
             </nestedGenPackages>
             <nestedGenPackages prefix="Component" disposableProviderFactory="true"
                 ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component">
-              <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/CompKind"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component">
+              <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind">
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind/SOFTWARE_COMPONENT"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind/CONTINUOUS_COMPONENT"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind/HARDWARE_COMPONENT"/>
+              </genEnums>
+              <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortKind">
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortKind/DISCRETE"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortKind/CONTINUOUS"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortKind/HYBRID"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortKind/HARDWARE"/>
+              </genEnums>
+              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/uMLRealtimeStatechart"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/ports"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstanceDiagram"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/eClass"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/referencingComponentParts"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/parts"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/partDiagram"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/mustImplementProvidedInterfaces"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/mustImplementRequiredInterfaces"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/type"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/kind"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ContinuousComponent">
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ContinuousComponent/xMLFileName"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/port"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/portInstance"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/getDirectionFromPortToPortInstance"/>
-              </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/delegations"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/invisibleInterfaces"/>
                 <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/component"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/portInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/portRoleInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/referencingPortParts"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/delegationTypes"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/portRole"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/type"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/portKind"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/specification"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/required"/>
@@ -83,29 +66,69 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/provided"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/cardinality"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/get_interfaces"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/getNewPortInstance"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/fromPortToConnectorRev"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/toPortToConnectorRev"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/fromPortToConnectorIRev"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/toPortToConnectorIRev"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/toString"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/updateRealtimeStatechart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/getProtocolStatechart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/setProtocolStatechart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/getContinuousPortType"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/setContinuousPortType"/>
               </genClasses>
               <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"/>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ContinuousPortSpecification"/>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/DiscretePortSpecification"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/HartwarePortSpecification"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/HardwarePortSpecification"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/componentType"/>
+                <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/parentComponent"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/fromRev"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/toRev"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/delegation"/>
+              </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent">
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/embeddedParts"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/connectors"/>
+              </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/AtomicComponent"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Assembly">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Assembly/to"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Assembly/from"/>
+              </genClasses>
+              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Connector">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Connector/fromPort"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Connector/toPort"/>
+                <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Connector/parentComponent"/>
+              </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/componentPart"/>
+              </genClasses>
             </nestedGenPackages>
             <nestedGenPackages prefix="Constraint" disposableProviderFactory="true"
                 ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint">
-              <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness"/>
+              <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness">
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/CORRECT"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/VIOLATED"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/UNSAFE"/>
+                <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/UNKNOWN"/>
+              </genEnums>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint">
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/correctness"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/type"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getBackground"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getIsInternalConstraint"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getExtendAutomatically"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/language"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/background"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/internalConstraint"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/extendAutomatically"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/textualExpression"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getTextAsComment"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/isCorrect"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getCorrectnessAsString"/>
@@ -120,7 +143,7 @@
                   <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/setValue/o"/>
                 </genOperations>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/setValue.1">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/setValue.1/o"/>
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/setValue.1/value"/>
                 </genOperations>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/longValue"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/toString"/>
@@ -134,323 +157,91 @@
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Cardinality/upperBound"/>
               </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity">
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/byteValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/doubleValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/floatValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/intValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/longValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/shortValue"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/toString"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/equals">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Infinity/equals/o"/>
+                </genOperations>
+              </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement/uMLRealtimeStatechart"/>
+              </genClasses>
             </nestedGenPackages>
             <nestedGenPackages prefix="Instance" disposableProviderFactory="true"
                 ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance">
-              <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Iterator">
-                <genTypeParameters ecoreTypeParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Iterator/T"/>
-              </genDataTypes>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/statechart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/providedInterfaceInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/componentInstanceDiagrams"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/requiredInterfaceInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/portRoles"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/assemblyType"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/sourcePortInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/targetPortInstance"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/Assembly/getName"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/name"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/role"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/component"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/innerDiag"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentInstanceConfiguration"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toRef"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentInstanceDiagrams"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/solverId"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/referencedComponentPart"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/role"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/cardinality"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/fromRef"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toString"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/getCName"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/getPortInstanceWhichBelongsToPort">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/getPortInstanceWhichBelongsToPort/p"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/createUnparseModuleName"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/name"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/wrapperComponent"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/pI2PIDelegations"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/assemblies"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/component"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/componentInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/interfaceInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/portInstances"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceDiagram/toString"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration/componentInstances"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ContinuousPortInstance">
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ContinuousPortInstance/toString"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/toComponentI"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromComponentI"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/toPort"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromPort"/>
               </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DeploymentElement"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DiscretePortInstance">
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DiscretePortInstance/makeSpecialEnvironment">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DiscretePortInstance/makeSpecialEnvironment/instDiag"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DiscretePortInstance/makeSpecialEnvironment.1"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry/value"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry/key"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/HybridPortInstance">
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/HybridPortInstance/portInstances"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance">
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry/value"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/assembly"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/portInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/portRoleInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/componentInstanceDiagrams"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/interfacePart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstance/get_interface"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstanceLink">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstanceLink/portInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstanceLink/interfaceInstance"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/InterfaceInstanceLink/get_interface"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance/pattern"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance/portRoleInstances"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance/name"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PatternInstance/getFsaname"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/componentInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/invisibleDelegation"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/delegations"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/sourcePI2PIDelegations"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/targetPI2PIDelegations"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/invisibleInterfaceInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/interfaceInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/port"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/componentInstanceDiagrams"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/portRoleInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/portPart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/ingoingAssemblies"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/outgoingAssemblies"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/getName"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/toString"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortLink">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortLink/port"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortLink/patternInstance"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/patternInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/port"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/portInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/portRole"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/uMLRealtimeStatechart"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/name"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstance/iteratorOfInterfaceInstance"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstanceLink">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstanceLink/portRoleInstance"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortRoleInstanceLink/patternInstance"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ProvidedInterfaceInstance"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/RequiredInterfaceInstance"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/SoftwareComponentInstance"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance/source"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance/target"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance/componentInstanceDiagram"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance/delegationType"/>
-              </genClasses>
-            </nestedGenPackages>
-            <nestedGenPackages prefix="Part" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part">
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/AssemblyType">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/AssemblyType/providedInterfacePart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/AssemblyType/requiredInterfacePart"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart/componentInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart/componentType"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ComponentPart/portParts"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ConnectorType"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/DelegationType">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/DelegationType/delegationInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/DelegationType/port"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/DelegationType/portPart"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart/assemblyType"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart/interfaceInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart/portPart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/InterfacePart/interfaceType"/>
-              </genClasses>
-              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/Part">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/Part/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/Part/parentComponent"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/Part/partDiagram"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram/component"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram/embeddedParts"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PartDiagram/name"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart/portInstancess"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart/portType"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart/componentPart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart/interfacePartss"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/PortPart/delegationTypess"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ProvidedInterfacePart">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/ProvidedInterfacePart/providedInterface"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/RequiredInterfacePart">
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/part/RequiredInterfacePart/requiredInterface"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry/key"/>
               </genClasses>
             </nestedGenPackages>
             <nestedGenPackages prefix="Pattern" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern">
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel">
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/bidirectional"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/interfaceClass"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/direction"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/name"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/statechart"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/statechart"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/source"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/providedInterface"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/diagram"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/requiredInterface"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Channel/portRoles"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/target"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/ConstraintLink"/>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/name"/>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/patternDiagram"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/patternInstances"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Pattern/portRoles"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/channels"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/interfaces"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/portRoles"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/pattern"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/ePackage"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/msgIFaces"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PatternDiagram/delete"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/roles"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/name"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/assembly"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/patternDiagram"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/interfaces"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/portRoleInstances"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/uMLRealtimeStatechart"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/eClass"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/messageInterface"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/getMulti"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PortRoleLink">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PortRoleLink/pattern"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/PortRoleLink/portRole"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/cardinality"/>
               </genClasses>
             </nestedGenPackages>
             <nestedGenPackages prefix="Realtimestatechart" disposableProviderFactory="true"
@@ -467,18 +258,6 @@
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent/fullEventName"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent/rtArguments"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent/toString"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity">
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/byteValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/doubleValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/floatValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/intValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/longValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/shortValue"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/toString"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/equals">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Infinity/equals/o"/>
-                </genOperations>
               </genClasses>
               <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom">
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom/upperBound"/>
@@ -509,7 +288,8 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeTransitions"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLBoolRealtimeAtoms"/>
-                <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeStatechart"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeStatechart"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLClockResetAtoms"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/toString"/>
@@ -629,12 +409,12 @@
                 <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/uMLRealtimeTransitions"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/minDuration"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/maxDuration"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/portInstances"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/spline1"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/spline2"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/polynomDegree"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/has"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/portsByComponentInstance"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/getBreakpoint"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFlatSwitching">
@@ -706,7 +486,8 @@
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/hasProvidedInterface"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/hasRequiredInterface"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/isEmbedded"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLClocks"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLClocks"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/getFirstCalculation"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/hasInUMLSynchronizationChannel"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/mapOfAllSyncChannels"/>
@@ -867,7 +648,7 @@
                   ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf">
                 <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf">
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf/assembly"/>
+                      ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf/connectorInstance"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf/reqPortInstanceReconf"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -889,8 +670,6 @@
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/DelegationReconf/portReconf"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/DelegationReconf/delegation"/>
-                  <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/DelegationReconf/portInstanceReconf"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/DelegationReconf/reconfDiagram"/>
@@ -901,7 +680,7 @@
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf/componentInstanceReconf"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                      ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf/portInstance"/>
+                      ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf/portByComponentInstance"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/PortInstanceReconf/reconfDiagram"/>
                 </genClasses>
@@ -934,315 +713,6 @@
           </nestedGenPackages>
         </nestedGenPackages>
       </nestedGenPackages>
-    </nestedGenPackages>
-  </genPackages>
-  <genPackages prefix="Modeling" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#/">
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//Expression"/>
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//TypedElement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//TypedElement/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//TypedElement/genericType"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/annotation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/extension"/>
-      <genOperations ecoreOperation="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/getExtension">
-        <genParameters ecoreParameter="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/getExtension/type"/>
-      </genOperations>
-      <genOperations ecoreOperation="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/provideExtension">
-        <genParameters ecoreParameter="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/provideExtension/type"/>
-      </genOperations>
-      <genOperations ecoreOperation="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/getAnnotation">
-        <genParameters ecoreParameter="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/getAnnotation/source"/>
-      </genOperations>
-      <genOperations ecoreOperation="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/provideAnnotation">
-        <genParameters ecoreParameter="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement/provideAnnotation/source"/>
-      </genOperations>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//Extension">
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//Extension/base"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//Extension/modelBase"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//Extension/owningAnnotation"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//Extension/extendableBase"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement/comment"/>
-    </genClasses>
-    <nestedGenPackages prefix="Expressions" disposableProviderFactory="true" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#//expressions">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//expressions/LogicOperator">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/LogicOperator/AND"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/LogicOperator/OR"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/LogicOperator/XOR"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/LESS"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/LESS_OR_EQUAL"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/EQUAL"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/GREATER_OR_EQUAL"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/GREATER"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator/UNEQUAL"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator/PLUS"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator/MINUS"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator/TIMES"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator/DIVIDE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticOperator/MODULO"/>
-      </genEnums>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression/expressionText"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression/language"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression/languageVersion"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/LiteralExpression">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/LiteralExpression/value"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/LiteralExpression/valueType"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/AttributeValueExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/AttributeValueExpression/object"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/AttributeValueExpression/attribute"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ObjectVariableExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ObjectVariableExpression/object"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/BinaryExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/BinaryExpression/leftExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/BinaryExpression/rightExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/NotExpression">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/NotExpression/negatedExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/BinaryLogicExpression">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/BinaryLogicExpression/operator"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparisonExpression">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparisonExpression/operator"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticExpression">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ArithmeticExpression/operator"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/MethodCallExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/MethodCallExpression/targetObject"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/MethodCallExpression/callExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/ExceptionExpression">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ExceptionExpression/exceptionType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ExceptionExpression/variableName"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Collaboration">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Collaboration/source"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Collaboration/target"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Collaboration/body"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Collaboration/forEach"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Pattern" disposableProviderFactory="true" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#//pattern">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingState">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingState/BOUND"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingState/UNBOUND"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingState/MAYBE_BOUND"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingType">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingType/NONE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingType/NEGATIVE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingType/OPTIONAL"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/BindingType/SET"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Modifier">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Modifier/NONE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Modifier/CREATE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Modifier/DESTROY"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType/FIRST"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType/LAST"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType/DIRECT"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType/INDIRECT"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLinkType/INDEX"/>
-      </genEnums>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/ownedObject"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/ownedLink"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/ownedConstraint"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/ownedPattern"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/owningPattern"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectPattern/bindingType"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/owningPattern"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/incomingLink"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/outgoingLink"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/bindingState"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/bindingType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/modifier"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/classifier"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/ownedConstraint"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/ownedAttributeAssignment"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/receivedCollaboration"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/sentCollaboration"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/ObjectVariable/bindingExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/owningPattern"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/bindingType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/modifier"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/target"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/source"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/multiLinkToTarget"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/multiLinkFromSource"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/sourceEnd"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/targetEnd"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Link/qualifierExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/index"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/multiLinkType"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/negative"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/sourceLink"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/targetObject"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/MultiLink/targetLink"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Path">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Path/ownedPathExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/AttributeAssignment">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/AttributeAssignment/owningObjectVariable"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/AttributeAssignment/ownedValueExpression"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/AttributeAssignment/attribute"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//pattern/Constraint">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Constraint/ownedConstraintExpression"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Constraint/owningPattern"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//pattern/Constraint/owningObjectVariable"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Activities" disposableProviderFactory="true" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#//activities">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard">
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/NONE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/SUCCESS"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/FAILURE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/EACH_TIME"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/END"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/ELSE"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/BOOL"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/EXCEPTION"/>
-        <genEnumLiterals ecoreEnumLiteral="../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard/FINALLY"/>
-      </genEnums>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/OperationExtension">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/OperationExtension/ownedActivity"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/Activity">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/Activity/ownedActivityNode"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/Activity/ownedActivityEdge"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/Activity/owningOperation"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/Activity/precondition"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityNode">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityNode/owningActivity"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityNode/incoming"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityNode/outgoing"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityNode/owningActivityNode"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge/owningActivity"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge/target"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge/source"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge/guardType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityEdge/ownedGuardExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/StoryNode">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//activities/StoryNode/forEach"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/StoryNode/ownedPattern"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/DecisionNode"/>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/StartNode"/>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/StopNode">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.storydriven.modeling/model/sdm.ecore#//activities/StopNode/flowStopOnly"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/StopNode/returnValue"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityCallNode">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/ActivityCallNode/callee"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/StatementNode">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/StatementNode/statementExpression"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//activities/StructuredNode">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//activities/StructuredNode/ownedActivityNode"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Templates" disposableProviderFactory="true" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#//templates">
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//templates/ObjectPatternTemplate">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/ObjectPatternTemplate/typeParameter"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/ObjectPatternTemplate/templateBinding"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//templates/TemplateBinding">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/TemplateBinding/boundParameter"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/TemplateBinding/bindingExpression"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/TemplateBinding/propertyBinding"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/TemplateBinding/template"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//templates/PropertyBinding">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/PropertyBinding/boundProperty"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/PropertyBinding/bindingExpression"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//templates/PropertyBinding/templateBinding"/>
-      </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Calls" disposableProviderFactory="true" ecorePackage="../../org.storydriven.modeling/model/sdm.ecore#//calls">
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation/ownedParameterBindings"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable/inParameters"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable/outParameters"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//calls/Parameter">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Parameter/type"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Parameter/inParameterOwner"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/Parameter/outParameterOwner"/>
-      </genClasses>
-      <genClasses ecoreClass="../../org.storydriven.modeling/model/sdm.ecore#//calls/ParameterBinding">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/ParameterBinding/owningInvocation"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/ParameterBinding/ownedValueExpression"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ../../org.storydriven.modeling/model/sdm.ecore#//calls/ParameterBinding/parameter"/>
-      </genClasses>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
