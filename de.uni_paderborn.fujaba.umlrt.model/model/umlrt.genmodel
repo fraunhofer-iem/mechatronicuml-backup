@@ -6,12 +6,16 @@
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
   <foreignModel>umlrt.ecore</foreignModel>
   <genPackages prefix="De" disposableProviderFactory="true" ecorePackage="umlrt.ecore#/">
-    <nestedGenPackages prefix="Uni_paderborn" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn">
-      <nestedGenPackages prefix="Fujaba" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba">
-        <nestedGenPackages prefix="Umlrt" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt">
-          <nestedGenPackages prefix="Model" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model">
-            <nestedGenPackages prefix="Behavior" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/behavior">
+    <nestedGenPackages prefix="Uni_paderborn" basePackage="de" disposableProviderFactory="true"
+        ecorePackage="umlrt.ecore#//uni_paderborn">
+      <nestedGenPackages prefix="Fujaba" basePackage="de.uni_paderborn" disposableProviderFactory="true"
+          ecorePackage="umlrt.ecore#//uni_paderborn/fujaba">
+        <nestedGenPackages prefix="Umlrt" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
+            ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt">
+          <nestedGenPackages prefix="Model" basePackage="de.uni_paderborn.fujaba.umlrt"
+              disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model">
+            <nestedGenPackages prefix="Behavior" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/behavior">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/behavior/ProtocolStatechart">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/behavior/ProtocolStatechart/port"/>
@@ -20,8 +24,8 @@
                 </genOperations>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Component" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component">
+            <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component">
               <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind">
                 <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind/SOFTWARE_COMPONENT"/>
                 <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentKind/CONTINUOUS_COMPONENT"/>
@@ -114,8 +118,8 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Delegation/componentPart"/>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Constraint" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint">
+            <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint">
               <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness">
                 <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/CORRECT"/>
                 <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Correctness/VIOLATED"/>
@@ -134,7 +138,8 @@
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/getCorrectnessAsString"/>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Core" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core">
+            <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber">
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/value"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/infinity"/>
@@ -174,8 +179,8 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement/uMLRealtimeStatechart"/>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Instance" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance">
+            <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance">
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/role"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -215,7 +220,8 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry/key"/>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Pattern" disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern">
+            <nestedGenPackages prefix="Pattern" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector">
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/bidirectional"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -244,8 +250,8 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role/cardinality"/>
               </genClasses>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Realtimestatechart" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+            <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart">
               <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Map"/>
               <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vector"/>
               <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Set">
@@ -644,8 +650,8 @@
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockToUMLDeadlineAtom/value"/>
               </genClasses>
-              <nestedGenPackages prefix="Reconf" disposableProviderFactory="true"
-                  ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf">
+              <nestedGenPackages prefix="Reconf" basePackage="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart"
+                  disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf">
                 <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf">
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"
                       ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf/connectorInstance"/>
@@ -706,8 +712,8 @@
                 </genClasses>
               </nestedGenPackages>
             </nestedGenPackages>
-            <nestedGenPackages prefix="Msgiface" disposableProviderFactory="true"
-                ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface">
+            <nestedGenPackages prefix="Msgiface" basePackage="de.uni_paderborn.fujaba.umlrt.model"
+                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
             </nestedGenPackages>
           </nestedGenPackages>
