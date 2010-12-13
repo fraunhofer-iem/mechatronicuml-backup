@@ -741,7 +741,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLParameterizedSynchronizationChannel"
-                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeAction">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
@@ -759,7 +759,8 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/sideEffect"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
                   containment="true"/>
@@ -1053,7 +1054,7 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLSynchronizationChannels"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
                   containment="true"/>
@@ -1101,14 +1102,13 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLSynchronizationChannel"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="senderSynchronizationChannel"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="receiverSynchronizationChannel"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
-                  containment="true"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="sideEffect" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction/uMLRealtimeTransition"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="targetUMLRealtimeState"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sourceUMLRealtimeState"
@@ -1142,20 +1142,17 @@
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLSynchronizationChannel">
+            <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-                <eParameters name="newChannel" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLSynchronizationChannel"/>
+                <eParameters name="newChannel" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeComplexState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="senderTransitions"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="receiverTransitions"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
