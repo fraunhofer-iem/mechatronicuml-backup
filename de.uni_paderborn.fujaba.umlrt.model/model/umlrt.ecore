@@ -703,15 +703,13 @@
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatecharts"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeDoAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeExitAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeEntryAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
-                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event/uMLRealtimeComplexState"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent/exitActionRev"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent/entryActionRev"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"
                   containment="true"/>
@@ -762,12 +760,6 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeDoAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeEntryAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="revUMLRealtimeExitAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
                   containment="true"/>
@@ -1209,6 +1201,23 @@
             <eClassifiers xsi:type="ecore:EEnum" name="HistoryKind">
               <eLiterals name="deep"/>
               <eLiterals name="shallow" value="1"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Event">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeComplexState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/doAction"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ResettingEvent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtom"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="entryActionRev"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/entryAction"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="exitActionRev"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/exitAction"/>
             </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">
