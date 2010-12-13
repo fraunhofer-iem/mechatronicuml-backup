@@ -644,29 +644,24 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLBoolRealtimeAtom" abstract="true">
-              <eOperations name="setUpperBound">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Alternative setter for upper bound with a long value as argument."/>
-                </eAnnotations>
-                <eParameters name="newUpperBound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-              </eOperations>
-              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
               <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
                   containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLBoolWithLowerBoundRealtimeAtom"
-                abstract="true" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom">
-              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
                   containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="AbsoluteDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/absoluteDeadlines"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/absoluteDeadlines"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RelativeDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/relativeDeadline"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLClock">
               <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -675,8 +670,9 @@
                 <eParameters name="newClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLBoolRealtimeAtoms"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLClock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLClocks"/>
@@ -725,7 +721,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/uMLRealtimeComplexState"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLDeadlineAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLDeadlineAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLDeadlineAtom"/>
@@ -735,7 +731,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolRealtimeAtom">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
@@ -1142,8 +1138,12 @@
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockToUMLTimeguardAtom"
                   containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="deadlines" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockToUMLDeadlineAtom"
-                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/uMLRealtimeTransition"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
@@ -1161,7 +1161,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="syncs" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Sync"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLBoolWithLowerBoundRealtimeAtom">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
