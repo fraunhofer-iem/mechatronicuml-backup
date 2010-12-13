@@ -30,7 +30,7 @@
           <eSubpackages name="component" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/component"
               nsPrefix="component">
             <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"
-                eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
+                eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
               </eAnnotations>
@@ -102,7 +102,8 @@
                   <details key="documentation" value="The component this port belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portRole" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/port">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The port role this port is a realization of."/>
                 </eAnnotations>
@@ -137,15 +138,15 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="fromPortToConnectorRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Connector"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Connector/fromPort">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/fromPort">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the connector this port is the source of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="toPortToConnectorRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Connector"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Connector/toPort">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/toPort">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the connector this port is the target of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
@@ -230,19 +231,19 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Connector"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Connector/parentComponent">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/parentComponent">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
+            <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component #//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
               </eAnnotations>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector">
+            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
               </eAnnotations>
@@ -259,7 +260,8 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true">
+            <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This abstract class is the common super class of delegations and assemblies."/>
               </eAnnotations>
@@ -283,7 +285,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Delegation" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Connector">
+            <eClassifiers xsi:type="ecore:EClass" name="Delegation" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a delegation connector. A delegation connector connects a port of a structured component type and a port part of component part the structured component contains."/>
               </eAnnotations>
@@ -305,6 +307,10 @@
               <eLiterals name="CONTINUOUS" value="1" literal="continuous"/>
               <eLiterals name="HYBRID" value="2" literal="hybrid"/>
               <eLiterals name="HARDWARE" value="3" literal="hardware"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="BehavioralConnector" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorClass"
+                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
@@ -334,11 +340,6 @@
                   <details key="documentation" value="The correctness of this constraint encoded as a literal of the enum type &quot;Correctness&quot;."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The constraint language in which the constraint is specified."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This attribute decides whether background checking is activated for this constraint. If it is activated the correctness of the constraint is checked whenever the model changes. These checks are performed in the background such that user interaction is not interrupted."/>
@@ -348,18 +349,23 @@
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="textualExpression"
-                  eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//activities/TransitionGuard">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The actual constraint formulated in some constraint language such as LTL, CTL, TCTL, OCL etc."/>
-                </eAnnotations>
-              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="textualExpression"
+                  eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="constrainableElement"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EEnum" name="Correctness">
               <eLiterals name="CORRECT" literal="correct"/>
               <eLiterals name="VIOLATED" value="1" literal="violated"/>
               <eLiterals name="UNSAFE" value="2" literal="unsafe"/>
               <eLiterals name="UNKNOWN" value="3" literal="unknown"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ModelingConstraint" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint"/>
+            <eClassifiers xsi:type="ecore:EClass" name="VerifiableConstraint" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint"/>
+            <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/constraint/VerifiableConstraint">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="textualExpression"
+                  eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core"
@@ -469,6 +475,11 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ConstrainableElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/constrainableElement"/>
+            </eClassifiers>
           </eSubpackages>
           <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/instance"
               nsPrefix="instance">
@@ -532,7 +543,7 @@
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
               nsPrefix="pattern">
-            <eClassifiers xsi:type="ecore:EClass" name="RoleConnector">
+            <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
               </eAnnotations>
@@ -540,11 +551,6 @@
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart of this channel. It serves to model specific properties of real communication channels such as propagation delay, probability of message loss or message buffers which are restricted in size."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -559,19 +565,25 @@
                   <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/connectors"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" containment="true"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The roles belonging to this pattern."/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/pattern"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+            <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a role of a coordination pattern."/>
               </eAnnotations>
@@ -598,14 +610,12 @@
                   <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the realtime statechart of this role."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This is redundant to Port::interfaces and should be reworked."/>
-                </eAnnotations>
-              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/refines"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart"
@@ -932,7 +942,8 @@
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
                   defaultValueLiteral="0"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeState" abstract="true">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeState" abstract="true"
+                eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
@@ -953,7 +964,6 @@
                   <details key="documentation" value="The realtime statechart this state belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeStatechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
@@ -1193,6 +1203,13 @@
               <eTypeParameters name="UMLClock"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EDataType" name="Iterator" instanceClassName="java.util.Iterator"/>
+            <eClassifiers xsi:type="ecore:EClass" name="HistoryState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryKind"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="HistoryKind">
+              <eLiterals name="deep"/>
+              <eLiterals name="shallow" value="1"/>
+            </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">
               <eClassifiers xsi:type="ecore:EClass" name="AssemblyReconf">
