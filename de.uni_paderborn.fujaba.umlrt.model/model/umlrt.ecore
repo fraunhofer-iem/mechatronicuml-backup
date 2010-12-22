@@ -349,8 +349,6 @@
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="textualExpression"
-                  eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="constrainableElement"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint"/>
@@ -508,7 +506,10 @@
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentInstanceConfiguration"/>
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentInstanceConfiguration"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  containment="true"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -529,16 +530,16 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="ComponentInstance2PortMapEntry&#xD;&#xA;Saves just one port for one certain component instance."/>
               </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="CI2PMapEntry" instanceClassName="java.util.Map$Entry">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="ComponentInstance2PortsMapEntry&#xD;&#xA;Saves a list of ports for one certain component instance."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
@@ -768,7 +769,7 @@
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//Expression"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeArgument">
               <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -856,11 +857,20 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstToPortInstMapEntry"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/PortInstToPortInstMapEntry"
-                  containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portsByComponentInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  </eTypeArguments>
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  </eTypeArguments>
+                </eGenericType>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeFlatSwitching">
               <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -874,9 +884,18 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstToPortInstMapEntry"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/PortInstToPortInstMapEntry"
-                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  </eTypeArguments>
+                  <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/MyMap">
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  </eTypeArguments>
+                </eGenericType>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeInternalEvent"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbstractUMLRealtimeEvent">
@@ -1175,11 +1194,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PortInstToPortInstMapEntry"
-                instanceClassName="java.util.Map$Entry">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry"/>
-            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="StringToEClass" instanceClassName="java.util.Map$Entry">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
@@ -1231,6 +1245,10 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="receiveSyncRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/receiveSync"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EDataType" name="MyMap" instanceClassName="java.util.HashMap">
+              <eTypeParameters name="key"/>
+              <eTypeParameters name="value"/>
             </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">
