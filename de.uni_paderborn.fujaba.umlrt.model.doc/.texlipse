@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Wed Dec 22 18:05:49 CET 2010
+#Wed Dec 22 18:25:59 CET 2010
 builderNum=2
 outputDir=protocols/
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=protocols/tex
-mainTexFile=10-12-08.tex
-outputFile=10-12-08.pdf
+mainTexFile=10-12-15.tex
+outputFile=10-12-15.pdf
 langSpell=
 markDer=true
 srcDir=protocols/tex/
