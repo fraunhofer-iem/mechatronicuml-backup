@@ -1320,6 +1320,42 @@
               </eAnnotations>
             </eClassifiers>
           </eSubpackages>
+          <eSubpackages name="modelstructure" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/modelstructure"
+              nsPrefix="modelstructure">
+            <eClassifiers xsi:type="ecore:EClass" name="UmlrtRootNode">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternContainer"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/PatternContainer"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentContainer"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/ComponentContainer"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PatternContainer">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/PatternDiagram"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnectors"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentContainer">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentDiagrams"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/ComponentDiagram"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentDiagram">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="structuredComponent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
+                  containment="true"/>
+            </eClassifiers>
+          </eSubpackages>
         </eSubpackages>
       </eSubpackages>
     </eSubpackages>
