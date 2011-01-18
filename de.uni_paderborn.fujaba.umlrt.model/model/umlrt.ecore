@@ -773,7 +773,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"/>
