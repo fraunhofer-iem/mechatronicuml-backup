@@ -748,11 +748,6 @@
                   <details key="documentation" value="If this assoc is set the value of the referenced attribute is assigned to the attribute stored in the assoc &quot;assignedEAttribute&quot;."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="revResultEvent">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="If the value to be assigned is yield by a method call this assoc stores the internal event representing the call."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="assignedEAttribute"
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -779,16 +774,6 @@
               </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
-              <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields qualified event name including the signature e.g. port1.msg1(int eins, int zwo)."/>
-                </eAnnotations>
-              </eOperations>
-              <eOperations name="getFullEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields qualified event name including arguments e.g. port1.msg1(1, &quot;foo&quot;)."/>
-                </eAnnotations>
-              </eOperations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"/>
