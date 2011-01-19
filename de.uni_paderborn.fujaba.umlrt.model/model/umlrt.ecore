@@ -710,21 +710,21 @@
                   <details key="documentation" value="The realtime statechart this complex state belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event/uMLRealtimeComplexState">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/doActionRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The do action. It is executed periodically while the corresponding complex state is active."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent/exitActionRev">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/CrossingEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/CrossingEvent/exitActionRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The exit action. It is exectuted once when the corresponding complex state is left."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ResettingEvent/entryActionRev">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/CrossingEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/CrossingEvent/entryActionRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The entry action. It is exectuted once when the corresponding complex state is entered."/>
                 </eAnnotations>
@@ -769,12 +769,18 @@
               </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLDeadlineAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO: Not required anymore?"/>
+              </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLDeadlineAtom"/>
               </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLInterfaceStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO: What's this good for?"/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
@@ -794,16 +800,35 @@
               </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeAction" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
+              </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Does an action require an id?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpperBound"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Required?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLowerBound"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Required?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The worst case execution time of this action."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;."/>
@@ -811,10 +836,18 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/sideEffect"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/sideEffect">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The transition this action is a side effect of."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtoms"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Is this required? The crossing events already have an assocs to resets."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
@@ -1169,14 +1202,15 @@
               <eLiterals name="deep"/>
               <eLiterals name="shallow" value="1"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Event">
+            <eClassifiers xsi:type="ecore:EClass" name="DoEvent">
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeComplexState"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="doActionRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/doAction"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ResettingEvent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Event">
+            <eClassifiers xsi:type="ecore:EClass" name="CrossingEvent">
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClockResetAtom"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="entryActionRev"
@@ -1185,6 +1219,8 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="exitActionRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/exitAction"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Sync" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSyncRev"
