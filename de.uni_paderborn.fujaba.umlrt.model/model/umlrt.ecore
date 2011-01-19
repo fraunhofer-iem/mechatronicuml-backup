@@ -674,7 +674,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLClockResetAtom">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents clock resets for exactly one clock."/>
+                <details key="documentation" value="This class represents clock resets for exactly one clock. A clock reset sets a clock back to zero."/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
@@ -977,7 +977,7 @@
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newStartState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState"/>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartStateRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLRealtimeStartState">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1099,7 +1099,7 @@
                   defaultValueLiteral="\&quot;schedule.xml\&quot;"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartState"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState/uMLRealtimeStatechart">
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStartState/uMLRealtimeStartStateRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The start state of this realtime statechart."/>
                 </eAnnotations>
@@ -1147,12 +1147,23 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/StringToEClass"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEmbedded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-                  derived="true"/>
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a complex state or not."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClocks" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeStatechart"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/uMLRealtimeStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The clocks of this realtime statechart."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeStopState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents the stop state of a realtime statechart."/>
+              </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newStopState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStopState"/>
@@ -1171,28 +1182,54 @@
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newTransition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"/>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationType"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="uMLRealtimeTransitionMappingVector"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Vector"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="sendSync" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Sync"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Sync/sendSyncRev"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="receiveSync"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Sync"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Sync/receiveSyncRev"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/sendSyncRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The synchronisation which is sent upon activation of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="receiveSynchronization"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/receiveSyncRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The synchronisation which is to be received upon activation of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sideEffect" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction/uMLRealtimeTransition"/>
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction/uMLRealtimeTransition">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="targetUMLRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The state which is the target of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sourceUMLRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The state which is the source of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The realtime statechart this transition belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClockResetAtom"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The clock resets of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeFlatSwitching"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFlatSwitching"
                   containment="true"/>
@@ -1201,10 +1238,18 @@
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeFadingFunction/uMLRealtimeTransitions"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEvents"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The trigger events of this transition. They are required for this transition to be activated."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="raisedEvents"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeEvent"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The events which are raised upon activiation of this transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/UMLClockToUMLTimeguardAtom"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
@@ -1214,6 +1259,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/uMLRealtimeTransition"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
@@ -1257,13 +1303,13 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Sync" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+            <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSyncRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/sendSync"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/sendSynchronization"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="receiveSyncRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/receiveSync"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/receiveSynchronization"/>
             </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">
