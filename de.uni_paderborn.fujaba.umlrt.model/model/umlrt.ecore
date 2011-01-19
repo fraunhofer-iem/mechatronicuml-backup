@@ -1126,16 +1126,24 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLInterfaceStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInterfaceStatechart"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="hasProvidedInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The behovioral element this statechart belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedMsgIFace"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/StringToEClass"
                   containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="hasRequiredInterface"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMsgIFace"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/StringToEClass"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEmbedded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
