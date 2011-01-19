@@ -737,20 +737,36 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfacedStates"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: What's this good for?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: What's this good for?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/UMLCRStateToUMLInvariantAtomMapEntry"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This is the invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state dependent on the values of the clocks."/>
+                  <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Specifies whether this complex state is committed or not. The meaning of being committed is the same as it is with committed states in Uppaal."/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/uMLRealtimeComplexState"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/uMLRealtimeComplexState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The synchronization channels provided by this complex state."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLDeadlineAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
@@ -763,12 +779,19 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents the invariant belonging to a complex state.&#xA;TODO: Wondering why there is not any relation to 'UMLClock'."/>
+              </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The complex state this invariant belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeAction" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
