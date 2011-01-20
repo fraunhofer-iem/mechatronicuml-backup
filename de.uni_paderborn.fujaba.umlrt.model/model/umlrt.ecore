@@ -725,7 +725,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/UMLCRStateToUMLInvariantAtomMapEntry"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
@@ -1173,7 +1173,8 @@
                   <details key="documentation" value="The events which are raised upon activiation of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/UMLClockToUMLTimeguardAtom"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x&lt;=2 the transition would only be allowed to be activated if x has a value less or equal to 2."/>
@@ -1313,21 +1314,9 @@
                 <eTypeParameters name="UMLClock"/>
               </eClassifiers>
               <eClassifiers xsi:type="ecore:EDataType" name="Iterator" instanceClassName="java.util.Iterator"/>
-              <eClassifiers xsi:type="ecore:EClass" name="UMLClockToUMLTimeguardAtom"
-                  instanceClassName="java.util.Map$Entry">
-                <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
-                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
-              </eClassifiers>
               <eClassifiers xsi:type="ecore:EClass" name="StringToEClass" instanceClassName="java.util.Map$Entry">
                 <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
-              </eClassifiers>
-              <eClassifiers xsi:type="ecore:EClass" name="UMLCRStateToUMLInvariantAtomMapEntry"
-                  instanceClassName="java.util.Map$Entry">
-                <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
-                <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1"
-                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
               </eClassifiers>
             </eSubpackages>
           </eSubpackages>
