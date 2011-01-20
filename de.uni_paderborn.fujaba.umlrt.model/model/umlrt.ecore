@@ -751,7 +751,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents the invariant belonging to a complex state.&#xA;TODO: Wondering why there is not any relation to 'UMLClock'."/>
               </eAnnotations>
@@ -760,7 +760,8 @@
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
+                  containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The complex state this invariant belongs to."/>
                 </eAnnotations>
@@ -1198,7 +1199,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/channels"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom">
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
