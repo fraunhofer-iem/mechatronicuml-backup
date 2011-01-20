@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Thu Jan 20 12:11:00 CET 2011
+#Thu Jan 20 12:24:40 CET 2011
 builderNum=2
 outputDir=protocols/
 makeIndSty=
@@ -8,6 +8,6 @@ outputFormat=pdf
 tempDir=protocols/tex
 mainTexFile=11-01-12.tex
 outputFile=11-01-12.pdf
-langSpell=
+langSpell=de
 markDer=true
 srcDir=protocols/tex/
