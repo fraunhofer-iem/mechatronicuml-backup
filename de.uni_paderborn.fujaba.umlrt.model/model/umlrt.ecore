@@ -574,15 +574,14 @@
                 <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" containment="true"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The roles belonging to this pattern."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/pattern"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/pattern"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1331,39 +1330,7 @@
           </eSubpackages>
           <eSubpackages name="modelstructure" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/modelstructure"
               nsPrefix="modelstructure">
-            <eClassifiers xsi:type="ecore:EClass" name="UmlrtRootNode">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternContainer"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/PatternContainer"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentContainer"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/ComponentContainer"
-                  containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PatternContainer">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="patternDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/PatternDiagram"
-                  containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnectors"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ComponentContainer">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentDiagrams"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/modelstructure/ComponentDiagram"
-                  containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ComponentDiagram">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="structuredComponent"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
-                  containment="true"/>
-            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UmlrtRootNode"/>
           </eSubpackages>
         </eSubpackages>
       </eSubpackages>
