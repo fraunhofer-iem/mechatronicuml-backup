@@ -1,0 +1,7 @@
+# Tracing options for the patterneditor.diagram plug-in
+
+# Common issues
+patterneditor.diagram/debug=false
+
+# Visual IDs
+patterneditor.diagram/debug/visualID=false
