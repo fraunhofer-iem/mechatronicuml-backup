@@ -239,11 +239,6 @@
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="RolePattern"
-            description="Create new RolePattern"
-            genLinks="//@diagram/@links.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="CoordinationPatternConstraint"
             description="Create new CoordinationPatternConstraint"
             genLinks="//@diagram/@links.2"/>

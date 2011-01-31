@@ -53,7 +53,7 @@
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/constraint/TextualConstraint"/>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pattern.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="pattern.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="pattern.gmfgraph#TextualConstraint"/>
     </ownedChild>
@@ -76,9 +76,6 @@
         href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/target"/>
   </links>
   <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.3"/>
     <diagramLink
         href="pattern.gmfgraph#RolePattern"/>
     <linkMetaFeature
@@ -88,7 +85,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.4"/>
+        href="pattern.gmftool#//@palette/@tools.0/@tools.3"/>
     <diagramLink
         href="pattern.gmfgraph#CoordinationPatternConstraint"/>
     <linkMetaFeature
@@ -98,7 +95,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.5"/>
+        href="pattern.gmftool#//@palette/@tools.0/@tools.4"/>
     <diagramLink
         href="pattern.gmfgraph#RoleConstraint"/>
     <linkMetaFeature
