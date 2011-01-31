@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.EllipseAnchor;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
@@ -163,10 +165,18 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
+	 * Customized the CoordinationPattern NodeFigure to have an EllipseAnchor.
+	 * 
+	 * @generated NOT
+	 * 
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
+			@Override
+			public ConnectionAnchor createDefaultAnchor() {
+				return new EllipseAnchor(this);
+			}
+		};
 		return result;
 	}
 

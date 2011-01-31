@@ -533,6 +533,23 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+   
+   
+   <!--
+   TODO: Fix the following extension that should remove Delete Actions from the CoordinationPattern's Context Menu. 
+   -->
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="false"?>   
+	  <contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider" 
+	    checkPluginLoaded="false">
+	    <Priority name="Low"/>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="patterneditor.diagram.edit.parts.CoordinationPatternEditPart"/>
+		    <popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+            <popupPredefinedItem id="deleteFromModelAction" remove="true"/> 
+		</popupContribution>
+	  </contributionItemProvider>
+	</extension>
 
    <!-- optionally, specify keybindings -->
 </plugin>

@@ -52,6 +52,8 @@ import org.eclipse.ui.part.FileEditorInput;
 import patterneditor.PatternDiagram;
 import patterneditor.PatterneditorFactory;
 import patterneditor.diagram.edit.parts.PatternDiagramEditPart;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
 
 /**
  * @generated
@@ -216,10 +218,15 @@ public class PatternDiagramEditorUtil {
 	 * Create a new instance of domain element associated with canvas.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	private static PatternDiagram createInitialModel() {
-		return PatterneditorFactory.eINSTANCE.createPatternDiagram();
+		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
+				.createPatternDiagram();
+		CoordinationPattern coordinationPattern = PatternFactory.eINSTANCE
+				.createCoordinationPattern();
+		patternDiagram.setCoordinationPattern(coordinationPattern);
+		return patternDiagram;
 	}
 
 	/**

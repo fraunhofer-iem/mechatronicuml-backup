@@ -48,7 +48,10 @@ public class RoleCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * Executes this Command; creating a new Role and connecting it to the
+	 * CoordinationPattern.
+	 * 
+	 * @generated NOT
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
@@ -58,6 +61,10 @@ public class RoleCreateCommand extends EditElementCommand {
 		PatternDiagram owner = (PatternDiagram) getElementToEdit();
 		owner.getRoles().add(newElement);
 
+		// BEGIN ADDED CODE
+		newElement.setPattern(owner.getCoordinationPattern());
+		// END ADDED CODE
+		
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
