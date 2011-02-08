@@ -156,12 +156,6 @@
                   <details key="documentation" value="This association stores the connector this port is the target of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromPortToConnectorIRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromPort"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toPortToConnectorIRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/toPort"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -255,23 +249,6 @@
                 <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
               </eAnnotations>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/toRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The component part of the port part to which this assembly leads."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/fromRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The component part of the port part from which this assembly originates."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -294,6 +271,23 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/connectors">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The structured component this connector belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/toRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The component part of the port part to which this assembly leads."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/fromRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The component part of the port part from which this assembly originates."/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
@@ -511,6 +505,21 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromComponentI"/>
             </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This one connects two ports of two component instances."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="toComponentI"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toRef"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="fromComponentI"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/fromRef"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration"
                 eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -522,21 +531,6 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
                   containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This one connects two ports of two component instances."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toComponentI"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toRef"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromComponentI"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/fromRef"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/toPortToConnectorIRev"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/fromPortToConnectorIRev"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="CI2PsMapEntry" instanceClassName="java.util.Map$Entry">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
