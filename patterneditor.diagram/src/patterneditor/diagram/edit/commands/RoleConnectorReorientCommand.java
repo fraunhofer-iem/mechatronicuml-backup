@@ -71,7 +71,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		}
 		PatternDiagram container = (PatternDiagram) getLink().eContainer();
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRoleConnector_4001(container, getLink(),
+				.canExistRoleConnector_4101(container, getLink(),
 						getNewSource(), target);
 	}
 
@@ -89,7 +89,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		}
 		PatternDiagram container = (PatternDiagram) getLink().eContainer();
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRoleConnector_4001(container, getLink(), source,
+				.canExistRoleConnector_4101(container, getLink(), source,
 						getNewTarget());
 	}
 

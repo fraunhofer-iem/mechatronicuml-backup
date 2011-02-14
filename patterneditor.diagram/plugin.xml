@@ -213,8 +213,8 @@
       <viewProvider class="patterneditor.diagram.providers.PatternViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2101,2102,2103"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4101,4102,4103,4104"/>
       </viewProvider>
    </extension>
 
@@ -226,13 +226,13 @@
             <method name="getType()" value="Pattern"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003"/>
+            <method name="getType()" value="2101,2102,2103"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004"/>
+            <method name="getType()" value="4101,4102,4103,4104"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002"/>
+            <method name="getType()" value="5101,5102"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -245,11 +245,11 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="patterneditor.diagram.providers.PatternModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="patterneditor.diagram.edit.parts.PatternDiagramEditPart" id="PatternDiagram_1000"/>
-         <object class="patterneditor.diagram.edit.parts.CoordinationPatternEditPart" id="CoordinationPattern_2001"/>
-         <object class="patterneditor.diagram.edit.parts.RoleEditPart" id="Role_2002"/>
-         <object class="patterneditor.diagram.edit.parts.TextualConstraintEditPart" id="TextualConstraint_2003"/>
-         <context elements="PatternDiagram_1000,CoordinationPattern_2001,Role_2002,TextualConstraint_2003"/>
+         <object class="patterneditor.diagram.edit.parts.PatternDiagramEditPart" id="PatternDiagram_1001"/>
+         <object class="patterneditor.diagram.edit.parts.CoordinationPatternEditPart" id="CoordinationPattern_2101"/>
+         <object class="patterneditor.diagram.edit.parts.RoleEditPart" id="Role_2102"/>
+         <object class="patterneditor.diagram.edit.parts.TextualConstraintEditPart" id="TextualConstraint_2103"/>
+         <context elements="PatternDiagram_1001,CoordinationPattern_2101,Role_2102,TextualConstraint_2103"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -271,79 +271,79 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://patterneditor">
          <metamodelType
-               id="patterneditor.diagram.PatternDiagram_1000"
-               name="%metatype.name.PatternDiagram_1000"
+               id="patterneditor.diagram.PatternDiagram_1001"
+               name="%metatype.name.PatternDiagram_1001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PatternDiagram"
                edithelper="patterneditor.diagram.edit.helpers.PatternDiagramEditHelper">
-            <param name="semanticHint" value="1000"/>
+            <param name="semanticHint" value="1001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern">
          <metamodelType
-               id="patterneditor.diagram.CoordinationPattern_2001"
-               name="%metatype.name.CoordinationPattern_2001"
+               id="patterneditor.diagram.CoordinationPattern_2101"
+               name="%metatype.name.CoordinationPattern_2101"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CoordinationPattern"
                edithelper="patterneditor.diagram.edit.helpers.CoordinationPatternEditHelper">
-            <param name="semanticHint" value="2001"/>
+            <param name="semanticHint" value="2101"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern">
          <metamodelType
-               id="patterneditor.diagram.Role_2002"
-               name="%metatype.name.Role_2002"
+               id="patterneditor.diagram.Role_2102"
+               name="%metatype.name.Role_2102"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Role"
                edithelper="patterneditor.diagram.edit.helpers.RoleEditHelper">
-            <param name="semanticHint" value="2002"/>
+            <param name="semanticHint" value="2102"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint">
          <metamodelType
-               id="patterneditor.diagram.TextualConstraint_2003"
-               name="%metatype.name.TextualConstraint_2003"
+               id="patterneditor.diagram.TextualConstraint_2103"
+               name="%metatype.name.TextualConstraint_2103"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="TextualConstraint"
                edithelper="patterneditor.diagram.edit.helpers.TextualConstraintEditHelper">
-            <param name="semanticHint" value="2003"/>
+            <param name="semanticHint" value="2103"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern">
          <metamodelType
-               id="patterneditor.diagram.RoleConnector_4001"
-               name="%metatype.name.RoleConnector_4001"
+               id="patterneditor.diagram.RoleConnector_4101"
+               name="%metatype.name.RoleConnector_4101"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="RoleConnector"
                edithelper="patterneditor.diagram.edit.helpers.RoleConnectorEditHelper">
-            <param name="semanticHint" value="4001"/>
+            <param name="semanticHint" value="4101"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern">
          <specializationType
-               id="patterneditor.diagram.RolePattern_4002"
-               name="%metatype.name.RolePattern_4002"
+               id="patterneditor.diagram.RolePattern_4102"
+               name="%metatype.name.RolePattern_4102"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4002"/>
+            <param name="semanticHint" value="4102"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core">
          <specializationType
-               id="patterneditor.diagram.ConstrainableElementConstraint_4003"
-               name="%metatype.name.ConstrainableElementConstraint_4003"
+               id="patterneditor.diagram.ConstrainableElementConstraint_4103"
+               name="%metatype.name.ConstrainableElementConstraint_4103"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4003"/>
+            <param name="semanticHint" value="4103"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core">
          <specializationType
-               id="patterneditor.diagram.ConstrainableElementConstraint_4004"
-               name="%metatype.name.ConstrainableElementConstraint_4004"
+               id="patterneditor.diagram.ConstrainableElementConstraint_4104"
+               name="%metatype.name.ConstrainableElementConstraint_4104"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4004"/>
+            <param name="semanticHint" value="4104"/>
          </specializationType>
       </metamodel>
    </extension>
@@ -358,14 +358,14 @@
          </enablement>
       </clientContext> 
       <binding context="patterneditor.diagram.TypeContext">
-         <elementType ref="patterneditor.diagram.PatternDiagram_1000"/>
-         <elementType ref="patterneditor.diagram.CoordinationPattern_2001"/>
-         <elementType ref="patterneditor.diagram.Role_2002"/>
-         <elementType ref="patterneditor.diagram.TextualConstraint_2003"/>
-         <elementType ref="patterneditor.diagram.RoleConnector_4001"/>
-         <elementType ref="patterneditor.diagram.RolePattern_4002"/>
-         <elementType ref="patterneditor.diagram.ConstrainableElementConstraint_4003"/>
-         <elementType ref="patterneditor.diagram.ConstrainableElementConstraint_4004"/>
+         <elementType ref="patterneditor.diagram.PatternDiagram_1001"/>
+         <elementType ref="patterneditor.diagram.CoordinationPattern_2101"/>
+         <elementType ref="patterneditor.diagram.Role_2102"/>
+         <elementType ref="patterneditor.diagram.TextualConstraint_2103"/>
+         <elementType ref="patterneditor.diagram.RoleConnector_4101"/>
+         <elementType ref="patterneditor.diagram.RolePattern_4102"/>
+         <elementType ref="patterneditor.diagram.ConstrainableElementConstraint_4103"/>
+         <elementType ref="patterneditor.diagram.ConstrainableElementConstraint_4104"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

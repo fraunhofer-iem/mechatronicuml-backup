@@ -41,7 +41,7 @@ public class RoleItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public RoleItemSemanticEditPolicy() {
-		super(PatternElementTypes.Role_2002);
+		super(PatternElementTypes.Role_2102);
 	}
 
 	/**
@@ -123,20 +123,20 @@ public class RoleItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.RoleConnector_4001 == req.getElementType()) {
+		if (PatternElementTypes.RoleConnector_4101 == req.getElementType()) {
 			return getGEFWrapper(new RoleConnectorCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.RolePattern_4002 == req.getElementType()) {
+		if (PatternElementTypes.RolePattern_4102 == req.getElementType()) {
 			return getGEFWrapper(new RolePatternCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4103 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4104 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraint2CreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -149,18 +149,18 @@ public class RoleItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.RoleConnector_4001 == req.getElementType()) {
+		if (PatternElementTypes.RoleConnector_4101 == req.getElementType()) {
 			return getGEFWrapper(new RoleConnectorCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.RolePattern_4002 == req.getElementType()) {
+		if (PatternElementTypes.RolePattern_4102 == req.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4103 == req
 				.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4104 == req
 				.getElementType()) {
 			return null;
 		}

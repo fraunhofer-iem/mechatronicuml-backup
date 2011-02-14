@@ -221,13 +221,13 @@ public class PatternViewProvider extends AbstractProvider implements
 		}
 		switch (visualID) {
 		case CoordinationPatternEditPart.VISUAL_ID:
-			return createCoordinationPattern_2001(domainElement, containerView,
+			return createCoordinationPattern_2101(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case RoleEditPart.VISUAL_ID:
-			return createRole_2002(domainElement, containerView, index,
+			return createRole_2102(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case TextualConstraintEditPart.VISUAL_ID:
-			return createTextualConstraint_2003(domainElement, containerView,
+			return createTextualConstraint_2103(domainElement, containerView,
 					index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -244,17 +244,17 @@ public class PatternViewProvider extends AbstractProvider implements
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (PatternVisualIDRegistry.getVisualID(elementTypeHint)) {
 		case RoleConnectorEditPart.VISUAL_ID:
-			return createRoleConnector_4001(
+			return createRoleConnector_4101(
 					getSemanticElement(semanticAdapter), containerView, index,
 					persisted, preferencesHint);
 		case RolePatternEditPart.VISUAL_ID:
-			return createRolePattern_4002(containerView, index, persisted,
+			return createRolePattern_4102(containerView, index, persisted,
 					preferencesHint);
 		case ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return createConstrainableElementConstraint_4003(containerView,
+			return createConstrainableElementConstraint_4103(containerView,
 					index, persisted, preferencesHint);
 		case ConstrainableElementConstraint2EditPart.VISUAL_ID:
-			return createConstrainableElementConstraint_4004(containerView,
+			return createConstrainableElementConstraint_4104(containerView,
 					index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -264,7 +264,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createCoordinationPattern_2001(EObject domainElement,
+	public Node createCoordinationPattern_2101(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -302,7 +302,7 @@ public class PatternViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5001 = createLabel(node,
+		Node label5101 = createLabel(node,
 				PatternVisualIDRegistry
 						.getType(CoordinationPatternNameEditPart.VISUAL_ID));
 		return node;
@@ -311,7 +311,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createRole_2002(EObject domainElement, View containerView,
+	public Node createRole_2102(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -347,20 +347,20 @@ public class PatternViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5002 = createLabel(node,
+		Node label5102 = createLabel(node,
 				PatternVisualIDRegistry.getType(RoleNameEditPart.VISUAL_ID));
-		label5002.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5102.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5002 = (Location) label5002.getLayoutConstraint();
-		location5002.setX(0);
-		location5002.setY(5);
+		Location location5102 = (Location) label5102.getLayoutConstraint();
+		location5102.setX(0);
+		location5102.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createTextualConstraint_2003(EObject domainElement,
+	public Node createTextualConstraint_2103(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -404,7 +404,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createRoleConnector_4001(EObject domainElement,
+	public Edge createRoleConnector_4101(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -457,7 +457,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createRolePattern_4002(View containerView, int index,
+	public Edge createRolePattern_4102(View containerView, int index,
 			boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -509,7 +509,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createConstrainableElementConstraint_4003(View containerView,
+	public Edge createConstrainableElementConstraint_4103(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -561,7 +561,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createConstrainableElementConstraint_4004(View containerView,
+	public Edge createConstrainableElementConstraint_4104(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());

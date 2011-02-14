@@ -224,25 +224,20 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (PatternVisualIDRegistry.getVisualID(view)) {
 
-		case ConstrainableElementConstraint2EditPart.VISUAL_ID: {
+		case RolePatternEditPart.VISUAL_ID: {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			PatternNavigatorGroup target = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_ConstrainableElementConstraint_4004_target,
+					Messages.NavigatorGroupName_RolePattern_4102_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PatternNavigatorGroup source = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_ConstrainableElementConstraint_4004_source,
+					Messages.NavigatorGroupName_RolePattern_4102_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					PatternVisualIDRegistry
-							.getType(TextualConstraintEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					PatternVisualIDRegistry
 							.getType(CoordinationPatternEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
+			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
@@ -257,14 +252,14 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ConstrainableElementConstraintEditPart.VISUAL_ID: {
+		case ConstrainableElementConstraint2EditPart.VISUAL_ID: {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			PatternNavigatorGroup target = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_ConstrainableElementConstraint_4003_target,
+					Messages.NavigatorGroupName_ConstrainableElementConstraint_4104_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PatternNavigatorGroup source = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_ConstrainableElementConstraint_4003_source,
+					Messages.NavigatorGroupName_ConstrainableElementConstraint_4104_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -294,7 +289,7 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
 			PatternNavigatorGroup links = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_PatternDiagram_1000_links,
+					Messages.NavigatorGroupName_PatternDiagram_1001_links,
 					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
@@ -335,11 +330,38 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case RoleConnectorEditPart.VISUAL_ID: {
+			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			PatternNavigatorGroup target = new PatternNavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnector_4101_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			PatternNavigatorGroup source = new PatternNavigatorGroup(
+					Messages.NavigatorGroupName_RoleConnector_4101_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
 		case TextualConstraintEditPart.VISUAL_ID: {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PatternNavigatorGroup incominglinks = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_TextualConstraint_2003_incominglinks,
+					Messages.NavigatorGroupName_TextualConstraint_2103_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(
@@ -360,69 +382,14 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case RoleConnectorEditPart.VISUAL_ID: {
-			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			PatternNavigatorGroup target = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_RoleConnector_4001_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			PatternNavigatorGroup source = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_RoleConnector_4001_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case RolePatternEditPart.VISUAL_ID: {
-			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			PatternNavigatorGroup target = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_RolePattern_4002_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			PatternNavigatorGroup source = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_RolePattern_4002_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					PatternVisualIDRegistry
-							.getType(CoordinationPatternEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
 		case CoordinationPatternEditPart.VISUAL_ID: {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PatternNavigatorGroup incominglinks = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_CoordinationPattern_2001_incominglinks,
+					Messages.NavigatorGroupName_CoordinationPattern_2101_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PatternNavigatorGroup outgoinglinks = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_CoordinationPattern_2001_outgoinglinks,
+					Messages.NavigatorGroupName_CoordinationPattern_2101_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -451,14 +418,47 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
+		case ConstrainableElementConstraintEditPart.VISUAL_ID: {
+			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			PatternNavigatorGroup target = new PatternNavigatorGroup(
+					Messages.NavigatorGroupName_ConstrainableElementConstraint_4103_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			PatternNavigatorGroup source = new PatternNavigatorGroup(
+					Messages.NavigatorGroupName_ConstrainableElementConstraint_4103_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					PatternVisualIDRegistry
+							.getType(TextualConstraintEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					PatternVisualIDRegistry
+							.getType(CoordinationPatternEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					PatternVisualIDRegistry.getType(RoleEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
 		case RoleEditPart.VISUAL_ID: {
 			LinkedList<PatternAbstractNavigatorItem> result = new LinkedList<PatternAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			PatternNavigatorGroup incominglinks = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_Role_2002_incominglinks,
+					Messages.NavigatorGroupName_Role_2102_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			PatternNavigatorGroup outgoinglinks = new PatternNavigatorGroup(
-					Messages.NavigatorGroupName_Role_2002_outgoinglinks,
+					Messages.NavigatorGroupName_Role_2102_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),

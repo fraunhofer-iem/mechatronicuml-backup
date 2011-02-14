@@ -56,35 +56,35 @@ public class PatternElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PatternDiagram_1000 = getElementType("patterneditor.diagram.PatternDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType PatternDiagram_1001 = getElementType("patterneditor.diagram.PatternDiagram_1001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationPattern_2001 = getElementType("patterneditor.diagram.CoordinationPattern_2001"); //$NON-NLS-1$
+	public static final IElementType CoordinationPattern_2101 = getElementType("patterneditor.diagram.CoordinationPattern_2101"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType Role_2002 = getElementType("patterneditor.diagram.Role_2002"); //$NON-NLS-1$
+	public static final IElementType Role_2102 = getElementType("patterneditor.diagram.Role_2102"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType TextualConstraint_2003 = getElementType("patterneditor.diagram.TextualConstraint_2003"); //$NON-NLS-1$
+	public static final IElementType TextualConstraint_2103 = getElementType("patterneditor.diagram.TextualConstraint_2103"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleConnector_4001 = getElementType("patterneditor.diagram.RoleConnector_4001"); //$NON-NLS-1$
+	public static final IElementType RoleConnector_4101 = getElementType("patterneditor.diagram.RoleConnector_4101"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RolePattern_4002 = getElementType("patterneditor.diagram.RolePattern_4002"); //$NON-NLS-1$
+	public static final IElementType RolePattern_4102 = getElementType("patterneditor.diagram.RolePattern_4102"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConstrainableElementConstraint_4003 = getElementType("patterneditor.diagram.ConstrainableElementConstraint_4003"); //$NON-NLS-1$
+	public static final IElementType ConstrainableElementConstraint_4103 = getElementType("patterneditor.diagram.ConstrainableElementConstraint_4103"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ConstrainableElementConstraint_4004 = getElementType("patterneditor.diagram.ConstrainableElementConstraint_4004"); //$NON-NLS-1$
+	public static final IElementType ConstrainableElementConstraint_4104 = getElementType("patterneditor.diagram.ConstrainableElementConstraint_4104"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -197,41 +197,41 @@ public class PatternElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(PatternDiagram_1000,
+			elements.put(PatternDiagram_1001,
 					PatterneditorPackage.eINSTANCE.getPatternDiagram());
 
 			elements.put(
-					CoordinationPattern_2001,
+					CoordinationPattern_2101,
 					de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage.eINSTANCE
 							.getCoordinationPattern());
 
 			elements.put(
-					Role_2002,
+					Role_2102,
 					de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage.eINSTANCE
 							.getRole());
 
 			elements.put(
-					TextualConstraint_2003,
+					TextualConstraint_2103,
 					de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage.eINSTANCE
 							.getTextualConstraint());
 
 			elements.put(
-					RoleConnector_4001,
+					RoleConnector_4101,
 					de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage.eINSTANCE
 							.getRoleConnector());
 
 			elements.put(
-					RolePattern_4002,
+					RolePattern_4102,
 					de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage.eINSTANCE
 							.getRole_Pattern());
 
 			elements.put(
-					ConstrainableElementConstraint_4003,
+					ConstrainableElementConstraint_4103,
 					de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
 							.getConstrainableElement_Constraint());
 
 			elements.put(
-					ConstrainableElementConstraint_4004,
+					ConstrainableElementConstraint_4104,
 					de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
 							.getConstrainableElement_Constraint());
 		}
@@ -251,14 +251,14 @@ public class PatternElementTypes {
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
-			KNOWN_ELEMENT_TYPES.add(PatternDiagram_1000);
-			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2001);
-			KNOWN_ELEMENT_TYPES.add(Role_2002);
-			KNOWN_ELEMENT_TYPES.add(TextualConstraint_2003);
-			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
-			KNOWN_ELEMENT_TYPES.add(RolePattern_4002);
-			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4003);
-			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4004);
+			KNOWN_ELEMENT_TYPES.add(PatternDiagram_1001);
+			KNOWN_ELEMENT_TYPES.add(CoordinationPattern_2101);
+			KNOWN_ELEMENT_TYPES.add(Role_2102);
+			KNOWN_ELEMENT_TYPES.add(TextualConstraint_2103);
+			KNOWN_ELEMENT_TYPES.add(RoleConnector_4101);
+			KNOWN_ELEMENT_TYPES.add(RolePattern_4102);
+			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4103);
+			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4104);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -269,21 +269,21 @@ public class PatternElementTypes {
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case PatternDiagramEditPart.VISUAL_ID:
-			return PatternDiagram_1000;
+			return PatternDiagram_1001;
 		case CoordinationPatternEditPart.VISUAL_ID:
-			return CoordinationPattern_2001;
+			return CoordinationPattern_2101;
 		case RoleEditPart.VISUAL_ID:
-			return Role_2002;
+			return Role_2102;
 		case TextualConstraintEditPart.VISUAL_ID:
-			return TextualConstraint_2003;
+			return TextualConstraint_2103;
 		case RoleConnectorEditPart.VISUAL_ID:
-			return RoleConnector_4001;
+			return RoleConnector_4101;
 		case RolePatternEditPart.VISUAL_ID:
-			return RolePattern_4002;
+			return RolePattern_4102;
 		case ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return ConstrainableElementConstraint_4003;
+			return ConstrainableElementConstraint_4103;
 		case ConstrainableElementConstraint2EditPart.VISUAL_ID:
-			return ConstrainableElementConstraint_4004;
+			return ConstrainableElementConstraint_4104;
 		}
 		return null;
 	}

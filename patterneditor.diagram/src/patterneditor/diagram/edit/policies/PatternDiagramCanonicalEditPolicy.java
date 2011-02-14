@@ -76,7 +76,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<PatternNodeDescriptor> childDescriptors = PatternDiagramUpdater
-				.getPatternDiagram_1000SemanticChildren(viewObject);
+				.getPatternDiagram_1001SemanticChildren(viewObject);
 		for (PatternNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -111,7 +111,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<PatternNodeDescriptor> childDescriptors = PatternDiagramUpdater
-				.getPatternDiagram_1000SemanticChildren((View) getHost()
+				.getPatternDiagram_1001SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
@@ -251,7 +251,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case PatternDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getPatternDiagram_1000ContainedLinks(view));
+						.getPatternDiagram_1001ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -262,7 +262,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case CoordinationPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getCoordinationPattern_2001ContainedLinks(view));
+						.getCoordinationPattern_2101ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -273,7 +273,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case RoleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getRole_2002ContainedLinks(view));
+						.getRole_2102ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -284,7 +284,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case TextualConstraintEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getTextualConstraint_2003ContainedLinks(view));
+						.getTextualConstraint_2103ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -295,7 +295,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case RoleConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getRoleConnector_4001ContainedLinks(view));
+						.getRoleConnector_4101ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

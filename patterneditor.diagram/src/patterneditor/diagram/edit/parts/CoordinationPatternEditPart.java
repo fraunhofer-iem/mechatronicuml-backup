@@ -53,7 +53,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2001;
+	public static final int VISUAL_ID = 2101;
 
 	/**
 	 * @generated
@@ -314,8 +314,8 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4103);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4104);
 		return types;
 	}
 
@@ -326,10 +326,10 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4103);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4104);
 		}
 		return types;
 	}
@@ -339,10 +339,10 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4003) {
-			types.add(PatternElementTypes.TextualConstraint_2003);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4004) {
-			types.add(PatternElementTypes.TextualConstraint_2003);
+		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4103) {
+			types.add(PatternElementTypes.TextualConstraint_2103);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4104) {
+			types.add(PatternElementTypes.TextualConstraint_2103);
 		}
 		return types;
 	}
@@ -352,7 +352,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PatternElementTypes.RolePattern_4002);
+		types.add(PatternElementTypes.RolePattern_4102);
 		return types;
 	}
 
@@ -361,8 +361,8 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.RolePattern_4002) {
-			types.add(PatternElementTypes.Role_2002);
+		if (relationshipType == PatternElementTypes.RolePattern_4102) {
+			types.add(PatternElementTypes.Role_2102);
 		}
 		return types;
 	}

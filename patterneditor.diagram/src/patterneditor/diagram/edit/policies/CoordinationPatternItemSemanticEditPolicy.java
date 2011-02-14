@@ -37,7 +37,7 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public CoordinationPatternItemSemanticEditPolicy() {
-		super(PatternElementTypes.CoordinationPattern_2001);
+		super(PatternElementTypes.CoordinationPattern_2101);
 	}
 
 	/**
@@ -105,15 +105,15 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.RolePattern_4002 == req.getElementType()) {
+		if (PatternElementTypes.RolePattern_4102 == req.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4103 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4104 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraint2CreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -126,15 +126,15 @@ public class CoordinationPatternItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.RolePattern_4002 == req.getElementType()) {
+		if (PatternElementTypes.RolePattern_4102 == req.getElementType()) {
 			return getGEFWrapper(new RolePatternCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4103 == req
 				.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4104 == req
 				.getElementType()) {
 			return null;
 		}

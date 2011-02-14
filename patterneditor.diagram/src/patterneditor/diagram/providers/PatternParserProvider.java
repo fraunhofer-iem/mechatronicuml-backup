@@ -28,37 +28,37 @@ public class PatternParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser coordinationPatternName_5001Parser;
+	private IParser coordinationPatternName_5101Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCoordinationPatternName_5001Parser() {
-		if (coordinationPatternName_5001Parser == null) {
+	private IParser getCoordinationPatternName_5101Parser() {
+		if (coordinationPatternName_5101Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			coordinationPatternName_5001Parser = parser;
+			coordinationPatternName_5101Parser = parser;
 		}
-		return coordinationPatternName_5001Parser;
+		return coordinationPatternName_5101Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser roleName_5002Parser;
+	private IParser roleName_5102Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRoleName_5002Parser() {
-		if (roleName_5002Parser == null) {
+	private IParser getRoleName_5102Parser() {
+		if (roleName_5102Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			roleName_5002Parser = parser;
+			roleName_5102Parser = parser;
 		}
-		return roleName_5002Parser;
+		return roleName_5102Parser;
 	}
 
 	/**
@@ -67,9 +67,9 @@ public class PatternParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case CoordinationPatternNameEditPart.VISUAL_ID:
-			return getCoordinationPatternName_5001Parser();
+			return getCoordinationPatternName_5101Parser();
 		case RoleNameEditPart.VISUAL_ID:
-			return getRoleName_5002Parser();
+			return getRoleName_5102Parser();
 		}
 		return null;
 	}

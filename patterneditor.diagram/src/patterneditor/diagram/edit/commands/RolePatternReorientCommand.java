@@ -72,7 +72,7 @@ public class RolePatternReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRolePattern_4002(getNewSource(), getOldTarget());
+				.canExistRolePattern_4102(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class RolePatternReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRolePattern_4002(getOldSource(), getNewTarget());
+				.canExistRolePattern_4102(getOldSource(), getNewTarget());
 	}
 
 	/**

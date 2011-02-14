@@ -28,7 +28,7 @@ public class PatternDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 1000;
+	public static final int VISUAL_ID = 1001;
 
 	/**
 	 * @generated

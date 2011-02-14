@@ -52,10 +52,10 @@ public class PatternPaletteFactory {
 				Messages.RoleConnector1CreationTool_title,
 				Messages.RoleConnector1CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.RoleConnector_4001));
+						.singletonList(PatternElementTypes.RoleConnector_4101));
 		entry.setId("createRoleConnector1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.RoleConnector_4001));
+				.getImageDescriptor(PatternElementTypes.RoleConnector_4101));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -68,10 +68,10 @@ public class PatternPaletteFactory {
 				Messages.CoordinationPattern2CreationTool_title,
 				Messages.CoordinationPattern2CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.CoordinationPattern_2001));
+						.singletonList(PatternElementTypes.CoordinationPattern_2101));
 		entry.setId("createCoordinationPattern2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.CoordinationPattern_2001));
+				.getImageDescriptor(PatternElementTypes.CoordinationPattern_2101));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -83,10 +83,10 @@ public class PatternPaletteFactory {
 		NodeToolEntry entry = new NodeToolEntry(
 				Messages.Role3CreationTool_title,
 				Messages.Role3CreationTool_desc,
-				Collections.singletonList(PatternElementTypes.Role_2002));
+				Collections.singletonList(PatternElementTypes.Role_2102));
 		entry.setId("createRole3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.Role_2002));
+				.getImageDescriptor(PatternElementTypes.Role_2102));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -99,10 +99,10 @@ public class PatternPaletteFactory {
 				Messages.CoordinationPatternConstraint4CreationTool_title,
 				Messages.CoordinationPatternConstraint4CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4003));
+						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4103));
 		entry.setId("createCoordinationPatternConstraint4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4003));
+				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4103));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -115,10 +115,10 @@ public class PatternPaletteFactory {
 				Messages.RoleConstraint5CreationTool_title,
 				Messages.RoleConstraint5CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4004));
+						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4104));
 		entry.setId("createRoleConstraint5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4004));
+				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4104));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -131,10 +131,10 @@ public class PatternPaletteFactory {
 				Messages.TextualConstraint6CreationTool_title,
 				Messages.TextualConstraint6CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.TextualConstraint_2003));
+						.singletonList(PatternElementTypes.TextualConstraint_2103));
 		entry.setId("createTextualConstraint6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.TextualConstraint_2003));
+				.getImageDescriptor(PatternElementTypes.TextualConstraint_2103));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

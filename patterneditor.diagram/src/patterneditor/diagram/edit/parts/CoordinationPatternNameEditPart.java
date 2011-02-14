@@ -53,7 +53,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5001;
+	public static final int VISUAL_ID = 5101;
 
 	/**
 	 * @generated
@@ -291,7 +291,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = PatternParserProvider
 					.getParser(
-							PatternElementTypes.CoordinationPattern_2001,
+							PatternElementTypes.CoordinationPattern_2101,
 							getParserElement(),
 							PatternVisualIDRegistry
 									.getType(patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));

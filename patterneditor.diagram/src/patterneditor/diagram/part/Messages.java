@@ -313,72 +313,72 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_target;
+	public static String NavigatorGroupName_RolePattern_4102_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_source;
+	public static String NavigatorGroupName_RolePattern_4102_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4003_target;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4104_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4003_source;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4104_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PatternDiagram_1000_links;
+	public static String NavigatorGroupName_PatternDiagram_1001_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_TextualConstraint_2003_incominglinks;
+	public static String NavigatorGroupName_RoleConnector_4101_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4001_target;
+	public static String NavigatorGroupName_RoleConnector_4101_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4001_source;
+	public static String NavigatorGroupName_TextualConstraint_2103_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RolePattern_4002_target;
+	public static String NavigatorGroupName_CoordinationPattern_2101_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RolePattern_4002_source;
+	public static String NavigatorGroupName_CoordinationPattern_2101_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_2001_incominglinks;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4103_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_2001_outgoinglinks;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4103_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_2002_incominglinks;
+	public static String NavigatorGroupName_Role_2102_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_2002_outgoinglinks;
+	public static String NavigatorGroupName_Role_2102_outgoinglinks;
 
 	/**
 	 * @generated

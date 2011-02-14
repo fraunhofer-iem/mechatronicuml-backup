@@ -323,16 +323,16 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4001(PatternDiagram container,
+		public boolean canCreateRoleConnector_4101(PatternDiagram container,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.Role source,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.Role target) {
-			return canExistRoleConnector_4001(container, null, source, target);
+			return canExistRoleConnector_4101(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRolePattern_4002(
+		public boolean canCreateRolePattern_4102(
 				de.uni_paderborn.fujaba.umlrt.model.pattern.Role source,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern target) {
 			if (source != null) {
@@ -344,13 +344,13 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistRolePattern_4002(source, target);
+			return canExistRolePattern_4102(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateConstrainableElementConstraint_4003(
+		public boolean canCreateConstrainableElementConstraint_4103(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			if (source != null) {
@@ -362,13 +362,13 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistConstrainableElementConstraint_4003(source, target);
+			return canExistConstrainableElementConstraint_4103(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateConstrainableElementConstraint_4004(
+		public boolean canCreateConstrainableElementConstraint_4104(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			if (source != null) {
@@ -380,13 +380,13 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistConstrainableElementConstraint_4004(source, target);
+			return canExistConstrainableElementConstraint_4104(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4001(
+		public boolean canExistRoleConnector_4101(
 				PatternDiagram container,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.Role source,
@@ -397,7 +397,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRolePattern_4002(
+		public boolean canExistRolePattern_4102(
 				de.uni_paderborn.fujaba.umlrt.model.pattern.Role source,
 				de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern target) {
 			return true;
@@ -406,7 +406,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistConstrainableElementConstraint_4003(
+		public boolean canExistConstrainableElementConstraint_4103(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			return true;
@@ -415,7 +415,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistConstrainableElementConstraint_4004(
+		public boolean canExistConstrainableElementConstraint_4104(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			return true;

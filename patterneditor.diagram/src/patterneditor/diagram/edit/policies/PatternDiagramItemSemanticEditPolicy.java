@@ -22,21 +22,21 @@ public class PatternDiagramItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public PatternDiagramItemSemanticEditPolicy() {
-		super(PatternElementTypes.PatternDiagram_1000);
+		super(PatternElementTypes.PatternDiagram_1001);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (PatternElementTypes.CoordinationPattern_2001 == req
+		if (PatternElementTypes.CoordinationPattern_2101 == req
 				.getElementType()) {
 			return getGEFWrapper(new CoordinationPatternCreateCommand(req));
 		}
-		if (PatternElementTypes.Role_2002 == req.getElementType()) {
+		if (PatternElementTypes.Role_2102 == req.getElementType()) {
 			return getGEFWrapper(new RoleCreateCommand(req));
 		}
-		if (PatternElementTypes.TextualConstraint_2003 == req.getElementType()) {
+		if (PatternElementTypes.TextualConstraint_2103 == req.getElementType()) {
 			return getGEFWrapper(new TextualConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

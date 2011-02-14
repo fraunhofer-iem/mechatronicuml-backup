@@ -41,9 +41,9 @@ public class PatternModelingAssistantProvider extends ModelingAssistantProvider 
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof PatternDiagramEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-			types.add(PatternElementTypes.CoordinationPattern_2001);
-			types.add(PatternElementTypes.Role_2002);
-			types.add(PatternElementTypes.TextualConstraint_2003);
+			types.add(PatternElementTypes.CoordinationPattern_2101);
+			types.add(PatternElementTypes.Role_2102);
+			types.add(PatternElementTypes.TextualConstraint_2103);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

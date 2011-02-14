@@ -16,7 +16,7 @@ public class RolePatternItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public RolePatternItemSemanticEditPolicy() {
-		super(PatternElementTypes.RolePattern_4002);
+		super(PatternElementTypes.RolePattern_4102);
 	}
 
 	/**

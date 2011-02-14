@@ -18,7 +18,7 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4001;
+	public static final int VISUAL_ID = 4101;
 
 	/**
 	 * @generated

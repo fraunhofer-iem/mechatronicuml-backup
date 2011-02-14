@@ -44,7 +44,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2002;
+	public static final int VISUAL_ID = 2102;
 
 	/**
 	 * @generated
@@ -237,10 +237,10 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
-		types.add(PatternElementTypes.RoleConnector_4001);
-		types.add(PatternElementTypes.RolePattern_4002);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
+		types.add(PatternElementTypes.RoleConnector_4101);
+		types.add(PatternElementTypes.RolePattern_4102);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4103);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4104);
 		return types;
 	}
 
@@ -251,16 +251,16 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof patterneditor.diagram.edit.parts.RoleEditPart) {
-			types.add(PatternElementTypes.RoleConnector_4001);
+			types.add(PatternElementTypes.RoleConnector_4101);
 		}
 		if (targetEditPart instanceof CoordinationPatternEditPart) {
-			types.add(PatternElementTypes.RolePattern_4002);
+			types.add(PatternElementTypes.RolePattern_4102);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4103);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4104);
 		}
 		return types;
 	}
@@ -270,14 +270,14 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.RoleConnector_4001) {
-			types.add(PatternElementTypes.Role_2002);
-		} else if (relationshipType == PatternElementTypes.RolePattern_4002) {
-			types.add(PatternElementTypes.CoordinationPattern_2001);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4003) {
-			types.add(PatternElementTypes.TextualConstraint_2003);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4004) {
-			types.add(PatternElementTypes.TextualConstraint_2003);
+		if (relationshipType == PatternElementTypes.RoleConnector_4101) {
+			types.add(PatternElementTypes.Role_2102);
+		} else if (relationshipType == PatternElementTypes.RolePattern_4102) {
+			types.add(PatternElementTypes.CoordinationPattern_2101);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4103) {
+			types.add(PatternElementTypes.TextualConstraint_2103);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4104) {
+			types.add(PatternElementTypes.TextualConstraint_2103);
 		}
 		return types;
 	}
@@ -287,7 +287,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(PatternElementTypes.RoleConnector_4001);
+		types.add(PatternElementTypes.RoleConnector_4101);
 		return types;
 	}
 
@@ -296,8 +296,8 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.RoleConnector_4001) {
-			types.add(PatternElementTypes.Role_2002);
+		if (relationshipType == PatternElementTypes.RoleConnector_4101) {
+			types.add(PatternElementTypes.Role_2102);
 		}
 		return types;
 	}

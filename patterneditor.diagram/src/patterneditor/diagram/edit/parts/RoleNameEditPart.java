@@ -56,7 +56,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5102;
 
 	/**
 	 * @generated
@@ -331,7 +331,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = PatternParserProvider
 					.getParser(
-							PatternElementTypes.Role_2002,
+							PatternElementTypes.Role_2102,
 							getParserElement(),
 							PatternVisualIDRegistry
 									.getType(patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));

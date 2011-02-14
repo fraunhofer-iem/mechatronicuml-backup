@@ -69,7 +69,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canCreateRoleConnector_4001(getContainer(), getSource(),
+				.canCreateRoleConnector_4101(getContainer(), getSource(),
 						getTarget());
 	}
 

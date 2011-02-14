@@ -16,7 +16,7 @@ public class RoleConnectorItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public RoleConnectorItemSemanticEditPolicy() {
-		super(PatternElementTypes.RoleConnector_4001);
+		super(PatternElementTypes.RoleConnector_4101);
 	}
 
 	/**
