@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="patterneditor"
     nsURI="http://patterneditor" nsPrefix="patterneditor">
-  <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram" eSuperTypes="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/modelstructure/Diagram">
+  <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern" eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
