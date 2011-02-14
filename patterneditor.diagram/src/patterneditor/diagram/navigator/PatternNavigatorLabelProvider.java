@@ -90,30 +90,30 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (PatternVisualIDRegistry.getVisualID(view)) {
-		case RolePatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?Role?pattern", PatternElementTypes.RolePattern_4102); //$NON-NLS-1$
 		case ConstrainableElementConstraint2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/core?ConstrainableElement?constraint", PatternElementTypes.ConstrainableElementConstraint_4104); //$NON-NLS-1$
-		case PatternDiagramEditPart.VISUAL_ID:
+		case RolePatternEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://patterneditor?PatternDiagram", PatternElementTypes.PatternDiagram_1001); //$NON-NLS-1$
-		case RoleConnectorEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?RoleConnector", PatternElementTypes.RoleConnector_4101); //$NON-NLS-1$
-		case TextualConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint?TextualConstraint", PatternElementTypes.TextualConstraint_2103); //$NON-NLS-1$
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?Role?pattern", PatternElementTypes.RolePattern_4102); //$NON-NLS-1$
 		case CoordinationPatternEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?CoordinationPattern", PatternElementTypes.CoordinationPattern_2101); //$NON-NLS-1$
+		case PatternDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http://patterneditor?PatternDiagram", PatternElementTypes.PatternDiagram_1001); //$NON-NLS-1$
 		case ConstrainableElementConstraintEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/core?ConstrainableElement?constraint", PatternElementTypes.ConstrainableElementConstraint_4103); //$NON-NLS-1$
+		case RoleConnectorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?RoleConnector", PatternElementTypes.RoleConnector_4101); //$NON-NLS-1$
 		case RoleEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern?Role", PatternElementTypes.Role_2102); //$NON-NLS-1$
+		case TextualConstraintEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint?TextualConstraint", PatternElementTypes.TextualConstraint_2103); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -166,31 +166,24 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (PatternVisualIDRegistry.getVisualID(view)) {
-		case RolePatternEditPart.VISUAL_ID:
-			return getRolePattern_4102Text(view);
 		case ConstrainableElementConstraint2EditPart.VISUAL_ID:
 			return getConstrainableElementConstraint_4104Text(view);
-		case PatternDiagramEditPart.VISUAL_ID:
-			return getPatternDiagram_1001Text(view);
-		case RoleConnectorEditPart.VISUAL_ID:
-			return getRoleConnector_4101Text(view);
-		case TextualConstraintEditPart.VISUAL_ID:
-			return getTextualConstraint_2103Text(view);
+		case RolePatternEditPart.VISUAL_ID:
+			return getRolePattern_4102Text(view);
 		case CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2101Text(view);
+		case PatternDiagramEditPart.VISUAL_ID:
+			return getPatternDiagram_1001Text(view);
 		case ConstrainableElementConstraintEditPart.VISUAL_ID:
 			return getConstrainableElementConstraint_4103Text(view);
+		case RoleConnectorEditPart.VISUAL_ID:
+			return getRoleConnector_4101Text(view);
 		case RoleEditPart.VISUAL_ID:
 			return getRole_2102Text(view);
+		case TextualConstraintEditPart.VISUAL_ID:
+			return getTextualConstraint_2103Text(view);
 		}
 		return getUnknownElementText(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getRolePattern_4102Text(View view) {
-		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -203,38 +196,8 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getPatternDiagram_1001Text(View view) {
+	private String getRolePattern_4102Text(View view) {
 		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getRoleConnector_4101Text(View view) {
-		de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector) view
-				.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.isBidirectional());
-		} else {
-			PatternDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 4101); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getTextualConstraint_2103Text(View view) {
-		de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint) view
-				.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getCorrectness());
-		} else {
-			PatternDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 2103); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
 	}
 
 	/**
@@ -260,8 +223,30 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
+	private String getPatternDiagram_1001Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getConstrainableElementConstraint_4103Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRoleConnector_4101Text(View view) {
+		de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector) view
+				.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.isBidirectional());
+		} else {
+			PatternDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 4101); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -279,6 +264,21 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 		} else {
 			PatternDiagramEditorPlugin.getInstance().logError(
 					"Parser was not found for label " + 5102); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTextualConstraint_2103Text(View view) {
+		de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint) view
+				.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getCorrectness());
+		} else {
+			PatternDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 2103); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

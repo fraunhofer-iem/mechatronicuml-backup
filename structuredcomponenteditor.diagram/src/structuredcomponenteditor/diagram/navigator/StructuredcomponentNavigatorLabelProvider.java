@@ -89,27 +89,27 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 	 */
 	public Image getImage(View view) {
 		switch (StructuredcomponentVisualIDRegistry.getVisualID(view)) {
-		case AssemblyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Assembly", StructuredcomponentElementTypes.Assembly_4002); //$NON-NLS-1$
-		case Port2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Port", StructuredcomponentElementTypes.Port_3003); //$NON-NLS-1$
 		case ComponentPartEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?ComponentPart", StructuredcomponentElementTypes.ComponentPart_3002); //$NON-NLS-1$
-		case StructuredComponentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?StructuredComponent", StructuredcomponentElementTypes.StructuredComponent_2001); //$NON-NLS-1$
 		case StructuredComponentDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://structuredcomponenteditor?StructuredComponentDiagram", StructuredcomponentElementTypes.StructuredComponentDiagram_1000); //$NON-NLS-1$
-		case DelegationEditPart.VISUAL_ID:
+		case StructuredComponentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Delegation", StructuredcomponentElementTypes.Delegation_4001); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?StructuredComponent", StructuredcomponentElementTypes.StructuredComponent_2001); //$NON-NLS-1$
+		case Port2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Port", StructuredcomponentElementTypes.Port_3003); //$NON-NLS-1$
 		case PortEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Port", StructuredcomponentElementTypes.Port_3001); //$NON-NLS-1$
+		case AssemblyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Assembly", StructuredcomponentElementTypes.Assembly_4002); //$NON-NLS-1$
+		case DelegationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/emf/model/component?Delegation", StructuredcomponentElementTypes.Delegation_4001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -164,20 +164,20 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (StructuredcomponentVisualIDRegistry.getVisualID(view)) {
-		case AssemblyEditPart.VISUAL_ID:
-			return getAssembly_4002Text(view);
-		case Port2EditPart.VISUAL_ID:
-			return getPort_3003Text(view);
 		case ComponentPartEditPart.VISUAL_ID:
 			return getComponentPart_3002Text(view);
-		case StructuredComponentEditPart.VISUAL_ID:
-			return getStructuredComponent_2001Text(view);
 		case StructuredComponentDiagramEditPart.VISUAL_ID:
 			return getStructuredComponentDiagram_1000Text(view);
-		case DelegationEditPart.VISUAL_ID:
-			return getDelegation_4001Text(view);
+		case StructuredComponentEditPart.VISUAL_ID:
+			return getStructuredComponent_2001Text(view);
+		case Port2EditPart.VISUAL_ID:
+			return getPort_3003Text(view);
 		case PortEditPart.VISUAL_ID:
 			return getPort_3001Text(view);
+		case AssemblyEditPart.VISUAL_ID:
+			return getAssembly_4002Text(view);
+		case DelegationEditPart.VISUAL_ID:
+			return getDelegation_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -185,29 +185,14 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getAssembly_4002Text(View view) {
+	private String getComponentPart_3002Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getPort_3003Text(View view) {
-		de.uni_paderborn.fujaba.umlrt.model.component.Port domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.component.Port) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			StructuredcomponentDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 3003); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getComponentPart_3002Text(View view) {
+	private String getStructuredComponentDiagram_1000Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 
@@ -234,15 +219,16 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getStructuredComponentDiagram_1000Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getDelegation_4001Text(View view) {
-		return ""; //$NON-NLS-1$
+	private String getPort_3003Text(View view) {
+		de.uni_paderborn.fujaba.umlrt.model.component.Port domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.component.Port) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			StructuredcomponentDiagramEditorPlugin.getInstance().logError(
+					"No domain element for view with visualID = " + 3003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -258,6 +244,20 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 					"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAssembly_4002Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDelegation_4001Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

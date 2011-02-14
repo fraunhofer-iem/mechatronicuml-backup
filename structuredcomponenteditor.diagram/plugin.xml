@@ -344,7 +344,7 @@
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="structuredcomponenteditor.diagram.EditingDomain"/>
+               value="UmlrtSharedEditingDomain"/>
          </enablement>
       </clientContext> 
       <binding context="structuredcomponenteditor.diagram.TypeContext">

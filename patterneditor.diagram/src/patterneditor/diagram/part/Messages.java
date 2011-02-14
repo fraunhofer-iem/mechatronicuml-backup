@@ -313,16 +313,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RolePattern_4102_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RolePattern_4102_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ConstrainableElementConstraint_4104_target;
 
 	/**
@@ -333,22 +323,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PatternDiagram_1001_links;
+	public static String NavigatorGroupName_RolePattern_4102_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4101_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4101_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_TextualConstraint_2103_incominglinks;
+	public static String NavigatorGroupName_RolePattern_4102_source;
 
 	/**
 	 * @generated
@@ -363,6 +343,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_PatternDiagram_1001_links;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ConstrainableElementConstraint_4103_target;
 
 	/**
@@ -373,12 +358,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_RoleConnector_4101_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RoleConnector_4101_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Role_2102_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Role_2102_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_TextualConstraint_2103_incominglinks;
 
 	/**
 	 * @generated

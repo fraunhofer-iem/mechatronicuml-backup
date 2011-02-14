@@ -160,7 +160,7 @@ public class StructuredcomponentDocumentProvider extends
 	private TransactionalEditingDomain createEditingDomain() {
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
 				.getInstance().createEditingDomain();
-		editingDomain.setID("structuredcomponenteditor.diagram.EditingDomain"); //$NON-NLS-1$
+		editingDomain.setID("UmlrtSharedEditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

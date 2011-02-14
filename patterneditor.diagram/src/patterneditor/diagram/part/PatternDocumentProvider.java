@@ -160,7 +160,7 @@ public class PatternDocumentProvider extends AbstractDocumentProvider implements
 	private TransactionalEditingDomain createEditingDomain() {
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory
 				.getInstance().createEditingDomain();
-		editingDomain.setID("patterneditor.diagram.EditingDomain"); //$NON-NLS-1$
+		editingDomain.setID("UmlrtSharedEditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

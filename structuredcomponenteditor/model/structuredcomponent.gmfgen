@@ -10,6 +10,7 @@
       itemSemanticEditPolicyClassName="StructuredComponentDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="StructuredComponentDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
+      editingDomainID="UmlrtSharedEditingDomain"
       validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>

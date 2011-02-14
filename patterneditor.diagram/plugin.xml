@@ -354,7 +354,7 @@
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="patterneditor.diagram.EditingDomain"/>
+               value="UmlrtSharedEditingDomain"/>
          </enablement>
       </clientContext> 
       <binding context="patterneditor.diagram.TypeContext">
