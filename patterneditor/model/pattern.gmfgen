@@ -2,7 +2,8 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel">
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="pattern_diagram"
+    domainFileExtension="umlrt">
   <diagram
       visualID="1000"
       editPartClassName="PatternDiagramEditPart"
@@ -109,7 +110,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2003"
         editPartClassName="TextualConstraintEditPart"
         itemSemanticEditPolicyClassName="TextualConstraintItemSemanticEditPolicy"
         canonicalEditPolicyClassName="TextualConstraintCanonicalEditPolicy"
@@ -182,7 +183,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4005"
+        visualID="4003"
         editPartClassName="ConstrainableElementConstraintEditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraintItemSemanticEditPolicy"
         createCommandClassName="ConstrainableElementConstraintCreateCommand"
@@ -201,7 +202,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4006"
+        visualID="4004"
         editPartClassName="ConstrainableElementConstraint2EditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraint2ItemSemanticEditPolicy"
         createCommandClassName="ConstrainableElementConstraint2CreateCommand"

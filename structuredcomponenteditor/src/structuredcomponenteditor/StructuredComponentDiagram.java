@@ -8,7 +8,7 @@ package structuredcomponenteditor;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.umlrt.model.modelstructure.Diagram;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface StructuredComponentDiagram extends EObject {
+public interface StructuredComponentDiagram extends Diagram {
 	/**
 	 * Returns the value of the '<em><b>Structured Component</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

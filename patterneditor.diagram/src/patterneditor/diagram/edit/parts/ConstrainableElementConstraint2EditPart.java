@@ -18,7 +18,7 @@ public class ConstrainableElementConstraint2EditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4006;
+	public static final int VISUAL_ID = 4004;
 
 	/**
 	 * @generated

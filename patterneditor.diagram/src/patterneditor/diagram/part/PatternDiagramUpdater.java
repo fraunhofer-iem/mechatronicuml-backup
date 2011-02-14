@@ -94,7 +94,7 @@ public class PatternDiagramUpdater {
 		case RoleEditPart.VISUAL_ID:
 			return getRole_2002ContainedLinks(view);
 		case TextualConstraintEditPart.VISUAL_ID:
-			return getTextualConstraint_2004ContainedLinks(view);
+			return getTextualConstraint_2003ContainedLinks(view);
 		case RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001ContainedLinks(view);
 		}
@@ -111,7 +111,7 @@ public class PatternDiagramUpdater {
 		case RoleEditPart.VISUAL_ID:
 			return getRole_2002IncomingLinks(view);
 		case TextualConstraintEditPart.VISUAL_ID:
-			return getTextualConstraint_2004IncomingLinks(view);
+			return getTextualConstraint_2003IncomingLinks(view);
 		case RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001IncomingLinks(view);
 		}
@@ -128,7 +128,7 @@ public class PatternDiagramUpdater {
 		case RoleEditPart.VISUAL_ID:
 			return getRole_2002OutgoingLinks(view);
 		case TextualConstraintEditPart.VISUAL_ID:
-			return getTextualConstraint_2004OutgoingLinks(view);
+			return getTextualConstraint_2003OutgoingLinks(view);
 		case RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001OutgoingLinks(view);
 		}
@@ -154,8 +154,8 @@ public class PatternDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern modelElement = (de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) view
 				.getElement();
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -168,15 +168,15 @@ public class PatternDiagramUpdater {
 				.getElement();
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Role_Pattern_4002(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PatternLinkDescriptor> getTextualConstraint_2004ContainedLinks(
+	public static List<PatternLinkDescriptor> getTextualConstraint_2003ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -222,16 +222,16 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<PatternLinkDescriptor> getTextualConstraint_2004IncomingLinks(
+	public static List<PatternLinkDescriptor> getTextualConstraint_2003IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint modelElement = (de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(
+		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(
 				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(
+		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -252,8 +252,8 @@ public class PatternDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern modelElement = (de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) view
 				.getElement();
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -267,15 +267,15 @@ public class PatternDiagramUpdater {
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_RoleConnector_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Role_Pattern_4002(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<PatternLinkDescriptor> getTextualConstraint_2004OutgoingLinks(
+	public static List<PatternLinkDescriptor> getTextualConstraint_2003OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -369,7 +369,7 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PatternLinkDescriptor> getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(
+	private static Collection<PatternLinkDescriptor> getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(
 			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
@@ -381,7 +381,7 @@ public class PatternDiagramUpdater {
 				result.add(new PatternLinkDescriptor(
 						setting.getEObject(),
 						target,
-						PatternElementTypes.ConstrainableElementConstraint_4005,
+						PatternElementTypes.ConstrainableElementConstraint_4003,
 						ConstrainableElementConstraintEditPart.VISUAL_ID));
 			}
 		}
@@ -391,7 +391,7 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PatternLinkDescriptor> getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(
+	private static Collection<PatternLinkDescriptor> getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
 			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
@@ -403,7 +403,7 @@ public class PatternDiagramUpdater {
 				result.add(new PatternLinkDescriptor(
 						setting.getEObject(),
 						target,
-						PatternElementTypes.ConstrainableElementConstraint_4006,
+						PatternElementTypes.ConstrainableElementConstraint_4004,
 						ConstrainableElementConstraint2EditPart.VISUAL_ID));
 			}
 		}
@@ -474,7 +474,7 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PatternLinkDescriptor> getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4005(
+	private static Collection<PatternLinkDescriptor> getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(
 			de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source) {
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
 		for (Iterator<?> destinations = source.getConstraint().iterator(); destinations
@@ -482,7 +482,7 @@ public class PatternDiagramUpdater {
 			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint destination = (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) destinations
 					.next();
 			result.add(new PatternLinkDescriptor(source, destination,
-					PatternElementTypes.ConstrainableElementConstraint_4005,
+					PatternElementTypes.ConstrainableElementConstraint_4003,
 					ConstrainableElementConstraintEditPart.VISUAL_ID));
 		}
 		return result;
@@ -491,7 +491,7 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<PatternLinkDescriptor> getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4006(
+	private static Collection<PatternLinkDescriptor> getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
 			de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source) {
 		LinkedList<PatternLinkDescriptor> result = new LinkedList<PatternLinkDescriptor>();
 		for (Iterator<?> destinations = source.getConstraint().iterator(); destinations
@@ -499,7 +499,7 @@ public class PatternDiagramUpdater {
 			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint destination = (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) destinations
 					.next();
 			result.add(new PatternLinkDescriptor(source, destination,
-					PatternElementTypes.ConstrainableElementConstraint_4006,
+					PatternElementTypes.ConstrainableElementConstraint_4004,
 					ConstrainableElementConstraint2EditPart.VISUAL_ID));
 		}
 		return result;

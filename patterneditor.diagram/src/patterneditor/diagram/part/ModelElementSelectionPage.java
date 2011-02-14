@@ -30,7 +30,7 @@ public class ModelElementSelectionPage extends WizardPage {
 	/**
 	 * @generated
 	 */
-	private TreeViewer modelViewer;
+	TreeViewer modelViewer;
 
 	/**
 	 * @generated

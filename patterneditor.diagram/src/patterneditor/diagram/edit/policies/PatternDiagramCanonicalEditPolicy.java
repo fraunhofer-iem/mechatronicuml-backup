@@ -284,7 +284,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		case TextualConstraintEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(PatternDiagramUpdater
-						.getTextualConstraint_2004ContainedLinks(view));
+						.getTextualConstraint_2003ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

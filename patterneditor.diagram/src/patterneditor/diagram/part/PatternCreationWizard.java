@@ -102,7 +102,7 @@ public class PatternCreationWizard extends Wizard implements INewWizard {
 	 */
 	public void addPages() {
 		diagramModelFilePage = new PatternCreationWizardPage(
-				"DiagramModelFile", getSelection(), "patterneditor_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+				"DiagramModelFile", getSelection(), "pattern_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage
 				.setTitle(Messages.PatternCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage
@@ -110,15 +110,15 @@ public class PatternCreationWizard extends Wizard implements INewWizard {
 		addPage(diagramModelFilePage);
 
 		domainModelFilePage = new PatternCreationWizardPage(
-				"DomainModelFile", getSelection(), "patterneditor") { //$NON-NLS-1$ //$NON-NLS-2$
+				"DomainModelFile", getSelection(), "umlrt") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
 					fileName = fileName.substring(0, fileName.length()
-							- ".patterneditor_diagram".length()); //$NON-NLS-1$
+							- ".pattern_diagram".length()); //$NON-NLS-1$
 					setFileName(PatternDiagramEditorUtil.getUniqueFileName(
-							getContainerFullPath(), fileName, "patterneditor")); //$NON-NLS-1$
+							getContainerFullPath(), fileName, "umlrt")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

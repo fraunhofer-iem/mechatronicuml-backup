@@ -131,12 +131,12 @@ public class RoleItemSemanticEditPolicy extends
 			return getGEFWrapper(new RolePatternCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4005 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4006 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraint2CreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -156,11 +156,11 @@ public class RoleItemSemanticEditPolicy extends
 		if (PatternElementTypes.RolePattern_4002 == req.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4005 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
 				.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4006 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
 				.getElementType()) {
 			return null;
 		}

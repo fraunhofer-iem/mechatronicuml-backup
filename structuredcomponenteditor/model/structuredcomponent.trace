@@ -17,9 +17,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')"/>
   <childNodeTraces
       visualID="3002"
-      queryText="let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'ComponentPart'"/>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'ComponentPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'StructuredComponent') and _containmentMF_.name = 'embeddedParts')"/>
   <childNodeTraces
-      visualID="3004"
+      visualID="3003"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/emf/model/component' and _eClass_.name = 'ComponentPart') and _containmentMF_.name = 'portsDerived')"/>
   <linkTraces
       visualID="4001"

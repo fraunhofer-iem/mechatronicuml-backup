@@ -12,7 +12,7 @@ public class PatternNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 4008;
+	private static final int GROUP_CATEGORY = 4006;
 
 	/**
 	 * @generated

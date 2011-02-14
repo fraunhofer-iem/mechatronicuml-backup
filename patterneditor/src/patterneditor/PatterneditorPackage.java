@@ -6,6 +6,8 @@
  */
 package patterneditor;
 
+import de.uni_paderborn.fujaba.umlrt.model.modelstructure.ModelstructurePackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -75,7 +77,7 @@ public interface PatterneditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_DIAGRAM__COORDINATION_PATTERN = 0;
+	int PATTERN_DIAGRAM__COORDINATION_PATTERN = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -84,7 +86,7 @@ public interface PatterneditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_DIAGRAM__ROLES = 1;
+	int PATTERN_DIAGRAM__ROLES = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Role Connectors</b></em>' containment reference list.
@@ -93,7 +95,7 @@ public interface PatterneditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_DIAGRAM__ROLE_CONNECTORS = 2;
+	int PATTERN_DIAGRAM__ROLE_CONNECTORS = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Textual Constraints</b></em>' containment reference list.
@@ -102,7 +104,7 @@ public interface PatterneditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_DIAGRAM__TEXTUAL_CONSTRAINTS = 3;
+	int PATTERN_DIAGRAM__TEXTUAL_CONSTRAINTS = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Pattern Diagram</em>' class.
@@ -111,7 +113,7 @@ public interface PatterneditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_DIAGRAM_FEATURE_COUNT = 4;
+	int PATTERN_DIAGRAM_FEATURE_COUNT = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 4;
 
 
 	/**

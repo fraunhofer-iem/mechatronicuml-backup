@@ -36,7 +36,7 @@ public class PatternDiagramItemSemanticEditPolicy extends
 		if (PatternElementTypes.Role_2002 == req.getElementType()) {
 			return getGEFWrapper(new RoleCreateCommand(req));
 		}
-		if (PatternElementTypes.TextualConstraint_2004 == req.getElementType()) {
+		if (PatternElementTypes.TextualConstraint_2003 == req.getElementType()) {
 			return getGEFWrapper(new TextualConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

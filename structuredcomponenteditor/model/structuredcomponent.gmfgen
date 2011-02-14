@@ -2,7 +2,8 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel">
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="structuredcomponent_diagram"
+    domainFileExtension="umlrt">
   <diagram
       visualID="1000"
       editPartClassName="StructuredComponentDiagramEditPart"
@@ -36,8 +37,9 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="PortEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="InPortFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolygonShape fFigurePolygon; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePolygon = new org.eclipse.draw2d.PolygonShape();&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(14)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(14)&#xA;));&#xA;fFigurePolygon.setFill(true);&#xA;&#xA;this.add(fFigurePolygon);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolygonShape getFigurePolygon() {&#xA;&#x9;&#x9;return fFigurePolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
@@ -86,7 +88,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3004"
+        visualID="3003"
         editPartClassName="Port2EditPart"
         itemSemanticEditPolicyClassName="Port2ItemSemanticEditPolicy"
         canonicalEditPolicyClassName="Port2CanonicalEditPolicy"
@@ -100,8 +102,9 @@
           xsi:type="gmfgen:SpecializationType"
           metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="InPortFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolygonShape fFigurePolygon; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePolygon = new org.eclipse.draw2d.PolygonShape();&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(14)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(14)&#xA;));&#xA;fFigurePolygon.setFill(true);&#xA;&#xA;this.add(fFigurePolygon);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolygonShape getFigurePolygon() {&#xA;&#x9;&#x9;return fFigurePolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"

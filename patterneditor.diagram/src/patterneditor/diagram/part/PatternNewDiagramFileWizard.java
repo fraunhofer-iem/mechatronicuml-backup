@@ -1,6 +1,7 @@
 package patterneditor.diagram.part;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -25,15 +26,32 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
+import patterneditor.PatternDiagram;
+import patterneditor.PatterneditorFactory;
 import patterneditor.diagram.edit.parts.PatternDiagramEditPart;
+import de.uni_paderborn.fujaba.umlrt.model.modelstructure.RootNode;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
 
 /**
  * @generated
  */
 public class PatternNewDiagramFileWizard extends Wizard {
+
+	/**
+	 * @generated NOT
+	 */
+	private EObject diagramRoot;
 
 	/**
 	 * @generated
@@ -53,8 +71,16 @@ public class PatternNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
+	/**
+	 * @generated NOT
+	 */
 	public PatternNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
 			TransactionalEditingDomain editingDomain) {
+
+		// BEGIN ADDED
+		this.diagramRoot = diagramRoot;
+		// END ADDED
+
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
@@ -81,9 +107,8 @@ public class PatternNewDiagramFileWizard extends Wizard {
 					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage
-				.setFileName(PatternDiagramEditorUtil.getUniqueFileName(
-						filePath, fileName, "patterneditor_diagram")); //$NON-NLS-1$
+		myFileCreationPage.setFileName(PatternDiagramEditorUtil
+				.getUniqueFileName(filePath, fileName, "pattern_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.PatternNewDiagramFileWizard_RootSelectionPageName);
@@ -105,7 +130,7 @@ public class PatternNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
@@ -125,15 +150,37 @@ public class PatternNewDiagramFileWizard extends Wizard {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
+				// BEGIN ADDED
+				EObject modelElement = diagramRootElementSelectionPage
+						.getModelElement();
+
+				if (modelElement == null) {
+					PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
+							.createPatternDiagram();
+
+					CoordinationPattern coordinationPattern = PatternFactory.eINSTANCE
+							.createCoordinationPattern();
+					patternDiagram.setCoordinationPattern(coordinationPattern);
+
+					((RootNode) diagramRoot).getDiagrams().add(patternDiagram);
+					try {
+						diagramRoot.eResource().save(Collections.EMPTY_MAP);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					modelElement = patternDiagram;
+				}
+				// END ADDED
+
 				int diagramVID = PatternVisualIDRegistry
-						.getDiagramVisualID(diagramRootElementSelectionPage
-								.getModelElement());
+						.getDiagramVisualID(modelElement);
 				if (diagramVID != PatternDiagramEditPart.VISUAL_ID) {
 					return CommandResult
 							.newErrorCommandResult(Messages.PatternNewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService.createDiagram(
-						diagramRootElementSelectionPage.getModelElement(),
+				Diagram diagram = ViewService.createDiagram(modelElement,
 						PatternDiagramEditPart.MODEL_ID,
 						PatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
@@ -159,10 +206,85 @@ public class PatternNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static class DiagramRootElementSelectionPage extends
 			ModelElementSelectionPage {
+
+		private Button selectOption;
+		private Button createOption;
+
+		/**
+		 * @generated NOT
+		 */
+		public boolean isCreateSelected() {
+			return createOption.getSelection();
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		public EObject getModelElement() {
+			if (isCreateSelected()) {
+				return null;
+			}
+			return super.getModelElement();
+		}
+
+		/**
+		 * @generated NOT
+		 */
+		@Override
+		public void createControl(Composite parent) {
+			initializeDialogUnits(parent);
+
+			Composite plate = new Composite(parent, SWT.NONE);
+			plate.setLayoutData(new GridData(GridData.FILL_BOTH));
+			GridLayout layout = new GridLayout();
+			layout.marginWidth = 0;
+			plate.setLayout(layout);
+			setControl(plate);
+
+			createOption = new Button(plate, SWT.RADIO);
+			createOption.setText("Neues Modell-Element anlegen");
+			selectOption = new Button(plate, SWT.RADIO);
+			selectOption.setText("Bestehendes Modell-Element auswählen");
+
+			Composite selectPlate = new Composite(plate, SWT.NONE);
+			selectPlate.setLayoutData(new GridData(GridData.FILL_BOTH));
+			GridLayout selectLayout = new GridLayout();
+			selectLayout.marginLeft = 16;
+			selectPlate.setLayout(selectLayout);
+
+			super.createControl(selectPlate);
+
+			/*
+			 * Add Listeners to the Option Buttons
+			 */
+			createOption.addListener(SWT.Selection, new Listener() {
+
+				@Override
+				public void handleEvent(Event event) {
+					modelViewer.getTree().setEnabled(false);
+					setPageComplete(validatePage());
+				}
+			});
+			selectOption.addListener(SWT.Selection, new Listener() {
+
+				@Override
+				public void handleEvent(Event event) {
+					modelViewer.getTree().setEnabled(true);
+					setPageComplete(validatePage());
+				}
+			});
+			createOption.setSelection(true);
+			modelViewer.getTree().setEnabled(false);
+
+			/*
+			 * Validate Page
+			 */
+			setPageComplete(validatePage());
+		}
 
 		/**
 		 * @generated
@@ -182,6 +304,10 @@ public class PatternNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
+			if (isCreateSelected()) {
+				setErrorMessage(null);
+				return true;
+			}
 			if (selectedModelElement == null) {
 				setErrorMessage(Messages.PatternNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;

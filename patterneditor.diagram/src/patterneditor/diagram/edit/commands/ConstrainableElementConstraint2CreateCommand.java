@@ -56,7 +56,7 @@ public class ConstrainableElementConstraint2CreateCommand extends
 		}
 		// target may be null here but it's possible to check constraint
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canCreateConstrainableElementConstraint_4006(getSource(),
+				.canCreateConstrainableElementConstraint_4004(getSource(),
 						getTarget());
 	}
 

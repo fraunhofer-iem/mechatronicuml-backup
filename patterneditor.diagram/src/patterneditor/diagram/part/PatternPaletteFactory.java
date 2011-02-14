@@ -99,10 +99,10 @@ public class PatternPaletteFactory {
 				Messages.CoordinationPatternConstraint4CreationTool_title,
 				Messages.CoordinationPatternConstraint4CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4005));
+						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4003));
 		entry.setId("createCoordinationPatternConstraint4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4005));
+				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -115,10 +115,10 @@ public class PatternPaletteFactory {
 				Messages.RoleConstraint5CreationTool_title,
 				Messages.RoleConstraint5CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4006));
+						.singletonList(PatternElementTypes.ConstrainableElementConstraint_4004));
 		entry.setId("createRoleConstraint5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4006));
+				.getImageDescriptor(PatternElementTypes.ConstrainableElementConstraint_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -131,10 +131,10 @@ public class PatternPaletteFactory {
 				Messages.TextualConstraint6CreationTool_title,
 				Messages.TextualConstraint6CreationTool_desc,
 				Collections
-						.singletonList(PatternElementTypes.TextualConstraint_2004));
+						.singletonList(PatternElementTypes.TextualConstraint_2003));
 		entry.setId("createTextualConstraint6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(PatternElementTypes
-				.getImageDescriptor(PatternElementTypes.TextualConstraint_2004));
+				.getImageDescriptor(PatternElementTypes.TextualConstraint_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -43,7 +43,7 @@ public class PatternModelingAssistantProvider extends ModelingAssistantProvider 
 			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 			types.add(PatternElementTypes.CoordinationPattern_2001);
 			types.add(PatternElementTypes.Role_2002);
-			types.add(PatternElementTypes.TextualConstraint_2004);
+			types.add(PatternElementTypes.TextualConstraint_2003);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

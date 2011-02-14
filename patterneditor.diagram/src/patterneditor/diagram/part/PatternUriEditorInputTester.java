@@ -17,7 +17,7 @@ public class PatternUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "patterneditor_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "pattern_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

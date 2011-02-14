@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.operations.OperationHistoryFactory;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.EllipseAnchor;
@@ -13,6 +19,7 @@ import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.emf.workspace.AbstractEMFOperation;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -28,10 +35,13 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import patterneditor.diagram.edit.policies.CoordinationPatternItemSemanticEditPolicy;
+import patterneditor.diagram.part.PatternDiagramEditorPlugin;
 import patterneditor.diagram.part.PatternVisualIDRegistry;
 import patterneditor.diagram.providers.PatternElementTypes;
 
@@ -60,6 +70,39 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public CoordinationPatternEditPart(View view) {
 		super(view);
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public void activate() {
+		super.activate();
+		
+		AbstractEMFOperation emfOp = new AbstractEMFOperation(getEditingDomain(), "Location setting") {
+
+			@Override
+			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				Location lc = (Location) ((Node) getModel()).getLayoutConstraint();
+				lc.setX(100);
+				lc.setY(50);
+				
+				return Status.OK_STATUS;
+			}
+
+		};
+
+		IStatus status;
+
+		try {
+			status = OperationHistoryFactory.getOperationHistory().execute(emfOp, null, null);
+		} catch (ExecutionException e) {
+			status = new Status(IStatus.ERROR, PatternDiagramEditorPlugin.ID, "Setting location failed", e);
+		}
+
+		if (status.getCode() == IStatus.WARNING || status.getCode() == IStatus.ERROR) {
+			PatternDiagramEditorPlugin.getInstance().getLog().log(status);
+		}
 	}
 
 	/**
@@ -271,8 +314,8 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4005);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4006);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
 		return types;
 	}
 
@@ -283,10 +326,10 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4005);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4006);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
 		}
 		return types;
 	}
@@ -296,10 +339,10 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4005) {
-			types.add(PatternElementTypes.TextualConstraint_2004);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4006) {
-			types.add(PatternElementTypes.TextualConstraint_2004);
+		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4003) {
+			types.add(PatternElementTypes.TextualConstraint_2003);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4004) {
+			types.add(PatternElementTypes.TextualConstraint_2003);
 		}
 		return types;
 	}

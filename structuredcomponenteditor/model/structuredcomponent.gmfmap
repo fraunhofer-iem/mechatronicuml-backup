@@ -34,7 +34,7 @@
               xsi:type="gmftool:CreationTool"
               href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
-              href="structuredcomponent.gmfgraph#Port"/>
+              href="structuredcomponent.gmfgraph#InPort"/>
         </ownedChild>
       </children>
       <children
@@ -61,7 +61,7 @@
                   xsi:type="gmftool:CreationTool"
                   href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
-                  href="structuredcomponent.gmfgraph#Port"/>
+                  href="structuredcomponent.gmfgraph#InPort"/>
             </ownedChild>
           </children>
         </ownedChild>

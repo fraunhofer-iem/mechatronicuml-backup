@@ -227,7 +227,7 @@ public class PatternViewProvider extends AbstractProvider implements
 			return createRole_2002(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case TextualConstraintEditPart.VISUAL_ID:
-			return createTextualConstraint_2004(domainElement, containerView,
+			return createTextualConstraint_2003(domainElement, containerView,
 					index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -251,10 +251,10 @@ public class PatternViewProvider extends AbstractProvider implements
 			return createRolePattern_4002(containerView, index, persisted,
 					preferencesHint);
 		case ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return createConstrainableElementConstraint_4005(containerView,
+			return createConstrainableElementConstraint_4003(containerView,
 					index, persisted, preferencesHint);
 		case ConstrainableElementConstraint2EditPart.VISUAL_ID:
-			return createConstrainableElementConstraint_4006(containerView,
+			return createConstrainableElementConstraint_4004(containerView,
 					index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -360,7 +360,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createTextualConstraint_2004(EObject domainElement,
+	public Node createTextualConstraint_2003(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -509,7 +509,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createConstrainableElementConstraint_4005(View containerView,
+	public Edge createConstrainableElementConstraint_4003(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -561,7 +561,7 @@ public class PatternViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createConstrainableElementConstraint_4006(View containerView,
+	public Edge createConstrainableElementConstraint_4004(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());

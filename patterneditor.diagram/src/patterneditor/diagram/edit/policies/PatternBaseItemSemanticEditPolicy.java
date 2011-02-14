@@ -350,7 +350,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateConstrainableElementConstraint_4005(
+		public boolean canCreateConstrainableElementConstraint_4003(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			if (source != null) {
@@ -362,13 +362,13 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistConstrainableElementConstraint_4005(source, target);
+			return canExistConstrainableElementConstraint_4003(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateConstrainableElementConstraint_4006(
+		public boolean canCreateConstrainableElementConstraint_4004(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			if (source != null) {
@@ -380,7 +380,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistConstrainableElementConstraint_4006(source, target);
+			return canExistConstrainableElementConstraint_4004(source, target);
 		}
 
 		/**
@@ -406,7 +406,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistConstrainableElementConstraint_4005(
+		public boolean canExistConstrainableElementConstraint_4003(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			return true;
@@ -415,7 +415,7 @@ public class PatternBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistConstrainableElementConstraint_4006(
+		public boolean canExistConstrainableElementConstraint_4004(
 				de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source,
 				de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target) {
 			return true;

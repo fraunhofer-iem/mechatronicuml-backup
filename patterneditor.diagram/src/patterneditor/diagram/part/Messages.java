@@ -313,32 +313,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4006_target;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4006_source;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_2002_incominglinks;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_2002_outgoinglinks;
+	public static String NavigatorGroupName_ConstrainableElementConstraint_4003_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RolePattern_4002_target;
+	public static String NavigatorGroupName_PatternDiagram_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RolePattern_4002_source;
+	public static String NavigatorGroupName_TextualConstraint_2003_incominglinks;
 
 	/**
 	 * @generated
@@ -353,7 +353,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_TextualConstraint_2004_incominglinks;
+	public static String NavigatorGroupName_RolePattern_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RolePattern_4002_source;
 
 	/**
 	 * @generated
@@ -368,17 +373,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PatternDiagram_1000_links;
+	public static String NavigatorGroupName_Role_2002_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4005_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4005_source;
+	public static String NavigatorGroupName_Role_2002_outgoinglinks;
 
 	/**
 	 * @generated

@@ -6,6 +6,8 @@
  */
 package structuredcomponenteditor;
 
+import de.uni_paderborn.fujaba.umlrt.model.modelstructure.ModelstructurePackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -75,7 +77,7 @@ public interface ComponenteditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT_DIAGRAM__STRUCTURED_COMPONENT = 0;
+	int STRUCTURED_COMPONENT_DIAGRAM__STRUCTURED_COMPONENT = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Structured Component Diagram</em>' class.
@@ -84,7 +86,7 @@ public interface ComponenteditorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT_DIAGRAM_FEATURE_COUNT = 1;
+	int STRUCTURED_COMPONENT_DIAGRAM_FEATURE_COUNT = ModelstructurePackage.DIAGRAM_FEATURE_COUNT + 1;
 
 
 	/**

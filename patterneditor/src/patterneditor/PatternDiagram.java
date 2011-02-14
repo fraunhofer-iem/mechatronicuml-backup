@@ -8,13 +8,13 @@ package patterneditor;
 
 import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
 
+import de.uni_paderborn.fujaba.umlrt.model.modelstructure.Diagram;
+
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface PatternDiagram extends EObject {
+public interface PatternDiagram extends Diagram {
 	/**
 	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

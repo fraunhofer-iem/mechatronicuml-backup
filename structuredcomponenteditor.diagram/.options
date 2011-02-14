@@ -1,0 +1,7 @@
+# Tracing options for the structuredcomponenteditor.diagram plug-in
+
+# Common issues
+structuredcomponenteditor.diagram/debug=false
+
+# Visual IDs
+structuredcomponenteditor.diagram/debug/visualID=false

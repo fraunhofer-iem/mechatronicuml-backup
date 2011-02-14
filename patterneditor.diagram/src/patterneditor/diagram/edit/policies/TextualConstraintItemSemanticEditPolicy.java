@@ -34,7 +34,7 @@ public class TextualConstraintItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public TextualConstraintItemSemanticEditPolicy() {
-		super(PatternElementTypes.TextualConstraint_2004);
+		super(PatternElementTypes.TextualConstraint_2003);
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class TextualConstraintItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.ConstrainableElementConstraint_4005 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
 				.getElementType()) {
 			return null;
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4006 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
 				.getElementType()) {
 			return null;
 		}
@@ -107,12 +107,12 @@ public class TextualConstraintItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (PatternElementTypes.ConstrainableElementConstraint_4005 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (PatternElementTypes.ConstrainableElementConstraint_4006 == req
+		if (PatternElementTypes.ConstrainableElementConstraint_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new ConstrainableElementConstraint2CreateCommand(
 					req, req.getSource(), req.getTarget()));

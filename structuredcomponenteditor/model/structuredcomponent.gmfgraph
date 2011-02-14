@@ -117,12 +117,6 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
-        name="PortFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PortFigure"/>
-    </descriptors>
-    <descriptors
         name="DelegationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
@@ -133,6 +127,75 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="AssemblyFigure"/>
+    </descriptors>
+    <descriptors
+        name="InPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="InPortFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <children
+            xsi:type="gmfgraph:Polygon"
+            name="Polygon">
+          <template
+              x="6"
+              y="6"/>
+          <template
+              x="14"
+              y="10"/>
+          <template
+              x="6"
+              y="14"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="OutPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="OutPortFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <children
+            xsi:type="gmfgraph:ScalablePolygon"
+            name="Polygon">
+          <template/>
+          <template
+              x="2"
+              y="1"/>
+          <template
+              y="2"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="InOutPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PortFigure"/>
+    </descriptors>
+    <descriptors
+        name="InMultiPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PortFigure"/>
+    </descriptors>
+    <descriptors
+        name="OutMultiPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PortFigure"/>
+    </descriptors>
+    <descriptors
+        name="InOutMultiPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="PortFigure"/>
     </descriptors>
   </figures>
   <nodes
@@ -156,8 +219,8 @@
     </facets>
   </nodes>
   <nodes
-      name="Port"
-      figure="PortFigure"
+      name="InPort"
+      figure="InPortFigure"
       affixedParentSide="NORTH">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">

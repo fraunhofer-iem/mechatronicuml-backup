@@ -16,7 +16,7 @@ public class ConstrainableElementConstraint2ItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public ConstrainableElementConstraint2ItemSemanticEditPolicy() {
-		super(PatternElementTypes.ConstrainableElementConstraint_4006);
+		super(PatternElementTypes.ConstrainableElementConstraint_4004);
 	}
 
 	/**

@@ -73,7 +73,7 @@ public class ConstrainableElementConstraint2ReorientCommand extends
 			return false;
 		}
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistConstrainableElementConstraint_4006(getNewSource(),
+				.canExistConstrainableElementConstraint_4004(getNewSource(),
 						getOldTarget());
 	}
 
@@ -85,7 +85,7 @@ public class ConstrainableElementConstraint2ReorientCommand extends
 			return false;
 		}
 		return PatternBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistConstrainableElementConstraint_4006(getOldSource(),
+				.canExistConstrainableElementConstraint_4004(getOldSource(),
 						getNewTarget());
 	}
 

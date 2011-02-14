@@ -36,7 +36,7 @@ public class TextualConstraintEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2004;
+	public static final int VISUAL_ID = 2003;
 
 	/**
 	 * @generated
@@ -193,8 +193,8 @@ public class TextualConstraintEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4005);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4006);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
 		return types;
 	}
 
@@ -203,10 +203,10 @@ public class TextualConstraintEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4005) {
+		if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4003) {
 			types.add(PatternElementTypes.CoordinationPattern_2001);
 			types.add(PatternElementTypes.Role_2002);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4006) {
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4004) {
 			types.add(PatternElementTypes.CoordinationPattern_2001);
 			types.add(PatternElementTypes.Role_2002);
 		}

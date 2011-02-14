@@ -239,8 +239,8 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(PatternElementTypes.RoleConnector_4001);
 		types.add(PatternElementTypes.RolePattern_4002);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4005);
-		types.add(PatternElementTypes.ConstrainableElementConstraint_4006);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
+		types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
 		return types;
 	}
 
@@ -257,10 +257,10 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 			types.add(PatternElementTypes.RolePattern_4002);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4005);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4003);
 		}
 		if (targetEditPart instanceof TextualConstraintEditPart) {
-			types.add(PatternElementTypes.ConstrainableElementConstraint_4006);
+			types.add(PatternElementTypes.ConstrainableElementConstraint_4004);
 		}
 		return types;
 	}
@@ -274,10 +274,10 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 			types.add(PatternElementTypes.Role_2002);
 		} else if (relationshipType == PatternElementTypes.RolePattern_4002) {
 			types.add(PatternElementTypes.CoordinationPattern_2001);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4005) {
-			types.add(PatternElementTypes.TextualConstraint_2004);
-		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4006) {
-			types.add(PatternElementTypes.TextualConstraint_2004);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4003) {
+			types.add(PatternElementTypes.TextualConstraint_2003);
+		} else if (relationshipType == PatternElementTypes.ConstrainableElementConstraint_4004) {
+			types.add(PatternElementTypes.TextualConstraint_2003);
 		}
 		return types;
 	}
