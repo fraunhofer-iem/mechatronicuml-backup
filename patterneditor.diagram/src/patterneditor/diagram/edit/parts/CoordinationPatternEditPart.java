@@ -72,38 +72,38 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 		super(view);
 	}
 	
-	/**
-	 * @generated NOT
-	 */
-	@Override
-	public void activate() {
-		super.activate();
-		
-		AbstractEMFOperation emfOp = new AbstractEMFOperation(getEditingDomain(), "Location setting") {
-
-			@Override
-			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Location lc = (Location) ((Node) getModel()).getLayoutConstraint();
-				lc.setX(100);
-				lc.setY(50);
-				
-				return Status.OK_STATUS;
-			}
-
-		};
-
-		IStatus status;
-
-		try {
-			status = OperationHistoryFactory.getOperationHistory().execute(emfOp, null, null);
-		} catch (ExecutionException e) {
-			status = new Status(IStatus.ERROR, PatternDiagramEditorPlugin.ID, "Setting location failed", e);
-		}
-
-		if (status.getCode() == IStatus.WARNING || status.getCode() == IStatus.ERROR) {
-			PatternDiagramEditorPlugin.getInstance().getLog().log(status);
-		}
-	}
+//	/**
+//	 * @generated NOT
+//	 */
+//	@Override
+//	public void activate() {
+//		super.activate();
+//		
+//		AbstractEMFOperation emfOp = new AbstractEMFOperation(getEditingDomain(), "Location setting") {
+//
+//			@Override
+//			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+//				Location lc = (Location) ((Node) getModel()).getLayoutConstraint();
+//				lc.setX(100);
+//				lc.setY(50);
+//				
+//				return Status.OK_STATUS;
+//			}
+//
+//		};
+//
+//		IStatus status;
+//
+//		try {
+//			status = OperationHistoryFactory.getOperationHistory().execute(emfOp, null, null);
+//		} catch (ExecutionException e) {
+//			status = new Status(IStatus.ERROR, PatternDiagramEditorPlugin.ID, "Setting location failed", e);
+//		}
+//
+//		if (status.getCode() == IStatus.WARNING || status.getCode() == IStatus.ERROR) {
+//			PatternDiagramEditorPlugin.getInstance().getLog().log(status);
+//		}
+//	}
 
 	/**
 	 * @generated
