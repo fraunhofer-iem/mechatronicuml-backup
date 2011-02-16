@@ -3,14 +3,13 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="pattern_diagram"
-    domainFileExtension="umlrt">
+    domainFileExtension="fujaba">
   <diagram
-      visualID="1001"
+      visualID="1000"
       editPartClassName="PatternDiagramEditPart"
       itemSemanticEditPolicyClassName="PatternDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="PatternDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
-      editingDomainID="UmlrtSharedEditingDomain"
       validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
@@ -23,7 +22,7 @@
     <domainDiagramElement
         href="pattern.genmodel#//patterneditor/PatternDiagram"/>
     <topLevelNodes
-        visualID="2101"
+        visualID="2001"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
@@ -47,7 +46,7 @@
             href="pattern.genmodel#//patterneditor/PatternDiagram/coordinationPattern"/>
       </modelFacet>
       <labels
-          visualID="5101"
+          visualID="5001"
           editPartClassName="CoordinationPatternNameEditPart"
           itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -65,7 +64,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2102"
+        visualID="2002"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
         canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
@@ -94,7 +93,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5102"
+          visualID="5002"
           editPartClassName="RoleNameEditPart"
           itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -111,7 +110,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2103"
+        visualID="2003"
         editPartClassName="TextualConstraintEditPart"
         itemSemanticEditPolicyClassName="TextualConstraintItemSemanticEditPolicy"
         canonicalEditPolicyClassName="TextualConstraintCanonicalEditPolicy"
@@ -136,7 +135,7 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4101"
+        visualID="4001"
         editPartClassName="RoleConnectorEditPart"
         itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
         createCommandClassName="RoleConnectorCreateCommand"
@@ -164,7 +163,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4102"
+        visualID="4002"
         editPartClassName="RolePatternEditPart"
         itemSemanticEditPolicyClassName="RolePatternItemSemanticEditPolicy"
         createCommandClassName="RolePatternCreateCommand"
@@ -184,7 +183,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4103"
+        visualID="4003"
         editPartClassName="ConstrainableElementConstraintEditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraintItemSemanticEditPolicy"
         createCommandClassName="ConstrainableElementConstraintCreateCommand"
@@ -203,7 +202,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4104"
+        visualID="4004"
         editPartClassName="ConstrainableElementConstraint2EditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraint2ItemSemanticEditPolicy"
         createCommandClassName="ConstrainableElementConstraint2CreateCommand"
@@ -258,31 +257,32 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="patterneditor.diagram.general"
+        iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.general"
         name="Pattern Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="patterneditor.diagram.appearance"
+          iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="patterneditor.diagram.connections"
+          iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="patterneditor.diagram.printing"
+          iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="patterneditor.diagram.rulersAndGrid"
+          iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin>
+  <plugin
+      name="Pattern Editor Plugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>

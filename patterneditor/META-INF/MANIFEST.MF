@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: patterneditor;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.patterneditor;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -12,6 +12,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.modeling;visibility:=reexport,
  de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Export-Package: patterneditor,
- patterneditor.impl,
- patterneditor.util
+Export-Package: de.uni_paderborn.fujaba.umlrt.patterneditor,
+ de.uni_paderborn.fujaba.umlrt.patterneditor.impl,
+ de.uni_paderborn.fujaba.umlrt.patterneditor.util

@@ -3,14 +3,13 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="structuredcomponent_diagram"
-    domainFileExtension="umlrt">
+    domainFileExtension="fujaba">
   <diagram
       visualID="1000"
       editPartClassName="StructuredComponentDiagramEditPart"
       itemSemanticEditPolicyClassName="StructuredComponentDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="StructuredComponentDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
-      editingDomainID="UmlrtSharedEditingDomain"
       validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
@@ -275,31 +274,32 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="structuredcomponenteditor.diagram.general"
+        iD="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.general"
         name="Structuredcomponent Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="structuredcomponenteditor.diagram.appearance"
+          iD="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="structuredcomponenteditor.diagram.connections"
+          iD="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="structuredcomponenteditor.diagram.printing"
+          iD="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="structuredcomponenteditor.diagram.rulersAndGrid"
+          iD="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin>
+  <plugin
+      name="Structuredcomponent Editor Plugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
