@@ -8,7 +8,7 @@
       <eSubpackages name="umlrt" nsURI="http:///de/uni_paderborn/fujaba/umlrt" nsPrefix="umlrt">
         <eSubpackages name="model" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model"
             nsPrefix="model">
-          <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/behavior"
+          <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
               nsPrefix="behavior">
             <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -27,7 +27,7 @@
               </eStructuralFeatures>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="component" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/component"
+          <eSubpackages name="component" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component"
               nsPrefix="component">
             <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
               <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -319,7 +319,7 @@
                   eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/constraint"
+          <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/constraint"
               nsPrefix="constraint">
             <eClassifiers xsi:type="ecore:EClass" name="Constraint">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -372,7 +372,7 @@
                   eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/TextualExpression"/>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/core"
+          <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/core"
               nsPrefix="core">
             <eClassifiers xsi:type="ecore:EClass" name="NaturalNumber">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -485,7 +485,7 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/constrainableElement"/>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/instance"
+          <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance"
               nsPrefix="instance">
             <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -548,7 +548,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/pattern"
+          <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
               nsPrefix="pattern">
             <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -624,7 +624,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/refines"/>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart"
+          <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart"
               nsPrefix="realtimestatechart">
             <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1326,7 +1326,7 @@
               </eClassifiers>
             </eSubpackages>
           </eSubpackages>
-          <eSubpackages name="msgiface" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/msgiface"
+          <eSubpackages name="msgiface" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface"
               nsPrefix="msgiface">
             <eClassifiers xsi:type="ecore:EClass" name="MessageInterface" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1334,7 +1334,7 @@
               </eAnnotations>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="modelstructure" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/modelstructure"
+          <eSubpackages name="modelstructure" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/modelstructure"
               nsPrefix="modelstructure">
             <eClassifiers xsi:type="ecore:EClass" name="RootNode">
               <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
