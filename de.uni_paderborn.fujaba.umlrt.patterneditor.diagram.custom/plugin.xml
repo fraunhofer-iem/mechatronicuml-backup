@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern">
+      
+      <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"
+		typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"
+		class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+		inheritance="all">
+      </adviceBinding>
+   
+         
+         
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"/>
+         <advice ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"/>
+      </binding>
+   </extension>
+   
+</plugin>

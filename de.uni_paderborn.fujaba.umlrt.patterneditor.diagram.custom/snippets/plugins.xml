@@ -1,0 +1,21 @@
+
+         <specializationType
+               id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.Role"     
+               icon="icons/halfadder16.gif"
+               name="%RoleTool.Label"
+               edithelperadvice="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+               kind="org.eclipse.gmf.runtime.emf.core.internal.util.IHintedType"> 
+            <specializes id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"/>
+            <param name="semanticHint" value="2002"/>
+         </specializationType>
+         
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="patterneditor.diagram.custom.providers.PatternCustomEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
