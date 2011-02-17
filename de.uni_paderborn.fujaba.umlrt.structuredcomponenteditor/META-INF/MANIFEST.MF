@@ -7,8 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: 
- de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor,
+Export-Package: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.impl,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.util
 Require-Bundle: org.eclipse.core.runtime,
