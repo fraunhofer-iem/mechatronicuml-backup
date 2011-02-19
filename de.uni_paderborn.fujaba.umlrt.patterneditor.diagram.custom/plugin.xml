@@ -24,4 +24,15 @@
       </binding>
    </extension>
    
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.providers.CustomPatternEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
 </plugin>
