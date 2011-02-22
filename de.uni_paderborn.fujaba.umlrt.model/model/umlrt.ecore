@@ -1326,14 +1326,6 @@
               </eAnnotations>
             </eClassifiers>
           </eSubpackages>
-          <eSubpackages name="modelstructure" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/modelstructure"
-              nsPrefix="modelstructure">
-            <eClassifiers xsi:type="ecore:EClass" name="RootNode">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
-                  eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
-                  containment="true"/>
-            </eClassifiers>
-          </eSubpackages>
         </eSubpackages>
       </eSubpackages>
     </eSubpackages>

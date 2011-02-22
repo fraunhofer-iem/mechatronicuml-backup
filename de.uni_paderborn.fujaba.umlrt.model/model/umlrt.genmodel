@@ -192,14 +192,13 @@
             <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.umlrt.model"
                 disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/role"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/component"/>
-                <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentInstanceConfiguration"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentType"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toRef"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/fromRef"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portsDerived"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toString"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
@@ -211,10 +210,6 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/toPort"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromPort"/>
-              </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration">
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration/componentInstances"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -605,12 +600,6 @@
             <nestedGenPackages prefix="Msgiface" basePackage="de.uni_paderborn.fujaba.umlrt.model"
                 disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
-            </nestedGenPackages>
-            <nestedGenPackages prefix="Modelstructure" basePackage="de.uni_paderborn.fujaba.umlrt.model"
-                disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/modelstructure">
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/modelstructure/RootNode">
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/modelstructure/RootNode/diagrams"/>
-              </genClasses>
             </nestedGenPackages>
           </nestedGenPackages>
         </nestedGenPackages>
