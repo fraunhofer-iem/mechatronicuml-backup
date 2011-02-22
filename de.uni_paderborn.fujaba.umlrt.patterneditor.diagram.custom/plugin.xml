@@ -34,5 +34,19 @@
          </Priority>
       </editpartProvider>
    </extension>
+
+    
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     icon="icons/PatterneditorDiagramFile.gif"
+  	     class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     name="Pattern Diagram">
+  	     
+  	     
+  	  	 <description>Creates a new Pattern diagram.</description>
+      </wizard>
+   </extension>
    
 </plugin>
