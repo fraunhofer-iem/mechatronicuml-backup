@@ -26,6 +26,7 @@
         visualID="3001"
         editPartClassName="PortEditPart"
         itemSemanticEditPolicyClassName="PortItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortViewFactory"
         canonicalEditPolicyClassName="PortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortGraphicalNodeEditPolicy"
         createCommandClassName="PortCreateCommand"
@@ -39,11 +40,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="InPortFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolygonShape fFigurePolygon; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePolygon = new org.eclipse.draw2d.PolygonShape();&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(14)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(14)&#xA;));&#xA;fFigurePolygon.setFill(true);&#xA;&#xA;this.add(fFigurePolygon);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolygonShape getFigurePolygon() {&#xA;&#x9;&#x9;return fFigurePolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureMulti; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure a10 = new org.eclipse.draw2d.RectangleFigure();&#xA;a10.setFill(false);&#xA;a10.setOutline(false);&#xA;a10.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(a10);&#xA;a10.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure a21 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;a10.add(a21);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMulti = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureMulti.setFill(false);&#xA;fFigureMulti.setOutline(false);&#xA;fFigureMulti.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;&#xA;this.add(fFigureMulti);&#xA;fFigureMulti.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b21 = new org.eclipse.draw2d.RectangleFigure();&#xA;b21.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;fFigureMulti.add(b21);&#xA;b21.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape polygon2 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polygon2.setFill(true);&#xA;&#xA;b21.add(polygon2);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureMulti() {&#xA;&#x9;&#x9;return fFigureMulti;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="24"
+            height="24"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -58,6 +59,7 @@
         visualID="3002"
         editPartClassName="ComponentPartEditPart"
         itemSemanticEditPolicyClassName="ComponentPartItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentPartViewFactory"
         canonicalEditPolicyClassName="ComponentPartCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         graphicalNodeEditPolicyClassName="ComponentPartGraphicalNodeEditPolicy"
@@ -91,6 +93,7 @@
         visualID="3003"
         editPartClassName="Port2EditPart"
         itemSemanticEditPolicyClassName="Port2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortViewFactory"
         canonicalEditPolicyClassName="Port2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Port2GraphicalNodeEditPolicy"
         createCommandClassName="Port2CreateCommand"
@@ -104,11 +107,11 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="InPortFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.PolygonShape fFigurePolygon; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePolygon = new org.eclipse.draw2d.PolygonShape();&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(14)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;fFigurePolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(14)&#xA;));&#xA;fFigurePolygon.setFill(true);&#xA;&#xA;this.add(fFigurePolygon);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.PolygonShape getFigurePolygon() {&#xA;&#x9;&#x9;return fFigurePolygon;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InPortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureMulti; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InPortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure a10 = new org.eclipse.draw2d.RectangleFigure();&#xA;a10.setFill(false);&#xA;a10.setOutline(false);&#xA;a10.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(a10);&#xA;a10.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure a21 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;a10.add(a21);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMulti = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureMulti.setFill(false);&#xA;fFigureMulti.setOutline(false);&#xA;fFigureMulti.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;&#xA;this.add(fFigureMulti);&#xA;fFigureMulti.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b21 = new org.eclipse.draw2d.RectangleFigure();&#xA;b21.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;fFigureMulti.add(b21);&#xA;b21.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.ScalablePolygonShape polygon2 = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;polygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;polygon2.setFill(true);&#xA;&#xA;b21.add(polygon2);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureMulti() {&#xA;&#x9;&#x9;return fFigureMulti;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="24"
+            height="24"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -123,6 +126,7 @@
         visualID="2001"
         editPartClassName="StructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredComponentViewFactory"
         canonicalEditPolicyClassName="StructuredComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         compartments="//@diagram/@compartments.0"
@@ -153,7 +157,8 @@
       <labels
           visualID="5001"
           editPartClassName="StructuredComponentNameEditPart"
-          itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -172,6 +177,7 @@
         visualID="4001"
         editPartClassName="DelegationEditPart"
         itemSemanticEditPolicyClassName="DelegationItemSemanticEditPolicy"
+        notationViewFactoryClassName="DelegationViewFactory"
         createCommandClassName="DelegationCreateCommand"
         reorientCommandClassName="DelegationReorientCommand">
       <diagramRunTimeClass
@@ -200,6 +206,7 @@
         visualID="4002"
         editPartClassName="AssemblyEditPart"
         itemSemanticEditPolicyClassName="AssemblyItemSemanticEditPolicy"
+        notationViewFactoryClassName="AssemblyViewFactory"
         createCommandClassName="AssemblyCreateCommand"
         reorientCommandClassName="AssemblyReorientCommand">
       <diagramRunTimeClass
@@ -228,6 +235,7 @@
         visualID="7001"
         editPartClassName="StructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentComponentCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredComponentComponentCompartmentViewFactory"
         canonicalEditPolicyClassName="StructuredComponentComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1"
         title="ComponentCompartment"
@@ -298,8 +306,7 @@
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin
-      name="Structuredcomponent Editor Plugin">
+  <plugin>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
