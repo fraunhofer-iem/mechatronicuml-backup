@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: componentInstanceConfigurationEditor.diagram.custom
+Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
+ de.uni_paderborn.fujaba.umlrt.model;bundle-version="1.0.0",
+ org.storydriven.modeling;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.newwizard;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.part.CustomComponentInstanceConfigurationEditorPlugin

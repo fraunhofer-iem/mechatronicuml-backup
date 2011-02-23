@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="element-types"
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+            class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.part.CustomComponentInstanceConfigurationCreationWizard"
+            icon="icons/NewComponentInstanceConfigurationEditorWizard.gif"
+            id="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.wizard1"
+            name="ComponentInstanceConfiguration Diagram">
+      </wizard>
+   </extension>
+
+</plugin>
