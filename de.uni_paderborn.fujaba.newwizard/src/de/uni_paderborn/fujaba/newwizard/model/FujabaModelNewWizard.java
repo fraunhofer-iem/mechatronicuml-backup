@@ -28,56 +28,45 @@ import de.uni_paderborn.fujaba.newwizard.Messages;
 import de.uni_paderborn.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.uni_paderborn.fujaba.newwizard.diagrams.pages.NewExtendedFileCreationPage;
 
-public class FujabaModelNewWizard extends Wizard implements INewWizard{
+/**
+ * A New Wizard for the Fujaba Model.
+ * 
+ * @author bingo
+ * 
+ */
+public class FujabaModelNewWizard extends Wizard implements INewWizard {
 
+	/**
+	 * The Wizard Page for selecting a file name.
+	 */
 	protected NewExtendedFileCreationPage domainModelFilePage;
-	
-	/**
-	 * @generated
-	 */
-	private IWorkbench workbench;
 
 	/**
-	 * @generated
+	 * The Editing Domain for all changes.
 	 */
-	protected IStructuredSelection selection;
-
-	/**
-	 * @generated
-	 */
-	public IWorkbench getWorkbench() {
-		return workbench;
-	}
-
-	/**
-	 * @generated
-	 */
-	public IStructuredSelection getSelection() {
-		return selection;
-	}
-	
 	private TransactionalEditingDomain editingDomain;
 
+	/**
+	 * Constructs this NewWizard.
+	 */
 	public FujabaModelNewWizard() {
 		editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 	}
 
-
 	/**
-	 * @generated
+	 * Initializes this creation wizard.
+	 * 
+	 * @param workbench
+	 *            The workbench
+	 * @param selection
+	 *            The selection that existed before this wizard was opened.
+	 * 
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		this.workbench = workbench;
-		this.selection = selection;
-
 		setNeedsProgressMonitor(true);
-	}
-	
 
-	@Override
-	public void addPages() {
 		domainModelFilePage = new NewExtendedFileCreationPage(
-				"DiagramModelFile", getSelection(), FujabaNewwizardPlugin.FUJABA_MODEL_EXTENSION); //$NON-NLS-1$
+				"DiagramModelFile", selection, FujabaNewwizardPlugin.FUJABA_MODEL_EXTENSION); //$NON-NLS-1$
 
 		domainModelFilePage
 				.setTitle(Messages.NewDiagramFileWizard_CreationPageTitle);
@@ -87,6 +76,9 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard{
 		addPage(domainModelFilePage);
 	}
 
+	/**
+	 * Creates the specified domain model.
+	 */
 	@Override
 	public boolean performFinish() {
 
@@ -99,8 +91,9 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard{
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 		final Resource domainModelResource = resourceSet
 				.createResource(diagramModelURI);
-		
-		final RootNode rootNode = ModelinstanceFactory.eINSTANCE.createRootNode();
+
+		final RootNode rootNode = ModelinstanceFactory.eINSTANCE
+				.createRootNode();
 
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
 				editingDomain, "InitDiagramCommand", affectedFiles) {
@@ -108,7 +101,7 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard{
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				
+
 				domainModelResource.getContents().add(rootNode);
 				return CommandResult.newOKCommandResult();
 			}
@@ -121,7 +114,7 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard{
 
 		} catch (ExecutionException e) {
 			FujabaNewwizardPlugin.getDefault().logError(
-					"Unable to create model and diagram", e); //$NON-NLS-1$
+					"Unable to create model.", e); //$NON-NLS-1$
 		} catch (IOException ex) {
 			FujabaNewwizardPlugin.getDefault().logError(
 					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$

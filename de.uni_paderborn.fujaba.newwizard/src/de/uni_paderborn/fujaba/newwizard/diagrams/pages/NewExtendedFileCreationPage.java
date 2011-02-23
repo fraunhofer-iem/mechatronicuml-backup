@@ -12,16 +12,32 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import de.uni_paderborn.fujaba.newwizard.Messages;
 
 /**
- * @generated
+ * A Wizard Page for creating new diagram files that have a certain file
+ * extension. This class has been copied from a generated GMF-Editor, where it
+ * was named ???CreationWizardPage.
+ * 
+ * @author bingo
+ * 
  */
 public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 
 	/**
+	 * The File Extension to use.
+	 * 
 	 * @generated
 	 */
 	private final String fileExtension;
 
 	/**
+	 * Constructs this Creation Page.
+	 * 
+	 * @param pageName
+	 *            The name for this Page.
+	 * @param selection
+	 *            The current object selection in the workbench.
+	 * @param fileExtension
+	 *            The file extension for new files.
+	 * 
 	 * @generated
 	 */
 	public NewExtendedFileCreationPage(String pageName,
@@ -40,6 +56,8 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * Returns the URI of the specified file.
+	 * 
 	 * @generated
 	 */
 	public URI getURI() {
@@ -47,6 +65,9 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * Finds out the Path for the currently selected file, as entered by the
+	 * user.
+	 * 
 	 * @generated
 	 */
 	protected IPath getFilePath() {
@@ -62,6 +83,11 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * Creates the controls for this Wizard Page.
+	 * 
+	 * @param parent
+	 *            The parent control.
+	 * 
 	 * @generated
 	 */
 	public void createControl(Composite parent) {
@@ -72,6 +98,16 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * Returns a unique file name, based on the given hint.
+	 * 
+	 * @param containerFullPath
+	 *            The full path for the new file.
+	 * @param fileName
+	 *            The desired filename, or null for a default name.
+	 * @param extension
+	 *            The file extension to use.
+	 * @return The unique file name that can be used to create a new file.
+	 * 
 	 * @generated
 	 */
 	private static String getUniqueFileName(IPath containerFullPath,
@@ -100,6 +136,8 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * Validates the current state of this Wizard Page.
+	 * 
 	 * @generated
 	 */
 	protected boolean validatePage() {
@@ -109,9 +147,8 @@ public class NewExtendedFileCreationPage extends WizardNewFileCreationPage {
 		String extension = getExtension();
 		if (extension != null
 				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS
-					.bind(Messages.CreationWizardPageExtensionError,
-							extension));
+			setErrorMessage(NLS.bind(Messages.CreationWizardPageExtensionError,
+					extension));
 			return false;
 		}
 		return true;

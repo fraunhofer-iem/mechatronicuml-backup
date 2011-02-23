@@ -21,16 +21,44 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
-public class AddElementPageExtension extends Observable implements ModelSelectionPageExtension {
+import de.uni_paderborn.fujaba.newwizard.Messages;
 
+/**
+ * A Page Extension for the ModelSelectionPage with a check box. The user can
+ * choose, if a new Diagram Element should be added to the Root Node, or if an
+ * existing Diagram Element is to be selected.
+ * 
+ * @author bingo
+ * 
+ */
+public class AddElementPageExtension extends Observable implements
+		ModelSelectionPageExtension {
 
-	private boolean addElement;
+	/**
+	 * The checkbox.
+	 */
 	private Button btn;
 
+	/**
+	 * The current status of the checkbox.
+	 */
+	private boolean addElement;
+
+	/**
+	 * Gets the current status of the checkbox.
+	 * 
+	 * @return true, if a new element should be added to the Root Node.
+	 */
 	public final boolean shouldAddElement() {
 		return addElement;
 	}
 
+	/**
+	 * Handler that will be executed, when the status of the checkbox changes.
+	 * 
+	 * @param value
+	 *            Current status of the checkbox.
+	 */
 	protected void onStatusChanged(boolean value) {
 		if (addElement == value) {
 			return;
@@ -40,10 +68,18 @@ public class AddElementPageExtension extends Observable implements ModelSelectio
 		notifyObservers(Boolean.valueOf(addElement));
 	}
 
+	/**
+	 * The checkbox will use this text.
+	 * 
+	 * @return The text to use.
+	 */
 	protected String getLabelText() {
-		return "Add new Diagram Element to Root Node";
+		return Messages.AddNewDiagramElementToRootNode;
 	}
 
+	/**
+	 * Creates the checkbox for this Page Extension.
+	 */
 	public void createControl(Composite parent) {
 		btn = new Button(parent, SWT.CHECK);
 		btn.setText(getLabelText());
@@ -59,9 +95,20 @@ public class AddElementPageExtension extends Observable implements ModelSelectio
 		});
 	}
 
+	/**
+	 * Handler that will be called, if the Resource in the ModelSelectionPage
+	 * changed.
+	 */
 	public void setResource(Resource resource) {
+		// ignore
 	}
 
+	/**
+	 * Sets the current selection status of the checkbox to "status".
+	 * 
+	 * @param status
+	 *            The selection status to set.
+	 */
 	public void setAddElement(boolean status) {
 		btn.setSelection(status);
 		onStatusChanged(status);

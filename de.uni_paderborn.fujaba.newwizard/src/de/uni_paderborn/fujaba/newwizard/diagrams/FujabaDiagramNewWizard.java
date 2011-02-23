@@ -3,22 +3,18 @@ package de.uni_paderborn.fujaba.newwizard.diagrams;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.internal.common.ui.ResourceLocationProvider;
@@ -61,19 +57,10 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	 */
 	protected NewExtendedFileCreationPage diagramModelFilePage;
 
-	// protected DomainSourceSelectionPage domainSourceSelectionPage;
-
 	/**
 	 * Added to allow selection of an existing domain model file.
 	 */
 	protected DiagramModelSelectionPage domainModelSelectionPage;
-
-	/**
-	 * @generated
-	 */
-	// protected
-	// de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternCreationWizardPage
-	// domainModelFilePage;
 
 	/**
 	 * @generated
@@ -159,27 +146,14 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 		// 1) Create Diagram Model File
 		addDiagramModelFilePage();
 
-		// 2) Choose if we want to create or choose a Domain Model.
-		// addDomainSourceSelectionPage();
-
-		// 3) Select existing Domain File and Domain Element.
+		// 2) Select existing Domain File and Domain Element.
 		addDomainModelSelectionPage();
 
-		// 4) If the user chose "Create new Model" (in 2), create Domain Model
-		// File
-		// addDomainModelFilePage();
 	}
 
 	private void addDiagramModelFilePage() {
 		diagramModelFilePage = new NewExtendedFileCreationPage(
 				"DiagramModelFile", getSelection(), getDiagramFileExtension()); //$NON-NLS-1$
-
-		// diagramModelFilePage
-		// .setTitle(Messages.PatternNewDiagramFileWizard_CreationPageTitle);
-		// diagramModelFilePage
-		// .setDescription(NLS
-		// .bind(Messages.PatternNewDiagramFileWizard_CreationPageDescription,
-		// getModelId()));
 
 		diagramModelFilePage
 				.setTitle(Messages.CreationWizard_DiagramModelFilePageTitle);
@@ -272,7 +246,7 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					throws ExecutionException {
 
 				EObject diagramElement = domainModelSelectionPage
-						.getSelectedModelElement();
+						.getSelectedDiagramElement();
 
 				if (diagramElement == null) {
 					List<?> rootElements = modelResource.getContents();
