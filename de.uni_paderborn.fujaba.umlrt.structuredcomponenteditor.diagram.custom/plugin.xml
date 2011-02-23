@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       icon="icons/StructuredComponentDiagram.gif"
+  	       class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.part.CustomStructuredcomponentDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.part.CustomStructuredcomponentDiagramCreationWizard"
+  	       name="Structured Component Diagram">
+  	     
+  	  	 <description>Creates a new Structured Component Diagram.</description>
+      </wizard>
+   </extension>
+   
+</plugin>
