@@ -175,6 +175,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 * Handler that will be called whenever the Resource changed.
 	 */
 	protected void resourceChanged() {
+		super.resourceChanged();
 		boolean shouldAddElement = false;
 		Resource resource = getResource();
 		if (!resource.getContents().isEmpty()) {
