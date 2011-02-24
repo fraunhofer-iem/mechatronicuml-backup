@@ -15,6 +15,15 @@
    </extension>
    
    
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.providers.CustomStructuredcomponentEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
@@ -37,7 +46,5 @@
          <advice ref="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"/>
       </binding>
    </extension>
-   
-   
    
 </plugin>

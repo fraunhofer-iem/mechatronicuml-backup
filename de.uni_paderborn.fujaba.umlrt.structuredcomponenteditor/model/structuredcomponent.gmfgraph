@@ -129,17 +129,17 @@
           name="AssemblyFigure"/>
     </descriptors>
     <descriptors
-        name="InPortFigure">
+        name="PortFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="PortFigure"
+          name="InOutPortFigure"
           outline="false"
           fill="false">
         <layout
             xsi:type="gmfgraph:StackLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name=""
+            name="aux1"
             outline="false"
             fill="false">
           <layout
@@ -156,7 +156,7 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name=""
+            name="InnerRectContainer"
             outline="false"
             fill="false">
           <layout
@@ -169,7 +169,12 @@
           </border>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="bounds">
+              name="InnerRectangle"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="InPolygonContainer"
+              outline="false"
+              fill="false">
             <layout
                 xsi:type="gmfgraph:StackLayout"/>
             <border
@@ -182,7 +187,9 @@
             </border>
             <children
                 xsi:type="gmfgraph:ScalablePolygon"
-                name="Polygon">
+                name="InPolygon"
+                outline="false"
+                fill="false">
               <template/>
               <template
                   x="1"
@@ -191,53 +198,11 @@
                   y="2"/>
             </children>
           </children>
-        </children>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors
-        name="OutPortFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="OutPortFigure"
-          outline="false"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="a1"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                top="3"
-                left="3"/>
-          </border>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="a2"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="Multi"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                bottom="3"
-                right="3"/>
-          </border>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="b2">
+              name="OutPolygonContainer"
+              outline="false"
+              fill="false">
             <layout
                 xsi:type="gmfgraph:StackLayout"/>
             <border
@@ -250,7 +215,9 @@
             </border>
             <children
                 xsi:type="gmfgraph:ScalablePolygon"
-                name="Polygon">
+                name="OutPolygon"
+                outline="false"
+                fill="false">
               <template
                   x="1"/>
               <template
@@ -260,53 +227,11 @@
                   y="2"/>
             </children>
           </children>
-        </children>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors
-        name="InOutPortFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="InOutPortFigure"
-          outline="false"
-          fill="false">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="a1"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                top="3"
-                left="3"/>
-          </border>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="a2"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="Multi"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                bottom="3"
-                right="3"/>
-          </border>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="b1">
+              name="InOutPolygonContainer1"
+              outline="false"
+              fill="false">
             <layout
                 xsi:type="gmfgraph:StackLayout"/>
             <border
@@ -319,7 +244,9 @@
             </border>
             <children
                 xsi:type="gmfgraph:ScalablePolygon"
-                name="Polygon1">
+                name="InOutPolygon1"
+                outline="false"
+                fill="false">
               <template/>
               <template
                   x="1"
@@ -330,7 +257,7 @@
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="b2"
+              name="InOutPolygonContainer2"
               outline="false"
               fill="false">
             <layout
@@ -345,7 +272,9 @@
             </border>
             <children
                 xsi:type="gmfgraph:ScalablePolygon"
-                name="Polygon">
+                name="InOutPolygon2"
+                outline="false"
+                fill="false">
               <template
                   x="1"/>
               <template
@@ -358,7 +287,19 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
   <nodes
@@ -383,7 +324,7 @@
   </nodes>
   <nodes
       name="Port"
-      figure="InPortFigure"
+      figure="PortFigure"
       affixedParentSide="NORTH">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
