@@ -19,7 +19,7 @@ public class CustomComponentInstanceConfigurationCreationWizard extends FujabaDi
 
 		setWindowTitle(getWindowTitle());
 		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewComponentInstanceConfigurationEditorWizard.gif")); //$NON-NLS-1$
+				.getBundledImageDescriptor("icons/NewComponentInstanceConfigurationEditorWizard.gif")); //$NON-NLS-1$
 
 	}
 

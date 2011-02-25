@@ -8,9 +8,45 @@
             category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
             class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.part.CustomComponentInstanceConfigurationCreationWizard"
             icon="icons/NewComponentInstanceConfigurationEditorWizard.gif"
-            id="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.wizard1"
+            id="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.part.CustomComponentInstanceConfigurationCreationWizard"
             name="ComponentInstanceConfiguration Diagram">
+            
+            <description>Creates a new Component Instance Configuration. </description>
       </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.providers.CustomComponentInstanceConfigurationEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   <extension
+         id="element-types"
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel
+            nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
+         <adviceBinding
+               class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
+               id="de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.custom.ComponentInstanceAdvice"
+               inheritance="all"
+               typeId="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.ComponentInstance_2002">
+         </adviceBinding>
+      </metamodel>
+   </extension>
+   <extension
+         id="element-types-bindings"
+         point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding
+            context="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.TypeContext">
+         <elementType
+               ref="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.ComponentInstance_2002"></elementType>
+         <advice
+               ref="de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.custom.ComponentInstanceAdvice">
+         </advice>
+      </binding>
    </extension>
 
 </plugin>
