@@ -24,14 +24,14 @@
       <diagramNode
           href="componentInstanceConfiguration.gmfgraph#ComponentInstance"/>
       <children
-          referencedChild="//@nodes.0/@ownedChild">
+          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portsDerived"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
           <diagramNode
-              href="componentInstanceConfiguration.gmfgraph#InPort"/>
+              href="componentInstanceConfiguration.gmfgraph#Port"/>
         </ownedChild>
       </children>
     </ownedChild>
