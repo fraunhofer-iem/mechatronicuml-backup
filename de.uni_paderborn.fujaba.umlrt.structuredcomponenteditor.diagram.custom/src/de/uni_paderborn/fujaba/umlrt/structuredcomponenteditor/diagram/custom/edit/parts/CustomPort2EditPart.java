@@ -8,7 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around ComponentParts.
@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
  * @author bingo
  * 
  */
-public class CustomPort2EditPart extends PortEditPart {
+public class CustomPort2EditPart extends Port2EditPart {
 
 	/**
 	 * All logic that is common between CustomPortEditPart and
