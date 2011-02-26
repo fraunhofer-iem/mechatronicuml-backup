@@ -84,20 +84,22 @@ public class CustomPort2EditPart extends PortEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		EditPart parentEditPart = getParent();
-		if (parentEditPart instanceof ComponentPartEditPart) {
-			IFigure figure = ((ComponentPartEditPart) parentEditPart)
-					.getFigure();
-
-			if (figure instanceof BorderedNodeFigure) {
-				BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-				IFigure portContainerFigure = bnf.getBorderItemContainer();
-				delegation.removePortContainerLayoutListener(portContainerFigure);
+		if (delegation != null) {
+			EditPart parentEditPart = getParent();
+			if (parentEditPart instanceof ComponentPartEditPart) {
+				IFigure figure = ((ComponentPartEditPart) parentEditPart)
+						.getFigure();
+	
+				if (figure instanceof BorderedNodeFigure) {
+					BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+					IFigure portContainerFigure = bnf.getBorderItemContainer();
+					delegation.removePortContainerLayoutListener(portContainerFigure);
+				}
 			}
+	
+			delegation.deactivate();
+			delegation = null;
 		}
-
-		delegation.deactivate();
-		delegation = null;
 		super.deactivate();
 	}
 
