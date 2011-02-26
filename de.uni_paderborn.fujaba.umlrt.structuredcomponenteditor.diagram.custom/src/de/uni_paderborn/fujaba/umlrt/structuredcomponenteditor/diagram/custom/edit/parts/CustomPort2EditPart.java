@@ -84,9 +84,6 @@ public class CustomPort2EditPart extends PortEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		delegation.deactivate();
-		delegation = null;
-
 		EditPart parentEditPart = getParent();
 		if (parentEditPart instanceof ComponentPartEditPart) {
 			IFigure figure = ((ComponentPartEditPart) parentEditPart)
@@ -99,6 +96,8 @@ public class CustomPort2EditPart extends PortEditPart {
 			}
 		}
 
+		delegation.deactivate();
+		delegation = null;
 		super.deactivate();
 	}
 

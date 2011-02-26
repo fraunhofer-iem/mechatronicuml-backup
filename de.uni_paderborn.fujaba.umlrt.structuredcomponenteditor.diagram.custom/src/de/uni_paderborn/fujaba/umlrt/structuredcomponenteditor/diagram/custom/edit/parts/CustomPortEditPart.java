@@ -85,9 +85,6 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		delegation.deactivate();
-		delegation = null;
-
 		EditPart parentEditPart = getParent();
 		if (parentEditPart instanceof StructuredComponentEditPart) {
 			IFigure figure = ((StructuredComponentEditPart) parentEditPart)
@@ -99,7 +96,9 @@ public class CustomPortEditPart extends PortEditPart {
 				delegation.removePortContainerLayoutListener(portContainerFigure);
 			}
 		}
-
+		
+		delegation.deactivate();
+		delegation = null;
 		super.deactivate();
 	}
 
