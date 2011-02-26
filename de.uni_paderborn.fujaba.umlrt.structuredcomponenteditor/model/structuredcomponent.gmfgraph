@@ -132,7 +132,7 @@
         name="PortFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="InOutPortFigure"
+          name="PortFigure"
           outline="false"
           fill="false">
         <layout
@@ -229,7 +229,7 @@
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="InOutPolygonContainer1"
+              name="InOutPolygonContainer"
               outline="false"
               fill="false">
             <layout
@@ -239,42 +239,23 @@
               <insets
                   top="3"
                   left="3"
-                  bottom="7"
-                  right="11"/>
-            </border>
-            <children
-                xsi:type="gmfgraph:ScalablePolygon"
-                name="InOutPolygon1"
-                outline="false"
-                fill="false">
-              <template/>
-              <template
-                  x="1"
-                  y="1"/>
-              <template
-                  y="2"/>
-            </children>
-          </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="InOutPolygonContainer2"
-              outline="false"
-              fill="false">
-            <layout
-                xsi:type="gmfgraph:StackLayout"/>
-            <border
-                xsi:type="gmfgraph:MarginBorder">
-              <insets
-                  top="7"
-                  left="11"
                   bottom="3"
                   right="3"/>
             </border>
             <children
                 xsi:type="gmfgraph:ScalablePolygon"
-                name="InOutPolygon2"
+                name="InOutPolygon"
                 outline="false"
                 fill="false">
+              <template
+                  x="1"
+                  y="1"/>
+              <template
+                  x="2"
+                  y="2"/>
+              <template
+                  x="1"
+                  y="3"/>
               <template
                   x="1"/>
               <template
@@ -291,13 +272,7 @@
       <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3"/>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4"/>
-      <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
     </descriptors>

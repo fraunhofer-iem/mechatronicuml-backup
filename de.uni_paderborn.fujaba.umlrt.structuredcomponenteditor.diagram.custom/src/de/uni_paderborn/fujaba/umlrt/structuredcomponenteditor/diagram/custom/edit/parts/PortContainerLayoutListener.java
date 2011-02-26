@@ -5,14 +5,16 @@ import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
+
 public class PortContainerLayoutListener extends LayoutListener.Stub {
 	private AbstractBorderItemEditPart editPart;
-	private PortDecoration portDecoration;
 
-	public PortContainerLayoutListener(AbstractBorderItemEditPart editPart,
-			PortDecoration portDecoration) {
+	CustomPortFigure portFigure;
+	
+	public PortContainerLayoutListener(AbstractBorderItemEditPart editPart, CustomPortFigure portFigure) {
 		this.editPart = editPart;
-		this.portDecoration = portDecoration;
+		this.portFigure = portFigure;
 	}
 
 	@Override
@@ -21,7 +23,7 @@ public class PortContainerLayoutListener extends LayoutListener.Stub {
 		if (borderItemLocator != null) {
 			borderItemLocator.relocate(editPart.getFigure());
 			int side = borderItemLocator.getCurrentSideOfParent();
-			portDecoration.setPortSide(side);
+			portFigure.setPortSide(side);
 		}
 
 		

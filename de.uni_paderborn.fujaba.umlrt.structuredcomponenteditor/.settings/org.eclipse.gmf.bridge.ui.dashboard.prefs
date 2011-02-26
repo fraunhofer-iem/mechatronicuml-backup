@@ -1,0 +1,8 @@
+#Tue Feb 22 16:21:31 CET 2011
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.ecore
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/model/structuredcomponent.gmftool
