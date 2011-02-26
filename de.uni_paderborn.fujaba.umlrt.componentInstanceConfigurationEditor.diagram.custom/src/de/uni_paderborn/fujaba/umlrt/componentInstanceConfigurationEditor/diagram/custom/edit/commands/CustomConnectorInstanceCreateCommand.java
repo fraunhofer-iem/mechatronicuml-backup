@@ -66,7 +66,23 @@ public class CustomConnectorInstanceCreateCommand extends EditElementCommand {
 		            }
 	            }
 	        }
+		}
+		if(getTarget() instanceof Port){
 
+			Map map =  portEditPartSource.getViewer().getEditPartRegistry();
+
+	        for (Iterator it = map.keySet().iterator(); it.hasNext();) {
+	            Object key = it.next();
+	            Object value =  map.get(key);
+	            if(key instanceof ShapeImpl){
+	            	
+		            if(getTarget().equals(((ShapeImpl) key).basicGetElement())
+		            		&& !portEditPartSource.equals(value)){
+		            	portEditPartTarget = (CustomPortEditPart)value;
+		            	break;
+		            }
+	            }
+	        }
 		}
 
 		
@@ -117,25 +133,6 @@ public class CustomConnectorInstanceCreateCommand extends EditElementCommand {
 		getContainer().getConnectorInstances().add(newElement);
 		newElement.setFromPort(getSource());
 		newElement.setToPort(getTarget());
-		
-		if(getTarget() instanceof Port){
-
-			Map map =  portEditPartSource.getViewer().getEditPartRegistry();
-
-	        for (Iterator it = map.keySet().iterator(); it.hasNext();) {
-	            Object key = it.next();
-	            Object value =  map.get(key);
-	            if(key instanceof ShapeImpl){
-	            	
-		            if(getTarget().equals(((ShapeImpl) key).basicGetElement())){
-		            	portEditPartTarget = (CustomPortEditPart)value;
-		            	break;
-		            }
-	            }
-	        }
-		}
-	 
-		
 		newElement.setFromComponentI((ComponentInstance)((ShapeImpl) portEditPartSource.getParent().getModel()).basicGetElement());
 		newElement.setToComponentI((ComponentInstance)((ShapeImpl) portEditPartTarget.getParent().getModel()).basicGetElement());
 		doConfigure(newElement, monitor, info);
