@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPort2ItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart;
 
@@ -89,18 +91,28 @@ public class CustomPort2EditPart extends Port2EditPart {
 			if (parentEditPart instanceof ComponentPartEditPart) {
 				IFigure figure = ((ComponentPartEditPart) parentEditPart)
 						.getFigure();
-	
+
 				if (figure instanceof BorderedNodeFigure) {
 					BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 					IFigure portContainerFigure = bnf.getBorderItemContainer();
-					delegation.removePortContainerLayoutListener(portContainerFigure);
+					delegation
+							.removePortContainerLayoutListener(portContainerFigure);
 				}
 			}
-	
+
 			delegation.deactivate();
 			delegation = null;
 		}
 		super.deactivate();
+	}
+
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CustomPort2ItemSemanticEditPolicy());
+
 	}
 
 }
