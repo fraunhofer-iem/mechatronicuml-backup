@@ -1,22 +1,20 @@
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies;
 
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.Port2ItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.PortItemSemanticEditPolicy;
 
 /**
- * A customized Port2ItemSemanticEditPolicy. We create our customized Delegation
+ * A customized PortItemSemanticEditPolicy. We create our customized Delegation
  * and Assembly-CreateCommands here.
  * 
  * @author bingo
  * 
  */
-public class CustomPort2ItemSemanticEditPolicy extends
-		Port2ItemSemanticEditPolicy {
+public class CustomPortItemSemanticEditPolicy extends
+		PortItemSemanticEditPolicy {
 
 	/**
 	 * We delegate all logic that is common between
@@ -55,15 +53,6 @@ public class CustomPort2ItemSemanticEditPolicy extends
 			}
 		}
 		return super.getCreateRelationshipCommand(req);
-	}
-
-	/**
-	 * Deleting a PartPort also deletes the Port on Type-Layer. So we forbid
-	 * deleting this model element; instead only the view object will be
-	 * deleted.
-	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		return UnexecutableCommand.INSTANCE;
 	}
 
 }

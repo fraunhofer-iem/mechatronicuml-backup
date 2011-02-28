@@ -20,29 +20,49 @@ import org.eclipse.draw2d.geometry.Transform;
  */
 public class ScalableRotableTriangleShape extends ScalablePolygonShape {
 
+	/**
+	 * The List of triangular polygons.
+	 */
 	private List<PointList> triangles = null;
 
+	/**
+	 * The transformation to apply (currently only used for rotation).
+	 */
 	private Transform transform = new Transform();
 
+	/**
+	 * Fills all triangular polygons.
+	 */
 	protected void fillShape(Graphics graphics) {
 		graphics.pushState();
 		graphics.translate(getLocation());
-		for (PointList scaledTrianglePoints : getTriangles(getTransformedPoints(getScaledPoints()))) {
+		for (PointList scaledTrianglePoints : getTriangles(getRotatedPoints(getScaledPoints()))) {
 			graphics.fillPolygon(scaledTrianglePoints);
 		}
 		graphics.popState();
 	}
 
+	/**
+	 * Outlines all triangular polygons.
+	 */
 	protected void outlineShape(Graphics graphics) {
 		graphics.pushState();
 		graphics.translate(getLocation());
-		for (PointList scaledTrianglePoints : getTriangles(getTransformedPoints(getScaledPoints()))) {
+		for (PointList scaledTrianglePoints : getTriangles(getRotatedPoints(getScaledPoints()))) {
 			graphics.drawPolygon(scaledTrianglePoints);
 		}
 		graphics.popState();
 	}
 
-	public PointList getTransformedPoints(PointList points) {
+	/**
+	 * Rotates all points within the given PointList and moves them back into
+	 * the origin.
+	 * 
+	 * @param points
+	 *            the points to rotate.
+	 * @return the rotated points.
+	 */
+	public PointList getRotatedPoints(PointList points) {
 		// Don't modify the original PointList
 		points = points.getCopy();
 
@@ -59,6 +79,13 @@ public class ScalableRotableTriangleShape extends ScalablePolygonShape {
 		return points;
 	}
 
+	/**
+	 * Get a List of Triangles that is created from the given PointList.
+	 * 
+	 * @param points
+	 *            The PointList to triangulate.
+	 * @return the List of Triangles.
+	 */
 	public List<PointList> getTriangles(PointList points) {
 		if (triangles != null) {
 			return triangles;
@@ -75,11 +102,20 @@ public class ScalableRotableTriangleShape extends ScalablePolygonShape {
 		return triangles;
 	}
 
+	/**
+	 * Sets the rotation to use in degrees.
+	 * 
+	 * @param degrees
+	 *            rotation in degrees.
+	 */
 	public void setRotationInDegrees(double degrees) {
 		invalidatePoints();
 		transform.setRotation(degrees / 360.0 * Math.PI * 2);
 	}
 
+	/**
+	 * Invalidates the cached triangles.
+	 */
 	protected void invalidatePoints() {
 		triangles = null;
 	}

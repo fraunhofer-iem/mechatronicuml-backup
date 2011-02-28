@@ -8,7 +8,15 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredcomponentEditPartFactory;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry;
 
-public class CustomStructuredcomponentEditPartFactory extends StructuredcomponentEditPartFactory {
+/**
+ * The custom EditPartFactory that creates our overridden EditParts.
+ * 
+ * @author bingo
+ * 
+ */
+public class CustomStructuredcomponentEditPartFactory extends
+		StructuredcomponentEditPartFactory {
+	
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
@@ -23,4 +31,5 @@ public class CustomStructuredcomponentEditPartFactory extends Structuredcomponen
 		}
 		return super.createEditPart(context, model);
 	}
+
 }

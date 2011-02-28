@@ -6,16 +6,13 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
 
 /**
  * This class contains all logic that is common between CustomPortEditPart and
@@ -126,8 +123,8 @@ public class CustomPortEditPartDelegation {
 	}
 
 	/**
-	 * Adds a LayoutListener to the given port container figure. This listener will
-	 * hook into layout changes (movements) and update the port's visual
+	 * Adds a LayoutListener to the given port container figure. This listener
+	 * will hook into layout changes (movements) and update the port's visual
 	 * orientation according to the side it lies at.
 	 * 
 	 * @param portContainerFigure
@@ -147,12 +144,14 @@ public class CustomPortEditPartDelegation {
 	 */
 	public void removePortContainerLayoutListener(IFigure portContainerFigure) {
 		if (portContainerLayoutListener != null) {
-			portContainerFigure.removeLayoutListener(portContainerLayoutListener);
+			portContainerFigure
+					.removeLayoutListener(portContainerLayoutListener);
 		}
 	}
 
 	/**
-	 * Called whenever the EditPart is going to be activated. Initializes objects.
+	 * Called whenever the EditPart is going to be activated. Initializes
+	 * objects.
 	 */
 	public void activate() {
 		EObject element = editPart.getNotationView().getElement();
@@ -170,7 +169,8 @@ public class CustomPortEditPartDelegation {
 	}
 
 	/**
-	 * Called whenever the EditPart is going to be deactivated. Cleans up objects.
+	 * Called whenever the EditPart is going to be deactivated. Cleans up
+	 * objects.
 	 */
 	public void deactivate() {
 		port = null;

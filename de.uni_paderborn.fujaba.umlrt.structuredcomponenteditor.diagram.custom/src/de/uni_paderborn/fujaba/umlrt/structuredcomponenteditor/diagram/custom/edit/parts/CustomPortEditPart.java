@@ -3,10 +3,12 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
 
@@ -102,6 +104,17 @@ public class CustomPortEditPart extends PortEditPart {
 			delegation = null;
 		}
 		super.deactivate();
+	}
+	
+
+
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CustomPortItemSemanticEditPolicy());
+
 	}
 
 }
