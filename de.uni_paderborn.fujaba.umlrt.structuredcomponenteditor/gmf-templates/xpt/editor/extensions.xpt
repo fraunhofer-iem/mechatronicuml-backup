@@ -13,20 +13,6 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «DEFINE extensions FOR gmfgen::GenEditorGenerator»
-   <extension point="org.eclipse.ui.editors" id="gmf-editor">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <editor
-         id="«editor.iD»"
-         name="%editorName"
-         icon="«editor.iconPathX»"
-         extensions="«diagramFileExtension»"
-         default="true"
-         class="«editor.getQualifiedClassName()»"
-         matchingStrategy="«diagram.getMatchingStrategyQualifiedClassName()»"
-         contributorClass="«editor.getActionBarContributorQualifiedClassName()»">
-      </editor>
-   </extension>
-   
    <extension point="org.eclipse.ui.contexts" id="ui-context">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <context
