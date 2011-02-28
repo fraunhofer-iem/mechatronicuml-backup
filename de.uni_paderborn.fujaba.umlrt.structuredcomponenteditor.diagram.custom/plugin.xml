@@ -6,7 +6,7 @@
       <?gmfgen generated="true"?>
       <editor
          id="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
-         name="Structuredcomponent Diagram Editor"
+         name="%editorName"
          icon="icons/StructuredComponentDiagram.gif"
          extensions="structuredcomponent_diagram"
          default="true"

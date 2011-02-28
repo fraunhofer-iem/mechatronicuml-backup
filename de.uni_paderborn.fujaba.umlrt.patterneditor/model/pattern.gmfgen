@@ -3,7 +3,9 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="pattern_diagram"
-    domainFileExtension="fujaba">
+    domainFileExtension="fujaba"
+    dynamicTemplates="true"
+    templateDirectory="/de.uni_paderborn.fujaba.umlrt.patterneditor/gmf-templates">
   <diagram
       visualID="1000"
       editPartClassName="PatternDiagramEditPart"

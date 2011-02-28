@@ -2,18 +2,42 @@
 <?eclipse version="3.4"?>
 <plugin>
 
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorID"
+         name="%editorName"
+         icon="icons/PatternDiagram.png"
+         extensions="pattern_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramActionBarContributor">
+      </editor>
+   </extension>
+    
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     icon="icons/PatternDiagram.png"
+  	     class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     name="Pattern Diagram">
+  	     
+  	     
+  	  	 <description>Creates a new Pattern diagram.</description>
+      </wizard>
+   </extension>
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern">
       
-      <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"
-		typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"
-		class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
-		inheritance="all">
-      </adviceBinding>
-   
-         
-         
+        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"
+		  typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"
+		  class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
       </metamodel>
    </extension>
    
@@ -33,20 +57,6 @@
                name="Low">
          </Priority>
       </editpartProvider>
-   </extension>
-
-    
-   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
-  	  <wizard
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     icon="icons/PatternDiagram.png"
-  	     class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
-  	     id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
-  	     name="Pattern Diagram">
-  	     
-  	     
-  	  	 <description>Creates a new Pattern diagram.</description>
-      </wizard>
    </extension>
    
 </plugin>
