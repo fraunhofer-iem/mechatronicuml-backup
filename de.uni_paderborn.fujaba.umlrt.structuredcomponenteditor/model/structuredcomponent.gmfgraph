@@ -163,9 +163,7 @@
               xsi:type="gmfgraph:StackLayout"/>
           <border
               xsi:type="gmfgraph:MarginBorder">
-            <insets
-                bottom="3"
-                right="3"/>
+            <insets/>
           </border>
           <children
               xsi:type="gmfgraph:Rectangle"

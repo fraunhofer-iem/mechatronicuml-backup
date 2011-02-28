@@ -10,48 +10,48 @@
         title="componenteditor">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Component"
-          description="Create new Component">
+          title="StructuredComponent"
+          description="Create new StructuredComponent">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/StructuredComponent.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="ComponentPart"
           description="Create new ComponentPart">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentPart.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Port"
           description="Create new Port">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Port.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Delegation"
           description="Create new Delegation">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Delegation.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Assembly"
           description="Create new Assembly">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor"/>
       </tools>
     </tools>
   </palette>
