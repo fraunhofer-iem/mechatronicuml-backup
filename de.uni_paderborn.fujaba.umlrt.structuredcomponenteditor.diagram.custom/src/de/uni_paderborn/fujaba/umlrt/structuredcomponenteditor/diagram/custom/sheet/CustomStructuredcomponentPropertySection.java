@@ -49,7 +49,7 @@ public class CustomStructuredcomponentPropertySection extends
 									switch (featureId) {
 									case CorePackage.CARDINALITY__LOWER_BOUND:
 									case CorePackage.CARDINALITY__UPPER_BOUND:
-										EDataType eDataType = EcorePackage.Literals.ELONG;
+										EDataType eDataType = EcorePackage.Literals.ESTRING;
 										return createEDataTypeCellEditor(
 												eDataType, composite);
 									}

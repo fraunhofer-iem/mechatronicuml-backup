@@ -41,7 +41,7 @@ public class PortLowerBoundPropertyDescriptor extends ItemPropertyDescriptor {
 		// Create the new NaturalNumber for the lower bound and set it's value.
 		NaturalNumber lowerBoundNumber = CoreFactory.eINSTANCE
 				.createNaturalNumber();
-		lowerBoundNumber.setValue((Long) value);
+		lowerBoundNumber.setValue((String) value);
 
 		// Set the new lower bound for the Cardinality and set the Port's
 		// Cardinality.
@@ -55,7 +55,7 @@ public class PortLowerBoundPropertyDescriptor extends ItemPropertyDescriptor {
 
 		if (p.getCardinality() != null
 				&& p.getCardinality().getLowerBound() != null) {
-			return p.getCardinality().getLowerBound().getValue();
+			return p.getCardinality().getLowerBound().toString();
 		}
 
 		return null;

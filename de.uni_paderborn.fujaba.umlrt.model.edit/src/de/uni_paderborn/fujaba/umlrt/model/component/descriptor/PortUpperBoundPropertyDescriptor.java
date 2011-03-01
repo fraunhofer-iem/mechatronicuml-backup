@@ -41,7 +41,7 @@ public class PortUpperBoundPropertyDescriptor extends ItemPropertyDescriptor {
 		// Create the new NaturalNumber for the upper bound and set it's value.
 		NaturalNumber upperBoundNumber = CoreFactory.eINSTANCE
 				.createNaturalNumber();
-		upperBoundNumber.setValue((Long) value);
+		upperBoundNumber.setValue((String) value);
 
 		// Set the new upper bound for the Cardinality and set the Port's
 		// Cardinality.
@@ -55,7 +55,7 @@ public class PortUpperBoundPropertyDescriptor extends ItemPropertyDescriptor {
 
 		if (p.getCardinality() != null
 				&& p.getCardinality().getUpperBound() != null) {
-			return p.getCardinality().getUpperBound().getValue();
+			return p.getCardinality().getUpperBound().toString();
 		}
 
 		return null;

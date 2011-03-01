@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
 
 /**
@@ -93,12 +94,15 @@ public class CustomPortEditPartDelegation {
 	 * Updates the PortFigure to visualize a multi-port, if necessary.
 	 */
 	public void updatePortCardinality() {
-		if (port != null) {
-			boolean isMulti = port.getCardinality() != null && port.getCardinality().getUpperBound() != null
-					&& port.getCardinality().getUpperBound().getValue() > 1;
-
-			portFigure.setPortMulti(isMulti);
+		boolean isMulti = false;
+		if (port != null && port.getCardinality() != null) {
+			NaturalNumber upperBound = port.getCardinality().getUpperBound();
+			if (upperBound != null && upperBound.isInfinity()
+					|| upperBound.getValue() > 1) {
+				isMulti = true;
+			}
 		}
+		portFigure.setPortMulti(isMulti);
 	}
 
 	/**
