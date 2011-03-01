@@ -108,13 +108,15 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setValue(long newValue) {
 		long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.NATURAL_NUMBER__VALUE, oldValue, value));
+
+		setInfinity(false);
 	}
 
 	/**
@@ -163,12 +165,18 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setValue(String value) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (!value.equals("*")) {
+			try {
+				setValue(Long.parseLong(value));
+				return;
+			} catch (NumberFormatException e) {
+				// fall through
+			}
+		}
+		setInfinity(true);
 	}
 
 	/**
@@ -185,12 +193,13 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String toString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (isInfinity()) {
+			return "*";
+		}
+		return Long.toString(value);
 	}
 
 	/**
