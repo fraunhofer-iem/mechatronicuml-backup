@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
 
@@ -71,22 +72,16 @@ public class CustomPortEditPartDelegation {
 	 *            The notification sent by the model.
 	 */
 	protected final void handleNotificationEvent(final Notification notification) {
-		Object feature = notification.getFeature();
+		int featureID = notification.getFeatureID(PortImpl.class);
+		switch (featureID) {
+		case ComponentPackage.PORT__PROVIDED:
+		case ComponentPackage.PORT__REQUIRED:
+			updatePortType();
+			break;
 
-		if (feature instanceof EReference) {
-
-			EReference reference = (EReference) feature;
-
-			switch (reference.getFeatureID()) {
-			case ComponentPackage.PORT__PROVIDED:
-			case ComponentPackage.PORT__REQUIRED:
-				updatePortType();
-				break;
-
-			case ComponentPackage.PORT__CARDINALITY:
-				updatePortCardinality();
-				break;
-			}
+		case ComponentPackage.PORT__CARDINALITY:
+			updatePortCardinality();
+			break;
 		}
 	}
 

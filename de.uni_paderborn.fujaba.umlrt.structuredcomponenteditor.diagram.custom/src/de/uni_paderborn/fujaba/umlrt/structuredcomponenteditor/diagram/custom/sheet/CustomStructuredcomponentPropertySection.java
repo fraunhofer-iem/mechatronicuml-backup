@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.StructuredcomponentPropertySection;
 
@@ -26,6 +27,7 @@ public class CustomStructuredcomponentPropertySection extends
 		if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
 		}
+		
 		AdapterFactory af = getAdapterFactory(object);
 		if (af != null) {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
@@ -41,17 +43,20 @@ public class CustomStructuredcomponentPropertySection extends
 
 							public CellEditor createPropertyEditor(
 									Composite composite) {
+
 								Object feature = itemPropertyDescriptor
 										.getFeature(itemPropertyDescriptor);
 								if (feature instanceof EReference) {
 									EReference reference = (EReference) feature;
-									int featureId = reference.getFeatureID();
-									switch (featureId) {
-									case CorePackage.CARDINALITY__LOWER_BOUND:
-									case CorePackage.CARDINALITY__UPPER_BOUND:
-										EDataType eDataType = EcorePackage.Literals.ESTRING;
-										return createEDataTypeCellEditor(
-												eDataType, composite);
+									if (reference.getContainerClass() == Cardinality.class) {
+										int featureId = reference.getFeatureID();
+										switch (featureId) {
+										case CorePackage.CARDINALITY__LOWER_BOUND:
+										case CorePackage.CARDINALITY__UPPER_BOUND:
+											EDataType eDataType = EcorePackage.Literals.ESTRING;
+											return createEDataTypeCellEditor(
+													eDataType, composite);
+										}
 									}
 								}
 								return super.createPropertyEditor(composite);
@@ -61,10 +66,11 @@ public class CustomStructuredcomponentPropertySection extends
 				};
 			}
 		}
-		if (object instanceof IAdaptable) {
-			return (IPropertySource) ((IAdaptable) object)
-					.getAdapter(IPropertySource.class);
-		}
-		return null;
+//		if (object instanceof IAdaptable) {
+//			return (IPropertySource) ((IAdaptable) object)
+//					.getAdapter(IPropertySource.class);
+//		}
+//		return null;
+		return super.getPropertySource(object);
 	}
 }
