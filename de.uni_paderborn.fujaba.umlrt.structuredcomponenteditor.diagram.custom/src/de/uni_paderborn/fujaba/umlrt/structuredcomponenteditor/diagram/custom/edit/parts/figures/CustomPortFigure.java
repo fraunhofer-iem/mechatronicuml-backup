@@ -4,6 +4,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 
@@ -120,12 +121,22 @@ public class CustomPortFigure extends RectangleFigure {
 	 *            true, if this Port is a multi port.
 	 */
 	public void setPortMulti(boolean isMulti) {
+		// Calculate new Margin for bottom, right.
 		int marginBottomRight = 0;
 		if (isMulti) {
 			marginBottomRight = 3;
 		}
-		getFigureInnerRectContainer().setBorder(
-				new MarginBorder(0, 0, marginBottomRight, marginBottomRight));
+
+		// Calculate new preferred size, which is the original size (24,24)
+		// minus the margin.
+		Dimension preferredSize = getParent().getPreferredSize().getCopy();
+		preferredSize.expand(-marginBottomRight, -marginBottomRight);
+
+		// Set the new margin and the new preferred size. 
+		RectangleFigure innerRectContainer = getFigureInnerRectContainer();
+		innerRectContainer.setBorder(new MarginBorder(0, 0, marginBottomRight,
+				marginBottomRight));
+		innerRectContainer.setPreferredSize(preferredSize);
 	}
 
 	/**
