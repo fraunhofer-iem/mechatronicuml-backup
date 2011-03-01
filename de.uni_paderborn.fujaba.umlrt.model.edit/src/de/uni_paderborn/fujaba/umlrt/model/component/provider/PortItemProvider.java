@@ -7,22 +7,13 @@
 package de.uni_paderborn.fujaba.umlrt.model.component.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,10 +23,16 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.component.descriptor.PortLowerBoundPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.component.descriptor.PortUpperBoundPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.Port} object.
@@ -63,11 +60,13 @@ public class PortItemProvider
 
 	/**
 	 * This returns the property descriptors for the adapted class.
+	 * 
+	 * For Cardinality: Use one descriptor for lower bound and one for upper bound.
+	 * 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
@@ -78,7 +77,33 @@ public class PortItemProvider
 			addPortKindPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addProvidedPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
+			// addCardinalityPropertyDescriptor(object);
+			itemPropertyDescriptors.add(new PortLowerBoundPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 "Lower Bound",
+                 "The lower bound of the Port's Cardinality",
+                 CorePackage.Literals.CARDINALITY__LOWER_BOUND,
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+			
+			itemPropertyDescriptors.add(new PortUpperBoundPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 "Upper Bound",
+                 "The upper bound of the Port's Cardinality",
+                 CorePackage.Literals.CARDINALITY__UPPER_BOUND,
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null)); 
+			
 			addFromPortToConnectorRevPropertyDescriptor(object);
 			addToPortToConnectorRevPropertyDescriptor(object);
 		}
