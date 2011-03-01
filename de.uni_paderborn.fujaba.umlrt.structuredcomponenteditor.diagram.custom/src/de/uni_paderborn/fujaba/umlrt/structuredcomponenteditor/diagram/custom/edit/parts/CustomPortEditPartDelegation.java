@@ -94,7 +94,7 @@ public class CustomPortEditPartDelegation {
 	 */
 	public void updatePortCardinality() {
 		if (port != null) {
-			boolean isMulti = port.getCardinality() != null
+			boolean isMulti = port.getCardinality() != null && port.getCardinality().getUpperBound() != null
 					&& port.getCardinality().getUpperBound().getValue() > 1;
 
 			portFigure.setPortMulti(isMulti);
