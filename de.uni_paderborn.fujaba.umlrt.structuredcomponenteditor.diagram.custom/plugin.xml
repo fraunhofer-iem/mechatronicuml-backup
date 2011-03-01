@@ -60,4 +60,21 @@
       </binding>
    </extension>
 
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram">
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.sheet.CustomStructuredcomponentPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
 </plugin>
