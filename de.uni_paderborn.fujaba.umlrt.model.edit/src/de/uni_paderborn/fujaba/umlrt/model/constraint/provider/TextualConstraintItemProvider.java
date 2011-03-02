@@ -7,16 +7,11 @@
 package de.uni_paderborn.fujaba.umlrt.model.constraint.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,6 +19,13 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintExpressionTextPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintLanguagePropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintLanguageVersionPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint} object.
@@ -69,22 +71,61 @@ public class TextualConstraintItemProvider
 	 * This adds a property descriptor for the Textual Expression feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTextualExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TextualConstraint_textualExpression_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
-				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_TextualConstraint_textualExpression_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
+//				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
+//				 true,
+//				 false,
+//				 true,
+//				 null,
+//				 null,
+//				 null));
+		
+		itemPropertyDescriptors.add(new TextualConstraintExpressionTextPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 "Expression Text",
+                 "The Expression Text of the Textual Expression",
+                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+		
+		itemPropertyDescriptors.add(new TextualConstraintLanguagePropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 "Language",
+                 "The Language of the Textual Expression",
+                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+		
+		itemPropertyDescriptors.add(new TextualConstraintLanguageVersionPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 "Language Version",
+                 "The Language Version of the Textual Expression",
+                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
 	}
 
 	/**
