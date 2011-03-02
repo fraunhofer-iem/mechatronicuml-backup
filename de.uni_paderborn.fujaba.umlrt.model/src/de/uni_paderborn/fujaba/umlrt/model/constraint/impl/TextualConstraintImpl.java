@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -33,7 +34,7 @@ import org.storydriven.modeling.expressions.TextualExpression;
  */
 public class TextualConstraintImpl extends VerifiableConstraintImpl implements TextualConstraint {
 	/**
-	 * The cached value of the '{@link #getTextualExpression() <em>Textual Expression</em>}' reference.
+	 * The cached value of the '{@link #getTextualExpression() <em>Textual Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTextualExpression()
@@ -67,14 +68,6 @@ public class TextualConstraintImpl extends VerifiableConstraintImpl implements T
 	 * @generated
 	 */
 	public TextualExpression getTextualExpression() {
-		if (textualExpression != null && textualExpression.eIsProxy()) {
-			InternalEObject oldTextualExpression = (InternalEObject)textualExpression;
-			textualExpression = (TextualExpression)eResolveProxy(oldTextualExpression);
-			if (textualExpression != oldTextualExpression) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, oldTextualExpression, textualExpression));
-			}
-		}
 		return textualExpression;
 	}
 
@@ -83,8 +76,14 @@ public class TextualConstraintImpl extends VerifiableConstraintImpl implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextualExpression basicGetTextualExpression() {
-		return textualExpression;
+	public NotificationChain basicSetTextualExpression(TextualExpression newTextualExpression, NotificationChain msgs) {
+		TextualExpression oldTextualExpression = textualExpression;
+		textualExpression = newTextualExpression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, oldTextualExpression, newTextualExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -93,10 +92,31 @@ public class TextualConstraintImpl extends VerifiableConstraintImpl implements T
 	 * @generated
 	 */
 	public void setTextualExpression(TextualExpression newTextualExpression) {
-		TextualExpression oldTextualExpression = textualExpression;
-		textualExpression = newTextualExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, oldTextualExpression, textualExpression));
+		if (newTextualExpression != textualExpression) {
+			NotificationChain msgs = null;
+			if (textualExpression != null)
+				msgs = ((InternalEObject)textualExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, null, msgs);
+			if (newTextualExpression != null)
+				msgs = ((InternalEObject)newTextualExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, null, msgs);
+			msgs = basicSetTextualExpression(newTextualExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION, newTextualExpression, newTextualExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION:
+				return basicSetTextualExpression(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -108,8 +128,7 @@ public class TextualConstraintImpl extends VerifiableConstraintImpl implements T
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConstraintPackage.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION:
-				if (resolve) return getTextualExpression();
-				return basicGetTextualExpression();
+				return getTextualExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

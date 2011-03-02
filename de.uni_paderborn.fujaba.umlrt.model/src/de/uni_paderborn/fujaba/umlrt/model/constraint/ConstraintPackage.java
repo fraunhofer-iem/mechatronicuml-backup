@@ -418,7 +418,7 @@ public interface ConstraintPackage extends EPackage {
 	int TEXTUAL_CONSTRAINT__CONSTRAINABLE_ELEMENT = VERIFIABLE_CONSTRAINT__CONSTRAINABLE_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Textual Expression</b></em>' reference.
+	 * The feature id for the '<em><b>Textual Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -608,10 +608,10 @@ public interface ConstraintPackage extends EPackage {
 	EClass getTextualConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint#getTextualExpression <em>Textual Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint#getTextualExpression <em>Textual Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Textual Expression</em>'.
+	 * @return the meta object for the containment reference '<em>Textual Expression</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint#getTextualExpression()
 	 * @see #getTextualConstraint()
 	 * @generated
@@ -756,7 +756,7 @@ public interface ConstraintPackage extends EPackage {
 		EClass TEXTUAL_CONSTRAINT = eINSTANCE.getTextualConstraint();
 
 		/**
-		 * The meta object literal for the '<em><b>Textual Expression</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Textual Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
