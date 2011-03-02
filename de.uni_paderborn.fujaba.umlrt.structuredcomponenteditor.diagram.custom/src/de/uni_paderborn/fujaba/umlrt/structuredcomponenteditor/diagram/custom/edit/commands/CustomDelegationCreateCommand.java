@@ -3,11 +3,11 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand;
 
@@ -48,7 +48,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	 *            The parent Component for this Delegation.
 	 */
 	public CustomDelegationCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target, ComponentPart componentPart,
+			Port source, Port target, ComponentPart componentPart,
 			StructuredComponent parentComponent) {
 		super(request, source, target);
 		this.componentPart = componentPart;

@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomAssemblyCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationCreateCommand;
@@ -24,54 +25,35 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
  */
 public class CustomPortItemSemanticDelegation {
 
-	/**
-	 * This request parameter stores the target model element that an editpart
-	 * is stored for.
-	 */
-	public static final String PARAMETER_SOURCE = "Parameter_Source";
-
-	/**
-	 * This request parameter stores the source model element that an editpart
-	 * is stored for.
-	 */
-	public static final String PARAMETER_TARGET = "Parameter_Target";
-
-	/**
-	 * This request parameter stores the EditPart for the given source element.
-	 */
-	public static final String PARAMETER_SOURCE_EDITPART = "Parameter_SourceEditPart";
-
-	/**
-	 * This request parameter stores the EditPart for the given target element.
-	 */
-	public static final String PARAMETER_TARGET_EDITPART = "Parameter_TargetEditPart";
-
-	/**
-	 * Creates a CustomDelegationCreateCommand.
-	 * 
-	 * @param req
-	 *            The Request, which should also contain values for Parameters
-	 *            PARAMETER_SOURCE_EDITPART, PARAMETER_TARGET_EDITPART, if
-	 *            available.
-	 * @return the CustomDelegationCreateCommand.
-	 */
 	public CustomDelegationCreateCommand getDelegationCreateCommand(
 			CreateRelationshipRequest req) {
 
+		ComponentPart componentPart = null;
+		StructuredComponent structuredComponent = null;
+		Port sourcePort = null;
+		Port targetPort = null;
+
+		if (req.getSource() instanceof Port) {
+			sourcePort = (Port) req.getSource();
+		}
+
+		if (req.getTarget() instanceof Port) {
+			targetPort = (Port) req.getTarget();
+		}
+		Object sourceEditPart = req
+				.getParameter(CustomPortGraphicalNodeEditPolicy.SOURCE_PORT_EDITPART_KEY);
+		Object targetEditPart = req
+				.getParameter(CustomPortGraphicalNodeEditPolicy.TARGET_PORT_EDITPART_KEY);
+
 		List<EditPart> editParts = new LinkedList<EditPart>();
-		Object sourceEditPart = req.getParameter(PARAMETER_SOURCE_EDITPART);
 		if (sourceEditPart instanceof EditPart) {
 			editParts.add((EditPart) sourceEditPart);
 		}
-
-		Object targetEditPart = req.getParameter(PARAMETER_TARGET_EDITPART);
 		if (targetEditPart instanceof EditPart) {
 			editParts.add((EditPart) targetEditPart);
 		}
 
 		// Now get the parent elements
-		ComponentPart componentPart = null;
-		StructuredComponent structuredComponent = null;
 		for (EditPart editPart : editParts) {
 			if (editPart instanceof PortEditPart) {
 				structuredComponent = (StructuredComponent) getParentElement(editPart);
@@ -80,8 +62,8 @@ public class CustomPortItemSemanticDelegation {
 			}
 		}
 
-		return new CustomDelegationCreateCommand(req, req.getSource(),
-				req.getTarget(), componentPart, structuredComponent);
+		return new CustomDelegationCreateCommand(req, sourcePort, targetPort,
+				componentPart, structuredComponent);
 	}
 
 	/**
@@ -95,25 +77,32 @@ public class CustomPortItemSemanticDelegation {
 	 */
 	public CustomAssemblyCreateCommand getAssemblyCreateCommand(
 			CreateRelationshipRequest req) {
+		ComponentPart sourceComponentPart = null;
+		ComponentPart targetComponentPart = null;
+		Port sourcePort = null;
+		Port targetPort = null;
 
-		EObject sourceComponentPart = null;
-		if (req.getSource() != null) {
-			Object sourceEditPart = req.getParameter(PARAMETER_SOURCE_EDITPART);
-			if (sourceEditPart instanceof EditPart) {
-				sourceComponentPart = getParentElement((EditPart) sourceEditPart);
-			}
+		if (req.getSource() instanceof Port) {
+			sourcePort = (Port) req.getSource();
+		}
+		if (req.getTarget() instanceof Port) {
+			targetPort = (Port) req.getTarget();
+		}
+		Object sourceEditPart = req
+				.getParameter(CustomPortGraphicalNodeEditPolicy.SOURCE_PORT_EDITPART_KEY);
+		Object targetEditPart = req
+				.getParameter(CustomPortGraphicalNodeEditPolicy.TARGET_PORT_EDITPART_KEY);
+
+		// Now get the parent elements
+		if (sourceEditPart instanceof Port2EditPart) {
+			sourceComponentPart = (ComponentPart) getParentElement((EditPart) sourceEditPart);
+		}
+		if (targetEditPart instanceof Port2EditPart) {
+			targetComponentPart = (ComponentPart) getParentElement((EditPart) targetEditPart);
 		}
 
-		EObject targetComponentPart = null;
-		if (req.getTarget() != null) {
-			Object targetEditPart = req.getParameter(PARAMETER_TARGET_EDITPART);
-			if (targetEditPart instanceof EditPart) {
-				targetComponentPart = getParentElement((EditPart) targetEditPart);
-			}
-		}
-
-		return new CustomAssemblyCreateCommand(req, req.getSource(),
-				req.getTarget(), sourceComponentPart, targetComponentPart);
+		return new CustomAssemblyCreateCommand(req, sourcePort, targetPort,
+				sourceComponentPart, targetComponentPart);
 	}
 
 	/**
@@ -129,25 +118,8 @@ public class CustomPortItemSemanticDelegation {
 		return parentEditPart.getNotationView().getElement();
 	}
 
-	public EditElementCommand getCreateRelationshipCommand(CreateRelationshipRequest req, EditPart host) {
-		if (req.getSource() != req
-				.getParameter(CustomPortItemSemanticDelegation.PARAMETER_SOURCE)) {
-			req.setParameter(
-					CustomPortItemSemanticDelegation.PARAMETER_SOURCE,
-					req.getSource());
-			req.setParameter(
-					CustomPortItemSemanticDelegation.PARAMETER_SOURCE_EDITPART,
-					host);
-		}
-		if (req.getTarget() != req
-				.getParameter(CustomPortItemSemanticDelegation.PARAMETER_TARGET)) {
-			req.setParameter(
-					CustomPortItemSemanticDelegation.PARAMETER_TARGET,
-					req.getTarget());
-			req.setParameter(
-					CustomPortItemSemanticDelegation.PARAMETER_TARGET_EDITPART,
-					host);
-		}
+	public EditElementCommand getCreateRelationshipCommand(
+			CreateRelationshipRequest req, EditPart host) {
 
 		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
 				.getElementType()) {

@@ -3,10 +3,10 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand;
 
@@ -45,17 +45,10 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 	 *            The model element of the source port's visual container.
 	 */
 	public CustomAssemblyCreateCommand(CreateRelationshipRequest request,
-			EObject source, EObject target, EObject sourceContainer,
-			EObject targetContainer) {
+			Port source, Port target, ComponentPart sourceComponentPart, ComponentPart targetComponentPart) {
 		super(request, source, target);
-
-		if (sourceContainer instanceof ComponentPart) {
-			this.sourceComponentPart = (ComponentPart) sourceContainer;
-		}
-
-		if (targetContainer instanceof ComponentPart) {
-			this.targetComponentPart = (ComponentPart) targetContainer;
-		}
+		this.sourceComponentPart = sourceComponentPart;
+		this.targetComponentPart = targetComponentPart;
 	}
 
 	/**
