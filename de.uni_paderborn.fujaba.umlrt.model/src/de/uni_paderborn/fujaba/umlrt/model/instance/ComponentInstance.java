@@ -114,7 +114,7 @@ public interface ComponentInstance extends NamedElement {
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_PortsDerived()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='componentType.ports'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif'"
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();

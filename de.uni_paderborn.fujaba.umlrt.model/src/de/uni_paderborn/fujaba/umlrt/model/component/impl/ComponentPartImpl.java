@@ -107,7 +107,7 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 		super();
 		
 		// Install a notification adapter that informs the
-		// portsDerived-reference, whenever one of the dependant features
+		// portsDerived-reference, whenever one of the dependent features
 		// was modified
 		DerivedAttributeAdapter daa = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
 		daa.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);

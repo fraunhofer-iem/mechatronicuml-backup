@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
@@ -94,10 +95,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ComponentInstanceImpl() {
 		super();
+		
+		// Install a notification adapter that informs the
+		// portsDerived-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter daa = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED);
+		daa.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
 	}
 
 	/**

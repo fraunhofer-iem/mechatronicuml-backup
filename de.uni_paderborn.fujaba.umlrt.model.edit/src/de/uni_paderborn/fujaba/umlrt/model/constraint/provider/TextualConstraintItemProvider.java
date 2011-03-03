@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.constraint.provider;
 
 
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import java.util.Collection;
 import java.util.List;
 

@@ -487,7 +487,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getComponentInstance_PortsDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "componentType.ports"
+			 "derivation", "if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif"
 		   });			
 	}
 
