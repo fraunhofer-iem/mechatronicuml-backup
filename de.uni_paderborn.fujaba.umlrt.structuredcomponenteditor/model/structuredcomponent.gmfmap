@@ -51,9 +51,15 @@
           <diagramNode
               href="structuredcomponent.gmfgraph#ComponentPart"/>
           <children
-              referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
+              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/portsDerived"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <diagramNode
+                  href="structuredcomponent.gmfgraph#Port"/>
+            </ownedChild>
           </children>
         </ownedChild>
       </children>

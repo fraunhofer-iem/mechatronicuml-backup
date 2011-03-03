@@ -71,7 +71,7 @@ public class CustomPortItemSemanticDelegation {
 	 * 
 	 * @param req
 	 *            The Request, which should also contain values for Parameters
-	 *            PARAMETER_SOURCE_EDITPART, PARAMETER_TARGET_EDITPART, if
+	 *            SOURCE_PORT_EDITPART_KEY, TARGET_PORT_EDITPART_KEY, if
 	 *            available.
 	 * @return the CustomAssemblyCreateCommand.
 	 */

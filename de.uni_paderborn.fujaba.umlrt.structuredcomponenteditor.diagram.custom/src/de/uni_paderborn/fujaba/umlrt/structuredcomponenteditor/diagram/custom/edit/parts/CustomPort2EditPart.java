@@ -1,20 +1,15 @@
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehaviour;
+import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPort2ItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
@@ -32,7 +27,7 @@ public class CustomPort2EditPart extends Port2EditPart {
 	 * All logic that is common between CustomPortEditPart and
 	 * CustomPort2EditPart is delegated, to reduce duplicate code.
 	 */
-	private CustomPortEditPartDelegation delegation;
+	private PortBehaviour delegation;
 
 	/**
 	 * Constructs this EditPart.
@@ -70,7 +65,7 @@ public class CustomPort2EditPart extends Port2EditPart {
 	 */
 	@Override
 	public void activate() {
-		delegation = new CustomPortEditPartDelegation(this,
+		delegation = new PortBehaviour(this,
 				(CustomPortFigure) primaryShape);
 		delegation.activate();
 

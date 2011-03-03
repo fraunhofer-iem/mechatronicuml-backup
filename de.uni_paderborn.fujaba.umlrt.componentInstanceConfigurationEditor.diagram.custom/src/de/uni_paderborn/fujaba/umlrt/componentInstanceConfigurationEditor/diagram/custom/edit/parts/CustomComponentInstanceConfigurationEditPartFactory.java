@@ -7,7 +7,15 @@ import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationVisualIDRegistry;
 
-public class CustomComponentInstanceConfigurationEditPartFactory extends ComponentInstanceConfigurationEditPartFactory {
+/**
+ * The custom EditPartFactory that creates our overridden EditParts.
+ * 
+ * @author bingo
+ * 
+ */
+public class CustomComponentInstanceConfigurationEditPartFactory extends
+		ComponentInstanceConfigurationEditPartFactory {
+
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
@@ -20,4 +28,5 @@ public class CustomComponentInstanceConfigurationEditPartFactory extends Compone
 		}
 		return super.createEditPart(context, model);
 	}
+
 }

@@ -1,14 +1,14 @@
-package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.sheet;
+package de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.sheet;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.StructuredcomponentPropertySection;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.sheet.ComponentInstanceConfigurationPropertySection;
 
-public class CustomStructuredcomponentPropertySection extends
-		StructuredcomponentPropertySection {
+public class CustomComponentInstanceConfigurationPropertySection extends
+		ComponentInstanceConfigurationPropertySection {
 	/**
 	 * @generated
 	 */

@@ -20,8 +20,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.modelstructure.ModelstructurePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
@@ -105,7 +103,6 @@ public class componentInstanceConfigurationPackageImpl extends EPackageImpl impl
 		PatternPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
 		MsgifacePackage.eINSTANCE.eClass();
-		ModelstructurePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		thecomponentInstanceConfigurationPackage.createPackageContents();

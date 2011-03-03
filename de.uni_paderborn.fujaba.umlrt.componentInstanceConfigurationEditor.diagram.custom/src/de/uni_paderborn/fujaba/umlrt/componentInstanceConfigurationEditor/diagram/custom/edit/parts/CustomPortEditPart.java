@@ -1,136 +1,124 @@
 package de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LayoutListener;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
-import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehaviour;
+import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.PortEditPart;
-import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart;
-import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.policies.CustomPortItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
 
 /**
+ * A customized PortEditPart. It is responsible for ports around
+ * StructuredComponents.
  * 
  * @author bingo
  * 
  */
 public class CustomPortEditPart extends PortEditPart {
 
-	private Dimension offset = new Dimension(12, 12);
+	/**
+	 * All logic that is common between CustomPortEditPart and
+	 * CustomPort2EditPart is delegated, to reduce duplicate code.
+	 */
+	private PortBehaviour delegation;
 
-	private PortDecoration portDecoration;
-
-	private LayoutListener portContainerLayoutListener;
-
+	
+	/**
+	 * Constructs this EditPart.
+	 * 
+	 * @param view
+	 *            The graphical model.
+	 */
 	public CustomPortEditPart(View view) {
 		super(view);
+
 	}
-	
-	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
 
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new CustomPortItemSemanticEditPolicy(this));
-		}
-
+	/**
+	 * Creates the custom figure.
+	 */
 	@Override
 	protected IFigure createNodeShape() {
-		// Create a new PortFigure...
-		CustomPortFigure portFigure = new CustomPortFigure();
-		primaryShape = portFigure;
-
-		// Create PortDecoration
-		EObject element = getNotationView().getElement();
-		if (element instanceof Port) {
-			Port port = (Port) getNotationView().getElement();
-			portDecoration = new PortDecoration(portFigure, port);
-		}
-
-		// We are ready
-		return primaryShape;
+		return primaryShape = new CustomPortFigure(getMapMode());
 	}
 
+	/**
+	 * Updates the visual representation of this Port according to model
+	 * changes.
+	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		EObject element = getNotationView().getElement();
-		Object feature = notification.getFeature();
-
-		if (feature instanceof EReference && element instanceof Port
-				&& portDecoration != null) {
-
-			EReference reference = (EReference) feature;
-
-			switch (reference.getFeatureID()) {
-			case ComponentPackage.PORT__PROVIDED:
-			case ComponentPackage.PORT__REQUIRED:
-			case ComponentPackage.PORT__CARDINALITY:
-				portDecoration.update();
-				break;
-			}
+		if (delegation != null) {
+			delegation.handleNotificationEvent(notification);
 		}
-
 		super.handleNotificationEvent(notification);
 	}
 
+	/**
+	 * Initializes this EditPart, when it is activated.
+	 */
 	@Override
 	public void activate() {
-		IBorderItemLocator locator = getBorderItemLocator();
-		if (locator instanceof BorderItemLocator) {
-			((BorderItemLocator) locator).setBorderItemOffset(offset);
-		}
+		delegation = new PortBehaviour(this,
+				(CustomPortFigure) primaryShape);
+		delegation.activate();
 
-		EditPart parentEditPart = this.getParent();
-		if (parentEditPart instanceof ComponentInstanceConfigurationEditPart) {
-			IFigure figure = ((ComponentInstanceConfigurationEditPart) parentEditPart)
+		EditPart parentEditPart = getParent();
+		if (parentEditPart instanceof ComponentInstanceEditPart) {
+			IFigure figure = ((ComponentInstanceEditPart) parentEditPart)
 					.getFigure();
 
 			if (figure instanceof BorderedNodeFigure) {
 				BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-				IFigure bicf = bnf.getBorderItemContainer();
-				portContainerLayoutListener = new PortContainerLayoutListener(
-						this, portDecoration);
-				bicf.addLayoutListener(portContainerLayoutListener);
+				IFigure portContainerFigure = bnf.getBorderItemContainer();
+				delegation.addPortContainerLayoutListener(portContainerFigure);
 			}
 		}
+
 		super.activate();
 	}
 
+	/**
+	 * Cleanup this EditPart.
+	 */
 	@Override
 	public void deactivate() {
-		if (portContainerLayoutListener != null) {
-			EditPart parentEditPart = this.getParent();
-			if (parentEditPart instanceof ComponentInstanceConfigurationEditPart) {
-				IFigure figure = ((ComponentInstanceConfigurationEditPart) parentEditPart)
+		if (delegation != null) {
+			EditPart parentEditPart = getParent();
+			if (parentEditPart instanceof ComponentInstanceEditPart) {
+				IFigure figure = ((ComponentInstanceEditPart) parentEditPart)
 						.getFigure();
-
+	
 				if (figure instanceof BorderedNodeFigure) {
 					BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-					IFigure bicf = bnf.getBorderItemContainer();
-					portContainerLayoutListener = new PortContainerLayoutListener(
-							this, portDecoration);
-					bicf.removeLayoutListener(portContainerLayoutListener);
+					IFigure portContainerFigure = bnf.getBorderItemContainer();
+					delegation.removePortContainerLayoutListener(portContainerFigure);
 				}
 			}
+			
+			delegation.deactivate();
+			delegation = null;
 		}
 		super.deactivate();
 	}
 
-	public class CustomPortFigure
-			extends
-			de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.PortEditPart.PortFigure
-			implements IPortFigure {
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+				new CustomPortGraphicalNodeEditPolicy());
+
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CustomPortItemSemanticEditPolicy());
 
 	}
 

@@ -12,20 +12,21 @@ import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.componentInstanceConfigurationFactory;
 
-public class CustomComponentInstanceConfigurationCreationWizard extends FujabaDiagramNewWizard {
+public class ComponentInstanceConfigurationDiagramCreationWizard extends
+		FujabaDiagramNewWizard {
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
 		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/NewComponentInstanceConfigurationEditorWizard.gif")); //$NON-NLS-1$
+				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
 
 	}
 
 	@Override
 	protected String getDiagramFileExtension() {
-		return "componentInstanceConfiguration_diagram"; //$NON-NLS-1$
+		return "componentinstanceconfiguration_diagram"; //$NON-NLS-1$
 	}
 
 	@Override
@@ -41,6 +42,7 @@ public class CustomComponentInstanceConfigurationCreationWizard extends FujabaDi
 	@Override
 	protected String getEditorId() {
 		return de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditor.ID;
+
 	}
 
 	/**
@@ -48,10 +50,9 @@ public class CustomComponentInstanceConfigurationCreationWizard extends FujabaDi
 	 */
 	@Override
 	protected EObject createInitialModel() {
-		ComponentInstanceConfiguration CICDiagram = componentInstanceConfigurationFactory.eINSTANCE
+		ComponentInstanceConfiguration diagram = componentInstanceConfigurationFactory.eINSTANCE
 				.createComponentInstanceConfiguration();
-
-		return CICDiagram;
+		return diagram;
 	}
 
 	@Override
@@ -61,8 +62,8 @@ public class CustomComponentInstanceConfigurationCreationWizard extends FujabaDi
 				.provides(
 						new CreateDiagramViewOperation(
 								new EObjectAdapter(object),
-								getModelId(),
-								getDiagramPreferencesHint()));
+								de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.MODEL_ID,
+								de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 	}
 
 }

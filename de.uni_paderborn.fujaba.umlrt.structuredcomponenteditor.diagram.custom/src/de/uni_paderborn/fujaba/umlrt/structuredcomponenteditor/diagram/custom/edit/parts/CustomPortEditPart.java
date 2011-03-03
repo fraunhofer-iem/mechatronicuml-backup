@@ -4,11 +4,13 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehaviour;
+import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
@@ -27,8 +29,9 @@ public class CustomPortEditPart extends PortEditPart {
 	 * All logic that is common between CustomPortEditPart and
 	 * CustomPort2EditPart is delegated, to reduce duplicate code.
 	 */
-	private CustomPortEditPartDelegation delegation;
+	private PortBehaviour delegation;
 
+	
 	/**
 	 * Constructs this EditPart.
 	 * 
@@ -65,7 +68,7 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	public void activate() {
-		delegation = new CustomPortEditPartDelegation(this,
+		delegation = new PortBehaviour(this,
 				(CustomPortFigure) primaryShape);
 		delegation.activate();
 
