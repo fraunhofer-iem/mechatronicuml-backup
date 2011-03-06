@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.modeling.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
@@ -42,12 +43,13 @@ import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
+public class ComponentPartImpl extends NamedElementImpl implements ComponentPart {
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -97,6 +99,16 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentNameDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,6 +287,24 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComponentNameDerived() {
+		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentNameDerived(String newComponentNameDerived) {
+		COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicSet(this, null, 0, newComponentNameDerived);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -356,6 +386,8 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 				return getDelegation();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return getPortsDerived();
+			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
+				return getComponentNameDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -391,6 +423,9 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 				getPortsDerived().clear();
 				getPortsDerived().addAll((Collection<? extends Port>)newValue);
 				return;
+			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
+				setComponentNameDerived((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -421,6 +456,10 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				getPortsDerived().clear();
 				return;
+			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
+				//setComponentNameDerived(COMPONENT_NAME_DERIVED_EDEFAULT);
+				setComponentNameDerived(null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -445,6 +484,8 @@ public class ComponentPartImpl extends EObjectImpl implements ComponentPart {
 				return delegation != null && !delegation.isEmpty();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
+				return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

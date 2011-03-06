@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart;
@@ -27,7 +28,9 @@ public class CustomStructuredcomponentEditPartFactory extends
 			case PortEditPart.VISUAL_ID:
 				return new CustomPortEditPart(view);
 			case Port2EditPart.VISUAL_ID:
-				return new CustomPort2EditPart(view);
+				return new CustomPortEditPart(view);
+			case ComponentPartEditPart.VISUAL_ID:
+				return new CustomComponentPartEditPart(view);
 			case StructuredComponentComponentCompartmentEditPart.VISUAL_ID:
 				return new CustomStructuredComponentComponentCompartmentEditPart(view);
 			}

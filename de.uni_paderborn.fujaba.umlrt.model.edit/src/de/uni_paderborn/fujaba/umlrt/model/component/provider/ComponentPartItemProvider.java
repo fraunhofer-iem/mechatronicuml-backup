@@ -30,8 +30,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart} object.
@@ -40,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ComponentPartItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -72,6 +74,7 @@ public class ComponentPartItemProvider
 			addFromRevPropertyDescriptor(object);
 			addToRevPropertyDescriptor(object);
 			addDelegationPropertyDescriptor(object);
+			addComponentNameDerivedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -165,6 +168,28 @@ public class ComponentPartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Component Name Derived feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addComponentNameDerivedPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_ComponentPart_componentNameDerived_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_componentNameDerived_feature", "_UI_ComponentPart_type"),
+//				 ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED,
+//				 true,
+//				 false,
+//				 false,
+//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+//				 null,
+//				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -213,7 +238,10 @@ public class ComponentPartItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComponentPart_type");
+		String label = ((ComponentPart)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ComponentPart_type") :
+			getString("_UI_ComponentPart_type") + " " + label;
 	}
 
 	/**
@@ -228,6 +256,9 @@ public class ComponentPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
+			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

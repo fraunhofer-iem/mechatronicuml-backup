@@ -587,6 +587,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentPart_ComponentNameDerived() {
+		return (EAttribute)componentPartEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStructuredComponent() {
 		return structuredComponentEClass;
 	}
@@ -803,6 +812,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentPartEClass, COMPONENT_PART__TO_REV);
 		createEReference(componentPartEClass, COMPONENT_PART__DELEGATION);
 		createEReference(componentPartEClass, COMPONENT_PART__PORTS_DERIVED);
+		createEAttribute(componentPartEClass, COMPONENT_PART__COMPONENT_NAME_DERIVED);
 
 		structuredComponentEClass = createEClass(STRUCTURED_COMPONENT);
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__EMBEDDED_PARTS);
@@ -876,6 +886,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		discretePortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
 		discretePortSpecificationEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		hardwarePortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
+		componentPartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
@@ -926,6 +937,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getComponentPart_ToRev(), this.getAssembly(), this.getAssembly_To(), "toRev", null, 0, -1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentPart_Delegation(), this.getDelegation(), this.getDelegation_ComponentPart(), "delegation", null, 0, -1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentPart_PortsDerived(), this.getPort(), null, "portsDerived", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentPart_ComponentNameDerived(), theEcorePackage.getEString(), "componentNameDerived", " ", 1, 1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuredComponentEClass, StructuredComponent.class, "StructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructuredComponent_EmbeddedParts(), this.getComponentPart(), this.getComponentPart_ParentComponent(), "embeddedParts", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -985,7 +997,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																												
+		   });																																													
 	}
 
 	/**
@@ -1001,6 +1013,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif"
+		   });		
+		addAnnotation
+		  (getComponentPart_ComponentNameDerived(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if componentType->notEmpty() then\n\tcomponentType.name\nelse\n\tnull\nendif"
 		   });													
 	}
 

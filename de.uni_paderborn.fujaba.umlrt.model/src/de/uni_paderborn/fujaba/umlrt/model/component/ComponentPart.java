@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.storydriven.modeling.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ComponentPart extends EObject {
+public interface ComponentPart extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.
@@ -157,5 +159,33 @@ public interface ComponentPart extends EObject {
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();
+
+	/**
+	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
+	 * The default value is <code>" "</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Name Derived</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Name Derived</em>' attribute.
+	 * @see #setComponentNameDerived(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_ComponentNameDerived()
+	 * @model default=" " required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType->notEmpty() then\n\tcomponentType.name\nelse\n\tnull\nendif'"
+	 * @generated
+	 */
+	String getComponentNameDerived();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Name Derived</em>' attribute.
+	 * @see #getComponentNameDerived()
+	 * @generated
+	 */
+	void setComponentNameDerived(String value);
 
 } // ComponentPart

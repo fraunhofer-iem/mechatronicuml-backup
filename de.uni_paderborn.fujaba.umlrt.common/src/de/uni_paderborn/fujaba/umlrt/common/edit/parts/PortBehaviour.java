@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 /**
- * This class contains all the behaviour for port edit parts.
+ * This class contains all the behavior for port edit parts.
  * 
  * @author bingo
  * 
