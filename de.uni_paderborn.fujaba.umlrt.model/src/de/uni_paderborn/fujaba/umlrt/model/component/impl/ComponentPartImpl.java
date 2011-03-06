@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
@@ -121,8 +122,14 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter daa = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
-		daa.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
+		DerivedAttributeAdapter componentPartPortsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
+		componentPartPortsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
+		
+		// Install a notification adapter that informs the
+		// componentNameDerived-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter componentPartComponentNameDerived = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED);
+		componentPartComponentNameDerived.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
 	/**

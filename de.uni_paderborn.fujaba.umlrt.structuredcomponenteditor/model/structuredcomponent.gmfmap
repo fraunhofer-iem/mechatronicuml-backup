@@ -47,12 +47,16 @@
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern=""
-              editorPattern=""
-              editPattern="">
+              viewPattern="{0} : {1}"
+              editorPattern="{0}"
+              editPattern="{0}">
             <diagramLabel
                 href="structuredcomponent.gmfgraph#ComponentPartName"/>
             <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/componentNameDerived"/>
+            <editableFeatures
                 href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool

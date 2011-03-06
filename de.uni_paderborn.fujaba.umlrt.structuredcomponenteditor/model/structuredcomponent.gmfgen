@@ -149,10 +149,14 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern=""
-            editorPattern=""
-            editPattern="">
+            viewPattern="{0} : {1}"
+            editorPattern="{0}"
+            editPattern="{0}">
           <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          <metaFeatures
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/component/ComponentPart/componentNameDerived"/>
+          <editableMetaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
       </labels>
