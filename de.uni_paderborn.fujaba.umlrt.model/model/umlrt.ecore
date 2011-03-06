@@ -681,6 +681,9 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart/uMLClocks"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="timeConstraints"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint/umlClock"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeComplexState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -735,7 +738,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
@@ -760,22 +763,6 @@
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLInvariantAtom">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the invariant belonging to a complex state.&#xA;TODO: Wondering why there is not any relation to 'UMLClock'."/>
-              </eAnnotations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLInvariantAtom"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The complex state this invariant belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeAction" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1185,7 +1172,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x&lt;=2 the transition would only be allowed to be activated if x has a value less or equal to 2."/>
@@ -1209,11 +1196,21 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/channels"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeguardAtom">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLTimeConstraint">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
+              </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeguardAtom"/>
+                <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint"/>
               </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber" containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="umlClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock/timeConstraints"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+                  eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
+                  defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="HistoryState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryKind"/>

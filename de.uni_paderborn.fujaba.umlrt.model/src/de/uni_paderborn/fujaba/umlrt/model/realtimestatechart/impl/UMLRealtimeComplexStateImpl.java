@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfDiagram;
 
 import java.lang.reflect.InvocationTargetException;
@@ -137,7 +138,7 @@ public class UMLRealtimeComplexStateImpl extends UMLRealtimeStateImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UMLInvariantAtom> invariants;
+	protected EList<UMLTimeConstraint> invariants;
 
 	/**
 	 * The default value of the '{@link #isCommitted() <em>Committed</em>}' attribute.
@@ -427,9 +428,9 @@ public class UMLRealtimeComplexStateImpl extends UMLRealtimeStateImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<UMLInvariantAtom> getInvariants() {
+	public EList<UMLTimeConstraint> getInvariants() {
 		if (invariants == null) {
-			invariants = new EObjectContainmentEList<UMLInvariantAtom>(UMLInvariantAtom.class, this, RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__INVARIANTS);
+			invariants = new EObjectContainmentEList<UMLTimeConstraint>(UMLTimeConstraint.class, this, RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__INVARIANTS);
 		}
 		return invariants;
 	}
@@ -596,7 +597,7 @@ public class UMLRealtimeComplexStateImpl extends UMLRealtimeStateImpl implements
 				return;
 			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__INVARIANTS:
 				getInvariants().clear();
-				getInvariants().addAll((Collection<? extends UMLInvariantAtom>)newValue);
+				getInvariants().addAll((Collection<? extends UMLTimeConstraint>)newValue);
 				return;
 			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__COMMITTED:
 				setCommitted((Boolean)newValue);

@@ -144,12 +144,6 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_INVARIANT_ATOM: {
-				UMLInvariantAtom umlInvariantAtom = (UMLInvariantAtom)theEObject;
-				T result = caseUMLInvariantAtom(umlInvariantAtom);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.UML_REALTIME_ACTION: {
 				UMLRealtimeAction umlRealtimeAction = (UMLRealtimeAction)theEObject;
 				T result = caseUMLRealtimeAction(umlRealtimeAction);
@@ -235,9 +229,9 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_TIMEGUARD_ATOM: {
-				UMLTimeguardAtom umlTimeguardAtom = (UMLTimeguardAtom)theEObject;
-				T result = caseUMLTimeguardAtom(umlTimeguardAtom);
+			case RealtimestatechartPackage.UML_TIME_CONSTRAINT: {
+				UMLTimeConstraint umlTimeConstraint = (UMLTimeConstraint)theEObject;
+				T result = caseUMLTimeConstraint(umlTimeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -362,21 +356,6 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseUMLInterfaceStatechart(UMLInterfaceStatechart object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Invariant Atom</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Invariant Atom</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUMLInvariantAtom(UMLInvariantAtom object) {
 		return null;
 	}
 
@@ -531,17 +510,17 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Timeguard Atom</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>UML Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Timeguard Atom</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>UML Time Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLTimeguardAtom(UMLTimeguardAtom object) {
+	public T caseUMLTimeConstraint(UMLTimeConstraint object) {
 		return null;
 	}
 

@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -42,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLClockImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLClockImpl#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLClockImpl#getResets <em>Resets</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLClockImpl#getTimeConstraints <em>Time Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,6 +99,16 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 	 * @ordered
 	 */
 	protected EList<UMLClock> resets;
+
+	/**
+	 * The cached value of the '{@link #getTimeConstraints() <em>Time Constraints</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UMLTimeConstraint> timeConstraints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,6 +239,18 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<UMLTimeConstraint> getTimeConstraints() {
+		if (timeConstraints == null) {
+			timeConstraints = new EObjectWithInverseResolvingEList<UMLTimeConstraint>(UMLTimeConstraint.class, this, RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS, RealtimestatechartPackage.UML_TIME_CONSTRAINT__UML_CLOCK);
+		}
+		return timeConstraints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String toString() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -259,6 +283,8 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 				if (uMLRealtimeStatechart != null)
 					msgs = ((InternalEObject)uMLRealtimeStatechart).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_STATECHART__UML_CLOCKS, UMLRealtimeStatechart.class, msgs);
 				return basicSetUMLRealtimeStatechart((UMLRealtimeStatechart)otherEnd, msgs);
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTimeConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -275,6 +301,8 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 				return ((InternalEList<?>)getAbsoluteDeadlines()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.UML_CLOCK__UML_REALTIME_STATECHART:
 				return basicSetUMLRealtimeStatechart(null, msgs);
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				return ((InternalEList<?>)getTimeConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -296,6 +324,8 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 				return basicGetUMLRealtimeStatechart();
 			case RealtimestatechartPackage.UML_CLOCK__RESETS:
 				return getResets();
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				return getTimeConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -323,6 +353,10 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 				getResets().clear();
 				getResets().addAll((Collection<? extends UMLClock>)newValue);
 				return;
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				getTimeConstraints().clear();
+				getTimeConstraints().addAll((Collection<? extends UMLTimeConstraint>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -347,6 +381,9 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 			case RealtimestatechartPackage.UML_CLOCK__RESETS:
 				getResets().clear();
 				return;
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				getTimeConstraints().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -367,6 +404,8 @@ public class UMLClockImpl extends EObjectImpl implements UMLClock {
 				return uMLRealtimeStatechart != null;
 			case RealtimestatechartPackage.UML_CLOCK__RESETS:
 				return resets != null && !resets.isEmpty();
+			case RealtimestatechartPackage.UML_CLOCK__TIME_CONSTRAINTS:
+				return timeConstraints != null && !timeConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

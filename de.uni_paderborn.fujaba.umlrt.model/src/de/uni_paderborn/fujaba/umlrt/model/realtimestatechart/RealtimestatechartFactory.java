@@ -71,15 +71,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	UMLInterfaceStatechart createUMLInterfaceStatechart();
 
 	/**
-	 * Returns a new object of class '<em>UML Invariant Atom</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Invariant Atom</em>'.
-	 * @generated
-	 */
-	UMLInvariantAtom createUMLInvariantAtom();
-
-	/**
 	 * Returns a new object of class '<em>UML Realtime Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,13 +152,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	SynchronizationChannel createSynchronizationChannel();
 
 	/**
-	 * Returns a new object of class '<em>UML Timeguard Atom</em>'.
+	 * Returns a new object of class '<em>UML Time Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Timeguard Atom</em>'.
+	 * @return a new object of class '<em>UML Time Constraint</em>'.
 	 * @generated
 	 */
-	UMLTimeguardAtom createUMLTimeguardAtom();
+	UMLTimeConstraint createUMLTimeConstraint();
 
 	/**
 	 * Returns a new object of class '<em>History State</em>'.

@@ -205,7 +205,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 
 	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -216,7 +216,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<UMLInvariantAtom> getInvariants();
+	EList<UMLTimeConstraint> getInvariants();
 
 	/**
 	 * Returns the value of the '<em><b>Committed</b></em>' attribute.

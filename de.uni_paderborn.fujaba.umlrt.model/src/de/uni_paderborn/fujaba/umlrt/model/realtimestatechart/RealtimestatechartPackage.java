@@ -280,13 +280,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int UML_CLOCK__RESETS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Time Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_CLOCK__TIME_CONSTRAINTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>UML Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UML_CLOCK_FEATURE_COUNT = 4;
+	int UML_CLOCK_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -323,7 +332,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeState()
 	 * @generated
 	 */
-	int UML_REALTIME_STATE = 12;
+	int UML_REALTIME_STATE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -964,7 +973,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeStatechart()
 	 * @generated
 	 */
-	int UML_REALTIME_STATECHART = 13;
+	int UML_REALTIME_STATECHART = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1904,52 +1913,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int UML_INTERFACE_STATECHART_OPERATION_COUNT = UML_REALTIME_STATECHART_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLInvariantAtomImpl <em>UML Invariant Atom</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLInvariantAtomImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLInvariantAtom()
-	 * @generated
-	 */
-	int UML_INVARIANT_ATOM = 6;
-
-	/**
-	 * The feature id for the '<em><b>UML Complex Realtime State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE = 0;
-
-	/**
-	 * The number of structural features of the '<em>UML Invariant Atom</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UML_INVARIANT_ATOM_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Clone</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UML_INVARIANT_ATOM___CLONE__UMLREALTIMESTATECHART_UMLINVARIANTATOM = 0;
-
-	/**
-	 * The number of operations of the '<em>UML Invariant Atom</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UML_INVARIANT_ATOM_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLRealtimeActionImpl <em>UML Realtime Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1957,7 +1920,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeAction()
 	 * @generated
 	 */
-	int UML_REALTIME_ACTION = 7;
+	int UML_REALTIME_ACTION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2264,7 +2227,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeEvent()
 	 * @generated
 	 */
-	int UML_REALTIME_EVENT = 8;
+	int UML_REALTIME_EVENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2607,7 +2570,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeFadingFunction()
 	 * @generated
 	 */
-	int UML_REALTIME_FADING_FUNCTION = 9;
+	int UML_REALTIME_FADING_FUNCTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -2725,7 +2688,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeFlatSwitching()
 	 * @generated
 	 */
-	int UML_REALTIME_FLAT_SWITCHING = 10;
+	int UML_REALTIME_FLAT_SWITCHING = 9;
 
 	/**
 	 * The feature id for the '<em><b>UML Realtime Transitions</b></em>' reference list.
@@ -2825,7 +2788,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeStartState()
 	 * @generated
 	 */
-	int UML_REALTIME_START_STATE = 11;
+	int UML_REALTIME_START_STATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3123,7 +3086,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeStopState()
 	 * @generated
 	 */
-	int UML_REALTIME_STOP_STATE = 14;
+	int UML_REALTIME_STOP_STATE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3403,7 +3366,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLRealtimeTransition()
 	 * @generated
 	 */
-	int UML_REALTIME_TRANSITION = 15;
+	int UML_REALTIME_TRANSITION = 14;
 
 	/**
 	 * The feature id for the '<em><b>UML Realtime Transition Mapping Vector</b></em>' attribute.
@@ -3638,7 +3601,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationChannel()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_CHANNEL = 16;
+	int SYNCHRONIZATION_CHANNEL = 15;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3884,23 +3847,50 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeguardAtomImpl <em>UML Timeguard Atom</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeConstraintImpl <em>UML Time Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeguardAtomImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLTimeguardAtom()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeConstraintImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLTimeConstraint()
 	 * @generated
 	 */
-	int UML_TIMEGUARD_ATOM = 17;
+	int UML_TIME_CONSTRAINT = 16;
 
 	/**
-	 * The number of structural features of the '<em>UML Timeguard Atom</em>' class.
+	 * The feature id for the '<em><b>Bound</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UML_TIMEGUARD_ATOM_FEATURE_COUNT = 0;
+	int UML_TIME_CONSTRAINT__BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Uml Clock</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_TIME_CONSTRAINT__UML_CLOCK = 1;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_TIME_CONSTRAINT__OPERATOR = 2;
+
+	/**
+	 * The number of structural features of the '<em>UML Time Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UML_TIME_CONSTRAINT_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Clone</em>' operation.
@@ -3909,16 +3899,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UML_TIMEGUARD_ATOM___CLONE__UMLREALTIMESTATECHART_UMLTIMEGUARDATOM = 0;
+	int UML_TIME_CONSTRAINT___CLONE__UMLREALTIMESTATECHART_UMLTIMECONSTRAINT = 0;
 
 	/**
-	 * The number of operations of the '<em>UML Timeguard Atom</em>' class.
+	 * The number of operations of the '<em>UML Time Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UML_TIMEGUARD_ATOM_OPERATION_COUNT = 1;
+	int UML_TIME_CONSTRAINT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.
@@ -3928,7 +3918,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryState()
 	 * @generated
 	 */
-	int HISTORY_STATE = 18;
+	int HISTORY_STATE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4208,7 +4198,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getDoEvent()
 	 * @generated
 	 */
-	int DO_EVENT = 19;
+	int DO_EVENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
@@ -4272,7 +4262,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryOrExitEvent()
 	 * @generated
 	 */
-	int ENTRY_OR_EXIT_EVENT = 20;
+	int ENTRY_OR_EXIT_EVENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference.
@@ -4336,7 +4326,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronization()
 	 * @generated
 	 */
-	int SYNCHRONIZATION = 21;
+	int SYNCHRONIZATION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4598,7 +4588,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryKind()
 	 * @generated
 	 */
-	int HISTORY_KIND = 22;
+	int HISTORY_KIND = 21;
 
 
 	/**
@@ -4739,6 +4729,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUMLClock_Resets();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getTimeConstraints <em>Time Constraints</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Time Constraints</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getTimeConstraints()
+	 * @see #getUMLClock()
+	 * @generated
+	 */
+	EReference getUMLClock_TimeConstraints();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#toString() <em>To String</em>}' operation.
@@ -4910,37 +4911,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUMLInterfaceStatechart_UMLRealtimeStatechart();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom <em>UML Invariant Atom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>UML Invariant Atom</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom
-	 * @generated
-	 */
-	EClass getUMLInvariantAtom();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom#getUMLComplexRealtimeState <em>UML Complex Realtime State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>UML Complex Realtime State</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom#getUMLComplexRealtimeState()
-	 * @see #getUMLInvariantAtom()
-	 * @generated
-	 */
-	EReference getUMLInvariantAtom_UMLComplexRealtimeState();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom) <em>Clone</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Clone</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom)
-	 * @generated
-	 */
-	EOperation getUMLInvariantAtom__Clone__UMLRealtimeStatechart_UMLInvariantAtom();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction <em>UML Realtime Action</em>}'.
@@ -6030,24 +6000,57 @@ public interface RealtimestatechartPackage extends EPackage {
 	EOperation getSynchronizationChannel__Clone__UMLRealtimeStatechart_SynchronizationChannel();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom <em>UML Timeguard Atom</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint <em>UML Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>UML Timeguard Atom</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom
+	 * @return the meta object for class '<em>UML Time Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint
 	 * @generated
 	 */
-	EClass getUMLTimeguardAtom();
+	EClass getUMLTimeConstraint();
 
 	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom) <em>Clone</em>}' operation.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getBound <em>Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Bound</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getBound()
+	 * @see #getUMLTimeConstraint()
+	 * @generated
+	 */
+	EReference getUMLTimeConstraint_Bound();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getUmlClock <em>Uml Clock</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Uml Clock</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getUmlClock()
+	 * @see #getUMLTimeConstraint()
+	 * @generated
+	 */
+	EReference getUMLTimeConstraint_UmlClock();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getOperator()
+	 * @see #getUMLTimeConstraint()
+	 * @generated
+	 */
+	EAttribute getUMLTimeConstraint_Operator();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint) <em>Clone</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Clone</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart, de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint)
 	 * @generated
 	 */
-	EOperation getUMLTimeguardAtom__Clone__UMLRealtimeStatechart_UMLTimeguardAtom();
+	EOperation getUMLTimeConstraint__Clone__UMLRealtimeStatechart_UMLTimeConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState <em>History State</em>}'.
@@ -6356,6 +6359,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference UML_CLOCK__RESETS = eINSTANCE.getUMLClock_Resets();
 
 		/**
+		 * The meta object literal for the '<em><b>Time Constraints</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UML_CLOCK__TIME_CONSTRAINTS = eINSTANCE.getUMLClock_TimeConstraints();
+
+		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6486,32 +6497,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART = eINSTANCE.getUMLInterfaceStatechart_UMLRealtimeStatechart();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLInvariantAtomImpl <em>UML Invariant Atom</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLInvariantAtomImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLInvariantAtom()
-		 * @generated
-		 */
-		EClass UML_INVARIANT_ATOM = eINSTANCE.getUMLInvariantAtom();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Complex Realtime State</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE = eINSTANCE.getUMLInvariantAtom_UMLComplexRealtimeState();
-
-		/**
-		 * The meta object literal for the '<em><b>Clone</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation UML_INVARIANT_ATOM___CLONE__UMLREALTIMESTATECHART_UMLINVARIANTATOM = eINSTANCE.getUMLInvariantAtom__Clone__UMLRealtimeStatechart_UMLInvariantAtom();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLRealtimeActionImpl <em>UML Realtime Action</em>}' class.
@@ -7350,14 +7335,38 @@ public interface RealtimestatechartPackage extends EPackage {
 		EOperation SYNCHRONIZATION_CHANNEL___CLONE__UMLREALTIMESTATECHART_SYNCHRONIZATIONCHANNEL = eINSTANCE.getSynchronizationChannel__Clone__UMLRealtimeStatechart_SynchronizationChannel();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeguardAtomImpl <em>UML Timeguard Atom</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeConstraintImpl <em>UML Time Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeguardAtomImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLTimeguardAtom()
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLTimeConstraintImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getUMLTimeConstraint()
 		 * @generated
 		 */
-		EClass UML_TIMEGUARD_ATOM = eINSTANCE.getUMLTimeguardAtom();
+		EClass UML_TIME_CONSTRAINT = eINSTANCE.getUMLTimeConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Bound</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UML_TIME_CONSTRAINT__BOUND = eINSTANCE.getUMLTimeConstraint_Bound();
+
+		/**
+		 * The meta object literal for the '<em><b>Uml Clock</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UML_TIME_CONSTRAINT__UML_CLOCK = eINSTANCE.getUMLTimeConstraint_UmlClock();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UML_TIME_CONSTRAINT__OPERATOR = eINSTANCE.getUMLTimeConstraint_Operator();
 
 		/**
 		 * The meta object literal for the '<em><b>Clone</b></em>' operation.
@@ -7365,7 +7374,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation UML_TIMEGUARD_ATOM___CLONE__UMLREALTIMESTATECHART_UMLTIMEGUARDATOM = eINSTANCE.getUMLTimeguardAtom__Clone__UMLRealtimeStatechart_UMLTimeguardAtom();
+		EOperation UML_TIME_CONSTRAINT___CLONE__UMLREALTIMESTATECHART_UMLTIMECONSTRAINT = eINSTANCE.getUMLTimeConstraint__Clone__UMLRealtimeStatechart_UMLTimeConstraint();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.

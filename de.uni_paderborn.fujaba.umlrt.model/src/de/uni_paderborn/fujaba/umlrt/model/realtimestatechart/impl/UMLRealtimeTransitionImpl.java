@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeFlatSwi
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom;
 
 import java.lang.reflect.InvocationTargetException;
@@ -234,7 +235,7 @@ public class UMLRealtimeTransitionImpl extends EObjectImpl implements UMLRealtim
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UMLTimeguardAtom> timeguard;
+	protected EList<UMLTimeConstraint> timeguard;
 
 	/**
 	 * The cached value of the '{@link #getAbsoluteDeadlines() <em>Absolute Deadlines</em>}' containment reference list.
@@ -751,9 +752,9 @@ public class UMLRealtimeTransitionImpl extends EObjectImpl implements UMLRealtim
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<UMLTimeguardAtom> getTimeguard() {
+	public EList<UMLTimeConstraint> getTimeguard() {
 		if (timeguard == null) {
-			timeguard = new EObjectContainmentEList<UMLTimeguardAtom>(UMLTimeguardAtom.class, this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__TIMEGUARD);
+			timeguard = new EObjectContainmentEList<UMLTimeConstraint>(UMLTimeConstraint.class, this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__TIMEGUARD);
 		}
 		return timeguard;
 	}
@@ -1121,7 +1122,7 @@ public class UMLRealtimeTransitionImpl extends EObjectImpl implements UMLRealtim
 				return;
 			case RealtimestatechartPackage.UML_REALTIME_TRANSITION__TIMEGUARD:
 				getTimeguard().clear();
-				getTimeguard().addAll((Collection<? extends UMLTimeguardAtom>)newValue);
+				getTimeguard().addAll((Collection<? extends UMLTimeConstraint>)newValue);
 				return;
 			case RealtimestatechartPackage.UML_REALTIME_TRANSITION__ABSOLUTE_DEADLINES:
 				getAbsoluteDeadlines().clear();

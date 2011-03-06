@@ -58,6 +58,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStopState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
@@ -139,13 +140,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass umlInvariantAtomEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass umlRealtimeActionEClass = null;
 
 	/**
@@ -216,7 +210,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass umlTimeguardAtomEClass = null;
+	private EClass umlTimeConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -468,6 +462,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getUMLClock_TimeConstraints() {
+		return (EReference)umlClockEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getUMLClock__ToString() {
 		return umlClockEClass.getEOperations().get(0);
 	}
@@ -605,33 +608,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getUMLInterfaceStatechart_UMLRealtimeStatechart() {
 		return (EReference)umlInterfaceStatechartEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUMLInvariantAtom() {
-		return umlInvariantAtomEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUMLInvariantAtom_UMLComplexRealtimeState() {
-		return (EReference)umlInvariantAtomEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getUMLInvariantAtom__Clone__UMLRealtimeStatechart_UMLInvariantAtom() {
-		return umlInvariantAtomEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1557,8 +1533,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUMLTimeguardAtom() {
-		return umlTimeguardAtomEClass;
+	public EClass getUMLTimeConstraint() {
+		return umlTimeConstraintEClass;
 	}
 
 	/**
@@ -1566,8 +1542,35 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getUMLTimeguardAtom__Clone__UMLRealtimeStatechart_UMLTimeguardAtom() {
-		return umlTimeguardAtomEClass.getEOperations().get(0);
+	public EReference getUMLTimeConstraint_Bound() {
+		return (EReference)umlTimeConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUMLTimeConstraint_UmlClock() {
+		return (EReference)umlTimeConstraintEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUMLTimeConstraint_Operator() {
+		return (EAttribute)umlTimeConstraintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getUMLTimeConstraint__Clone__UMLRealtimeStatechart_UMLTimeConstraint() {
+		return umlTimeConstraintEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -1758,6 +1761,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(umlClockEClass, UML_CLOCK__ABSOLUTE_DEADLINES);
 		createEReference(umlClockEClass, UML_CLOCK__UML_REALTIME_STATECHART);
 		createEReference(umlClockEClass, UML_CLOCK__RESETS);
+		createEReference(umlClockEClass, UML_CLOCK__TIME_CONSTRAINTS);
 		createEOperation(umlClockEClass, UML_CLOCK___TO_STRING);
 		createEOperation(umlClockEClass, UML_CLOCK___CLONE__UMLREALTIMESTATECHART_UMLCLOCK);
 
@@ -1776,10 +1780,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		umlInterfaceStatechartEClass = createEClass(UML_INTERFACE_STATECHART);
 		createEReference(umlInterfaceStatechartEClass, UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART);
-
-		umlInvariantAtomEClass = createEClass(UML_INVARIANT_ATOM);
-		createEReference(umlInvariantAtomEClass, UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE);
-		createEOperation(umlInvariantAtomEClass, UML_INVARIANT_ATOM___CLONE__UMLREALTIMESTATECHART_UMLINVARIANTATOM);
 
 		umlRealtimeActionEClass = createEClass(UML_REALTIME_ACTION);
 		createEAttribute(umlRealtimeActionEClass, UML_REALTIME_ACTION__ID);
@@ -1893,8 +1893,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE);
 		createEOperation(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL___CLONE__UMLREALTIMESTATECHART_SYNCHRONIZATIONCHANNEL);
 
-		umlTimeguardAtomEClass = createEClass(UML_TIMEGUARD_ATOM);
-		createEOperation(umlTimeguardAtomEClass, UML_TIMEGUARD_ATOM___CLONE__UMLREALTIMESTATECHART_UMLTIMEGUARDATOM);
+		umlTimeConstraintEClass = createEClass(UML_TIME_CONSTRAINT);
+		createEReference(umlTimeConstraintEClass, UML_TIME_CONSTRAINT__BOUND);
+		createEReference(umlTimeConstraintEClass, UML_TIME_CONSTRAINT__UML_CLOCK);
+		createEAttribute(umlTimeConstraintEClass, UML_TIME_CONSTRAINT__OPERATOR);
+		createEOperation(umlTimeConstraintEClass, UML_TIME_CONSTRAINT___CLONE__UMLREALTIMESTATECHART_UMLTIMECONSTRAINT);
 
 		historyStateEClass = createEClass(HISTORY_STATE);
 		createEAttribute(historyStateEClass, HISTORY_STATE__KIND);
@@ -1995,6 +1998,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getUMLClock_AbsoluteDeadlines(), this.getAbsoluteDeadline(), this.getAbsoluteDeadline_UMLClock(), "absoluteDeadlines", null, 0, -1, UMLClock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLClock_UMLRealtimeStatechart(), this.getUMLRealtimeStatechart(), this.getUMLRealtimeStatechart_UMLClocks(), "uMLRealtimeStatechart", null, 0, 1, UMLClock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLClock_Resets(), this.getUMLClock(), null, "resets", null, 0, -1, UMLClock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLClock_TimeConstraints(), this.getUMLTimeConstraint(), this.getUMLTimeConstraint_UmlClock(), "timeConstraints", null, 0, -1, UMLClock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getUMLClock__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2010,7 +2014,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getUMLRealtimeComplexState_ReconfDiagram(), theReconfPackage.getReconfDiagram(), null, "reconfDiagram", null, 0, 1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeComplexState_InterfacedStates(), this.getUMLRealtimeComplexState(), null, "interfacedStates", null, 0, -1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeComplexState_InterfaceState(), this.getUMLRealtimeComplexState(), null, "interfaceState", null, 0, 1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUMLRealtimeComplexState_Invariants(), this.getUMLInvariantAtom(), null, "invariants", null, 0, -1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLRealtimeComplexState_Invariants(), this.getUMLTimeConstraint(), null, "invariants", null, 0, -1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUMLRealtimeComplexState_Committed(), theEcorePackage.getEBoolean(), "committed", null, 0, 1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeComplexState_Channels(), this.getSynchronizationChannel(), this.getSynchronizationChannel_UMLRealtimeComplexState(), "channels", null, 0, -1, UMLRealtimeComplexState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2020,13 +2024,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(umlInterfaceStatechartEClass, UMLInterfaceStatechart.class, "UMLInterfaceStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUMLInterfaceStatechart_UMLRealtimeStatechart(), this.getUMLRealtimeStatechart(), null, "uMLRealtimeStatechart", null, 0, 1, UMLInterfaceStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(umlInvariantAtomEClass, UMLInvariantAtom.class, "UMLInvariantAtom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLInvariantAtom_UMLComplexRealtimeState(), this.getUMLRealtimeComplexState(), null, "uMLComplexRealtimeState", null, 0, 1, UMLInvariantAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getUMLInvariantAtom__Clone__UMLRealtimeStatechart_UMLInvariantAtom(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUMLRealtimeStatechart(), "rtsc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUMLInvariantAtom(), "newAtom", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(umlRealtimeActionEClass, UMLRealtimeAction.class, "UMLRealtimeAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUMLRealtimeAction_Id(), ecorePackage.getEString(), "id", null, 0, 1, UMLRealtimeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2181,7 +2178,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getUMLRealtimeTransition_UMLRealtimeFadingFunction(), this.getUMLRealtimeFadingFunction(), this.getUMLRealtimeFadingFunction_UMLRealtimeTransitions(), "uMLRealtimeFadingFunction", null, 0, 1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeTransition_TriggerEvents(), this.getUMLRealtimeEvent(), null, "triggerEvents", null, 0, -1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeTransition_RaisedEvents(), this.getUMLRealtimeEvent(), null, "raisedEvents", null, 0, -1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUMLRealtimeTransition_Timeguard(), this.getUMLTimeguardAtom(), null, "timeguard", null, 0, -1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLRealtimeTransition_Timeguard(), this.getUMLTimeConstraint(), null, "timeguard", null, 0, -1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeTransition_AbsoluteDeadlines(), this.getAbsoluteDeadline(), this.getAbsoluteDeadline_UMLRealtimeTransition(), "absoluteDeadlines", null, 0, -1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUMLRealtimeTransition_RelativeDeadline(), this.getRelativeDeadline(), this.getRelativeDeadline_UMLRealtimeTransition(), "relativeDeadline", null, 0, 1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUMLRealtimeTransition_Urgent(), theEcorePackage.getEBoolean(), "urgent", null, 0, 1, UMLRealtimeTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2208,11 +2205,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		addEParameter(op, this.getUMLRealtimeStatechart(), "rtsc", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSynchronizationChannel(), "newChannel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(umlTimeguardAtomEClass, UMLTimeguardAtom.class, "UMLTimeguardAtom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(umlTimeConstraintEClass, UMLTimeConstraint.class, "UMLTimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUMLTimeConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, UMLTimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLTimeConstraint_UmlClock(), this.getUMLClock(), this.getUMLClock_TimeConstraints(), "umlClock", null, 0, 1, UMLTimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUMLTimeConstraint_Operator(), theExpressionsPackage.getComparingOperator(), "operator", "ComparingOperator.LESS_OR_EQUAL", 1, 1, UMLTimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getUMLTimeguardAtom__Clone__UMLRealtimeStatechart_UMLTimeguardAtom(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getUMLTimeConstraint__Clone__UMLRealtimeStatechart_UMLTimeConstraint(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getUMLRealtimeStatechart(), "rtsc", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getUMLTimeguardAtom(), "newAtom", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getUMLTimeConstraint(), "newAtom", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(historyStateEClass, HistoryState.class, "HistoryState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHistoryState_Kind(), this.getHistoryKind(), "kind", null, 0, 1, HistoryState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -359,7 +359,7 @@ public interface UMLRealtimeTransition extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Timeguard</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -370,7 +370,7 @@ public interface UMLRealtimeTransition extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<UMLTimeguardAtom> getTimeguard();
+	EList<UMLTimeConstraint> getTimeguard();
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Deadlines</b></em>' containment reference list.

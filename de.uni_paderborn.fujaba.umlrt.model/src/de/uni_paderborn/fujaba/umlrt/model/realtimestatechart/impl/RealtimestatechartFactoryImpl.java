@@ -66,7 +66,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.UML_CLOCK: return createUMLClock();
 			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE: return createUMLRealtimeComplexState();
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: return createUMLInterfaceStatechart();
-			case RealtimestatechartPackage.UML_INVARIANT_ATOM: return createUMLInvariantAtom();
 			case RealtimestatechartPackage.UML_REALTIME_ACTION: return createUMLRealtimeAction();
 			case RealtimestatechartPackage.UML_REALTIME_EVENT: return createUMLRealtimeEvent();
 			case RealtimestatechartPackage.UML_REALTIME_FADING_FUNCTION: return createUMLRealtimeFadingFunction();
@@ -76,7 +75,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.UML_REALTIME_STOP_STATE: return createUMLRealtimeStopState();
 			case RealtimestatechartPackage.UML_REALTIME_TRANSITION: return createUMLRealtimeTransition();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
-			case RealtimestatechartPackage.UML_TIMEGUARD_ATOM: return createUMLTimeguardAtom();
+			case RealtimestatechartPackage.UML_TIME_CONSTRAINT: return createUMLTimeConstraint();
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
@@ -164,16 +163,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public UMLInterfaceStatechart createUMLInterfaceStatechart() {
 		UMLInterfaceStatechartImpl umlInterfaceStatechart = new UMLInterfaceStatechartImpl();
 		return umlInterfaceStatechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UMLInvariantAtom createUMLInvariantAtom() {
-		UMLInvariantAtomImpl umlInvariantAtom = new UMLInvariantAtomImpl();
-		return umlInvariantAtom;
 	}
 
 	/**
@@ -271,9 +260,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLTimeguardAtom createUMLTimeguardAtom() {
-		UMLTimeguardAtomImpl umlTimeguardAtom = new UMLTimeguardAtomImpl();
-		return umlTimeguardAtom;
+	public UMLTimeConstraint createUMLTimeConstraint() {
+		UMLTimeConstraintImpl umlTimeConstraint = new UMLTimeConstraintImpl();
+		return umlTimeConstraint;
 	}
 
 	/**

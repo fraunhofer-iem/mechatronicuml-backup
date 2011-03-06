@@ -108,10 +108,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createUMLInterfaceStatechartAdapter();
 			}
 			@Override
-			public Adapter caseUMLInvariantAtom(UMLInvariantAtom object) {
-				return createUMLInvariantAtomAdapter();
-			}
-			@Override
 			public Adapter caseUMLRealtimeAction(UMLRealtimeAction object) {
 				return createUMLRealtimeActionAdapter();
 			}
@@ -152,8 +148,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createSynchronizationChannelAdapter();
 			}
 			@Override
-			public Adapter caseUMLTimeguardAtom(UMLTimeguardAtom object) {
-				return createUMLTimeguardAtomAdapter();
+			public Adapter caseUMLTimeConstraint(UMLTimeConstraint object) {
+				return createUMLTimeConstraintAdapter();
 			}
 			@Override
 			public Adapter caseHistoryState(HistoryState object) {
@@ -308,20 +304,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom <em>UML Invariant Atom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom
-	 * @generated
-	 */
-	public Adapter createUMLInvariantAtomAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction <em>UML Realtime Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -462,16 +444,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom <em>UML Timeguard Atom</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint <em>UML Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint
 	 * @generated
 	 */
-	public Adapter createUMLTimeguardAtomAdapter() {
+	public Adapter createUMLTimeConstraintAdapter() {
 		return null;
 	}
 

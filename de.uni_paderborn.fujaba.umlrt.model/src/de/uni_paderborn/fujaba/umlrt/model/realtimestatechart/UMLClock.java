@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getResets <em>Resets</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getTimeConstraints <em>Time Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -120,6 +121,24 @@ public interface UMLClock extends EObject {
 	 * @generated
 	 */
 	EList<UMLClock> getResets();
+
+	/**
+	 * Returns the value of the '<em><b>Time Constraints</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getUmlClock <em>Uml Clock</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Constraints</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Constraints</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLClock_TimeConstraints()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint#getUmlClock
+	 * @model opposite="umlClock"
+	 * @generated
+	 */
+	EList<UMLTimeConstraint> getTimeConstraints();
 
 	/**
 	 * <!-- begin-user-doc -->

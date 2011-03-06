@@ -464,8 +464,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				getPortsDerived().clear();
 				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				//setComponentNameDerived(COMPONENT_NAME_DERIVED_EDEFAULT);
-				setComponentNameDerived(null);
+				setComponentNameDerived(COMPONENT_NAME_DERIVED_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
