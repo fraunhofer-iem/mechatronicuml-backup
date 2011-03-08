@@ -12,10 +12,17 @@
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="{0} : {1}"
+          editorPattern="{0}"
+          editPattern="{0}">
         <diagramLabel
             href="componentInstanceConfiguration.gmfgraph#ComponentInstanceName"/>
         <features
+            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        <features
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentNameDerived"/>
+        <editableFeatures
             href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool

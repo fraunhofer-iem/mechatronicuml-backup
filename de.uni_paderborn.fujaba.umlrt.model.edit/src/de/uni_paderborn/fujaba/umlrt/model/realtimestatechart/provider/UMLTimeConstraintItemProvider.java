@@ -9,9 +9,10 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
+
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,22 +24,26 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.modeling.expressions.ComparingOperator;
+
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class UMLInvariantAtomItemProvider
+public class UMLTimeConstraintItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +57,7 @@ public class UMLInvariantAtomItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLInvariantAtomItemProvider(AdapterFactory adapterFactory) {
+	public UMLTimeConstraintItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,8 +72,54 @@ public class UMLInvariantAtomItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUmlClockPropertyDescriptor(object);
+			addOperatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Uml Clock feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUmlClockPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLTimeConstraint_umlClock_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLTimeConstraint_umlClock_feature", "_UI_UMLTimeConstraint_type"),
+				 RealtimestatechartPackage.Literals.UML_TIME_CONSTRAINT__UML_CLOCK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperatorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLTimeConstraint_operator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLTimeConstraint_operator_feature", "_UI_UMLTimeConstraint_type"),
+				 RealtimestatechartPackage.Literals.UML_TIME_CONSTRAINT__OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -83,7 +134,7 @@ public class UMLInvariantAtomItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_TIME_CONSTRAINT__BOUND);
 		}
 		return childrenFeatures;
 	}
@@ -102,14 +153,14 @@ public class UMLInvariantAtomItemProvider
 	}
 
 	/**
-	 * This returns UMLInvariantAtom.gif.
+	 * This returns UMLTimeConstraint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/UMLInvariantAtom"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UMLTimeConstraint"));
 	}
 
 	/**
@@ -120,7 +171,11 @@ public class UMLInvariantAtomItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_UMLInvariantAtom_type");
+		ComparingOperator labelValue = ((UMLTimeConstraint)object).getOperator();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_UMLTimeConstraint_type") :
+			getString("_UI_UMLTimeConstraint_type") + " " + label;
 	}
 
 	/**
@@ -134,8 +189,11 @@ public class UMLInvariantAtomItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(UMLInvariantAtom.class)) {
-			case RealtimestatechartPackage.UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE:
+		switch (notification.getFeatureID(UMLTimeConstraint.class)) {
+			case RealtimestatechartPackage.UML_TIME_CONSTRAINT__OPERATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case RealtimestatechartPackage.UML_TIME_CONSTRAINT__BOUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,8 +213,8 @@ public class UMLInvariantAtomItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_INVARIANT_ATOM__UML_COMPLEX_REALTIME_STATE,
-				 RealtimestatechartFactory.eINSTANCE.createUMLRealtimeComplexState()));
+				(RealtimestatechartPackage.Literals.UML_TIME_CONSTRAINT__BOUND,
+				 CoreFactory.eINSTANCE.createNaturalNumber()));
 	}
 
 	/**

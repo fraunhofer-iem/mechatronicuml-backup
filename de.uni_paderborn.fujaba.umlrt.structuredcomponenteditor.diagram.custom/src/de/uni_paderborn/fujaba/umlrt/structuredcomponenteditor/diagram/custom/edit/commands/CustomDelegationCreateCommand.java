@@ -32,7 +32,6 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	 */
 	private StructuredComponent parentComponent;
 
-
 	/**
 	 * Constructs this CustomDelegationCreateCommand.
 	 * 

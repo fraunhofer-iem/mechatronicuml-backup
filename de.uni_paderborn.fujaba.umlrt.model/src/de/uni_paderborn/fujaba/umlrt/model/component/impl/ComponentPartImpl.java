@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
@@ -30,6 +31,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +40,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getFromRev <em>From Rev</em>}</li>
@@ -45,12 +48,33 @@ import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ComponentPartImpl extends NamedElementImpl implements ComponentPart {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -112,6 +136,16 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED).getSettingDelegate();
 
 	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cardinality cardinality;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -122,13 +156,13 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter componentPartPortsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
+		DerivedAttributeAdapter componentPartPortsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED, Notification.ADD_MANY);
 		componentPartPortsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
 		
 		// Install a notification adapter that informs the
 		// componentNameDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter componentPartComponentNameDerived = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED);
+		DerivedAttributeAdapter componentPartComponentNameDerived = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED, Notification.SET);
 		componentPartComponentNameDerived.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
@@ -140,6 +174,27 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentPackage.Literals.COMPONENT_PART;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -303,8 +358,42 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponentNameDerived(String newComponentNameDerived) {
-		COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicSet(this, null, 0, newComponentNameDerived);
+	public Cardinality getCardinality() {
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		if (newCardinality != cardinality) {
+			NotificationChain msgs = null;
+			if (cardinality != null)
+				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.COMPONENT_PART__CARDINALITY, null, msgs);
+			if (newCardinality != null)
+				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.COMPONENT_PART__CARDINALITY, null, msgs);
+			msgs = basicSetCardinality(newCardinality, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__CARDINALITY, newCardinality, newCardinality));
 	}
 
 	/**
@@ -354,6 +443,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return ((InternalEList<?>)getDelegation()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return ((InternalEList<?>)getPortsDerived()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -380,6 +471,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				return getComment();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
@@ -395,6 +488,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return getPortsDerived();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
 				return getComponentNameDerived();
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -408,6 +503,9 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				setComment((String)newValue);
+				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
@@ -426,12 +524,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				getDelegation().clear();
 				getDelegation().addAll((Collection<? extends Delegation>)newValue);
 				return;
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				getPortsDerived().clear();
-				getPortsDerived().addAll((Collection<? extends Port>)newValue);
-				return;
-			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				setComponentNameDerived((String)newValue);
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+				setCardinality((Cardinality)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,6 +539,9 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
@@ -460,11 +557,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			case ComponentPackage.COMPONENT_PART__DELEGATION:
 				getDelegation().clear();
 				return;
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				getPortsDerived().clear();
-				return;
-			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				setComponentNameDerived(COMPONENT_NAME_DERIVED_EDEFAULT);
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+				setCardinality((Cardinality)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -478,6 +572,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
@@ -492,8 +588,58 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
 				return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+				return cardinality != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.COMPONENT_PART__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.COMPONENT_PART__COMMENT;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentPartImpl

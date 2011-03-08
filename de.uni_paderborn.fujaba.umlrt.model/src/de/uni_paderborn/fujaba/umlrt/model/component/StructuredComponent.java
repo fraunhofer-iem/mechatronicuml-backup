@@ -66,4 +66,5 @@ public interface StructuredComponent extends Component {
 	 */
 	EList<ConnectorType> getConnectors();
 
+
 } // StructuredComponent

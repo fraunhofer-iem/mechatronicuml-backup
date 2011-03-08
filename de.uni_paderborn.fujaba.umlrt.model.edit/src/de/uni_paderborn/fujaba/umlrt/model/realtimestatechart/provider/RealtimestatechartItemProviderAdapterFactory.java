@@ -191,29 +191,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UMLInvariantAtomItemProvider umlInvariantAtomItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInvariantAtom}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUMLInvariantAtomAdapter() {
-		if (umlInvariantAtomItemProvider == null) {
-			umlInvariantAtomItemProvider = new UMLInvariantAtomItemProvider(this);
-		}
-
-		return umlInvariantAtomItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,26 +398,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UMLTimeguardAtomItemProvider umlTimeguardAtomItemProvider;
+	protected UMLTimeConstraintItemProvider umlTimeConstraintItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeguardAtom}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUMLTimeguardAtomAdapter() {
-		if (umlTimeguardAtomItemProvider == null) {
-			umlTimeguardAtomItemProvider = new UMLTimeguardAtomItemProvider(this);
+	public Adapter createUMLTimeConstraintAdapter() {
+		if (umlTimeConstraintItemProvider == null) {
+			umlTimeConstraintItemProvider = new UMLTimeConstraintItemProvider(this);
 		}
 
-		return umlTimeguardAtomItemProvider;
+		return umlTimeConstraintItemProvider;
 	}
 
 	/**
@@ -639,7 +616,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (umlClockItemProvider != null) umlClockItemProvider.dispose();
 		if (umlRealtimeComplexStateItemProvider != null) umlRealtimeComplexStateItemProvider.dispose();
 		if (umlInterfaceStatechartItemProvider != null) umlInterfaceStatechartItemProvider.dispose();
-		if (umlInvariantAtomItemProvider != null) umlInvariantAtomItemProvider.dispose();
 		if (umlRealtimeActionItemProvider != null) umlRealtimeActionItemProvider.dispose();
 		if (umlRealtimeEventItemProvider != null) umlRealtimeEventItemProvider.dispose();
 		if (umlRealtimeFadingFunctionItemProvider != null) umlRealtimeFadingFunctionItemProvider.dispose();
@@ -649,7 +625,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (umlRealtimeStopStateItemProvider != null) umlRealtimeStopStateItemProvider.dispose();
 		if (umlRealtimeTransitionItemProvider != null) umlRealtimeTransitionItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
-		if (umlTimeguardAtomItemProvider != null) umlTimeguardAtomItemProvider.dispose();
+		if (umlTimeConstraintItemProvider != null) umlTimeConstraintItemProvider.dispose();
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();

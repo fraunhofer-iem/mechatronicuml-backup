@@ -6,27 +6,27 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.LinkedList;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Structured Component</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Structured Component</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -37,11 +37,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class StructuredComponentImpl extends ComponentImpl implements StructuredComponent {
+public class StructuredComponentImpl extends ComponentImpl implements
+		StructuredComponent {
 	/**
 	 * The cached value of the '{@link #getEmbeddedParts() <em>Embedded Parts</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @see #getEmbeddedParts()
 	 * @generated
 	 * @ordered
@@ -50,8 +51,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getConnectors()
 	 * @generated
 	 * @ordered
@@ -59,8 +59,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	protected EList<ConnectorType> connectors;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StructuredComponentImpl() {
@@ -68,8 +67,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -78,8 +76,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<ComponentPart> getEmbeddedParts() {
@@ -90,8 +87,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<ConnectorType> getConnectors() {
@@ -102,13 +98,13 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmbeddedParts()).basicAdd(otherEnd, msgs);
@@ -119,12 +115,12 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
 				return ((InternalEList<?>)getEmbeddedParts()).basicRemove(otherEnd, msgs);
@@ -135,8 +131,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -151,8 +146,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -172,8 +166,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -190,8 +183,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -205,4 +197,7 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 		return super.eIsSet(featureID);
 	}
 
-} //StructuredComponentImpl
+	
+
+
+} // StructuredComponentImpl

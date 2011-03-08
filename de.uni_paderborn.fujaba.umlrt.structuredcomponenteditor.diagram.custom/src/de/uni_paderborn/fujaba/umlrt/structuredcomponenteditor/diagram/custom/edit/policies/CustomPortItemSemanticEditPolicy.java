@@ -7,18 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 
+import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomAssemblyCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomAssemblyReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationReorientCommand;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.PortItemSemanticEditPolicy;
 
 /**
@@ -30,12 +34,66 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.poli
  */
 public class CustomPortItemSemanticEditPolicy extends
 		PortItemSemanticEditPolicy {
+	/**
+	 * Deleting a PartPort also deletes the Port on Type-Layer. So we forbid
+	 * deleting this model element; instead only the view object will be
+	 * deleted.
+	 */
+	@Override
+	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		if (getParentElement(getHost()) instanceof ComponentPart) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return super.getDestroyElementCommand(req);
+	}
 
-	public CustomDelegationCreateCommand getDelegationCreateCommand(
+	@Override
+	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
+				.getElementType()) {
+			return getGEFWrapper(getDelegationCreateCommand(req));
+		}
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002 == req
+				.getElementType()) {
+			return getGEFWrapper(getAssemblyCreateCommand(req));
+		}
+		return super.getCreateRelationshipCommand(req);
+	}
+
+	@Override
+	protected Command getReorientRelationshipCommand(
+			ReorientRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
+			return getGEFWrapper(getDelegationReorientCommand(req));
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getGEFWrapper(getAssemblyReorientCommand(req));
+		}
+		return super.getReorientRelationshipCommand(req);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected Command getReorientRelationshipSourceCommand(
+			ReconnectRequest request) {
+		request.getExtendedData().put("CONNECTION_EDITPART",
+				request.getConnectionEditPart());
+		return super.getReorientRelationshipSourceCommand(request);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected Command getReorientRelationshipTargetCommand(
+			ReconnectRequest request) {
+		request.getExtendedData().put("CONNECTION_EDITPART",
+				request.getConnectionEditPart());
+		return super.getReorientRelationshipTargetCommand(request);
+	}
+
+	private CustomDelegationCreateCommand getDelegationCreateCommand(
 			CreateRelationshipRequest req) {
 
-		ComponentPart componentPart = null;
-		StructuredComponent structuredComponent = null;
 		Port sourcePort = null;
 		Port targetPort = null;
 
@@ -46,10 +104,11 @@ public class CustomPortItemSemanticEditPolicy extends
 		if (req.getTarget() instanceof Port) {
 			targetPort = (Port) req.getTarget();
 		}
-		Object sourceEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.SOURCE_PORT_EDITPART_KEY);
-		Object targetEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.TARGET_PORT_EDITPART_KEY);
+		Object sourceEditPart = req.getParameter("SOURCE_PORT_EDITPART");
+		Object targetEditPart = req.getParameter("TARGET_PORT_EDITPART");
+
+		ComponentPart componentPart = null;
+		StructuredComponent structuredComponent = null;
 
 		List<EditPart> editParts = new LinkedList<EditPart>();
 		if (sourceEditPart instanceof EditPart) {
@@ -82,7 +141,7 @@ public class CustomPortItemSemanticEditPolicy extends
 	 *            available.
 	 * @return the CustomAssemblyCreateCommand.
 	 */
-	public CustomAssemblyCreateCommand getAssemblyCreateCommand(
+	private CustomAssemblyCreateCommand getAssemblyCreateCommand(
 			CreateRelationshipRequest req) {
 		ComponentPart sourceComponentPart = null;
 		ComponentPart targetComponentPart = null;
@@ -97,8 +156,7 @@ public class CustomPortItemSemanticEditPolicy extends
 		}
 
 		// Now get the parent elements
-		Object sourceEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.SOURCE_PORT_EDITPART_KEY);
+		Object sourceEditPart = req.getParameter("SOURCE_PORT_EDITPART");
 		if (sourceEditPart instanceof EditPart) {
 			EObject sourceParentElement = getParentElement((EditPart) sourceEditPart);
 			if (sourceParentElement instanceof ComponentPart) {
@@ -106,8 +164,7 @@ public class CustomPortItemSemanticEditPolicy extends
 			}
 		}
 
-		Object targetEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.TARGET_PORT_EDITPART_KEY);
+		Object targetEditPart = req.getParameter("TARGET_PORT_EDITPART");
 		if (targetEditPart instanceof EditPart) {
 			EObject targetParentElement = getParentElement((EditPart) targetEditPart);
 			if (targetParentElement instanceof ComponentPart) {
@@ -117,6 +174,77 @@ public class CustomPortItemSemanticEditPolicy extends
 
 		return new CustomAssemblyCreateCommand(req, sourcePort, targetPort,
 				sourceComponentPart, targetComponentPart);
+	}
+
+	private CustomDelegationReorientCommand getDelegationReorientCommand(
+			ReorientRelationshipRequest req) {
+
+		Object connectionEditPart = req.getParameter("CONNECTION_EDITPART");
+
+		List<EditPart> editParts = new LinkedList<EditPart>();
+
+		if (connectionEditPart instanceof DelegationEditPart) {
+			DelegationEditPart delegationEditPart = (DelegationEditPart) connectionEditPart;
+			EditPart sourceEditPart = delegationEditPart.getSource();
+			EditPart targetEditPart = delegationEditPart.getTarget();
+
+			switch (req.getDirection()) {
+			case ReorientRequest.REORIENT_SOURCE:
+				sourceEditPart = getHost();
+				break;
+			case ReorientRequest.REORIENT_TARGET:
+				targetEditPart = getHost();
+				break;
+			}
+
+			if (sourceEditPart != null) {
+				editParts.add(sourceEditPart);
+			}
+			if (targetEditPart != null) {
+				editParts.add(targetEditPart);
+			}
+		}
+
+		ComponentPart componentPart = null;
+		StructuredComponent structuredComponent = null;
+
+		// Now get the parent elements
+		for (EditPart editPart : editParts) {
+			EObject parentElement = getParentElement(editPart);
+			if (parentElement instanceof StructuredComponent) {
+				structuredComponent = (StructuredComponent) parentElement;
+			} else if (parentElement instanceof ComponentPart) {
+				componentPart = (ComponentPart) parentElement;
+			}
+		}
+		return new CustomDelegationReorientCommand(req, componentPart,
+				structuredComponent);
+	}
+
+	private CustomAssemblyReorientCommand getAssemblyReorientCommand(
+			ReorientRelationshipRequest req) {
+		ComponentPart newComponentPart = null;
+
+		EObject parentElement = getParentElement(getHost());
+		if (parentElement instanceof ComponentPart) {
+			newComponentPart = (ComponentPart) parentElement;
+		}
+
+		Assembly assembly = (Assembly) req.getRelationship();
+		ComponentPart sourceComponentPart = assembly.getFrom();
+		ComponentPart targetComponentPart = assembly.getTo();
+
+		switch (req.getDirection()) {
+		case ReorientRequest.REORIENT_SOURCE:
+			sourceComponentPart = newComponentPart;
+			break;
+		case ReorientRequest.REORIENT_TARGET:
+			targetComponentPart = newComponentPart;
+			break;
+		}
+
+		return new CustomAssemblyReorientCommand(req, sourceComponentPart,
+				targetComponentPart);
 	}
 
 	/**
@@ -130,31 +258,6 @@ public class CustomPortItemSemanticEditPolicy extends
 		ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
 				.getParent();
 		return parentEditPart.getNotationView().getElement();
-	}
-
-	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(getDelegationCreateCommand(req));
-		}
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(getAssemblyCreateCommand(req));
-		}
-		return super.getCreateRelationshipCommand(req);
-	}
-
-	/**
-	 * Deleting a PartPort also deletes the Port on Type-Layer. So we forbid
-	 * deleting this model element; instead only the view object will be
-	 * deleted.
-	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		if (getParentElement(getHost()) instanceof ComponentPart) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		return super.getDestroyElementCommand(req);
 	}
 
 }

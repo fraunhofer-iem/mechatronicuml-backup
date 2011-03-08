@@ -77,7 +77,7 @@ public class DelegationItemProvider
 				 getString("_UI_Delegation_componentPart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Delegation_componentPart_feature", "_UI_Delegation_type"),
 				 ComponentPackage.Literals.DELEGATION__COMPONENT_PART,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

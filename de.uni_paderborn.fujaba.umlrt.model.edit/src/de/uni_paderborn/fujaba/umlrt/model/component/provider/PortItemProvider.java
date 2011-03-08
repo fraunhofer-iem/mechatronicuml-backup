@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -30,28 +29,23 @@ import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.descriptor.PortLowerBoundPropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.component.descriptor.PortUpperBoundPropertyDescriptor;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.PortCardinalityPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.Port} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the item provider adapter for a
+ * {@link de.uni_paderborn.fujaba.umlrt.model.component.Port} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class PortItemProvider
-	extends NamedElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class PortItemProvider extends NamedElementItemProvider implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PortItemProvider(AdapterFactory adapterFactory) {
@@ -60,13 +54,10 @@ public class PortItemProvider
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * 
-	 * For Cardinality: Use one descriptor for lower bound and one for upper bound.
-	 * 
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
 	 */
+	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
@@ -77,33 +68,7 @@ public class PortItemProvider
 			addPortKindPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addProvidedPropertyDescriptor(object);
-			// addCardinalityPropertyDescriptor(object);
-			itemPropertyDescriptors.add(new PortLowerBoundPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 "Lower Bound",
-                 "The lower bound of the Port's Cardinality",
-                 CorePackage.Literals.CARDINALITY__LOWER_BOUND,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-			
-			itemPropertyDescriptors.add(new PortUpperBoundPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 "Upper Bound",
-                 "The upper bound of the Port's Cardinality",
-                 CorePackage.Literals.CARDINALITY__UPPER_BOUND,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null)); 
-			
+			addCardinalityPropertyDescriptor(object);
 			addFromPortToConnectorRevPropertyDescriptor(object);
 			addToPortToConnectorRevPropertyDescriptor(object);
 		}
@@ -111,9 +76,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Comment feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addCommentPropertyDescriptor(Object object) {
@@ -134,8 +99,7 @@ public class PortItemProvider
 
 	/**
 	 * This adds a property descriptor for the Invisible Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addInvisibleInterfacesPropertyDescriptor(Object object) {
@@ -155,9 +119,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Refines feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Refines feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addRefinesPropertyDescriptor(Object object) {
@@ -177,9 +141,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Port Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Port Kind feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addPortKindPropertyDescriptor(Object object) {
@@ -199,9 +163,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Required feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addRequiredPropertyDescriptor(Object object) {
@@ -221,9 +185,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Provided feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addProvidedPropertyDescriptor(Object object) {
@@ -243,31 +207,40 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This adds a property descriptor for the Cardinality feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
 	 */
 	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__CARDINALITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+//				((ComposeableAdapterFactory) adapterFactory)
+//						.getRootAdapterFactory(),
+//				getResourceLocator(),
+//				getString("_UI_Port_cardinality_feature"),
+//				getString("_UI_PropertyDescriptor_description",
+//						"_UI_Port_cardinality_feature", "_UI_Port_type"),
+//				ComponentPackage.Literals.PORT__CARDINALITY, true, false, true,
+//				null, null, null));
+		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Lower Bound", "The lower bound of the Port's Cardinality",
+				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+				true, null, null, null));
+
+		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Upper Bound", "The upper bound of the Port's Cardinality",
+				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+				true, null, null, null));
+
 	}
 
 	/**
 	 * This adds a property descriptor for the From Port To Connector Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addFromPortToConnectorRevPropertyDescriptor(Object object) {
@@ -288,8 +261,7 @@ public class PortItemProvider
 
 	/**
 	 * This adds a property descriptor for the To Port To Connector Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addToPortToConnectorRevPropertyDescriptor(Object object) {
@@ -312,12 +284,12 @@ public class PortItemProvider
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.PORT__SPECIFICATION);
@@ -326,8 +298,7 @@ public class PortItemProvider
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -340,8 +311,7 @@ public class PortItemProvider
 
 	/**
 	 * This returns Port.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -351,8 +321,8 @@ public class PortItemProvider
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -366,8 +336,8 @@ public class PortItemProvider
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -387,14 +357,15 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
@@ -414,9 +385,9 @@ public class PortItemProvider
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

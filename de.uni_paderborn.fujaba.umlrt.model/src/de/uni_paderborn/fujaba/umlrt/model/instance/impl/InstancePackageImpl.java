@@ -49,6 +49,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.Reconf
 
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -236,6 +237,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentInstance_ComponentNameDerived() {
+		return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getComponentInstance__ToString() {
 		return componentInstanceEClass.getEOperations().get(0);
 	}
@@ -372,6 +382,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__TO_REF);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__FROM_REF);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORTS_DERIVED);
+		createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED);
 		createEOperation(componentInstanceEClass, COMPONENT_INSTANCE___TO_STRING);
 
 		connectorInstanceEClass = createEClass(CONNECTOR_INSTANCE);
@@ -426,10 +437,11 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInstance_ComponentType(), theComponentPackage.getComponent(), theComponentPackage.getComponent_ComponentInstances(), "componentType", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_ComponentType(), theComponentPackage.getComponent(), theComponentPackage.getComponent_ComponentInstances(), "componentType", null, 1, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ToRef(), this.getConnectorInstance(), this.getConnectorInstance_ToComponentI(), "toRef", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_FromRef(), this.getConnectorInstance(), this.getConnectorInstance_FromComponentI(), "fromRef", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstance_PortsDerived(), theComponentPackage.getPort(), null, "portsDerived", null, 0, -1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_PortsDerived(), theComponentPackage.getPort(), null, "portsDerived", null, 0, -1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstance_ComponentNameDerived(), ecorePackage.getEString(), "componentNameDerived", "", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getComponentInstance__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -472,7 +484,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });						
 	}
 
 	/**
@@ -487,7 +499,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getComponentInstance_PortsDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif"
+			 "derivation", "if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif"
+		   });		
+		addAnnotation
+		  (getComponentInstance_ComponentNameDerived(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
 		   });			
 	}
 

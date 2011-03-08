@@ -6,6 +6,8 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 
 /**
@@ -26,6 +28,9 @@ public class CustomPortFigure extends RectangleFigure {
 	public enum PortType {
 		NONE, IN_PORT, OUT_PORT, INOUT_PORT
 	};
+	
+	
+	private boolean multiPort;
 
 	/**
 	 * @generated
@@ -65,6 +70,7 @@ public class CustomPortFigure extends RectangleFigure {
 		this.setOutline(false);
 		this.mapMode = mapMode;
 		createContents();
+		setPortMulti(false);
 		setPortType(PortType.INOUT_PORT);
 		setPortSide(PositionConstants.NORTH);
 		getFigureInPolygon().setOutline(true);
@@ -121,6 +127,8 @@ public class CustomPortFigure extends RectangleFigure {
 	 *            true, if this Port is a multi port.
 	 */
 	public void setPortMulti(boolean isMulti) {
+		this.multiPort = isMulti;
+
 		// Calculate new Margin for bottom, right.
 		int marginBottomRight = 0;
 		if (isMulti) {
@@ -129,14 +137,16 @@ public class CustomPortFigure extends RectangleFigure {
 
 		// Calculate new preferred size, which is the original size (24,24)
 		// minus the margin.
-		Dimension preferredSize = getParent().getPreferredSize().getCopy();
-		preferredSize.expand(-marginBottomRight, -marginBottomRight);
-
-		// Set the new margin and the new preferred size. 
-		RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-		innerRectContainer.setBorder(new MarginBorder(0, 0, marginBottomRight,
-				marginBottomRight));
-		innerRectContainer.setPreferredSize(preferredSize);
+		if (getParent() != null) {
+			Dimension preferredSize = getParent().getPreferredSize().getCopy();
+			preferredSize.expand(-marginBottomRight, -marginBottomRight);
+	
+			// Set the new margin and the new preferred size. 
+			RectangleFigure innerRectContainer = getFigureInnerRectContainer();
+			innerRectContainer.setBorder(new MarginBorder(0, 0, marginBottomRight,
+					marginBottomRight));
+			innerRectContainer.setPreferredSize(preferredSize);
+		}
 	}
 
 	/**
@@ -290,5 +300,23 @@ public class CustomPortFigure extends RectangleFigure {
 	public RectangleFigure getFigureInnerRectContainer() {
 		return fFigureInnerRectContainer;
 	}
+
+	public PointList getCustomPolygonPoints(Rectangle anchRect) {
+		if (multiPort) {
+			PointList points = new PointList(9);
+			points.addPoint(anchRect.x, anchRect.y);
+			points.addPoint(anchRect.x + anchRect.width - 3, anchRect.y);
+			points.addPoint(anchRect.x + anchRect.width - 3, anchRect.y  + 3);
+			points.addPoint(anchRect.x + anchRect.width, anchRect.y + 3);
+			points.addPoint(anchRect.x + anchRect.width, anchRect.y + anchRect.height);
+			points.addPoint(anchRect.x + 3, anchRect.y + anchRect.height);
+			points.addPoint(anchRect.x + 3, anchRect.y + anchRect.height - 3);
+			points.addPoint(anchRect.x, anchRect.y + anchRect.height - 3);
+			points.addPoint(anchRect.x, anchRect.y);
+			return points;
+		}
+		return null;
+	}
+
 
 }

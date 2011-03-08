@@ -4,17 +4,17 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehaviour;
+import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehavior;
 import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
@@ -29,9 +29,8 @@ public class CustomPortEditPart extends PortEditPart {
 	 * All logic that is common between CustomPortEditPart and
 	 * CustomPort2EditPart is delegated, to reduce duplicate code.
 	 */
-	private PortBehaviour delegation;
+	private PortBehavior delegation;
 
-	
 	/**
 	 * Constructs this EditPart.
 	 * 
@@ -48,7 +47,22 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		primaryShape = portFigure;
+		getDelegation().setPortFigure(portFigure);
+		return primaryShape;
+	}
+
+	@Override
+	protected NodeFigure createNodePlate() {
+		return getDelegation().createNodePlate();
+	}
+
+	private PortBehavior getDelegation() {
+		if (delegation == null) {
+			delegation = new PortBehavior(this);
+		}
+		return delegation;
 	}
 
 	/**
@@ -57,9 +71,7 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		if (delegation != null) {
-			delegation.handleNotificationEvent(notification);
-		}
+		getDelegation().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
 	}
 
@@ -68,20 +80,17 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	public void activate() {
-		delegation = new PortBehaviour(this,
-				(CustomPortFigure) primaryShape);
-		delegation.activate();
+		getDelegation().activate();
 
 		EditPart parentEditPart = getParent();
-		if (parentEditPart instanceof StructuredComponentEditPart) {
-			IFigure figure = ((StructuredComponentEditPart) parentEditPart)
-					.getFigure();
-
-			if (figure instanceof BorderedNodeFigure) {
-				BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-				IFigure portContainerFigure = bnf.getBorderItemContainer();
-				delegation.addPortContainerLayoutListener(portContainerFigure);
-			}
+		IFigure figure = null;
+		if (parentEditPart instanceof GraphicalEditPart) {
+			figure = ((GraphicalEditPart) parentEditPart).getFigure();
+		}
+		if (figure instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+			IFigure portContainerFigure = bnf.getBorderItemContainer();
+			getDelegation().addPortContainerLayoutListener(portContainerFigure);
 		}
 
 		super.activate();
@@ -92,22 +101,18 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		if (delegation != null) {
-			EditPart parentEditPart = getParent();
-			if (parentEditPart instanceof StructuredComponentEditPart) {
-				IFigure figure = ((StructuredComponentEditPart) parentEditPart)
-						.getFigure();
-	
-				if (figure instanceof BorderedNodeFigure) {
-					BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-					IFigure portContainerFigure = bnf.getBorderItemContainer();
-					delegation.removePortContainerLayoutListener(portContainerFigure);
-				}
-			}
-			
-			delegation.deactivate();
-			delegation = null;
+		EditPart parentEditPart = getParent();
+		IFigure figure = null;
+		if (parentEditPart instanceof GraphicalEditPart) {
+			figure = ((GraphicalEditPart) parentEditPart).getFigure();
 		}
+		if (figure instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+			IFigure portContainerFigure = bnf.getBorderItemContainer();
+			getDelegation().removePortContainerLayoutListener(
+					portContainerFigure);
+		}
+		getDelegation().deactivate();
 		super.deactivate();
 	}
 

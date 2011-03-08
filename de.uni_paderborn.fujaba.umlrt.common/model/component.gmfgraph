@@ -2,8 +2,93 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
-  <figures>
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ComponentCanvas">
+  <figures
+      name="ComponentGallery">
+    <descriptors
+        name="ComponentMultiFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ComponentFigure"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="aux1"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                top="3"
+                left="3"/>
+          </border>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="shadow"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="InnerRectContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                bottom="3"
+                right="3"/>
+          </border>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="">
+            <layout
+                xsi:type="gmfgraph:StackLayout"/>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="container"
+                outline="false"
+                fill="false">
+              <layout
+                  xsi:type="gmfgraph:GridLayout"
+                  numColumns="2"
+                  equalWidth="false"/>
+              <border
+                  xsi:type="gmfgraph:MarginBorder">
+                <insets
+                    top="5"
+                    left="5"
+                    bottom="5"
+                    right="5"/>
+              </border>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="ComponentNameFigure"
+                  text="">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    verticalAlignment="BEGINNING"/>
+                <font
+                    xsi:type="gmfgraph:BasicFont"/>
+              </children>
+              <children
+                  xsi:type="gmfgraph:FigureRef"
+                  figure="//@figures.0/@descriptors.4/@actualFigure"/>
+            </children>
+          </children>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
     <descriptors
         name="ComponentFigure">
       <actualFigure
@@ -39,11 +124,11 @@
           </children>
           <children
               xsi:type="gmfgraph:FigureRef"
-              figure="//@figures.0/@descriptors.3/@actualFigure"/>
+              figure="//@figures.0/@descriptors.4/@actualFigure"/>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="ConnectorFigure">
@@ -189,13 +274,13 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.1/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.2/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.3/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="ComponentIconFigure">

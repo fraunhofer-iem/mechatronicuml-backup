@@ -181,4 +181,5 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 */
 	EList<ComponentInstance> getComponentInstances();
 
+
 } // Component

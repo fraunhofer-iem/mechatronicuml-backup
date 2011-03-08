@@ -70,6 +70,7 @@ public class UMLClockItemProvider
 			addAbsoluteDeadlinesPropertyDescriptor(object);
 			addUMLRealtimeStatechartPropertyDescriptor(object);
 			addResetsPropertyDescriptor(object);
+			addTimeConstraintsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -154,6 +155,28 @@ public class UMLClockItemProvider
 				 getString("_UI_UMLClock_resets_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UMLClock_resets_feature", "_UI_UMLClock_type"),
 				 RealtimestatechartPackage.Literals.UML_CLOCK__RESETS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Time Constraints feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeConstraintsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UMLClock_timeConstraints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLClock_timeConstraints_feature", "_UI_UMLClock_type"),
+				 RealtimestatechartPackage.Literals.UML_CLOCK__TIME_CONSTRAINTS,
 				 true,
 				 false,
 				 true,

@@ -6,34 +6,28 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.umlrt.model.component.Component;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,12 +40,18 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getToRef <em>To Ref</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getFromRef <em>From Ref</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
+	/**
+	 * @generated NOT
+	 */
+	private static final String COMPONENT_NAME_DERIVED_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -93,6 +93,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED).getSettingDelegate();
 
 	/**
+	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentNameDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -103,8 +113,14 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter daa = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED);
-		daa.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED, Notification.ADD_MANY);
+		portsDerivedAdapter.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
+		
+		// Install a notification adapter that informs the
+		// componentNameDerived-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter componentNameDerived = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED, Notification.SET);
+		componentNameDerived.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -216,6 +232,15 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getComponentNameDerived() {
+		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String toString() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -280,6 +305,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return getFromRef();
 			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
 				return getPortsDerived();
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
+				return getComponentNameDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -304,10 +331,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				getFromRef().clear();
 				getFromRef().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
-				getPortsDerived().clear();
-				getPortsDerived().addAll((Collection<? extends Port>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -329,9 +352,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
 				getFromRef().clear();
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
-				getPortsDerived().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -352,6 +372,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return fromRef != null && !fromRef.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
 				return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
+				return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

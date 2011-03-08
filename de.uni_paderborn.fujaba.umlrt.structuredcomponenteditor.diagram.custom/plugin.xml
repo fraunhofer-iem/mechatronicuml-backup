@@ -10,7 +10,7 @@
          icon="icons/StructuredComponentDiagram.gif"
          extensions="structuredcomponent_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
+         class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.part.CustomStructuredcomponentDiagramEditor"
          matchingStrategy="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentMatchingStrategy"
          contributorClass="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramActionBarContributor">
       </editor>

@@ -6,8 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import org.eclipse.emf.common.util.EList;
 
+import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 
@@ -30,14 +32,16 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TypeNotEqualToParent CardinalityLowerBoundSet CardinalityUpperBoundSet'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent'"
  * @generated
  */
-public interface ComponentPart extends NamedElement {
+public interface ComponentPart extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.
@@ -154,15 +158,15 @@ public interface ComponentPart extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_PortsDerived()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif'"
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif'"
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
-	 * The default value is <code>" "</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Name Derived</em>' attribute isn't clear,
@@ -170,22 +174,36 @@ public interface ComponentPart extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Name Derived</em>' attribute.
-	 * @see #setComponentNameDerived(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_ComponentNameDerived()
-	 * @model default=" " required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType->notEmpty() then\n\tcomponentType.name\nelse\n\tnull\nendif'"
+	 * @model default="" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif'"
 	 * @generated
 	 */
 	String getComponentNameDerived();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}' attribute.
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Name Derived</em>' attribute.
-	 * @see #getComponentNameDerived()
+	 * <!-- begin-model-doc -->
+	 * The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(Cardinality)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_Cardinality()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	void setComponentNameDerived(String value);
+	Cardinality getCardinality();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getCardinality <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
+	 * @see #getCardinality()
+	 * @generated
+	 */
+	void setCardinality(Cardinality value);
 
 } // ComponentPart

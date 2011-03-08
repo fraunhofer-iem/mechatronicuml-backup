@@ -3,16 +3,22 @@ package de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagr
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.policies.PortItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.providers.ComponentInstanceConfigurationElementTypes;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.commands.CustomConnectorInstanceCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.commands.CustomConnectorInstanceReorientCommand;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
 
 /**
  * A customized PortItemSemanticEditPolicy. We create our customized
@@ -24,6 +30,28 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 public class CustomPortItemSemanticEditPolicy extends
 		PortItemSemanticEditPolicy {
 
+	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
+
+		if (ComponentInstanceConfigurationElementTypes.ConnectorInstance_4001 == req
+				.getElementType()) {
+
+			return getGEFWrapper(getConnectorInstanceCreateCommand(req));
+		}
+
+		return super.getCreateRelationshipCommand(req);
+	}
+
+	@Override
+	protected Command getReorientRelationshipCommand(
+			ReorientRelationshipRequest req) {
+
+		switch (getVisualID(req)) {
+		case de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ConnectorInstanceEditPart.VISUAL_ID:
+			return getGEFWrapper(getConnectorInstanceReorientCommand(req));
+		}
+		return super.getReorientRelationshipCommand(req);
+	}
+
 	/**
 	 * Creates a CustomConnectorInstanceCreateCommand.
 	 * 
@@ -33,7 +61,7 @@ public class CustomPortItemSemanticEditPolicy extends
 	 *            available.
 	 * @return the CustomConnectorInstanceCreateCommand.
 	 */
-	public CustomConnectorInstanceCreateCommand getConnectorInstanceCreateCommand(
+	private CustomConnectorInstanceCreateCommand getConnectorInstanceCreateCommand(
 			CreateRelationshipRequest req) {
 		ComponentInstance sourceComponentInstance = null;
 		ComponentInstance targetComponentInstance = null;
@@ -59,8 +87,8 @@ public class CustomPortItemSemanticEditPolicy extends
 			targetComponentInstance = (ComponentInstance) getParentElement((EditPart) targetEditPart);
 		}
 
-		return new CustomConnectorInstanceCreateCommand(req, sourcePort, targetPort,
-				sourceComponentInstance, targetComponentInstance);
+		return new CustomConnectorInstanceCreateCommand(req, sourcePort,
+				targetPort, sourceComponentInstance, targetComponentInstance);
 	}
 
 	/**
@@ -82,18 +110,32 @@ public class CustomPortItemSemanticEditPolicy extends
 		return null;
 	}
 
-	/**
-	 * Delegates to the CustomPortItemSemanticDelegation.
-	 */
-	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		
-		if (ComponentInstanceConfigurationElementTypes.ConnectorInstance_4001 == req
-				.getElementType()) {
+	private ICommand getConnectorInstanceReorientCommand(
+			ReorientRelationshipRequest req) {
 
-			return getGEFWrapper(getConnectorInstanceCreateCommand(req));
+		ComponentInstance newComponentInstance = null;
+
+		EObject parentElement = getParentElement(getHost());
+		if (parentElement instanceof ComponentInstance) {
+			newComponentInstance = (ComponentInstance) parentElement;
 		}
 
-		return super.getCreateRelationshipCommand(req);
+		ConnectorInstance connector = (ConnectorInstance) req.getRelationship();
+		ComponentInstance sourceComponentInstance = connector
+				.getFromComponentI();
+		ComponentInstance targetComponentInstance = connector.getToComponentI();
+
+		switch (req.getDirection()) {
+		case ReorientRequest.REORIENT_SOURCE:
+			sourceComponentInstance = newComponentInstance;
+			break;
+		case ReorientRequest.REORIENT_TARGET:
+			targetComponentInstance = newComponentInstance;
+			break;
+		}
+
+		return new CustomConnectorInstanceReorientCommand(req,
+				sourceComponentInstance, targetComponentInstance);
 	}
 
 }

@@ -17,7 +17,7 @@
   <nodes
       name="ComponentPart">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentMultiFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

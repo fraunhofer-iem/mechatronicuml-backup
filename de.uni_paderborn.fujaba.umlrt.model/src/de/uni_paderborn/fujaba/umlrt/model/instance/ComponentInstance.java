@@ -30,6 +30,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getToRef <em>To Ref</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getFromRef <em>From Ref</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,7 +52,7 @@ public interface ComponentInstance extends NamedElement {
 	 * @see #setComponentType(Component)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_ComponentType()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances
-	 * @model opposite="componentInstances"
+	 * @model opposite="componentInstances" required="true"
 	 * @generated
 	 */
 	Component getComponentType();
@@ -113,11 +114,28 @@ public interface ComponentInstance extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_PortsDerived()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType->notEmpty() then\n\tcomponentType.ports\nelse\n\tOrderedSet { }\nendif'"
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif'"
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();
+
+	/**
+	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Name Derived</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Name Derived</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_ComponentNameDerived()
+	 * @model default="" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif'"
+	 * @generated
+	 */
+	String getComponentNameDerived();
 
 	/**
 	 * <!-- begin-user-doc -->

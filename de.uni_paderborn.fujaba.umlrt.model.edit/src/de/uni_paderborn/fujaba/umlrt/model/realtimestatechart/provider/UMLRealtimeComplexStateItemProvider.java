@@ -304,7 +304,7 @@ public class UMLRealtimeComplexStateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__INVARIANTS,
-				 RealtimestatechartFactory.eINSTANCE.createUMLInvariantAtom()));
+				 RealtimestatechartFactory.eINSTANCE.createUMLTimeConstraint()));
 	}
 
 	/**

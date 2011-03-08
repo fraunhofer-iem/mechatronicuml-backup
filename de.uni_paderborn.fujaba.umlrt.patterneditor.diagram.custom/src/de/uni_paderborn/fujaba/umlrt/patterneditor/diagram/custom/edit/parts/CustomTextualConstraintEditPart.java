@@ -14,24 +14,7 @@ public class CustomTextualConstraintEditPart extends TextualConstraintEditPart {
 	public CustomTextualConstraintEditPart(View view) {
 		super(view);
 	}
-//		this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-//				.DPtoLP(0)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode()
-//				.DPtoLP(0)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode()
-//				.DPtoLP(10)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode()
-//				.DPtoLP(10)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode()
-//				.DPtoLP(10)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(30), getMapMode()
-//				.DPtoLP(0)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode()
-//				.DPtoLP(10)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode()
-//				.DPtoLP(40)));
-//		this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
-//				.DPtoLP(40)));
+
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			public PointList getPolygonPoints() {

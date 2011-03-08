@@ -7,22 +7,13 @@
 package de.uni_paderborn.fujaba.umlrt.model.component.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,9 +22,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.ComponentPartCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.PortCardinalityPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart} object.
@@ -70,13 +70,33 @@ public class ComponentPartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCommentPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
-			addFromRevPropertyDescriptor(object);
-			addToRevPropertyDescriptor(object);
-			addDelegationPropertyDescriptor(object);
-			addComponentNameDerivedPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -102,91 +122,39 @@ public class ComponentPartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the From Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFromRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_fromRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_fromRev_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__FROM_REV,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the To Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addToRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_toRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_toRev_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__TO_REV,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Delegation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDelegationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_delegation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_delegation_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__DELEGATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Component Name Derived feature.
+	 * This adds a property descriptor for the Cardinality feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addComponentNameDerivedPropertyDescriptor(Object object) {
+	protected void addCardinalityPropertyDescriptor(Object object) {
 //		itemPropertyDescriptors.add
 //			(createItemPropertyDescriptor
 //				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 //				 getResourceLocator(),
-//				 getString("_UI_ComponentPart_componentNameDerived_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_componentNameDerived_feature", "_UI_ComponentPart_type"),
-//				 ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED,
+//				 getString("_UI_ComponentPart_cardinality_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_cardinality_feature", "_UI_ComponentPart_type"),
+//				 ComponentPackage.Literals.COMPONENT_PART__CARDINALITY,
 //				 true,
 //				 false,
 //				 false,
-//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+//				 null,
 //				 null,
 //				 null));
+		
+		itemPropertyDescriptors.add(new ComponentPartCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Lower Bound", "The lower bound of the ComponentPart's Cardinality",
+				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+				true, null, null, null));
+
+		itemPropertyDescriptors.add(new ComponentPartCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Upper Bound", "The upper bound of the ComponentPart's Cardinality",
+				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+				true, null, null, null));
 	}
 
 	/**
@@ -202,6 +170,7 @@ public class ComponentPartItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
+			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY);
 		}
 		return childrenFeatures;
 	}
@@ -256,10 +225,12 @@ public class ComponentPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
+			case ComponentPackage.COMPONENT_PART__COMMENT:
 			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
+			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -281,6 +252,11 @@ public class ComponentPartItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED,
 				 ComponentFactory.eINSTANCE.createPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY,
+				 CoreFactory.eINSTANCE.createCardinality()));
 	}
 
 	/**

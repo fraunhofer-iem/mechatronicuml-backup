@@ -45,7 +45,8 @@ import org.storydriven.modeling.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='body'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='self.cardinality.lowerBound->notEmpty()'"
  * @generated
  */
 public interface Port extends NamedElement, CommentableElement {
@@ -221,7 +222,7 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_Cardinality()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Cardinality getCardinality();

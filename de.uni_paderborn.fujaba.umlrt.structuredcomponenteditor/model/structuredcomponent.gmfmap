@@ -128,35 +128,4 @@
     <palette
         href="structuredcomponent.gmftool#//@palette"/>
   </diagram>
-  <audits
-      id="componentPart"
-      name="ComponentPart audits"
-      description="ComponentPart audits">
-    <audits
-        name="ComponentType->notEmpty()"
-        description="A ComponentPart's ComponentType must not be null."
-        id="componentPart.componentType.notEmpty"
-        message="ComponentType must be set">
-      <rule
-          body="self.componentType->notEmpty()"/>
-      <target
-          xsi:type="gmfmap:DomainElementTarget">
-        <element
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"/>
-      </target>
-    </audits>
-    <audits
-        name="ComponentType != parentComponent"
-        description="A ComponentPart's ComponentType must not be null."
-        id="componentPart.componentType.notequals.parentComponent"
-        message="ComponentType must not be identical to the parent Component.">
-      <rule
-          body="self.componentType &lt;> self.parentComponent"/>
-      <target
-          xsi:type="gmfmap:DomainElementTarget">
-        <element
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"/>
-      </target>
-    </audits>
-  </audits>
 </gmfmap:Mapping>

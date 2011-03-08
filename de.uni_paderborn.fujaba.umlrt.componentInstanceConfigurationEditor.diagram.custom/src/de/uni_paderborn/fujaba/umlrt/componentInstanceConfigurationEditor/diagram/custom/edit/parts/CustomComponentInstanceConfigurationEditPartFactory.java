@@ -4,6 +4,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.ComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationVisualIDRegistry;
 
@@ -22,6 +23,8 @@ public class CustomComponentInstanceConfigurationEditPartFactory extends
 			View view = (View) model;
 
 			switch (ComponentInstanceConfigurationVisualIDRegistry.getVisualID(view)) {
+			case ComponentInstanceEditPart.VISUAL_ID:
+				return new CustomComponentInstanceEditPart(view);
 			case PortEditPart.VISUAL_ID:
 				return new CustomPortEditPart(view);
 			}

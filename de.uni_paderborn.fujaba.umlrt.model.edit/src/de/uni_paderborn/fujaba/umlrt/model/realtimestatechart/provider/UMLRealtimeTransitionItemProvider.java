@@ -442,7 +442,7 @@ public class UMLRealtimeTransitionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.UML_REALTIME_TRANSITION__TIMEGUARD,
-				 RealtimestatechartFactory.eINSTANCE.createUMLTimeguardAtom()));
+				 RealtimestatechartFactory.eINSTANCE.createUMLTimeConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

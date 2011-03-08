@@ -24,9 +24,7 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintExpressionTextPropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintLanguagePropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.descriptor.TextualConstraintLanguageVersionPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.TextualConstraintExpressionPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint} object.
@@ -89,7 +87,7 @@ public class TextualConstraintItemProvider
 //				 null,
 //				 null));
 		
-		itemPropertyDescriptors.add(new TextualConstraintExpressionTextPropertyDescriptor(
+		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
                  "Expression Text",
@@ -102,7 +100,7 @@ public class TextualConstraintItemProvider
                  null,
                  null));
 		
-		itemPropertyDescriptors.add(new TextualConstraintLanguagePropertyDescriptor(
+		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
                  "Language",
@@ -115,7 +113,7 @@ public class TextualConstraintItemProvider
                  null,
                  null));
 		
-		itemPropertyDescriptors.add(new TextualConstraintLanguageVersionPropertyDescriptor(
+		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
                  "Language Version",

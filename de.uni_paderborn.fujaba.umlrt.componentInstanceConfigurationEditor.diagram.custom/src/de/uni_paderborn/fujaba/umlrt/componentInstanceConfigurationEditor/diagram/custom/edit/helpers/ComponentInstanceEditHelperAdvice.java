@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
 /**
  * An EditHelperAdvice for the ComponentInstance.
@@ -32,13 +32,13 @@ public class ComponentInstanceEditHelperAdvice extends AbstractEditHelperAdvice 
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				ComponentPart componentPart = (ComponentPart) request
+				ComponentInstance componentInstance = (ComponentInstance) request
 						.getElementToDestroy();
 
 				// prevent complete deletion of derived ports.
-				componentPart.setComponentType(null);
+				componentInstance.setComponentType(null);
 
-				return CommandResult.newOKCommandResult(componentPart);
+				return CommandResult.newOKCommandResult(componentInstance);
 			}
 
 		};

@@ -76,10 +76,7 @@ public class ComponentItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
-			addEClassPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
-			addMustImplementProvidedInterfacesPropertyDescriptor(object);
-			addMustImplementRequiredInterfacesPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
 			addComponentInstancesPropertyDescriptor(object);
 		}
@@ -131,28 +128,6 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the EClass feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_eClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_eClass_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__ECLASS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Referencing Component Parts feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,50 +150,6 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Must Implement Provided Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMustImplementProvidedInterfacesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementProvidedInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementProvidedInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Must Implement Required Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMustImplementRequiredInterfacesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementRequiredInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementRequiredInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -232,7 +163,7 @@ public class ComponentItemProvider
 				 getString("_UI_Component_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_kind_feature", "_UI_Component_type"),
 				 ComponentPackage.Literals.COMPONENT__KIND,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -254,7 +185,7 @@ public class ComponentItemProvider
 				 getString("_UI_Component_componentInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentInstances_feature", "_UI_Component_type"),
 				 ComponentPackage.Literals.COMPONENT__COMPONENT_INSTANCES,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

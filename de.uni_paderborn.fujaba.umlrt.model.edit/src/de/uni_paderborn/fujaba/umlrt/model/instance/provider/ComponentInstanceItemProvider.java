@@ -31,6 +31,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.storydriven.modeling.provider.NamedElementItemProvider;
@@ -71,8 +72,6 @@ public class ComponentInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addComponentTypePropertyDescriptor(object);
-			addToRefPropertyDescriptor(object);
-			addFromRefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,50 +90,6 @@ public class ComponentInstanceItemProvider
 				 getString("_UI_ComponentInstance_componentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_componentType_feature", "_UI_ComponentInstance_type"),
 				 InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the To Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addToRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_toRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_toRef_feature", "_UI_ComponentInstance_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE__TO_REF,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the From Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFromRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_fromRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_fromRef_feature", "_UI_ComponentInstance_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE__FROM_REF,
 				 true,
 				 false,
 				 true,
@@ -210,6 +165,9 @@ public class ComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

@@ -76,6 +76,11 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 				return false;
 			}
 		}
+		
+		// Make sure, sourceComponentPart is set.
+		if (sourceComponentPart == null) {
+			return false;
+		}
 
 		return super.canExecute();
 	}

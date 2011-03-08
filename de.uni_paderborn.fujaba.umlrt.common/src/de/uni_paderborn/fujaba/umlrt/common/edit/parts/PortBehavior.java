@@ -3,12 +3,15 @@ package de.uni_paderborn.fujaba.umlrt.common.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
@@ -22,7 +25,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
  * @author bingo
  * 
  */
-public class PortBehaviour {
+public class PortBehavior {
 	/**
 	 * The port's EditPart.
 	 */
@@ -57,10 +60,8 @@ public class PortBehaviour {
 	 * @param portFigure
 	 *            The port's figure.
 	 */
-	public PortBehaviour(AbstractBorderItemEditPart editPart,
-			CustomPortFigure portFigure) {
+	public PortBehavior(AbstractBorderItemEditPart editPart) {
 		this.editPart = editPart;
-		this.portFigure = portFigure;
 	}
 
 	/**
@@ -90,15 +91,18 @@ public class PortBehaviour {
 	 * Updates the PortFigure to visualize a multi-port, if necessary.
 	 */
 	public void updatePortCardinality() {
-		boolean isMulti = false;
-		if (port != null && port.getCardinality() != null) {
-			NaturalNumber upperBound = port.getCardinality().getUpperBound();
-			if (upperBound != null
-					&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
-				isMulti = true;
+		if (portFigure != null) {
+			boolean isMulti = false;
+			if (port != null && port.getCardinality() != null) {
+				NaturalNumber upperBound = port.getCardinality()
+						.getUpperBound();
+				if (upperBound != null
+						&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
+					isMulti = true;
+				}
 			}
+			portFigure.setPortMulti(isMulti);
 		}
-		portFigure.setPortMulti(isMulti);
 	}
 
 	/**
@@ -106,7 +110,7 @@ public class PortBehaviour {
 	 * InOutPort, according to the current model state.
 	 */
 	public void updatePortType() {
-		if (port != null) {
+		if (port != null && portFigure != null) {
 			CustomPortFigure.PortType portType;
 			if (port.getRequired() != null && port.getProvided() != null) {
 				portType = CustomPortFigure.PortType.INOUT_PORT;
@@ -176,10 +180,39 @@ public class PortBehaviour {
 		port = null;
 	}
 
-	
+	public CustomPortFigure getPortFigure() {
+		return portFigure;
+	}
+
+	public void setPortFigure(CustomPortFigure portFigure) {
+		this.portFigure = portFigure;
+	}
+
+
+	public NodeFigure createNodePlate() {
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
+			public PointList getPolygonPoints() {
+				PointList customPolygonPoints = null;
+				if (portFigure != null) {
+					customPolygonPoints = portFigure
+							.getCustomPolygonPoints(getHandleBounds());
+				}
+				if (customPolygonPoints != null) {
+					return customPolygonPoints;
+				}
+				return super.getPolygonPoints();
+			}
+		};
+
+		// FIXME: workaround for #154536
+		result.getBounds().setSize(result.getPreferredSize());
+		return result;
+	}
+
 	/**
-	 * A LayoutListener that listens to changes in the container's layout. After the
-	 * ports are layouted, we check at which side they are, to rotate their polygon.
+	 * A LayoutListener that listens to changes in the container's layout. After
+	 * the ports are layouted, we check at which side they are, to rotate their
+	 * polygon.
 	 * 
 	 * @author bingo
 	 * 
@@ -210,11 +243,13 @@ public class PortBehaviour {
 		}
 
 		/**
-		 * Rotate the port's figure according to the side that the port currently is at.
+		 * Rotate the port's figure according to the side that the port
+		 * currently is at.
 		 */
 		@Override
 		public void postLayout(IFigure container) {
-			IBorderItemLocator borderItemLocator = editPart.getBorderItemLocator();
+			IBorderItemLocator borderItemLocator = editPart
+					.getBorderItemLocator();
 			if (borderItemLocator != null) {
 				borderItemLocator.relocate(editPart.getFigure());
 				int side = borderItemLocator.getCurrentSideOfParent();
@@ -222,6 +257,4 @@ public class PortBehaviour {
 			}
 		}
 	}
-
-
 }

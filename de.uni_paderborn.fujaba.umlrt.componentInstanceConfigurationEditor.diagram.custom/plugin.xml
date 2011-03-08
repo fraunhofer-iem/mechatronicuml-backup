@@ -10,7 +10,7 @@
          icon="icons/ComponentInstance.gif"
          extensions="componentinstanceconfiguration_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditor"
+         class="de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.part.CustomComponentInstanceConfigurationDiagramEditor"
          matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationMatchingStrategy"
          contributorClass="de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramActionBarContributor">
       </editor>

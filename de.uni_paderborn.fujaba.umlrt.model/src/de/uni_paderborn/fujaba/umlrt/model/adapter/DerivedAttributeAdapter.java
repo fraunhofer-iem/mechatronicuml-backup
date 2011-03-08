@@ -30,12 +30,9 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	private EStructuralFeature dependantFeature = null;
 	private EStructuralFeature navigationFeature = null;
 
-	// TODO: Make sure, we send the correct event type (maybe also REMOVE_MANY).
-	/**
-	 * The event type to send. Originally Notification_SET was sent, but for
-	 * 0..* references, ADD_MANY seems to work better.
-	 */
-	private final int eventType = Notification.ADD_MANY;
+	// TODO: Make sure, we do not need to send two events (REMOVE_MANY and
+	// ADD_MANY), when setting a 1..* navigation.
+	private int eventType;
 
 	private AdapterImpl dependantAdapter = new AdapterImpl() {
 
@@ -49,44 +46,13 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 		}
 	};
 
-	/*
-	 * Convenience constructor for a local and navigated dependency
-	 */
 	public DerivedAttributeAdapter(EObject source,
-			EStructuralFeature derivedFeature,
-			EStructuralFeature navigationFeature,
-			EStructuralFeature dependantFeature, EStructuralFeature localFeature) {
-		this(source, derivedFeature);
-		addNavigatedDependency(navigationFeature, dependantFeature);
-		addLocalDependency(localFeature);
-	}
-
-	/*
-	 * Convenience constructor for a navigated dependency
-	 */
-	public DerivedAttributeAdapter(EObject source,
-			EStructuralFeature derivedFeature,
-			EStructuralFeature navigationFeature,
-			EStructuralFeature dependantFeature) {
-		this(source, derivedFeature);
-		addNavigatedDependency(navigationFeature, dependantFeature);
-	}
-
-	/*
-	 * Convenience constructor for a local dependency
-	 */
-	public DerivedAttributeAdapter(EObject source,
-			EStructuralFeature derivedFeature, EStructuralFeature localFeature) {
-		this(source, derivedFeature);
-		addLocalDependency(localFeature);
-	}
-
-	public DerivedAttributeAdapter(EObject source,
-			EStructuralFeature derivedFeature) {
+			EStructuralFeature derivedFeature, int eventType) {
 		super();
 		this.source = (InternalEObject) source;
 		this.derivedFeature = derivedFeature;
 		source.eAdapters().add(this);
+		this.eventType = eventType;
 	}
 
 	public void addNavigatedDependency(EStructuralFeature navigationFeature,
