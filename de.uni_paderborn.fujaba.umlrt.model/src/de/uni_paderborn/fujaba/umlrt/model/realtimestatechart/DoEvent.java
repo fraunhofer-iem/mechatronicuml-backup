@@ -56,7 +56,7 @@ public interface DoEvent extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Do Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getDoAction <em>Do Action</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction <em>Do Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Do Action Rev</em>' container reference isn't clear,
@@ -64,13 +64,13 @@ public interface DoEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Do Action Rev</em>' container reference.
-	 * @see #setDoActionRev(UMLRealtimeComplexState)
+	 * @see #setDoActionRev(UMLRealtimeCompositeState)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_DoActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getDoAction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction
 	 * @model opposite="doAction" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeComplexState getDoActionRev();
+	UMLRealtimeCompositeState getDoActionRev();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev <em>Do Action Rev</em>}' container reference.
@@ -80,7 +80,7 @@ public interface DoEvent extends EObject {
 	 * @see #getDoActionRev()
 	 * @generated
 	 */
-	void setDoActionRev(UMLRealtimeComplexState value);
+	void setDoActionRev(UMLRealtimeCompositeState value);
 
 	/**
 	 * Returns the value of the '<em><b>Period Lower</b></em>' attribute.

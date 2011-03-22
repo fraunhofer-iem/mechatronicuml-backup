@@ -145,26 +145,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UMLRealtimeComplexStateItemProvider umlRealtimeComplexStateItemProvider;
+	protected UMLRealtimeCompositeStateItemProvider umlRealtimeCompositeStateItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUMLRealtimeComplexStateAdapter() {
-		if (umlRealtimeComplexStateItemProvider == null) {
-			umlRealtimeComplexStateItemProvider = new UMLRealtimeComplexStateItemProvider(this);
+	public Adapter createUMLRealtimeCompositeStateAdapter() {
+		if (umlRealtimeCompositeStateItemProvider == null) {
+			umlRealtimeCompositeStateItemProvider = new UMLRealtimeCompositeStateItemProvider(this);
 		}
 
-		return umlRealtimeComplexStateItemProvider;
+		return umlRealtimeCompositeStateItemProvider;
 	}
 
 	/**
@@ -513,6 +513,52 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Prioritizable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrioritizableItemProvider prioritizableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Prioritizable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrioritizableAdapter() {
+		if (prioritizableItemProvider == null) {
+			prioritizableItemProvider = new PrioritizableItemProvider(this);
+		}
+
+		return prioritizableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RegionItemProvider regionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRegionAdapter() {
+		if (regionItemProvider == null) {
+			regionItemProvider = new RegionItemProvider(this);
+		}
+
+		return regionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -614,7 +660,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (absoluteDeadlineItemProvider != null) absoluteDeadlineItemProvider.dispose();
 		if (relativeDeadlineItemProvider != null) relativeDeadlineItemProvider.dispose();
 		if (umlClockItemProvider != null) umlClockItemProvider.dispose();
-		if (umlRealtimeComplexStateItemProvider != null) umlRealtimeComplexStateItemProvider.dispose();
+		if (umlRealtimeCompositeStateItemProvider != null) umlRealtimeCompositeStateItemProvider.dispose();
 		if (umlInterfaceStatechartItemProvider != null) umlInterfaceStatechartItemProvider.dispose();
 		if (umlRealtimeActionItemProvider != null) umlRealtimeActionItemProvider.dispose();
 		if (umlRealtimeEventItemProvider != null) umlRealtimeEventItemProvider.dispose();
@@ -630,6 +676,8 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
+		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
+		if (regionItemProvider != null) regionItemProvider.dispose();
 	}
 
 }

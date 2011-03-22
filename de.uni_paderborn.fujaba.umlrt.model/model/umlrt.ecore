@@ -718,16 +718,17 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLTimeConstraint/umlClock"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeComplexState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeCompositeState"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeState">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
-                <eParameters name="newComplexState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                <eParameters name="newComplexState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"/>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatecharts"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this complex state belongs to."/>
                 </eAnnotations>
@@ -759,13 +760,13 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfacedStates"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="TODO: What's this good for?"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="TODO: What's this good for?"/>
                 </eAnnotations>
@@ -1004,7 +1005,7 @@
                 </eAnnotations>
                 <eParameters name="set">
                   <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Set">
-                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                    <eTypeArguments eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"/>
                   </eGenericType>
                 </eParameters>
               </eOperations>
@@ -1059,7 +1060,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The complex state in which this realtime statechart is embedded."/>
@@ -1123,7 +1124,7 @@
                 <eParameters name="newStopState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStopState"/>
               </eOperations>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeTransition">
+            <eClassifiers xsi:type="ecore:EClass" name="UMLRealtimeTransition" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable">
               <eOperations name="hasClockInUMLClockResetAtom" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
                 <eParameters name="clock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
               </eOperations>
@@ -1138,7 +1139,6 @@
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="uMLRealtimeTransitionMappingVector"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Vector"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/sendSyncRev">
@@ -1226,8 +1226,8 @@
                 <eParameters name="newChannel" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeComplexState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/channels"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState/channels"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="UMLTimeConstraint">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1256,8 +1256,8 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="doActionRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/doAction"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState/doAction"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper"
@@ -1266,11 +1266,11 @@
             <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent">
               <eStructuralFeatures xsi:type="ecore:EReference" name="resets" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLClock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="entryActionRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/entryAction"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState/entryAction"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="exitActionRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState/exitAction"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState/exitAction"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeAction"/>
             </eClassifiers>
@@ -1281,6 +1281,13 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="receiveSyncRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeTransition/receiveSynchronization"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Prioritizable">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeStatechart"/>
             </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">
@@ -1302,7 +1309,7 @@
                 <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
                     eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="stateToBeActivated"
-                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"/>
               </eClassifiers>
               <eClassifiers xsi:type="ecore:EClass" name="DelegationReconf">
                 <eStructuralFeatures xsi:type="ecore:EReference" name="portReconf"
@@ -1340,7 +1347,7 @@
                 <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyReconfs"
                     upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeComplexState"/>
+                    eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/UMLRealtimeCompositeState"/>
               </eClassifiers>
             </eSubpackages>
             <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart/helper"

@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfFactory;
 
@@ -32,12 +32,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class UMLRealtimeComplexStateItemProvider
+public class UMLRealtimeCompositeStateItemProvider
 	extends UMLRealtimeStateItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -51,7 +51,7 @@ public class UMLRealtimeComplexStateItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeComplexStateItemProvider(AdapterFactory adapterFactory) {
+	public UMLRealtimeCompositeStateItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,7 +66,7 @@ public class UMLRealtimeComplexStateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLRealtimeStatechartsPropertyDescriptor(object);
+			addRegionsPropertyDescriptor(object);
 			addInterfacedStatesPropertyDescriptor(object);
 			addInterfaceStatePropertyDescriptor(object);
 			addCommittedPropertyDescriptor(object);
@@ -76,19 +76,19 @@ public class UMLRealtimeComplexStateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Realtime Statecharts feature.
+	 * This adds a property descriptor for the Regions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLRealtimeStatechartsPropertyDescriptor(Object object) {
+	protected void addRegionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeComplexState_uMLRealtimeStatecharts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeComplexState_uMLRealtimeStatecharts_feature", "_UI_UMLRealtimeComplexState_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__UML_REALTIME_STATECHARTS,
+				 getString("_UI_UMLRealtimeCompositeState_regions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeCompositeState_regions_feature", "_UI_UMLRealtimeCompositeState_type"),
+				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__REGIONS,
 				 true,
 				 false,
 				 true,
@@ -108,9 +108,9 @@ public class UMLRealtimeComplexStateItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeComplexState_interfacedStates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeComplexState_interfacedStates_feature", "_UI_UMLRealtimeComplexState_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__INTERFACED_STATES,
+				 getString("_UI_UMLRealtimeCompositeState_interfacedStates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeCompositeState_interfacedStates_feature", "_UI_UMLRealtimeCompositeState_type"),
+				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__INTERFACED_STATES,
 				 true,
 				 false,
 				 true,
@@ -130,9 +130,9 @@ public class UMLRealtimeComplexStateItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeComplexState_interfaceState_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeComplexState_interfaceState_feature", "_UI_UMLRealtimeComplexState_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__INTERFACE_STATE,
+				 getString("_UI_UMLRealtimeCompositeState_interfaceState_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeCompositeState_interfaceState_feature", "_UI_UMLRealtimeCompositeState_type"),
+				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__INTERFACE_STATE,
 				 true,
 				 false,
 				 true,
@@ -152,9 +152,9 @@ public class UMLRealtimeComplexStateItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeComplexState_committed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeComplexState_committed_feature", "_UI_UMLRealtimeComplexState_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__COMMITTED,
+				 getString("_UI_UMLRealtimeCompositeState_committed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeCompositeState_committed_feature", "_UI_UMLRealtimeCompositeState_type"),
+				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__COMMITTED,
 				 true,
 				 false,
 				 false,
@@ -174,9 +174,9 @@ public class UMLRealtimeComplexStateItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeComplexState_channels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeComplexState_channels_feature", "_UI_UMLRealtimeComplexState_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__CHANNELS,
+				 getString("_UI_UMLRealtimeCompositeState_channels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeCompositeState_channels_feature", "_UI_UMLRealtimeCompositeState_type"),
+				 RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__CHANNELS,
 				 true,
 				 false,
 				 true,
@@ -197,11 +197,11 @@ public class UMLRealtimeComplexStateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__DO_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__EXIT_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__ENTRY_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__RECONF_DIAGRAM);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__INVARIANTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__DO_ACTION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__RECONF_DIAGRAM);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__INVARIANTS);
 		}
 		return childrenFeatures;
 	}
@@ -220,14 +220,14 @@ public class UMLRealtimeComplexStateItemProvider
 	}
 
 	/**
-	 * This returns UMLRealtimeComplexState.gif.
+	 * This returns UMLRealtimeCompositeState.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/UMLRealtimeComplexState"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UMLRealtimeCompositeState"));
 	}
 
 	/**
@@ -238,10 +238,10 @@ public class UMLRealtimeComplexStateItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UMLRealtimeComplexState)object).getName();
+		String label = ((UMLRealtimeCompositeState)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_UMLRealtimeComplexState_type") :
-			getString("_UI_UMLRealtimeComplexState_type") + " " + label;
+			getString("_UI_UMLRealtimeCompositeState_type") :
+			getString("_UI_UMLRealtimeCompositeState_type") + " " + label;
 	}
 
 	/**
@@ -255,15 +255,15 @@ public class UMLRealtimeComplexStateItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(UMLRealtimeComplexState.class)) {
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__COMMITTED:
+		switch (notification.getFeatureID(UMLRealtimeCompositeState.class)) {
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__COMMITTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__DO_ACTION:
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__EXIT_ACTION:
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__ENTRY_ACTION:
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__RECONF_DIAGRAM:
-			case RealtimestatechartPackage.UML_REALTIME_COMPLEX_STATE__INVARIANTS:
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__DO_ACTION:
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION:
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION:
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__RECONF_DIAGRAM:
+			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__INVARIANTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -283,27 +283,27 @@ public class UMLRealtimeComplexStateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__DO_ACTION,
+				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__DO_ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__EXIT_ACTION,
+				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__ENTRY_ACTION,
+				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__RECONF_DIAGRAM,
+				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__RECONF_DIAGRAM,
 				 ReconfFactory.eINSTANCE.createReconfDiagram()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__INVARIANTS,
+				(RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__INVARIANTS,
 				 RealtimestatechartFactory.eINSTANCE.createUMLTimeConstraint()));
 	}
 
@@ -319,8 +319,8 @@ public class UMLRealtimeComplexStateItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__EXIT_ACTION ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_COMPLEX_STATE__ENTRY_ACTION;
+			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION ||
+			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION;
 
 		if (qualify) {
 			return getString

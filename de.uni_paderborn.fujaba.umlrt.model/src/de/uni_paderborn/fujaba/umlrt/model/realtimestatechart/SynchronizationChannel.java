@@ -31,7 +31,7 @@ import org.storydriven.modeling.calls.Callable;
 public interface SynchronizationChannel extends NamedElement, Callable {
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Complex State</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getChannels <em>Channels</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getChannels <em>Channels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>UML Realtime Complex State</em>' reference isn't clear,
@@ -39,13 +39,13 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Realtime Complex State</em>' reference.
-	 * @see #setUMLRealtimeComplexState(UMLRealtimeComplexState)
+	 * @see #setUMLRealtimeComplexState(UMLRealtimeCompositeState)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_UMLRealtimeComplexState()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getChannels
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getChannels
 	 * @model opposite="channels"
 	 * @generated
 	 */
-	UMLRealtimeComplexState getUMLRealtimeComplexState();
+	UMLRealtimeCompositeState getUMLRealtimeComplexState();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getUMLRealtimeComplexState <em>UML Realtime Complex State</em>}' reference.
@@ -55,7 +55,7 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	 * @see #getUMLRealtimeComplexState()
 	 * @generated
 	 */
-	void setUMLRealtimeComplexState(UMLRealtimeComplexState value);
+	void setUMLRealtimeComplexState(UMLRealtimeCompositeState value);
 
 	/**
 	 * <!-- begin-user-doc -->

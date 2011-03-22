@@ -250,12 +250,12 @@ public interface UMLRealtimeStatechart extends NamedElement, CommentableElement 
 	 * The complex state in which this realtime statechart is embedded.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>UML Complex Realtime State</em>' containment reference.
-	 * @see #setUMLComplexRealtimeState(UMLRealtimeComplexState)
+	 * @see #setUMLComplexRealtimeState(UMLRealtimeCompositeState)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeStatechart_UMLComplexRealtimeState()
 	 * @model containment="true"
 	 * @generated
 	 */
-	UMLRealtimeComplexState getUMLComplexRealtimeState();
+	UMLRealtimeCompositeState getUMLComplexRealtimeState();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart#getUMLComplexRealtimeState <em>UML Complex Realtime State</em>}' containment reference.
@@ -265,7 +265,7 @@ public interface UMLRealtimeStatechart extends NamedElement, CommentableElement 
 	 * @see #getUMLComplexRealtimeState()
 	 * @generated
 	 */
-	void setUMLComplexRealtimeState(UMLRealtimeComplexState value);
+	void setUMLComplexRealtimeState(UMLRealtimeCompositeState value);
 
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Transitions</b></em>' containment reference list.
@@ -506,10 +506,10 @@ public interface UMLRealtimeStatechart extends NamedElement, CommentableElement 
 	 * <!-- begin-model-doc -->
 	 * Adds all complex states to the set given as an argument.
 	 * <!-- end-model-doc -->
-	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState>"
+	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState>"
 	 * @generated
 	 */
-	void addComplexUMLRealtimeStates(Set<UMLRealtimeComplexState> set);
+	void addComplexUMLRealtimeStates(Set<UMLRealtimeCompositeState> set);
 
 	/**
 	 * <!-- begin-user-doc -->

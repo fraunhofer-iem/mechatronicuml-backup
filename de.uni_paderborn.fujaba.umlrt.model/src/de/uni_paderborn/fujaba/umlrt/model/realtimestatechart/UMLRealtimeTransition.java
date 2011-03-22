@@ -25,7 +25,6 @@ import org.storydriven.modeling.expressions.Expression;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getUMLRealtimeTransitionMappingVector <em>UML Realtime Transition Mapping Vector</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getPriority <em>Priority</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getSendSynchronization <em>Send Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getSideEffect <em>Side Effect</em>}</li>
@@ -49,7 +48,7 @@ import org.storydriven.modeling.expressions.Expression;
  * @model
  * @generated
  */
-public interface UMLRealtimeTransition extends EObject {
+public interface UMLRealtimeTransition extends Prioritizable {
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Transition Mapping Vector</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,32 +74,6 @@ public interface UMLRealtimeTransition extends EObject {
 	 * @generated
 	 */
 	void setUMLRealtimeTransitionMappingVector(Vector value);
-
-	/**
-	 * Returns the value of the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Priority</em>' attribute.
-	 * @see #setPriority(int)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeTransition_Priority()
-	 * @model
-	 * @generated
-	 */
-	int getPriority();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getPriority <em>Priority</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Priority</em>' attribute.
-	 * @see #getPriority()
-	 * @generated
-	 */
-	void setPriority(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Send Synchronization</b></em>' reference.

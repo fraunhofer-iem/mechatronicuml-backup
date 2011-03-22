@@ -53,13 +53,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	UMLClock createUMLClock();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Complex State</em>'.
+	 * Returns a new object of class '<em>UML Realtime Composite State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Complex State</em>'.
+	 * @return a new object of class '<em>UML Realtime Composite State</em>'.
 	 * @generated
 	 */
-	UMLRealtimeComplexState createUMLRealtimeComplexState();
+	UMLRealtimeCompositeState createUMLRealtimeCompositeState();
 
 	/**
 	 * Returns a new object of class '<em>UML Interface Statechart</em>'.
@@ -195,6 +195,24 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Synchronization createSynchronization();
+
+	/**
+	 * Returns a new object of class '<em>Prioritizable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Prioritizable</em>'.
+	 * @generated
+	 */
+	Prioritizable createPrioritizable();
+
+	/**
+	 * Returns a new object of class '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Region</em>'.
+	 * @generated
+	 */
+	Region createRegion();
 
 	/**
 	 * Returns the package supported by this factory.

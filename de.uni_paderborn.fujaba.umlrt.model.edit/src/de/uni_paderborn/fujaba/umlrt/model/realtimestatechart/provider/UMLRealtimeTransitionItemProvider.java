@@ -42,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class UMLRealtimeTransitionItemProvider
-	extends ItemProviderAdapter
+	extends PrioritizableItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -71,7 +71,6 @@ public class UMLRealtimeTransitionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUMLRealtimeTransitionMappingVectorPropertyDescriptor(object);
-			addPriorityPropertyDescriptor(object);
 			addSendSynchronizationPropertyDescriptor(object);
 			addReceiveSynchronizationPropertyDescriptor(object);
 			addTargetUMLRealtimeStatePropertyDescriptor(object);
@@ -102,28 +101,6 @@ public class UMLRealtimeTransitionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Priority feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPriorityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UMLRealtimeTransition_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UMLRealtimeTransition_priority_feature", "_UI_UMLRealtimeTransition_type"),
-				 RealtimestatechartPackage.Literals.UML_REALTIME_TRANSITION__PRIORITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -360,11 +337,8 @@ public class UMLRealtimeTransitionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Vector labelValue = ((UMLRealtimeTransition)object).getUMLRealtimeTransitionMappingVector();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_UMLRealtimeTransition_type") :
-			getString("_UI_UMLRealtimeTransition_type") + " " + label;
+		UMLRealtimeTransition umlRealtimeTransition = (UMLRealtimeTransition)object;
+		return getString("_UI_UMLRealtimeTransition_type") + " " + umlRealtimeTransition.getPriority();
 	}
 
 	/**
@@ -380,7 +354,6 @@ public class UMLRealtimeTransitionItemProvider
 
 		switch (notification.getFeatureID(UMLRealtimeTransition.class)) {
 			case RealtimestatechartPackage.UML_REALTIME_TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR:
-			case RealtimestatechartPackage.UML_REALTIME_TRANSITION__PRIORITY:
 			case RealtimestatechartPackage.UML_REALTIME_TRANSITION__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -471,17 +444,6 @@ public class UMLRealtimeTransitionItemProvider
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

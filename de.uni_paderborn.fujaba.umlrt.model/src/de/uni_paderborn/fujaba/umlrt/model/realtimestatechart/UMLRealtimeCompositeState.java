@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>UML Realtime Complex State</b></em>'.
+ * A representation of the model object '<em><b>UML Realtime Composite State</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -24,38 +24,38 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getUMLRealtimeStatecharts <em>UML Realtime Statecharts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getDoAction <em>Do Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getExitAction <em>Exit Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getEntryAction <em>Entry Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getReconfDiagram <em>Reconf Diagram</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getInterfacedStates <em>Interfaced States</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getInterfaceState <em>Interface State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getInvariants <em>Invariants</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#isCommitted <em>Committed</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getChannels <em>Channels</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getRegions <em>Regions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction <em>Do Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getExitAction <em>Exit Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getEntryAction <em>Entry Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getReconfDiagram <em>Reconf Diagram</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getInterfacedStates <em>Interfaced States</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getInterfaceState <em>Interface State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getInvariants <em>Invariants</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#isCommitted <em>Committed</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState()
+ * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState()
  * @model
  * @generated
  */
-public interface UMLRealtimeComplexState extends UMLRealtimeState {
+public interface UMLRealtimeCompositeState extends UMLRealtimeState {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Statecharts</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart}.
+	 * Returns the value of the '<em><b>Regions</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this complex state belongs to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>UML Realtime Statecharts</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_UMLRealtimeStatecharts()
+	 * @return the value of the '<em>Regions</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_Regions()
 	 * @model
 	 * @generated
 	 */
-	EList<UMLRealtimeStatechart> getUMLRealtimeStatecharts();
+	EList<Region> getRegions();
 
 	/**
 	 * Returns the value of the '<em><b>Do Action</b></em>' containment reference.
@@ -67,7 +67,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Do Action</em>' containment reference.
 	 * @see #setDoAction(DoEvent)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_DoAction()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_DoAction()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev
 	 * @model opposite="doActionRev" containment="true"
 	 * @generated
@@ -75,7 +75,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	DoEvent getDoAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getDoAction <em>Do Action</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction <em>Do Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Do Action</em>' containment reference.
@@ -94,7 +94,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Action</em>' containment reference.
 	 * @see #setExitAction(EntryOrExitEvent)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_ExitAction()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_ExitAction()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev
 	 * @model opposite="exitActionRev" containment="true"
 	 * @generated
@@ -102,7 +102,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	EntryOrExitEvent getExitAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getExitAction <em>Exit Action</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getExitAction <em>Exit Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Exit Action</em>' containment reference.
@@ -121,7 +121,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Action</em>' containment reference.
 	 * @see #setEntryAction(EntryOrExitEvent)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_EntryAction()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_EntryAction()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev
 	 * @model opposite="entryActionRev" containment="true"
 	 * @generated
@@ -129,7 +129,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	EntryOrExitEvent getEntryAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getEntryAction <em>Entry Action</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getEntryAction <em>Entry Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Entry Action</em>' containment reference.
@@ -147,14 +147,14 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconf Diagram</em>' containment reference.
 	 * @see #setReconfDiagram(ReconfDiagram)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_ReconfDiagram()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_ReconfDiagram()
 	 * @model containment="true"
 	 * @generated
 	 */
 	ReconfDiagram getReconfDiagram();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getReconfDiagram <em>Reconf Diagram</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getReconfDiagram <em>Reconf Diagram</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Reconf Diagram</em>' containment reference.
@@ -165,18 +165,18 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 
 	/**
 	 * Returns the value of the '<em><b>Interfaced States</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * TODO: What's this good for?
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interfaced States</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_InterfacedStates()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_InterfacedStates()
 	 * @model
 	 * @generated
 	 */
-	EList<UMLRealtimeComplexState> getInterfacedStates();
+	EList<UMLRealtimeCompositeState> getInterfacedStates();
 
 	/**
 	 * Returns the value of the '<em><b>Interface State</b></em>' reference.
@@ -186,22 +186,22 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * TODO: What's this good for?
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interface State</em>' reference.
-	 * @see #setInterfaceState(UMLRealtimeComplexState)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_InterfaceState()
+	 * @see #setInterfaceState(UMLRealtimeCompositeState)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_InterfaceState()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeComplexState getInterfaceState();
+	UMLRealtimeCompositeState getInterfaceState();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#getInterfaceState <em>Interface State</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getInterfaceState <em>Interface State</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interface State</em>' reference.
 	 * @see #getInterfaceState()
 	 * @generated
 	 */
-	void setInterfaceState(UMLRealtimeComplexState value);
+	void setInterfaceState(UMLRealtimeCompositeState value);
 
 	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.
@@ -212,7 +212,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Invariants</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_Invariants()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_Invariants()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -227,14 +227,14 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Committed</em>' attribute.
 	 * @see #setCommitted(boolean)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_Committed()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_Committed()
 	 * @model
 	 * @generated
 	 */
 	boolean isCommitted();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeComplexState#isCommitted <em>Committed</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#isCommitted <em>Committed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Committed</em>' attribute.
@@ -253,7 +253,7 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * The synchronization channels provided by this complex state.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Channels</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeComplexState_Channels()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLRealtimeCompositeState_Channels()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getUMLRealtimeComplexState
 	 * @model opposite="uMLRealtimeComplexState"
 	 * @generated
@@ -266,6 +266,6 @@ public interface UMLRealtimeComplexState extends UMLRealtimeState {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(UMLRealtimeStatechart rtsc, UMLRealtimeComplexState newComplexState);
+	EObject clone(UMLRealtimeStatechart rtsc, UMLRealtimeCompositeState newComplexState);
 
-} // UMLRealtimeComplexState
+} // UMLRealtimeCompositeState

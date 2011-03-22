@@ -429,7 +429,7 @@ public class UMLRealtimeStatechartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE,
-				 RealtimestatechartFactory.eINSTANCE.createUMLRealtimeComplexState()));
+				 RealtimestatechartFactory.eINSTANCE.createUMLRealtimeCompositeState()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -439,7 +439,7 @@ public class UMLRealtimeStatechartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_REALTIME_STATES,
-				 RealtimestatechartFactory.eINSTANCE.createUMLRealtimeComplexState()));
+				 RealtimestatechartFactory.eINSTANCE.createUMLRealtimeCompositeState()));
 
 		newChildDescriptors.add
 			(createChildParameter
