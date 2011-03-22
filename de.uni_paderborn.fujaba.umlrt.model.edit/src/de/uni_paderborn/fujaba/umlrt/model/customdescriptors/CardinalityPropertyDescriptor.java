@@ -6,19 +6,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
-
 
 /**
  * 
  * @generated NOT
  * 
  * @author bingo
- *
+ * 
  */
 public abstract class CardinalityPropertyDescriptor extends
 		NavigatedObjectPropertyDescriptor {
@@ -64,27 +62,26 @@ public abstract class CardinalityPropertyDescriptor extends
 	@Override
 	protected Object getObjectValue(EObject navigatedObject,
 			EStructuralFeature feature) {
-		if (feature instanceof EReference) {
-			EReference reference = (EReference) feature;
-			if (reference.getContainerClass() == Cardinality.class) {
-				int featureID = reference.getFeatureID();
-				switch (featureID) {
-				case CorePackage.CARDINALITY__LOWER_BOUND:
-					NaturalNumber lowerBound = ((Cardinality) navigatedObject)
-							.getLowerBound();
-					if (lowerBound != null) {
-						return lowerBound.toString();
-					}
-					break;
-				case CorePackage.CARDINALITY__UPPER_BOUND:
-					NaturalNumber upperBound = ((Cardinality) navigatedObject)
-							.getUpperBound();
-					if (upperBound != null) {
-						return upperBound.toString();
-					}
-					break;
+
+		if (feature.getContainerClass() == Cardinality.class) {
+			int featureID = feature.getFeatureID();
+			switch (featureID) {
+			case CorePackage.CARDINALITY__LOWER_BOUND:
+				NaturalNumber lowerBound = ((Cardinality) navigatedObject)
+						.getLowerBound();
+				if (lowerBound != null) {
+					return lowerBound.toString();
 				}
+				break;
+			case CorePackage.CARDINALITY__UPPER_BOUND:
+				NaturalNumber upperBound = ((Cardinality) navigatedObject)
+						.getUpperBound();
+				if (upperBound != null) {
+					return upperBound.toString();
+				}
+				break;
 			}
+
 		}
 		return null;
 

@@ -6,10 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.storydriven.modeling.expressions.ExpressionsFactory;
-import org.storydriven.modeling.expressions.TextualExpression;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
 
 /**
  * 
