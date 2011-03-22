@@ -51,16 +51,10 @@
           name="RoleNameFigure"/>
     </descriptors>
     <descriptors
-        name="RoleConstraintFigure">
+        name="ConstraintLinkFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="RoleConstraintFigure"/>
-    </descriptors>
-    <descriptors
-        name="CoordinationPatternConstraintFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="CoordinationPatternConstraintFigure"/>
+          name="ConstraintLinkFigure"/>
     </descriptors>
     <descriptors
         name="TextualConstraintFigure">
@@ -93,7 +87,7 @@
             y="40"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -119,11 +113,8 @@
       name="RolePattern"
       figure="RolePatternFigure"/>
   <connections
-      name="RoleConstraint"
-      figure="RoleConstraintFigure"/>
-  <connections
-      name="CoordinationPatternConstraint"
-      figure="CoordinationPatternConstraintFigure"/>
+      name="ConstraintLink"
+      figure="ConstraintLinkFigure"/>
   <labels
       name="CoordinationPatternName"
       figure="CoordinationPatternFigure"
@@ -137,5 +128,5 @@
       name="TextualConstraintName"
       figure="TextualConstraintFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
 </gmfgraph:Canvas>

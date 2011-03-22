@@ -27,6 +27,7 @@
         visualID="2001"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationPatternViewFactory"
         canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
         createCommandClassName="CoordinationPatternCreateCommand">
@@ -50,7 +51,8 @@
       <labels
           visualID="5001"
           editPartClassName="CoordinationPatternNameEditPart"
-          itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CoordinationPatternNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -69,6 +71,7 @@
         visualID="2002"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleViewFactory"
         canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy"
         createCommandClassName="RoleCreateCommand">
@@ -97,7 +100,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5002"
           editPartClassName="RoleNameEditPart"
-          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RoleNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -115,6 +119,7 @@
         visualID="2003"
         editPartClassName="TextualConstraintEditPart"
         itemSemanticEditPolicyClassName="TextualConstraintItemSemanticEditPolicy"
+        notationViewFactoryClassName="TextualConstraintViewFactory"
         canonicalEditPolicyClassName="TextualConstraintCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="TextualConstraintGraphicalNodeEditPolicy"
         createCommandClassName="TextualConstraintCreateCommand">
@@ -140,6 +145,7 @@
         visualID="4001"
         editPartClassName="RoleConnectorEditPart"
         itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleConnectorViewFactory"
         createCommandClassName="RoleConnectorCreateCommand"
         reorientCommandClassName="RoleConnectorReorientCommand">
       <diagramRunTimeClass
@@ -168,6 +174,7 @@
         visualID="4002"
         editPartClassName="RolePatternEditPart"
         itemSemanticEditPolicyClassName="RolePatternItemSemanticEditPolicy"
+        notationViewFactoryClassName="RolePatternViewFactory"
         createCommandClassName="RolePatternCreateCommand"
         reorientCommandClassName="RolePatternReorientCommand">
       <diagramRunTimeClass
@@ -188,27 +195,9 @@
         visualID="4003"
         editPartClassName="ConstrainableElementConstraintEditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraintItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConstrainableElementConstraintViewFactory"
         createCommandClassName="ConstrainableElementConstraintCreateCommand"
         reorientCommandClassName="ConstrainableElementConstraintReorientCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"/>
-      <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
-      <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint"/>
-      </modelFacet>
-    </links>
-    <links
-        visualID="4004"
-        editPartClassName="ConstrainableElementConstraint2EditPart"
-        itemSemanticEditPolicyClassName="ConstrainableElementConstraint2ItemSemanticEditPolicy"
-        createCommandClassName="ConstrainableElementConstraint2CreateCommand"
-        reorientCommandClassName="ConstrainableElementConstraint2ReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -242,19 +231,9 @@
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="CoordinationPatternConstraint"
-            description="Create new CoordinationPatternConstraint"
+            title="ConstraintLink"
+            description="Create new ConstraintLink"
             genLinks="//@diagram/@links.2"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="RoleConstraint"
-            description="Create new RoleConstraint"
-            genLinks="//@diagram/@links.3"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="TextualConstraint"
-            description="Create new TextualConstraint"
-            genNodes="//@diagram/@topLevelNodes.2"/>
       </groups>
     </palette>
     <preferencePages
@@ -397,47 +376,6 @@
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.2"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@links.3"
-        groupName="links"
-        groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.3"
-        child="//@diagram/@topLevelNodes.2"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@links.3"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.3"
-        child="//@diagram/@topLevelNodes.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.3"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.3"
-        child="//@diagram/@topLevelNodes.1"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>

@@ -37,26 +37,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="CoordinationPatternConstraint"
-          description="Create new CoordinationPatternConstraint">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="RoleConstraint"
-          description="Create new RoleConstraint">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="TextualConstraint"
-          description="Create new TextualConstraint">
+          title="ConstraintLink"
+          description="Create new ConstraintLink">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
