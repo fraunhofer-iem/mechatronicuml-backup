@@ -34,6 +34,8 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.poli
  */
 public class CustomPortItemSemanticEditPolicy extends
 		PortItemSemanticEditPolicy {
+
+	// TODO: Can we forbid deleting the view element.
 	/**
 	 * Deleting a PartPort also deletes the Port on Type-Layer. So we forbid
 	 * deleting this model element; instead only the view object will be
@@ -136,8 +138,8 @@ public class CustomPortItemSemanticEditPolicy extends
 	 * Creates a CustomAssemblyCreateCommand.
 	 * 
 	 * @param req
-	 *            The Request, which should also contain values for Parameters
-	 *            SOURCE_PORT_EDITPART_KEY, TARGET_PORT_EDITPART_KEY, if
+	 *            The Request, which should also contain parameters
+	 *            "SOURCE_PORT_EDITPART", "TARGET_PORT_EDITPART", if
 	 *            available.
 	 * @return the CustomAssemblyCreateCommand.
 	 */

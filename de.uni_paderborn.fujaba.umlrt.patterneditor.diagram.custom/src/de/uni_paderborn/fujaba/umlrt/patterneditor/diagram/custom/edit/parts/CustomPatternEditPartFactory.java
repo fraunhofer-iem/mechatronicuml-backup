@@ -8,6 +8,13 @@ import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternEdi
 import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry;
 
+/**
+ * Our customized EditPartFactory, which makes sure our overridden
+ * EditPart-Classes are instantiated.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomPatternEditPartFactory extends PatternEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {

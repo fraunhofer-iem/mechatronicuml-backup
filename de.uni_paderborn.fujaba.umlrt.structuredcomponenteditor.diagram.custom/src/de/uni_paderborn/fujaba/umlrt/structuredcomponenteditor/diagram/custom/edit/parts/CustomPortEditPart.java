@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
 
 /**
  * A customized PortEditPart. It is responsible for ports around
- * StructuredComponents.
+ * StructuredComponents and ComponentParts.
  * 
  * @author bingo
  * 
@@ -26,8 +26,7 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
 public class CustomPortEditPart extends PortEditPart {
 
 	/**
-	 * All logic that is common between CustomPortEditPart and
-	 * CustomPort2EditPart is delegated, to reduce duplicate code.
+	 * All behavior is delegated, to reduce duplicate code.
 	 */
 	private PortBehavior delegation;
 
@@ -53,11 +52,22 @@ public class CustomPortEditPart extends PortEditPart {
 		return primaryShape;
 	}
 
+	/**
+	 * Creates the node plate, which is defines the size and is responsible to
+	 * return custom PolygonPoints that help connecting Connections at the right
+	 * Point.
+	 */
 	@Override
 	protected NodeFigure createNodePlate() {
 		return getDelegation().createNodePlate();
 	}
 
+	/**
+	 * Gets the PortBehavior object or lazily creates it. It will never return
+	 * null.
+	 * 
+	 * @return The PortBehavior object.
+	 */
 	private PortBehavior getDelegation() {
 		if (delegation == null) {
 			delegation = new PortBehavior(this);

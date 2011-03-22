@@ -13,6 +13,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
 
+/**
+ * An EditHelperAdvice for Roles. It makes sure newly created Roles are
+ * automatically connected to the CoordinationPattern.
+ * 
+ * @author bingo
+ * 
+ */
 public class RoleEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {

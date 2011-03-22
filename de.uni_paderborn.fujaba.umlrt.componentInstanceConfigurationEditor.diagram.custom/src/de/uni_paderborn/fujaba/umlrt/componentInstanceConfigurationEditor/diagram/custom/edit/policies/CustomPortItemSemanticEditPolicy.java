@@ -15,7 +15,6 @@ import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.edit
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.providers.ComponentInstanceConfigurationElementTypes;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.commands.CustomConnectorInstanceCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfigurationEditor.diagram.custom.edit.commands.CustomConnectorInstanceReorientCommand;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
@@ -74,10 +73,8 @@ public class CustomPortItemSemanticEditPolicy extends
 		if (req.getTarget() instanceof Port) {
 			targetPort = (Port) req.getTarget();
 		}
-		Object sourceEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.SOURCE_PORT_EDITPART_KEY);
-		Object targetEditPart = req
-				.getParameter(CustomPortGraphicalNodeEditPolicy.TARGET_PORT_EDITPART_KEY);
+		Object sourceEditPart = req.getParameter("SOURCE_PORT_EDITPART");
+		Object targetEditPart = req.getParameter("TARGET_PORT_EDITPART");
 
 		// Now get the parent elements
 		if (sourceEditPart instanceof PortEditPart) {

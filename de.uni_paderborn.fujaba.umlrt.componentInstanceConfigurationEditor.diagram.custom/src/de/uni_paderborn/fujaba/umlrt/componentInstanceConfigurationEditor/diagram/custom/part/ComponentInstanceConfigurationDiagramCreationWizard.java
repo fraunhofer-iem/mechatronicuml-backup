@@ -12,6 +12,13 @@ import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.componentInstanceConfigurationFactory;
 
+/**
+ * A CreationWizard for ComponentInstance diagrams. It implements the abstract
+ * creation wizard from the de.uni_paderborn.fujaba.newwizard plugin.
+ * 
+ * @author bingo
+ * 
+ */
 public class ComponentInstanceConfigurationDiagramCreationWizard extends
 		FujabaDiagramNewWizard {
 
@@ -45,9 +52,6 @@ public class ComponentInstanceConfigurationDiagramCreationWizard extends
 
 	}
 
-	/**
-	 * Create a new instance of domain element associated with canvas.
-	 */
 	@Override
 	protected EObject createInitialModel() {
 		ComponentInstanceConfiguration diagram = componentInstanceConfigurationFactory.eINSTANCE

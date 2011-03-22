@@ -79,14 +79,33 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 
 	}
 
+	/**
+	 * Should return the ID of the generated Editor class.
+	 * 
+	 * @return the Editor-ID.
+	 */
 	protected abstract String getEditorId();
-	
+
+	/**
+	 * Should return the MODEL_ID of the generated DiagramEditPart.
+	 * 
+	 * @return The Model-ID.
+	 */
 	protected abstract String getModelId();
 
+	/**
+	 * Should return the DIAGRAM_PREFERENCES_HINT of the generated Editor-Plugin
+	 * class.
+	 * 
+	 * @return the PreferencesHint.
+	 */
 	protected abstract PreferencesHint getDiagramPreferencesHint();
 
-	
-
+	/**
+	 * Should return the file extension to use in the NewWizard.
+	 * 
+	 * @return the file extension.
+	 */
 	protected abstract String getDiagramFileExtension();
 
 	/**
@@ -94,7 +113,6 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	 */
 	protected abstract EObject createInitialModel();
 
-	
 	/**
 	 * @generated
 	 */

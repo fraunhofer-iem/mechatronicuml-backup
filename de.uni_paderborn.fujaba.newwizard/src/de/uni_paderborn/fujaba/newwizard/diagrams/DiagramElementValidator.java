@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.newwizard.diagrams;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * A Validator that can test, if the given object is a valid Diagram Element for
+ * A validator that can test, if the given object is a valid Diagram Element for
  * the Editor.
  * 
  * @author bingo
@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface DiagramElementValidator {
 
 	/**
-	 * Tests, if the given object is a valid Diagram Element for the Editor.
+	 * Tests if the given object is a valid Diagram Element for the Editor.
 	 * 
 	 * @param object
 	 *            The object to test.

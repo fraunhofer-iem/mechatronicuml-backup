@@ -14,6 +14,13 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
 
+/**
+ * A CreationWizard for Pattern diagrams. It implements the abstract creation
+ * wizard from the de.uni_paderborn.fujaba.newwizard plugin.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
@@ -46,9 +53,6 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	}
 
-	/**
-	 * Create a new instance of domain element associated with canvas.
-	 */
 	@Override
 	protected EObject createInitialModel() {
 		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE

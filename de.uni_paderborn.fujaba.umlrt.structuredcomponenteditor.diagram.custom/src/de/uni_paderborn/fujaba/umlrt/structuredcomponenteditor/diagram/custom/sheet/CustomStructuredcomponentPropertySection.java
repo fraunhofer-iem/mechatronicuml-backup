@@ -17,8 +17,9 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.Str
 
 public class CustomStructuredcomponentPropertySection extends
 		StructuredcomponentPropertySection {
+
 	/**
-	 * @generated
+	 * Customized to create our own CustomPropertySource objects.
 	 */
 	public IPropertySource getPropertySource(Object object) {
 		if (object instanceof IPropertySource) {
@@ -32,11 +33,6 @@ public class CustomStructuredcomponentPropertySection extends
 				return new CustomPropertySource(object, ips);
 			}
 		}
-		// if (object instanceof IAdaptable) {
-		// return (IPropertySource) ((IAdaptable) object)
-		// .getAdapter(IPropertySource.class);
-		// }
-		// return null;
 		return super.getPropertySource(object);
 	}
 

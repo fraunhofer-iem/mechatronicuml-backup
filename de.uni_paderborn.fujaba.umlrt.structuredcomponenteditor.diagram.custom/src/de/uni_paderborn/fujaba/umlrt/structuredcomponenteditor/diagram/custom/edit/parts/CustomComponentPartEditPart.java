@@ -14,6 +14,15 @@ import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
 
+
+
+/**
+ * A customized EditPart for ComponentParts. A customized Figure will be used,
+ * which allows displaying the ComponentPart as multi Part.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomComponentPartEditPart extends ComponentPartEditPart {
 
 	public CustomComponentPartEditPart(View view) {
@@ -24,7 +33,6 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	protected IFigure createNodeShape() {
 		return primaryShape = new CustomComponentMultiFigure();
 	}
-	
 
 	/**
 	 * Called whenever the EditPart is going to be activated. Initializes
@@ -45,7 +53,8 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		if (feature instanceof EReference) {
 			EReference reference = (EReference) feature;
 			if (reference.getContainerClass() == ComponentPart.class) {
-				int featureID = notification.getFeatureID(ComponentPartImpl.class);
+				int featureID = notification
+						.getFeatureID(ComponentPartImpl.class);
 				if (featureID == ComponentPackage.COMPONENT_PART__CARDINALITY) {
 					updateCardinality();
 				}
@@ -59,7 +68,8 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 */
 	public void updateCardinality() {
 		CustomComponentMultiFigure figure = (CustomComponentMultiFigure) primaryShape;
-		ComponentPart componentPart = (ComponentPart) getNotationView().getElement();
+		ComponentPart componentPart = (ComponentPart) getNotationView()
+				.getElement();
 		if (figure != null) {
 			boolean isMulti = false;
 			if (componentPart != null && componentPart.getCardinality() != null) {

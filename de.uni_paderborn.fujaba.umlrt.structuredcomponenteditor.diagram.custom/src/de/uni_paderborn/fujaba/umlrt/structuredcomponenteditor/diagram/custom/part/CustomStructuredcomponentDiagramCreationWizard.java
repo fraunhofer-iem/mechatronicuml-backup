@@ -14,6 +14,13 @@ import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorFactory;
 
+/**
+ * A CreationWizard for StructuredComponent diagrams. It implements the abstract
+ * creation wizard from the de.uni_paderborn.fujaba.newwizard plugin.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomStructuredcomponentDiagramCreationWizard extends
 		FujabaDiagramNewWizard {
 
@@ -47,9 +54,6 @@ public class CustomStructuredcomponentDiagramCreationWizard extends
 
 	}
 
-	/**
-	 * Create a new instance of domain element associated with canvas.
-	 */
 	@Override
 	protected EObject createInitialModel() {
 		StructuredComponentDiagram diagram = StructuredcomponenteditorFactory.eINSTANCE

@@ -5,6 +5,13 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ComponentInstanceConfigurationDiagramEditor;
 import de.uni_paderborn.fujaba.umlrt.componentInstanceConfiguration.diagram.part.ValidateAction;
 
+/**
+ * A customized DiagramEditor-Class, which automatically validates the diagram
+ * after it was saved.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomComponentInstanceConfigurationDiagramEditor extends
 		ComponentInstanceConfigurationDiagramEditor {
 

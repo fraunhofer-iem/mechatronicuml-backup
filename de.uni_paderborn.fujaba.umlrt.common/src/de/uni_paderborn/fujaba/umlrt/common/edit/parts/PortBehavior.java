@@ -188,8 +188,15 @@ public class PortBehavior {
 		this.portFigure = portFigure;
 	}
 
-
+	/**
+	 * The Port's Node Plate to use. It defines the size to use and is
+	 * responsible to return custom PolygonPoints, that help connecting
+	 * Connections at the right Point.
+	 * 
+	 * @return The Port's Node Plate to use. 
+	 */
 	public NodeFigure createNodePlate() {
+		// Copied from generated PortEditPart.java.
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			public PointList getPolygonPoints() {
 				PointList customPolygonPoints = null;

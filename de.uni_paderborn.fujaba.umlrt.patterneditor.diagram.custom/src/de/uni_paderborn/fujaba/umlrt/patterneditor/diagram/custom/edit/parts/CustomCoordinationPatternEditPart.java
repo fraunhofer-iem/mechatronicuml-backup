@@ -8,6 +8,13 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart;
 
+/**
+ * A custom EditPart for the CoordinationPattern. We replace the NodeFigure
+ * here.
+ * 
+ * @author bingo
+ * 
+ */
 public class CustomCoordinationPatternEditPart extends
 		CoordinationPatternEditPart {
 

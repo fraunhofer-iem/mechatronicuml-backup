@@ -40,10 +40,10 @@ public class CustomConnectorInstanceCreateCommand extends
 	 *            The source port element.
 	 * @param target
 	 *            The target port element.
-	 * @param sourceContainer
-	 *            The model element of the target port's visual container.
-	 * @param targetContainer
-	 *            The model element of the source port's visual container.
+	 * @param sourceComponentInstance
+	 *            The ComponentInstance of the source Port.
+	 * @param targetComponentInstance
+	 *            The ComponentInstance of the target Port.
 	 */
 	public CustomConnectorInstanceCreateCommand(
 			CreateRelationshipRequest request, Port source, Port target,
@@ -75,15 +75,18 @@ public class CustomConnectorInstanceCreateCommand extends
 
 	/**
 	 * Configure the newly created ConnectorInstance to additionally have
-	 * references to both ComponentInstances and the parent component.
+	 * references to both ComponentInstances.
 	 */
 	protected void doConfigure(
 			de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		super.doConfigure(newElement, monitor, info);
+		// Set both ComponentInstances.
 		newElement.setFromComponentI(sourceComponentInstance);
 		newElement.setToComponentI(targetComponentInstance);
+		
+		// Call super implementation, which sets both Ports.
+		super.doConfigure(newElement, monitor, info);
 	}
 
 	@Override

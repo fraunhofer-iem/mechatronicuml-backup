@@ -39,10 +39,10 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 	 *            The source port element.
 	 * @param target
 	 *            The target port element.
-	 * @param sourceContainer
-	 *            The model element of the target port's visual container.
-	 * @param targetContainer
-	 *            The model element of the source port's visual container.
+	 * @param sourceComponentPart
+	 *            The ComponentPart of the source port.
+	 * @param targetComponentPart
+	 *            The ComponentPart of the target port.
 	 */
 	public CustomAssemblyCreateCommand(CreateRelationshipRequest request,
 			Port source, Port target, ComponentPart sourceComponentPart, ComponentPart targetComponentPart) {

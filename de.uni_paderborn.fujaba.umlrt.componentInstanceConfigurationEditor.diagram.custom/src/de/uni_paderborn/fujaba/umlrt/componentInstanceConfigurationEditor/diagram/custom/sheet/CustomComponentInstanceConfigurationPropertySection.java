@@ -32,11 +32,6 @@ public class CustomComponentInstanceConfigurationPropertySection extends
 				return new CustomPropertySource(object, ips);
 			}
 		}
-//		if (object instanceof IAdaptable) {
-//			return (IPropertySource) ((IAdaptable) object)
-//					.getAdapter(IPropertySource.class);
-//		}
-//		return null;
 		return super.getPropertySource(object);
 	}
 

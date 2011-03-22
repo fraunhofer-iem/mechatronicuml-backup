@@ -11,9 +11,26 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
 public class CustomConnectorInstanceReorientCommand extends
 		ConnectorInstanceReorientCommand {
+	/**
+	 * The ComponentInstance of the source Port.
+	 */
 	private ComponentInstance sourceComponentInstance;
+
+	/**
+	 * The ComponentInstance of the target Port.
+	 */
 	private ComponentInstance targetComponentInstance;
 
+	/**
+	 * Constructs this CustomConnectorInstanceReorientCommand.
+	 * 
+	 * @param request
+	 *            The ReorientRelationshipRequest.
+	 * @param sourceComponentInstance
+	 *            The ComponentInstance of the source Port.
+	 * @param targetComponentInstance
+	 *            The ComponentInstance of the target Port.
+	 */
 	public CustomConnectorInstanceReorientCommand(
 			ReorientRelationshipRequest request,
 			ComponentInstance sourceComponentInstance,
@@ -35,19 +52,23 @@ public class CustomConnectorInstanceReorientCommand extends
 
 		// Make sure, both sourceComponentInstance and
 		// targetComponentInstance are set.
-		if (sourceComponentInstance == null
-				|| targetComponentInstance == null) {
+		if (sourceComponentInstance == null || targetComponentInstance == null) {
 			return false;
 		}
 
 		return super.canExecute();
 	}
-	
 
+	/**
+	 * Customized to additionally set the new references to ComponentInstances.
+	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
+		// Set the new references to ComponentInstances.
 		getLink().setFromComponentI(sourceComponentInstance);
 		getLink().setToComponentI(targetComponentInstance);
+		
+		// Call super implementation, which sets the new Port to use.
 		return super.doExecuteWithResult(monitor, info);
 	}
 }

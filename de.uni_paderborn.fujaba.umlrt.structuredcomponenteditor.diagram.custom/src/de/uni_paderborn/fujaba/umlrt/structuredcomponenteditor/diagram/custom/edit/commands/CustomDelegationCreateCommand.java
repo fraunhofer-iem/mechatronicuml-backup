@@ -11,11 +11,10 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand;
 
-
 /**
- * A customized DelegationCreateCommand. We make sure, a delegation may be created
- * between both ports. The created element is then configured to get references
- * for the ComponentPart and the StructuredComponent.
+ * A customized DelegationCreateCommand. We make sure, a delegation may be
+ * created between both ports. The created element is then configured to get
+ * references for the ComponentPart and the StructuredComponent.
  * 
  * @author bingo
  * 
@@ -26,7 +25,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	 * The ComponentPart.
 	 */
 	private ComponentPart componentPart;
-	
+
 	/**
 	 * The parent Component.
 	 */
@@ -62,7 +61,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 		// We add checks that are only performed, when both source and target
 		// are set.
 		if (getSource() != null && getTarget() != null) {
-			
+
 			// Make sure, both parentComponent and componentPart are set.
 			if (parentComponent == null || componentPart == null) {
 				return false;
@@ -79,9 +78,13 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	@Override
 	protected void doConfigure(Delegation newElement, IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		super.doConfigure(newElement, monitor, info);
+		// Set both ComponentPart and ParentComponent.
 		newElement.setComponentPart(componentPart);
 		newElement.setParentComponent(parentComponent);
+
+		// Call super implementation, which will set both Ports for the new
+		// Delegation.
+		super.doConfigure(newElement, monitor, info);
 	}
 
 }
