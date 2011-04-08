@@ -63,19 +63,19 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 		switch (eClass.getClassifierID()) {
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE: return createAbsoluteDeadline();
 			case RealtimestatechartPackage.RELATIVE_DEADLINE: return createRelativeDeadline();
-			case RealtimestatechartPackage.UML_CLOCK: return createUMLClock();
-			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE: return createUMLRealtimeCompositeState();
+			case RealtimestatechartPackage.CLOCK: return createClock();
+			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: return createUMLInterfaceStatechart();
-			case RealtimestatechartPackage.UML_REALTIME_ACTION: return createUMLRealtimeAction();
-			case RealtimestatechartPackage.UML_REALTIME_EVENT: return createUMLRealtimeEvent();
-			case RealtimestatechartPackage.UML_REALTIME_FADING_FUNCTION: return createUMLRealtimeFadingFunction();
-			case RealtimestatechartPackage.UML_REALTIME_FLAT_SWITCHING: return createUMLRealtimeFlatSwitching();
-			case RealtimestatechartPackage.UML_REALTIME_START_STATE: return createUMLRealtimeStartState();
-			case RealtimestatechartPackage.UML_REALTIME_STATECHART: return createUMLRealtimeStatechart();
-			case RealtimestatechartPackage.UML_REALTIME_STOP_STATE: return createUMLRealtimeStopState();
-			case RealtimestatechartPackage.UML_REALTIME_TRANSITION: return createUMLRealtimeTransition();
+			case RealtimestatechartPackage.ACTION: return createAction();
+			case RealtimestatechartPackage.REALTIME_EVENT: return createRealtimeEvent();
+			case RealtimestatechartPackage.FADING_FUNCTION: return createFadingFunction();
+			case RealtimestatechartPackage.FLAT_SWITCHING: return createFlatSwitching();
+			case RealtimestatechartPackage.INITIAL_STATE: return createInitialState();
+			case RealtimestatechartPackage.STATECHART: return createStatechart();
+			case RealtimestatechartPackage.FINAL_STATE: return createFinalState();
+			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
-			case RealtimestatechartPackage.UML_TIME_CONSTRAINT: return createUMLTimeConstraint();
+			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
@@ -142,9 +142,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLClock createUMLClock() {
-		UMLClockImpl umlClock = new UMLClockImpl();
-		return umlClock;
+	public Clock createClock() {
+		ClockImpl clock = new ClockImpl();
+		return clock;
 	}
 
 	/**
@@ -152,9 +152,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState createUMLRealtimeCompositeState() {
-		UMLRealtimeCompositeStateImpl umlRealtimeCompositeState = new UMLRealtimeCompositeStateImpl();
-		return umlRealtimeCompositeState;
+	public State createState() {
+		StateImpl state = new StateImpl();
+		return state;
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeAction createUMLRealtimeAction() {
-		UMLRealtimeActionImpl umlRealtimeAction = new UMLRealtimeActionImpl();
-		return umlRealtimeAction;
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
 	}
 
 	/**
@@ -182,9 +182,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeEvent createUMLRealtimeEvent() {
-		UMLRealtimeEventImpl umlRealtimeEvent = new UMLRealtimeEventImpl();
-		return umlRealtimeEvent;
+	public RealtimeEvent createRealtimeEvent() {
+		RealtimeEventImpl realtimeEvent = new RealtimeEventImpl();
+		return realtimeEvent;
 	}
 
 	/**
@@ -192,9 +192,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeFadingFunction createUMLRealtimeFadingFunction() {
-		UMLRealtimeFadingFunctionImpl umlRealtimeFadingFunction = new UMLRealtimeFadingFunctionImpl();
-		return umlRealtimeFadingFunction;
+	public FadingFunction createFadingFunction() {
+		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
+		return fadingFunction;
 	}
 
 	/**
@@ -202,9 +202,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeFlatSwitching createUMLRealtimeFlatSwitching() {
-		UMLRealtimeFlatSwitchingImpl umlRealtimeFlatSwitching = new UMLRealtimeFlatSwitchingImpl();
-		return umlRealtimeFlatSwitching;
+	public FlatSwitching createFlatSwitching() {
+		FlatSwitchingImpl flatSwitching = new FlatSwitchingImpl();
+		return flatSwitching;
 	}
 
 	/**
@@ -212,9 +212,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStartState createUMLRealtimeStartState() {
-		UMLRealtimeStartStateImpl umlRealtimeStartState = new UMLRealtimeStartStateImpl();
-		return umlRealtimeStartState;
+	public InitialState createInitialState() {
+		InitialStateImpl initialState = new InitialStateImpl();
+		return initialState;
 	}
 
 	/**
@@ -222,9 +222,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart createUMLRealtimeStatechart() {
-		UMLRealtimeStatechartImpl umlRealtimeStatechart = new UMLRealtimeStatechartImpl();
-		return umlRealtimeStatechart;
+	public Statechart createStatechart() {
+		StatechartImpl statechart = new StatechartImpl();
+		return statechart;
 	}
 
 	/**
@@ -232,9 +232,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStopState createUMLRealtimeStopState() {
-		UMLRealtimeStopStateImpl umlRealtimeStopState = new UMLRealtimeStopStateImpl();
-		return umlRealtimeStopState;
+	public FinalState createFinalState() {
+		FinalStateImpl finalState = new FinalStateImpl();
+		return finalState;
 	}
 
 	/**
@@ -242,9 +242,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition createUMLRealtimeTransition() {
-		UMLRealtimeTransitionImpl umlRealtimeTransition = new UMLRealtimeTransitionImpl();
-		return umlRealtimeTransition;
+	public Transition createTransition() {
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
 	}
 
 	/**
@@ -262,9 +262,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLTimeConstraint createUMLTimeConstraint() {
-		UMLTimeConstraintImpl umlTimeConstraint = new UMLTimeConstraintImpl();
-		return umlTimeConstraint;
+	public ClockConstraint createClockConstraint() {
+		ClockConstraintImpl clockConstraint = new ClockConstraintImpl();
+		return clockConstraint;
 	}
 
 	/**

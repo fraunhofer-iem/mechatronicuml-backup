@@ -7,21 +7,12 @@
 package de.uni_paderborn.fujaba.umlrt.model.behavior.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.UMLRealtimeStatechartItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,6 +21,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.StatechartItemProvider;
+
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart} object.
  * <!-- begin-user-doc -->
@@ -37,7 +33,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class ProtocolStatechartItemProvider
-	extends UMLRealtimeStatechartItemProvider
+	extends StatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -154,11 +150,11 @@ public class ProtocolStatechartItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_REALTIME_START_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_REALTIME_STATES ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_REALTIME_START_STATE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__VERTICES ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_COMPLEX_REALTIME_STATE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__PROVIDED_MSG_IFACE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__REQUIRED_MSG_IFACE;
 
 		if (qualify) {
 			return getString

@@ -70,7 +70,6 @@ public class SynchronizationChannelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addUMLRealtimeComplexStatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,28 +92,6 @@ public class SynchronizationChannelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the UML Realtime Complex State feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUMLRealtimeComplexStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SynchronizationChannel_uMLRealtimeComplexState_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SynchronizationChannel_uMLRealtimeComplexState_feature", "_UI_SynchronizationChannel_type"),
-				 RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

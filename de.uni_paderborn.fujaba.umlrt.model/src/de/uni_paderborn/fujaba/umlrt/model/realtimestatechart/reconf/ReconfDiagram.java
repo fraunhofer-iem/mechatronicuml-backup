@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import org.eclipse.emf.common.util.EList;
@@ -106,12 +107,12 @@ public interface ReconfDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Complex Realtime State</em>' reference.
-	 * @see #setUMLComplexRealtimeState(UMLRealtimeCompositeState)
+	 * @see #setUMLComplexRealtimeState(State)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage#getReconfDiagram_UMLComplexRealtimeState()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getUMLComplexRealtimeState();
+	State getUMLComplexRealtimeState();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfDiagram#getUMLComplexRealtimeState <em>UML Complex Realtime State</em>}' reference.
@@ -121,7 +122,7 @@ public interface ReconfDiagram extends EObject {
 	 * @see #getUMLComplexRealtimeState()
 	 * @generated
 	 */
-	void setUMLComplexRealtimeState(UMLRealtimeCompositeState value);
+	void setUMLComplexRealtimeState(State value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -6,8 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
@@ -29,7 +31,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getDoActionRev <em>Do Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getPeriodUpper <em>Period Upper</em>}</li>
@@ -40,14 +42,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class DoEventImpl extends EObjectImpl implements DoEvent {
 	/**
-	 * The cached value of the '{@link #getUMLRealtimeAction() <em>UML Realtime Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeAction()
+	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeAction uMLRealtimeAction;
+	protected Action action;
 
 	/**
 	 * The default value of the '{@link #getPeriodLower() <em>Period Lower</em>}' attribute.
@@ -113,16 +115,16 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeAction getUMLRealtimeAction() {
-		if (uMLRealtimeAction != null && uMLRealtimeAction.eIsProxy()) {
-			InternalEObject oldUMLRealtimeAction = (InternalEObject)uMLRealtimeAction;
-			uMLRealtimeAction = (UMLRealtimeAction)eResolveProxy(oldUMLRealtimeAction);
-			if (uMLRealtimeAction != oldUMLRealtimeAction) {
+	public Action getAction() {
+		if (action != null && action.eIsProxy()) {
+			InternalEObject oldAction = (InternalEObject)action;
+			action = (Action)eResolveProxy(oldAction);
+			if (action != oldAction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.DO_EVENT__ACTION, oldAction, action));
 			}
 		}
-		return uMLRealtimeAction;
+		return action;
 	}
 
 	/**
@@ -130,8 +132,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeAction basicGetUMLRealtimeAction() {
-		return uMLRealtimeAction;
+	public Action basicGetAction() {
+		return action;
 	}
 
 	/**
@@ -139,11 +141,11 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeAction(UMLRealtimeAction newUMLRealtimeAction) {
-		UMLRealtimeAction oldUMLRealtimeAction = uMLRealtimeAction;
-		uMLRealtimeAction = newUMLRealtimeAction;
+	public void setAction(Action newAction) {
+		Action oldAction = action;
+		action = newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__ACTION, oldAction, action));
 	}
 
 	/**
@@ -151,9 +153,9 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getDoActionRev() {
+	public State getDoActionRev() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV) return null;
-		return (UMLRealtimeCompositeState)eContainer();
+		return (State)eContainer();
 	}
 
 	/**
@@ -161,7 +163,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDoActionRev(UMLRealtimeCompositeState newDoActionRev, NotificationChain msgs) {
+	public NotificationChain basicSetDoActionRev(State newDoActionRev, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newDoActionRev, RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV, msgs);
 		return msgs;
 	}
@@ -171,7 +173,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDoActionRev(UMLRealtimeCompositeState newDoActionRev) {
+	public void setDoActionRev(State newDoActionRev) {
 		if (newDoActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV && newDoActionRev != null)) {
 			if (EcoreUtil.isAncestor(this, newDoActionRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -179,7 +181,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDoActionRev != null)
-				msgs = ((InternalEObject)newDoActionRev).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__DO_ACTION, UMLRealtimeCompositeState.class, msgs);
+				msgs = ((InternalEObject)newDoActionRev).eInverseAdd(this, RealtimestatechartPackage.STATE__DO_ACTION, State.class, msgs);
 			msgs = basicSetDoActionRev(newDoActionRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -240,7 +242,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDoActionRev((UMLRealtimeCompositeState)otherEnd, msgs);
+				return basicSetDoActionRev((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -268,7 +270,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__DO_ACTION, UMLRealtimeCompositeState.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__DO_ACTION, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -281,9 +283,9 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION:
-				if (resolve) return getUMLRealtimeAction();
-				return basicGetUMLRealtimeAction();
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
+				if (resolve) return getAction();
+				return basicGetAction();
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
 				return getDoActionRev();
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
@@ -302,11 +304,11 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((UMLRealtimeAction)newValue);
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
+				setAction((Action)newValue);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
-				setDoActionRev((UMLRealtimeCompositeState)newValue);
+				setDoActionRev((State)newValue);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				setPeriodLower((Integer)newValue);
@@ -326,11 +328,11 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((UMLRealtimeAction)null);
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
+				setAction((Action)null);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
-				setDoActionRev((UMLRealtimeCompositeState)null);
+				setDoActionRev((State)null);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				setPeriodLower(PERIOD_LOWER_EDEFAULT);
@@ -350,8 +352,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.DO_EVENT__UML_REALTIME_ACTION:
-				return uMLRealtimeAction != null;
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
+				return action != null;
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
 				return getDoActionRev() != null;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:

@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
@@ -48,7 +51,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLClock resets;
+	protected Clock resets;
 
 	/**
 	 * The cached value of the '{@link #getUMLRealtimeAction() <em>UML Realtime Action</em>}' reference.
@@ -58,7 +61,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeAction uMLRealtimeAction;
+	protected Action uMLRealtimeAction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,10 +87,10 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLClock getResets() {
+	public Clock getResets() {
 		if (resets != null && resets.eIsProxy()) {
 			InternalEObject oldResets = (InternalEObject)resets;
-			resets = (UMLClock)eResolveProxy(oldResets);
+			resets = (Clock)eResolveProxy(oldResets);
 			if (resets != oldResets) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS, oldResets, resets));
@@ -101,7 +104,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLClock basicGetResets() {
+	public Clock basicGetResets() {
 		return resets;
 	}
 
@@ -110,8 +113,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResets(UMLClock newResets) {
-		UMLClock oldResets = resets;
+	public void setResets(Clock newResets) {
+		Clock oldResets = resets;
 		resets = newResets;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS, oldResets, resets));
@@ -122,9 +125,9 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getEntryActionRev() {
+	public State getEntryActionRev() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV) return null;
-		return (UMLRealtimeCompositeState)eContainer();
+		return (State)eContainer();
 	}
 
 	/**
@@ -132,7 +135,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntryActionRev(UMLRealtimeCompositeState newEntryActionRev, NotificationChain msgs) {
+	public NotificationChain basicSetEntryActionRev(State newEntryActionRev, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newEntryActionRev, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV, msgs);
 		return msgs;
 	}
@@ -142,7 +145,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntryActionRev(UMLRealtimeCompositeState newEntryActionRev) {
+	public void setEntryActionRev(State newEntryActionRev) {
 		if (newEntryActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV && newEntryActionRev != null)) {
 			if (EcoreUtil.isAncestor(this, newEntryActionRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -150,7 +153,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newEntryActionRev != null)
-				msgs = ((InternalEObject)newEntryActionRev).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION, UMLRealtimeCompositeState.class, msgs);
+				msgs = ((InternalEObject)newEntryActionRev).eInverseAdd(this, RealtimestatechartPackage.STATE__ENTRY_ACTION, State.class, msgs);
 			msgs = basicSetEntryActionRev(newEntryActionRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -163,9 +166,9 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getExitActionRev() {
+	public State getExitActionRev() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV) return null;
-		return (UMLRealtimeCompositeState)eContainer();
+		return (State)eContainer();
 	}
 
 	/**
@@ -173,7 +176,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExitActionRev(UMLRealtimeCompositeState newExitActionRev, NotificationChain msgs) {
+	public NotificationChain basicSetExitActionRev(State newExitActionRev, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newExitActionRev, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV, msgs);
 		return msgs;
 	}
@@ -183,7 +186,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExitActionRev(UMLRealtimeCompositeState newExitActionRev) {
+	public void setExitActionRev(State newExitActionRev) {
 		if (newExitActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV && newExitActionRev != null)) {
 			if (EcoreUtil.isAncestor(this, newExitActionRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -191,7 +194,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newExitActionRev != null)
-				msgs = ((InternalEObject)newExitActionRev).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION, UMLRealtimeCompositeState.class, msgs);
+				msgs = ((InternalEObject)newExitActionRev).eInverseAdd(this, RealtimestatechartPackage.STATE__EXIT_ACTION, State.class, msgs);
 			msgs = basicSetExitActionRev(newExitActionRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -204,10 +207,10 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeAction getUMLRealtimeAction() {
+	public Action getUMLRealtimeAction() {
 		if (uMLRealtimeAction != null && uMLRealtimeAction.eIsProxy()) {
 			InternalEObject oldUMLRealtimeAction = (InternalEObject)uMLRealtimeAction;
-			uMLRealtimeAction = (UMLRealtimeAction)eResolveProxy(oldUMLRealtimeAction);
+			uMLRealtimeAction = (Action)eResolveProxy(oldUMLRealtimeAction);
 			if (uMLRealtimeAction != oldUMLRealtimeAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
@@ -221,7 +224,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeAction basicGetUMLRealtimeAction() {
+	public Action basicGetUMLRealtimeAction() {
 		return uMLRealtimeAction;
 	}
 
@@ -230,8 +233,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeAction(UMLRealtimeAction newUMLRealtimeAction) {
-		UMLRealtimeAction oldUMLRealtimeAction = uMLRealtimeAction;
+	public void setUMLRealtimeAction(Action newUMLRealtimeAction) {
+		Action oldUMLRealtimeAction = uMLRealtimeAction;
 		uMLRealtimeAction = newUMLRealtimeAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
@@ -248,11 +251,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetEntryActionRev((UMLRealtimeCompositeState)otherEnd, msgs);
+				return basicSetEntryActionRev((State)otherEnd, msgs);
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetExitActionRev((UMLRealtimeCompositeState)otherEnd, msgs);
+				return basicSetExitActionRev((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -282,9 +285,9 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__ENTRY_ACTION, UMLRealtimeCompositeState.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__ENTRY_ACTION, State.class, msgs);
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__EXIT_ACTION, UMLRealtimeCompositeState.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EXIT_ACTION, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -320,16 +323,16 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
-				setResets((UMLClock)newValue);
+				setResets((Clock)newValue);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				setEntryActionRev((UMLRealtimeCompositeState)newValue);
+				setEntryActionRev((State)newValue);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				setExitActionRev((UMLRealtimeCompositeState)newValue);
+				setExitActionRev((State)newValue);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((UMLRealtimeAction)newValue);
+				setUMLRealtimeAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -344,16 +347,16 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
-				setResets((UMLClock)null);
+				setResets((Clock)null);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				setEntryActionRev((UMLRealtimeCompositeState)null);
+				setEntryActionRev((State)null);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				setExitActionRev((UMLRealtimeCompositeState)null);
+				setExitActionRev((State)null);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((UMLRealtimeAction)null);
+				setUMLRealtimeAction((Action)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -33,7 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class HistoryStateItemProvider
-	extends UMLRealtimeStateItemProvider
+	extends VertexItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

@@ -602,7 +602,7 @@ public class ReconfPackageImpl extends EPackageImpl implements ReconfPackage {
 		initEClass(componentInstanceReconfEClass, ComponentInstanceReconf.class, "ComponentInstanceReconf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentInstanceReconf_ComponentInstance(), theInstancePackage.getComponentInstance(), null, "componentInstance", null, 0, 1, ComponentInstanceReconf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstanceReconf_ReconfDiagram(), this.getReconfDiagram(), null, "reconfDiagram", null, 0, 1, ComponentInstanceReconf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstanceReconf_StateToBeActivated(), theRealtimestatechartPackage.getUMLRealtimeCompositeState(), null, "stateToBeActivated", null, 0, 1, ComponentInstanceReconf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstanceReconf_StateToBeActivated(), theRealtimestatechartPackage.getState(), null, "stateToBeActivated", null, 0, 1, ComponentInstanceReconf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getComponentInstanceReconf__GetCName(), ecorePackage.getEString(), "getCName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -630,7 +630,7 @@ public class ReconfPackageImpl extends EPackageImpl implements ReconfPackage {
 		initEReference(getReconfDiagram_DelegationReconfs(), this.getDelegationReconf(), null, "delegationReconfs", null, 0, -1, ReconfDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfDiagram_PortReconfs(), this.getPortReconf(), null, "portReconfs", null, 0, -1, ReconfDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfDiagram_AssemblyReconfs(), this.getAssemblyReconf(), null, "assemblyReconfs", null, 0, -1, ReconfDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfDiagram_UMLComplexRealtimeState(), theRealtimestatechartPackage.getUMLRealtimeCompositeState(), null, "uMLComplexRealtimeState", null, 0, 1, ReconfDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfDiagram_UMLComplexRealtimeState(), theRealtimestatechartPackage.getState(), null, "uMLComplexRealtimeState", null, 0, 1, ReconfDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getReconfDiagram__IteratorOfComponentInstanceReconf(), this.getComponentInstanceReconf(), "iteratorOfComponentInstanceReconf", 0, -1, IS_UNIQUE, IS_ORDERED);
 	}

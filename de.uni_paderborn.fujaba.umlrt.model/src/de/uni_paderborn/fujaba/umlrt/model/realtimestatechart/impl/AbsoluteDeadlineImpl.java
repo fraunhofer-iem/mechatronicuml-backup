@@ -7,7 +7,9 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition;
 
@@ -44,7 +46,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLClock uMLClock;
+	protected Clock uMLClock;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,9 +72,9 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition getUMLRealtimeTransition() {
+	public Transition getUMLRealtimeTransition() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION) return null;
-		return (UMLRealtimeTransition)eContainer();
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -80,7 +82,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUMLRealtimeTransition(UMLRealtimeTransition newUMLRealtimeTransition, NotificationChain msgs) {
+	public NotificationChain basicSetUMLRealtimeTransition(Transition newUMLRealtimeTransition, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newUMLRealtimeTransition, RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION, msgs);
 		return msgs;
 	}
@@ -90,7 +92,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeTransition(UMLRealtimeTransition newUMLRealtimeTransition) {
+	public void setUMLRealtimeTransition(Transition newUMLRealtimeTransition) {
 		if (newUMLRealtimeTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION && newUMLRealtimeTransition != null)) {
 			if (EcoreUtil.isAncestor(this, newUMLRealtimeTransition))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -98,7 +100,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newUMLRealtimeTransition != null)
-				msgs = ((InternalEObject)newUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__ABSOLUTE_DEADLINES, UMLRealtimeTransition.class, msgs);
+				msgs = ((InternalEObject)newUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES, Transition.class, msgs);
 			msgs = basicSetUMLRealtimeTransition(newUMLRealtimeTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -111,10 +113,10 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLClock getUMLClock() {
+	public Clock getUMLClock() {
 		if (uMLClock != null && uMLClock.eIsProxy()) {
 			InternalEObject oldUMLClock = (InternalEObject)uMLClock;
-			uMLClock = (UMLClock)eResolveProxy(oldUMLClock);
+			uMLClock = (Clock)eResolveProxy(oldUMLClock);
 			if (uMLClock != oldUMLClock) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK, oldUMLClock, uMLClock));
@@ -128,7 +130,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLClock basicGetUMLClock() {
+	public Clock basicGetUMLClock() {
 		return uMLClock;
 	}
 
@@ -137,8 +139,8 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUMLClock(UMLClock newUMLClock, NotificationChain msgs) {
-		UMLClock oldUMLClock = uMLClock;
+	public NotificationChain basicSetUMLClock(Clock newUMLClock, NotificationChain msgs) {
+		Clock oldUMLClock = uMLClock;
 		uMLClock = newUMLClock;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK, oldUMLClock, newUMLClock);
@@ -152,13 +154,13 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLClock(UMLClock newUMLClock) {
+	public void setUMLClock(Clock newUMLClock) {
 		if (newUMLClock != uMLClock) {
 			NotificationChain msgs = null;
 			if (uMLClock != null)
-				msgs = ((InternalEObject)uMLClock).eInverseRemove(this, RealtimestatechartPackage.UML_CLOCK__ABSOLUTE_DEADLINES, UMLClock.class, msgs);
+				msgs = ((InternalEObject)uMLClock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
 			if (newUMLClock != null)
-				msgs = ((InternalEObject)newUMLClock).eInverseAdd(this, RealtimestatechartPackage.UML_CLOCK__ABSOLUTE_DEADLINES, UMLClock.class, msgs);
+				msgs = ((InternalEObject)newUMLClock).eInverseAdd(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
 			msgs = basicSetUMLClock(newUMLClock, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -177,11 +179,11 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetUMLRealtimeTransition((UMLRealtimeTransition)otherEnd, msgs);
+				return basicSetUMLRealtimeTransition((Transition)otherEnd, msgs);
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK:
 				if (uMLClock != null)
-					msgs = ((InternalEObject)uMLClock).eInverseRemove(this, RealtimestatechartPackage.UML_CLOCK__ABSOLUTE_DEADLINES, UMLClock.class, msgs);
-				return basicSetUMLClock((UMLClock)otherEnd, msgs);
+					msgs = ((InternalEObject)uMLClock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
+				return basicSetUMLClock((Clock)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -211,7 +213,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__ABSOLUTE_DEADLINES, UMLRealtimeTransition.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES, Transition.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -242,10 +244,10 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((UMLRealtimeTransition)newValue);
+				setUMLRealtimeTransition((Transition)newValue);
 				return;
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK:
-				setUMLClock((UMLClock)newValue);
+				setUMLClock((Clock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -260,10 +262,10 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((UMLRealtimeTransition)null);
+				setUMLRealtimeTransition((Transition)null);
 				return;
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK:
-				setUMLClock((UMLClock)null);
+				setUMLClock((Clock)null);
 				return;
 		}
 		super.eUnset(featureID);

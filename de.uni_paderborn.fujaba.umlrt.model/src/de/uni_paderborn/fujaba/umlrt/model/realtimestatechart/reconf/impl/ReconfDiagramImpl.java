@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.AssemblyReconf;
@@ -98,7 +99,7 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeCompositeState uMLComplexRealtimeState;
+	protected State uMLComplexRealtimeState;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,10 +173,10 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getUMLComplexRealtimeState() {
+	public State getUMLComplexRealtimeState() {
 		if (uMLComplexRealtimeState != null && uMLComplexRealtimeState.eIsProxy()) {
 			InternalEObject oldUMLComplexRealtimeState = (InternalEObject)uMLComplexRealtimeState;
-			uMLComplexRealtimeState = (UMLRealtimeCompositeState)eResolveProxy(oldUMLComplexRealtimeState);
+			uMLComplexRealtimeState = (State)eResolveProxy(oldUMLComplexRealtimeState);
 			if (uMLComplexRealtimeState != oldUMLComplexRealtimeState) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfPackage.RECONF_DIAGRAM__UML_COMPLEX_REALTIME_STATE, oldUMLComplexRealtimeState, uMLComplexRealtimeState));
@@ -189,7 +190,7 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState basicGetUMLComplexRealtimeState() {
+	public State basicGetUMLComplexRealtimeState() {
 		return uMLComplexRealtimeState;
 	}
 
@@ -198,8 +199,8 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLComplexRealtimeState(UMLRealtimeCompositeState newUMLComplexRealtimeState) {
-		UMLRealtimeCompositeState oldUMLComplexRealtimeState = uMLComplexRealtimeState;
+	public void setUMLComplexRealtimeState(State newUMLComplexRealtimeState) {
+		State oldUMLComplexRealtimeState = uMLComplexRealtimeState;
 		uMLComplexRealtimeState = newUMLComplexRealtimeState;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReconfPackage.RECONF_DIAGRAM__UML_COMPLEX_REALTIME_STATE, oldUMLComplexRealtimeState, uMLComplexRealtimeState));
@@ -265,7 +266,7 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 				getAssemblyReconfs().addAll((Collection<? extends AssemblyReconf>)newValue);
 				return;
 			case ReconfPackage.RECONF_DIAGRAM__UML_COMPLEX_REALTIME_STATE:
-				setUMLComplexRealtimeState((UMLRealtimeCompositeState)newValue);
+				setUMLComplexRealtimeState((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -292,7 +293,7 @@ public class ReconfDiagramImpl extends EObjectImpl implements ReconfDiagram {
 				getAssemblyReconfs().clear();
 				return;
 			case ReconfPackage.RECONF_DIAGRAM__UML_COMPLEX_REALTIME_STATE:
-				setUMLComplexRealtimeState((UMLRealtimeCompositeState)null);
+				setUMLComplexRealtimeState((State)null);
 				return;
 		}
 		super.eUnset(featureID);

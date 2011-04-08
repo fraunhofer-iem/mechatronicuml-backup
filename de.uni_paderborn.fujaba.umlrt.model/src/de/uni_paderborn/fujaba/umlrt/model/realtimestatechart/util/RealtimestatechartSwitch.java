@@ -119,104 +119,107 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_CLOCK: {
-				UMLClock umlClock = (UMLClock)theEObject;
-				T result = caseUMLClock(umlClock);
+			case RealtimestatechartPackage.CLOCK: {
+				Clock clock = (Clock)theEObject;
+				T result = caseClock(clock);
+				if (result == null) result = caseNamedElement(clock);
+				if (result == null) result = caseExtendableElement(clock);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE: {
-				UMLRealtimeCompositeState umlRealtimeCompositeState = (UMLRealtimeCompositeState)theEObject;
-				T result = caseUMLRealtimeCompositeState(umlRealtimeCompositeState);
-				if (result == null) result = caseUMLRealtimeState(umlRealtimeCompositeState);
-				if (result == null) result = caseNamedElement(umlRealtimeCompositeState);
-				if (result == null) result = caseExtendableElement(umlRealtimeCompositeState);
+			case RealtimestatechartPackage.STATE: {
+				State state = (State)theEObject;
+				T result = caseState(state);
+				if (result == null) result = caseVertex(state);
+				if (result == null) result = caseNamedElement(state);
+				if (result == null) result = caseExtendableElement(state);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: {
 				UMLInterfaceStatechart umlInterfaceStatechart = (UMLInterfaceStatechart)theEObject;
 				T result = caseUMLInterfaceStatechart(umlInterfaceStatechart);
-				if (result == null) result = caseUMLRealtimeStatechart(umlInterfaceStatechart);
+				if (result == null) result = caseStatechart(umlInterfaceStatechart);
 				if (result == null) result = caseNamedElement(umlInterfaceStatechart);
 				if (result == null) result = caseCommentableElement(umlInterfaceStatechart);
 				if (result == null) result = caseExtendableElement(umlInterfaceStatechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_ACTION: {
-				UMLRealtimeAction umlRealtimeAction = (UMLRealtimeAction)theEObject;
-				T result = caseUMLRealtimeAction(umlRealtimeAction);
-				if (result == null) result = caseExpression(umlRealtimeAction);
-				if (result == null) result = caseTypedElement(umlRealtimeAction);
-				if (result == null) result = caseCommentableElement(umlRealtimeAction);
-				if (result == null) result = caseExtendableElement(umlRealtimeAction);
+			case RealtimestatechartPackage.ACTION: {
+				Action action = (Action)theEObject;
+				T result = caseAction(action);
+				if (result == null) result = caseExpression(action);
+				if (result == null) result = caseTypedElement(action);
+				if (result == null) result = caseCommentableElement(action);
+				if (result == null) result = caseExtendableElement(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_EVENT: {
-				UMLRealtimeEvent umlRealtimeEvent = (UMLRealtimeEvent)theEObject;
-				T result = caseUMLRealtimeEvent(umlRealtimeEvent);
-				if (result == null) result = caseMethodCallExpression(umlRealtimeEvent);
-				if (result == null) result = caseExpression(umlRealtimeEvent);
-				if (result == null) result = caseInvocation(umlRealtimeEvent);
-				if (result == null) result = caseTypedElement(umlRealtimeEvent);
-				if (result == null) result = caseCommentableElement(umlRealtimeEvent);
-				if (result == null) result = caseExtendableElement(umlRealtimeEvent);
+			case RealtimestatechartPackage.REALTIME_EVENT: {
+				RealtimeEvent realtimeEvent = (RealtimeEvent)theEObject;
+				T result = caseRealtimeEvent(realtimeEvent);
+				if (result == null) result = caseMethodCallExpression(realtimeEvent);
+				if (result == null) result = caseExpression(realtimeEvent);
+				if (result == null) result = caseInvocation(realtimeEvent);
+				if (result == null) result = caseTypedElement(realtimeEvent);
+				if (result == null) result = caseCommentableElement(realtimeEvent);
+				if (result == null) result = caseExtendableElement(realtimeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_FADING_FUNCTION: {
-				UMLRealtimeFadingFunction umlRealtimeFadingFunction = (UMLRealtimeFadingFunction)theEObject;
-				T result = caseUMLRealtimeFadingFunction(umlRealtimeFadingFunction);
+			case RealtimestatechartPackage.FADING_FUNCTION: {
+				FadingFunction fadingFunction = (FadingFunction)theEObject;
+				T result = caseFadingFunction(fadingFunction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_FLAT_SWITCHING: {
-				UMLRealtimeFlatSwitching umlRealtimeFlatSwitching = (UMLRealtimeFlatSwitching)theEObject;
-				T result = caseUMLRealtimeFlatSwitching(umlRealtimeFlatSwitching);
+			case RealtimestatechartPackage.FLAT_SWITCHING: {
+				FlatSwitching flatSwitching = (FlatSwitching)theEObject;
+				T result = caseFlatSwitching(flatSwitching);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_START_STATE: {
-				UMLRealtimeStartState umlRealtimeStartState = (UMLRealtimeStartState)theEObject;
-				T result = caseUMLRealtimeStartState(umlRealtimeStartState);
-				if (result == null) result = caseUMLRealtimeState(umlRealtimeStartState);
-				if (result == null) result = caseNamedElement(umlRealtimeStartState);
-				if (result == null) result = caseExtendableElement(umlRealtimeStartState);
+			case RealtimestatechartPackage.INITIAL_STATE: {
+				InitialState initialState = (InitialState)theEObject;
+				T result = caseInitialState(initialState);
+				if (result == null) result = caseVertex(initialState);
+				if (result == null) result = caseNamedElement(initialState);
+				if (result == null) result = caseExtendableElement(initialState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_STATE: {
-				UMLRealtimeState umlRealtimeState = (UMLRealtimeState)theEObject;
-				T result = caseUMLRealtimeState(umlRealtimeState);
-				if (result == null) result = caseNamedElement(umlRealtimeState);
-				if (result == null) result = caseExtendableElement(umlRealtimeState);
+			case RealtimestatechartPackage.VERTEX: {
+				Vertex vertex = (Vertex)theEObject;
+				T result = caseVertex(vertex);
+				if (result == null) result = caseNamedElement(vertex);
+				if (result == null) result = caseExtendableElement(vertex);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_STATECHART: {
-				UMLRealtimeStatechart umlRealtimeStatechart = (UMLRealtimeStatechart)theEObject;
-				T result = caseUMLRealtimeStatechart(umlRealtimeStatechart);
-				if (result == null) result = caseNamedElement(umlRealtimeStatechart);
-				if (result == null) result = caseCommentableElement(umlRealtimeStatechart);
-				if (result == null) result = caseExtendableElement(umlRealtimeStatechart);
+			case RealtimestatechartPackage.STATECHART: {
+				Statechart statechart = (Statechart)theEObject;
+				T result = caseStatechart(statechart);
+				if (result == null) result = caseNamedElement(statechart);
+				if (result == null) result = caseCommentableElement(statechart);
+				if (result == null) result = caseExtendableElement(statechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_STOP_STATE: {
-				UMLRealtimeStopState umlRealtimeStopState = (UMLRealtimeStopState)theEObject;
-				T result = caseUMLRealtimeStopState(umlRealtimeStopState);
-				if (result == null) result = caseUMLRealtimeState(umlRealtimeStopState);
-				if (result == null) result = caseNamedElement(umlRealtimeStopState);
-				if (result == null) result = caseExtendableElement(umlRealtimeStopState);
+			case RealtimestatechartPackage.FINAL_STATE: {
+				FinalState finalState = (FinalState)theEObject;
+				T result = caseFinalState(finalState);
+				if (result == null) result = caseVertex(finalState);
+				if (result == null) result = caseNamedElement(finalState);
+				if (result == null) result = caseExtendableElement(finalState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_REALTIME_TRANSITION: {
-				UMLRealtimeTransition umlRealtimeTransition = (UMLRealtimeTransition)theEObject;
-				T result = caseUMLRealtimeTransition(umlRealtimeTransition);
-				if (result == null) result = casePrioritizable(umlRealtimeTransition);
+			case RealtimestatechartPackage.TRANSITION: {
+				Transition transition = (Transition)theEObject;
+				T result = caseTransition(transition);
+				if (result == null) result = casePrioritizable(transition);
+				if (result == null) result = caseExtendableElement(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,16 +233,16 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_TIME_CONSTRAINT: {
-				UMLTimeConstraint umlTimeConstraint = (UMLTimeConstraint)theEObject;
-				T result = caseUMLTimeConstraint(umlTimeConstraint);
+			case RealtimestatechartPackage.CLOCK_CONSTRAINT: {
+				ClockConstraint clockConstraint = (ClockConstraint)theEObject;
+				T result = caseClockConstraint(clockConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RealtimestatechartPackage.HISTORY_STATE: {
 				HistoryState historyState = (HistoryState)theEObject;
 				T result = caseHistoryState(historyState);
-				if (result == null) result = caseUMLRealtimeState(historyState);
+				if (result == null) result = caseVertex(historyState);
 				if (result == null) result = caseNamedElement(historyState);
 				if (result == null) result = caseExtendableElement(historyState);
 				if (result == null) result = defaultCase(theEObject);
@@ -329,32 +332,32 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Clock</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Clock</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Clock</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Clock</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLClock(UMLClock object) {
+	public T caseClock(Clock object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Composite State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Composite State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeCompositeState(UMLRealtimeCompositeState object) {
+	public T caseState(State object) {
 		return null;
 	}
 
@@ -374,137 +377,137 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeAction(UMLRealtimeAction object) {
+	public T caseAction(Action object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Realtime Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Realtime Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeEvent(UMLRealtimeEvent object) {
+	public T caseRealtimeEvent(RealtimeEvent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Fading Function</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fading Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Fading Function</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fading Function</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeFadingFunction(UMLRealtimeFadingFunction object) {
+	public T caseFadingFunction(FadingFunction object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Flat Switching</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Flat Switching</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Flat Switching</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Flat Switching</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeFlatSwitching(UMLRealtimeFlatSwitching object) {
+	public T caseFlatSwitching(FlatSwitching object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Start State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Start State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Initial State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeStartState(UMLRealtimeStartState object) {
+	public T caseInitialState(InitialState object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Vertex</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Vertex</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeState(UMLRealtimeState object) {
+	public T caseVertex(Vertex object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Statechart</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Statechart</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Statechart</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeStatechart(UMLRealtimeStatechart object) {
+	public T caseStatechart(Statechart object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Stop State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Stop State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Final State</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeStopState(UMLRealtimeStopState object) {
+	public T caseFinalState(FinalState object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Transition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Transition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeTransition(UMLRealtimeTransition object) {
+	public T caseTransition(Transition object) {
 		return null;
 	}
 
@@ -524,17 +527,17 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Time Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Clock Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Time Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Clock Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLTimeConstraint(UMLTimeConstraint object) {
+	public T caseClockConstraint(ClockConstraint object) {
 		return null;
 	}
 

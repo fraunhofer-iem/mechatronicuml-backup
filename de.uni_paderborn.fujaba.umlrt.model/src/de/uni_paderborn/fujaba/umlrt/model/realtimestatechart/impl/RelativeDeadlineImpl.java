@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,16 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadline {
-	/**
-	 * The cached value of the '{@link #getUMLRealtimeTransition() <em>UML Realtime Transition</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected UMLRealtimeTransition uMLRealtimeTransition;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,16 +58,9 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition getUMLRealtimeTransition() {
-		if (uMLRealtimeTransition != null && uMLRealtimeTransition.eIsProxy()) {
-			InternalEObject oldUMLRealtimeTransition = (InternalEObject)uMLRealtimeTransition;
-			uMLRealtimeTransition = (UMLRealtimeTransition)eResolveProxy(oldUMLRealtimeTransition);
-			if (uMLRealtimeTransition != oldUMLRealtimeTransition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION, oldUMLRealtimeTransition, uMLRealtimeTransition));
-			}
-		}
-		return uMLRealtimeTransition;
+	public Transition getUMLRealtimeTransition() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION) return null;
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -83,22 +68,8 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition basicGetUMLRealtimeTransition() {
-		return uMLRealtimeTransition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetUMLRealtimeTransition(UMLRealtimeTransition newUMLRealtimeTransition, NotificationChain msgs) {
-		UMLRealtimeTransition oldUMLRealtimeTransition = uMLRealtimeTransition;
-		uMLRealtimeTransition = newUMLRealtimeTransition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION, oldUMLRealtimeTransition, newUMLRealtimeTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetUMLRealtimeTransition(Transition newUMLRealtimeTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newUMLRealtimeTransition, RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION, msgs);
 		return msgs;
 	}
 
@@ -107,13 +78,15 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeTransition(UMLRealtimeTransition newUMLRealtimeTransition) {
-		if (newUMLRealtimeTransition != uMLRealtimeTransition) {
+	public void setUMLRealtimeTransition(Transition newUMLRealtimeTransition) {
+		if (newUMLRealtimeTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION && newUMLRealtimeTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newUMLRealtimeTransition))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (uMLRealtimeTransition != null)
-				msgs = ((InternalEObject)uMLRealtimeTransition).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RELATIVE_DEADLINE, UMLRealtimeTransition.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newUMLRealtimeTransition != null)
-				msgs = ((InternalEObject)newUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RELATIVE_DEADLINE, UMLRealtimeTransition.class, msgs);
+				msgs = ((InternalEObject)newUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE, Transition.class, msgs);
 			msgs = basicSetUMLRealtimeTransition(newUMLRealtimeTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -130,9 +103,9 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
-				if (uMLRealtimeTransition != null)
-					msgs = ((InternalEObject)uMLRealtimeTransition).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RELATIVE_DEADLINE, UMLRealtimeTransition.class, msgs);
-				return basicSetUMLRealtimeTransition((UMLRealtimeTransition)otherEnd, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetUMLRealtimeTransition((Transition)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -157,11 +130,24 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE, Transition.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
-				if (resolve) return getUMLRealtimeTransition();
-				return basicGetUMLRealtimeTransition();
+				return getUMLRealtimeTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,7 +161,7 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((UMLRealtimeTransition)newValue);
+				setUMLRealtimeTransition((Transition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,7 +176,7 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((UMLRealtimeTransition)null);
+				setUMLRealtimeTransition((Transition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,7 +191,7 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION:
-				return uMLRealtimeTransition != null;
+				return getUMLRealtimeTransition() != null;
 		}
 		return super.eIsSet(featureID);
 	}

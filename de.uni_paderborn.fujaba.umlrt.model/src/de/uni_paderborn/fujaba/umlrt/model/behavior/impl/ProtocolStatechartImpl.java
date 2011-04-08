@@ -6,26 +6,20 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.behavior.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.UMLRealtimeStatechartImpl;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StatechartImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ProtocolStatechartImpl extends UMLRealtimeStatechartImpl implements ProtocolStatechart {
+public class ProtocolStatechartImpl extends StatechartImpl implements ProtocolStatechart {
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -113,7 +107,7 @@ public class ProtocolStatechartImpl extends UMLRealtimeStatechartImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(UMLRealtimeStatechart newpsc) {
+	public EObject clone(Statechart newpsc) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -186,8 +180,8 @@ public class ProtocolStatechartImpl extends UMLRealtimeStatechartImpl implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BehaviorPackage.PROTOCOL_STATECHART___CLONE__UMLREALTIMESTATECHART:
-				return clone((UMLRealtimeStatechart)arguments.get(0));
+			case BehaviorPackage.PROTOCOL_STATECHART___CLONE__STATECHART:
+				return clone((Statechart)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

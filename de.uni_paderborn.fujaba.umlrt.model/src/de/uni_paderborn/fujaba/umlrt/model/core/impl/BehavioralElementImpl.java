@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.core.impl;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,7 +42,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeStatechart uMLRealtimeStatechart;
+	protected Statechart uMLRealtimeStatechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,10 +68,10 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart getUMLRealtimeStatechart() {
+	public Statechart getUMLRealtimeStatechart() {
 		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
 			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (UMLRealtimeStatechart)eResolveProxy(oldUMLRealtimeStatechart);
+			uMLRealtimeStatechart = (Statechart)eResolveProxy(oldUMLRealtimeStatechart);
 			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -84,7 +85,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart basicGetUMLRealtimeStatechart() {
+	public Statechart basicGetUMLRealtimeStatechart() {
 		return uMLRealtimeStatechart;
 	}
 
@@ -93,8 +94,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(UMLRealtimeStatechart newUMLRealtimeStatechart) {
-		UMLRealtimeStatechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
+	public void setUMLRealtimeStatechart(Statechart newUMLRealtimeStatechart) {
+		Statechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
 		uMLRealtimeStatechart = newUMLRealtimeStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -124,7 +125,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)newValue);
+				setUMLRealtimeStatechart((Statechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +140,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)null);
+				setUMLRealtimeStatechart((Statechart)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
 
 /**
@@ -35,26 +37,6 @@ import org.storydriven.modeling.calls.impl.InvocationImpl;
  * @generated
  */
 public class SynchronizationImpl extends InvocationImpl implements Synchronization {
-	/**
-	 * The cached value of the '{@link #getSendSyncRev() <em>Send Sync Rev</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSendSyncRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected UMLRealtimeTransition sendSyncRev;
-
-	/**
-	 * The cached value of the '{@link #getReceiveSyncRev() <em>Receive Sync Rev</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiveSyncRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected UMLRealtimeTransition receiveSyncRev;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,16 +61,9 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition getSendSyncRev() {
-		if (sendSyncRev != null && sendSyncRev.eIsProxy()) {
-			InternalEObject oldSendSyncRev = (InternalEObject)sendSyncRev;
-			sendSyncRev = (UMLRealtimeTransition)eResolveProxy(oldSendSyncRev);
-			if (sendSyncRev != oldSendSyncRev) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV, oldSendSyncRev, sendSyncRev));
-			}
-		}
-		return sendSyncRev;
+	public Transition getSendSyncRev() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV) return null;
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -96,22 +71,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition basicGetSendSyncRev() {
-		return sendSyncRev;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSendSyncRev(UMLRealtimeTransition newSendSyncRev, NotificationChain msgs) {
-		UMLRealtimeTransition oldSendSyncRev = sendSyncRev;
-		sendSyncRev = newSendSyncRev;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV, oldSendSyncRev, newSendSyncRev);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetSendSyncRev(Transition newSendSyncRev, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSendSyncRev, RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV, msgs);
 		return msgs;
 	}
 
@@ -120,13 +81,15 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSendSyncRev(UMLRealtimeTransition newSendSyncRev) {
-		if (newSendSyncRev != sendSyncRev) {
+	public void setSendSyncRev(Transition newSendSyncRev) {
+		if (newSendSyncRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV && newSendSyncRev != null)) {
+			if (EcoreUtil.isAncestor(this, newSendSyncRev))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (sendSyncRev != null)
-				msgs = ((InternalEObject)sendSyncRev).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__SEND_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSendSyncRev != null)
-				msgs = ((InternalEObject)newSendSyncRev).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__SEND_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
+				msgs = ((InternalEObject)newSendSyncRev).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION, Transition.class, msgs);
 			msgs = basicSetSendSyncRev(newSendSyncRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -139,16 +102,9 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition getReceiveSyncRev() {
-		if (receiveSyncRev != null && receiveSyncRev.eIsProxy()) {
-			InternalEObject oldReceiveSyncRev = (InternalEObject)receiveSyncRev;
-			receiveSyncRev = (UMLRealtimeTransition)eResolveProxy(oldReceiveSyncRev);
-			if (receiveSyncRev != oldReceiveSyncRev) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV, oldReceiveSyncRev, receiveSyncRev));
-			}
-		}
-		return receiveSyncRev;
+	public Transition getReceiveSyncRev() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV) return null;
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -156,22 +112,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeTransition basicGetReceiveSyncRev() {
-		return receiveSyncRev;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReceiveSyncRev(UMLRealtimeTransition newReceiveSyncRev, NotificationChain msgs) {
-		UMLRealtimeTransition oldReceiveSyncRev = receiveSyncRev;
-		receiveSyncRev = newReceiveSyncRev;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV, oldReceiveSyncRev, newReceiveSyncRev);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetReceiveSyncRev(Transition newReceiveSyncRev, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newReceiveSyncRev, RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV, msgs);
 		return msgs;
 	}
 
@@ -180,13 +122,15 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReceiveSyncRev(UMLRealtimeTransition newReceiveSyncRev) {
-		if (newReceiveSyncRev != receiveSyncRev) {
+	public void setReceiveSyncRev(Transition newReceiveSyncRev) {
+		if (newReceiveSyncRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV && newReceiveSyncRev != null)) {
+			if (EcoreUtil.isAncestor(this, newReceiveSyncRev))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (receiveSyncRev != null)
-				msgs = ((InternalEObject)receiveSyncRev).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RECEIVE_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newReceiveSyncRev != null)
-				msgs = ((InternalEObject)newReceiveSyncRev).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RECEIVE_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
+				msgs = ((InternalEObject)newReceiveSyncRev).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, Transition.class, msgs);
 			msgs = basicSetReceiveSyncRev(newReceiveSyncRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -203,13 +147,13 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
-				if (sendSyncRev != null)
-					msgs = ((InternalEObject)sendSyncRev).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__SEND_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
-				return basicSetSendSyncRev((UMLRealtimeTransition)otherEnd, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSendSyncRev((Transition)otherEnd, msgs);
 			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
-				if (receiveSyncRev != null)
-					msgs = ((InternalEObject)receiveSyncRev).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_TRANSITION__RECEIVE_SYNCHRONIZATION, UMLRealtimeTransition.class, msgs);
-				return basicSetReceiveSyncRev((UMLRealtimeTransition)otherEnd, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetReceiveSyncRev((Transition)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -236,14 +180,28 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION, Transition.class, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, Transition.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
-				if (resolve) return getSendSyncRev();
-				return basicGetSendSyncRev();
+				return getSendSyncRev();
 			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
-				if (resolve) return getReceiveSyncRev();
-				return basicGetReceiveSyncRev();
+				return getReceiveSyncRev();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,10 +215,10 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
-				setSendSyncRev((UMLRealtimeTransition)newValue);
+				setSendSyncRev((Transition)newValue);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
-				setReceiveSyncRev((UMLRealtimeTransition)newValue);
+				setReceiveSyncRev((Transition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,10 +233,10 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
-				setSendSyncRev((UMLRealtimeTransition)null);
+				setSendSyncRev((Transition)null);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
-				setReceiveSyncRev((UMLRealtimeTransition)null);
+				setReceiveSyncRev((Transition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -293,9 +251,9 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV:
-				return sendSyncRev != null;
+				return getSendSyncRev() != null;
 			case RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV:
-				return receiveSyncRev != null;
+				return getReceiveSyncRev() != null;
 		}
 		return super.eIsSet(featureID);
 	}

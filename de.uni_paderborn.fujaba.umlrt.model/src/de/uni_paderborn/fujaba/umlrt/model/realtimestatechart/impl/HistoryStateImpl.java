@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class HistoryStateImpl extends UMLRealtimeStateImpl implements HistoryState {
+public class HistoryStateImpl extends VertexImpl implements HistoryState {
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->

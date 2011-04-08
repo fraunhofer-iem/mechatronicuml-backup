@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
@@ -30,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implements UMLInterfaceStatechart {
+public class UMLInterfaceStatechartImpl extends StatechartImpl implements UMLInterfaceStatechart {
 	/**
 	 * The cached value of the '{@link #getUMLRealtimeStatechart() <em>UML Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -39,7 +40,7 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeStatechart uMLRealtimeStatechart;
+	protected Statechart uMLRealtimeStatechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,10 +66,10 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart getUMLRealtimeStatechart() {
+	public Statechart getUMLRealtimeStatechart() {
 		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
 			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (UMLRealtimeStatechart)eResolveProxy(oldUMLRealtimeStatechart);
+			uMLRealtimeStatechart = (Statechart)eResolveProxy(oldUMLRealtimeStatechart);
 			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -82,7 +83,7 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart basicGetUMLRealtimeStatechart() {
+	public Statechart basicGetUMLRealtimeStatechart() {
 		return uMLRealtimeStatechart;
 	}
 
@@ -91,8 +92,8 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(UMLRealtimeStatechart newUMLRealtimeStatechart) {
-		UMLRealtimeStatechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
+	public void setUMLRealtimeStatechart(Statechart newUMLRealtimeStatechart) {
+		Statechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
 		uMLRealtimeStatechart = newUMLRealtimeStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -122,7 +123,7 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)newValue);
+				setUMLRealtimeStatechart((Statechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,7 +138,7 @@ public class UMLInterfaceStatechartImpl extends UMLRealtimeStatechartImpl implem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)null);
+				setUMLRealtimeStatechart((Statechart)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -186,7 +186,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getProtocolStatechart__Clone__UMLRealtimeStatechart() {
+	public EOperation getProtocolStatechart__Clone__Statechart() {
 		return protocolStatechartEClass.getEOperations().get(0);
 	}
 
@@ -220,7 +220,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Create classes and their features
 		protocolStatechartEClass = createEClass(PROTOCOL_STATECHART);
 		createEReference(protocolStatechartEClass, PROTOCOL_STATECHART__PORT);
-		createEOperation(protocolStatechartEClass, PROTOCOL_STATECHART___CLONE__UMLREALTIMESTATECHART);
+		createEOperation(protocolStatechartEClass, PROTOCOL_STATECHART___CLONE__STATECHART);
 	}
 
 	/**
@@ -256,14 +256,14 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		protocolStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage.getUMLRealtimeStatechart());
+		protocolStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage.getStatechart());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(protocolStatechartEClass, ProtocolStatechart.class, "ProtocolStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProtocolStatechart_Port(), theComponentPackage.getPort(), null, "port", null, 0, 1, ProtocolStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getProtocolStatechart__Clone__UMLRealtimeStatechart(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRealtimestatechartPackage.getUMLRealtimeStatechart(), "newpsc", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getProtocolStatechart__Clone__Statechart(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theRealtimestatechartPackage.getStatechart(), "newpsc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

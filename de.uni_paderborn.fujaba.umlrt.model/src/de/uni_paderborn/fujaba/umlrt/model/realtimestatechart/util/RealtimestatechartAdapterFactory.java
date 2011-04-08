@@ -96,60 +96,60 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createRelativeDeadlineAdapter();
 			}
 			@Override
-			public Adapter caseUMLClock(UMLClock object) {
-				return createUMLClockAdapter();
+			public Adapter caseClock(Clock object) {
+				return createClockAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeCompositeState(UMLRealtimeCompositeState object) {
-				return createUMLRealtimeCompositeStateAdapter();
+			public Adapter caseState(State object) {
+				return createStateAdapter();
 			}
 			@Override
 			public Adapter caseUMLInterfaceStatechart(UMLInterfaceStatechart object) {
 				return createUMLInterfaceStatechartAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeAction(UMLRealtimeAction object) {
-				return createUMLRealtimeActionAdapter();
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeEvent(UMLRealtimeEvent object) {
-				return createUMLRealtimeEventAdapter();
+			public Adapter caseRealtimeEvent(RealtimeEvent object) {
+				return createRealtimeEventAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeFadingFunction(UMLRealtimeFadingFunction object) {
-				return createUMLRealtimeFadingFunctionAdapter();
+			public Adapter caseFadingFunction(FadingFunction object) {
+				return createFadingFunctionAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeFlatSwitching(UMLRealtimeFlatSwitching object) {
-				return createUMLRealtimeFlatSwitchingAdapter();
+			public Adapter caseFlatSwitching(FlatSwitching object) {
+				return createFlatSwitchingAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeStartState(UMLRealtimeStartState object) {
-				return createUMLRealtimeStartStateAdapter();
+			public Adapter caseInitialState(InitialState object) {
+				return createInitialStateAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeState(UMLRealtimeState object) {
-				return createUMLRealtimeStateAdapter();
+			public Adapter caseVertex(Vertex object) {
+				return createVertexAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeStatechart(UMLRealtimeStatechart object) {
-				return createUMLRealtimeStatechartAdapter();
+			public Adapter caseStatechart(Statechart object) {
+				return createStatechartAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeStopState(UMLRealtimeStopState object) {
-				return createUMLRealtimeStopStateAdapter();
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
 			}
 			@Override
-			public Adapter caseUMLRealtimeTransition(UMLRealtimeTransition object) {
-				return createUMLRealtimeTransitionAdapter();
+			public Adapter caseTransition(Transition object) {
+				return createTransitionAdapter();
 			}
 			@Override
 			public Adapter caseSynchronizationChannel(SynchronizationChannel object) {
 				return createSynchronizationChannelAdapter();
 			}
 			@Override
-			public Adapter caseUMLTimeConstraint(UMLTimeConstraint object) {
-				return createUMLTimeConstraintAdapter();
+			public Adapter caseClockConstraint(ClockConstraint object) {
+				return createClockConstraintAdapter();
 			}
 			@Override
 			public Adapter caseHistoryState(HistoryState object) {
@@ -270,30 +270,30 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock <em>UML Clock</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock <em>Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock
 	 * @generated
 	 */
-	public Adapter createUMLClockAdapter() {
+	public Adapter createClockAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState <em>UML Realtime Composite State</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeCompositeStateAdapter() {
+	public Adapter createStateAdapter() {
 		return null;
 	}
 
@@ -312,128 +312,128 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction <em>UML Realtime Action</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeAction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeActionAdapter() {
+	public Adapter createActionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeEvent <em>UML Realtime Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent <em>Realtime Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeEvent
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeEventAdapter() {
+	public Adapter createRealtimeEventAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeFadingFunction <em>UML Realtime Fading Function</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction <em>Fading Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeFadingFunction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeFadingFunctionAdapter() {
+	public Adapter createFadingFunctionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeFlatSwitching <em>UML Realtime Flat Switching</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching <em>Flat Switching</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeFlatSwitching
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeFlatSwitchingAdapter() {
+	public Adapter createFlatSwitchingAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStartState <em>UML Realtime Start State</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState <em>Initial State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStartState
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeStartStateAdapter() {
+	public Adapter createInitialStateAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeState <em>UML Realtime State</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex <em>Vertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeState
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeStateAdapter() {
+	public Adapter createVertexAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart <em>UML Realtime Statechart</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeStatechartAdapter() {
+	public Adapter createStatechartAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStopState <em>UML Realtime Stop State</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState <em>Final State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStopState
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeStopStateAdapter() {
+	public Adapter createFinalStateAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition <em>UML Realtime Transition</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition
 	 * @generated
 	 */
-	public Adapter createUMLRealtimeTransitionAdapter() {
+	public Adapter createTransitionAdapter() {
 		return null;
 	}
 
@@ -452,16 +452,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint <em>UML Time Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLTimeConstraint
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint
 	 * @generated
 	 */
-	public Adapter createUMLTimeConstraintAdapter() {
+	public Adapter createClockConstraintAdapter() {
 		return null;
 	}
 

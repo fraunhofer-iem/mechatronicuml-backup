@@ -31,7 +31,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 public interface AbsoluteDeadline extends Deadline {
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>UML Realtime Transition</em>' container reference isn't clear,
@@ -39,13 +39,13 @@ public interface AbsoluteDeadline extends Deadline {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #setUMLRealtimeTransition(UMLRealtimeTransition)
+	 * @see #setUMLRealtimeTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_UMLRealtimeTransition()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getAbsoluteDeadlines
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines
 	 * @model opposite="absoluteDeadlines" required="true" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeTransition getUMLRealtimeTransition();
+	Transition getUMLRealtimeTransition();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' container reference.
@@ -55,11 +55,11 @@ public interface AbsoluteDeadline extends Deadline {
 	 * @see #getUMLRealtimeTransition()
 	 * @generated
 	 */
-	void setUMLRealtimeTransition(UMLRealtimeTransition value);
+	void setUMLRealtimeTransition(Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>UML Clock</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>UML Clock</em>' reference isn't clear,
@@ -67,13 +67,13 @@ public interface AbsoluteDeadline extends Deadline {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Clock</em>' reference.
-	 * @see #setUMLClock(UMLClock)
+	 * @see #setUMLClock(Clock)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_UMLClock()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLClock#getAbsoluteDeadlines
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getAbsoluteDeadlines
 	 * @model opposite="absoluteDeadlines" required="true"
 	 * @generated
 	 */
-	UMLClock getUMLClock();
+	Clock getUMLClock();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock <em>UML Clock</em>}' reference.
@@ -83,6 +83,6 @@ public interface AbsoluteDeadline extends Deadline {
 	 * @see #getUMLClock()
 	 * @generated
 	 */
-	void setUMLClock(UMLClock value);
+	void setUMLClock(Clock value);
 
 } // AbsoluteDeadline

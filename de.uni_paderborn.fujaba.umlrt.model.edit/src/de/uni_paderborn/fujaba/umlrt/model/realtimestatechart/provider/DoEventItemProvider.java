@@ -66,7 +66,7 @@ public class DoEventItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLRealtimeActionPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 			addPeriodLowerPropertyDescriptor(object);
 			addPeriodUpperPropertyDescriptor(object);
 		}
@@ -74,19 +74,19 @@ public class DoEventItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Realtime Action feature.
+	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLRealtimeActionPropertyDescriptor(Object object) {
+	protected void addActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DoEvent_uMLRealtimeAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_uMLRealtimeAction_feature", "_UI_DoEvent_type"),
-				 RealtimestatechartPackage.Literals.DO_EVENT__UML_REALTIME_ACTION,
+				 getString("_UI_DoEvent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_action_feature", "_UI_DoEvent_type"),
+				 RealtimestatechartPackage.Literals.DO_EVENT__ACTION,
 				 true,
 				 false,
 				 true,

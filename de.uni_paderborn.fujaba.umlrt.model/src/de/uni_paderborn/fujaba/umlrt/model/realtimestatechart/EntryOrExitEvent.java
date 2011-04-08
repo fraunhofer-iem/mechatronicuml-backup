@@ -37,12 +37,12 @@ public interface EntryOrExitEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resets</em>' reference.
-	 * @see #setResets(UMLClock)
+	 * @see #setResets(Clock)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_Resets()
 	 * @model
 	 * @generated
 	 */
-	UMLClock getResets();
+	Clock getResets();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getResets <em>Resets</em>}' reference.
@@ -52,11 +52,11 @@ public interface EntryOrExitEvent extends EObject {
 	 * @see #getResets()
 	 * @generated
 	 */
-	void setResets(UMLClock value);
+	void setResets(Clock value);
 
 	/**
 	 * Returns the value of the '<em><b>Entry Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getEntryAction <em>Entry Action</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction <em>Entry Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entry Action Rev</em>' container reference isn't clear,
@@ -64,13 +64,13 @@ public interface EntryOrExitEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entry Action Rev</em>' container reference.
-	 * @see #setEntryActionRev(UMLRealtimeCompositeState)
+	 * @see #setEntryActionRev(State)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_EntryActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getEntryAction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction
 	 * @model opposite="entryAction" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getEntryActionRev();
+	State getEntryActionRev();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev <em>Entry Action Rev</em>}' container reference.
@@ -80,11 +80,11 @@ public interface EntryOrExitEvent extends EObject {
 	 * @see #getEntryActionRev()
 	 * @generated
 	 */
-	void setEntryActionRev(UMLRealtimeCompositeState value);
+	void setEntryActionRev(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Exit Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getExitAction <em>Exit Action</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction <em>Exit Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Exit Action Rev</em>' container reference isn't clear,
@@ -92,13 +92,13 @@ public interface EntryOrExitEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Exit Action Rev</em>' container reference.
-	 * @see #setExitActionRev(UMLRealtimeCompositeState)
+	 * @see #setExitActionRev(State)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_ExitActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getExitAction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction
 	 * @model opposite="exitAction" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getExitActionRev();
+	State getExitActionRev();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev <em>Exit Action Rev</em>}' container reference.
@@ -108,7 +108,7 @@ public interface EntryOrExitEvent extends EObject {
 	 * @see #getExitActionRev()
 	 * @generated
 	 */
-	void setExitActionRev(UMLRealtimeCompositeState value);
+	void setExitActionRev(State value);
 
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Action</b></em>' reference.
@@ -119,12 +119,12 @@ public interface EntryOrExitEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Realtime Action</em>' reference.
-	 * @see #setUMLRealtimeAction(UMLRealtimeAction)
+	 * @see #setUMLRealtimeAction(Action)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_UMLRealtimeAction()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeAction getUMLRealtimeAction();
+	Action getUMLRealtimeAction();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}' reference.
@@ -134,6 +134,6 @@ public interface EntryOrExitEvent extends EObject {
 	 * @see #getUMLRealtimeAction()
 	 * @generated
 	 */
-	void setUMLRealtimeAction(UMLRealtimeAction value);
+	void setUMLRealtimeAction(Action value);
 
 } // EntryOrExitEvent

@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 
@@ -40,7 +43,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getUMLRealtimeComplexState <em>UML Realtime Complex State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,16 +69,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUMLRealtimeComplexState() <em>UML Realtime Complex State</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeComplexState()
-	 * @generated
-	 * @ordered
-	 */
-	protected UMLRealtimeCompositeState uMLRealtimeComplexState;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,16 +115,9 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getUMLRealtimeComplexState() {
-		if (uMLRealtimeComplexState != null && uMLRealtimeComplexState.eIsProxy()) {
-			InternalEObject oldUMLRealtimeComplexState = (InternalEObject)uMLRealtimeComplexState;
-			uMLRealtimeComplexState = (UMLRealtimeCompositeState)eResolveProxy(oldUMLRealtimeComplexState);
-			if (uMLRealtimeComplexState != oldUMLRealtimeComplexState) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE, oldUMLRealtimeComplexState, uMLRealtimeComplexState));
-			}
-		}
-		return uMLRealtimeComplexState;
+	public State getState() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE) return null;
+		return (State)eContainer();
 	}
 
 	/**
@@ -139,22 +125,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState basicGetUMLRealtimeComplexState() {
-		return uMLRealtimeComplexState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetUMLRealtimeComplexState(UMLRealtimeCompositeState newUMLRealtimeComplexState, NotificationChain msgs) {
-		UMLRealtimeCompositeState oldUMLRealtimeComplexState = uMLRealtimeComplexState;
-		uMLRealtimeComplexState = newUMLRealtimeComplexState;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE, oldUMLRealtimeComplexState, newUMLRealtimeComplexState);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+	public NotificationChain basicSetState(State newState, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newState, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE, msgs);
 		return msgs;
 	}
 
@@ -163,18 +135,20 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeComplexState(UMLRealtimeCompositeState newUMLRealtimeComplexState) {
-		if (newUMLRealtimeComplexState != uMLRealtimeComplexState) {
+	public void setState(State newState) {
+		if (newState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE && newState != null)) {
+			if (EcoreUtil.isAncestor(this, newState))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (uMLRealtimeComplexState != null)
-				msgs = ((InternalEObject)uMLRealtimeComplexState).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__CHANNELS, UMLRealtimeCompositeState.class, msgs);
-			if (newUMLRealtimeComplexState != null)
-				msgs = ((InternalEObject)newUMLRealtimeComplexState).eInverseAdd(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__CHANNELS, UMLRealtimeCompositeState.class, msgs);
-			msgs = basicSetUMLRealtimeComplexState(newUMLRealtimeComplexState, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newState != null)
+				msgs = ((InternalEObject)newState).eInverseAdd(this, RealtimestatechartPackage.STATE__CHANNELS, State.class, msgs);
+			msgs = basicSetState(newState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE, newUMLRealtimeComplexState, newUMLRealtimeComplexState));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE, newState, newState));
 	}
 
 	/**
@@ -182,7 +156,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(UMLRealtimeStatechart rtsc, SynchronizationChannel newChannel) {
+	public EObject clone(Statechart rtsc, SynchronizationChannel newChannel) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -196,10 +170,10 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				if (uMLRealtimeComplexState != null)
-					msgs = ((InternalEObject)uMLRealtimeComplexState).eInverseRemove(this, RealtimestatechartPackage.UML_REALTIME_COMPOSITE_STATE__CHANNELS, UMLRealtimeCompositeState.class, msgs);
-				return basicSetUMLRealtimeComplexState((UMLRealtimeCompositeState)otherEnd, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetState((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -212,10 +186,24 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				return basicSetUMLRealtimeComplexState(null, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				return basicSetState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__CHANNELS, State.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -228,9 +216,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				return getComment();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				if (resolve) return getUMLRealtimeComplexState();
-				return basicGetUMLRealtimeComplexState();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -246,8 +233,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				setComment((String)newValue);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				setUMLRealtimeComplexState((UMLRealtimeCompositeState)newValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				setState((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,8 +251,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				setUMLRealtimeComplexState((UMLRealtimeCompositeState)null);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				setState((State)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -281,8 +268,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__UML_REALTIME_COMPLEX_STATE:
-				return uMLRealtimeComplexState != null;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				return getState() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -337,8 +324,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___CLONE__UMLREALTIMESTATECHART_SYNCHRONIZATIONCHANNEL:
-				return clone((UMLRealtimeStatechart)arguments.get(0), (SynchronizationChannel)arguments.get(1));
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___CLONE__STATECHART_SYNCHRONIZATIONCHANNEL:
+				return clone((Statechart)arguments.get(0), (SynchronizationChannel)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

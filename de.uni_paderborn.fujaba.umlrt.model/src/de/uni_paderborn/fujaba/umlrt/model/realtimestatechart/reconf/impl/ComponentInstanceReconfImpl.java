@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ComponentInstanceReconf;
@@ -70,7 +71,7 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeCompositeState stateToBeActivated;
+	protected State stateToBeActivated;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,10 +173,10 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState getStateToBeActivated() {
+	public State getStateToBeActivated() {
 		if (stateToBeActivated != null && stateToBeActivated.eIsProxy()) {
 			InternalEObject oldStateToBeActivated = (InternalEObject)stateToBeActivated;
-			stateToBeActivated = (UMLRealtimeCompositeState)eResolveProxy(oldStateToBeActivated);
+			stateToBeActivated = (State)eResolveProxy(oldStateToBeActivated);
 			if (stateToBeActivated != oldStateToBeActivated) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfPackage.COMPONENT_INSTANCE_RECONF__STATE_TO_BE_ACTIVATED, oldStateToBeActivated, stateToBeActivated));
@@ -189,7 +190,7 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeCompositeState basicGetStateToBeActivated() {
+	public State basicGetStateToBeActivated() {
 		return stateToBeActivated;
 	}
 
@@ -198,8 +199,8 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStateToBeActivated(UMLRealtimeCompositeState newStateToBeActivated) {
-		UMLRealtimeCompositeState oldStateToBeActivated = stateToBeActivated;
+	public void setStateToBeActivated(State newStateToBeActivated) {
+		State oldStateToBeActivated = stateToBeActivated;
 		stateToBeActivated = newStateToBeActivated;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ReconfPackage.COMPONENT_INSTANCE_RECONF__STATE_TO_BE_ACTIVATED, oldStateToBeActivated, stateToBeActivated));
@@ -263,7 +264,7 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 				setReconfDiagram((ReconfDiagram)newValue);
 				return;
 			case ReconfPackage.COMPONENT_INSTANCE_RECONF__STATE_TO_BE_ACTIVATED:
-				setStateToBeActivated((UMLRealtimeCompositeState)newValue);
+				setStateToBeActivated((State)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,7 +285,7 @@ public class ComponentInstanceReconfImpl extends EObjectImpl implements Componen
 				setReconfDiagram((ReconfDiagram)null);
 				return;
 			case ReconfPackage.COMPONENT_INSTANCE_RECONF__STATE_TO_BE_ACTIVATED:
-				setStateToBeActivated((UMLRealtimeCompositeState)null);
+				setStateToBeActivated((State)null);
 				return;
 		}
 		super.eUnset(featureID);

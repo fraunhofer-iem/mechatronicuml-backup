@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import org.eclipse.emf.ecore.EObject;
@@ -92,12 +93,12 @@ public interface ComponentInstanceReconf extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>State To Be Activated</em>' reference.
-	 * @see #setStateToBeActivated(UMLRealtimeCompositeState)
+	 * @see #setStateToBeActivated(State)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage#getComponentInstanceReconf_StateToBeActivated()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getStateToBeActivated();
+	State getStateToBeActivated();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ComponentInstanceReconf#getStateToBeActivated <em>State To Be Activated</em>}' reference.
@@ -107,7 +108,7 @@ public interface ComponentInstanceReconf extends EObject {
 	 * @see #getStateToBeActivated()
 	 * @generated
 	 */
-	void setStateToBeActivated(UMLRealtimeCompositeState value);
+	void setStateToBeActivated(State value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -27,7 +27,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  * @model
  * @generated
  */
-public interface UMLInterfaceStatechart extends UMLRealtimeStatechart {
+public interface UMLInterfaceStatechart extends Statechart {
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -37,12 +37,12 @@ public interface UMLInterfaceStatechart extends UMLRealtimeStatechart {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #setUMLRealtimeStatechart(UMLRealtimeStatechart)
+	 * @see #setUMLRealtimeStatechart(Statechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getUMLInterfaceStatechart_UMLRealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeStatechart getUMLRealtimeStatechart();
+	Statechart getUMLRealtimeStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}' reference.
@@ -52,6 +52,6 @@ public interface UMLInterfaceStatechart extends UMLRealtimeStatechart {
 	 * @see #getUMLRealtimeStatechart()
 	 * @generated
 	 */
-	void setUMLRealtimeStatechart(UMLRealtimeStatechart value);
+	void setUMLRealtimeStatechart(Statechart value);
 
 } // UMLInterfaceStatechart

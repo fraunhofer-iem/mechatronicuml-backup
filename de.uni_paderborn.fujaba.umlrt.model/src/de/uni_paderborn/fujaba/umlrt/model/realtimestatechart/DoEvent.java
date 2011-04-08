@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev <em>Do Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}</li>
@@ -29,34 +29,34 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DoEvent extends EObject {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Action</b></em>' reference.
+	 * Returns the value of the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Realtime Action</em>' reference isn't clear,
+	 * If the meaning of the '<em>Action</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Action</em>' reference.
-	 * @see #setUMLRealtimeAction(UMLRealtimeAction)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_UMLRealtimeAction()
+	 * @return the value of the '<em>Action</em>' reference.
+	 * @see #setAction(Action)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_Action()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeAction getUMLRealtimeAction();
+	Action getAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getAction <em>Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Action</em>' reference.
-	 * @see #getUMLRealtimeAction()
+	 * @param value the new value of the '<em>Action</em>' reference.
+	 * @see #getAction()
 	 * @generated
 	 */
-	void setUMLRealtimeAction(UMLRealtimeAction value);
+	void setAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Do Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction <em>Do Action</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getDoAction <em>Do Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Do Action Rev</em>' container reference isn't clear,
@@ -64,13 +64,13 @@ public interface DoEvent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Do Action Rev</em>' container reference.
-	 * @see #setDoActionRev(UMLRealtimeCompositeState)
+	 * @see #setDoActionRev(State)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_DoActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getDoAction
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getDoAction
 	 * @model opposite="doAction" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getDoActionRev();
+	State getDoActionRev();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev <em>Do Action Rev</em>}' container reference.
@@ -80,7 +80,7 @@ public interface DoEvent extends EObject {
 	 * @see #getDoActionRev()
 	 * @generated
 	 */
-	void setDoActionRev(UMLRealtimeCompositeState value);
+	void setDoActionRev(State value);
 
 	/**
 	 * Returns the value of the '<em><b>Period Lower</b></em>' attribute.

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
 import org.eclipse.emf.ecore.EObject;
@@ -36,12 +37,12 @@ public interface BehavioralElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #setUMLRealtimeStatechart(UMLRealtimeStatechart)
+	 * @see #setUMLRealtimeStatechart(Statechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_UMLRealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeStatechart getUMLRealtimeStatechart();
+	Statechart getUMLRealtimeStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}' reference.
@@ -51,6 +52,6 @@ public interface BehavioralElement extends EObject {
 	 * @see #getUMLRealtimeStatechart()
 	 * @generated
 	 */
-	void setUMLRealtimeStatechart(UMLRealtimeStatechart value);
+	void setUMLRealtimeStatechart(Statechart value);
 
 } // BehavioralElement

@@ -31,7 +31,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class UMLInterfaceStatechartItemProvider
-	extends UMLRealtimeStatechartItemProvider
+	extends StatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -148,11 +148,11 @@ public class UMLInterfaceStatechartItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_REALTIME_START_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_REALTIME_STATES ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == RealtimestatechartPackage.Literals.UML_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_REALTIME_START_STATE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__VERTICES ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_COMPLEX_REALTIME_STATE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__PROVIDED_MSG_IFACE ||
+			childFeature == RealtimestatechartPackage.Literals.STATECHART__REQUIRED_MSG_IFACE;
 
 		if (qualify) {
 			return getString

@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -43,7 +44,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected UMLRealtimeStatechart uMLRealtimeStatechart;
+	protected Statechart uMLRealtimeStatechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,10 +70,10 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart getUMLRealtimeStatechart() {
+	public Statechart getUMLRealtimeStatechart() {
 		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
 			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (UMLRealtimeStatechart)eResolveProxy(oldUMLRealtimeStatechart);
+			uMLRealtimeStatechart = (Statechart)eResolveProxy(oldUMLRealtimeStatechart);
 			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -86,7 +87,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UMLRealtimeStatechart basicGetUMLRealtimeStatechart() {
+	public Statechart basicGetUMLRealtimeStatechart() {
 		return uMLRealtimeStatechart;
 	}
 
@@ -95,8 +96,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(UMLRealtimeStatechart newUMLRealtimeStatechart) {
-		UMLRealtimeStatechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
+	public void setUMLRealtimeStatechart(Statechart newUMLRealtimeStatechart) {
+		Statechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
 		uMLRealtimeStatechart = newUMLRealtimeStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
@@ -126,7 +127,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)newValue);
+				setUMLRealtimeStatechart((Statechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,7 +142,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((UMLRealtimeStatechart)null);
+				setUMLRealtimeStatechart((Statechart)null);
 				return;
 		}
 		super.eUnset(featureID);

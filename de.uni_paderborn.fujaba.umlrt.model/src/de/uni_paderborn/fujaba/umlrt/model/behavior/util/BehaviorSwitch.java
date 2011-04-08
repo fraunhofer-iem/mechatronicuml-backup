@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior.util;
 
 import de.uni_paderborn.fujaba.umlrt.model.behavior.*;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
 import java.util.List;
@@ -96,7 +97,7 @@ public class BehaviorSwitch<T> {
 			case BehaviorPackage.PROTOCOL_STATECHART: {
 				ProtocolStatechart protocolStatechart = (ProtocolStatechart)theEObject;
 				T result = caseProtocolStatechart(protocolStatechart);
-				if (result == null) result = caseUMLRealtimeStatechart(protocolStatechart);
+				if (result == null) result = caseStatechart(protocolStatechart);
 				if (result == null) result = caseNamedElement(protocolStatechart);
 				if (result == null) result = caseCommentableElement(protocolStatechart);
 				if (result == null) result = caseExtendableElement(protocolStatechart);
@@ -168,17 +169,17 @@ public class BehaviorSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Realtime Statechart</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Realtime Statechart</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Statechart</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUMLRealtimeStatechart(UMLRealtimeStatechart object) {
+	public T caseStatechart(Statechart object) {
 		return null;
 	}
 

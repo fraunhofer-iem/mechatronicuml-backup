@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
 
 import org.eclipse.emf.common.util.EList;
@@ -111,12 +112,12 @@ public interface Role extends NamedElement, ConstrainableElement {
 	 * The realtime statechart describing the communication behavior of this role.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #setUMLRealtimeStatechart(UMLRealtimeStatechart)
+	 * @see #setUMLRealtimeStatechart(Statechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_UMLRealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	UMLRealtimeStatechart getUMLRealtimeStatechart();
+	Statechart getUMLRealtimeStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}' reference.
@@ -126,7 +127,7 @@ public interface Role extends NamedElement, ConstrainableElement {
 	 * @see #getUMLRealtimeStatechart()
 	 * @generated
 	 */
-	void setUMLRealtimeStatechart(UMLRealtimeStatechart value);
+	void setUMLRealtimeStatechart(Statechart value);
 
 	/**
 	 * Returns the value of the '<em><b>EClass</b></em>' reference.

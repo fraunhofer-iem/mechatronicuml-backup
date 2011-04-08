@@ -29,31 +29,31 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  */
 public interface RelativeDeadline extends Deadline {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getRelativeDeadline <em>Relative Deadline</em>}'.
+	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline <em>Relative Deadline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>UML Realtime Transition</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Transition</em>' reference.
-	 * @see #setUMLRealtimeTransition(UMLRealtimeTransition)
+	 * @return the value of the '<em>UML Realtime Transition</em>' container reference.
+	 * @see #setUMLRealtimeTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRelativeDeadline_UMLRealtimeTransition()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeTransition#getRelativeDeadline
-	 * @model opposite="relativeDeadline"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline
+	 * @model opposite="relativeDeadline" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeTransition getUMLRealtimeTransition();
+	Transition getUMLRealtimeTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Transition</em>' reference.
+	 * @param value the new value of the '<em>UML Realtime Transition</em>' container reference.
 	 * @see #getUMLRealtimeTransition()
 	 * @generated
 	 */
-	void setUMLRealtimeTransition(UMLRealtimeTransition value);
+	void setUMLRealtimeTransition(Transition value);
 
 } // RelativeDeadline

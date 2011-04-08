@@ -44,22 +44,22 @@ public interface RealtimestatechartFactory extends EFactory {
 	RelativeDeadline createRelativeDeadline();
 
 	/**
-	 * Returns a new object of class '<em>UML Clock</em>'.
+	 * Returns a new object of class '<em>Clock</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Clock</em>'.
+	 * @return a new object of class '<em>Clock</em>'.
 	 * @generated
 	 */
-	UMLClock createUMLClock();
+	Clock createClock();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Composite State</em>'.
+	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Composite State</em>'.
+	 * @return a new object of class '<em>State</em>'.
 	 * @generated
 	 */
-	UMLRealtimeCompositeState createUMLRealtimeCompositeState();
+	State createState();
 
 	/**
 	 * Returns a new object of class '<em>UML Interface Statechart</em>'.
@@ -71,76 +71,76 @@ public interface RealtimestatechartFactory extends EFactory {
 	UMLInterfaceStatechart createUMLInterfaceStatechart();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Action</em>'.
+	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Action</em>'.
+	 * @return a new object of class '<em>Action</em>'.
 	 * @generated
 	 */
-	UMLRealtimeAction createUMLRealtimeAction();
+	Action createAction();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Event</em>'.
+	 * Returns a new object of class '<em>Realtime Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Event</em>'.
+	 * @return a new object of class '<em>Realtime Event</em>'.
 	 * @generated
 	 */
-	UMLRealtimeEvent createUMLRealtimeEvent();
+	RealtimeEvent createRealtimeEvent();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Fading Function</em>'.
+	 * Returns a new object of class '<em>Fading Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Fading Function</em>'.
+	 * @return a new object of class '<em>Fading Function</em>'.
 	 * @generated
 	 */
-	UMLRealtimeFadingFunction createUMLRealtimeFadingFunction();
+	FadingFunction createFadingFunction();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Flat Switching</em>'.
+	 * Returns a new object of class '<em>Flat Switching</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Flat Switching</em>'.
+	 * @return a new object of class '<em>Flat Switching</em>'.
 	 * @generated
 	 */
-	UMLRealtimeFlatSwitching createUMLRealtimeFlatSwitching();
+	FlatSwitching createFlatSwitching();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Start State</em>'.
+	 * Returns a new object of class '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Start State</em>'.
+	 * @return a new object of class '<em>Initial State</em>'.
 	 * @generated
 	 */
-	UMLRealtimeStartState createUMLRealtimeStartState();
+	InitialState createInitialState();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Statechart</em>'.
+	 * Returns a new object of class '<em>Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Statechart</em>'.
+	 * @return a new object of class '<em>Statechart</em>'.
 	 * @generated
 	 */
-	UMLRealtimeStatechart createUMLRealtimeStatechart();
+	Statechart createStatechart();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Stop State</em>'.
+	 * Returns a new object of class '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Stop State</em>'.
+	 * @return a new object of class '<em>Final State</em>'.
 	 * @generated
 	 */
-	UMLRealtimeStopState createUMLRealtimeStopState();
+	FinalState createFinalState();
 
 	/**
-	 * Returns a new object of class '<em>UML Realtime Transition</em>'.
+	 * Returns a new object of class '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Realtime Transition</em>'.
+	 * @return a new object of class '<em>Transition</em>'.
 	 * @generated
 	 */
-	UMLRealtimeTransition createUMLRealtimeTransition();
+	Transition createTransition();
 
 	/**
 	 * Returns a new object of class '<em>Synchronization Channel</em>'.
@@ -152,13 +152,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	SynchronizationChannel createSynchronizationChannel();
 
 	/**
-	 * Returns a new object of class '<em>UML Time Constraint</em>'.
+	 * Returns a new object of class '<em>Clock Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Time Constraint</em>'.
+	 * @return a new object of class '<em>Clock Constraint</em>'.
 	 * @generated
 	 */
-	UMLTimeConstraint createUMLTimeConstraint();
+	ClockConstraint createClockConstraint();
 
 	/**
 	 * Returns a new object of class '<em>History State</em>'.

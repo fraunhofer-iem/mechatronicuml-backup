@@ -23,7 +23,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  * @model
  * @generated
  */
-public interface HistoryState extends UMLRealtimeState {
+public interface HistoryState extends Vertex {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind}.

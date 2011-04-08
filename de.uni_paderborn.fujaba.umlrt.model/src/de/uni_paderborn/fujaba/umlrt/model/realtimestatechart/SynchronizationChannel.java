@@ -17,10 +17,16 @@ import org.storydriven.modeling.calls.Callable;
  * A representation of the model object '<em><b>Synchronization Channel</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Defines a type of a synchronization channel that can be used to synchronize
+ * between statecharts contained as substatecharts in the same state.
+ * Serves as a type for Synchronizations.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getUMLRealtimeComplexState <em>UML Realtime Complex State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,32 +36,31 @@ import org.storydriven.modeling.calls.Callable;
  */
 public interface SynchronizationChannel extends NamedElement, Callable {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Complex State</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getChannels <em>Channels</em>}'.
+	 * Returns the value of the '<em><b>State</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getChannels <em>Channels</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>UML Realtime Complex State</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Complex State</em>' reference.
-	 * @see #setUMLRealtimeComplexState(UMLRealtimeCompositeState)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_UMLRealtimeComplexState()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState#getChannels
-	 * @model opposite="channels"
+	 * <!-- begin-model-doc -->
+	 * The state in which this synchronization channel is defined.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>State</em>' container reference.
+	 * @see #setState(State)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_State()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getChannels
+	 * @model opposite="channels" transient="false"
 	 * @generated
 	 */
-	UMLRealtimeCompositeState getUMLRealtimeComplexState();
+	State getState();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getUMLRealtimeComplexState <em>UML Realtime Complex State</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Complex State</em>' reference.
-	 * @see #getUMLRealtimeComplexState()
+	 * @param value the new value of the '<em>State</em>' container reference.
+	 * @see #getState()
 	 * @generated
 	 */
-	void setUMLRealtimeComplexState(UMLRealtimeCompositeState value);
+	void setState(State value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,6 +68,6 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(UMLRealtimeStatechart rtsc, SynchronizationChannel newChannel);
+	EObject clone(Statechart rtsc, SynchronizationChannel newChannel);
 
 } // SynchronizationChannel
