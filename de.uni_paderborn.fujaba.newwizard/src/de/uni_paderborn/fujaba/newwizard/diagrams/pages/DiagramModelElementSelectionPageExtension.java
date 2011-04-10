@@ -120,10 +120,12 @@ public class DiagramModelElementSelectionPageExtension implements
 	 */
 	@Override
 	public void setResource(Resource resource) {
-		modelViewer.setInput(resource);
-		if (!resource.getContents().isEmpty()) {
-			EObject firstElement = resource.getContents().get(0);
-			modelViewer.setSelection(new StructuredSelection(firstElement));
+		if (resource != null) {
+			modelViewer.setInput(resource);
+			if (!resource.getContents().isEmpty()) {
+				EObject firstElement = resource.getContents().get(0);
+				modelViewer.setSelection(new StructuredSelection(firstElement));
+			}
 		}
 	}
 
