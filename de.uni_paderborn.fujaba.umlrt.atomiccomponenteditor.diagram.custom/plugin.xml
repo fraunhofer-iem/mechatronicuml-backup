@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
+         name="%editorName"
+         icon="icons/AtomicComponentDiagram.gif"
+         extensions="atomiccomponent_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       icon="icons/AtomicComponentDiagram.gif"
+  	       class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+  	       name="Atomic Component Diagram">
+  	     
+  	  	 <description>Creates a new Atomic Component Diagram.</description>
+      </wizard>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.providers.CustomAtomiccomponentEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.ComponentPartAdvice"
+		  typeId="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.ComponentPart_3002"
+		  class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.ComponentPart_3002"/>
+         <advice ref="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.ComponentPartAdvice"/>
+      </binding>
+   </extension>
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram">
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.sheet.CustomAtomiccomponentPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.navigator.AtomiccomponentAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+</plugin>
