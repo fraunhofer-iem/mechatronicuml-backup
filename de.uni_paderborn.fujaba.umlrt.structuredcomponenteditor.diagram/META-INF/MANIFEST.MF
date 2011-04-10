@@ -7,8 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts, 
- de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies, 
+Export-Package: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers,

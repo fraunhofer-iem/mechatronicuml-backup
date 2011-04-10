@@ -51,7 +51,7 @@ public class StructuredcomponentPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.StructuredComponent_2001));
 		entry.setId("createStructuredComponent1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/StructuredComponent.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/StructuredComponent.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -67,7 +67,7 @@ public class StructuredcomponentPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.ComponentPart_3002));
 		entry.setId("createComponentPart2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/ComponentPart.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/ComponentPart.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -83,7 +83,7 @@ public class StructuredcomponentPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001));
 		entry.setId("createPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Port.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Port.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -99,7 +99,7 @@ public class StructuredcomponentPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001));
 		entry.setId("createDelegation4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Delegation.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -115,7 +115,7 @@ public class StructuredcomponentPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002));
 		entry.setId("createAssembly5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Assembly.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Assembly.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

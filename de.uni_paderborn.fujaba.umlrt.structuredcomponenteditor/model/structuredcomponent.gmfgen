@@ -296,31 +296,31 @@
             xsi:type="gmfgen:ToolEntry"
             title="StructuredComponent"
             description="Create new StructuredComponent"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/StructuredComponent.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/StructuredComponent.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ComponentPart"
             description="Create new ComponentPart"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/ComponentPart.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/ComponentPart.gif"
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Port"
             description="Create new Port"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Port.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Port.gif"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Delegation"
             description="Create new Delegation"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Delegation.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Delegation.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Assembly"
             description="Create new Assembly"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor/icons/Assembly.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Assembly.gif"
             genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
