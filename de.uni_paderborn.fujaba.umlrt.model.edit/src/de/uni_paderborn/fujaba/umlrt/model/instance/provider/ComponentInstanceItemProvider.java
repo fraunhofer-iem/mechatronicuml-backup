@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
 import java.util.Collection;
@@ -110,7 +111,9 @@ public class ComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PART_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -168,7 +171,9 @@ public class ComponentInstanceItemProvider
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -188,8 +193,28 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED,
-				 ComponentFactory.eINSTANCE.createPort()));
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PART_INSTANCES,
+				 InstanceFactory.eINSTANCE.createComponentInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createPortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
+				 InstanceFactory.eINSTANCE.createConnectorInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
+				 InstanceFactory.eINSTANCE.createAssemblyInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
+				 InstanceFactory.eINSTANCE.createDelegationInstance()));
 	}
 
 	/**

@@ -4,23 +4,17 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.umlrt.model.msgiface.provider;
+package de.uni_paderborn.fujaba.umlrt.model.instance.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.provider.EClassItemProvider;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -31,13 +25,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MessageInterfaceItemProvider
-	extends EClassItemProvider
+public class DelegationInstanceItemProvider
+	extends ConnectorInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -50,7 +44,7 @@ public class MessageInterfaceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterfaceItemProvider(AdapterFactory adapterFactory) {
+	public DelegationInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,25 +59,25 @@ public class MessageInterfaceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInheritsPropertyDescriptor(object);
+			addDelegationTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Inherits feature.
+	 * This adds a property descriptor for the Delegation Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInheritsPropertyDescriptor(Object object) {
+	protected void addDelegationTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MessageInterface_inherits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_inherits_feature", "_UI_MessageInterface_type"),
-				 MsgifacePackage.Literals.MESSAGE_INTERFACE__INHERITS,
+				 getString("_UI_DelegationInstance_delegationType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DelegationInstance_delegationType_feature", "_UI_DelegationInstance_type"),
+				 InstancePackage.Literals.DELEGATION_INSTANCE__DELEGATION_TYPE,
 				 true,
 				 false,
 				 true,
@@ -93,14 +87,14 @@ public class MessageInterfaceItemProvider
 	}
 
 	/**
-	 * This returns MessageInterface.gif.
+	 * This returns DelegationInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MessageInterface"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DelegationInstance"));
 	}
 
 	/**
@@ -111,10 +105,10 @@ public class MessageInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageInterface)object).getName();
+		String label = ((DelegationInstance)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_MessageInterface_type") :
-			getString("_UI_MessageInterface_type") + " " + label;
+			getString("_UI_DelegationInstance_type") :
+			getString("_UI_DelegationInstance_type") + " " + label;
 	}
 
 	/**
@@ -140,17 +134,6 @@ public class MessageInterfaceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

@@ -4,37 +4,63 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.umlrt.model.behavior.impl;
+package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.ReconfPackageImpl;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.ReconfPackageImpl;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,13 +68,48 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.Reconf
  * <!-- end-user-doc -->
  * @generated
  */
-public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage {
+public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass protocolStatechartEClass = null;
+	private EClass stringToEClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType myMapEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mapEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType vectorEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType setEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType iteratorEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -61,12 +122,12 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage#eNS_URI
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private BehaviorPackageImpl() {
-		super(eNS_URI, BehaviorFactory.eINSTANCE);
+	private HelperPackageImpl() {
+		super(eNS_URI, HelperFactory.eINSTANCE);
 	}
 
 	/**
@@ -79,7 +140,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link BehaviorPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link HelperPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,11 +149,11 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static BehaviorPackage init() {
-		if (isInited) return (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+	public static HelperPackage init() {
+		if (isInited) return (HelperPackage)EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI);
 
 		// Obtain or create and register package
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new BehaviorPackageImpl());
+		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new HelperPackageImpl());
 
 		isInited = true;
 
@@ -100,6 +161,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		SDMPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
@@ -107,10 +169,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		ReconfPackageImpl theReconfPackage = (ReconfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) instanceof ReconfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) : ReconfPackage.eINSTANCE);
-		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
 
 		// Create package meta-data objects
+		theHelperPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
@@ -119,10 +181,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		thePatternPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
 		theReconfPackage.createPackageContents();
-		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
 
 		// Initialize created meta-data
+		theHelperPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
@@ -131,16 +193,15 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		thePatternPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
 		theReconfPackage.initializePackageContents();
-		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theBehaviorPackage.freeze();
+		theHelperPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(BehaviorPackage.eNS_URI, theBehaviorPackage);
-		return theBehaviorPackage;
+		EPackage.Registry.INSTANCE.put(HelperPackage.eNS_URI, theHelperPackage);
+		return theHelperPackage;
 	}
 
 	/**
@@ -148,8 +209,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProtocolStatechart() {
-		return protocolStatechartEClass;
+	public EClass getStringToEClass() {
+		return stringToEClassEClass;
 	}
 
 	/**
@@ -157,8 +218,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProtocolStatechart_Port() {
-		return (EReference)protocolStatechartEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStringToEClass_Key() {
+		return (EAttribute)stringToEClassEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -166,8 +227,8 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getProtocolStatechart__Clone__Statechart() {
-		return protocolStatechartEClass.getEOperations().get(0);
+	public EReference getStringToEClass_Value() {
+		return (EReference)stringToEClassEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -175,8 +236,53 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BehaviorFactory getBehaviorFactory() {
-		return (BehaviorFactory)getEFactoryInstance();
+	public EDataType getMyMap() {
+		return myMapEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getMap() {
+		return mapEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getVector() {
+		return vectorEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getSet() {
+		return setEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getIterator() {
+		return iteratorEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HelperFactory getHelperFactory() {
+		return (HelperFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -198,9 +304,16 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		isCreated = true;
 
 		// Create classes and their features
-		protocolStatechartEClass = createEClass(PROTOCOL_STATECHART);
-		createEReference(protocolStatechartEClass, PROTOCOL_STATECHART__PORT);
-		createEOperation(protocolStatechartEClass, PROTOCOL_STATECHART___CLONE__STATECHART);
+		stringToEClassEClass = createEClass(STRING_TO_ECLASS);
+		createEAttribute(stringToEClassEClass, STRING_TO_ECLASS__KEY);
+		createEReference(stringToEClassEClass, STRING_TO_ECLASS__VALUE);
+
+		// Create data types
+		myMapEDataType = createEDataType(MY_MAP);
+		mapEDataType = createEDataType(MAP);
+		vectorEDataType = createEDataType(VECTOR);
+		setEDataType = createEDataType(SET);
+		iteratorEDataType = createEDataType(ITERATOR);
 	}
 
 	/**
@@ -227,26 +340,28 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
+		addETypeParameter(myMapEDataType, "key");
+		addETypeParameter(myMapEDataType, "value");
+		addETypeParameter(setEDataType, "UMLClock");
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		protocolStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage.getStatechart());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(protocolStatechartEClass, ProtocolStatechart.class, "ProtocolStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProtocolStatechart_Port(), theComponentPackage.getPort(), null, "port", null, 0, 1, ProtocolStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(stringToEClassEClass, Map.Entry.class, "StringToEClass", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringToEClass_Key(), theEcorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStringToEClass_Value(), theEcorePackage.getEClass(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getProtocolStatechart__Clone__Statechart(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theRealtimestatechartPackage.getStatechart(), "newpsc", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
+		// Initialize data types
+		initEDataType(myMapEDataType, HashMap.class, "MyMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mapEDataType, Map.class, "Map", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(vectorEDataType, Vector.class, "Vector", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(setEDataType, Set.class, "Set", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(iteratorEDataType, Iterator.class, "Iterator", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
-} //BehaviorPackageImpl
+} //HelperPackageImpl

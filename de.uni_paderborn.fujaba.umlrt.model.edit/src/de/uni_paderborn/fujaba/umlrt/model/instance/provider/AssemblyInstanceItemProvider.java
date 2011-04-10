@@ -7,18 +7,14 @@
 package de.uni_paderborn.fujaba.umlrt.model.instance.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
-
+import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -27,16 +23,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link java.util.Map.Entry} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CI2PMapEntryItemProvider
-	extends ItemProviderAdapter
+public class AssemblyInstanceItemProvider
+	extends ConnectorInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -49,7 +44,7 @@ public class CI2PMapEntryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CI2PMapEntryItemProvider(AdapterFactory adapterFactory) {
+	public AssemblyInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,26 +59,26 @@ public class CI2PMapEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKeyPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addAssemblyTypePropertyDescriptor(object);
+			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Key feature.
+	 * This adds a property descriptor for the Assembly Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object) {
+	protected void addAssemblyTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CI2PMapEntry_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CI2PMapEntry_key_feature", "_UI_CI2PMapEntry_type"),
-				 InstancePackage.Literals.CI2P_MAP_ENTRY__KEY,
+				 getString("_UI_AssemblyInstance_assemblyType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_assemblyType_feature", "_UI_AssemblyInstance_type"),
+				 InstancePackage.Literals.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE,
 				 true,
 				 false,
 				 true,
@@ -93,19 +88,19 @@ public class CI2PMapEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
+	 * This adds a property descriptor for the Coordination Pattern feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addCoordinationPatternPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CI2PMapEntry_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CI2PMapEntry_value_feature", "_UI_CI2PMapEntry_type"),
-				 InstancePackage.Literals.CI2P_MAP_ENTRY__VALUE,
+				 getString("_UI_AssemblyInstance_coordinationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_coordinationPattern_feature", "_UI_AssemblyInstance_type"),
+				 InstancePackage.Literals.ASSEMBLY_INSTANCE__COORDINATION_PATTERN,
 				 true,
 				 false,
 				 true,
@@ -115,14 +110,14 @@ public class CI2PMapEntryItemProvider
 	}
 
 	/**
-	 * This returns CI2PMapEntry.gif.
+	 * This returns AssemblyInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CI2PMapEntry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyInstance"));
 	}
 
 	/**
@@ -133,8 +128,10 @@ public class CI2PMapEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Map.Entry<?, ?> ci2PMapEntry = (Map.Entry<?, ?>)object;
-		return "" + ci2PMapEntry.getKey() + " -> " + ci2PMapEntry.getValue();
+		String label = ((AssemblyInstance)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AssemblyInstance_type") :
+			getString("_UI_AssemblyInstance_type") + " " + label;
 	}
 
 	/**
@@ -160,17 +157,6 @@ public class CI2PMapEntryItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

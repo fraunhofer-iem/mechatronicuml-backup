@@ -10,10 +10,10 @@ package de.uni_paderborn.fujaba.umlrt.model.instance.provider;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -27,16 +27,21 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.storydriven.modeling.SDMPackage;
+
+import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 /**
- * This is the item provider adapter for a {@link java.util.Map.Entry} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CI2PsMapEntryItemProvider
-	extends ItemProviderAdapter
+public class PortInstanceItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -49,7 +54,7 @@ public class CI2PsMapEntryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CI2PsMapEntryItemProvider(AdapterFactory adapterFactory) {
+	public PortInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,26 +69,48 @@ public class CI2PsMapEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKeyPropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
+			addPortTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Key feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CI2PsMapEntry_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CI2PsMapEntry_key_feature", "_UI_CI2PsMapEntry_type"),
-				 InstancePackage.Literals.CI2_PS_MAP_ENTRY__KEY,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_portType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_portType_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
 				 true,
 				 false,
 				 true,
@@ -93,36 +120,14 @@ public class CI2PsMapEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CI2PsMapEntry_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CI2PsMapEntry_value_feature", "_UI_CI2PsMapEntry_type"),
-				 InstancePackage.Literals.CI2_PS_MAP_ENTRY__VALUE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns CI2PsMapEntry.gif.
+	 * This returns PortInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CI2PsMapEntry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PortInstance"));
 	}
 
 	/**
@@ -133,8 +138,10 @@ public class CI2PsMapEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Map.Entry<?, ?> ci2PsMapEntry = (Map.Entry<?, ?>)object;
-		return "" + ci2PsMapEntry.getKey() + " -> " + ci2PsMapEntry.getValue();
+		String label = ((PortInstance)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PortInstance_type") :
+			getString("_UI_PortInstance_type") + " " + label;
 	}
 
 	/**
@@ -147,6 +154,12 @@ public class CI2PsMapEntryItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PortInstance.class)) {
+			case InstancePackage.PORT_INSTANCE__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

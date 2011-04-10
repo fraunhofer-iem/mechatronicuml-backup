@@ -73,7 +73,6 @@ public class FadingFunctionItemProvider
 			addSpline2PropertyDescriptor(object);
 			addPolynomDegreePropertyDescriptor(object);
 			addPortsByComponentInstancePropertyDescriptor(object);
-			addPortInstToPortInstMapEntryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -233,28 +232,6 @@ public class FadingFunctionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Port Inst To Port Inst Map Entry feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPortInstToPortInstMapEntryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FadingFunction_portInstToPortInstMapEntry_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FadingFunction_portInstToPortInstMapEntry_feature", "_UI_FadingFunction_type"),
-				 RealtimestatechartPackage.Literals.FADING_FUNCTION__PORT_INST_TO_PORT_INST_MAP_ENTRY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns FadingFunction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -297,7 +274,6 @@ public class FadingFunctionItemProvider
 			case RealtimestatechartPackage.FADING_FUNCTION__SPLINE1:
 			case RealtimestatechartPackage.FADING_FUNCTION__SPLINE2:
 			case RealtimestatechartPackage.FADING_FUNCTION__POLYNOM_DEGREE:
-			case RealtimestatechartPackage.FADING_FUNCTION__PORT_INST_TO_PORT_INST_MAP_ENTRY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

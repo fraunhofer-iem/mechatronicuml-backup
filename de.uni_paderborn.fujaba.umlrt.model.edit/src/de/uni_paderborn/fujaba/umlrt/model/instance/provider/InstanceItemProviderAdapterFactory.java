@@ -122,49 +122,72 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CI2PsMapEntryItemProvider ci2PsMapEntryItemProvider;
+	protected PortInstanceItemProvider portInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link java.util.Map.Entry}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCI2PsMapEntryAdapter() {
-		if (ci2PsMapEntryItemProvider == null) {
-			ci2PsMapEntryItemProvider = new CI2PsMapEntryItemProvider(this);
+	public Adapter createPortInstanceAdapter() {
+		if (portInstanceItemProvider == null) {
+			portInstanceItemProvider = new PortInstanceItemProvider(this);
 		}
 
-		return ci2PsMapEntryItemProvider;
+		return portInstanceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link java.util.Map.Entry} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CI2PMapEntryItemProvider ci2PMapEntryItemProvider;
+	protected AssemblyInstanceItemProvider assemblyInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link java.util.Map.Entry}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCI2PMapEntryAdapter() {
-		if (ci2PMapEntryItemProvider == null) {
-			ci2PMapEntryItemProvider = new CI2PMapEntryItemProvider(this);
+	public Adapter createAssemblyInstanceAdapter() {
+		if (assemblyInstanceItemProvider == null) {
+			assemblyInstanceItemProvider = new AssemblyInstanceItemProvider(this);
 		}
 
-		return ci2PMapEntryItemProvider;
+		return assemblyInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DelegationInstanceItemProvider delegationInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDelegationInstanceAdapter() {
+		if (delegationInstanceItemProvider == null) {
+			delegationInstanceItemProvider = new DelegationInstanceItemProvider(this);
+		}
+
+		return delegationInstanceItemProvider;
 	}
 
 	/**
@@ -268,8 +291,9 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	public void dispose() {
 		if (componentInstanceItemProvider != null) componentInstanceItemProvider.dispose();
 		if (connectorInstanceItemProvider != null) connectorInstanceItemProvider.dispose();
-		if (ci2PsMapEntryItemProvider != null) ci2PsMapEntryItemProvider.dispose();
-		if (ci2PMapEntryItemProvider != null) ci2PMapEntryItemProvider.dispose();
+		if (portInstanceItemProvider != null) portInstanceItemProvider.dispose();
+		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
+		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
 	}
 
 }
