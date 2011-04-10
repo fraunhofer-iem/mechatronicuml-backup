@@ -2843,22 +2843,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FADING_FUNCTION__PORTS_BY_COMPONENT_INSTANCE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Port Inst To Port Inst Map Entry</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__PORT_INST_TO_PORT_INST_MAP_ENTRY = 8;
-
-	/**
 	 * The number of structural features of the '<em>Fading Function</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FADING_FUNCTION_FEATURE_COUNT = 9;
+	int FADING_FUNCTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The operation id for the '<em>Get Breakpoint</em>' operation.
@@ -5643,17 +5634,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFadingFunction_PortsByComponentInstance();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortInstToPortInstMapEntry <em>Port Inst To Port Inst Map Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port Inst To Port Inst Map Entry</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortInstToPortInstMapEntry()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_PortInstToPortInstMapEntry();
-
-	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getBreakpoint() <em>Get Breakpoint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7187,14 +7167,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FADING_FUNCTION__PORTS_BY_COMPONENT_INSTANCE = eINSTANCE.getFadingFunction_PortsByComponentInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Inst To Port Inst Map Entry</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__PORT_INST_TO_PORT_INST_MAP_ENTRY = eINSTANCE.getFadingFunction_PortInstToPortInstMapEntry();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Breakpoint</b></em>' operation.

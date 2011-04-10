@@ -6,14 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.eclipse.emf.common.util.EList;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -33,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getSpline2 <em>Spline2</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPolynomDegree <em>Polynom Degree</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortsByComponentInstance <em>Ports By Component Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortInstToPortInstMapEntry <em>Port Inst To Port Inst Map Entry</em>}</li>
  * </ul>
  * </p>
  *
@@ -235,12 +227,12 @@ public interface FadingFunction extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports By Component Instance</em>' reference.
-	 * @see #setPortsByComponentInstance(Map.Entry)
+	 * @see #setPortsByComponentInstance(PortInstance)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getFadingFunction_PortsByComponentInstance()
-	 * @model mapType="de.uni_paderborn.fujaba.umlrt.model.instance.CI2PsMapEntry<de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance, de.uni_paderborn.fujaba.umlrt.model.component.Port>"
+	 * @model
 	 * @generated
 	 */
-	Map.Entry<ComponentInstance, EList<Port>> getPortsByComponentInstance();
+	PortInstance getPortsByComponentInstance();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortsByComponentInstance <em>Ports By Component Instance</em>}' reference.
@@ -250,33 +242,7 @@ public interface FadingFunction extends EObject {
 	 * @see #getPortsByComponentInstance()
 	 * @generated
 	 */
-	void setPortsByComponentInstance(Map.Entry<ComponentInstance, EList<Port>> value);
-
-	/**
-	 * Returns the value of the '<em><b>Port Inst To Port Inst Map Entry</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port Inst To Port Inst Map Entry</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port Inst To Port Inst Map Entry</em>' attribute.
-	 * @see #setPortInstToPortInstMapEntry(HashMap)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getFadingFunction_PortInstToPortInstMapEntry()
-	 * @model dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.MyMap<?, ?>"
-	 * @generated
-	 */
-	HashMap<?, ?> getPortInstToPortInstMapEntry();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortInstToPortInstMapEntry <em>Port Inst To Port Inst Map Entry</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port Inst To Port Inst Map Entry</em>' attribute.
-	 * @see #getPortInstToPortInstMapEntry()
-	 * @generated
-	 */
-	void setPortInstToPortInstMapEntry(HashMap<?, ?> value);
+	void setPortsByComponentInstance(PortInstance value);
 
 	/**
 	 * <!-- begin-user-doc -->

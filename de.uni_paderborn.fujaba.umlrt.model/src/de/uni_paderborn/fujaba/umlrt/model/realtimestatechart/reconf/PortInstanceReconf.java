@@ -6,11 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-
-import java.util.Map;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -95,12 +91,12 @@ public interface PortInstanceReconf extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port By Component Instance</em>' reference.
-	 * @see #setPortByComponentInstance(Map.Entry)
+	 * @see #setPortByComponentInstance(PortInstance)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage#getPortInstanceReconf_PortByComponentInstance()
-	 * @model mapType="de.uni_paderborn.fujaba.umlrt.model.instance.CI2PMapEntry<de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance, de.uni_paderborn.fujaba.umlrt.model.component.Port>"
+	 * @model
 	 * @generated
 	 */
-	Map.Entry<ComponentInstance, Port> getPortByComponentInstance();
+	PortInstance getPortByComponentInstance();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.PortInstanceReconf#getPortByComponentInstance <em>Port By Component Instance</em>}' reference.
@@ -110,7 +106,7 @@ public interface PortInstanceReconf extends EObject {
 	 * @see #getPortByComponentInstance()
 	 * @generated
 	 */
-	void setPortByComponentInstance(Map.Entry<ComponentInstance, Port> value);
+	void setPortByComponentInstance(PortInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Reconf Diagram</b></em>' reference.

@@ -6,19 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 /**
  * <!-- begin-user-doc -->

@@ -15,14 +15,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
+
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
@@ -349,8 +348,26 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSetPortsDerived() {
+		return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getComponentNameDerived() {
 		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetComponentNameDerived() {
+		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -585,9 +602,9 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			case ComponentPackage.COMPONENT_PART__DELEGATION:
 				return delegation != null && !delegation.isEmpty();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetPortsDerived();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetComponentNameDerived();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
 		}

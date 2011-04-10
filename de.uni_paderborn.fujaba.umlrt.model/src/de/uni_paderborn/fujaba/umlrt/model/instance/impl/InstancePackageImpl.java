@@ -22,11 +22,14 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
@@ -85,14 +88,21 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ci2PsMapEntryEClass = null;
+	private EClass portInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ci2PMapEntryEClass = null;
+	private EClass assemblyInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass delegationInstanceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -210,8 +220,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstance_ToRef() {
-		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getComponentInstance_ComponentNameDerived() {
+		return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -219,7 +229,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstance_FromRef() {
+	public EReference getComponentInstance_PartInstances() {
 		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -228,7 +238,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstance_PortsDerived() {
+	public EReference getComponentInstance_PortInstances() {
 		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -237,8 +247,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentInstance_ComponentNameDerived() {
-		return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(4);
+	public EReference getComponentInstance_ConnectorInstances() {
+		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -264,7 +274,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorInstance_ToComponentI() {
+	public EReference getConnectorInstance_Source() {
 		return (EReference)connectorInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -273,7 +283,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorInstance_FromComponentI() {
+	public EReference getConnectorInstance_Target() {
 		return (EReference)connectorInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -282,7 +292,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorInstance_ToPort() {
+	public EReference getConnectorInstance_ParentComponentInstance() {
 		return (EReference)connectorInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -291,8 +301,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorInstance_FromPort() {
-		return (EReference)connectorInstanceEClass.getEStructuralFeatures().get(3);
+	public EClass getPortInstance() {
+		return portInstanceEClass;
 	}
 
 	/**
@@ -300,8 +310,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCI2PsMapEntry() {
-		return ci2PsMapEntryEClass;
+	public EReference getPortInstance_PortType() {
+		return (EReference)portInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -309,8 +319,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCI2PsMapEntry_Key() {
-		return (EReference)ci2PsMapEntryEClass.getEStructuralFeatures().get(0);
+	public EClass getAssemblyInstance() {
+		return assemblyInstanceEClass;
 	}
 
 	/**
@@ -318,8 +328,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCI2PsMapEntry_Value() {
-		return (EReference)ci2PsMapEntryEClass.getEStructuralFeatures().get(1);
+	public EReference getAssemblyInstance_AssemblyType() {
+		return (EReference)assemblyInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -327,8 +337,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCI2PMapEntry() {
-		return ci2PMapEntryEClass;
+	public EReference getAssemblyInstance_CoordinationPattern() {
+		return (EReference)assemblyInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -336,8 +346,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCI2PMapEntry_Key() {
-		return (EReference)ci2PMapEntryEClass.getEStructuralFeatures().get(0);
+	public EClass getDelegationInstance() {
+		return delegationInstanceEClass;
 	}
 
 	/**
@@ -345,8 +355,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCI2PMapEntry_Value() {
-		return (EReference)ci2PMapEntryEClass.getEStructuralFeatures().get(1);
+	public EReference getDelegationInstance_DelegationType() {
+		return (EReference)delegationInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -379,25 +389,26 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Create classes and their features
 		componentInstanceEClass = createEClass(COMPONENT_INSTANCE);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_TYPE);
-		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__TO_REF);
-		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__FROM_REF);
-		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORTS_DERIVED);
 		createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED);
+		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PART_INSTANCES);
+		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORT_INSTANCES);
+		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 		createEOperation(componentInstanceEClass, COMPONENT_INSTANCE___TO_STRING);
 
 		connectorInstanceEClass = createEClass(CONNECTOR_INSTANCE);
-		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__TO_COMPONENT_I);
-		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__FROM_COMPONENT_I);
-		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__TO_PORT);
-		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__FROM_PORT);
+		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__SOURCE);
+		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__TARGET);
+		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE);
 
-		ci2PsMapEntryEClass = createEClass(CI2_PS_MAP_ENTRY);
-		createEReference(ci2PsMapEntryEClass, CI2_PS_MAP_ENTRY__KEY);
-		createEReference(ci2PsMapEntryEClass, CI2_PS_MAP_ENTRY__VALUE);
+		portInstanceEClass = createEClass(PORT_INSTANCE);
+		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_TYPE);
 
-		ci2PMapEntryEClass = createEClass(CI2P_MAP_ENTRY);
-		createEReference(ci2PMapEntryEClass, CI2P_MAP_ENTRY__KEY);
-		createEReference(ci2PMapEntryEClass, CI2P_MAP_ENTRY__VALUE);
+		assemblyInstanceEClass = createEClass(ASSEMBLY_INSTANCE);
+		createEReference(assemblyInstanceEClass, ASSEMBLY_INSTANCE__ASSEMBLY_TYPE);
+		createEReference(assemblyInstanceEClass, ASSEMBLY_INSTANCE__COORDINATION_PATTERN);
+
+		delegationInstanceEClass = createEClass(DELEGATION_INSTANCE);
+		createEReference(delegationInstanceEClass, DELEGATION_INSTANCE__DELEGATION_TYPE);
 	}
 
 	/**
@@ -426,6 +437,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -434,30 +446,36 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Add supertypes to classes
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		connectorInstanceEClass.getESuperTypes().add(theComponentPackage.getBehavioralConnector());
+		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
+		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentInstance_ComponentType(), theComponentPackage.getComponent(), theComponentPackage.getComponent_ComponentInstances(), "componentType", null, 1, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstance_ToRef(), this.getConnectorInstance(), this.getConnectorInstance_ToComponentI(), "toRef", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstance_FromRef(), this.getConnectorInstance(), this.getConnectorInstance_FromComponentI(), "fromRef", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstance_PortsDerived(), theComponentPackage.getPort(), null, "portsDerived", null, 0, -1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentInstance_ComponentNameDerived(), ecorePackage.getEString(), "componentNameDerived", "", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstance_ComponentNameDerived(), ecorePackage.getEString(), "componentNameDerived", "", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_PartInstances(), this.getComponentInstance(), null, "partInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_PortInstances(), this.getPortInstance(), null, "portInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstance_ConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_ParentComponentInstance(), "connectorInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getComponentInstance__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(connectorInstanceEClass, ConnectorInstance.class, "ConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorInstance_ToComponentI(), this.getComponentInstance(), this.getComponentInstance_ToRef(), "toComponentI", null, 0, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorInstance_FromComponentI(), this.getComponentInstance(), this.getComponentInstance_FromRef(), "fromComponentI", null, 0, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorInstance_ToPort(), theComponentPackage.getPort(), null, "toPort", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorInstance_FromPort(), theComponentPackage.getPort(), null, "fromPort", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorInstance_Source(), this.getPortInstance(), null, "source", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorInstance_Target(), this.getPortInstance(), null, "target", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorInstance_ParentComponentInstance(), this.getComponentInstance(), this.getComponentInstance_ConnectorInstances(), "parentComponentInstance", null, 0, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(ci2PsMapEntryEClass, Map.Entry.class, "CI2PsMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCI2PsMapEntry_Key(), this.getComponentInstance(), null, "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCI2PsMapEntry_Value(), theComponentPackage.getPort(), null, "value", null, 0, -1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(ci2PMapEntryEClass, Map.Entry.class, "CI2PMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCI2PMapEntry_Key(), this.getComponentInstance(), null, "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCI2PMapEntry_Value(), theComponentPackage.getPort(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(assemblyInstanceEClass, AssemblyInstance.class, "AssemblyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssemblyInstance_CoordinationPattern(), thePatternPackage.getCoordinationPattern(), null, "coordinationPattern", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(delegationInstanceEClass, DelegationInstance.class, "DelegationInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDelegationInstance_DelegationType(), theComponentPackage.getDelegation(), null, "delegationType", null, 1, 1, DelegationInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -484,7 +502,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });						
+		   });			
 	}
 
 	/**
@@ -496,17 +514,11 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
 		addAnnotation
-		  (getComponentInstance_PortsDerived(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif"
-		   });		
-		addAnnotation
 		  (getComponentInstance_ComponentNameDerived(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
-		   });			
+		   });	
 	}
 
 } //InstancePackageImpl

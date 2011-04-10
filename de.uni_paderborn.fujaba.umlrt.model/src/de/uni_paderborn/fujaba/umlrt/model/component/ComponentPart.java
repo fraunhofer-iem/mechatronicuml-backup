@@ -37,8 +37,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TypeNotEqualToParent CardinalityLowerBoundSet CardinalityUpperBoundSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()'"
  * @generated
  */
 public interface ComponentPart extends NamedElement, CommentableElement {
@@ -81,7 +81,7 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * @see #setParentComponent(StructuredComponent)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_ParentComponent()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent#getEmbeddedParts
-	 * @model opposite="embeddedParts" required="true" transient="false"
+	 * @model opposite="embeddedParts" transient="false"
 	 * @generated
 	 */
 	StructuredComponent getParentComponent();
@@ -157,12 +157,23 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
+	 * @see #isSetPortsDerived()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_PortsDerived()
-	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif'"
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Ports Derived</em>' containment reference list is set.
+	 * @see #getPortsDerived()
+	 * @generated
+	 */
+	boolean isSetPortsDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
@@ -174,12 +185,23 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Name Derived</em>' attribute.
+	 * @see #isSetComponentNameDerived()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_ComponentNameDerived()
-	 * @model default="" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif'"
 	 * @generated
 	 */
 	String getComponentNameDerived();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Component Name Derived</em>' attribute is set.
+	 * @see #getComponentNameDerived()
+	 * @generated
+	 */
+	boolean isSetComponentNameDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

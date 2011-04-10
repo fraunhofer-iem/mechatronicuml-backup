@@ -244,8 +244,8 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(componentPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentPart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponentPart_TypeNotEqualToParent(componentPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponentPart_CardinalityLowerBoundSet(componentPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentPart_TypeNotEqualToParent(componentPart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponentPart_CardinalityUpperBoundSet(componentPart, diagnostics, context);
 		return result;
 	}

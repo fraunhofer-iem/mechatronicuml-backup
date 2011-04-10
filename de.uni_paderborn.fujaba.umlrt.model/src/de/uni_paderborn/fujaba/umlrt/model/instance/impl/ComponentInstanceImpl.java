@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.instance.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,81 +17,51 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DependantAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Instance</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Component Instance</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getToRef <em>To Ref</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getFromRef <em>From Ref</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPartInstances <em>Part Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentInstanceImpl extends NamedElementImpl implements ComponentInstance {
-	/**
-	 * @generated NOT
-	 */
-	private static final String COMPONENT_NAME_DERIVED_EDEFAULT = null;
-
+public class ComponentInstanceImpl extends NamedElementImpl implements
+		ComponentInstance {
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getComponentType()
 	 * @generated
 	 * @ordered
 	 */
 	protected Component componentType;
-
-	/**
-	 * The cached value of the '{@link #getToRef() <em>To Ref</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToRef()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorInstance> toRef;
-
-	/**
-	 * The cached value of the '{@link #getFromRef() <em>From Ref</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromRef()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorInstance> fromRef;
-
-	/**
-	 * The cached setting delegate for the '{@link #getPortsDerived() <em>Ports Derived</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortsDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
@@ -103,29 +74,99 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
 
 	/**
+	 * @generated NOT
+	 */
+	private static final String COMPONENT_NAME_DERIVED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPartInstances() <em>Part Instances</em>}' containment reference list.
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * @see #getPartInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentInstance> partInstances;
+
+	/**
+	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * @see #getPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortInstance> portInstances;
+
+	/**
+	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getConnectorInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorInstance> connectorInstances;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected ComponentInstanceImpl() {
 		super();
-		
+
 		// Install a notification adapter that informs the
-		// portsDerived-reference, whenever one of the dependent features
+		// componentNameDerived-reference, whenever one of the dependent
+		// features
 		// was modified
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__PORTS_DERIVED, Notification.ADD_MANY);
-		portsDerivedAdapter.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
-		
-		// Install a notification adapter that informs the
-		// componentNameDerived-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter componentNameDerived = new DerivedAttributeAdapter(this, InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED, Notification.SET);
-		componentNameDerived.addNavigatedDependency(InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+		DerivedAttributeAdapter componentNameDerived = new DerivedAttributeAdapter(
+				this,
+				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED,
+				Notification.SET);
+		componentNameDerived.addNavigatedDependency(
+				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
+				SDMPackage.Literals.NAMED_ELEMENT__NAME);
+
+		// Install a notification adapter that updates the partInstances,
+		// whenever one of the dependent features was modified
+		DependantAttributeAdapter partInstancesAdapter = new DependantAttributeAdapter() {
+
+			@Override
+			protected void notifyDependantAttributeChange() {
+				updatePartInstances();
+			}
+
+		};
+		partInstancesAdapter.addNavigatedDependency(
+				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
+				ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
+		eAdapters.add(partInstancesAdapter);
+
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	private void updatePartInstances() {
+		/*
+		 * Make sure that for every ComponentPart of the componentType, there is
+		 * a ComponentInstance.
+		 */
+		if (componentType instanceof StructuredComponent) {
+			StructuredComponent structuredComponent = (StructuredComponent) componentType;
+			List<ComponentPart> parts = structuredComponent.getEmbeddedParts();
+
+			for (ComponentPart componentPart : parts) {
+				// FIXME: Wir wissen nicht eindeutig, welche Instanz zu welchem Part gehören soll...
+			}
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -134,8 +175,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Component getComponentType() {
@@ -151,8 +191,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Component basicGetComponentType() {
@@ -160,11 +199,11 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComponentType(Component newComponentType, NotificationChain msgs) {
+	public NotificationChain basicSetComponentType(Component newComponentType,
+			NotificationChain msgs) {
 		Component oldComponentType = componentType;
 		componentType = newComponentType;
 		if (eNotificationRequired()) {
@@ -175,8 +214,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setComponentType(Component newComponentType) {
@@ -194,42 +232,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorInstance> getToRef() {
-		if (toRef == null) {
-			toRef = new EObjectWithInverseResolvingEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE__TO_REF, InstancePackage.CONNECTOR_INSTANCE__TO_COMPONENT_I);
-		}
-		return toRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorInstance> getFromRef() {
-		if (fromRef == null) {
-			fromRef = new EObjectWithInverseResolvingEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE__FROM_REF, InstancePackage.CONNECTOR_INSTANCE__FROM_COMPONENT_I);
-		}
-		return fromRef;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<Port> getPortsDerived() {
-		return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getComponentNameDerived() {
@@ -237,8 +240,49 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetComponentNameDerived() {
+		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ComponentInstance> getPartInstances() {
+		if (partInstances == null) {
+			partInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES);
+		}
+		return partInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PortInstance> getPortInstances() {
+		if (portInstances == null) {
+			portInstances = new EObjectContainmentEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES);
+		}
+		return portInstances;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConnectorInstance> getConnectorInstances() {
+		if (connectorInstances == null) {
+			connectorInstances = new EObjectContainmentWithInverseEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES, InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE);
+		}
+		return connectorInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String toString() {
@@ -248,49 +292,46 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (componentType != null)
 					msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, Component.class, msgs);
 				return basicSetComponentType((Component)otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getToRef()).basicAdd(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFromRef()).basicAdd(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return basicSetComponentType(null, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				return ((InternalEList<?>)getToRef()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				return ((InternalEList<?>)getFromRef()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
-				return ((InternalEList<?>)getPortsDerived()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+				return ((InternalEList<?>)getPartInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -299,21 +340,20 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				return getToRef();
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				return getFromRef();
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
-				return getPortsDerived();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
 				return getComponentNameDerived();
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+				return getPartInstances();
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return getPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				return getConnectorInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -323,21 +363,24 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				getToRef().clear();
-				getToRef().addAll((Collection<? extends ConnectorInstance>)newValue);
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+				getPartInstances().clear();
+				getPartInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				getFromRef().clear();
-				getFromRef().addAll((Collection<? extends ConnectorInstance>)newValue);
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				getPortInstances().clear();
+				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				getConnectorInstances().clear();
+				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -346,19 +389,21 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				getToRef().clear();
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+				getPartInstances().clear();
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				getFromRef().clear();
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				getPortInstances().clear();
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				getConnectorInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -366,25 +411,25 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return componentType != null;
-			case InstancePackage.COMPONENT_INSTANCE__TO_REF:
-				return toRef != null && !toRef.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE__FROM_REF:
-				return fromRef != null && !fromRef.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE__PORTS_DERIVED:
-				return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return isSetComponentNameDerived();
+			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+				return partInstances != null && !partInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return portInstances != null && !portInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+				return connectorInstances != null && !connectorInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
 		switch (operationID) {
 			case InstancePackage.COMPONENT_INSTANCE___TO_STRING:
 				return toString();
@@ -392,4 +437,4 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //ComponentInstanceImpl
+} // ComponentInstanceImpl

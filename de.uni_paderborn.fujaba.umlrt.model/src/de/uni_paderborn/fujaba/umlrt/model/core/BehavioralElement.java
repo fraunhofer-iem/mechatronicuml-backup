@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeStatechart;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 /**
  * <!-- begin-user-doc -->

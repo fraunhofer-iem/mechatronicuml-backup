@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
@@ -92,12 +93,16 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorInstanceAdapter();
 			}
 			@Override
-			public Adapter caseCI2PsMapEntry(Map.Entry<ComponentInstance, EList<Port>> object) {
-				return createCI2PsMapEntryAdapter();
+			public Adapter casePortInstance(PortInstance object) {
+				return createPortInstanceAdapter();
 			}
 			@Override
-			public Adapter caseCI2PMapEntry(Map.Entry<ComponentInstance, Port> object) {
-				return createCI2PMapEntryAdapter();
+			public Adapter caseAssemblyInstance(AssemblyInstance object) {
+				return createAssemblyInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDelegationInstance(DelegationInstance object) {
+				return createDelegationInstanceAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -114,6 +119,10 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehavioralConnector(BehavioralConnector object) {
 				return createBehavioralConnectorAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -164,30 +173,44 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>CI2 Ps Map Entry</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance <em>Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see java.util.Map.Entry
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance
 	 * @generated
 	 */
-	public Adapter createCI2PsMapEntryAdapter() {
+	public Adapter createPortInstanceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>CI2P Map Entry</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see java.util.Map.Entry
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance
 	 * @generated
 	 */
-	public Adapter createCI2PMapEntryAdapter() {
+	public Adapter createAssemblyInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance <em>Delegation Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance
+	 * @generated
+	 */
+	public Adapter createDelegationInstanceAdapter() {
 		return null;
 	}
 
@@ -244,6 +267,20 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehavioralConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.CommentableElement
+	 * @generated
+	 */
+	public Adapter createCommentableElementAdapter() {
 		return null;
 	}
 

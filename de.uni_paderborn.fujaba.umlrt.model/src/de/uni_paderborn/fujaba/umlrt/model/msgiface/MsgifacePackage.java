@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 /**
@@ -286,13 +287,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_INTERFACE__EALL_GENERIC_SUPER_TYPES = EcorePackage.ECLASS__EALL_GENERIC_SUPER_TYPES;
 
 	/**
+	 * The feature id for the '<em><b>Inherits</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE__INHERITS = EcorePackage.ECLASS_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Message Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = EcorePackage.ECLASS_FEATURE_COUNT + 0;
+	int MESSAGE_INTERFACE_FEATURE_COUNT = EcorePackage.ECLASS_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -423,6 +433,17 @@ public interface MsgifacePackage extends EPackage {
 	EClass getMessageInterface();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getInherits <em>Inherits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Inherits</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getInherits()
+	 * @see #getMessageInterface()
+	 * @generated
+	 */
+	EReference getMessageInterface_Inherits();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,6 +475,13 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MESSAGE_INTERFACE = eINSTANCE.getMessageInterface();
+		/**
+		 * The meta object literal for the '<em><b>Inherits</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_INTERFACE__INHERITS = eINSTANCE.getMessageInterface_Inherits();
 
 	}
 

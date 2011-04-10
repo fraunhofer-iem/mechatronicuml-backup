@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLRealtimeCompositeState;
 
 import org.eclipse.emf.ecore.EObject;
 

@@ -6,20 +6,26 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.behavior.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StatechartImpl;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StatechartImpl;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

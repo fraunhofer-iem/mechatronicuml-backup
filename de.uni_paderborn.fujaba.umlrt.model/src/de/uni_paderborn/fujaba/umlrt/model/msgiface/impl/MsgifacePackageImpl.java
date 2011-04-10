@@ -48,6 +48,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.Reconf
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -175,6 +176,15 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMessageInterface_Inherits() {
+		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MsgifaceFactory getMsgifaceFactory() {
 		return (MsgifaceFactory)getEFactoryInstance();
 	}
@@ -199,6 +209,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Create classes and their features
 		messageInterfaceEClass = createEClass(MESSAGE_INTERFACE);
+		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__INHERITS);
 	}
 
 	/**
@@ -236,6 +247,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageInterface_Inherits(), this.getMessageInterface(), null, "inherits", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

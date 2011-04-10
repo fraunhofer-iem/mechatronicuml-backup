@@ -44,6 +44,33 @@ public interface InstanceFactory extends EFactory {
 	ConnectorInstance createConnectorInstance();
 
 	/**
+	 * Returns a new object of class '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Instance</em>'.
+	 * @generated
+	 */
+	PortInstance createPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Assembly Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assembly Instance</em>'.
+	 * @generated
+	 */
+	AssemblyInstance createAssemblyInstance();
+
+	/**
+	 * Returns a new object of class '<em>Delegation Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Delegation Instance</em>'.
+	 * @generated
+	 */
+	DelegationInstance createDelegationInstance();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

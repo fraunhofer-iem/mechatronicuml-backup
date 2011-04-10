@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
 
@@ -110,19 +111,40 @@ public class InstanceSwitch<T> {
 				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
 				T result = caseConnectorInstance(connectorInstance);
 				if (result == null) result = caseBehavioralConnector(connectorInstance);
+				if (result == null) result = caseNamedElement(connectorInstance);
 				if (result == null) result = caseBehavioralElement(connectorInstance);
+				if (result == null) result = caseExtendableElement(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.CI2_PS_MAP_ENTRY: {
-				@SuppressWarnings("unchecked") Map.Entry<ComponentInstance, EList<Port>> ci2PsMapEntry = (Map.Entry<ComponentInstance, EList<Port>>)theEObject;
-				T result = caseCI2PsMapEntry(ci2PsMapEntry);
+			case InstancePackage.PORT_INSTANCE: {
+				PortInstance portInstance = (PortInstance)theEObject;
+				T result = casePortInstance(portInstance);
+				if (result == null) result = caseNamedElement(portInstance);
+				if (result == null) result = caseCommentableElement(portInstance);
+				if (result == null) result = caseExtendableElement(portInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.CI2P_MAP_ENTRY: {
-				@SuppressWarnings("unchecked") Map.Entry<ComponentInstance, Port> ci2PMapEntry = (Map.Entry<ComponentInstance, Port>)theEObject;
-				T result = caseCI2PMapEntry(ci2PMapEntry);
+			case InstancePackage.ASSEMBLY_INSTANCE: {
+				AssemblyInstance assemblyInstance = (AssemblyInstance)theEObject;
+				T result = caseAssemblyInstance(assemblyInstance);
+				if (result == null) result = caseConnectorInstance(assemblyInstance);
+				if (result == null) result = caseBehavioralConnector(assemblyInstance);
+				if (result == null) result = caseNamedElement(assemblyInstance);
+				if (result == null) result = caseBehavioralElement(assemblyInstance);
+				if (result == null) result = caseExtendableElement(assemblyInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.DELEGATION_INSTANCE: {
+				DelegationInstance delegationInstance = (DelegationInstance)theEObject;
+				T result = caseDelegationInstance(delegationInstance);
+				if (result == null) result = caseConnectorInstance(delegationInstance);
+				if (result == null) result = caseBehavioralConnector(delegationInstance);
+				if (result == null) result = caseNamedElement(delegationInstance);
+				if (result == null) result = caseBehavioralElement(delegationInstance);
+				if (result == null) result = caseExtendableElement(delegationInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,32 +183,47 @@ public class InstanceSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>CI2 Ps Map Entry</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>CI2 Ps Map Entry</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCI2PsMapEntry(Map.Entry<ComponentInstance, EList<Port>> object) {
+	public T casePortInstance(PortInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>CI2P Map Entry</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>CI2P Map Entry</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCI2PMapEntry(Map.Entry<ComponentInstance, Port> object) {
+	public T caseAssemblyInstance(AssemblyInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Delegation Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Delegation Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDelegationInstance(DelegationInstance object) {
 		return null;
 	}
 
@@ -247,6 +284,21 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralConnector(BehavioralConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 

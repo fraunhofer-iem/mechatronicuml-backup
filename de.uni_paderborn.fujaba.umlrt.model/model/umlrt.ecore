@@ -189,15 +189,15 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-                <details key="constraints" value="TypeNotEqualToParent CardinalityLowerBoundSet CardinalityUpperBoundSet"/>
+                <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a component part. A component part is an instance of a component type on the modelling level. It is typed by its respective component type. A component part is embedded into a structured component."/>
               </eAnnotations>
               <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                 <details key="CardinalityLowerBoundSet" value="self.cardinality.lowerBound->notEmpty()"/>
-                <details key="CardinalityUpperBoundSet" value="self.cardinality.upperBound->notEmpty()"/>
                 <details key="TypeNotEqualToParent" value="self.componentType &lt;> self.parentComponent"/>
+                <details key="CardinalityUpperBoundSet" value="self.cardinality.upperBound->notEmpty()"/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
@@ -207,7 +207,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/StructuredComponent/embeddedParts">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The structured component type containing this component part."/>
@@ -234,8 +234,8 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portsDerived"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"
-                  changeable="false" volatile="true" transient="true" derived="true"
-                  containment="true">
+                  changeable="false" volatile="true" transient="true" unsettable="true"
+                  derived="true" containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;componentType.ports&#xA;endif"/>
                 </eAnnotations>
@@ -243,7 +243,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                   changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-                  derived="true">
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
                 </eAnnotations>
@@ -532,58 +532,49 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toRef" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/toComponentI"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromRef" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/fromComponentI"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portsDerived"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"
-                  changeable="false" volatile="true" transient="true" derived="true"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;componentType.ports&#xA;endif"/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                   changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-                  derived="true">
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="partInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/parentComponentInstance"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
+            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This one connects two ports of two component instances."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toComponentI"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponentInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toRef"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromComponentI"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/fromRef"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="CI2PsMapEntry" instanceClassName="java.util.Map$Entry">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="ComponentInstance2PortMapEntry&#xD;&#xA;Saves just one port for one certain component instance."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+            <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="CI2PMapEntry" instanceClassName="java.util.Map$Entry">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="ComponentInstance2PortsMapEntry&#xD;&#xA;Saves a list of ports for one certain component instance."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+            <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
@@ -891,13 +882,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portsByComponentInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/CI2PsMapEntry"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
-                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyMap">
-                  <eTypeArguments/>
-                  <eTypeArguments/>
-                </eGenericType>
-              </eStructuralFeatures>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="FlatSwitching">
               <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -1319,7 +1304,7 @@
                 <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstanceReconf"
                     eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ComponentInstanceReconf"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="portByComponentInstance"
-                    eType="#//uni_paderborn/fujaba/umlrt/model/instance/CI2PMapEntry"/>
+                    eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
                 <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
                     eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"/>
               </eClassifiers>
@@ -1368,6 +1353,8 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
               </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="inherits" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
             </eClassifiers>
           </eSubpackages>
         </eSubpackages>

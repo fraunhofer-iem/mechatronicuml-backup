@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector;
+import org.storydriven.modeling.NamedElement;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
 /**
@@ -21,10 +22,9 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToComponentI <em>To Component I</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromComponentI <em>From Component I</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToPort <em>To Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromPort <em>From Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource <em>Source</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,113 +32,85 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
  * @model
  * @generated
  */
-public interface ConnectorInstance extends BehavioralConnector {
+public interface ConnectorInstance extends BehavioralConnector, NamedElement {
 	/**
-	 * Returns the value of the '<em><b>To Component I</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getToRef <em>To Ref</em>}'.
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>To Component I</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Component I</em>' reference.
-	 * @see #setToComponentI(ComponentInstance)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_ToComponentI()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getToRef
-	 * @model opposite="toRef"
-	 * @generated
-	 */
-	ComponentInstance getToComponentI();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToComponentI <em>To Component I</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Component I</em>' reference.
-	 * @see #getToComponentI()
-	 * @generated
-	 */
-	void setToComponentI(ComponentInstance value);
-
-	/**
-	 * Returns the value of the '<em><b>From Component I</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getFromRef <em>From Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>From Component I</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Component I</em>' reference.
-	 * @see #setFromComponentI(ComponentInstance)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_FromComponentI()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getFromRef
-	 * @model opposite="fromRef"
-	 * @generated
-	 */
-	ComponentInstance getFromComponentI();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromComponentI <em>From Component I</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From Component I</em>' reference.
-	 * @see #getFromComponentI()
-	 * @generated
-	 */
-	void setFromComponentI(ComponentInstance value);
-
-	/**
-	 * Returns the value of the '<em><b>To Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To Port</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>To Port</em>' reference.
-	 * @see #setToPort(Port)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_ToPort()
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(PortInstance)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_Source()
 	 * @model required="true"
 	 * @generated
 	 */
-	Port getToPort();
+	PortInstance getSource();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToPort <em>To Port</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To Port</em>' reference.
-	 * @see #getToPort()
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
 	 * @generated
 	 */
-	void setToPort(Port value);
+	void setSource(PortInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>From Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>From Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>From Port</em>' reference.
-	 * @see #setFromPort(Port)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_FromPort()
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(PortInstance)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_Target()
 	 * @model required="true"
 	 * @generated
 	 */
-	Port getFromPort();
+	PortInstance getTarget();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromPort <em>From Port</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From Port</em>' reference.
-	 * @see #getFromPort()
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
 	 * @generated
 	 */
-	void setFromPort(Port value);
+	void setTarget(PortInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Component Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Component Instance</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Component Instance</em>' container reference.
+	 * @see #setParentComponentInstance(ComponentInstance)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_ParentComponentInstance()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances
+	 * @model opposite="connectorInstances" transient="false"
+	 * @generated
+	 */
+	ComponentInstance getParentComponentInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Component Instance</em>' container reference.
+	 * @see #getParentComponentInstance()
+	 * @generated
+	 */
+	void setParentComponentInstance(ComponentInstance value);
 
 } // ConnectorInstance

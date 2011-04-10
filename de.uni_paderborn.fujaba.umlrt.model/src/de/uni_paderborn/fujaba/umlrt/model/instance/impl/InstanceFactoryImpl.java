@@ -68,8 +68,9 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 		switch (eClass.getClassifierID()) {
 			case InstancePackage.COMPONENT_INSTANCE: return createComponentInstance();
 			case InstancePackage.CONNECTOR_INSTANCE: return createConnectorInstance();
-			case InstancePackage.CI2_PS_MAP_ENTRY: return (EObject)createCI2PsMapEntry();
-			case InstancePackage.CI2P_MAP_ENTRY: return (EObject)createCI2PMapEntry();
+			case InstancePackage.PORT_INSTANCE: return createPortInstance();
+			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
+			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,9 +101,9 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<ComponentInstance, EList<Port>> createCI2PsMapEntry() {
-		CI2PsMapEntryImpl ci2PsMapEntry = new CI2PsMapEntryImpl();
-		return ci2PsMapEntry;
+	public PortInstance createPortInstance() {
+		PortInstanceImpl portInstance = new PortInstanceImpl();
+		return portInstance;
 	}
 
 	/**
@@ -110,9 +111,19 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<ComponentInstance, Port> createCI2PMapEntry() {
-		CI2PMapEntryImpl ci2PMapEntry = new CI2PMapEntryImpl();
-		return ci2PMapEntry;
+	public AssemblyInstance createAssemblyInstance() {
+		AssemblyInstanceImpl assemblyInstance = new AssemblyInstanceImpl();
+		return assemblyInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DelegationInstance createDelegationInstance() {
+		DelegationInstanceImpl delegationInstance = new DelegationInstanceImpl();
+		return delegationInstance;
 	}
 
 	/**

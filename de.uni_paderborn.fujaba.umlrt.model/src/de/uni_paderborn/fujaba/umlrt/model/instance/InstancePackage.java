@@ -113,40 +113,40 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>To Ref</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__TO_REF = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>From Ref</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__FROM_REF = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ports Derived</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__PORTS_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Component Name Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Part Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__PART_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -375,40 +375,58 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE__CONNECTOR_CLASS = ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>To Component I</b></em>' reference.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__TO_COMPONENT_I = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 0;
+	int CONNECTOR_INSTANCE__ANNOTATION = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>From Component I</b></em>' reference.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__FROM_COMPONENT_I = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
+	int CONNECTOR_INSTANCE__EXTENSION = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__TO_PORT = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+	int CONNECTOR_INSTANCE__NAME = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__FROM_PORT = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
+	int CONNECTOR_INSTANCE__SOURCE = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE__TARGET = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Connector Instance</em>' class.
@@ -417,7 +435,178 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE_FEATURE_COUNT = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 4;
+	int CONNECTOR_INSTANCE_FEATURE_COUNT = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECLASS = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EIS_PROXY = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ERESOURCE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECONTAINER = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECONTAINING_FEATURE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECONTAINMENT_FEATURE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECONTENTS = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EALL_CONTENTS = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ECROSS_REFERENCES = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EUNSET__ESTRUCTURALFEATURE = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___EINVOKE__EOPERATION_ELIST = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___GET_ANNOTATION__STRING = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Connector Instance</em>' class.
@@ -426,99 +615,821 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE_OPERATION_COUNT = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 0;
+	int CONNECTOR_INSTANCE_OPERATION_COUNT = ComponentPackage.BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 19;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PsMapEntryImpl <em>CI2 Ps Map Entry</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PsMapEntryImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getCI2PsMapEntry()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getPortInstance()
 	 * @generated
 	 */
-	int CI2_PS_MAP_ENTRY = 2;
+	int PORT_INSTANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CI2_PS_MAP_ENTRY__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference list.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2_PS_MAP_ENTRY__VALUE = 1;
+	int PORT_INSTANCE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
-	 * The number of structural features of the '<em>CI2 Ps Map Entry</em>' class.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2_PS_MAP_ENTRY_FEATURE_COUNT = 2;
+	int PORT_INSTANCE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
-	 * The number of operations of the '<em>CI2 Ps Map Entry</em>' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2_PS_MAP_ENTRY_OPERATION_COUNT = 0;
+	int PORT_INSTANCE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PMapEntryImpl <em>CI2P Map Entry</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PMapEntryImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getCI2PMapEntry()
-	 * @generated
-	 */
-	int CI2P_MAP_ENTRY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2P_MAP_ENTRY__KEY = 0;
+	int PORT_INSTANCE__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2P_MAP_ENTRY__VALUE = 1;
+	int PORT_INSTANCE__PORT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>CI2P Map Entry</em>' class.
+	 * The number of structural features of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2P_MAP_ENTRY_FEATURE_COUNT = 2;
+	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>CI2P Map Entry</em>' class.
+	 * The operation id for the '<em>EClass</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CI2P_MAP_ENTRY_OPERATION_COUNT = 0;
+	int PORT_INSTANCE___ECLASS = SDMPackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EIS_PROXY = SDMPackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ERESOURCE = SDMPackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ECONTAINER = SDMPackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ECONTAINING_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ECONTAINMENT_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ECONTENTS = SDMPackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EALL_CONTENTS = SDMPackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ECROSS_REFERENCES = SDMPackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EGET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EUNSET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___EINVOKE__EOPERATION_ELIST = SDMPackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___GET_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___PROVIDE_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___GET_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getAssemblyInstance()
+	 * @generated
+	 */
+	int ASSEMBLY_INSTANCE = 3;
+
+	/**
+	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__UML_REALTIME_STATECHART = CONNECTOR_INSTANCE__UML_REALTIME_STATECHART;
+
+	/**
+	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__CONNECTOR_CLASS = CONNECTOR_INSTANCE__CONNECTOR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__ANNOTATION = CONNECTOR_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__NAME = CONNECTOR_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__SOURCE = CONNECTOR_INSTANCE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__PARENT_COMPONENT_INSTANCE = CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Assembly Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__COORDINATION_PATTERN = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Assembly Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECLASS = CONNECTOR_INSTANCE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EIS_PROXY = CONNECTOR_INSTANCE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ERESOURCE = CONNECTOR_INSTANCE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECONTAINER = CONNECTOR_INSTANCE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECONTAINING_FEATURE = CONNECTOR_INSTANCE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECONTAINMENT_FEATURE = CONNECTOR_INSTANCE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECONTENTS = CONNECTOR_INSTANCE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EALL_CONTENTS = CONNECTOR_INSTANCE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ECROSS_REFERENCES = CONNECTOR_INSTANCE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EGET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = CONNECTOR_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EUNSET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___EINVOKE__EOPERATION_ELIST = CONNECTOR_INSTANCE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___GET_EXTENSION__ECLASS = CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___PROVIDE_EXTENSION__ECLASS = CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___GET_ANNOTATION__STRING = CONNECTOR_INSTANCE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE___PROVIDE_ANNOTATION__STRING = CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Assembly Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE_OPERATION_COUNT = CONNECTOR_INSTANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.DelegationInstanceImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getDelegationInstance()
+	 * @generated
+	 */
+	int DELEGATION_INSTANCE = 4;
+
+	/**
+	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__UML_REALTIME_STATECHART = CONNECTOR_INSTANCE__UML_REALTIME_STATECHART;
+
+	/**
+	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__CONNECTOR_CLASS = CONNECTOR_INSTANCE__CONNECTOR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__ANNOTATION = CONNECTOR_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__NAME = CONNECTOR_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__SOURCE = CONNECTOR_INSTANCE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__PARENT_COMPONENT_INSTANCE = CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Delegation Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__DELEGATION_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Delegation Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECLASS = CONNECTOR_INSTANCE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EIS_PROXY = CONNECTOR_INSTANCE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ERESOURCE = CONNECTOR_INSTANCE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECONTAINER = CONNECTOR_INSTANCE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECONTAINING_FEATURE = CONNECTOR_INSTANCE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECONTAINMENT_FEATURE = CONNECTOR_INSTANCE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECONTENTS = CONNECTOR_INSTANCE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EALL_CONTENTS = CONNECTOR_INSTANCE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ECROSS_REFERENCES = CONNECTOR_INSTANCE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EGET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = CONNECTOR_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EUNSET__ESTRUCTURALFEATURE = CONNECTOR_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___EINVOKE__EOPERATION_ELIST = CONNECTOR_INSTANCE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___GET_EXTENSION__ECLASS = CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___PROVIDE_EXTENSION__ECLASS = CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___GET_ANNOTATION__STRING = CONNECTOR_INSTANCE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE___PROVIDE_ANNOTATION__STRING = CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Delegation Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE_OPERATION_COUNT = CONNECTOR_INSTANCE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -543,39 +1454,6 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getToRef <em>To Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>To Ref</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getToRef()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_ToRef();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getFromRef <em>From Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From Ref</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getFromRef()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_FromRef();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortsDerived <em>Ports Derived</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ports Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortsDerived()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_PortsDerived();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -585,6 +1463,39 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentInstance_ComponentNameDerived();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPartInstances <em>Part Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Part Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPartInstances()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_PartInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_PortInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_ConnectorInstances();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#toString() <em>To String</em>}' operation.
@@ -607,116 +1518,111 @@ public interface InstancePackage extends EPackage {
 	EClass getConnectorInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToComponentI <em>To Component I</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Component I</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToComponentI()
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource()
 	 * @see #getConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_ToComponentI();
+	EReference getConnectorInstance_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromComponentI <em>From Component I</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Component I</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromComponentI()
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget()
 	 * @see #getConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_FromComponentI();
+	EReference getConnectorInstance_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToPort <em>To Port</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Port</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getToPort()
+	 * @return the meta object for the container reference '<em>Parent Component Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getParentComponentInstance()
 	 * @see #getConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_ToPort();
+	EReference getConnectorInstance_ParentComponentInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromPort <em>From Port</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance <em>Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Port</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getFromPort()
-	 * @see #getConnectorInstance()
+	 * @return the meta object for class '<em>Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance
 	 * @generated
 	 */
-	EReference getConnectorInstance_FromPort();
+	EClass getPortInstance();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>CI2 Ps Map Entry</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType <em>Port Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>CI2 Ps Map Entry</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyType="de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance"
-	 *        valueType="de.uni_paderborn.fujaba.umlrt.model.component.Port" valueMany="true"
+	 * @return the meta object for the reference '<em>Port Type</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType()
+	 * @see #getPortInstance()
 	 * @generated
 	 */
-	EClass getCI2PsMapEntry();
+	EReference getPortInstance_PortType();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getCI2PsMapEntry()
+	 * @return the meta object for class '<em>Assembly Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance
 	 * @generated
 	 */
-	EReference getCI2PsMapEntry_Key();
+	EClass getAssemblyInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getCI2PsMapEntry()
+	 * @return the meta object for the reference '<em>Assembly Type</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance#getAssemblyType()
+	 * @see #getAssemblyInstance()
 	 * @generated
 	 */
-	EReference getCI2PsMapEntry_Value();
+	EReference getAssemblyInstance_AssemblyType();
 
 	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>CI2P Map Entry</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance#getCoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>CI2P Map Entry</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyType="de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance"
-	 *        valueType="de.uni_paderborn.fujaba.umlrt.model.component.Port"
+	 * @return the meta object for the reference '<em>Coordination Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance#getCoordinationPattern()
+	 * @see #getAssemblyInstance()
 	 * @generated
 	 */
-	EClass getCI2PMapEntry();
+	EReference getAssemblyInstance_CoordinationPattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Key</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance <em>Delegation Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getCI2PMapEntry()
+	 * @return the meta object for class '<em>Delegation Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance
 	 * @generated
 	 */
-	EReference getCI2PMapEntry_Key();
+	EClass getDelegationInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance#getDelegationType <em>Delegation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getCI2PMapEntry()
+	 * @return the meta object for the reference '<em>Delegation Type</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance#getDelegationType()
+	 * @see #getDelegationInstance()
 	 * @generated
 	 */
-	EReference getCI2PMapEntry_Value();
+	EReference getDelegationInstance_DelegationType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -760,36 +1666,36 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_TYPE = eINSTANCE.getComponentInstance_ComponentType();
 
 		/**
-		 * The meta object literal for the '<em><b>To Ref</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__TO_REF = eINSTANCE.getComponentInstance_ToRef();
-
-		/**
-		 * The meta object literal for the '<em><b>From Ref</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__FROM_REF = eINSTANCE.getComponentInstance_FromRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Ports Derived</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__PORTS_DERIVED = eINSTANCE.getComponentInstance_PortsDerived();
-
-		/**
 		 * The meta object literal for the '<em><b>Component Name Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = eINSTANCE.getComponentInstance_ComponentNameDerived();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__PART_INSTANCES = eINSTANCE.getComponentInstance_PartInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__PORT_INSTANCES = eINSTANCE.getComponentInstance_PortInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstance_ConnectorInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' operation.
@@ -810,88 +1716,90 @@ public interface InstancePackage extends EPackage {
 		EClass CONNECTOR_INSTANCE = eINSTANCE.getConnectorInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>To Component I</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__TO_COMPONENT_I = eINSTANCE.getConnectorInstance_ToComponentI();
+		EReference CONNECTOR_INSTANCE__SOURCE = eINSTANCE.getConnectorInstance_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>From Component I</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__FROM_COMPONENT_I = eINSTANCE.getConnectorInstance_FromComponentI();
+		EReference CONNECTOR_INSTANCE__TARGET = eINSTANCE.getConnectorInstance_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>To Port</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Parent Component Instance</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__TO_PORT = eINSTANCE.getConnectorInstance_ToPort();
+		EReference CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = eINSTANCE.getConnectorInstance_ParentComponentInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>From Port</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getPortInstance()
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__FROM_PORT = eINSTANCE.getConnectorInstance_FromPort();
+		EClass PORT_INSTANCE = eINSTANCE.getPortInstance();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PsMapEntryImpl <em>CI2 Ps Map Entry</em>}' class.
+		 * The meta object literal for the '<em><b>Port Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PsMapEntryImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getCI2PsMapEntry()
 		 * @generated
 		 */
-		EClass CI2_PS_MAP_ENTRY = eINSTANCE.getCI2PsMapEntry();
+		EReference PORT_INSTANCE__PORT_TYPE = eINSTANCE.getPortInstance_PortType();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getAssemblyInstance()
 		 * @generated
 		 */
-		EReference CI2_PS_MAP_ENTRY__KEY = eINSTANCE.getCI2PsMapEntry_Key();
+		EClass ASSEMBLY_INSTANCE = eINSTANCE.getAssemblyInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assembly Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CI2_PS_MAP_ENTRY__VALUE = eINSTANCE.getCI2PsMapEntry_Value();
+		EReference ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = eINSTANCE.getAssemblyInstance_AssemblyType();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PMapEntryImpl <em>CI2P Map Entry</em>}' class.
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.CI2PMapEntryImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getCI2PMapEntry()
 		 * @generated
 		 */
-		EClass CI2P_MAP_ENTRY = eINSTANCE.getCI2PMapEntry();
+		EReference ASSEMBLY_INSTANCE__COORDINATION_PATTERN = eINSTANCE.getAssemblyInstance_CoordinationPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.DelegationInstanceImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getDelegationInstance()
 		 * @generated
 		 */
-		EReference CI2P_MAP_ENTRY__KEY = eINSTANCE.getCI2PMapEntry_Key();
+		EClass DELEGATION_INSTANCE = eINSTANCE.getDelegationInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Delegation Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CI2P_MAP_ENTRY__VALUE = eINSTANCE.getCI2PMapEntry_Value();
+		EReference DELEGATION_INSTANCE__DELEGATION_TYPE = eINSTANCE.getDelegationInstance_DelegationType();
 
 	}
 
