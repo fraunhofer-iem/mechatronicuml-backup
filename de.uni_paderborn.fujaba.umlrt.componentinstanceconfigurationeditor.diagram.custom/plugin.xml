@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
+         name="%editorName"
+         icon="icons/ComponentInstanceConfDiagram.gif"
+         extensions="componentinstanceconfiguration_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       icon="icons/ComponentInstanceConfDiagram.gif"
+  	       class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
+  	       name="ComponentInstance Configuration Diagram">
+  	     
+  	  	 <description>Creates a new ComponentInstance Configuration Diagram.</description>
+      </wizard>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
+		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2001"
+		  class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2001"/>
+         <advice ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
+      </binding>
+   </extension>
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram">
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.sheet.CustomComponentinstanceconfigurationPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+</plugin>
