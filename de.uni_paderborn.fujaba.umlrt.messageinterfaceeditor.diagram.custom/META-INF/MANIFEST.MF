@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramEditorPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.gmf.runtime.diagram.ui,
+ de.uni_paderborn.fujaba.newwizard;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

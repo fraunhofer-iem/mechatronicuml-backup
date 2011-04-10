@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+  	  <wizard
+  	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+  	       name="Message-Interface Diagram">
+  	     
+  	  	 <description>Creates a new Message-Interface Diagram.</description>
+      </wizard>
+   </extension>
+
+</plugin>
