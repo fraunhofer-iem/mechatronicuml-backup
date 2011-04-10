@@ -70,10 +70,6 @@ public class PatternElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ConstrainableElementConstraint_4003 = getElementType("de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.ConstrainableElementConstraint_4003"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType ConstrainableElementConstraint_4004 = getElementType("de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.ConstrainableElementConstraint_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -220,11 +216,6 @@ public class PatternElementTypes {
 					ConstrainableElementConstraint_4003,
 					de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
 							.getConstrainableElement_Constraint());
-
-			elements.put(
-					ConstrainableElementConstraint_4004,
-					de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-							.getConstrainableElement_Constraint());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -249,7 +240,6 @@ public class PatternElementTypes {
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4001);
 			KNOWN_ELEMENT_TYPES.add(RolePattern_4002);
 			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4003);
-			KNOWN_ELEMENT_TYPES.add(ConstrainableElementConstraint_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -273,8 +263,6 @@ public class PatternElementTypes {
 			return RolePattern_4002;
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
 			return ConstrainableElementConstraint_4003;
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraint2EditPart.VISUAL_ID:
-			return ConstrainableElementConstraint_4004;
 		}
 		return null;
 	}

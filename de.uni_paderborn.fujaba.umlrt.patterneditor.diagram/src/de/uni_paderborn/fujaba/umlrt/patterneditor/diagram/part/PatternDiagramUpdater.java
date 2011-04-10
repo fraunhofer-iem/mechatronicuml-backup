@@ -157,7 +157,6 @@ public class PatternDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -171,7 +170,6 @@ public class PatternDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Role_Pattern_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -233,8 +231,6 @@ public class PatternDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(
 				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
-				modelElement, crossReferences));
 		return result;
 	}
 
@@ -255,7 +251,6 @@ public class PatternDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -270,7 +265,6 @@ public class PatternDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_RoleConnector_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Role_Pattern_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(modelElement));
 		return result;
 	}
 
@@ -401,28 +395,6 @@ public class PatternDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> getIncomingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
-			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-					.getConstrainableElement_Constraint()) {
-				result.add(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor(
-						setting.getEObject(),
-						target,
-						de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4004,
-						de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraint2EditPart.VISUAL_ID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
 	private static Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> getOutgoingTypeModelFacetLinks_RoleConnector_4001(
 			de.uni_paderborn.fujaba.umlrt.model.pattern.Role source) {
 		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram container = null;
@@ -501,25 +473,6 @@ public class PatternDiagramUpdater {
 					destination,
 					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003,
 					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> getOutgoingFeatureModelFacetLinks_ConstrainableElement_Constraint_4004(
-			de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement source) {
-		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
-		for (Iterator<?> destinations = source.getConstraint().iterator(); destinations
-				.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint destination = (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) destinations
-					.next();
-			result.add(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor(
-					source,
-					destination,
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4004,
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraint2EditPart.VISUAL_ID));
 		}
 		return result;
 	}

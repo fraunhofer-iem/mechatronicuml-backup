@@ -278,32 +278,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CoordinationPatternConstraint4CreationTool_title;
+	public static String ConstraintLink4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CoordinationPatternConstraint4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String RoleConstraint5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String RoleConstraint5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String TextualConstraint6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String TextualConstraint6CreationTool_desc;
+	public static String ConstraintLink4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -339,16 +319,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_PatternDiagram_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4004_source;
 
 	/**
 	 * @generated

@@ -5,14 +5,17 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="pattern_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.umlrt.patterneditor/gmf-templates">
+    templateDirectory="/de.uni_paderborn.fujaba.umlrt.common/gmf-templates">
   <diagram
       visualID="1000"
       editPartClassName="PatternDiagramEditPart"
       itemSemanticEditPolicyClassName="PatternDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="PatternDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
-      validationProviderPriority="Low">
+      validationProviderPriority="Low"
+      validationEnabled="true"
+      validationDecorators="true"
+      validationDecoratorProviderPriority="Medium">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType

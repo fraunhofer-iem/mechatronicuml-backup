@@ -7,9 +7,12 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts, 
+Export-Package: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts,
  de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers
+ de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers,
+ de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies,
+ de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands,
+ de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -41,6 +44,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.modeling.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
  de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport
+ org.eclipse.gef;visibility:=reexport,
+ org.eclipse.emf.validation;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

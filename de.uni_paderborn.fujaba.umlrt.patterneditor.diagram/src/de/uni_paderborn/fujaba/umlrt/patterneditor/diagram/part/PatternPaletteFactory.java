@@ -35,10 +35,7 @@ public class PatternPaletteFactory {
 		paletteContainer.add(createRoleConnector1CreationTool());
 		paletteContainer.add(createCoordinationPattern2CreationTool());
 		paletteContainer.add(createRole3CreationTool());
-		paletteContainer
-				.add(createCoordinationPatternConstraint4CreationTool());
-		paletteContainer.add(createRoleConstraint5CreationTool());
-		paletteContainer.add(createTextualConstraint6CreationTool());
+		paletteContainer.add(createConstraintLink4CreationTool());
 		return paletteContainer;
 	}
 
@@ -93,47 +90,15 @@ public class PatternPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCoordinationPatternConstraint4CreationTool() {
+	private ToolEntry createConstraintLink4CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.CoordinationPatternConstraint4CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.CoordinationPatternConstraint4CreationTool_desc,
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.ConstraintLink4CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.ConstraintLink4CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003));
-		entry.setId("createCoordinationPatternConstraint4CreationTool"); //$NON-NLS-1$
+		entry.setId("createConstraintLink4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createRoleConstraint5CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.RoleConstraint5CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.RoleConstraint5CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4004));
-		entry.setId("createRoleConstraint5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4004));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createTextualConstraint6CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.TextualConstraint6CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.TextualConstraint6CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003));
-		entry.setId("createTextualConstraint6CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

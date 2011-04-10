@@ -64,10 +64,6 @@ public class PatternEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraint2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraint2EditPart(
-						view);
-
 			}
 		}
 		return createUnrecognizedEditPart(context, model);
