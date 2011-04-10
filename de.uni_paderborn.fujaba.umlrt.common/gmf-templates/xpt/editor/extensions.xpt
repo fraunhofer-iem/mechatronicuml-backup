@@ -23,37 +23,4 @@
       </context>
    </extension>
 
-«IF diagram.generateInitDiagramAction()-»
-   «IF null = application»<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <objectContribution
-            id="«plugin.iD».InitDiagram"
-            nameFilter="*.«domainFileExtension»"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
-               menubarPath="additions"
-               enablesFor="1"
-               id="«plugin.iD».InitDiagramAction">
-         </action>
-      </objectContribution>
-   </extension>
-	«ELSE-»
-   <extension point="org.eclipse.ui.actionSets" id="init-diagram-action">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <actionSet
-            label="%initDiagramActionLabel"
-            visible="true"
-            id="«plugin.iD».InitDiagram">
-         <action
-               label="%initDiagramActionLabel"
-               class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
-               menubarPath="file/additions"
-               id="«plugin.iD».InitDiagramAction">
-         </action>
-      </actionSet>
-   </extension>
-	«ENDIF-»
-«ENDIF-»
 «ENDDEFINE»
