@@ -12,5 +12,45 @@
   	  	 <description>Creates a new Message-Interface Diagram.</description>
       </wizard>
    </extension>
+   
+   
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+         name="%editorName"
+         icon="icons/MessageInterfaceDiagram.gif"
+         extensions="messageinterface_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramActionBarContributor">
+      </editor>
+   </extension>
+<!--
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.providers.CustomMessageinterfaceEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+-->
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram">
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.sheet.CustomMessageinterfacePropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
 
 </plugin>

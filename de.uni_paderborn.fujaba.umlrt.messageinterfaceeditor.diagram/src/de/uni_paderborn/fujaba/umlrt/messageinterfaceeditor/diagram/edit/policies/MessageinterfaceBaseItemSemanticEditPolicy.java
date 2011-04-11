@@ -327,22 +327,22 @@ public class MessageinterfaceBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateMessageInterfaceInherits_4001(
+		public boolean canCreateMessageInterfaceSuperType_4002(
 				de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface source,
 				de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface target) {
 			if (source != null) {
-				if (source.getInherits().contains(target)) {
+				if (source.getSuperType().contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistMessageInterfaceInherits_4001(source, target);
+			return canExistMessageInterfaceSuperType_4002(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistMessageInterfaceInherits_4001(
+		public boolean canExistMessageInterfaceSuperType_4002(
 				de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface source,
 				de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface target) {
 			return true;

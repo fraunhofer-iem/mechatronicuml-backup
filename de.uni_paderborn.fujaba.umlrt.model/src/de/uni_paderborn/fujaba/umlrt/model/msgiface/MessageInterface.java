@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -21,7 +22,8 @@ import org.eclipse.emf.ecore.EClass;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getInherits <em>Inherits</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,21 +31,39 @@ import org.eclipse.emf.ecore.EClass;
  * @model
  * @generated
  */
-public interface MessageInterface extends EClass {
+public interface MessageInterface extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Inherits</b></em>' reference list.
+	 * Returns the value of the '<em><b>Super Type</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Inherits</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Super Type</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inherits</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageInterface_Inherits()
+	 * @return the value of the '<em>Super Type</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageInterface_SuperType()
 	 * @model
 	 * @generated
 	 */
-	EList<MessageInterface> getInherits();
+	EList<MessageInterface> getSuperType();
+
+	/**
+	 * Returns the value of the '<em><b>Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Message Types</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message Types</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageInterface_MessageTypes()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface
+	 * @model opposite="messageInterface"
+	 * @generated
+	 */
+	EList<MessageType> getMessageTypes();
 } // MessageInterface

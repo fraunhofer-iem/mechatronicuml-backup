@@ -15,6 +15,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.calls.Callable;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,10 +97,16 @@ public class MsgifaceSwitch<T> {
 			case MsgifacePackage.MESSAGE_INTERFACE: {
 				MessageInterface messageInterface = (MessageInterface)theEObject;
 				T result = caseMessageInterface(messageInterface);
-				if (result == null) result = caseEClass(messageInterface);
-				if (result == null) result = caseEClassifier(messageInterface);
-				if (result == null) result = caseENamedElement(messageInterface);
-				if (result == null) result = caseEModelElement(messageInterface);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MsgifacePackage.MESSAGE_TYPE: {
+				MessageType messageType = (MessageType)theEObject;
+				T result = caseMessageType(messageType);
+				if (result == null) result = caseCallable(messageType);
+				if (result == null) result = caseNamedElement(messageType);
+				if (result == null) result = caseCommentableElement(messageType);
+				if (result == null) result = caseExtendableElement(messageType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,62 +130,77 @@ public class MsgifaceSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Message Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Message Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEModelElement(EModelElement object) {
+	public T caseMessageType(MessageType object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseENamedElement(ENamedElement object) {
+	public T caseExtendableElement(ExtendableElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClassifier</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClassifier</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEClassifier(EClassifier object) {
+	public T caseCommentableElement(CommentableElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EClass</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Callable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EClass</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Callable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEClass(EClass object) {
+	public T caseCallable(Callable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

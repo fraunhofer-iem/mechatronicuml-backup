@@ -168,7 +168,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Messageinterface"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
       </viewProvider>
    </extension>
 
@@ -183,7 +183,7 @@
             <method name="getType()" value="2001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value="4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value=""/>
@@ -236,11 +236,11 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface">
          <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceInherits_4001"
-               name="%metatype.name.MessageInterfaceInherits_4001"
+               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4002"
+               name="%metatype.name.MessageInterfaceSuperType_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4001"/>
+            <param name="semanticHint" value="4002"/>
          </specializationType>
       </metamodel>
    </extension>
@@ -257,7 +257,7 @@
       <binding context="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceDiagram_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2001"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceInherits_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -425,6 +425,28 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceMarkerNavigationProvider">
+         <MarkerType name="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+<extension id="diagnostic" name="Messageinterface Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceValidationDecoratorProvider">
+         <Priority name="Medium"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>

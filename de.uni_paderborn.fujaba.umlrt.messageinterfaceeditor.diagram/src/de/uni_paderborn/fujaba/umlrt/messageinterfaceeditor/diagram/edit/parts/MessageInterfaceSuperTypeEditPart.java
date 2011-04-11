@@ -14,18 +14,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class MessageInterfaceInheritsEditPart extends ConnectionNodeEditPart
+public class MessageInterfaceSuperTypeEditPart extends ConnectionNodeEditPart
 		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4001;
+	public static final int VISUAL_ID = 4002;
 
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceInheritsEditPart(View view) {
+	public MessageInterfaceSuperTypeEditPart(View view) {
 		super(view);
 	}
 
@@ -36,7 +36,7 @@ public class MessageInterfaceInheritsEditPart extends ConnectionNodeEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceInheritsItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageInterfaceSuperTypeItemSemanticEditPolicy());
 	}
 
 	/**

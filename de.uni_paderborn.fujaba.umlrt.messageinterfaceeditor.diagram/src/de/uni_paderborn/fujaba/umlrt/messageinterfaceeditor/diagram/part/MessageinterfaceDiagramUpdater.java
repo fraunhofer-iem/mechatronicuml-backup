@@ -113,7 +113,7 @@ public class MessageinterfaceDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_Inherits_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4002(modelElement));
 		return result;
 	}
 
@@ -127,7 +127,7 @@ public class MessageinterfaceDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_MessageInterface_Inherits_4001(
+		result.addAll(getIncomingFeatureModelFacetLinks_MessageInterface_SuperType_4002(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -140,14 +140,14 @@ public class MessageinterfaceDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_Inherits_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4002(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getIncomingFeatureModelFacetLinks_MessageInterface_Inherits_4001(
+	private static Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getIncomingFeatureModelFacetLinks_MessageInterface_SuperType_4002(
 			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
@@ -155,12 +155,12 @@ public class MessageinterfaceDiagramUpdater {
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage.eINSTANCE
-					.getMessageInterface_Inherits()) {
+					.getMessageInterface_SuperType()) {
 				result.add(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor(
 						setting.getEObject(),
 						target,
-						de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceInherits_4001,
-						de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceInheritsEditPart.VISUAL_ID));
+						de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002,
+						de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -169,18 +169,18 @@ public class MessageinterfaceDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getOutgoingFeatureModelFacetLinks_MessageInterface_Inherits_4001(
+	private static Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4002(
 			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface source) {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
-		for (Iterator<?> destinations = source.getInherits().iterator(); destinations
+		for (Iterator<?> destinations = source.getSuperType().iterator(); destinations
 				.hasNext();) {
 			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface destination = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) destinations
 					.next();
 			result.add(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor(
 					source,
 					destination,
-					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceInherits_4001,
-					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceInheritsEditPart.VISUAL_ID));
+					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002,
+					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
 		}
 		return result;
 	}

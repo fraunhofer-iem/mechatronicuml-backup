@@ -74,12 +74,12 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceInheritsEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/msgiface?MessageInterface?inherits", de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceInherits_4001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/messageinterfaceeditor?MessageInterfaceDiagram", de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceDiagram_1000); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterface_2001); //$NON-NLS-1$
@@ -139,14 +139,21 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 		}
 		switch (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceInheritsEditPart.VISUAL_ID:
-			return getMessageInterfaceInherits_4001Text(view);
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getMessageInterfaceDiagram_1000Text(view);
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
+			return getMessageInterfaceSuperType_4002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getMessageInterface_2001Text(view);
 		}
 		return getUnknownElementText(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMessageInterfaceSuperType_4002Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -160,23 +167,6 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	private String getMessageInterface_2001Text(View view) {
-		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 2001); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getMessageInterfaceInherits_4001Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

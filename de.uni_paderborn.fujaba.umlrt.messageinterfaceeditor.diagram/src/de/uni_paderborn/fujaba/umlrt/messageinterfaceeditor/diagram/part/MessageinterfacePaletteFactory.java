@@ -61,10 +61,10 @@ public class MessageinterfacePaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.Messages.Generalization2CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.Messages.Generalization2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceInherits_4001));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002));
 		entry.setId("createGeneralization2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.custom/icons/Generalization.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Generalization.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

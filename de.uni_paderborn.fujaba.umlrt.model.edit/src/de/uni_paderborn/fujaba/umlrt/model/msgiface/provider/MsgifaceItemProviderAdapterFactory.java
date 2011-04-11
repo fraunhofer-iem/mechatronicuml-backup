@@ -99,6 +99,29 @@ public class MsgifaceItemProviderAdapterFactory extends MsgifaceAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageTypeItemProvider messageTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageTypeAdapter() {
+		if (messageTypeItemProvider == null) {
+			messageTypeItemProvider = new MessageTypeItemProvider(this);
+		}
+
+		return messageTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +221,7 @@ public class MsgifaceItemProviderAdapterFactory extends MsgifaceAdapterFactory i
 	 */
 	public void dispose() {
 		if (messageInterfaceItemProvider != null) messageInterfaceItemProvider.dispose();
+		if (messageTypeItemProvider != null) messageTypeItemProvider.dispose();
 	}
 
 }

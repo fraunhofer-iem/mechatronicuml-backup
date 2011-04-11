@@ -26,7 +26,7 @@
         href="messageinterface.gmfgraph#Generalization"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/inherits"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/superType"/>
   </links>
   <diagram>
     <diagramCanvas

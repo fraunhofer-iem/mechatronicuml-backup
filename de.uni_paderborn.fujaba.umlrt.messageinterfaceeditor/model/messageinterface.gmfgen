@@ -12,7 +12,10 @@
       itemSemanticEditPolicyClassName="MessageInterfaceDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="MessageInterfaceDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
-      validationProviderPriority="Low">
+      validationProviderPriority="Low"
+      validationEnabled="true"
+      validationDecorators="true"
+      validationDecoratorProviderPriority="Medium">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
@@ -49,12 +52,12 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4001"
-        editPartClassName="MessageInterfaceInheritsEditPart"
-        itemSemanticEditPolicyClassName="MessageInterfaceInheritsItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageInterfaceInheritsViewFactory"
-        createCommandClassName="MessageInterfaceInheritsCreateCommand"
-        reorientCommandClassName="MessageInterfaceInheritsReorientCommand">
+        visualID="4002"
+        editPartClassName="MessageInterfaceSuperTypeEditPart"
+        itemSemanticEditPolicyClassName="MessageInterfaceSuperTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageInterfaceSuperTypeViewFactory"
+        createCommandClassName="MessageInterfaceSuperTypeCreateCommand"
+        reorientCommandClassName="MessageInterfaceSuperTypeReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -66,7 +69,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/inherits"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/superType"/>
       </modelFacet>
     </links>
     <palette>
@@ -81,7 +84,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Generalization"
             description="Create new Generalization"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.custom/icons/Generalization.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Generalization.gif"
             genLinks="//@diagram/@links.0"/>
       </groups>
     </palette>

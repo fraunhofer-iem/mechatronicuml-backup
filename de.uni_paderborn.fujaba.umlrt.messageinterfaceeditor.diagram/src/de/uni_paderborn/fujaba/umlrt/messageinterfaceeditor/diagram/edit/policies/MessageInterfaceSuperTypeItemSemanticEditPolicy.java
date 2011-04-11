@@ -7,16 +7,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class MessageInterfaceInheritsItemSemanticEditPolicy
+public class MessageInterfaceSuperTypeItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceInheritsItemSemanticEditPolicy() {
+	public MessageInterfaceSuperTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceInherits_4001);
+				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002);
 	}
 
 	/**

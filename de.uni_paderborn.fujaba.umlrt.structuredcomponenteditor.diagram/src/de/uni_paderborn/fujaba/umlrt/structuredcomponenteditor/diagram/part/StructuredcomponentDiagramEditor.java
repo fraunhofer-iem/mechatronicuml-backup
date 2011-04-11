@@ -171,6 +171,16 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();

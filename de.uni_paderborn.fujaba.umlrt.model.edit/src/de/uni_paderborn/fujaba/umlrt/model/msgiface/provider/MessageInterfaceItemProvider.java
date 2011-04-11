@@ -29,6 +29,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface} object.
@@ -37,7 +38,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class MessageInterfaceItemProvider
-	extends EClassItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -65,25 +66,48 @@ public class MessageInterfaceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInheritsPropertyDescriptor(object);
+			addSuperTypePropertyDescriptor(object);
+			addMessageTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Inherits feature.
+	 * This adds a property descriptor for the Super Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInheritsPropertyDescriptor(Object object) {
+	protected void addSuperTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_MessageInterface_inherits_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_inherits_feature", "_UI_MessageInterface_type"),
-				 MsgifacePackage.Literals.MESSAGE_INTERFACE__INHERITS,
+				 getString("_UI_MessageInterface_superType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_superType_feature", "_UI_MessageInterface_type"),
+				 MsgifacePackage.Literals.MESSAGE_INTERFACE__SUPER_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageInterface_messageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageInterface_messageTypes_feature", "_UI_MessageInterface_type"),
+				 MsgifacePackage.Literals.MESSAGE_INTERFACE__MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -111,10 +135,7 @@ public class MessageInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageInterface)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MessageInterface_type") :
-			getString("_UI_MessageInterface_type") + " " + label;
+		return getString("_UI_MessageInterface_type");
 	}
 
 	/**

@@ -61,6 +61,7 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MsgifacePackage.MESSAGE_INTERFACE: return createMessageInterface();
+			case MsgifacePackage.MESSAGE_TYPE: return createMessageType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -75,6 +76,7 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 		MessageInterfaceImpl messageInterface = new MessageInterfaceImpl();
 		return messageInterface;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,6 +96,17 @@ public class MsgifaceFactoryImpl extends EFactoryImpl implements MsgifaceFactory
 	@Deprecated
 	public static MsgifacePackage getPackage() {
 		return MsgifacePackage.eINSTANCE;
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MessageType createMessageType() {
+		MessageTypeImpl messageType = new MessageTypeImpl();
+		return messageType;
 	}
 
 } //MsgifaceFactoryImpl

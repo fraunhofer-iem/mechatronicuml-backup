@@ -18,6 +18,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.calls.Callable;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,20 +84,24 @@ public class MsgifaceAdapterFactory extends AdapterFactoryImpl {
 				return createMessageInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
+			public Adapter caseMessageType(MessageType object) {
+				return createMessageTypeAdapter();
 			}
 			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
 			}
 			@Override
-			public Adapter caseEClassifier(EClassifier object) {
-				return createEClassifierAdapter();
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseEClass(EClass object) {
-				return createEClassAdapter();
+			public Adapter caseCallable(Callable object) {
+				return createCallableAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -130,58 +138,72 @@ public class MsgifaceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType
 	 * @generated
 	 */
-	public Adapter createEModelElementAdapter() {
+	public Adapter createMessageTypeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.ENamedElement
+	 * @see org.storydriven.modeling.ExtendableElement
 	 * @generated
 	 */
-	public Adapter createENamedElementAdapter() {
+	public Adapter createExtendableElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EClassifier <em>EClassifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EClassifier
+	 * @see org.storydriven.modeling.CommentableElement
 	 * @generated
 	 */
-	public Adapter createEClassifierAdapter() {
+	public Adapter createCommentableElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EClass <em>EClass</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.Callable <em>Callable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.emf.ecore.EClass
+	 * @see org.storydriven.modeling.calls.Callable
 	 * @generated
 	 */
-	public Adapter createEClassAdapter() {
+	public Adapter createCallableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 

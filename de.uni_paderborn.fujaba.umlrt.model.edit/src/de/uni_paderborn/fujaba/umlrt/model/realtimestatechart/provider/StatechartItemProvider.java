@@ -461,11 +461,6 @@ public class StatechartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATECHART__ECLASS,
-				 MsgifaceFactory.eINSTANCE.createMessageInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATECHART__ECLASS,
 				 EcoreFactory.eINSTANCE.createEClass()));
 
 		newChildDescriptors.add

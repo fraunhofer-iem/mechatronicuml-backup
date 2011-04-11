@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.storydriven.modeling.calls.CallsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,229 +72,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_INTERFACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Super Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__EANNOTATIONS = EcorePackage.ECLASS__EANNOTATIONS;
+	int MESSAGE_INTERFACE__SUPER_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__NAME = EcorePackage.ECLASS__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Instance Class Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__INSTANCE_CLASS_NAME = EcorePackage.ECLASS__INSTANCE_CLASS_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Instance Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__INSTANCE_CLASS = EcorePackage.ECLASS__INSTANCE_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__DEFAULT_VALUE = EcorePackage.ECLASS__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Instance Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__INSTANCE_TYPE_NAME = EcorePackage.ECLASS__INSTANCE_TYPE_NAME;
-
-	/**
-	 * The feature id for the '<em><b>EPackage</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EPACKAGE = EcorePackage.ECLASS__EPACKAGE;
-
-	/**
-	 * The feature id for the '<em><b>EType Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ETYPE_PARAMETERS = EcorePackage.ECLASS__ETYPE_PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ABSTRACT = EcorePackage.ECLASS__ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Interface</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__INTERFACE = EcorePackage.ECLASS__INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>ESuper Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ESUPER_TYPES = EcorePackage.ECLASS__ESUPER_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>EOperations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EOPERATIONS = EcorePackage.ECLASS__EOPERATIONS;
-
-	/**
-	 * The feature id for the '<em><b>EAll Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_ATTRIBUTES = EcorePackage.ECLASS__EALL_ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>EAll References</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_REFERENCES = EcorePackage.ECLASS__EALL_REFERENCES;
-
-	/**
-	 * The feature id for the '<em><b>EReferences</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EREFERENCES = EcorePackage.ECLASS__EREFERENCES;
-
-	/**
-	 * The feature id for the '<em><b>EAttributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EATTRIBUTES = EcorePackage.ECLASS__EATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>EAll Containments</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_CONTAINMENTS = EcorePackage.ECLASS__EALL_CONTAINMENTS;
-
-	/**
-	 * The feature id for the '<em><b>EAll Operations</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_OPERATIONS = EcorePackage.ECLASS__EALL_OPERATIONS;
-
-	/**
-	 * The feature id for the '<em><b>EAll Structural Features</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_STRUCTURAL_FEATURES = EcorePackage.ECLASS__EALL_STRUCTURAL_FEATURES;
-
-	/**
-	 * The feature id for the '<em><b>EAll Super Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_SUPER_TYPES = EcorePackage.ECLASS__EALL_SUPER_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>EID Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EID_ATTRIBUTE = EcorePackage.ECLASS__EID_ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>EStructural Features</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__ESTRUCTURAL_FEATURES = EcorePackage.ECLASS__ESTRUCTURAL_FEATURES;
-
-	/**
-	 * The feature id for the '<em><b>EGeneric Super Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EGENERIC_SUPER_TYPES = EcorePackage.ECLASS__EGENERIC_SUPER_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>EAll Generic Super Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__EALL_GENERIC_SUPER_TYPES = EcorePackage.ECLASS__EALL_GENERIC_SUPER_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Inherits</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE__INHERITS = EcorePackage.ECLASS_FEATURE_COUNT + 0;
+	int MESSAGE_INTERFACE__MESSAGE_TYPES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Message Interface</em>' class.
@@ -302,115 +96,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = EcorePackage.ECLASS_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_EANNOTATION__STRING = EcorePackage.ECLASS___GET_EANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Instance</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___IS_INSTANCE__OBJECT = EcorePackage.ECLASS___IS_INSTANCE__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Get Classifier ID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_CLASSIFIER_ID = EcorePackage.ECLASS___GET_CLASSIFIER_ID;
-
-	/**
-	 * The operation id for the '<em>Is Super Type Of</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___IS_SUPER_TYPE_OF__ECLASS = EcorePackage.ECLASS___IS_SUPER_TYPE_OF__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Feature Count</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_FEATURE_COUNT = EcorePackage.ECLASS___GET_FEATURE_COUNT;
-
-	/**
-	 * The operation id for the '<em>Get EStructural Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_ESTRUCTURAL_FEATURE__INT = EcorePackage.ECLASS___GET_ESTRUCTURAL_FEATURE__INT;
-
-	/**
-	 * The operation id for the '<em>Get Feature ID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_FEATURE_ID__ESTRUCTURALFEATURE = EcorePackage.ECLASS___GET_FEATURE_ID__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>Get EStructural Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_ESTRUCTURAL_FEATURE__STRING = EcorePackage.ECLASS___GET_ESTRUCTURAL_FEATURE__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Operation Count</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_OPERATION_COUNT = EcorePackage.ECLASS___GET_OPERATION_COUNT;
-
-	/**
-	 * The operation id for the '<em>Get EOperation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_EOPERATION__INT = EcorePackage.ECLASS___GET_EOPERATION__INT;
-
-	/**
-	 * The operation id for the '<em>Get Operation ID</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_OPERATION_ID__EOPERATION = EcorePackage.ECLASS___GET_OPERATION_ID__EOPERATION;
-
-	/**
-	 * The operation id for the '<em>Get Override</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_INTERFACE___GET_OVERRIDE__EOPERATION = EcorePackage.ECLASS___GET_OVERRIDE__EOPERATION;
+	int MESSAGE_INTERFACE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Message Interface</em>' class.
@@ -419,7 +105,252 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_OPERATION_COUNT = EcorePackage.ECLASS_OPERATION_COUNT + 0;
+	int MESSAGE_INTERFACE_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl#getMessageType()
+	 * @generated
+	 */
+	int MESSAGE_TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__COMMENT = CallsPackage.CALLABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Message Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECLASS = CallsPackage.CALLABLE___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EIS_PROXY = CallsPackage.CALLABLE___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ERESOURCE = CallsPackage.CALLABLE___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECONTAINER = CallsPackage.CALLABLE___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECONTAINING_FEATURE = CallsPackage.CALLABLE___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECONTAINMENT_FEATURE = CallsPackage.CALLABLE___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECONTENTS = CallsPackage.CALLABLE___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EALL_CONTENTS = CallsPackage.CALLABLE___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ECROSS_REFERENCES = CallsPackage.CALLABLE___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EGET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___ESET__ESTRUCTURALFEATURE_OBJECT = CallsPackage.CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EIS_SET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EUNSET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___EINVOKE__EOPERATION_ELIST = CallsPackage.CALLABLE___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___GET_EXTENSION__ECLASS = CallsPackage.CALLABLE___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___PROVIDE_EXTENSION__ECLASS = CallsPackage.CALLABLE___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___GET_ANNOTATION__STRING = CallsPackage.CALLABLE___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___PROVIDE_ANNOTATION__STRING = CallsPackage.CALLABLE___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Message Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -433,15 +364,47 @@ public interface MsgifacePackage extends EPackage {
 	EClass getMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getInherits <em>Inherits</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getSuperType <em>Super Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inherits</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getInherits()
+	 * @return the meta object for the reference list '<em>Super Type</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getSuperType()
 	 * @see #getMessageInterface()
 	 * @generated
 	 */
-	EReference getMessageInterface_Inherits();
+	EReference getMessageInterface_SuperType();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes()
+	 * @see #getMessageInterface()
+	 * @generated
+	 */
+	EReference getMessageInterface_MessageTypes();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType
+	 * @generated
+	 */
+	EClass getMessageType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EReference getMessageType_MessageInterface();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -476,12 +439,35 @@ public interface MsgifacePackage extends EPackage {
 		 */
 		EClass MESSAGE_INTERFACE = eINSTANCE.getMessageInterface();
 		/**
-		 * The meta object literal for the '<em><b>Inherits</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Super Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_INTERFACE__INHERITS = eINSTANCE.getMessageInterface_Inherits();
+		EReference MESSAGE_INTERFACE__SUPER_TYPE = eINSTANCE.getMessageInterface_SuperType();
+		/**
+		 * The meta object literal for the '<em><b>Message Types</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_INTERFACE__MESSAGE_TYPES = eINSTANCE.getMessageInterface_MessageTypes();
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl <em>Message Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl#getMessageType()
+		 * @generated
+		 */
+		EClass MESSAGE_TYPE = eINSTANCE.getMessageType();
+		/**
+		 * The meta object literal for the '<em><b>Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
 
 	}
 

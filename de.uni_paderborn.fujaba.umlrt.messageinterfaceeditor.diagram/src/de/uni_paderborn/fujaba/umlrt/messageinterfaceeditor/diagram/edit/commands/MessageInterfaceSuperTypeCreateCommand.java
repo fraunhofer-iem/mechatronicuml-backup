@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 /**
  * @generated
  */
-public class MessageInterfaceInheritsCreateCommand extends EditElementCommand {
+public class MessageInterfaceSuperTypeCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -26,7 +26,7 @@ public class MessageInterfaceInheritsCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceInheritsCreateCommand(
+	public MessageInterfaceSuperTypeCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -53,7 +53,7 @@ public class MessageInterfaceInheritsCreateCommand extends EditElementCommand {
 		}
 		// target may be null here but it's possible to check constraint
 		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateMessageInterfaceInherits_4001(
+				.getLinkConstraints().canCreateMessageInterfaceSuperType_4002(
 						getSource(), getTarget());
 	}
 
@@ -68,7 +68,7 @@ public class MessageInterfaceInheritsCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().getInherits().add(getTarget());
+			getSource().getSuperType().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

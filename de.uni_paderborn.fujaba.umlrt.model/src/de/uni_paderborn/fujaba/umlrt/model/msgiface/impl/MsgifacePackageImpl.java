@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifaceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
 
@@ -54,6 +55,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.CallsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,6 +70,13 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * @generated
 	 */
 	private EClass messageInterfaceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -176,8 +185,35 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageInterface_Inherits() {
+	public EReference getMessageInterface_SuperType() {
 		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageInterface_MessageTypes() {
+		return (EReference)messageInterfaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMessageType() {
+		return messageTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageType_MessageInterface() {
+		return (EReference)messageTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -209,7 +245,11 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Create classes and their features
 		messageInterfaceEClass = createEClass(MESSAGE_INTERFACE);
-		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__INHERITS);
+		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__SUPER_TYPE);
+		createEReference(messageInterfaceEClass, MESSAGE_INTERFACE__MESSAGE_TYPES);
+
+		messageTypeEClass = createEClass(MESSAGE_TYPE);
+		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
 	}
 
 	/**
@@ -236,18 +276,24 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		messageInterfaceEClass.getESuperTypes().add(theEcorePackage.getEClass());
+		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
+		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInterface_Inherits(), this.getMessageInterface(), null, "inherits", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterface_SuperType(), this.getMessageInterface(), null, "superType", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

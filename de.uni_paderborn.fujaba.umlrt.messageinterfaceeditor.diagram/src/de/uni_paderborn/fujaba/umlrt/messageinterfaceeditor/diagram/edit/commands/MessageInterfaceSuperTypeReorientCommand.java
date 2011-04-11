@@ -12,7 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 /**
  * @generated
  */
-public class MessageInterfaceInheritsReorientCommand extends EditElementCommand {
+public class MessageInterfaceSuperTypeReorientCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -37,7 +38,7 @@ public class MessageInterfaceInheritsReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	public MessageInterfaceInheritsReorientCommand(
+	public MessageInterfaceSuperTypeReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
@@ -70,7 +71,7 @@ public class MessageInterfaceInheritsReorientCommand extends EditElementCommand 
 			return false;
 		}
 		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceInherits_4001(
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4002(
 						getNewSource(), getOldTarget());
 	}
 
@@ -82,7 +83,7 @@ public class MessageInterfaceInheritsReorientCommand extends EditElementCommand 
 			return false;
 		}
 		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceInherits_4001(
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4002(
 						getOldSource(), getNewTarget());
 	}
 
@@ -108,8 +109,8 @@ public class MessageInterfaceInheritsReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getInherits().remove(getOldTarget());
-		getNewSource().getInherits().add(getOldTarget());
+		getOldSource().getSuperType().remove(getOldTarget());
+		getNewSource().getSuperType().add(getOldTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 
@@ -117,8 +118,8 @@ public class MessageInterfaceInheritsReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getInherits().remove(getOldTarget());
-		getOldSource().getInherits().add(getNewTarget());
+		getOldSource().getSuperType().remove(getOldTarget());
+		getOldSource().getSuperType().add(getNewTarget());
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

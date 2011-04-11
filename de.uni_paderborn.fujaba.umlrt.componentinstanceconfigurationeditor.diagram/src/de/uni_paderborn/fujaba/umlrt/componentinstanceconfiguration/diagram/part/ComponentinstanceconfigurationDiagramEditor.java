@@ -171,7 +171,18 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(IProgressMonitor progressMonitor) {
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performSaveAs(
+			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
@@ -269,9 +280,6 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
-		if (diagram == null || diagram.eResource() == null) {
-			return StructuredSelection.EMPTY;
-		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem item = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorItem(

@@ -598,7 +598,13 @@
                 disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface">
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/inherits"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/superType"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/messageTypes"/>
+              </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType">
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/messageInterface"/>
               </genClasses>
             </nestedGenPackages>
           </nestedGenPackages>
