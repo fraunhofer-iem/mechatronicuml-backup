@@ -87,9 +87,9 @@ public class ComponentinstanceconfigurationSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM: {
-				ComponentInstanceConfigurationDiagram componentInstanceConfigurationDiagram = (ComponentInstanceConfigurationDiagram)theEObject;
-				T result = caseComponentInstanceConfigurationDiagram(componentInstanceConfigurationDiagram);
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION: {
+				ComponentInstanceConfiguration componentInstanceConfiguration = (ComponentInstanceConfiguration)theEObject;
+				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,17 +98,17 @@ public class ComponentinstanceconfigurationSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component Instance Configuration Diagram</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Instance Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component Instance Configuration Diagram</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Instance Configuration</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponentInstanceConfigurationDiagram(ComponentInstanceConfigurationDiagram object) {
+	public T caseComponentInstanceConfiguration(ComponentInstanceConfiguration object) {
 		return null;
 	}
 

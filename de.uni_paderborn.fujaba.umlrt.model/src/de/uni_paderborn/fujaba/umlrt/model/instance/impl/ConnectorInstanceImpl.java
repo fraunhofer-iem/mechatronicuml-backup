@@ -44,9 +44,6 @@ import org.storydriven.modeling.SDMPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl#getParentComponentInstance <em>Parent Component Instance</em>}</li>
@@ -56,46 +53,6 @@ import org.storydriven.modeling.SDMPackage;
  * @generated
  */
 public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements ConnectorInstance {
-	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EAnnotation> annotations;
-
-	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extension> extensions;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -133,51 +90,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	protected EClass eStaticClass() {
 		return InstancePackage.Literals.CONNECTOR_INSTANCE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, InstancePackage.CONNECTOR_INSTANCE__ANNOTATION);
-		}
-		return annotations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, InstancePackage.CONNECTOR_INSTANCE__EXTENSION, SDMPackage.EXTENSION__EXTENDABLE_BASE);
-		}
-		return extensions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__NAME, oldName, name));
 	}
 
 	/**
@@ -302,56 +214,10 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -368,10 +234,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				return basicSetParentComponentInstance(null, msgs);
 		}
@@ -400,12 +262,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION:
-				return getAnnotations();
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				return getExtensions();
-			case InstancePackage.CONNECTOR_INSTANCE__NAME:
-				return getName();
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
@@ -427,17 +283,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
-				return;
-			case InstancePackage.CONNECTOR_INSTANCE__NAME:
-				setName((String)newValue);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
 				setSource((PortInstance)newValue);
 				return;
@@ -459,15 +304,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION:
-				getAnnotations().clear();
-				return;
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				getExtensions().clear();
-				return;
-			case InstancePackage.CONNECTOR_INSTANCE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
 				setSource((PortInstance)null);
 				return;
@@ -489,12 +325,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
-			case InstancePackage.CONNECTOR_INSTANCE__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
-			case InstancePackage.CONNECTOR_INSTANCE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
 				return source != null;
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
@@ -503,142 +333,6 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 				return getParentComponentInstance() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (derivedFeatureID) {
-				case InstancePackage.CONNECTOR_INSTANCE__ANNOTATION: return SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case InstancePackage.CONNECTOR_INSTANCE__EXTENSION: return SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case InstancePackage.CONNECTOR_INSTANCE__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION: return InstancePackage.CONNECTOR_INSTANCE__ANNOTATION;
-				case SDMPackage.EXTENDABLE_ELEMENT__EXTENSION: return InstancePackage.CONNECTOR_INSTANCE__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.NAMED_ELEMENT__NAME: return InstancePackage.CONNECTOR_INSTANCE__NAME;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
-			switch (baseOperationID) {
-				case EcorePackage.EOBJECT___ECLASS: return InstancePackage.CONNECTOR_INSTANCE___ECLASS;
-				case EcorePackage.EOBJECT___EIS_PROXY: return InstancePackage.CONNECTOR_INSTANCE___EIS_PROXY;
-				case EcorePackage.EOBJECT___ERESOURCE: return InstancePackage.CONNECTOR_INSTANCE___ERESOURCE;
-				case EcorePackage.EOBJECT___ECONTAINER: return InstancePackage.CONNECTOR_INSTANCE___ECONTAINER;
-				case EcorePackage.EOBJECT___ECONTAINING_FEATURE: return InstancePackage.CONNECTOR_INSTANCE___ECONTAINING_FEATURE;
-				case EcorePackage.EOBJECT___ECONTAINMENT_FEATURE: return InstancePackage.CONNECTOR_INSTANCE___ECONTAINMENT_FEATURE;
-				case EcorePackage.EOBJECT___ECONTENTS: return InstancePackage.CONNECTOR_INSTANCE___ECONTENTS;
-				case EcorePackage.EOBJECT___EALL_CONTENTS: return InstancePackage.CONNECTOR_INSTANCE___EALL_CONTENTS;
-				case EcorePackage.EOBJECT___ECROSS_REFERENCES: return InstancePackage.CONNECTOR_INSTANCE___ECROSS_REFERENCES;
-				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE: return InstancePackage.CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN: return InstancePackage.CONNECTOR_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-				case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT: return InstancePackage.CONNECTOR_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
-				case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE: return InstancePackage.CONNECTOR_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE: return InstancePackage.CONNECTOR_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
-				case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST: return InstancePackage.CONNECTOR_INSTANCE___EINVOKE__EOPERATION_ELIST;
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseOperationID) {
-				case SDMPackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return InstancePackage.CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS;
-				case SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return InstancePackage.CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS;
-				case SDMPackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return InstancePackage.CONNECTOR_INSTANCE___GET_ANNOTATION__STRING;
-				case SDMPackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return InstancePackage.CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseOperationID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case InstancePackage.CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS:
-				return getExtension((EClass)arguments.get(0));
-			case InstancePackage.CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS:
-				return provideExtension((EClass)arguments.get(0));
-			case InstancePackage.CONNECTOR_INSTANCE___GET_ANNOTATION__STRING:
-				return getAnnotation((String)arguments.get(0));
-			case InstancePackage.CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING:
-				return provideAnnotation((String)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ConnectorInstanceImpl

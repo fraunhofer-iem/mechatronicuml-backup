@@ -264,7 +264,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 */
 	public EList<PortInstance> getPortInstances() {
 		if (portInstances == null) {
-			portInstances = new EObjectContainmentEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES);
+			portInstances = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
 		}
 		return portInstances;
 	}
@@ -304,6 +304,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 				if (componentType != null)
 					msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, Component.class, msgs);
 				return basicSetComponentType((Component)otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
 		}

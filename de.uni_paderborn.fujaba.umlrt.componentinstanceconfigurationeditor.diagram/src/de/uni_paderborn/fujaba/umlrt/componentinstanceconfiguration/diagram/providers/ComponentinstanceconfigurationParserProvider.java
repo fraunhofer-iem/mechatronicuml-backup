@@ -23,13 +23,13 @@ public class ComponentinstanceconfigurationParserProvider extends
 	/**
 	 * @generated
 	 */
-	private IParser componentInstanceNameComponentNameDerived_5002Parser;
+	private IParser componentInstanceNameComponentNameDerived_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentInstanceNameComponentNameDerived_5002Parser() {
-		if (componentInstanceNameComponentNameDerived_5002Parser == null) {
+	private IParser getComponentInstanceNameComponentNameDerived_5003Parser() {
+		if (componentInstanceNameComponentNameDerived_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					SDMPackage.eINSTANCE.getNamedElement_Name(),
 					de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
@@ -41,9 +41,9 @@ public class ComponentinstanceconfigurationParserProvider extends
 			parser.setViewPattern("{0} : {1}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}"); //$NON-NLS-1$
-			componentInstanceNameComponentNameDerived_5002Parser = parser;
+			componentInstanceNameComponentNameDerived_5003Parser = parser;
 		}
-		return componentInstanceNameComponentNameDerived_5002Parser;
+		return componentInstanceNameComponentNameDerived_5003Parser;
 	}
 
 	/**
@@ -77,8 +77,8 @@ public class ComponentinstanceconfigurationParserProvider extends
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameEditPart.VISUAL_ID:
-			return getComponentInstanceNameComponentNameDerived_5002Parser();
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDeriveEditPart.VISUAL_ID:
+			return getComponentInstanceNameComponentNameDerived_5003Parser();
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceName2EditPart.VISUAL_ID:
 			return getComponentInstanceNameComponentNameDerived_5001Parser();
 		}

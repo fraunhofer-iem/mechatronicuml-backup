@@ -175,7 +175,7 @@ public class ComponentinstanceconfigurationDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram model = createInitialModel();
+				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
@@ -225,9 +225,9 @@ public class ComponentinstanceconfigurationDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram createInitialModel() {
+	private static de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration createInitialModel() {
 		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory.eINSTANCE
-				.createComponentInstanceConfigurationDiagram();
+				.createComponentInstanceConfiguration();
 	}
 
 	/**
@@ -237,7 +237,7 @@ public class ComponentinstanceconfigurationDiagramEditorUtil {
 	 * @generated
 	 */
 	private static void attachModelToResource(
-			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram model,
+			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

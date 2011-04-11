@@ -6,31 +6,22 @@
  */
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,8 +35,7 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentInstanceConfigurationDiagramEClass = null;
-
+	private EClass componentInstanceConfigurationEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -122,8 +112,8 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponentInstanceConfigurationDiagram() {
-		return componentInstanceConfigurationDiagramEClass;
+	public EClass getComponentInstanceConfiguration() {
+		return componentInstanceConfigurationEClass;
 	}
 
 	/**
@@ -131,8 +121,8 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstanceConfigurationDiagram_ComponentInstances() {
-		return (EReference)componentInstanceConfigurationDiagramEClass.getEStructuralFeatures().get(0);
+	public EReference getComponentInstanceConfiguration_ComponentInstances() {
+		return (EReference)componentInstanceConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -163,8 +153,8 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 		isCreated = true;
 
 		// Create classes and their features
-		componentInstanceConfigurationDiagramEClass = createEClass(COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM);
-		createEReference(componentInstanceConfigurationDiagramEClass, COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES);
+		componentInstanceConfigurationEClass = createEClass(COMPONENT_INSTANCE_CONFIGURATION);
+		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 	}
 
 	/**
@@ -200,8 +190,8 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 		// Add supertypes to classes
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(componentInstanceConfigurationDiagramEClass, ComponentInstanceConfigurationDiagram.class, "ComponentInstanceConfigurationDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentInstanceConfigurationDiagram_ComponentInstances(), theInstancePackage.getComponentInstance(), null, "componentInstances", null, 0, -1, ComponentInstanceConfigurationDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentInstanceConfigurationEClass, ComponentInstanceConfiguration.class, "ComponentInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentInstanceConfiguration_ComponentInstances(), theInstancePackage.getComponentInstance(), null, "componentInstances", null, 0, -1, ComponentInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

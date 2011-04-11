@@ -14,21 +14,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Component Instance Configuration Diagram</b></em>'.
+ * A representation of the model object '<em><b>Component Instance Configuration</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram#getComponentInstances <em>Component Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage#getComponentInstanceConfigurationDiagram()
+ * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage#getComponentInstanceConfiguration()
  * @model
  * @generated
  */
-public interface ComponentInstanceConfigurationDiagram extends EObject {
+public interface ComponentInstanceConfiguration extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance}.
@@ -39,10 +39,10 @@ public interface ComponentInstanceConfigurationDiagram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage#getComponentInstanceConfigurationDiagram_ComponentInstances()
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage#getComponentInstanceConfiguration_ComponentInstances()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ComponentInstance> getComponentInstances();
 
-} // ComponentInstanceConfigurationDiagram
+} // ComponentInstanceConfiguration

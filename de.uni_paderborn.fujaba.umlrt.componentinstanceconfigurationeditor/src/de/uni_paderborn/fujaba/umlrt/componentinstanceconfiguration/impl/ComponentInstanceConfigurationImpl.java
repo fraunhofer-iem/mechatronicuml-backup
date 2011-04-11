@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
@@ -27,18 +27,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Instance Configuration Diagram</b></em>'.
+ * An implementation of the model object '<em><b>Component Instance Configuration</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationDiagramImpl#getComponentInstances <em>Component Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl implements ComponentInstanceConfigurationDiagram {
+public class ComponentInstanceConfigurationImpl extends EObjectImpl implements ComponentInstanceConfiguration {
 	/**
 	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstanceConfigurationDiagramImpl() {
+	protected ComponentInstanceConfigurationImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM;
+		return ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION;
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	 */
 	public EList<ComponentInstance> getComponentInstances() {
 		if (componentInstances == null) {
-			componentInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES);
+			componentInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 		}
 		return componentInstances;
 	}
@@ -88,7 +88,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -102,7 +102,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return getComponentInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
@@ -133,7 +133,7 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				return;
 		}
@@ -148,10 +148,10 @@ public class ComponentInstanceConfigurationDiagramImpl extends EObjectImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return componentInstances != null && !componentInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ComponentInstanceConfigurationDiagramImpl
+} //ComponentInstanceConfigurationImpl

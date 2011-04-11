@@ -15,7 +15,7 @@ public class ComponentInstanceComponentCompartmentItemSemanticEditPolicy
 	 */
 	public ComponentInstanceComponentCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_2001);
+				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_2002);
 	}
 
 	/**

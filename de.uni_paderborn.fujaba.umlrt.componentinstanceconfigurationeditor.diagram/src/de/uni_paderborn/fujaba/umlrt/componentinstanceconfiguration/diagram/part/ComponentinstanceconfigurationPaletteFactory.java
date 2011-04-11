@@ -45,7 +45,7 @@ public class ComponentinstanceconfigurationPaletteFactory {
 	 */
 	private ToolEntry createComponentInstance1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_2001);
+		types.add(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_2002);
 		types.add(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_3002);
 		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.ComponentInstance1CreationTool_title,

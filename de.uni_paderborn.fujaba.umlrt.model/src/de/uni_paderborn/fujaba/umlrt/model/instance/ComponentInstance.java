@@ -115,6 +115,7 @@ public interface ComponentInstance extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port Instances</em>' containment reference list isn't clear,
@@ -123,7 +124,8 @@ public interface ComponentInstance extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_PortInstances()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance
+	 * @model opposite="componentInstance" containment="true"
 	 * @generated
 	 */
 	EList<PortInstance> getPortInstances();

@@ -53,7 +53,7 @@ public class ComponentInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance newElement = de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory.eINSTANCE
 				.createComponentInstance();
 
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram owner = (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration) getElementToEdit();
 		owner.getComponentInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);

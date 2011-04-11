@@ -9,7 +9,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
 
 /**
@@ -55,8 +55,8 @@ public class CustomComponentinstanceconfigurationDiagramCreationWizard extends
 
 	@Override
 	protected EObject createInitialModel() {
-		ComponentInstanceConfigurationDiagram diagram = ComponentinstanceconfigurationFactory.eINSTANCE
-				.createComponentInstanceConfigurationDiagram();
+		ComponentInstanceConfiguration diagram = ComponentinstanceconfigurationFactory.eINSTANCE
+				.createComponentInstanceConfiguration();
 		return diagram;
 	}
 

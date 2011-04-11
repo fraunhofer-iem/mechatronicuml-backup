@@ -76,26 +76,26 @@ public class ComponentinstanceconfigurationItemProviderAdapterFactory extends Co
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstanceConfigurationDiagramItemProvider componentInstanceConfigurationDiagramItemProvider;
+	protected ComponentInstanceConfigurationItemProvider componentInstanceConfigurationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentInstanceConfigurationDiagramAdapter() {
-		if (componentInstanceConfigurationDiagramItemProvider == null) {
-			componentInstanceConfigurationDiagramItemProvider = new ComponentInstanceConfigurationDiagramItemProvider(this);
+	public Adapter createComponentInstanceConfigurationAdapter() {
+		if (componentInstanceConfigurationItemProvider == null) {
+			componentInstanceConfigurationItemProvider = new ComponentInstanceConfigurationItemProvider(this);
 		}
 
-		return componentInstanceConfigurationDiagramItemProvider;
+		return componentInstanceConfigurationItemProvider;
 	}
 
 	/**
@@ -197,7 +197,7 @@ public class ComponentinstanceconfigurationItemProviderAdapterFactory extends Co
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentInstanceConfigurationDiagramItemProvider != null) componentInstanceConfigurationDiagramItemProvider.dispose();
+		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
 	}
 
 }

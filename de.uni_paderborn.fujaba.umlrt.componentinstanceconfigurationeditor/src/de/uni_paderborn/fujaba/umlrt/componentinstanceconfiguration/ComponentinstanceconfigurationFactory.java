@@ -26,13 +26,13 @@ public interface ComponentinstanceconfigurationFactory extends EFactory {
 	ComponentinstanceconfigurationFactory eINSTANCE = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Component Instance Configuration Diagram</em>'.
+	 * Returns a new object of class '<em>Component Instance Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instance Configuration Diagram</em>'.
+	 * @return a new object of class '<em>Component Instance Configuration</em>'.
 	 * @generated
 	 */
-	ComponentInstanceConfigurationDiagram createComponentInstanceConfigurationDiagram();
+	ComponentInstanceConfiguration createComponentInstanceConfiguration();
 
 	/**
 	 * Returns the package supported by this factory.

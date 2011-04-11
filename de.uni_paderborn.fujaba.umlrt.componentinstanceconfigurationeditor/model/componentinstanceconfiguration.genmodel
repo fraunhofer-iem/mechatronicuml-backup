@@ -8,8 +8,8 @@
   <foreignModel>componentinstanceconfiguration.ecore</foreignModel>
   <genPackages prefix="Componentinstanceconfiguration" basePackage="de.uni_paderborn.fujaba.umlrt"
       disposableProviderFactory="true" ecorePackage="componentinstanceconfiguration.ecore#/">
-    <genClasses ecoreClass="componentinstanceconfiguration.ecore#//ComponentInstanceConfigurationDiagram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentinstanceconfiguration.ecore#//ComponentInstanceConfigurationDiagram/componentInstances"/>
+    <genClasses ecoreClass="componentinstanceconfiguration.ecore#//ComponentInstanceConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentinstanceconfiguration.ecore#//ComponentInstanceConfiguration/componentInstances"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

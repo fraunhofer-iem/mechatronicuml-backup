@@ -72,8 +72,8 @@ public class ComponentinstanceconfigurationAdapterFactory extends AdapterFactory
 	protected ComponentinstanceconfigurationSwitch<Adapter> modelSwitch =
 		new ComponentinstanceconfigurationSwitch<Adapter>() {
 			@Override
-			public Adapter caseComponentInstanceConfigurationDiagram(ComponentInstanceConfigurationDiagram object) {
-				return createComponentInstanceConfigurationDiagramAdapter();
+			public Adapter caseComponentInstanceConfiguration(ComponentInstanceConfiguration object) {
+				return createComponentInstanceConfigurationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -96,16 +96,16 @@ public class ComponentinstanceconfigurationAdapterFactory extends AdapterFactory
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram <em>Component Instance Configuration Diagram</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration
 	 * @generated
 	 */
-	public Adapter createComponentInstanceConfigurationDiagramAdapter() {
+	public Adapter createComponentInstanceConfigurationAdapter() {
 		return null;
 	}
 

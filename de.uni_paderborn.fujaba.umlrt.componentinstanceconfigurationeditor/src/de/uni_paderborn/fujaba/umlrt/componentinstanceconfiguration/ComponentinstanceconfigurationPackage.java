@@ -59,14 +59,14 @@ public interface ComponentinstanceconfigurationPackage extends EPackage {
 	ComponentinstanceconfigurationPackage eINSTANCE = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationDiagramImpl <em>Component Instance Configuration Diagram</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationDiagramImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationPackageImpl#getComponentInstanceConfigurationDiagram()
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationPackageImpl#getComponentInstanceConfiguration()
 	 * @generated
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM = 0;
+	int COMPONENT_INSTANCE_CONFIGURATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
@@ -75,38 +75,38 @@ public interface ComponentinstanceconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES = 0;
+	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Component Instance Configuration Diagram</em>' class.
+	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM_FEATURE_COUNT = 1;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = 1;
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram <em>Component Instance Configuration Diagram</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Component Instance Configuration Diagram</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram
+	 * @return the meta object for class '<em>Component Instance Configuration</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration
 	 * @generated
 	 */
-	EClass getComponentInstanceConfigurationDiagram();
+	EClass getComponentInstanceConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram#getComponentInstances <em>Component Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Component Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram#getComponentInstances()
-	 * @see #getComponentInstanceConfigurationDiagram()
+	 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration#getComponentInstances()
+	 * @see #getComponentInstanceConfiguration()
 	 * @generated
 	 */
-	EReference getComponentInstanceConfigurationDiagram_ComponentInstances();
+	EReference getComponentInstanceConfiguration_ComponentInstances();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -131,14 +131,14 @@ public interface ComponentinstanceconfigurationPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationDiagramImpl <em>Component Instance Configuration Diagram</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationDiagramImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationPackageImpl#getComponentInstanceConfigurationDiagram()
+		 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentInstanceConfigurationImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl.ComponentinstanceconfigurationPackageImpl#getComponentInstanceConfiguration()
 		 * @generated
 		 */
-		EClass COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM = eINSTANCE.getComponentInstanceConfigurationDiagram();
+		EClass COMPONENT_INSTANCE_CONFIGURATION = eINSTANCE.getComponentInstanceConfiguration();
 
 		/**
 		 * The meta object literal for the '<em><b>Component Instances</b></em>' containment reference list feature.
@@ -146,7 +146,7 @@ public interface ComponentinstanceconfigurationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES = eINSTANCE.getComponentInstanceConfigurationDiagram_ComponentInstances();
+		EReference COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ComponentInstances();
 
 	}
 

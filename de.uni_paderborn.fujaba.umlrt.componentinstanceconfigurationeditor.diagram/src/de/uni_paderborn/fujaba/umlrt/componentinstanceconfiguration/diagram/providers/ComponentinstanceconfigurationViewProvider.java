@@ -215,7 +215,7 @@ public class ComponentinstanceconfigurationViewProvider extends
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
-			return createComponentInstance_2001(domainElement, containerView,
+			return createComponentInstance_2002(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return createPortInstance_3001(domainElement, containerView, index,
@@ -254,7 +254,7 @@ public class ComponentinstanceconfigurationViewProvider extends
 	/**
 	 * @generated
 	 */
-	public Node createComponentInstance_2001(EObject domainElement,
+	public Node createComponentInstance_2002(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -292,10 +292,10 @@ public class ComponentinstanceconfigurationViewProvider extends
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5002 = createLabel(
+		Node label5003 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDeriveEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry

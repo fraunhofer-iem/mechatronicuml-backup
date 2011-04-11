@@ -8,16 +8,19 @@ package de.uni_paderborn.fujaba.umlrt.model.instance.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 
@@ -32,6 +35,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -151,6 +155,91 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstance getComponentInstance() {
+		if (eContainerFeatureID() != InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE) return null;
+		return (ComponentInstance)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetComponentInstance(ComponentInstance newComponentInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newComponentInstance, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponentInstance(ComponentInstance newComponentInstance) {
+		if (newComponentInstance != eInternalContainer() || (eContainerFeatureID() != InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE && newComponentInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newComponentInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newComponentInstance != null)
+				msgs = ((InternalEObject)newComponentInstance).eInverseAdd(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
+			msgs = basicSetComponentInstance(newComponentInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE, newComponentInstance, newComponentInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetComponentInstance((ComponentInstance)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				return basicSetComponentInstance(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -159,6 +248,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				if (resolve) return getPortType();
 				return basicGetPortType();
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				return getComponentInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,6 +267,9 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return;
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				setPortType((Port)newValue);
+				return;
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				setComponentInstance((ComponentInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,6 +289,9 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				setPortType((Port)null);
 				return;
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				setComponentInstance((ComponentInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -211,6 +308,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				return portType != null;
+			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
+				return getComponentInstance() != null;
 		}
 		return super.eIsSet(featureID);
 	}

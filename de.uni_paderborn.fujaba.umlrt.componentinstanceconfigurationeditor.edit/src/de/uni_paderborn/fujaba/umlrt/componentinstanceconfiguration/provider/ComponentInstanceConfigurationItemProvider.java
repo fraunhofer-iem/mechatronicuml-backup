@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
@@ -32,12 +32,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentInstanceConfigurationDiagramItemProvider
+public class ComponentInstanceConfigurationItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -51,7 +51,7 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstanceConfigurationDiagramItemProvider(AdapterFactory adapterFactory) {
+	public ComponentInstanceConfigurationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -82,7 +82,7 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES);
+			childrenFeatures.add(ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -101,14 +101,14 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 	}
 
 	/**
-	 * This returns ComponentInstanceConfigurationDiagram.gif.
+	 * This returns ComponentInstanceConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentInstanceConfigurationDiagram"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentInstanceConfiguration"));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComponentInstanceConfigurationDiagram_type");
+		return getString("_UI_ComponentInstanceConfiguration_type");
 	}
 
 	/**
@@ -133,8 +133,8 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentInstanceConfigurationDiagram.class)) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES:
+		switch (notification.getFeatureID(ComponentInstanceConfiguration.class)) {
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -154,7 +154,7 @@ public class ComponentInstanceConfigurationDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM__COMPONENT_INSTANCES,
+				(ComponentinstanceconfigurationPackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES,
 				 InstanceFactory.eINSTANCE.createComponentInstance()));
 	}
 

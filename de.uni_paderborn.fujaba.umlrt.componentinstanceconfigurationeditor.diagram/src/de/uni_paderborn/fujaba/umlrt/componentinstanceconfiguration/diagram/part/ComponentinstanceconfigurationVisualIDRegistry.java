@@ -84,9 +84,9 @@ public class ComponentinstanceconfigurationVisualIDRegistry {
 			return -1;
 		}
 		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage.eINSTANCE
-				.getComponentInstanceConfigurationDiagram().isSuperTypeOf(
+				.getComponentInstanceConfiguration().isSuperTypeOf(
 						domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram) domainElement)) {
+				&& isDiagram((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration) domainElement)) {
 			return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -184,7 +184,7 @@ public class ComponentinstanceconfigurationVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDeriveEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
@@ -244,7 +244,7 @@ public class ComponentinstanceconfigurationVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfigurationDiagram element) {
+			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration element) {
 		return true;
 	}
 

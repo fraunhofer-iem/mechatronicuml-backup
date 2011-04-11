@@ -25,7 +25,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfigurationDiagram"/>
+        href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3001"
@@ -124,7 +124,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2001"
+        visualID="2002"
         editPartClassName="ComponentInstanceEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceViewFactory"
@@ -151,15 +151,15 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
         <containmentMetaFeature
-            href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfigurationDiagram/componentInstances"/>
+            href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfiguration/componentInstances"/>
         <childMetaFeature
-            href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfigurationDiagram/componentInstances"/>
+            href="componentinstanceconfiguration.genmodel#//componentinstanceconfiguration/ComponentInstanceConfiguration/componentInstances"/>
       </modelFacet>
       <labels
-          visualID="5002"
-          editPartClassName="ComponentInstanceNameEditPart"
-          itemSemanticEditPolicyClassName="ComponentInstanceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ComponentInstanceNameViewFactory">
+          visualID="5003"
+          editPartClassName="ComponentInstanceNameComponentNameDeriveEditPart"
+          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDeriveItemSemanticEditPolicy"
+          notationViewFactoryClassName="ComponentInstanceNameComponentNameDerivedViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -244,7 +244,7 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7001"
+        visualID="7003"
         editPartClassName="ComponentInstanceComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceComponentCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentInstanceComponentCompartmentViewFactory"

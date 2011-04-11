@@ -105,10 +105,7 @@ public class DelegationInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DelegationInstance)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DelegationInstance_type") :
-			getString("_UI_DelegationInstance_type") + " " + label;
+		return getString("_UI_DelegationInstance_type");
 	}
 
 	/**

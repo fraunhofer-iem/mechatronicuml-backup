@@ -13,6 +13,10 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
  * A representation of the model object '<em><b>Delegation Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A DelegationInstance connects two PortInstances which belong to ComponentInstances that are hierarchical. The source feature represents the PortInstance of the outer ComponentInstance, the target feature represents the inner PortInstance.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

@@ -60,7 +60,7 @@ public class ComponentinstanceconfigurationFactoryImpl extends EFactoryImpl impl
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION_DIAGRAM: return createComponentInstanceConfigurationDiagram();
+			case ComponentinstanceconfigurationPackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,9 +71,9 @@ public class ComponentinstanceconfigurationFactoryImpl extends EFactoryImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstanceConfigurationDiagram createComponentInstanceConfigurationDiagram() {
-		ComponentInstanceConfigurationDiagramImpl componentInstanceConfigurationDiagram = new ComponentInstanceConfigurationDiagramImpl();
-		return componentInstanceConfigurationDiagram;
+	public ComponentInstanceConfiguration createComponentInstanceConfiguration() {
+		ComponentInstanceConfigurationImpl componentInstanceConfiguration = new ComponentInstanceConfigurationImpl();
+		return componentInstanceConfiguration;
 	}
 
 	/**

@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
  * @model
  * @generated
  */
-public interface ConnectorInstance extends BehavioralConnector, NamedElement {
+public interface ConnectorInstance extends BehavioralConnector {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -45,11 +45,13 @@ public class ComponentinstanceconfigurationElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentInstanceConfigurationDiagram_1000 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfigurationDiagram_1000"); //$NON-NLS-1$
+	public static final IElementType ComponentInstanceConfiguration_1000 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_1000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentInstance_2001 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2001"); //$NON-NLS-1$
+	public static final IElementType ComponentInstance_2002 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -179,12 +181,12 @@ public class ComponentinstanceconfigurationElementTypes {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(
-					ComponentInstanceConfigurationDiagram_1000,
+					ComponentInstanceConfiguration_1000,
 					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage.eINSTANCE
-							.getComponentInstanceConfigurationDiagram());
+							.getComponentInstanceConfiguration());
 
 			elements.put(
-					ComponentInstance_2001,
+					ComponentInstance_2002,
 					de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
 							.getComponentInstance());
 
@@ -224,8 +226,8 @@ public class ComponentinstanceconfigurationElementTypes {
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
-			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfigurationDiagram_1000);
-			KNOWN_ELEMENT_TYPES.add(ComponentInstance_2001);
+			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_1000);
+			KNOWN_ELEMENT_TYPES.add(ComponentInstance_2002);
 			KNOWN_ELEMENT_TYPES.add(PortInstance_3001);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstance_3002);
 			KNOWN_ELEMENT_TYPES.add(AssemblyInstance_4001);
@@ -240,9 +242,9 @@ public class ComponentinstanceconfigurationElementTypes {
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
-			return ComponentInstanceConfigurationDiagram_1000;
+			return ComponentInstanceConfiguration_1000;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
-			return ComponentInstance_2001;
+			return ComponentInstance_2002;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return PortInstance_3001;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
