@@ -55,7 +55,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getInvisibleInterfaces <em>Invisible Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequired <em>Required</em>}</li>
@@ -98,16 +97,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EList<EClass> invisibleInterfaces;
-
-	/**
-	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefines()
-	 * @generated
-	 * @ordered
-	 */
-	protected Role refines;
 
 	/**
 	 * The default value of the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
@@ -280,66 +269,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__COMPONENT, newComponent, newComponent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role getRefines() {
-		if (refines != null && refines.eIsProxy()) {
-			InternalEObject oldRefines = (InternalEObject)refines;
-			refines = (Role)eResolveProxy(oldRefines);
-			if (refines != oldRefines) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT__REFINES, oldRefines, refines));
-			}
-		}
-		return refines;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetRefines() {
-		return refines;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRefines(Role newRefines, NotificationChain msgs) {
-		Role oldRefines = refines;
-		refines = newRefines;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__REFINES, oldRefines, newRefines);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRefines(Role newRefines) {
-		if (newRefines != refines) {
-			NotificationChain msgs = null;
-			if (refines != null)
-				msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
-			if (newRefines != null)
-				msgs = ((InternalEObject)newRefines).eInverseAdd(this, PatternPackage.ROLE__PORT, Role.class, msgs);
-			msgs = basicSetRefines(newRefines, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__REFINES, newRefines, newRefines));
 	}
 
 	/**
@@ -542,10 +471,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponent((Component)otherEnd, msgs);
-			case ComponentPackage.PORT__REFINES:
-				if (refines != null)
-					msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
-				return basicSetRefines((Role)otherEnd, msgs);
 			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFromPortToConnectorRev()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
@@ -564,8 +489,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__COMPONENT:
 				return basicSetComponent(null, msgs);
-			case ComponentPackage.PORT__REFINES:
-				return basicSetRefines(null, msgs);
 			case ComponentPackage.PORT__SPECIFICATION:
 				return ((InternalEList<?>)getSpecification()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__CARDINALITY:
@@ -606,9 +529,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getInvisibleInterfaces();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent();
-			case ComponentPackage.PORT__REFINES:
-				if (resolve) return getRefines();
-				return basicGetRefines();
 			case ComponentPackage.PORT__PORT_KIND:
 				return getPortKind();
 			case ComponentPackage.PORT__SPECIFICATION:
@@ -647,9 +567,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)newValue);
-				return;
-			case ComponentPackage.PORT__REFINES:
-				setRefines((Role)newValue);
 				return;
 			case ComponentPackage.PORT__PORT_KIND:
 				setPortKind((PortKind)newValue);
@@ -696,9 +613,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)null);
 				return;
-			case ComponentPackage.PORT__REFINES:
-				setRefines((Role)null);
-				return;
 			case ComponentPackage.PORT__PORT_KIND:
 				setPortKind(PORT_KIND_EDEFAULT);
 				return;
@@ -738,8 +652,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return invisibleInterfaces != null && !invisibleInterfaces.isEmpty();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent() != null;
-			case ComponentPackage.PORT__REFINES:
-				return refines != null;
 			case ComponentPackage.PORT__PORT_KIND:
 				return portKind != PORT_KIND_EDEFAULT;
 			case ComponentPackage.PORT__SPECIFICATION:

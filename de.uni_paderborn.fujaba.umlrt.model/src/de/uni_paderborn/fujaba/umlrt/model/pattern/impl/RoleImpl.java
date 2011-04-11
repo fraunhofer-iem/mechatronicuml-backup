@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
@@ -142,7 +143,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> port;
+	protected EList<DiscretePortSpecification> port;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -490,9 +491,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getPort() {
+	public EList<DiscretePortSpecification> getPort() {
 		if (port == null) {
-			port = new EObjectWithInverseResolvingEList<Port>(Port.class, this, PatternPackage.ROLE__PORT, ComponentPackage.PORT__REFINES);
+			port = new EObjectWithInverseResolvingEList<DiscretePortSpecification>(DiscretePortSpecification.class, this, PatternPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES);
 		}
 		return port;
 	}
@@ -615,7 +616,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return;
 			case PatternPackage.ROLE__PORT:
 				getPort().clear();
-				getPort().addAll((Collection<? extends Port>)newValue);
+				getPort().addAll((Collection<? extends DiscretePortSpecification>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

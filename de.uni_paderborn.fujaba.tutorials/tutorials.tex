@@ -1,0 +1,159 @@
+%\documentclass[12pt,a4paper,twoside,titlepage,headsepline,pointlessnumbers,liststotoc,idxtotoc,bibtotoc,ngerman]{scrartcl}
+\documentclass[12pt,a4paper,twoside,titlepage,headsepline,pointlessnumbers,liststotoc,idxtotoc,bibtotoc,ngerman,english]{scrartcl}
+
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running pdflatex
+\else
+\pdfoutput=1 % we are running pdflatex
+\pdfcompresslevel=9     % compression level for text and image;
+\usepackage[pdftex,bookmarks=true,bookmarksopen=false,bookmarksnumbered=true,linktocpage,colorlinks=true,backref,pagebackref, linkcolor=black,  citecolor=black, urlcolor=black]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage[final]{pdfpages}
+
+% Setzt die Einrücktiefe der ersten Zeile nach einem Absatz auf 0
+\setlength{\parindent}{0pt} 
+\usepackage{needspace}
+
+
+\usepackage{amsfonts}
+\usepackage{algorithmic}
+\usepackage{bibgerm}
+\usepackage{url}
+\usepackage{color}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{bbm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ntheorem}
+\usepackage{fancyvrb}
+\usepackage{subfigure}
+%\usepackage{ngerman}
+\usepackage[english]{babel}
+\usepackage{mathptmx} 
+\usepackage[scaled=.90]{helvet} 
+\usepackage{courier}
+\usepackage[rightcaption]{sidecap}
+\usepackage{lscape}
+\usepackage{supertabular} 
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+% Listings
+\usepackage{listings}
+\lstset{basicstyle=\small,captionpos=b}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{0.5pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\RequirePackage{xspace}
+
+\setcounter{secnumdepth}{3}
+\selectlanguage{english} % Dokumentensprache auf englisch stellen
+%\selectlanguage{german} % Dokumentensprache auf deutsch stellen
+
+
+\newcommand{\p}[1]{\texttt{\small #1}}
+\newcommand{\INFO}[1]{{\small~\\\hrule\vspace{0.1cm}\hrule~\\\textbf{Information:}\\#1~\\\hrule\vspace{0.1cm}\hrule~\\}}
+%\theoremstyle{break}
+%\newtheorem{defi}{Definition}[section] 
+%\newtheorem{bsp}{Beispiel}[section] 
+
+\definecolor{gray}{gray}{0.95}
+\setlength{\fboxrule}{2pt}
+
+\providecommand{\ext}[1]{}
+\providecommand{\TODO}[1]{{\small ~\\\hrule\vspace{0.1cm}\hrule~\\\textbf{TODO}:  #1~\\\hrule\vspace{0.1cm}\hrule~\\}}
+
+\pagestyle{headings}
+
+\begin{document}                
+             
+
+	% ************************************************************
+	% *****                    Titelseite                    *****
+	% ************************************************************
+
+
+	\setcounter{page}{1}
+	\pagenumbering{Roman}
+
+	\begin{titlepage}
+	\thispagestyle{empty}
+	\begin{center}
+
+			\includegraphics[width=12cm]{figures/Logo_Uni_Paderborn}\\
+			\textsf{
+			Fakultät für Elektrotechnik, Informatik und Mathematik \\
+			Institut für Informatik, Fachgebiet Softwaretechnik \\ 
+      		Warburger Straße 100 \\
+			33098 Paderborn} \\
+                    
+      \vspace{4cm}									
+
+			{\LARGE  \textbf{GMF-Tutorials}} \\ 
+			\vspace{0.5cm}
+			{\Large Fujaba Diagram Editors with GMF} \\ 
+			\vspace{2.5cm}
+
+			\vspace{0.5cm}
+			\textbf{Author:} Ingo Budde \\
+			\vspace{1cm}
+			Paderborn, \today \\
+			\vspace{1cm}
+			
+	\end{center}
+	\end{titlepage}
+
+	\clearpage
+		
+	\thispagestyle{empty}
+	
+	\tableofcontents
+	
+	\clearpage
+  
+  \pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+\section{Overview}
+\subsection{Introduction}
+In this document several solutions will be provided that help developing a
+GMF-Diagram Editor for Fujaba.
+It is not necessary to do it exactly this way, but it should give the reader a
+good orientation.
+
+\subsection{Multiple ways of modifying the generated editor}
+Basically there are multiple ways to modify the look and behavior of the
+generated editor.
+\begin{enumerate}
+    \item Adjusting the generated code directly (myeditor.diagram)
+	\item Creation of a "Extension"-Plugin (myeditor.diagram.custom)
+\end{enumerate}
+
+In this document, the second variant will be chosen, so that the GMF-Code can be
+regenerated without problems. Furthermore, this way there is a strict separation
+of generated and manually written sourcecode. This idea was taken from Dr. Köhnlein's
+\href{http://www.slideshare.net/itemis/gmf-fr-anspruchsvolle-presentation}{slides}
+at w-jax08 (slides 20-22). \\
+In case, changes on the generated code are unavoidable, this can be achieved by
+modifying the gmf-templates used to generate the code.
+
+
+\subsection{Conventions}
+It is assumed that the editor is called MyEditor. 
+
+\include{sections/newwizard/newwizard}
+
+%	\listoffigures % Abbildungsverzeichnis
+
+	% ************************************************************
+	% *****                      Ende                        *****
+	% ************************************************************
+
+\end{document}

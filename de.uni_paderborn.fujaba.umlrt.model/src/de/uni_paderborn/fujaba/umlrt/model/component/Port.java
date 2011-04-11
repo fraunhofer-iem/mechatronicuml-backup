@@ -33,7 +33,6 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getInvisibleInterfaces <em>Invisible Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getComponent <em>Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequired <em>Required</em>}</li>
@@ -91,33 +90,6 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setComponent(Component value);
-
-	/**
-	 * Returns the value of the '<em><b>Refines</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The port role this port is a realization of.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Refines</em>' reference.
-	 * @see #setRefines(Role)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_Refines()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPort
-	 * @model opposite="port"
-	 * @generated
-	 */
-	Role getRefines();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRefines <em>Refines</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Refines</em>' reference.
-	 * @see #getRefines()
-	 * @generated
-	 */
-	void setRefines(Role value);
 
 	/**
 	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.

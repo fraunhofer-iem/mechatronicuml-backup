@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.component.provider;
 
 
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 import java.util.Collection;
@@ -59,6 +60,7 @@ public class DiscretePortSpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUMLRealtimeStatechartPropertyDescriptor(object);
+			addRefinesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,6 +79,28 @@ public class DiscretePortSpecificationItemProvider
 				 getString("_UI_BehavioralElement_uMLRealtimeStatechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_uMLRealtimeStatechart_feature", "_UI_BehavioralElement_type"),
 				 CorePackage.Literals.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refines feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortSpecification_refines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_refines_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REFINES,
 				 true,
 				 false,
 				 true,

@@ -755,22 +755,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__REFINES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PORT_KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT__PORT_KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' containment reference list.
@@ -779,7 +770,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' reference.
@@ -788,7 +779,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Provided</b></em>' reference.
@@ -797,7 +788,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -806,7 +797,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>From Port To Connector Rev</b></em>' reference list.
@@ -815,7 +806,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__FROM_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__FROM_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>To Port To Connector Rev</b></em>' reference list.
@@ -824,7 +815,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -833,7 +824,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1100,13 +1091,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__REFINES = PORT_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 1;
+	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Discrete Port Specification</em>' class.
@@ -2547,17 +2547,6 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Component();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRefines <em>Refines</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refines</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getRefines()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Refines();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortKind <em>Port Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2673,6 +2662,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiscretePortSpecification();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRefines <em>Refines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refines</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRefines()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_Refines();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
@@ -3095,14 +3095,6 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__COMPONENT = eINSTANCE.getPort_Component();
 
 		/**
-		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__REFINES = eINSTANCE.getPort_Refines();
-
-		/**
 		 * The meta object literal for the '<em><b>Port Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3195,6 +3187,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DISCRETE_PORT_SPECIFICATION = eINSTANCE.getDiscretePortSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__REFINES = eINSTANCE.getDiscretePortSpecification_Refines();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

@@ -64,7 +64,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 
 			addCommentPropertyDescriptor(object);
 			addInvisibleInterfacesPropertyDescriptor(object);
-			addRefinesPropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addProvidedPropertyDescriptor(object);
@@ -110,28 +109,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 getString("_UI_Port_invisibleInterfaces_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_invisibleInterfaces_feature", "_UI_Port_type"),
 				 ComponentPackage.Literals.PORT__INVISIBLE_INTERFACES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Refines feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addRefinesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_refines_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_refines_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__REFINES,
 				 true,
 				 false,
 				 true,
