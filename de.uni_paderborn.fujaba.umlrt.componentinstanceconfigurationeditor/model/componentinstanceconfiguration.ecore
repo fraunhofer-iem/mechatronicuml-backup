@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentinstanceconfiguration"
     nsURI="http:///de/uni_paderborn/fujaba/umlrt/componentinstanceconfiguration" nsPrefix="componentinstanceconfiguration">
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration">
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
         containment="true"/>
