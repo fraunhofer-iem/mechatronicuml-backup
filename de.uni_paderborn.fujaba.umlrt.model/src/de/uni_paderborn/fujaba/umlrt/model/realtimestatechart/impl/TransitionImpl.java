@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
@@ -181,7 +182,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 * @ordered
 	 */
-	protected Statechart statechart;
+	protected AbstractStatechart statechart;
 
 	/**
 	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference list.
@@ -567,10 +568,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getStatechart() {
+	public AbstractStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (Statechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__STATECHART, oldStatechart, statechart));
@@ -584,7 +585,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart basicGetStatechart() {
+	public AbstractStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -593,8 +594,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(Statechart newStatechart) {
-		Statechart oldStatechart = statechart;
+	public void setStatechart(AbstractStatechart newStatechart) {
+		AbstractStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__STATECHART, oldStatechart, statechart));
@@ -875,7 +876,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, Transition newTransition) {
+	public EObject clone(AbstractStatechart rtsc, Transition newTransition) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1088,7 +1089,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((Statechart)newValue);
+				setStatechart((AbstractStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__RESETS:
 				getResets().clear();
@@ -1162,7 +1163,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((Statechart)null);
+				setStatechart((AbstractStatechart)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__RESETS:
 				getResets().clear();
@@ -1343,8 +1344,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return calculateWorstCaseDeadlineAsNaturalNumber();
 			case RealtimestatechartPackage.TRANSITION___GET_DEFAULT_NAME:
 				return getDefaultName();
-			case RealtimestatechartPackage.TRANSITION___CLONE__STATECHART_TRANSITION:
-				return clone((Statechart)arguments.get(0), (Transition)arguments.get(1));
+			case RealtimestatechartPackage.TRANSITION___CLONE__ABSTRACTSTATECHART_TRANSITION:
+				return clone((AbstractStatechart)arguments.get(0), (Transition)arguments.get(1));
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:

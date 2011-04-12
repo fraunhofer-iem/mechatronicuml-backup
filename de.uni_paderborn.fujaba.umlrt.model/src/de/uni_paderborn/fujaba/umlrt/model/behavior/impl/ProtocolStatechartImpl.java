@@ -11,9 +11,8 @@ import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StatechartImpl;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -40,7 +39,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ProtocolStatechartImpl extends StatechartImpl implements ProtocolStatechart {
+public class ProtocolStatechartImpl extends AbstractStatechartImpl implements ProtocolStatechart {
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -113,7 +112,7 @@ public class ProtocolStatechartImpl extends StatechartImpl implements ProtocolSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart newpsc) {
+	public EObject clone(AbstractStatechart newpsc) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -186,8 +185,8 @@ public class ProtocolStatechartImpl extends StatechartImpl implements ProtocolSt
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case BehaviorPackage.PROTOCOL_STATECHART___CLONE__STATECHART:
-				return clone((Statechart)arguments.get(0));
+			case BehaviorPackage.PROTOCOL_STATECHART___CLONE__ABSTRACTSTATECHART:
+				return clone((AbstractStatechart)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -29,6 +30,6 @@ public interface FinalState extends Vertex {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, FinalState newStopState);
+	EObject clone(AbstractStatechart rtsc, FinalState newStopState);
 
 } // FinalState

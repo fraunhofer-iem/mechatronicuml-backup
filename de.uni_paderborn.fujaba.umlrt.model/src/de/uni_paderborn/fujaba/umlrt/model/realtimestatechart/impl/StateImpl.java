@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent;
@@ -473,7 +474,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, State newComplexState) {
+	public EObject clone(AbstractStatechart rtsc, State newComplexState) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -696,8 +697,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.STATE___CLONE__STATECHART_STATE:
-				return clone((Statechart)arguments.get(0), (State)arguments.get(1));
+			case RealtimestatechartPackage.STATE___CLONE__ABSTRACTSTATECHART_STATE:
+				return clone((AbstractStatechart)arguments.get(0), (State)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

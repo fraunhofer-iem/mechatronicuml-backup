@@ -10,7 +10,7 @@
             nsPrefix="model">
           <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
               nsPrefix="behavior">
-            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
+            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents the statechart of a port. The statechart describes the communication behavior of the port."/>
               </eAnnotations>
@@ -18,7 +18,7 @@
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart."/>
                 </eAnnotations>
-                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -508,466 +508,19 @@
               </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ConstrainableElement">
               <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/constrainableElement"/>
             </eClassifiers>
-          </eSubpackages>
-          <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance"
-              nsPrefix="instance">
-            <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-              <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-              <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-              <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-            </eAnnotations>
-            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="An instance of a component. This is not a runtime instance, though. Instead it is&#xD;&#xA;an instantiation of a component type specified by a component."/>
-              </eAnnotations>
-              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-                  unsettable="true" derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="partInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/componentInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/parentComponentInstance"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This one connects two ports of two component instances."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponentInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="A DelegationInstance connects two PortInstances which belong to ComponentInstances that are hierarchical. The source feature represents the PortInstance of the outer ComponentInstance, the target feature represents the inner PortInstance."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
-            </eClassifiers>
-          </eSubpackages>
-          <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
-              nsPrefix="pattern">
-            <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/connectors"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The roles belonging to this pattern."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/pattern"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a role of a coordination pattern."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/source">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The channel which connects this role with another role."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/roles">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The coordination pattern this role belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart describing the communication behavior of this role."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the realtime statechart of this role."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/DiscretePortSpecification"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/DiscretePortSpecification/refines"/>
-            </eClassifiers>
-          </eSubpackages>
-          <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart"
-              nsPrefix="realtimestatechart">
-            <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
-                  containment="true"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="AbsoluteDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/absoluteDeadlines"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="RelativeDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents clocks of a realtime statechart."/>
-              </eAnnotations>
-              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-                <eParameters name="newClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Every clock has a unique identifier."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLClock"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/clocks"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
-              </eAnnotations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-                <eParameters name="newComplexState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/parentState">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The regions of this state. Regions are used to model composite states.&#xA;In case of one region, we have an xor superstate, in case of multiple regions, &#xA;we have an AND-superstate."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/doActionRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The do action. It is executed periodically while the corresponding complex state is active."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/exitActionRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The exit action. It is exectuted once when the corresponding complex state is left."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/entryActionRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The entry action. It is exectuted once when the corresponding complex state is entered."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The reconfiguration diagram belonging to this complex state. This is mainly a component instance diagram describing a certain configuration of the system."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacedStates"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: What's this good for?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: What's this good for?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-                  defaultValueLiteral="false">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Specifies whether this complex state is committed or not. The meaning of being committed is the same as it is with committed states in Uppaal."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/state">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The synchronization channels provided by this complex state."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="UMLInterfaceStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="TODO: What's this good for?"/>
-              </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
-              </eAnnotations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-                <eParameters name="newAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: Does an action require an id?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The worst case execution time of this action."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The transition this action is a side effect of."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: Is this required? The crossing events already have an assocs to resets."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="RealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
-              </eAnnotations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-                <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-              </eOperations>
-              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredUMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The transition this events belongs to as trigger event."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedUMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The transition this event belongs to as raised event."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: What's this good for?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-                  derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The name is to be derived from the corresponding message type."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="FadingFunction">
-              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/uMLRealtimeFadingFunction"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portsByComponentInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="FlatSwitching">
-              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
-                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyMap">
-                  <eTypeArguments/>
-                  <eTypeArguments/>
-                </eGenericType>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the start state of a realtime statechart."/>
-              </eAnnotations>
-              <eOperations name="getNextState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads."/>
-                </eAnnotations>
-              </eOperations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
-                <eParameters name="newStartState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartStateRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/uMLRealtimeStartState">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart this start state belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a basic state of a realtime statechart."/>
-              </eAnnotations>
-              <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
-                </eAnnotations>
-              </eOperations>
-              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
-                </eAnnotations>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The outgoing transitions of this state."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The incoming transitions of this state."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart this state belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Statechart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+            <eClassifiers xsi:type="ecore:EClass" name="AbstractStatechart" abstract="true"
+                eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a realtime statechart."/>
               </eAnnotations>
-              <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
+              <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
                 </eAnnotations>
@@ -1102,12 +655,459 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/statechart"/>
             </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance"
+              nsPrefix="instance">
+            <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+              <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+              <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+              <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+            </eAnnotations>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="An instance of a component. This is not a runtime instance, though. Instead it is&#xD;&#xA;an instantiation of a component type specified by a component."/>
+              </eAnnotations>
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="partInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/componentInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/parentComponentInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This one connects two ports of two component instances."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponentInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="A DelegationInstance connects two PortInstances which belong to ComponentInstances that are hierarchical. The source feature represents the PortInstance of the outer ComponentInstance, the target feature represents the inner PortInstance."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
+              nsPrefix="pattern">
+            <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channel">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/connectors"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role" eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The roles belonging to this pattern."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/pattern"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a role of a coordination pattern."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="channel" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/source">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The channel which connects this role with another role."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern/roles">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The coordination pattern this role belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The realtime statechart describing the communication behavior of this role."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the realtime statechart of this role."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/core/Cardinality"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/DiscretePortSpecification"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/DiscretePortSpecification/refines"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart"
+              nsPrefix="realtimestatechart">
+            <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
+                  containment="true"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="AbsoluteDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/absoluteDeadlines"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RelativeDeadline" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents clocks of a realtime statechart."/>
+              </eAnnotations>
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newClock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Every clock has a unique identifier."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLClock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
+              </eAnnotations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newComplexState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/parentState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The regions of this state. Regions are used to model composite states.&#xA;In case of one region, we have an xor superstate, in case of multiple regions, &#xA;we have an AND-superstate."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/doActionRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The do action. It is executed periodically while the corresponding complex state is active."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/exitActionRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The exit action. It is exectuted once when the corresponding complex state is left."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/entryActionRev">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The entry action. It is exectuted once when the corresponding complex state is entered."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="reconfDiagram"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/ReconfDiagram"
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The reconfiguration diagram belonging to this complex state. This is mainly a component instance diagram describing a certain configuration of the system."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfacedStates"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: What's this good for?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceState"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: What's this good for?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+                  defaultValueLiteral="false">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Specifies whether this complex state is committed or not. The meaning of being committed is the same as it is with committed states in Uppaal."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/state">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The synchronization channels provided by this complex state."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UMLInterfaceStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO: What's this good for?"/>
+              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
+              </eAnnotations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Does an action require an id?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The worst case execution time of this action."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The transition this action is a side effect of."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: Is this required? The crossing events already have an assocs to resets."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
+              </eAnnotations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newEvent" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
+              </eOperations>
+              <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredUMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The transition this events belongs to as trigger event."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedUMLRealtimeTransition"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The transition this event belongs to as raised event."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO: What's this good for?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The name is to be derived from the corresponding message type."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="FadingFunction">
+              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/uMLRealtimeFadingFunction"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portsByComponentInstance"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="FlatSwitching">
+              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
+                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyMap">
+                  <eTypeArguments/>
+                  <eTypeArguments/>
+                </eGenericType>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents the start state of a realtime statechart."/>
+              </eAnnotations>
+              <eOperations name="getNextState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads."/>
+                </eAnnotations>
+              </eOperations>
+              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newStartState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"/>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartStateRev"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The realtime statechart this start state belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents a basic state of a realtime statechart."/>
+              </eAnnotations>
+              <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
+                </eAnnotations>
+              </eOperations>
+              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
+                </eAnnotations>
+              </eOperations>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The outgoing transitions of this state."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The incoming transitions of this state."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The realtime statechart this state belongs to."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+            </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents the stop state of a realtime statechart."/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
                 <eParameters name="newStopState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState"/>
               </eOperations>
             </eClassifiers>
@@ -1115,7 +1115,7 @@
               <eOperations name="calculateWorstCaseDeadlineAsNaturalNumber" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
               <eOperations name="getDefaultName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
                 <eParameters name="newTransition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="uMLRealtimeTransitionMappingVector"
@@ -1150,7 +1150,7 @@
                   <details key="documentation" value="The state which is the source of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this transition belongs to."/>
                 </eAnnotations>
@@ -1203,7 +1203,7 @@
                 <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
                 <eParameters name="newChannel" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
@@ -1218,7 +1218,7 @@
                 <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"/>
+                <eParameters name="rtsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
                 <eParameters name="newAtom" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
@@ -1269,11 +1269,17 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/embeddingRegion"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/embeddingRegion"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentState"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/regions"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart"
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
+              </eAnnotations>
             </eClassifiers>
             <eSubpackages name="reconf" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
                 nsPrefix="reconf">

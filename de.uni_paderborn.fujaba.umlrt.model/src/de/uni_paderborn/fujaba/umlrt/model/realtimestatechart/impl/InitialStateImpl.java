@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
@@ -64,9 +66,9 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getUMLRealtimeStartStateRev() {
+	public AbstractStatechart getUMLRealtimeStartStateRev() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV) return null;
-		return (Statechart)eContainer();
+		return (AbstractStatechart)eContainer();
 	}
 
 	/**
@@ -74,7 +76,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUMLRealtimeStartStateRev(Statechart newUMLRealtimeStartStateRev, NotificationChain msgs) {
+	public NotificationChain basicSetUMLRealtimeStartStateRev(AbstractStatechart newUMLRealtimeStartStateRev, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newUMLRealtimeStartStateRev, RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV, msgs);
 		return msgs;
 	}
@@ -84,7 +86,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStartStateRev(Statechart newUMLRealtimeStartStateRev) {
+	public void setUMLRealtimeStartStateRev(AbstractStatechart newUMLRealtimeStartStateRev) {
 		if (newUMLRealtimeStartStateRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV && newUMLRealtimeStartStateRev != null)) {
 			if (EcoreUtil.isAncestor(this, newUMLRealtimeStartStateRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -92,7 +94,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newUMLRealtimeStartStateRev != null)
-				msgs = ((InternalEObject)newUMLRealtimeStartStateRev).eInverseAdd(this, RealtimestatechartPackage.STATECHART__UML_REALTIME_START_STATE, Statechart.class, msgs);
+				msgs = ((InternalEObject)newUMLRealtimeStartStateRev).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, AbstractStatechart.class, msgs);
 			msgs = basicSetUMLRealtimeStartStateRev(newUMLRealtimeStartStateRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -116,7 +118,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, InitialState newStartState) {
+	public EObject clone(AbstractStatechart rtsc, InitialState newStartState) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -133,7 +135,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetUMLRealtimeStartStateRev((Statechart)otherEnd, msgs);
+				return basicSetUMLRealtimeStartStateRev((AbstractStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -161,7 +163,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATECHART__UML_REALTIME_START_STATE, Statechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, AbstractStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -189,7 +191,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				setUMLRealtimeStartStateRev((Statechart)newValue);
+				setUMLRealtimeStartStateRev((AbstractStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -204,7 +206,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				setUMLRealtimeStartStateRev((Statechart)null);
+				setUMLRealtimeStartStateRev((AbstractStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -234,8 +236,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 		switch (operationID) {
 			case RealtimestatechartPackage.INITIAL_STATE___GET_NEXT_STATE:
 				return getNextState();
-			case RealtimestatechartPackage.INITIAL_STATE___CLONE__STATECHART_INITIALSTATE:
-				return clone((Statechart)arguments.get(0), (InitialState)arguments.get(1));
+			case RealtimestatechartPackage.INITIAL_STATE___CLONE__ABSTRACTSTATECHART_INITIALSTATE:
+				return clone((AbstractStatechart)arguments.get(0), (InitialState)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

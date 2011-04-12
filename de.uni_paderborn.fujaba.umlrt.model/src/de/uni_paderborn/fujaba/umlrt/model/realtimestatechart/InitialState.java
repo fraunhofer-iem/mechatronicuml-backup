@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -31,20 +32,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface InitialState extends Vertex {
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Start State Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getUMLRealtimeStartState <em>UML Realtime Start State</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLRealtimeStartState <em>UML Realtime Start State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this start state belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>UML Realtime Start State Rev</em>' container reference.
-	 * @see #setUMLRealtimeStartStateRev(Statechart)
+	 * @see #setUMLRealtimeStartStateRev(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getInitialState_UMLRealtimeStartStateRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getUMLRealtimeStartState
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLRealtimeStartState
 	 * @model opposite="uMLRealtimeStartState" transient="false"
 	 * @generated
 	 */
-	Statechart getUMLRealtimeStartStateRev();
+	AbstractStatechart getUMLRealtimeStartStateRev();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getUMLRealtimeStartStateRev <em>UML Realtime Start State Rev</em>}' container reference.
@@ -54,7 +55,7 @@ public interface InitialState extends Vertex {
 	 * @see #getUMLRealtimeStartStateRev()
 	 * @generated
 	 */
-	void setUMLRealtimeStartStateRev(Statechart value);
+	void setUMLRealtimeStartStateRev(AbstractStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +74,6 @@ public interface InitialState extends Vertex {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, InitialState newStartState);
+	EObject clone(AbstractStatechart rtsc, InitialState newStartState);
 
 } // InitialState

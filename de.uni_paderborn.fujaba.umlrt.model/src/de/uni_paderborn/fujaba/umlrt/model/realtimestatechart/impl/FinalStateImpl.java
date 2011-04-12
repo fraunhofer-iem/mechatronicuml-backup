@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
@@ -51,7 +52,7 @@ public class FinalStateImpl extends VertexImpl implements FinalState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, FinalState newStopState) {
+	public EObject clone(AbstractStatechart rtsc, FinalState newStopState) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -65,8 +66,8 @@ public class FinalStateImpl extends VertexImpl implements FinalState {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.FINAL_STATE___CLONE__STATECHART_FINALSTATE:
-				return clone((Statechart)arguments.get(0), (FinalState)arguments.get(1));
+			case RealtimestatechartPackage.FINAL_STATE___CLONE__ABSTRACTSTATECHART_FINALSTATE:
+				return clone((AbstractStatechart)arguments.get(0), (FinalState)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

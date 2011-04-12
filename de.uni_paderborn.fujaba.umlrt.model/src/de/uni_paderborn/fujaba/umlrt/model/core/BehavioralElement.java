@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,29 +28,29 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  */
 public interface BehavioralElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Realtime Statechart</em>' reference isn't clear,
+	 * If the meaning of the '<em>Statechart</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #setUMLRealtimeStatechart(Statechart)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_UMLRealtimeStatechart()
+	 * @return the value of the '<em>Statechart</em>' reference.
+	 * @see #setStatechart(AbstractStatechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_Statechart()
 	 * @model
 	 * @generated
 	 */
-	Statechart getUMLRealtimeStatechart();
+	AbstractStatechart getStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #getUMLRealtimeStatechart()
+	 * @param value the new value of the '<em>Statechart</em>' reference.
+	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setUMLRealtimeStatechart(Statechart value);
+	void setStatechart(AbstractStatechart value);
 
 } // BehavioralElement

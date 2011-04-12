@@ -7,6 +7,9 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
+import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.provider.AbstractStatechartItemProvider;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart;
 
@@ -16,6 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,7 +35,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class UMLInterfaceStatechartItemProvider
-	extends StatechartItemProvider
+	extends AbstractStatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -148,11 +152,11 @@ public class UMLInterfaceStatechartItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_REALTIME_START_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__VERTICES ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_COMPLEX_REALTIME_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__REQUIRED_MSG_IFACE;
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_REALTIME_START_STATE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__VERTICES ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
 
 		if (qualify) {
 			return getString
@@ -160,6 +164,17 @@ public class UMLInterfaceStatechartItemProvider
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

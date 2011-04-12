@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.behavior;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 import org.eclipse.emf.ecore.EClass;
@@ -79,7 +80,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__ANNOTATION = RealtimestatechartPackage.STATECHART__ANNOTATION;
+	int PROTOCOL_STATECHART__ANNOTATION = CorePackage.ABSTRACT_STATECHART__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -88,7 +89,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__EXTENSION = RealtimestatechartPackage.STATECHART__EXTENSION;
+	int PROTOCOL_STATECHART__EXTENSION = CorePackage.ABSTRACT_STATECHART__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -97,7 +98,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__NAME = RealtimestatechartPackage.STATECHART__NAME;
+	int PROTOCOL_STATECHART__NAME = CorePackage.ABSTRACT_STATECHART__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -106,7 +107,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__COMMENT = RealtimestatechartPackage.STATECHART__COMMENT;
+	int PROTOCOL_STATECHART__COMMENT = CorePackage.ABSTRACT_STATECHART__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -115,7 +116,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__EVENT_QUEUE_SIZE = RealtimestatechartPackage.STATECHART__EVENT_QUEUE_SIZE;
+	int PROTOCOL_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_STATECHART__EVENT_QUEUE_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
@@ -124,7 +125,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__WCET_DOCUMENT = RealtimestatechartPackage.STATECHART__WCET_DOCUMENT;
+	int PROTOCOL_STATECHART__WCET_DOCUMENT = CorePackage.ABSTRACT_STATECHART__WCET_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
@@ -133,7 +134,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__SECURITY_LEVEL = RealtimestatechartPackage.STATECHART__SECURITY_LEVEL;
+	int PROTOCOL_STATECHART__SECURITY_LEVEL = CorePackage.ABSTRACT_STATECHART__SECURITY_LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
@@ -142,7 +143,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__SYSTEM_WCET_MAP = RealtimestatechartPackage.STATECHART__SYSTEM_WCET_MAP;
+	int PROTOCOL_STATECHART__SYSTEM_WCET_MAP = CorePackage.ABSTRACT_STATECHART__SYSTEM_WCET_MAP;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -151,7 +152,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__UTILISATION = RealtimestatechartPackage.STATECHART__UTILISATION;
+	int PROTOCOL_STATECHART__UTILISATION = CorePackage.ABSTRACT_STATECHART__UTILISATION;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -160,7 +161,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__SCHEDULE_DOCUMENT = RealtimestatechartPackage.STATECHART__SCHEDULE_DOCUMENT;
+	int PROTOCOL_STATECHART__SCHEDULE_DOCUMENT = CorePackage.ABSTRACT_STATECHART__SCHEDULE_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>UML Realtime Start State</b></em>' containment reference.
@@ -169,7 +170,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__UML_REALTIME_START_STATE = RealtimestatechartPackage.STATECHART__UML_REALTIME_START_STATE;
+	int PROTOCOL_STATECHART__UML_REALTIME_START_STATE = CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE;
 
 	/**
 	 * The feature id for the '<em><b>UML Complex Realtime State</b></em>' containment reference.
@@ -178,7 +179,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__UML_COMPLEX_REALTIME_STATE = RealtimestatechartPackage.STATECHART__UML_COMPLEX_REALTIME_STATE;
+	int PROTOCOL_STATECHART__UML_COMPLEX_REALTIME_STATE = CorePackage.ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -187,7 +188,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__TRANSITIONS = RealtimestatechartPackage.STATECHART__TRANSITIONS;
+	int PROTOCOL_STATECHART__TRANSITIONS = CorePackage.ABSTRACT_STATECHART__TRANSITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -196,7 +197,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__VERTICES = RealtimestatechartPackage.STATECHART__VERTICES;
+	int PROTOCOL_STATECHART__VERTICES = CorePackage.ABSTRACT_STATECHART__VERTICES;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
@@ -205,7 +206,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__ECLASS = RealtimestatechartPackage.STATECHART__ECLASS;
+	int PROTOCOL_STATECHART__ECLASS = CorePackage.ABSTRACT_STATECHART__ECLASS;
 
 	/**
 	 * The feature id for the '<em><b>UML Interface Statechart</b></em>' containment reference.
@@ -214,7 +215,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__UML_INTERFACE_STATECHART = RealtimestatechartPackage.STATECHART__UML_INTERFACE_STATECHART;
+	int PROTOCOL_STATECHART__UML_INTERFACE_STATECHART = CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -223,7 +224,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__BEHAVIORAL_ELEMENT = RealtimestatechartPackage.STATECHART__BEHAVIORAL_ELEMENT;
+	int PROTOCOL_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
@@ -232,7 +233,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__PROVIDED_MSG_IFACE = RealtimestatechartPackage.STATECHART__PROVIDED_MSG_IFACE;
+	int PROTOCOL_STATECHART__PROVIDED_MSG_IFACE = CorePackage.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE;
 
 	/**
 	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
@@ -241,7 +242,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__REQUIRED_MSG_IFACE = RealtimestatechartPackage.STATECHART__REQUIRED_MSG_IFACE;
+	int PROTOCOL_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
 
 	/**
 	 * The feature id for the '<em><b>Is Embedded</b></em>' attribute.
@@ -250,7 +251,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__IS_EMBEDDED = RealtimestatechartPackage.STATECHART__IS_EMBEDDED;
+	int PROTOCOL_STATECHART__IS_EMBEDDED = CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -259,7 +260,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__CLOCKS = RealtimestatechartPackage.STATECHART__CLOCKS;
+	int PROTOCOL_STATECHART__CLOCKS = CorePackage.ABSTRACT_STATECHART__CLOCKS;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -268,7 +269,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__EMBEDDING_REGION = RealtimestatechartPackage.STATECHART__EMBEDDING_REGION;
+	int PROTOCOL_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -277,7 +278,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__PORT = RealtimestatechartPackage.STATECHART_FEATURE_COUNT + 0;
+	int PROTOCOL_STATECHART__PORT = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Protocol Statechart</em>' class.
@@ -286,7 +287,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART_FEATURE_COUNT = RealtimestatechartPackage.STATECHART_FEATURE_COUNT + 1;
+	int PROTOCOL_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -295,7 +296,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECLASS = RealtimestatechartPackage.STATECHART___ECLASS;
+	int PROTOCOL_STATECHART___ECLASS = CorePackage.ABSTRACT_STATECHART___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -304,7 +305,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EIS_PROXY = RealtimestatechartPackage.STATECHART___EIS_PROXY;
+	int PROTOCOL_STATECHART___EIS_PROXY = CorePackage.ABSTRACT_STATECHART___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -313,7 +314,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ERESOURCE = RealtimestatechartPackage.STATECHART___ERESOURCE;
+	int PROTOCOL_STATECHART___ERESOURCE = CorePackage.ABSTRACT_STATECHART___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -322,7 +323,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECONTAINER = RealtimestatechartPackage.STATECHART___ECONTAINER;
+	int PROTOCOL_STATECHART___ECONTAINER = CorePackage.ABSTRACT_STATECHART___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -331,7 +332,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECONTAINING_FEATURE = RealtimestatechartPackage.STATECHART___ECONTAINING_FEATURE;
+	int PROTOCOL_STATECHART___ECONTAINING_FEATURE = CorePackage.ABSTRACT_STATECHART___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -340,7 +341,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECONTAINMENT_FEATURE = RealtimestatechartPackage.STATECHART___ECONTAINMENT_FEATURE;
+	int PROTOCOL_STATECHART___ECONTAINMENT_FEATURE = CorePackage.ABSTRACT_STATECHART___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -349,7 +350,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECONTENTS = RealtimestatechartPackage.STATECHART___ECONTENTS;
+	int PROTOCOL_STATECHART___ECONTENTS = CorePackage.ABSTRACT_STATECHART___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -358,7 +359,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EALL_CONTENTS = RealtimestatechartPackage.STATECHART___EALL_CONTENTS;
+	int PROTOCOL_STATECHART___EALL_CONTENTS = CorePackage.ABSTRACT_STATECHART___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -367,7 +368,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ECROSS_REFERENCES = RealtimestatechartPackage.STATECHART___ECROSS_REFERENCES;
+	int PROTOCOL_STATECHART___ECROSS_REFERENCES = CorePackage.ABSTRACT_STATECHART___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -376,7 +377,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EGET__ESTRUCTURALFEATURE = RealtimestatechartPackage.STATECHART___EGET__ESTRUCTURALFEATURE;
+	int PROTOCOL_STATECHART___EGET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -385,7 +386,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN = RealtimestatechartPackage.STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int PROTOCOL_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.ABSTRACT_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -394,7 +395,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT = RealtimestatechartPackage.STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int PROTOCOL_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.ABSTRACT_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -403,7 +404,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EIS_SET__ESTRUCTURALFEATURE = RealtimestatechartPackage.STATECHART___EIS_SET__ESTRUCTURALFEATURE;
+	int PROTOCOL_STATECHART___EIS_SET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -412,7 +413,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EUNSET__ESTRUCTURALFEATURE = RealtimestatechartPackage.STATECHART___EUNSET__ESTRUCTURALFEATURE;
+	int PROTOCOL_STATECHART___EUNSET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -421,7 +422,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___EINVOKE__EOPERATION_ELIST = RealtimestatechartPackage.STATECHART___EINVOKE__EOPERATION_ELIST;
+	int PROTOCOL_STATECHART___EINVOKE__EOPERATION_ELIST = CorePackage.ABSTRACT_STATECHART___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -430,7 +431,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___GET_EXTENSION__ECLASS = RealtimestatechartPackage.STATECHART___GET_EXTENSION__ECLASS;
+	int PROTOCOL_STATECHART___GET_EXTENSION__ECLASS = CorePackage.ABSTRACT_STATECHART___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -439,7 +440,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___PROVIDE_EXTENSION__ECLASS = RealtimestatechartPackage.STATECHART___PROVIDE_EXTENSION__ECLASS;
+	int PROTOCOL_STATECHART___PROVIDE_EXTENSION__ECLASS = CorePackage.ABSTRACT_STATECHART___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -448,7 +449,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___GET_ANNOTATION__STRING = RealtimestatechartPackage.STATECHART___GET_ANNOTATION__STRING;
+	int PROTOCOL_STATECHART___GET_ANNOTATION__STRING = CorePackage.ABSTRACT_STATECHART___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -457,7 +458,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___PROVIDE_ANNOTATION__STRING = RealtimestatechartPackage.STATECHART___PROVIDE_ANNOTATION__STRING;
+	int PROTOCOL_STATECHART___PROVIDE_ANNOTATION__STRING = CorePackage.ABSTRACT_STATECHART___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Highest Parent Statechart</em>' operation.
@@ -466,7 +467,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___GET_HIGHEST_PARENT_STATECHART = RealtimestatechartPackage.STATECHART___GET_HIGHEST_PARENT_STATECHART;
+	int PROTOCOL_STATECHART___GET_HIGHEST_PARENT_STATECHART = CorePackage.ABSTRACT_STATECHART___GET_HIGHEST_PARENT_STATECHART;
 
 	/**
 	 * The operation id for the '<em>Add All UML Realtime States</em>' operation.
@@ -475,7 +476,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = RealtimestatechartPackage.STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
+	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Add Complex UML Realtime States</em>' operation.
@@ -484,7 +485,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = RealtimestatechartPackage.STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
+	int PROTOCOL_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = CorePackage.ABSTRACT_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
 
 	/**
 	 * The operation id for the '<em>Add All UML Realtime Transitions</em>' operation.
@@ -493,7 +494,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = RealtimestatechartPackage.STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
+	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
 
 	/**
 	 * The operation id for the '<em>Iterator Of All UML Clocks</em>' operation.
@@ -502,7 +503,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = RealtimestatechartPackage.STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
+	int PROTOCOL_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = CorePackage.ABSTRACT_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Add All UML Clocks</em>' operation.
@@ -511,7 +512,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = RealtimestatechartPackage.STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
+	int PROTOCOL_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -520,7 +521,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___TO_STRING = RealtimestatechartPackage.STATECHART___TO_STRING;
+	int PROTOCOL_STATECHART___TO_STRING = CorePackage.ABSTRACT_STATECHART___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Clone</em>' operation.
@@ -529,7 +530,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___CLONE = RealtimestatechartPackage.STATECHART___CLONE;
+	int PROTOCOL_STATECHART___CLONE = CorePackage.ABSTRACT_STATECHART___CLONE;
 
 	/**
 	 * The operation id for the '<em>Clone</em>' operation.
@@ -538,7 +539,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART___CLONE__STATECHART = RealtimestatechartPackage.STATECHART_OPERATION_COUNT + 0;
+	int PROTOCOL_STATECHART___CLONE__ABSTRACTSTATECHART = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Protocol Statechart</em>' class.
@@ -547,7 +548,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART_OPERATION_COUNT = RealtimestatechartPackage.STATECHART_OPERATION_COUNT + 1;
+	int PROTOCOL_STATECHART_OPERATION_COUNT = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 1;
 
 
 	/**
@@ -572,14 +573,14 @@ public interface BehaviorPackage extends EPackage {
 	EReference getProtocolStatechart_Port();
 
 	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart) <em>Clone</em>}' operation.
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart#clone(de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) <em>Clone</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Clone</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart#clone(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart#clone(de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart)
 	 * @generated
 	 */
-	EOperation getProtocolStatechart__Clone__Statechart();
+	EOperation getProtocolStatechart__Clone__AbstractStatechart();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -628,7 +629,7 @@ public interface BehaviorPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROTOCOL_STATECHART___CLONE__STATECHART = eINSTANCE.getProtocolStatechart__Clone__Statechart();
+		EOperation PROTOCOL_STATECHART___CLONE__ABSTRACTSTATECHART = eINSTANCE.getProtocolStatechart__Clone__AbstractStatechart();
 
 	}
 

@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior.util;
 
 import de.uni_paderborn.fujaba.umlrt.model.behavior.*;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -94,8 +95,8 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseStatechart(Statechart object) {
-				return createStatechartAdapter();
+			public Adapter caseAbstractStatechart(AbstractStatechart object) {
+				return createAbstractStatechartAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -174,16 +175,16 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart <em>Statechart</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart <em>Abstract Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart
 	 * @generated
 	 */
-	public Adapter createStatechartAdapter() {
+	public Adapter createAbstractStatechartAdapter() {
 		return null;
 	}
 

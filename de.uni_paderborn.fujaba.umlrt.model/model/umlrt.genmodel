@@ -186,11 +186,53 @@
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement/uMLRealtimeStatechart"/>
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement/statechart"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint"/>
+              </genClasses>
+              <genClasses image="false" ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/eventQueueSize"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/wcetDocument"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/securityLevel"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/systemWcetMap"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/utilisation"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/scheduleDocument"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLComplexRealtimeState"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/eClass"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLInterfaceStatechart"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/behavioralElement"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/providedMsgIFace"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/requiredMsgIFace"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/isEmbedded"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/embeddingRegion"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/getHighestParentStatechart"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLRealtimeStates">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLRealtimeStates/set"/>
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLRealtimeStates/inclusiveStartStates"/>
+                </genOperations>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addComplexUMLRealtimeStates">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addComplexUMLRealtimeStates/set"/>
+                </genOperations>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLRealtimeTransitions">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLRealtimeTransitions/set"/>
+                </genOperations>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/iteratorOfAllUMLClocks">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/iteratorOfAllUMLClocks/excludeNoClock"/>
+                </genOperations>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLClocks">
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLClocks/set"/>
+                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/addAllUMLClocks/excludeNoClock"/>
+                </genOperations>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/toString"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clone"/>
               </genClasses>
             </nestedGenPackages>
             <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.umlrt.model"
@@ -388,48 +430,6 @@
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/getLongName"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/getRootRealtimeStatechart"/>
               </genClasses>
-              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/eventQueueSize"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/wcetDocument"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/securityLevel"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/systemWcetMap"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/utilisation"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/scheduleDocument"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/uMLRealtimeStartState"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/uMLComplexRealtimeState"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/transitions"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/vertices"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/eClass"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/uMLInterfaceStatechart"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/behavioralElement"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/providedMsgIFace"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/requiredMsgIFace"/>
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/isEmbedded"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/clocks"/>
-                <genFeatures notify="false" createChild="false" propertySortChoices="true"
-                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/embeddingRegion"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/getHighestParentStatechart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLRealtimeStates">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLRealtimeStates/set"/>
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLRealtimeStates/inclusiveStartStates"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addComplexUMLRealtimeStates">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addComplexUMLRealtimeStates/set"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLRealtimeTransitions">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLRealtimeTransitions/set"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/iteratorOfAllUMLClocks">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/iteratorOfAllUMLClocks/excludeNoClock"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLClocks">
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLClocks/set"/>
-                  <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/addAllUMLClocks/excludeNoClock"/>
-                </genOperations>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/toString"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Statechart/clone"/>
-              </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState">
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState/clone">
                   <genParameters ecoreParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState/clone/rtsc"/>
@@ -515,6 +515,7 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/statechart"/>
                 <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/parentState"/>
               </genClasses>
+              <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"/>
               <nestedGenPackages prefix="Reconf" basePackage="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart"
                   disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf">
                 <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/reconf/AssemblyReconf">

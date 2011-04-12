@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -187,6 +188,6 @@ public interface Action extends Expression {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, Action newAction);
+	EObject clone(AbstractStatechart rtsc, Action newAction);
 
 } // Action

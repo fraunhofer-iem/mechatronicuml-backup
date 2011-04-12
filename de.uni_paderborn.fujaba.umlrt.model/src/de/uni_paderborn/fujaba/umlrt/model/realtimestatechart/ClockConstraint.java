@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import org.eclipse.emf.ecore.EObject;
@@ -125,6 +126,6 @@ public interface ClockConstraint extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, ClockConstraint newAtom);
+	EObject clone(AbstractStatechart rtsc, ClockConstraint newAtom);
 
 } // ClockConstraint

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfDiagram;
 
 import org.eclipse.emf.common.util.EList;
@@ -271,6 +272,6 @@ public interface State extends Vertex {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, State newComplexState);
+	EObject clone(AbstractStatechart rtsc, State newComplexState);
 
 } // State

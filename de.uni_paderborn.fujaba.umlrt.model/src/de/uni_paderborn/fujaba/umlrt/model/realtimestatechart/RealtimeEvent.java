@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.ecore.EObject;
 
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
@@ -166,7 +167,7 @@ public interface RealtimeEvent extends MethodCallExpression {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, RealtimeEvent newEvent);
+	EObject clone(AbstractStatechart rtsc, RealtimeEvent newEvent);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.util;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.*;
 
 import java.util.List;
@@ -139,7 +140,7 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: {
 				UMLInterfaceStatechart umlInterfaceStatechart = (UMLInterfaceStatechart)theEObject;
 				T result = caseUMLInterfaceStatechart(umlInterfaceStatechart);
-				if (result == null) result = caseStatechart(umlInterfaceStatechart);
+				if (result == null) result = caseAbstractStatechart(umlInterfaceStatechart);
 				if (result == null) result = caseNamedElement(umlInterfaceStatechart);
 				if (result == null) result = caseCommentableElement(umlInterfaceStatechart);
 				if (result == null) result = caseExtendableElement(umlInterfaceStatechart);
@@ -194,15 +195,6 @@ public class RealtimestatechartSwitch<T> {
 				T result = caseVertex(vertex);
 				if (result == null) result = caseNamedElement(vertex);
 				if (result == null) result = caseExtendableElement(vertex);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.STATECHART: {
-				Statechart statechart = (Statechart)theEObject;
-				T result = caseStatechart(statechart);
-				if (result == null) result = caseNamedElement(statechart);
-				if (result == null) result = caseCommentableElement(statechart);
-				if (result == null) result = caseExtendableElement(statechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -279,6 +271,16 @@ public class RealtimestatechartSwitch<T> {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
 				if (result == null) result = casePrioritizable(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: {
+				FujabaRealtimeStatechart fujabaRealtimeStatechart = (FujabaRealtimeStatechart)theEObject;
+				T result = caseFujabaRealtimeStatechart(fujabaRealtimeStatechart);
+				if (result == null) result = caseAbstractStatechart(fujabaRealtimeStatechart);
+				if (result == null) result = caseNamedElement(fujabaRealtimeStatechart);
+				if (result == null) result = caseCommentableElement(fujabaRealtimeStatechart);
+				if (result == null) result = caseExtendableElement(fujabaRealtimeStatechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -467,21 +469,6 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Statechart</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStatechart(Statechart object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -632,6 +619,21 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -673,6 +675,21 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Statechart</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractStatechart(AbstractStatechart object) {
 		return null;
 	}
 

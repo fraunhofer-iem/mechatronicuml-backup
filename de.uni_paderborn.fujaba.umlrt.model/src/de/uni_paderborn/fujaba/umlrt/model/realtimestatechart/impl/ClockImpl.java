@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
@@ -159,9 +161,9 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getStatechart() {
+	public AbstractStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART) return null;
-		return (Statechart)eContainer();
+		return (AbstractStatechart)eContainer();
 	}
 
 	/**
@@ -169,7 +171,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(Statechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(AbstractStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.CLOCK__STATECHART, msgs);
 		return msgs;
 	}
@@ -179,7 +181,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(Statechart newStatechart) {
+	public void setStatechart(AbstractStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -187,7 +189,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.STATECHART__CLOCKS, Statechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__CLOCKS, AbstractStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -235,7 +237,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, Clock newClock) {
+	public EObject clone(AbstractStatechart rtsc, Clock newClock) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -255,7 +257,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((Statechart)otherEnd, msgs);
+				return basicSetStatechart((AbstractStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClockConstraints()).basicAdd(otherEnd, msgs);
 		}
@@ -289,7 +291,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATECHART__CLOCKS, Statechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__CLOCKS, AbstractStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -333,7 +335,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				getAbsoluteDeadlines().addAll((Collection<? extends AbsoluteDeadline>)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((Statechart)newValue);
+				setStatechart((AbstractStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK__RESETS:
 				getResets().clear();
@@ -362,7 +364,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				getAbsoluteDeadlines().clear();
 				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((Statechart)null);
+				setStatechart((AbstractStatechart)null);
 				return;
 			case RealtimestatechartPackage.CLOCK__RESETS:
 				getResets().clear();
@@ -406,8 +408,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 		switch (operationID) {
 			case RealtimestatechartPackage.CLOCK___TO_STRING:
 				return toString();
-			case RealtimestatechartPackage.CLOCK___CLONE__STATECHART_CLOCK:
-				return clone((Statechart)arguments.get(0), (Clock)arguments.get(1));
+			case RealtimestatechartPackage.CLOCK___CLONE__ABSTRACTSTATECHART_CLOCK:
+				return clone((AbstractStatechart)arguments.get(0), (Clock)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

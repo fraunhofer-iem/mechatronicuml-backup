@@ -71,7 +71,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.FADING_FUNCTION: return createFadingFunction();
 			case RealtimestatechartPackage.FLAT_SWITCHING: return createFlatSwitching();
 			case RealtimestatechartPackage.INITIAL_STATE: return createInitialState();
-			case RealtimestatechartPackage.STATECHART: return createStatechart();
 			case RealtimestatechartPackage.FINAL_STATE: return createFinalState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
@@ -82,6 +81,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.PRIORITIZABLE: return createPrioritizable();
 			case RealtimestatechartPackage.REGION: return createRegion();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -222,16 +222,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart createStatechart() {
-		StatechartImpl statechart = new StatechartImpl();
-		return statechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FinalState createFinalState() {
 		FinalStateImpl finalState = new FinalStateImpl();
 		return finalState;
@@ -325,6 +315,16 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public Region createRegion() {
 		RegionImpl region = new RegionImpl();
 		return region;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FujabaRealtimeStatechart createFujabaRealtimeStatechart() {
+		FujabaRealtimeStatechartImpl fujabaRealtimeStatechart = new FujabaRealtimeStatechartImpl();
+		return fujabaRealtimeStatechart;
 	}
 
 	/**

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
@@ -302,7 +303,7 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, Action newAction) {
+	public EObject clone(AbstractStatechart rtsc, Action newAction) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -470,8 +471,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.ACTION___CLONE__STATECHART_ACTION:
-				return clone((Statechart)arguments.get(0), (Action)arguments.get(1));
+			case RealtimestatechartPackage.ACTION___CLONE__ABSTRACTSTATECHART_ACTION:
+				return clone((AbstractStatechart)arguments.get(0), (Action)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

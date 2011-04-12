@@ -306,29 +306,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StatechartItemProvider statechartItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStatechartAdapter() {
-		if (statechartItemProvider == null) {
-			statechartItemProvider = new StatechartItemProvider(this);
-		}
-
-		return statechartItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -559,6 +536,29 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FujabaRealtimeStatechartItemProvider fujabaRealtimeStatechartItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFujabaRealtimeStatechartAdapter() {
+		if (fujabaRealtimeStatechartItemProvider == null) {
+			fujabaRealtimeStatechartItemProvider = new FujabaRealtimeStatechartItemProvider(this);
+		}
+
+		return fujabaRealtimeStatechartItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,7 +667,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
 		if (flatSwitchingItemProvider != null) flatSwitchingItemProvider.dispose();
 		if (initialStateItemProvider != null) initialStateItemProvider.dispose();
-		if (statechartItemProvider != null) statechartItemProvider.dispose();
 		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
@@ -678,6 +677,7 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
 		if (regionItemProvider != null) regionItemProvider.dispose();
+		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
 	}
 
 }

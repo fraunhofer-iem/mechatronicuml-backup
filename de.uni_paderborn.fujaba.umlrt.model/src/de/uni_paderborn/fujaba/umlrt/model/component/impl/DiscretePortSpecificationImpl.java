@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
@@ -27,7 +28,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRefines <em>Refines</em>}</li>
  * </ul>
  * </p>
@@ -36,14 +37,14 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  */
 public class DiscretePortSpecificationImpl extends PortSpecificationImpl implements DiscretePortSpecification {
 	/**
-	 * The cached value of the '{@link #getUMLRealtimeStatechart() <em>UML Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeStatechart()
+	 * @see #getStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected Statechart uMLRealtimeStatechart;
+	protected AbstractStatechart statechart;
 
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
@@ -79,16 +80,16 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getUMLRealtimeStatechart() {
-		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
-			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (Statechart)eResolveProxy(oldUMLRealtimeStatechart);
-			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
+	public AbstractStatechart getStatechart() {
+		if (statechart != null && statechart.eIsProxy()) {
+			InternalEObject oldStatechart = (InternalEObject)statechart;
+			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART, oldStatechart, statechart));
 			}
 		}
-		return uMLRealtimeStatechart;
+		return statechart;
 	}
 
 	/**
@@ -96,8 +97,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart basicGetUMLRealtimeStatechart() {
-		return uMLRealtimeStatechart;
+	public AbstractStatechart basicGetStatechart() {
+		return statechart;
 	}
 
 	/**
@@ -105,11 +106,11 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(Statechart newUMLRealtimeStatechart) {
-		Statechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
-		uMLRealtimeStatechart = newUMLRealtimeStatechart;
+	public void setStatechart(AbstractStatechart newStatechart) {
+		AbstractStatechart oldStatechart = statechart;
+		statechart = newStatechart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART, oldStatechart, statechart));
 	}
 
 	/**
@@ -210,9 +211,9 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				if (resolve) return getUMLRealtimeStatechart();
-				return basicGetUMLRealtimeStatechart();
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
+				if (resolve) return getStatechart();
+				return basicGetStatechart();
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				if (resolve) return getRefines();
 				return basicGetRefines();
@@ -228,8 +229,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((Statechart)newValue);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
+				setStatechart((AbstractStatechart)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				setRefines((Role)newValue);
@@ -246,8 +247,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((Statechart)null);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
+				setStatechart((AbstractStatechart)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				setRefines((Role)null);
@@ -264,8 +265,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART:
-				return uMLRealtimeStatechart != null;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
+				return statechart != null;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				return refines != null;
 		}
@@ -281,7 +282,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART;
+				case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__STATECHART;
 				default: return -1;
 			}
 		}
@@ -297,7 +298,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART: return ComponentPackage.DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART;
+				case CorePackage.BEHAVIORAL_ELEMENT__STATECHART: return ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART;
 				default: return -1;
 			}
 		}

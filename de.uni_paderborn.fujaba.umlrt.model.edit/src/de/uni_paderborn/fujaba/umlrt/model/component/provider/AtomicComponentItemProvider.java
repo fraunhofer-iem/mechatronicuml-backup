@@ -60,25 +60,25 @@ public class AtomicComponentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLRealtimeStatechartPropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Realtime Statechart feature.
+	 * This adds a property descriptor for the Statechart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLRealtimeStatechartPropertyDescriptor(Object object) {
+	protected void addStatechartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_uMLRealtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_uMLRealtimeStatechart_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART,
+				 getString("_UI_BehavioralElement_statechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_statechart_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__STATECHART,
 				 true,
 				 false,
 				 true,

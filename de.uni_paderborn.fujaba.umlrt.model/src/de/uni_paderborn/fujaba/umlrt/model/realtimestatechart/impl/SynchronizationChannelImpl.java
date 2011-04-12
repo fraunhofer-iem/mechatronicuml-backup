@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -148,7 +149,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, SynchronizationChannel newChannel) {
+	public EObject clone(AbstractStatechart rtsc, SynchronizationChannel newChannel) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -316,8 +317,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___CLONE__STATECHART_SYNCHRONIZATIONCHANNEL:
-				return clone((Statechart)arguments.get(0), (SynchronizationChannel)arguments.get(1));
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___CLONE__ABSTRACTSTATECHART_SYNCHRONIZATIONCHANNEL:
+				return clone((AbstractStatechart)arguments.get(0), (SynchronizationChannel)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

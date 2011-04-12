@@ -23,8 +23,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.provider.AbstractStatechartItemProvider;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.StatechartItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.behavior.ProtocolStatechart} object.
@@ -33,7 +34,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.Statechar
  * @generated
  */
 public class ProtocolStatechartItemProvider
-	extends StatechartItemProvider
+	extends AbstractStatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -150,11 +151,11 @@ public class ProtocolStatechartItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_REALTIME_START_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__VERTICES ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__UML_COMPLEX_REALTIME_STATE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == RealtimestatechartPackage.Literals.STATECHART__REQUIRED_MSG_IFACE;
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_REALTIME_START_STATE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__VERTICES ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE ||
+			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
 
 		if (qualify) {
 			return getString

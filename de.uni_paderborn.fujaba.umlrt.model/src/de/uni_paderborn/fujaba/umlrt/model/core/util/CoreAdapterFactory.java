@@ -14,6 +14,9 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.ExtendableElement;
+import org.storydriven.modeling.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +93,22 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConstrainableElement(ConstrainableElement object) {
 				return createConstrainableElementAdapter();
+			}
+			@Override
+			public Adapter caseAbstractStatechart(AbstractStatechart object) {
+				return createAbstractStatechartAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -178,6 +197,62 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConstrainableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart <em>Abstract Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart
+	 * @generated
+	 */
+	public Adapter createAbstractStatechartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.ExtendableElement
+	 * @generated
+	 */
+	public Adapter createExtendableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.modeling.CommentableElement
+	 * @generated
+	 */
+	public Adapter createCommentableElementAdapter() {
 		return null;
 	}
 

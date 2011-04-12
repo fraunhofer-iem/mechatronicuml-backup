@@ -116,15 +116,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	InitialState createInitialState();
 
 	/**
-	 * Returns a new object of class '<em>Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Statechart</em>'.
-	 * @generated
-	 */
-	Statechart createStatechart();
-
-	/**
 	 * Returns a new object of class '<em>Final State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,6 +204,15 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Region createRegion();
+
+	/**
+	 * Returns a new object of class '<em>Fujaba Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fujaba Realtime Statechart</em>'.
+	 * @generated
+	 */
+	FujabaRealtimeStatechart createFujabaRealtimeStatechart();
 
 	/**
 	 * Returns the package supported by this factory.

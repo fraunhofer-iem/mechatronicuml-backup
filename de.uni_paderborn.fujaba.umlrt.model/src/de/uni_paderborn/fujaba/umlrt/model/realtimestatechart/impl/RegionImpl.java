@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
@@ -44,7 +46,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * @generated
 	 * @ordered
 	 */
-	protected Statechart statechart;
+	protected AbstractStatechart statechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,10 +72,10 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getStatechart() {
+	public AbstractStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (Statechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, statechart));
@@ -87,7 +89,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart basicGetStatechart() {
+	public AbstractStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -96,8 +98,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(Statechart newStatechart, NotificationChain msgs) {
-		Statechart oldStatechart = statechart;
+	public NotificationChain basicSetStatechart(AbstractStatechart newStatechart, NotificationChain msgs) {
+		AbstractStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, newStatechart);
@@ -111,13 +113,13 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(Statechart newStatechart) {
+	public void setStatechart(AbstractStatechart newStatechart) {
 		if (newStatechart != statechart) {
 			NotificationChain msgs = null;
 			if (statechart != null)
-				msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.STATECHART__EMBEDDING_REGION, Statechart.class, msgs);
+				msgs = ((InternalEObject)statechart).eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, AbstractStatechart.class, msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.STATECHART__EMBEDDING_REGION, Statechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, AbstractStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -176,8 +178,8 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 		switch (featureID) {
 			case RealtimestatechartPackage.REGION__STATECHART:
 				if (statechart != null)
-					msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.STATECHART__EMBEDDING_REGION, Statechart.class, msgs);
-				return basicSetStatechart((Statechart)otherEnd, msgs);
+					msgs = ((InternalEObject)statechart).eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, AbstractStatechart.class, msgs);
+				return basicSetStatechart((AbstractStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -242,7 +244,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((Statechart)newValue);
+				setStatechart((AbstractStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)newValue);
@@ -260,7 +262,7 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((Statechart)null);
+				setStatechart((AbstractStatechart)null);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)null);

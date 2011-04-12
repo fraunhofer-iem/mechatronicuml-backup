@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
@@ -286,7 +287,7 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, RealtimeEvent newEvent) {
+	public EObject clone(AbstractStatechart rtsc, RealtimeEvent newEvent) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -411,8 +412,8 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.REALTIME_EVENT___CLONE__STATECHART_REALTIMEEVENT:
-				return clone((Statechart)arguments.get(0), (RealtimeEvent)arguments.get(1));
+			case RealtimestatechartPackage.REALTIME_EVENT___CLONE__ABSTRACTSTATECHART_REALTIMEEVENT:
+				return clone((AbstractStatechart)arguments.get(0), (RealtimeEvent)arguments.get(1));
 			case RealtimestatechartPackage.REALTIME_EVENT___TO_STRING:
 				return toString();
 		}

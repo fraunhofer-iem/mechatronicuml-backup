@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.common.util.EList;
 
 import org.storydriven.modeling.NamedElement;
@@ -71,12 +72,12 @@ public interface Vertex extends NamedElement {
 	 * The realtime statechart this state belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(Statechart)
+	 * @see #setStatechart(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
 	 * @model
 	 * @generated
 	 */
-	Statechart getStatechart();
+	AbstractStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' reference.
@@ -86,7 +87,7 @@ public interface Vertex extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(Statechart value);
+	void setStatechart(AbstractStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +109,6 @@ public interface Vertex extends NamedElement {
 	 * @model kind="operation"
 	 * @generated
 	 */
-	Statechart getRootRealtimeStatechart();
+	AbstractStatechart getRootRealtimeStatechart();
 
 } // Vertex

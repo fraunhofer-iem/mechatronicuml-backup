@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.util;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -132,10 +133,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createVertexAdapter();
 			}
 			@Override
-			public Adapter caseStatechart(Statechart object) {
-				return createStatechartAdapter();
-			}
-			@Override
 			public Adapter caseFinalState(FinalState object) {
 				return createFinalStateAdapter();
 			}
@@ -176,6 +173,10 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createRegionAdapter();
 			}
 			@Override
+			public Adapter caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {
+				return createFujabaRealtimeStatechartAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -186,6 +187,10 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseAbstractStatechart(AbstractStatechart object) {
+				return createAbstractStatechartAdapter();
 			}
 			@Override
 			public Adapter caseTypedElement(TypedElement object) {
@@ -396,20 +401,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart
-	 * @generated
-	 */
-	public Adapter createStatechartAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState <em>Final State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -550,6 +541,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart <em>Fujaba Realtime Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart
+	 * @generated
+	 */
+	public Adapter createFujabaRealtimeStatechartAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -588,6 +593,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart <em>Abstract Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart
+	 * @generated
+	 */
+	public Adapter createAbstractStatechartAdapter() {
 		return null;
 	}
 

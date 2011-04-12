@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
@@ -24,7 +25,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AtomicComponentImpl#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AtomicComponentImpl#getStatechart <em>Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,15 +33,14 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
  */
 public class AtomicComponentImpl extends ComponentImpl implements AtomicComponent {
 	/**
-	 * The cached value of the '{@link #getUMLRealtimeStatechart() <em>UML Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeStatechart()
+	 * @see #getStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected Statechart uMLRealtimeStatechart;
-
+	protected AbstractStatechart statechart;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,16 +65,16 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart getUMLRealtimeStatechart() {
-		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
-			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (Statechart)eResolveProxy(oldUMLRealtimeStatechart);
-			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
+	public AbstractStatechart getStatechart() {
+		if (statechart != null && statechart.eIsProxy()) {
+			InternalEObject oldStatechart = (InternalEObject)statechart;
+			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
 			}
 		}
-		return uMLRealtimeStatechart;
+		return statechart;
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statechart basicGetUMLRealtimeStatechart() {
-		return uMLRealtimeStatechart;
+	public AbstractStatechart basicGetStatechart() {
+		return statechart;
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(Statechart newUMLRealtimeStatechart) {
-		Statechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
-		uMLRealtimeStatechart = newUMLRealtimeStatechart;
+	public void setStatechart(AbstractStatechart newStatechart) {
+		AbstractStatechart oldStatechart = statechart;
+		statechart = newStatechart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
 	}
 
 	/**
@@ -106,9 +106,9 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART:
-				if (resolve) return getUMLRealtimeStatechart();
-				return basicGetUMLRealtimeStatechart();
+			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
+				if (resolve) return getStatechart();
+				return basicGetStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,8 +121,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((Statechart)newValue);
+			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
+				setStatechart((AbstractStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((Statechart)null);
+			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
+				setStatechart((AbstractStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART:
-				return uMLRealtimeStatechart != null;
+			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
+				return statechart != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,7 +166,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART;
+				case ComponentPackage.ATOMIC_COMPONENT__STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__STATECHART;
 				default: return -1;
 			}
 		}
@@ -182,7 +182,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART: return ComponentPackage.ATOMIC_COMPONENT__UML_REALTIME_STATECHART;
+				case CorePackage.BEHAVIORAL_ELEMENT__STATECHART: return ComponentPackage.ATOMIC_COMPONENT__STATECHART;
 				default: return -1;
 			}
 		}

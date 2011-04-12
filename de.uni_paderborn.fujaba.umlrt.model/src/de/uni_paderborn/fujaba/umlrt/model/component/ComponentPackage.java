@@ -1082,13 +1082,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__UML_REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int DISCRETE_PORT_SPECIFICATION__STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -1896,13 +1896,13 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__COMPONENT_INSTANCES = COMPONENT__COMPONENT_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__UML_REALTIME_STATECHART = COMPONENT_FEATURE_COUNT + 0;
+	int ATOMIC_COMPONENT__STATECHART = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
@@ -2104,13 +2104,13 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR = 13;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__UML_REALTIME_STATECHART = CorePackage.BEHAVIORAL_ELEMENT__UML_REALTIME_STATECHART;
+	int BEHAVIORAL_CONNECTOR__STATECHART = CorePackage.BEHAVIORAL_ELEMENT__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2150,13 +2150,13 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE = 10;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__UML_REALTIME_STATECHART = BEHAVIORAL_CONNECTOR__UML_REALTIME_STATECHART;
+	int CONNECTOR_TYPE__STATECHART = BEHAVIORAL_CONNECTOR__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2223,13 +2223,13 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY = 11;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY__UML_REALTIME_STATECHART = CONNECTOR_TYPE__UML_REALTIME_STATECHART;
+	int ASSEMBLY__STATECHART = CONNECTOR_TYPE__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2314,13 +2314,13 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION = 12;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__UML_REALTIME_STATECHART = CONNECTOR_TYPE__UML_REALTIME_STATECHART;
+	int DELEGATION__STATECHART = CONNECTOR_TYPE__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.

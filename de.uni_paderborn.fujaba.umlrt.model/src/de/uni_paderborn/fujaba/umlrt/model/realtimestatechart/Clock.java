@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -82,7 +83,7 @@ public interface Clock extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getClocks <em>Clocks</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' container reference isn't clear,
@@ -90,13 +91,13 @@ public interface Clock extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(Statechart)
+	 * @see #setStatechart(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getClocks
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks
 	 * @model opposite="clocks" transient="false"
 	 * @generated
 	 */
-	Statechart getStatechart();
+	AbstractStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}' container reference.
@@ -106,7 +107,7 @@ public interface Clock extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(Statechart value);
+	void setStatechart(AbstractStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Resets</b></em>' reference list.
@@ -156,6 +157,6 @@ public interface Clock extends NamedElement {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, Clock newClock);
+	EObject clone(AbstractStatechart rtsc, Clock newClock);
 
 } // Clock

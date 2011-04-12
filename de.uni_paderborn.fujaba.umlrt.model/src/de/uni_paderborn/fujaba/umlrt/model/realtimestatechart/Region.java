@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +29,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 public interface Region extends Prioritizable {
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' reference isn't clear,
@@ -35,13 +37,13 @@ public interface Region extends Prioritizable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(Statechart)
+	 * @see #setStatechart(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRegion_Statechart()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart#getEmbeddingRegion
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion
 	 * @model opposite="embeddingRegion"
 	 * @generated
 	 */
-	Statechart getStatechart();
+	AbstractStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}' reference.
@@ -51,7 +53,7 @@ public interface Region extends Prioritizable {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(Statechart value);
+	void setStatechart(AbstractStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent State</b></em>' container reference.

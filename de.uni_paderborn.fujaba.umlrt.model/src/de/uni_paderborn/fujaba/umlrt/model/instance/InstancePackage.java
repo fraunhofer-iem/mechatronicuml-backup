@@ -357,13 +357,13 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__UML_REALTIME_STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__UML_REALTIME_STATECHART;
+	int CONNECTOR_INSTANCE__STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -684,13 +684,13 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_INSTANCE__UML_REALTIME_STATECHART = CONNECTOR_INSTANCE__UML_REALTIME_STATECHART;
+	int ASSEMBLY_INSTANCE__STATECHART = CONNECTOR_INSTANCE__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -775,13 +775,13 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__UML_REALTIME_STATECHART = CONNECTOR_INSTANCE__UML_REALTIME_STATECHART;
+	int DELEGATION_INSTANCE__STATECHART = CONNECTOR_INSTANCE__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.

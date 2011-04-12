@@ -75,13 +75,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__UML_REALTIME_STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__UML_REALTIME_STATECHART;
+	int ROLE_CONNECTOR__STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.

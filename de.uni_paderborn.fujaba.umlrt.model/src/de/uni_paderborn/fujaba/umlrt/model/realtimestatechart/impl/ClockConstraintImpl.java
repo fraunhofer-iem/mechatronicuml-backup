@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
@@ -233,7 +234,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject clone(Statechart rtsc, ClockConstraint newAtom) {
+	public EObject clone(AbstractStatechart rtsc, ClockConstraint newAtom) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -358,8 +359,8 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT___CLONE__STATECHART_CLOCKCONSTRAINT:
-				return clone((Statechart)arguments.get(0), (ClockConstraint)arguments.get(1));
+			case RealtimestatechartPackage.CLOCK_CONSTRAINT___CLONE__ABSTRACTSTATECHART_CLOCKCONSTRAINT:
+				return clone((AbstractStatechart)arguments.get(0), (ClockConstraint)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

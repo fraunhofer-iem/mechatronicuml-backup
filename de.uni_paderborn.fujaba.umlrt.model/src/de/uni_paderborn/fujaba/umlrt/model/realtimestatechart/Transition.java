@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import java.util.Vector;
@@ -216,12 +217,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * The realtime statechart this transition belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(Statechart)
+	 * @see #setStatechart(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Statechart()
 	 * @model
 	 * @generated
 	 */
-	Statechart getStatechart();
+	AbstractStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}' reference.
@@ -231,7 +232,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(Statechart value);
+	void setStatechart(AbstractStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Resets</b></em>' reference list.
@@ -468,6 +469,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(Statechart rtsc, Transition newTransition);
+	EObject clone(AbstractStatechart rtsc, Transition newTransition);
 
 } // Transition
