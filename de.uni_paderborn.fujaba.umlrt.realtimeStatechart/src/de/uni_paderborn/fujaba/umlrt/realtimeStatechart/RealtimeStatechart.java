@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 /**
@@ -18,5 +19,5 @@ import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
  * @model
  * @generated
  */
-public interface RealtimeStatechart extends AbstractStatechart {
+public interface RealtimeStatechart extends FujabaRealtimeStatechart {
 } // RealtimeStatechart

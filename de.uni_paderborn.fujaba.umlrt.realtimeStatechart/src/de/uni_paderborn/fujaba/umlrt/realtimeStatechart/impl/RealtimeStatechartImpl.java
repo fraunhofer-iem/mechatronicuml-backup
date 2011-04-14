@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl;
 import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
@@ -22,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class RealtimeStatechartImpl extends AbstractStatechartImpl implements RealtimeStatechart {
+public class RealtimeStatechartImpl extends FujabaRealtimeStatechartImpl implements RealtimeStatechart {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

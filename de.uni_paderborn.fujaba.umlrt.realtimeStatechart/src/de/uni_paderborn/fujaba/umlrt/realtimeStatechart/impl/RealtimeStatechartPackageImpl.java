@@ -180,14 +180,14 @@ public class RealtimeStatechartPackageImpl extends EPackageImpl implements Realt
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		realtimeStatechartEClass.getESuperTypes().add(theCorePackage.getAbstractStatechart());
+		realtimeStatechartEClass.getESuperTypes().add(theRealtimestatechartPackage.getFujabaRealtimeStatechart());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

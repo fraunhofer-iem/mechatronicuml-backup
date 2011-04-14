@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.provider;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.FujabaRealtimeStatechartItemProvider;
 import de.uni_paderborn.fujaba.umlrt.model.core.provider.AbstractStatechartItemProvider;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
@@ -35,7 +36,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class RealtimeStatechartItemProvider
-	extends AbstractStatechartItemProvider
+	extends FujabaRealtimeStatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
