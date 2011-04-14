@@ -28,7 +28,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getClockConstraints <em>Clock Constraints</em>}</li>
  * </ul>
  * </p>
@@ -110,22 +109,6 @@ public interface Clock extends NamedElement {
 	void setStatechart(AbstractStatechart value);
 
 	/**
-	 * Returns the value of the '<em><b>Resets</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resets</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Resets</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClock_Resets()
-	 * @model
-	 * @generated
-	 */
-	EList<Clock> getResets();
-
-	/**
 	 * Returns the value of the '<em><b>Clock Constraints</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClock <em>Clock</em>}'.
@@ -142,21 +125,5 @@ public interface Clock extends NamedElement {
 	 * @generated
 	 */
 	EList<ClockConstraint> getClockConstraints();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String toString();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, Clock newClock);
 
 } // Clock

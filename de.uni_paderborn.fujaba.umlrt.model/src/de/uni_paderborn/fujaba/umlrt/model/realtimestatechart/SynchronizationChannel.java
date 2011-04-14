@@ -63,12 +63,4 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	 */
 	void setState(State value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, SynchronizationChannel newChannel);
-
 } // SynchronizationChannel

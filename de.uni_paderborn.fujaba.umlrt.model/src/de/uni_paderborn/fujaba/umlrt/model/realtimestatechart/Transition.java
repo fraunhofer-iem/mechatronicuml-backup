@@ -210,25 +210,27 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setSource(Vertex value);
 
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this transition belongs to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' reference.
+	 * @return the value of the '<em>Statechart</em>' container reference.
 	 * @see #setStatechart(AbstractStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Statechart()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getTransitions
+	 * @model opposite="transitions" transient="false"
 	 * @generated
 	 */
 	AbstractStatechart getStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' reference.
+	 * @param value the new value of the '<em>Statechart</em>' container reference.
 	 * @see #getStatechart()
 	 * @generated
 	 */
@@ -454,21 +456,5 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	String getDefaultName();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, Transition newTransition);
 
 } // Transition

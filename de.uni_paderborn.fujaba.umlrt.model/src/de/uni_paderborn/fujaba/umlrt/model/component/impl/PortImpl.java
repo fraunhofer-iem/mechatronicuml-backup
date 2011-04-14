@@ -17,9 +17,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;

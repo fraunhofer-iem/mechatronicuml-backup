@@ -68,12 +68,4 @@ public interface InitialState extends Vertex {
 	 */
 	Vertex getNextState();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, InitialState newStartState);
-
 } // InitialState

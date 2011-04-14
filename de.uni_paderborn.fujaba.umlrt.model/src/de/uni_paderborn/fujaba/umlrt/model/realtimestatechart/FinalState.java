@@ -24,12 +24,5 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface FinalState extends Vertex {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, FinalState newStopState);
 
 } // FinalState

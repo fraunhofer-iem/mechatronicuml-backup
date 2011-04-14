@@ -16,7 +16,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
 import java.lang.reflect.InvocationTargetException;
@@ -65,7 +64,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getEClass <em>EClass</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getUMLInterfaceStatechart <em>UML Interface Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
@@ -267,16 +265,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 * @ordered
 	 */
 	protected EClass eClass;
-
-	/**
-	 * The cached value of the '{@link #getUMLInterfaceStatechart() <em>UML Interface Statechart</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUMLInterfaceStatechart()
-	 * @generated
-	 * @ordered
-	 */
-	protected UMLInterfaceStatechart uMLInterfaceStatechart;
 
 	/**
 	 * The cached value of the '{@link #getBehavioralElement() <em>Behavioral Element</em>}' reference.
@@ -607,7 +595,7 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 */
 	public EList<Transition> getTransitions() {
 		if (transitions == null) {
-			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS);
+			transitions = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS, RealtimestatechartPackage.TRANSITION__STATECHART);
 		}
 		return transitions;
 	}
@@ -665,49 +653,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__ECLASS, newEClass, newEClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UMLInterfaceStatechart getUMLInterfaceStatechart() {
-		return uMLInterfaceStatechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetUMLInterfaceStatechart(UMLInterfaceStatechart newUMLInterfaceStatechart, NotificationChain msgs) {
-		UMLInterfaceStatechart oldUMLInterfaceStatechart = uMLInterfaceStatechart;
-		uMLInterfaceStatechart = newUMLInterfaceStatechart;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART, oldUMLInterfaceStatechart, newUMLInterfaceStatechart);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUMLInterfaceStatechart(UMLInterfaceStatechart newUMLInterfaceStatechart) {
-		if (newUMLInterfaceStatechart != uMLInterfaceStatechart) {
-			NotificationChain msgs = null;
-			if (uMLInterfaceStatechart != null)
-				msgs = ((InternalEObject)uMLInterfaceStatechart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART, null, msgs);
-			if (newUMLInterfaceStatechart != null)
-				msgs = ((InternalEObject)newUMLInterfaceStatechart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART, null, msgs);
-			msgs = basicSetUMLInterfaceStatechart(newUMLInterfaceStatechart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART, newUMLInterfaceStatechart, newUMLInterfaceStatechart));
 	}
 
 	/**
@@ -1028,6 +973,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				if (uMLRealtimeStartState != null)
 					msgs = ((InternalEObject)uMLRealtimeStartState).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, null, msgs);
 				return basicSetUMLRealtimeStartState((InitialState)otherEnd, msgs);
+			case CorePackage.ABSTRACT_STATECHART__TRANSITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
 			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
@@ -1056,8 +1003,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
 				return basicSetEClass(null, msgs);
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
-				return basicSetUMLInterfaceStatechart(null, msgs);
 			case CorePackage.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE:
 				return basicSetProvidedMsgIFace(null, msgs);
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
@@ -1102,8 +1047,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return getVertices();
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
 				return getEClass();
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
-				return getUMLInterfaceStatechart();
 			case CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT:
 				if (resolve) return getBehavioralElement();
 				return basicGetBehavioralElement();
@@ -1168,9 +1111,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return;
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
 				setEClass((EClass)newValue);
-				return;
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
-				setUMLInterfaceStatechart((UMLInterfaceStatechart)newValue);
 				return;
 			case CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)newValue);
@@ -1239,9 +1179,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
 				setEClass((EClass)null);
 				return;
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
-				setUMLInterfaceStatechart((UMLInterfaceStatechart)null);
-				return;
 			case CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)null);
 				return;
@@ -1296,8 +1233,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return vertices != null && !vertices.isEmpty();
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
 				return eClass != null;
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
-				return uMLInterfaceStatechart != null;
 			case CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT:
 				return behavioralElement != null;
 			case CorePackage.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE:

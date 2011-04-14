@@ -12,9 +12,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-
-import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
@@ -24,12 +21,10 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -46,7 +41,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getClockConstraints <em>Clock Constraints</em>}</li>
  * </ul>
  * </p>
@@ -83,16 +77,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * @ordered
 	 */
 	protected EList<AbsoluteDeadline> absoluteDeadlines;
-
-	/**
-	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResets()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Clock> resets;
 
 	/**
 	 * The cached value of the '{@link #getClockConstraints() <em>Clock Constraints</em>}' reference list.
@@ -202,18 +186,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Clock> getResets() {
-		if (resets == null) {
-			resets = new EObjectResolvingEList<Clock>(Clock.class, this, RealtimestatechartPackage.CLOCK__RESETS);
-		}
-		return resets;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ClockConstraint> getClockConstraints() {
 		if (clockConstraints == null) {
 			clockConstraints = new EObjectWithInverseResolvingEList<ClockConstraint>(ClockConstraint.class, this, RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK);
@@ -226,21 +198,15 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+		if (eIsProxy()) return super.toString();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone(AbstractStatechart rtsc, Clock newClock) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 	/**
@@ -310,8 +276,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				return getAbsoluteDeadlines();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				return getStatechart();
-			case RealtimestatechartPackage.CLOCK__RESETS:
-				return getResets();
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				return getClockConstraints();
 		}
@@ -336,10 +300,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				setStatechart((AbstractStatechart)newValue);
-				return;
-			case RealtimestatechartPackage.CLOCK__RESETS:
-				getResets().clear();
-				getResets().addAll((Collection<? extends Clock>)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
@@ -366,9 +326,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				setStatechart((AbstractStatechart)null);
 				return;
-			case RealtimestatechartPackage.CLOCK__RESETS:
-				getResets().clear();
-				return;
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
 				return;
@@ -390,28 +347,10 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				return absoluteDeadlines != null && !absoluteDeadlines.isEmpty();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				return getStatechart() != null;
-			case RealtimestatechartPackage.CLOCK__RESETS:
-				return resets != null && !resets.isEmpty();
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				return clockConstraints != null && !clockConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.CLOCK___TO_STRING:
-				return toString();
-			case RealtimestatechartPackage.CLOCK___CLONE__ABSTRACTSTATECHART_CLOCK:
-				return clone((AbstractStatechart)arguments.get(0), (Clock)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ClockImpl

@@ -6,19 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfDiagram;
-
-import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
@@ -28,14 +22,12 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -49,9 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getDoAction <em>Do Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getExitAction <em>Exit Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getEntryAction <em>Entry Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getReconfDiagram <em>Reconf Diagram</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getInterfacedStates <em>Interfaced States</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getInterfaceState <em>Interface State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getInvariants <em>Invariants</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getChannels <em>Channels</em>}</li>
@@ -100,36 +89,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EntryOrExitEvent entryAction;
-
-	/**
-	 * The cached value of the '{@link #getReconfDiagram() <em>Reconf Diagram</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReconfDiagram()
-	 * @generated
-	 * @ordered
-	 */
-	protected ReconfDiagram reconfDiagram;
-
-	/**
-	 * The cached value of the '{@link #getInterfacedStates() <em>Interfaced States</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInterfacedStates()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<State> interfacedStates;
-
-	/**
-	 * The cached value of the '{@link #getInterfaceState() <em>Interface State</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInterfaceState()
-	 * @generated
-	 * @ordered
-	 */
-	protected State interfaceState;
 
 	/**
 	 * The cached value of the '{@link #getInvariants() <em>Invariants</em>}' containment reference list.
@@ -336,99 +295,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfDiagram getReconfDiagram() {
-		return reconfDiagram;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReconfDiagram(ReconfDiagram newReconfDiagram, NotificationChain msgs) {
-		ReconfDiagram oldReconfDiagram = reconfDiagram;
-		reconfDiagram = newReconfDiagram;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__RECONF_DIAGRAM, oldReconfDiagram, newReconfDiagram);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReconfDiagram(ReconfDiagram newReconfDiagram) {
-		if (newReconfDiagram != reconfDiagram) {
-			NotificationChain msgs = null;
-			if (reconfDiagram != null)
-				msgs = ((InternalEObject)reconfDiagram).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.STATE__RECONF_DIAGRAM, null, msgs);
-			if (newReconfDiagram != null)
-				msgs = ((InternalEObject)newReconfDiagram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.STATE__RECONF_DIAGRAM, null, msgs);
-			msgs = basicSetReconfDiagram(newReconfDiagram, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__RECONF_DIAGRAM, newReconfDiagram, newReconfDiagram));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<State> getInterfacedStates() {
-		if (interfacedStates == null) {
-			interfacedStates = new EObjectResolvingEList<State>(State.class, this, RealtimestatechartPackage.STATE__INTERFACED_STATES);
-		}
-		return interfacedStates;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State getInterfaceState() {
-		if (interfaceState != null && interfaceState.eIsProxy()) {
-			InternalEObject oldInterfaceState = (InternalEObject)interfaceState;
-			interfaceState = (State)eResolveProxy(oldInterfaceState);
-			if (interfaceState != oldInterfaceState) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.STATE__INTERFACE_STATE, oldInterfaceState, interfaceState));
-			}
-		}
-		return interfaceState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State basicGetInterfaceState() {
-		return interfaceState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInterfaceState(State newInterfaceState) {
-		State oldInterfaceState = interfaceState;
-		interfaceState = newInterfaceState;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__INTERFACE_STATE, oldInterfaceState, interfaceState));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ClockConstraint> getInvariants() {
 		if (invariants == null) {
 			invariants = new EObjectContainmentEList<ClockConstraint>(ClockConstraint.class, this, RealtimestatechartPackage.STATE__INVARIANTS);
@@ -467,17 +333,6 @@ public class StateImpl extends VertexImpl implements State {
 			channels = new EObjectContainmentWithInverseEList<SynchronizationChannel>(SynchronizationChannel.class, this, RealtimestatechartPackage.STATE__CHANNELS, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE);
 		}
 		return channels;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone(AbstractStatechart rtsc, State newComplexState) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -525,8 +380,6 @@ public class StateImpl extends VertexImpl implements State {
 				return basicSetExitAction(null, msgs);
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				return basicSetEntryAction(null, msgs);
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
-				return basicSetReconfDiagram(null, msgs);
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				return ((InternalEList<?>)getInvariants()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
@@ -551,13 +404,6 @@ public class StateImpl extends VertexImpl implements State {
 				return getExitAction();
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				return getEntryAction();
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
-				return getReconfDiagram();
-			case RealtimestatechartPackage.STATE__INTERFACED_STATES:
-				return getInterfacedStates();
-			case RealtimestatechartPackage.STATE__INTERFACE_STATE:
-				if (resolve) return getInterfaceState();
-				return basicGetInterfaceState();
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				return getInvariants();
 			case RealtimestatechartPackage.STATE__COMMITTED:
@@ -589,16 +435,6 @@ public class StateImpl extends VertexImpl implements State {
 				return;
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				setEntryAction((EntryOrExitEvent)newValue);
-				return;
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
-				setReconfDiagram((ReconfDiagram)newValue);
-				return;
-			case RealtimestatechartPackage.STATE__INTERFACED_STATES:
-				getInterfacedStates().clear();
-				getInterfacedStates().addAll((Collection<? extends State>)newValue);
-				return;
-			case RealtimestatechartPackage.STATE__INTERFACE_STATE:
-				setInterfaceState((State)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();
@@ -635,15 +471,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				setEntryAction((EntryOrExitEvent)null);
 				return;
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
-				setReconfDiagram((ReconfDiagram)null);
-				return;
-			case RealtimestatechartPackage.STATE__INTERFACED_STATES:
-				getInterfacedStates().clear();
-				return;
-			case RealtimestatechartPackage.STATE__INTERFACE_STATE:
-				setInterfaceState((State)null);
-				return;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();
 				return;
@@ -673,12 +500,6 @@ public class StateImpl extends VertexImpl implements State {
 				return exitAction != null;
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				return entryAction != null;
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
-				return reconfDiagram != null;
-			case RealtimestatechartPackage.STATE__INTERFACED_STATES:
-				return interfacedStates != null && !interfacedStates.isEmpty();
-			case RealtimestatechartPackage.STATE__INTERFACE_STATE:
-				return interfaceState != null;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				return invariants != null && !invariants.isEmpty();
 			case RealtimestatechartPackage.STATE__COMMITTED:
@@ -687,20 +508,6 @@ public class StateImpl extends VertexImpl implements State {
 				return channels != null && !channels.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.STATE___CLONE__ABSTRACTSTATECHART_STATE:
-				return clone((AbstractStatechart)arguments.get(0), (State)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

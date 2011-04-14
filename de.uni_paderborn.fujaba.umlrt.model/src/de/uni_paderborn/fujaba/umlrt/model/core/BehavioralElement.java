@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.umlrt.model.core;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Behavioral Element</b></em>'.

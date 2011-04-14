@@ -6,19 +6,14 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;

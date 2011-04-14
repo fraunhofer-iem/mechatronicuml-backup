@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior.util;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.*;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;

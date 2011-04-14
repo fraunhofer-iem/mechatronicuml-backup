@@ -6,18 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->

@@ -120,12 +120,4 @@ public interface ClockConstraint extends EObject {
 	 */
 	void setOperator(ComparingOperator value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, ClockConstraint newAtom);
-
 } // ClockConstraint

@@ -16,7 +16,6 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 /**
  * <!-- begin-user-doc -->

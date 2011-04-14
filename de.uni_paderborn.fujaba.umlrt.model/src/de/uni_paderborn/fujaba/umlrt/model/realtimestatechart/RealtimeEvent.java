@@ -25,7 +25,6 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition <em>Triggered UML Realtime Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition <em>Raised UML Realtime Transition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getInstance <em>Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getFullEventName <em>Full Event Name</em>}</li>
  * </ul>
@@ -87,31 +86,6 @@ public interface RealtimeEvent extends MethodCallExpression {
 	void setRaisedUMLRealtimeTransition(Transition value);
 
 	/**
-	 * Returns the value of the '<em><b>Instance</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO: What's this good for?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Instance</em>' attribute.
-	 * @see #setInstance(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRealtimeEvent_Instance()
-	 * @model
-	 * @generated
-	 */
-	String getInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getInstance <em>Instance</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instance</em>' attribute.
-	 * @see #getInstance()
-	 * @generated
-	 */
-	void setInstance(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,21 +134,5 @@ public interface RealtimeEvent extends MethodCallExpression {
 	 * @generated
 	 */
 	void setFullEventName(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, RealtimeEvent newEvent);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String toString();
 
 } // RealtimeEvent

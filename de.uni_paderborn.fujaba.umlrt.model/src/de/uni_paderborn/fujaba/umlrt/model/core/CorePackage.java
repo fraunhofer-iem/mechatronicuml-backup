@@ -529,22 +529,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_STATECHART__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>UML Interface Statechart</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STATECHART__UML_INTERFACE_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
-
-	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
@@ -553,7 +544,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__PROVIDED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ABSTRACT_STATECHART__PROVIDED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
@@ -562,7 +553,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__REQUIRED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int ABSTRACT_STATECHART__REQUIRED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Is Embedded</b></em>' attribute.
@@ -571,7 +562,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__IS_EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
+	int ABSTRACT_STATECHART__IS_EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -580,7 +571,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
+	int ABSTRACT_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -589,7 +580,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
+	int ABSTRACT_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Statechart</em>' class.
@@ -598,7 +589,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 19;
+	int ABSTRACT_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1241,17 +1232,6 @@ public interface CorePackage extends EPackage {
 	EReference getAbstractStatechart_EClass();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLInterfaceStatechart <em>UML Interface Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>UML Interface Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLInterfaceStatechart()
-	 * @see #getAbstractStatechart()
-	 * @generated
-	 */
-	EReference getAbstractStatechart_UMLInterfaceStatechart();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1727,14 +1707,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_STATECHART__ECLASS = eINSTANCE.getAbstractStatechart_EClass();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Interface Statechart</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_STATECHART__UML_INTERFACE_STATECHART = eINSTANCE.getAbstractStatechart_UMLInterfaceStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Behavioral Element</b></em>' reference feature.

@@ -20,7 +20,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
@@ -32,7 +31,6 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 /**
  * <!-- begin-user-doc -->

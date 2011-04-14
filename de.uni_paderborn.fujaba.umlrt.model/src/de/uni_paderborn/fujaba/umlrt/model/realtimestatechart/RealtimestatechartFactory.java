@@ -62,15 +62,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	State createState();
 
 	/**
-	 * Returns a new object of class '<em>UML Interface Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>UML Interface Statechart</em>'.
-	 * @generated
-	 */
-	UMLInterfaceStatechart createUMLInterfaceStatechart();
-
-	/**
 	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

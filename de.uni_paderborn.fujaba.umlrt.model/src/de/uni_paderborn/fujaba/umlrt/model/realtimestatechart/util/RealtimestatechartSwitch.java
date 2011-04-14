@@ -137,16 +137,6 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: {
-				UMLInterfaceStatechart umlInterfaceStatechart = (UMLInterfaceStatechart)theEObject;
-				T result = caseUMLInterfaceStatechart(umlInterfaceStatechart);
-				if (result == null) result = caseAbstractStatechart(umlInterfaceStatechart);
-				if (result == null) result = caseNamedElement(umlInterfaceStatechart);
-				if (result == null) result = caseCommentableElement(umlInterfaceStatechart);
-				if (result == null) result = caseExtendableElement(umlInterfaceStatechart);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
@@ -360,21 +350,6 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseState(State object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>UML Interface Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>UML Interface Statechart</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUMLInterfaceStatechart(UMLInterfaceStatechart object) {
 		return null;
 	}
 

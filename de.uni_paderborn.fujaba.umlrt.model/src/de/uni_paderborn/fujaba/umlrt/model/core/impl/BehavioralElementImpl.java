@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 
 /**
  * <!-- begin-user-doc -->

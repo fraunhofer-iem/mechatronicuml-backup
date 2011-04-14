@@ -11,7 +11,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
 import java.util.Iterator;
@@ -49,7 +48,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEClass <em>EClass</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLInterfaceStatechart <em>UML Interface Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
@@ -277,6 +275,7 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -284,7 +283,8 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transitions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_Transitions()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart
+	 * @model opposite="statechart" containment="true"
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
@@ -328,32 +328,6 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setEClass(EClass value);
-
-	/**
-	 * Returns the value of the '<em><b>UML Interface Statechart</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>UML Interface Statechart</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Interface Statechart</em>' containment reference.
-	 * @see #setUMLInterfaceStatechart(UMLInterfaceStatechart)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_UMLInterfaceStatechart()
-	 * @model containment="true"
-	 * @generated
-	 */
-	UMLInterfaceStatechart getUMLInterfaceStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLInterfaceStatechart <em>UML Interface Statechart</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Interface Statechart</em>' containment reference.
-	 * @see #getUMLInterfaceStatechart()
-	 * @generated
-	 */
-	void setUMLInterfaceStatechart(UMLInterfaceStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Behavioral Element</b></em>' reference.

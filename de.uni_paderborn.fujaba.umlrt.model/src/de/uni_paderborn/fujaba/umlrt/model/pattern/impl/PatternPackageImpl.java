@@ -6,57 +6,35 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.pattern.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.ReconfPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,7 +120,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
-		ReconfPackageImpl theReconfPackage = (ReconfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) instanceof ReconfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) : ReconfPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
 
@@ -154,7 +131,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
-		theReconfPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
 
@@ -166,7 +142,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
-		theReconfPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 

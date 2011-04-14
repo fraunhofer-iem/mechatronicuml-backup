@@ -25,7 +25,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 
 /**
@@ -142,17 +141,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE, newState, newState));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone(AbstractStatechart rtsc, SynchronizationChannel newChannel) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -315,20 +303,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___CLONE__ABSTRACTSTATECHART_SYNCHRONIZATIONCHANNEL:
-				return clone((AbstractStatechart)arguments.get(0), (SynchronizationChannel)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -347,12 +321,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 
 	@Override
 	public EList<EParameter> getOutParameters() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EList<EParameter> getContainedParameters() {
 		// TODO Auto-generated method stub
 		return null;
 	}

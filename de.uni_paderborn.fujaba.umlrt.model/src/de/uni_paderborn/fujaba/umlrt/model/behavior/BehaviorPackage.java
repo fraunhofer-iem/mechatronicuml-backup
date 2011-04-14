@@ -6,13 +6,12 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.behavior;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -207,15 +206,6 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROTOCOL_STATECHART__ECLASS = CorePackage.ABSTRACT_STATECHART__ECLASS;
-
-	/**
-	 * The feature id for the '<em><b>UML Interface Statechart</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART__UML_INTERFACE_STATECHART = CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.

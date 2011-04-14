@@ -10,7 +10,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +20,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -108,17 +106,6 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * @generated
 	 */
 	public Vertex getNextState() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone(AbstractStatechart rtsc, InitialState newStartState) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -236,8 +223,6 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 		switch (operationID) {
 			case RealtimestatechartPackage.INITIAL_STATE___GET_NEXT_STATE:
 				return getNextState();
-			case RealtimestatechartPackage.INITIAL_STATE___CLONE__ABSTRACTSTATECHART_INITIALSTATE:
-				return clone((AbstractStatechart)arguments.get(0), (InitialState)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

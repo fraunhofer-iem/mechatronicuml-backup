@@ -6,12 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfDiagram;
-
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,9 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getDoAction <em>Do Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction <em>Exit Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction <em>Entry Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getReconfDiagram <em>Reconf Diagram</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getInterfacedStates <em>Interfaced States</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getInterfaceState <em>Interface State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getInvariants <em>Invariants</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
@@ -144,71 +136,6 @@ public interface State extends Vertex {
 	void setEntryAction(EntryOrExitEvent value);
 
 	/**
-	 * Returns the value of the '<em><b>Reconf Diagram</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The reconfiguration diagram belonging to this complex state. This is mainly a component instance diagram describing a certain configuration of the system.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Reconf Diagram</em>' containment reference.
-	 * @see #setReconfDiagram(ReconfDiagram)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_ReconfDiagram()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ReconfDiagram getReconfDiagram();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getReconfDiagram <em>Reconf Diagram</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reconf Diagram</em>' containment reference.
-	 * @see #getReconfDiagram()
-	 * @generated
-	 */
-	void setReconfDiagram(ReconfDiagram value);
-
-	/**
-	 * Returns the value of the '<em><b>Interfaced States</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO: What's this good for?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Interfaced States</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_InterfacedStates()
-	 * @model
-	 * @generated
-	 */
-	EList<State> getInterfacedStates();
-
-	/**
-	 * Returns the value of the '<em><b>Interface State</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO: What's this good for?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Interface State</em>' reference.
-	 * @see #setInterfaceState(State)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_InterfaceState()
-	 * @model
-	 * @generated
-	 */
-	State getInterfaceState();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getInterfaceState <em>Interface State</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interface State</em>' reference.
-	 * @see #getInterfaceState()
-	 * @generated
-	 */
-	void setInterfaceState(State value);
-
-	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint}.
 	 * <!-- begin-user-doc -->
@@ -265,13 +192,5 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	EList<SynchronizationChannel> getChannels();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, State newComplexState);
 
 } // State

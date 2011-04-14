@@ -182,12 +182,4 @@ public interface Action extends Expression {
 	 */
 	void setWCETSpecifiedByUser(boolean value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone(AbstractStatechart rtsc, Action newAction);
-
 } // Action

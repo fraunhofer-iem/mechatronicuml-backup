@@ -47,10 +47,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.Helper
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.ReconfPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -168,7 +164,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
-		ReconfPackageImpl theReconfPackage = (ReconfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) instanceof ReconfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) : ReconfPackage.eINSTANCE);
 		HelperPackageImpl theHelperPackage = (HelperPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) instanceof HelperPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI) : HelperPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
 
@@ -180,7 +175,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theInstancePackage.createPackageContents();
 		thePatternPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
-		theReconfPackage.createPackageContents();
 		theHelperPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
 
@@ -192,7 +186,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theInstancePackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
-		theReconfPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 
@@ -543,7 +536,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_UMLInterfaceStatechart() {
+	public EReference getAbstractStatechart_BehavioralElement() {
 		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -552,7 +545,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_BehavioralElement() {
+	public EReference getAbstractStatechart_ProvidedMsgIFace() {
 		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -561,7 +554,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_ProvidedMsgIFace() {
+	public EReference getAbstractStatechart_RequiredMsgIFace() {
 		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -570,17 +563,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_RequiredMsgIFace() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAbstractStatechart_IsEmbedded() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -589,7 +573,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getAbstractStatechart_Clocks() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(16);
+		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -598,7 +582,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getAbstractStatechart_EmbeddingRegion() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(17);
+		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -743,7 +727,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__TRANSITIONS);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__VERTICES);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__ECLASS);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__UML_INTERFACE_STATECHART);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__PROVIDED_MSG_IFACE);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__REQUIRED_MSG_IFACE);
@@ -856,10 +839,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getAbstractStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_UMLRealtimeStartState(), theRealtimestatechartPackage.getInitialState(), theRealtimestatechartPackage.getInitialState_UMLRealtimeStartStateRev(), "uMLRealtimeStartState", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_UMLComplexRealtimeState(), theRealtimestatechartPackage.getState(), null, "uMLComplexRealtimeState", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_Transitions(), theRealtimestatechartPackage.getTransition(), null, "transitions", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractStatechart_Transitions(), theRealtimestatechartPackage.getTransition(), theRealtimestatechartPackage.getTransition_Statechart(), "transitions", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_Vertices(), theRealtimestatechartPackage.getVertex(), null, "vertices", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_UMLInterfaceStatechart(), theRealtimestatechartPackage.getUMLInterfaceStatechart(), null, "uMLInterfaceStatechart", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_BehavioralElement(), this.getBehavioralElement(), null, "behavioralElement", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_ProvidedMsgIFace(), theHelperPackage.getStringToEClass(), null, "providedMsgIFace", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_RequiredMsgIFace(), theHelperPackage.getStringToEClass(), null, "requiredMsgIFace", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

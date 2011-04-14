@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
@@ -18,7 +19,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Statechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.storydriven.modeling.ExtendableElement;
@@ -173,16 +174,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected Vertex source;
-
-	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
-	 * @generated
-	 * @ordered
-	 */
-	protected AbstractStatechart statechart;
 
 	/**
 	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference list.
@@ -569,15 +560,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public AbstractStatechart getStatechart() {
-		if (statechart != null && statechart.eIsProxy()) {
-			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
-			if (statechart != oldStatechart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__STATECHART, oldStatechart, statechart));
-			}
-		}
-		return statechart;
+		if (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART) return null;
+		return (AbstractStatechart)eContainer();
 	}
 
 	/**
@@ -585,8 +569,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetStatechart() {
-		return statechart;
+	public NotificationChain basicSetStatechart(AbstractStatechart newStatechart, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.TRANSITION__STATECHART, msgs);
+		return msgs;
 	}
 
 	/**
@@ -595,10 +580,19 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public void setStatechart(AbstractStatechart newStatechart) {
-		AbstractStatechart oldStatechart = statechart;
-		statechart = newStatechart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__STATECHART, oldStatechart, statechart));
+		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART && newStatechart != null)) {
+			if (EcoreUtil.isAncestor(this, newStatechart))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newStatechart != null)
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS, AbstractStatechart.class, msgs);
+			msgs = basicSetStatechart(newStatechart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__STATECHART, newStatechart, newStatechart));
 	}
 
 	/**
@@ -865,28 +859,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getDefaultName() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone(AbstractStatechart rtsc, Transition newTransition) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -949,6 +921,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (sideEffect != null)
 					msgs = ((InternalEObject)sideEffect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, null, msgs);
 				return basicSetSideEffect((Action)otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__STATECHART:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetStatechart((AbstractStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION:
 				if (uMLRealtimeFadingFunction != null)
 					msgs = ((InternalEObject)uMLRealtimeFadingFunction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION, null, msgs);
@@ -981,6 +957,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicSetReceiveSynchronization(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
 				return basicSetSideEffect(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__STATECHART:
+				return basicSetStatechart(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
 				return basicSetUMLRealtimeFlatSwitching(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION:
@@ -997,6 +975,20 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicSetRelativeDeadline(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.TRANSITION__STATECHART:
+				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS, AbstractStatechart.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -1026,8 +1018,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (resolve) return getSource();
 				return basicGetSource();
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				if (resolve) return getStatechart();
-				return basicGetStatechart();
+				return getStatechart();
 			case RealtimestatechartPackage.TRANSITION__RESETS:
 				return getResets();
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
@@ -1224,7 +1215,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				return source != null;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return statechart != null;
+				return getStatechart() != null;
 			case RealtimestatechartPackage.TRANSITION__RESETS:
 				return resets != null && !resets.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
@@ -1342,10 +1333,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		switch (operationID) {
 			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER:
 				return calculateWorstCaseDeadlineAsNaturalNumber();
-			case RealtimestatechartPackage.TRANSITION___GET_DEFAULT_NAME:
-				return getDefaultName();
-			case RealtimestatechartPackage.TRANSITION___CLONE__ABSTRACTSTATECHART_TRANSITION:
-				return clone((AbstractStatechart)arguments.get(0), (Transition)arguments.get(1));
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:

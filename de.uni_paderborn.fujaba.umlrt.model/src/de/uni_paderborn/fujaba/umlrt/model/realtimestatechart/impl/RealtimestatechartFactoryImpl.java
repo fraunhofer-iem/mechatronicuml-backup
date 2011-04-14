@@ -65,7 +65,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.RELATIVE_DEADLINE: return createRelativeDeadline();
 			case RealtimestatechartPackage.CLOCK: return createClock();
 			case RealtimestatechartPackage.STATE: return createState();
-			case RealtimestatechartPackage.UML_INTERFACE_STATECHART: return createUMLInterfaceStatechart();
 			case RealtimestatechartPackage.ACTION: return createAction();
 			case RealtimestatechartPackage.REALTIME_EVENT: return createRealtimeEvent();
 			case RealtimestatechartPackage.FADING_FUNCTION: return createFadingFunction();
@@ -155,16 +154,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public State createState() {
 		StateImpl state = new StateImpl();
 		return state;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UMLInterfaceStatechart createUMLInterfaceStatechart() {
-		UMLInterfaceStatechartImpl umlInterfaceStatechart = new UMLInterfaceStatechartImpl();
-		return umlInterfaceStatechart;
 	}
 
 	/**

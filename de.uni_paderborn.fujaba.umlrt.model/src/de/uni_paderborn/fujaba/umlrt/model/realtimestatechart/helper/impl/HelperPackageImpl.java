@@ -6,45 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl.ReconfPackageImpl;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -57,10 +18,27 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -168,7 +146,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		PatternPackageImpl thePatternPackage = (PatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) instanceof PatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI) : PatternPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
-		ReconfPackageImpl theReconfPackage = (ReconfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) instanceof ReconfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfPackage.eNS_URI) : ReconfPackage.eINSTANCE);
 		MsgifacePackageImpl theMsgifacePackage = (MsgifacePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) instanceof MsgifacePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI) : MsgifacePackage.eINSTANCE);
 
 		// Create package meta-data objects
@@ -180,7 +157,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		theInstancePackage.createPackageContents();
 		thePatternPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
-		theReconfPackage.createPackageContents();
 		theMsgifacePackage.createPackageContents();
 
 		// Initialize created meta-data
@@ -192,7 +168,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		theInstancePackage.initializePackageContents();
 		thePatternPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
-		theReconfPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
