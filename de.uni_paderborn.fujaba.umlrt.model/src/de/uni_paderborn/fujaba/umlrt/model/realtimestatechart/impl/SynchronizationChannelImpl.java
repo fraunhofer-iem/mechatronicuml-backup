@@ -351,4 +351,10 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		return null;
 	}
 
+	@Override
+	public EList<EParameter> getContainedParameters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 } //SynchronizationChannelImpl
