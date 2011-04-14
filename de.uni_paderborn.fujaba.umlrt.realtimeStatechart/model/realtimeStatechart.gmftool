@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="StatechartPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Realtime Statechart"
+        description="Can be casted on statechart."
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="State"
+          description="Creation of a state.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/c_state16.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Start State"
+          description="Creation of a start state.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/startState16.png"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Stop State"
+          description="Creation of a stop state.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/stopState16.png"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Transition"
+          description="Creation of a transition.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/transition16.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Clock"
+          description="Creation of a clock for a statechart">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="History"
+          description="Creation of a history.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/history16.png"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Realtime State"
+        description="Can be casted on state."
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Time Invariant"
+          description="Creation of a time invariant.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Region"
+          description="Creation of a region for a state.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/andState.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Realtime Transition"
+        description="Can be casted on transition."
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Trigger Event"
+          description="Creation of a trigger event.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/e_trigger16.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Raised Event"
+          description="Creation of a raised event.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/e_raised16.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Side Effect"
+          description="Creation of a side effect.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/setRefMethod.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Clock Reset"
+          description="Creation of a clock reset.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Time Guard"
+          description="Creation of a time guard.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Absolute Deadline"
+          description="Creation of a absolute deadline.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Relative Deadline"
+          description="Creation of a relative deadline.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/clock.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>
