@@ -72,7 +72,6 @@ public class RealtimeEventItemProvider
 
 			addTriggeredUMLRealtimeTransitionPropertyDescriptor(object);
 			addRaisedUMLRealtimeTransitionPropertyDescriptor(object);
-			addInstancePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addFullEventNamePropertyDescriptor(object);
 		}
@@ -119,28 +118,6 @@ public class RealtimeEventItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeEvent_instance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeEvent_instance_feature", "_UI_RealtimeEvent_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_EVENT__INSTANCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -226,7 +203,6 @@ public class RealtimeEventItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RealtimeEvent.class)) {
-			case RealtimestatechartPackage.REALTIME_EVENT__INSTANCE:
 			case RealtimestatechartPackage.REALTIME_EVENT__NAME:
 			case RealtimestatechartPackage.REALTIME_EVENT__FULL_EVENT_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

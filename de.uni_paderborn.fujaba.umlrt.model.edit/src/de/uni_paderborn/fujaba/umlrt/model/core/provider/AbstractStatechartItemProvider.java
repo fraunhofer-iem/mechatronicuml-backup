@@ -328,7 +328,6 @@ public class AbstractStatechartItemProvider
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__TRANSITIONS);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__VERTICES);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__ECLASS);
-			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_STATECHART__CLOCKS);
@@ -390,7 +389,6 @@ public class AbstractStatechartItemProvider
 			case CorePackage.ABSTRACT_STATECHART__TRANSITIONS:
 			case CorePackage.ABSTRACT_STATECHART__VERTICES:
 			case CorePackage.ABSTRACT_STATECHART__ECLASS:
-			case CorePackage.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART:
 			case CorePackage.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE:
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
@@ -450,11 +448,6 @@ public class AbstractStatechartItemProvider
 			(createChildParameter
 				(CorePackage.Literals.ABSTRACT_STATECHART__ECLASS,
 				 EcoreFactory.eINSTANCE.createEClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.ABSTRACT_STATECHART__UML_INTERFACE_STATECHART,
-				 RealtimestatechartFactory.eINSTANCE.createUMLInterfaceStatechart()));
 
 		newChildDescriptors.add
 			(createChildParameter

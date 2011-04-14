@@ -168,29 +168,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UMLInterfaceStatechartItemProvider umlInterfaceStatechartItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.UMLInterfaceStatechart}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUMLInterfaceStatechartAdapter() {
-		if (umlInterfaceStatechartItemProvider == null) {
-			umlInterfaceStatechartItemProvider = new UMLInterfaceStatechartItemProvider(this);
-		}
-
-		return umlInterfaceStatechartItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,7 +638,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (relativeDeadlineItemProvider != null) relativeDeadlineItemProvider.dispose();
 		if (clockItemProvider != null) clockItemProvider.dispose();
 		if (stateItemProvider != null) stateItemProvider.dispose();
-		if (umlInterfaceStatechartItemProvider != null) umlInterfaceStatechartItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (realtimeEventItemProvider != null) realtimeEventItemProvider.dispose();
 		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();

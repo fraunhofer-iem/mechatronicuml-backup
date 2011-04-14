@@ -7,20 +7,12 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.ReconfFactory;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -30,6 +22,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State} object.
@@ -66,55 +62,9 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addInterfacedStatesPropertyDescriptor(object);
-			addInterfaceStatePropertyDescriptor(object);
 			addCommittedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Interfaced States feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInterfacedStatesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_interfacedStates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_interfacedStates_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__INTERFACED_STATES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Interface State feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInterfaceStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_interfaceState_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_interfaceState_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__INTERFACE_STATE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -155,7 +105,6 @@ public class StateItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DO_ACTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_ACTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__RECONF_DIAGRAM);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
 		}
@@ -219,7 +168,6 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__DO_ACTION:
 			case RealtimestatechartPackage.STATE__EXIT_ACTION:
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
-			case RealtimestatechartPackage.STATE__RECONF_DIAGRAM:
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -258,11 +206,6 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__RECONF_DIAGRAM,
-				 ReconfFactory.eINSTANCE.createReconfDiagram()));
 
 		newChildDescriptors.add
 			(createChildParameter
