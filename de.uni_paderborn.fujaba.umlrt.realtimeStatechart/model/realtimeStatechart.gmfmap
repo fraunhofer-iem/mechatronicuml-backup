@@ -101,10 +101,36 @@
               href="realtimeStatechart.gmfgraph#EEEventNode"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/invariants"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#TimeInvariant"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clockConstraintExpr"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.0"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#TimeInvariantNode"/>
+        </ownedChild>
+      </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
         <compartment
             href="realtimeStatechart.gmfgraph#ActionsCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.3">
+        <compartment
+            href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

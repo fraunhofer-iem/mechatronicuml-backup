@@ -42,10 +42,11 @@ public class RealtimeStatechartModelingAssistantProvider extends
 			return types;
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 			types.add(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.EntryEvent_3005);
 			types.add(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.DoEvent_3002);
 			types.add(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitEvent_3006);
+			types.add(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ClockConstraint_3007);
 			return types;
 		}
 		return Collections.EMPTY_LIST;

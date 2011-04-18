@@ -182,14 +182,15 @@ public class RealtimeStatechartPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createTimeInvariant1CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.TimeInvariant1CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.TimeInvariant1CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ClockConstraint_3007));
 		entry.setId("createTimeInvariant1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

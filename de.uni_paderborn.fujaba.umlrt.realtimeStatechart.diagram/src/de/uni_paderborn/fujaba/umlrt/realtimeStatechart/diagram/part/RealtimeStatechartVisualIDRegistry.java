@@ -149,6 +149,12 @@ public class RealtimeStatechartVisualIDRegistry {
 				return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID;
 			}
 			break;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getClockConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID;
+			}
+			break;
 		}
 		return -1;
 	}
@@ -197,6 +203,9 @@ public class RealtimeStatechartVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart.VISUAL_ID == nodeVisualID) {
@@ -213,6 +222,11 @@ public class RealtimeStatechartVisualIDRegistry {
 				return true;
 			}
 			break;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -221,6 +235,11 @@ public class RealtimeStatechartVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

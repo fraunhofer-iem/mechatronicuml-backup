@@ -135,6 +135,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 					.getFigure());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStateCompartmentFigureInvariants();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -150,6 +158,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 					.getFigureStateCompartmentFigureActions();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStateCompartmentFigureInvariants();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -182,6 +198,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) {
 			return getPrimaryShape().getFigureStateCompartmentFigureActions();
+		}
+		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureStateCompartmentFigureInvariants();
 		}
 		return getContentPane();
 	}
@@ -369,6 +389,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID));
 			}
+			if (type == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ClockConstraint_3007) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID));
+			}
 		}
 		return super.getTargetEditPart(request);
 	}
@@ -439,7 +463,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 
 			GridData constraintFFigureStateCompartmentFigureInvariants = new GridData();
 			constraintFFigureStateCompartmentFigureInvariants.verticalAlignment = GridData.CENTER;
-			constraintFFigureStateCompartmentFigureInvariants.horizontalAlignment = GridData.CENTER;
+			constraintFFigureStateCompartmentFigureInvariants.horizontalAlignment = GridData.FILL;
 			constraintFFigureStateCompartmentFigureInvariants.horizontalIndent = 0;
 			constraintFFigureStateCompartmentFigureInvariants.horizontalSpan = 1;
 			constraintFFigureStateCompartmentFigureInvariants.verticalSpan = 1;

@@ -77,7 +77,8 @@
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"/>
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -395,18 +396,17 @@
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
+      name="ActionsCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <compartments
       name="RegionCompartment"
       figure="StateFigure"
-      collapsible="true"
       accessor="//@figures.0/@descriptors.2/@accessors.4"/>
   <compartments
       name="SubstateCompartment"
       figure="RegionFigure"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <compartments
-      name="ActionsCompartment"
-      figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <labels
       name="TransitionPriority"
       figure="TransitionFigure"

@@ -80,6 +80,11 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ClockConstraint_3007 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Transition_4001 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"); //$NON-NLS-1$
 
 	/**
@@ -234,6 +239,11 @@ public class RealtimeStatechartElementTypes {
 							.getExitEvent());
 
 			elements.put(
+					ClockConstraint_3007,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getClockConstraint());
+
+			elements.put(
 					Transition_4001,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition());
@@ -262,6 +272,7 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(EntryEvent_3005);
 			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
 			KNOWN_ELEMENT_TYPES.add(ExitEvent_3006);
+			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3007);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -288,6 +299,8 @@ public class RealtimeStatechartElementTypes {
 			return DoEvent_3002;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
 			return ExitEvent_3006;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
+			return ClockConstraint_3007;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}
