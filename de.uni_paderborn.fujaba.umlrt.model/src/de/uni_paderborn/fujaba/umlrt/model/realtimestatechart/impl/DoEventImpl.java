@@ -98,7 +98,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EXPR_EDEFAULT = "test";
+	protected static final String ACTION_EXPR_EDEFAULT = "doEventExpr";
 
 	/**
 	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.

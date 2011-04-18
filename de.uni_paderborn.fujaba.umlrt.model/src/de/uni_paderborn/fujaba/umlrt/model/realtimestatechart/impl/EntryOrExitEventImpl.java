@@ -67,7 +67,7 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EXPR_EDEFAULT = "test";
+	protected static final String ACTION_EXPR_EDEFAULT = "entryExitExpr";
 
 	/**
 	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.

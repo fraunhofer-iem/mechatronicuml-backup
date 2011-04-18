@@ -74,6 +74,7 @@ public class ClockConstraintItemProvider
 
 			addClockPropertyDescriptor(object);
 			addOperatorPropertyDescriptor(object);
+			addClockConstraintExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,6 +115,28 @@ public class ClockConstraintItemProvider
 				 getString("_UI_ClockConstraint_operator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_operator_feature", "_UI_ClockConstraint_type"),
 				 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clock Constraint Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClockConstraintExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ClockConstraint_clockConstraintExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_clockConstraintExpr_feature", "_UI_ClockConstraint_type"),
+				 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR,
 				 true,
 				 false,
 				 false,
@@ -191,6 +214,7 @@ public class ClockConstraintItemProvider
 
 		switch (notification.getFeatureID(ClockConstraint.class)) {
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
+			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__BOUND:

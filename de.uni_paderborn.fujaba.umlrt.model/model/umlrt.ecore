@@ -1154,6 +1154,9 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
                   eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
                   defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+                  defaultValueLiteral="clockConstraintExpr"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="HistoryState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryKind"/>
@@ -1172,14 +1175,14 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="test"/>
+                  defaultValueLiteral="doEventExpr"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent">
               <eStructuralFeatures xsi:type="ecore:EReference" name="resets" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="test"/>
+                  defaultValueLiteral="entryExitExpr"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="EntryEvent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent">
               <eStructuralFeatures xsi:type="ecore:EReference" name="entryActionRev"

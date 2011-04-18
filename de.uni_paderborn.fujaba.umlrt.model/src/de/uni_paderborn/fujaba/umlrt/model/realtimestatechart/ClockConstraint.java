@@ -28,6 +28,7 @@ import org.storydriven.modeling.expressions.ComparingOperator;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getBound <em>Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClock <em>Clock</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getOperator <em>Operator</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,5 +120,32 @@ public interface ClockConstraint extends EObject {
 	 * @generated
 	 */
 	void setOperator(ComparingOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Clock Constraint Expr</b></em>' attribute.
+	 * The default value is <code>"clockConstraintExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Clock Constraint Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #setClockConstraintExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_ClockConstraintExpr()
+	 * @model default="clockConstraintExpr"
+	 * @generated
+	 */
+	String getClockConstraintExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #getClockConstraintExpr()
+	 * @generated
+	 */
+	void setClockConstraintExpr(String value);
 
 } // ClockConstraint

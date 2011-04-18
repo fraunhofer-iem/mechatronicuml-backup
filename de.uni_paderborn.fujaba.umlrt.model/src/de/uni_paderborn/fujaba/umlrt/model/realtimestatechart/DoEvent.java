@@ -137,7 +137,7 @@ public interface DoEvent extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
-	 * The default value is <code>"test"</code>.
+	 * The default value is <code>"doEventExpr"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
@@ -147,7 +147,7 @@ public interface DoEvent extends EObject {
 	 * @return the value of the '<em>Action Expr</em>' attribute.
 	 * @see #setActionExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_ActionExpr()
-	 * @model default="test"
+	 * @model default="doEventExpr"
 	 * @generated
 	 */
 	String getActionExpr();

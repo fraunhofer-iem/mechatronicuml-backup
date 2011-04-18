@@ -3191,13 +3191,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_CONSTRAINT__OPERATOR = 2;
 
 	/**
+	 * The feature id for the '<em><b>Clock Constraint Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR = 3;
+
+	/**
 	 * The number of structural features of the '<em>Clock Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_CONSTRAINT_FEATURE_COUNT = 3;
+	int CLOCK_CONSTRAINT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Clock Constraint</em>' class.
@@ -5469,6 +5478,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getClockConstraint_Operator();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Clock Constraint Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr()
+	 * @see #getClockConstraint()
+	 * @generated
+	 */
+	EAttribute getClockConstraint_ClockConstraintExpr();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState <em>History State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6492,6 +6512,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__OPERATOR = eINSTANCE.getClockConstraint_Operator();
+
+		/**
+		 * The meta object literal for the '<em><b>Clock Constraint Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR = eINSTANCE.getClockConstraint_ClockConstraintExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.
