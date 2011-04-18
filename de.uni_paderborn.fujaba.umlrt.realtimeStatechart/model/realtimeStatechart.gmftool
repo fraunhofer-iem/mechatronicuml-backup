@@ -88,6 +88,33 @@
             path="icon/andState.gif"
             bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Entry Event"
+          description="Creation of a entry action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/xAction.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Do Event"
+          description="Creation of a do action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/xAction.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Exit Event"
+          description="Creation of a exit action">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/xAction.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

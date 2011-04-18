@@ -1,7 +1,7 @@
-#Tue Apr 12 22:53:07 CEST 2011
+#Mon Apr 18 10:27:18 CEST 2011
 eclipse.preferences.version=1
 generate_rcp=false
 ignore_gmfgen_validation=false
-ignore_mapmodel_validation=false
+ignore_mapmodel_validation=true
 use_map_mode=true
 use_runtime_figures=true

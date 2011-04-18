@@ -81,11 +81,23 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="StateCompartmentFigureActions"
+            name="StateCompartmentActionsFigure"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StateCompartmentFigureSynchroChannel"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
               horizontalAlignment="FILL"/>
         </children>
         <children
@@ -111,8 +123,11 @@
           accessor="getFigureStateCompartmentFigureActions"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
       <accessors
-          accessor="getFigureStateCompartmentFigureRegions"
+          accessor="getFigureStateCompartmentFigureSynchoChannel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.3"/>
+      <accessors
+          accessor="getFigureStateCompartmentFigureRegions"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.4"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -258,7 +273,6 @@
           outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
-            numColumns="2"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
@@ -268,29 +282,19 @@
               grabExcessHorizontalSpace="true"
               horizontalAlignment="FILL"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="DoEventExprLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              horizontalAlignment="END"/>
-        </children>
       </actualFigure>
       <accessors
           accessor="getFigureDoActionLabel"
           figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getFigureDoEventExprLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="EntryExitEventFigure">
+        name="EEEventFigure">
       <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="EntryEventFigure">
+          xsi:type="gmfgraph:Rectangle"
+          name="ActionRectangle"
+          outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
-            numColumns="2"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
@@ -300,20 +304,10 @@
               grabExcessHorizontalSpace="true"
               horizontalAlignment="FILL"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="EEEventExprLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              horizontalAlignment="END"/>
-        </children>
       </actualFigure>
       <accessors
           accessor="getFigureEEActionLabel"
           figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getFigureTimerExprLabel"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
   <nodes
@@ -363,17 +357,18 @@
   </nodes>
   <nodes
       name="DoEventNode"
-      figure="DoEventFigure">
+      figure="DoEventFigure"
+      affixedParentSide="WEST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="-1"
-          dy="-1"/>
+          dx="20"
+          dy="20"/>
     </facets>
   </nodes>
   <nodes
-      name="EntryExitEventNode"
-      figure="EntryExitEventFigure"
+      name="EEEventNode"
+      figure="EEEventFigure"
       affixedParentSide="WEST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -400,19 +395,18 @@
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
-      name="ActionCompartment"
-      figure="StateFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
-  <compartments
       name="RegionCompartment"
       figure="StateFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.2/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.4"/>
   <compartments
       name="SubstateCompartment"
       figure="RegionFigure"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <compartments
+      name="ActionsCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <labels
       name="TransitionPriority"
       figure="TransitionFigure"
@@ -495,15 +489,15 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
-      name="DoEventActionName"
+      name="DoEventExpr"
       figure="DoEventFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
-      name="DoEventExpr"
-      figure="DoEventFigure"
+      name="EEEventExpr"
+      figure="EEEventFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
       name="RegionPriority"
       figure="RegionPriorityFigure"

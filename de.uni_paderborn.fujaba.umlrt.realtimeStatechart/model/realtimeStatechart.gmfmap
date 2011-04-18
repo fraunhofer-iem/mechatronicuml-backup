@@ -34,6 +34,78 @@
           href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="realtimeStatechart.gmfgraph#StateNode"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/entryAction"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryEvent"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#EEEventExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/actionExpr"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#EEEventNode"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/doAction"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#DoEventExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/actionExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/periodLower"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/periodUpper"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#DoEventNode"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitEvent"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#EEEventExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/actionExpr"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.4"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#EEEventNode"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
+        <compartment
+            href="realtimeStatechart.gmfgraph#ActionsCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
