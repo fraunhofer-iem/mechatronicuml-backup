@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 import java.util.Collection;
@@ -26,7 +27,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent} object.
@@ -65,6 +68,7 @@ public class EntryOrExitEventItemProvider
 
 			addResetsPropertyDescriptor(object);
 			addUMLRealtimeActionPropertyDescriptor(object);
+			addActionExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,6 +118,28 @@ public class EntryOrExitEventItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Action Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntryOrExitEvent_actionExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_actionExpr_feature", "_UI_EntryOrExitEvent_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns EntryOrExitEvent.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,7 +158,10 @@ public class EntryOrExitEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_EntryOrExitEvent_type");
+		String label = ((EntryOrExitEvent)object).getActionExpr();
+		return label == null || label.length() == 0 ?
+			getString("_UI_EntryOrExitEvent_type") :
+			getString("_UI_EntryOrExitEvent_type") + " " + label;
 	}
 
 	/**
@@ -145,6 +174,12 @@ public class EntryOrExitEventItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(EntryOrExitEvent.class)) {
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

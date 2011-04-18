@@ -444,6 +444,52 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntryEventItemProvider entryEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntryEventAdapter() {
+		if (entryEventItemProvider == null) {
+			entryEventItemProvider = new EntryEventItemProvider(this);
+		}
+
+		return entryEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExitEventItemProvider exitEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExitEventAdapter() {
+		if (exitEventItemProvider == null) {
+			exitEventItemProvider = new ExitEventItemProvider(this);
+		}
+
+		return exitEventItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -650,6 +696,8 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
+		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
+		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
 		if (regionItemProvider != null) regionItemProvider.dispose();

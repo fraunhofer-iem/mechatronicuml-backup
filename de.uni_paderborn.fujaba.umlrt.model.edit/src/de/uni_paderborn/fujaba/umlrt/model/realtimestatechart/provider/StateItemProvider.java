@@ -200,12 +200,12 @@ public class StateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EXIT_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createExitEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createEntryEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -216,29 +216,6 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__CHANNELS,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.STATE__EXIT_ACTION ||
-			childFeature == RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
