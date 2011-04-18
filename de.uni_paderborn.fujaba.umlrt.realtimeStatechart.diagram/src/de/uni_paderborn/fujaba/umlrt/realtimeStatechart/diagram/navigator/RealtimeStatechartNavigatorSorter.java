@@ -10,7 +10,7 @@ public class RealtimeStatechartNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 4003;
+	private static final int GROUP_CATEGORY = 7003;
 
 	/**
 	 * @generated

@@ -65,6 +65,21 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType EntryEvent_3005 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DoEvent_3002 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoEvent_3002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ExitEvent_3006 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitEvent_3006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Transition_4001 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"); //$NON-NLS-1$
 
 	/**
@@ -204,6 +219,21 @@ public class RealtimeStatechartElementTypes {
 							.getHistoryState());
 
 			elements.put(
+					EntryEvent_3005,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getEntryEvent());
+
+			elements.put(
+					DoEvent_3002,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getDoEvent());
+
+			elements.put(
+					ExitEvent_3006,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getExitEvent());
+
+			elements.put(
 					Transition_4001,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition());
@@ -229,6 +259,9 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InitialState_2009);
 			KNOWN_ELEMENT_TYPES.add(FinalState_2010);
 			KNOWN_ELEMENT_TYPES.add(HistoryState_2011);
+			KNOWN_ELEMENT_TYPES.add(EntryEvent_3005);
+			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
+			KNOWN_ELEMENT_TYPES.add(ExitEvent_3006);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -249,6 +282,12 @@ public class RealtimeStatechartElementTypes {
 			return FinalState_2010;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
 			return HistoryState_2011;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+			return EntryEvent_3005;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+			return DoEvent_3002;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+			return ExitEvent_3006;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}

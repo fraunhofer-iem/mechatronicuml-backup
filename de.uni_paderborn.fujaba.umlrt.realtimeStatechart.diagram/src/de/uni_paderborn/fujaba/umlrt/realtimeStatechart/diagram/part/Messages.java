@@ -353,6 +353,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String EntryEvent3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EntryEvent3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String DoEvent4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String DoEvent4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitEvent5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitEvent5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String TriggerEvent1CreationTool_title;
 
 	/**
@@ -419,6 +449,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String RelativeDeadline7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String StateActionsCompartmentEditPart_title;
 
 	/**
 	 * @generated

@@ -19,9 +19,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -64,6 +67,8 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -122,6 +127,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureStateNameFigure());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStateCompartmentFigureActions();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -130,6 +143,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureStateCompartmentFigureActions();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -159,6 +180,9 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart) {
+			return getPrimaryShape().getFigureStateCompartmentFigureActions();
+		}
 		return getContentPane();
 	}
 
@@ -326,6 +350,32 @@ public class StateEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.EntryEvent_3005) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID));
+			}
+			if (type == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.DoEvent_3002) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID));
+			}
+			if (type == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitEvent_3006) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
 	public class StateFigure extends RoundedRectangle {
 
 		/**
@@ -340,6 +390,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private RectangleFigure fFigureStateCompartmentFigureActions;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureStateCompartmentFigureSynchoChannel;
 		/**
 		 * @generated
 		 */
@@ -408,6 +462,21 @@ public class StateEditPart extends ShapeNodeEditPart {
 			this.add(fFigureStateCompartmentFigureActions,
 					constraintFFigureStateCompartmentFigureActions);
 
+			fFigureStateCompartmentFigureSynchoChannel = new RectangleFigure();
+			fFigureStateCompartmentFigureSynchoChannel.setFill(false);
+			fFigureStateCompartmentFigureSynchoChannel.setOutline(false);
+
+			GridData constraintFFigureStateCompartmentFigureSynchoChannel = new GridData();
+			constraintFFigureStateCompartmentFigureSynchoChannel.verticalAlignment = GridData.FILL;
+			constraintFFigureStateCompartmentFigureSynchoChannel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateCompartmentFigureSynchoChannel.horizontalIndent = 0;
+			constraintFFigureStateCompartmentFigureSynchoChannel.horizontalSpan = 1;
+			constraintFFigureStateCompartmentFigureSynchoChannel.verticalSpan = 1;
+			constraintFFigureStateCompartmentFigureSynchoChannel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateCompartmentFigureSynchoChannel.grabExcessVerticalSpace = true;
+			this.add(fFigureStateCompartmentFigureSynchoChannel,
+					constraintFFigureStateCompartmentFigureSynchoChannel);
+
 			fFigureStateCompartmentFigureRegions = new RectangleFigure();
 			fFigureStateCompartmentFigureRegions.setFill(false);
 			fFigureStateCompartmentFigureRegions.setOutline(false);
@@ -444,6 +513,13 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		public RectangleFigure getFigureStateCompartmentFigureActions() {
 			return fFigureStateCompartmentFigureActions;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureStateCompartmentFigureSynchoChannel() {
+			return fFigureStateCompartmentFigureSynchoChannel;
 		}
 
 		/**

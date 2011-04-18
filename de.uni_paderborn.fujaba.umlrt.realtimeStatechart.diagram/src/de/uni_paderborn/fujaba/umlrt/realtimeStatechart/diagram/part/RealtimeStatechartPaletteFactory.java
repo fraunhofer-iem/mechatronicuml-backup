@@ -57,6 +57,9 @@ public class RealtimeStatechartPaletteFactory {
 				.setDescription(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_desc);
 		paletteContainer.add(createTimeInvariant1CreationTool());
 		paletteContainer.add(createRegion2CreationTool());
+		paletteContainer.add(createEntryEvent3CreationTool());
+		paletteContainer.add(createDoEvent4CreationTool());
+		paletteContainer.add(createExitEvent5CreationTool());
 		return paletteContainer;
 	}
 
@@ -202,6 +205,54 @@ public class RealtimeStatechartPaletteFactory {
 		entry.setId("createRegion2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/andState.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEntryEvent3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.EntryEvent3CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.EntryEvent3CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.EntryEvent_3005));
+		entry.setId("createEntryEvent3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/xAction.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createDoEvent4CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.DoEvent4CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.DoEvent4CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.DoEvent_3002));
+		entry.setId("createDoEvent4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/xAction.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createExitEvent5CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.ExitEvent5CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.ExitEvent5CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitEvent_3006));
+		entry.setId("createExitEvent5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/xAction.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
