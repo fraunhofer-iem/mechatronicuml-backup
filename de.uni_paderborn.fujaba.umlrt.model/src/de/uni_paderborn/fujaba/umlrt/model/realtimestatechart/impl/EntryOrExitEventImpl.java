@@ -31,9 +31,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getResets <em>Resets</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getEntryActionRev <em>Entry Action Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getExitActionRev <em>Exit Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getActionExpr <em>Action Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +58,26 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * @ordered
 	 */
 	protected Action uMLRealtimeAction;
+
+	/**
+	 * The default value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ACTION_EXPR_EDEFAULT = "test";
+
+	/**
+	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActionExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String actionExpr = ACTION_EXPR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,88 +141,6 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getEntryActionRev() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV) return null;
-		return (State)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEntryActionRev(State newEntryActionRev, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newEntryActionRev, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEntryActionRev(State newEntryActionRev) {
-		if (newEntryActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV && newEntryActionRev != null)) {
-			if (EcoreUtil.isAncestor(this, newEntryActionRev))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newEntryActionRev != null)
-				msgs = ((InternalEObject)newEntryActionRev).eInverseAdd(this, RealtimestatechartPackage.STATE__ENTRY_ACTION, State.class, msgs);
-			msgs = basicSetEntryActionRev(newEntryActionRev, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV, newEntryActionRev, newEntryActionRev));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public State getExitActionRev() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV) return null;
-		return (State)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExitActionRev(State newExitActionRev, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newExitActionRev, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExitActionRev(State newExitActionRev) {
-		if (newExitActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV && newExitActionRev != null)) {
-			if (EcoreUtil.isAncestor(this, newExitActionRev))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newExitActionRev != null)
-				msgs = ((InternalEObject)newExitActionRev).eInverseAdd(this, RealtimestatechartPackage.STATE__EXIT_ACTION, State.class, msgs);
-			msgs = basicSetExitActionRev(newExitActionRev, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV, newExitActionRev, newExitActionRev));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Action getUMLRealtimeAction() {
 		if (uMLRealtimeAction != null && uMLRealtimeAction.eIsProxy()) {
 			InternalEObject oldUMLRealtimeAction = (InternalEObject)uMLRealtimeAction;
@@ -242,19 +179,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetEntryActionRev((State)otherEnd, msgs);
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetExitActionRev((State)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public String getActionExpr() {
+		return actionExpr;
 	}
 
 	/**
@@ -262,31 +188,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				return basicSetEntryActionRev(null, msgs);
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				return basicSetExitActionRev(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__ENTRY_ACTION, State.class, msgs);
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EXIT_ACTION, State.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
+	public void setActionExpr(String newActionExpr) {
+		String oldActionExpr = actionExpr;
+		actionExpr = newActionExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR, oldActionExpr, actionExpr));
 	}
 
 	/**
@@ -300,13 +206,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				if (resolve) return getResets();
 				return basicGetResets();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				return getEntryActionRev();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				return getExitActionRev();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				if (resolve) return getUMLRealtimeAction();
 				return basicGetUMLRealtimeAction();
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+				return getActionExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -322,14 +226,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				setResets((Clock)newValue);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				setEntryActionRev((State)newValue);
-				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				setExitActionRev((State)newValue);
-				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				setUMLRealtimeAction((Action)newValue);
+				return;
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+				setActionExpr((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -346,14 +247,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				setResets((Clock)null);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				setEntryActionRev((State)null);
-				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				setExitActionRev((State)null);
-				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				setUMLRealtimeAction((Action)null);
+				return;
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+				setActionExpr(ACTION_EXPR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -369,14 +267,28 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				return resets != null;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV:
-				return getEntryActionRev() != null;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV:
-				return getExitActionRev() != null;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				return uMLRealtimeAction != null;
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+				return ACTION_EXPR_EDEFAULT == null ? actionExpr != null : !ACTION_EXPR_EDEFAULT.equals(actionExpr);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (actionExpr: ");
+		result.append(actionExpr);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntryOrExitEventImpl

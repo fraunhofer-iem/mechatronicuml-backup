@@ -242,6 +242,20 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RealtimestatechartPackage.ENTRY_EVENT: {
+				EntryEvent entryEvent = (EntryEvent)theEObject;
+				T result = caseEntryEvent(entryEvent);
+				if (result == null) result = caseEntryOrExitEvent(entryEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.EXIT_EVENT: {
+				ExitEvent exitEvent = (ExitEvent)theEObject;
+				T result = caseExitEvent(exitEvent);
+				if (result == null) result = caseEntryOrExitEvent(exitEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RealtimestatechartPackage.SYNCHRONIZATION: {
 				Synchronization synchronization = (Synchronization)theEObject;
 				T result = caseSynchronization(synchronization);
@@ -545,6 +559,36 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseEntryOrExitEvent(EntryOrExitEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntryEvent(EntryEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExitEvent(ExitEvent object) {
 		return null;
 	}
 

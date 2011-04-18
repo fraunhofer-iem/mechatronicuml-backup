@@ -83,20 +83,20 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Exit Action</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev <em>Exit Action Rev</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent#getExitActionRev <em>Exit Action Rev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The exit action. It is exectuted once when the corresponding complex state is left.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Action</em>' containment reference.
-	 * @see #setExitAction(EntryOrExitEvent)
+	 * @see #setExitAction(ExitEvent)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_ExitAction()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent#getExitActionRev
 	 * @model opposite="exitActionRev" containment="true"
 	 * @generated
 	 */
-	EntryOrExitEvent getExitAction();
+	ExitEvent getExitAction();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction <em>Exit Action</em>}' containment reference.
@@ -106,24 +106,24 @@ public interface State extends Vertex {
 	 * @see #getExitAction()
 	 * @generated
 	 */
-	void setExitAction(EntryOrExitEvent value);
+	void setExitAction(ExitEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Entry Action</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev <em>Entry Action Rev</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev <em>Entry Action Rev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The entry action. It is exectuted once when the corresponding complex state is entered.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Action</em>' containment reference.
-	 * @see #setEntryAction(EntryOrExitEvent)
+	 * @see #setEntryAction(EntryEvent)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_EntryAction()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev
 	 * @model opposite="entryActionRev" containment="true"
 	 * @generated
 	 */
-	EntryOrExitEvent getEntryAction();
+	EntryEvent getEntryAction();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction <em>Entry Action</em>}' containment reference.
@@ -133,7 +133,7 @@ public interface State extends Vertex {
 	 * @see #getEntryAction()
 	 * @generated
 	 */
-	void setEntryAction(EntryOrExitEvent value);
+	void setEntryAction(EntryEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.

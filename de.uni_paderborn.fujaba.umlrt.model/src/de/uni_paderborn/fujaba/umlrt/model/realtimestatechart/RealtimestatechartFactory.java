@@ -170,6 +170,24 @@ public interface RealtimestatechartFactory extends EFactory {
 	EntryOrExitEvent createEntryOrExitEvent();
 
 	/**
+	 * Returns a new object of class '<em>Entry Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entry Event</em>'.
+	 * @generated
+	 */
+	EntryEvent createEntryEvent();
+
+	/**
+	 * Returns a new object of class '<em>Exit Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exit Event</em>'.
+	 * @generated
+	 */
+	ExitEvent createExitEvent();
+
+	/**
 	 * Returns a new object of class '<em>Synchronization</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

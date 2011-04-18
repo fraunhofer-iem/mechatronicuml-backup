@@ -77,6 +77,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
+			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
+			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.PRIORITIZABLE: return createPrioritizable();
 			case RealtimestatechartPackage.REGION: return createRegion();
@@ -274,6 +276,26 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public EntryOrExitEvent createEntryOrExitEvent() {
 		EntryOrExitEventImpl entryOrExitEvent = new EntryOrExitEventImpl();
 		return entryOrExitEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntryEvent createEntryEvent() {
+		EntryEventImpl entryEvent = new EntryEventImpl();
+		return entryEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExitEvent createExitEvent() {
+		ExitEventImpl exitEvent = new ExitEventImpl();
+		return exitEvent;
 	}
 
 	/**

@@ -2492,7 +2492,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizable()
 	 * @generated
 	 */
-	int PRIORITIZABLE = 19;
+	int PRIORITIZABLE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3535,13 +3535,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT__PERIOD_UPPER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_EVENT__ACTION_EXPR = 4;
+
+	/**
 	 * The number of structural features of the '<em>Do Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT_FEATURE_COUNT = 4;
+	int DO_EVENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Do Event</em>' class.
@@ -3572,31 +3581,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT__RESETS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Entry Action Rev</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV = 1;
-
-	/**
-	 * The feature id for the '<em><b>Exit Action Rev</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV = 2;
-
-	/**
 	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = 3;
+	int ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_OR_EXIT_EVENT__ACTION_EXPR = 2;
 
 	/**
 	 * The number of structural features of the '<em>Entry Or Exit Event</em>' class.
@@ -3605,7 +3605,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_OR_EXIT_EVENT_FEATURE_COUNT = 4;
+	int ENTRY_OR_EXIT_EVENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Entry Or Exit Event</em>' class.
@@ -3617,6 +3617,134 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryEventImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
+	 * @generated
+	 */
+	int ENTRY_EVENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Resets</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT__RESETS = ENTRY_OR_EXIT_EVENT__RESETS;
+
+	/**
+	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT__UML_REALTIME_ACTION = ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT__ACTION_EXPR = ENTRY_OR_EXIT_EVENT__ACTION_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Entry Action Rev</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT__ENTRY_ACTION_REV = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Entry Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT_FEATURE_COUNT = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Entry Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_EVENT_OPERATION_COUNT = ENTRY_OR_EXIT_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl <em>Exit Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
+	 * @generated
+	 */
+	int EXIT_EVENT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Resets</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT__RESETS = ENTRY_OR_EXIT_EVENT__RESETS;
+
+	/**
+	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT__UML_REALTIME_ACTION = ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT__ACTION_EXPR = ENTRY_OR_EXIT_EVENT__ACTION_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Exit Action Rev</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT__EXIT_ACTION_REV = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Exit Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT_FEATURE_COUNT = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Exit Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_EVENT_OPERATION_COUNT = ENTRY_OR_EXIT_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3624,7 +3752,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronization()
 	 * @generated
 	 */
-	int SYNCHRONIZATION = 18;
+	int SYNCHRONIZATION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3886,7 +4014,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getRegion()
 	 * @generated
 	 */
-	int REGION = 20;
+	int REGION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3941,7 +4069,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFujabaRealtimeStatechart()
 	 * @generated
 	 */
-	int FUJABA_REALTIME_STATECHART = 21;
+	int FUJABA_REALTIME_STATECHART = 23;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4401,7 +4529,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryKind()
 	 * @generated
 	 */
-	int HISTORY_KIND = 22;
+	int HISTORY_KIND = 24;
 
 
 	/**
@@ -5416,6 +5544,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getDoEvent_PeriodUpper();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr <em>Action Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr()
+	 * @see #getDoEvent()
+	 * @generated
+	 */
+	EAttribute getDoEvent_ActionExpr();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent <em>Entry Or Exit Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5437,28 +5576,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getEntryOrExitEvent_Resets();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev <em>Entry Action Rev</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Entry Action Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev()
-	 * @see #getEntryOrExitEvent()
-	 * @generated
-	 */
-	EReference getEntryOrExitEvent_EntryActionRev();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev <em>Exit Action Rev</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Exit Action Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev()
-	 * @see #getEntryOrExitEvent()
-	 * @generated
-	 */
-	EReference getEntryOrExitEvent_ExitActionRev();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5468,6 +5585,59 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntryOrExitEvent_UMLRealtimeAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr <em>Action Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Action Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr()
+	 * @see #getEntryOrExitEvent()
+	 * @generated
+	 */
+	EAttribute getEntryOrExitEvent_ActionExpr();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent <em>Entry Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Entry Event</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent
+	 * @generated
+	 */
+	EClass getEntryEvent();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev <em>Entry Action Rev</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Entry Action Rev</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev()
+	 * @see #getEntryEvent()
+	 * @generated
+	 */
+	EReference getEntryEvent_EntryActionRev();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent <em>Exit Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Exit Event</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent
+	 * @generated
+	 */
+	EClass getExitEvent();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent#getExitActionRev <em>Exit Action Rev</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Exit Action Rev</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent#getExitActionRev()
+	 * @see #getExitEvent()
+	 * @generated
+	 */
+	EReference getExitEvent_ExitActionRev();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization <em>Synchronization</em>}'.
@@ -6384,6 +6554,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute DO_EVENT__PERIOD_UPPER = eINSTANCE.getDoEvent_PeriodUpper();
 
 		/**
+		 * The meta object literal for the '<em><b>Action Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DO_EVENT__ACTION_EXPR = eINSTANCE.getDoEvent_ActionExpr();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6402,12 +6580,48 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference ENTRY_OR_EXIT_EVENT__RESETS = eINSTANCE.getEntryOrExitEvent_Resets();
 
 		/**
+		 * The meta object literal for the '<em><b>UML Realtime Action</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = eINSTANCE.getEntryOrExitEvent_UMLRealtimeAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Action Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTRY_OR_EXIT_EVENT__ACTION_EXPR = eINSTANCE.getEntryOrExitEvent_ActionExpr();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryEventImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
+		 * @generated
+		 */
+		EClass ENTRY_EVENT = eINSTANCE.getEntryEvent();
+
+		/**
 		 * The meta object literal for the '<em><b>Entry Action Rev</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTRY_OR_EXIT_EVENT__ENTRY_ACTION_REV = eINSTANCE.getEntryOrExitEvent_EntryActionRev();
+		EReference ENTRY_EVENT__ENTRY_ACTION_REV = eINSTANCE.getEntryEvent_EntryActionRev();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl <em>Exit Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
+		 * @generated
+		 */
+		EClass EXIT_EVENT = eINSTANCE.getExitEvent();
 
 		/**
 		 * The meta object literal for the '<em><b>Exit Action Rev</b></em>' container reference feature.
@@ -6415,15 +6629,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTRY_OR_EXIT_EVENT__EXIT_ACTION_REV = eINSTANCE.getEntryOrExitEvent_ExitActionRev();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Realtime Action</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = eINSTANCE.getEntryOrExitEvent_UMLRealtimeAction();
+		EReference EXIT_EVENT__EXIT_ACTION_REV = eINSTANCE.getExitEvent_ExitActionRev();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.

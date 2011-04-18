@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev <em>Do Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr <em>Action Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,5 +134,32 @@ public interface DoEvent extends EObject {
 	 * @generated
 	 */
 	void setPeriodUpper(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
+	 * The default value is <code>"test"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action Expr</em>' attribute.
+	 * @see #setActionExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_ActionExpr()
+	 * @model default="test"
+	 * @generated
+	 */
+	String getActionExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr <em>Action Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action Expr</em>' attribute.
+	 * @see #getActionExpr()
+	 * @generated
+	 */
+	void setActionExpr(String value);
 
 } // DoEvent

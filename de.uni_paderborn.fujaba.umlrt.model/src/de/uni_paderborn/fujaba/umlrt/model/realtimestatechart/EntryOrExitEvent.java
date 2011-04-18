@@ -17,9 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getResets <em>Resets</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev <em>Entry Action Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev <em>Exit Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr <em>Action Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,62 +54,6 @@ public interface EntryOrExitEvent extends EObject {
 	void setResets(Clock value);
 
 	/**
-	 * Returns the value of the '<em><b>Entry Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction <em>Entry Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entry Action Rev</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entry Action Rev</em>' container reference.
-	 * @see #setEntryActionRev(State)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_EntryActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction
-	 * @model opposite="entryAction" transient="false"
-	 * @generated
-	 */
-	State getEntryActionRev();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEntryActionRev <em>Entry Action Rev</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entry Action Rev</em>' container reference.
-	 * @see #getEntryActionRev()
-	 * @generated
-	 */
-	void setEntryActionRev(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Exit Action Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction <em>Exit Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Exit Action Rev</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exit Action Rev</em>' container reference.
-	 * @see #setExitActionRev(State)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_ExitActionRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getExitAction
-	 * @model opposite="exitAction" transient="false"
-	 * @generated
-	 */
-	State getExitActionRev();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getExitActionRev <em>Exit Action Rev</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Exit Action Rev</em>' container reference.
-	 * @see #getExitActionRev()
-	 * @generated
-	 */
-	void setExitActionRev(State value);
-
-	/**
 	 * Returns the value of the '<em><b>UML Realtime Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -135,5 +78,32 @@ public interface EntryOrExitEvent extends EObject {
 	 * @generated
 	 */
 	void setUMLRealtimeAction(Action value);
+
+	/**
+	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
+	 * The default value is <code>"test"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action Expr</em>' attribute.
+	 * @see #setActionExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_ActionExpr()
+	 * @model default="test"
+	 * @generated
+	 */
+	String getActionExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr <em>Action Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action Expr</em>' attribute.
+	 * @see #getActionExpr()
+	 * @generated
+	 */
+	void setActionExpr(String value);
 
 } // EntryOrExitEvent

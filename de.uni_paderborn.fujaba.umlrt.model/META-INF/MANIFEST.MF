@@ -37,7 +37,4 @@ Export-Package: de.uni_paderborn.fujaba.umlrt.model.behavior,
  de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl,
  de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.util,
  de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl,
- de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf,
- de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.impl,
- de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.util,
  de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.util
