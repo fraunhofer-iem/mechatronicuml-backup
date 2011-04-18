@@ -65,6 +65,11 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Clock_2012 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType EntryEvent_3005 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"); //$NON-NLS-1$
 
 	/**
@@ -81,6 +86,11 @@ public class RealtimeStatechartElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ClockConstraint_3007 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType SynchronizationChannel_3008 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -224,6 +234,11 @@ public class RealtimeStatechartElementTypes {
 							.getHistoryState());
 
 			elements.put(
+					Clock_2012,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getClock());
+
+			elements.put(
 					EntryEvent_3005,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getEntryEvent());
@@ -242,6 +257,11 @@ public class RealtimeStatechartElementTypes {
 					ClockConstraint_3007,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getClockConstraint());
+
+			elements.put(
+					SynchronizationChannel_3008,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getSynchronizationChannel());
 
 			elements.put(
 					Transition_4001,
@@ -269,10 +289,12 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InitialState_2009);
 			KNOWN_ELEMENT_TYPES.add(FinalState_2010);
 			KNOWN_ELEMENT_TYPES.add(HistoryState_2011);
+			KNOWN_ELEMENT_TYPES.add(Clock_2012);
 			KNOWN_ELEMENT_TYPES.add(EntryEvent_3005);
 			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
 			KNOWN_ELEMENT_TYPES.add(ExitEvent_3006);
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3007);
+			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3008);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -293,6 +315,8 @@ public class RealtimeStatechartElementTypes {
 			return FinalState_2010;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
 			return HistoryState_2011;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
+			return Clock_2012;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return EntryEvent_3005;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
@@ -301,6 +325,8 @@ public class RealtimeStatechartElementTypes {
 			return ExitEvent_3006;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
 			return ClockConstraint_3007;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
+			return SynchronizationChannel_3008;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}

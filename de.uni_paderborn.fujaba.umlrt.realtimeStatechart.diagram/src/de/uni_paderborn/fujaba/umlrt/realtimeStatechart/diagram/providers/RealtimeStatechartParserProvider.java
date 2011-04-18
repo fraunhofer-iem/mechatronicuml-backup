@@ -42,6 +42,27 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser clockNameId_5014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClockNameId_5014Parser() {
+		if (clockNameId_5014Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					SDMPackage.eINSTANCE.getNamedElement_Name(),
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getClock_Id() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			clockNameId_5014Parser = parser;
+		}
+		return clockNameId_5014Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser entryEventActionExpr_5010Parser;
 
 	/**
@@ -123,6 +144,25 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser synchronizationChannelSynchroChannelExpr_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getSynchronizationChannelSynchroChannelExpr_5013Parser() {
+		if (synchronizationChannelSynchroChannelExpr_5013Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getSynchronizationChannel_SynchroChannelExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			synchronizationChannelSynchroChannelExpr_5013Parser = parser;
+		}
+		return synchronizationChannelSynchroChannelExpr_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser transitionPriority_6001Parser;
 
 	/**
@@ -146,6 +186,8 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5005Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockNameIdEditPart.VISUAL_ID:
+			return getClockNameId_5014Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart.VISUAL_ID:
 			return getEntryEventActionExpr_5010Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart.VISUAL_ID:
@@ -154,6 +196,8 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 			return getExitEventActionExpr_5011Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart.VISUAL_ID:
 			return getClockConstraintClockConstraintExpr_5012Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart.VISUAL_ID:
+			return getSynchronizationChannelSynchroChannelExpr_5013Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID:
 			return getTransitionPriority_6001Parser();
 		}

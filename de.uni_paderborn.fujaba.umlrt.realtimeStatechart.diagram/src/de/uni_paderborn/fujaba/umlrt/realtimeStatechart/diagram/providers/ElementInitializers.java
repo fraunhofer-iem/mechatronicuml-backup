@@ -86,6 +86,30 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Clock_2012(
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getClock(), null).evaluate(instance);
+			instance.setName((String) value_0);
+			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getClock(), null).evaluate(instance);
+			instance.setId((String) value_1);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public static ElementInitializers getInstance() {
 		ElementInitializers cached = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.getInstance().getElementInitializers();

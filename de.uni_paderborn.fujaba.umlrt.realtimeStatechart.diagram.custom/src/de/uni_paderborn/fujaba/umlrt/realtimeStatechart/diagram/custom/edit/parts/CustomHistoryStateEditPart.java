@@ -8,8 +8,6 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
@@ -36,10 +34,7 @@ public class CustomHistoryStateEditPart extends HistoryStateEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		HistoryState historyState = (HistoryState) getModel();
-		if(historyState.getKind() == HistoryKind.DEEP){
-			return primaryShape = new DeepHistoryFigure();
-		}
+
 		return primaryShape = new ShallowHistoryFigure();
 	}
 	

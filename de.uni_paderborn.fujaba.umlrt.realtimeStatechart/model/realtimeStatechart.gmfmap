@@ -50,7 +50,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#EEEventNode"/>
         </ownedChild>
@@ -75,7 +75,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#DoEventNode"/>
         </ownedChild>
@@ -96,7 +96,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.4"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#EEEventNode"/>
         </ownedChild>
@@ -122,6 +122,27 @@
               href="realtimeStatechart.gmfgraph#TimeInvariantNode"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.2">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/channels"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#SynchroChannelExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/synchroChannelExpr"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.5"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#SynchroChannelNode"/>
+        </ownedChild>
+      </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
         <compartment
@@ -131,6 +152,11 @@
           children="//@nodes.0/@ownedChild/@children.3">
         <compartment
             href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.4">
+        <compartment
+            href="realtimeStatechart.gmfgraph#SynchroChannelsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -204,6 +230,47 @@
           href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="realtimeStatechart.gmfgraph#HistoryNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <value
+              body="'c'"/>
+        </initializers>
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/id"/>
+          <value
+              body="id"/>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="realtimeStatechart.gmfgraph#ClockName"/>
+        <features
+            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+        <features
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/id"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.4"/>
+      <diagramNode
+          href="realtimeStatechart.gmfgraph#ClockNode"/>
     </ownedChild>
   </nodes>
   <links>

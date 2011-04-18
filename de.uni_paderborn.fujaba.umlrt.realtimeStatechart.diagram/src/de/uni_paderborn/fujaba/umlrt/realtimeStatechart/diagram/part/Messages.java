@@ -343,42 +343,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Region2CreationTool_title;
+	public static String EntryEvent2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Region2CreationTool_desc;
+	public static String EntryEvent2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String EntryEvent3CreationTool_title;
+	public static String DoEvent3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String EntryEvent3CreationTool_desc;
+	public static String DoEvent3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DoEvent4CreationTool_title;
+	public static String ExitEvent4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DoEvent4CreationTool_desc;
+	public static String ExitEvent4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitEvent5CreationTool_title;
+	public static String Region5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitEvent5CreationTool_desc;
+	public static String Region5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String SynchronizationChannel6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String SynchronizationChannel6CreationTool_desc;
 
 	/**
 	 * @generated
@@ -459,6 +469,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String StateInvariantCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StateSynchroChannelsCompartmentEditPart_title;
 
 	/**
 	 * @generated

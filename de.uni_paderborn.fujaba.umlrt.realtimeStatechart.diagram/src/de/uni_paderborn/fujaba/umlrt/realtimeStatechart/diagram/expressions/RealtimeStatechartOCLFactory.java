@@ -30,7 +30,7 @@ public class RealtimeStatechartOCLFactory {
 	 * @generated
 	 */
 	protected RealtimeStatechartOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartAbstractExpression[4];
+		this.expressions = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartAbstractExpression[6];
 	}
 
 	/**
@@ -53,6 +53,8 @@ public class RealtimeStatechartOCLFactory {
 					"\'InitialState\'", //$NON-NLS-1$
 					"\'FinalState\'", //$NON-NLS-1$
 					"\'History\'", //$NON-NLS-1$
+					"\'c\'", //$NON-NLS-1$
+					"id", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

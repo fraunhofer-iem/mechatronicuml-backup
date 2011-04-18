@@ -46,6 +46,11 @@ public class RealtimeStatechartItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.HistoryStateCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2012 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.ClockCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

@@ -92,8 +92,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="StateCompartmentFigureSynchroChannel"
-            outline="false"
-            fill="false">
+            outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
@@ -104,8 +103,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="StateCompartmentFigureRegions"
-            outline="false"
-            fill="false">
+            outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
@@ -215,16 +213,16 @@
           figure="//@figures.0/@descriptors.5/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
-        name="DeepHistoryFigure">
+        name="HistoryFigure">
       <actualFigure
           xsi:type="gmfgraph:Ellipse"
-          name="DeepHistoryFigure"
+          name="HistoryFigure"
           lineWidth="3">
         <layout
             xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="DeepHistoryLabel"
+            name="HistoryLabel"
             text="H*">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -234,23 +232,25 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="ShallowHistoryFigure">
+        name="ClockFigure">
       <actualFigure
           xsi:type="gmfgraph:Ellipse"
-          name="ShallowHistoryFigure"
+          name="ClockFigure"
           lineWidth="3">
         <layout
             xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ShallowHistoryLabel"
-            text="H">
+            name="ClockLabel"
+            text="H*">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
               grabExcessVerticalSpace="true"/>
         </children>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="TimeInvariantFigure">
@@ -265,6 +265,28 @@
       <accessors
           accessor="getFigureTimeInvariantExpr"
           figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="SynchroChannelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="SynchroChannelRectangle"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SynchroChannelLabel">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFigureSynchroChannelLabel"
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DoEventFigure">
@@ -286,7 +308,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureDoActionLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="EEEventFigure">
@@ -308,7 +330,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureEEActionLabel"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -348,12 +370,33 @@
       figure="RegionFigure"/>
   <nodes
       name="HistoryNode"
-      figure="DeepHistoryFigure">
+      figure="HistoryFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
           dx="30"
           dy="30"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="ClockNode"
+      figure="ClockFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="30"
+          dy="30"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="SynchroChannelNode"
+      figure="SynchroChannelFigure"
+      affixedParentSide="WEST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="20"
+          dy="20"/>
     </facets>
   </nodes>
   <nodes
@@ -399,6 +442,10 @@
       name="ActionsCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <compartments
+      name="SynchroChannelsCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.3"/>
   <compartments
       name="RegionCompartment"
       figure="StateFigure"
@@ -478,6 +525,12 @@
         y="-20"/>
   </labels>
   <labels
+      name="ClockName"
+      figure="StateFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels
       name="StateName"
       figure="StateFigure"
       resizeConstraint="NONE"
@@ -489,15 +542,20 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
+      name="SynchroChannelExpr"
+      figure="SynchroChannelFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels
       name="DoEventExpr"
       figure="DoEventFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
       name="EEEventExpr"
       figure="EEEventFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels
       name="RegionPriority"
       figure="RegionPriorityFigure"
