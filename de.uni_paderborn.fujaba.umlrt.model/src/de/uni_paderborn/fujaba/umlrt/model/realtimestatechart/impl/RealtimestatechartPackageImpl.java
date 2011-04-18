@@ -1107,6 +1107,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSynchronizationChannel_SynchroChannelExpr() {
+		return (EAttribute)synchronizationChannelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getClockConstraint() {
 		return clockConstraintEClass;
 	}
@@ -1503,9 +1512,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(transitionEClass, TRANSITION__GUARD);
 		createEOperation(transitionEClass, TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER);
 
-		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
-		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
-
 		clockConstraintEClass = createEClass(CLOCK_CONSTRAINT);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__BOUND);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__CLOCK);
@@ -1532,6 +1538,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		exitEventEClass = createEClass(EXIT_EVENT);
 		createEReference(exitEventEClass, EXIT_EVENT__EXIT_ACTION_REV);
+
+		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
+		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
+		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
 		createEReference(synchronizationEClass, SYNCHRONIZATION__SEND_SYNC_REV);
@@ -1602,11 +1612,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		finalStateEClass.getESuperTypes().add(this.getVertex());
 		transitionEClass.getESuperTypes().add(this.getPrioritizable());
 		transitionEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		synchronizationChannelEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		historyStateEClass.getESuperTypes().add(this.getVertex());
 		entryEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
 		exitEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
+		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		synchronizationChannelEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		synchronizationEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		regionEClass.getESuperTypes().add(this.getPrioritizable());
 		fujabaRealtimeStatechartEClass.getESuperTypes().add(theCorePackage.getAbstractStatechart());
@@ -1717,9 +1727,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEOperation(getTransition__CalculateWorstCaseDeadlineAsNaturalNumber(), theCorePackage.getNaturalNumber(), "calculateWorstCaseDeadlineAsNaturalNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(clockConstraintEClass, ClockConstraint.class, "ClockConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClockConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClockConstraint_Clock(), this.getClock(), this.getClock_ClockConstraints(), "clock", null, 0, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1746,6 +1753,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(exitEventEClass, ExitEvent.class, "ExitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExitEvent_ExitActionRev(), this.getState(), this.getState_ExitAction(), "exitActionRev", null, 0, 1, ExitEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSynchronizationChannel_SynchroChannelExpr(), theEcorePackage.getEString(), "synchroChannelExpr", "synchroChannelExpr", 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronization_SendSyncRev(), this.getTransition(), this.getTransition_SendSynchronization(), "sendSyncRev", null, 0, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

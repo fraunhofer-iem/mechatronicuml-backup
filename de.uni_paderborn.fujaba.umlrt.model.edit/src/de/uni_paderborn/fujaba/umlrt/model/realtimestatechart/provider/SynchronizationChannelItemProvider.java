@@ -70,6 +70,7 @@ public class SynchronizationChannelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addSynchroChannelExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +98,28 @@ public class SynchronizationChannelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Synchro Channel Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchroChannelExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SynchronizationChannel_synchroChannelExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SynchronizationChannel_synchroChannelExpr_feature", "_UI_SynchronizationChannel_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns SynchronizationChannel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +138,7 @@ public class SynchronizationChannelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SynchronizationChannel)object).getName();
+		String label = ((SynchronizationChannel)object).getSynchroChannelExpr();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SynchronizationChannel_type") :
 			getString("_UI_SynchronizationChannel_type") + " " + label;
@@ -134,6 +157,7 @@ public class SynchronizationChannelItemProvider
 
 		switch (notification.getFeatureID(SynchronizationChannel.class)) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

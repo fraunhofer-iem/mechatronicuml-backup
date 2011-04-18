@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +62,26 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchroChannelExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SYNCHRO_CHANNEL_EXPR_EDEFAULT = "synchroChannelExpr";
+
+	/**
+	 * The cached value of the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchroChannelExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String synchroChannelExpr = SYNCHRO_CHANNEL_EXPR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +169,27 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSynchroChannelExpr() {
+		return synchroChannelExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSynchroChannelExpr(String newSynchroChannelExpr) {
+		String oldSynchroChannelExpr = synchroChannelExpr;
+		synchroChannelExpr = newSynchroChannelExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, oldSynchroChannelExpr, synchroChannelExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -199,6 +241,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return getComment();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
+				return getSynchroChannelExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +260,9 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)newValue);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
+				setSynchroChannelExpr((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,6 +282,9 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)null);
 				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
+				setSynchroChannelExpr(SYNCHRO_CHANNEL_EXPR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +301,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
+				return SYNCHRO_CHANNEL_EXPR_EDEFAULT == null ? synchroChannelExpr != null : !SYNCHRO_CHANNEL_EXPR_EDEFAULT.equals(synchroChannelExpr);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -309,6 +361,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
+		result.append(", synchroChannelExpr: ");
+		result.append(synchroChannelExpr);
 		result.append(')');
 		return result.toString();
 	}

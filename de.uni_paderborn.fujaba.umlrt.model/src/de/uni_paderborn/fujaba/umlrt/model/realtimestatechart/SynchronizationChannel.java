@@ -28,6 +28,7 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,5 +63,32 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	 * @generated
 	 */
 	void setState(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Synchro Channel Expr</b></em>' attribute.
+	 * The default value is <code>"synchroChannelExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Synchro Channel Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Synchro Channel Expr</em>' attribute.
+	 * @see #setSynchroChannelExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_SynchroChannelExpr()
+	 * @model default="synchroChannelExpr"
+	 * @generated
+	 */
+	String getSynchroChannelExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Synchro Channel Expr</em>' attribute.
+	 * @see #getSynchroChannelExpr()
+	 * @generated
+	 */
+	void setSynchroChannelExpr(String value);
 
 } // SynchronizationChannel

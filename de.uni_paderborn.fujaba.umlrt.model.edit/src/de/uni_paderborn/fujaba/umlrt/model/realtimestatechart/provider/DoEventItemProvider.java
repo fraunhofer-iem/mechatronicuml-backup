@@ -177,13 +177,14 @@ public class DoEventItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		DoEvent doEvent = (DoEvent)object;
-		return getString("_UI_DoEvent_type") + " " + doEvent.getPeriodLower();
-	}
+		String label = ((DoEvent)object).getActionExpr();
+		return label == null || label.length() == 0 ?
+				getString("_UI_Clock_type") :
+				getString("_UI_Clock_type") + " " + label;}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

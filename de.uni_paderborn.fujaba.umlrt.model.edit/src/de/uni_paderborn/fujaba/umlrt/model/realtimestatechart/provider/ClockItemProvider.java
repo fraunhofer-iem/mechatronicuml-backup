@@ -155,11 +155,11 @@ public class ClockItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Clock)object).getName();
+		String label = ((Clock)object).getName() + ((Clock)object).getId();;
 		return label == null || label.length() == 0 ?
 			getString("_UI_Clock_type") :
 			getString("_UI_Clock_type") + " " + label;

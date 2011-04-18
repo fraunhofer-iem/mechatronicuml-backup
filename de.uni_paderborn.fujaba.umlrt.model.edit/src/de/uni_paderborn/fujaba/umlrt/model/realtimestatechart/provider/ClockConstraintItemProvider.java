@@ -7,23 +7,13 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -35,7 +25,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.modeling.expressions.ComparingOperator;
+import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint} object.
@@ -190,13 +183,12 @@ public class ClockConstraintItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		ComparingOperator labelValue = ((ClockConstraint)object).getOperator();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
+		String label = ((ClockConstraint)object).getClockConstraintExpr();
+	return label == null || label.length() == 0 ?
 			getString("_UI_ClockConstraint_type") :
 			getString("_UI_ClockConstraint_type") + " " + label;
 	}

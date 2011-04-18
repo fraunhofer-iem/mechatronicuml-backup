@@ -72,13 +72,13 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.INITIAL_STATE: return createInitialState();
 			case RealtimestatechartPackage.FINAL_STATE: return createFinalState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
 			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
 			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.PRIORITIZABLE: return createPrioritizable();
 			case RealtimestatechartPackage.REGION: return createRegion();

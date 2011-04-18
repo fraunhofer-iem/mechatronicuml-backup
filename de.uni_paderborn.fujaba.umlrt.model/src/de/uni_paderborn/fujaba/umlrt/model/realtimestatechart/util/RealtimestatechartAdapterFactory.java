@@ -137,10 +137,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createTransitionAdapter();
 			}
 			@Override
-			public Adapter caseSynchronizationChannel(SynchronizationChannel object) {
-				return createSynchronizationChannelAdapter();
-			}
-			@Override
 			public Adapter caseClockConstraint(ClockConstraint object) {
 				return createClockConstraintAdapter();
 			}
@@ -163,6 +159,10 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExitEvent(ExitEvent object) {
 				return createExitEventAdapter();
+			}
+			@Override
+			public Adapter caseSynchronizationChannel(SynchronizationChannel object) {
+				return createSynchronizationChannelAdapter();
 			}
 			@Override
 			public Adapter caseSynchronization(Synchronization object) {

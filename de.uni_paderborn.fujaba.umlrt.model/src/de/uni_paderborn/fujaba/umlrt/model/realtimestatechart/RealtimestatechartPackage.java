@@ -2917,241 +2917,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationChannel()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_CHANNEL = 13;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__NAME = SDMPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECLASS = SDMPackage.NAMED_ELEMENT___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EIS_PROXY = SDMPackage.NAMED_ELEMENT___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ERESOURCE = SDMPackage.NAMED_ELEMENT___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINER = SDMPackage.NAMED_ELEMENT___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINING_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINMENT_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTENTS = SDMPackage.NAMED_ELEMENT___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EALL_CONTENTS = SDMPackage.NAMED_ELEMENT___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ECROSS_REFERENCES = SDMPackage.NAMED_ELEMENT___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EUNSET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___EINVOKE__EOPERATION_ELIST = SDMPackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Synchronization Channel</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SYNCHRONIZATION_CHANNEL = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -3161,7 +2927,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getClockConstraint()
 	 * @generated
 	 */
-	int CLOCK_CONSTRAINT = 14;
+	int CLOCK_CONSTRAINT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Bound</b></em>' containment reference.
@@ -3225,7 +2991,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryState()
 	 * @generated
 	 */
-	int HISTORY_STATE = 15;
+	int HISTORY_STATE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3505,7 +3271,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getDoEvent()
 	 * @generated
 	 */
-	int DO_EVENT = 16;
+	int DO_EVENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -3578,7 +3344,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryOrExitEvent()
 	 * @generated
 	 */
-	int ENTRY_OR_EXIT_EVENT = 17;
+	int ENTRY_OR_EXIT_EVENT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference.
@@ -3633,7 +3399,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
 	 * @generated
 	 */
-	int ENTRY_EVENT = 18;
+	int ENTRY_EVENT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference.
@@ -3697,7 +3463,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
 	 * @generated
 	 */
-	int EXIT_EVENT = 19;
+	int EXIT_EVENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference.
@@ -3752,6 +3518,249 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXIT_EVENT_OPERATION_COUNT = ENTRY_OR_EXIT_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>State</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Synchro Channel Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECLASS = SDMPackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EIS_PROXY = SDMPackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ERESOURCE = SDMPackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECONTAINER = SDMPackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECONTAINING_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECONTAINMENT_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECONTENTS = SDMPackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EALL_CONTENTS = SDMPackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ECROSS_REFERENCES = SDMPackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EUNSET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___EINVOKE__EOPERATION_ELIST = SDMPackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Synchronization Channel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -5435,6 +5444,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getSynchronizationChannel_State();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Synchro Channel Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr()
+	 * @see #getSynchronizationChannel()
+	 * @generated
+	 */
+	EAttribute getSynchronizationChannel_SynchroChannelExpr();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6478,6 +6498,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYNCHRONIZATION_CHANNEL__STATE = eINSTANCE.getSynchronizationChannel_State();
+
+		/**
+		 * The meta object literal for the '<em><b>Synchro Channel Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = eINSTANCE.getSynchronizationChannel_SynchroChannelExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

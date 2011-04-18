@@ -205,16 +205,6 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: {
-				SynchronizationChannel synchronizationChannel = (SynchronizationChannel)theEObject;
-				T result = caseSynchronizationChannel(synchronizationChannel);
-				if (result == null) result = caseNamedElement(synchronizationChannel);
-				if (result == null) result = caseCallable(synchronizationChannel);
-				if (result == null) result = caseCommentableElement(synchronizationChannel);
-				if (result == null) result = caseExtendableElement(synchronizationChannel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: {
 				ClockConstraint clockConstraint = (ClockConstraint)theEObject;
 				T result = caseClockConstraint(clockConstraint);
@@ -253,6 +243,16 @@ public class RealtimestatechartSwitch<T> {
 				ExitEvent exitEvent = (ExitEvent)theEObject;
 				T result = caseExitEvent(exitEvent);
 				if (result == null) result = caseEntryOrExitEvent(exitEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: {
+				SynchronizationChannel synchronizationChannel = (SynchronizationChannel)theEObject;
+				T result = caseSynchronizationChannel(synchronizationChannel);
+				if (result == null) result = caseNamedElement(synchronizationChannel);
+				if (result == null) result = caseCallable(synchronizationChannel);
+				if (result == null) result = caseCommentableElement(synchronizationChannel);
+				if (result == null) result = caseExtendableElement(synchronizationChannel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

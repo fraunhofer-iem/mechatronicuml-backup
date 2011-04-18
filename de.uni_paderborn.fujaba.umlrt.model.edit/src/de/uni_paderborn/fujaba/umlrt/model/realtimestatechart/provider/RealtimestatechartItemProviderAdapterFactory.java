@@ -691,13 +691,13 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (initialStateItemProvider != null) initialStateItemProvider.dispose();
 		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
-		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
+		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
 		if (regionItemProvider != null) regionItemProvider.dispose();
