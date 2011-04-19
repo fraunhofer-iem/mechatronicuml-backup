@@ -44,6 +44,13 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline <em>Relative Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeGuardExpr <em>Time Guard Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResetExpr <em>Clock Reset Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getDeadlineExpr <em>Deadline Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -161,6 +168,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getIncomingTransitions <em>Incoming Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -169,7 +177,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Vertex)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Target()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getIncomingTransitions
+	 * @model opposite="incomingTransitions"
 	 * @generated
 	 */
 	Vertex getTarget();
@@ -186,6 +195,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getOutgoingTransitions <em>Outgoing Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -194,7 +204,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Vertex)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Source()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getOutgoingTransitions
+	 * @model opposite="outgoingTransitions"
 	 * @generated
 	 */
 	Vertex getSource();
@@ -308,6 +319,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Trigger Events</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition <em>Triggered UML Realtime Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -315,7 +327,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerEvents()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition
+	 * @model opposite="triggeredUMLRealtimeTransition" containment="true"
 	 * @generated
 	 */
 	EList<RealtimeEvent> getTriggerEvents();
@@ -323,6 +336,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Raised Events</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition <em>Raised UML Realtime Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -330,7 +344,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raised Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaisedEvents()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition
+	 * @model opposite="raisedUMLRealtimeTransition" containment="true"
 	 * @generated
 	 */
 	EList<RealtimeEvent> getRaisedEvents();
@@ -448,6 +463,195 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	void setGuard(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.
+	 * The default value is <code>"eventExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Expr</em>' attribute.
+	 * @see #setEventExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_EventExpr()
+	 * @model default="eventExpr"
+	 * @generated
+	 */
+	String getEventExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Expr</em>' attribute.
+	 * @see #getEventExpr()
+	 * @generated
+	 */
+	void setEventExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Side Effect Expr</b></em>' attribute.
+	 * The default value is <code>"sideEffectExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Side Effect Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Side Effect Expr</em>' attribute.
+	 * @see #setSideEffectExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SideEffectExpr()
+	 * @model default="sideEffectExpr"
+	 * @generated
+	 */
+	String getSideEffectExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Side Effect Expr</em>' attribute.
+	 * @see #getSideEffectExpr()
+	 * @generated
+	 */
+	void setSideEffectExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Guard Expr</b></em>' attribute.
+	 * The default value is <code>"timeGuardExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Guard Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Guard Expr</em>' attribute.
+	 * @see #setTimeGuardExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TimeGuardExpr()
+	 * @model default="timeGuardExpr"
+	 * @generated
+	 */
+	String getTimeGuardExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeGuardExpr <em>Time Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Guard Expr</em>' attribute.
+	 * @see #getTimeGuardExpr()
+	 * @generated
+	 */
+	void setTimeGuardExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Clock Reset Expr</b></em>' attribute.
+	 * The default value is <code>"clockResetExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Clock Reset Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Clock Reset Expr</em>' attribute.
+	 * @see #setClockResetExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResetExpr()
+	 * @model default="clockResetExpr"
+	 * @generated
+	 */
+	String getClockResetExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResetExpr <em>Clock Reset Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Clock Reset Expr</em>' attribute.
+	 * @see #getClockResetExpr()
+	 * @generated
+	 */
+	void setClockResetExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Deadline Expr</b></em>' attribute.
+	 * The default value is <code>"deadlineExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Deadline Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Deadline Expr</em>' attribute.
+	 * @see #setDeadlineExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_DeadlineExpr()
+	 * @model default="deadlineExpr"
+	 * @generated
+	 */
+	String getDeadlineExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getDeadlineExpr <em>Deadline Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deadline Expr</em>' attribute.
+	 * @see #getDeadlineExpr()
+	 * @generated
+	 */
+	void setDeadlineExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Guard Expr</b></em>' attribute.
+	 * The default value is <code>"guardExpr"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Guard Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Guard Expr</em>' attribute.
+	 * @see #setGuardExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_GuardExpr()
+	 * @model default="guardExpr"
+	 * @generated
+	 */
+	String getGuardExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guard Expr</em>' attribute.
+	 * @see #getGuardExpr()
+	 * @generated
+	 */
+	void setGuardExpr(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Safety Transition</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Safety Transition</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety Transition</em>' attribute.
+	 * @see #setSafetyTransition(boolean)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransition()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isSafetyTransition();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safety Transition</em>' attribute.
+	 * @see #isSafetyTransition()
+	 * @generated
+	 */
+	void setSafetyTransition(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->

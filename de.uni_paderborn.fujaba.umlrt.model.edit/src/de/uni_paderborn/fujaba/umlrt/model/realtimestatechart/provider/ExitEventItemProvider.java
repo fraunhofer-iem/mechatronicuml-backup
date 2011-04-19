@@ -80,7 +80,7 @@ public class ExitEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExitEvent)object).getActionExpr();
+		String label = ((ExitEvent)object).getEventExpr();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ExitEvent_type") :
 			getString("_UI_ExitEvent_type") + " " + label;

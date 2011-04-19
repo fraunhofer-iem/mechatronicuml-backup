@@ -101,16 +101,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createClockAdapter();
 			}
 			@Override
+			public Adapter caseRegion(Region object) {
+				return createRegionAdapter();
+			}
+			@Override
 			public Adapter caseState(State object) {
 				return createStateAdapter();
 			}
 			@Override
-			public Adapter caseAction(Action object) {
-				return createActionAdapter();
+			public Adapter caseInitialState(InitialState object) {
+				return createInitialStateAdapter();
 			}
 			@Override
-			public Adapter caseRealtimeEvent(RealtimeEvent object) {
-				return createRealtimeEventAdapter();
+			public Adapter caseFinalState(FinalState object) {
+				return createFinalStateAdapter();
 			}
 			@Override
 			public Adapter caseFadingFunction(FadingFunction object) {
@@ -121,16 +125,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createFlatSwitchingAdapter();
 			}
 			@Override
-			public Adapter caseInitialState(InitialState object) {
-				return createInitialStateAdapter();
-			}
-			@Override
 			public Adapter caseVertex(Vertex object) {
 				return createVertexAdapter();
-			}
-			@Override
-			public Adapter caseFinalState(FinalState object) {
-				return createFinalStateAdapter();
 			}
 			@Override
 			public Adapter caseTransition(Transition object) {
@@ -145,8 +141,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createHistoryStateAdapter();
 			}
 			@Override
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
+			}
+			@Override
 			public Adapter caseDoEvent(DoEvent object) {
 				return createDoEventAdapter();
+			}
+			@Override
+			public Adapter caseRealtimeEvent(RealtimeEvent object) {
+				return createRealtimeEventAdapter();
 			}
 			@Override
 			public Adapter caseEntryOrExitEvent(EntryOrExitEvent object) {
@@ -171,10 +175,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePrioritizable(Prioritizable object) {
 				return createPrioritizableAdapter();
-			}
-			@Override
-			public Adapter caseRegion(Region object) {
-				return createRegionAdapter();
 			}
 			@Override
 			public Adapter caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {

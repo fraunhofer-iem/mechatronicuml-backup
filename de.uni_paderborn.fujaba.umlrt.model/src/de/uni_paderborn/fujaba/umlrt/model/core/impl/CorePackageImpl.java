@@ -581,15 +581,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_EmbeddingRegion() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getAbstractStatechart__GetHighestParentStatechart() {
 		return abstractStatechartEClass.getEOperations().get(0);
 	}
@@ -732,7 +723,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__REQUIRED_MSG_IFACE);
 		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__IS_EMBEDDED);
 		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__CLOCKS);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__EMBEDDING_REGION);
 		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___GET_HIGHEST_PARENT_STATECHART);
 		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN);
 		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET);
@@ -847,7 +837,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getAbstractStatechart_RequiredMsgIFace(), theHelperPackage.getStringToEClass(), null, "requiredMsgIFace", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractStatechart_IsEmbedded(), theEcorePackage.getEBoolean(), "isEmbedded", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractStatechart_Clocks(), theRealtimestatechartPackage.getClock(), theRealtimestatechartPackage.getClock_Statechart(), "clocks", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_EmbeddingRegion(), theRealtimestatechartPackage.getRegion(), theRealtimestatechartPackage.getRegion_Statechart(), "embeddingRegion", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAbstractStatechart__GetHighestParentStatechart(), this.getAbstractStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -80,7 +80,7 @@ public class EntryEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EntryEvent)object).getActionExpr();
+		String label = ((EntryEvent)object).getEventExpr();
 		return label == null || label.length() == 0 ?
 			getString("_UI_EntryEvent_type") :
 			getString("_UI_EntryEvent_type") + " " + label;

@@ -53,7 +53,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isIsEmbedded <em>Is Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion <em>Embedding Region</em>}</li>
  * </ul>
  * </p>
  *
@@ -447,34 +446,6 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<Clock> getClocks();
-
-	/**
-	 * Returns the value of the '<em><b>Embedding Region</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Embedding Region</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Embedding Region</em>' reference.
-	 * @see #setEmbeddingRegion(Region)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_EmbeddingRegion()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region#getStatechart
-	 * @model opposite="statechart"
-	 * @generated
-	 */
-	Region getEmbeddingRegion();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion <em>Embedding Region</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Embedding Region</em>' reference.
-	 * @see #getEmbeddingRegion()
-	 * @generated
-	 */
-	void setEmbeddingRegion(Region value);
 
 	/**
 	 * <!-- begin-user-doc -->

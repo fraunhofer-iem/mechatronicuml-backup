@@ -128,6 +128,13 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RealtimestatechartPackage.REGION: {
+				Region region = (Region)theEObject;
+				T result = caseRegion(region);
+				if (result == null) result = casePrioritizable(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RealtimestatechartPackage.STATE: {
 				State state = (State)theEObject;
 				T result = caseState(state);
@@ -137,25 +144,21 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ACTION: {
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = caseExpression(action);
-				if (result == null) result = caseTypedElement(action);
-				if (result == null) result = caseCommentableElement(action);
-				if (result == null) result = caseExtendableElement(action);
+			case RealtimestatechartPackage.INITIAL_STATE: {
+				InitialState initialState = (InitialState)theEObject;
+				T result = caseInitialState(initialState);
+				if (result == null) result = caseVertex(initialState);
+				if (result == null) result = caseNamedElement(initialState);
+				if (result == null) result = caseExtendableElement(initialState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.REALTIME_EVENT: {
-				RealtimeEvent realtimeEvent = (RealtimeEvent)theEObject;
-				T result = caseRealtimeEvent(realtimeEvent);
-				if (result == null) result = caseMethodCallExpression(realtimeEvent);
-				if (result == null) result = caseExpression(realtimeEvent);
-				if (result == null) result = caseInvocation(realtimeEvent);
-				if (result == null) result = caseTypedElement(realtimeEvent);
-				if (result == null) result = caseCommentableElement(realtimeEvent);
-				if (result == null) result = caseExtendableElement(realtimeEvent);
+			case RealtimestatechartPackage.FINAL_STATE: {
+				FinalState finalState = (FinalState)theEObject;
+				T result = caseFinalState(finalState);
+				if (result == null) result = caseVertex(finalState);
+				if (result == null) result = caseNamedElement(finalState);
+				if (result == null) result = caseExtendableElement(finalState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -171,29 +174,11 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.INITIAL_STATE: {
-				InitialState initialState = (InitialState)theEObject;
-				T result = caseInitialState(initialState);
-				if (result == null) result = caseVertex(initialState);
-				if (result == null) result = caseNamedElement(initialState);
-				if (result == null) result = caseExtendableElement(initialState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.VERTEX: {
 				Vertex vertex = (Vertex)theEObject;
 				T result = caseVertex(vertex);
 				if (result == null) result = caseNamedElement(vertex);
 				if (result == null) result = caseExtendableElement(vertex);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.FINAL_STATE: {
-				FinalState finalState = (FinalState)theEObject;
-				T result = caseFinalState(finalState);
-				if (result == null) result = caseVertex(finalState);
-				if (result == null) result = caseNamedElement(finalState);
-				if (result == null) result = caseExtendableElement(finalState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -220,9 +205,31 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RealtimestatechartPackage.ACTION: {
+				Action action = (Action)theEObject;
+				T result = caseAction(action);
+				if (result == null) result = caseExpression(action);
+				if (result == null) result = caseTypedElement(action);
+				if (result == null) result = caseCommentableElement(action);
+				if (result == null) result = caseExtendableElement(action);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RealtimestatechartPackage.DO_EVENT: {
 				DoEvent doEvent = (DoEvent)theEObject;
 				T result = caseDoEvent(doEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.REALTIME_EVENT: {
+				RealtimeEvent realtimeEvent = (RealtimeEvent)theEObject;
+				T result = caseRealtimeEvent(realtimeEvent);
+				if (result == null) result = caseMethodCallExpression(realtimeEvent);
+				if (result == null) result = caseExpression(realtimeEvent);
+				if (result == null) result = caseInvocation(realtimeEvent);
+				if (result == null) result = caseTypedElement(realtimeEvent);
+				if (result == null) result = caseCommentableElement(realtimeEvent);
+				if (result == null) result = caseExtendableElement(realtimeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -268,13 +275,6 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.PRIORITIZABLE: {
 				Prioritizable prioritizable = (Prioritizable)theEObject;
 				T result = casePrioritizable(prioritizable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.REGION: {
-				Region region = (Region)theEObject;
-				T result = caseRegion(region);
-				if (result == null) result = casePrioritizable(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

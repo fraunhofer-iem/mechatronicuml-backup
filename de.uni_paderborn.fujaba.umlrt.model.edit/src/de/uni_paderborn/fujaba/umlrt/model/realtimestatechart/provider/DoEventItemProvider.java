@@ -69,7 +69,7 @@ public class DoEventItemProvider
 			addActionPropertyDescriptor(object);
 			addPeriodLowerPropertyDescriptor(object);
 			addPeriodUpperPropertyDescriptor(object);
-			addActionExprPropertyDescriptor(object);
+			addEventExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -141,19 +141,19 @@ public class DoEventItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Expr feature.
+	 * This adds a property descriptor for the Event Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionExprPropertyDescriptor(Object object) {
+	protected void addEventExprPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DoEvent_actionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_actionExpr_feature", "_UI_DoEvent_type"),
-				 RealtimestatechartPackage.Literals.DO_EVENT__ACTION_EXPR,
+				 getString("_UI_DoEvent_eventExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_eventExpr_feature", "_UI_DoEvent_type"),
+				 RealtimestatechartPackage.Literals.DO_EVENT__EVENT_EXPR,
 				 true,
 				 false,
 				 false,
@@ -181,7 +181,7 @@ public class DoEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DoEvent)object).getActionExpr();
+		String label = ((DoEvent)object).getEventExpr();
 		return label == null || label.length() == 0 ?
 				getString("_UI_Clock_type") :
 				getString("_UI_Clock_type") + " " + label;}
@@ -200,7 +200,7 @@ public class DoEventItemProvider
 		switch (notification.getFeatureID(DoEvent.class)) {
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-			case RealtimestatechartPackage.DO_EVENT__ACTION_EXPR:
+			case RealtimestatechartPackage.DO_EVENT__EVENT_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

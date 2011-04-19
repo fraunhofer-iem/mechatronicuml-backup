@@ -683,24 +683,24 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (absoluteDeadlineItemProvider != null) absoluteDeadlineItemProvider.dispose();
 		if (relativeDeadlineItemProvider != null) relativeDeadlineItemProvider.dispose();
 		if (clockItemProvider != null) clockItemProvider.dispose();
+		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (stateItemProvider != null) stateItemProvider.dispose();
-		if (actionItemProvider != null) actionItemProvider.dispose();
-		if (realtimeEventItemProvider != null) realtimeEventItemProvider.dispose();
-		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
-		if (flatSwitchingItemProvider != null) flatSwitchingItemProvider.dispose();
 		if (initialStateItemProvider != null) initialStateItemProvider.dispose();
 		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
+		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
+		if (flatSwitchingItemProvider != null) flatSwitchingItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
+		if (realtimeEventItemProvider != null) realtimeEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
-		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
 	}
 

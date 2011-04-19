@@ -37,6 +37,7 @@ public interface Vertex extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Outgoing Transitions</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -44,7 +45,8 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Transitions</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getVertex_OutgoingTransitions()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSource
+	 * @model opposite="source"
 	 * @generated
 	 */
 	EList<Transition> getOutgoingTransitions();
@@ -52,6 +54,7 @@ public interface Vertex extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Incoming Transitions</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -59,7 +62,8 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Transitions</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getVertex_IncomingTransitions()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTarget
+	 * @model opposite="target"
 	 * @generated
 	 */
 	EList<Transition> getIncomingTransitions();

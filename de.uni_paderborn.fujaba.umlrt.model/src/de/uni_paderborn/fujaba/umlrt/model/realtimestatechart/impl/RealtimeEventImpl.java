@@ -12,11 +12,13 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.calls.expressions.impl.MethodCallExpressionImpl;
 
 /**
@@ -36,26 +38,6 @@ import org.storydriven.modeling.calls.expressions.impl.MethodCallExpressionImpl;
  * @generated
  */
 public class RealtimeEventImpl extends MethodCallExpressionImpl implements RealtimeEvent {
-	/**
-	 * The cached value of the '{@link #getTriggeredUMLRealtimeTransition() <em>Triggered UML Realtime Transition</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTriggeredUMLRealtimeTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected Transition triggeredUMLRealtimeTransition;
-
-	/**
-	 * The cached value of the '{@link #getRaisedUMLRealtimeTransition() <em>Raised UML Realtime Transition</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRaisedUMLRealtimeTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected Transition raisedUMLRealtimeTransition;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -121,15 +103,8 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * @generated
 	 */
 	public Transition getTriggeredUMLRealtimeTransition() {
-		if (triggeredUMLRealtimeTransition != null && triggeredUMLRealtimeTransition.eIsProxy()) {
-			InternalEObject oldTriggeredUMLRealtimeTransition = (InternalEObject)triggeredUMLRealtimeTransition;
-			triggeredUMLRealtimeTransition = (Transition)eResolveProxy(oldTriggeredUMLRealtimeTransition);
-			if (triggeredUMLRealtimeTransition != oldTriggeredUMLRealtimeTransition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION, oldTriggeredUMLRealtimeTransition, triggeredUMLRealtimeTransition));
-			}
-		}
-		return triggeredUMLRealtimeTransition;
+		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION) return null;
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -137,8 +112,9 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition basicGetTriggeredUMLRealtimeTransition() {
-		return triggeredUMLRealtimeTransition;
+	public NotificationChain basicSetTriggeredUMLRealtimeTransition(Transition newTriggeredUMLRealtimeTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTriggeredUMLRealtimeTransition, RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION, msgs);
+		return msgs;
 	}
 
 	/**
@@ -147,10 +123,19 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * @generated
 	 */
 	public void setTriggeredUMLRealtimeTransition(Transition newTriggeredUMLRealtimeTransition) {
-		Transition oldTriggeredUMLRealtimeTransition = triggeredUMLRealtimeTransition;
-		triggeredUMLRealtimeTransition = newTriggeredUMLRealtimeTransition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION, oldTriggeredUMLRealtimeTransition, triggeredUMLRealtimeTransition));
+		if (newTriggeredUMLRealtimeTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION && newTriggeredUMLRealtimeTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newTriggeredUMLRealtimeTransition))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newTriggeredUMLRealtimeTransition != null)
+				msgs = ((InternalEObject)newTriggeredUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, Transition.class, msgs);
+			msgs = basicSetTriggeredUMLRealtimeTransition(newTriggeredUMLRealtimeTransition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION, newTriggeredUMLRealtimeTransition, newTriggeredUMLRealtimeTransition));
 	}
 
 	/**
@@ -159,15 +144,8 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * @generated
 	 */
 	public Transition getRaisedUMLRealtimeTransition() {
-		if (raisedUMLRealtimeTransition != null && raisedUMLRealtimeTransition.eIsProxy()) {
-			InternalEObject oldRaisedUMLRealtimeTransition = (InternalEObject)raisedUMLRealtimeTransition;
-			raisedUMLRealtimeTransition = (Transition)eResolveProxy(oldRaisedUMLRealtimeTransition);
-			if (raisedUMLRealtimeTransition != oldRaisedUMLRealtimeTransition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION, oldRaisedUMLRealtimeTransition, raisedUMLRealtimeTransition));
-			}
-		}
-		return raisedUMLRealtimeTransition;
+		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION) return null;
+		return (Transition)eContainer();
 	}
 
 	/**
@@ -175,8 +153,9 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition basicGetRaisedUMLRealtimeTransition() {
-		return raisedUMLRealtimeTransition;
+	public NotificationChain basicSetRaisedUMLRealtimeTransition(Transition newRaisedUMLRealtimeTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRaisedUMLRealtimeTransition, RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION, msgs);
+		return msgs;
 	}
 
 	/**
@@ -185,10 +164,19 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * @generated
 	 */
 	public void setRaisedUMLRealtimeTransition(Transition newRaisedUMLRealtimeTransition) {
-		Transition oldRaisedUMLRealtimeTransition = raisedUMLRealtimeTransition;
-		raisedUMLRealtimeTransition = newRaisedUMLRealtimeTransition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION, oldRaisedUMLRealtimeTransition, raisedUMLRealtimeTransition));
+		if (newRaisedUMLRealtimeTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION && newRaisedUMLRealtimeTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newRaisedUMLRealtimeTransition))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRaisedUMLRealtimeTransition != null)
+				msgs = ((InternalEObject)newRaisedUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, Transition.class, msgs);
+			msgs = basicSetRaisedUMLRealtimeTransition(newRaisedUMLRealtimeTransition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION, newRaisedUMLRealtimeTransition, newRaisedUMLRealtimeTransition));
 	}
 
 	/**
@@ -239,6 +227,58 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetTriggeredUMLRealtimeTransition((Transition)otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetRaisedUMLRealtimeTransition((Transition)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION:
+				return basicSetTriggeredUMLRealtimeTransition(null, msgs);
+			case RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION:
+				return basicSetRaisedUMLRealtimeTransition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, Transition.class, msgs);
+			case RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION:
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, Transition.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
@@ -260,11 +300,9 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION:
-				if (resolve) return getTriggeredUMLRealtimeTransition();
-				return basicGetTriggeredUMLRealtimeTransition();
+				return getTriggeredUMLRealtimeTransition();
 			case RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION:
-				if (resolve) return getRaisedUMLRealtimeTransition();
-				return basicGetRaisedUMLRealtimeTransition();
+				return getRaisedUMLRealtimeTransition();
 			case RealtimestatechartPackage.REALTIME_EVENT__NAME:
 				return getName();
 			case RealtimestatechartPackage.REALTIME_EVENT__FULL_EVENT_NAME:
@@ -330,9 +368,9 @@ public class RealtimeEventImpl extends MethodCallExpressionImpl implements Realt
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION:
-				return triggeredUMLRealtimeTransition != null;
+				return getTriggeredUMLRealtimeTransition() != null;
 			case RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION:
-				return raisedUMLRealtimeTransition != null;
+				return getRaisedUMLRealtimeTransition() != null;
 			case RealtimestatechartPackage.REALTIME_EVENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.REALTIME_EVENT__FULL_EVENT_NAME:

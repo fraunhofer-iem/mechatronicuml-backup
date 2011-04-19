@@ -36,50 +36,54 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  */
 public interface RealtimeEvent extends MethodCallExpression {
 	/**
-	 * Returns the value of the '<em><b>Triggered UML Realtime Transition</b></em>' reference.
+	 * Returns the value of the '<em><b>Triggered UML Realtime Transition</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The transition this events belongs to as trigger event.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Triggered UML Realtime Transition</em>' reference.
+	 * @return the value of the '<em>Triggered UML Realtime Transition</em>' container reference.
 	 * @see #setTriggeredUMLRealtimeTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRealtimeEvent_TriggeredUMLRealtimeTransition()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents
+	 * @model opposite="triggerEvents" transient="false"
 	 * @generated
 	 */
 	Transition getTriggeredUMLRealtimeTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition <em>Triggered UML Realtime Transition</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition <em>Triggered UML Realtime Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Triggered UML Realtime Transition</em>' reference.
+	 * @param value the new value of the '<em>Triggered UML Realtime Transition</em>' container reference.
 	 * @see #getTriggeredUMLRealtimeTransition()
 	 * @generated
 	 */
 	void setTriggeredUMLRealtimeTransition(Transition value);
 
 	/**
-	 * Returns the value of the '<em><b>Raised UML Realtime Transition</b></em>' reference.
+	 * Returns the value of the '<em><b>Raised UML Realtime Transition</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRaisedEvents <em>Raised Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The transition this event belongs to as raised event.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Raised UML Realtime Transition</em>' reference.
+	 * @return the value of the '<em>Raised UML Realtime Transition</em>' container reference.
 	 * @see #setRaisedUMLRealtimeTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRealtimeEvent_RaisedUMLRealtimeTransition()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRaisedEvents
+	 * @model opposite="raisedEvents" transient="false"
 	 * @generated
 	 */
 	Transition getRaisedUMLRealtimeTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition <em>Raised UML Realtime Transition</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition <em>Raised UML Realtime Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Raised UML Realtime Transition</em>' reference.
+	 * @param value the new value of the '<em>Raised UML Realtime Transition</em>' container reference.
 	 * @see #getRaisedUMLRealtimeTransition()
 	 * @generated
 	 */

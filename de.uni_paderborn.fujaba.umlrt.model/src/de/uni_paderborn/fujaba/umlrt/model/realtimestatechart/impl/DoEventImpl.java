@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getDoActionRev <em>Do Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getPeriodUpper <em>Period Upper</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getActionExpr <em>Action Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,24 +91,24 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	protected int periodUpper = PERIOD_UPPER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * The default value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
+	 * @see #getEventExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EXPR_EDEFAULT = "doEventExpr";
+	protected static final String EVENT_EXPR_EDEFAULT = "doEventExpr";
 
 	/**
-	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * The cached value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
+	 * @see #getEventExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected String actionExpr = ACTION_EXPR_EDEFAULT;
+	protected String eventExpr = EVENT_EXPR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getActionExpr() {
-		return actionExpr;
+	public String getEventExpr() {
+		return eventExpr;
 	}
 
 	/**
@@ -264,11 +264,11 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionExpr(String newActionExpr) {
-		String oldActionExpr = actionExpr;
-		actionExpr = newActionExpr;
+	public void setEventExpr(String newEventExpr) {
+		String oldEventExpr = eventExpr;
+		eventExpr = newEventExpr;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__ACTION_EXPR, oldActionExpr, actionExpr));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__EVENT_EXPR, oldEventExpr, eventExpr));
 	}
 
 	/**
@@ -332,8 +332,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 				return getPeriodLower();
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
 				return getPeriodUpper();
-			case RealtimestatechartPackage.DO_EVENT__ACTION_EXPR:
-				return getActionExpr();
+			case RealtimestatechartPackage.DO_EVENT__EVENT_EXPR:
+				return getEventExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,8 +358,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
 				setPeriodUpper((Integer)newValue);
 				return;
-			case RealtimestatechartPackage.DO_EVENT__ACTION_EXPR:
-				setActionExpr((String)newValue);
+			case RealtimestatechartPackage.DO_EVENT__EVENT_EXPR:
+				setEventExpr((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,8 +385,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
 				setPeriodUpper(PERIOD_UPPER_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.DO_EVENT__ACTION_EXPR:
-				setActionExpr(ACTION_EXPR_EDEFAULT);
+			case RealtimestatechartPackage.DO_EVENT__EVENT_EXPR:
+				setEventExpr(EVENT_EXPR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -408,8 +408,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 				return periodLower != PERIOD_LOWER_EDEFAULT;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
 				return periodUpper != PERIOD_UPPER_EDEFAULT;
-			case RealtimestatechartPackage.DO_EVENT__ACTION_EXPR:
-				return ACTION_EXPR_EDEFAULT == null ? actionExpr != null : !ACTION_EXPR_EDEFAULT.equals(actionExpr);
+			case RealtimestatechartPackage.DO_EVENT__EVENT_EXPR:
+				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -428,8 +428,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 		result.append(periodLower);
 		result.append(", periodUpper: ");
 		result.append(periodUpper);
-		result.append(", actionExpr: ");
-		result.append(actionExpr);
+		result.append(", eventExpr: ");
+		result.append(eventExpr);
 		result.append(')');
 		return result.toString();
 	}

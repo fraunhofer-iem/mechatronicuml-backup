@@ -68,7 +68,7 @@ public class EntryOrExitEventItemProvider
 
 			addResetsPropertyDescriptor(object);
 			addUMLRealtimeActionPropertyDescriptor(object);
-			addActionExprPropertyDescriptor(object);
+			addEventExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,19 +118,19 @@ public class EntryOrExitEventItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Action Expr feature.
+	 * This adds a property descriptor for the Event Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActionExprPropertyDescriptor(Object object) {
+	protected void addEventExprPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntryOrExitEvent_actionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_actionExpr_feature", "_UI_EntryOrExitEvent_type"),
-				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION_EXPR,
+				 getString("_UI_EntryOrExitEvent_eventExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_eventExpr_feature", "_UI_EntryOrExitEvent_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__EVENT_EXPR,
 				 true,
 				 false,
 				 false,
@@ -158,7 +158,7 @@ public class EntryOrExitEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EntryOrExitEvent)object).getActionExpr();
+		String label = ((EntryOrExitEvent)object).getEventExpr();
 		return label == null || label.length() == 0 ?
 			getString("_UI_EntryOrExitEvent_type") :
 			getString("_UI_EntryOrExitEvent_type") + " " + label;
@@ -176,7 +176,7 @@ public class EntryOrExitEventItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntryOrExitEvent.class)) {
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

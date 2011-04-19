@@ -17,6 +17,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +25,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.storydriven.modeling.impl.NamedElementImpl;
@@ -100,7 +103,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 */
 	public EList<Transition> getOutgoingTransitions() {
 		if (outgoingTransitions == null) {
-			outgoingTransitions = new EObjectResolvingEList<Transition>(Transition.class, this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS);
+			outgoingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS, RealtimestatechartPackage.TRANSITION__SOURCE);
 		}
 		return outgoingTransitions;
 	}
@@ -112,7 +115,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 */
 	public EList<Transition> getIncomingTransitions() {
 		if (incomingTransitions == null) {
-			incomingTransitions = new EObjectResolvingEList<Transition>(Transition.class, this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS);
+			incomingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, RealtimestatechartPackage.TRANSITION__TARGET);
 		}
 		return incomingTransitions;
 	}
@@ -175,6 +178,39 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransitions()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS:
+				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
+				return ((InternalEList<?>)getIncomingTransitions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

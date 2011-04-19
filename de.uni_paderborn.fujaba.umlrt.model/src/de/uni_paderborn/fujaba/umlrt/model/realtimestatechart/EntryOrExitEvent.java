@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr <em>Action Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,30 +80,30 @@ public interface EntryOrExitEvent extends EObject {
 	void setUMLRealtimeAction(Action value);
 
 	/**
-	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
+	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.
 	 * The default value is <code>"entryExitExpr"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Event Expr</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Expr</em>' attribute.
-	 * @see #setActionExpr(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_ActionExpr()
+	 * @return the value of the '<em>Event Expr</em>' attribute.
+	 * @see #setEventExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_EventExpr()
 	 * @model default="entryExitExpr"
 	 * @generated
 	 */
-	String getActionExpr();
+	String getEventExpr();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getActionExpr <em>Action Expr</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEventExpr <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Expr</em>' attribute.
-	 * @see #getActionExpr()
+	 * @param value the new value of the '<em>Event Expr</em>' attribute.
+	 * @see #getEventExpr()
 	 * @generated
 	 */
-	void setActionExpr(String value);
+	void setEventExpr(String value);
 
 } // EntryOrExitEvent

@@ -79,6 +79,13 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getRelativeDeadline <em>Relative Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getEventExpr <em>Event Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSideEffectExpr <em>Side Effect Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTimeGuardExpr <em>Time Guard Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getClockResetExpr <em>Clock Reset Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getDeadlineExpr <em>Deadline Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getGuardExpr <em>Guard Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#isSafetyTransition <em>Safety Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -284,6 +291,146 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected Expression guard;
+
+	/**
+	 * The default value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EVENT_EXPR_EDEFAULT = "eventExpr";
+
+	/**
+	 * The cached value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String eventExpr = EVENT_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSideEffectExpr() <em>Side Effect Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSideEffectExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SIDE_EFFECT_EXPR_EDEFAULT = "sideEffectExpr";
+
+	/**
+	 * The cached value of the '{@link #getSideEffectExpr() <em>Side Effect Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSideEffectExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sideEffectExpr = SIDE_EFFECT_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTimeGuardExpr() <em>Time Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeGuardExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TIME_GUARD_EXPR_EDEFAULT = "timeGuardExpr";
+
+	/**
+	 * The cached value of the '{@link #getTimeGuardExpr() <em>Time Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeGuardExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String timeGuardExpr = TIME_GUARD_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getClockResetExpr() <em>Clock Reset Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClockResetExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CLOCK_RESET_EXPR_EDEFAULT = "clockResetExpr";
+
+	/**
+	 * The cached value of the '{@link #getClockResetExpr() <em>Clock Reset Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClockResetExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String clockResetExpr = CLOCK_RESET_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDeadlineExpr() <em>Deadline Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeadlineExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DEADLINE_EXPR_EDEFAULT = "deadlineExpr";
+
+	/**
+	 * The cached value of the '{@link #getDeadlineExpr() <em>Deadline Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDeadlineExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String deadlineExpr = DEADLINE_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGuardExpr() <em>Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuardExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GUARD_EXPR_EDEFAULT = "guardExpr";
+
+	/**
+	 * The cached value of the '{@link #getGuardExpr() <em>Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGuardExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String guardExpr = GUARD_EXPR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSafetyTransition() <em>Safety Transition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSafetyTransition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SAFETY_TRANSITION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSafetyTransition() <em>Safety Transition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSafetyTransition()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean safetyTransition = SAFETY_TRANSITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -509,11 +656,33 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Vertex newTarget) {
+	public NotificationChain basicSetTarget(Vertex newTarget, NotificationChain msgs) {
 		Vertex oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TARGET, oldTarget, target));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(Vertex newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -547,11 +716,33 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(Vertex newSource) {
+	public NotificationChain basicSetSource(Vertex newSource, NotificationChain msgs) {
 		Vertex oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SOURCE, oldSource, source));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(Vertex newSource) {
+		if (newSource != source) {
+			NotificationChain msgs = null;
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS, Vertex.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS, Vertex.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -700,7 +891,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public EList<RealtimeEvent> getTriggerEvents() {
 		if (triggerEvents == null) {
-			triggerEvents = new EObjectContainmentEList<RealtimeEvent>(RealtimeEvent.class, this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS);
+			triggerEvents = new EObjectContainmentWithInverseEList<RealtimeEvent>(RealtimeEvent.class, this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, RealtimestatechartPackage.REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION);
 		}
 		return triggerEvents;
 	}
@@ -712,7 +903,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public EList<RealtimeEvent> getRaisedEvents() {
 		if (raisedEvents == null) {
-			raisedEvents = new EObjectContainmentEList<RealtimeEvent>(RealtimeEvent.class, this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS);
+			raisedEvents = new EObjectContainmentWithInverseEList<RealtimeEvent>(RealtimeEvent.class, this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, RealtimestatechartPackage.REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION);
 		}
 		return raisedEvents;
 	}
@@ -848,6 +1039,153 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEventExpr() {
+		return eventExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventExpr(String newEventExpr) {
+		String oldEventExpr = eventExpr;
+		eventExpr = newEventExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__EVENT_EXPR, oldEventExpr, eventExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSideEffectExpr() {
+		return sideEffectExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSideEffectExpr(String newSideEffectExpr) {
+		String oldSideEffectExpr = sideEffectExpr;
+		sideEffectExpr = newSideEffectExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR, oldSideEffectExpr, sideEffectExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTimeGuardExpr() {
+		return timeGuardExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeGuardExpr(String newTimeGuardExpr) {
+		String oldTimeGuardExpr = timeGuardExpr;
+		timeGuardExpr = newTimeGuardExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR, oldTimeGuardExpr, timeGuardExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getClockResetExpr() {
+		return clockResetExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClockResetExpr(String newClockResetExpr) {
+		String oldClockResetExpr = clockResetExpr;
+		clockResetExpr = newClockResetExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR, oldClockResetExpr, clockResetExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDeadlineExpr() {
+		return deadlineExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeadlineExpr(String newDeadlineExpr) {
+		String oldDeadlineExpr = deadlineExpr;
+		deadlineExpr = newDeadlineExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR, oldDeadlineExpr, deadlineExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getGuardExpr() {
+		return guardExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGuardExpr(String newGuardExpr) {
+		String oldGuardExpr = guardExpr;
+		guardExpr = newGuardExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD_EXPR, oldGuardExpr, guardExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSafetyTransition() {
+		return safetyTransition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSafetyTransition(boolean newSafetyTransition) {
+		boolean oldSafetyTransition = safetyTransition;
+		safetyTransition = newSafetyTransition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION, oldSafetyTransition, safetyTransition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -921,6 +1259,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (sideEffect != null)
 					msgs = ((InternalEObject)sideEffect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, null, msgs);
 				return basicSetSideEffect((Action)otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
+				return basicSetTarget((Vertex)otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS, Vertex.class, msgs);
+				return basicSetSource((Vertex)otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -929,6 +1275,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (uMLRealtimeFadingFunction != null)
 					msgs = ((InternalEObject)uMLRealtimeFadingFunction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION, null, msgs);
 				return basicSetUMLRealtimeFadingFunction((FadingFunction)otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTriggerEvents()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRaisedEvents()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAbsoluteDeadlines()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
@@ -957,6 +1307,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicSetReceiveSynchronization(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
 				return basicSetSideEffect(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__TARGET:
+				return basicSetTarget(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__SOURCE:
+				return basicSetSource(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				return basicSetStatechart(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
@@ -1040,6 +1394,20 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				if (resolve) return getGuard();
 				return basicGetGuard();
+			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
+				return getEventExpr();
+			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
+				return getSideEffectExpr();
+			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
+				return getTimeGuardExpr();
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR:
+				return getClockResetExpr();
+			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
+				return getDeadlineExpr();
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				return getGuardExpr();
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+				return isSafetyTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1117,6 +1485,27 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)newValue);
 				return;
+			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
+				setEventExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
+				setSideEffectExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
+				setTimeGuardExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR:
+				setClockResetExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
+				setDeadlineExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				setGuardExpr((String)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+				setSafetyTransition((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1186,6 +1575,27 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)null);
 				return;
+			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
+				setEventExpr(EVENT_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
+				setSideEffectExpr(SIDE_EFFECT_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
+				setTimeGuardExpr(TIME_GUARD_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR:
+				setClockResetExpr(CLOCK_RESET_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
+				setDeadlineExpr(DEADLINE_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				setGuardExpr(GUARD_EXPR_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+				setSafetyTransition(SAFETY_TRANSITION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1236,6 +1646,20 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return guard != null;
+			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
+				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
+			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
+				return SIDE_EFFECT_EXPR_EDEFAULT == null ? sideEffectExpr != null : !SIDE_EFFECT_EXPR_EDEFAULT.equals(sideEffectExpr);
+			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
+				return TIME_GUARD_EXPR_EDEFAULT == null ? timeGuardExpr != null : !TIME_GUARD_EXPR_EDEFAULT.equals(timeGuardExpr);
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR:
+				return CLOCK_RESET_EXPR_EDEFAULT == null ? clockResetExpr != null : !CLOCK_RESET_EXPR_EDEFAULT.equals(clockResetExpr);
+			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
+				return DEADLINE_EXPR_EDEFAULT == null ? deadlineExpr != null : !DEADLINE_EXPR_EDEFAULT.equals(deadlineExpr);
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				return GUARD_EXPR_EDEFAULT == null ? guardExpr != null : !GUARD_EXPR_EDEFAULT.equals(guardExpr);
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+				return safetyTransition != SAFETY_TRANSITION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1359,6 +1783,20 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		result.append(uMLRealtimeTransitionMappingVector);
 		result.append(", urgent: ");
 		result.append(urgent);
+		result.append(", eventExpr: ");
+		result.append(eventExpr);
+		result.append(", sideEffectExpr: ");
+		result.append(sideEffectExpr);
+		result.append(", timeGuardExpr: ");
+		result.append(timeGuardExpr);
+		result.append(", clockResetExpr: ");
+		result.append(clockResetExpr);
+		result.append(", deadlineExpr: ");
+		result.append(deadlineExpr);
+		result.append(", guardExpr: ");
+		result.append(guardExpr);
+		result.append(", safetyTransition: ");
+		result.append(safetyTransition);
 		result.append(')');
 		return result.toString();
 	}

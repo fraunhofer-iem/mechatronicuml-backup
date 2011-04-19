@@ -574,22 +574,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STATECHART__EMBEDDING_REGION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
-
-	/**
 	 * The number of structural features of the '<em>Abstract Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 18;
+	int ABSTRACT_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1287,17 +1278,6 @@ public interface CorePackage extends EPackage {
 	EReference getAbstractStatechart_Clocks();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Embedding Region</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getEmbeddingRegion()
-	 * @see #getAbstractStatechart()
-	 * @generated
-	 */
-	EReference getAbstractStatechart_EmbeddingRegion();
-
-	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getHighestParentStatechart() <em>Get Highest Parent Statechart</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1747,14 +1727,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_STATECHART__CLOCKS = eINSTANCE.getAbstractStatechart_Clocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Embedding Region</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_STATECHART__EMBEDDING_REGION = eINSTANCE.getAbstractStatechart_EmbeddingRegion();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Highest Parent Statechart</b></em>' operation.

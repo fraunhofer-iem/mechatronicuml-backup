@@ -86,7 +86,6 @@ public class AbstractStatechartItemProvider
 			addScheduleDocumentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
 			addIsEmbeddedPropertyDescriptor(object);
-			addEmbeddingRegionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -285,28 +284,6 @@ public class AbstractStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Embedding Region feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmbeddingRegionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractStatechart_embeddingRegion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractStatechart_embeddingRegion_feature", "_UI_AbstractStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_STATECHART__EMBEDDING_REGION,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

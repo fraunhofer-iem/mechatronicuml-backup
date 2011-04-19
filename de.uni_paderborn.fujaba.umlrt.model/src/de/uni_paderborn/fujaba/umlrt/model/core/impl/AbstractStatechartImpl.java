@@ -69,7 +69,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#isIsEmbedded <em>Is Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
  * </ul>
  * </p>
  *
@@ -325,16 +324,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 * @ordered
 	 */
 	protected EList<Clock> clocks;
-
-	/**
-	 * The cached value of the '{@link #getEmbeddingRegion() <em>Embedding Region</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmbeddingRegion()
-	 * @generated
-	 * @ordered
-	 */
-	protected Region embeddingRegion;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -817,66 +806,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Region getEmbeddingRegion() {
-		if (embeddingRegion != null && embeddingRegion.eIsProxy()) {
-			InternalEObject oldEmbeddingRegion = (InternalEObject)embeddingRegion;
-			embeddingRegion = (Region)eResolveProxy(oldEmbeddingRegion);
-			if (embeddingRegion != oldEmbeddingRegion) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, oldEmbeddingRegion, embeddingRegion));
-			}
-		}
-		return embeddingRegion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Region basicGetEmbeddingRegion() {
-		return embeddingRegion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEmbeddingRegion(Region newEmbeddingRegion, NotificationChain msgs) {
-		Region oldEmbeddingRegion = embeddingRegion;
-		embeddingRegion = newEmbeddingRegion;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, oldEmbeddingRegion, newEmbeddingRegion);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEmbeddingRegion(Region newEmbeddingRegion) {
-		if (newEmbeddingRegion != embeddingRegion) {
-			NotificationChain msgs = null;
-			if (embeddingRegion != null)
-				msgs = ((InternalEObject)embeddingRegion).eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
-			if (newEmbeddingRegion != null)
-				msgs = ((InternalEObject)newEmbeddingRegion).eInverseAdd(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
-			msgs = basicSetEmbeddingRegion(newEmbeddingRegion, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION, newEmbeddingRegion, newEmbeddingRegion));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AbstractStatechart getHighestParentStatechart() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -977,10 +906,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				if (embeddingRegion != null)
-					msgs = ((InternalEObject)embeddingRegion).eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
-				return basicSetEmbeddingRegion((Region)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -1009,8 +934,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return basicSetRequiredMsgIFace(null, msgs);
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				return basicSetEmbeddingRegion(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1058,9 +981,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return isIsEmbedded();
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return getClocks();
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				if (resolve) return getEmbeddingRegion();
-				return basicGetEmbeddingRegion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1128,9 +1048,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				getClocks().clear();
 				getClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				setEmbeddingRegion((Region)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1194,9 +1111,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				getClocks().clear();
 				return;
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				setEmbeddingRegion((Region)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1243,8 +1157,6 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return isEmbedded != IS_EMBEDDED_EDEFAULT;
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
-			case CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION:
-				return embeddingRegion != null;
 		}
 		return super.eIsSet(featureID);
 	}

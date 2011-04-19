@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getDoActionRev <em>Do Action Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr <em>Action Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,30 +136,30 @@ public interface DoEvent extends EObject {
 	void setPeriodUpper(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
+	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.
 	 * The default value is <code>"doEventExpr"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Event Expr</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Expr</em>' attribute.
-	 * @see #setActionExpr(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_ActionExpr()
+	 * @return the value of the '<em>Event Expr</em>' attribute.
+	 * @see #setEventExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_EventExpr()
 	 * @model default="doEventExpr"
 	 * @generated
 	 */
-	String getActionExpr();
+	String getEventExpr();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getActionExpr <em>Action Expr</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent#getEventExpr <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Expr</em>' attribute.
-	 * @see #getActionExpr()
+	 * @param value the new value of the '<em>Event Expr</em>' attribute.
+	 * @see #getEventExpr()
 	 * @generated
 	 */
-	void setActionExpr(String value);
+	void setEventExpr(String value);
 
 } // DoEvent

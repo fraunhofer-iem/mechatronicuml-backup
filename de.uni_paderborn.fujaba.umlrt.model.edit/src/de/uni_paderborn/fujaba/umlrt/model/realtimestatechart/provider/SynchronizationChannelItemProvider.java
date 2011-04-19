@@ -138,7 +138,7 @@ public class SynchronizationChannelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SynchronizationChannel)object).getSynchroChannelExpr();
+		String label = ((SynchronizationChannel)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SynchronizationChannel_type") :
 			getString("_UI_SynchronizationChannel_type") + " " + label;

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getActionExpr <em>Action Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,24 +60,24 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	protected Action uMLRealtimeAction;
 
 	/**
-	 * The default value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * The default value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
+	 * @see #getEventExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ACTION_EXPR_EDEFAULT = "entryExitExpr";
+	protected static final String EVENT_EXPR_EDEFAULT = "entryExitExpr";
 
 	/**
-	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
+	 * The cached value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
+	 * @see #getEventExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected String actionExpr = ACTION_EXPR_EDEFAULT;
+	protected String eventExpr = EVENT_EXPR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +179,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getActionExpr() {
-		return actionExpr;
+	public String getEventExpr() {
+		return eventExpr;
 	}
 
 	/**
@@ -188,11 +188,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActionExpr(String newActionExpr) {
-		String oldActionExpr = actionExpr;
-		actionExpr = newActionExpr;
+	public void setEventExpr(String newEventExpr) {
+		String oldEventExpr = eventExpr;
+		eventExpr = newEventExpr;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR, oldActionExpr, actionExpr));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR, oldEventExpr, eventExpr));
 	}
 
 	/**
@@ -209,8 +209,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				if (resolve) return getUMLRealtimeAction();
 				return basicGetUMLRealtimeAction();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
-				return getActionExpr();
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
+				return getEventExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,8 +229,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				setUMLRealtimeAction((Action)newValue);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
-				setActionExpr((String)newValue);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
+				setEventExpr((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -250,8 +250,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				setUMLRealtimeAction((Action)null);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
-				setActionExpr(ACTION_EXPR_EDEFAULT);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
+				setEventExpr(EVENT_EXPR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -269,8 +269,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 				return resets != null;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
 				return uMLRealtimeAction != null;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION_EXPR:
-				return ACTION_EXPR_EDEFAULT == null ? actionExpr != null : !ACTION_EXPR_EDEFAULT.equals(actionExpr);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
+				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -285,8 +285,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (actionExpr: ");
-		result.append(actionExpr);
+		result.append(" (eventExpr: ");
+		result.append(eventExpr);
 		result.append(')');
 		return result.toString();
 	}

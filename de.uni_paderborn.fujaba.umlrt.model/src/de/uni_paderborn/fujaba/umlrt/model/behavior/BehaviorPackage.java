@@ -253,15 +253,6 @@ public interface BehaviorPackage extends EPackage {
 	int PROTOCOL_STATECHART__CLOCKS = CorePackage.ABSTRACT_STATECHART__CLOCKS;
 
 	/**
-	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_STATECHART__EMBEDDING_REGION;
-
-	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
