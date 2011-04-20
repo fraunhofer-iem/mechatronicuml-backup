@@ -1,28 +1,24 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions;
 
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.ui.IObjectActionDelegate;
-import org.eclipse.ui.IWorkbenchPart;
 
-public class TriggerEventCreateAction implements IObjectActionDelegate {
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.RealtimeEventCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
+
+public class TriggerEventCreateAction extends CommonCreateAction {
+
 
 	@Override
 	public void run(IAction action) {
-		// TODO Auto-generated method stub
+		
+		  CreateElementRequest request = new CreateElementRequest(selectedTransition,
+				  RealtimeStatechartElementTypes.RealtimeEvent_3013);
+		  
+		  RealtimeEventCreateCommand command = new RealtimeEventCreateCommand(request);
+
+		  new ICommandProxy(command).execute();
 		
 	}
-
-	@Override
-	public void selectionChanged(IAction action, ISelection selection) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

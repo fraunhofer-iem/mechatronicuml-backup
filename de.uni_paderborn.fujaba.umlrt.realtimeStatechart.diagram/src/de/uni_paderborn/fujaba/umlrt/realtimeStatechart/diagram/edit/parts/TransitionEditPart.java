@@ -91,6 +91,12 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 							.getFigureTransitionSafetyTransitionLabel());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureTransitionSynchroExprLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -130,6 +136,9 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
 			return true;
 		}
 		return false;
@@ -206,6 +215,11 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureTransitionSynchroExprLabel;
+
+		/**
+		 * @generated
+		 */
 		public TransitionFigure() {
 
 			createContents();
@@ -256,6 +270,11 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 			fFigureTransitionSafetyTransitionLabel.setText("");
 
 			this.add(fFigureTransitionSafetyTransitionLabel);
+
+			fFigureTransitionSynchroExprLabel = new WrappingLabel();
+			fFigureTransitionSynchroExprLabel.setText("");
+
+			this.add(fFigureTransitionSynchroExprLabel);
 
 		}
 
@@ -321,6 +340,13 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		 */
 		public WrappingLabel getFigureTransitionSafetyTransitionLabel() {
 			return fFigureTransitionSafetyTransitionLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureTransitionSynchroExprLabel() {
+			return fFigureTransitionSynchroExprLabel;
 		}
 
 	}

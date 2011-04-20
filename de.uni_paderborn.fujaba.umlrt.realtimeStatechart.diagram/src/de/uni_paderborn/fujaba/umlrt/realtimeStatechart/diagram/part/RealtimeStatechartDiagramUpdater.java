@@ -132,6 +132,82 @@ public class RealtimeStatechartDiagramUpdater {
 				continue;
 			}
 		}
+		{
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline childElement = modelElement
+					.getRelativeDeadline();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RelativeDeadlineEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+			}
+		}
+		for (Iterator<?> it = modelElement.getTimeguard().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint childElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraint2EditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getTriggerEvents().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent childElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEventEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getRaisedEvents().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent childElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEvent2EditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+		{
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action childElement = modelElement
+					.getSideEffect();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+			}
+		}
+		{
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization childElement = modelElement
+					.getSendSynchronization();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+			}
+		}
+		{
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization childElement = modelElement
+					.getReceiveSynchronization();
+			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Synchronization2EditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+			}
+		}
 		return result;
 	}
 
@@ -308,6 +384,20 @@ public class RealtimeStatechartDiagramUpdater {
 			return getRegion_3009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AbsoluteDeadlineEditPart.VISUAL_ID:
 			return getAbsoluteDeadline_3010ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RelativeDeadlineEditPart.VISUAL_ID:
+			return getRelativeDeadline_3011ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraint2EditPart.VISUAL_ID:
+			return getClockConstraint_3012ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEventEditPart.VISUAL_ID:
+			return getRealtimeEvent_3013ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEvent2EditPart.VISUAL_ID:
+			return getRealtimeEvent_3014ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID:
+			return getAction_3015ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID:
+			return getSynchronization_3016ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Synchronization2EditPart.VISUAL_ID:
+			return getSynchronization_3017ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4001ContainedLinks(view);
 		}
@@ -347,6 +437,20 @@ public class RealtimeStatechartDiagramUpdater {
 			return getRegion_3009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AbsoluteDeadlineEditPart.VISUAL_ID:
 			return getAbsoluteDeadline_3010IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RelativeDeadlineEditPart.VISUAL_ID:
+			return getRelativeDeadline_3011IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraint2EditPart.VISUAL_ID:
+			return getClockConstraint_3012IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEventEditPart.VISUAL_ID:
+			return getRealtimeEvent_3013IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEvent2EditPart.VISUAL_ID:
+			return getRealtimeEvent_3014IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID:
+			return getAction_3015IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID:
+			return getSynchronization_3016IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Synchronization2EditPart.VISUAL_ID:
+			return getSynchronization_3017IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4001IncomingLinks(view);
 		}
@@ -386,6 +490,20 @@ public class RealtimeStatechartDiagramUpdater {
 			return getRegion_3009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AbsoluteDeadlineEditPart.VISUAL_ID:
 			return getAbsoluteDeadline_3010OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RelativeDeadlineEditPart.VISUAL_ID:
+			return getRelativeDeadline_3011OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraint2EditPart.VISUAL_ID:
+			return getClockConstraint_3012OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEventEditPart.VISUAL_ID:
+			return getRealtimeEvent_3013OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEvent2EditPart.VISUAL_ID:
+			return getRealtimeEvent_3014OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID:
+			return getAction_3015OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID:
+			return getSynchronization_3016OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Synchronization2EditPart.VISUAL_ID:
+			return getSynchronization_3017OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4001OutgoingLinks(view);
 		}
@@ -504,6 +622,62 @@ public class RealtimeStatechartDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getAbsoluteDeadline_3010ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRelativeDeadline_3011ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClockConstraint_3012ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3013ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3014ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getAction_3015ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3016ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3017ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -651,6 +825,62 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRelativeDeadline_3011IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClockConstraint_3012IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3013IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3014IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getAction_3015IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3016IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3017IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_4001IncomingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -772,6 +1002,62 @@ public class RealtimeStatechartDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getAbsoluteDeadline_3010OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRelativeDeadline_3011OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClockConstraint_3012OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3013OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getRealtimeEvent_3014OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getAction_3015OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3016OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getSynchronization_3017OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

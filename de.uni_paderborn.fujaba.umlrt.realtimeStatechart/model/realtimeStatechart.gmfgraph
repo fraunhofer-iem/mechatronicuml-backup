@@ -149,7 +149,7 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="TransitionFigure"
-          targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.8">
+          targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.9">
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionPriorityLabel"/>
@@ -175,6 +175,10 @@
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionSafetyTransitionLabel"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="TransitionSynchroExprLabel"
+            text=""/>
         <children
             xsi:type="gmfgraph:PolylineDecoration"
             name="TransitionFigure"/>
@@ -203,6 +207,9 @@
       <accessors
           accessor="getFigureTransitionSafetyTransitionLabel"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.7"/>
+      <accessors
+          accessor="getFigureTransitionSynchroExprLabel"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.8"/>
     </descriptors>
     <descriptors
         name="TestTransitionFigure">
@@ -542,6 +549,30 @@
         y="-20"/>
   </labels>
   <labels
+      name="TransitionSafetyTransition"
+      figure="TransitionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.7">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-20"/>
+  </labels>
+  <labels
+      name="TransitionSynchroExpr"
+      figure="TransitionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.8">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="CENTER"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-20"/>
+  </labels>
+  <labels
       name="ClockName"
       figure="StateFigure"
       resizeConstraint="NONE"
@@ -573,16 +604,4 @@
       figure="EEEventFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.11/@accessors.0"/>
-  <labels
-      name="TransitionSafetyTransition"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.4/@accessors.7">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
 </gmfgraph:Canvas>

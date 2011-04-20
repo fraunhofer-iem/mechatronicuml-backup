@@ -55,7 +55,7 @@ public class CustomRealtimeStatechartPropertySection extends
 	 *            the editPart.
 	 * @return the model element of the parent EditPart.
 	 */
-	private EObject getParentElement(EditPart editPart) {
+	protected EObject getParentElement(EditPart editPart) {
 		ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
 				.getParent();
 		return parentEditPart.getNotationView().getElement();

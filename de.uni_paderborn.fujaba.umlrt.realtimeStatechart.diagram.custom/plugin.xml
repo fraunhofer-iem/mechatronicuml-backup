@@ -59,7 +59,7 @@
       <objectContribution
             adaptable="false"
             id="objectContribution.Transition"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart">
+            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
          <menu
                id="RealtimeStatechart.Insert"
                label="Custom.Insert"
@@ -69,10 +69,67 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.AbsoluteDeadlineAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.AbsoluteDeadlineCreateAction"
                enablesFor="1"
+               icon="icons/clock.gif"
                id="Statechart.CreateAbsoluteDeadlineID"
                label="AbsoluteDeadline"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.RelativeDeadlineCreateAction"
+               enablesFor="1"
+               icon="icons/clock.gif"
+               id="Statechart.CreateRelativeDeadlineID"
+               label="RelativeDeadline"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.RaisedEventCreateAction"
+               enablesFor="1"
+               icon="icons/e_raised16.gif"
+               id="Statechart.CreateRaisedEventID"
+               label="RaisedEvent"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TriggerEventCreateAction"
+               enablesFor="1"
+               icon="icons/e_trigger16.gif"
+               id="Statechart.CreateTriggerEventID"
+               label="TriggerEvent"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.SendSynchroCreateAction"
+               enablesFor="1"
+               icon="icons/Syn.gif"
+               id="Statechart.CreateSendSynchroID"
+               label="SendSynchronization"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ReceiveSynchroCreateAction"
+               enablesFor="1"
+               icon="icons/Syn.gif"
+               id="Statechart.CreateReceiveSynchroID"
+               label="ReceiveSynchronization"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.SideEffectCreateAction"
+               enablesFor="1"
+               icon="icons/setRefMethod.gif"
+               id="Statechart.CreateSideEffectID"
+               label="SideEffect"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TimeGuardCreateAction"
+               enablesFor="1"
+               icon="icons/clock.gif"
+               id="Statechart.CreateTimeGuardID"
+               label="TimeGuard"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
       </objectContribution>
