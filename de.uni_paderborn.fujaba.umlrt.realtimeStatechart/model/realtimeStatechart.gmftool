@@ -48,6 +48,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="TestTransition"
+          description="Creation of a transition.">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icon/transition16.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.realtimeStatechart"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Clock"
           description="Creation of a clock for a statechart">
         <smallIcon

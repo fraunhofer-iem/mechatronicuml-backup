@@ -54,7 +54,7 @@ public class RealtimeStatechartOCLFactory {
 					"\'FinalState\'", //$NON-NLS-1$
 					"\'History\'", //$NON-NLS-1$
 					"\'c\'", //$NON-NLS-1$
-					"id", //$NON-NLS-1$
+					"\'id\'", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

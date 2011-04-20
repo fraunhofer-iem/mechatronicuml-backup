@@ -70,6 +70,11 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Transition_2013 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType EntryEvent_3005 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"); //$NON-NLS-1$
 
 	/**
@@ -91,6 +96,16 @@ public class RealtimeStatechartElementTypes {
 	 * @generated
 	 */
 	public static final IElementType SynchronizationChannel_3008 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Region_3009 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3009"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AbsoluteDeadline_3010 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AbsoluteDeadline_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -239,6 +254,11 @@ public class RealtimeStatechartElementTypes {
 							.getClock());
 
 			elements.put(
+					Transition_2013,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getTransition());
+
+			elements.put(
 					EntryEvent_3005,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getEntryEvent());
@@ -262,6 +282,16 @@ public class RealtimeStatechartElementTypes {
 					SynchronizationChannel_3008,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getSynchronizationChannel());
+
+			elements.put(
+					Region_3009,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getRegion());
+
+			elements.put(
+					AbsoluteDeadline_3010,
+					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getAbsoluteDeadline());
 
 			elements.put(
 					Transition_4001,
@@ -290,11 +320,14 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(FinalState_2010);
 			KNOWN_ELEMENT_TYPES.add(HistoryState_2011);
 			KNOWN_ELEMENT_TYPES.add(Clock_2012);
+			KNOWN_ELEMENT_TYPES.add(Transition_2013);
 			KNOWN_ELEMENT_TYPES.add(EntryEvent_3005);
 			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
 			KNOWN_ELEMENT_TYPES.add(ExitEvent_3006);
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3007);
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3008);
+			KNOWN_ELEMENT_TYPES.add(Region_3009);
+			KNOWN_ELEMENT_TYPES.add(AbsoluteDeadline_3010);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -317,6 +350,8 @@ public class RealtimeStatechartElementTypes {
 			return HistoryState_2011;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
 			return Clock_2012;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
+			return Transition_2013;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return EntryEvent_3005;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
@@ -327,6 +362,10 @@ public class RealtimeStatechartElementTypes {
 			return ClockConstraint_3007;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
 			return SynchronizationChannel_3008;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
+			return Region_3009;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AbsoluteDeadlineEditPart.VISUAL_ID:
+			return AbsoluteDeadline_3010;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
 		}

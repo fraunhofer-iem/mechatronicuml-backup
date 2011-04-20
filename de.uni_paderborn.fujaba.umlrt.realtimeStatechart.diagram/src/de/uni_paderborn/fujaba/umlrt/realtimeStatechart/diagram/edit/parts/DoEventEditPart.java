@@ -111,7 +111,7 @@ public class DoEventEditPart extends AbstractBorderItemEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureDoActionLabel());
+					.setLabel(getPrimaryShape().getFigureDoEventLabel());
 			return true;
 		}
 		return false;
@@ -259,7 +259,7 @@ public class DoEventEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureDoActionLabel;
+		private WrappingLabel fFigureDoEventLabel;
 
 		/**
 		 * @generated
@@ -280,26 +280,26 @@ public class DoEventEditPart extends AbstractBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			fFigureDoActionLabel = new WrappingLabel();
-			fFigureDoActionLabel.setText("");
+			fFigureDoEventLabel = new WrappingLabel();
+			fFigureDoEventLabel.setText("");
 
-			GridData constraintFFigureDoActionLabel = new GridData();
-			constraintFFigureDoActionLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureDoActionLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureDoActionLabel.horizontalIndent = 0;
-			constraintFFigureDoActionLabel.horizontalSpan = 1;
-			constraintFFigureDoActionLabel.verticalSpan = 1;
-			constraintFFigureDoActionLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureDoActionLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureDoActionLabel, constraintFFigureDoActionLabel);
+			GridData constraintFFigureDoEventLabel = new GridData();
+			constraintFFigureDoEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureDoEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureDoEventLabel.horizontalIndent = 0;
+			constraintFFigureDoEventLabel.horizontalSpan = 1;
+			constraintFFigureDoEventLabel.verticalSpan = 1;
+			constraintFFigureDoEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureDoEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureDoEventLabel, constraintFFigureDoEventLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureDoActionLabel() {
-			return fFigureDoActionLabel;
+		public WrappingLabel getFigureDoEventLabel() {
+			return fFigureDoEventLabel;
 		}
 
 	}

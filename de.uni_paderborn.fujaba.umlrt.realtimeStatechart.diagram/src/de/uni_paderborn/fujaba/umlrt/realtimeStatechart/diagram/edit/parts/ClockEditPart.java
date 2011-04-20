@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts;
 
 import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
@@ -266,7 +267,7 @@ public class ClockEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
-			this.setLineWidth(3);
+			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 

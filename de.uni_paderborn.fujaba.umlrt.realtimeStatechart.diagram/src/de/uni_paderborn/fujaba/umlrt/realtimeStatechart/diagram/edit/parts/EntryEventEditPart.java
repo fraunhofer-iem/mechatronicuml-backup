@@ -111,7 +111,7 @@ public class EntryEventEditPart extends AbstractBorderItemEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureEEActionLabel());
+					.setLabel(getPrimaryShape().getFigureEEEventLabel());
 			return true;
 		}
 		return false;
@@ -259,7 +259,7 @@ public class EntryEventEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureEEActionLabel;
+		private WrappingLabel fFigureEEEventLabel;
 
 		/**
 		 * @generated
@@ -280,26 +280,26 @@ public class EntryEventEditPart extends AbstractBorderItemEditPart {
 		 */
 		private void createContents() {
 
-			fFigureEEActionLabel = new WrappingLabel();
-			fFigureEEActionLabel.setText("");
+			fFigureEEEventLabel = new WrappingLabel();
+			fFigureEEEventLabel.setText("");
 
-			GridData constraintFFigureEEActionLabel = new GridData();
-			constraintFFigureEEActionLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureEEActionLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureEEActionLabel.horizontalIndent = 0;
-			constraintFFigureEEActionLabel.horizontalSpan = 1;
-			constraintFFigureEEActionLabel.verticalSpan = 1;
-			constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);
+			GridData constraintFFigureEEEventLabel = new GridData();
+			constraintFFigureEEEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureEEEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureEEEventLabel.horizontalIndent = 0;
+			constraintFFigureEEEventLabel.horizontalSpan = 1;
+			constraintFFigureEEEventLabel.verticalSpan = 1;
+			constraintFFigureEEEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureEEEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureEEEventLabel, constraintFFigureEEEventLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureEEActionLabel() {
-			return fFigureEEActionLabel;
+		public WrappingLabel getFigureEEEventLabel() {
+			return fFigureEEEventLabel;
 		}
 
 	}

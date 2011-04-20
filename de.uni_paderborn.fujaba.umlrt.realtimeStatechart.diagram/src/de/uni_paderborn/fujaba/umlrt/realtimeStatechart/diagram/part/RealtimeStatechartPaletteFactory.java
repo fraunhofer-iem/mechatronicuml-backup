@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,8 +41,9 @@ public class RealtimeStatechartPaletteFactory {
 		paletteContainer.add(createStartState2CreationTool());
 		paletteContainer.add(createStopState3CreationTool());
 		paletteContainer.add(createTransition4CreationTool());
-		paletteContainer.add(createClock5CreationTool());
-		paletteContainer.add(createHistory6CreationTool());
+		paletteContainer.add(createTestTransition5CreationTool());
+		paletteContainer.add(createClock6CreationTool());
+		paletteContainer.add(createHistory7CreationTool());
 		return paletteContainer;
 	}
 
@@ -151,13 +153,29 @@ public class RealtimeStatechartPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createClock5CreationTool() {
+	private ToolEntry createTestTransition5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock5CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock5CreationTool_desc,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.TestTransition5CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.TestTransition5CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Transition_2013));
+		entry.setId("createTestTransition5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createClock6CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock6CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2012));
-		entry.setId("createClock5CreationTool"); //$NON-NLS-1$
+		entry.setId("createClock6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -167,13 +185,13 @@ public class RealtimeStatechartPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHistory6CreationTool() {
+	private ToolEntry createHistory7CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History6CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History6CreationTool_desc,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History7CreationTool_title,
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History7CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.HistoryState_2011));
-		entry.setId("createHistory6CreationTool"); //$NON-NLS-1$
+		entry.setId("createHistory7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/history16.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -248,14 +266,15 @@ public class RealtimeStatechartPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRegion5CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Region5CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Region5CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Region_3009));
 		entry.setId("createRegion5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/andState.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -354,14 +373,15 @@ public class RealtimeStatechartPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAbsoluteDeadline6CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.AbsoluteDeadline6CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.AbsoluteDeadline6CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.AbsoluteDeadline_3010));
 		entry.setId("createAbsoluteDeadline6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

@@ -63,63 +63,58 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser entryEventActionExpr_5010Parser;
+	private IParser entryEventEventExpr_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryEventActionExpr_5010Parser() {
-		if (entryEventActionExpr_5010Parser == null) {
+	private IParser getEntryEventEventExpr_5010Parser() {
+		if (entryEventEventExpr_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getEntryOrExitEvent_ActionExpr() };
+					.getEntryOrExitEvent_EventExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			entryEventActionExpr_5010Parser = parser;
+			entryEventEventExpr_5010Parser = parser;
 		}
-		return entryEventActionExpr_5010Parser;
+		return entryEventEventExpr_5010Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser doEventActionExprPeriodLowerPeriodUpper_5006Parser;
+	private IParser doEventEventExpr_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDoEventActionExprPeriodLowerPeriodUpper_5006Parser() {
-		if (doEventActionExprPeriodLowerPeriodUpper_5006Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getDoEvent_ActionExpr(),
-					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getDoEvent_PeriodLower(),
-					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getDoEvent_PeriodUpper() };
+	private IParser getDoEventEventExpr_5006Parser() {
+		if (doEventEventExpr_5006Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getDoEvent_EventExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			doEventActionExprPeriodLowerPeriodUpper_5006Parser = parser;
+			doEventEventExpr_5006Parser = parser;
 		}
-		return doEventActionExprPeriodLowerPeriodUpper_5006Parser;
+		return doEventEventExpr_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser exitEventActionExpr_5011Parser;
+	private IParser exitEventEventExpr_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getExitEventActionExpr_5011Parser() {
-		if (exitEventActionExpr_5011Parser == null) {
+	private IParser getExitEventEventExpr_5011Parser() {
+		if (exitEventEventExpr_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getEntryOrExitEvent_ActionExpr() };
+					.getEntryOrExitEvent_EventExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			exitEventActionExpr_5011Parser = parser;
+			exitEventEventExpr_5011Parser = parser;
 		}
-		return exitEventActionExpr_5011Parser;
+		return exitEventEventExpr_5011Parser;
 	}
 
 	/**
@@ -182,6 +177,139 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	private IParser transitionClockResetExpr_6002Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionClockResetExpr_6002Parser() {
+		if (transitionClockResetExpr_6002Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_ClockResetExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionClockResetExpr_6002Parser = parser;
+		}
+		return transitionClockResetExpr_6002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionDeadlineExpr_6003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionDeadlineExpr_6003Parser() {
+		if (transitionDeadlineExpr_6003Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_DeadlineExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionDeadlineExpr_6003Parser = parser;
+		}
+		return transitionDeadlineExpr_6003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionEventExpr_6004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionEventExpr_6004Parser() {
+		if (transitionEventExpr_6004Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_EventExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionEventExpr_6004Parser = parser;
+		}
+		return transitionEventExpr_6004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionGuardExpr_6005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionGuardExpr_6005Parser() {
+		if (transitionGuardExpr_6005Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_GuardExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionGuardExpr_6005Parser = parser;
+		}
+		return transitionGuardExpr_6005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionSideEffectExpr_6006Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionSideEffectExpr_6006Parser() {
+		if (transitionSideEffectExpr_6006Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_SideEffectExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionSideEffectExpr_6006Parser = parser;
+		}
+		return transitionSideEffectExpr_6006Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionTimeGuardExpr_6007Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionTimeGuardExpr_6007Parser() {
+		if (transitionTimeGuardExpr_6007Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_TimeGuardExpr() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionTimeGuardExpr_6007Parser = parser;
+		}
+		return transitionTimeGuardExpr_6007Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser transitionSafetyTransition_6008Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransitionSafetyTransition_6008Parser() {
+		if (transitionSafetyTransition_6008Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getTransition_SafetyTransition() };
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			transitionSafetyTransition_6008Parser = parser;
+		}
+		return transitionSafetyTransition_6008Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
@@ -189,17 +317,31 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockNameIdEditPart.VISUAL_ID:
 			return getClockNameId_5014Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart.VISUAL_ID:
-			return getEntryEventActionExpr_5010Parser();
+			return getEntryEventEventExpr_5010Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart.VISUAL_ID:
-			return getDoEventActionExprPeriodLowerPeriodUpper_5006Parser();
+			return getDoEventEventExpr_5006Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventActionExprEditPart.VISUAL_ID:
-			return getExitEventActionExpr_5011Parser();
+			return getExitEventEventExpr_5011Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart.VISUAL_ID:
 			return getClockConstraintClockConstraintExpr_5012Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart.VISUAL_ID:
 			return getSynchronizationChannelSynchroChannelExpr_5013Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID:
 			return getTransitionPriority_6001Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionClockResetExprEditPart.VISUAL_ID:
+			return getTransitionClockResetExpr_6002Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionDeadlineExprEditPart.VISUAL_ID:
+			return getTransitionDeadlineExpr_6003Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEventExprEditPart.VISUAL_ID:
+			return getTransitionEventExpr_6004Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart.VISUAL_ID:
+			return getTransitionGuardExpr_6005Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSideEffectExprEditPart.VISUAL_ID:
+			return getTransitionSideEffectExpr_6006Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart.VISUAL_ID:
+			return getTransitionTimeGuardExpr_6007Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart.VISUAL_ID:
+			return getTransitionSafetyTransition_6008Parser();
 		}
 		return null;
 	}

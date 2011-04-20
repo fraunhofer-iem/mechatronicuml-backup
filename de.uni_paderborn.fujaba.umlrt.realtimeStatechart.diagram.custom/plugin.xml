@@ -48,11 +48,34 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.edit.parts.CustomRealtimeStatechartEditPartFactory">
+            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.providers.CustomRealtimeStatechartEditPartProvider">
          <Priority
-               name="Lowest">
+               name="Medium">
          </Priority>
       </editpartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="objectContribution.Transition"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart">
+         <menu
+               id="RealtimeStatechart.Insert"
+               label="Custom.Insert"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.AbsoluteDeadlineAction"
+               enablesFor="1"
+               id="Statechart.CreateAbsoluteDeadlineID"
+               label="AbsoluteDeadline"
+               menubarPath="RealtimeStatechart.Insert/group1">
+         </action>
+      </objectContribution>
    </extension>
 
 </plugin>

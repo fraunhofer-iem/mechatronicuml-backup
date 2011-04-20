@@ -5,12 +5,13 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
  * 
- * @author bingo
+ * @author braund
  * 
  */
 public class CustomRealtimeStatechartEditPartFactory extends
@@ -24,6 +25,11 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			switch (RealtimeStatechartVisualIDRegistry.getVisualID(view)) {
 			case HistoryStateEditPart.VISUAL_ID:
 				return new CustomHistoryStateEditPart(view);
+			}
+			
+			switch (RealtimeStatechartVisualIDRegistry.getVisualID(view)) {
+			case TransitionEditPart.VISUAL_ID:
+				return new CustomTransitionEditPart(view);
 			}
 		}
 		return super.createEditPart(context, model);

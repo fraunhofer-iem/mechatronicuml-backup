@@ -3,5 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="realtimeStatechart"
     nsURI="http://statechart" nsPrefix="realtimeStatechart">
-  <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tmpContainer" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

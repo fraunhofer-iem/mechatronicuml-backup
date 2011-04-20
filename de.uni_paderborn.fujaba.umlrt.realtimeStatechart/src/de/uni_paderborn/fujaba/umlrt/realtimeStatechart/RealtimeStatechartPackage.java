@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -259,13 +260,22 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__EMBEDDING_REGION = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION;
 
 	/**
+	 * The feature id for the '<em><b>Tmp Container</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__TMP_CONTAINER = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART_FEATURE_COUNT + 0;
+	int REALTIME_STATECHART_FEATURE_COUNT = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART_FEATURE_COUNT + 1;
 
 
 	/**
@@ -277,6 +287,17 @@ public interface RealtimeStatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRealtimeStatechart();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart#getTmpContainer <em>Tmp Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Tmp Container</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart#getTmpContainer()
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getRealtimeStatechart_TmpContainer();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -309,6 +330,13 @@ public interface RealtimeStatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REALTIME_STATECHART = eINSTANCE.getRealtimeStatechart();
+		/**
+		 * The meta object literal for the '<em><b>Tmp Container</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART__TMP_CONTAINER = eINSTANCE.getRealtimeStatechart_TmpContainer();
 
 	}
 

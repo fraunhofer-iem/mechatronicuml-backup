@@ -29,6 +29,8 @@ import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechartPackag
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -130,6 +132,15 @@ public class RealtimeStatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRealtimeStatechart_TmpContainer() {
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RealtimeStatechartFactory getRealtimeStatechartFactory() {
 		return (RealtimeStatechartFactory)getEFactoryInstance();
 	}
@@ -154,6 +165,7 @@ public class RealtimeStatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Create classes and their features
 		realtimeStatechartEClass = createEClass(REALTIME_STATECHART);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__TMP_CONTAINER);
 	}
 
 	/**
@@ -181,6 +193,7 @@ public class RealtimeStatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Obtain other dependent packages
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -191,6 +204,7 @@ public class RealtimeStatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRealtimeStatechart_TmpContainer(), theEcorePackage.getEObject(), null, "tmpContainer", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
