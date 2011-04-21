@@ -159,7 +159,7 @@ public class ClockItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Clock)object).getName() + ((Clock)object).getId();;
+		String label = ((Clock)object).getStatechart().getName()+ ": " + ((Clock)object).getName()+ "_" + ((Clock)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Clock_type") :
 			getString("_UI_Clock_type") + " " + label;

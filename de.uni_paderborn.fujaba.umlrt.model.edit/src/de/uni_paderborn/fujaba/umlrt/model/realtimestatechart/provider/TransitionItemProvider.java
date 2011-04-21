@@ -76,15 +76,16 @@ public class TransitionItemProvider
 			addSourcePropertyDescriptor(object);
 			addStatechartPropertyDescriptor(object);
 			addResetsPropertyDescriptor(object);
+			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 			addEventExprPropertyDescriptor(object);
 			addSideEffectExprPropertyDescriptor(object);
 			addTimeGuardExprPropertyDescriptor(object);
-			addClockResetExprPropertyDescriptor(object);
 			addDeadlineExprPropertyDescriptor(object);
 			addGuardExprPropertyDescriptor(object);
-			addSafetyTransitionPropertyDescriptor(object);
+			addSynchroExprPropertyDescriptor(object);
+			addClockResetsExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -310,28 +311,6 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Clock Reset Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClockResetExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_clockResetExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockResetExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESET_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Deadline Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -367,6 +346,50 @@ public class TransitionItemProvider
 				 getString("_UI_Transition_guardExpr_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guardExpr_feature", "_UI_Transition_type"),
 				 RealtimestatechartPackage.Literals.TRANSITION__GUARD_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Synchro Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchroExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_synchroExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_synchroExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clock Resets Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClockResetsExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_clockResetsExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockResetsExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR,
 				 true,
 				 false,
 				 false,
@@ -474,14 +497,15 @@ public class TransitionItemProvider
 
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR:
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
 			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESET_EXPR:
 			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:

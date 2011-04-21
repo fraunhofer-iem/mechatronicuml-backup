@@ -795,6 +795,11 @@
           </eSubpackages>
           <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart"
               nsPrefix="realtimestatechart">
+            <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+              <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+              <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+              <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+            </eAnnotations>
             <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
@@ -827,6 +832,11 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents clocks of a realtime statechart."/>
               </eAnnotations>
+              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="body" value="if(name!=null &amp;&amp; id!=null) {&#xD;&#xA;return &quot;{&quot; + name+&quot;_&quot;+id +&quot;}&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Every clock has a unique identifier."/>
@@ -1033,8 +1043,8 @@
                   <details key="documentation" value="The realtime statechart this transition belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clockResets"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The clock resets of this transition."/>
                 </eAnnotations>
@@ -1072,6 +1082,9 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/uMLRealtimeTransition"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+                  defaultValueLiteral="false"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
                   defaultValueLiteral="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
@@ -1083,17 +1096,22 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeGuardExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="timeGuardExpr"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetExpr"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="clockResetExpr"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="deadlineExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="deadlineExpr"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="guardExpr"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-                  defaultValueLiteral="false"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroExpr"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+                  defaultValueLiteral="synchroExpr"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetsExpr"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="resets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) "/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

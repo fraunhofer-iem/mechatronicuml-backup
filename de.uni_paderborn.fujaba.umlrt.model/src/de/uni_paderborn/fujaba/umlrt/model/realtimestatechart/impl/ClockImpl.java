@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -198,6 +199,19 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String toMyString() {
+		if(name!=null && id!=null) {
+		return "{" + name+"_"+id +"}";
+		}else{
+		return "";
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
@@ -351,6 +365,20 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				return clockConstraints != null && !clockConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.CLOCK___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ClockImpl
