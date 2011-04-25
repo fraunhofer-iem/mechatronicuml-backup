@@ -288,117 +288,6 @@
           href="realtimeStatechart.gmfgraph#ClockNode"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.4"/>
-      <diagramNode
-          href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.5"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.6"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/timeguard"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.4"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.1"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.2"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sendSynchronization"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"/>
-          <diagramNode
-              href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
-        </ownedChild>
-      </children>
-    </ownedChild>
-  </nodes>
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
@@ -416,7 +305,7 @@
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionClockResetExpr"/>
       <features
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockResetExpr"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockResetsExpr"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"

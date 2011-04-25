@@ -309,215 +309,6 @@
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/regions"/>
       </modelFacet>
     </childNodes>
-    <childNodes
-        visualID="3010"
-        editPartClassName="AbsoluteDeadlineEditPart"
-        itemSemanticEditPolicyClassName="AbsoluteDeadlineItemSemanticEditPolicy"
-        notationViewFactoryClassName="AbsoluteDeadlineViewFactory"
-        canonicalEditPolicyClassName="AbsoluteDeadlineCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="AbsoluteDeadlineGraphicalNodeEditPolicy"
-        createCommandClassName="AbsoluteDeadlineCreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="AbsoluteDeadlineEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3011"
-        editPartClassName="RelativeDeadlineEditPart"
-        itemSemanticEditPolicyClassName="RelativeDeadlineItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="RelativeDeadlineCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="RelativeDeadlineGraphicalNodeEditPolicy"
-        createCommandClassName="RelativeDeadlineCreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="RelativeDeadlineEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3012"
-        editPartClassName="ClockConstraint2EditPart"
-        itemSemanticEditPolicyClassName="ClockConstraint2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ClockConstraint2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ClockConstraint2GraphicalNodeEditPolicy"
-        createCommandClassName="ClockConstraint2CreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.3/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/timeguard"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/timeguard"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3013"
-        editPartClassName="RealtimeEventEditPart"
-        itemSemanticEditPolicyClassName="RealtimeEventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="RealtimeEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="RealtimeEventGraphicalNodeEditPolicy"
-        createCommandClassName="RealtimeEventCreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="RealtimeEventEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3014"
-        editPartClassName="RealtimeEvent2EditPart"
-        itemSemanticEditPolicyClassName="RealtimeEvent2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="RealtimeEvent2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="RealtimeEvent2GraphicalNodeEditPolicy"
-        createCommandClassName="RealtimeEvent2CreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.9/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3015"
-        editPartClassName="ActionEditPart"
-        itemSemanticEditPolicyClassName="ActionItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ActionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ActionGraphicalNodeEditPolicy"
-        createCommandClassName="ActionCreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ActionEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3016"
-        editPartClassName="SynchronizationEditPart"
-        itemSemanticEditPolicyClassName="SynchronizationItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="SynchronizationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="SynchronizationGraphicalNodeEditPolicy"
-        createCommandClassName="SynchronizationCreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="SynchronizationEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sendSynchronization"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sendSynchronization"/>
-      </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3017"
-        editPartClassName="Synchronization2EditPart"
-        itemSemanticEditPolicyClassName="Synchronization2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="Synchronization2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Synchronization2GraphicalNodeEditPolicy"
-        createCommandClassName="Synchronization2CreateCommand"
-        containers="//@diagram/@topLevelNodes.5">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
-      </modelFacet>
-    </childNodes>
     <topLevelNodes
         visualID="2008"
         editPartClassName="StateEditPart"
@@ -774,33 +565,6 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes
-        visualID="2013"
-        editPartClassName="Transition2EditPart"
-        itemSemanticEditPolicyClassName="Transition2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="TransitionViewFactory"
-        canonicalEditPolicyClassName="TransitionCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.9 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13"
-        graphicalNodeEditPolicyClassName="TransitionGraphicalNodeEditPolicy"
-        createCommandClassName="Transition2CreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="TransitionEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestTransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestTransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestTransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
-      </modelFacet>
-    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="TransitionEditPart"
@@ -811,8 +575,8 @@
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.5/@elementType"/>
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="TransitionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="TransitionFigure"
@@ -875,7 +639,7 @@
             parser="//@labelParsers/@implementations.0"
             editorPattern="">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockResetExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockResetsExpr"/>
         </modelFacet>
       </labels>
       <labels
@@ -1020,7 +784,8 @@
       <labels
           visualID="6009"
           editPartClassName="TransitionSynchroExprEditPart"
-          itemSemanticEditPolicyClassName="TransitionSynchroExprItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="TransitionSynchroExprItemSemanticEditPolicy"
+          notationViewFactoryClassName="TransitionSynchroExprViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1144,8 +909,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="TestTransition"
             description="Creation of a transition."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"
-            genNodes="//@diagram/@topLevelNodes.5"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Clock"
@@ -1208,20 +972,17 @@
             xsi:type="gmfgen:ToolEntry"
             title="Trigger Event"
             description="Creation of a trigger event."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/e_trigger16.gif"
-            genNodes="//@diagram/@childNodes.9"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/e_trigger16.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Raised Event"
             description="Creation of a raised event."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/e_raised16.gif"
-            genNodes="//@diagram/@childNodes.10"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/e_raised16.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Side Effect"
             description="Creation of a side effect."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/setRefMethod.gif"
-            genNodes="//@diagram/@childNodes.11"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/setRefMethod.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Clock Reset"
@@ -1231,20 +992,17 @@
             xsi:type="gmfgen:ToolEntry"
             title="Time Guard"
             description="Creation of a time guard."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
-            genNodes="//@diagram/@childNodes.8"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Absolute Deadline"
             description="Creation of a absolute deadline."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
-            genNodes="//@diagram/@childNodes.6"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Relative Deadline"
             description="Creation of a relative deadline."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
-            genNodes="//@diagram/@childNodes.7"/>
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"/>
       </groups>
     </palette>
     <preferencePages
@@ -1314,33 +1072,6 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.4"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.6"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.7"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.8"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.9"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.10"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.11"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.12"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.5"
-        child="//@diagram/@childNodes.13"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.5"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"

@@ -7,7 +7,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet.RealtimeStatechartPropertySection;
 
 public class CustomRealtimeStatechartPropertySection extends
@@ -25,7 +24,7 @@ public class CustomRealtimeStatechartPropertySection extends
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new CustomPropertySource(object, ips);
+				return new CustomStatechartPropertySource(object, ips);
 			}
 		}
 		return super.getPropertySource(object);
