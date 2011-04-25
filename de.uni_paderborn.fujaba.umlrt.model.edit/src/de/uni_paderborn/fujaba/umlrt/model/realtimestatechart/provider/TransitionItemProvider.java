@@ -7,6 +7,9 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.PortCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.RelativeDeadlinePropertyDescriptor;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
@@ -64,7 +67,7 @@ public class TransitionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
@@ -75,7 +78,7 @@ public class TransitionItemProvider
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addStatechartPropertyDescriptor(object);
-			addResetsPropertyDescriptor(object);
+			addClockResetsPropertyDescriptor(object);
 			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
@@ -86,8 +89,33 @@ public class TransitionItemProvider
 			addGuardExprPropertyDescriptor(object);
 			addSynchroExprPropertyDescriptor(object);
 			addClockResetsExprPropertyDescriptor(object);
+			addRelativeDeadlinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+	
+	/**
+	 * This adds a property descriptor for the RelativeDeadline feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	protected void addRelativeDeadlinePropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add(new RelativeDeadlinePropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"RelativeDeadline - Lower Bound", "The lower bound of the Transition's RelativeDeadline",
+				RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND, true, false,
+				true, null, null, null));
+
+		itemPropertyDescriptors.add(new RelativeDeadlinePropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"RelativeDeadline - Upper Bound", "The upper bound of the Transition's RelativeDeadline",
+				RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND, true, false,
+				true, null, null, null));
+
 	}
 
 	/**
@@ -179,19 +207,19 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Resets feature.
+	 * This adds a property descriptor for the Clock Resets feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResetsPropertyDescriptor(Object object) {
+	protected void addClockResetsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_resets_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_resets_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__RESETS,
+				 getString("_UI_Transition_clockResets_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockResets_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS,
 				 true,
 				 false,
 				 true,
