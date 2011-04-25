@@ -2173,13 +2173,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Resets</b></em>' reference list.
+	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RESETS = PRIORITIZABLE_FEATURE_COUNT + 9;
+	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>UML Realtime Flat Switching</b></em>' containment reference.
@@ -2524,22 +2524,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER = PRIORITIZABLE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Get CRE</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION___GET_CRE = PRIORITIZABLE_OPERATION_COUNT + 20;
-
-	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 21;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Bound</b></em>' containment reference.
@@ -5404,15 +5395,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Statechart();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getResets <em>Resets</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResets <em>Clock Resets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Resets</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getResets()
+	 * @return the meta object for the reference list '<em>Clock Resets</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResets()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_Resets();
+	EReference getTransition_ClockResets();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFlatSwitching <em>UML Realtime Flat Switching</em>}'.
@@ -5610,16 +5601,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTransition__CalculateWorstCaseDeadlineAsNaturalNumber();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getCRE() <em>Get CRE</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get CRE</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getCRE()
-	 * @generated
-	 */
-	EOperation getTransition__GetCRE();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel <em>Synchronization Channel</em>}'.
@@ -6612,12 +6593,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__STATECHART = eINSTANCE.getTransition_Statechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Resets</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Clock Resets</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__RESETS = eINSTANCE.getTransition_Resets();
+		EReference TRANSITION__CLOCK_RESETS = eINSTANCE.getTransition_ClockResets();
 
 		/**
 		 * The meta object literal for the '<em><b>UML Realtime Flat Switching</b></em>' containment reference feature.
@@ -6762,14 +6743,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER = eINSTANCE.getTransition__CalculateWorstCaseDeadlineAsNaturalNumber();
-
-		/**
-		 * The meta object literal for the '<em><b>Get CRE</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TRANSITION___GET_CRE = eINSTANCE.getTransition__GetCRE();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl <em>Synchronization Channel</em>}' class.

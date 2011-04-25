@@ -70,7 +70,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getResets <em>Resets</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getUMLRealtimeFlatSwitching <em>UML Realtime Flat Switching</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getUMLRealtimeFadingFunction <em>UML Realtime Fading Function</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTriggerEvents <em>Trigger Events</em>}</li>
@@ -185,14 +185,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected Vertex source;
 
 	/**
-	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference list.
+	 * The cached value of the '{@link #getClockResets() <em>Clock Resets</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResets()
+	 * @see #getClockResets()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Clock> resets;
+	protected EList<Clock> clockResets;
 
 	/**
 	 * The cached value of the '{@link #getUMLRealtimeFlatSwitching() <em>UML Realtime Flat Switching</em>}' containment reference.
@@ -803,11 +803,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Clock> getResets() {
-		if (resets == null) {
-			resets = new EObjectResolvingEList<Clock>(Clock.class, this, RealtimestatechartPackage.TRANSITION__RESETS);
+	public EList<Clock> getClockResets() {
+		if (clockResets == null) {
+			clockResets = new EObjectResolvingEList<Clock>(Clock.class, this, RealtimestatechartPackage.TRANSITION__CLOCK_RESETS);
 		}
-		return resets;
+		return clockResets;
 	}
 
 	/**
@@ -1245,21 +1245,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCRE() {
-		String value = "";
-		java.util.Iterator<Clock> clockIter = getResets().iterator();
-		while(clockIter.hasNext()){
-		Clock tmp = clockIter.next();
-		value = tmp.toMyString() + System.getProperty("line.separator") + value;
-		}
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -1436,8 +1421,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicGetSource();
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				return getStatechart();
-			case RealtimestatechartPackage.TRANSITION__RESETS:
-				return getResets();
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
+				return getClockResets();
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
 				return getUMLRealtimeFlatSwitching();
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION:
@@ -1515,9 +1500,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				setStatechart((AbstractStatechart)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__RESETS:
-				getResets().clear();
-				getResets().addAll((Collection<? extends Clock>)newValue);
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
+				getClockResets().clear();
+				getClockResets().addAll((Collection<? extends Clock>)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
 				setUMLRealtimeFlatSwitching((FlatSwitching)newValue);
@@ -1613,8 +1598,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				setStatechart((AbstractStatechart)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__RESETS:
-				getResets().clear();
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
+				getClockResets().clear();
 				return;
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
 				setUMLRealtimeFlatSwitching((FlatSwitching)null);
@@ -1697,8 +1682,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return source != null;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				return getStatechart() != null;
-			case RealtimestatechartPackage.TRANSITION__RESETS:
-				return resets != null && !resets.isEmpty();
+			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
+				return clockResets != null && !clockResets.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
 				return uMLRealtimeFlatSwitching != null;
 			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION:
@@ -1830,8 +1815,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		switch (operationID) {
 			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER:
 				return calculateWorstCaseDeadlineAsNaturalNumber();
-			case RealtimestatechartPackage.TRANSITION___GET_CRE:
-				return getCRE();
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:

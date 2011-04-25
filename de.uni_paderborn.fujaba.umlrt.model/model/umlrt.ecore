@@ -1109,7 +1109,7 @@
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="resets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) "/>
+                  <details key="derivation" value="clockResets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) "/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>

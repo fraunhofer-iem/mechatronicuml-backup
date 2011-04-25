@@ -999,7 +999,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Resets() {
+	public EReference getTransition_ClockResets() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1163,15 +1163,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EOperation getTransition__CalculateWorstCaseDeadlineAsNaturalNumber() {
 		return transitionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getTransition__GetCRE() {
-		return transitionEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -1590,7 +1581,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(transitionEClass, TRANSITION__TARGET);
 		createEReference(transitionEClass, TRANSITION__SOURCE);
 		createEReference(transitionEClass, TRANSITION__STATECHART);
-		createEReference(transitionEClass, TRANSITION__RESETS);
+		createEReference(transitionEClass, TRANSITION__CLOCK_RESETS);
 		createEReference(transitionEClass, TRANSITION__UML_REALTIME_FLAT_SWITCHING);
 		createEReference(transitionEClass, TRANSITION__UML_REALTIME_FADING_FUNCTION);
 		createEReference(transitionEClass, TRANSITION__TRIGGER_EVENTS);
@@ -1609,7 +1600,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(transitionEClass, TRANSITION__SYNCHRO_EXPR);
 		createEAttribute(transitionEClass, TRANSITION__CLOCK_RESETS_EXPR);
 		createEOperation(transitionEClass, TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER);
-		createEOperation(transitionEClass, TRANSITION___GET_CRE);
 
 		clockConstraintEClass = createEClass(CLOCK_CONSTRAINT);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__BOUND);
@@ -1816,7 +1806,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getTransition_Target(), this.getVertex(), this.getVertex_IncomingTransitions(), "target", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Source(), this.getVertex(), this.getVertex_OutgoingTransitions(), "source", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Statechart(), theCorePackage.getAbstractStatechart(), theCorePackage.getAbstractStatechart_Transitions(), "statechart", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_Resets(), this.getClock(), null, "resets", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_ClockResets(), this.getClock(), null, "clockResets", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_UMLRealtimeFlatSwitching(), this.getFlatSwitching(), null, "uMLRealtimeFlatSwitching", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_UMLRealtimeFadingFunction(), this.getFadingFunction(), this.getFadingFunction_UMLRealtimeTransitions(), "uMLRealtimeFadingFunction", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_TriggerEvents(), this.getRealtimeEvent(), this.getRealtimeEvent_TriggeredUMLRealtimeTransition(), "triggerEvents", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1836,8 +1826,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getTransition_ClockResetsExpr(), theEcorePackage.getEString(), "clockResetsExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTransition__CalculateWorstCaseDeadlineAsNaturalNumber(), theCorePackage.getNaturalNumber(), "calculateWorstCaseDeadlineAsNaturalNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getTransition__GetCRE(), theEcorePackage.getEString(), "getCRE", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(clockConstraintEClass, ClockConstraint.class, "ClockConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClockConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1924,7 +1912,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																			
+		   });																																																		
 	}
 
 	/**
@@ -1934,12 +1922,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																						
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																					
 		addAnnotation
 		  (getTransition_ClockResetsExpr(), 
 		   source, 
 		   new String[] {
-			 "derivation", "resets->iterate( c:Clock;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) "
+			 "derivation", "clockResets->iterate( c:Clock;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) "
 		   });															
 	}
 

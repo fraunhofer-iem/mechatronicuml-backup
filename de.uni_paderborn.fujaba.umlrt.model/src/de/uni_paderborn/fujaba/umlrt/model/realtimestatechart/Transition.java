@@ -34,7 +34,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getResets <em>Resets</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFlatSwitching <em>UML Realtime Flat Switching</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFadingFunction <em>UML Realtime Fading Function</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}</li>
@@ -249,19 +249,19 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setStatechart(AbstractStatechart value);
 
 	/**
-	 * Returns the value of the '<em><b>Resets</b></em>' reference list.
+	 * Returns the value of the '<em><b>Clock Resets</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The clock resets of this transition.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Resets</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Resets()
+	 * @return the value of the '<em>Clock Resets</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResets()
 	 * @model
 	 * @generated
 	 */
-	EList<Clock> getResets();
+	EList<Clock> getClockResets();
 
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Flat Switching</b></em>' containment reference.
@@ -642,7 +642,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setClockResetsExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResetsExpr()
 	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='resets->iterate( c:Clock;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) '"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='clockResets->iterate( c:Clock;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) '"
 	 * @generated
 	 */
 	String getClockResetsExpr();
@@ -716,14 +716,5 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\njava.util.Iterator<Clock> clockIter = getResets().iterator();\r\nwhile(clockIter.hasNext()){\r\nClock tmp = clockIter.next();\r\nvalue = tmp.toMyString() + System.getProperty(\"line.separator\") + value;\r\n}\r\nreturn value;'"
-	 * @generated
-	 */
-	String getCRE();
 
 } // Transition
