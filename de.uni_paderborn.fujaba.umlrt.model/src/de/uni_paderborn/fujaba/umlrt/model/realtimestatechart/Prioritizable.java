@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getPrioritizable()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Prioritizable extends EObject {

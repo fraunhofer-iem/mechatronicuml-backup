@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.InitialStateImpl#getUMLRealtimeStartStateRev <em>UML Realtime Start State Rev</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.InitialStateImpl#getStartStateRev <em>Start State Rev</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,8 +64,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getUMLRealtimeStartStateRev() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV) return null;
+	public AbstractStatechart getStartStateRev() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV) return null;
 		return (AbstractStatechart)eContainer();
 	}
 
@@ -74,8 +74,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUMLRealtimeStartStateRev(AbstractStatechart newUMLRealtimeStartStateRev, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newUMLRealtimeStartStateRev, RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV, msgs);
+	public NotificationChain basicSetStartStateRev(AbstractStatechart newStartStateRev, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newStartStateRev, RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV, msgs);
 		return msgs;
 	}
 
@@ -84,20 +84,20 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStartStateRev(AbstractStatechart newUMLRealtimeStartStateRev) {
-		if (newUMLRealtimeStartStateRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV && newUMLRealtimeStartStateRev != null)) {
-			if (EcoreUtil.isAncestor(this, newUMLRealtimeStartStateRev))
+	public void setStartStateRev(AbstractStatechart newStartStateRev) {
+		if (newStartStateRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV && newStartStateRev != null)) {
+			if (EcoreUtil.isAncestor(this, newStartStateRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newUMLRealtimeStartStateRev != null)
-				msgs = ((InternalEObject)newUMLRealtimeStartStateRev).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, AbstractStatechart.class, msgs);
-			msgs = basicSetUMLRealtimeStartStateRev(newUMLRealtimeStartStateRev, msgs);
+			if (newStartStateRev != null)
+				msgs = ((InternalEObject)newStartStateRev).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, AbstractStatechart.class, msgs);
+			msgs = basicSetStartStateRev(newStartStateRev, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV, newUMLRealtimeStartStateRev, newUMLRealtimeStartStateRev));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV, newStartStateRev, newStartStateRev));
 	}
 
 	/**
@@ -119,10 +119,10 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetUMLRealtimeStartStateRev((AbstractStatechart)otherEnd, msgs);
+				return basicSetStartStateRev((AbstractStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -135,8 +135,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				return basicSetUMLRealtimeStartStateRev(null, msgs);
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
+				return basicSetStartStateRev(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,7 +149,7 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
 				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE, AbstractStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -163,8 +163,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				return getUMLRealtimeStartStateRev();
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
+				return getStartStateRev();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,8 +177,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				setUMLRealtimeStartStateRev((AbstractStatechart)newValue);
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
+				setStartStateRev((AbstractStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +192,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				setUMLRealtimeStartStateRev((AbstractStatechart)null);
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
+				setStartStateRev((AbstractStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,8 +207,8 @@ public class InitialStateImpl extends VertexImpl implements InitialState {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV:
-				return getUMLRealtimeStartStateRev() != null;
+			case RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV:
+				return getStartStateRev() != null;
 		}
 		return super.eIsSet(featureID);
 	}

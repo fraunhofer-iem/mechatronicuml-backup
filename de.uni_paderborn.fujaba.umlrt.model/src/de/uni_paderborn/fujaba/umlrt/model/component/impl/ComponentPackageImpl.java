@@ -1054,7 +1054,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getComponentPart_PortsDerived(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif"
+			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
 		   });		
 		addAnnotation
 		  (getComponentPart_ComponentNameDerived(), 

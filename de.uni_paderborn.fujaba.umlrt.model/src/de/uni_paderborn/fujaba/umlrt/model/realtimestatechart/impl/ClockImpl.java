@@ -136,7 +136,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 */
 	public EList<AbsoluteDeadline> getAbsoluteDeadlines() {
 		if (absoluteDeadlines == null) {
-			absoluteDeadlines = new EObjectWithInverseResolvingEList<AbsoluteDeadline>(AbsoluteDeadline.class, this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, RealtimestatechartPackage.ABSOLUTE_DEADLINE__UML_CLOCK);
+			absoluteDeadlines = new EObjectWithInverseResolvingEList<AbsoluteDeadline>(AbsoluteDeadline.class, this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK);
 		}
 		return absoluteDeadlines;
 	}

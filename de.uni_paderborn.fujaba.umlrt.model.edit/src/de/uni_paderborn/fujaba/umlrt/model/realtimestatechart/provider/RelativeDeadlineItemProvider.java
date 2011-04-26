@@ -58,31 +58,8 @@ public class RelativeDeadlineItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLRealtimeTransitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the UML Realtime Transition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUMLRealtimeTransitionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RelativeDeadline_uMLRealtimeTransition_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RelativeDeadline_uMLRealtimeTransition_feature", "_UI_RelativeDeadline_type"),
-				 RealtimestatechartPackage.Literals.RELATIVE_DEADLINE__UML_REALTIME_TRANSITION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

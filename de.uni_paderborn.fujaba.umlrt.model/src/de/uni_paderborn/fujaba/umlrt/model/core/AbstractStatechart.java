@@ -221,7 +221,7 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>UML Realtime Start State</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getUMLRealtimeStartStateRev <em>UML Realtime Start State Rev</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -230,8 +230,8 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>UML Realtime Start State</em>' containment reference.
 	 * @see #setUMLRealtimeStartState(InitialState)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_UMLRealtimeStartState()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getUMLRealtimeStartStateRev
-	 * @model opposite="uMLRealtimeStartStateRev" containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev
+	 * @model opposite="startStateRev" containment="true"
 	 * @generated
 	 */
 	InitialState getUMLRealtimeStartState();

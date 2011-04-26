@@ -146,6 +146,15 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__COMMENT = CallsPackage.CALLABLE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

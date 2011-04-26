@@ -68,20 +68,16 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.INITIAL_STATE: return createInitialState();
 			case RealtimestatechartPackage.FINAL_STATE: return createFinalState();
-			case RealtimestatechartPackage.FADING_FUNCTION: return createFadingFunction();
-			case RealtimestatechartPackage.FLAT_SWITCHING: return createFlatSwitching();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.ACTION: return createAction();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
-			case RealtimestatechartPackage.REALTIME_EVENT: return createRealtimeEvent();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: return createAsynchronousEvent();
 			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
 			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
-			case RealtimestatechartPackage.PRIORITIZABLE: return createPrioritizable();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -173,36 +169,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealtimeEvent createRealtimeEvent() {
-		RealtimeEventImpl realtimeEvent = new RealtimeEventImpl();
-		return realtimeEvent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FadingFunction createFadingFunction() {
-		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
-		return fadingFunction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FlatSwitching createFlatSwitching() {
-		FlatSwitchingImpl flatSwitching = new FlatSwitchingImpl();
-		return flatSwitching;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public InitialState createInitialState() {
 		InitialStateImpl initialState = new InitialStateImpl();
 		return initialState;
@@ -273,9 +239,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryOrExitEvent createEntryOrExitEvent() {
-		EntryOrExitEventImpl entryOrExitEvent = new EntryOrExitEventImpl();
-		return entryOrExitEvent;
+	public AsynchronousEvent createAsynchronousEvent() {
+		AsynchronousEventImpl asynchronousEvent = new AsynchronousEventImpl();
+		return asynchronousEvent;
 	}
 
 	/**
@@ -306,16 +272,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public Synchronization createSynchronization() {
 		SynchronizationImpl synchronization = new SynchronizationImpl();
 		return synchronization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Prioritizable createPrioritizable() {
-		PrioritizableImpl prioritizable = new PrioritizableImpl();
-		return prioritizable;
 	}
 
 	/**

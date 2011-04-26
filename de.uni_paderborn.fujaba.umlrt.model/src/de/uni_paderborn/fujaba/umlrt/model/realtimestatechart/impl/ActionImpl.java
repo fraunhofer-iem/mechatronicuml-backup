@@ -38,7 +38,7 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getBlocking <em>Blocking</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getUMLRealtimeTransition <em>UML Realtime Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getTransition <em>Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#isWCETSpecifiedByUser <em>WCET Specified By User</em>}</li>
  * </ul>
@@ -224,8 +224,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition getUMLRealtimeTransition() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION) return null;
+	public Transition getTransition() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.ACTION__TRANSITION) return null;
 		return (Transition)eContainer();
 	}
 
@@ -234,8 +234,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUMLRealtimeTransition(Transition newUMLRealtimeTransition, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newUMLRealtimeTransition, RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION, msgs);
+	public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTransition, RealtimestatechartPackage.ACTION__TRANSITION, msgs);
 		return msgs;
 	}
 
@@ -244,20 +244,20 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeTransition(Transition newUMLRealtimeTransition) {
-		if (newUMLRealtimeTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION && newUMLRealtimeTransition != null)) {
-			if (EcoreUtil.isAncestor(this, newUMLRealtimeTransition))
+	public void setTransition(Transition newTransition) {
+		if (newTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ACTION__TRANSITION && newTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newTransition))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newUMLRealtimeTransition != null)
-				msgs = ((InternalEObject)newUMLRealtimeTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, Transition.class, msgs);
-			msgs = basicSetUMLRealtimeTransition(newUMLRealtimeTransition, msgs);
+			if (newTransition != null)
+				msgs = ((InternalEObject)newTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, Transition.class, msgs);
+			msgs = basicSetTransition(newTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION, newUMLRealtimeTransition, newUMLRealtimeTransition));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION__TRANSITION, newTransition, newTransition));
 	}
 
 	/**
@@ -301,10 +301,10 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
+			case RealtimestatechartPackage.ACTION__TRANSITION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetUMLRealtimeTransition((Transition)otherEnd, msgs);
+				return basicSetTransition((Transition)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -317,8 +317,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
-				return basicSetUMLRealtimeTransition(null, msgs);
+			case RealtimestatechartPackage.ACTION__TRANSITION:
+				return basicSetTransition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -331,7 +331,7 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
+			case RealtimestatechartPackage.ACTION__TRANSITION:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, Transition.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -351,8 +351,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return getWcet();
 			case RealtimestatechartPackage.ACTION__BLOCKING:
 				return getBlocking();
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
-				return getUMLRealtimeTransition();
+			case RealtimestatechartPackage.ACTION__TRANSITION:
+				return getTransition();
 			case RealtimestatechartPackage.ACTION__RESETS:
 				return getResets();
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:
@@ -379,8 +379,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 			case RealtimestatechartPackage.ACTION__BLOCKING:
 				setBlocking((Long)newValue);
 				return;
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((Transition)newValue);
+			case RealtimestatechartPackage.ACTION__TRANSITION:
+				setTransition((Transition)newValue);
 				return;
 			case RealtimestatechartPackage.ACTION__RESETS:
 				getResets().clear();
@@ -410,8 +410,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 			case RealtimestatechartPackage.ACTION__BLOCKING:
 				setBlocking(BLOCKING_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
-				setUMLRealtimeTransition((Transition)null);
+			case RealtimestatechartPackage.ACTION__TRANSITION:
+				setTransition((Transition)null);
 				return;
 			case RealtimestatechartPackage.ACTION__RESETS:
 				getResets().clear();
@@ -437,8 +437,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
 			case RealtimestatechartPackage.ACTION__BLOCKING:
 				return blocking != BLOCKING_EDEFAULT;
-			case RealtimestatechartPackage.ACTION__UML_REALTIME_TRANSITION:
-				return getUMLRealtimeTransition() != null;
+			case RealtimestatechartPackage.ACTION__TRANSITION:
+				return getTransition() != null;
 			case RealtimestatechartPackage.ACTION__RESETS:
 				return resets != null && !resets.isEmpty();
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:

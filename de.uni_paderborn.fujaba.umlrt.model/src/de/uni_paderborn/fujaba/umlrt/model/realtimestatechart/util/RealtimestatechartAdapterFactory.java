@@ -117,14 +117,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createFinalStateAdapter();
 			}
 			@Override
-			public Adapter caseFadingFunction(FadingFunction object) {
-				return createFadingFunctionAdapter();
-			}
-			@Override
-			public Adapter caseFlatSwitching(FlatSwitching object) {
-				return createFlatSwitchingAdapter();
-			}
-			@Override
 			public Adapter caseVertex(Vertex object) {
 				return createVertexAdapter();
 			}
@@ -149,8 +141,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createDoEventAdapter();
 			}
 			@Override
-			public Adapter caseRealtimeEvent(RealtimeEvent object) {
-				return createRealtimeEventAdapter();
+			public Adapter caseAsynchronousEvent(AsynchronousEvent object) {
+				return createAsynchronousEventAdapter();
 			}
 			@Override
 			public Adapter caseEntryOrExitEvent(EntryOrExitEvent object) {
@@ -321,48 +313,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent <em>Realtime Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent
-	 * @generated
-	 */
-	public Adapter createRealtimeEventAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction <em>Fading Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction
-	 * @generated
-	 */
-	public Adapter createFadingFunctionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching <em>Flat Switching</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching
-	 * @generated
-	 */
-	public Adapter createFlatSwitchingAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState <em>Initial State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -471,6 +421,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDoEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent <em>Asynchronous Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent
+	 * @generated
+	 */
+	public Adapter createAsynchronousEventAdapter() {
 		return null;
 	}
 

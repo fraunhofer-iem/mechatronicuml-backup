@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getResets <em>Resets</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEvent {
+public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEvent {
 	/**
 	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -50,14 +50,14 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	protected Clock resets;
 
 	/**
-	 * The cached value of the '{@link #getUMLRealtimeAction() <em>UML Realtime Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeAction()
+	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected Action uMLRealtimeAction;
+	protected Action action;
 
 	/**
 	 * The default value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
@@ -141,16 +141,16 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action getUMLRealtimeAction() {
-		if (uMLRealtimeAction != null && uMLRealtimeAction.eIsProxy()) {
-			InternalEObject oldUMLRealtimeAction = (InternalEObject)uMLRealtimeAction;
-			uMLRealtimeAction = (Action)eResolveProxy(oldUMLRealtimeAction);
-			if (uMLRealtimeAction != oldUMLRealtimeAction) {
+	public Action getAction() {
+		if (action != null && action.eIsProxy()) {
+			InternalEObject oldAction = (InternalEObject)action;
+			action = (Action)eResolveProxy(oldAction);
+			if (action != oldAction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, action));
 			}
 		}
-		return uMLRealtimeAction;
+		return action;
 	}
 
 	/**
@@ -158,8 +158,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action basicGetUMLRealtimeAction() {
-		return uMLRealtimeAction;
+	public Action basicGetAction() {
+		return action;
 	}
 
 	/**
@@ -167,11 +167,11 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeAction(Action newUMLRealtimeAction) {
-		Action oldUMLRealtimeAction = uMLRealtimeAction;
-		uMLRealtimeAction = newUMLRealtimeAction;
+	public void setAction(Action newAction) {
+		Action oldAction = action;
+		action = newAction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION, oldUMLRealtimeAction, uMLRealtimeAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, action));
 	}
 
 	/**
@@ -206,9 +206,9 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				if (resolve) return getResets();
 				return basicGetResets();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				if (resolve) return getUMLRealtimeAction();
-				return basicGetUMLRealtimeAction();
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
+				if (resolve) return getAction();
+				return basicGetAction();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				return getEventExpr();
 		}
@@ -226,8 +226,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				setResets((Clock)newValue);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((Action)newValue);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
+				setAction((Action)newValue);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				setEventExpr((String)newValue);
@@ -247,8 +247,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				setResets((Clock)null);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				setUMLRealtimeAction((Action)null);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
+				setAction((Action)null);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				setEventExpr(EVENT_EXPR_EDEFAULT);
@@ -267,8 +267,8 @@ public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEven
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				return resets != null;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION:
-				return uMLRealtimeAction != null;
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
+				return action != null;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
 		}

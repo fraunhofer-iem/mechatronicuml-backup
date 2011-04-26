@@ -108,13 +108,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DEADLINE_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEADLINE___TO_MY_STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Deadline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEADLINE_OPERATION_COUNT = 0;
+	int DEADLINE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AbsoluteDeadlineImpl <em>Absolute Deadline</em>}' class.
@@ -145,22 +154,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ABSOLUTE_DEADLINE__LOWER_BOUND = DEADLINE__LOWER_BOUND;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Transition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION = DEADLINE_FEATURE_COUNT + 0;
+	int ABSOLUTE_DEADLINE__TRANSITION = DEADLINE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>UML Clock</b></em>' reference.
+	 * The feature id for the '<em><b>Clock</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_DEADLINE__UML_CLOCK = DEADLINE_FEATURE_COUNT + 1;
+	int ABSOLUTE_DEADLINE__CLOCK = DEADLINE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Absolute Deadline</em>' class.
@@ -172,13 +181,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ABSOLUTE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_DEADLINE___TO_MY_STRING = DEADLINE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Absolute Deadline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_DEADLINE_OPERATION_COUNT = DEADLINE_OPERATION_COUNT + 0;
+	int ABSOLUTE_DEADLINE_OPERATION_COUNT = DEADLINE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RelativeDeadlineImpl <em>Relative Deadline</em>}' class.
@@ -209,13 +227,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int RELATIVE_DEADLINE__LOWER_BOUND = DEADLINE__LOWER_BOUND;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Transition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIVE_DEADLINE__UML_REALTIME_TRANSITION = DEADLINE_FEATURE_COUNT + 0;
+	int RELATIVE_DEADLINE__TRANSITION = DEADLINE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Relative Deadline</em>' class.
@@ -227,13 +245,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int RELATIVE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIVE_DEADLINE___TO_MY_STRING = DEADLINE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Relative Deadline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIVE_DEADLINE_OPERATION_COUNT = DEADLINE_OPERATION_COUNT + 0;
+	int RELATIVE_DEADLINE_OPERATION_COUNT = DEADLINE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl <em>Clock</em>}' class.
@@ -514,7 +541,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 10;
+	int VERTEX = 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl <em>State</em>}' class.
@@ -534,37 +561,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 14;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimeEventImpl <em>Realtime Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimeEventImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimeEvent()
-	 * @generated
-	 */
-	int REALTIME_EVENT = 16;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FadingFunctionImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFadingFunction()
-	 * @generated
-	 */
-	int FADING_FUNCTION = 8;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FlatSwitchingImpl <em>Flat Switching</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FlatSwitchingImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFlatSwitching()
-	 * @generated
-	 */
-	int FLAT_SWITCHING = 9;
+	int ACTION = 12;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.InitialStateImpl <em>Initial State</em>}' class.
@@ -594,7 +591,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizable()
 	 * @generated
 	 */
-	int PRIORITIZABLE = 22;
+	int PRIORITIZABLE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -631,7 +628,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 11;
+	int TRANSITION = 9;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl <em>Synchronization Channel</em>}' class.
@@ -641,7 +638,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationChannel()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_CHANNEL = 20;
+	int SYNCHRONIZATION_CHANNEL = 18;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -651,7 +648,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getClockConstraint()
 	 * @generated
 	 */
-	int CLOCK_CONSTRAINT = 12;
+	int CLOCK_CONSTRAINT = 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.
@@ -661,7 +658,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryState()
 	 * @generated
 	 */
-	int HISTORY_STATE = 13;
+	int HISTORY_STATE = 11;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.DoEventImpl <em>Do Event</em>}' class.
@@ -671,7 +668,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getDoEvent()
 	 * @generated
 	 */
-	int DO_EVENT = 15;
+	int DO_EVENT = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
@@ -681,7 +678,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryOrExitEvent()
 	 * @generated
 	 */
-	int ENTRY_OR_EXIT_EVENT = 17;
+	int ENTRY_OR_EXIT_EVENT = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
@@ -691,7 +688,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
 	 * @generated
 	 */
-	int ENTRY_EVENT = 18;
+	int ENTRY_EVENT = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl <em>Exit Event</em>}' class.
@@ -701,7 +698,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
 	 * @generated
 	 */
-	int EXIT_EVENT = 19;
+	int EXIT_EVENT = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -711,7 +708,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronization()
 	 * @generated
 	 */
-	int SYNCHRONIZATION = 21;
+	int SYNCHRONIZATION = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RegionImpl <em>Region</em>}' class.
@@ -1408,13 +1405,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int INITIAL_STATE__STATECHART = VERTEX__STATECHART;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Start State Rev</b></em>' container reference.
+	 * The feature id for the '<em><b>Start State Rev</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIAL_STATE__UML_REALTIME_START_STATE_REV = VERTEX_FEATURE_COUNT + 0;
+	int INITIAL_STATE__START_STATE_REV = VERTEX_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Initial State</em>' class.
@@ -1894,195 +1891,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FINAL_STATE_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__FUNCTION = 0;
-
-	/**
-	 * The feature id for the '<em><b>UML Realtime Transitions</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__UML_REALTIME_TRANSITIONS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Min Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__MIN_DURATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Max Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__MAX_DURATION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Spline1</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__SPLINE1 = 4;
-
-	/**
-	 * The feature id for the '<em><b>Spline2</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__SPLINE2 = 5;
-
-	/**
-	 * The feature id for the '<em><b>Polynom Degree</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__POLYNOM_DEGREE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Ports By Component Instance</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__PORTS_BY_COMPONENT_INSTANCE = 7;
-
-	/**
-	 * The number of structural features of the '<em>Fading Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION_FEATURE_COUNT = 8;
-
-	/**
-	 * The operation id for the '<em>Get Breakpoint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION___GET_BREAKPOINT = 0;
-
-	/**
-	 * The number of operations of the '<em>Fading Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION_OPERATION_COUNT = 1;
-
-	/**
-	 * The feature id for the '<em><b>UML Realtime Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__UML_REALTIME_TRANSITIONS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Min Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__MIN_DURATION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Max Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__MAX_DURATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Spline1</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__SPLINE1 = 3;
-
-	/**
-	 * The feature id for the '<em><b>Spline2</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__SPLINE2 = 4;
-
-	/**
-	 * The feature id for the '<em><b>Polynom Degree</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__POLYNOM_DEGREE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Port Inst To Port Inst Map Entry</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING__PORT_INST_TO_PORT_INST_MAP_ENTRY = 6;
-
-	/**
-	 * The number of structural features of the '<em>Flat Switching</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING_FEATURE_COUNT = 7;
-
-	/**
-	 * The operation id for the '<em>Get Breakpoint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING___GET_BREAKPOINT = 0;
-
-	/**
-	 * The number of operations of the '<em>Flat Switching</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAT_SWITCHING_OPERATION_COUNT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2110,13 +1918,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__EXTENSION = PRIORITIZABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Transition Mapping Vector</b></em>' attribute.
+	 * The feature id for the '<em><b>Transition Mapping Vector</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR = PRIORITIZABLE_FEATURE_COUNT + 2;
+	int TRANSITION__TRANSITION_MAPPING_VECTOR = PRIORITIZABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Send Synchronization</b></em>' containment reference.
@@ -2182,31 +1990,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Flat Switching</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__UML_REALTIME_FLAT_SWITCHING = PRIORITIZABLE_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>UML Realtime Fading Function</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__UML_REALTIME_FADING_FUNCTION = PRIORITIZABLE_FEATURE_COUNT + 11;
-
-	/**
 	 * The feature id for the '<em><b>Trigger Events</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 12;
+	int TRANSITION__TRIGGER_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Raised Events</b></em>' containment reference list.
@@ -2215,16 +2005,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 13;
+	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Timeguard</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Clock Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TIMEGUARD = PRIORITIZABLE_FEATURE_COUNT + 14;
+	int TRANSITION__CLOCK_CONSTRAINT = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -2233,7 +2023,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 15;
+	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -2242,7 +2032,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 16;
+	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Safety Transition</b></em>' attribute.
@@ -2251,7 +2041,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SAFETY_TRANSITION = PRIORITIZABLE_FEATURE_COUNT + 17;
+	int TRANSITION__SAFETY_TRANSITION = PRIORITIZABLE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -2260,7 +2050,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 18;
+	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' reference.
@@ -2269,7 +2059,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 19;
+	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
@@ -2278,7 +2068,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 20;
+	int TRANSITION__EVENT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Side Effect Expr</b></em>' attribute.
@@ -2287,25 +2077,34 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SIDE_EFFECT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 21;
+	int TRANSITION__SIDE_EFFECT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 19;
 
 	/**
-	 * The feature id for the '<em><b>Time Guard Expr</b></em>' attribute.
+	 * The feature id for the '<em><b>Clock Constraint Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TIME_GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 22;
+	int TRANSITION__CLOCK_CONSTRAINT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 20;
 
 	/**
-	 * The feature id for the '<em><b>Deadline Expr</b></em>' attribute.
+	 * The feature id for the '<em><b>Absolute Deadline Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 23;
+	int TRANSITION__ABSOLUTE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 21;
+
+	/**
+	 * The feature id for the '<em><b>Relative Deadline Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__RELATIVE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Guard Expr</b></em>' attribute.
@@ -2314,7 +2113,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 24;
+	int TRANSITION__GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Synchro Expr</b></em>' attribute.
@@ -2323,7 +2122,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SYNCHRO_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
+	int TRANSITION__SYNCHRO_EXPR = PRIORITIZABLE_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets Expr</b></em>' attribute.
@@ -2332,7 +2131,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 26;
+	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -2341,7 +2140,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 27;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 26;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2929,13 +2728,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ACTION__BLOCKING = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Transition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__UML_REALTIME_TRANSITION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
+	int ACTION__TRANSITION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference list.
@@ -3208,13 +3007,23 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl <em>Asynchronous Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousEvent()
+	 * @generated
+	 */
+	int ASYNCHRONOUS_EVENT = 14;
+
+	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__ANNOTATION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__ANNOTATION;
+	int ASYNCHRONOUS_EVENT__ANNOTATION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -3223,7 +3032,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__EXTENSION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__EXTENSION;
+	int ASYNCHRONOUS_EVENT__EXTENSION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -3232,7 +3041,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TYPE;
+	int ASYNCHRONOUS_EVENT__TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -3241,7 +3050,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__GENERIC_TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__GENERIC_TYPE;
+	int ASYNCHRONOUS_EVENT__GENERIC_TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__GENERIC_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3250,7 +3059,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__COMMENT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__COMMENT;
+	int ASYNCHRONOUS_EVENT__COMMENT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
@@ -3259,7 +3068,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__OWNED_PARAMETER_BINDINGS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS;
+	int ASYNCHRONOUS_EVENT__OWNED_PARAMETER_BINDINGS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS;
 
 	/**
 	 * The feature id for the '<em><b>Callee</b></em>' reference.
@@ -3268,7 +3077,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__CALLEE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE;
+	int ASYNCHRONOUS_EVENT__CALLEE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -3277,7 +3086,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__TARGET = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET;
+	int ASYNCHRONOUS_EVENT__TARGET = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Opaque Callable</b></em>' containment reference.
@@ -3286,25 +3095,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__OPAQUE_CALLABLE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE;
+	int ASYNCHRONOUS_EVENT__OPAQUE_CALLABLE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE;
 
 	/**
-	 * The feature id for the '<em><b>Triggered UML Realtime Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Triggeredtransition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 0;
+	int ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Raised UML Realtime Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Raisedtransition</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 1;
+	int ASYNCHRONOUS_EVENT__RAISEDTRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3313,7 +3122,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 2;
+	int ASYNCHRONOUS_EVENT__NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Full Event Name</b></em>' attribute.
@@ -3322,16 +3131,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT__FULL_EVENT_NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 3;
+	int ASYNCHRONOUS_EVENT__FULL_EVENT_NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Realtime Event</em>' class.
+	 * The number of structural features of the '<em>Asynchronous Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT_FEATURE_COUNT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 4;
+	int ASYNCHRONOUS_EVENT_FEATURE_COUNT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3340,7 +3149,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECLASS;
+	int ASYNCHRONOUS_EVENT___ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3349,7 +3158,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EIS_PROXY = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EIS_PROXY;
+	int ASYNCHRONOUS_EVENT___EIS_PROXY = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3358,7 +3167,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ERESOURCE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ERESOURCE;
+	int ASYNCHRONOUS_EVENT___ERESOURCE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3367,7 +3176,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECONTAINER = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINER;
+	int ASYNCHRONOUS_EVENT___ECONTAINER = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3376,7 +3185,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECONTAINING_FEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINING_FEATURE;
+	int ASYNCHRONOUS_EVENT___ECONTAINING_FEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3385,7 +3194,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECONTAINMENT_FEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINMENT_FEATURE;
+	int ASYNCHRONOUS_EVENT___ECONTAINMENT_FEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3394,7 +3203,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECONTENTS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTENTS;
+	int ASYNCHRONOUS_EVENT___ECONTENTS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3403,7 +3212,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EALL_CONTENTS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EALL_CONTENTS;
+	int ASYNCHRONOUS_EVENT___EALL_CONTENTS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3412,7 +3221,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ECROSS_REFERENCES = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECROSS_REFERENCES;
+	int ASYNCHRONOUS_EVENT___ECROSS_REFERENCES = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3421,7 +3230,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EGET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EGET__ESTRUCTURALFEATURE;
+	int ASYNCHRONOUS_EVENT___EGET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3430,7 +3239,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ASYNCHRONOUS_EVENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3439,7 +3248,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___ESET__ESTRUCTURALFEATURE_OBJECT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ASYNCHRONOUS_EVENT___ESET__ESTRUCTURALFEATURE_OBJECT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3448,7 +3257,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EIS_SET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
+	int ASYNCHRONOUS_EVENT___EIS_SET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3457,7 +3266,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EUNSET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
+	int ASYNCHRONOUS_EVENT___EUNSET__ESTRUCTURALFEATURE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3466,7 +3275,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___EINVOKE__EOPERATION_ELIST = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EINVOKE__EOPERATION_ELIST;
+	int ASYNCHRONOUS_EVENT___EINVOKE__EOPERATION_ELIST = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3475,7 +3284,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___GET_EXTENSION__ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___GET_EXTENSION__ECLASS;
+	int ASYNCHRONOUS_EVENT___GET_EXTENSION__ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3484,7 +3293,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___PROVIDE_EXTENSION__ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___PROVIDE_EXTENSION__ECLASS;
+	int ASYNCHRONOUS_EVENT___PROVIDE_EXTENSION__ECLASS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3493,7 +3302,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___GET_ANNOTATION__STRING = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___GET_ANNOTATION__STRING;
+	int ASYNCHRONOUS_EVENT___GET_ANNOTATION__STRING = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3502,16 +3311,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT___PROVIDE_ANNOTATION__STRING = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___PROVIDE_ANNOTATION__STRING;
+	int ASYNCHRONOUS_EVENT___PROVIDE_ANNOTATION__STRING = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Realtime Event</em>' class.
+	 * The number of operations of the '<em>Asynchronous Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_EVENT_OPERATION_COUNT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_OPERATION_COUNT + 0;
+	int ASYNCHRONOUS_EVENT_OPERATION_COUNT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Resets</b></em>' reference.
@@ -3523,13 +3332,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT__RESETS = 0;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = 1;
+	int ENTRY_OR_EXIT_EVENT__ACTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
@@ -3568,13 +3377,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_EVENT__RESETS = ENTRY_OR_EXIT_EVENT__RESETS;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_EVENT__UML_REALTIME_ACTION = ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION;
+	int ENTRY_EVENT__ACTION = ENTRY_OR_EXIT_EVENT__ACTION;
 
 	/**
 	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
@@ -3622,13 +3431,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_EVENT__RESETS = ENTRY_OR_EXIT_EVENT__RESETS;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_EVENT__UML_REALTIME_ACTION = ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION;
+	int EXIT_EVENT__ACTION = ENTRY_OR_EXIT_EVENT__ACTION;
 
 	/**
 	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
@@ -3703,13 +3512,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Synchro Channel Expr</b></em>' attribute.
@@ -3718,7 +3536,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
@@ -3727,7 +3545,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4169,7 +3987,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFujabaRealtimeStatechart()
 	 * @generated
 	 */
-	int FUJABA_REALTIME_STATECHART = 23;
+	int FUJABA_REALTIME_STATECHART = 21;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -4629,7 +4447,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getHistoryKind()
 	 * @generated
 	 */
-	int HISTORY_KIND = 24;
+	int HISTORY_KIND = 22;
 
 
 	/**
@@ -4665,6 +4483,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getDeadline_LowerBound();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Deadline#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Deadline#toMyString()
+	 * @generated
+	 */
+	EOperation getDeadline__ToMyString();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline <em>Absolute Deadline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4675,26 +4503,36 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getAbsoluteDeadline();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>UML Realtime Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLRealtimeTransition()
+	 * @return the meta object for the container reference '<em>Transition</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getTransition()
 	 * @see #getAbsoluteDeadline()
 	 * @generated
 	 */
-	EReference getAbsoluteDeadline_UMLRealtimeTransition();
+	EReference getAbsoluteDeadline_Transition();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock <em>UML Clock</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>UML Clock</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock()
+	 * @return the meta object for the reference '<em>Clock</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock()
 	 * @see #getAbsoluteDeadline()
 	 * @generated
 	 */
-	EReference getAbsoluteDeadline_UMLClock();
+	EReference getAbsoluteDeadline_Clock();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#toMyString()
+	 * @generated
+	 */
+	EOperation getAbsoluteDeadline__ToMyString();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline <em>Relative Deadline</em>}'.
@@ -4707,15 +4545,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getRelativeDeadline();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>UML Realtime Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition()
+	 * @return the meta object for the container reference '<em>Transition</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getTransition()
 	 * @see #getRelativeDeadline()
 	 * @generated
 	 */
-	EReference getRelativeDeadline_UMLRealtimeTransition();
+	EReference getRelativeDeadline_Transition();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#toMyString()
+	 * @generated
+	 */
+	EOperation getRelativeDeadline__ToMyString();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock <em>Clock</em>}'.
@@ -4912,15 +4760,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getAction_Blocking();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getUMLRealtimeTransition <em>UML Realtime Transition</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>UML Realtime Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getUMLRealtimeTransition()
+	 * @return the meta object for the container reference '<em>Transition</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition()
 	 * @see #getAction()
 	 * @generated
 	 */
-	EReference getAction_UMLRealtimeTransition();
+	EReference getAction_Transition();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getResets <em>Resets</em>}'.
@@ -4945,265 +4793,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getAction_WCETSpecifiedByUser();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent <em>Realtime Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Realtime Event</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent
-	 * @generated
-	 */
-	EClass getRealtimeEvent();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition <em>Triggered UML Realtime Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Triggered UML Realtime Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getTriggeredUMLRealtimeTransition()
-	 * @see #getRealtimeEvent()
-	 * @generated
-	 */
-	EReference getRealtimeEvent_TriggeredUMLRealtimeTransition();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition <em>Raised UML Realtime Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Raised UML Realtime Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getRaisedUMLRealtimeTransition()
-	 * @see #getRealtimeEvent()
-	 * @generated
-	 */
-	EReference getRealtimeEvent_RaisedUMLRealtimeTransition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getName()
-	 * @see #getRealtimeEvent()
-	 * @generated
-	 */
-	EAttribute getRealtimeEvent_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getFullEventName <em>Full Event Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Full Event Name</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent#getFullEventName()
-	 * @see #getRealtimeEvent()
-	 * @generated
-	 */
-	EAttribute getRealtimeEvent_FullEventName();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction <em>Fading Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fading Function</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction
-	 * @generated
-	 */
-	EClass getFadingFunction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getFunction <em>Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Function</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getFunction()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_Function();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getUMLRealtimeTransitions <em>UML Realtime Transitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>UML Realtime Transitions</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getUMLRealtimeTransitions()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EReference getFadingFunction_UMLRealtimeTransitions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getMinDuration <em>Min Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Duration</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getMinDuration()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_MinDuration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getMaxDuration <em>Max Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Duration</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getMaxDuration()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_MaxDuration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getSpline1 <em>Spline1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Spline1</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getSpline1()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_Spline1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getSpline2 <em>Spline2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Spline2</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getSpline2()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_Spline2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPolynomDegree <em>Polynom Degree</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Polynom Degree</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPolynomDegree()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EAttribute getFadingFunction_PolynomDegree();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortsByComponentInstance <em>Ports By Component Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ports By Component Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getPortsByComponentInstance()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EReference getFadingFunction_PortsByComponentInstance();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getBreakpoint() <em>Get Breakpoint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Breakpoint</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction#getBreakpoint()
-	 * @generated
-	 */
-	EOperation getFadingFunction__GetBreakpoint();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching <em>Flat Switching</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Flat Switching</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching
-	 * @generated
-	 */
-	EClass getFlatSwitching();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getUMLRealtimeTransitions <em>UML Realtime Transitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>UML Realtime Transitions</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getUMLRealtimeTransitions()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EReference getFlatSwitching_UMLRealtimeTransitions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getMinDuration <em>Min Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Duration</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getMinDuration()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_MinDuration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getMaxDuration <em>Max Duration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Duration</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getMaxDuration()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_MaxDuration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getSpline1 <em>Spline1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Spline1</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getSpline1()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_Spline1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getSpline2 <em>Spline2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Spline2</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getSpline2()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_Spline2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getPolynomDegree <em>Polynom Degree</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Polynom Degree</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getPolynomDegree()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_PolynomDegree();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getPortInstToPortInstMapEntry <em>Port Inst To Port Inst Map Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port Inst To Port Inst Map Entry</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getPortInstToPortInstMapEntry()
-	 * @see #getFlatSwitching()
-	 * @generated
-	 */
-	EAttribute getFlatSwitching_PortInstToPortInstMapEntry();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getBreakpoint() <em>Get Breakpoint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Breakpoint</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching#getBreakpoint()
-	 * @generated
-	 */
-	EOperation getFlatSwitching__GetBreakpoint();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState <em>Initial State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5214,15 +4803,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getInitialState();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getUMLRealtimeStartStateRev <em>UML Realtime Start State Rev</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>UML Realtime Start State Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getUMLRealtimeStartStateRev()
+	 * @return the meta object for the container reference '<em>Start State Rev</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev()
 	 * @see #getInitialState()
 	 * @generated
 	 */
-	EReference getInitialState_UMLRealtimeStartStateRev();
+	EReference getInitialState_StartStateRev();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getNextState() <em>Get Next State</em>}' operation.
@@ -5318,15 +4907,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeTransitionMappingVector <em>UML Realtime Transition Mapping Vector</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector <em>Transition Mapping Vector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>UML Realtime Transition Mapping Vector</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeTransitionMappingVector()
+	 * @return the meta object for the attribute '<em>Transition Mapping Vector</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_UMLRealtimeTransitionMappingVector();
+	EAttribute getTransition_TransitionMappingVector();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}'.
@@ -5406,28 +4995,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_ClockResets();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFlatSwitching <em>UML Realtime Flat Switching</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>UML Realtime Flat Switching</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFlatSwitching()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_UMLRealtimeFlatSwitching();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFadingFunction <em>UML Realtime Fading Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>UML Realtime Fading Function</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getUMLRealtimeFadingFunction()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_UMLRealtimeFadingFunction();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5450,15 +5017,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_RaisedEvents();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeguard <em>Timeguard</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Timeguard</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeguard()
+	 * @return the meta object for the containment reference list '<em>Clock Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraint()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_Timeguard();
+	EReference getTransition_ClockConstraint();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
@@ -5527,26 +5094,37 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getTransition_SideEffectExpr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeGuardExpr <em>Time Guard Expr</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Guard Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTimeGuardExpr()
+	 * @return the meta object for the attribute '<em>Clock Constraint Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_TimeGuardExpr();
+	EAttribute getTransition_ClockConstraintExpr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getDeadlineExpr <em>Deadline Expr</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Deadline Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getDeadlineExpr()
+	 * @return the meta object for the attribute '<em>Absolute Deadline Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_DeadlineExpr();
+	EAttribute getTransition_AbsoluteDeadlineExpr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadlineExpr <em>Relative Deadline Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relative Deadline Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadlineExpr()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_RelativeDeadlineExpr();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}'.
@@ -5775,6 +5353,60 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getDoEvent_EventExpr();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent <em>Asynchronous Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Asynchronous Event</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent
+	 * @generated
+	 */
+	EClass getAsynchronousEvent();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getTriggeredtransition <em>Triggeredtransition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Triggeredtransition</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getTriggeredtransition()
+	 * @see #getAsynchronousEvent()
+	 * @generated
+	 */
+	EReference getAsynchronousEvent_Triggeredtransition();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getRaisedtransition <em>Raisedtransition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Raisedtransition</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getRaisedtransition()
+	 * @see #getAsynchronousEvent()
+	 * @generated
+	 */
+	EReference getAsynchronousEvent_Raisedtransition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getName()
+	 * @see #getAsynchronousEvent()
+	 * @generated
+	 */
+	EAttribute getAsynchronousEvent_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getFullEventName <em>Full Event Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Full Event Name</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getFullEventName()
+	 * @see #getAsynchronousEvent()
+	 * @generated
+	 */
+	EAttribute getAsynchronousEvent_FullEventName();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent <em>Entry Or Exit Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5796,15 +5428,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getEntryOrExitEvent_Resets();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>UML Realtime Action</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction()
+	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getAction()
 	 * @see #getEntryOrExitEvent()
 	 * @generated
 	 */
-	EReference getEntryOrExitEvent_UMLRealtimeAction();
+	EReference getEntryOrExitEvent_Action();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEventExpr <em>Event Expr</em>}'.
@@ -6025,6 +5657,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference DEADLINE__LOWER_BOUND = eINSTANCE.getDeadline_LowerBound();
 
 		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DEADLINE___TO_MY_STRING = eINSTANCE.getDeadline__ToMyString();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AbsoluteDeadlineImpl <em>Absolute Deadline</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6035,20 +5675,28 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass ABSOLUTE_DEADLINE = eINSTANCE.getAbsoluteDeadline();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Transition</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSOLUTE_DEADLINE__UML_REALTIME_TRANSITION = eINSTANCE.getAbsoluteDeadline_UMLRealtimeTransition();
+		EReference ABSOLUTE_DEADLINE__TRANSITION = eINSTANCE.getAbsoluteDeadline_Transition();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Clock</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Clock</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABSOLUTE_DEADLINE__UML_CLOCK = eINSTANCE.getAbsoluteDeadline_UMLClock();
+		EReference ABSOLUTE_DEADLINE__CLOCK = eINSTANCE.getAbsoluteDeadline_Clock();
+
+		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSOLUTE_DEADLINE___TO_MY_STRING = eINSTANCE.getAbsoluteDeadline__ToMyString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RelativeDeadlineImpl <em>Relative Deadline</em>}' class.
@@ -6061,12 +5709,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass RELATIVE_DEADLINE = eINSTANCE.getRelativeDeadline();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Transition</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RELATIVE_DEADLINE__UML_REALTIME_TRANSITION = eINSTANCE.getRelativeDeadline_UMLRealtimeTransition();
+		EReference RELATIVE_DEADLINE__TRANSITION = eINSTANCE.getRelativeDeadline_Transition();
+
+		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RELATIVE_DEADLINE___TO_MY_STRING = eINSTANCE.getRelativeDeadline__ToMyString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl <em>Clock</em>}' class.
@@ -6219,12 +5875,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute ACTION__BLOCKING = eINSTANCE.getAction_Blocking();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Transition</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTION__UML_REALTIME_TRANSITION = eINSTANCE.getAction_UMLRealtimeTransition();
+		EReference ACTION__TRANSITION = eINSTANCE.getAction_Transition();
 
 		/**
 		 * The meta object literal for the '<em><b>Resets</b></em>' reference list feature.
@@ -6243,204 +5899,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute ACTION__WCET_SPECIFIED_BY_USER = eINSTANCE.getAction_WCETSpecifiedByUser();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimeEventImpl <em>Realtime Event</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimeEventImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getRealtimeEvent()
-		 * @generated
-		 */
-		EClass REALTIME_EVENT = eINSTANCE.getRealtimeEvent();
-
-		/**
-		 * The meta object literal for the '<em><b>Triggered UML Realtime Transition</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REALTIME_EVENT__TRIGGERED_UML_REALTIME_TRANSITION = eINSTANCE.getRealtimeEvent_TriggeredUMLRealtimeTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Raised UML Realtime Transition</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REALTIME_EVENT__RAISED_UML_REALTIME_TRANSITION = eINSTANCE.getRealtimeEvent_RaisedUMLRealtimeTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_EVENT__NAME = eINSTANCE.getRealtimeEvent_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Full Event Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_EVENT__FULL_EVENT_NAME = eINSTANCE.getRealtimeEvent_FullEventName();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FadingFunctionImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFadingFunction()
-		 * @generated
-		 */
-		EClass FADING_FUNCTION = eINSTANCE.getFadingFunction();
-
-		/**
-		 * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__FUNCTION = eINSTANCE.getFadingFunction_Function();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transitions</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FADING_FUNCTION__UML_REALTIME_TRANSITIONS = eINSTANCE.getFadingFunction_UMLRealtimeTransitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__MIN_DURATION = eINSTANCE.getFadingFunction_MinDuration();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__MAX_DURATION = eINSTANCE.getFadingFunction_MaxDuration();
-
-		/**
-		 * The meta object literal for the '<em><b>Spline1</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__SPLINE1 = eINSTANCE.getFadingFunction_Spline1();
-
-		/**
-		 * The meta object literal for the '<em><b>Spline2</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__SPLINE2 = eINSTANCE.getFadingFunction_Spline2();
-
-		/**
-		 * The meta object literal for the '<em><b>Polynom Degree</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FADING_FUNCTION__POLYNOM_DEGREE = eINSTANCE.getFadingFunction_PolynomDegree();
-
-		/**
-		 * The meta object literal for the '<em><b>Ports By Component Instance</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FADING_FUNCTION__PORTS_BY_COMPONENT_INSTANCE = eINSTANCE.getFadingFunction_PortsByComponentInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Breakpoint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FADING_FUNCTION___GET_BREAKPOINT = eINSTANCE.getFadingFunction__GetBreakpoint();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FlatSwitchingImpl <em>Flat Switching</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FlatSwitchingImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFlatSwitching()
-		 * @generated
-		 */
-		EClass FLAT_SWITCHING = eINSTANCE.getFlatSwitching();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transitions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FLAT_SWITCHING__UML_REALTIME_TRANSITIONS = eINSTANCE.getFlatSwitching_UMLRealtimeTransitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Min Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__MIN_DURATION = eINSTANCE.getFlatSwitching_MinDuration();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Duration</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__MAX_DURATION = eINSTANCE.getFlatSwitching_MaxDuration();
-
-		/**
-		 * The meta object literal for the '<em><b>Spline1</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__SPLINE1 = eINSTANCE.getFlatSwitching_Spline1();
-
-		/**
-		 * The meta object literal for the '<em><b>Spline2</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__SPLINE2 = eINSTANCE.getFlatSwitching_Spline2();
-
-		/**
-		 * The meta object literal for the '<em><b>Polynom Degree</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__POLYNOM_DEGREE = eINSTANCE.getFlatSwitching_PolynomDegree();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Inst To Port Inst Map Entry</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FLAT_SWITCHING__PORT_INST_TO_PORT_INST_MAP_ENTRY = eINSTANCE.getFlatSwitching_PortInstToPortInstMapEntry();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Breakpoint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FLAT_SWITCHING___GET_BREAKPOINT = eINSTANCE.getFlatSwitching__GetBreakpoint();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.InitialStateImpl <em>Initial State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6451,12 +5909,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass INITIAL_STATE = eINSTANCE.getInitialState();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Start State Rev</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Start State Rev</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INITIAL_STATE__UML_REALTIME_START_STATE_REV = eINSTANCE.getInitialState_UMLRealtimeStartStateRev();
+		EReference INITIAL_STATE__START_STATE_REV = eINSTANCE.getInitialState_StartStateRev();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Next State</b></em>' operation.
@@ -6537,12 +5995,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass TRANSITION = eINSTANCE.getTransition();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Transition Mapping Vector</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Transition Mapping Vector</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR = eINSTANCE.getTransition_UMLRealtimeTransitionMappingVector();
+		EAttribute TRANSITION__TRANSITION_MAPPING_VECTOR = eINSTANCE.getTransition_TransitionMappingVector();
 
 		/**
 		 * The meta object literal for the '<em><b>Send Synchronization</b></em>' containment reference feature.
@@ -6601,22 +6059,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__CLOCK_RESETS = eINSTANCE.getTransition_ClockResets();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Flat Switching</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__UML_REALTIME_FLAT_SWITCHING = eINSTANCE.getTransition_UMLRealtimeFlatSwitching();
-
-		/**
-		 * The meta object literal for the '<em><b>UML Realtime Fading Function</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__UML_REALTIME_FADING_FUNCTION = eINSTANCE.getTransition_UMLRealtimeFadingFunction();
-
-		/**
 		 * The meta object literal for the '<em><b>Trigger Events</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6633,12 +6075,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__RAISED_EVENTS = eINSTANCE.getTransition_RaisedEvents();
 
 		/**
-		 * The meta object literal for the '<em><b>Timeguard</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Clock Constraint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__TIMEGUARD = eINSTANCE.getTransition_Timeguard();
+		EReference TRANSITION__CLOCK_CONSTRAINT = eINSTANCE.getTransition_ClockConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Absolute Deadlines</b></em>' containment reference list feature.
@@ -6689,20 +6131,28 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute TRANSITION__SIDE_EFFECT_EXPR = eINSTANCE.getTransition_SideEffectExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Guard Expr</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Clock Constraint Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__TIME_GUARD_EXPR = eINSTANCE.getTransition_TimeGuardExpr();
+		EAttribute TRANSITION__CLOCK_CONSTRAINT_EXPR = eINSTANCE.getTransition_ClockConstraintExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Deadline Expr</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Absolute Deadline Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__DEADLINE_EXPR = eINSTANCE.getTransition_DeadlineExpr();
+		EAttribute TRANSITION__ABSOLUTE_DEADLINE_EXPR = eINSTANCE.getTransition_AbsoluteDeadlineExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Relative Deadline Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__RELATIVE_DEADLINE_EXPR = eINSTANCE.getTransition_RelativeDeadlineExpr();
 
 		/**
 		 * The meta object literal for the '<em><b>Guard Expr</b></em>' attribute feature.
@@ -6881,6 +6331,48 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute DO_EVENT__EVENT_EXPR = eINSTANCE.getDoEvent_EventExpr();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl <em>Asynchronous Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousEvent()
+		 * @generated
+		 */
+		EClass ASYNCHRONOUS_EVENT = eINSTANCE.getAsynchronousEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Triggeredtransition</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION = eINSTANCE.getAsynchronousEvent_Triggeredtransition();
+
+		/**
+		 * The meta object literal for the '<em><b>Raisedtransition</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASYNCHRONOUS_EVENT__RAISEDTRANSITION = eINSTANCE.getAsynchronousEvent_Raisedtransition();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASYNCHRONOUS_EVENT__NAME = eINSTANCE.getAsynchronousEvent_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Full Event Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASYNCHRONOUS_EVENT__FULL_EVENT_NAME = eINSTANCE.getAsynchronousEvent_FullEventName();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6899,12 +6391,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference ENTRY_OR_EXIT_EVENT__RESETS = eINSTANCE.getEntryOrExitEvent_Resets();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Action</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION = eINSTANCE.getEntryOrExitEvent_UMLRealtimeAction();
+		EReference ENTRY_OR_EXIT_EVENT__ACTION = eINSTANCE.getEntryOrExitEvent_Action();
 
 		/**
 		 * The meta object literal for the '<em><b>Event Expr</b></em>' attribute feature.

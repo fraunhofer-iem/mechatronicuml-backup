@@ -191,75 +191,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RealtimeEventItemProvider realtimeEventItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRealtimeEventAdapter() {
-		if (realtimeEventItemProvider == null) {
-			realtimeEventItemProvider = new RealtimeEventItemProvider(this);
-		}
-
-		return realtimeEventItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FadingFunctionItemProvider fadingFunctionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FadingFunction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFadingFunctionAdapter() {
-		if (fadingFunctionItemProvider == null) {
-			fadingFunctionItemProvider = new FadingFunctionItemProvider(this);
-		}
-
-		return fadingFunctionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FlatSwitchingItemProvider flatSwitchingItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FlatSwitching}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFlatSwitchingAdapter() {
-		if (flatSwitchingItemProvider == null) {
-			flatSwitchingItemProvider = new FlatSwitchingItemProvider(this);
-		}
-
-		return flatSwitchingItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,26 +352,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntryOrExitEventItemProvider entryOrExitEventItemProvider;
+	protected AsynchronousEventItemProvider asynchronousEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEntryOrExitEventAdapter() {
-		if (entryOrExitEventItemProvider == null) {
-			entryOrExitEventItemProvider = new EntryOrExitEventItemProvider(this);
+	public Adapter createAsynchronousEventAdapter() {
+		if (asynchronousEventItemProvider == null) {
+			asynchronousEventItemProvider = new AsynchronousEventItemProvider(this);
 		}
 
-		return entryOrExitEventItemProvider;
+		return asynchronousEventItemProvider;
 	}
 
 	/**
@@ -510,29 +441,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		}
 
 		return synchronizationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Prioritizable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrioritizableItemProvider prioritizableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Prioritizable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPrioritizableAdapter() {
-		if (prioritizableItemProvider == null) {
-			prioritizableItemProvider = new PrioritizableItemProvider(this);
-		}
-
-		return prioritizableItemProvider;
 	}
 
 	/**
@@ -687,20 +595,16 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (stateItemProvider != null) stateItemProvider.dispose();
 		if (initialStateItemProvider != null) initialStateItemProvider.dispose();
 		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
-		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
-		if (flatSwitchingItemProvider != null) flatSwitchingItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
-		if (realtimeEventItemProvider != null) realtimeEventItemProvider.dispose();
-		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
+		if (asynchronousEventItemProvider != null) asynchronousEventItemProvider.dispose();
 		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
 		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
-		if (prioritizableItemProvider != null) prioritizableItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
 	}
 

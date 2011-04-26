@@ -71,33 +71,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	Action createAction();
 
 	/**
-	 * Returns a new object of class '<em>Realtime Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Realtime Event</em>'.
-	 * @generated
-	 */
-	RealtimeEvent createRealtimeEvent();
-
-	/**
-	 * Returns a new object of class '<em>Fading Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fading Function</em>'.
-	 * @generated
-	 */
-	FadingFunction createFadingFunction();
-
-	/**
-	 * Returns a new object of class '<em>Flat Switching</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Flat Switching</em>'.
-	 * @generated
-	 */
-	FlatSwitching createFlatSwitching();
-
-	/**
 	 * Returns a new object of class '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,13 +134,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	DoEvent createDoEvent();
 
 	/**
-	 * Returns a new object of class '<em>Entry Or Exit Event</em>'.
+	 * Returns a new object of class '<em>Asynchronous Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Or Exit Event</em>'.
+	 * @return a new object of class '<em>Asynchronous Event</em>'.
 	 * @generated
 	 */
-	EntryOrExitEvent createEntryOrExitEvent();
+	AsynchronousEvent createAsynchronousEvent();
 
 	/**
 	 * Returns a new object of class '<em>Entry Event</em>'.
@@ -195,15 +168,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Synchronization createSynchronization();
-
-	/**
-	 * Returns a new object of class '<em>Prioritizable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Prioritizable</em>'.
-	 * @generated
-	 */
-	Prioritizable createPrioritizable();
 
 	/**
 	 * Returns a new object of class '<em>Region</em>'.

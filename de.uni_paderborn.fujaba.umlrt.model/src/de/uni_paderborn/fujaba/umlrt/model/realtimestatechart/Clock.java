@@ -65,7 +65,7 @@ public interface Clock extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Absolute Deadlines</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock <em>UML Clock</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Absolute Deadlines</em>' reference list isn't clear,
@@ -74,8 +74,8 @@ public interface Clock extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Absolute Deadlines</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClock_AbsoluteDeadlines()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock
-	 * @model opposite="uMLClock"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock
+	 * @model opposite="clock"
 	 * @generated
 	 */
 	EList<AbsoluteDeadline> getAbsoluteDeadlines();

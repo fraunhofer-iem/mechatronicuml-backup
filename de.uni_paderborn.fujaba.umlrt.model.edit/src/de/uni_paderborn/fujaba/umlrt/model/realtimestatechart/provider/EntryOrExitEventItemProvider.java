@@ -67,7 +67,7 @@ public class EntryOrExitEventItemProvider
 			super.getPropertyDescriptors(object);
 
 			addResetsPropertyDescriptor(object);
-			addUMLRealtimeActionPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 			addEventExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -96,19 +96,19 @@ public class EntryOrExitEventItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Realtime Action feature.
+	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLRealtimeActionPropertyDescriptor(Object object) {
+	protected void addActionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntryOrExitEvent_uMLRealtimeAction_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_uMLRealtimeAction_feature", "_UI_EntryOrExitEvent_type"),
-				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__UML_REALTIME_ACTION,
+				 getString("_UI_EntryOrExitEvent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
 				 true,
 				 false,
 				 true,

@@ -19,7 +19,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getTransition <em>Transition</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,31 +29,39 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  */
 public interface RelativeDeadline extends Deadline {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * Returns the value of the '<em><b>Transition</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline <em>Relative Deadline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Realtime Transition</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Transition</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #setUMLRealtimeTransition(Transition)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRelativeDeadline_UMLRealtimeTransition()
+	 * @return the value of the '<em>Transition</em>' container reference.
+	 * @see #setTransition(Transition)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getRelativeDeadline_Transition()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline
 	 * @model opposite="relativeDeadline" transient="false"
 	 * @generated
 	 */
-	Transition getUMLRealtimeTransition();
+	Transition getTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline#getTransition <em>Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #getUMLRealtimeTransition()
+	 * @param value the new value of the '<em>Transition</em>' container reference.
+	 * @see #getTransition()
 	 * @generated
 	 */
-	void setUMLRealtimeTransition(Transition value);
+	void setTransition(Transition value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null) {\r\nreturn \"[\" + upperBound+\",\"+ lowerBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
+	 * @generated
+	 */
+	String toMyString();
 
 } // RelativeDeadline

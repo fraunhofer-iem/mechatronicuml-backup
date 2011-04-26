@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -20,13 +21,16 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 
 import org.storydriven.modeling.calls.Callable;
 
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 /**
@@ -37,6 +41,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getContainedParameters <em>Contained Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  * </ul>
@@ -64,6 +69,16 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getContainedParameters() <em>Contained Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EParameter> containedParameters;
 
 	/**
 	 * The default value of the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
@@ -211,6 +226,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS:
+				return ((InternalEList<?>)getContainedParameters()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return basicSetState(null, msgs);
 		}
@@ -241,6 +258,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				return getComment();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS:
+				return getContainedParameters();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
@@ -254,11 +273,16 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				setComment((String)newValue);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS:
+				getContainedParameters().clear();
+				getContainedParameters().addAll((Collection<? extends EParameter>)newValue);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)newValue);
@@ -281,6 +305,9 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS:
+				getContainedParameters().clear();
+				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)null);
 				return;
@@ -301,6 +328,8 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS:
+				return containedParameters != null && !containedParameters.isEmpty();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
@@ -324,6 +353,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		}
 		if (baseClass == Callable.class) {
 			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS: return CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -345,6 +375,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 		}
 		if (baseClass == Callable.class) {
 			switch (baseFeatureID) {
+				case CallsPackage.CALLABLE__CONTAINED_PARAMETERS: return RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS;
 				default: return -1;
 			}
 		}

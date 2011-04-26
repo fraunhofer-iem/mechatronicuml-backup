@@ -159,7 +159,7 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * @see #isSetPortsDerived()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_PortsDerived()
 	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tcomponentType.ports\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif'"
 	 * @generated
 	 */
 	EList<Port> getPortsDerived();

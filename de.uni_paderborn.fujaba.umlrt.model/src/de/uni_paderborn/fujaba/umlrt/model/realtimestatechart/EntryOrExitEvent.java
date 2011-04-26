@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getResets <em>Resets</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getEventExpr <em>Event Expr</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EntryOrExitEvent extends EObject {
@@ -54,30 +54,30 @@ public interface EntryOrExitEvent extends EObject {
 	void setResets(Clock value);
 
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Action</b></em>' reference.
+	 * Returns the value of the '<em><b>Action</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Realtime Action</em>' reference isn't clear,
+	 * If the meaning of the '<em>Action</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Action</em>' reference.
-	 * @see #setUMLRealtimeAction(Action)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_UMLRealtimeAction()
+	 * @return the value of the '<em>Action</em>' reference.
+	 * @see #setAction(Action)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_Action()
 	 * @model
 	 * @generated
 	 */
-	Action getUMLRealtimeAction();
+	Action getAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getUMLRealtimeAction <em>UML Realtime Action</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Action</em>' reference.
-	 * @see #getUMLRealtimeAction()
+	 * @param value the new value of the '<em>Action</em>' reference.
+	 * @see #getAction()
 	 * @generated
 	 */
-	void setUMLRealtimeAction(Action value);
+	void setAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.

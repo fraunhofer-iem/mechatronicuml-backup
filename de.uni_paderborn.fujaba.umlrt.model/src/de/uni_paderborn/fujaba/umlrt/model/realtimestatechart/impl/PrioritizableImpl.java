@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class PrioritizableImpl extends EObjectImpl implements Prioritizable {
+public abstract class PrioritizableImpl extends EObjectImpl implements Prioritizable {
 	/**
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->

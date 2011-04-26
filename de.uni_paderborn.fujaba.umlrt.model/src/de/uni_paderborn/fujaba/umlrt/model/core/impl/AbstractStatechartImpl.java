@@ -524,9 +524,9 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 		if (newUMLRealtimeStartState != uMLRealtimeStartState) {
 			NotificationChain msgs = null;
 			if (uMLRealtimeStartState != null)
-				msgs = ((InternalEObject)uMLRealtimeStartState).eInverseRemove(this, RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV, InitialState.class, msgs);
+				msgs = ((InternalEObject)uMLRealtimeStartState).eInverseRemove(this, RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV, InitialState.class, msgs);
 			if (newUMLRealtimeStartState != null)
-				msgs = ((InternalEObject)newUMLRealtimeStartState).eInverseAdd(this, RealtimestatechartPackage.INITIAL_STATE__UML_REALTIME_START_STATE_REV, InitialState.class, msgs);
+				msgs = ((InternalEObject)newUMLRealtimeStartState).eInverseAdd(this, RealtimestatechartPackage.INITIAL_STATE__START_STATE_REV, InitialState.class, msgs);
 			msgs = basicSetUMLRealtimeStartState(newUMLRealtimeStartState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}

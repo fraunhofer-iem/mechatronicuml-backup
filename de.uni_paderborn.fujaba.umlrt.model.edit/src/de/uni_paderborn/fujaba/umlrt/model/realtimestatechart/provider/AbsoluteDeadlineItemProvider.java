@@ -58,25 +58,25 @@ public class AbsoluteDeadlineItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLClockPropertyDescriptor(object);
+			addClockPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Clock feature.
+	 * This adds a property descriptor for the Clock feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLClockPropertyDescriptor(Object object) {
+	protected void addClockPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbsoluteDeadline_uMLClock_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbsoluteDeadline_uMLClock_feature", "_UI_AbsoluteDeadline_type"),
-				 RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__UML_CLOCK,
+				 getString("_UI_AbsoluteDeadline_clock_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbsoluteDeadline_clock_feature", "_UI_AbsoluteDeadline_type"),
+				 RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__CLOCK,
 				 true,
 				 false,
 				 true,

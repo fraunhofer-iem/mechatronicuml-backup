@@ -28,7 +28,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getBlocking <em>Blocking</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getUMLRealtimeTransition <em>UML Realtime Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#isWCETSpecifiedByUser <em>WCET Specified By User</em>}</li>
  * </ul>
@@ -115,31 +115,31 @@ public interface Action extends Expression {
 	void setBlocking(long value);
 
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * Returns the value of the '<em><b>Transition</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect <em>Side Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The transition this action is a side effect of.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #setUMLRealtimeTransition(Transition)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_UMLRealtimeTransition()
+	 * @return the value of the '<em>Transition</em>' container reference.
+	 * @see #setTransition(Transition)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_Transition()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect
 	 * @model opposite="sideEffect" transient="false"
 	 * @generated
 	 */
-	Transition getUMLRealtimeTransition();
+	Transition getTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #getUMLRealtimeTransition()
+	 * @param value the new value of the '<em>Transition</em>' container reference.
+	 * @see #getTransition()
 	 * @generated
 	 */
-	void setUMLRealtimeTransition(Transition value);
+	void setTransition(Transition value);
 
 	/**
 	 * Returns the value of the '<em><b>Resets</b></em>' reference list.

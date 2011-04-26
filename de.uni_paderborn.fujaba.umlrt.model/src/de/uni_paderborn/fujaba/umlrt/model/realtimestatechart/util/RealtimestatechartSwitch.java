@@ -162,18 +162,6 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.FADING_FUNCTION: {
-				FadingFunction fadingFunction = (FadingFunction)theEObject;
-				T result = caseFadingFunction(fadingFunction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.FLAT_SWITCHING: {
-				FlatSwitching flatSwitching = (FlatSwitching)theEObject;
-				T result = caseFlatSwitching(flatSwitching);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.VERTEX: {
 				Vertex vertex = (Vertex)theEObject;
 				T result = caseVertex(vertex);
@@ -221,15 +209,15 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.REALTIME_EVENT: {
-				RealtimeEvent realtimeEvent = (RealtimeEvent)theEObject;
-				T result = caseRealtimeEvent(realtimeEvent);
-				if (result == null) result = caseMethodCallExpression(realtimeEvent);
-				if (result == null) result = caseExpression(realtimeEvent);
-				if (result == null) result = caseInvocation(realtimeEvent);
-				if (result == null) result = caseTypedElement(realtimeEvent);
-				if (result == null) result = caseCommentableElement(realtimeEvent);
-				if (result == null) result = caseExtendableElement(realtimeEvent);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: {
+				AsynchronousEvent asynchronousEvent = (AsynchronousEvent)theEObject;
+				T result = caseAsynchronousEvent(asynchronousEvent);
+				if (result == null) result = caseMethodCallExpression(asynchronousEvent);
+				if (result == null) result = caseExpression(asynchronousEvent);
+				if (result == null) result = caseInvocation(asynchronousEvent);
+				if (result == null) result = caseTypedElement(asynchronousEvent);
+				if (result == null) result = caseCommentableElement(asynchronousEvent);
+				if (result == null) result = caseExtendableElement(asynchronousEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -383,51 +371,6 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Realtime Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Realtime Event</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRealtimeEvent(RealtimeEvent object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fading Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fading Function</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFadingFunction(FadingFunction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Flat Switching</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Flat Switching</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFlatSwitching(FlatSwitching object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Initial State</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -544,6 +487,21 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseDoEvent(DoEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Asynchronous Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Asynchronous Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAsynchronousEvent(AsynchronousEvent object) {
 		return null;
 	}
 

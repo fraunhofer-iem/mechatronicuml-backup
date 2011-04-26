@@ -19,8 +19,8 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock <em>UML Clock</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getTransition <em>Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,59 +30,67 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  */
 public interface AbsoluteDeadline extends Deadline {
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Transition</b></em>' container reference.
+	 * Returns the value of the '<em><b>Transition</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Realtime Transition</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Transition</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #setUMLRealtimeTransition(Transition)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_UMLRealtimeTransition()
+	 * @return the value of the '<em>Transition</em>' container reference.
+	 * @see #setTransition(Transition)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_Transition()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines
 	 * @model opposite="absoluteDeadlines" required="true" transient="false"
 	 * @generated
 	 */
-	Transition getUMLRealtimeTransition();
+	Transition getTransition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLRealtimeTransition <em>UML Realtime Transition</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getTransition <em>Transition</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Transition</em>' container reference.
-	 * @see #getUMLRealtimeTransition()
+	 * @param value the new value of the '<em>Transition</em>' container reference.
+	 * @see #getTransition()
 	 * @generated
 	 */
-	void setUMLRealtimeTransition(Transition value);
+	void setTransition(Transition value);
 
 	/**
-	 * Returns the value of the '<em><b>UML Clock</b></em>' reference.
+	 * Returns the value of the '<em><b>Clock</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>UML Clock</em>' reference isn't clear,
+	 * If the meaning of the '<em>Clock</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>UML Clock</em>' reference.
-	 * @see #setUMLClock(Clock)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_UMLClock()
+	 * @return the value of the '<em>Clock</em>' reference.
+	 * @see #setClock(Clock)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_Clock()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getAbsoluteDeadlines
 	 * @model opposite="absoluteDeadlines" required="true"
 	 * @generated
 	 */
-	Clock getUMLClock();
+	Clock getClock();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getUMLClock <em>UML Clock</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Clock</em>' reference.
-	 * @see #getUMLClock()
+	 * @param value the new value of the '<em>Clock</em>' reference.
+	 * @see #getClock()
 	 * @generated
 	 */
-	void setUMLClock(Clock value);
+	void setClock(Clock value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null && clock!=null) {\r\nreturn clock.getName()+clock.getId() + \"in [\" + upperBound+\",\"+ lowerBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
+	 * @generated
+	 */
+	String toMyString();
 
 } // AbsoluteDeadline

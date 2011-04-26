@@ -7,22 +7,13 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.PortCardinalityPropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.RelativeDeadlinePropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -32,12 +23,14 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.activities.ActivitiesFactory;
-
 import org.storydriven.modeling.calls.CallsFactory;
+
+import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.RelativeDeadlinePropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition} object.
@@ -74,7 +67,7 @@ public class TransitionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUMLRealtimeTransitionMappingVectorPropertyDescriptor(object);
+			addTransitionMappingVectorPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addStatechartPropertyDescriptor(object);
@@ -84,16 +77,41 @@ public class TransitionItemProvider
 			addGuardPropertyDescriptor(object);
 			addEventExprPropertyDescriptor(object);
 			addSideEffectExprPropertyDescriptor(object);
-			addTimeGuardExprPropertyDescriptor(object);
-			addDeadlineExprPropertyDescriptor(object);
+			addClockConstraintExprPropertyDescriptor(object);
+			addAbsoluteDeadlineExprPropertyDescriptor(object);
+			addRelativeDeadlineExprPropertyDescriptor(object);
 			addGuardExprPropertyDescriptor(object);
 			addSynchroExprPropertyDescriptor(object);
 			addClockResetsExprPropertyDescriptor(object);
+			
+			//own stuff
 			addRelativeDeadlinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 	
+	/**
+	 * This adds a property descriptor for the Transition Mapping Vector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransitionMappingVectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_transitionMappingVector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_transitionMappingVector_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_MAPPING_VECTOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
 	/**
 	 * This adds a property descriptor for the RelativeDeadline feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -116,28 +134,6 @@ public class TransitionItemProvider
 				RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND, true, false,
 				true, null, null, null));
 
-	}
-
-	/**
-	 * This adds a property descriptor for the UML Realtime Transition Mapping Vector feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUMLRealtimeTransitionMappingVectorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_uMLRealtimeTransitionMappingVector_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_uMLRealtimeTransitionMappingVector_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -317,19 +313,19 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Time Guard Expr feature.
+	 * This adds a property descriptor for the Clock Constraint Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTimeGuardExprPropertyDescriptor(Object object) {
+	protected void addClockConstraintExprPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_timeGuardExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_timeGuardExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__TIME_GUARD_EXPR,
+				 getString("_UI_Transition_clockConstraintExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockConstraintExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT_EXPR,
 				 true,
 				 false,
 				 false,
@@ -339,19 +335,41 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Deadline Expr feature.
+	 * This adds a property descriptor for the Absolute Deadline Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDeadlineExprPropertyDescriptor(Object object) {
+	protected void addAbsoluteDeadlineExprPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_deadlineExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_deadlineExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__DEADLINE_EXPR,
+				 getString("_UI_Transition_absoluteDeadlineExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_absoluteDeadlineExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Relative Deadline Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelativeDeadlineExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_relativeDeadlineExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_relativeDeadlineExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR,
 				 true,
 				 false,
 				 false,
@@ -465,11 +483,9 @@ public class TransitionItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__UML_REALTIME_FLAT_SWITCHING);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__UML_REALTIME_FADING_FUNCTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TIMEGUARD);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 		}
@@ -524,13 +540,14 @@ public class TransitionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
-			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_TRANSITION_MAPPING_VECTOR:
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR:
 			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
-			case RealtimestatechartPackage.TRANSITION__TIME_GUARD_EXPR:
-			case RealtimestatechartPackage.TRANSITION__DEADLINE_EXPR:
+			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
+			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
+			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
@@ -541,11 +558,9 @@ public class TransitionItemProvider
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FLAT_SWITCHING:
-			case RealtimestatechartPackage.TRANSITION__UML_REALTIME_FADING_FUNCTION:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-			case RealtimestatechartPackage.TRANSITION__TIMEGUARD:
+			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -597,27 +612,17 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__UML_REALTIME_FLAT_SWITCHING,
-				 RealtimestatechartFactory.eINSTANCE.createFlatSwitching()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__UML_REALTIME_FADING_FUNCTION,
-				 RealtimestatechartFactory.eINSTANCE.createFadingFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createRealtimeEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createRealtimeEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__TIMEGUARD,
+				(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT,
 				 RealtimestatechartFactory.eINSTANCE.createClockConstraint()));
 
 		newChildDescriptors.add
