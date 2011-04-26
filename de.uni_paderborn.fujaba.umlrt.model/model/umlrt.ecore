@@ -591,7 +591,7 @@
                   defaultValueLiteral="\&quot;schedule.xml\&quot;"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartState"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState/uMLRealtimeStartStateRev">
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState/startStateRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The start state of this realtime statechart."/>
                 </eAnnotations>
@@ -813,10 +813,10 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLClock" lowerBound="1"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/absoluteDeadlines"/>
             </eClassifiers>
@@ -824,8 +824,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
@@ -844,7 +843,7 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLClock"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
@@ -918,7 +917,7 @@
                   <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads."/>
                 </eAnnotations>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartStateRev"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="startStateRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -930,42 +929,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents the stop state of a realtime statechart."/>
               </eAnnotations>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="FadingFunction">
-              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="function" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/uMLRealtimeFadingFunction"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portsByComponentInstance"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="FlatSwitching">
-              <eOperations name="getBreakpoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDuration"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="spline2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="polynomDegree"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="portInstToPortInstMapEntry">
-                <eGenericType eClassifier="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyMap">
-                  <eTypeArguments/>
-                  <eTypeArguments/>
-                </eGenericType>
-              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1003,7 +966,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
               <eOperations name="calculateWorstCaseDeadlineAsNaturalNumber" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="uMLRealtimeTransitionMappingVector"
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionMappingVector"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Vector"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"
@@ -1020,7 +983,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sideEffect" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action/uMLRealtimeTransition">
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action/transition">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation."/>
                 </eAnnotations>
@@ -1049,22 +1012,16 @@
                   <details key="documentation" value="The clock resets of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeFlatSwitching"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FlatSwitching"
-                  containment="true"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeFadingFunction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FadingFunction"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FadingFunction/uMLRealtimeTransitions"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEvents"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent/triggeredUMLRealtimeTransition">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent/triggeredtransition">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The trigger events of this transition. They are required for this transition to be activated."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="raisedEvents"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent/raisedUMLRealtimeTransition">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent/raisedtransition">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The events which are raised upon activiation of this transition."/>
                 </eAnnotations>
@@ -1078,10 +1035,10 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/uMLRealtimeTransition"/>
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/transition"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/uMLRealtimeTransition"/>
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/transition"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
                   defaultValueLiteral="false"/>
@@ -1089,21 +1046,21 @@
                   defaultValueLiteral="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="eventExpr"/>
+                  defaultValueLiteral="eventExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="sideEffectExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="sideEffectExpr"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeGuardExpr"
+                  defaultValueLiteral="sideEffectExpr" derived="true"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="timeGuardExpr"/>
+                  defaultValueLiteral="timeGuardExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="deadlineExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="deadlineExpr"/>
+                  defaultValueLiteral="deadlineExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="guardExpr"/>
+                  defaultValueLiteral="guardExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="synchroExpr"/>
+                  defaultValueLiteral="synchroExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetsExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
@@ -1154,8 +1111,7 @@
                   <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeTransition"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The transition this action is a side effect of."/>
@@ -1182,18 +1138,18 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="doEventExpr"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="RealtimeEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
+            <eClassifiers xsi:type="ecore:EClass" name="AsynchronousEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
               </eAnnotations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredUMLRealtimeTransition"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredtransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The transition this events belongs to as trigger event."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedUMLRealtimeTransition"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="raisedtransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1207,16 +1163,16 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+                  derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type."/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent">
+            <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent" abstract="true">
               <eStructuralFeatures xsi:type="ecore:EReference" name="resets" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeAction"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="entryExitExpr"/>
             </eClassifiers>
@@ -1252,7 +1208,7 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Prioritizable">
+            <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart"
