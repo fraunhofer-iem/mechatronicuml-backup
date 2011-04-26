@@ -1069,8 +1069,8 @@
                   <details key="documentation" value="The events which are raised upon activiation of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="timeguard" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraint"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x&lt;=2 the transition would only be allowed to be activated if x has a value less or equal to 2."/>
