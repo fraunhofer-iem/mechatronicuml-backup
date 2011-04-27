@@ -115,17 +115,17 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ClockConstraint_3012 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3012"); //$NON-NLS-1$
+	public static final IElementType ClockConstraint_3018 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3018"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType RealtimeEvent_3013 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeEvent_3013"); //$NON-NLS-1$
+	public static final IElementType AsynchronousEvent_3019 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType RealtimeEvent_3014 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeEvent_3014"); //$NON-NLS-1$
+	public static final IElementType AsynchronousEvent_3020 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -334,19 +334,19 @@ public class RealtimeStatechartElementTypes {
 							.getRelativeDeadline());
 
 			elements.put(
-					ClockConstraint_3012,
+					ClockConstraint_3018,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getClockConstraint());
 
 			elements.put(
-					RealtimeEvent_3013,
+					AsynchronousEvent_3019,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getRealtimeEvent());
+							.getAsynchronousEvent());
 
 			elements.put(
-					RealtimeEvent_3014,
+					AsynchronousEvent_3020,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getRealtimeEvent());
+							.getAsynchronousEvent());
 
 			elements.put(
 					Action_3015,
@@ -399,9 +399,9 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Region_3009);
 			KNOWN_ELEMENT_TYPES.add(AbsoluteDeadline_3010);
 			KNOWN_ELEMENT_TYPES.add(RelativeDeadline_3011);
-			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3012);
-			KNOWN_ELEMENT_TYPES.add(RealtimeEvent_3013);
-			KNOWN_ELEMENT_TYPES.add(RealtimeEvent_3014);
+			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3018);
+			KNOWN_ELEMENT_TYPES.add(AsynchronousEvent_3019);
+			KNOWN_ELEMENT_TYPES.add(AsynchronousEvent_3020);
 			KNOWN_ELEMENT_TYPES.add(Action_3015);
 			KNOWN_ELEMENT_TYPES.add(Synchronization_3016);
 			KNOWN_ELEMENT_TYPES.add(Synchronization_3017);
@@ -446,11 +446,11 @@ public class RealtimeStatechartElementTypes {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RelativeDeadlineEditPart.VISUAL_ID:
 			return RelativeDeadline_3011;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraint2EditPart.VISUAL_ID:
-			return ClockConstraint_3012;
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEventEditPart.VISUAL_ID:
-			return RealtimeEvent_3013;
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeEvent2EditPart.VISUAL_ID:
-			return RealtimeEvent_3014;
+			return ClockConstraint_3018;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AsynchronousEventEditPart.VISUAL_ID:
+			return AsynchronousEvent_3019;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AsynchronousEvent2EditPart.VISUAL_ID:
+			return AsynchronousEvent_3020;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID:
 			return Action_3015;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID:

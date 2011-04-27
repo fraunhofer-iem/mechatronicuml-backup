@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RealtimeEvent2CreateCommand extends EditElementCommand {
+public class AsynchronousEventCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public RealtimeEvent2CreateCommand(CreateElementRequest req) {
+	public AsynchronousEventCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,11 +50,11 @@ public class RealtimeEvent2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createRealtimeEvent();
+		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createAsynchronousEvent();
 
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) getElementToEdit();
-		owner.getRaisedEvents().add(newElement);
+		owner.getTriggerEvents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +66,7 @@ public class RealtimeEvent2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimeEvent newElement,
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

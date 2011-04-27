@@ -54,7 +54,7 @@ public class ClockConstraint2CreateCommand extends EditElementCommand {
 				.createClockConstraint();
 
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) getElementToEdit();
-		owner.getTimeguard().add(newElement);
+		owner.getClockConstraints().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

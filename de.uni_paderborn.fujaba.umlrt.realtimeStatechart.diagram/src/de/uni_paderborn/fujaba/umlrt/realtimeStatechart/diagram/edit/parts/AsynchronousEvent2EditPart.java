@@ -23,12 +23,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class RealtimeEvent2EditPart extends ShapeNodeEditPart {
+public class AsynchronousEvent2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3014;
+	public static final int VISUAL_ID = 3020;
 
 	/**
 	 * @generated
@@ -43,7 +43,7 @@ public class RealtimeEvent2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public RealtimeEvent2EditPart(View view) {
+	public AsynchronousEvent2EditPart(View view) {
 		super(view);
 	}
 
@@ -54,7 +54,7 @@ public class RealtimeEvent2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeEvent2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.AsynchronousEvent2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

@@ -28,7 +28,7 @@ public class ClockConstraint2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3018;
 
 	/**
 	 * @generated

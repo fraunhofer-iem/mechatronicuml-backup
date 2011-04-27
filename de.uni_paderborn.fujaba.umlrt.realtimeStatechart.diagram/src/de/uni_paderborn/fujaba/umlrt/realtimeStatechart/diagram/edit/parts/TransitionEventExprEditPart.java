@@ -78,7 +78,7 @@ public class TransitionEventExprEditPart extends LabelEditPart implements
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEventExprEditPart.VISUAL_ID),
-				new Point(0, -20));
+				new Point(0, 50));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class TransitionEventExprEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.MIDDLE;
+		return ConnectionLocator.SOURCE;
 	}
 
 	/**

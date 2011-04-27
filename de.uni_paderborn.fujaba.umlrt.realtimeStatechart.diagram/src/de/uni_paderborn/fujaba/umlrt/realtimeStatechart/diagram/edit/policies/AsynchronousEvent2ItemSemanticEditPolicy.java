@@ -11,16 +11,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RealtimeEventItemSemanticEditPolicy
+public class AsynchronousEvent2ItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public RealtimeEventItemSemanticEditPolicy() {
+	public AsynchronousEvent2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.RealtimeEvent_3013);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.AsynchronousEvent_3020);
 	}
 
 	/**

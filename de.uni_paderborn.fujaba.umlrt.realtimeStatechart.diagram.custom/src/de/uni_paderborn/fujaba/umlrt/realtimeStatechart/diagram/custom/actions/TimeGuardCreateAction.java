@@ -12,7 +12,7 @@ public class TimeGuardCreateAction extends CommonCreateAction {
 	public void run(IAction action) {
 		
 		  CreateElementRequest request = new CreateElementRequest(selectedTransition,
-				  RealtimeStatechartElementTypes.ClockConstraint_3012);
+				  RealtimeStatechartElementTypes.ClockConstraint_3018);
 		  
 		  ClockConstraint2CreateCommand command = new ClockConstraint2CreateCommand(request);
 

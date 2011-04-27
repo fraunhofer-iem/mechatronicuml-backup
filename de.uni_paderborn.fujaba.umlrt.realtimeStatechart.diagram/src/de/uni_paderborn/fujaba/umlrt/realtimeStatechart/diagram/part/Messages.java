@@ -263,16 +263,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RealtimeTransition3Group_title;
-
-	/**
-	 * @generated
-	 */
-	public static String RealtimeTransition3Group_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String State1CreationTool_title;
 
 	/**
@@ -399,76 +389,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String SynchronizationChannel6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String TriggerEvent1CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String TriggerEvent1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String RaisedEvent2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String RaisedEvent2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String SideEffect3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String SideEffect3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ClockReset4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ClockReset4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String TimeGuard5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String TimeGuard5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String AbsoluteDeadline6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String AbsoluteDeadline6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String RelativeDeadline7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String RelativeDeadline7CreationTool_desc;
 
 	/**
 	 * @generated

@@ -43,13 +43,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class TransitionSynchroExprEditPart extends LabelEditPart implements
+public class TransitionSynchroExpr2EditPart extends LabelEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6009;
+	public static final int VISUAL_ID = 6010;
 
 	/**
 	 * @generated
@@ -77,14 +77,14 @@ public class TransitionSynchroExprEditPart extends LabelEditPart implements
 	static {
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart.VISUAL_ID),
 				new Point(0, -20));
 	}
 
 	/**
 	 * @generated
 	 */
-	public TransitionSynchroExprEditPart(View view) {
+	public TransitionSynchroExpr2EditPart(View view) {
 		super(view);
 	}
 
@@ -311,7 +311,7 @@ public class TransitionSynchroExprEditPart extends LabelEditPart implements
 							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Transition_4001,
 							getParserElement(),
 							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

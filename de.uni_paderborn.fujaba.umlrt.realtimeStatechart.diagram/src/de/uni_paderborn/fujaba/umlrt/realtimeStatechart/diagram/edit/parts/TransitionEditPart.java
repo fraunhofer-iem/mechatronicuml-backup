@@ -58,41 +58,47 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionDeadlineExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionDeadlineExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionDeadlineExprLabel());
+							.getFigureTransitionAbsoluteDeadlineExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEventExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEventExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionEventExprLabel());
+							.getFigureTransitionRelativeDeadlineExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionGuardExprLabel());
+							.getFigureTransitionEventExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSideEffectExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSideEffectExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionSideEffectExprLabel());
+							.getFigureTransitionGuardExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionTimeGuardExprLabel());
+							.getFigureTransitionSideEffectExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionSafetyTransitionLabel());
+							.getFigureTransitionClockConstraintExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureTransitionSafetyTransitionLabel());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionSynchroExprLabel());
 			return true;
@@ -139,6 +145,9 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart) {
 			return true;
 		}
 		return false;
@@ -190,11 +199,15 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTransitionDeadlineExprLabel;
+		private WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTransitionTimeGuardExprLabel;
+		private WrappingLabel fFigureTransitionRelativeDeadlineExprLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureTransitionClockConstraintExprLabel;
 		/**
 		 * @generated
 		 */
@@ -241,15 +254,20 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 
 			this.add(fFigureTransitionEventExprLabel);
 
-			fFigureTransitionDeadlineExprLabel = new WrappingLabel();
-			fFigureTransitionDeadlineExprLabel.setText("");
+			fFigureTransitionAbsoluteDeadlineExprLabel = new WrappingLabel();
+			fFigureTransitionAbsoluteDeadlineExprLabel.setText("");
 
-			this.add(fFigureTransitionDeadlineExprLabel);
+			this.add(fFigureTransitionAbsoluteDeadlineExprLabel);
 
-			fFigureTransitionTimeGuardExprLabel = new WrappingLabel();
-			fFigureTransitionTimeGuardExprLabel.setText("");
+			fFigureTransitionRelativeDeadlineExprLabel = new WrappingLabel();
+			fFigureTransitionRelativeDeadlineExprLabel.setText("");
 
-			this.add(fFigureTransitionTimeGuardExprLabel);
+			this.add(fFigureTransitionRelativeDeadlineExprLabel);
+
+			fFigureTransitionClockConstraintExprLabel = new WrappingLabel();
+			fFigureTransitionClockConstraintExprLabel.setText("");
+
+			this.add(fFigureTransitionClockConstraintExprLabel);
 
 			fFigureTransitionGuardExprLabel = new WrappingLabel();
 			fFigureTransitionGuardExprLabel.setText("");
@@ -303,15 +321,22 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTransitionDeadlineExprLabel() {
-			return fFigureTransitionDeadlineExprLabel;
+		public WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {
+			return fFigureTransitionAbsoluteDeadlineExprLabel;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTransitionTimeGuardExprLabel() {
-			return fFigureTransitionTimeGuardExprLabel;
+		public WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {
+			return fFigureTransitionRelativeDeadlineExprLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureTransitionClockConstraintExprLabel() {
+			return fFigureTransitionClockConstraintExprLabel;
 		}
 
 		/**

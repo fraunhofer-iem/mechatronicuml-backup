@@ -302,9 +302,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.5"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
@@ -315,22 +312,16 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.6"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
       </children>
       <children>
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/timeguard"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockConstraints"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.4"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
@@ -340,10 +331,7 @@
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
@@ -353,10 +341,7 @@
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RealtimeEvent"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.1"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
@@ -367,9 +352,6 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.2"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#TestTransitionNode"/>
         </ownedChild>
@@ -419,9 +401,17 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="realtimeStatechart.gmfgraph#TransitionDeadlineExpr"/>
+          href="realtimeStatechart.gmfgraph#TransitionAbsoluteDeadlineExpr"/>
       <features
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/deadlineExpr"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlineExpr"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="realtimeStatechart.gmfgraph#TransitionRelativeDeadlineExpr"/>
+      <features
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadlineExpr"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
@@ -451,9 +441,9 @@
         xsi:type="gmfmap:FeatureLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="realtimeStatechart.gmfgraph#TransitionTimeGuardExpr"/>
+          href="realtimeStatechart.gmfgraph#TransitionClockConstraintExpr"/>
       <features
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/timeGuardExpr"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockConstraintExpr"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
@@ -464,7 +454,8 @@
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/safetyTransition"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionSynchroExpr"/>
       <features
