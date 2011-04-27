@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.ComparingOperator;
 
 /**
@@ -96,10 +99,17 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ClockConstraintImpl() {
 		super();
+		
+		// Install a notification adapter that informs the
+		// clockConstraintExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter clockConstraintExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, Notification.SET);
+		clockConstraintExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND, CorePackage.Literals.NATURAL_NUMBER__VALUE);
+
 	}
 
 	/**

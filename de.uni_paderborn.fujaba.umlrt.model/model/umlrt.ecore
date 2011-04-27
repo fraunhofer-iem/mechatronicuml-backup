@@ -820,7 +820,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null &amp;&amp; clock!=null) {&#xD;&#xA;return clock.getName()+clock.getId() + &quot;in [&quot; + upperBound+&quot;,&quot;+ lowerBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null &amp;&amp; clock!=null) {&#xD;&#xA;return clock.getName()+clock.getId() + &quot;in [&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
@@ -836,7 +836,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null) {&#xD;&#xA;return &quot;[&quot; + upperBound+&quot;,&quot;+ lowerBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null) {&#xD;&#xA;return &quot;[&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
@@ -848,7 +848,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if(name!=null &amp;&amp; id!=null) {&#xD;&#xA;return &quot;{&quot; + name+&quot;_&quot;+id +&quot;}&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="body" value="if(name!=null &amp;&amp; id!=null) {&#xD;&#xA;return name+&quot;_&quot;+id ;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -981,6 +981,11 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
               <eOperations name="calculateWorstCaseDeadlineAsNaturalNumber" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
+              <eOperations name="computeClockResets" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="body" value="String value = &quot;&quot;;&#xD;&#xA;&#x9;if(clockResets!=null){&#xD;&#xA;&#x9;java.util.Iterator&lt;Clock> iter = clockResets.iterator();&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;Clock clock = iter.next();&#xD;&#xA;&#x9;&#x9;if(value.equals(&quot;&quot;)){&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;{&quot;+ clock.getName() + clock.getId();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;, &quot; + clock.getName() + clock.getId();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;if(!value.equals(&quot;&quot;)){&#xD;&#xA;&#x9;return value+&quot;}&quot;;&#xD;&#xA;}&#xD;&#xA;return value;"/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionMappingVector"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Vector"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
@@ -1104,7 +1109,7 @@
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="clockResets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) &#xD;&#xA;"/>
+                  <details key="derivation" value="computeClockResets()&#xD;&#xA;"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransitionExpr"

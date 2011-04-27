@@ -30,6 +30,7 @@ import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.Expression;
 
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
@@ -407,10 +408,29 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected TransitionImpl() {
 		super();
+		
+		// Install a notification adapter that informs the
+		// clockResetExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, Notification.ADD_MANY);
+		clockResetExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+
+		// Install a notification adapter that informs the
+		// relativeDeadlineExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, Notification.SET);
+		relativeDeadlineExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+
+		// Install a notification adapter that informs the
+		// absoluteDeadlineExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, Notification.ADD_MANY);
+		absoluteDeadlineExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+
 	}
 
 	/**
@@ -1236,6 +1256,30 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String computeClockResets() {
+		String value = "";
+			if(clockResets!=null){
+			java.util.Iterator<Clock> iter = clockResets.iterator();
+			while(iter.hasNext()){
+				Clock clock = iter.next();
+				if(value.equals("")){
+					value = value + "{"+ clock.getName() + clock.getId();
+				}else{
+					value = value + ", " + clock.getName() + clock.getId();
+				}
+			}
+		}
+		if(!value.equals("")){
+			return value+"}";
+		}
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -1798,6 +1842,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		switch (operationID) {
 			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER:
 				return calculateWorstCaseDeadlineAsNaturalNumber();
+			case RealtimestatechartPackage.TRANSITION___COMPUTE_CLOCK_RESETS:
+				return computeClockResets();
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:

@@ -201,7 +201,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 */
 	public String toMyString() {
 		if(name!=null && id!=null) {
-		return "{" + name+"_"+id +"}";
+		return name+"_"+id ;
 		}else{
 		return "";
 		}

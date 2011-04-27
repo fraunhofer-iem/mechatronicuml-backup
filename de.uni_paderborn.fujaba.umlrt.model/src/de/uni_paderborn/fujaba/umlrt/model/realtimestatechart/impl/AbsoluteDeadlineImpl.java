@@ -175,7 +175,7 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 */
 	public String toMyString() {
 		if(upperBound!=null && lowerBound!=null && clock!=null) {
-		return clock.getName()+clock.getId() + "in [" + upperBound+","+ lowerBound +"]";
+		return clock.getName()+clock.getId() + "in [" + lowerBound+","+ upperBound +"]";
 		}else{
 		return "";
 		}

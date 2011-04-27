@@ -104,7 +104,7 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 */
 	public String toMyString() {
 		if(upperBound!=null && lowerBound!=null) {
-		return "[" + upperBound+","+ lowerBound +"]";
+		return "[" + lowerBound+","+ upperBound +"]";
 		}else{
 		return "";
 		}

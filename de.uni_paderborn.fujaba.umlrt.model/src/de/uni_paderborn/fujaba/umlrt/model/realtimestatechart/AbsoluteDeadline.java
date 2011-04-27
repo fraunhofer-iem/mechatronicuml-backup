@@ -88,7 +88,7 @@ public interface AbsoluteDeadline extends Deadline {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null && clock!=null) {\r\nreturn clock.getName()+clock.getId() + \"in [\" + upperBound+\",\"+ lowerBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null && clock!=null) {\r\nreturn clock.getName()+clock.getId() + \"in [\" + lowerBound+\",\"+ upperBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
 	 * @generated
 	 */
 	String toMyString();

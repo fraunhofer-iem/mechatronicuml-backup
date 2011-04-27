@@ -727,7 +727,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setClockResetsExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResetsExpr()
 	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tclockResets->iterate( c:Clock;  return: String = \'\' | \r\n\treturn.concat(c.toMyString())) \r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeClockResets()\r\n'"
 	 * @generated
 	 */
 	String getClockResetsExpr();
@@ -856,5 +856,13 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\n\tif(clockResets!=null){\r\n\tjava.util.Iterator<Clock> iter = clockResets.iterator();\r\n\twhile(iter.hasNext()){\r\n\t\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + \"{\"+ clock.getName() + clock.getId();\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId();\r\n\t\t}\r\n\t}\r\n}\r\nif(!value.equals(\"\")){\r\n\treturn value+\"}\";\r\n}\r\nreturn value;'"
+	 * @generated
+	 */
+	String computeClockResets();
 
 } // Transition

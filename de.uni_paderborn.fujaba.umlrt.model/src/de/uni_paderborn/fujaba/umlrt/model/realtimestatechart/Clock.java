@@ -129,7 +129,7 @@ public interface Clock extends NamedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(name!=null && id!=null) {\r\nreturn \"{\" + name+\"_\"+id +\"}\";\r\n}else{\r\nreturn \"\";\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(name!=null && id!=null) {\r\nreturn name+\"_\"+id ;\r\n}else{\r\nreturn \"\";\r\n}'"
 	 * @generated
 	 */
 	String toMyString();
