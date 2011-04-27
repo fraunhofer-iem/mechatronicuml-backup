@@ -37,7 +37,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRaisedEvents <em>Raised Events</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraint <em>Clock Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraints <em>Clock Constraints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadline <em>Relative Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}</li>
@@ -51,6 +51,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSynchroExpr <em>Synchro Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockResetsExpr <em>Clock Resets Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -297,19 +298,19 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	EList<AsynchronousEvent> getRaisedEvents();
 
 	/**
-	 * Returns the value of the '<em><b>Clock Constraint</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Clock Constraints</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x<=2 the transition would only be allowed to be activated if x has a value less or equal to 2.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clock Constraint</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraint()
+	 * @return the value of the '<em>Clock Constraints</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraints()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ClockConstraint> getClockConstraint();
+	EList<ClockConstraint> getClockConstraints();
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -412,7 +413,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.
-	 * The default value is <code>"eventExpr"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Event Expr</em>' attribute isn't clear,
@@ -422,7 +423,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Event Expr</em>' attribute.
 	 * @see #setEventExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_EventExpr()
-	 * @model default="eventExpr" derived="true"
+	 * @model default=""
 	 * @generated
 	 */
 	String getEventExpr();
@@ -447,9 +448,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Side Effect Expr</em>' attribute.
+	 * @see #isSetSideEffectExpr()
+	 * @see #unsetSideEffectExpr()
 	 * @see #setSideEffectExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SideEffectExpr()
-	 * @model default="sideEffectExpr" derived="true"
+	 * @model default="sideEffectExpr" unsettable="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if sideEffect.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\t sideEffect.toMyString()\r\nendif'"
 	 * @generated
 	 */
 	String getSideEffectExpr();
@@ -459,14 +463,39 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Side Effect Expr</em>' attribute.
+	 * @see #isSetSideEffectExpr()
+	 * @see #unsetSideEffectExpr()
 	 * @see #getSideEffectExpr()
 	 * @generated
 	 */
 	void setSideEffectExpr(String value);
 
 	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetSideEffectExpr()
+	 * @see #getSideEffectExpr()
+	 * @see #setSideEffectExpr(String)
+	 * @generated
+	 */
+	void unsetSideEffectExpr();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Side Effect Expr</em>' attribute is set.
+	 * @see #unsetSideEffectExpr()
+	 * @see #getSideEffectExpr()
+	 * @see #setSideEffectExpr(String)
+	 * @generated
+	 */
+	boolean isSetSideEffectExpr();
+
+	/**
 	 * Returns the value of the '<em><b>Clock Constraint Expr</b></em>' attribute.
-	 * The default value is <code>"timeGuardExpr"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clock Constraint Expr</em>' attribute isn't clear,
@@ -474,9 +503,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #isSetClockConstraintExpr()
+	 * @see #unsetClockConstraintExpr()
 	 * @see #setClockConstraintExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraintExpr()
-	 * @model default="timeGuardExpr" derived="true"
+	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='clockConstraints->iterate( c:ClockConstraint;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) \r\n'"
 	 * @generated
 	 */
 	String getClockConstraintExpr();
@@ -486,10 +518,35 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #isSetClockConstraintExpr()
+	 * @see #unsetClockConstraintExpr()
 	 * @see #getClockConstraintExpr()
 	 * @generated
 	 */
 	void setClockConstraintExpr(String value);
+
+	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClockConstraintExpr()
+	 * @see #getClockConstraintExpr()
+	 * @see #setClockConstraintExpr(String)
+	 * @generated
+	 */
+	void unsetClockConstraintExpr();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Clock Constraint Expr</em>' attribute is set.
+	 * @see #unsetClockConstraintExpr()
+	 * @see #getClockConstraintExpr()
+	 * @see #setClockConstraintExpr(String)
+	 * @generated
+	 */
+	boolean isSetClockConstraintExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Deadline Expr</b></em>' attribute.
@@ -506,7 +563,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setAbsoluteDeadlineExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_AbsoluteDeadlineExpr()
 	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tabsoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = \'\' | \r\n\treturn.concat(a.toMyString())) \r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='absoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = \'\' | \r\nreturn.concat(a.toMyString())) \r\n'"
 	 * @generated
 	 */
 	String getAbsoluteDeadlineExpr();
@@ -561,7 +618,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setRelativeDeadlineExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_RelativeDeadlineExpr()
 	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\trelativeDeadline.toMyString()\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\trelativeDeadline.toMyString()\r\nendif'"
 	 * @generated
 	 */
 	String getRelativeDeadlineExpr();
@@ -670,7 +727,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setClockResetsExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResetsExpr()
 	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tclockResets->iterate( c:Clock;  return: String = \'\' | \r\n\treturn.concat(c.toMyString())) \r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tclockResets->iterate( c:Clock;  return: String = \'\' | \r\n\treturn.concat(c.toMyString())) \r\nendif'"
 	 * @generated
 	 */
 	String getClockResetsExpr();
@@ -709,6 +766,61 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	boolean isSetClockResetsExpr();
+
+	/**
+	 * Returns the value of the '<em><b>Safety Transition Expr</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Safety Transition Expr</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety Transition Expr</em>' attribute.
+	 * @see #isSetSafetyTransitionExpr()
+	 * @see #unsetSafetyTransitionExpr()
+	 * @see #setSafetyTransitionExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransitionExpr()
+	 * @model default="" unsettable="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif\r\nendif'"
+	 * @generated
+	 */
+	String getSafetyTransitionExpr();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safety Transition Expr</em>' attribute.
+	 * @see #isSetSafetyTransitionExpr()
+	 * @see #unsetSafetyTransitionExpr()
+	 * @see #getSafetyTransitionExpr()
+	 * @generated
+	 */
+	void setSafetyTransitionExpr(String value);
+
+	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetSafetyTransitionExpr()
+	 * @see #getSafetyTransitionExpr()
+	 * @see #setSafetyTransitionExpr(String)
+	 * @generated
+	 */
+	void unsetSafetyTransitionExpr();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Safety Transition Expr</em>' attribute is set.
+	 * @see #unsetSafetyTransitionExpr()
+	 * @see #getSafetyTransitionExpr()
+	 * @see #setSafetyTransitionExpr(String)
+	 * @generated
+	 */
+	boolean isSetSafetyTransitionExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Safety Transition</b></em>' attribute.

@@ -75,14 +75,16 @@ public class TransitionItemProvider
 			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
-			addEventExprPropertyDescriptor(object);
-			addSideEffectExprPropertyDescriptor(object);
-			addClockConstraintExprPropertyDescriptor(object);
-			addAbsoluteDeadlineExprPropertyDescriptor(object);
-			addRelativeDeadlineExprPropertyDescriptor(object);
-			addGuardExprPropertyDescriptor(object);
-			addSynchroExprPropertyDescriptor(object);
-			addClockResetsExprPropertyDescriptor(object);
+			
+			//removed expr stuff
+//			addEventExprPropertyDescriptor(object);
+//			addSideEffectExprPropertyDescriptor(object);
+//			addClockConstraintExprPropertyDescriptor(object);
+//			addAbsoluteDeadlineExprPropertyDescriptor(object);
+//			addRelativeDeadlineExprPropertyDescriptor(object);
+//			addGuardExprPropertyDescriptor(object);
+//			addSynchroExprPropertyDescriptor(object);
+//			addClockResetsExprPropertyDescriptor(object);
 			
 			//own stuff
 			addRelativeDeadlinePropertyDescriptor(object);
@@ -445,6 +447,28 @@ public class TransitionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Safety Transition Expr feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSafetyTransitionExprPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_safetyTransitionExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_safetyTransitionExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Safety Transition feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,7 +509,7 @@ public class TransitionItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 		}
@@ -551,6 +575,7 @@ public class TransitionItemProvider
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
+			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
@@ -560,7 +585,7 @@ public class TransitionItemProvider
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT:
+			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -622,7 +647,7 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT,
+				(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS,
 				 RealtimestatechartFactory.eINSTANCE.createClockConstraint()));
 
 		newChildDescriptors.add

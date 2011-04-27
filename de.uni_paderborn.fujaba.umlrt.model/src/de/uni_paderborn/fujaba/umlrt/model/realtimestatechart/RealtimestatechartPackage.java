@@ -2008,13 +2008,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Clock Constraint</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINT = PRIORITIZABLE_FEATURE_COUNT + 12;
+	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -2134,13 +2134,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
 
 	/**
+	 * The feature id for the '<em><b>Safety Transition Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SAFETY_TRANSITION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 26;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 26;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 27;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2377,13 +2386,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_CONSTRAINT_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_CONSTRAINT___TO_MY_STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Clock Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_CONSTRAINT_OPERATION_COUNT = 0;
+	int CLOCK_CONSTRAINT_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2935,13 +2953,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ACTION___PROVIDE_ANNOTATION__STRING = ExpressionsPackage.EXPRESSION___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION___TO_MY_STRING = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 0;
+	int ACTION_OPERATION_COUNT = ExpressionsPackage.EXPRESSION_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -4793,6 +4820,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getAction_WCETSpecifiedByUser();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#toMyString()
+	 * @generated
+	 */
+	EOperation getAction__ToMyString();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState <em>Initial State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5017,15 +5054,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_RaisedEvents();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraint <em>Clock Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraints <em>Clock Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Clock Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraint()
+	 * @return the meta object for the containment reference list '<em>Clock Constraints</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraints()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_ClockConstraint();
+	EReference getTransition_ClockConstraints();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
@@ -5160,6 +5197,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getTransition_ClockResetsExpr();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Safety Transition Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSafetyTransitionExpr()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_SafetyTransitionExpr();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5265,6 +5313,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getClockConstraint_ClockConstraintExpr();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#toMyString()
+	 * @generated
+	 */
+	EOperation getClockConstraint__ToMyString();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState <em>History State</em>}'.
@@ -5899,6 +5957,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute ACTION__WCET_SPECIFIED_BY_USER = eINSTANCE.getAction_WCETSpecifiedByUser();
 
 		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ACTION___TO_MY_STRING = eINSTANCE.getAction__ToMyString();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.InitialStateImpl <em>Initial State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6075,12 +6141,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__RAISED_EVENTS = eINSTANCE.getTransition_RaisedEvents();
 
 		/**
-		 * The meta object literal for the '<em><b>Clock Constraint</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Clock Constraints</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__CLOCK_CONSTRAINT = eINSTANCE.getTransition_ClockConstraint();
+		EReference TRANSITION__CLOCK_CONSTRAINTS = eINSTANCE.getTransition_ClockConstraints();
 
 		/**
 		 * The meta object literal for the '<em><b>Absolute Deadlines</b></em>' containment reference list feature.
@@ -6179,6 +6245,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute TRANSITION__CLOCK_RESETS_EXPR = eINSTANCE.getTransition_ClockResetsExpr();
 
 		/**
+		 * The meta object literal for the '<em><b>Safety Transition Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__SAFETY_TRANSITION_EXPR = eINSTANCE.getTransition_SafetyTransitionExpr();
+
+		/**
 		 * The meta object literal for the '<em><b>Safety Transition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6261,6 +6335,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR = eINSTANCE.getClockConstraint_ClockConstraintExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLOCK_CONSTRAINT___TO_MY_STRING = eINSTANCE.getClockConstraint__ToMyString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.

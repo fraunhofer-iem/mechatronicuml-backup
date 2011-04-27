@@ -12,10 +12,13 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -81,24 +84,14 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	protected ComparingOperator operator = OPERATOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getClockConstraintExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLOCK_CONSTRAINT_EXPR_EDEFAULT = "clockConstraintExpr";
-
-	/**
-	 * The cached value of the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClockConstraintExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String clockConstraintExpr = CLOCK_CONSTRAINT_EXPR_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,7 +242,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @generated
 	 */
 	public String getClockConstraintExpr() {
-		return clockConstraintExpr;
+		return (String)CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -258,10 +251,38 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @generated
 	 */
 	public void setClockConstraintExpr(String newClockConstraintExpr) {
-		String oldClockConstraintExpr = clockConstraintExpr;
-		clockConstraintExpr = newClockConstraintExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, oldClockConstraintExpr, clockConstraintExpr));
+		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newClockConstraintExpr);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetClockConstraintExpr() {
+		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetClockConstraintExpr() {
+		return CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String toMyString() {
+				if(clock!=null && operator!=null && bound!=null) {
+					return clock.getName()+clock.getId() +" "+ operator.toString() +" " + bound.getValue();
+				}else{
+					return "";
+				}
 	}
 
 	/**
@@ -359,7 +380,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				setOperator(OPERATOR_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				setClockConstraintExpr(CLOCK_CONSTRAINT_EXPR_EDEFAULT);
+				unsetClockConstraintExpr();
 				return;
 		}
 		super.eUnset(featureID);
@@ -380,9 +401,23 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				return CLOCK_CONSTRAINT_EXPR_EDEFAULT == null ? clockConstraintExpr != null : !CLOCK_CONSTRAINT_EXPR_EDEFAULT.equals(clockConstraintExpr);
+				return isSetClockConstraintExpr();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.CLOCK_CONSTRAINT___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -397,8 +432,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (operator: ");
 		result.append(operator);
-		result.append(", clockConstraintExpr: ");
-		result.append(clockConstraintExpr);
 		result.append(')');
 		return result.toString();
 	}

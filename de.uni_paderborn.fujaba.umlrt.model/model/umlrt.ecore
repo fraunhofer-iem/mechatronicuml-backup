@@ -1041,7 +1041,7 @@
                   <details key="documentation" value="The events which are raised upon activiation of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraint"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1061,19 +1061,29 @@
                   defaultValueLiteral="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="eventExpr" derived="true"/>
+                  defaultValueLiteral=""/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="sideEffectExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="sideEffectExpr" derived="true"/>
+                  volatile="true" transient="true" defaultValueLiteral="sideEffectExpr"
+                  unsettable="true" derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="if sideEffect.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9; sideEffect.toMyString()&#xD;&#xA;endif"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="timeGuardExpr" derived="true"/>
+                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="clockConstraints->iterate( c:ClockConstraint;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) &#xD;&#xA;"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="absoluteDeadlineExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;absoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = '' | &#xD;&#xA;&#x9;return.concat(a.toMyString())) &#xD;&#xA;endif"/>
+                  <details key="derivation" value="absoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = '' | &#xD;&#xA;return.concat(a.toMyString())) &#xD;&#xA;"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeDeadlineExpr"
@@ -1081,7 +1091,7 @@
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;relativeDeadline.toMyString()&#xD;&#xA;endif"/>
+                  <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;relativeDeadline.toMyString()&#xD;&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
@@ -1094,7 +1104,15 @@
                   volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;clockResets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;&#x9;return.concat(c.toMyString())) &#xD;&#xA;endif"/>
+                  <details key="derivation" value="clockResets->iterate( c:Clock;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) &#xD;&#xA;"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransitionExpr"
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if safetyTransition=false then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
@@ -1102,6 +1120,11 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
               </eAnnotations>
+              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="body" value="&#x9;&#x9;if(clock!=null &amp;&amp; operator!=null &amp;&amp; bound!=null) {&#xD;&#xA;&#x9;&#x9;&#x9;return clock.getName()+clock.getId() +&quot; &quot;+ operator.toString() +&quot; &quot; + bound.getValue();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber" containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
@@ -1111,7 +1134,11 @@
                   defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="clockConstraintExpr"/>
+                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="toMyString()"/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="HistoryState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryKind"/>
@@ -1124,6 +1151,11 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
               </eAnnotations>
+              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="body" value="return null;"/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="TODO: Does an action require an id?"/>

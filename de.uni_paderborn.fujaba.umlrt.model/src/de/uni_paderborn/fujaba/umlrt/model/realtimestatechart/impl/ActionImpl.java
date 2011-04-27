@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -298,6 +299,15 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String toMyString() {
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -445,6 +455,20 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return wCETSpecifiedByUser != WCET_SPECIFIED_BY_USER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.ACTION___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -123,7 +123,7 @@ public interface ClockConstraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Clock Constraint Expr</b></em>' attribute.
-	 * The default value is <code>"clockConstraintExpr"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clock Constraint Expr</em>' attribute isn't clear,
@@ -131,9 +131,12 @@ public interface ClockConstraint extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #isSetClockConstraintExpr()
+	 * @see #unsetClockConstraintExpr()
 	 * @see #setClockConstraintExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_ClockConstraintExpr()
-	 * @model default="clockConstraintExpr"
+	 * @model default="" unsettable="true" transient="true" volatile="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='toMyString()'"
 	 * @generated
 	 */
 	String getClockConstraintExpr();
@@ -143,9 +146,42 @@ public interface ClockConstraint extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Clock Constraint Expr</em>' attribute.
+	 * @see #isSetClockConstraintExpr()
+	 * @see #unsetClockConstraintExpr()
 	 * @see #getClockConstraintExpr()
 	 * @generated
 	 */
 	void setClockConstraintExpr(String value);
+
+	/**
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetClockConstraintExpr()
+	 * @see #getClockConstraintExpr()
+	 * @see #setClockConstraintExpr(String)
+	 * @generated
+	 */
+	void unsetClockConstraintExpr();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Clock Constraint Expr</em>' attribute is set.
+	 * @see #unsetClockConstraintExpr()
+	 * @see #getClockConstraintExpr()
+	 * @see #setClockConstraintExpr(String)
+	 * @generated
+	 */
+	boolean isSetClockConstraintExpr();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(clock!=null && operator!=null && bound!=null) {\r\n\t\t\treturn clock.getName()+clock.getId() +\" \"+ operator.toString() +\" \" + bound.getValue();\r\n\t\t}else{\r\n\t\t\treturn \"\";\r\n\t\t}'"
+	 * @generated
+	 */
+	String toMyString();
 
 } // ClockConstraint
