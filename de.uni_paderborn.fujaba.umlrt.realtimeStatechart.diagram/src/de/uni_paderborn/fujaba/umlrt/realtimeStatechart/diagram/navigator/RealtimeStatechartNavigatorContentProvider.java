@@ -271,14 +271,14 @@ public class RealtimeStatechartNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_HistoryState_2011_incominglinks,
+					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_InitialState_2009_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_HistoryState_2011_outgoinglinks,
+					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_InitialState_2009_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(
@@ -302,14 +302,14 @@ public class RealtimeStatechartNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_InitialState_2009_incominglinks,
+					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_HistoryState_2011_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_InitialState_2009_outgoinglinks,
+					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.NavigatorGroupName_HistoryState_2011_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(

@@ -303,32 +303,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String TestTransition5CreationTool_title;
+	public static String Clock5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String TestTransition5CreationTool_desc;
+	public static String Clock5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Clock6CreationTool_title;
+	public static String History6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Clock6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String History7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String History7CreationTool_desc;
+	public static String History6CreationTool_desc;
 
 	/**
 	 * @generated

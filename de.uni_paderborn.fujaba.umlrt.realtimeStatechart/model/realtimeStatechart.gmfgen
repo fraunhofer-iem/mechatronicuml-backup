@@ -367,6 +367,7 @@
         visualID="3018"
         editPartClassName="ClockConstraint2EditPart"
         itemSemanticEditPolicyClassName="ClockConstraint2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ClockConstraintViewFactory"
         canonicalEditPolicyClassName="ClockConstraint2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockConstraint2GraphicalNodeEditPolicy"
         createCommandClassName="ClockConstraint2CreateCommand"
@@ -393,6 +394,7 @@
         visualID="3019"
         editPartClassName="AsynchronousEventEditPart"
         itemSemanticEditPolicyClassName="AsynchronousEventItemSemanticEditPolicy"
+        notationViewFactoryClassName="AsynchronousEventViewFactory"
         canonicalEditPolicyClassName="AsynchronousEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="AsynchronousEventGraphicalNodeEditPolicy"
         createCommandClassName="AsynchronousEventCreateCommand"
@@ -419,6 +421,7 @@
         visualID="3020"
         editPartClassName="AsynchronousEvent2EditPart"
         itemSemanticEditPolicyClassName="AsynchronousEvent2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="AsynchronousEventViewFactory"
         canonicalEditPolicyClassName="AsynchronousEvent2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="AsynchronousEvent2GraphicalNodeEditPolicy"
         createCommandClassName="AsynchronousEvent2CreateCommand"
@@ -1042,13 +1045,14 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/safetyTransition"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/safetyTransitionExpr"/>
         </modelFacet>
       </labels>
       <labels
           visualID="6010"
           editPartClassName="TransitionSynchroExpr2EditPart"
           itemSemanticEditPolicyClassName="TransitionSynchroExpr2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="TransitionSynchroExprViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1169,11 +1173,6 @@
             description="Creation of a transition."
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"
             genLinks="//@diagram/@links.0"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="TestTransition"
-            description="Creation of a transition."
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Clock"

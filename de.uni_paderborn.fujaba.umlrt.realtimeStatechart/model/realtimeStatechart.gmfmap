@@ -242,7 +242,7 @@
       </domainInitializer>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="realtimeStatechart.gmfgraph#HistoryNode"/>
     </ownedChild>
@@ -283,7 +283,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="realtimeStatechart.gmfgraph#ClockNode"/>
     </ownedChild>
@@ -451,7 +451,7 @@
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionSafetyTransition"/>
       <features
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/safetyTransition"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/safetyTransitionExpr"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"

@@ -310,20 +310,20 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser transitionSafetyTransition_6009Parser;
+	private IParser transitionSafetyTransitionExpr_6009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTransitionSafetyTransition_6009Parser() {
-		if (transitionSafetyTransition_6009Parser == null) {
+	private IParser getTransitionSafetyTransitionExpr_6009Parser() {
+		if (transitionSafetyTransitionExpr_6009Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getTransition_SafetyTransition() };
+					.getTransition_SafetyTransitionExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			transitionSafetyTransition_6009Parser = parser;
+			transitionSafetyTransitionExpr_6009Parser = parser;
 		}
-		return transitionSafetyTransition_6009Parser;
+		return transitionSafetyTransitionExpr_6009Parser;
 	}
 
 	/**
@@ -381,7 +381,7 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart.VISUAL_ID:
 			return getTransitionClockConstraintExpr_6008Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart.VISUAL_ID:
-			return getTransitionSafetyTransition_6009Parser();
+			return getTransitionSafetyTransitionExpr_6009Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExpr2EditPart.VISUAL_ID:
 			return getTransitionSynchroExpr_6010Parser();
 		}
