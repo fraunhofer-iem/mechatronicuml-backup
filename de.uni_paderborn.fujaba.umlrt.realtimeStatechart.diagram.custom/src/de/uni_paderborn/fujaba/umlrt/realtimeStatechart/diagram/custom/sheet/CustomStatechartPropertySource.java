@@ -38,6 +38,7 @@ public class CustomStatechartPropertySource extends PropertySource {
 						switch (featureId) {
 						case RealtimestatechartPackage.RELATIVE_DEADLINE__LOWER_BOUND:
 						case RealtimestatechartPackage.RELATIVE_DEADLINE__UPPER_BOUND:
+						case RealtimestatechartPackage.TRANSITION__GUARD:
 							EDataType eDataType = EcorePackage.Literals.ESTRING;
 							return createEDataTypeCellEditor(eDataType,
 									composite);

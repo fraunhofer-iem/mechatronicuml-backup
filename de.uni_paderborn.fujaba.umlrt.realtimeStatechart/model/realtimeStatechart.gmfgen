@@ -960,8 +960,7 @@
           visualID="6006"
           editPartClassName="TransitionSideEffectExprEditPart"
           itemSemanticEditPolicyClassName="TransitionSideEffectExprItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionSideEffectExprViewFactory"
-          readOnly="true">
+          notationViewFactoryClassName="TransitionSideEffectExprViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -974,7 +973,8 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.0"
+            editorPattern="">
           <metaFeatures
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/guardExpr"/>
         </modelFacet>

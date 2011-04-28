@@ -423,7 +423,7 @@
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        readOnly="true">
+        editorPattern="">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionGuardExpr"/>
       <features
