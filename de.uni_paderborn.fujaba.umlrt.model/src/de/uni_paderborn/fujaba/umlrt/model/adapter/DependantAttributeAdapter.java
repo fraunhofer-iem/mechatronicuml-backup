@@ -41,6 +41,8 @@ public abstract class DependantAttributeAdapter extends AdapterImpl {
 			}
 		}
 	};
+	
+
 
 	public DependantAttributeAdapter() {
 		super();
@@ -58,7 +60,9 @@ public abstract class DependantAttributeAdapter extends AdapterImpl {
 
 	@Override
 	public void notifyChanged(Notification notification) {
-		if (navigationFeature.equals(notification.getFeature())) {
+		
+		if (notification!=null && notification.getFeature()!=null &&
+				notification.getFeature().equals(navigationFeature)) {
 			switch (notification.getEventType()) {
 			// TODO support ADD_MANY/REMOVE_MANY?
 			case Notification.ADD:
