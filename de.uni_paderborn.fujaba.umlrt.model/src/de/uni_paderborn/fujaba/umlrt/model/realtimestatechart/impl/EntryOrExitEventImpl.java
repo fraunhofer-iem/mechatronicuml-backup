@@ -10,8 +10,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -20,8 +18,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,7 +46,7 @@ public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryO
 	protected Clock resets;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
@@ -142,14 +138,6 @@ public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryO
 	 * @generated
 	 */
 	public Action getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (Action)eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, action));
-			}
-		}
 		return action;
 	}
 
@@ -158,8 +146,14 @@ public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action basicGetAction() {
-		return action;
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -168,10 +162,17 @@ public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryO
 	 * @generated
 	 */
 	public void setAction(Action newAction) {
-		Action oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, action));
+		if (newAction != action) {
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -201,14 +202,27 @@ public abstract class EntryOrExitEventImpl extends EObjectImpl implements EntryO
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
+				return basicSetAction(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__RESETS:
 				if (resolve) return getResets();
 				return basicGetResets();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
+				return getAction();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__EVENT_EXPR:
 				return getEventExpr();
 		}

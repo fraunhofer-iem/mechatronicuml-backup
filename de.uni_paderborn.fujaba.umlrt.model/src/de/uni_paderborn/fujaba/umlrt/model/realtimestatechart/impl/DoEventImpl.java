@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class DoEventImpl extends EObjectImpl implements DoEvent {
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
@@ -135,14 +135,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * @generated
 	 */
 	public Action getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (Action)eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.DO_EVENT__ACTION, oldAction, action));
-			}
-		}
 		return action;
 	}
 
@@ -151,8 +143,14 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action basicGetAction() {
-		return action;
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -161,10 +159,17 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * @generated
 	 */
 	public void setAction(Action newAction) {
-		Action oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__ACTION, oldAction, action));
+		if (newAction != action) {
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -295,6 +300,8 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
+				return basicSetAction(null, msgs);
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
 				return basicSetDoActionRev(null, msgs);
 		}
@@ -324,8 +331,7 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
+				return getAction();
 			case RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV:
 				return getDoActionRev();
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:

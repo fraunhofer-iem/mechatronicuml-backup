@@ -65,7 +65,7 @@ public class SynchronizationChannelItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
@@ -73,7 +73,7 @@ public class SynchronizationChannelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addSynchroChannelExprPropertyDescriptor(object);
+			//addSynchroChannelExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

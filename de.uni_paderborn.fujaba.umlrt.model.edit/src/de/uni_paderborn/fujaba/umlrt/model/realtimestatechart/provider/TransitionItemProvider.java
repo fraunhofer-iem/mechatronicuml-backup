@@ -70,19 +70,22 @@ public class TransitionItemProvider
 			addTransitionMappingVectorPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
+//			addStatechartPropertyDescriptor(object);
 			addClockResetsPropertyDescriptor(object);
 			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
-			addGuardPropertyDescriptor(object);
+			
+			addGuardExprPropertyDescriptor(object);
 			
 			//removed expr stuff
+			
+//			addGuardPropertyDescriptor(object);
+			
 //			addEventExprPropertyDescriptor(object);
 //			addSideEffectExprPropertyDescriptor(object);
 //			addClockConstraintExprPropertyDescriptor(object);
 //			addAbsoluteDeadlineExprPropertyDescriptor(object);
 //			addRelativeDeadlineExprPropertyDescriptor(object);
-//			addGuardExprPropertyDescriptor(object);
 //			addSynchroExprPropertyDescriptor(object);
 //			addClockResetsExprPropertyDescriptor(object);
 			

@@ -70,7 +70,8 @@ public class ClockConstraintItemProvider
 
 			addClockPropertyDescriptor(object);
 			addOperatorPropertyDescriptor(object);
-			addClockConstraintExprPropertyDescriptor(object);
+			
+			//addClockConstraintExprPropertyDescriptor(object);
 			
 			//my stuff
 			addNaturalNumberPropertyDescriptor(object);

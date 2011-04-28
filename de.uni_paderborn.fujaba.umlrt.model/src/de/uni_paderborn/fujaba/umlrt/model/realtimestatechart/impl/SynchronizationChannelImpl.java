@@ -6,32 +6,29 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.calls.Callable;
-
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,32 +78,29 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	protected EList<EParameter> containedParameters;
 
 	/**
-	 * The default value of the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSynchroChannelExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SYNCHRO_CHANNEL_EXPR_EDEFAULT = "synchroChannelExpr";
-
-	/**
-	 * The cached value of the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchroChannelExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String synchroChannelExpr = SYNCHRO_CHANNEL_EXPR_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected SynchronizationChannelImpl() {
 		super();
+		
+		// Install a notification adapter that informs the
+		// clockConstraintExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter clockConstraintExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
+		clockConstraintExprAdapter.addLocalDependency(SDMPackage.Literals.NAMED_ELEMENT__NAME);
+
 	}
 
 	/**
@@ -187,7 +181,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @generated
 	 */
 	public String getSynchroChannelExpr() {
-		return synchroChannelExpr;
+		return (String)SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -196,10 +190,55 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @generated
 	 */
 	public void setSynchroChannelExpr(String newSynchroChannelExpr) {
-		String oldSynchroChannelExpr = synchroChannelExpr;
-		synchroChannelExpr = newSynchroChannelExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, oldSynchroChannelExpr, synchroChannelExpr));
+		SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchroChannelExpr);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void unsetSynchroChannelExpr() {
+		SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetSynchroChannelExpr() {
+		return SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String toMyString() {
+				String value ="";
+				boolean firstTime = true;
+				if(name!=null) {
+				value = name ;
+					if(containedParameters!=null){
+						value = value+"(";
+						java.util.Iterator<EParameter> iter = containedParameters.iterator();
+						while(iter.hasNext()){
+							EParameter tmp = iter.next();
+							if(firstTime){
+								firstTime=false;
+								value = value + tmp.getName() + ":" + tmp.getEType().getInstanceClassName() +"_"+ tmp.getEType().getInstanceTypeName();
+							}else{
+								value = value +", "+ tmp.getName() + ":" + tmp.getEType().getInstanceClassName() +"_"+ tmp.getEType().getInstanceTypeName();
+							}
+							
+						}
+					}else{
+						value = value+"()";
+					}
+				}
+				return value;
 	}
 
 	/**
@@ -312,7 +351,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				setState((State)null);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				setSynchroChannelExpr(SYNCHRO_CHANNEL_EXPR_EDEFAULT);
+				unsetSynchroChannelExpr();
 				return;
 		}
 		super.eUnset(featureID);
@@ -333,7 +372,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				return SYNCHRO_CHANNEL_EXPR_EDEFAULT == null ? synchroChannelExpr != null : !SYNCHRO_CHANNEL_EXPR_EDEFAULT.equals(synchroChannelExpr);
+				return isSetSynchroChannelExpr();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -388,14 +427,26 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @generated
 	 */
 	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", synchroChannelExpr: ");
-		result.append(synchroChannelExpr);
 		result.append(')');
 		return result.toString();
 	}

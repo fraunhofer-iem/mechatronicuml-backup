@@ -137,12 +137,12 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createActionAdapter();
 			}
 			@Override
-			public Adapter caseDoEvent(DoEvent object) {
-				return createDoEventAdapter();
-			}
-			@Override
 			public Adapter caseAsynchronousEvent(AsynchronousEvent object) {
 				return createAsynchronousEventAdapter();
+			}
+			@Override
+			public Adapter caseDoEvent(DoEvent object) {
+				return createDoEventAdapter();
 			}
 			@Override
 			public Adapter caseEntryOrExitEvent(EntryOrExitEvent object) {

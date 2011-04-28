@@ -386,26 +386,26 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setUrgent(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Guard</b></em>' reference.
+	 * Returns the value of the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Guard</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guard</em>' reference.
+	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Expression)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Guard()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Expression getGuard();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuard <em>Guard</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuard <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Guard</em>' reference.
+	 * @param value the new value of the '<em>Guard</em>' containment reference.
 	 * @see #getGuard()
 	 * @generated
 	 */
@@ -660,7 +660,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Guard Expr</b></em>' attribute.
-	 * The default value is <code>"guardExpr"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Guard Expr</em>' attribute isn't clear,
@@ -670,7 +670,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Guard Expr</em>' attribute.
 	 * @see #setGuardExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_GuardExpr()
-	 * @model default="guardExpr" derived="true"
+	 * @model default="" derived="true"
 	 * @generated
 	 */
 	String getGuardExpr();
@@ -860,7 +860,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\n\tif(clockResets!=null){\r\n\tjava.util.Iterator<Clock> iter = clockResets.iterator();\r\n\twhile(iter.hasNext()){\r\n\t\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + \"{\"+ clock.getName() + clock.getId();\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId();\r\n\t\t}\r\n\t}\r\n}\r\nif(!value.equals(\"\")){\r\n\treturn value+\"}\";\r\n}\r\nreturn value;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\nif(clockResets!=null){\r\njava.util.Iterator<Clock> iter = clockResets.iterator();\r\nwhile(iter.hasNext()){\r\n\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + clock.getName() + clock.getId() + \":=0\";\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId() + \":=0\";\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\nreturn value;'"
 	 * @generated
 	 */
 	String computeClockResets();

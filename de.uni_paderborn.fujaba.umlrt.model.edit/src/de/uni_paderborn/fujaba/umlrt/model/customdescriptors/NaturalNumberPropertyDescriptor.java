@@ -4,7 +4,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -13,8 +12,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Deadline;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
 /**
  * 

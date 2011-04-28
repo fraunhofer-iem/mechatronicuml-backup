@@ -276,7 +276,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected boolean urgent = URGENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
+	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGuard()
@@ -353,7 +353,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GUARD_EXPR_EDEFAULT = "guardExpr";
+	protected static final String GUARD_EXPR_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getGuardExpr() <em>Guard Expr</em>}' attribute.
@@ -416,20 +416,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		// Install a notification adapter that informs the
 		// clockResetExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, Notification.ADD_MANY);
-		clockResetExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, Notification.SET);
+		clockResetExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS);
 
 		// Install a notification adapter that informs the
 		// relativeDeadlineExpr-reference, whenever one of the dependent features
 		// was modified
 		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, Notification.SET);
-		relativeDeadlineExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+		relativeDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 
 		// Install a notification adapter that informs the
 		// absoluteDeadlineExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, Notification.ADD_MANY);
-		absoluteDeadlineExprAdapter.addNavigatedDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, Notification.SET);
+		absoluteDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
+		
+		// Install a notification adapter that informs the
+		// safetyTransitionExpr-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter safetyTransitionExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR, Notification.SET);
+		safetyTransitionExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION);
 
 	}
 
@@ -929,14 +935,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public Expression getGuard() {
-		if (guard != null && guard.eIsProxy()) {
-			InternalEObject oldGuard = (InternalEObject)guard;
-			guard = (Expression)eResolveProxy(oldGuard);
-			if (guard != oldGuard) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__GUARD, oldGuard, guard));
-			}
-		}
 		return guard;
 	}
 
@@ -945,8 +943,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression basicGetGuard() {
-		return guard;
+	public NotificationChain basicSetGuard(Expression newGuard, NotificationChain msgs) {
+		Expression oldGuard = guard;
+		guard = newGuard;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD, oldGuard, newGuard);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -955,10 +959,17 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public void setGuard(Expression newGuard) {
-		Expression oldGuard = guard;
-		guard = newGuard;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD, oldGuard, guard));
+		if (newGuard != guard) {
+			NotificationChain msgs = null;
+			if (guard != null)
+				msgs = ((InternalEObject)guard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__GUARD, null, msgs);
+			if (newGuard != null)
+				msgs = ((InternalEObject)newGuard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__GUARD, null, msgs);
+			msgs = basicSetGuard(newGuard, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD, newGuard, newGuard));
 	}
 
 	/**
@@ -1258,20 +1269,17 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public String computeClockResets() {
 		String value = "";
-			if(clockResets!=null){
-			java.util.Iterator<Clock> iter = clockResets.iterator();
-			while(iter.hasNext()){
-				Clock clock = iter.next();
+		if(clockResets!=null){
+		java.util.Iterator<Clock> iter = clockResets.iterator();
+		while(iter.hasNext()){
+			Clock clock = iter.next();
 				if(value.equals("")){
-					value = value + "{"+ clock.getName() + clock.getId();
+					value = value + clock.getName() + clock.getId() + ":=0";
 				}else{
-					value = value + ", " + clock.getName() + clock.getId();
+					value = value + ", " + clock.getName() + clock.getId() + ":=0";
+					}
 				}
 			}
-		}
-		if(!value.equals("")){
-			return value+"}";
-		}
 		return value;
 	}
 
@@ -1402,6 +1410,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return ((InternalEList<?>)getAbsoluteDeadlines()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				return basicSetRelativeDeadline(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__GUARD:
+				return basicSetGuard(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1465,8 +1475,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__GUARD:
-				if (resolve) return getGuard();
-				return basicGetGuard();
+				return getGuard();
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				return getEventExpr();
 			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:

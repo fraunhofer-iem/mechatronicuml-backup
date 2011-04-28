@@ -203,12 +203,6 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.DO_EVENT: {
-				DoEvent doEvent = (DoEvent)theEObject;
-				T result = caseDoEvent(doEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: {
 				AsynchronousEvent asynchronousEvent = (AsynchronousEvent)theEObject;
 				T result = caseAsynchronousEvent(asynchronousEvent);
@@ -218,6 +212,12 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = caseTypedElement(asynchronousEvent);
 				if (result == null) result = caseCommentableElement(asynchronousEvent);
 				if (result == null) result = caseExtendableElement(asynchronousEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.DO_EVENT: {
+				DoEvent doEvent = (DoEvent)theEObject;
+				T result = caseDoEvent(doEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
