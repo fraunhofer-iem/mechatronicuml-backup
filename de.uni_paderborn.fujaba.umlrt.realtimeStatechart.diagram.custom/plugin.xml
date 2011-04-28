@@ -133,6 +133,26 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
       </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="objectContribution.SynchronizationChannel"
+            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart">
+         <menu
+               id="RealtimeStatechart.CreateEParameter"
+               label="Custom.Insert"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.AddParameterWizardAction"
+               enablesFor="1"
+               id="Statechart.AddEParameterID"
+               label="Add EParameter"
+               menubarPath="RealtimeStatechart.CreateEParameter/group1">
+         </action>
+      </objectContribution>
    </extension>
 
 </plugin>
