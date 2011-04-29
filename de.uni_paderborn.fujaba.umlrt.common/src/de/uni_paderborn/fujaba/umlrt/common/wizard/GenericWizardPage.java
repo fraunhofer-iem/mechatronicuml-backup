@@ -173,10 +173,12 @@ ITextFieldListener {
 	      page.setLayout(gridLayout);
 	      page.setFont(parent.getFont());
 
-	      Iterator<GenericTextField> itf = this.fields.iterator();
-	      while (itf.hasNext())
-	      {
-	         itf.next().createControl(page);
+	      if(fields!=null){
+		      Iterator<GenericTextField> itf = this.fields.iterator();
+		      while (itf.hasNext())
+		      {
+		         itf.next().createControl(page);
+		      }
 	      }
 
 	      // Hook for creating additional controls
@@ -199,10 +201,12 @@ ITextFieldListener {
 	      initialized = true;
 
 	      // Set focus to first text field if present
-	      Iterator<GenericTextField> ffd = this.fields.iterator();
-	      if (ffd.hasNext())
-	      {
-	         ffd.next().setFocus();
+	      if(fields!=null){
+		      Iterator<GenericTextField> ffd = this.fields.iterator();
+		      if (ffd.hasNext())
+		      {
+		         ffd.next().setFocus();
+		      }
 	      }
 	}
 	
