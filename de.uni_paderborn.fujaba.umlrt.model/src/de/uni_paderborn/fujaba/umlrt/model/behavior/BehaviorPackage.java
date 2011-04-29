@@ -235,13 +235,13 @@ public interface BehaviorPackage extends EPackage {
 	int PROTOCOL_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
 
 	/**
-	 * The feature id for the '<em><b>Is Embedded</b></em>' attribute.
+	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTOCOL_STATECHART__IS_EMBEDDED = CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED;
+	int PROTOCOL_STATECHART__EMBEDDED = CorePackage.ABSTRACT_STATECHART__EMBEDDED;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.

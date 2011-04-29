@@ -13,8 +13,6 @@ import java.util.Vector;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.ExtendableElement;
 
 import org.storydriven.modeling.expressions.Expression;
@@ -30,7 +28,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector <em>Transition Mapping Vector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect <em>Side Effect</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}</li>
@@ -44,7 +42,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getRelativeDeadlineExpr <em>Relative Deadline Expr</em>}</li>
@@ -141,31 +139,31 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setReceiveSynchronization(Synchronization value);
 
 	/**
-	 * Returns the value of the '<em><b>Side Effect</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Transition Action</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Side Effect</em>' containment reference.
-	 * @see #setSideEffect(Action)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SideEffect()
+	 * @return the value of the '<em>Transition Action</em>' containment reference.
+	 * @see #setTransitionAction(Action)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TransitionAction()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition
 	 * @model opposite="transition" containment="true"
 	 * @generated
 	 */
-	Action getSideEffect();
+	Action getTransitionAction();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect <em>Side Effect</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Side Effect</em>' containment reference.
-	 * @see #getSideEffect()
+	 * @param value the new value of the '<em>Transition Action</em>' containment reference.
+	 * @see #getTransitionAction()
 	 * @generated
 	 */
-	void setSideEffect(Action value);
+	void setTransitionAction(Action value);
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
@@ -359,6 +357,33 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setRelativeDeadline(RelativeDeadline value);
 
 	/**
+	 * Returns the value of the '<em><b>Safety Transition</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Safety Transition</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safety Transition</em>' attribute.
+	 * @see #setSafetyTransition(boolean)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransition()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isSafetyTransition();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safety Transition</em>' attribute.
+	 * @see #isSafetyTransition()
+	 * @generated
+	 */
+	void setSafetyTransition(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
@@ -389,7 +414,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * Returns the value of the '<em><b>Guard</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Guard</em>' reference isn't clear,
+	 * If the meaning of the '<em>Guard</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -423,7 +448,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Event Expr</em>' attribute.
 	 * @see #setEventExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_EventExpr()
-	 * @model default=""
+	 * @model default="" derived="true"
 	 * @generated
 	 */
 	String getEventExpr();
@@ -439,59 +464,59 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setEventExpr(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Side Effect Expr</b></em>' attribute.
+	 * Returns the value of the '<em><b>Transition Action Expr</b></em>' attribute.
 	 * The default value is <code>"sideEffectExpr"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Side Effect Expr</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Transition Action Expr</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Side Effect Expr</em>' attribute.
-	 * @see #isSetSideEffectExpr()
-	 * @see #unsetSideEffectExpr()
-	 * @see #setSideEffectExpr(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SideEffectExpr()
+	 * @return the value of the '<em>Transition Action Expr</em>' attribute.
+	 * @see #isSetTransitionActionExpr()
+	 * @see #unsetTransitionActionExpr()
+	 * @see #setTransitionActionExpr(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TransitionActionExpr()
 	 * @model default="sideEffectExpr" unsettable="true" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if sideEffect.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\t sideEffect.toMyString()\r\nendif'"
 	 * @generated
 	 */
-	String getSideEffectExpr();
+	String getTransitionActionExpr();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Side Effect Expr</em>' attribute.
-	 * @see #isSetSideEffectExpr()
-	 * @see #unsetSideEffectExpr()
-	 * @see #getSideEffectExpr()
+	 * @param value the new value of the '<em>Transition Action Expr</em>' attribute.
+	 * @see #isSetTransitionActionExpr()
+	 * @see #unsetTransitionActionExpr()
+	 * @see #getTransitionActionExpr()
 	 * @generated
 	 */
-	void setSideEffectExpr(String value);
+	void setTransitionActionExpr(String value);
 
 	/**
-	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute.
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetSideEffectExpr()
-	 * @see #getSideEffectExpr()
-	 * @see #setSideEffectExpr(String)
+	 * @see #isSetTransitionActionExpr()
+	 * @see #getTransitionActionExpr()
+	 * @see #setTransitionActionExpr(String)
 	 * @generated
 	 */
-	void unsetSideEffectExpr();
+	void unsetTransitionActionExpr();
 
 	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffectExpr <em>Side Effect Expr</em>}' attribute is set.
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Side Effect Expr</em>' attribute is set.
-	 * @see #unsetSideEffectExpr()
-	 * @see #getSideEffectExpr()
-	 * @see #setSideEffectExpr(String)
+	 * @return whether the value of the '<em>Transition Action Expr</em>' attribute is set.
+	 * @see #unsetTransitionActionExpr()
+	 * @see #getTransitionActionExpr()
+	 * @see #setTransitionActionExpr(String)
 	 * @generated
 	 */
-	boolean isSetSideEffectExpr();
+	boolean isSetTransitionActionExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Clock Constraint Expr</b></em>' attribute.
@@ -821,33 +846,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	boolean isSetSafetyTransitionExpr();
-
-	/**
-	 * Returns the value of the '<em><b>Safety Transition</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Safety Transition</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Safety Transition</em>' attribute.
-	 * @see #setSafetyTransition(boolean)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransition()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isSafetyTransition();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Safety Transition</em>' attribute.
-	 * @see #isSafetyTransition()
-	 * @generated
-	 */
-	void setSafetyTransition(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->

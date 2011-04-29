@@ -195,17 +195,17 @@ public class StateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__DO_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createDoAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EXIT_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createExitEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createExitAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createEntryEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createEntryAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

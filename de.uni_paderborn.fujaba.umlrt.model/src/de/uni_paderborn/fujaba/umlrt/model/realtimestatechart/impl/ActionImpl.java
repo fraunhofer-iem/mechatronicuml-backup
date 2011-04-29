@@ -7,13 +7,10 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -24,7 +21,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.storydriven.modeling.expressions.impl.ExpressionImpl;
@@ -40,7 +36,6 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getBlocking <em>Blocking</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getTransition <em>Transition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#isWCETSpecifiedByUser <em>WCET Specified By User</em>}</li>
  * </ul>
  * </p>
@@ -107,16 +102,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * @ordered
 	 */
 	protected long blocking = BLOCKING_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getResets() <em>Resets</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResets()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Clock> resets;
 
 	/**
 	 * The default value of the '{@link #isWCETSpecifiedByUser() <em>WCET Specified By User</em>}' attribute.
@@ -253,24 +238,12 @@ public class ActionImpl extends ExpressionImpl implements Action {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newTransition != null)
-				msgs = ((InternalEObject)newTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, Transition.class, msgs);
+				msgs = ((InternalEObject)newTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, Transition.class, msgs);
 			msgs = basicSetTransition(newTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION__TRANSITION, newTransition, newTransition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Clock> getResets() {
-		if (resets == null) {
-			resets = new EObjectResolvingEList<Clock>(Clock.class, this, RealtimestatechartPackage.ACTION__RESETS);
-		}
-		return resets;
 	}
 
 	/**
@@ -342,7 +315,7 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.ACTION__TRANSITION:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, Transition.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, Transition.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -363,8 +336,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return getBlocking();
 			case RealtimestatechartPackage.ACTION__TRANSITION:
 				return getTransition();
-			case RealtimestatechartPackage.ACTION__RESETS:
-				return getResets();
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:
 				return isWCETSpecifiedByUser();
 		}
@@ -391,10 +362,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return;
 			case RealtimestatechartPackage.ACTION__TRANSITION:
 				setTransition((Transition)newValue);
-				return;
-			case RealtimestatechartPackage.ACTION__RESETS:
-				getResets().clear();
-				getResets().addAll((Collection<? extends Clock>)newValue);
 				return;
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:
 				setWCETSpecifiedByUser((Boolean)newValue);
@@ -423,9 +390,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 			case RealtimestatechartPackage.ACTION__TRANSITION:
 				setTransition((Transition)null);
 				return;
-			case RealtimestatechartPackage.ACTION__RESETS:
-				getResets().clear();
-				return;
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:
 				setWCETSpecifiedByUser(WCET_SPECIFIED_BY_USER_EDEFAULT);
 				return;
@@ -449,8 +413,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 				return blocking != BLOCKING_EDEFAULT;
 			case RealtimestatechartPackage.ACTION__TRANSITION:
 				return getTransition() != null;
-			case RealtimestatechartPackage.ACTION__RESETS:
-				return resets != null && !resets.isEmpty();
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:
 				return wCETSpecifiedByUser != WCET_SPECIFIED_BY_USER_EDEFAULT;
 		}

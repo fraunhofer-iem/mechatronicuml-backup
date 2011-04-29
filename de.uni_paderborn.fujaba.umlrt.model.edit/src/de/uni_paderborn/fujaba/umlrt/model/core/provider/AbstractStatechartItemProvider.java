@@ -85,7 +85,7 @@ public class AbstractStatechartItemProvider
 			addUtilisationPropertyDescriptor(object);
 			addScheduleDocumentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
-			addIsEmbeddedPropertyDescriptor(object);
+			addEmbeddedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -267,19 +267,19 @@ public class AbstractStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Embedded feature.
+	 * This adds a property descriptor for the Embedded feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsEmbeddedPropertyDescriptor(Object object) {
+	protected void addEmbeddedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractStatechart_isEmbedded_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractStatechart_isEmbedded_feature", "_UI_AbstractStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_STATECHART__IS_EMBEDDED,
+				 getString("_UI_AbstractStatechart_embedded_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractStatechart_embedded_feature", "_UI_AbstractStatechart_type"),
+				 CorePackage.Literals.ABSTRACT_STATECHART__EMBEDDED,
 				 true,
 				 false,
 				 false,
@@ -358,7 +358,7 @@ public class AbstractStatechartItemProvider
 			case CorePackage.ABSTRACT_STATECHART__SYSTEM_WCET_MAP:
 			case CorePackage.ABSTRACT_STATECHART__UTILISATION:
 			case CorePackage.ABSTRACT_STATECHART__SCHEDULE_DOCUMENT:
-			case CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED:
+			case CorePackage.ABSTRACT_STATECHART__EMBEDDED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE:

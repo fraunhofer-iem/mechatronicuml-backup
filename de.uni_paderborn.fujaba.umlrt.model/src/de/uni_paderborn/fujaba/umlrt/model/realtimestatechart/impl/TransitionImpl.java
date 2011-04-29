@@ -57,7 +57,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionMappingVector <em>Transition Mapping Vector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSendSynchronization <em>Send Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSideEffect <em>Side Effect</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionAction <em>Transition Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getStatechart <em>Statechart</em>}</li>
@@ -71,7 +71,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getEventExpr <em>Event Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSideEffectExpr <em>Side Effect Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionActionExpr <em>Transition Action Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getRelativeDeadlineExpr <em>Relative Deadline Expr</em>}</li>
@@ -146,14 +146,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected Synchronization receiveSynchronization;
 
 	/**
-	 * The cached value of the '{@link #getSideEffect() <em>Side Effect</em>}' containment reference.
+	 * The cached value of the '{@link #getTransitionAction() <em>Transition Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSideEffect()
+	 * @see #getTransitionAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected Action sideEffect;
+	protected Action transitionAction;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -306,14 +306,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected String eventExpr = EVENT_EXPR_EDEFAULT;
 
 	/**
-	 * The cached setting delegate for the '{@link #getSideEffectExpr() <em>Side Effect Expr</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getTransitionActionExpr() <em>Transition Action Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSideEffectExpr()
+	 * @see #getTransitionActionExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SIDE_EFFECT_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT_EXPR).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TRANSITION_ACTION_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION_EXPR).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
@@ -585,8 +585,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action getSideEffect() {
-		return sideEffect;
+	public Action getTransitionAction() {
+		return transitionAction;
 	}
 
 	/**
@@ -594,11 +594,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSideEffect(Action newSideEffect, NotificationChain msgs) {
-		Action oldSideEffect = sideEffect;
-		sideEffect = newSideEffect;
+	public NotificationChain basicSetTransitionAction(Action newTransitionAction, NotificationChain msgs) {
+		Action oldTransitionAction = transitionAction;
+		transitionAction = newTransitionAction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, oldSideEffect, newSideEffect);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, oldTransitionAction, newTransitionAction);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -609,18 +609,18 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideEffect(Action newSideEffect) {
-		if (newSideEffect != sideEffect) {
+	public void setTransitionAction(Action newTransitionAction) {
+		if (newTransitionAction != transitionAction) {
 			NotificationChain msgs = null;
-			if (sideEffect != null)
-				msgs = ((InternalEObject)sideEffect).eInverseRemove(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
-			if (newSideEffect != null)
-				msgs = ((InternalEObject)newSideEffect).eInverseAdd(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
-			msgs = basicSetSideEffect(newSideEffect, msgs);
+			if (transitionAction != null)
+				msgs = ((InternalEObject)transitionAction).eInverseRemove(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
+			if (newTransitionAction != null)
+				msgs = ((InternalEObject)newTransitionAction).eInverseAdd(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
+			msgs = basicSetTransitionAction(newTransitionAction, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, newSideEffect, newSideEffect));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, newTransitionAction, newTransitionAction));
 	}
 
 	/**
@@ -998,8 +998,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSideEffectExpr() {
-		return (String)SIDE_EFFECT_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public String getTransitionActionExpr() {
+		return (String)TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -1007,8 +1007,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSideEffectExpr(String newSideEffectExpr) {
-		SIDE_EFFECT_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSideEffectExpr);
+	public void setTransitionActionExpr(String newTransitionActionExpr) {
+		TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTransitionActionExpr);
 	}
 
 	/**
@@ -1016,8 +1016,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void unsetSideEffectExpr() {
-		SIDE_EFFECT_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+	public void unsetTransitionActionExpr() {
+		TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 	}
 
 	/**
@@ -1025,8 +1025,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetSideEffectExpr() {
-		return SIDE_EFFECT_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public boolean isSetTransitionActionExpr() {
+		return TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -1346,10 +1346,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (receiveSynchronization != null)
 					msgs = ((InternalEObject)receiveSynchronization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, null, msgs);
 				return basicSetReceiveSynchronization((Synchronization)otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				if (sideEffect != null)
-					msgs = ((InternalEObject)sideEffect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SIDE_EFFECT, null, msgs);
-				return basicSetSideEffect((Action)otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				if (transitionAction != null)
+					msgs = ((InternalEObject)transitionAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, null, msgs);
+				return basicSetTransitionAction((Action)otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (target != null)
 					msgs = ((InternalEObject)target).eInverseRemove(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
@@ -1392,8 +1392,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicSetSendSynchronization(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 				return basicSetReceiveSynchronization(null, msgs);
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				return basicSetSideEffect(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				return basicSetTransitionAction(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return basicSetTarget(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
@@ -1448,8 +1448,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getSendSynchronization();
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 				return getReceiveSynchronization();
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				return getSideEffect();
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				return getTransitionAction();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -1478,8 +1478,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getGuard();
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				return getEventExpr();
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
-				return getSideEffectExpr();
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
+				return getTransitionActionExpr();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
 				return getClockConstraintExpr();
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
@@ -1524,8 +1524,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 				setReceiveSynchronization((Synchronization)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				setSideEffect((Action)newValue);
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				setTransitionAction((Action)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)newValue);
@@ -1571,8 +1571,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr((String)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
-				setSideEffectExpr((String)newValue);
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
+				setTransitionActionExpr((String)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
 				setClockConstraintExpr((String)newValue);
@@ -1622,8 +1622,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 				setReceiveSynchronization((Synchronization)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				setSideEffect((Action)null);
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				setTransitionAction((Action)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)null);
@@ -1664,8 +1664,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr(EVENT_EXPR_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
-				unsetSideEffectExpr();
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
+				unsetTransitionActionExpr();
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
 				unsetClockConstraintExpr();
@@ -1710,8 +1710,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return sendSynchronization != null;
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
 				return receiveSynchronization != null;
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
-				return sideEffect != null;
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
+				return transitionAction != null;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return target != null;
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
@@ -1738,8 +1738,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return guard != null;
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
-				return isSetSideEffectExpr();
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
+				return isSetTransitionActionExpr();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
 				return isSetClockConstraintExpr();
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:

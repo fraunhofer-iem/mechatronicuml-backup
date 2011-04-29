@@ -70,7 +70,6 @@ public class ActionItemProvider
 			addIdPropertyDescriptor(object);
 			addWcetPropertyDescriptor(object);
 			addBlockingPropertyDescriptor(object);
-			addResetsPropertyDescriptor(object);
 			addWCETSpecifiedByUserPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -138,28 +137,6 @@ public class ActionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Resets feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResetsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_resets_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_resets_feature", "_UI_Action_type"),
-				 RealtimestatechartPackage.Literals.ACTION__RESETS,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

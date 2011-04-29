@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 
@@ -22,24 +22,24 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Exit Event</b></em>'.
+ * An implementation of the model object '<em><b>Exit Action</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitEventImpl#getExitActionRev <em>Exit Action Rev</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ExitActionImpl#getExitActionRev <em>Exit Action Rev</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
+public class ExitActionImpl extends EntryOrExitActionImpl implements ExitAction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExitEventImpl() {
+	protected ExitActionImpl() {
 		super();
 	}
 
@@ -50,7 +50,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RealtimestatechartPackage.Literals.EXIT_EVENT;
+		return RealtimestatechartPackage.Literals.EXIT_ACTION;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	 * @generated
 	 */
 	public State getExitActionRev() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV) return null;
+		if (eContainerFeatureID() != RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV) return null;
 		return (State)eContainer();
 	}
 
@@ -69,7 +69,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	 * @generated
 	 */
 	public NotificationChain basicSetExitActionRev(State newExitActionRev, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newExitActionRev, RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newExitActionRev, RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV, msgs);
 		return msgs;
 	}
 
@@ -79,7 +79,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	 * @generated
 	 */
 	public void setExitActionRev(State newExitActionRev) {
-		if (newExitActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV && newExitActionRev != null)) {
+		if (newExitActionRev != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV && newExitActionRev != null)) {
 			if (EcoreUtil.isAncestor(this, newExitActionRev))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -91,7 +91,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV, newExitActionRev, newExitActionRev));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV, newExitActionRev, newExitActionRev));
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetExitActionRev((State)otherEnd, msgs);
@@ -118,7 +118,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				return basicSetExitActionRev(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -132,7 +132,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EXIT_ACTION, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -146,7 +146,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				return getExitActionRev();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -160,7 +160,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				setExitActionRev((State)newValue);
 				return;
 		}
@@ -175,7 +175,7 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				setExitActionRev((State)null);
 				return;
 		}
@@ -190,10 +190,10 @@ public class ExitEventImpl extends EntryOrExitEventImpl implements ExitEvent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV:
+			case RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV:
 				return getExitActionRev() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ExitEventImpl
+} //ExitActionImpl

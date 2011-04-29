@@ -73,9 +73,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
 			case RealtimestatechartPackage.ACTION: return createAction();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: return createAsynchronousEvent();
-			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
-			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
-			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
+			case RealtimestatechartPackage.DO_ACTION: return createDoAction();
+			case RealtimestatechartPackage.ENTRY_ACTION: return createEntryAction();
+			case RealtimestatechartPackage.EXIT_ACTION: return createExitAction();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
@@ -229,16 +229,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoEvent createDoEvent() {
-		DoEventImpl doEvent = new DoEventImpl();
-		return doEvent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AsynchronousEvent createAsynchronousEvent() {
 		AsynchronousEventImpl asynchronousEvent = new AsynchronousEventImpl();
 		return asynchronousEvent;
@@ -249,9 +239,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryEvent createEntryEvent() {
-		EntryEventImpl entryEvent = new EntryEventImpl();
-		return entryEvent;
+	public DoAction createDoAction() {
+		DoActionImpl doAction = new DoActionImpl();
+		return doAction;
 	}
 
 	/**
@@ -259,9 +249,19 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExitEvent createExitEvent() {
-		ExitEventImpl exitEvent = new ExitEventImpl();
-		return exitEvent;
+	public EntryAction createEntryAction() {
+		EntryActionImpl entryAction = new EntryActionImpl();
+		return entryAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExitAction createExitAction() {
+		ExitActionImpl exitAction = new ExitActionImpl();
+		return exitAction;
 	}
 
 	/**

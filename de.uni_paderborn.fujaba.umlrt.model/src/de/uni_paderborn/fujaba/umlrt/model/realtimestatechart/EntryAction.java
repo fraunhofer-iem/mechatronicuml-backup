@@ -9,21 +9,21 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Entry Event</b></em>'.
+ * A representation of the model object '<em><b>Entry Action</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev <em>Entry Action Rev</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction#getEntryActionRev <em>Entry Action Rev</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryEvent()
+ * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryAction()
  * @model
  * @generated
  */
-public interface EntryEvent extends EntryOrExitEvent {
+public interface EntryAction extends EntryOrExitAction {
 	/**
 	 * Returns the value of the '<em><b>Entry Action Rev</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction <em>Entry Action</em>}'.
@@ -35,7 +35,7 @@ public interface EntryEvent extends EntryOrExitEvent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entry Action Rev</em>' container reference.
 	 * @see #setEntryActionRev(State)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryEvent_EntryActionRev()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getEntryAction_EntryActionRev()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getEntryAction
 	 * @model opposite="entryAction" transient="false"
 	 * @generated
@@ -43,7 +43,7 @@ public interface EntryEvent extends EntryOrExitEvent {
 	State getEntryActionRev();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent#getEntryActionRev <em>Entry Action Rev</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction#getEntryActionRev <em>Entry Action Rev</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Entry Action Rev</em>' container reference.
@@ -52,4 +52,4 @@ public interface EntryEvent extends EntryOrExitEvent {
 	 */
 	void setEntryActionRev(State value);
 
-} // EntryEvent
+} // EntryAction

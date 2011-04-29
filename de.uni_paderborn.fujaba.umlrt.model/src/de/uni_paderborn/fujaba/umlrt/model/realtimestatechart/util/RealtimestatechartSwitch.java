@@ -215,29 +215,29 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.DO_EVENT: {
-				DoEvent doEvent = (DoEvent)theEObject;
-				T result = caseDoEvent(doEvent);
+			case RealtimestatechartPackage.DO_ACTION: {
+				DoAction doAction = (DoAction)theEObject;
+				T result = caseDoAction(doAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: {
-				EntryOrExitEvent entryOrExitEvent = (EntryOrExitEvent)theEObject;
-				T result = caseEntryOrExitEvent(entryOrExitEvent);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION: {
+				EntryOrExitAction entryOrExitAction = (EntryOrExitAction)theEObject;
+				T result = caseEntryOrExitAction(entryOrExitAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ENTRY_EVENT: {
-				EntryEvent entryEvent = (EntryEvent)theEObject;
-				T result = caseEntryEvent(entryEvent);
-				if (result == null) result = caseEntryOrExitEvent(entryEvent);
+			case RealtimestatechartPackage.ENTRY_ACTION: {
+				EntryAction entryAction = (EntryAction)theEObject;
+				T result = caseEntryAction(entryAction);
+				if (result == null) result = caseEntryOrExitAction(entryAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.EXIT_EVENT: {
-				ExitEvent exitEvent = (ExitEvent)theEObject;
-				T result = caseExitEvent(exitEvent);
-				if (result == null) result = caseEntryOrExitEvent(exitEvent);
+			case RealtimestatechartPackage.EXIT_ACTION: {
+				ExitAction exitAction = (ExitAction)theEObject;
+				T result = caseExitAction(exitAction);
+				if (result == null) result = caseEntryOrExitAction(exitAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -476,21 +476,6 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Do Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Do Event</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDoEvent(DoEvent object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Asynchronous Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -506,47 +491,62 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entry Or Exit Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Do Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entry Or Exit Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Do Action</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntryOrExitEvent(EntryOrExitEvent object) {
+	public T caseDoAction(DoAction object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Or Exit Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Or Exit Action</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntryEvent(EntryEvent object) {
+	public T caseEntryOrExitAction(EntryOrExitAction object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Action</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExitEvent(ExitEvent object) {
+	public T caseEntryAction(EntryAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExitAction(ExitAction object) {
 		return null;
 	}
 

@@ -67,7 +67,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#isIsEmbedded <em>Is Embedded</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl#getClocks <em>Clocks</em>}</li>
  * </ul>
  * </p>
@@ -296,24 +296,24 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	protected Map.Entry<String, EClass> requiredMsgIFace;
 
 	/**
-	 * The default value of the '{@link #isIsEmbedded() <em>Is Embedded</em>}' attribute.
+	 * The default value of the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsEmbedded()
+	 * @see #isEmbedded()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_EMBEDDED_EDEFAULT = false;
+	protected static final boolean EMBEDDED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsEmbedded() <em>Is Embedded</em>}' attribute.
+	 * The cached value of the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsEmbedded()
+	 * @see #isEmbedded()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isEmbedded = IS_EMBEDDED_EDEFAULT;
+	protected boolean embedded = EMBEDDED_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getClocks() <em>Clocks</em>}' containment reference list.
@@ -773,8 +773,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsEmbedded() {
-		return isEmbedded;
+	public boolean isEmbedded() {
+		return embedded;
 	}
 
 	/**
@@ -782,11 +782,11 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsEmbedded(boolean newIsEmbedded) {
-		boolean oldIsEmbedded = isEmbedded;
-		isEmbedded = newIsEmbedded;
+	public void setEmbedded(boolean newEmbedded) {
+		boolean oldEmbedded = embedded;
+		embedded = newEmbedded;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED, oldIsEmbedded, isEmbedded));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_STATECHART__EMBEDDED, oldEmbedded, embedded));
 	}
 
 	/**
@@ -977,8 +977,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return getProvidedMsgIFace();
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
 				return getRequiredMsgIFace();
-			case CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED:
-				return isIsEmbedded();
+			case CorePackage.ABSTRACT_STATECHART__EMBEDDED:
+				return isEmbedded();
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return getClocks();
 		}
@@ -1041,8 +1041,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
 				setRequiredMsgIFace((Map.Entry<String, EClass>)newValue);
 				return;
-			case CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED:
-				setIsEmbedded((Boolean)newValue);
+			case CorePackage.ABSTRACT_STATECHART__EMBEDDED:
+				setEmbedded((Boolean)newValue);
 				return;
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				getClocks().clear();
@@ -1105,8 +1105,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
 				setRequiredMsgIFace((Map.Entry<String, EClass>)null);
 				return;
-			case CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED:
-				setIsEmbedded(IS_EMBEDDED_EDEFAULT);
+			case CorePackage.ABSTRACT_STATECHART__EMBEDDED:
+				setEmbedded(EMBEDDED_EDEFAULT);
 				return;
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				getClocks().clear();
@@ -1153,8 +1153,8 @@ public abstract class AbstractStatechartImpl extends NamedElementImpl implements
 				return providedMsgIFace != null;
 			case CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE:
 				return requiredMsgIFace != null;
-			case CorePackage.ABSTRACT_STATECHART__IS_EMBEDDED:
-				return isEmbedded != IS_EMBEDDED_EDEFAULT;
+			case CorePackage.ABSTRACT_STATECHART__EMBEDDED:
+				return embedded != EMBEDDED_EDEFAULT;
 			case CorePackage.ABSTRACT_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
 		}

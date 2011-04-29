@@ -6,11 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.expressions.Expression;
 
 /**
@@ -29,7 +24,6 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getBlocking <em>Blocking</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getResets <em>Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#isWCETSpecifiedByUser <em>WCET Specified By User</em>}</li>
  * </ul>
  * </p>
@@ -116,7 +110,7 @@ public interface Action extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Transition</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect <em>Side Effect</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -125,8 +119,8 @@ public interface Action extends Expression {
 	 * @return the value of the '<em>Transition</em>' container reference.
 	 * @see #setTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_Transition()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSideEffect
-	 * @model opposite="sideEffect" transient="false"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionAction
+	 * @model opposite="transitionAction" transient="false"
 	 * @generated
 	 */
 	Transition getTransition();
@@ -140,21 +134,6 @@ public interface Action extends Expression {
 	 * @generated
 	 */
 	void setTransition(Transition value);
-
-	/**
-	 * Returns the value of the '<em><b>Resets</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO: Is this required? The crossing events already have an assocs to resets.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Resets</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_Resets()
-	 * @model
-	 * @generated
-	 */
-	EList<Clock> getResets();
 
 	/**
 	 * Returns the value of the '<em><b>WCET Specified By User</b></em>' attribute.

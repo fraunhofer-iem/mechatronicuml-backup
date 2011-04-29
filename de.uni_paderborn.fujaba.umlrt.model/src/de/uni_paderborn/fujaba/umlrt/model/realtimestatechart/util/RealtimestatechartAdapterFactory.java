@@ -141,20 +141,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createAsynchronousEventAdapter();
 			}
 			@Override
-			public Adapter caseDoEvent(DoEvent object) {
-				return createDoEventAdapter();
+			public Adapter caseDoAction(DoAction object) {
+				return createDoActionAdapter();
 			}
 			@Override
-			public Adapter caseEntryOrExitEvent(EntryOrExitEvent object) {
-				return createEntryOrExitEventAdapter();
+			public Adapter caseEntryOrExitAction(EntryOrExitAction object) {
+				return createEntryOrExitActionAdapter();
 			}
 			@Override
-			public Adapter caseEntryEvent(EntryEvent object) {
-				return createEntryEventAdapter();
+			public Adapter caseEntryAction(EntryAction object) {
+				return createEntryActionAdapter();
 			}
 			@Override
-			public Adapter caseExitEvent(ExitEvent object) {
-				return createExitEventAdapter();
+			public Adapter caseExitAction(ExitAction object) {
+				return createExitActionAdapter();
 			}
 			@Override
 			public Adapter caseSynchronizationChannel(SynchronizationChannel object) {
@@ -411,20 +411,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent <em>Do Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent
-	 * @generated
-	 */
-	public Adapter createDoEventAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent <em>Asynchronous Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -439,44 +425,58 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent <em>Entry Or Exit Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction <em>Do Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitEvent
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction
 	 * @generated
 	 */
-	public Adapter createEntryOrExitEventAdapter() {
+	public Adapter createDoActionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent <em>Entry Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitAction <em>Entry Or Exit Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryOrExitAction
 	 * @generated
 	 */
-	public Adapter createEntryEventAdapter() {
+	public Adapter createEntryOrExitActionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent <em>Exit Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction <em>Entry Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction
 	 * @generated
 	 */
-	public Adapter createExitEventAdapter() {
+	public Adapter createEntryActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction <em>Exit Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction
+	 * @generated
+	 */
+	public Adapter createExitActionAdapter() {
 		return null;
 	}
 

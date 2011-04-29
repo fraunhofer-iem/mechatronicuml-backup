@@ -556,13 +556,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_STATECHART__REQUIRED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Is Embedded</b></em>' attribute.
+	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATECHART__IS_EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int ABSTRACT_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -1256,15 +1256,15 @@ public interface CorePackage extends EPackage {
 	EReference getAbstractStatechart_RequiredMsgIFace();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isIsEmbedded <em>Is Embedded</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isEmbedded <em>Embedded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Embedded</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isIsEmbedded()
+	 * @return the meta object for the attribute '<em>Embedded</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isEmbedded()
 	 * @see #getAbstractStatechart()
 	 * @generated
 	 */
-	EAttribute getAbstractStatechart_IsEmbedded();
+	EAttribute getAbstractStatechart_Embedded();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks <em>Clocks</em>}'.
@@ -1713,12 +1713,12 @@ public interface CorePackage extends EPackage {
 		EReference ABSTRACT_STATECHART__REQUIRED_MSG_IFACE = eINSTANCE.getAbstractStatechart_RequiredMsgIFace();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Embedded</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABSTRACT_STATECHART__IS_EMBEDDED = eINSTANCE.getAbstractStatechart_IsEmbedded();
+		EAttribute ABSTRACT_STATECHART__EMBEDDED = eINSTANCE.getAbstractStatechart_Embedded();
 
 		/**
 		 * The meta object literal for the '<em><b>Clocks</b></em>' containment reference list feature.

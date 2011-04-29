@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExitEventItemProvider
-	extends EntryOrExitEventItemProvider
+public class EntryActionItemProvider
+	extends EntryOrExitActionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -42,7 +42,7 @@ public class ExitEventItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExitEventItemProvider(AdapterFactory adapterFactory) {
+	public EntryActionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,28 +62,28 @@ public class ExitEventItemProvider
 	}
 
 	/**
-	 * This returns ExitEvent.gif.
+	 * This returns EntryAction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExitEvent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EntryAction"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExitEvent)object).getEventExpr();
+		String label = ((EntryAction)object).getActionExpr();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ExitEvent_type") :
-			getString("_UI_ExitEvent_type") + " " + label;
+			getString("_UI_EntryAction_type") :
+			getString("_UI_EntryAction_type") + " " + label;
 	}
 
 	/**

@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryEvent;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
@@ -65,7 +65,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 * @ordered
 	 */
-	protected DoEvent doAction;
+	protected DoAction doAction;
 
 	/**
 	 * The cached value of the '{@link #getExitAction() <em>Exit Action</em>}' containment reference.
@@ -75,7 +75,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 * @ordered
 	 */
-	protected ExitEvent exitAction;
+	protected ExitAction exitAction;
 
 	/**
 	 * The cached value of the '{@link #getEntryAction() <em>Entry Action</em>}' containment reference.
@@ -85,7 +85,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 * @ordered
 	 */
-	protected EntryEvent entryAction;
+	protected EntryAction entryAction;
 
 	/**
 	 * The cached value of the '{@link #getInvariants() <em>Invariants</em>}' containment reference list.
@@ -163,7 +163,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoEvent getDoAction() {
+	public DoAction getDoAction() {
 		return doAction;
 	}
 
@@ -172,8 +172,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDoAction(DoEvent newDoAction, NotificationChain msgs) {
-		DoEvent oldDoAction = doAction;
+	public NotificationChain basicSetDoAction(DoAction newDoAction, NotificationChain msgs) {
+		DoAction oldDoAction = doAction;
 		doAction = newDoAction;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__DO_ACTION, oldDoAction, newDoAction);
@@ -187,13 +187,13 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDoAction(DoEvent newDoAction) {
+	public void setDoAction(DoAction newDoAction) {
 		if (newDoAction != doAction) {
 			NotificationChain msgs = null;
 			if (doAction != null)
-				msgs = ((InternalEObject)doAction).eInverseRemove(this, RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV, DoEvent.class, msgs);
+				msgs = ((InternalEObject)doAction).eInverseRemove(this, RealtimestatechartPackage.DO_ACTION__DO_ACTION_REV, DoAction.class, msgs);
 			if (newDoAction != null)
-				msgs = ((InternalEObject)newDoAction).eInverseAdd(this, RealtimestatechartPackage.DO_EVENT__DO_ACTION_REV, DoEvent.class, msgs);
+				msgs = ((InternalEObject)newDoAction).eInverseAdd(this, RealtimestatechartPackage.DO_ACTION__DO_ACTION_REV, DoAction.class, msgs);
 			msgs = basicSetDoAction(newDoAction, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -206,7 +206,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExitEvent getExitAction() {
+	public ExitAction getExitAction() {
 		return exitAction;
 	}
 
@@ -215,8 +215,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExitAction(ExitEvent newExitAction, NotificationChain msgs) {
-		ExitEvent oldExitAction = exitAction;
+	public NotificationChain basicSetExitAction(ExitAction newExitAction, NotificationChain msgs) {
+		ExitAction oldExitAction = exitAction;
 		exitAction = newExitAction;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__EXIT_ACTION, oldExitAction, newExitAction);
@@ -230,13 +230,13 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExitAction(ExitEvent newExitAction) {
+	public void setExitAction(ExitAction newExitAction) {
 		if (newExitAction != exitAction) {
 			NotificationChain msgs = null;
 			if (exitAction != null)
-				msgs = ((InternalEObject)exitAction).eInverseRemove(this, RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV, ExitEvent.class, msgs);
+				msgs = ((InternalEObject)exitAction).eInverseRemove(this, RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV, ExitAction.class, msgs);
 			if (newExitAction != null)
-				msgs = ((InternalEObject)newExitAction).eInverseAdd(this, RealtimestatechartPackage.EXIT_EVENT__EXIT_ACTION_REV, ExitEvent.class, msgs);
+				msgs = ((InternalEObject)newExitAction).eInverseAdd(this, RealtimestatechartPackage.EXIT_ACTION__EXIT_ACTION_REV, ExitAction.class, msgs);
 			msgs = basicSetExitAction(newExitAction, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -249,7 +249,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryEvent getEntryAction() {
+	public EntryAction getEntryAction() {
 		return entryAction;
 	}
 
@@ -258,8 +258,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntryAction(EntryEvent newEntryAction, NotificationChain msgs) {
-		EntryEvent oldEntryAction = entryAction;
+	public NotificationChain basicSetEntryAction(EntryAction newEntryAction, NotificationChain msgs) {
+		EntryAction oldEntryAction = entryAction;
 		entryAction = newEntryAction;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__ENTRY_ACTION, oldEntryAction, newEntryAction);
@@ -273,13 +273,13 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEntryAction(EntryEvent newEntryAction) {
+	public void setEntryAction(EntryAction newEntryAction) {
 		if (newEntryAction != entryAction) {
 			NotificationChain msgs = null;
 			if (entryAction != null)
-				msgs = ((InternalEObject)entryAction).eInverseRemove(this, RealtimestatechartPackage.ENTRY_EVENT__ENTRY_ACTION_REV, EntryEvent.class, msgs);
+				msgs = ((InternalEObject)entryAction).eInverseRemove(this, RealtimestatechartPackage.ENTRY_ACTION__ENTRY_ACTION_REV, EntryAction.class, msgs);
 			if (newEntryAction != null)
-				msgs = ((InternalEObject)newEntryAction).eInverseAdd(this, RealtimestatechartPackage.ENTRY_EVENT__ENTRY_ACTION_REV, EntryEvent.class, msgs);
+				msgs = ((InternalEObject)newEntryAction).eInverseAdd(this, RealtimestatechartPackage.ENTRY_ACTION__ENTRY_ACTION_REV, EntryAction.class, msgs);
 			msgs = basicSetEntryAction(newEntryAction, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -346,15 +346,15 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__DO_ACTION:
 				if (doAction != null)
 					msgs = ((InternalEObject)doAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.STATE__DO_ACTION, null, msgs);
-				return basicSetDoAction((DoEvent)otherEnd, msgs);
+				return basicSetDoAction((DoAction)otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__EXIT_ACTION:
 				if (exitAction != null)
 					msgs = ((InternalEObject)exitAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.STATE__EXIT_ACTION, null, msgs);
-				return basicSetExitAction((ExitEvent)otherEnd, msgs);
+				return basicSetExitAction((ExitAction)otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 				if (entryAction != null)
 					msgs = ((InternalEObject)entryAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.STATE__ENTRY_ACTION, null, msgs);
-				return basicSetEntryAction((EntryEvent)otherEnd, msgs);
+				return basicSetEntryAction((EntryAction)otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChannels()).basicAdd(otherEnd, msgs);
 		}
@@ -425,13 +425,13 @@ public class StateImpl extends VertexImpl implements State {
 				getRegions().addAll((Collection<? extends Region>)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__DO_ACTION:
-				setDoAction((DoEvent)newValue);
+				setDoAction((DoAction)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__EXIT_ACTION:
-				setExitAction((ExitEvent)newValue);
+				setExitAction((ExitAction)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
-				setEntryAction((EntryEvent)newValue);
+				setEntryAction((EntryAction)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();
@@ -460,13 +460,13 @@ public class StateImpl extends VertexImpl implements State {
 				getRegions().clear();
 				return;
 			case RealtimestatechartPackage.STATE__DO_ACTION:
-				setDoAction((DoEvent)null);
+				setDoAction((DoAction)null);
 				return;
 			case RealtimestatechartPackage.STATE__EXIT_ACTION:
-				setExitAction((ExitEvent)null);
+				setExitAction((ExitAction)null);
 				return;
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
-				setEntryAction((EntryEvent)null);
+				setEntryAction((EntryAction)null);
 				return;
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 				getInvariants().clear();

@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
  * @generated
  */
 public interface FujabaRealtimeStatechart extends AbstractStatechart {
-
 	/**
 	 * Returns the value of the '<em><b>Embedding Region</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
@@ -57,4 +56,5 @@ public interface FujabaRealtimeStatechart extends AbstractStatechart {
 	 * @generated
 	 */
 	void setEmbeddingRegion(Region value);
+
 } // FujabaRealtimeStatechart

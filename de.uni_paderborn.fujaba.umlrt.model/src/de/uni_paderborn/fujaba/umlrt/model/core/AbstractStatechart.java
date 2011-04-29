@@ -51,7 +51,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isIsEmbedded <em>Is Embedded</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks <em>Clocks</em>}</li>
  * </ul>
  * </p>
@@ -406,29 +406,29 @@ public interface AbstractStatechart extends NamedElement, CommentableElement {
 	void setRequiredMsgIFace(Map.Entry<String, EClass> value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Embedded</b></em>' attribute.
+	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This attribute specifies whether this realtime statechart is embedded into a complex state or not.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Is Embedded</em>' attribute.
-	 * @see #setIsEmbedded(boolean)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_IsEmbedded()
+	 * @return the value of the '<em>Embedded</em>' attribute.
+	 * @see #setEmbedded(boolean)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractStatechart_Embedded()
 	 * @model derived="true"
 	 * @generated
 	 */
-	boolean isIsEmbedded();
+	boolean isEmbedded();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isIsEmbedded <em>Is Embedded</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#isEmbedded <em>Embedded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Embedded</em>' attribute.
-	 * @see #isIsEmbedded()
+	 * @param value the new value of the '<em>Embedded</em>' attribute.
+	 * @see #isEmbedded()
 	 * @generated
 	 */
-	void setIsEmbedded(boolean value);
+	void setEmbedded(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Clocks</b></em>' containment reference list.

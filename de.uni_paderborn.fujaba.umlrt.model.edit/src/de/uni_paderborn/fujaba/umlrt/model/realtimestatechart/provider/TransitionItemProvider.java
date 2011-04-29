@@ -296,19 +296,19 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Side Effect Expr feature.
+	 * This adds a property descriptor for the Transition Action Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSideEffectExprPropertyDescriptor(Object object) {
+	protected void addTransitionActionExprPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_sideEffectExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_sideEffectExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT_EXPR,
+				 getString("_UI_Transition_transitionActionExpr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_transitionActionExpr_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION_EXPR,
 				 true,
 				 false,
 				 false,
@@ -509,7 +509,7 @@ public class TransitionItemProvider
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
@@ -571,7 +571,7 @@ public class TransitionItemProvider
 			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT_EXPR:
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
@@ -585,7 +585,7 @@ public class TransitionItemProvider
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-			case RealtimestatechartPackage.TRANSITION__SIDE_EFFECT:
+			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
@@ -635,7 +635,7 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__SIDE_EFFECT,
+				(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
 
 		newChildDescriptors.add

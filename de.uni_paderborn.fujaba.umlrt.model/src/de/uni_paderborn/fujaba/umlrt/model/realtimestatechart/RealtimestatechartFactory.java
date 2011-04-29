@@ -53,6 +53,15 @@ public interface RealtimestatechartFactory extends EFactory {
 	Clock createClock();
 
 	/**
+	 * Returns a new object of class '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Region</em>'.
+	 * @generated
+	 */
+	Region createRegion();
+
+	/**
 	 * Returns a new object of class '<em>State</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,15 +69,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	State createState();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
 
 	/**
 	 * Returns a new object of class '<em>Initial State</em>'.
@@ -98,15 +98,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Synchronization Channel</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Synchronization Channel</em>'.
-	 * @generated
-	 */
-	SynchronizationChannel createSynchronizationChannel();
-
-	/**
 	 * Returns a new object of class '<em>Clock Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,13 +116,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	HistoryState createHistoryState();
 
 	/**
-	 * Returns a new object of class '<em>Do Event</em>'.
+	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Do Event</em>'.
+	 * @return a new object of class '<em>Action</em>'.
 	 * @generated
 	 */
-	DoEvent createDoEvent();
+	Action createAction();
 
 	/**
 	 * Returns a new object of class '<em>Asynchronous Event</em>'.
@@ -143,22 +134,40 @@ public interface RealtimestatechartFactory extends EFactory {
 	AsynchronousEvent createAsynchronousEvent();
 
 	/**
-	 * Returns a new object of class '<em>Entry Event</em>'.
+	 * Returns a new object of class '<em>Do Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Event</em>'.
+	 * @return a new object of class '<em>Do Action</em>'.
 	 * @generated
 	 */
-	EntryEvent createEntryEvent();
+	DoAction createDoAction();
 
 	/**
-	 * Returns a new object of class '<em>Exit Event</em>'.
+	 * Returns a new object of class '<em>Entry Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exit Event</em>'.
+	 * @return a new object of class '<em>Entry Action</em>'.
 	 * @generated
 	 */
-	ExitEvent createExitEvent();
+	EntryAction createEntryAction();
+
+	/**
+	 * Returns a new object of class '<em>Exit Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exit Action</em>'.
+	 * @generated
+	 */
+	ExitAction createExitAction();
+
+	/**
+	 * Returns a new object of class '<em>Synchronization Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Synchronization Channel</em>'.
+	 * @generated
+	 */
+	SynchronizationChannel createSynchronizationChannel();
 
 	/**
 	 * Returns a new object of class '<em>Synchronization</em>'.
@@ -168,15 +177,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Synchronization createSynchronization();
-
-	/**
-	 * Returns a new object of class '<em>Region</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Region</em>'.
-	 * @generated
-	 */
-	Region createRegion();
 
 	/**
 	 * Returns a new object of class '<em>Fujaba Realtime Statechart</em>'.
