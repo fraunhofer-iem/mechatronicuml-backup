@@ -883,8 +883,8 @@
                   <details key="documentation" value="The regions of this state. Regions are used to model composite states.&#xA;In case of one region, we have an xor superstate, in case of multiple regions, &#xA;we have an AND-superstate."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/doActionRev">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction/doActionRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The do action. It is executed periodically while the corresponding complex state is active."/>
                 </eAnnotations>
@@ -1184,12 +1184,6 @@
                   <details key="documentation" value="The transition this action is a side effect of."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: Is this required? The crossing events already have an assocs to resets."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
@@ -1225,7 +1219,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="DoEvent">
+            <eClassifiers xsi:type="ecore:EClass" name="DoAction">
               <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="doActionRev"
