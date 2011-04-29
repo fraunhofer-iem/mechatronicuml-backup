@@ -6,13 +6,13 @@ import org.eclipse.jface.action.IAction;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.ActionCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class SideEffectCreateAction extends CommonCreateAction {
+public class TransitionActionCreateAction extends CommonCreateAction {
 	
 	@Override
 	public void run(IAction action) {
 		
 		  CreateElementRequest request = new CreateElementRequest(selectedTransition,
-				  RealtimeStatechartElementTypes.Action_3015);
+				  RealtimeStatechartElementTypes.Action_3024);
 		  
 		  ActionCreateCommand command = new ActionCreateCommand(request);
 

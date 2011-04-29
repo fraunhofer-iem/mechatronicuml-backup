@@ -11,16 +11,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ExitEventItemSemanticEditPolicy
+public class ExitActionItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ExitEventItemSemanticEditPolicy() {
+	public ExitActionItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitEvent_3006);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitAction_3023);
 	}
 
 	/**

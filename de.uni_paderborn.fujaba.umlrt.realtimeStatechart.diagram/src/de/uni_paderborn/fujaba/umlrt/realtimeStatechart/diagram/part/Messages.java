@@ -333,32 +333,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String EntryEvent2CreationTool_title;
+	public static String EntryAction2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String EntryEvent2CreationTool_desc;
+	public static String EntryAction2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DoEvent3CreationTool_title;
+	public static String DoAction3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DoEvent3CreationTool_desc;
+	public static String DoAction3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitEvent4CreationTool_title;
+	public static String ExitAction4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ExitEvent4CreationTool_desc;
+	public static String ExitAction4CreationTool_desc;
 
 	/**
 	 * @generated

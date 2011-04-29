@@ -63,58 +63,58 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser entryEventEventExpr_5010Parser;
+	private IParser entryActionActionExpr_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryEventEventExpr_5010Parser() {
-		if (entryEventEventExpr_5010Parser == null) {
+	private IParser getEntryActionActionExpr_5015Parser() {
+		if (entryActionActionExpr_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getEntryOrExitEvent_EventExpr() };
+					.getEntryOrExitAction_ActionExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			entryEventEventExpr_5010Parser = parser;
+			entryActionActionExpr_5015Parser = parser;
 		}
-		return entryEventEventExpr_5010Parser;
+		return entryActionActionExpr_5015Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser doEventEventExpr_5006Parser;
+	private IParser doActionActionExpr_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getDoEventEventExpr_5006Parser() {
-		if (doEventEventExpr_5006Parser == null) {
+	private IParser getDoActionActionExpr_5016Parser() {
+		if (doActionActionExpr_5016Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getDoEvent_EventExpr() };
+					.getDoAction_ActionExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			doEventEventExpr_5006Parser = parser;
+			doActionActionExpr_5016Parser = parser;
 		}
-		return doEventEventExpr_5006Parser;
+		return doActionActionExpr_5016Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser exitEventEventExpr_5011Parser;
+	private IParser exitActionActionExpr_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getExitEventEventExpr_5011Parser() {
-		if (exitEventEventExpr_5011Parser == null) {
+	private IParser getExitActionActionExpr_5017Parser() {
+		if (exitActionActionExpr_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getEntryOrExitEvent_EventExpr() };
+					.getEntryOrExitAction_ActionExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			exitEventEventExpr_5011Parser = parser;
+			exitActionActionExpr_5017Parser = parser;
 		}
-		return exitEventEventExpr_5011Parser;
+		return exitActionActionExpr_5017Parser;
 	}
 
 	/**
@@ -272,20 +272,20 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser transitionSideEffectExpr_6007Parser;
+	private IParser transitionTransitionActionExpr_6007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTransitionSideEffectExpr_6007Parser() {
-		if (transitionSideEffectExpr_6007Parser == null) {
+	private IParser getTransitionTransitionActionExpr_6007Parser() {
+		if (transitionTransitionActionExpr_6007Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getTransition_SideEffectExpr() };
+					.getTransition_TransitionActionExpr() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			transitionSideEffectExpr_6007Parser = parser;
+			transitionTransitionActionExpr_6007Parser = parser;
 		}
-		return transitionSideEffectExpr_6007Parser;
+		return transitionTransitionActionExpr_6007Parser;
 	}
 
 	/**
@@ -354,12 +354,12 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 			return getStateName_5005Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockNameIdEditPart.VISUAL_ID:
 			return getClockNameId_5014Parser();
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart.VISUAL_ID:
-			return getEntryEventEventExpr_5010Parser();
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart.VISUAL_ID:
-			return getDoEventEventExpr_5006Parser();
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventActionExprEditPart.VISUAL_ID:
-			return getExitEventEventExpr_5011Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionActionExprEditPart.VISUAL_ID:
+			return getEntryActionActionExpr_5015Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionActionExprEditPart.VISUAL_ID:
+			return getDoActionActionExpr_5016Parser();
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitActionActionExprEditPart.VISUAL_ID:
+			return getExitActionActionExpr_5017Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart.VISUAL_ID:
 			return getClockConstraintClockConstraintExpr_5012Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart.VISUAL_ID:
@@ -377,7 +377,7 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSideEffectExprEditPart.VISUAL_ID:
 			return getTransitionGuardExpr_6006Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart.VISUAL_ID:
-			return getTransitionSideEffectExpr_6007Parser();
+			return getTransitionTransitionActionExpr_6007Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart.VISUAL_ID:
 			return getTransitionClockConstraintExpr_6008Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart.VISUAL_ID:

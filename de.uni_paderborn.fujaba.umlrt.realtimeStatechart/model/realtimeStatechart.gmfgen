@@ -26,24 +26,24 @@
         href="realtimeStatechart.genmodel#//realtimeStatechart/RealtimeStatechart"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3005"
-        editPartClassName="EntryEventEditPart"
-        itemSemanticEditPolicyClassName="EntryEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryEventViewFactory"
-        canonicalEditPolicyClassName="EntryEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EntryEventGraphicalNodeEditPolicy"
-        createCommandClassName="EntryEventCreateCommand"
+        visualID="3021"
+        editPartClassName="EntryActionEditPart"
+        itemSemanticEditPolicyClassName="EntryActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryActionViewFactory"
+        canonicalEditPolicyClassName="EntryActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryActionGraphicalNodeEditPolicy"
+        createCommandClassName="EntryActionCreateCommand"
         containers="//@diagram/@compartments.0"
         preferredSideName="WEST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="EntryEventEditHelper"/>
+          editHelperClassName="EntryActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="EEEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEEventLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEEventLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEEventLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEEventLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEEventLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEEventLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEEventLabel.horizontalIndent = 0;&#xA;constraintFFigureEEEventLabel.horizontalSpan = 1;&#xA;constraintFFigureEEEventLabel.verticalSpan = 1;&#xA;constraintFFigureEEEventLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEEventLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEEventLabel, constraintFFigureEEEventLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEEventLabel() {&#xA;&#x9;&#x9;return fFigureEEEventLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          className="EEActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEActionLabel.horizontalIndent = 0;&#xA;constraintFFigureEEActionLabel.horizontalSpan = 1;&#xA;constraintFFigureEEActionLabel.verticalSpan = 1;&#xA;constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEActionLabel() {&#xA;&#x9;&#x9;return fFigureEEActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
@@ -51,51 +51,51 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryEvent"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryAction"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/entryAction"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/entryAction"/>
       </modelFacet>
       <labels
-          visualID="5010"
-          editPartClassName="EntryEventActionExprEditPart"
-          itemSemanticEditPolicyClassName="EntryEventActionExprItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryEventActionExprViewFactory">
+          visualID="5015"
+          editPartClassName="EntryActionActionExprEditPart"
+          itemSemanticEditPolicyClassName="EntryActionActionExprItemSemanticEditPolicy"
+          notationViewFactoryClassName="EntryActionActionExprViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureEEEventLabel"
+            getterName="getFigureEEActionLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/eventExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction/actionExpr"/>
         </modelFacet>
       </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3002"
-        editPartClassName="DoEventEditPart"
-        itemSemanticEditPolicyClassName="DoEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="DoEventViewFactory"
-        canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
-        createCommandClassName="DoEventCreateCommand"
+        visualID="3022"
+        editPartClassName="DoActionEditPart"
+        itemSemanticEditPolicyClassName="DoActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="DoActionViewFactory"
+        canonicalEditPolicyClassName="DoActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DoActionGraphicalNodeEditPolicy"
+        createCommandClassName="DoActionCreateCommand"
         containers="//@diagram/@compartments.0"
         preferredSideName="WEST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="DoEventEditHelper"/>
+          editHelperClassName="DoActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="DoEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DoEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureDoEventLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DoEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureDoEventLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureDoEventLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureDoEventLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureDoEventLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureDoEventLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureDoEventLabel.horizontalIndent = 0;&#xA;constraintFFigureDoEventLabel.horizontalSpan = 1;&#xA;constraintFFigureDoEventLabel.verticalSpan = 1;&#xA;constraintFFigureDoEventLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureDoEventLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureDoEventLabel, constraintFFigureDoEventLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDoEventLabel() {&#xA;&#x9;&#x9;return fFigureDoEventLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          className="DoActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DoActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureDoActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DoActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureDoActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureDoActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureDoActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureDoActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureDoActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureDoActionLabel.horizontalIndent = 0;&#xA;constraintFFigureDoActionLabel.horizontalSpan = 1;&#xA;constraintFFigureDoActionLabel.verticalSpan = 1;&#xA;constraintFFigureDoActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureDoActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureDoActionLabel, constraintFFigureDoActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDoActionLabel() {&#xA;&#x9;&#x9;return fFigureDoActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
@@ -103,51 +103,51 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/doAction"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/doAction"/>
       </modelFacet>
       <labels
-          visualID="5006"
-          editPartClassName="DoEventPeriodLowerPeriodUpperEditPart"
-          itemSemanticEditPolicyClassName="DoEventPeriodLowerPeriodUpperItemSemanticEditPolicy"
-          notationViewFactoryClassName="DoEventPeriodLowerPeriodUpperViewFactory">
+          visualID="5016"
+          editPartClassName="DoActionActionExprEditPart"
+          itemSemanticEditPolicyClassName="DoActionActionExprItemSemanticEditPolicy"
+          notationViewFactoryClassName="DoActionActionExprViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureDoEventLabel"
+            getterName="getFigureDoActionLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoEvent/eventExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction/actionExpr"/>
         </modelFacet>
       </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3006"
-        editPartClassName="ExitEventEditPart"
-        itemSemanticEditPolicyClassName="ExitEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExitEventViewFactory"
-        canonicalEditPolicyClassName="ExitEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ExitEventGraphicalNodeEditPolicy"
-        createCommandClassName="ExitEventCreateCommand"
+        visualID="3023"
+        editPartClassName="ExitActionEditPart"
+        itemSemanticEditPolicyClassName="ExitActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExitActionViewFactory"
+        canonicalEditPolicyClassName="ExitActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExitActionGraphicalNodeEditPolicy"
+        createCommandClassName="ExitActionCreateCommand"
         containers="//@diagram/@compartments.0"
         preferredSideName="WEST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ExitEventEditHelper"/>
+          editHelperClassName="ExitActionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="EEEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEEventLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEEventLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEEventLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEEventLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEEventLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEEventLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEEventLabel.horizontalIndent = 0;&#xA;constraintFFigureEEEventLabel.horizontalSpan = 1;&#xA;constraintFFigureEEEventLabel.verticalSpan = 1;&#xA;constraintFFigureEEEventLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEEventLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEEventLabel, constraintFFigureEEEventLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEEventLabel() {&#xA;&#x9;&#x9;return fFigureEEEventLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          className="EEActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEActionLabel.horizontalIndent = 0;&#xA;constraintFFigureEEActionLabel.horizontalSpan = 1;&#xA;constraintFFigureEEActionLabel.verticalSpan = 1;&#xA;constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEActionLabel() {&#xA;&#x9;&#x9;return fFigureEEActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
@@ -155,28 +155,28 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitEvent"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitAction"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
       </modelFacet>
       <labels
-          visualID="5011"
-          editPartClassName="ExitEventActionExprEditPart"
-          itemSemanticEditPolicyClassName="ExitEventActionExprItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitEventActionExprViewFactory">
+          visualID="5017"
+          editPartClassName="ExitActionActionExprEditPart"
+          itemSemanticEditPolicyClassName="ExitActionActionExprItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExitActionActionExprViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureEEEventLabel"
+            getterName="getFigureEEActionLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitEvent/eventExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction/actionExpr"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -445,7 +445,7 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3015"
+        visualID="3024"
         editPartClassName="ActionEditPart"
         itemSemanticEditPolicyClassName="ActionItemSemanticEditPolicy"
         notationViewFactoryClassName="ActionViewFactory"
@@ -466,9 +466,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionAction"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffect"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionAction"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -823,7 +823,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="TransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionPriorityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionEventExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionRelativeDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockConstraintExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionGuardExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockResetExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSideEffectExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSafetyTransitionLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSynchroExprLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionPriorityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionPriorityFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionPriorityFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionEventExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionEventExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionEventExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionAbsoluteDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionAbsoluteDeadlineExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionAbsoluteDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionRelativeDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionRelativeDeadlineExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionRelativeDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockConstraintExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockConstraintExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionClockConstraintExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionGuardExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionGuardExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionGuardExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockResetExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockResetExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionClockResetExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSideEffectExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSideEffectExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionSideEffectExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSafetyTransitionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSafetyTransitionLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionSafetyTransitionLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSynchroExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSynchroExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionSynchroExprLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionPriorityFigure() {&#xA;&#x9;&#x9;return fFigureTransitionPriorityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionEventExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionEventExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionAbsoluteDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionRelativeDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockConstraintExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockConstraintExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionGuardExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionGuardExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockResetExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockResetExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSideEffectExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSideEffectExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSafetyTransitionLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSafetyTransitionLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSynchroExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSynchroExprLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionPriorityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionEventExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionRelativeDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockConstraintExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionGuardExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockResetExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionActionExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSafetyTransitionLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSynchroExprLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionPriorityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionPriorityFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionPriorityFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionEventExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionEventExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionEventExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionAbsoluteDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionAbsoluteDeadlineExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionAbsoluteDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionRelativeDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionRelativeDeadlineExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionRelativeDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockConstraintExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockConstraintExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionClockConstraintExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionGuardExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionGuardExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionGuardExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockResetExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockResetExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionClockResetExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionActionExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionActionExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionActionExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSafetyTransitionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSafetyTransitionLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionSafetyTransitionLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSynchroExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSynchroExprLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionSynchroExprLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionPriorityFigure() {&#xA;&#x9;&#x9;return fFigureTransitionPriorityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionEventExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionEventExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionAbsoluteDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionRelativeDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockConstraintExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockConstraintExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionGuardExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionGuardExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockResetExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockResetExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionActionExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionActionExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSafetyTransitionLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSafetyTransitionLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSynchroExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSynchroExprLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -989,7 +989,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionSideEffectExprLabel"
+            getterName="getFigureTransitionActionExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
@@ -997,9 +997,10 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.0"
+            editorPattern="">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sideEffectExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionActionExpr"/>
         </modelFacet>
       </labels>
       <labels
@@ -1198,19 +1199,19 @@
             genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Entry Event"
+            title="Entry Action"
             description="Creation of a entry action"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/entry_action16.gif"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Do Event"
+            title="Do Action"
             description="Creation of a do action"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/do_action16.gif"
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Exit Event"
+            title="Exit Action"
             description="Creation of a exit action"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/exit_action16.gif"
             genNodes="//@diagram/@childNodes.2"/>

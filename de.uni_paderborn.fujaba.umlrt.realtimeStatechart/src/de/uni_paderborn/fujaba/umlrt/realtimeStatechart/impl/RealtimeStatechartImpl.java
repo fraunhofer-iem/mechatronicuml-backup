@@ -6,18 +6,11 @@
  */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl;
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
+import org.eclipse.emf.ecore.EClass;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechartPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

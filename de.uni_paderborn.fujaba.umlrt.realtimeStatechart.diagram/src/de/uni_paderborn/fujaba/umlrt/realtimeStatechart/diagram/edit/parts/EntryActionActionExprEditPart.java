@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class DoEventPeriodLowerPeriodUpperEditPart extends CompartmentEditPart
+public class EntryActionActionExprEditPart extends CompartmentEditPart
 		implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5006;
+	public static final int VISUAL_ID = 5015;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class DoEventPeriodLowerPeriodUpperEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public DoEventPeriodLowerPeriodUpperEditPart(View view) {
+	public EntryActionActionExprEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class DoEventPeriodLowerPeriodUpperEditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.DoEvent_3002,
+							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.EntryAction_3021,
 							getParserElement(),
 							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventPeriodLowerPeriodUpperEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionActionExprEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

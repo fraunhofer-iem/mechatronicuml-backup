@@ -42,7 +42,7 @@ public class ActionCreateCommand extends EditElementCommand {
 	 */
 	public boolean canExecute() {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition container = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) getElementToEdit();
-		if (container.getSideEffect() != null) {
+		if (container.getTransitionAction() != null) {
 			return false;
 		}
 		return true;
@@ -58,7 +58,7 @@ public class ActionCreateCommand extends EditElementCommand {
 				.createAction();
 
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) getElementToEdit();
-		owner.setSideEffect(newElement);
+		owner.setTransitionAction(newElement);
 
 		doConfigure(newElement, monitor, info);
 

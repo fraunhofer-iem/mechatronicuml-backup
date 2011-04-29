@@ -12,17 +12,17 @@ import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class AddEParameterWizard extends AbstractWizard {
+public class ModifyParameterWizard extends AbstractWizard {
 	
 	private final String ADD_EPARAMETER_WIZARD_SECTION = "AddEParameterWizard";
 
 	private org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag = null;
 
-	private AddEParameterPage addEParameterPage;
+	private ModifyParameterPage addEParameterPage;
 	
 	private SynchronizationChannel selectedSyncChannel = null;
 
-	public AddEParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, SynchronizationChannel sC)
+	public ModifyParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, SynchronizationChannel sC)
 	{
 		super();
 
@@ -36,14 +36,16 @@ public class AddEParameterWizard extends AbstractWizard {
 			section = workbenchSettings.addNewSection(this.ADD_EPARAMETER_WIZARD_SECTION);
 		}
 		setDialogSettings(section);
+		
 	}
 
 	@Override
 	public void addPages() {
 
-		addEParameterPage = new AddEParameterPage("Event occurrences for hazards", selection);
-		addEParameterPage.setExplanation("Required event occurrences for each hazard.");
-
+		addEParameterPage = new ModifyParameterPage("Create/Delete parameters for selected synchronization channel", selection);
+		addEParameterPage.setExplanation("Create/Delete parameters for selected synchronization channel");
+		addPage(addEParameterPage);
+		
 	}
 
 

@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="RealtimeStatechart"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2008,2009,2010,2011,2012,2013,3005,3002,3006,3007,3008,3009,3010,3011,3018,3019,3020,3015,3016,3017"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2008,2009,2010,2011,2012,2013,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -202,13 +202,13 @@
             <method name="getType()" value="RealtimeStatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2008,2009,2010,2011,2012,2013,3005,3002,3006,3007,3008,3009,3010,3011,3018,3019,3020,3015,3016,3017"/>
+            <method name="getType()" value="2008,2009,2010,2011,2012,2013,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5005,5014,5010,5006,5011,5012,5013"/>
+            <method name="getType()" value="5005,5014,5015,5016,5017,5012,5013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7002,7003,7004"/>
@@ -320,32 +320,32 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"
-               name="%metatype.name.EntryEvent_3005"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"
+               name="%metatype.name.EntryAction_3021"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="EntryEvent"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.EntryEventEditHelper">
-            <param name="semanticHint" value="3005"/>
+               eclass="EntryAction"
+               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.EntryActionEditHelper">
+            <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoEvent_3002"
-               name="%metatype.name.DoEvent_3002"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"
+               name="%metatype.name.DoAction_3022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="DoEvent"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.DoEventEditHelper">
-            <param name="semanticHint" value="3002"/>
+               eclass="DoAction"
+               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.DoActionEditHelper">
+            <param name="semanticHint" value="3022"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitEvent_3006"
-               name="%metatype.name.ExitEvent_3006"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"
+               name="%metatype.name.ExitAction_3023"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExitEvent"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ExitEventEditHelper">
-            <param name="semanticHint" value="3006"/>
+               eclass="ExitAction"
+               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ExitActionEditHelper">
+            <param name="semanticHint" value="3023"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
@@ -428,12 +428,12 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3015"
-               name="%metatype.name.Action_3015"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3024"
+               name="%metatype.name.Action_3024"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Action"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ActionEditHelper">
-            <param name="semanticHint" value="3015"/>
+            <param name="semanticHint" value="3024"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
@@ -483,9 +483,9 @@
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2011"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2012"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoEvent_3002"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitEvent_3006"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3008"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3009"/>
@@ -494,7 +494,7 @@
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3018"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3019"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3020"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3015"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3024"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3016"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3017"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"/>

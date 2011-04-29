@@ -6,32 +6,21 @@
  */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechartFactory;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechartPackage;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

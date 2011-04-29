@@ -181,7 +181,8 @@ public class RealtimeStatechartDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(IProgressMonitor progressMonitor) {
+	protected void performSaveAs(
+			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);

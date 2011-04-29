@@ -10,7 +10,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.AddEParameterWizard;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyParameterWizard;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart;
 
 public class AddParameterWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
@@ -48,7 +48,7 @@ public class AddParameterWizardAction extends AbstractRealtimeStatechartEditorAc
          workbench = this.window.getWorkbench();
       }
       
-      AddEParameterWizard wizard = new AddEParameterWizard(diag,selectedSyncChannel);
+      ModifyParameterWizard wizard = new ModifyParameterWizard(diag,selectedSyncChannel);
       wizard.init(workbench, null);
       WizardDialog dialog = new WizardDialog(shell, wizard);
       dialog.create();

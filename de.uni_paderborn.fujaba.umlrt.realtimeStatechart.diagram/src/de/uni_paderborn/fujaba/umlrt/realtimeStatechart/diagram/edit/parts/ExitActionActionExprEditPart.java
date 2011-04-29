@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class EntryEventActionExprEditPart extends CompartmentEditPart implements
+public class ExitActionActionExprEditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5010;
+	public static final int VISUAL_ID = 5017;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class EntryEventActionExprEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public EntryEventActionExprEditPart(View view) {
+	public ExitActionActionExprEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class EntryEventActionExprEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.EntryEvent_3005,
+							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.ExitAction_3023,
 							getParserElement(),
 							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventActionExprEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitActionActionExprEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

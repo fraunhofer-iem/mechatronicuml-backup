@@ -81,7 +81,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Entry Event"
+          title="Entry Action"
           description="Creation of a entry action">
         <smallIcon
             xsi:type="gmftool:BundleImage"
@@ -90,7 +90,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Do Event"
+          title="Do Action"
           description="Creation of a do action">
         <smallIcon
             xsi:type="gmftool:BundleImage"
@@ -99,7 +99,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Exit Event"
+          title="Exit Action"
           description="Creation of a exit action">
         <smallIcon
             xsi:type="gmftool:BundleImage"

@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class DoEventCreateCommand extends EditElementCommand {
+public class DoActionCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public DoEventCreateCommand(CreateElementRequest req) {
+	public DoActionCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -54,8 +54,8 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createDoEvent();
+		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createDoAction();
 
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) getElementToEdit();
 		owner.setDoAction(newElement);
@@ -70,7 +70,7 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoEvent newElement,
+			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

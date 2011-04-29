@@ -78,7 +78,7 @@ public class TransitionCanonicalEditPolicy extends CanonicalEditPolicy {
 							.getTransition_RaisedEvents());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getTransition_SideEffect());
+							.getTransition_TransitionAction());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition_SendSynchronization());

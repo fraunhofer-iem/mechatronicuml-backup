@@ -117,11 +117,11 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.SideEffectCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TransitionActionCreateAction"
                enablesFor="1"
                icon="icons/setRefMethod.gif"
-               id="Statechart.CreateSideEffectID"
-               label="SideEffect"
+               id="Statechart.CreateTransitionActionID"
+               label="TransitionAction"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
@@ -148,8 +148,8 @@
          <action
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.AddParameterWizardAction"
                enablesFor="1"
-               id="Statechart.AddEParameterID"
-               label="Add EParameter"
+               id="Statechart.ModifyParameterID"
+               label="Modify Parameters"
                menubarPath="RealtimeStatechart.CreateEParameter/group1">
          </action>
       </objectContribution>

@@ -174,7 +174,7 @@
             name="TransitionClockResetExprLabel"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionSideEffectExprLabel"/>
+            name="TransitionActionExprLabel"/>
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionSafetyTransitionLabel"/>
@@ -208,7 +208,7 @@
           accessor="getFigureTransitionClockResetExprLabel"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.6"/>
       <accessors
-          accessor="getFigureTransitionSideEffectExprLabel"
+          accessor="getFigureTransitionActionExprLabel"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.7"/>
       <accessors
           accessor="getFigureTransitionSafetyTransitionLabel"
@@ -305,17 +305,17 @@
           figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="DoEventFigure">
+        name="DoActionFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="EventRectangle"
+          name="ActionRectangle"
           outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="DoEventLabel">
+            name="DoActionLabel">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
@@ -323,21 +323,21 @@
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureDoEventLabel"
+          accessor="getFigureDoActionLabel"
           figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="EEEventFigure">
+        name="EEActionFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="EventRectangle"
+          name="ActionRectangle"
           outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="EEEventLabel">
+            name="EEActionLabel">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
@@ -345,7 +345,7 @@
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureEEEventLabel"
+          accessor="getFigureEEActionLabel"
           figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
@@ -416,8 +416,8 @@
     </facets>
   </nodes>
   <nodes
-      name="DoEventNode"
-      figure="DoEventFigure"
+      name="DoActionNode"
+      figure="DoActionFigure"
       affixedParentSide="WEST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -427,8 +427,8 @@
     </facets>
   </nodes>
   <nodes
-      name="EEEventNode"
-      figure="EEEventFigure"
+      name="EEActionNode"
+      figure="EEActionFigure"
       affixedParentSide="WEST">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -497,7 +497,7 @@
         y="-20"/>
   </labels>
   <labels
-      name="TransitionSideEffectExpr"
+      name="TransitionActionExpr"
       figure="TransitionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.4/@accessors.7">
@@ -612,13 +612,13 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
-      name="DoEventExpr"
-      figure="DoEventFigure"
+      name="DoActionExpr"
+      figure="DoActionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
-      name="EEEventExpr"
-      figure="EEEventFigure"
+      name="EEActionExpr"
+      figure="EEActionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.11/@accessors.0"/>
 </gmfgraph:Canvas>

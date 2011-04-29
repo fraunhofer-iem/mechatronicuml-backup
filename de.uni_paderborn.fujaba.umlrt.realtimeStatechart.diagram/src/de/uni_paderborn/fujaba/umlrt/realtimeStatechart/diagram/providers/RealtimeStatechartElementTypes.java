@@ -75,17 +75,17 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EntryEvent_3005 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryEvent_3005"); //$NON-NLS-1$
+	public static final IElementType EntryAction_3021 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType DoEvent_3002 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoEvent_3002"); //$NON-NLS-1$
+	public static final IElementType DoAction_3022 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExitEvent_3006 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitEvent_3006"); //$NON-NLS-1$
+	public static final IElementType ExitAction_3023 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -130,7 +130,7 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Action_3015 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3015"); //$NON-NLS-1$
+	public static final IElementType Action_3024 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3024"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -294,19 +294,19 @@ public class RealtimeStatechartElementTypes {
 							.getTransition());
 
 			elements.put(
-					EntryEvent_3005,
+					EntryAction_3021,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getEntryEvent());
+							.getEntryAction());
 
 			elements.put(
-					DoEvent_3002,
+					DoAction_3022,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getDoEvent());
+							.getDoAction());
 
 			elements.put(
-					ExitEvent_3006,
+					ExitAction_3023,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getExitEvent());
+							.getExitAction());
 
 			elements.put(
 					ClockConstraint_3007,
@@ -349,7 +349,7 @@ public class RealtimeStatechartElementTypes {
 							.getAsynchronousEvent());
 
 			elements.put(
-					Action_3015,
+					Action_3024,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getAction());
 
@@ -391,9 +391,9 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HistoryState_2011);
 			KNOWN_ELEMENT_TYPES.add(Clock_2012);
 			KNOWN_ELEMENT_TYPES.add(Transition_2013);
-			KNOWN_ELEMENT_TYPES.add(EntryEvent_3005);
-			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
-			KNOWN_ELEMENT_TYPES.add(ExitEvent_3006);
+			KNOWN_ELEMENT_TYPES.add(EntryAction_3021);
+			KNOWN_ELEMENT_TYPES.add(DoAction_3022);
+			KNOWN_ELEMENT_TYPES.add(ExitAction_3023);
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3007);
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3008);
 			KNOWN_ELEMENT_TYPES.add(Region_3009);
@@ -402,7 +402,7 @@ public class RealtimeStatechartElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3018);
 			KNOWN_ELEMENT_TYPES.add(AsynchronousEvent_3019);
 			KNOWN_ELEMENT_TYPES.add(AsynchronousEvent_3020);
-			KNOWN_ELEMENT_TYPES.add(Action_3015);
+			KNOWN_ELEMENT_TYPES.add(Action_3024);
 			KNOWN_ELEMENT_TYPES.add(Synchronization_3016);
 			KNOWN_ELEMENT_TYPES.add(Synchronization_3017);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
@@ -429,12 +429,12 @@ public class RealtimeStatechartElementTypes {
 			return Clock_2012;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
 			return Transition_2013;
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return EntryEvent_3005;
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return DoEvent_3002;
-		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return ExitEvent_3006;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
+			return EntryAction_3021;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:
+			return DoAction_3022;
+		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ExitActionEditPart.VISUAL_ID:
+			return ExitAction_3023;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
 			return ClockConstraint_3007;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
@@ -452,7 +452,7 @@ public class RealtimeStatechartElementTypes {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.AsynchronousEvent2EditPart.VISUAL_ID:
 			return AsynchronousEvent_3020;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ActionEditPart.VISUAL_ID:
-			return Action_3015;
+			return Action_3024;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationEditPart.VISUAL_ID:
 			return Synchronization_3016;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Synchronization2EditPart.VISUAL_ID:

@@ -10,7 +10,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -233,13 +232,13 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__REQUIRED_MSG_IFACE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
 
 	/**
-	 * The feature id for the '<em><b>Is Embedded</b></em>' attribute.
+	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__IS_EMBEDDED = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__IS_EMBEDDED;
+	int REALTIME_STATECHART__EMBEDDED = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDED;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.

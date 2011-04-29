@@ -82,7 +82,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionTimeGuardExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionSideEffectExprLabel());
+							.getFigureTransitionActionExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionEditPart) {
@@ -219,7 +219,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTransitionSideEffectExprLabel;
+		private WrappingLabel fFigureTransitionActionExprLabel;
 		/**
 		 * @generated
 		 */
@@ -279,10 +279,10 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 
 			this.add(fFigureTransitionClockResetExprLabel);
 
-			fFigureTransitionSideEffectExprLabel = new WrappingLabel();
-			fFigureTransitionSideEffectExprLabel.setText("");
+			fFigureTransitionActionExprLabel = new WrappingLabel();
+			fFigureTransitionActionExprLabel.setText("");
 
-			this.add(fFigureTransitionSideEffectExprLabel);
+			this.add(fFigureTransitionActionExprLabel);
 
 			fFigureTransitionSafetyTransitionLabel = new WrappingLabel();
 			fFigureTransitionSafetyTransitionLabel.setText("");
@@ -356,8 +356,8 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTransitionSideEffectExprLabel() {
-			return fFigureTransitionSideEffectExprLabel;
+		public WrappingLabel getFigureTransitionActionExprLabel() {
+			return fFigureTransitionActionExprLabel;
 		}
 
 		/**
