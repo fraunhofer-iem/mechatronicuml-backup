@@ -1233,7 +1233,8 @@
                   defaultValueLiteral="doEventExpr"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitAction" abstract="true">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="resets" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clockResets"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
