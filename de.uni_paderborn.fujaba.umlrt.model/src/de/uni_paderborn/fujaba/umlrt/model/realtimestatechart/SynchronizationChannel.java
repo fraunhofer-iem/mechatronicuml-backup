@@ -26,6 +26,7 @@ import org.storydriven.modeling.calls.Callable;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,7 +34,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface SynchronizationChannel extends NamedElement, Callable {
+public interface SynchronizationChannel extends Callable {
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getChannels <em>Channels</em>}'.
@@ -90,9 +91,35 @@ public interface SynchronizationChannel extends NamedElement, Callable {
 	boolean isSetSynchroChannelExpr();
 
 	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString value =\"null\";\r\n\t\tboolean firstTime = true;\r\n\t\tif(name!=null) {\r\n\t\tvalue = name ;\r\n\t\t\tif(containedParameters!=null){\r\n\t\t\t\tvalue = value+\"(\";\r\n\t\t\t\tjava.util.Iterator<EParameter> iter = containedParameters.iterator();\r\n\t\t\t\twhile(iter.hasNext()){\r\n\t\t\t\t\tEParameter tmp = iter.next();\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime=false;\r\n\t\t\t\t\t\tvalue = value + tmp.getName() + \":\" + tmp.getEType().getInstanceClassName() +\"_\"+ tmp.getEType().getInstanceTypeName();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\tvalue = value +\", \"+ tmp.getName() + \":\" + tmp.getEType().getInstanceClassName() +\"_\"+ tmp.getEType().getInstanceTypeName();\r\n\t\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\t}else{\r\n\t\t\t\tvalue = value+\"()\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn value;'"
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tString value =\"null\";\r\n\t\tboolean firstTime = true;\r\n\t\tif(name!=null) {\r\n\t\tvalue = name ;\r\n\t\t\tif(containedParameters!=null){\r\n\t\t\t\tvalue = value+\"(\";\r\n\t\t\t\tjava.util.Iterator<EParameter> iter = containedParameters.iterator();\r\n\t\t\t\twhile(iter.hasNext()){\r\n\t\t\t\t\tEParameter tmp = iter.next();\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime=false;\r\n\t\t\t\t\t\tvalue = value + tmp.getName() + \":\" + tmp.getEType().getInstanceTypeName();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\tvalue = value +\", \"+ tmp.getName() + \":\" + tmp.getEType().getInstanceTypeName() ;\r\n\t\t\t\t\t}\t\t\t\t\r\n\t\t\t\t}\r\n\t\t\tvalue = value + \")\";\r\n\t\t\t}else{\r\n\t\t\t\tvalue = value+\"()\";\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn value;'"
 	 * @generated
 	 */
 	String toMyString();

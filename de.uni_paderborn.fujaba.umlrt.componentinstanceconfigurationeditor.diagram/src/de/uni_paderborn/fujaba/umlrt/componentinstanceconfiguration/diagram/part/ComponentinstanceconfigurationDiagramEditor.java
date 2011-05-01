@@ -51,7 +51,6 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 * @generated
 	 */
 	public static final String ID = "de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"; //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

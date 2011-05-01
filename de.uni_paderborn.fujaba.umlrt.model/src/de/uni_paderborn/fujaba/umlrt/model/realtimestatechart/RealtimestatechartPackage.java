@@ -3500,7 +3500,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int SYNCHRONIZATION_CHANNEL__ANNOTATION = CallsPackage.CALLABLE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -3509,16 +3509,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int SYNCHRONIZATION_CHANNEL__EXTENSION = CallsPackage.CALLABLE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3527,7 +3518,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SYNCHRONIZATION_CHANNEL__COMMENT = CallsPackage.CALLABLE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
@@ -3536,7 +3527,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SYNCHRONIZATION_CHANNEL__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
@@ -3545,7 +3536,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__STATE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SYNCHRONIZATION_CHANNEL__STATE = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Synchro Channel Expr</b></em>' attribute.
@@ -3554,7 +3545,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
@@ -3563,7 +3563,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3572,7 +3572,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECLASS = SDMPackage.NAMED_ELEMENT___ECLASS;
+	int SYNCHRONIZATION_CHANNEL___ECLASS = CallsPackage.CALLABLE___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -3581,7 +3581,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EIS_PROXY = SDMPackage.NAMED_ELEMENT___EIS_PROXY;
+	int SYNCHRONIZATION_CHANNEL___EIS_PROXY = CallsPackage.CALLABLE___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -3590,7 +3590,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ERESOURCE = SDMPackage.NAMED_ELEMENT___ERESOURCE;
+	int SYNCHRONIZATION_CHANNEL___ERESOURCE = CallsPackage.CALLABLE___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -3599,7 +3599,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINER = SDMPackage.NAMED_ELEMENT___ECONTAINER;
+	int SYNCHRONIZATION_CHANNEL___ECONTAINER = CallsPackage.CALLABLE___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -3608,7 +3608,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINING_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int SYNCHRONIZATION_CHANNEL___ECONTAINING_FEATURE = CallsPackage.CALLABLE___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -3617,7 +3617,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTAINMENT_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int SYNCHRONIZATION_CHANNEL___ECONTAINMENT_FEATURE = CallsPackage.CALLABLE___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -3626,7 +3626,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECONTENTS = SDMPackage.NAMED_ELEMENT___ECONTENTS;
+	int SYNCHRONIZATION_CHANNEL___ECONTENTS = CallsPackage.CALLABLE___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -3635,7 +3635,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EALL_CONTENTS = SDMPackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int SYNCHRONIZATION_CHANNEL___EALL_CONTENTS = CallsPackage.CALLABLE___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -3644,7 +3644,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ECROSS_REFERENCES = SDMPackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int SYNCHRONIZATION_CHANNEL___ECROSS_REFERENCES = CallsPackage.CALLABLE___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3653,7 +3653,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -3662,7 +3662,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int SYNCHRONIZATION_CHANNEL___EGET__ESTRUCTURALFEATURE_BOOLEAN = CallsPackage.CALLABLE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -3671,7 +3671,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int SYNCHRONIZATION_CHANNEL___ESET__ESTRUCTURALFEATURE_OBJECT = CallsPackage.CALLABLE___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -3680,7 +3680,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int SYNCHRONIZATION_CHANNEL___EIS_SET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -3689,7 +3689,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EUNSET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int SYNCHRONIZATION_CHANNEL___EUNSET__ESTRUCTURALFEATURE = CallsPackage.CALLABLE___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -3698,7 +3698,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___EINVOKE__EOPERATION_ELIST = SDMPackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int SYNCHRONIZATION_CHANNEL___EINVOKE__EOPERATION_ELIST = CallsPackage.CALLABLE___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -3707,7 +3707,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = CallsPackage.CALLABLE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3716,7 +3716,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS = CallsPackage.CALLABLE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3725,7 +3725,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING = CallsPackage.CALLABLE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3734,7 +3734,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING = CallsPackage.CALLABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>To My String</em>' operation.
@@ -3743,7 +3743,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___TO_MY_STRING = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SYNCHRONIZATION_CHANNEL___TO_MY_STRING = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Synchronization Channel</em>' class.
@@ -3752,7 +3752,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int SYNCHRONIZATION_CHANNEL_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -5591,6 +5591,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getSynchronizationChannel_SynchroChannelExpr();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getName()
+	 * @see #getSynchronizationChannel()
+	 * @generated
+	 */
+	EAttribute getSynchronizationChannel_Name();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#toMyString() <em>To My String</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6568,6 +6579,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = eINSTANCE.getSynchronizationChannel_SynchroChannelExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYNCHRONIZATION_CHANNEL__NAME = eINSTANCE.getSynchronizationChannel_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>To My String</b></em>' operation.

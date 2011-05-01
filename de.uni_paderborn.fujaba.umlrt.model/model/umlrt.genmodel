@@ -443,6 +443,7 @@
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel">
                 <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/state"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/synchroChannelExpr"/>
+                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/name"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/toMyString"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization">

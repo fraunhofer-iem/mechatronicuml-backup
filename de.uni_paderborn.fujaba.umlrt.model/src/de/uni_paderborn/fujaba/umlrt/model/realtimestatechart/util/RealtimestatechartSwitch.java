@@ -244,7 +244,6 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: {
 				SynchronizationChannel synchronizationChannel = (SynchronizationChannel)theEObject;
 				T result = caseSynchronizationChannel(synchronizationChannel);
-				if (result == null) result = caseNamedElement(synchronizationChannel);
 				if (result == null) result = caseCallable(synchronizationChannel);
 				if (result == null) result = caseCommentableElement(synchronizationChannel);
 				if (result == null) result = caseExtendableElement(synchronizationChannel);

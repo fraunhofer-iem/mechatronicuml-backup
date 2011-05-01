@@ -1251,13 +1251,13 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
+            <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="&#x9;&#x9;String value =&quot;null&quot;;&#xD;&#xA;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;if(name!=null) {&#xD;&#xA;&#x9;&#x9;value = name ;&#xD;&#xA;&#x9;&#x9;&#x9;if(containedParameters!=null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return value;"/>
+                  <details key="body" value="&#x9;&#x9;String value =&quot;null&quot;;&#xD;&#xA;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;if(name!=null) {&#xD;&#xA;&#x9;&#x9;value = name ;&#xD;&#xA;&#x9;&#x9;&#x9;if(containedParameters!=null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceTypeName() ;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;)&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return value;"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
@@ -1274,6 +1274,7 @@
                   <details key="derivation" value="toMyString()"/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSyncRev"

@@ -980,6 +980,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSynchronizationChannel_Name() {
+		return (EAttribute)synchronizationChannelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getSynchronizationChannel__ToMyString() {
 		return synchronizationChannelEClass.getEOperations().get(0);
 	}
@@ -1475,6 +1484,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
 		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR);
+		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__NAME);
 		createEOperation(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL___TO_MY_STRING);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
@@ -1546,7 +1556,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		asynchronousEventEClass.getESuperTypes().add(theExpressionsPackage_1.getMethodCallExpression());
 		entryActionEClass.getESuperTypes().add(this.getEntryOrExitAction());
 		exitActionEClass.getESuperTypes().add(this.getEntryOrExitAction());
-		synchronizationChannelEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		synchronizationChannelEClass.getESuperTypes().add(theCallsPackage.getCallable());
 		synchronizationEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		fujabaRealtimeStatechartEClass.getESuperTypes().add(theCorePackage.getAbstractStatechart());
@@ -1684,6 +1693,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronizationChannel_SynchroChannelExpr(), theEcorePackage.getEString(), "synchroChannelExpr", "", 0, 1, SynchronizationChannel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSynchronizationChannel_Name(), theEcorePackage.getEString(), "name", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSynchronizationChannel__ToMyString(), theEcorePackage.getEString(), "toMyString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
