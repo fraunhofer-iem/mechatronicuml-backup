@@ -42,8 +42,7 @@ public class ModifyParameterWizard extends AbstractWizard {
 	@Override
 	public void addPages() {
 
-		addEParameterPage = new ModifyParameterPage("Create/Delete parameters for selected synchronization channel", selection);
-		addEParameterPage.setExplanation("Create/Delete parameters for selected synchronization channel");
+		addEParameterPage = new ModifyParameterPage("Create/Delete parameters for selected synchronization channel");
 		addPage(addEParameterPage);
 		
 	}
