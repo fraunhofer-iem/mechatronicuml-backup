@@ -190,24 +190,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSynchroChannelExpr(String newSynchroChannelExpr) {
-		SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchroChannelExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetSynchroChannelExpr() {
-		SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isSetSynchroChannelExpr() {
 		return SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
@@ -218,7 +200,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 * @generated
 	 */
 	public String toMyString() {
-				String value ="";
+				String value ="null";
 				boolean firstTime = true;
 				if(name!=null) {
 				value = name ;
@@ -327,9 +309,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)newValue);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				setSynchroChannelExpr((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -350,9 +329,6 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				setState((State)null);
-				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				unsetSynchroChannelExpr();
 				return;
 		}
 		super.eUnset(featureID);

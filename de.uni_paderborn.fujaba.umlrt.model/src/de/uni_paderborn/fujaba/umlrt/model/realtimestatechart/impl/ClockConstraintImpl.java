@@ -258,24 +258,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClockConstraintExpr(String newClockConstraintExpr) {
-		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newClockConstraintExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetClockConstraintExpr() {
-		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isSetClockConstraintExpr() {
 		return CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
@@ -289,7 +271,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				if(clock!=null && operator!=null && bound!=null) {
 					return clock.getName()+clock.getId() +" "+ operator.toString() +" " + bound.getValue();
 				}else{
-					return "";
+					return "null";
 				}
 	}
 
@@ -363,9 +345,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
 				setOperator((ComparingOperator)newValue);
 				return;
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				setClockConstraintExpr((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -386,9 +365,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				return;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				unsetClockConstraintExpr();
 				return;
 		}
 		super.eUnset(featureID);

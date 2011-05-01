@@ -1007,24 +1007,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransitionActionExpr(String newTransitionActionExpr) {
-		TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTransitionActionExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetTransitionActionExpr() {
-		TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isSetTransitionActionExpr() {
 		return TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
@@ -1036,24 +1018,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public String getClockConstraintExpr() {
 		return (String)CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClockConstraintExpr(String newClockConstraintExpr) {
-		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newClockConstraintExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetClockConstraintExpr() {
-		CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 	}
 
 	/**
@@ -1079,24 +1043,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAbsoluteDeadlineExpr(String newAbsoluteDeadlineExpr) {
-		ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newAbsoluteDeadlineExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetAbsoluteDeadlineExpr() {
-		ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isSetAbsoluteDeadlineExpr() {
 		return ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
@@ -1108,24 +1054,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public String getRelativeDeadlineExpr() {
 		return (String)RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRelativeDeadlineExpr(String newRelativeDeadlineExpr) {
-		RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRelativeDeadlineExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetRelativeDeadlineExpr() {
-		RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 	}
 
 	/**
@@ -1151,18 +1079,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGuardExpr(String newGuardExpr) {
-		String oldGuardExpr = guardExpr;
-		guardExpr = newGuardExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD_EXPR, oldGuardExpr, guardExpr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getSynchroExpr() {
 		return synchroExpr;
 	}
@@ -1172,38 +1088,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSynchroExpr(String newSynchroExpr) {
-		String oldSynchroExpr = synchroExpr;
-		synchroExpr = newSynchroExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR, oldSynchroExpr, synchroExpr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getClockResetsExpr() {
 		return (String)CLOCK_RESETS_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClockResetsExpr(String newClockResetsExpr) {
-		CLOCK_RESETS_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newClockResetsExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetClockResetsExpr() {
-		CLOCK_RESETS_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 	}
 
 	/**
@@ -1222,24 +1108,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public String getSafetyTransitionExpr() {
 		return (String)SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSafetyTransitionExpr(String newSafetyTransitionExpr) {
-		SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSafetyTransitionExpr);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetSafetyTransitionExpr() {
-		SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 	}
 
 	/**
@@ -1571,30 +1439,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr((String)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
-				setTransitionActionExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
-				setClockConstraintExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
-				setAbsoluteDeadlineExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
-				setRelativeDeadlineExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				setGuardExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-				setSynchroExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
-				setClockResetsExpr((String)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
-				setSafetyTransitionExpr((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1663,30 +1507,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return;
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr(EVENT_EXPR_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
-				unsetTransitionActionExpr();
-				return;
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
-				unsetClockConstraintExpr();
-				return;
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
-				unsetAbsoluteDeadlineExpr();
-				return;
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
-				unsetRelativeDeadlineExpr();
-				return;
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				setGuardExpr(GUARD_EXPR_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-				setSynchroExpr(SYNCHRO_EXPR_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
-				unsetClockResetsExpr();
-				return;
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
-				unsetSafetyTransitionExpr();
 				return;
 		}
 		super.eUnset(featureID);

@@ -1071,53 +1071,53 @@
                   defaultValueLiteral="" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionActionExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="sideEffectExpr"
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral="sideEffectExpr"
                   unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if sideEffect.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9; sideEffect.toMyString()&#xD;&#xA;endif"/>
+                  <details key="derivation" value="if transitionAction.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9; transitionAction.toMyString()&#xD;&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-                  derived="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="clockConstraints->iterate( c:ClockConstraint;  return: String = '' | &#xD;&#xA;return.concat(c.toMyString())) &#xD;&#xA;"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="absoluteDeadlineExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-                  derived="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="absoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = '' | &#xD;&#xA;return.concat(a.toMyString())) &#xD;&#xA;"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeDeadlineExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-                  derived="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;relativeDeadline.toMyString()&#xD;&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="" derived="true"/>
+                  changeable="false" defaultValueLiteral="" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="synchroExpr" derived="true"/>
+                  changeable="false" defaultValueLiteral="synchroExpr" derived="true"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetsExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-                  derived="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="computeClockResets()&#xD;&#xA;"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransitionExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true"
-                  derived="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if safetyTransition=false then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
                 </eAnnotations>
@@ -1129,7 +1129,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="&#x9;&#x9;if(clock!=null &amp;&amp; operator!=null &amp;&amp; bound!=null) {&#xD;&#xA;&#x9;&#x9;&#x9;return clock.getName()+clock.getId() +&quot; &quot;+ operator.toString() +&quot; &quot; + bound.getValue();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
+                  <details key="body" value="&#x9;&#x9;if(clock!=null &amp;&amp; operator!=null &amp;&amp; bound!=null) {&#xD;&#xA;&#x9;&#x9;&#x9;return clock.getName()+clock.getId() +&quot; &quot;+ operator.toString() +&quot; &quot; + bound.getValue();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;null&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
@@ -1141,7 +1141,8 @@
                   defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="" unsettable="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="toMyString()"/>
                 </eAnnotations>
@@ -1256,7 +1257,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="&#x9;&#x9;String value =&quot;&quot;;&#xD;&#xA;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;if(name!=null) {&#xD;&#xA;&#x9;&#x9;value = name ;&#xD;&#xA;&#x9;&#x9;&#x9;if(containedParameters!=null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return value;"/>
+                  <details key="body" value="&#x9;&#x9;String value =&quot;null&quot;;&#xD;&#xA;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;if(name!=null) {&#xD;&#xA;&#x9;&#x9;value = name ;&#xD;&#xA;&#x9;&#x9;&#x9;if(containedParameters!=null){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getInstanceClassName() +&quot;_&quot;+ tmp.getEType().getInstanceTypeName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return value;"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
@@ -1267,8 +1268,8 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroChannelExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  volatile="true" transient="true" defaultValueLiteral="synchroChannelExpr"
-                  unsettable="true">
+                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+                  unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="toMyString()"/>
                 </eAnnotations>
