@@ -27,7 +27,7 @@ public abstract class AbstractWizard extends Wizard implements
     */
    protected String getTitle()
    {
-      return "Fujaba4Eclipse Wizard";
+      return "Fujaba Wizard";
    }
 
 
