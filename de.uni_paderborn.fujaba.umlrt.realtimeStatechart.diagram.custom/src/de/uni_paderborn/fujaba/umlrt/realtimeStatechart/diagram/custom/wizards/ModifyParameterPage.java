@@ -1,7 +1,15 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.WizardPage;
@@ -18,6 +26,8 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.ParameterCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
 public class ModifyParameterPage extends WizardPage{
 	
@@ -147,7 +157,14 @@ public class ModifyParameterPage extends WizardPage{
 	}  
 	
 	private void handleCreateParameterEvent(){
-		
+	  	  
+		CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
+				RealtimeStatechartElementTypes.Action_3024);
+						  
+					ParameterCreateCommand command = new ParameterCreateCommand(request, 
+							this.parameterNameText.getText(), this.parameterTypeText.getText());
+			
+					new ICommandProxy(command).execute();
 	}
 	
 	private void handleDeleteParameterEvent(){
@@ -165,6 +182,16 @@ public class ModifyParameterPage extends WizardPage{
 	        if (parent instanceof SynchronizationChannel)
 	        {
 	        	SynchronizationChannel syncChannel = (SynchronizationChannel)parent;
+	        	ArrayList<String> list = new ArrayList<String>();
+	        	
+	        	if(syncChannel.getInParameters()!=null){
+	        		Iterator<EParameter> iter = syncChannel.getInParameters().iterator();
+	        		while(iter.hasNext()){
+	        			EParameter tmp = iter.next();
+	        			list.add(tmp.getName() +":"+tmp.getEType());
+	        		}
+	        		return list.toArray();
+	        	}
 	        }
 			
 	        return null;
@@ -172,6 +199,11 @@ public class ModifyParameterPage extends WizardPage{
 		
 		public void dispose(){}
 		      
+	}
+	
+	protected void deleteObject(EObject obj){
+		new ICommandProxy(new DestroyElementCommand(
+			new DestroyElementRequest(obj, false))).execute();
 	}
 	
 }
