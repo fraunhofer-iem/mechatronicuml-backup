@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -155,22 +156,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
+	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Message Type</em>' class.
@@ -416,6 +417,17 @@ public interface MsgifacePackage extends EPackage {
 	EReference getMessageType_MessageInterface();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_Name();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,6 +489,13 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__NAME = eINSTANCE.getMessageType_Name();
 
 	}
 

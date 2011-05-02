@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.msgiface.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
@@ -33,6 +34,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,6 +197,15 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMessageType_Name() {
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MsgifaceFactory getMsgifaceFactory() {
 		return (MsgifaceFactory)getEFactoryInstance();
 	}
@@ -224,6 +235,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
+		createEAttribute(messageTypeEClass, MESSAGE_TYPE__NAME);
 	}
 
 	/**
@@ -251,7 +263,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Obtain other dependent packages
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
-		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -259,7 +271,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		// Add supertypes to classes
 		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
-		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -268,6 +279,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageType_Name(), theEcorePackage.getEString(), "name", null, 0, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

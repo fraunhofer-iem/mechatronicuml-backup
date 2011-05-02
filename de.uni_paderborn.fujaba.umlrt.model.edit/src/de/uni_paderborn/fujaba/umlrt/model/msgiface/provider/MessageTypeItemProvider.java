@@ -69,8 +69,8 @@ public class MessageTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addMessageInterfacePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,9 +86,9 @@ public class MessageTypeItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_MessageType_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageType_name_feature", "_UI_MessageType_type"),
+				 MsgifacePackage.Literals.MESSAGE_TYPE__NAME,
 				 true,
 				 false,
 				 false,
