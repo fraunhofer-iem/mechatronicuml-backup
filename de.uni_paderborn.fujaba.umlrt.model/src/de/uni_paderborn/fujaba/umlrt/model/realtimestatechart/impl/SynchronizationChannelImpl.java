@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.impl.CallableImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
@@ -78,12 +79,11 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	protected SynchronizationChannelImpl() {
 		super();
 		
-		// Install a notification adapter that informs the
-		// clockConstraintExpr-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter clockConstraintExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
-		clockConstraintExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
+		DerivedAttributeAdapter clockConstraintExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
+		clockConstraintExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
 
+		DerivedAttributeAdapter clockConstraintExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
+		clockConstraintExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 	}
 
 	/**
@@ -182,28 +182,31 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * @generated
 	 */
 	public String toMyString() {
-				String value ="null";
-				boolean firstTime = true;
-				if(name!=null) {
-				value = name ;
-					if(containedParameters!=null){
-						value = value+"(";
-						java.util.Iterator<EParameter> iter = containedParameters.iterator();
-						while(iter.hasNext()){
-							EParameter tmp = iter.next();
-							if(firstTime){
-								firstTime=false;
-								value = value + tmp.getName() + ":" + tmp.getEType().getInstanceTypeName();
-							}else{
-								value = value +", "+ tmp.getName() + ":" + tmp.getEType().getInstanceTypeName() ;
-							}				
-						}
-					value = value + ")";
-					}else{
-						value = value+"()";
+		String value ="null";
+		boolean firstTime = true;
+		if(name!=null) {
+		value = name ;
+		if(containedParameters!=null){
+			value = value+"(";
+			java.util.Iterator<EParameter> iter = containedParameters.iterator();
+			while(iter.hasNext()){
+				EParameter tmp = iter.next();
+				if(tmp.getName()!=null && tmp.getEType()!=null && 
+					tmp.getEType().getInstanceTypeName()!=null){				
+						if(firstTime){
+							firstTime=false;
+							value = value + tmp.getName() + ":" + tmp.getEType().getName();
+						}else{
+							value = value +", "+ tmp.getName() + ":" + tmp.getEType().getName() ;
+						}	
 					}
 				}
-				return value;
+			value = value + ")";
+			}else{
+				value = value+"()";
+			}
+		}
+		return value;
 	}
 
 	/**
