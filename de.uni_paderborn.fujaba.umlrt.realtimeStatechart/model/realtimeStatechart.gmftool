@@ -8,12 +8,12 @@
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Realtime Statechart"
-        description="Can be casted on statechart."
+        description="Can be casted on statechart"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="State"
-          description="Creation of a state.">
+          description="Creation of a state">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/c_state16.gif"
@@ -22,7 +22,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Start State"
-          description="Creation of a start state.">
+          description="Creation of a start state">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/startState16.png"
@@ -40,7 +40,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Transition"
-          description="Creation of a transition.">
+          description="Creation of a transition">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/transition16.gif"
@@ -58,7 +58,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="History"
-          description="Creation of a history.">
+          description="Creation of a history">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/history16.png"
@@ -68,12 +68,12 @@
     <tools
         xsi:type="gmftool:ToolGroup"
         title="Realtime State"
-        description="Can be casted on state."
+        description="Can be casted on state"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Time Invariant"
-          description="Creation of a time invariant.">
+          description="Creation of a time invariant">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/clock.gif"
@@ -109,7 +109,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Region"
-          description="Creation of a region for a state.">
+          description="Creation of a region for a state">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/andState.gif"
@@ -118,7 +118,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Synchronization Channel"
-          description="Creation of a synchronization channel.">
+          description="Creation of a synchronization channel">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/xAction.gif"

@@ -10,31 +10,28 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 
 import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class ModifyParameterWizard extends AbstractWizard {
+public class CreateEDataTypeWizard extends AbstractWizard {
 	
-	private final String ADD_EPARAMETER_WIZARD_SECTION = "AddEParameterWizard";
+	private final String CREATE_EDATATYPE_WIZARD_SECTION = "CreateEDataTypeWizard";
 
 	private FujabaRealtimeStatechart realtimeStatechart = null;
 
-	private ModifyParameterPage addEParameterPage;
+	private CreateEDataTypePage addEDataTypePage;
 	
-	private SynchronizationChannel selectedSyncChannel = null;
-
-	public ModifyParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, SynchronizationChannel sC)
+	public CreateEDataTypeWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag)
 	{
 		super();
 
 		this.realtimeStatechart = (FujabaRealtimeStatechart)diag.getElement();
-		this.setSelectedSyncChannel(sC);
+
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
-		IDialogSettings section = workbenchSettings.getSection(this.ADD_EPARAMETER_WIZARD_SECTION);
+		IDialogSettings section = workbenchSettings.getSection(this.CREATE_EDATATYPE_WIZARD_SECTION);
 		if (section == null)
 		{
-			section = workbenchSettings.addNewSection(this.ADD_EPARAMETER_WIZARD_SECTION);
+			section = workbenchSettings.addNewSection(this.CREATE_EDATATYPE_WIZARD_SECTION);
 		}
 		setDialogSettings(section);
 		
@@ -43,8 +40,8 @@ public class ModifyParameterWizard extends AbstractWizard {
 	@Override
 	public void addPages() {
 
-		addEParameterPage = new ModifyParameterPage("Create/Delete parameters for selected synchronization channel");
-		addPage(addEParameterPage);
+		addEDataTypePage = new CreateEDataTypePage("Create/Delete data types for selected realtime statechart");
+		addPage(addEDataTypePage);
 		
 	}
 
@@ -57,13 +54,5 @@ public class ModifyParameterWizard extends AbstractWizard {
 	public boolean performFinish() {
 		
 		return super.performFinish();
-	}
-
-	public void setSelectedSyncChannel(SynchronizationChannel selectedSyncChannel) {
-		this.selectedSyncChannel = selectedSyncChannel;
-	}
-
-	public SynchronizationChannel getSelectedSyncChannel() {
-		return selectedSyncChannel;
 	}
 }

@@ -146,11 +146,31 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.AddParameterWizardAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySyncChannelParameterWizardAction"
                enablesFor="1"
                id="Statechart.ModifyParameterID"
                label="Modify Parameters"
                menubarPath="RealtimeStatechart.CreateEParameter/group1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="objectContribution.RealtimeStatechart"
+            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart">
+         <menu
+               id="RealtimeStatechart.CreateEDataType"
+               label="Custom.Insert"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyRTSCEDataTypesWizardAction"
+               enablesFor="1"
+               id="Statechart.ModifyDataTypeID"
+               label="Modify DataTypes"
+               menubarPath="RealtimeStatechart.CreateEDataType/group1">
          </action>
       </objectContribution>
    </extension>

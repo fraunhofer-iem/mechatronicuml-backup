@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyParameterWizard;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart;
 
-public class AddParameterWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
+public class ModifySyncChannelParameterWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
 {
 	protected SynchronizationChannel selectedSyncChannel = null;
 	

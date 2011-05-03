@@ -1,18 +1,17 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.WizardPage;
@@ -27,21 +26,19 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Combo;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.ParameterCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.DataTypeCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class ModifyParameterPage extends WizardPage{
+public class CreateEDataTypePage extends WizardPage{
 	
-	protected Text parameterNameText = null;
-	protected Combo parameterTypeCombo = null;
+	protected Text dataTypeNameText = null;
+	protected Text instanceTypeNameText = null;
 	
-	protected ListViewer parameterLViewer = null;
+	protected ListViewer dataTypeLViewer = null;
  
-	public ModifyParameterPage(String pageName)
+	public CreateEDataTypePage(String pageName)
 	{
 		super(pageName);
 	}
@@ -76,7 +73,7 @@ public class ModifyParameterPage extends WizardPage{
 	    parameterNameFormData1.top = new FormAttachment(0, 0);
 	    parameterNameFormData1.bottom = new FormAttachment(10, 0);
 	    Label pNameLabel = new Label(main, SWT.NONE);
-	    pNameLabel.setText("ParameterName:  ");
+	    pNameLabel.setText("type name:  ");
 	    pNameLabel.setLayoutData(parameterNameFormData1);
 	    
 	    FormData parameterNameFormData2 = new FormData();
@@ -84,8 +81,8 @@ public class ModifyParameterPage extends WizardPage{
 	    parameterNameFormData2.right = new FormAttachment(20, 0);
 	    parameterNameFormData2.top = new FormAttachment(10, 0);
 	    parameterNameFormData2.bottom = new FormAttachment(20, 0);
-	    parameterNameText = new Text(main, SWT.SINGLE | SWT.BORDER); 
-	    parameterNameText.setLayoutData(parameterNameFormData2);
+	    dataTypeNameText = new Text(main, SWT.SINGLE | SWT.BORDER); 
+	    dataTypeNameText.setLayoutData(parameterNameFormData2);
 	    
 	    FormData parameterTypeFormData1 = new FormData();
 	    parameterTypeFormData1.left = new FormAttachment(0, 0);
@@ -93,7 +90,7 @@ public class ModifyParameterPage extends WizardPage{
 	    parameterTypeFormData1.top = new FormAttachment(20, 0);
 	    parameterTypeFormData1.bottom = new FormAttachment(30, 0);
 	    Label parameterTypeLabel = new Label(main, SWT.NONE);
-	    parameterTypeLabel.setText("ParameterType:  ");
+	    parameterTypeLabel.setText("instance type name:  ");
 	    parameterTypeLabel.setLayoutData(parameterTypeFormData1);
 	   
 	    FormData parameterTypeFormData2 = new FormData();
@@ -101,10 +98,8 @@ public class ModifyParameterPage extends WizardPage{
 	    parameterTypeFormData2.right = new FormAttachment(20, 0);
 	    parameterTypeFormData2.top = new FormAttachment(30, 0);
 	    parameterTypeFormData2.bottom = new FormAttachment(40, 0);
-	    parameterTypeCombo = new Combo(main, SWT.SINGLE | SWT.BORDER);
-	    parameterTypeCombo.setLayoutData(parameterTypeFormData2);
-	    
-	    instanciateParameterTypeCombo();
+	    instanceTypeNameText = new Text(main, SWT.SINGLE | SWT.BORDER);
+	    instanceTypeNameText.setLayoutData(parameterTypeFormData2);
 	    
 	    FormData exitingParameterFormData = new FormData();
 	    exitingParameterFormData.left = new FormAttachment(40, 0);
@@ -112,8 +107,8 @@ public class ModifyParameterPage extends WizardPage{
 	    exitingParameterFormData.top = new FormAttachment(0, 0);
 	    exitingParameterFormData.bottom = new FormAttachment(20, 0);
 	    Label exitingParameterLabel = new Label(main, SWT.NONE);
-	    exitingParameterLabel.setText("Existing Parameter of \n" +
-	    		"synchronization channel: '"+ ((ModifyParameterWizard)getWizard()).getSelectedSyncChannel().getName()+ "'");
+	    exitingParameterLabel.setText("Existing data types of \n" +
+	    		"realtime statechart: '"+ ((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart().getName()+ "'");
 	    exitingParameterLabel.setLayoutData(exitingParameterFormData);
 	    
 	    FormData parameterLViewerFormData = new FormData();
@@ -124,9 +119,9 @@ public class ModifyParameterPage extends WizardPage{
 	    Composite parametersViewerComposite = new Composite(main, SWT.NONE);
 	    parametersViewerComposite.setLayout(new FillLayout());
 	    parametersViewerComposite.setLayoutData(parameterLViewerFormData);
-	    parameterLViewer = new ListViewer(parametersViewerComposite);
-	    parameterLViewer.setContentProvider(new ParameterListContentProvider());
-	    parameterLViewer.setInput(null);
+	    dataTypeLViewer = new ListViewer(parametersViewerComposite);
+	    dataTypeLViewer.setContentProvider(new DataTypeContentProvider());
+	    dataTypeLViewer.setInput(((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart());
 	    
 	    FormData createButtonFormData = new FormData();
 	    createButtonFormData.left = new FormAttachment(0, 0);
@@ -139,7 +134,9 @@ public class ModifyParameterPage extends WizardPage{
 	    {
 	    	public void handleEvent(Event event)
 	    	{
-	    		handleCreateParameterEvent();
+	    		handleCreateDataTypeEvent();
+	    		dataTypeLViewer.refresh();
+
 	        }
 	     });
 	     createButton.setLayoutData(createButtonFormData);
@@ -155,87 +152,91 @@ public class ModifyParameterPage extends WizardPage{
 	     {
 	    	 public void handleEvent(Event event)
 	    	 {
-	    		 handleDeleteParameterEvent();
+	    		 handleDeleteDataTypeEvent();
+	    		 dataTypeLViewer.refresh();
 	    	 }
 		});
 	     deleteButton.setLayoutData(deleteButtonFormData);		     
 
 	}  
 	
-	private void handleCreateParameterEvent(){
+	private void handleCreateDataTypeEvent(){
 	  	  
-		CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-				RealtimeStatechartElementTypes.Action_3024);
-						  
-					ParameterCreateCommand command = new ParameterCreateCommand(request, 
-							this.parameterNameText.getText(), this.parameterTypeCombo.getText());
-			
-					new ICommandProxy(command).execute();
+		if(!dataTypeNameText.getText().equals("") && !instanceTypeNameText.getText().equals("")){
+			CreateElementRequest request = new CreateElementRequest(((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart(),
+					RealtimeStatechartElementTypes.Action_3024);
+							  
+						DataTypeCreateCommand command = new DataTypeCreateCommand(request, 
+								this.dataTypeNameText.getText(), this.instanceTypeNameText.getText());
+				
+						new ICommandProxy(command).execute();
+		}
 	}
 	
-	private void handleDeleteParameterEvent(){
+	private void handleDeleteDataTypeEvent(){
 		
+	      ISelection selection = dataTypeLViewer.getSelection();
+
+	      if(selection instanceof IStructuredSelection)
+	      {
+	    	  IStructuredSelection sel = (IStructuredSelection) selection;
+
+	    	  for (Object obj : sel.toList()) {
+
+	    		  if(obj != null){
+	    			  
+	    			  Iterator<EDataType> iter = ((CreateEDataTypeWizard)getWizard()).
+	    			  	getRealtimeStatechart().getDataTypes().iterator();
+	    			  while(iter.hasNext()){
+	    				  EDataType tmp = iter.next();
+	    				  if(getFullDataType(tmp).equals(obj.toString())){
+	    					  deleteObject(tmp);
+	    				  }
+	    			  }
+	    		  }
+	    	  }
+	      }
 	}
 	
-	//provider
-	class ParameterListContentProvider implements IStructuredContentProvider
+	public Object[] getDataTypes(Object object)
 	{
-
+		if (object instanceof RealtimeStatechart)
+		{
+			RealtimeStatechart realtimeStatechart = (RealtimeStatechart)object;
+			ArrayList<String> list = new ArrayList<String>();
+	        	
+			if(realtimeStatechart.getDataTypes()!=null){
+				Iterator<EDataType> iter = realtimeStatechart.getDataTypes().iterator();
+				while(iter.hasNext()){
+	
+					list.add(getFullDataType(iter.next()));
+	        	}
+	        	return list.toArray();
+	      	}
+	  	}
+			
+		return null;
+	}	
+	
+	class DataTypeContentProvider implements IStructuredContentProvider
+	{
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
-
+		
 		public Object[] getElements(Object parent)
 		{
-	        if (parent instanceof SynchronizationChannel)
-	        {
-	        	SynchronizationChannel syncChannel = (SynchronizationChannel)parent;
-	        	ArrayList<String> list = new ArrayList<String>();
-	        	
-	        	if(syncChannel.getInParameters()!=null){
-	        		Iterator<EParameter> iter = syncChannel.getInParameters().iterator();
-	        		while(iter.hasNext()){
-	        			EParameter tmp = iter.next();
-	        			list.add(tmp.getName() +":"+tmp.getEType());
-	        		}
-	        		return list.toArray();
-	        	}
-	        }
-			
-	        return null;
+			return getDataTypes(parent);
 		}
-		
+			
 		public void dispose(){}
-		      
+		   
+	}
+	
+	private String getFullDataType(EDataType dataType){
+		return dataType.getName() +": ["+dataType.getInstanceTypeName()+ "]";
 	}
 	
 	protected void deleteObject(EObject obj){
 		new ICommandProxy(new DestroyElementCommand(
 			new DestroyElementRequest(obj, false))).execute();
 	}
-	
-	private void instanciateParameterTypeCombo(){
-		if(getDataTypes()!=null){
-			ArrayList<String> parameterNames = new ArrayList<String>();
-			
-			Iterator<EDataType> iter = getDataTypes().iterator();
-			while(iter.hasNext()){
-				EDataType dataType = iter.next();
-				
-				parameterNames.add(dataType.getName());
-			}
-			
-			String[] names = (String[]) parameterNames.toArray();
-		    Arrays.sort(names);
-		    
-		    for(int i=0; i<names.length; i++)
-		    	parameterTypeCombo.add(names[i]);
-		}
-	}
-	
-	private List<EDataType> getDataTypes(){
-		
-		FujabaRealtimeStatechart statechart = ((ModifyParameterWizard)getWizard()).getRealtimeStatechart();
-
-		return statechart.getTopLevelDataTypes();
-	}
-	
 }
