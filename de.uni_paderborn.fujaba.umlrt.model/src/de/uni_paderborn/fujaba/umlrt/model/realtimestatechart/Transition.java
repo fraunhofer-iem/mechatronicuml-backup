@@ -25,7 +25,6 @@ import org.storydriven.modeling.expressions.Expression;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector <em>Transition Mapping Vector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}</li>
@@ -58,32 +57,6 @@ import org.storydriven.modeling.expressions.Expression;
  * @generated
  */
 public interface Transition extends Prioritizable, ExtendableElement {
-	/**
-	 * Returns the value of the '<em><b>Transition Mapping Vector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transition Mapping Vector</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transition Mapping Vector</em>' attribute.
-	 * @see #setTransitionMappingVector(Vector)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TransitionMappingVector()
-	 * @model dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Vector"
-	 * @generated
-	 */
-	Vector getTransitionMappingVector();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector <em>Transition Mapping Vector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transition Mapping Vector</em>' attribute.
-	 * @see #getTransitionMappingVector()
-	 * @generated
-	 */
-	void setTransitionMappingVector(Vector value);
-
 	/**
 	 * Returns the value of the '<em><b>Send Synchronization</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization#getSendSyncRev <em>Send Sync Rev</em>}'.

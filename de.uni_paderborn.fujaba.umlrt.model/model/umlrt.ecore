@@ -987,8 +987,6 @@
                   <details key="body" value="String value = &quot;&quot;;&#xD;&#xA;if(clockResets!=null){&#xD;&#xA;java.util.Iterator&lt;Clock> iter = clockResets.iterator();&#xD;&#xA;while(iter.hasNext()){&#xD;&#xA;&#x9;Clock clock = iter.next();&#xD;&#xA;&#x9;&#x9;if(value.equals(&quot;&quot;)){&#xD;&#xA;&#x9;&#x9;&#x9;value = value + clock.getName() + clock.getId() + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;, &quot; + clock.getName() + clock.getId() + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;return value;"/>
                 </eAnnotations>
               </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionMappingVector"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Vector"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/sendSyncRev">

@@ -363,7 +363,6 @@
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/getRootRealtimeStatechart"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition">
-                <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionMappingVector"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sendSynchronization"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionAction"/>

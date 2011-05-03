@@ -1829,22 +1829,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__EXTENSION = PRIORITIZABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Transition Mapping Vector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__TRANSITION_MAPPING_VECTOR = PRIORITIZABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Send Synchronization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SEND_SYNCHRONIZATION = PRIORITIZABLE_FEATURE_COUNT + 3;
+	int TRANSITION__SEND_SYNCHRONIZATION = PRIORITIZABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Receive Synchronization</b></em>' containment reference.
@@ -1853,7 +1844,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RECEIVE_SYNCHRONIZATION = PRIORITIZABLE_FEATURE_COUNT + 4;
+	int TRANSITION__RECEIVE_SYNCHRONIZATION = PRIORITIZABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Transition Action</b></em>' containment reference.
@@ -1862,7 +1853,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRANSITION_ACTION = PRIORITIZABLE_FEATURE_COUNT + 5;
+	int TRANSITION__TRANSITION_ACTION = PRIORITIZABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1871,7 +1862,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = PRIORITIZABLE_FEATURE_COUNT + 6;
+	int TRANSITION__TARGET = PRIORITIZABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1880,7 +1871,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = PRIORITIZABLE_FEATURE_COUNT + 7;
+	int TRANSITION__SOURCE = PRIORITIZABLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
@@ -1889,7 +1880,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 8;
+	int TRANSITION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
@@ -1898,7 +1889,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 9;
+	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Events</b></em>' containment reference list.
@@ -1907,7 +1898,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 10;
+	int TRANSITION__TRIGGER_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Raised Events</b></em>' containment reference list.
@@ -1916,7 +1907,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 11;
+	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
@@ -1925,7 +1916,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZABLE_FEATURE_COUNT + 12;
+	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZABLE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -1934,7 +1925,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 13;
+	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -1943,7 +1934,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 14;
+	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Safety Transition</b></em>' attribute.
@@ -1952,7 +1943,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SAFETY_TRANSITION = PRIORITIZABLE_FEATURE_COUNT + 15;
+	int TRANSITION__SAFETY_TRANSITION = PRIORITIZABLE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -1961,7 +1952,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 16;
+	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1970,7 +1961,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 17;
+	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
@@ -1979,7 +1970,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 18;
+	int TRANSITION__EVENT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Transition Action Expr</b></em>' attribute.
@@ -1988,7 +1979,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRANSITION_ACTION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 19;
+	int TRANSITION__TRANSITION_ACTION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraint Expr</b></em>' attribute.
@@ -1997,7 +1988,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 20;
+	int TRANSITION__CLOCK_CONSTRAINT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadline Expr</b></em>' attribute.
@@ -2006,7 +1997,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 21;
+	int TRANSITION__ABSOLUTE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline Expr</b></em>' attribute.
@@ -2015,7 +2006,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 22;
+	int TRANSITION__RELATIVE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Guard Expr</b></em>' attribute.
@@ -2024,7 +2015,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 23;
+	int TRANSITION__GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Synchro Expr</b></em>' attribute.
@@ -2033,7 +2024,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SYNCHRO_EXPR = PRIORITIZABLE_FEATURE_COUNT + 24;
+	int TRANSITION__SYNCHRO_EXPR = PRIORITIZABLE_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets Expr</b></em>' attribute.
@@ -2042,7 +2033,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
+	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Safety Transition Expr</b></em>' attribute.
@@ -2051,7 +2042,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SAFETY_TRANSITION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 26;
+	int TRANSITION__SAFETY_TRANSITION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -2060,7 +2051,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 27;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 26;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4918,17 +4909,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getTransition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector <em>Transition Mapping Vector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transition Mapping Vector</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionMappingVector()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_TransitionMappingVector();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6088,14 +6068,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRANSITION = eINSTANCE.getTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition Mapping Vector</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__TRANSITION_MAPPING_VECTOR = eINSTANCE.getTransition_TransitionMappingVector();
 
 		/**
 		 * The meta object literal for the '<em><b>Send Synchronization</b></em>' containment reference feature.

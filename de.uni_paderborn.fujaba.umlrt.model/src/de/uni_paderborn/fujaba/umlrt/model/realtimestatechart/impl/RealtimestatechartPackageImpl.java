@@ -711,17 +711,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_TransitionMappingVector() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTransition_SendSynchronization() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -730,7 +721,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_ReceiveSynchronization() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -739,7 +730,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_TransitionAction() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(3);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -748,7 +739,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_Target() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(4);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -757,7 +748,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_Source() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(5);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -766,7 +757,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_Statechart() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(6);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -775,7 +766,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_ClockResets() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(7);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -784,7 +775,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_TriggerEvents() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(8);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -793,7 +784,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_RaisedEvents() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(9);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -802,7 +793,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_ClockConstraints() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(10);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -811,7 +802,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_AbsoluteDeadlines() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(11);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -820,7 +811,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_RelativeDeadline() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(12);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -829,7 +820,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_Urgent() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(14);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -838,7 +829,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getTransition_Guard() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(15);
+		return (EReference)transitionEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -847,7 +838,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_EventExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(16);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -856,7 +847,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_TransitionActionExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(17);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -865,7 +856,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_ClockConstraintExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -874,7 +865,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_AbsoluteDeadlineExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(19);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -883,7 +874,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_RelativeDeadlineExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -892,7 +883,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_GuardExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -901,7 +892,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_SynchroExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -910,7 +901,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_ClockResetsExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -919,7 +910,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_SafetyTransitionExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(24);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -928,7 +919,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getTransition_SafetyTransition() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1430,7 +1421,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEOperation(vertexEClass, VERTEX___GET_ROOT_REALTIME_STATECHART);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEAttribute(transitionEClass, TRANSITION__TRANSITION_MAPPING_VECTOR);
 		createEReference(transitionEClass, TRANSITION__SEND_SYNCHRONIZATION);
 		createEReference(transitionEClass, TRANSITION__RECEIVE_SYNCHRONIZATION);
 		createEReference(transitionEClass, TRANSITION__TRANSITION_ACTION);
@@ -1637,7 +1627,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEOperation(getVertex__GetRootRealtimeStatechart(), theCorePackage.getAbstractStatechart(), "getRootRealtimeStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTransition_TransitionMappingVector(), theHelperPackage.getVector(), "transitionMappingVector", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_SendSynchronization(), this.getSynchronization(), this.getSynchronization_SendSyncRev(), "sendSynchronization", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_ReceiveSynchronization(), this.getSynchronization(), this.getSynchronization_ReceiveSyncRev(), "receiveSynchronization", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_TransitionAction(), this.getAction(), this.getAction_Transition(), "transitionAction", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

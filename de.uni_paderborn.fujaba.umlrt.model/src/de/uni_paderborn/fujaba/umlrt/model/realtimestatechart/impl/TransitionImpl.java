@@ -54,7 +54,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionMappingVector <em>Transition Mapping Vector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getSendSynchronization <em>Send Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionAction <em>Transition Action</em>}</li>
@@ -104,26 +103,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected EList<Extension> extensions;
-
-	/**
-	 * The default value of the '{@link #getTransitionMappingVector() <em>Transition Mapping Vector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionMappingVector()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Vector TRANSITION_MAPPING_VECTOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTransitionMappingVector() <em>Transition Mapping Vector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionMappingVector()
-	 * @generated
-	 * @ordered
-	 */
-	protected Vector transitionMappingVector = TRANSITION_MAPPING_VECTOR_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSendSynchronization() <em>Send Synchronization</em>}' containment reference.
@@ -471,27 +450,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartPackage.TRANSITION__EXTENSION, SDMPackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Vector getTransitionMappingVector() {
-		return transitionMappingVector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransitionMappingVector(Vector newTransitionMappingVector) {
-		Vector oldTransitionMappingVector = transitionMappingVector;
-		transitionMappingVector = newTransitionMappingVector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR, oldTransitionMappingVector, transitionMappingVector));
 	}
 
 	/**
@@ -1310,8 +1268,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getAnnotations();
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return getExtensions();
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR:
-				return getTransitionMappingVector();
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 				return getSendSynchronization();
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
@@ -1382,9 +1338,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR:
-				setTransitionMappingVector((Vector)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 				setSendSynchronization((Synchronization)newValue);
@@ -1457,9 +1410,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				getExtensions().clear();
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR:
-				setTransitionMappingVector(TRANSITION_MAPPING_VECTOR_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 				setSendSynchronization((Synchronization)null);
 				return;
@@ -1524,8 +1474,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return annotations != null && !annotations.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return extensions != null && !extensions.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_MAPPING_VECTOR:
-				return TRANSITION_MAPPING_VECTOR_EDEFAULT == null ? transitionMappingVector != null : !TRANSITION_MAPPING_VECTOR_EDEFAULT.equals(transitionMappingVector);
 			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
 				return sendSynchronization != null;
 			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
@@ -1695,9 +1643,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (transitionMappingVector: ");
-		result.append(transitionMappingVector);
-		result.append(", safetyTransition: ");
+		result.append(" (safetyTransition: ");
 		result.append(safetyTransition);
 		result.append(", urgent: ");
 		result.append(urgent);
