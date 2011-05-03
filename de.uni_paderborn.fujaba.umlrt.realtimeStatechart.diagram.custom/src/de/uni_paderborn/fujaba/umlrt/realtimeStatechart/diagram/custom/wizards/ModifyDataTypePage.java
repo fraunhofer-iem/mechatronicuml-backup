@@ -31,14 +31,14 @@ import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.DataTypeCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class CreateEDataTypePage extends WizardPage{
+public class ModifyDataTypePage extends WizardPage{
 	
 	protected Text dataTypeNameText = null;
 	protected Text instanceTypeNameText = null;
 	
 	protected ListViewer dataTypeLViewer = null;
  
-	public CreateEDataTypePage(String pageName)
+	public ModifyDataTypePage(String pageName)
 	{
 		super(pageName);
 	}
@@ -108,7 +108,7 @@ public class CreateEDataTypePage extends WizardPage{
 	    exitingParameterFormData.bottom = new FormAttachment(20, 0);
 	    Label exitingParameterLabel = new Label(main, SWT.NONE);
 	    exitingParameterLabel.setText("Existing data types of \n" +
-	    		"realtime statechart: '"+ ((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart().getName()+ "'");
+	    		"realtime statechart: '"+ ((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart().getName()+ "'");
 	    exitingParameterLabel.setLayoutData(exitingParameterFormData);
 	    
 	    FormData parameterLViewerFormData = new FormData();
@@ -121,7 +121,7 @@ public class CreateEDataTypePage extends WizardPage{
 	    parametersViewerComposite.setLayoutData(parameterLViewerFormData);
 	    dataTypeLViewer = new ListViewer(parametersViewerComposite);
 	    dataTypeLViewer.setContentProvider(new DataTypeContentProvider());
-	    dataTypeLViewer.setInput(((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart());
+	    dataTypeLViewer.setInput(((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart());
 	    
 	    FormData createButtonFormData = new FormData();
 	    createButtonFormData.left = new FormAttachment(0, 0);
@@ -163,7 +163,7 @@ public class CreateEDataTypePage extends WizardPage{
 	private void handleCreateDataTypeEvent(){
 	  	  
 		if(!dataTypeNameText.getText().equals("") && !instanceTypeNameText.getText().equals("")){
-			CreateElementRequest request = new CreateElementRequest(((CreateEDataTypeWizard)getWizard()).getRealtimeStatechart(),
+			CreateElementRequest request = new CreateElementRequest(((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart(),
 					RealtimeStatechartElementTypes.Action_3024);
 							  
 						DataTypeCreateCommand command = new DataTypeCreateCommand(request, 
@@ -185,12 +185,13 @@ public class CreateEDataTypePage extends WizardPage{
 
 	    		  if(obj != null){
 	    			  
-	    			  Iterator<EDataType> iter = ((CreateEDataTypeWizard)getWizard()).
+	    			  Iterator<EDataType> iter = ((ModifyDataTypeWizard)getWizard()).
 	    			  	getRealtimeStatechart().getDataTypes().iterator();
 	    			  while(iter.hasNext()){
 	    				  EDataType tmp = iter.next();
 	    				  if(getFullDataType(tmp).equals(obj.toString())){
 	    					  deleteObject(tmp);
+	    					  break;
 	    				  }
 	    			  }
 	    		  }
@@ -215,7 +216,7 @@ public class CreateEDataTypePage extends WizardPage{
 	      	}
 	  	}
 			
-		return null;
+		return new Object[0];
 	}	
 	
 	class DataTypeContentProvider implements IStructuredContentProvider

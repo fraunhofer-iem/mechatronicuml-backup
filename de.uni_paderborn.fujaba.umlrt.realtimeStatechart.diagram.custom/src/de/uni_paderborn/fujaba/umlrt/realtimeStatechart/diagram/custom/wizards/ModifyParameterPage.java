@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,7 +11,9 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.WizardPage;
@@ -22,12 +23,12 @@ import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Combo;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
@@ -125,8 +126,8 @@ public class ModifyParameterPage extends WizardPage{
 	    parametersViewerComposite.setLayout(new FillLayout());
 	    parametersViewerComposite.setLayoutData(parameterLViewerFormData);
 	    parameterLViewer = new ListViewer(parametersViewerComposite);
-	    parameterLViewer.setContentProvider(new ParameterListContentProvider());
-	    parameterLViewer.setInput(null);
+	    parameterLViewer.setContentProvider(new ParametersContentProvider());
+	    parameterLViewer.setInput(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel());
 	    
 	    FormData createButtonFormData = new FormData();
 	    createButtonFormData.left = new FormAttachment(0, 0);
@@ -140,6 +141,7 @@ public class ModifyParameterPage extends WizardPage{
 	    	public void handleEvent(Event event)
 	    	{
 	    		handleCreateParameterEvent();
+	    		parameterLViewer.refresh();
 	        }
 	     });
 	     createButton.setLayoutData(createButtonFormData);
@@ -156,6 +158,7 @@ public class ModifyParameterPage extends WizardPage{
 	    	 public void handleEvent(Event event)
 	    	 {
 	    		 handleDeleteParameterEvent();
+	    		 parameterLViewer.refresh();
 	    	 }
 		});
 	     deleteButton.setLayoutData(deleteButtonFormData);		     
@@ -164,47 +167,74 @@ public class ModifyParameterPage extends WizardPage{
 	
 	private void handleCreateParameterEvent(){
 	  	  
-		CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-				RealtimeStatechartElementTypes.Action_3024);
-						  
-					ParameterCreateCommand command = new ParameterCreateCommand(request, 
-							this.parameterNameText.getText(), this.parameterTypeCombo.getText());
-			
-					new ICommandProxy(command).execute();
+		if(!parameterNameText.getText().equals("") && getSelectedDataType()!= null){
+			CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
+					RealtimeStatechartElementTypes.Action_3024);
+							  
+						ParameterCreateCommand command = new ParameterCreateCommand(request, 
+								this.parameterNameText.getText(), getSelectedDataType());
+				
+						new ICommandProxy(command).execute();
+		}
 	}
 	
 	private void handleDeleteParameterEvent(){
 		
+	      ISelection selection = parameterLViewer.getSelection();
+
+	      if(selection instanceof IStructuredSelection)
+	      {
+	    	  IStructuredSelection sel = (IStructuredSelection) selection;
+
+	    	  for (Object obj : sel.toList()) {
+
+	    		  if(obj != null){
+	    			  
+	    			  Iterator<EParameter> iter = ((ModifyParameterWizard)getWizard()).
+	    			  	getSelectedSyncChannel().getContainedParameters().iterator();
+	    			  while(iter.hasNext()){
+	    				  EParameter tmp = iter.next();
+	    				  if(getFullParameterName(tmp).equals(obj.toString())){
+	    					  deleteObject(tmp);
+	    					  break;
+	    				  }
+	    			  }
+	    		  }
+	    	  }
+	      }
 	}
 	
-	//provider
-	class ParameterListContentProvider implements IStructuredContentProvider
+	
+	public Object[] getParameters(Object object)
 	{
-
+        if (object instanceof SynchronizationChannel)
+        {
+        	SynchronizationChannel syncChannel = (SynchronizationChannel)object;
+        	ArrayList<String> list = new ArrayList<String>();
+        	
+        	if(syncChannel.getContainedParameters()!=null){
+        		Iterator<EParameter> iter = syncChannel.getContainedParameters().iterator();
+        		while(iter.hasNext()){
+        			list.add(getFullParameterName(iter.next()));
+        		}
+        		return list.toArray();
+        	}
+        }
+		
+        return new Object[0];
+	}	
+	
+	class ParametersContentProvider implements IStructuredContentProvider
+	{
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
-
+		
 		public Object[] getElements(Object parent)
 		{
-	        if (parent instanceof SynchronizationChannel)
-	        {
-	        	SynchronizationChannel syncChannel = (SynchronizationChannel)parent;
-	        	ArrayList<String> list = new ArrayList<String>();
-	        	
-	        	if(syncChannel.getInParameters()!=null){
-	        		Iterator<EParameter> iter = syncChannel.getInParameters().iterator();
-	        		while(iter.hasNext()){
-	        			EParameter tmp = iter.next();
-	        			list.add(tmp.getName() +":"+tmp.getEType());
-	        		}
-	        		return list.toArray();
-	        	}
-	        }
-			
-	        return null;
+			return getParameters(parent);
 		}
-		
+			
 		public void dispose(){}
-		      
+		   
 	}
 	
 	protected void deleteObject(EObject obj){
@@ -214,21 +244,28 @@ public class ModifyParameterPage extends WizardPage{
 	
 	private void instanciateParameterTypeCombo(){
 		if(getDataTypes()!=null){
-			ArrayList<String> parameterNames = new ArrayList<String>();
-			
+		
 			Iterator<EDataType> iter = getDataTypes().iterator();
 			while(iter.hasNext()){
 				EDataType dataType = iter.next();
 				
-				parameterNames.add(dataType.getName());
+				parameterTypeCombo.add(dataType.getName());
 			}
-			
-			String[] names = (String[]) parameterNames.toArray();
-		    Arrays.sort(names);
-		    
-		    for(int i=0; i<names.length; i++)
-		    	parameterTypeCombo.add(names[i]);
 		}
+	}
+	
+	private EDataType getSelectedDataType(){
+	      
+		String dataTypeString = parameterTypeCombo.getItem(parameterTypeCombo.getSelectionIndex());
+		Iterator<EDataType> iter = ((ModifyParameterWizard)getWizard()).
+	  		getRealtimeStatechart().getDataTypes().iterator();
+		while(iter.hasNext()){
+			EDataType tmp = iter.next();
+			if(tmp.getName().equals(dataTypeString)){
+				return tmp;
+			}
+		}
+		return null;
 	}
 	
 	private List<EDataType> getDataTypes(){
@@ -238,4 +275,7 @@ public class ModifyParameterPage extends WizardPage{
 		return statechart.getTopLevelDataTypes();
 	}
 	
+	private String getFullParameterName(EParameter parameter){
+		return parameter.getName() +": "+parameter.getEType().getName();
+	}
 }

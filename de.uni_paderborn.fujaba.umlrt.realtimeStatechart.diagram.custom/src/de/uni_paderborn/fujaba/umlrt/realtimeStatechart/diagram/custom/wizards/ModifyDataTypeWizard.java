@@ -12,15 +12,15 @@ import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class CreateEDataTypeWizard extends AbstractWizard {
+public class ModifyDataTypeWizard extends AbstractWizard {
 	
 	private final String CREATE_EDATATYPE_WIZARD_SECTION = "CreateEDataTypeWizard";
 
 	private FujabaRealtimeStatechart realtimeStatechart = null;
 
-	private CreateEDataTypePage addEDataTypePage;
+	private ModifyDataTypePage addEDataTypePage;
 	
-	public CreateEDataTypeWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag)
+	public ModifyDataTypeWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag)
 	{
 		super();
 
@@ -40,7 +40,7 @@ public class CreateEDataTypeWizard extends AbstractWizard {
 	@Override
 	public void addPages() {
 
-		addEDataTypePage = new CreateEDataTypePage("Create/Delete data types for selected realtime statechart");
+		addEDataTypePage = new ModifyDataTypePage("Create/Delete data types for selected realtime statechart");
 		addPage(addEDataTypePage);
 		
 	}

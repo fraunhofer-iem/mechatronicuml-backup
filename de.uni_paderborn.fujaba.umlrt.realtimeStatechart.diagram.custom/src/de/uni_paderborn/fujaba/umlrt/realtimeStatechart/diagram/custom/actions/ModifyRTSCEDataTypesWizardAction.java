@@ -7,7 +7,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.CreateEDataTypeWizard;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyDataTypeWizard;
 
 public class ModifyRTSCEDataTypesWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
 {	
@@ -42,7 +42,7 @@ public class ModifyRTSCEDataTypesWizardAction extends AbstractRealtimeStatechart
          workbench = this.window.getWorkbench();
       }
       
-      CreateEDataTypeWizard wizard = new CreateEDataTypeWizard(diag);
+      ModifyDataTypeWizard wizard = new ModifyDataTypeWizard(diag);
       wizard.init(workbench, null);
       WizardDialog dialog = new WizardDialog(shell, wizard);
       dialog.create();

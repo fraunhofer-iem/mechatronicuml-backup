@@ -24,12 +24,12 @@ import org.storydriven.modeling.calls.Callable;
 public class ParameterCreateCommand extends EditElementCommand {
 	
 	private String name = null;
-	private String type = null;
+	private EDataType type = null;
 
 	/**
 	 * @generated
 	 */
-	public ParameterCreateCommand(CreateElementRequest req, String name, String type) {
+	public ParameterCreateCommand(CreateElementRequest req, String name, EDataType type) {
 		super(req.getLabel(), null, req);
 		this.name = name;
 		this.type = type;
@@ -65,27 +65,10 @@ public class ParameterCreateCommand extends EditElementCommand {
 		EParameter newElement = EcoreFactory.eINSTANCE.createEParameter();
 
 		Callable owner = (Callable) getElementToEdit();
-		owner.getContainedParameters().add(newElement);
-		
-		EDataType dataType = org.eclipse.emf.ecore.EcoreFactory.eINSTANCE.createEDataType();
-		if(type.equals("int")){
-			dataType.setName("EInt");
-			dataType.setInstanceTypeName("int");
-			dataType.setSerializable(true);
-		}else if(type.equals("double")){
-			dataType.setName("EDouble");
-			dataType.setInstanceTypeName("double");
-			dataType.setSerializable(true);
-		}else if(type.equals("string")){
-			dataType.setName("EString");
-			dataType.setInstanceTypeName("java.lang.String");
-			dataType.setSerializable(true);			
-		}else{
-			throw new ExecutionException("Type not found!");
-		}
+		owner.getContainedParameters().add(newElement);	
 
 		newElement.setName(name);
-		newElement.setEType(dataType);
+		newElement.setEType(type);
 
 		doConfigure(newElement, monitor, info);
 
