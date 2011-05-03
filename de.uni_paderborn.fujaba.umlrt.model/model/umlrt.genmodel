@@ -458,6 +458,8 @@
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
+                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/dataTypes"/>
+                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/getTopLevelDataTypes"/>
               </genClasses>
               <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart"
                   disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper">
@@ -471,6 +473,9 @@
                   <genTypeParameters ecoreTypeParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Set/UMLClock"/>
                 </genDataTypes>
                 <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Iterator"/>
+                <genDataTypes ecoreDataType="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyList">
+                  <genTypeParameters ecoreTypeParameter="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/MyList/elements"/>
+                </genDataTypes>
                 <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/StringToEClass">
                   <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/StringToEClass/key"/>
                   <genFeatures notify="false" createChild="false" propertySortChoices="true"

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -1331,6 +1332,24 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFujabaRealtimeStatechart_DataTypes() {
+		return (EReference)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getFujabaRealtimeStatechart__GetTopLevelDataTypes() {
+		return fujabaRealtimeStatechartEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getHistoryKind() {
 		return historyKindEEnum;
 	}
@@ -1496,6 +1515,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		fujabaRealtimeStatechartEClass = createEClass(FUJABA_REALTIME_STATECHART);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EMBEDDING_REGION);
+		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__DATA_TYPES);
+		createEOperation(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES);
 
 		// Create enums
 		historyKindEEnum = createEEnum(HISTORY_KIND);
@@ -1706,6 +1727,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(fujabaRealtimeStatechartEClass, FujabaRealtimeStatechart.class, "FujabaRealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFujabaRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechart_DataTypes(), theEcorePackage.getEDataType(), null, "dataTypes", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getFujabaRealtimeStatechart__GetTopLevelDataTypes(), null, "getTopLevelDataTypes", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(theHelperPackage.getMyList());
+		EGenericType g2 = createEGenericType(theEcorePackage.getEDataType());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		// Initialize enums and add enum literals
 		initEEnum(historyKindEEnum, HistoryKind.class, "HistoryKind");
@@ -1737,7 +1765,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																															
+		   });																																																																
 	}
 
 	/**
@@ -1795,7 +1823,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "toMyString()"
-		   });	
+		   });		
 	}
 
 } //RealtimestatechartPackageImpl

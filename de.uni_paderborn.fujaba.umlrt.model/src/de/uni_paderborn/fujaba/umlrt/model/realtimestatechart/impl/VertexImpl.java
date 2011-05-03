@@ -168,9 +168,15 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 */
 	public AbstractStatechart getRootRealtimeStatechart() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+				AbstractStatechart root = null;
+				org.eclipse.emf.ecore.EObject obj = getStatechart();
+				for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element
+				.eContainer()) {
+					if (element instanceof AbstractStatechart) {
+						root = (AbstractStatechart )element;
+					}
+				}
+			return root;
 	}
 
 	/**

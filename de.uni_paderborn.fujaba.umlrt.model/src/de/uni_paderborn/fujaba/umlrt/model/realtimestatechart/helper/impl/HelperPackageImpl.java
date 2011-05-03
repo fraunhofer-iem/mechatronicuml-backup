@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
@@ -88,6 +89,13 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	 * @generated
 	 */
 	private EDataType iteratorEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType myListEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -256,6 +264,15 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getMyList() {
+		return myListEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public HelperFactory getHelperFactory() {
 		return (HelperFactory)getEFactoryInstance();
 	}
@@ -289,6 +306,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		vectorEDataType = createEDataType(VECTOR);
 		setEDataType = createEDataType(SET);
 		iteratorEDataType = createEDataType(ITERATOR);
+		myListEDataType = createEDataType(MY_LIST);
 	}
 
 	/**
@@ -321,6 +339,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		addETypeParameter(myMapEDataType, "key");
 		addETypeParameter(myMapEDataType, "value");
 		addETypeParameter(setEDataType, "UMLClock");
+		addETypeParameter(myListEDataType, "elements");
 
 		// Set bounds for type parameters
 
@@ -337,6 +356,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		initEDataType(vectorEDataType, Vector.class, "Vector", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(setEDataType, Set.class, "Set", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(iteratorEDataType, Iterator.class, "Iterator", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(myListEDataType, List.class, "MyList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //HelperPackageImpl

@@ -6,17 +6,24 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.List;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +49,16 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 	 * @ordered
 	 */
 	protected Region embeddingRegion;
+
+	/**
+	 * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EDataType> dataTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +144,34 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EDataType> getDataTypes() {
+		if (dataTypes == null) {
+			dataTypes = new EObjectContainmentEList<EDataType>(EDataType.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES);
+		}
+		return dataTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<EDataType> getTopLevelDataTypes() {
+				if(embeddingRegion == null){
+					return getDataTypes();
+				}
+				de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();
+				if(root instanceof FujabaRealtimeStatechart){
+					return ((FujabaRealtimeStatechart)root).getDataTypes();
+				}
+				return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,6 +193,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 		switch (featureID) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				return basicSetEmbeddingRegion(null, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES:
+				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,6 +210,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				if (resolve) return getEmbeddingRegion();
 				return basicGetEmbeddingRegion();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES:
+				return getDataTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +221,16 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)newValue);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES:
+				getDataTypes().clear();
+				getDataTypes().addAll((Collection<? extends EDataType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,6 +247,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)null);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES:
+				getDataTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,8 +264,25 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 		switch (featureID) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				return embeddingRegion != null;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES:
+				return dataTypes != null && !dataTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES:
+				return getTopLevelDataTypes();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
 
 } //FujabaRealtimeStatechartImpl

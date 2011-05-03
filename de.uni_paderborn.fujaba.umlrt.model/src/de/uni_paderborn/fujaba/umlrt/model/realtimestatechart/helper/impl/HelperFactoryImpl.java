@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.*;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
@@ -91,6 +92,8 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 				return createSetFromString(eDataType, initialValue);
 			case HelperPackage.ITERATOR:
 				return createIteratorFromString(eDataType, initialValue);
+			case HelperPackage.MY_LIST:
+				return createMyListFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +117,8 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 				return convertSetToString(eDataType, instanceValue);
 			case HelperPackage.ITERATOR:
 				return convertIteratorToString(eDataType, instanceValue);
+			case HelperPackage.MY_LIST:
+				return convertMyListToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -217,6 +222,24 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 	 */
 	public String convertIteratorToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<?> createMyListFromString(EDataType eDataType, String initialValue) {
+		return (List<?>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMyListToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

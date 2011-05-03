@@ -159,6 +159,17 @@ public interface HelperPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>My List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.List
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getMyList()
+	 * @generated
+	 */
+	int MY_LIST = 6;
+
+
+	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +257,17 @@ public interface HelperPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getIterator();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.List <em>My List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>My List</em>'.
+	 * @see java.util.List
+	 * @model instanceClass="java.util.List" typeParameters="elements"
+	 * @generated
+	 */
+	EDataType getMyList();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -345,6 +367,16 @@ public interface HelperPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType ITERATOR = eINSTANCE.getIterator();
+
+		/**
+		 * The meta object literal for the '<em>My List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.List
+		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getMyList()
+		 * @generated
+		 */
+		EDataType MY_LIST = eINSTANCE.getMyList();
 
 	}
 

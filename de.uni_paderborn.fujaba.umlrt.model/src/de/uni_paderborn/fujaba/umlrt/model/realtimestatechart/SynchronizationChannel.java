@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import org.storydriven.modeling.NamedElement;
-
 import org.storydriven.modeling.calls.Callable;
 
 /**

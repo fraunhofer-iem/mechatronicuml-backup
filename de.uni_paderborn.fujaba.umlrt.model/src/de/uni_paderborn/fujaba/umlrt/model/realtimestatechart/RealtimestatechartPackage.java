@@ -4216,13 +4216,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__DATA_TYPES = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 1;
+	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4468,13 +4477,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART___CLONE = CorePackage.ABSTRACT_STATECHART___CLONE;
 
 	/**
+	 * The operation id for the '<em>Get Top Level Data Types</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Fujaba Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_OPERATION_COUNT = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 0;
+	int FUJABA_REALTIME_STATECHART_OPERATION_COUNT = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind <em>History Kind</em>}' enum.
@@ -5686,6 +5704,27 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFujabaRealtimeStatechart_EmbeddingRegion();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getDataTypes <em>Data Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data Types</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getDataTypes()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechart_DataTypes();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getTopLevelDataTypes() <em>Get Top Level Data Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Top Level Data Types</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getTopLevelDataTypes()
+	 * @generated
+	 */
+	EOperation getFujabaRealtimeStatechart__GetTopLevelDataTypes();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind <em>History Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6657,6 +6696,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = eINSTANCE.getFujabaRealtimeStatechart_EmbeddingRegion();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART__DATA_TYPES = eINSTANCE.getFujabaRealtimeStatechart_DataTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Top Level Data Types</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES = eINSTANCE.getFujabaRealtimeStatechart__GetTopLevelDataTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind <em>History Kind</em>}' enum.

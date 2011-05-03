@@ -112,6 +112,7 @@ public interface Vertex extends NamedElement {
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
 	 * <!-- end-model-doc -->
 	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tAbstractStatechart root = null;\r\n\t\torg.eclipse.emf.ecore.EObject obj = getStatechart();\r\n\t\tfor (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element\r\n\t\t.eContainer()) {\r\n\t\t\tif (element instanceof AbstractStatechart) {\r\n\t\t\t\troot = (AbstractStatechart )element;\r\n\t\t\t}\r\n\t\t}\r\n\treturn root;'"
 	 * @generated
 	 */
 	AbstractStatechart getRootRealtimeStatechart();

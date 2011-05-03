@@ -7,6 +7,9 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EDataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +24,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,5 +60,30 @@ public interface FujabaRealtimeStatechart extends AbstractStatechart {
 	 * @generated
 	 */
 	void setEmbeddingRegion(Region value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.EDataType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Types</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_DataTypes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EDataType> getDataTypes();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.MyList<org.eclipse.emf.ecore.EDataType>" many="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(embeddingRegion == null){\r\n\t\t\treturn getDataTypes();\r\n\t\t}\r\n\t\tde.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();\r\n\t\tif(root instanceof FujabaRealtimeStatechart){\r\n\t\t\treturn ((FujabaRealtimeStatechart)root).getDataTypes();\r\n\t\t}\r\n\t\treturn null;'"
+	 * @generated
+	 */
+	List<EDataType> getTopLevelDataTypes();
 
 } // FujabaRealtimeStatechart
