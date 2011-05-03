@@ -9,13 +9,13 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyParameterWizard;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifySynchronizationWizard;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 
-public class ModifySyncChannelParameterWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
+public class ModifySynchornizationWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
 {
-	protected SynchronizationChannel selectedSyncChannel = null;
+	protected Transition selectedTransition = null;
 	
 	private IWorkbenchWindow window;
 	   
@@ -48,7 +48,7 @@ public class ModifySyncChannelParameterWizardAction extends AbstractRealtimeStat
          workbench = this.window.getWorkbench();
       }
       
-      ModifyParameterWizard wizard = new ModifyParameterWizard(diag,selectedSyncChannel);
+      ModifySynchronizationWizard wizard = new ModifySynchronizationWizard(diag,selectedTransition);
       wizard.init(workbench, null);
       WizardDialog dialog = new WizardDialog(shell, wizard);
       dialog.create();
@@ -63,10 +63,10 @@ public class ModifySyncChannelParameterWizardAction extends AbstractRealtimeStat
 			IStructuredSelection structured = (IStructuredSelection) selection;
 			Object obj = structured.getFirstElement();
 
-	         if (obj instanceof SynchronizationChannelEditPart
-	               && ((SynchronizationChannelEditPart) obj).getNotationView().getElement() instanceof SynchronizationChannel){
+	         if (obj instanceof TransitionEditPart
+	               && ((TransitionEditPart) obj).getNotationView().getElement() instanceof Transition){
 	        	 
-	        	 selectedSyncChannel =(SynchronizationChannel) ((SynchronizationChannelEditPart) obj).getNotationView().getElement();
+	        	 selectedTransition =(Transition) ((TransitionEditPart) obj).getNotationView().getElement();
 	         }
 	  	}
 		

@@ -101,19 +101,11 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.SendSynchroCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySynchornizationWizardAction"
                enablesFor="1"
                icon="icons/Syn.gif"
-               id="Statechart.CreateSendSynchroID"
-               label="SendSynchronization"
-               menubarPath="RealtimeStatechart.Insert/group1">
-         </action>
-         <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ReceiveSynchroCreateAction"
-               enablesFor="1"
-               icon="icons/Syn.gif"
-               id="Statechart.CreateReceiveSynchroID"
-               label="ReceiveSynchronization"
+               id="Statechart.CreateSynchroID"
+               label="ModifySynchronization"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
@@ -146,7 +138,7 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySyncChannelParameterWizardAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySyncChannelWizardAction"
                enablesFor="1"
                id="Statechart.ModifyParameterID"
                label="Modify Parameters"
