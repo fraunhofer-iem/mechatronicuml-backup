@@ -589,20 +589,6 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheduleDocument"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                   defaultValueLiteral="\&quot;schedule.xml\&quot;"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStartState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState/startStateRev">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The start state of this realtime statechart."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLComplexRealtimeState"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The complex state in which this realtime statechart is embedded."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transitions"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/statechart">
@@ -933,8 +919,7 @@
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="startStateRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this start state belongs to."/>
                 </eAnnotations>
