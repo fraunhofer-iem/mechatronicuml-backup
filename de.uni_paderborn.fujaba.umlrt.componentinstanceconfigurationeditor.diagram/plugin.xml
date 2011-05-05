@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3001,3003"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3001,3003,3004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
@@ -202,7 +202,7 @@
             <method name="getType()" value="Componentinstanceconfiguration"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2002,3001,3003"/>
+            <method name="getType()" value="2002,3001,3003,3004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002"/>
@@ -211,7 +211,7 @@
             <method name="getType()" value="5003,5004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7003,7004"/>
+            <method name="getType()" value="7003"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -283,6 +283,15 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
+         <specializationType
+               id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3004"
+               name="%metatype.name.PortInstance_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3001"/>
+            <param name="semanticHint" value="3004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
          <metamodelType
                id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.AssemblyInstance_4001"
                name="%metatype.name.AssemblyInstance_4001"
@@ -318,6 +327,7 @@
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_3003"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3004"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.AssemblyInstance_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.DelegationInstance_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>

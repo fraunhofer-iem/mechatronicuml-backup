@@ -30,12 +30,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class PortInstanceEditPart extends AbstractBorderItemEditPart {
+public class PortInstance2EditPart extends AbstractBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 3004;
 
 	/**
 	 * @generated
@@ -50,7 +50,7 @@ public class PortInstanceEditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public PortInstanceEditPart(View view) {
+	public PortInstance2EditPart(View view) {
 		super(view);
 	}
 
@@ -63,7 +63,7 @@ public class PortInstanceEditPart extends AbstractBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.PortInstanceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.PortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

@@ -93,7 +93,7 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -138,12 +138,12 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -157,10 +157,10 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDerive2EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart) childEditPart)
 							.getFigure());
 			return true;
 		}

@@ -78,11 +78,13 @@ public class ComponentinstanceconfigurationPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPort3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.PortInstance_3001);
+		types.add(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.PortInstance_3004);
 		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.Port3CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.Port3CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.PortInstance_3001));
+				types);
 		entry.setId("createPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Port.gif")); //$NON-NLS-1$

@@ -134,17 +134,10 @@ public class ComponentinstanceconfigurationVisualIDRegistry {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
 					.getPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID;
+				return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
-					.getComponentInstance().isSuperTypeOf(
-							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID;
-			}
-			break;
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartment2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
 					.getComponentInstance().isSuperTypeOf(
 							domainElement.eClass())) {
@@ -198,19 +191,11 @@ public class ComponentinstanceconfigurationVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDerive2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartment2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

@@ -48,6 +48,42 @@
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/embeddedInstances"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="{0} : {1}"
+              editorPattern="{0}"
+              editPattern="{0}">
+            <diagramLabel
+                href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentNameDerived"/>
+            <editableFeatures
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.0"/>
+          <diagramNode
+              href="componentinstanceconfiguration.gmfgraph#ComponentInstance"/>
+          <children>
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
+              <diagramNode
+                  href="componentinstanceconfiguration.gmfgraph#Port"/>
+            </ownedChild>
+          </children>
+        </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.1">

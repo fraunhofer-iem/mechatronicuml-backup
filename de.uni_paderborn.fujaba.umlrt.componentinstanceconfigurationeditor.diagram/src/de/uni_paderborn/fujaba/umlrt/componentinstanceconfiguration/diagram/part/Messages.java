@@ -293,11 +293,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentInstanceComponentCompartment2EditPart_title;
-
-	/**
-	 * @generated
-	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -324,6 +319,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ComponentInstanceConfiguration_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortInstance_3004_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortInstance_3004_outgoinglinks;
 
 	/**
 	 * @generated
