@@ -10,7 +10,7 @@
             nsPrefix="model">
           <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
               nsPrefix="behavior">
-            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents the statechart of a port. The statechart describes the communication behavior of the port."/>
               </eAnnotations>
@@ -18,7 +18,7 @@
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart."/>
                 </eAnnotations>
-                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"/>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -508,19 +508,19 @@
               </eOperations>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement">
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ConstrainableElement">
               <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint/constrainableElement"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="AbstractStatechart" abstract="true"
-                eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+            <eClassifiers xsi:type="ecore:EClass" name="AbstractRealtimeStatechart"
+                abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a realtime statechart."/>
               </eAnnotations>
-              <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
                 </eAnnotations>
@@ -759,15 +759,15 @@
                   <details key="documentation" value="The coordination pattern this role belongs to."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="uMLRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="realtimeStatechart"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart describing the communication behavior of this role."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the realtime statechart of this role."/>
+                  <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
@@ -845,13 +845,13 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/clocks"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable">
+            <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentState"
@@ -919,7 +919,7 @@
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="startStateRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this start state belongs to."/>
                 </eAnnotations>
@@ -939,7 +939,7 @@
                   <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
                 </eAnnotations>
               </eOperations>
-              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
                   <details key="body" value="&#x9;&#x9;AbstractStatechart root = null;&#xD;&#xA;&#x9;&#x9;org.eclipse.emf.ecore.EObject obj = getStatechart();&#xD;&#xA;&#x9;&#x9;for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element&#xD;&#xA;&#x9;&#x9;.eContainer()) {&#xD;&#xA;&#x9;&#x9;&#x9;if (element instanceof AbstractStatechart) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;root = (AbstractStatechart )element;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;return root;"/>
@@ -959,7 +959,7 @@
                   <details key="documentation" value="The incoming transitions of this state."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this state belongs to."/>
                 </eAnnotations>
@@ -1005,8 +1005,8 @@
                   <details key="documentation" value="The state which is the source of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this transition belongs to."/>
                 </eAnnotations>
@@ -1272,7 +1272,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart"
-                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart">
+                eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
               </eAnnotations>
