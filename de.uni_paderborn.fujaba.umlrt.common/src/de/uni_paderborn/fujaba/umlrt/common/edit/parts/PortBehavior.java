@@ -114,9 +114,9 @@ public class PortBehavior {
 			CustomPortFigure.PortType portType;
 			if (port.getRequired() != null && port.getProvided() != null) {
 				portType = CustomPortFigure.PortType.INOUT_PORT;
-			} else if (port.getRequired() != null) {
-				portType = CustomPortFigure.PortType.IN_PORT;
 			} else if (port.getProvided() != null) {
+				portType = CustomPortFigure.PortType.IN_PORT;
+			} else if (port.getRequired() != null) {
 				portType = CustomPortFigure.PortType.OUT_PORT;
 			} else {
 				portType = CustomPortFigure.PortType.NONE;
