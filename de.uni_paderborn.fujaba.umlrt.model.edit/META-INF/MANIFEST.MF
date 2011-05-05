@@ -15,6 +15,7 @@ Export-Package: de.uni_paderborn.fujaba.umlrt.model.behavior.provider,
  de.uni_paderborn.fujaba.umlrt.model.instance.provider,
  de.uni_paderborn.fujaba.umlrt.model.msgiface.provider,
  de.uni_paderborn.fujaba.umlrt.model.pattern.provider,
+ de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.provider,
  de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
