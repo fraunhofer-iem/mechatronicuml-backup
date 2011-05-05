@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
@@ -194,20 +195,20 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getTransitions <em>Transitions</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this transition belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(AbstractStatechart)
+	 * @see #setStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_Statechart()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getTransitions
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getTransitions
 	 * @model opposite="transitions" transient="false"
 	 * @generated
 	 */
-	AbstractStatechart getStatechart();
+	AbstractRealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}' container reference.
@@ -217,7 +218,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractStatechart value);
+	void setStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock Resets</b></em>' reference list.

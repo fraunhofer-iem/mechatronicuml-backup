@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
@@ -30,7 +31,7 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPattern <em>Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRequired <em>Required</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getProvided <em>Provided</em>}</li>
@@ -99,36 +100,36 @@ public interface Role extends NamedElement, ConstrainableElement {
 	void setPattern(CoordinationPattern value);
 
 	/**
-	 * Returns the value of the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart describing the communication behavior of this role.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #setUMLRealtimeStatechart(AbstractStatechart)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_UMLRealtimeStatechart()
+	 * @return the value of the '<em>Realtime Statechart</em>' reference.
+	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_RealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	AbstractStatechart getUMLRealtimeStatechart();
+	AbstractRealtimeStatechart getRealtimeStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>UML Realtime Statechart</em>' reference.
-	 * @see #getUMLRealtimeStatechart()
+	 * @param value the new value of the '<em>Realtime Statechart</em>' reference.
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	void setUMLRealtimeStatechart(AbstractStatechart value);
+	void setRealtimeStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the realtime statechart of this role.
+	 * The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)

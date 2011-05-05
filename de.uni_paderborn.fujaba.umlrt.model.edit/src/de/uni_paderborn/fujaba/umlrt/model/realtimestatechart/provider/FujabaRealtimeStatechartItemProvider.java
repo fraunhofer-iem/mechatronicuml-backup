@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.provider.AbstractStatechartItemProvider;
+import de.uni_paderborn.fujaba.umlrt.model.core.provider.AbstractRealtimeStatechartItemProvider;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 
@@ -42,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class FujabaRealtimeStatechartItemProvider
-	extends AbstractStatechartItemProvider
+	extends AbstractRealtimeStatechartItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -205,11 +205,8 @@ public class FujabaRealtimeStatechartItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_REALTIME_START_STATE ||
-			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__VERTICES ||
-			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE ||
-			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == CorePackage.Literals.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
+			childFeature == CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE ||
+			childFeature == CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
 
 		if (qualify) {
 			return getString

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Vector;
@@ -706,9 +707,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getStatechart() {
+	public AbstractRealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART) return null;
-		return (AbstractStatechart)eContainer();
+		return (AbstractRealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -716,7 +717,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(AbstractStatechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(AbstractRealtimeStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.TRANSITION__STATECHART, msgs);
 		return msgs;
 	}
@@ -726,7 +727,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractStatechart newStatechart) {
+	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -734,7 +735,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS, AbstractStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS, AbstractRealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -1187,7 +1188,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((AbstractStatechart)otherEnd, msgs);
+				return basicSetStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTriggerEvents()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
@@ -1251,7 +1252,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_STATECHART__TRANSITIONS, AbstractStatechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS, AbstractRealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -1355,7 +1356,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((AbstractStatechart)newValue);
+				setStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
@@ -1426,7 +1427,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				setSource((Vertex)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((AbstractStatechart)null);
+				setStatechart((AbstractRealtimeStatechart)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();

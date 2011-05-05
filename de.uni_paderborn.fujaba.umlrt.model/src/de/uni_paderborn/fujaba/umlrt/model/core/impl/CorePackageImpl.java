@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
@@ -106,7 +107,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass abstractStatechartEClass = null;
+	private EClass abstractRealtimeStatechartEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -428,8 +429,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAbstractStatechart() {
-		return abstractStatechartEClass;
+	public EClass getAbstractRealtimeStatechart() {
+		return abstractRealtimeStatechartEClass;
 	}
 
 	/**
@@ -437,8 +438,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_EventQueueSize() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAbstractRealtimeStatechart_EventQueueSize() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -446,8 +447,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_WcetDocument() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAbstractRealtimeStatechart_WcetDocument() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -455,8 +456,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_SecurityLevel() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(2);
+	public EAttribute getAbstractRealtimeStatechart_SecurityLevel() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -464,8 +465,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_SystemWcetMap() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(3);
+	public EAttribute getAbstractRealtimeStatechart_SystemWcetMap() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -473,8 +474,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_Utilisation() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(4);
+	public EAttribute getAbstractRealtimeStatechart_Utilisation() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -482,8 +483,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_ScheduleDocument() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(5);
+	public EAttribute getAbstractRealtimeStatechart_ScheduleDocument() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -491,8 +492,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_UMLRealtimeStartState() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(6);
+	public EReference getAbstractRealtimeStatechart_Transitions() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -500,8 +501,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_UMLComplexRealtimeState() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(7);
+	public EReference getAbstractRealtimeStatechart_Vertices() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -509,8 +510,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_Transitions() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(8);
+	public EReference getAbstractRealtimeStatechart_EClass() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -518,8 +519,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_Vertices() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(9);
+	public EReference getAbstractRealtimeStatechart_BehavioralElement() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -527,8 +528,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_EClass() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(10);
+	public EReference getAbstractRealtimeStatechart_ProvidedMsgIFace() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -536,8 +537,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_BehavioralElement() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(11);
+	public EReference getAbstractRealtimeStatechart_RequiredMsgIFace() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -545,8 +546,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_ProvidedMsgIFace() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(12);
+	public EAttribute getAbstractRealtimeStatechart_Embedded() {
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -554,8 +555,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_RequiredMsgIFace() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(13);
+	public EReference getAbstractRealtimeStatechart_Clocks() {
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -563,8 +564,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAbstractStatechart_Embedded() {
-		return (EAttribute)abstractStatechartEClass.getEStructuralFeatures().get(14);
+	public EOperation getAbstractRealtimeStatechart__GetHighestParentStatechart() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -572,8 +573,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractStatechart_Clocks() {
-		return (EReference)abstractStatechartEClass.getEStructuralFeatures().get(15);
+	public EOperation getAbstractRealtimeStatechart__AddAllUMLRealtimeStates__Set_boolean() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -581,8 +582,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__GetHighestParentStatechart() {
-		return abstractStatechartEClass.getEOperations().get(0);
+	public EOperation getAbstractRealtimeStatechart__AddComplexUMLRealtimeStates__Set() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -590,8 +591,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__AddAllUMLRealtimeStates__Set_boolean() {
-		return abstractStatechartEClass.getEOperations().get(1);
+	public EOperation getAbstractRealtimeStatechart__AddAllUMLRealtimeTransitions__Set() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -599,8 +600,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__AddComplexUMLRealtimeStates__Set() {
-		return abstractStatechartEClass.getEOperations().get(2);
+	public EOperation getAbstractRealtimeStatechart__IteratorOfAllUMLClocks__boolean() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -608,8 +609,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__AddAllUMLRealtimeTransitions__Set() {
-		return abstractStatechartEClass.getEOperations().get(3);
+	public EOperation getAbstractRealtimeStatechart__AddAllUMLClocks__Set_boolean() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -617,8 +618,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__IteratorOfAllUMLClocks__boolean() {
-		return abstractStatechartEClass.getEOperations().get(4);
+	public EOperation getAbstractRealtimeStatechart__ToString() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -626,26 +627,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractStatechart__AddAllUMLClocks__Set_boolean() {
-		return abstractStatechartEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractStatechart__ToString() {
-		return abstractStatechartEClass.getEOperations().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractStatechart__Clone() {
-		return abstractStatechartEClass.getEOperations().get(7);
+	public EOperation getAbstractRealtimeStatechart__Clone() {
+		return abstractRealtimeStatechartEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -706,31 +689,29 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
 		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
 
-		abstractStatechartEClass = createEClass(ABSTRACT_STATECHART);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__EVENT_QUEUE_SIZE);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__WCET_DOCUMENT);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__SECURITY_LEVEL);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__SYSTEM_WCET_MAP);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__UTILISATION);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__SCHEDULE_DOCUMENT);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__UML_REALTIME_START_STATE);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__TRANSITIONS);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__VERTICES);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__ECLASS);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__PROVIDED_MSG_IFACE);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__REQUIRED_MSG_IFACE);
-		createEAttribute(abstractStatechartEClass, ABSTRACT_STATECHART__EMBEDDED);
-		createEReference(abstractStatechartEClass, ABSTRACT_STATECHART__CLOCKS);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___GET_HIGHEST_PARENT_STATECHART);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___TO_STRING);
-		createEOperation(abstractStatechartEClass, ABSTRACT_STATECHART___CLONE);
+		abstractRealtimeStatechartEClass = createEClass(ABSTRACT_REALTIME_STATECHART);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__UTILISATION);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__TRANSITIONS);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__VERTICES);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__ECLASS);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE);
+		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__EMBEDDED);
+		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__CLOCKS);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___TO_STRING);
+		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___CLONE);
 	}
 
 	/**
@@ -768,8 +749,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		abstractStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		abstractStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -815,63 +796,61 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElement_Statechart(), this.getAbstractStatechart(), null, "statechart", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElement_Statechart(), this.getAbstractRealtimeStatechart(), null, "statechart", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstrainableElement_Constraint(), theConstraintPackage.getConstraint(), theConstraintPackage.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractStatechartEClass, AbstractStatechart.class, "AbstractStatechart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_WcetDocument(), ecorePackage.getEString(), "wcetDocument", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_SecurityLevel(), ecorePackage.getEInt(), "securityLevel", "0", 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_SystemWcetMap(), theHelperPackage.getMap(), "systemWcetMap", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_UMLRealtimeStartState(), theRealtimestatechartPackage.getInitialState(), theRealtimestatechartPackage.getInitialState_StartStateRev(), "uMLRealtimeStartState", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_UMLComplexRealtimeState(), theRealtimestatechartPackage.getState(), null, "uMLComplexRealtimeState", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_Transitions(), theRealtimestatechartPackage.getTransition(), theRealtimestatechartPackage.getTransition_Statechart(), "transitions", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_Vertices(), theRealtimestatechartPackage.getVertex(), null, "vertices", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_BehavioralElement(), this.getBehavioralElement(), null, "behavioralElement", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_ProvidedMsgIFace(), theHelperPackage.getStringToEClass(), null, "providedMsgIFace", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_RequiredMsgIFace(), theHelperPackage.getStringToEClass(), null, "requiredMsgIFace", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractStatechart_Embedded(), theEcorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractStatechart_Clocks(), theRealtimestatechartPackage.getClock(), theRealtimestatechartPackage.getClock_Statechart(), "clocks", null, 0, -1, AbstractStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(abstractRealtimeStatechartEClass, AbstractRealtimeStatechart.class, "AbstractRealtimeStatechart", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_WcetDocument(), ecorePackage.getEString(), "wcetDocument", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_SecurityLevel(), ecorePackage.getEInt(), "securityLevel", "0", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_SystemWcetMap(), theHelperPackage.getMap(), "systemWcetMap", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_Transitions(), theRealtimestatechartPackage.getTransition(), theRealtimestatechartPackage.getTransition_Statechart(), "transitions", null, 0, -1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_Vertices(), theRealtimestatechartPackage.getVertex(), null, "vertices", null, 0, -1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_BehavioralElement(), this.getBehavioralElement(), null, "behavioralElement", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_ProvidedMsgIFace(), theHelperPackage.getStringToEClass(), null, "providedMsgIFace", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_RequiredMsgIFace(), theHelperPackage.getStringToEClass(), null, "requiredMsgIFace", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_Embedded(), theEcorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractRealtimeStatechart_Clocks(), theRealtimestatechartPackage.getClock(), theRealtimestatechartPackage.getClock_Statechart(), "clocks", null, 0, -1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getAbstractStatechart__GetHighestParentStatechart(), this.getAbstractStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAbstractRealtimeStatechart__GetHighestParentStatechart(), this.getAbstractRealtimeStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAbstractStatechart__AddAllUMLRealtimeStates__Set_boolean(), null, "addAllUMLRealtimeStates", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAbstractRealtimeStatechart__AddAllUMLRealtimeStates__Set_boolean(), null, "addAllUMLRealtimeStates", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(theHelperPackage.getSet());
 		EGenericType g2 = createEGenericType(theRealtimestatechartPackage.getVertex());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "set", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEBoolean(), "inclusiveStartStates", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAbstractStatechart__AddComplexUMLRealtimeStates__Set(), null, "addComplexUMLRealtimeStates", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAbstractRealtimeStatechart__AddComplexUMLRealtimeStates__Set(), null, "addComplexUMLRealtimeStates", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theHelperPackage.getSet());
 		g2 = createEGenericType(theRealtimestatechartPackage.getState());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "set", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAbstractStatechart__AddAllUMLRealtimeTransitions__Set(), null, "addAllUMLRealtimeTransitions", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAbstractRealtimeStatechart__AddAllUMLRealtimeTransitions__Set(), null, "addAllUMLRealtimeTransitions", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theHelperPackage.getSet());
 		g2 = createEGenericType(theRealtimestatechartPackage.getTransition());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "set", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAbstractStatechart__IteratorOfAllUMLClocks__boolean(), theHelperPackage.getIterator(), "iteratorOfAllUMLClocks", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAbstractRealtimeStatechart__IteratorOfAllUMLClocks__boolean(), theHelperPackage.getIterator(), "iteratorOfAllUMLClocks", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEBoolean(), "excludeNoClock", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getAbstractStatechart__AddAllUMLClocks__Set_boolean(), null, "addAllUMLClocks", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getAbstractRealtimeStatechart__AddAllUMLClocks__Set_boolean(), null, "addAllUMLClocks", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(theHelperPackage.getSet());
 		g2 = createEGenericType(theRealtimestatechartPackage.getClock());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "set", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEBoolean(), "excludeNoClock", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getAbstractStatechart__ToString(), theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAbstractRealtimeStatechart__ToString(), theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getAbstractStatechart__Clone(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAbstractRealtimeStatechart__Clone(), theEcorePackage.getEObject(), "clone", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

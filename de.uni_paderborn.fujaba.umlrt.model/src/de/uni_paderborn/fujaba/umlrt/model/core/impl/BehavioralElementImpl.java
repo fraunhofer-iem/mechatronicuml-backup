@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
@@ -38,7 +39,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractStatechart statechart;
+	protected AbstractRealtimeStatechart statechart;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,10 +64,10 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getStatechart() {
+	public AbstractRealtimeStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.BEHAVIORAL_ELEMENT__STATECHART, oldStatechart, statechart));
@@ -80,7 +81,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetStatechart() {
+	public AbstractRealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -89,8 +90,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractStatechart newStatechart) {
-		AbstractStatechart oldStatechart = statechart;
+	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+		AbstractRealtimeStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.BEHAVIORAL_ELEMENT__STATECHART, oldStatechart, statechart));
@@ -120,7 +121,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				setStatechart((AbstractStatechart)newValue);
+				setStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +136,7 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				setStatechart((AbstractStatechart)null);
+				setStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

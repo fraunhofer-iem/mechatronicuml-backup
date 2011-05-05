@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ComponentInstanceName2EditPart extends CompartmentEditPart
-		implements ITextAwareEditPart {
+public class ComponentInstanceNameComponentNameDerive2EditPart extends
+		CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5001;
+	public static final int VISUAL_ID = 5004;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class ComponentInstanceName2EditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceName2EditPart(View view) {
+	public ComponentInstanceNameComponentNameDerive2EditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class ComponentInstanceName2EditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_3002,
+							de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_3003,
 							getParserElement(),
 							de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceName2EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceNameComponentNameDerive2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

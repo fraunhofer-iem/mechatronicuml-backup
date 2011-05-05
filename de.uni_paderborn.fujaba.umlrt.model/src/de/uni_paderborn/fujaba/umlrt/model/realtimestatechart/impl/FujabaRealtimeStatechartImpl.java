@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractStatechartImpl;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
  *
  * @generated
  */
-public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl implements FujabaRealtimeStatechart {
+public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl implements FujabaRealtimeStatechart {
 	/**
 	 * The cached value of the '{@link #getEmbeddingRegion() <em>Embedding Region</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -154,17 +154,18 @@ public class FujabaRealtimeStatechartImpl extends AbstractStatechartImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public List<EDataType> getTopLevelDataTypes() {
-				if(embeddingRegion == null){
-					return getDataTypes();
-				}
-				de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();
-				if(root instanceof FujabaRealtimeStatechart){
-					return ((FujabaRealtimeStatechart)root).getDataTypes();
-				}
-				return null;
+		if (embeddingRegion == null) {
+			return getDataTypes();
+		}
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart root = embeddingRegion
+				.getParentState().getRootRealtimeStatechart();
+		if (root instanceof FujabaRealtimeStatechart) {
+			return ((FujabaRealtimeStatechart) root).getDataTypes();
+		}
+		return null;
 	}
 
 	/**

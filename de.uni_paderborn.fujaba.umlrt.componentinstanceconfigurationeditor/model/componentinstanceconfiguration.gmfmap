@@ -47,7 +47,7 @@
           compartment="//@nodes.0/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/partInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/embeddedInstances"/>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.1">

@@ -95,8 +95,8 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createConstrainableElementAdapter();
 			}
 			@Override
-			public Adapter caseAbstractStatechart(AbstractStatechart object) {
-				return createAbstractStatechartAdapter();
+			public Adapter caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
+				return createAbstractRealtimeStatechartAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -201,16 +201,16 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart <em>Abstract Statechart</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart <em>Abstract Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart
 	 * @generated
 	 */
-	public Adapter createAbstractStatechartAdapter() {
+	public Adapter createAbstractRealtimeStatechartAdapter() {
 		return null;
 	}
 

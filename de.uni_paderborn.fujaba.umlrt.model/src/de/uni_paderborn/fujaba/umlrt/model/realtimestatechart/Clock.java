@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.common.util.EList;
@@ -81,7 +82,7 @@ public interface Clock extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks <em>Clocks</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' container reference isn't clear,
@@ -89,13 +90,13 @@ public interface Clock extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(AbstractStatechart)
+	 * @see #setStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getClocks
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks
 	 * @model opposite="clocks" transient="false"
 	 * @generated
 	 */
-	AbstractStatechart getStatechart();
+	AbstractRealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}' container reference.
@@ -105,7 +106,7 @@ public interface Clock extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractStatechart value);
+	void setStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock Constraints</b></em>' reference list.

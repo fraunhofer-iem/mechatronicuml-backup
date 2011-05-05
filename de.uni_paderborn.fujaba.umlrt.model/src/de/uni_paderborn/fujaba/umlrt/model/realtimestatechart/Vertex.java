@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.common.util.EList;
@@ -77,12 +78,12 @@ public interface Vertex extends NamedElement {
 	 * The realtime statechart this state belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(AbstractStatechart)
+	 * @see #setStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
 	 * @model
 	 * @generated
 	 */
-	AbstractStatechart getStatechart();
+	AbstractRealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' reference.
@@ -92,7 +93,7 @@ public interface Vertex extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractStatechart value);
+	void setStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,6 +116,6 @@ public interface Vertex extends NamedElement {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tAbstractStatechart root = null;\r\n\t\torg.eclipse.emf.ecore.EObject obj = getStatechart();\r\n\t\tfor (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element\r\n\t\t.eContainer()) {\r\n\t\t\tif (element instanceof AbstractStatechart) {\r\n\t\t\t\troot = (AbstractStatechart )element;\r\n\t\t\t}\r\n\t\t}\r\n\treturn root;'"
 	 * @generated
 	 */
-	AbstractStatechart getRootRealtimeStatechart();
+	AbstractRealtimeStatechart getRootRealtimeStatechart();
 
 } // Vertex

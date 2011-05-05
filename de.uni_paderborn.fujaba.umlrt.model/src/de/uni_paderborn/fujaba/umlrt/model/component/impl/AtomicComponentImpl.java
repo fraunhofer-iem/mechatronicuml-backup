@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
@@ -39,7 +40,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractStatechart statechart;
+	protected AbstractRealtimeStatechart statechart;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,10 +65,10 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getStatechart() {
+	public AbstractRealtimeStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
@@ -81,7 +82,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetStatechart() {
+	public AbstractRealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -90,8 +91,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractStatechart newStatechart) {
-		AbstractStatechart oldStatechart = statechart;
+	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+		AbstractRealtimeStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
@@ -121,7 +122,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				setStatechart((AbstractStatechart)newValue);
+				setStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,7 +137,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				setStatechart((AbstractStatechart)null);
+				setStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

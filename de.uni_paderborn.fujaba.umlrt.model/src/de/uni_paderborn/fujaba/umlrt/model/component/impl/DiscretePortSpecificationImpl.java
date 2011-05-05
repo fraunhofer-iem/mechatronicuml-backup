@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
@@ -43,7 +44,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractStatechart statechart;
+	protected AbstractRealtimeStatechart statechart;
 
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
@@ -79,10 +80,10 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getStatechart() {
+	public AbstractRealtimeStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART, oldStatechart, statechart));
@@ -96,7 +97,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetStatechart() {
+	public AbstractRealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -105,8 +106,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractStatechart newStatechart) {
-		AbstractStatechart oldStatechart = statechart;
+	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+		AbstractRealtimeStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART, oldStatechart, statechart));
@@ -229,7 +230,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
-				setStatechart((AbstractStatechart)newValue);
+				setStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				setRefines((Role)newValue);
@@ -247,7 +248,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__STATECHART:
-				setStatechart((AbstractStatechart)null);
+				setStatechart((AbstractRealtimeStatechart)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				setRefines((Role)null);

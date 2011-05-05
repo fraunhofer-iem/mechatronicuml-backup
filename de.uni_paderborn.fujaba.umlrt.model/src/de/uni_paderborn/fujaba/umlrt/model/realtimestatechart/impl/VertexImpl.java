@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
@@ -68,7 +69,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractStatechart statechart;
+	protected AbstractRealtimeStatechart statechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,10 +119,10 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getStatechart() {
+	public AbstractRealtimeStatechart getStatechart() {
 		if (statechart != null && statechart.eIsProxy()) {
 			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractStatechart)eResolveProxy(oldStatechart);
+			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
 			if (statechart != oldStatechart) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.VERTEX__STATECHART, oldStatechart, statechart));
@@ -135,7 +136,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetStatechart() {
+	public AbstractRealtimeStatechart basicGetStatechart() {
 		return statechart;
 	}
 
@@ -144,8 +145,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractStatechart newStatechart) {
-		AbstractStatechart oldStatechart = statechart;
+	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+		AbstractRealtimeStatechart oldStatechart = statechart;
 		statechart = newStatechart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.VERTEX__STATECHART, oldStatechart, statechart));
@@ -165,18 +166,18 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public AbstractStatechart getRootRealtimeStatechart() {
-				AbstractStatechart root = null;
-				org.eclipse.emf.ecore.EObject obj = getStatechart();
-				for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element
+	public AbstractRealtimeStatechart getRootRealtimeStatechart() {
+		AbstractRealtimeStatechart root = null;
+		org.eclipse.emf.ecore.EObject obj = getStatechart();
+		for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element
 				.eContainer()) {
-					if (element instanceof AbstractStatechart) {
-						root = (AbstractStatechart )element;
-					}
-				}
-			return root;
+			if (element instanceof AbstractRealtimeStatechart) {
+				root = (AbstractRealtimeStatechart) element;
+			}
+		}
+		return root;
 	}
 
 	/**
@@ -249,7 +250,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((AbstractStatechart)newValue);
+				setStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -270,7 +271,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().clear();
 				return;
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((AbstractStatechart)null);
+				setStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

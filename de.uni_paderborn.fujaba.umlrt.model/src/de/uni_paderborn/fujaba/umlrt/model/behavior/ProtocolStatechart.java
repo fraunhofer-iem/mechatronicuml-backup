@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.ecore.EObject;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ProtocolStatechart extends AbstractStatechart {
+public interface ProtocolStatechart extends AbstractRealtimeStatechart {
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -67,6 +68,6 @@ public interface ProtocolStatechart extends AbstractStatechart {
 	 * @model
 	 * @generated
 	 */
-	EObject clone(AbstractStatechart newpsc);
+	EObject clone(AbstractRealtimeStatechart newpsc);
 
 } // ProtocolStatechart

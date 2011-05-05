@@ -59,7 +59,8 @@ public class ComponentinstanceconfigurationElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentInstance_3002 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_3002"); //$NON-NLS-1$
+	public static final IElementType ComponentInstance_3003 = getElementType("de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_3003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -196,7 +197,7 @@ public class ComponentinstanceconfigurationElementTypes {
 							.getPortInstance());
 
 			elements.put(
-					ComponentInstance_3002,
+					ComponentInstance_3003,
 					de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
 							.getComponentInstance());
 
@@ -229,7 +230,7 @@ public class ComponentinstanceconfigurationElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_1000);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstance_2002);
 			KNOWN_ELEMENT_TYPES.add(PortInstance_3001);
-			KNOWN_ELEMENT_TYPES.add(ComponentInstance_3002);
+			KNOWN_ELEMENT_TYPES.add(ComponentInstance_3003);
 			KNOWN_ELEMENT_TYPES.add(AssemblyInstance_4001);
 			KNOWN_ELEMENT_TYPES.add(DelegationInstance_4002);
 		}
@@ -248,7 +249,7 @@ public class ComponentinstanceconfigurationElementTypes {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return PortInstance_3001;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
-			return ComponentInstance_3002;
+			return ComponentInstance_3003;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return AssemblyInstance_4001;
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:

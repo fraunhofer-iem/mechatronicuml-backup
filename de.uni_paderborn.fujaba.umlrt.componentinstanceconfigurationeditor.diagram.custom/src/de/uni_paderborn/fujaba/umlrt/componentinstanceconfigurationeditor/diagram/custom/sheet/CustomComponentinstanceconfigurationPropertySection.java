@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.sheet;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -13,10 +14,20 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.sheet.ComponentinstanceconfigurationPropertySection;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.parts.CustomPortInstanceEditPart;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomComponentInstanceItemProvider;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomInstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.provider.ComponentInstanceItemProvider;
+import de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory;
 
 public class CustomComponentinstanceconfigurationPropertySection extends
 		ComponentinstanceconfigurationPropertySection {
+	CustomInstanceItemProviderAdapterFactory instanceFactory = new CustomInstanceItemProviderAdapterFactory();
+
+	public CustomComponentinstanceconfigurationPropertySection() {
+
+	}
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.
@@ -25,44 +36,29 @@ public class CustomComponentinstanceconfigurationPropertySection extends
 		if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
 		}
-		AdapterFactory af = getAdapterFactory(object);
-		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
-			if (ips != null) {
-				return new CustomPropertySource(object, ips);
-			}
+		IItemPropertySource ips = getItemPropertySource(object);
+		if (ips != null) {
+			return new CustomPropertySource(object, ips);
 		}
+
 		return super.getPropertySource(object);
 	}
 
-	@Override
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		if (selection instanceof StructuredSelection) {
-			StructuredSelection sel = (StructuredSelection) selection;
-			if (sel.size() == 1) {
-				Object ep = sel.getFirstElement();
-				if (ep instanceof CustomPortInstanceEditPart) {
-					EObject parentElement = getParentElement((CustomPortInstanceEditPart) ep);
-					if (parentElement instanceof ComponentPart) {
-						selection = StructuredSelection.EMPTY;
-					}
-				}
+	private IItemPropertySource getItemPropertySource(Object object) {
+		IItemPropertySource ips = null;
+
+		AdapterFactory af = getAdapterFactory(object);
+		if (af != null) {
+			ips = (IItemPropertySource) af.adapt(object,
+					IItemPropertySource.class);
+			if (ips instanceof ComponentInstanceItemProvider) {
+				CustomComponentInstanceItemProvider adapter = (CustomComponentInstanceItemProvider) instanceFactory
+						.createComponentInstanceAdapter();
+				ips = (IItemPropertySource) adapter;
 			}
 		}
-		super.setInput(part, selection);
+
+		return ips;
 	}
 
-	/**
-	 * Retrieves the model element of the editPart's parent EditPart.
-	 * 
-	 * @param editPart
-	 *            the editPart.
-	 * @return the model element of the parent EditPart.
-	 */
-	private EObject getParentElement(EditPart editPart) {
-		ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
-				.getParent();
-		return parentEditPart.getNotationView().getElement();
-	}
 }

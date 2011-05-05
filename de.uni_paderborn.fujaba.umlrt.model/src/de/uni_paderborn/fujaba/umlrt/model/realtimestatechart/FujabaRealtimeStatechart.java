@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EDataType;
  * @model
  * @generated
  */
-public interface FujabaRealtimeStatechart extends AbstractStatechart {
+public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	/**
 	 * Returns the value of the '<em><b>Embedding Region</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.

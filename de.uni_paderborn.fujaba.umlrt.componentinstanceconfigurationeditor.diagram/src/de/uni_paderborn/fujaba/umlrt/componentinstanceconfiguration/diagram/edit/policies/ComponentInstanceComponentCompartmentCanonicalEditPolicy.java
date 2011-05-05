@@ -32,7 +32,7 @@ public class ComponentInstanceComponentCompartmentCanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
-				.getComponentInstance_PartInstances();
+				.getComponentInstance_EmbeddedInstances();
 	}
 
 	/**

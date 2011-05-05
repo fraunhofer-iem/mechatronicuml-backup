@@ -591,13 +591,40 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PRIORITY = PRIORITIZABLE__PRIORITY;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__ANNOTATION = PRIORITIZABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__EXTENSION = PRIORITIZABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__NAME = PRIORITIZABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 0;
+	int REGION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent State</b></em>' container reference.
@@ -606,7 +633,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__PARENT_STATE = PRIORITIZABLE_FEATURE_COUNT + 1;
+	int REGION__PARENT_STATE = PRIORITIZABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Region</em>' class.
@@ -615,7 +642,178 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 2;
+	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECLASS = PRIORITIZABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EIS_PROXY = PRIORITIZABLE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ERESOURCE = PRIORITIZABLE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECONTAINER = PRIORITIZABLE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECONTAINING_FEATURE = PRIORITIZABLE_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECONTAINMENT_FEATURE = PRIORITIZABLE_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECONTENTS = PRIORITIZABLE_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EALL_CONTENTS = PRIORITIZABLE_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ECROSS_REFERENCES = PRIORITIZABLE_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EGET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN = PRIORITIZABLE_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___ESET__ESTRUCTURALFEATURE_OBJECT = PRIORITIZABLE_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EIS_SET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EUNSET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 13;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___EINVOKE__EOPERATION_ELIST = PRIORITIZABLE_OPERATION_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___GET_EXTENSION__ECLASS = PRIORITIZABLE_OPERATION_COUNT + 15;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___PROVIDE_EXTENSION__ECLASS = PRIORITIZABLE_OPERATION_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___GET_ANNOTATION__STRING = PRIORITIZABLE_OPERATION_COUNT + 17;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION___PROVIDE_ANNOTATION__STRING = PRIORITIZABLE_OPERATION_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -624,7 +822,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 0;
+	int REGION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1296,7 +1494,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int INITIAL_STATE__STATECHART = VERTEX__STATECHART;
 
 	/**
-	 * The feature id for the '<em><b>Start State Rev</b></em>' container reference.
+	 * The feature id for the '<em><b>Start State Rev</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4024,7 +4222,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ANNOTATION = CorePackage.ABSTRACT_STATECHART__ANNOTATION;
+	int FUJABA_REALTIME_STATECHART__ANNOTATION = CorePackage.ABSTRACT_REALTIME_STATECHART__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -4033,7 +4231,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EXTENSION = CorePackage.ABSTRACT_STATECHART__EXTENSION;
+	int FUJABA_REALTIME_STATECHART__EXTENSION = CorePackage.ABSTRACT_REALTIME_STATECHART__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4042,7 +4240,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__NAME = CorePackage.ABSTRACT_STATECHART__NAME;
+	int FUJABA_REALTIME_STATECHART__NAME = CorePackage.ABSTRACT_REALTIME_STATECHART__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -4051,7 +4249,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__COMMENT = CorePackage.ABSTRACT_STATECHART__COMMENT;
+	int FUJABA_REALTIME_STATECHART__COMMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -4060,7 +4258,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_STATECHART__EVENT_QUEUE_SIZE;
+	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
@@ -4069,7 +4267,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__WCET_DOCUMENT = CorePackage.ABSTRACT_STATECHART__WCET_DOCUMENT;
+	int FUJABA_REALTIME_STATECHART__WCET_DOCUMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
@@ -4078,7 +4276,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = CorePackage.ABSTRACT_STATECHART__SECURITY_LEVEL;
+	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL;
 
 	/**
 	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
@@ -4087,7 +4285,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__SYSTEM_WCET_MAP = CorePackage.ABSTRACT_STATECHART__SYSTEM_WCET_MAP;
+	int FUJABA_REALTIME_STATECHART__SYSTEM_WCET_MAP = CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -4096,7 +4294,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__UTILISATION = CorePackage.ABSTRACT_STATECHART__UTILISATION;
+	int FUJABA_REALTIME_STATECHART__UTILISATION = CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -4105,25 +4303,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = CorePackage.ABSTRACT_STATECHART__SCHEDULE_DOCUMENT;
-
-	/**
-	 * The feature id for the '<em><b>UML Realtime Start State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__UML_REALTIME_START_STATE = CorePackage.ABSTRACT_STATECHART__UML_REALTIME_START_STATE;
-
-	/**
-	 * The feature id for the '<em><b>UML Complex Realtime State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE = CorePackage.ABSTRACT_STATECHART__UML_COMPLEX_REALTIME_STATE;
+	int FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -4132,7 +4312,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__TRANSITIONS = CorePackage.ABSTRACT_STATECHART__TRANSITIONS;
+	int FUJABA_REALTIME_STATECHART__TRANSITIONS = CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -4141,7 +4321,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__VERTICES = CorePackage.ABSTRACT_STATECHART__VERTICES;
+	int FUJABA_REALTIME_STATECHART__VERTICES = CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
@@ -4150,7 +4330,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__ECLASS = CorePackage.ABSTRACT_STATECHART__ECLASS;
+	int FUJABA_REALTIME_STATECHART__ECLASS = CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -4159,7 +4339,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_STATECHART__BEHAVIORAL_ELEMENT;
+	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
@@ -4168,7 +4348,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__PROVIDED_MSG_IFACE = CorePackage.ABSTRACT_STATECHART__PROVIDED_MSG_IFACE;
+	int FUJABA_REALTIME_STATECHART__PROVIDED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE;
 
 	/**
 	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
@@ -4177,7 +4357,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_STATECHART__REQUIRED_MSG_IFACE;
+	int FUJABA_REALTIME_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -4186,7 +4366,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDED = CorePackage.ABSTRACT_STATECHART__EMBEDDED;
+	int FUJABA_REALTIME_STATECHART__EMBEDDED = CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -4195,7 +4375,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_STATECHART__CLOCKS;
+	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -4204,7 +4384,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 0;
+	int FUJABA_REALTIME_STATECHART__EMBEDDING_REGION = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -4213,7 +4393,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__DATA_TYPES = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 1;
+	int FUJABA_REALTIME_STATECHART__DATA_TYPES = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
@@ -4222,7 +4402,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_STATECHART_FEATURE_COUNT + 2;
+	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4231,7 +4411,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECLASS = CorePackage.ABSTRACT_STATECHART___ECLASS;
+	int FUJABA_REALTIME_STATECHART___ECLASS = CorePackage.ABSTRACT_REALTIME_STATECHART___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -4240,7 +4420,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EIS_PROXY = CorePackage.ABSTRACT_STATECHART___EIS_PROXY;
+	int FUJABA_REALTIME_STATECHART___EIS_PROXY = CorePackage.ABSTRACT_REALTIME_STATECHART___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -4249,7 +4429,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ERESOURCE = CorePackage.ABSTRACT_STATECHART___ERESOURCE;
+	int FUJABA_REALTIME_STATECHART___ERESOURCE = CorePackage.ABSTRACT_REALTIME_STATECHART___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -4258,7 +4438,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECONTAINER = CorePackage.ABSTRACT_STATECHART___ECONTAINER;
+	int FUJABA_REALTIME_STATECHART___ECONTAINER = CorePackage.ABSTRACT_REALTIME_STATECHART___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -4267,7 +4447,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECONTAINING_FEATURE = CorePackage.ABSTRACT_STATECHART___ECONTAINING_FEATURE;
+	int FUJABA_REALTIME_STATECHART___ECONTAINING_FEATURE = CorePackage.ABSTRACT_REALTIME_STATECHART___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -4276,7 +4456,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECONTAINMENT_FEATURE = CorePackage.ABSTRACT_STATECHART___ECONTAINMENT_FEATURE;
+	int FUJABA_REALTIME_STATECHART___ECONTAINMENT_FEATURE = CorePackage.ABSTRACT_REALTIME_STATECHART___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -4285,7 +4465,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECONTENTS = CorePackage.ABSTRACT_STATECHART___ECONTENTS;
+	int FUJABA_REALTIME_STATECHART___ECONTENTS = CorePackage.ABSTRACT_REALTIME_STATECHART___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -4294,7 +4474,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EALL_CONTENTS = CorePackage.ABSTRACT_STATECHART___EALL_CONTENTS;
+	int FUJABA_REALTIME_STATECHART___EALL_CONTENTS = CorePackage.ABSTRACT_REALTIME_STATECHART___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -4303,7 +4483,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ECROSS_REFERENCES = CorePackage.ABSTRACT_STATECHART___ECROSS_REFERENCES;
+	int FUJABA_REALTIME_STATECHART___ECROSS_REFERENCES = CorePackage.ABSTRACT_REALTIME_STATECHART___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4312,7 +4492,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EGET__ESTRUCTURALFEATURE;
+	int FUJABA_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4321,7 +4501,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.ABSTRACT_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int FUJABA_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -4330,7 +4510,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.ABSTRACT_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int FUJABA_REALTIME_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.ABSTRACT_REALTIME_STATECHART___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -4339,7 +4519,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EIS_SET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EIS_SET__ESTRUCTURALFEATURE;
+	int FUJABA_REALTIME_STATECHART___EIS_SET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_REALTIME_STATECHART___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -4348,7 +4528,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EUNSET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_STATECHART___EUNSET__ESTRUCTURALFEATURE;
+	int FUJABA_REALTIME_STATECHART___EUNSET__ESTRUCTURALFEATURE = CorePackage.ABSTRACT_REALTIME_STATECHART___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -4357,7 +4537,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___EINVOKE__EOPERATION_ELIST = CorePackage.ABSTRACT_STATECHART___EINVOKE__EOPERATION_ELIST;
+	int FUJABA_REALTIME_STATECHART___EINVOKE__EOPERATION_ELIST = CorePackage.ABSTRACT_REALTIME_STATECHART___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -4366,7 +4546,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___GET_EXTENSION__ECLASS = CorePackage.ABSTRACT_STATECHART___GET_EXTENSION__ECLASS;
+	int FUJABA_REALTIME_STATECHART___GET_EXTENSION__ECLASS = CorePackage.ABSTRACT_REALTIME_STATECHART___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4375,7 +4555,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___PROVIDE_EXTENSION__ECLASS = CorePackage.ABSTRACT_STATECHART___PROVIDE_EXTENSION__ECLASS;
+	int FUJABA_REALTIME_STATECHART___PROVIDE_EXTENSION__ECLASS = CorePackage.ABSTRACT_REALTIME_STATECHART___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4384,7 +4564,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___GET_ANNOTATION__STRING = CorePackage.ABSTRACT_STATECHART___GET_ANNOTATION__STRING;
+	int FUJABA_REALTIME_STATECHART___GET_ANNOTATION__STRING = CorePackage.ABSTRACT_REALTIME_STATECHART___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4393,7 +4573,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___PROVIDE_ANNOTATION__STRING = CorePackage.ABSTRACT_STATECHART___PROVIDE_ANNOTATION__STRING;
+	int FUJABA_REALTIME_STATECHART___PROVIDE_ANNOTATION__STRING = CorePackage.ABSTRACT_REALTIME_STATECHART___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Highest Parent Statechart</em>' operation.
@@ -4402,7 +4582,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART = CorePackage.ABSTRACT_STATECHART___GET_HIGHEST_PARENT_STATECHART;
+	int FUJABA_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART = CorePackage.ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART;
 
 	/**
 	 * The operation id for the '<em>Add All UML Realtime States</em>' operation.
@@ -4411,7 +4591,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
+	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Add Complex UML Realtime States</em>' operation.
@@ -4420,7 +4600,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = CorePackage.ABSTRACT_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
+	int FUJABA_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
 
 	/**
 	 * The operation id for the '<em>Add All UML Realtime Transitions</em>' operation.
@@ -4429,7 +4609,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
+	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
 
 	/**
 	 * The operation id for the '<em>Iterator Of All UML Clocks</em>' operation.
@@ -4438,7 +4618,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = CorePackage.ABSTRACT_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
+	int FUJABA_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Add All UML Clocks</em>' operation.
@@ -4447,7 +4627,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = CorePackage.ABSTRACT_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
+	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -4456,7 +4636,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___TO_STRING = CorePackage.ABSTRACT_STATECHART___TO_STRING;
+	int FUJABA_REALTIME_STATECHART___TO_STRING = CorePackage.ABSTRACT_REALTIME_STATECHART___TO_STRING;
 
 	/**
 	 * The operation id for the '<em>Clone</em>' operation.
@@ -4465,7 +4645,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___CLONE = CorePackage.ABSTRACT_STATECHART___CLONE;
+	int FUJABA_REALTIME_STATECHART___CLONE = CorePackage.ABSTRACT_REALTIME_STATECHART___CLONE;
 
 	/**
 	 * The operation id for the '<em>Get Top Level Data Types</em>' operation.
@@ -4474,7 +4654,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 0;
+	int FUJABA_REALTIME_STATECHART___GET_TOP_LEVEL_DATA_TYPES = CorePackage.ABSTRACT_REALTIME_STATECHART_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Fujaba Realtime Statechart</em>' class.
@@ -4483,7 +4663,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_OPERATION_COUNT = CorePackage.ABSTRACT_STATECHART_OPERATION_COUNT + 1;
+	int FUJABA_REALTIME_STATECHART_OPERATION_COUNT = CorePackage.ABSTRACT_REALTIME_STATECHART_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind <em>History Kind</em>}' enum.
@@ -4805,10 +4985,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getInitialState();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Start State Rev</em>'.
+	 * @return the meta object for the reference '<em>Start State Rev</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev()
 	 * @see #getInitialState()
 	 * @generated
@@ -5984,7 +6164,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass INITIAL_STATE = eINSTANCE.getInitialState();
 
 		/**
-		 * The meta object literal for the '<em><b>Start State Rev</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Start State Rev</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

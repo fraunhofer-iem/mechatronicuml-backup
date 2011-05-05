@@ -42,7 +42,7 @@ public class ComponentInstance2CanonicalEditPolicy extends CanonicalEditPolicy {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramUpdater
-				.getComponentInstance_3002SemanticChildren(viewObject);
+				.getComponentInstance_3003SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -75,7 +75,7 @@ public class ComponentInstance2CanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramUpdater
-				.getComponentInstance_3002SemanticChildren((View) getHost()
+				.getComponentInstance_3003SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

@@ -70,7 +70,7 @@ public class RoleItemProvider
 			addConstraintPropertyDescriptor(object);
 			addChannelPropertyDescriptor(object);
 			addPatternPropertyDescriptor(object);
-			addUMLRealtimeStatechartPropertyDescriptor(object);
+			addRealtimeStatechartPropertyDescriptor(object);
 			addEClassPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addProvidedPropertyDescriptor(object);
@@ -147,19 +147,19 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the UML Realtime Statechart feature.
+	 * This adds a property descriptor for the Realtime Statechart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUMLRealtimeStatechartPropertyDescriptor(Object object) {
+	protected void addRealtimeStatechartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_uMLRealtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_uMLRealtimeStatechart_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__UML_REALTIME_STATECHART,
+				 getString("_UI_Role_realtimeStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_realtimeStatechart_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__REALTIME_STATECHART,
 				 true,
 				 false,
 				 true,

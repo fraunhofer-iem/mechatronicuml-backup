@@ -41,10 +41,10 @@
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2001"
+		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"
 		  class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -54,7 +54,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2001"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"/>
          <advice ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
       </binding>
    </extension>

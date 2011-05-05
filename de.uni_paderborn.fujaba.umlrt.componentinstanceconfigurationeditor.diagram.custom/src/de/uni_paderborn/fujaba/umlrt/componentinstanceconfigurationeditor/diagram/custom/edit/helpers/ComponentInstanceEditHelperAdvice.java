@@ -11,6 +11,9 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
@@ -26,6 +29,42 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
  * 
  */
 public class ComponentInstanceEditHelperAdvice extends AbstractEditHelperAdvice {
+
+	@Override
+	public ICommand getBeforeEditCommand(IEditCommandRequest request) {
+		// TODO Auto-generated method stub
+		return super.getBeforeEditCommand(request);
+	}
+
+	@Override
+	public ICommand getAfterEditCommand(IEditCommandRequest request) {
+		// TODO Auto-generated method stub
+		return super.getAfterEditCommand(request);
+	}
+
+	@Override
+	protected ICommand getAfterDuplicateCommand(DuplicateElementsRequest request) {
+		// TODO Auto-generated method stub
+		return super.getAfterDuplicateCommand(request);
+	}
+
+	@Override
+	protected ICommand getBeforeEditContextCommand(GetEditContextRequest request) {
+		// TODO Auto-generated method stub
+		return super.getBeforeEditContextCommand(request);
+	}
+
+	@Override
+	protected ICommand getAfterEditContextCommand(GetEditContextRequest request) {
+		// TODO Auto-generated method stub
+		return super.getAfterEditContextCommand(request);
+	}
+
+	@Override
+	protected ICommand getBeforeSetCommand(SetRequest request) {
+		// TODO Auto-generated method stub
+		return super.getBeforeSetCommand(request);
+	}
 
 	@Override
 	protected ICommand getAfterSetCommand(SetRequest request) {
@@ -50,7 +89,7 @@ public class ComponentInstanceEditHelperAdvice extends AbstractEditHelperAdvice 
 
 				while (!instances.isEmpty()) {
 					ComponentInstance componentInstance = instances.pop();
-					componentInstance.getPartInstances().clear();
+					componentInstance.getEmbeddedInstances().clear();
 
 					Component componentType = componentInstance
 							.getComponentType();
@@ -62,7 +101,7 @@ public class ComponentInstanceEditHelperAdvice extends AbstractEditHelperAdvice 
 						for (ComponentPart componentPart : componentParts) {
 							ComponentInstance partInstance = InstanceFactory.eINSTANCE.createComponentInstance();
 							partInstance.setComponentType(componentPart.getComponentType());
-							componentInstance.getPartInstances().add(partInstance);
+							componentInstance.getEmbeddedInstances().add(partInstance);
 							instances.add(partInstance);
 						}
 					}

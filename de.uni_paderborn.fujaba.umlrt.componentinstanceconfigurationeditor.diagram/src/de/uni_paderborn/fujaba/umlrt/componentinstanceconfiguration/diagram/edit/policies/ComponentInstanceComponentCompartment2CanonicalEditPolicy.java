@@ -32,7 +32,7 @@ public class ComponentInstanceComponentCompartment2CanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
-				.getComponentInstance_PartInstances();
+				.getComponentInstance_EmbeddedInstances();
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class ComponentInstanceComponentCompartment2CanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramUpdater
-				.getComponentInstanceComponentCompartment_7002SemanticChildren(viewObject);
+				.getComponentInstanceComponentCompartment_7004SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -76,7 +76,7 @@ public class ComponentInstanceComponentCompartment2CanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramUpdater
-				.getComponentInstanceComponentCompartment_7002SemanticChildren((View) getHost()
+				.getComponentInstanceComponentCompartment_7004SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

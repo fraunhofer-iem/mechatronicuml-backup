@@ -118,8 +118,11 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+		
+		
 		factories
 				.add(new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.provider.ComponentinstanceconfigurationItemProviderAdapterFactory());
+		
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
@@ -143,6 +146,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 				.add(new de.uni_paderborn.fujaba.umlrt.model.core.provider.CoreItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory());
+		//factories.add(new CustomInstanceItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.umlrt.model.pattern.provider.PatternItemProviderAdapterFactory());
 		factories

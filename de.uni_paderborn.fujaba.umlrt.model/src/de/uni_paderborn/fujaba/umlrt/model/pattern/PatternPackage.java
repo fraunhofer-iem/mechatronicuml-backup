@@ -464,13 +464,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__UML_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' reference.
@@ -826,15 +826,15 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_Pattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>UML Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getUMLRealtimeStatechart()
+	 * @return the meta object for the reference '<em>Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_UMLRealtimeStatechart();
+	EReference getRole_RealtimeStatechart();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getEClass <em>EClass</em>}'.
@@ -1009,12 +1009,12 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__PATTERN = eINSTANCE.getRole_Pattern();
 
 		/**
-		 * The meta object literal for the '<em><b>UML Realtime Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Realtime Statechart</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__UML_REALTIME_STATECHART = eINSTANCE.getRole_UMLRealtimeStatechart();
+		EReference ROLE__REALTIME_STATECHART = eINSTANCE.getRole_RealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.

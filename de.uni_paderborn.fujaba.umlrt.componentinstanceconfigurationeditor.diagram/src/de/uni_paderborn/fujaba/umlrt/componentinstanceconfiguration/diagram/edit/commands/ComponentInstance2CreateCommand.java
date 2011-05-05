@@ -54,7 +54,7 @@ public class ComponentInstance2CreateCommand extends EditElementCommand {
 				.createComponentInstance();
 
 		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) getElementToEdit();
-		owner.getPartInstances().add(newElement);
+		owner.getEmbeddedInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

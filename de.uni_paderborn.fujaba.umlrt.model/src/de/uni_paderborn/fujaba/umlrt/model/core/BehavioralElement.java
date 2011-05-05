@@ -34,12 +34,12 @@ public interface BehavioralElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(AbstractStatechart)
+	 * @see #setStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_Statechart()
 	 * @model
 	 * @generated
 	 */
-	AbstractStatechart getStatechart();
+	AbstractRealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}' reference.
@@ -49,6 +49,6 @@ public interface BehavioralElement extends EObject {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractStatechart value);
+	void setStatechart(AbstractRealtimeStatechart value);
 
 } // BehavioralElement

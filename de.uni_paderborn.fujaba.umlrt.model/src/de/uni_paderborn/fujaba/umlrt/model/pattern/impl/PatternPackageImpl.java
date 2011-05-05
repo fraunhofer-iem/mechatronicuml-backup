@@ -258,7 +258,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_UMLRealtimeStatechart() {
+	public EReference getRole_RealtimeStatechart() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -348,7 +348,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__CHANNEL);
 		createEReference(roleEClass, ROLE__PATTERN);
-		createEReference(roleEClass, ROLE__UML_REALTIME_STATECHART);
+		createEReference(roleEClass, ROLE__REALTIME_STATECHART);
 		createEReference(roleEClass, ROLE__ECLASS);
 		createEReference(roleEClass, ROLE__REQUIRED);
 		createEReference(roleEClass, ROLE__PROVIDED);
@@ -411,7 +411,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_Channel(), this.getRoleConnector(), this.getRoleConnector_Source(), "channel", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Pattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Roles(), "pattern", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_UMLRealtimeStatechart(), theCorePackage.getAbstractStatechart(), null, "uMLRealtimeStatechart", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_RealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "realtimeStatechart", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Required(), theMsgifacePackage.getMessageInterface(), null, "required", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Provided(), theMsgifacePackage.getMessageInterface(), null, "provided", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

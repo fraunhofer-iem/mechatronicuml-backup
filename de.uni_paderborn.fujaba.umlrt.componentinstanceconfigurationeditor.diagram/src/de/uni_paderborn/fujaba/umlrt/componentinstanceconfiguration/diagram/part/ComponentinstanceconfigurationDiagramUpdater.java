@@ -29,11 +29,11 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			return getComponentInstance_2002SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
-			return getComponentInstance_3002SemanticChildren(view);
+			return getComponentInstance_3003SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
 			return getComponentInstanceComponentCompartment_7003SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartment2EditPart.VISUAL_ID:
-			return getComponentInstanceComponentCompartment_7002SemanticChildren(view);
+			return getComponentInstanceComponentCompartment_7004SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -93,7 +93,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> getComponentInstance_3002SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> getComponentInstance_3003SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -131,7 +131,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance modelElement = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getPartInstances().iterator(); it
+		for (Iterator<?> it = modelElement.getEmbeddedInstances().iterator(); it
 				.hasNext();) {
 			de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance childElement = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) it
 					.next();
@@ -149,7 +149,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> getComponentInstanceComponentCompartment_7002SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> getComponentInstanceComponentCompartment_7004SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -161,7 +161,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance modelElement = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getPartInstances().iterator(); it
+		for (Iterator<?> it = modelElement.getEmbeddedInstances().iterator(); it
 				.hasNext();) {
 			de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance childElement = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) it
 					.next();
@@ -190,7 +190,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return getPortInstance_3001ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
-			return getComponentInstance_3002ContainedLinks(view);
+			return getComponentInstance_3003ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return getAssemblyInstance_4001ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
@@ -211,7 +211,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return getPortInstance_3001IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
-			return getComponentInstance_3002IncomingLinks(view);
+			return getComponentInstance_3003IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return getAssemblyInstance_4001IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
@@ -232,7 +232,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID:
 			return getPortInstance_3001OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID:
-			return getComponentInstance_3002OutgoingLinks(view);
+			return getComponentInstance_3003OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return getAssemblyInstance_4001OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
@@ -273,7 +273,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3002ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3003ContainedLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance modelElement = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) view
 				.getElement();
@@ -327,7 +327,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3002IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3003IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -372,7 +372,7 @@ public class ComponentinstanceconfigurationDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3002OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationLinkDescriptor> getComponentInstance_3003OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

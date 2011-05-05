@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
@@ -42,7 +43,7 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getUMLRealtimeStatechart <em>UML Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getProvided <em>Provided</em>}</li>
@@ -85,14 +86,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected CoordinationPattern pattern;
 
 	/**
-	 * The cached value of the '{@link #getUMLRealtimeStatechart() <em>UML Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUMLRealtimeStatechart()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractStatechart uMLRealtimeStatechart;
+	protected AbstractRealtimeStatechart realtimeStatechart;
 
 	/**
 	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
@@ -300,16 +301,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart getUMLRealtimeStatechart() {
-		if (uMLRealtimeStatechart != null && uMLRealtimeStatechart.eIsProxy()) {
-			InternalEObject oldUMLRealtimeStatechart = (InternalEObject)uMLRealtimeStatechart;
-			uMLRealtimeStatechart = (AbstractStatechart)eResolveProxy(oldUMLRealtimeStatechart);
-			if (uMLRealtimeStatechart != oldUMLRealtimeStatechart) {
+	public AbstractRealtimeStatechart getRealtimeStatechart() {
+		if (realtimeStatechart != null && realtimeStatechart.eIsProxy()) {
+			InternalEObject oldRealtimeStatechart = (InternalEObject)realtimeStatechart;
+			realtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldRealtimeStatechart);
+			if (realtimeStatechart != oldRealtimeStatechart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 			}
 		}
-		return uMLRealtimeStatechart;
+		return realtimeStatechart;
 	}
 
 	/**
@@ -317,8 +318,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractStatechart basicGetUMLRealtimeStatechart() {
-		return uMLRealtimeStatechart;
+	public AbstractRealtimeStatechart basicGetRealtimeStatechart() {
+		return realtimeStatechart;
 	}
 
 	/**
@@ -326,11 +327,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUMLRealtimeStatechart(AbstractStatechart newUMLRealtimeStatechart) {
-		AbstractStatechart oldUMLRealtimeStatechart = uMLRealtimeStatechart;
-		uMLRealtimeStatechart = newUMLRealtimeStatechart;
+	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
+		realtimeStatechart = newRealtimeStatechart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__UML_REALTIME_STATECHART, oldUMLRealtimeStatechart, uMLRealtimeStatechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 	}
 
 	/**
@@ -558,9 +559,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PATTERN:
 				if (resolve) return getPattern();
 				return basicGetPattern();
-			case PatternPackage.ROLE__UML_REALTIME_STATECHART:
-				if (resolve) return getUMLRealtimeStatechart();
-				return basicGetUMLRealtimeStatechart();
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				if (resolve) return getRealtimeStatechart();
+				return basicGetRealtimeStatechart();
 			case PatternPackage.ROLE__ECLASS:
 				if (resolve) return getEClass();
 				return basicGetEClass();
@@ -598,8 +599,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PATTERN:
 				setPattern((CoordinationPattern)newValue);
 				return;
-			case PatternPackage.ROLE__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((AbstractStatechart)newValue);
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 			case PatternPackage.ROLE__ECLASS:
 				setEClass((EClass)newValue);
@@ -638,8 +639,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PATTERN:
 				setPattern((CoordinationPattern)null);
 				return;
-			case PatternPackage.ROLE__UML_REALTIME_STATECHART:
-				setUMLRealtimeStatechart((AbstractStatechart)null);
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
 			case PatternPackage.ROLE__ECLASS:
 				setEClass((EClass)null);
@@ -674,8 +675,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return channel != null;
 			case PatternPackage.ROLE__PATTERN:
 				return pattern != null;
-			case PatternPackage.ROLE__UML_REALTIME_STATECHART:
-				return uMLRealtimeStatechart != null;
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				return realtimeStatechart != null;
 			case PatternPackage.ROLE__ECLASS:
 				return eClass != null;
 			case PatternPackage.ROLE__REQUIRED:

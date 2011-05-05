@@ -29,9 +29,10 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPartInstances <em>Part Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getEmbeddedInstances <em>Embedded Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,20 +98,20 @@ public interface ComponentInstance extends NamedElement {
 	boolean isSetComponentNameDerived();
 
 	/**
-	 * Returns the value of the '<em><b>Part Instances</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Embedded Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Part Instances</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Embedded Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Part Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_PartInstances()
+	 * @return the value of the '<em>Embedded Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_EmbeddedInstances()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ComponentInstance> getPartInstances();
+	EList<ComponentInstance> getEmbeddedInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.
@@ -147,6 +148,32 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	EList<ConnectorInstance> getConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Component Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component Part</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component Part</em>' reference.
+	 * @see #setComponentPart(ComponentPart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_ComponentPart()
+	 * @model
+	 * @generated
+	 */
+	ComponentPart getComponentPart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Part</em>' reference.
+	 * @see #getComponentPart()
+	 * @generated
+	 */
+	void setComponentPart(ComponentPart value);
 
 	/**
 	 * <!-- begin-user-doc -->

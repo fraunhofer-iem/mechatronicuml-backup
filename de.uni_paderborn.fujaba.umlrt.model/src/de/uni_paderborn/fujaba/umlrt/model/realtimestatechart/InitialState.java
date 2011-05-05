@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 /**
@@ -30,31 +31,29 @@ import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
  */
 public interface InitialState extends Vertex {
 	/**
-	 * Returns the value of the '<em><b>Start State Rev</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLRealtimeStartState <em>UML Realtime Start State</em>}'.
+	 * Returns the value of the '<em><b>Start State Rev</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this start state belongs to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Start State Rev</em>' container reference.
-	 * @see #setStartStateRev(AbstractStatechart)
+	 * @return the value of the '<em>Start State Rev</em>' reference.
+	 * @see #setStartStateRev(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getInitialState_StartStateRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart#getUMLRealtimeStartState
-	 * @model opposite="uMLRealtimeStartState" transient="false"
+	 * @model
 	 * @generated
 	 */
-	AbstractStatechart getStartStateRev();
+	AbstractRealtimeStatechart getStartStateRev();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState#getStartStateRev <em>Start State Rev</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start State Rev</em>' container reference.
+	 * @param value the new value of the '<em>Start State Rev</em>' reference.
 	 * @see #getStartStateRev()
 	 * @generated
 	 */
-	void setStartStateRev(AbstractStatechart value);
+	void setStartStateRev(AbstractRealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

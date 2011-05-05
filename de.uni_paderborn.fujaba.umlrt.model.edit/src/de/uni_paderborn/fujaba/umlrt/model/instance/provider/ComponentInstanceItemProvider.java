@@ -73,6 +73,7 @@ public class ComponentInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addComponentTypePropertyDescriptor(object);
+			addComponentPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +101,28 @@ public class ComponentInstanceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Component Part feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentPartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_componentPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_componentPart_feature", "_UI_ComponentInstance_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_PART,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -111,7 +134,7 @@ public class ComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PART_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 		}
@@ -171,7 +194,7 @@ public class ComponentInstanceItemProvider
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PART_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -193,7 +216,7 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__PART_INSTANCES,
+				(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES,
 				 InstanceFactory.eINSTANCE.createComponentInstance()));
 
 		newChildDescriptors.add
