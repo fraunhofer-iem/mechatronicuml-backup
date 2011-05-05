@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;

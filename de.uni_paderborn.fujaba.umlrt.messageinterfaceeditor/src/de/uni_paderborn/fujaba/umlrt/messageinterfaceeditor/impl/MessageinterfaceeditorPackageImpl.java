@@ -201,7 +201,7 @@ public class MessageinterfaceeditorPackageImpl extends EPackageImpl implements M
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceDiagramEClass, MessageInterfaceDiagram.class, "MessageInterfaceDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInterfaceDiagram_MessageInterfaces(), theMsgifacePackage.getMessageInterface(), null, "messageInterfaces", null, 0, -1, MessageInterfaceDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterfaceDiagram_MessageInterfaces(), theMsgifacePackage.getMessageInterface(), null, "messageInterfaces", null, 0, 1, MessageInterfaceDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

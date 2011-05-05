@@ -69,7 +69,7 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 	int MESSAGE_INTERFACE_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Interfaces</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Message Interfaces</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,10 +98,10 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 	EClass getMessageInterfaceDiagram();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getMessageInterfaces <em>Message Interfaces</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getMessageInterfaces <em>Message Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Message Interfaces</em>'.
+	 * @return the meta object for the containment reference '<em>Message Interfaces</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getMessageInterfaces()
 	 * @see #getMessageInterfaceDiagram()
 	 * @generated
@@ -141,7 +141,7 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 		EClass MESSAGE_INTERFACE_DIAGRAM = eINSTANCE.getMessageInterfaceDiagram();
 
 		/**
-		 * The meta object literal for the '<em><b>Message Interfaces</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Message Interfaces</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

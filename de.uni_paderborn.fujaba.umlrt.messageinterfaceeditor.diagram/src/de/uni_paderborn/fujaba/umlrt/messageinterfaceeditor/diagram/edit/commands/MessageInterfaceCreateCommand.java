@@ -41,6 +41,10 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram container = (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram) getElementToEdit();
+		if (container.getMessageInterfaces() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -54,7 +58,7 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 				.createMessageInterface();
 
 		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram owner = (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram) getElementToEdit();
-		owner.getMessageInterfaces().add(newElement);
+		owner.setMessageInterfaces(newElement);
 
 		doConfigure(newElement, monitor, info);
 

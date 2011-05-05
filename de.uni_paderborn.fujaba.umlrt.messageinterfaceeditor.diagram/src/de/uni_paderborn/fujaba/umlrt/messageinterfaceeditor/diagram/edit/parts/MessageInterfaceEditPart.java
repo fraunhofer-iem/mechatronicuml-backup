@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;

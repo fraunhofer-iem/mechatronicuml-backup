@@ -5,8 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -41,16 +41,14 @@ public class MessageinterfaceDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram modelElement = (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getMessageInterfaces().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface childElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) it
-					.next();
+		{
+			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface childElement = modelElement
+					.getMessageInterfaces();
 			int visualID = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor(
 						childElement, visualID));
-				continue;
 			}
 		}
 		return result;

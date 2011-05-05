@@ -50,7 +50,6 @@ public class MessageinterfaceElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageInterface_2001 = getElementType("de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2001"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
