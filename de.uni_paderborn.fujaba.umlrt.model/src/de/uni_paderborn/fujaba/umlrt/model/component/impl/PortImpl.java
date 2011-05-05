@@ -54,8 +54,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getSpecification <em>Specification</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequired <em>Required</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvided <em>Provided</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
@@ -124,26 +122,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EList<PortSpecification> specification;
-
-	/**
-	 * The cached value of the '{@link #getRequired() <em>Required</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequired()
-	 * @generated
-	 * @ordered
-	 */
-	protected MessageInterface required;
-
-	/**
-	 * The cached value of the '{@link #getProvided() <em>Provided</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProvided()
-	 * @generated
-	 * @ordered
-	 */
-	protected MessageInterface provided;
 
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
@@ -306,82 +284,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getRequired() {
-		if (required != null && required.eIsProxy()) {
-			InternalEObject oldRequired = (InternalEObject)required;
-			required = (MessageInterface)eResolveProxy(oldRequired);
-			if (required != oldRequired) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT__REQUIRED, oldRequired, required));
-			}
-		}
-		return required;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetRequired() {
-		return required;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequired(MessageInterface newRequired) {
-		MessageInterface oldRequired = required;
-		required = newRequired;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__REQUIRED, oldRequired, required));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getProvided() {
-		if (provided != null && provided.eIsProxy()) {
-			InternalEObject oldProvided = (InternalEObject)provided;
-			provided = (MessageInterface)eResolveProxy(oldProvided);
-			if (provided != oldProvided) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT__PROVIDED, oldProvided, provided));
-			}
-		}
-		return provided;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetProvided() {
-		return provided;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProvided(MessageInterface newProvided) {
-		MessageInterface oldProvided = provided;
-		provided = newProvided;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__PROVIDED, oldProvided, provided));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -442,17 +344,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			toPortToConnectorRev = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
 		}
 		return toPortToConnectorRev;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String toString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -530,12 +421,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getPortKind();
 			case ComponentPackage.PORT__SPECIFICATION:
 				return getSpecification();
-			case ComponentPackage.PORT__REQUIRED:
-				if (resolve) return getRequired();
-				return basicGetRequired();
-			case ComponentPackage.PORT__PROVIDED:
-				if (resolve) return getProvided();
-				return basicGetProvided();
 			case ComponentPackage.PORT__CARDINALITY:
 				return getCardinality();
 			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
@@ -571,12 +456,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__SPECIFICATION:
 				getSpecification().clear();
 				getSpecification().addAll((Collection<? extends PortSpecification>)newValue);
-				return;
-			case ComponentPackage.PORT__REQUIRED:
-				setRequired((MessageInterface)newValue);
-				return;
-			case ComponentPackage.PORT__PROVIDED:
-				setProvided((MessageInterface)newValue);
 				return;
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -616,12 +495,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__SPECIFICATION:
 				getSpecification().clear();
 				return;
-			case ComponentPackage.PORT__REQUIRED:
-				setRequired((MessageInterface)null);
-				return;
-			case ComponentPackage.PORT__PROVIDED:
-				setProvided((MessageInterface)null);
-				return;
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
@@ -653,10 +526,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return portKind != PORT_KIND_EDEFAULT;
 			case ComponentPackage.PORT__SPECIFICATION:
 				return specification != null && !specification.isEmpty();
-			case ComponentPackage.PORT__REQUIRED:
-				return required != null;
-			case ComponentPackage.PORT__PROVIDED:
-				return provided != null;
 			case ComponentPackage.PORT__CARDINALITY:
 				return cardinality != null;
 			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
@@ -705,12 +574,16 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case ComponentPackage.PORT___TO_STRING:
-				return toString();
-		}
-		return super.eInvoke(operationID, arguments);
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(", portKind: ");
+		result.append(portKind);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PortImpl

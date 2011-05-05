@@ -75,13 +75,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__STATECHART;
+	int ROLE_CONNECTOR__REALTIME_STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__REALTIME_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -446,13 +446,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Channel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CHANNEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__CHANNEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' reference.
@@ -461,16 +470,16 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' reference.
@@ -479,7 +488,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' reference.
@@ -488,7 +497,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Provided</b></em>' reference.
@@ -497,7 +506,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ROLE__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' reference.
@@ -506,7 +515,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ROLE__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -515,7 +524,16 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Channels</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__CHANNELS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -524,7 +542,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -826,15 +844,15 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_Pattern();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart()
+	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getAdaptationRealtimeStatechart()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_RealtimeStatechart();
+	EReference getRole_AdaptationRealtimeStatechart();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getEClass <em>EClass</em>}'.
@@ -890,6 +908,17 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_Port();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannels <em>Channels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Channels</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannels()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Channels();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1009,12 +1038,12 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__PATTERN = eINSTANCE.getRole_Pattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Realtime Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__REALTIME_STATECHART = eINSTANCE.getRole_RealtimeStatechart();
+		EReference ROLE__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getRole_AdaptationRealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
@@ -1055,6 +1084,14 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__PORT = eINSTANCE.getRole_Port();
+
+		/**
+		 * The meta object literal for the '<em><b>Channels</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__CHANNELS = eINSTANCE.getRole_Channels();
 
 	}
 

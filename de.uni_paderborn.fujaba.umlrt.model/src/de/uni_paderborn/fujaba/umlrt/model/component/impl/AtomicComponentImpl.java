@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AtomicComponentImpl#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AtomicComponentImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,14 +33,14 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  */
 public class AtomicComponentImpl extends ComponentImpl implements AtomicComponent {
 	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
+	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractRealtimeStatechart statechart;
+	protected AbstractRealtimeStatechart realtimeStatechart;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,16 +65,16 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getStatechart() {
-		if (statechart != null && statechart.eIsProxy()) {
-			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
-			if (statechart != oldStatechart) {
+	public AbstractRealtimeStatechart getRealtimeStatechart() {
+		if (realtimeStatechart != null && realtimeStatechart.eIsProxy()) {
+			InternalEObject oldRealtimeStatechart = (InternalEObject)realtimeStatechart;
+			realtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldRealtimeStatechart);
+			if (realtimeStatechart != oldRealtimeStatechart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 			}
 		}
-		return statechart;
+		return realtimeStatechart;
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart basicGetStatechart() {
-		return statechart;
+	public AbstractRealtimeStatechart basicGetRealtimeStatechart() {
+		return realtimeStatechart;
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
-		AbstractRealtimeStatechart oldStatechart = statechart;
-		statechart = newStatechart;
+	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
+		realtimeStatechart = newRealtimeStatechart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__STATECHART, oldStatechart, statechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 	}
 
 	/**
@@ -106,9 +106,9 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				if (resolve) return getStatechart();
-				return basicGetStatechart();
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				if (resolve) return getRealtimeStatechart();
+				return basicGetRealtimeStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,8 +121,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)newValue);
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)null);
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__STATECHART:
-				return statechart != null;
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				return realtimeStatechart != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -166,7 +166,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.ATOMIC_COMPONENT__STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__STATECHART;
+				case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
 				default: return -1;
 			}
 		}
@@ -182,7 +182,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__STATECHART: return ComponentPackage.ATOMIC_COMPONENT__STATECHART;
+				case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART: return ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART;
 				default: return -1;
 			}
 		}

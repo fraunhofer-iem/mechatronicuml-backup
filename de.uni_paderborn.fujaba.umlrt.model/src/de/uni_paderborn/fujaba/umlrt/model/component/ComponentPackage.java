@@ -773,31 +773,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Required</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Provided</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>From Port To Connector Rev</b></em>' reference list.
@@ -806,7 +788,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__FROM_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__FROM_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>To Port To Connector Rev</b></em>' reference list.
@@ -815,7 +797,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -824,7 +806,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -998,22 +980,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT___TO_STRING = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int PORT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -1082,13 +1055,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -1100,13 +1073,40 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__REFINES = PORT_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__REQUIRED = PORT_SPECIFICATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Provided</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__PROVIDED = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 2;
+	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Discrete Port Specification</em>' class.
@@ -1896,13 +1896,13 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__COMPONENT_INSTANCES = COMPONENT__COMPONENT_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__STATECHART = COMPONENT_FEATURE_COUNT + 0;
+	int ATOMIC_COMPONENT__REALTIME_STATECHART = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
@@ -2104,13 +2104,13 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR = 13;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__STATECHART = CorePackage.BEHAVIORAL_ELEMENT__STATECHART;
+	int BEHAVIORAL_CONNECTOR__REALTIME_STATECHART = CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2150,13 +2150,13 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__STATECHART = BEHAVIORAL_CONNECTOR__STATECHART;
+	int CONNECTOR_TYPE__REALTIME_STATECHART = BEHAVIORAL_CONNECTOR__REALTIME_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2223,13 +2223,13 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY = 11;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY__STATECHART = CONNECTOR_TYPE__STATECHART;
+	int ASSEMBLY__REALTIME_STATECHART = CONNECTOR_TYPE__REALTIME_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2314,13 +2314,13 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION = 12;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__STATECHART = CONNECTOR_TYPE__STATECHART;
+	int DELEGATION__REALTIME_STATECHART = CONNECTOR_TYPE__REALTIME_STATECHART;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -2569,28 +2569,6 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Specification();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequired <em>Required</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequired()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Required();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvided <em>Provided</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvided()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Provided();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2622,16 +2600,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_ToPortToConnectorRev();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#toString() <em>To String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To String</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#toString()
-	 * @generated
-	 */
-	EOperation getPort__ToString();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification <em>Port Specification</em>}'.
@@ -2673,6 +2641,39 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscretePortSpecification_Refines();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_AdaptationRealtimeStatechart();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Required</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_Required();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided <em>Provided</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Provided</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_Provided();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
@@ -3111,22 +3112,6 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__SPECIFICATION = eINSTANCE.getPort_Specification();
 
 		/**
-		 * The meta object literal for the '<em><b>Required</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__REQUIRED = eINSTANCE.getPort_Required();
-
-		/**
-		 * The meta object literal for the '<em><b>Provided</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__PROVIDED = eINSTANCE.getPort_Provided();
-
-		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3149,14 +3134,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__TO_PORT_TO_CONNECTOR_REV = eINSTANCE.getPort_ToPortToConnectorRev();
-
-		/**
-		 * The meta object literal for the '<em><b>To String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PORT___TO_STRING = eINSTANCE.getPort__ToString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -3195,6 +3172,30 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT_SPECIFICATION__REFINES = eINSTANCE.getDiscretePortSpecification_Refines();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getDiscretePortSpecification_AdaptationRealtimeStatechart();
+
+		/**
+		 * The meta object literal for the '<em><b>Required</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__REQUIRED = eINSTANCE.getDiscretePortSpecification_Required();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__PROVIDED = eINSTANCE.getDiscretePortSpecification_Provided();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

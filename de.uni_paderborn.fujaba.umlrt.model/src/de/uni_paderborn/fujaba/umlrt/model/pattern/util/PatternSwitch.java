@@ -117,6 +117,7 @@ public class PatternSwitch<T> {
 				T result = caseRole(role);
 				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseConstrainableElement(role);
+				if (result == null) result = caseBehavioralElement(role);
 				if (result == null) result = caseExtendableElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

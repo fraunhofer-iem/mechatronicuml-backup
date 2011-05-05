@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,29 +26,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BehavioralElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statechart</em>' reference isn't clear,
+	 * If the meaning of the '<em>Realtime Statechart</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statechart</em>' reference.
-	 * @see #setStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_Statechart()
+	 * @return the value of the '<em>Realtime Statechart</em>' reference.
+	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_RealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	AbstractRealtimeStatechart getStatechart();
+	AbstractRealtimeStatechart getRealtimeStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' reference.
-	 * @see #getStatechart()
+	 * @param value the new value of the '<em>Realtime Statechart</em>' reference.
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractRealtimeStatechart value);
+	void setRealtimeStatechart(AbstractRealtimeStatechart value);
 
 } // BehavioralElement

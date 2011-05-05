@@ -68,7 +68,6 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HelperPackage.STRING_TO_ECLASS: return (EObject)createStringToEClass();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -122,16 +121,6 @@ public class HelperFactoryImpl extends EFactoryImpl implements HelperFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<String, EClass> createStringToEClass() {
-		StringToEClassImpl stringToEClass = new StringToEClassImpl();
-		return stringToEClass;
 	}
 
 	/**

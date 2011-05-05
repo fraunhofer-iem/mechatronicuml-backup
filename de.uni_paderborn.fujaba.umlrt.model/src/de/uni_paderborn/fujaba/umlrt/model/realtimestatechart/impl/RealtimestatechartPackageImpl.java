@@ -981,6 +981,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSynchronizationChannel_Role() {
+		return (EReference)synchronizationChannelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getSynchronizationChannel__ToMyString() {
 		return synchronizationChannelEClass.getEOperations().get(0);
 	}
@@ -1494,6 +1503,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
 		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR);
 		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__NAME);
+		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__ROLE);
 		createEOperation(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL___TO_MY_STRING);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
@@ -1543,6 +1553,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		org.storydriven.modeling.calls.expressions.ExpressionsPackage theExpressionsPackage_1 = (org.storydriven.modeling.calls.expressions.ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.modeling.calls.expressions.ExpressionsPackage.eNS_URI);
 		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theHelperPackage);
@@ -1705,6 +1716,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronizationChannel_SynchroChannelExpr(), theEcorePackage.getEString(), "synchroChannelExpr", "", 0, 1, SynchronizationChannel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSynchronizationChannel_Name(), theEcorePackage.getEString(), "name", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSynchronizationChannel_Role(), thePatternPackage.getRole(), thePatternPackage.getRole_Channels(), "role", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSynchronizationChannel__ToMyString(), theEcorePackage.getEString(), "toMyString", 0, 1, IS_UNIQUE, IS_ORDERED);
 

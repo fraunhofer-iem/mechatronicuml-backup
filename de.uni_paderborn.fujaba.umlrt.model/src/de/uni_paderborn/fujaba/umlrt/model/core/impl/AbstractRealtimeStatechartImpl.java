@@ -61,8 +61,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  * </ul>
@@ -250,26 +248,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected BehavioralElement behavioralElement;
-
-	/**
-	 * The cached value of the '{@link #getProvidedMsgIFace() <em>Provided Msg IFace</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProvidedMsgIFace()
-	 * @generated
-	 * @ordered
-	 */
-	protected Map.Entry<String, EClass> providedMsgIFace;
-
-	/**
-	 * The cached value of the '{@link #getRequiredMsgIFace() <em>Required Msg IFace</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRequiredMsgIFace()
-	 * @generated
-	 * @ordered
-	 */
-	protected Map.Entry<String, EClass> requiredMsgIFace;
 
 	/**
 	 * The default value of the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
@@ -577,92 +555,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<String, EClass> getProvidedMsgIFace() {
-		return providedMsgIFace;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetProvidedMsgIFace(Map.Entry<String, EClass> newProvidedMsgIFace, NotificationChain msgs) {
-		Map.Entry<String, EClass> oldProvidedMsgIFace = providedMsgIFace;
-		providedMsgIFace = newProvidedMsgIFace;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE, oldProvidedMsgIFace, newProvidedMsgIFace);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProvidedMsgIFace(Map.Entry<String, EClass> newProvidedMsgIFace) {
-		if (newProvidedMsgIFace != providedMsgIFace) {
-			NotificationChain msgs = null;
-			if (providedMsgIFace != null)
-				msgs = ((InternalEObject)providedMsgIFace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE, null, msgs);
-			if (newProvidedMsgIFace != null)
-				msgs = ((InternalEObject)newProvidedMsgIFace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE, null, msgs);
-			msgs = basicSetProvidedMsgIFace(newProvidedMsgIFace, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE, newProvidedMsgIFace, newProvidedMsgIFace));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<String, EClass> getRequiredMsgIFace() {
-		return requiredMsgIFace;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRequiredMsgIFace(Map.Entry<String, EClass> newRequiredMsgIFace, NotificationChain msgs) {
-		Map.Entry<String, EClass> oldRequiredMsgIFace = requiredMsgIFace;
-		requiredMsgIFace = newRequiredMsgIFace;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE, oldRequiredMsgIFace, newRequiredMsgIFace);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRequiredMsgIFace(Map.Entry<String, EClass> newRequiredMsgIFace) {
-		if (newRequiredMsgIFace != requiredMsgIFace) {
-			NotificationChain msgs = null;
-			if (requiredMsgIFace != null)
-				msgs = ((InternalEObject)requiredMsgIFace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE, null, msgs);
-			if (newRequiredMsgIFace != null)
-				msgs = ((InternalEObject)newRequiredMsgIFace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE, null, msgs);
-			msgs = basicSetRequiredMsgIFace(newRequiredMsgIFace, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE, newRequiredMsgIFace, newRequiredMsgIFace));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isEmbedded() {
 		return embedded;
 	}
@@ -810,10 +702,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
 				return basicSetEClass(null, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-				return basicSetProvidedMsgIFace(null, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
-				return basicSetRequiredMsgIFace(null, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
 		}
@@ -851,10 +739,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (resolve) return getBehavioralElement();
 				return basicGetBehavioralElement();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-				return getProvidedMsgIFace();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
-				return getRequiredMsgIFace();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
@@ -906,12 +790,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-				setProvidedMsgIFace((Map.Entry<String, EClass>)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
-				setRequiredMsgIFace((Map.Entry<String, EClass>)newValue);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded((Boolean)newValue);
@@ -965,12 +843,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)null);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-				setProvidedMsgIFace((Map.Entry<String, EClass>)null);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
-				setRequiredMsgIFace((Map.Entry<String, EClass>)null);
-				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded(EMBEDDED_EDEFAULT);
 				return;
@@ -1011,10 +883,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return eClass != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				return behavioralElement != null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-				return providedMsgIFace != null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
-				return requiredMsgIFace != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return embedded != EMBEDDED_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:

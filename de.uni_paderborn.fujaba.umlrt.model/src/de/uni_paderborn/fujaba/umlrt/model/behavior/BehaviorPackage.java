@@ -199,24 +199,6 @@ public interface BehaviorPackage extends EPackage {
 	int PROTOCOL_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART__PROVIDED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE;
-
-	/**
-	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
-
-	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -303,8 +303,6 @@ public class AbstractRealtimeStatechartItemProvider
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__VERTICES);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__ECLASS);
-			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE);
-			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE);
 			childrenFeatures.add(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__CLOCKS);
 		}
 		return childrenFeatures;
@@ -362,8 +360,6 @@ public class AbstractRealtimeStatechartItemProvider
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE:
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -414,41 +410,8 @@ public class AbstractRealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE,
-				 HelperFactory.eINSTANCE.create(HelperPackage.Literals.STRING_TO_ECLASS)));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE,
-				 HelperFactory.eINSTANCE.create(HelperPackage.Literals.STRING_TO_ECLASS)));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__CLOCKS,
 				 RealtimestatechartFactory.eINSTANCE.createClock()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE ||
-			childFeature == CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

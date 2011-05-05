@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.BehavioralElementImpl#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.BehavioralElementImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +32,14 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  */
 public class BehavioralElementImpl extends EObjectImpl implements BehavioralElement {
 	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
+	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
+	 * @see #getRealtimeStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractRealtimeStatechart statechart;
+	protected AbstractRealtimeStatechart realtimeStatechart;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,16 +64,16 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getStatechart() {
-		if (statechart != null && statechart.eIsProxy()) {
-			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
-			if (statechart != oldStatechart) {
+	public AbstractRealtimeStatechart getRealtimeStatechart() {
+		if (realtimeStatechart != null && realtimeStatechart.eIsProxy()) {
+			InternalEObject oldRealtimeStatechart = (InternalEObject)realtimeStatechart;
+			realtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldRealtimeStatechart);
+			if (realtimeStatechart != oldRealtimeStatechart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.BEHAVIORAL_ELEMENT__STATECHART, oldStatechart, statechart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 			}
 		}
-		return statechart;
+		return realtimeStatechart;
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart basicGetStatechart() {
-		return statechart;
+	public AbstractRealtimeStatechart basicGetRealtimeStatechart() {
+		return realtimeStatechart;
 	}
 
 	/**
@@ -90,11 +90,11 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
-		AbstractRealtimeStatechart oldStatechart = statechart;
-		statechart = newStatechart;
+	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
+		realtimeStatechart = newRealtimeStatechart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.BEHAVIORAL_ELEMENT__STATECHART, oldStatechart, statechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
 	}
 
 	/**
@@ -105,9 +105,9 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				if (resolve) return getStatechart();
-				return basicGetStatechart();
+			case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART:
+				if (resolve) return getRealtimeStatechart();
+				return basicGetRealtimeStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,8 +120,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)newValue);
+			case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)null);
+			case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,8 +150,8 @@ public class BehavioralElementImpl extends EObjectImpl implements BehavioralElem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.BEHAVIORAL_ELEMENT__STATECHART:
-				return statechart != null;
+			case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART:
+				return realtimeStatechart != null;
 		}
 		return super.eIsSet(featureID);
 	}

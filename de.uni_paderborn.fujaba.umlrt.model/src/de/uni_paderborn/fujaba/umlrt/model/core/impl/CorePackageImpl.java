@@ -402,7 +402,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehavioralElement_Statechart() {
+	public EReference getBehavioralElement_RealtimeStatechart() {
 		return (EReference)behavioralElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -528,26 +528,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractRealtimeStatechart_ProvidedMsgIFace() {
-		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAbstractRealtimeStatechart_RequiredMsgIFace() {
-		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(11);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAbstractRealtimeStatechart_Embedded() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -556,7 +538,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	public EReference getAbstractRealtimeStatechart_Clocks() {
-		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(13);
+		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -684,7 +666,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEOperation(infinityEClass, INFINITY___EQUALS__EOBJECT);
 
 		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
-		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__STATECHART);
+		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__REALTIME_STATECHART);
 
 		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
 		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
@@ -700,8 +682,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__VERTICES);
 		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__ECLASS);
 		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT);
-		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE);
-		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE);
 		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__EMBEDDED);
 		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__CLOCKS);
 		createEOperation(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
@@ -796,7 +776,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElement_Statechart(), this.getAbstractRealtimeStatechart(), null, "statechart", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElement_RealtimeStatechart(), this.getAbstractRealtimeStatechart(), null, "realtimeStatechart", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstrainableElement_Constraint(), theConstraintPackage.getConstraint(), theConstraintPackage.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -812,8 +792,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getAbstractRealtimeStatechart_Vertices(), theRealtimestatechartPackage.getVertex(), null, "vertices", null, 0, -1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractRealtimeStatechart_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractRealtimeStatechart_BehavioralElement(), this.getBehavioralElement(), null, "behavioralElement", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractRealtimeStatechart_ProvidedMsgIFace(), theHelperPackage.getStringToEClass(), null, "providedMsgIFace", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractRealtimeStatechart_RequiredMsgIFace(), theHelperPackage.getStringToEClass(), null, "requiredMsgIFace", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractRealtimeStatechart_Embedded(), theEcorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractRealtimeStatechart_Clocks(), theRealtimestatechartPackage.getClock(), theRealtimestatechartPackage.getClock_Statechart(), "clocks", null, 0, -1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

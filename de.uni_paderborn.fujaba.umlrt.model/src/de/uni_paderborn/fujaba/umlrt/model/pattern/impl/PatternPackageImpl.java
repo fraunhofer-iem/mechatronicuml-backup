@@ -258,7 +258,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_RealtimeStatechart() {
+	public EReference getRole_AdaptationRealtimeStatechart() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -312,6 +312,15 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRole_Channels() {
+		return (EReference)roleEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PatternFactory getPatternFactory() {
 		return (PatternFactory)getEFactoryInstance();
 	}
@@ -348,12 +357,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__CHANNEL);
 		createEReference(roleEClass, ROLE__PATTERN);
-		createEReference(roleEClass, ROLE__REALTIME_STATECHART);
+		createEReference(roleEClass, ROLE__ADAPTATION_REALTIME_STATECHART);
 		createEReference(roleEClass, ROLE__ECLASS);
 		createEReference(roleEClass, ROLE__REQUIRED);
 		createEReference(roleEClass, ROLE__PROVIDED);
 		createEReference(roleEClass, ROLE__CARDINALITY);
 		createEReference(roleEClass, ROLE__PORT);
+		createEReference(roleEClass, ROLE__CHANNELS);
 	}
 
 	/**
@@ -385,6 +395,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -396,6 +407,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		roleEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		roleEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		roleEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(roleConnectorEClass, RoleConnector.class, "RoleConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -411,12 +423,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_Channel(), this.getRoleConnector(), this.getRoleConnector_Source(), "channel", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Pattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Roles(), "pattern", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_RealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "realtimeStatechart", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_AdaptationRealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "adaptationRealtimeStatechart", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Required(), theMsgifacePackage.getMessageInterface(), null, "required", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Provided(), theMsgifacePackage.getMessageInterface(), null, "provided", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Port(), theComponentPackage.getDiscretePortSpecification(), theComponentPackage.getDiscretePortSpecification_Refines(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_Channels(), theRealtimestatechartPackage.getSynchronizationChannel(), theRealtimestatechartPackage.getSynchronizationChannel_Role(), "channels", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

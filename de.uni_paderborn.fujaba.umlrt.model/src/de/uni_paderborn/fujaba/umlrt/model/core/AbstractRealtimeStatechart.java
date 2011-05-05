@@ -45,8 +45,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getProvidedMsgIFace <em>Provided Msg IFace</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}</li>
  * </ul>
@@ -298,63 +296,11 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	void setBehavioralElement(BehavioralElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Provided Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Provided Msg IFace</em>' map isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provided Msg IFace</em>' map.
-	 * @see #setProvidedMsgIFace(Map.Entry)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_ProvidedMsgIFace()
-	 * @model mapType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.StringToEClass<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EClass>"
-	 * @generated
-	 */
-	Map.Entry<String, EClass> getProvidedMsgIFace();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getProvidedMsgIFace <em>Provided Msg IFace</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided Msg IFace</em>' map.
-	 * @see #getProvidedMsgIFace()
-	 * @generated
-	 */
-	void setProvidedMsgIFace(Map.Entry<String, EClass> value);
-
-	/**
-	 * Returns the value of the '<em><b>Required Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Required Msg IFace</em>' map isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required Msg IFace</em>' map.
-	 * @see #setRequiredMsgIFace(Map.Entry)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_RequiredMsgIFace()
-	 * @model mapType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.StringToEClass<org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EClass>"
-	 * @generated
-	 */
-	Map.Entry<String, EClass> getRequiredMsgIFace();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required Msg IFace</em>' map.
-	 * @see #getRequiredMsgIFace()
-	 * @generated
-	 */
-	void setRequiredMsgIFace(Map.Entry<String, EClass> value);
-
-	/**
 	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This attribute specifies whether this realtime statechart is embedded into a complex state or not.
+	 * This attribute specifies whether this realtime statechart is embedded into a region or not.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded</em>' attribute.
 	 * @see #setEmbedded(boolean)

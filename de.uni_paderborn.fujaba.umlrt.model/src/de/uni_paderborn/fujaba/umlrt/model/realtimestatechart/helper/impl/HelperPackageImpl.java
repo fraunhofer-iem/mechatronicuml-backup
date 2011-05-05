@@ -6,6 +6,41 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -13,33 +48,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,13 +62,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.Realtimestate
  * @generated
  */
 public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringToEClassEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,33 +199,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStringToEClass() {
-		return stringToEClassEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringToEClass_Key() {
-		return (EAttribute)stringToEClassEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStringToEClass_Value() {
-		return (EReference)stringToEClassEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getMyMap() {
 		return myMapEDataType;
 	}
@@ -295,11 +275,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		if (isCreated) return;
 		isCreated = true;
 
-		// Create classes and their features
-		stringToEClassEClass = createEClass(STRING_TO_ECLASS);
-		createEAttribute(stringToEClassEClass, STRING_TO_ECLASS__KEY);
-		createEReference(stringToEClassEClass, STRING_TO_ECLASS__VALUE);
-
 		// Create data types
 		myMapEDataType = createEDataType(MY_MAP);
 		mapEDataType = createEDataType(MAP);
@@ -331,24 +306,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
-
-		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-
-		// Create type parameters
-		addETypeParameter(myMapEDataType, "key");
-		addETypeParameter(myMapEDataType, "value");
-		addETypeParameter(setEDataType, "UMLClock");
-		addETypeParameter(myListEDataType, "elements");
-
-		// Set bounds for type parameters
-
-		// Add supertypes to classes
-
-		// Initialize classes, features, and operations; add parameters
-		initEClass(stringToEClassEClass, Map.Entry.class, "StringToEClass", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringToEClass_Key(), theEcorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStringToEClass_Value(), theEcorePackage.getEClass(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(myMapEDataType, HashMap.class, "MyMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

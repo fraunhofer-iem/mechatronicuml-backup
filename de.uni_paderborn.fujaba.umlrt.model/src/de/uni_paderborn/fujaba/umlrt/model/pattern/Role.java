@@ -12,10 +12,12 @@ import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,12 +33,13 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPattern <em>Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRequired <em>Required</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getProvided <em>Provided</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPort <em>Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,7 +47,7 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  * @model
  * @generated
  */
-public interface Role extends NamedElement, ConstrainableElement {
+public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
 	/**
 	 * Returns the value of the '<em><b>Channel</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector#getSource <em>Source</em>}'.
@@ -100,29 +103,29 @@ public interface Role extends NamedElement, ConstrainableElement {
 	void setPattern(CoordinationPattern value);
 
 	/**
-	 * Returns the value of the '<em><b>Realtime Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart describing the communication behavior of this role.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Realtime Statechart</em>' reference.
-	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_RealtimeStatechart()
+	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
+	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_AdaptationRealtimeStatechart()
 	 * @model
 	 * @generated
 	 */
-	AbstractRealtimeStatechart getRealtimeStatechart();
+	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRealtimeStatechart <em>Realtime Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Realtime Statechart</em>' reference.
-	 * @see #getRealtimeStatechart()
+	 * @param value the new value of the '<em>Adaptation Realtime Statechart</em>' reference.
+	 * @see #getAdaptationRealtimeStatechart()
 	 * @generated
 	 */
-	void setRealtimeStatechart(AbstractRealtimeStatechart value);
+	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>EClass</b></em>' reference.
@@ -244,5 +247,23 @@ public interface Role extends NamedElement, ConstrainableElement {
 	 * @generated
 	 */
 	EList<DiscretePortSpecification> getPort();
+
+	/**
+	 * Returns the value of the '<em><b>Channels</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Channels</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Channels</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_Channels()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getRole
+	 * @model opposite="role" containment="true"
+	 * @generated
+	 */
+	EList<SynchronizationChannel> getChannels();
 
 } // Role

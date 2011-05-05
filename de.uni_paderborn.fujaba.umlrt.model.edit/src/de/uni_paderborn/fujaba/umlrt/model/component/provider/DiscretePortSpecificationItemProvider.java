@@ -59,26 +59,29 @@ public class DiscretePortSpecificationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStatechartPropertyDescriptor(object);
+			addRealtimeStatechartPropertyDescriptor(object);
 			addRefinesPropertyDescriptor(object);
+			addAdaptationRealtimeStatechartPropertyDescriptor(object);
+			addRequiredPropertyDescriptor(object);
+			addProvidedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Statechart feature.
+	 * This adds a property descriptor for the Realtime Statechart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
+	protected void addRealtimeStatechartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_statechart_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__STATECHART,
+				 getString("_UI_BehavioralElement_realtimeStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_realtimeStatechart_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__REALTIME_STATECHART,
 				 true,
 				 false,
 				 true,
@@ -101,6 +104,72 @@ public class DiscretePortSpecificationItemProvider
 				 getString("_UI_DiscretePortSpecification_refines_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_refines_feature", "_UI_DiscretePortSpecification_type"),
 				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REFINES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Adaptation Realtime Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdaptationRealtimeStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortSpecification_adaptationRealtimeStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_adaptationRealtimeStatechart_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Required feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortSpecification_required_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_required_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Provided feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProvidedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortSpecification_provided_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_provided_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED,
 				 true,
 				 false,
 				 true,

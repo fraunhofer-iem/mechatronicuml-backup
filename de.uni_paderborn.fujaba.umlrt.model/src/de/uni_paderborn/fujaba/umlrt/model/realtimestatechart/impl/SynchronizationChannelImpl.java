@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -35,6 +37,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -181,6 +184,47 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Role getRole() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE) return null;
+		return (Role)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRole(Role newRole, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRole, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRole(Role newRole) {
+		if (newRole != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE && newRole != null)) {
+			if (EcoreUtil.isAncestor(this, newRole))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newRole != null)
+				msgs = ((InternalEObject)newRole).eInverseAdd(this, PatternPackage.ROLE__CHANNELS, Role.class, msgs);
+			msgs = basicSetRole(newRole, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE, newRole, newRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String toMyString() {
 		String value ="null";
 		boolean firstTime = true;
@@ -221,6 +265,10 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetState((State)otherEnd, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetRole((Role)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -235,6 +283,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return basicSetState(null, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				return basicSetRole(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -249,6 +299,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__CHANNELS, State.class, msgs);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				return eInternalContainer().eInverseRemove(this, PatternPackage.ROLE__CHANNELS, Role.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -267,6 +319,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				return getSynchroChannelExpr();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				return getName();
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				return getRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,6 +338,9 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				setName((String)newValue);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				setRole((Role)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -303,6 +360,9 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				setRole((Role)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -321,6 +381,8 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				return isSetSynchroChannelExpr();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
+				return getRole() != null;
 		}
 		return super.eIsSet(featureID);
 	}

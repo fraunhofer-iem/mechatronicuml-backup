@@ -65,8 +65,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 			addCommentPropertyDescriptor(object);
 			addInvisibleInterfacesPropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
-			addProvidedPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addFromPortToConnectorRevPropertyDescriptor(object);
 			addToPortToConnectorRevPropertyDescriptor(object);
@@ -135,50 +133,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Required feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_required_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__REQUIRED,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Provided feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addProvidedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_provided_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_provided_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__PROVIDED,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

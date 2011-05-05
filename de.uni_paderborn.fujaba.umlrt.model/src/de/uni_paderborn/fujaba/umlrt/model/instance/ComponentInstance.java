@@ -158,7 +158,7 @@ public interface ComponentInstance extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This references stores the ComponentPart, for which this ComponentInstance has been automatically created.
+	 * This reference stores the ComponentPart, which this ComponentInstance has been automatically created for.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Part</em>' reference.
 	 * @see #setComponentPart(ComponentPart)

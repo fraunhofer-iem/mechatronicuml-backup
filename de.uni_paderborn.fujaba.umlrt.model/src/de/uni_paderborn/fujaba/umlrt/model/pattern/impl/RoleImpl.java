@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
@@ -23,6 +24,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
@@ -32,6 +34,8 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +45,16 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getChannel <em>Channel</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getRequired <em>Required</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getProvided <em>Provided</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.impl.RoleImpl#getChannels <em>Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +70,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EList<Constraint> constraint;
+
+	/**
+	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRealtimeStatechart()
+	 * @generated
+	 * @ordered
+	 */
+	protected AbstractRealtimeStatechart realtimeStatechart;
 
 	/**
 	 * The cached value of the '{@link #getChannel() <em>Channel</em>}' reference.
@@ -86,14 +102,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected CoordinationPattern pattern;
 
 	/**
-	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getAdaptationRealtimeStatechart() <em>Adaptation Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealtimeStatechart()
+	 * @see #getAdaptationRealtimeStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractRealtimeStatechart realtimeStatechart;
+	protected AbstractRealtimeStatechart adaptationRealtimeStatechart;
 
 	/**
 	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
@@ -144,6 +160,16 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected EList<DiscretePortSpecification> port;
+
+	/**
+	 * The cached value of the '{@link #getChannels() <em>Channels</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChannels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SynchronizationChannel> channels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,6 +320,44 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__PATTERN, newPattern, newPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractRealtimeStatechart getAdaptationRealtimeStatechart() {
+		if (adaptationRealtimeStatechart != null && adaptationRealtimeStatechart.eIsProxy()) {
+			InternalEObject oldAdaptationRealtimeStatechart = (InternalEObject)adaptationRealtimeStatechart;
+			adaptationRealtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldAdaptationRealtimeStatechart);
+			if (adaptationRealtimeStatechart != oldAdaptationRealtimeStatechart) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART, oldAdaptationRealtimeStatechart, adaptationRealtimeStatechart));
+			}
+		}
+		return adaptationRealtimeStatechart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractRealtimeStatechart basicGetAdaptationRealtimeStatechart() {
+		return adaptationRealtimeStatechart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart newAdaptationRealtimeStatechart) {
+		AbstractRealtimeStatechart oldAdaptationRealtimeStatechart = adaptationRealtimeStatechart;
+		adaptationRealtimeStatechart = newAdaptationRealtimeStatechart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART, oldAdaptationRealtimeStatechart, adaptationRealtimeStatechart));
 	}
 
 	/**
@@ -503,6 +567,18 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SynchronizationChannel> getChannels() {
+		if (channels == null) {
+			channels = new EObjectContainmentWithInverseEList<SynchronizationChannel>(SynchronizationChannel.class, this, PatternPackage.ROLE__CHANNELS, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE);
+		}
+		return channels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -519,6 +595,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicSetPattern((CoordinationPattern)otherEnd, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
+			case PatternPackage.ROLE__CHANNELS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChannels()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -539,6 +617,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicSetPattern(null, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
+			case PatternPackage.ROLE__CHANNELS:
+				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -553,15 +633,18 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return getConstraint();
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				if (resolve) return getRealtimeStatechart();
+				return basicGetRealtimeStatechart();
 			case PatternPackage.ROLE__CHANNEL:
 				if (resolve) return getChannel();
 				return basicGetChannel();
 			case PatternPackage.ROLE__PATTERN:
 				if (resolve) return getPattern();
 				return basicGetPattern();
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				if (resolve) return getRealtimeStatechart();
-				return basicGetRealtimeStatechart();
+			case PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART:
+				if (resolve) return getAdaptationRealtimeStatechart();
+				return basicGetAdaptationRealtimeStatechart();
 			case PatternPackage.ROLE__ECLASS:
 				if (resolve) return getEClass();
 				return basicGetEClass();
@@ -576,6 +659,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicGetCardinality();
 			case PatternPackage.ROLE__PORT:
 				return getPort();
+			case PatternPackage.ROLE__CHANNELS:
+				return getChannels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -593,14 +678,17 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
+				return;
 			case PatternPackage.ROLE__CHANNEL:
 				setChannel((RoleConnector)newValue);
 				return;
 			case PatternPackage.ROLE__PATTERN:
 				setPattern((CoordinationPattern)newValue);
 				return;
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
+			case PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART:
+				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 			case PatternPackage.ROLE__ECLASS:
 				setEClass((EClass)newValue);
@@ -618,6 +706,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getPort().clear();
 				getPort().addAll((Collection<? extends DiscretePortSpecification>)newValue);
 				return;
+			case PatternPackage.ROLE__CHANNELS:
+				getChannels().clear();
+				getChannels().addAll((Collection<? extends SynchronizationChannel>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -633,14 +725,17 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				getConstraint().clear();
 				return;
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				setRealtimeStatechart((AbstractRealtimeStatechart)null);
+				return;
 			case PatternPackage.ROLE__CHANNEL:
 				setChannel((RoleConnector)null);
 				return;
 			case PatternPackage.ROLE__PATTERN:
 				setPattern((CoordinationPattern)null);
 				return;
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)null);
+			case PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART:
+				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
 			case PatternPackage.ROLE__ECLASS:
 				setEClass((EClass)null);
@@ -657,6 +752,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PORT:
 				getPort().clear();
 				return;
+			case PatternPackage.ROLE__CHANNELS:
+				getChannels().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -671,12 +769,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
+			case PatternPackage.ROLE__REALTIME_STATECHART:
+				return realtimeStatechart != null;
 			case PatternPackage.ROLE__CHANNEL:
 				return channel != null;
 			case PatternPackage.ROLE__PATTERN:
 				return pattern != null;
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				return realtimeStatechart != null;
+			case PatternPackage.ROLE__ADAPTATION_REALTIME_STATECHART:
+				return adaptationRealtimeStatechart != null;
 			case PatternPackage.ROLE__ECLASS:
 				return eClass != null;
 			case PatternPackage.ROLE__REQUIRED:
@@ -687,6 +787,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return cardinality != null;
 			case PatternPackage.ROLE__PORT:
 				return port != null && !port.isEmpty();
+			case PatternPackage.ROLE__CHANNELS:
+				return channels != null && !channels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -704,6 +806,12 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				default: return -1;
 			}
 		}
+		if (baseClass == BehavioralElement.class) {
+			switch (derivedFeatureID) {
+				case PatternPackage.ROLE__REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -717,6 +825,12 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return PatternPackage.ROLE__CONSTRAINT;
+				default: return -1;
+			}
+		}
+		if (baseClass == BehavioralElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART: return PatternPackage.ROLE__REALTIME_STATECHART;
 				default: return -1;
 			}
 		}

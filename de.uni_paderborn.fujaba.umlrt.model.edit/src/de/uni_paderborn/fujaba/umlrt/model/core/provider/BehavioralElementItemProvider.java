@@ -63,25 +63,25 @@ public class BehavioralElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStatechartPropertyDescriptor(object);
+			addRealtimeStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Statechart feature.
+	 * This adds a property descriptor for the Realtime Statechart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
+	protected void addRealtimeStatechartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_statechart_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__STATECHART,
+				 getString("_UI_BehavioralElement_realtimeStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_realtimeStatechart_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__REALTIME_STATECHART,
 				 true,
 				 false,
 				 true,

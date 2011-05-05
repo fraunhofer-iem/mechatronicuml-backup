@@ -6,11 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,52 +59,6 @@ public interface HelperPackage extends EPackage {
 	HelperPackage eINSTANCE = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.StringToEClassImpl <em>String To EClass</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.StringToEClassImpl
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getStringToEClass()
-	 * @generated
-	 */
-	int STRING_TO_ECLASS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_TO_ECLASS__KEY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_TO_ECLASS__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>String To EClass</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_TO_ECLASS_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>String To EClass</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_TO_ECLASS_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '<em>My Map</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +66,7 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getMyMap()
 	 * @generated
 	 */
-	int MY_MAP = 1;
+	int MY_MAP = 0;
 
 	/**
 	 * The meta object id for the '<em>Map</em>' data type.
@@ -125,7 +76,7 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getMap()
 	 * @generated
 	 */
-	int MAP = 2;
+	int MAP = 1;
 
 	/**
 	 * The meta object id for the '<em>Vector</em>' data type.
@@ -135,7 +86,7 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getVector()
 	 * @generated
 	 */
-	int VECTOR = 3;
+	int VECTOR = 2;
 
 	/**
 	 * The meta object id for the '<em>Set</em>' data type.
@@ -145,7 +96,7 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getSet()
 	 * @generated
 	 */
-	int SET = 4;
+	int SET = 3;
 
 	/**
 	 * The meta object id for the '<em>Iterator</em>' data type.
@@ -155,8 +106,7 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getIterator()
 	 * @generated
 	 */
-	int ITERATOR = 5;
-
+	int ITERATOR = 4;
 
 	/**
 	 * The meta object id for the '<em>My List</em>' data type.
@@ -166,42 +116,8 @@ public interface HelperPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getMyList()
 	 * @generated
 	 */
-	int MY_LIST = 6;
+	int MY_LIST = 5;
 
-
-	/**
-	 * Returns the meta object for class '{@link java.util.Map.Entry <em>String To EClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String To EClass</em>'.
-	 * @see java.util.Map.Entry
-	 * @model keyDataType="org.eclipse.emf.ecore.EString"
-	 *        valueType="org.eclipse.emf.ecore.EClass"
-	 * @generated
-	 */
-	EClass getStringToEClass();
-
-	/**
-	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getStringToEClass()
-	 * @generated
-	 */
-	EAttribute getStringToEClass_Key();
-
-	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
-	 * @see java.util.Map.Entry
-	 * @see #getStringToEClass()
-	 * @generated
-	 */
-	EReference getStringToEClass_Value();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.HashMap <em>My Map</em>}'.
@@ -292,32 +208,6 @@ public interface HelperPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.StringToEClassImpl <em>String To EClass</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.StringToEClassImpl
-		 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl#getStringToEClass()
-		 * @generated
-		 */
-		EClass STRING_TO_ECLASS = eINSTANCE.getStringToEClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_TO_ECLASS__KEY = eINSTANCE.getStringToEClass_Key();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STRING_TO_ECLASS__VALUE = eINSTANCE.getStringToEClass_Value();
-
 		/**
 		 * The meta object literal for the '<em>My Map</em>' data type.
 		 * <!-- begin-user-doc -->

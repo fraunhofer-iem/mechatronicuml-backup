@@ -319,13 +319,13 @@ public interface CorePackage extends EPackage {
 	int BEHAVIORAL_ELEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_ELEMENT__STATECHART = 0;
+	int BEHAVIORAL_ELEMENT__REALTIME_STATECHART = 0;
 
 	/**
 	 * The number of structural features of the '<em>Behavioral Element</em>' class.
@@ -520,31 +520,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
-
-	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -553,7 +535,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int ABSTRACT_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Realtime Statechart</em>' class.
@@ -562,7 +544,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 15;
+	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1041,15 +1023,15 @@ public interface CorePackage extends EPackage {
 	EClass getBehavioralElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart <em>Statechart</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getStatechart()
+	 * @return the meta object for the reference '<em>Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart()
 	 * @see #getBehavioralElement()
 	 * @generated
 	 */
-	EReference getBehavioralElement_Statechart();
+	EReference getBehavioralElement_RealtimeStatechart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
@@ -1191,28 +1173,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractRealtimeStatechart_BehavioralElement();
-
-	/**
-	 * Returns the meta object for the map '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getProvidedMsgIFace <em>Provided Msg IFace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the map '<em>Provided Msg IFace</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getProvidedMsgIFace()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_ProvidedMsgIFace();
-
-	/**
-	 * Returns the meta object for the map '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getRequiredMsgIFace <em>Required Msg IFace</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the map '<em>Required Msg IFace</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getRequiredMsgIFace()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_RequiredMsgIFace();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}'.
@@ -1524,12 +1484,12 @@ public interface CorePackage extends EPackage {
 		EClass BEHAVIORAL_ELEMENT = eINSTANCE.getBehavioralElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Realtime Statechart</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BEHAVIORAL_ELEMENT__STATECHART = eINSTANCE.getBehavioralElement_Statechart();
+		EReference BEHAVIORAL_ELEMENT__REALTIME_STATECHART = eINSTANCE.getBehavioralElement_RealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
@@ -1638,22 +1598,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = eINSTANCE.getAbstractRealtimeStatechart_BehavioralElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Provided Msg IFace</b></em>' map feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE = eINSTANCE.getAbstractRealtimeStatechart_ProvidedMsgIFace();
-
-		/**
-		 * The meta object literal for the '<em><b>Required Msg IFace</b></em>' map feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE = eINSTANCE.getAbstractRealtimeStatechart_RequiredMsgIFace();
 
 		/**
 		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.

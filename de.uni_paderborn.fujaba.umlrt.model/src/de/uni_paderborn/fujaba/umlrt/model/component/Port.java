@@ -30,8 +30,6 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getSpecification <em>Specification</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequired <em>Required</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvided <em>Provided</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
@@ -130,56 +128,6 @@ public interface Port extends NamedElement, CommentableElement {
 	EList<PortSpecification> getSpecification();
 
 	/**
-	 * Returns the value of the '<em><b>Required</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required</em>' reference.
-	 * @see #setRequired(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_Required()
-	 * @model
-	 * @generated
-	 */
-	MessageInterface getRequired();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequired <em>Required</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' reference.
-	 * @see #getRequired()
-	 * @generated
-	 */
-	void setRequired(MessageInterface value);
-
-	/**
-	 * Returns the value of the '<em><b>Provided</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association stores the provided message interface of this port. The required message interface defines which messages are allowed to be received by this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Provided</em>' reference.
-	 * @see #setProvided(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_Provided()
-	 * @model
-	 * @generated
-	 */
-	MessageInterface getProvided();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvided <em>Provided</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided</em>' reference.
-	 * @see #getProvided()
-	 * @generated
-	 */
-	void setProvided(MessageInterface value);
-
-	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -237,13 +185,5 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<ConnectorType> getToPortToConnectorRev();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String toString();
 
 } // Port

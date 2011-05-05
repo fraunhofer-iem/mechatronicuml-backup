@@ -3746,13 +3746,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCHRONIZATION_CHANNEL__ROLE = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4340,24 +4349,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__PROVIDED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__PROVIDED_MSG_IFACE;
-
-	/**
-	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__REQUIRED_MSG_IFACE = CorePackage.ABSTRACT_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -5780,6 +5771,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getSynchronizationChannel_Name();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Role</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#getRole()
+	 * @see #getSynchronizationChannel()
+	 * @generated
+	 */
+	EReference getSynchronizationChannel_Role();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel#toMyString() <em>To My String</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6778,6 +6780,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SYNCHRONIZATION_CHANNEL__NAME = eINSTANCE.getSynchronizationChannel_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYNCHRONIZATION_CHANNEL__ROLE = eINSTANCE.getSynchronizationChannel_Role();
 
 		/**
 		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
