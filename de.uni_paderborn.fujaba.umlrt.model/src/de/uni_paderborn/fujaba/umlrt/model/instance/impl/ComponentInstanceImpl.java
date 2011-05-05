@@ -335,16 +335,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
@@ -484,20 +474,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 				return componentPart != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
-			throws InvocationTargetException {
-		switch (operationID) {
-			case InstancePackage.COMPONENT_INSTANCE___TO_STRING:
-				return toString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } // ComponentInstanceImpl

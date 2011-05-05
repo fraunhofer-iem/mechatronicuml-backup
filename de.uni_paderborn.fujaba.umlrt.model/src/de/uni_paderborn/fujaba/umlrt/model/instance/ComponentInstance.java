@@ -157,6 +157,9 @@ public interface ComponentInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This references stores the ComponentPart, for which this ComponentInstance has been automatically created.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Part</em>' reference.
 	 * @see #setComponentPart(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_ComponentPart()
@@ -174,13 +177,5 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	void setComponentPart(ComponentPart value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String toString();
 
 } // ComponentInstance

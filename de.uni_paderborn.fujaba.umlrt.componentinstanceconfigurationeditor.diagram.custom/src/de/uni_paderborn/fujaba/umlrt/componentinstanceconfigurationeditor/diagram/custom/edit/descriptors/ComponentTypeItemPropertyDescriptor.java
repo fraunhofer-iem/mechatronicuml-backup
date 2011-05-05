@@ -28,20 +28,14 @@ public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor 
 	}
 
 	/**
-	 * Copied from super class ItemPropertyDescriptor and modified.
+	 * Copied from super class ItemPropertyDescriptor and modified to also
+	 * execute our UpdateComponentInstanceChildrenCommand.
 	 */
 	@Override
 	public void setPropertyValue(Object object, Object value) {
 
 		EObject eObject = (EObject) object;
 		EditingDomain editingDomain = getEditingDomain(object);
-
-		// BEGIN ADDED
-		// TODO: Use a Compound Command
-		Command command = new UpdateComponentInstanceChildrenCommand(
-				(ComponentInstance) object, (Component) value);
-		editingDomain.getCommandStack().execute(command);
-		// END ADDED
 
 		if (parentReferences != null) {
 			Command removeCommand = null;
@@ -54,16 +48,27 @@ public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor 
 					} else if (parentReference.getEType().isInstance(value)) {
 						if (editingDomain == null) {
 							eObject.eSet(parentReference, value);
+							getUpdateCommand((ComponentInstance) object,
+									(Component) value).execute();
 						} else {
+							CompoundCommand compoundCommand = new CompoundCommand();
+
+							compoundCommand.append(SetCommand.create(
+									editingDomain, getCommandOwner(eObject),
+									parentReference, value));
+
+							compoundCommand.append(getUpdateCommand(
+									(ComponentInstance) object,
+									(Component) value));
 							editingDomain.getCommandStack().execute(
-									SetCommand.create(editingDomain,
-											getCommandOwner(eObject),
-											parentReference, value));
+									compoundCommand);
 						}
 						return;
 					} else {
 						if (editingDomain == null) {
 							eObject.eSet(parentReference, null);
+							getUpdateCommand((ComponentInstance) object, null)
+									.execute();
 						} else {
 							removeCommand = SetCommand.create(editingDomain,
 									getCommandOwner(eObject), parentReference,
@@ -87,13 +92,23 @@ public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor 
 							compoundCommand.append(SetCommand.create(
 									editingDomain, getCommandOwner(eObject),
 									parentReference, value));
+							compoundCommand.append(getUpdateCommand(
+									(ComponentInstance) object,
+									(Component) value));
 							editingDomain.getCommandStack().execute(
 									compoundCommand);
 						} else {
+							CompoundCommand compoundCommand = new CompoundCommand();
+
+							compoundCommand.append(SetCommand.create(
+									editingDomain, getCommandOwner(eObject),
+									parentReference, value));
+
+							compoundCommand.append(getUpdateCommand(
+									(ComponentInstance) object,
+									(Component) value));
 							editingDomain.getCommandStack().execute(
-									SetCommand.create(editingDomain,
-											getCommandOwner(eObject),
-											parentReference, value));
+									compoundCommand);
 						}
 					}
 					break;
@@ -102,13 +117,25 @@ public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor 
 		} else {
 			if (editingDomain == null) {
 				eObject.eSet(feature, value);
+				getUpdateCommand((ComponentInstance) object, (Component) value);
 			} else {
+				CompoundCommand compoundCommand = new CompoundCommand();
+
+				compoundCommand.append(SetCommand.create(
+						editingDomain, getCommandOwner(eObject),
+						feature, value));
+
+				compoundCommand.append(getUpdateCommand(
+						(ComponentInstance) object,
+						(Component) value));
 				editingDomain.getCommandStack().execute(
-						SetCommand.create(editingDomain,
-								getCommandOwner(eObject), feature, value));
+						compoundCommand);
 			}
 		}
+	}
 
+	private Command getUpdateCommand(ComponentInstance object, Component value) {
+		return new UpdateComponentInstanceChildrenCommand(object, value);
 	}
 
 }

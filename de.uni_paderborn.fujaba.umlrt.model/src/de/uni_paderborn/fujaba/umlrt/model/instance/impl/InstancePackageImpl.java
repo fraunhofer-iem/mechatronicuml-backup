@@ -238,15 +238,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getComponentInstance__ToString() {
-		return componentInstanceEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConnectorInstance() {
 		return connectorInstanceEClass;
 	}
@@ -385,7 +376,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORT_INSTANCES);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_PART);
-		createEOperation(componentInstanceEClass, COMPONENT_INSTANCE___TO_STRING);
 
 		connectorInstanceEClass = createEClass(CONNECTOR_INSTANCE);
 		createEReference(connectorInstanceEClass, CONNECTOR_INSTANCE__SOURCE);
@@ -453,8 +443,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getComponentInstance_ConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_ParentComponentInstance(), "connectorInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getComponentInstance__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(connectorInstanceEClass, ConnectorInstance.class, "ConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorInstance_Source(), this.getPortInstance(), null, "source", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorInstance_Target(), this.getPortInstance(), null, "target", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -496,7 +484,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });				
+		   });					
 	}
 
 	/**
@@ -512,7 +500,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
-		   });		
+		   });			
 	}
 
 } //InstancePackageImpl

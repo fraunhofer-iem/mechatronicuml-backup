@@ -242,7 +242,6 @@
                 <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentPart"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/toString"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"

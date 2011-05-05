@@ -3,6 +3,10 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.command.AbstractCommand;
+import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
@@ -28,8 +32,15 @@ public class UpdateComponentInstanceChildrenCommand extends AbstractCommand {
 
 	@Override
 	public void execute() {
-		componentInstance.getEmbeddedInstances().clear();
+		// Clear embeddedInstances
+		CompoundCommand c = new CompoundCommand();
+		for (ComponentInstance embeddedInstance : componentInstance.getEmbeddedInstances()) {
+			c.add(new ICommandProxy(new DestroyElementCommand(
+					new DestroyElementRequest(embeddedInstance, false))));
+		}
+		c.execute();
 
+		// Add new embeddedInstances
 		LinkedList<ComponentInstance> instances = new LinkedList<ComponentInstance>();
 		ComponentInstance currentInstance = componentInstance;
 		Component component;

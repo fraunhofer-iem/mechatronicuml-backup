@@ -338,22 +338,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE___TO_STRING = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int COMPONENT_INSTANCE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -933,16 +924,6 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentPart();
 
 	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#toString() <em>To String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To String</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#toString()
-	 * @generated
-	 */
-	EOperation getComponentInstance__ToString();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance <em>Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1150,14 +1131,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
-
-		/**
-		 * The meta object literal for the '<em><b>To String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation COMPONENT_INSTANCE___TO_STRING = eINSTANCE.getComponentInstance__ToString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
