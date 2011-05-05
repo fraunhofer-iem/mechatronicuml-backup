@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
@@ -27,6 +28,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -57,6 +59,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredDerived <em>Required Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedDerived <em>Provided Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -154,12 +158,44 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected EList<ConnectorType> toPortToConnectorRev;
 
 	/**
+	 * The cached setting delegate for the '{@link #getRequiredDerived() <em>Required Derived</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getRequiredDerived()
 	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate REQUIRED_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__REQUIRED_DERIVED).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getProvidedDerived() <em>Provided Derived</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PROVIDED_DERIVED).getSettingDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	protected PortImpl() {
 		super();
+		
+		// Install a notification adapter that informs the
+		// portsDerived-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_DERIVED, Notification.ADD_MANY);
+		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED);
+
+		// Install a notification adapter that informs the
+		// portsDerived-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_DERIVED, Notification.ADD_MANY);
+		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED);
 	}
 
 	/**
@@ -352,6 +388,44 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<MessageInterface> getRequiredDerived() {
+		return (EList<MessageInterface>)REQUIRED_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetRequiredDerived() {
+		return REQUIRED_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<MessageInterface> getProvidedDerived() {
+		return (EList<MessageInterface>)PROVIDED_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetProvidedDerived() {
+		return PROVIDED_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -385,6 +459,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<?>)getFromPortToConnectorRev()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return ((InternalEList<?>)getToPortToConnectorRev()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__REQUIRED_DERIVED:
+				return ((InternalEList<?>)getRequiredDerived()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__PROVIDED_DERIVED:
+				return ((InternalEList<?>)getProvidedDerived()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -427,6 +505,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getFromPortToConnectorRev();
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return getToPortToConnectorRev();
+			case ComponentPackage.PORT__REQUIRED_DERIVED:
+				return getRequiredDerived();
+			case ComponentPackage.PORT__PROVIDED_DERIVED:
+				return getProvidedDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -532,6 +614,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return fromPortToConnectorRev != null && !fromPortToConnectorRev.isEmpty();
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return toPortToConnectorRev != null && !toPortToConnectorRev.isEmpty();
+			case ComponentPackage.PORT__REQUIRED_DERIVED:
+				return isSetRequiredDerived();
+			case ComponentPackage.PORT__PROVIDED_DERIVED:
+				return isSetProvidedDerived();
 		}
 		return super.eIsSet(featureID);
 	}

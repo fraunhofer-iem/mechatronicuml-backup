@@ -127,6 +127,7 @@
         visualID="3004"
         editPartClassName="PortInstance2EditPart"
         itemSemanticEditPolicyClassName="PortInstance2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortInstanceViewFactory"
         canonicalEditPolicyClassName="PortInstance2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortInstance2GraphicalNodeEditPolicy"
         createCommandClassName="PortInstance2CreateCommand"

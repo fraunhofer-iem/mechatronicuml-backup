@@ -800,13 +800,31 @@ public interface ComponentPackage extends EPackage {
 	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Required Derived</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__REQUIRED_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Provided Derived</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__PROVIDED_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2602,6 +2620,28 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_ToPortToConnectorRev();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived <em>Required Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Required Derived</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_RequiredDerived();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived <em>Provided Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Provided Derived</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_ProvidedDerived();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification <em>Port Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3134,6 +3174,22 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__TO_PORT_TO_CONNECTOR_REV = eINSTANCE.getPort_ToPortToConnectorRev();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Derived</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__REQUIRED_DERIVED = eINSTANCE.getPort_RequiredDerived();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided Derived</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__PROVIDED_DERIVED = eINSTANCE.getPort_ProvidedDerived();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.

@@ -155,14 +155,14 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter componentPartPortsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED, Notification.ADD_MANY);
-		componentPartPortsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
-		
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED, Notification.ADD_MANY);
+		portsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
+
 		// Install a notification adapter that informs the
 		// componentNameDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter componentPartComponentNameDerived = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED, Notification.SET);
-		componentPartComponentNameDerived.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
+		DerivedAttributeAdapter componentNameDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED, Notification.SET);
+		componentNameDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
 	/**

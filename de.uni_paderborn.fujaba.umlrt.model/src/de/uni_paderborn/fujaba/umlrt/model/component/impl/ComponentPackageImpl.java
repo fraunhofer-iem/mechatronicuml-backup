@@ -456,6 +456,24 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPort_RequiredDerived() {
+		return (EReference)portEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPort_ProvidedDerived() {
+		return (EReference)portEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortSpecification() {
 		return portSpecificationEClass;
 	}
@@ -805,6 +823,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(portEClass, PORT__CARDINALITY);
 		createEReference(portEClass, PORT__FROM_PORT_TO_CONNECTOR_REV);
 		createEReference(portEClass, PORT__TO_PORT_TO_CONNECTOR_REV);
+		createEReference(portEClass, PORT__REQUIRED_DERIVED);
+		createEReference(portEClass, PORT__PROVIDED_DERIVED);
 
 		portSpecificationEClass = createEClass(PORT_SPECIFICATION);
 
@@ -882,8 +902,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
-		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -931,6 +951,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getPort_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_FromPortToConnectorRev(), this.getConnectorType(), this.getConnectorType_FromPort(), "fromPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_ToPortToConnectorRev(), this.getConnectorType(), this.getConnectorType_ToPort(), "toPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_RequiredDerived(), theMsgifacePackage.getMessageInterface(), null, "requiredDerived", null, 0, -1, Port.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_ProvidedDerived(), theMsgifacePackage.getMessageInterface(), null, "providedDerived", null, 0, -1, Port.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(portSpecificationEClass, PortSpecification.class, "PortSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1018,7 +1040,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });																		
+		   });																				
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1040,7 +1062,19 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "body", "self.cardinality.lowerBound->notEmpty()"
-		   });																		
+		   });									
+		addAnnotation
+		  (getPort_RequiredDerived(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().required\nendif"
+		   });		
+		addAnnotation
+		  (getPort_ProvidedDerived(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().provided\nendif"
+		   });											
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 

@@ -224,6 +224,8 @@ public class PortItemProvider extends NamedElementItemProvider implements
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.PORT__SPECIFICATION);
+			childrenFeatures.add(ComponentPackage.Literals.PORT__REQUIRED_DERIVED);
+			childrenFeatures.add(ComponentPackage.Literals.PORT__PROVIDED_DERIVED);
 		}
 		return childrenFeatures;
 	}
@@ -281,6 +283,8 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.PORT__SPECIFICATION:
+			case ComponentPackage.PORT__REQUIRED_DERIVED:
+			case ComponentPackage.PORT__PROVIDED_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

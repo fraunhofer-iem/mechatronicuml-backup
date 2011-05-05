@@ -33,6 +33,8 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived <em>Required Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived <em>Provided Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -185,5 +187,61 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<ConnectorType> getToPortToConnectorRev();
+
+	/**
+	 * Returns the value of the '<em><b>Required Derived</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Required Derived</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Derived</em>' containment reference list.
+	 * @see #isSetRequiredDerived()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_RequiredDerived()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().required\nendif'"
+	 * @generated
+	 */
+	EList<MessageInterface> getRequiredDerived();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived <em>Required Derived</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Required Derived</em>' containment reference list is set.
+	 * @see #getRequiredDerived()
+	 * @generated
+	 */
+	boolean isSetRequiredDerived();
+
+	/**
+	 * Returns the value of the '<em><b>Provided Derived</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Provided Derived</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided Derived</em>' containment reference list.
+	 * @see #isSetProvidedDerived()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_ProvidedDerived()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().provided\nendif'"
+	 * @generated
+	 */
+	EList<MessageInterface> getProvidedDerived();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived <em>Provided Derived</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Provided Derived</em>' containment reference list is set.
+	 * @see #getProvidedDerived()
+	 * @generated
+	 */
+	boolean isSetProvidedDerived();
 
 } // Port
