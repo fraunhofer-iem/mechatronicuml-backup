@@ -39,6 +39,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Pseudo;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 import java.util.HashMap;
@@ -48,6 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 
