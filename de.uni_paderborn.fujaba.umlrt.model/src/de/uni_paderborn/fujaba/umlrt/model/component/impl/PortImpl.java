@@ -6,43 +6,35 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
-import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.umlrt.model.component.Component;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
+import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,8 +51,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredDerived <em>Required Derived</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedDerived <em>Provided Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,24 +150,24 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected EList<ConnectorType> toPortToConnectorRev;
 
 	/**
-	 * The cached setting delegate for the '{@link #getRequiredDerived() <em>Required Derived</em>}' containment reference list.
+	 * The cached setting delegate for the '{@link #getRequiredMessageInterface() <em>Required Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiredDerived()
+	 * @see #getRequiredMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate REQUIRED_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__REQUIRED_DERIVED).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getProvidedDerived() <em>Provided Derived</em>}' containment reference list.
+	 * The cached setting delegate for the '{@link #getProvidedMessageInterface() <em>Provided Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedDerived()
+	 * @see #getProvidedMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PROVIDED_DERIVED).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,15 +180,16 @@ public class PortImpl extends NamedElementImpl implements Port {
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_DERIVED, Notification.ADD_MANY);
-		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED);
+		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE, Notification.ADD);
+		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE);
 
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_DERIVED, Notification.ADD_MANY);
-		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED);
+		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE, Notification.ADD);
+		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -387,38 +380,82 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<MessageInterface> getRequiredDerived() {
-		return (EList<MessageInterface>)REQUIRED_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public MessageInterface getRequiredMessageInterface() {
+		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetRequiredDerived() {
-		return REQUIRED_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public MessageInterface basicGetRequiredMessageInterface() {
+		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<MessageInterface> getProvidedDerived() {
-		return (EList<MessageInterface>)PROVIDED_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public void setRequiredMessageInterface(MessageInterface newRequiredMessageInterface) {
+		//REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRequiredMessageInterface);
+		DiscretePortSpecification discretePortSpecification = null;
+		for (PortSpecification portSpecification : specification) {
+			if (portSpecification instanceof DiscretePortSpecification) {
+				discretePortSpecification = (DiscretePortSpecification) portSpecification;
+			}
+		}
+		if (discretePortSpecification == null) {
+			discretePortSpecification = ComponentFactory.eINSTANCE.createDiscretePortSpecification();
+			specification.add(discretePortSpecification);
+		}
+		discretePortSpecification.setRequiredMessageInterface(newRequiredMessageInterface);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetProvidedDerived() {
-		return PROVIDED_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public MessageInterface getProvidedMessageInterface() {
+		return (MessageInterface)PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageInterface basicGetProvidedMessageInterface() {
+		return (MessageInterface)PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setProvidedMessageInterface(MessageInterface newProvidedMessageInterface) {
+		//PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newProvidedMessageInterface);
+		DiscretePortSpecification discretePortSpecification = null;
+		for (PortSpecification portSpecification : specification) {
+			if (portSpecification instanceof DiscretePortSpecification) {
+				discretePortSpecification = (DiscretePortSpecification) portSpecification;
+			}
+		}
+		if (discretePortSpecification == null) {
+			discretePortSpecification = ComponentFactory.eINSTANCE.createDiscretePortSpecification();
+			specification.add(discretePortSpecification);
+		}
+		discretePortSpecification.setProvidedMessageInterface(newProvidedMessageInterface);
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -459,10 +496,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<?>)getFromPortToConnectorRev()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return ((InternalEList<?>)getToPortToConnectorRev()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__REQUIRED_DERIVED:
-				return ((InternalEList<?>)getRequiredDerived()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__PROVIDED_DERIVED:
-				return ((InternalEList<?>)getProvidedDerived()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -505,10 +538,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getFromPortToConnectorRev();
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return getToPortToConnectorRev();
-			case ComponentPackage.PORT__REQUIRED_DERIVED:
-				return getRequiredDerived();
-			case ComponentPackage.PORT__PROVIDED_DERIVED:
-				return getProvidedDerived();
+			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
+				if (resolve) return getRequiredMessageInterface();
+				return basicGetRequiredMessageInterface();
+			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
+				if (resolve) return getProvidedMessageInterface();
+				return basicGetProvidedMessageInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -550,6 +585,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				getToPortToConnectorRev().clear();
 				getToPortToConnectorRev().addAll((Collection<? extends ConnectorType>)newValue);
 				return;
+			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
+				setRequiredMessageInterface((MessageInterface)newValue);
+				return;
+			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
+				setProvidedMessageInterface((MessageInterface)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -586,6 +627,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				getToPortToConnectorRev().clear();
 				return;
+			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
+				setRequiredMessageInterface((MessageInterface)null);
+				return;
+			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
+				setProvidedMessageInterface((MessageInterface)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -614,10 +661,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return fromPortToConnectorRev != null && !fromPortToConnectorRev.isEmpty();
 			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
 				return toPortToConnectorRev != null && !toPortToConnectorRev.isEmpty();
-			case ComponentPackage.PORT__REQUIRED_DERIVED:
-				return isSetRequiredDerived();
-			case ComponentPackage.PORT__PROVIDED_DERIVED:
-				return isSetProvidedDerived();
+			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
+				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
+				return PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

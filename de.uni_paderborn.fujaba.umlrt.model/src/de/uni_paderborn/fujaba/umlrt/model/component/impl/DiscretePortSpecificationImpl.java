@@ -32,8 +32,8 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRequired <em>Required</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getProvided <em>Provided</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,24 +71,24 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	protected AbstractRealtimeStatechart adaptationRealtimeStatechart;
 
 	/**
-	 * The cached value of the '{@link #getRequired() <em>Required</em>}' reference.
+	 * The cached value of the '{@link #getRequiredMessageInterface() <em>Required Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequired()
+	 * @see #getRequiredMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface required;
+	protected MessageInterface requiredMessageInterface;
 
 	/**
-	 * The cached value of the '{@link #getProvided() <em>Provided</em>}' reference.
+	 * The cached value of the '{@link #getProvidedMessageInterface() <em>Provided Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvided()
+	 * @see #getProvidedMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageInterface provided;
+	protected MessageInterface providedMessageInterface;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,16 +250,16 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getRequired() {
-		if (required != null && required.eIsProxy()) {
-			InternalEObject oldRequired = (InternalEObject)required;
-			required = (MessageInterface)eResolveProxy(oldRequired);
-			if (required != oldRequired) {
+	public MessageInterface getRequiredMessageInterface() {
+		if (requiredMessageInterface != null && requiredMessageInterface.eIsProxy()) {
+			InternalEObject oldRequiredMessageInterface = (InternalEObject)requiredMessageInterface;
+			requiredMessageInterface = (MessageInterface)eResolveProxy(oldRequiredMessageInterface);
+			if (requiredMessageInterface != oldRequiredMessageInterface) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED, oldRequired, required));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE, oldRequiredMessageInterface, requiredMessageInterface));
 			}
 		}
-		return required;
+		return requiredMessageInterface;
 	}
 
 	/**
@@ -267,8 +267,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetRequired() {
-		return required;
+	public MessageInterface basicGetRequiredMessageInterface() {
+		return requiredMessageInterface;
 	}
 
 	/**
@@ -276,11 +276,11 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRequired(MessageInterface newRequired) {
-		MessageInterface oldRequired = required;
-		required = newRequired;
+	public void setRequiredMessageInterface(MessageInterface newRequiredMessageInterface) {
+		MessageInterface oldRequiredMessageInterface = requiredMessageInterface;
+		requiredMessageInterface = newRequiredMessageInterface;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED, oldRequired, required));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE, oldRequiredMessageInterface, requiredMessageInterface));
 	}
 
 	/**
@@ -288,16 +288,16 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getProvided() {
-		if (provided != null && provided.eIsProxy()) {
-			InternalEObject oldProvided = (InternalEObject)provided;
-			provided = (MessageInterface)eResolveProxy(oldProvided);
-			if (provided != oldProvided) {
+	public MessageInterface getProvidedMessageInterface() {
+		if (providedMessageInterface != null && providedMessageInterface.eIsProxy()) {
+			InternalEObject oldProvidedMessageInterface = (InternalEObject)providedMessageInterface;
+			providedMessageInterface = (MessageInterface)eResolveProxy(oldProvidedMessageInterface);
+			if (providedMessageInterface != oldProvidedMessageInterface) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED, oldProvided, provided));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE, oldProvidedMessageInterface, providedMessageInterface));
 			}
 		}
-		return provided;
+		return providedMessageInterface;
 	}
 
 	/**
@@ -305,8 +305,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetProvided() {
-		return provided;
+	public MessageInterface basicGetProvidedMessageInterface() {
+		return providedMessageInterface;
 	}
 
 	/**
@@ -314,11 +314,11 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setProvided(MessageInterface newProvided) {
-		MessageInterface oldProvided = provided;
-		provided = newProvided;
+	public void setProvidedMessageInterface(MessageInterface newProvidedMessageInterface) {
+		MessageInterface oldProvidedMessageInterface = providedMessageInterface;
+		providedMessageInterface = newProvidedMessageInterface;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED, oldProvided, provided));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE, oldProvidedMessageInterface, providedMessageInterface));
 	}
 
 	/**
@@ -368,12 +368,12 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART:
 				if (resolve) return getAdaptationRealtimeStatechart();
 				return basicGetAdaptationRealtimeStatechart();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED:
-				if (resolve) return getRequired();
-				return basicGetRequired();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED:
-				if (resolve) return getProvided();
-				return basicGetProvided();
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE:
+				if (resolve) return getRequiredMessageInterface();
+				return basicGetRequiredMessageInterface();
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
+				if (resolve) return getProvidedMessageInterface();
+				return basicGetProvidedMessageInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -395,11 +395,11 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART:
 				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED:
-				setRequired((MessageInterface)newValue);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE:
+				setRequiredMessageInterface((MessageInterface)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED:
-				setProvided((MessageInterface)newValue);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
+				setProvidedMessageInterface((MessageInterface)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -422,11 +422,11 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART:
 				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED:
-				setRequired((MessageInterface)null);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE:
+				setRequiredMessageInterface((MessageInterface)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED:
-				setProvided((MessageInterface)null);
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
+				setProvidedMessageInterface((MessageInterface)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -446,10 +446,10 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 				return refines != null;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART:
 				return adaptationRealtimeStatechart != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED:
-				return required != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED:
-				return provided != null;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE:
+				return requiredMessageInterface != null;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
+				return providedMessageInterface != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -25,8 +25,8 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRefines <em>Refines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired <em>Required</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided <em>Provided</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,52 +90,52 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
 
 	/**
-	 * Returns the value of the '<em><b>Required</b></em>' reference.
+	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required</em>' reference.
-	 * @see #setRequired(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_Required()
+	 * @return the value of the '<em>Required Message Interface</em>' reference.
+	 * @see #setRequiredMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_RequiredMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getRequired();
+	MessageInterface getRequiredMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired <em>Required</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' reference.
-	 * @see #getRequired()
+	 * @param value the new value of the '<em>Required Message Interface</em>' reference.
+	 * @see #getRequiredMessageInterface()
 	 * @generated
 	 */
-	void setRequired(MessageInterface value);
+	void setRequiredMessageInterface(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Provided</b></em>' reference.
+	 * Returns the value of the '<em><b>Provided Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This association stores the provided message interface of this port. The required message interface defines which messages are allowed to be received by this port.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Provided</em>' reference.
-	 * @see #setProvided(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_Provided()
+	 * @return the value of the '<em>Provided Message Interface</em>' reference.
+	 * @see #setProvidedMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_ProvidedMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getProvided();
+	MessageInterface getProvidedMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided <em>Provided</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided</em>' reference.
-	 * @see #getProvided()
+	 * @param value the new value of the '<em>Provided Message Interface</em>' reference.
+	 * @see #getProvidedMessageInterface()
 	 * @generated
 	 */
-	void setProvided(MessageInterface value);
+	void setProvidedMessageInterface(MessageInterface value);
 } // DiscretePortSpecification

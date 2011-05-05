@@ -77,8 +77,8 @@ public class PortBehavior {
 			EReference reference = (EReference) feature;
 			if (reference.getContainerClass() == Port.class) {
 				int featureID = notification.getFeatureID(PortImpl.class);
-				if (featureID == ComponentPackage.PORT__PROVIDED_DERIVED
-						|| featureID == ComponentPackage.PORT__REQUIRED_DERIVED) {
+				if (featureID == ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE
+						|| featureID == ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE) {
 					updatePortType();
 				} else if (featureID == ComponentPackage.PORT__CARDINALITY) {
 					updatePortCardinality();
@@ -112,11 +112,11 @@ public class PortBehavior {
 	public void updatePortType() {
 		if (port != null && portFigure != null) {
 			CustomPortFigure.PortType portType;
-			if (port.getRequiredDerived() != null && port.getProvidedDerived() != null) {
+			if (port.getRequiredMessageInterface() != null && port.getProvidedMessageInterface() != null) {
 				portType = CustomPortFigure.PortType.INOUT_PORT;
-			} else if (port.getProvidedDerived() != null) {
+			} else if (port.getProvidedMessageInterface() != null) {
 				portType = CustomPortFigure.PortType.IN_PORT;
-			} else if (port.getRequiredDerived() != null) {
+			} else if (port.getRequiredMessageInterface() != null) {
 				portType = CustomPortFigure.PortType.OUT_PORT;
 			} else {
 				portType = CustomPortFigure.PortType.NONE;

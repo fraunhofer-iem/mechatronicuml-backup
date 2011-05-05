@@ -65,9 +65,12 @@ public class PortItemProvider extends NamedElementItemProvider implements
 			addCommentPropertyDescriptor(object);
 			addInvisibleInterfacesPropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
+			addSpecificationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addFromPortToConnectorRevPropertyDescriptor(object);
 			addToPortToConnectorRevPropertyDescriptor(object);
+			addRequiredMessageInterfacePropertyDescriptor(object);
+			addProvidedMessageInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -133,6 +136,29 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+
+	/**
+	 * This adds a property descriptor for the Specification feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpecificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_specification_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_specification_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__SPECIFICATION,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
@@ -212,6 +238,50 @@ public class PortItemProvider extends NamedElementItemProvider implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Required Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_requiredMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_requiredMessageInterface_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Provided Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProvidedMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_providedMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_providedMessageInterface_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -224,8 +294,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.PORT__SPECIFICATION);
-			childrenFeatures.add(ComponentPackage.Literals.PORT__REQUIRED_DERIVED);
-			childrenFeatures.add(ComponentPackage.Literals.PORT__PROVIDED_DERIVED);
 		}
 		return childrenFeatures;
 	}
@@ -283,8 +351,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.PORT__SPECIFICATION:
-			case ComponentPackage.PORT__REQUIRED_DERIVED:
-			case ComponentPackage.PORT__PROVIDED_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DependantAttributeAdapter;
+import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
@@ -138,42 +138,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 		componentNameDerived.addNavigatedDependency(
 				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
 				SDMPackage.Literals.NAMED_ELEMENT__NAME);
-
-		// Install a notification adapter that updates the partInstances,
-		// whenever one of the dependent features was modified
-		DependantAttributeAdapter partInstancesAdapter = new DependantAttributeAdapter() {
-
-			@Override
-			protected void notifyDependantAttributeChange() {
-				updatePartInstances();
-			}
-
-		};
-		partInstancesAdapter.addNavigatedDependency(
-				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
-				ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
-		eAdapters.add(partInstancesAdapter);
-
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	private void updatePartInstances() {
-		/*
-		 * Make sure that for every ComponentPart of the componentType, there is
-		 * a ComponentInstance.
-		 */
-		if (componentType instanceof StructuredComponent) {
-			StructuredComponent structuredComponent = (StructuredComponent) componentType;
-			List<ComponentPart> parts = structuredComponent.getEmbeddedParts();
-
-			for (ComponentPart componentPart : parts) {
-				// FIXME: Wir wissen nicht eindeutig, welche Instanz zu welchem Part gehören soll...
-			}
-		}
 	}
 
 	/**

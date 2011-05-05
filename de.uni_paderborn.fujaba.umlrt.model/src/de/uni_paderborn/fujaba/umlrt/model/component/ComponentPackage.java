@@ -800,22 +800,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Required Derived</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__REQUIRED_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Provided Derived</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROVIDED_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -1100,22 +1100,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Required</b></em>' reference.
+	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__REQUIRED = PORT_SPECIFICATION_FEATURE_COUNT + 3;
+	int DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Provided</b></em>' reference.
+	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__PROVIDED = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+	int DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
@@ -2620,26 +2620,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_ToPortToConnectorRev();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived <em>Required Derived</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Required Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredDerived()
+	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPort_RequiredDerived();
+	EReference getPort_RequiredMessageInterface();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived <em>Provided Derived</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Provided Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedDerived()
+	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedMessageInterface()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPort_ProvidedDerived();
+	EReference getPort_ProvidedMessageInterface();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification <em>Port Specification</em>}'.
@@ -2694,26 +2694,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePortSpecification_AdaptationRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequired()
+	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequiredMessageInterface()
 	 * @see #getDiscretePortSpecification()
 	 * @generated
 	 */
-	EReference getDiscretePortSpecification_Required();
+	EReference getDiscretePortSpecification_RequiredMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided <em>Provided</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvided()
+	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvidedMessageInterface()
 	 * @see #getDiscretePortSpecification()
 	 * @generated
 	 */
-	EReference getDiscretePortSpecification_Provided();
+	EReference getDiscretePortSpecification_ProvidedMessageInterface();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
@@ -3176,20 +3176,20 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__TO_PORT_TO_CONNECTOR_REV = eINSTANCE.getPort_ToPortToConnectorRev();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Derived</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__REQUIRED_DERIVED = eINSTANCE.getPort_RequiredDerived();
+		EReference PORT__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getPort_RequiredMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided Derived</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__PROVIDED_DERIVED = eINSTANCE.getPort_ProvidedDerived();
+		EReference PORT__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPort_ProvidedMessageInterface();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -3238,20 +3238,20 @@ public interface ComponentPackage extends EPackage {
 		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getDiscretePortSpecification_AdaptationRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Required</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_SPECIFICATION__REQUIRED = eINSTANCE.getDiscretePortSpecification_Required();
+		EReference DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_RequiredMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_SPECIFICATION__PROVIDED = eINSTANCE.getDiscretePortSpecification_Provided();
+		EReference DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ProvidedMessageInterface();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

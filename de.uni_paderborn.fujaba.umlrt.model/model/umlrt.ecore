@@ -146,20 +146,18 @@
                   <details key="documentation" value="This association stores the connector this port is the target of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredDerived"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
-                  changeable="false" volatile="true" transient="true" unsettable="true"
-                  derived="true" containment="true">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
+                  volatile="true" transient="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().required&#xA;endif"/>
+                  <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="providedDerived"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
-                  changeable="false" volatile="true" transient="true" unsettable="true"
-                  derived="true" containment="true">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
+                  volatile="true" transient="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().provided&#xA;endif"/>
+                  <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
@@ -187,12 +185,14 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the provided message interface of this port. The required message interface defines which messages are allowed to be received by this port."/>
                 </eAnnotations>
