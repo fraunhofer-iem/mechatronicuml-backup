@@ -181,8 +181,7 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(
-			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);

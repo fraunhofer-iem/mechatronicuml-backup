@@ -41,14 +41,16 @@ public class MessageinterfaceDiagramUpdater {
 		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram modelElement = (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor>();
-		{
-			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface childElement = modelElement
-					.getMessageInterfaces();
+		for (Iterator<?> it = modelElement.getMessageInterfaces().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface childElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) it
+					.next();
 			int visualID = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor(
 						childElement, visualID));
+				continue;
 			}
 		}
 		return result;

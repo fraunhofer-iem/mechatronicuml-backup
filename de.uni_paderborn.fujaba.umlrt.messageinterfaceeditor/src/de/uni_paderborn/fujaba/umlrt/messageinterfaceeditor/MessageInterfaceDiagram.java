@@ -30,29 +30,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MessageInterfaceDiagram extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Message Interfaces</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Message Interfaces</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Message Interfaces</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Interfaces</em>' containment reference.
-	 * @see #setMessageInterfaces(MessageInterface)
+	 * @return the value of the '<em>Message Interfaces</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorPackage#getMessageInterfaceDiagram_MessageInterfaces()
 	 * @model containment="true"
 	 * @generated
 	 */
-	MessageInterface getMessageInterfaces();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getMessageInterfaces <em>Message Interfaces</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Interfaces</em>' containment reference.
-	 * @see #getMessageInterfaces()
-	 * @generated
-	 */
-	void setMessageInterfaces(MessageInterface value);
+	EList<MessageInterface> getMessageInterfaces();
 
 } // MessageInterfaceDiagram
