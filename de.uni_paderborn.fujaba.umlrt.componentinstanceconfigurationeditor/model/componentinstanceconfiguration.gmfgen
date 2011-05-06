@@ -316,12 +316,6 @@
             description="Create new Port"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Port.gif"
             genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="DelegationInstance"
-            description="Create new DelegationInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.umlrt.common/icons/Delegation.gif"
-            genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
     <preferencePages

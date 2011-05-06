@@ -36,7 +36,6 @@ public class ComponentinstanceconfigurationPaletteFactory {
 		paletteContainer.add(createComponentInstance1CreationTool());
 		paletteContainer.add(createAssemblyInstance2CreationTool());
 		paletteContainer.add(createPort3CreationTool());
-		paletteContainer.add(createDelegationInstance4CreationTool());
 		return paletteContainer;
 	}
 
@@ -88,22 +87,6 @@ public class ComponentinstanceconfigurationPaletteFactory {
 		entry.setId("createPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Port.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createDelegationInstance4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.DelegationInstance4CreationTool_title,
-				de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.DelegationInstance4CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.DelegationInstance_4002));
-		entry.setId("createDelegationInstance4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.common/icons/Delegation.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -35,15 +35,6 @@
             path="icons/Port.gif"
             bundle="de.uni_paderborn.fujaba.umlrt.common"/>
       </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="DelegationInstance"
-          description="Create new DelegationInstance">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/Delegation.gif"
-            bundle="de.uni_paderborn.fujaba.umlrt.common"/>
-      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>
