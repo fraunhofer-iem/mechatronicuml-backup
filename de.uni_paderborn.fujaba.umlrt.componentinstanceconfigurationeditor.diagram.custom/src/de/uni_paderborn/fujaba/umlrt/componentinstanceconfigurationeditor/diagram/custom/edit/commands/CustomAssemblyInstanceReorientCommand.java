@@ -4,6 +4,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.commands.AssemblyInstanceReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 /**
  * A customized AssemblyInstanceReorientCommand. We make sure, an assembly
@@ -36,15 +37,27 @@ public class CustomAssemblyInstanceReorientCommand extends
 	@Override
 	public boolean canExecute() {
 
+		// Find out the new source and target
+		PortInstance source = getOldSource();
+		PortInstance target = getOldTarget();
+		switch (reorientDirection) {
+		case ReorientRelationshipRequest.REORIENT_SOURCE:
+			source = getNewSource();
+			break;
+		case ReorientRelationshipRequest.REORIENT_TARGET:
+			target = getNewTarget();
+			break;
+		}
+		
 		// We add checks that are only performed, when both source and target
 		// are set.
-		if (getNewSource() != null && getNewTarget() != null) {
+		if (source != null && target != null) {
 			// Make sure, the source's and the target's ComponentInstance are
 			// the same.
-			ComponentInstance sourceComponentInstance = getNewSource()
+			ComponentInstance sourceComponentInstance = source
 					.getComponentInstance();
 
-			ComponentInstance targetComponentInstance = getNewTarget()
+			ComponentInstance targetComponentInstance = target
 					.getComponentInstance();
 
 			if (sourceComponentInstance != targetComponentInstance) {
@@ -53,5 +66,7 @@ public class CustomAssemblyInstanceReorientCommand extends
 		}
 		return super.canExecute();
 	}
+	
+	
 
 }

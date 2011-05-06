@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.PortInstanceItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.PortInstance2ItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomAssemblyInstanceCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomAssemblyInstanceReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceCreateCommand;
@@ -18,14 +18,14 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 /**
- * A customized PortInstanceItemSemanticEditPolicy. We create our customized Delegation
+ * A customized PortInstance2ItemSemanticEditPolicy. We create our customized Delegation
  * and Assembly-CreateCommands here.
  * 
  * @author bingo
  * 
  */
-public class CustomPortInstanceItemSemanticEditPolicy extends
-		PortInstanceItemSemanticEditPolicy {
+public class CustomPortInstance2ItemSemanticEditPolicy extends
+		PortInstance2ItemSemanticEditPolicy {
 
 	// TODO: Can we forbid deleting the view element.
 	/**

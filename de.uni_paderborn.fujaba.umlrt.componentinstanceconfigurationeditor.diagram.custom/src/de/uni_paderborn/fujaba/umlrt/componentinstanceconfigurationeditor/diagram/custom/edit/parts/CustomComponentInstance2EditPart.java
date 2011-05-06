@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.ComponentFigure;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart;
 
 
 
@@ -15,9 +15,9 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit
  * @author bingo
  * 
  */
-public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
+public class CustomComponentInstance2EditPart extends ComponentInstance2EditPart {
 
-	public CustomComponentInstanceEditPart(View view) {
+	public CustomComponentInstance2EditPart(View view) {
 		super(view);
 	}
 

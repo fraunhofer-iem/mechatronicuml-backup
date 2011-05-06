@@ -3,9 +3,11 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentinstanceconfigurationEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry;
 
@@ -27,8 +29,14 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case PortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				
+			case PortInstance2EditPart.VISUAL_ID:
+				return new CustomPortInstance2EditPart(view);
+				
 			case ComponentInstanceEditPart.VISUAL_ID:
 				return new CustomComponentInstanceEditPart(view);
+				
+			case ComponentInstance2EditPart.VISUAL_ID:
+				return new CustomComponentInstance2EditPart(view);
 		
 			case ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentInstanceComponentCompartmentEditPart(
