@@ -154,7 +154,7 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public List<EDataType> getTopLevelDataTypes() {
 		if (embeddingRegion == null) {

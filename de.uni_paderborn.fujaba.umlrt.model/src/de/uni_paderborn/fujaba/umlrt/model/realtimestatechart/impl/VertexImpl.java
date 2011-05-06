@@ -166,7 +166,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public AbstractRealtimeStatechart getRootRealtimeStatechart() {
 		AbstractRealtimeStatechart root = null;
