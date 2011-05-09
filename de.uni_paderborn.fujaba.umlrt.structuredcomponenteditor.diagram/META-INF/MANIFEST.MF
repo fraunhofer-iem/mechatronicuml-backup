@@ -7,8 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts, 
- de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies, 
+Export-Package: de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part,
  de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers,
@@ -45,6 +45,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
  de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport
+ org.eclipse.gef;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

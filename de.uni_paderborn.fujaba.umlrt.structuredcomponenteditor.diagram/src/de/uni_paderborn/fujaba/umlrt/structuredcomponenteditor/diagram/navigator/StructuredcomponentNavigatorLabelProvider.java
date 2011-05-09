@@ -77,24 +77,24 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/component?Assembly", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/component?Delegation", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?Port", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?ComponentPart", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.ComponentPart_3002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/component?StructuredComponent", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.StructuredComponent_2001); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?ComponentPart", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.ComponentPart_3002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?Port", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?Port", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/component?Delegation", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/component?Assembly", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/structuredcomponenteditor?StructuredComponentDiagram", de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.StructuredComponentDiagram_1000); //$NON-NLS-1$
@@ -154,18 +154,18 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 		}
 		switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return getAssembly_4002Text(view);
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return getDelegation_4001Text(view);
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
-			return getPort_3003Text(view);
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-			return getComponentPart_3002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
 			return getStructuredComponent_2001Text(view);
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+			return getComponentPart_3002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 			return getPort_3001Text(view);
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
+			return getPort_3003Text(view);
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
+			return getDelegation_4001Text(view);
+		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getAssembly_4002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
 			return getStructuredComponentDiagram_1000Text(view);
 		}

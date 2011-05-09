@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -36,14 +37,30 @@ public class UpdateComponentInstanceChildrenCommand extends AbstractCommand {
 
 	@Override
 	public void execute() {
-		// Clear embeddedInstances
-		CompoundCommand c = new CompoundCommand();
+		CompoundCommand c;
+		
+		// Destroy all embeddedInstances
+		c = new CompoundCommand();
 		for (ComponentInstance embeddedInstance : componentInstance
 				.getEmbeddedInstances()) {
 			c.add(new ICommandProxy(new DestroyElementCommand(
 					new DestroyElementRequest(embeddedInstance, false))));
 		}
 		c.execute();
+		
+		// Destroy all PortInstances
+		c = new CompoundCommand();
+		for (PortInstance portInstances: componentInstance.getPortInstances()) {
+			c.add(new ICommandProxy(new DestroyElementCommand(
+					new DestroyElementRequest(portInstances, false))));
+		}
+		c.execute();
+		
+		// Initialize top level component instance.
+		componentInstance.setName(componentInstance.getComponentNameDerived());
+		if (componentInstance.getComponentType() != null) {
+			instantiatePorts(componentInstance, componentInstance.getComponentType().getPorts());
+		}
 
 		// Add new embeddedInstances
 		LinkedList<ComponentInstance> instances = new LinkedList<ComponentInstance>();
@@ -62,36 +79,36 @@ public class UpdateComponentInstanceChildrenCommand extends AbstractCommand {
 			if (component instanceof StructuredComponent) {
 				StructuredComponent structured = (StructuredComponent) component;
 				for (ComponentPart part : structured.getEmbeddedParts()) {
-					ComponentInstance newInstance = createNewComponentInstance(part);
-					instances.add(newInstance);
+					// Create a new ComponentInstance
+					ComponentInstance newInstance= InstanceFactory.eINSTANCE
+							.createComponentInstance();
+
+					// Copy properties from ComponentPart
+					newInstance.setComponentPart(part);
+					newInstance.setComponentType(part.getComponentType());
+					newInstance.setName(part.getName());
+					instantiatePorts(newInstance, part.getPortsDerived());
+					
+					// Add to embeddedInstances
 					currentInstance.getEmbeddedInstances().add(newInstance);
+					
+					// Put it into the queue of instances.
+					instances.add(newInstance);
 				}
 			}
 		} while (!instances.isEmpty());
 	}
+	
+	private static void instantiatePorts(ComponentInstance instance, List<Port> ports) {
 
-	private static ComponentInstance createNewComponentInstance(
-			ComponentPart part) {
-		// Create a new ComponentInstance
-		ComponentInstance newComponentInstance = InstanceFactory.eINSTANCE
-				.createComponentInstance();
-
-		// Copy properties from ComponentPart
-		newComponentInstance.setComponentPart(part);
-		newComponentInstance.setComponentType(part.getComponentType());
-		newComponentInstance.setName(part.getName());
-
-		// Instantiate all Ports
-		for (Port port : part.getPortsDerived()) {
+		for (Port port : ports) {
 			for (long i = 0; i < getPortLowerBound(port); i++) {
 				PortInstance newPortInstance = InstanceFactory.eINSTANCE
 						.createPortInstance();
 				newPortInstance.setPortType(port);
-				newPortInstance.setComponentInstance(newComponentInstance);
+				newPortInstance.setComponentInstance(instance);
 			}
 		}
-
-		return newComponentInstance;
 	}
 
 	private static long getPortLowerBound(Port port) {

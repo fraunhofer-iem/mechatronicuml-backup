@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortBehavior;
+import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortInstanceBehavior;
 import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
@@ -28,7 +28,7 @@ public class CustomPortInstanceEditPart extends PortInstanceEditPart {
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
 	 */
-	private PortBehavior delegation;
+	private PortInstanceBehavior delegation;
 
 	/**
 	 * Constructs this EditPart.
@@ -68,9 +68,9 @@ public class CustomPortInstanceEditPart extends PortInstanceEditPart {
 	 * 
 	 * @return The PortBehavior object.
 	 */
-	private PortBehavior getDelegation() {
+	private PortInstanceBehavior getDelegation() {
 		if (delegation == null) {
-			delegation = new PortBehavior(this);
+			delegation = new PortInstanceBehavior(this);
 		}
 		return delegation;
 	}

@@ -71,6 +71,11 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public StructuredcomponentDiagramEditorPlugin() {
 	}
 
@@ -93,6 +98,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -269,6 +275,21 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory getStructuredcomponentOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setStructuredcomponentOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

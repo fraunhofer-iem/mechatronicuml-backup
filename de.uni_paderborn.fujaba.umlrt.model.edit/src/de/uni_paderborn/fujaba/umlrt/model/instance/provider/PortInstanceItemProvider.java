@@ -71,6 +71,8 @@ public class PortInstanceItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addPortTypePropertyDescriptor(object);
+			addRequiredMessageInterfacePropertyDescriptor(object);
+			addProvidedMessageInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,6 +116,50 @@ public class PortInstanceItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_requiredMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_requiredMessageInterface_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Provided Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProvidedMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_providedMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_providedMessageInterface_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
