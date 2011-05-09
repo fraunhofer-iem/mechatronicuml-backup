@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -15,9 +17,14 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -55,6 +62,8 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -94,14 +103,74 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new RectangleFigure();
+		return primaryShape = new MessageInterfaceFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public RectangleFigure getPrimaryShape() {
-		return (RectangleFigure) primaryShape;
+	public MessageInterfaceFigure getPrimaryShape() {
+		return (MessageInterfaceFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureMICompartmentMessageTypeFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureMICompartmentMessageTypeFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
+			return getPrimaryShape().getFigureMICompartmentMessageTypeFigure();
+		}
+		return getContentPane();
 	}
 
 	/**
@@ -136,6 +205,11 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -188,6 +262,14 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002);
@@ -235,6 +317,103 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 			types.add(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterface_2001);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageType_3001) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	public class MessageInterfaceFigure extends RectangleFigure {
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureMICompartmentMessageTypeFigure;
+
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureMessageInterfaceNameLabel;
+
+		/**
+		 * @generated
+		 */
+		public MessageInterfaceFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = false;
+			this.setLayoutManager(layoutThis);
+
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fFigureMessageInterfaceNameLabel = new WrappingLabel();
+			fFigureMessageInterfaceNameLabel.setText("");
+
+			GridData constraintFFigureMessageInterfaceNameLabel = new GridData();
+			constraintFFigureMessageInterfaceNameLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabel.horizontalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceNameLabel.horizontalIndent = 0;
+			constraintFFigureMessageInterfaceNameLabel.horizontalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabel.verticalSpan = 1;
+			constraintFFigureMessageInterfaceNameLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageInterfaceNameLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageInterfaceNameLabel,
+					constraintFFigureMessageInterfaceNameLabel);
+
+			fFigureMICompartmentMessageTypeFigure = new RectangleFigure();
+			fFigureMICompartmentMessageTypeFigure.setOutline(false);
+
+			GridData constraintFFigureMICompartmentMessageTypeFigure = new GridData();
+			constraintFFigureMICompartmentMessageTypeFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureMICompartmentMessageTypeFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureMICompartmentMessageTypeFigure.horizontalIndent = 0;
+			constraintFFigureMICompartmentMessageTypeFigure.horizontalSpan = 1;
+			constraintFFigureMICompartmentMessageTypeFigure.verticalSpan = 1;
+			constraintFFigureMICompartmentMessageTypeFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureMICompartmentMessageTypeFigure.grabExcessVerticalSpace = false;
+			this.add(fFigureMICompartmentMessageTypeFigure,
+					constraintFFigureMICompartmentMessageTypeFigure);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureMICompartmentMessageTypeFigure() {
+			return fFigureMICompartmentMessageTypeFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureMessageInterfaceNameLabel() {
+			return fFigureMessageInterfaceNameLabel;
+		}
+
 	}
 
 }

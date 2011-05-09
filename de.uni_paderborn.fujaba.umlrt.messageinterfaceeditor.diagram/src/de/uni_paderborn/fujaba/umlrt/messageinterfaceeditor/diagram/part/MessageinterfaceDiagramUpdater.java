@@ -26,6 +26,8 @@ public class MessageinterfaceDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getMessageInterfaceDiagram_1000SemanticChildren(view);
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID:
+			return getMessageInterfaceMessageTypeCompartment_7001SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -59,6 +61,36 @@ public class MessageinterfaceDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> getMessageInterfaceMessageTypeCompartment_7001SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType childElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getContainedLinks(
 			View view) {
 		switch (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
@@ -67,6 +99,8 @@ public class MessageinterfaceDiagramUpdater {
 			return getMessageInterfaceDiagram_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getMessageInterface_2001ContainedLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+			return getMessageType_3001ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -80,6 +114,8 @@ public class MessageinterfaceDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getMessageInterface_2001IncomingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+			return getMessageType_3001IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -93,6 +129,8 @@ public class MessageinterfaceDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getMessageInterface_2001OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+			return getMessageType_3001OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -120,6 +158,14 @@ public class MessageinterfaceDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getMessageType_3001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getMessageInterface_2001IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) view
@@ -135,6 +181,14 @@ public class MessageinterfaceDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getMessageType_3001IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getMessageInterface_2001OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface modelElement = (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) view
@@ -142,6 +196,14 @@ public class MessageinterfaceDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_MessageInterface_SuperType_4002(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> getMessageType_3001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**

@@ -258,12 +258,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Generalization2CreationTool_title;
+	public static String MessageType2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Generalization2CreationTool_desc;
+	public static String MessageType2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Generalization3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageInterfaceMessageTypeCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -299,6 +314,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnexpectedValueType;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_WrongStringConversion;
+
+	/**
+	 * @generated
+	 */
+	public static String AbstractParser_UnknownLiteral;
+
+	/**
+	 * @generated
+	 */
+	public static String MessageFormatParser_InvalidInputError;
 
 	/**
 	 * @generated

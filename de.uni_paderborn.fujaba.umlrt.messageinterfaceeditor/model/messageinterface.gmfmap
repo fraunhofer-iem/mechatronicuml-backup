@@ -11,17 +11,51 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="messageinterface.gmfgraph#MessageInterfaceName"/>
+        <features
+            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="messageinterface.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
           href="messageinterface.gmfgraph#MessageInterface"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/messageTypes"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="messageinterface.gmfgraph#MessageTypeExpr"/>
+            <features
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/MessageTypeExpr"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="messageinterface.gmftool#//@palette/@tools.0/@tools.1"/>
+          <diagramNode
+              href="messageinterface.gmfgraph#MessageType"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0">
+        <compartment
+            href="messageinterface.gmfgraph#MessageTypeCompartment"/>
+      </compartments>
     </ownedChild>
   </nodes>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="messageinterface.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="messageinterface.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
         href="messageinterface.gmfgraph#Generalization"/>
     <linkMetaFeature

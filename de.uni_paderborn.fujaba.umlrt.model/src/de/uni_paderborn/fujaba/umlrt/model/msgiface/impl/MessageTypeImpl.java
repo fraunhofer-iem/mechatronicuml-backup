@@ -10,16 +10,19 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.SDMPackage;
 
@@ -34,22 +37,13 @@ import org.storydriven.modeling.calls.impl.CallableImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageTypeExpr <em>Message Type Expr</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class MessageTypeImpl extends CallableImpl implements MessageType {
-	/**
-	 * The cached value of the '{@link #getMessageInterface() <em>Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageInterface()
-	 * @generated
-	 * @ordered
-	 */
-	protected MessageInterface messageInterface;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,6 +63,16 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getMessageTypeExpr() <em>Message Type Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageTypeExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MESSAGE_TYPE_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,16 +119,8 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getMessageInterface() {
-		if (messageInterface != null && messageInterface.eIsProxy()) {
-			InternalEObject oldMessageInterface = (InternalEObject)messageInterface;
-			messageInterface = (MessageInterface)eResolveProxy(oldMessageInterface);
-			if (messageInterface != oldMessageInterface) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE, oldMessageInterface, messageInterface));
-			}
-		}
-		return messageInterface;
+	public String getMessageTypeExpr() {
+		return (String)MESSAGE_TYPE_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -132,8 +128,27 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetMessageInterface() {
-		return messageInterface;
+	public boolean isSetMessageTypeExpr() {
+		return MESSAGE_TYPE_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String toMyString() {
+		return "test";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageInterface getMessageInterface() {
+		if (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE) return null;
+		return (MessageInterface)eContainer();
 	}
 
 	/**
@@ -142,12 +157,7 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * @generated
 	 */
 	public NotificationChain basicSetMessageInterface(MessageInterface newMessageInterface, NotificationChain msgs) {
-		MessageInterface oldMessageInterface = messageInterface;
-		messageInterface = newMessageInterface;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE, oldMessageInterface, newMessageInterface);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newMessageInterface, MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE, msgs);
 		return msgs;
 	}
 
@@ -157,10 +167,12 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * @generated
 	 */
 	public void setMessageInterface(MessageInterface newMessageInterface) {
-		if (newMessageInterface != messageInterface) {
+		if (newMessageInterface != eInternalContainer() || (eContainerFeatureID() != MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE && newMessageInterface != null)) {
+			if (EcoreUtil.isAncestor(this, newMessageInterface))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (messageInterface != null)
-				msgs = ((InternalEObject)messageInterface).eInverseRemove(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newMessageInterface != null)
 				msgs = ((InternalEObject)newMessageInterface).eInverseAdd(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
 			msgs = basicSetMessageInterface(newMessageInterface, msgs);
@@ -179,8 +191,8 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				if (messageInterface != null)
-					msgs = ((InternalEObject)messageInterface).eInverseRemove(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetMessageInterface((MessageInterface)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -206,13 +218,28 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+				return eInternalContainer().eInverseRemove(this, MsgifacePackage.MESSAGE_INTERFACE__MESSAGE_TYPES, MessageInterface.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				if (resolve) return getMessageInterface();
-				return basicGetMessageInterface();
+				return getMessageInterface();
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				return getName();
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
+				return getMessageTypeExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -262,11 +289,27 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return messageInterface != null;
+				return getMessageInterface() != null;
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
+				return isSetMessageTypeExpr();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MsgifacePackage.MESSAGE_TYPE___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

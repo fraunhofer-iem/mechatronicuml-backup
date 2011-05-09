@@ -8,8 +8,10 @@ package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.modeling.SDMPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.modeling.calls.CallsPackage;
 
@@ -27,6 +29,7 @@ import org.storydriven.modeling.calls.CallsPackage;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifaceFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface MsgifacePackage extends EPackage {
@@ -73,22 +76,49 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_INTERFACE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Super Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__SUPER_TYPE = 0;
+	int MESSAGE_INTERFACE__SUPER_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message Types</b></em>' reference list.
+	 * The feature id for the '<em><b>Message Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE__MESSAGE_TYPES = 1;
+	int MESSAGE_INTERFACE__MESSAGE_TYPES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Message Interface</em>' class.
@@ -97,7 +127,178 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_FEATURE_COUNT = 2;
+	int MESSAGE_INTERFACE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECLASS = SDMPackage.NAMED_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EIS_PROXY = SDMPackage.NAMED_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ERESOURCE = SDMPackage.NAMED_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECONTAINER = SDMPackage.NAMED_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECONTAINING_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECONTAINMENT_FEATURE = SDMPackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECONTENTS = SDMPackage.NAMED_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EALL_CONTENTS = SDMPackage.NAMED_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ECROSS_REFERENCES = SDMPackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EGET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EGET__ESTRUCTURALFEATURE_BOOLEAN = SDMPackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___ESET__ESTRUCTURALFEATURE_OBJECT = SDMPackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EIS_SET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EUNSET__ESTRUCTURALFEATURE = SDMPackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___EINVOKE__EOPERATION_ELIST = SDMPackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___GET_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___PROVIDE_EXTENSION__ECLASS = SDMPackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___GET_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Interface</em>' class.
@@ -106,7 +307,7 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_OPERATION_COUNT = 0;
+	int MESSAGE_INTERFACE_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -156,7 +357,7 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Message Interface</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -174,13 +375,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Message Type Expr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__MESSAGE_TYPE_EXPR = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Message Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
+	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -354,13 +564,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE___PROVIDE_ANNOTATION__STRING = CallsPackage.CALLABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>To My String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE___TO_MY_STRING = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Message Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
+	int MESSAGE_TYPE_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 1;
 
 
 	/**
@@ -385,10 +604,10 @@ public interface MsgifacePackage extends EPackage {
 	EReference getMessageInterface_SuperType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Message Types</em>'.
+	 * @return the meta object for the containment reference list '<em>Message Types</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes()
 	 * @see #getMessageInterface()
 	 * @generated
@@ -406,10 +625,10 @@ public interface MsgifacePackage extends EPackage {
 	EClass getMessageType();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Message Interface</em>'.
+	 * @return the meta object for the container reference '<em>Message Interface</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface()
 	 * @see #getMessageType()
 	 * @generated
@@ -426,6 +645,27 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMessageType_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr <em>Message Type Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Type Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr()
+	 * @see #getMessageType()
+	 * @generated
+	 */
+	EAttribute getMessageType_MessageTypeExpr();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#toMyString() <em>To My String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To My String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#toMyString()
+	 * @generated
+	 */
+	EOperation getMessageType__ToMyString();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -467,7 +707,7 @@ public interface MsgifacePackage extends EPackage {
 		 */
 		EReference MESSAGE_INTERFACE__SUPER_TYPE = eINSTANCE.getMessageInterface_SuperType();
 		/**
-		 * The meta object literal for the '<em><b>Message Types</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Message Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -483,7 +723,7 @@ public interface MsgifacePackage extends EPackage {
 		 */
 		EClass MESSAGE_TYPE = eINSTANCE.getMessageType();
 		/**
-		 * The meta object literal for the '<em><b>Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Message Interface</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -496,6 +736,20 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE_TYPE__NAME = eINSTANCE.getMessageType_Name();
+		/**
+		 * The meta object literal for the '<em><b>Message Type Expr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_TYPE__MESSAGE_TYPE_EXPR = eINSTANCE.getMessageType_MessageTypeExpr();
+		/**
+		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MESSAGE_TYPE___TO_MY_STRING = eINSTANCE.getMessageType__ToMyString();
 
 	}
 

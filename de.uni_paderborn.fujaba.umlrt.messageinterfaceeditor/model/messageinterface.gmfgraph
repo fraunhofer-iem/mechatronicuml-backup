@@ -23,7 +23,32 @@
         name="MessageInterfaceFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="MessageInterfaceFigure"/>
+          name="MessageInterfaceFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageInterfaceNameLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="MICompartmentMessageTypeFigure"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="GeneralizationFigure">
@@ -32,11 +57,47 @@
           name="GeneralizationFigure"
           targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
+    <descriptors
+        name="MessageTypeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="MessageTypeFigure"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MessageTypeExprLable">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFigureMessageTypeExprLable"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="MessageInterface"
       figure="MessageInterfaceFigure"/>
+  <nodes
+      name="MessageType"
+      figure="MessageTypeFigure"/>
   <connections
       name="Generalization"
       figure="GeneralizationFigure"/>
+  <compartments
+      name="MessageTypeCompartment"
+      figure="MessageInterfaceFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="MessageTypeExpr"
+      figure="MessageTypeFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="MessageInterfaceName"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>

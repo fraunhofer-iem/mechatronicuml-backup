@@ -26,12 +26,60 @@
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
         href="messageinterface.genmodel#//messageinterfaceeditor/MessageInterfaceDiagram"/>
+    <childNodes
+        visualID="3001"
+        editPartClassName="MessageTypeEditPart"
+        itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeViewFactory"
+        canonicalEditPolicyClassName="MessageTypeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="MessageTypeGraphicalNodeEditPolicy"
+        createCommandClassName="MessageTypeCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="MessageTypeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="MessageTypeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageTypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageTypeExprLable; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageTypeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMessageTypeExprLable = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureMessageTypeExprLable.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageTypeExprLable = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageTypeExprLable.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageTypeExprLable.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureMessageTypeExprLable.horizontalIndent = 0;&#xA;constraintFFigureMessageTypeExprLable.horizontalSpan = 1;&#xA;constraintFFigureMessageTypeExprLable.verticalSpan = 1;&#xA;constraintFFigureMessageTypeExprLable.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageTypeExprLable.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageTypeExprLable, constraintFFigureMessageTypeExprLable);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageTypeExprLable() {&#xA;&#x9;&#x9;return fFigureMessageTypeExprLable;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageType"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/messageTypes"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/messageTypes"/>
+      </modelFacet>
+      <labels
+          visualID="5001"
+          editPartClassName="MessageTypeMessageTypeExprEditPart"
+          itemSemanticEditPolicyClassName="MessageTypeMessageTypeExprItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeMessageTypeExprViewFactory"
+          readOnly="true"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureMessageTypeExprLable"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/MessageTypeExpr"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <topLevelNodes
         visualID="2001"
         editPartClassName="MessageInterfaceEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceItemSemanticEditPolicy"
         notationViewFactoryClassName="MessageInterfaceViewFactory"
         canonicalEditPolicyClassName="MessageInterfaceCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageInterfaceGraphicalNodeEditPolicy"
         createCommandClassName="MessageInterfaceCreateCommand">
       <diagramRunTimeClass
@@ -40,8 +88,9 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="MessageInterfaceEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="MessageInterfaceFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MessageInterfaceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureMICompartmentMessageTypeFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureMessageInterfaceNameLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MessageInterfaceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureMessageInterfaceNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureMessageInterfaceNameLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMessageInterfaceNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMessageInterfaceNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageInterfaceNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMessageInterfaceNameLabel.horizontalIndent = 0;&#xA;constraintFFigureMessageInterfaceNameLabel.horizontalSpan = 1;&#xA;constraintFFigureMessageInterfaceNameLabel.verticalSpan = 1;&#xA;constraintFFigureMessageInterfaceNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMessageInterfaceNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMessageInterfaceNameLabel, constraintFFigureMessageInterfaceNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureMICompartmentMessageTypeFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureMICompartmentMessageTypeFigure.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureMICompartmentMessageTypeFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureMICompartmentMessageTypeFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureMICompartmentMessageTypeFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureMICompartmentMessageTypeFigure.horizontalIndent = 0;&#xA;constraintFFigureMICompartmentMessageTypeFigure.horizontalSpan = 1;&#xA;constraintFFigureMICompartmentMessageTypeFigure.verticalSpan = 1;&#xA;constraintFFigureMICompartmentMessageTypeFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureMICompartmentMessageTypeFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureMICompartmentMessageTypeFigure, constraintFFigureMICompartmentMessageTypeFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureMICompartmentMessageTypeFigure() {&#xA;&#x9;&#x9;return fFigureMICompartmentMessageTypeFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureMessageInterfaceNameLabel() {&#xA;&#x9;&#x9;return fFigureMessageInterfaceNameLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"/>
@@ -50,6 +99,24 @@
         <childMetaFeature
             href="messageinterface.genmodel#//messageinterfaceeditor/MessageInterfaceDiagram/messageInterfaces"/>
       </modelFacet>
+      <labels
+          visualID="5002"
+          editPartClassName="MessageInterfaceNameEditPart"
+          itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageInterfaceNameViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <links
         visualID="4002"
@@ -72,6 +139,24 @@
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/superType"/>
       </modelFacet>
     </links>
+    <compartments
+        visualID="7001"
+        editPartClassName="MessageInterfaceMessageTypeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageInterfaceMessageTypeCompartmentViewFactory"
+        canonicalEditPolicyClassName="MessageInterfaceMessageTypeCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0"
+        title="MessageTypeCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureMICompartmentMessageTypeFigure"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
       <groups
           title="messageinterfaceeditor">
@@ -80,6 +165,11 @@
             title="MessageInterface"
             description="Create new MessageInterface"
             genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="MessageType"
+            description="Create new MessageType"
+            genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Generalization"
@@ -122,6 +212,9 @@
   <navigator>
     <childReferences
         child="//@diagram"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.0"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
@@ -177,6 +270,12 @@
   </propertySheet>
   <domainGenModel
       href="messageinterface.genmodel#/"/>
+  <labelParsers
+      extensibleViaService="true">
+    <implementations
+        xsi:type="gmfgen:PredefinedParser"
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+  </labelParsers>
   <contextMenus
       context="//@diagram">
     <items

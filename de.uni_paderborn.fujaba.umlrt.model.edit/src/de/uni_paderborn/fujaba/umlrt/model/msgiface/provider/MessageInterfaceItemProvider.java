@@ -29,7 +29,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.storydriven.modeling.provider.NamedElementItemProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface} object.
@@ -38,7 +41,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class MessageInterfaceItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -135,7 +138,10 @@ public class MessageInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_MessageInterface_type");
+		String label = ((MessageInterface)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_MessageInterface_type") :
+			getString("_UI_MessageInterface_type") + " " + label;
 	}
 
 	/**

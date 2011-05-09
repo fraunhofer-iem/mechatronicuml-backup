@@ -38,6 +38,18 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
+	protected void refreshOnActivate() {
+		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
+		List<?> c = getHost().getChildren();
+		for (int i = 0; i < c.size(); i++) {
+			((EditPart) c.get(i)).activate();
+		}
+		super.refreshOnActivate();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorPackage.eINSTANCE
 				.getMessageInterfaceDiagram_MessageInterfaces();
@@ -241,6 +253,17 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
 						.getMessageInterface_2001ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
+						.getMessageType_3001ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

@@ -38,6 +38,11 @@ public class MessageinterfaceModelingAssistantProvider extends
 			types.add(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterface_2001);
 			return types;
 		}
+		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageType_3001);
+			return types;
+		}
 		return Collections.EMPTY_LIST;
 	}
 

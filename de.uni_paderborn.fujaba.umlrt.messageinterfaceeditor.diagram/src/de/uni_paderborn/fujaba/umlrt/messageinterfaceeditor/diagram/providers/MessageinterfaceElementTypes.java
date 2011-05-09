@@ -53,6 +53,11 @@ public class MessageinterfaceElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType MessageType_3001 = getElementType("de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageType_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType MessageInterfaceSuperType_4002 = getElementType("de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4002"); //$NON-NLS-1$
 
 	/**
@@ -177,6 +182,11 @@ public class MessageinterfaceElementTypes {
 							.getMessageInterface());
 
 			elements.put(
+					MessageType_3001,
+					de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage.eINSTANCE
+							.getMessageType());
+
+			elements.put(
 					MessageInterfaceSuperType_4002,
 					de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageInterface_SuperType());
@@ -199,6 +209,7 @@ public class MessageinterfaceElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceDiagram_1000);
 			KNOWN_ELEMENT_TYPES.add(MessageInterface_2001);
+			KNOWN_ELEMENT_TYPES.add(MessageType_3001);
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -213,6 +224,8 @@ public class MessageinterfaceElementTypes {
 			return MessageInterfaceDiagram_1000;
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return MessageInterface_2001;
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+			return MessageType_3001;
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return MessageInterfaceSuperType_4002;
 		}
