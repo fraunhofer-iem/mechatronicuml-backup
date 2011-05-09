@@ -41,7 +41,7 @@ public interface RealtimeStatechartPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://statechart";
+	String eNS_URI = "http://uni_paderborn/fujaba/umlrt/realtimeStatechart";
 
 	/**
 	 * The package namespace name.

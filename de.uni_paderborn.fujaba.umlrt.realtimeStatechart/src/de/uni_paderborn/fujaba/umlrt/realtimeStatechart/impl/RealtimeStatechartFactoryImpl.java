@@ -31,7 +31,7 @@ public class RealtimeStatechartFactoryImpl extends EFactoryImpl implements Realt
 	 */
 	public static RealtimeStatechartFactory init() {
 		try {
-			RealtimeStatechartFactory theRealtimeStatechartFactory = (RealtimeStatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://statechart"); 
+			RealtimeStatechartFactory theRealtimeStatechartFactory = (RealtimeStatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://uni_paderborn/fujaba/umlrt/realtimeStatechart"); 
 			if (theRealtimeStatechartFactory != null) {
 				return theRealtimeStatechartFactory;
 			}
