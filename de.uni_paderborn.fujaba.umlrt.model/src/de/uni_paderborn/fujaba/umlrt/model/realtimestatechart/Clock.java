@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -129,6 +128,9 @@ public interface Clock extends NamedElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO: Delete?
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(name!=null && id!=null) {\r\nreturn name+\"_\"+id ;\r\n}else{\r\nreturn \"\";\r\n}'"
 	 * @generated
 	 */

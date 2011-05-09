@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component.provider;
 
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
 import java.util.Collection;
@@ -23,6 +24,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification} object.
@@ -64,6 +67,7 @@ public class DiscretePortSpecificationItemProvider
 			addAdaptationRealtimeStatechartPropertyDescriptor(object);
 			addRequiredMessageInterfacePropertyDescriptor(object);
 			addProvidedMessageInterfacePropertyDescriptor(object);
+			addEventQueueSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -179,6 +183,28 @@ public class DiscretePortSpecificationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Event Queue Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEventQueueSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortSpecification_eventQueueSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_eventQueueSize_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DiscretePortSpecification.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,7 +223,8 @@ public class DiscretePortSpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DiscretePortSpecification_type");
+		DiscretePortSpecification discretePortSpecification = (DiscretePortSpecification)object;
+		return getString("_UI_DiscretePortSpecification_type") + " " + discretePortSpecification.getEventQueueSize();
 	}
 
 	/**
@@ -210,6 +237,12 @@ public class DiscretePortSpecificationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DiscretePortSpecification.class)) {
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

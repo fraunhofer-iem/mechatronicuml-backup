@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,7 +15,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 
@@ -91,11 +91,63 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+	public NotificationChain basicSetRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart, NotificationChain msgs) {
 		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
 		realtimeStatechart = newRealtimeStatechart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, newRealtimeStatechart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+		if (newRealtimeStatechart != realtimeStatechart) {
+			NotificationChain msgs = null;
+			if (realtimeStatechart != null)
+				msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+			if (newRealtimeStatechart != null)
+				msgs = ((InternalEObject)newRealtimeStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+			msgs = basicSetRealtimeStatechart(newRealtimeStatechart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, newRealtimeStatechart, newRealtimeStatechart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				if (realtimeStatechart != null)
+					msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+				return basicSetRealtimeStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
+				return basicSetRealtimeStatechart(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

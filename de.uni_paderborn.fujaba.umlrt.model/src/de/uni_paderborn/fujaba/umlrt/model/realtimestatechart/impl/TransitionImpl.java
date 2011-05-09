@@ -6,10 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.Vector;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,7 +30,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.Expression;
 
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
@@ -346,24 +344,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected String guardExpr = GUARD_EXPR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSynchroExpr() <em>Synchro Expr</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getSynchroExpr() <em>Synchro Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSynchroExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SYNCHRO_EXPR_EDEFAULT = "synchroExpr";
-
-	/**
-	 * The cached value of the '{@link #getSynchroExpr() <em>Synchro Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchroExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String synchroExpr = SYNCHRO_EXPR_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getClockResetsExpr() <em>Clock Resets Expr</em>}' attribute.
@@ -1038,8 +1026,29 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setGuardExpr(String newGuardExpr) {
+		String oldGuardExpr = guardExpr;
+		guardExpr = newGuardExpr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD_EXPR, oldGuardExpr, guardExpr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getSynchroExpr() {
-		return synchroExpr;
+		return (String)SYNCHRO_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetSynchroExpr() {
+		return SYNCHRO_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -1094,7 +1103,28 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String computeClockResets() {
+	public String computeClockResetsExpr() {
+		String value = "";
+		if(clockResets!=null){
+		java.util.Iterator<Clock> iter = clockResets.iterator();
+		while(iter.hasNext()){
+			Clock clock = iter.next();
+				if(value.equals("")){
+					value = value + clock.getName() + clock.getId() + ":=0";
+				}else{
+					value = value + ", " + clock.getName() + clock.getId() + ":=0";
+					}
+				}
+			}
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String computeSynchroExpr() {
 		String value = "";
 		if(clockResets!=null){
 		java.util.Iterator<Clock> iter = clockResets.iterator();
@@ -1393,6 +1423,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr((String)newValue);
 				return;
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				setGuardExpr((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1459,6 +1492,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
 				setEventExpr(EVENT_EXPR_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
+				setGuardExpr(GUARD_EXPR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1518,7 +1554,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
 				return GUARD_EXPR_EDEFAULT == null ? guardExpr != null : !GUARD_EXPR_EDEFAULT.equals(guardExpr);
 			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-				return SYNCHRO_EXPR_EDEFAULT == null ? synchroExpr != null : !SYNCHRO_EXPR_EDEFAULT.equals(synchroExpr);
+				return isSetSynchroExpr();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
 				return isSetClockResetsExpr();
 			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
@@ -1620,8 +1656,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		switch (operationID) {
 			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER:
 				return calculateWorstCaseDeadlineAsNaturalNumber();
-			case RealtimestatechartPackage.TRANSITION___COMPUTE_CLOCK_RESETS:
-				return computeClockResets();
+			case RealtimestatechartPackage.TRANSITION___COMPUTE_CLOCK_RESETS_EXPR:
+				return computeClockResetsExpr();
+			case RealtimestatechartPackage.TRANSITION___COMPUTE_SYNCHRO_EXPR:
+				return computeSynchroExpr();
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:
@@ -1652,8 +1690,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		result.append(eventExpr);
 		result.append(", guardExpr: ");
 		result.append(guardExpr);
-		result.append(", synchroExpr: ");
-		result.append(synchroExpr);
 		result.append(')');
 		return result.toString();
 	}

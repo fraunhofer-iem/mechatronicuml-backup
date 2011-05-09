@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
@@ -172,9 +171,9 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 		AbstractRealtimeStatechart root = null;
 		org.eclipse.emf.ecore.EObject obj = getStatechart();
 		for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element
-				.eContainer()) {
+			.eContainer()) {
 			if (element instanceof AbstractRealtimeStatechart) {
-				root = (AbstractRealtimeStatechart) element;
+				root = (AbstractRealtimeStatechart)element;
 			}
 		}
 		return root;

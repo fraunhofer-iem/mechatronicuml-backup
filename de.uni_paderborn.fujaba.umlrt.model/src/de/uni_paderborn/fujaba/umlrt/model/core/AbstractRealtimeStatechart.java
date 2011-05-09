@@ -6,22 +6,17 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
-
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +30,6 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getWcetDocument <em>Wcet Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getSecurityLevel <em>Security Level</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}</li>
@@ -47,6 +41,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,32 +51,6 @@ import org.storydriven.modeling.NamedElement;
  */
 public interface AbstractRealtimeStatechart extends NamedElement, CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Event Queue Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Queue Size</em>' attribute.
-	 * @see #setEventQueueSize(int)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_EventQueueSize()
-	 * @model
-	 * @generated
-	 */
-	int getEventQueueSize();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Queue Size</em>' attribute.
-	 * @see #getEventQueueSize()
-	 * @generated
-	 */
-	void setEventQueueSize(int value);
-
-	/**
 	 * Returns the value of the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -89,6 +58,9 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Wcet Document</em>' attribute.
 	 * @see #setWcetDocument(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_WcetDocument()
@@ -116,6 +88,9 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Security Level</em>' attribute.
 	 * @see #setSecurityLevel(int)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_SecurityLevel()
@@ -142,6 +117,9 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>System Wcet Map</em>' attribute.
 	 * @see #setSystemWcetMap(Map)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_SystemWcetMap()
@@ -168,6 +146,9 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Utilisation</em>' attribute.
 	 * @see #setUtilisation(double)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_Utilisation()
@@ -195,6 +176,9 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * needed for WCET-analysis
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Schedule Document</em>' attribute.
 	 * @see #setScheduleDocument(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_ScheduleDocument()
@@ -251,6 +235,7 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.
+	 * TODO: Do we really need this?
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' containment reference.
 	 * @see #setEClass(EClass)
@@ -272,6 +257,7 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 
 	/**
 	 * Returns the value of the '<em><b>Behavioral Element</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -280,7 +266,8 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * @return the value of the '<em>Behavioral Element</em>' reference.
 	 * @see #setBehavioralElement(BehavioralElement)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_BehavioralElement()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart
+	 * @model opposite="realtimeStatechart"
 	 * @generated
 	 */
 	BehavioralElement getBehavioralElement();
@@ -338,6 +325,31 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	EList<Clock> getClocks();
 
 	/**
+	 * Returns the value of the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Available Clocks</em>' attribute.
+	 * @see #setAvailableClocks(Iterator)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_AvailableClocks()
+	 * @model dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Iterator" derived="true"
+	 * @generated
+	 */
+	Iterator getAvailableClocks();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Available Clocks</em>' attribute.
+	 * @see #getAvailableClocks()
+	 * @generated
+	 */
+	void setAvailableClocks(Iterator value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -347,76 +359,5 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getHighestParentStatechart();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Helper method which adds all states contained by this statechart and all sub-statecharts to the set passed as an argument including or excluding the start states dependant on the second argument.
-	 * <!-- end-model-doc -->
-	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex>"
-	 * @generated
-	 */
-	void addAllUMLRealtimeStates(Set<Vertex> set, boolean inclusiveStartStates);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Adds all complex states to the set given as an argument.
-	 * <!-- end-model-doc -->
-	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State>"
-	 * @generated
-	 */
-	void addComplexUMLRealtimeStates(Set<State> set);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Helper method which adds all transitions contained by this statechart and all sub-statecharts to the set passed as an argument including or excluding the init transition dependant on the second argument.
-	 * <!-- end-model-doc -->
-	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition>"
-	 * @generated
-	 */
-	void addAllUMLRealtimeTransitions(Set<Transition> set);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Yields an iterator containing all clocks contained by this statechart or by a sub-statechart of this statechart including or excluding the clock "NO_CLOCK" depending on the second argument.
-	 * <!-- end-model-doc -->
-	 * @model dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Iterator"
-	 * @generated
-	 */
-	Iterator iteratorOfAllUMLClocks(boolean excludeNoClock);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Helper method which adds all clocks contained by this statechart and all sub-statecharts to the set passed as an argument including or excluding the clock "NO_CLOCK" dependant on the second argument.
-	 * <!-- end-model-doc -->
-	 * @model setDataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Set<de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock>"
-	 * @generated
-	 */
-	void addAllUMLClocks(Set<Clock> set, boolean excludeNoClock);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	String toString();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject clone();
 
 } // AbstractRealtimeStatechart

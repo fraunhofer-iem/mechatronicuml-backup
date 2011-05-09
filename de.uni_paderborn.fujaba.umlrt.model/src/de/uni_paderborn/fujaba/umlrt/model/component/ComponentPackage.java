@@ -1118,13 +1118,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = PORT_SPECIFICATION_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 5;
+	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Discrete Port Specification</em>' class.
@@ -2716,6 +2725,17 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePortSpecification_ProvidedMessageInterface();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Event Queue Size</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getEventQueueSize()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EAttribute getDiscretePortSpecification_EventQueueSize();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3252,6 +3272,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ProvidedMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Event Queue Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = eINSTANCE.getDiscretePortSpecification_EventQueueSize();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

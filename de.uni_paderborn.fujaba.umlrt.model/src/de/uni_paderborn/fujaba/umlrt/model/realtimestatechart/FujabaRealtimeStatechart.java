@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EDataType;
@@ -81,8 +80,11 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO: Delete?
+	 * <!-- end-model-doc -->
 	 * @model kind="operation" dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.MyList<org.eclipse.emf.ecore.EDataType>" many="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(embeddingRegion == null){\r\n\t\t\treturn getDataTypes();\r\n\t\t}\r\n\t\tde.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();\r\n\t\tif(root instanceof FujabaRealtimeStatechart){\r\n\t\t\treturn ((FujabaRealtimeStatechart)root).getDataTypes();\r\n\t\t}\r\n\t\treturn null;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(embeddingRegion == null){\r\n\t\t\treturn getDataTypes();\r\n\t\t}\r\n\t\tde.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();\r\n\t\tif(root instanceof FujabaRealtimeStatechart){\r\n\t\t\treturn ((FujabaRealtimeStatechart)root).getDataTypes();\r\n\t\t}\r\n\t\treturn null;'"
 	 * @generated
 	 */
 	List<EDataType> getTopLevelDataTypes();

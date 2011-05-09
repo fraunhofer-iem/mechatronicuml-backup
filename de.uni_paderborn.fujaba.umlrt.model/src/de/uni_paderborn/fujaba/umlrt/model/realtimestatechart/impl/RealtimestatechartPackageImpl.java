@@ -936,8 +936,17 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTransition__ComputeClockResets() {
+	public EOperation getTransition__ComputeClockResetsExpr() {
 		return transitionEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTransition__ComputeSynchroExpr() {
+		return transitionEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1455,7 +1464,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(transitionEClass, TRANSITION__CLOCK_RESETS_EXPR);
 		createEAttribute(transitionEClass, TRANSITION__SAFETY_TRANSITION_EXPR);
 		createEOperation(transitionEClass, TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER);
-		createEOperation(transitionEClass, TRANSITION___COMPUTE_CLOCK_RESETS);
+		createEOperation(transitionEClass, TRANSITION___COMPUTE_CLOCK_RESETS_EXPR);
+		createEOperation(transitionEClass, TRANSITION___COMPUTE_SYNCHRO_EXPR);
 
 		clockConstraintEClass = createEClass(CLOCK_CONSTRAINT);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__BOUND);
@@ -1659,14 +1669,16 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getTransition_ClockConstraintExpr(), theEcorePackage.getEString(), "clockConstraintExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_AbsoluteDeadlineExpr(), theEcorePackage.getEString(), "absoluteDeadlineExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_RelativeDeadlineExpr(), theEcorePackage.getEString(), "relativeDeadlineExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_GuardExpr(), theEcorePackage.getEString(), "guardExpr", "", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_SynchroExpr(), theEcorePackage.getEString(), "synchroExpr", "synchroExpr", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_GuardExpr(), theEcorePackage.getEString(), "guardExpr", "", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_SynchroExpr(), theEcorePackage.getEString(), "synchroExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_ClockResetsExpr(), theEcorePackage.getEString(), "clockResetsExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_SafetyTransitionExpr(), theEcorePackage.getEString(), "safetyTransitionExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTransition__CalculateWorstCaseDeadlineAsNaturalNumber(), theCorePackage.getNaturalNumber(), "calculateWorstCaseDeadlineAsNaturalNumber", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getTransition__ComputeClockResets(), theEcorePackage.getEString(), "computeClockResets", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTransition__ComputeClockResetsExpr(), theEcorePackage.getEString(), "computeClockResetsExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getTransition__ComputeSynchroExpr(), theEcorePackage.getEString(), "computeSynchroExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(clockConstraintEClass, ClockConstraint.class, "ClockConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClockConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1767,7 +1779,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																
+		   });																																																																		
 	}
 
 	/**
@@ -1777,7 +1789,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																										
 		addAnnotation
 		  (getTransition_TransitionActionExpr(), 
 		   source, 
@@ -1803,16 +1815,22 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "derivation", "if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\trelativeDeadline.toMyString()\r\nendif"
 		   });		
 		addAnnotation
+		  (getTransition_SynchroExpr(), 
+		   source, 
+		   new String[] {
+			 "derivation", "computeSynchroExpr()\r\n"
+		   });		
+		addAnnotation
 		  (getTransition_ClockResetsExpr(), 
 		   source, 
 		   new String[] {
-			 "derivation", "computeClockResets()\r\n"
+			 "derivation", "computeClockResetsExpr()\r\n"
 		   });		
 		addAnnotation
 		  (getTransition_SafetyTransitionExpr(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif\r\nendif"
+			 "derivation", "\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif"
 		   });				
 		addAnnotation
 		  (getClockConstraint_ClockConstraintExpr(), 

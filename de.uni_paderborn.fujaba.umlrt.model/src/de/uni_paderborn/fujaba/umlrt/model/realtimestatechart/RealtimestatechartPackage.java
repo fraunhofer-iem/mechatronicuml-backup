@@ -2432,13 +2432,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER = PRIORITIZABLE_OPERATION_COUNT + 19;
 
 	/**
-	 * The operation id for the '<em>Compute Clock Resets</em>' operation.
+	 * The operation id for the '<em>Compute Clock Resets Expr</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___COMPUTE_CLOCK_RESETS = PRIORITIZABLE_OPERATION_COUNT + 20;
+	int TRANSITION___COMPUTE_CLOCK_RESETS_EXPR = PRIORITIZABLE_OPERATION_COUNT + 20;
+
+	/**
+	 * The operation id for the '<em>Compute Synchro Expr</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION___COMPUTE_SYNCHRO_EXPR = PRIORITIZABLE_OPERATION_COUNT + 21;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -2447,7 +2456,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 21;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 22;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -4261,15 +4270,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__COMMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4367,6 +4367,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
@@ -4574,69 +4583,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUJABA_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART = CorePackage.ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART;
-
-	/**
-	 * The operation id for the '<em>Add All UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Add Complex UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
-
-	/**
-	 * The operation id for the '<em>Add All UML Realtime Transitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
-
-	/**
-	 * The operation id for the '<em>Iterator Of All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Add All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___TO_STRING = CorePackage.ABSTRACT_REALTIME_STATECHART___TO_STRING;
-
-	/**
-	 * The operation id for the '<em>Clone</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART___CLONE = CorePackage.ABSTRACT_REALTIME_STATECHART___CLONE;
 
 	/**
 	 * The operation id for the '<em>Get Top Level Data Types</em>' operation.
@@ -5354,14 +5300,24 @@ public interface RealtimestatechartPackage extends EPackage {
 	EOperation getTransition__CalculateWorstCaseDeadlineAsNaturalNumber();
 
 	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeClockResets() <em>Compute Clock Resets</em>}' operation.
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeClockResetsExpr() <em>Compute Clock Resets Expr</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Compute Clock Resets</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeClockResets()
+	 * @return the meta object for the '<em>Compute Clock Resets Expr</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeClockResetsExpr()
 	 * @generated
 	 */
-	EOperation getTransition__ComputeClockResets();
+	EOperation getTransition__ComputeClockResetsExpr();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeSynchroExpr() <em>Compute Synchro Expr</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compute Synchro Expr</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeSynchroExpr()
+	 * @generated
+	 */
+	EOperation getTransition__ComputeSynchroExpr();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
@@ -6452,12 +6408,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EOperation TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER = eINSTANCE.getTransition__CalculateWorstCaseDeadlineAsNaturalNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Compute Clock Resets</b></em>' operation.
+		 * The meta object literal for the '<em><b>Compute Clock Resets Expr</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TRANSITION___COMPUTE_CLOCK_RESETS = eINSTANCE.getTransition__ComputeClockResets();
+		EOperation TRANSITION___COMPUTE_CLOCK_RESETS_EXPR = eINSTANCE.getTransition__ComputeClockResetsExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Compute Synchro Expr</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRANSITION___COMPUTE_SYNCHRO_EXPR = eINSTANCE.getTransition__ComputeSynchroExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

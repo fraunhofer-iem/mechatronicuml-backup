@@ -6,10 +6,18 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.modeling.SDMPackage;
+
 import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
 import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector;
@@ -28,48 +36,21 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
-
 import de.uni_paderborn.fujaba.umlrt.model.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -537,6 +518,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDiscretePortSpecification_EventQueueSize() {
+		return (EAttribute)discretePortSpecificationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHardwarePortSpecification() {
 		return hardwarePortSpecificationEClass;
 	}
@@ -835,6 +825,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART);
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE);
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE);
+		createEAttribute(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE);
 
 		hardwarePortSpecificationEClass = createEClass(HARDWARE_PORT_SPECIFICATION);
 
@@ -963,6 +954,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getDiscretePortSpecification_AdaptationRealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "adaptationRealtimeStatechart", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortSpecification_RequiredMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "requiredMessageInterface", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortSpecification_ProvidedMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "providedMessageInterface", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiscretePortSpecification_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hardwarePortSpecificationEClass, HardwarePortSpecification.class, "HardwarePortSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

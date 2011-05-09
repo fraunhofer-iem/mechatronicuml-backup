@@ -157,15 +157,14 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @generated
 	 */
 	public List<EDataType> getTopLevelDataTypes() {
-		if (embeddingRegion == null) {
-			return getDataTypes();
-		}
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart root = embeddingRegion
-				.getParentState().getRootRealtimeStatechart();
-		if (root instanceof FujabaRealtimeStatechart) {
-			return ((FujabaRealtimeStatechart) root).getDataTypes();
-		}
-		return null;
+				if(embeddingRegion == null){
+					return getDataTypes();
+				}
+				de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart root = embeddingRegion.getParentState().getRootRealtimeStatechart();
+				if(root instanceof FujabaRealtimeStatechart){
+					return ((FujabaRealtimeStatechart)root).getDataTypes();
+				}
+				return null;
 	}
 
 	/**

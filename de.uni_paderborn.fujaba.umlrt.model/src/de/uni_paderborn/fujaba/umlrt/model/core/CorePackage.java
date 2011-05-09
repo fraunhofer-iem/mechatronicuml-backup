@@ -430,22 +430,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
@@ -454,7 +445,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
@@ -463,7 +454,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -472,7 +463,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -481,7 +472,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -490,7 +481,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ABSTRACT_REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
@@ -499,7 +490,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ABSTRACT_REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
@@ -508,7 +499,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ABSTRACT_REALTIME_STATECHART__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -517,7 +508,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -526,7 +517,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
@@ -535,7 +526,16 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ABSTRACT_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Realtime Statechart</em>' class.
@@ -727,76 +727,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Add All UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Add Complex UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Add All UML Realtime Transitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Iterator Of All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Add All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___TO_STRING = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Clone</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART___CLONE = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 7;
-
-	/**
 	 * The number of operations of the '<em>Abstract Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 8;
+	int ABSTRACT_REALTIME_STATECHART_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -1065,17 +1002,6 @@ public interface CorePackage extends EPackage {
 	EClass getAbstractRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Event Queue Size</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEventQueueSize()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_EventQueueSize();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getWcetDocument <em>Wcet Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1197,6 +1123,17 @@ public interface CorePackage extends EPackage {
 	EReference getAbstractRealtimeStatechart_Clocks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Available Clocks</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks()
+	 * @see #getAbstractRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getAbstractRealtimeStatechart_AvailableClocks();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getHighestParentStatechart() <em>Get Highest Parent Statechart</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1205,76 +1142,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getAbstractRealtimeStatechart__GetHighestParentStatechart();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLRealtimeStates(java.util.Set, boolean) <em>Add All UML Realtime States</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add All UML Realtime States</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLRealtimeStates(java.util.Set, boolean)
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__AddAllUMLRealtimeStates__Set_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addComplexUMLRealtimeStates(java.util.Set) <em>Add Complex UML Realtime States</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Complex UML Realtime States</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addComplexUMLRealtimeStates(java.util.Set)
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__AddComplexUMLRealtimeStates__Set();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLRealtimeTransitions(java.util.Set) <em>Add All UML Realtime Transitions</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add All UML Realtime Transitions</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLRealtimeTransitions(java.util.Set)
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__AddAllUMLRealtimeTransitions__Set();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#iteratorOfAllUMLClocks(boolean) <em>Iterator Of All UML Clocks</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Iterator Of All UML Clocks</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#iteratorOfAllUMLClocks(boolean)
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__IteratorOfAllUMLClocks__boolean();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLClocks(java.util.Set, boolean) <em>Add All UML Clocks</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add All UML Clocks</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#addAllUMLClocks(java.util.Set, boolean)
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__AddAllUMLClocks__Set_boolean();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#toString() <em>To String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To String</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#toString()
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__ToString();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#clone() <em>Clone</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Clone</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#clone()
-	 * @generated
-	 */
-	EOperation getAbstractRealtimeStatechart__Clone();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1520,14 +1387,6 @@ public interface CorePackage extends EPackage {
 		EClass ABSTRACT_REALTIME_STATECHART = eINSTANCE.getAbstractRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Queue Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE = eINSTANCE.getAbstractRealtimeStatechart_EventQueueSize();
-
-		/**
 		 * The meta object literal for the '<em><b>Wcet Document</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1616,68 +1475,20 @@ public interface CorePackage extends EPackage {
 		EReference ABSTRACT_REALTIME_STATECHART__CLOCKS = eINSTANCE.getAbstractRealtimeStatechart_Clocks();
 
 		/**
+		 * The meta object literal for the '<em><b>Available Clocks</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getAbstractRealtimeStatechart_AvailableClocks();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Highest Parent Statechart</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART = eINSTANCE.getAbstractRealtimeStatechart__GetHighestParentStatechart();
-
-		/**
-		 * The meta object literal for the '<em><b>Add All UML Realtime States</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = eINSTANCE.getAbstractRealtimeStatechart__AddAllUMLRealtimeStates__Set_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Complex UML Realtime States</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = eINSTANCE.getAbstractRealtimeStatechart__AddComplexUMLRealtimeStates__Set();
-
-		/**
-		 * The meta object literal for the '<em><b>Add All UML Realtime Transitions</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = eINSTANCE.getAbstractRealtimeStatechart__AddAllUMLRealtimeTransitions__Set();
-
-		/**
-		 * The meta object literal for the '<em><b>Iterator Of All UML Clocks</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = eINSTANCE.getAbstractRealtimeStatechart__IteratorOfAllUMLClocks__boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>Add All UML Clocks</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = eINSTANCE.getAbstractRealtimeStatechart__AddAllUMLClocks__Set_boolean();
-
-		/**
-		 * The meta object literal for the '<em><b>To String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___TO_STRING = eINSTANCE.getAbstractRealtimeStatechart__ToString();
-
-		/**
-		 * The meta object literal for the '<em><b>Clone</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_REALTIME_STATECHART___CLONE = eINSTANCE.getAbstractRealtimeStatechart__Clone();
 
 	}
 

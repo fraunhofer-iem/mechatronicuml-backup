@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior.util;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.*;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import java.util.List;
 

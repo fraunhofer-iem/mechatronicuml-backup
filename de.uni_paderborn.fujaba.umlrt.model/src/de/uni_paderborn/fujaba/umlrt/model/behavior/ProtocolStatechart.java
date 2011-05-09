@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.umlrt.model.behavior;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -20,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <!-- begin-model-doc -->
  * This class represents the statechart of a port. The statechart describes the communication behavior of the port.
+ * TODO: Delete?
  * <!-- end-model-doc -->
  *
  * <p>
@@ -64,6 +64,7 @@ public interface ProtocolStatechart extends AbstractRealtimeStatechart {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart.
+	 * TODO: Delete?
 	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated

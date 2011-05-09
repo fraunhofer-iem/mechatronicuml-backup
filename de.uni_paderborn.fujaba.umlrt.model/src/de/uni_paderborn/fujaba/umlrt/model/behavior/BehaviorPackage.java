@@ -109,15 +109,6 @@ public interface BehaviorPackage extends EPackage {
 	int PROTOCOL_STATECHART__COMMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,6 +206,15 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROTOCOL_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS;
+
+	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTOCOL_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference.
@@ -413,69 +413,6 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROTOCOL_STATECHART___GET_HIGHEST_PARENT_STATECHART = CorePackage.ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART;
-
-	/**
-	 * The operation id for the '<em>Add All UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Add Complex UML Realtime States</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET;
-
-	/**
-	 * The operation id for the '<em>Add All UML Realtime Transitions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET;
-
-	/**
-	 * The operation id for the '<em>Iterator Of All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Add All UML Clocks</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN = CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>To String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___TO_STRING = CorePackage.ABSTRACT_REALTIME_STATECHART___TO_STRING;
-
-	/**
-	 * The operation id for the '<em>Clone</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_STATECHART___CLONE = CorePackage.ABSTRACT_REALTIME_STATECHART___CLONE;
 
 	/**
 	 * The operation id for the '<em>Clone</em>' operation.

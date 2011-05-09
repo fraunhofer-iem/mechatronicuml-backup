@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface BehavioralElement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Realtime Statechart</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Realtime Statechart</em>' reference isn't clear,
@@ -36,7 +37,8 @@ public interface BehavioralElement extends EObject {
 	 * @return the value of the '<em>Realtime Statechart</em>' reference.
 	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_RealtimeStatechart()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement
+	 * @model opposite="behavioralElement"
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getRealtimeStatechart();

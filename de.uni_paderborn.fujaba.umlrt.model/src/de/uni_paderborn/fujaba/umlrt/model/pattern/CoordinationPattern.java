@@ -52,21 +52,32 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	EList<Role> getRoles();
 
 	/**
-	 * Returns the value of the '<em><b>Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector#getPattern <em>Pattern</em>}'.
+	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connectors</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connectors</em>' reference list.
+	 * <!-- begin-model-doc -->
+	 * Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Connectors</em>' containment reference.
+	 * @see #setConnectors(RoleConnector)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getCoordinationPattern_Connectors()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector#getPattern
-	 * @model opposite="pattern"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<RoleConnector> getConnectors();
+	RoleConnector getConnectors();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connectors</em>' containment reference.
+	 * @see #getConnectors()
+	 * @generated
+	 */
+	void setConnectors(RoleConnector value);
 
 } // CoordinationPattern

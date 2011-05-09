@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,4 +139,30 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * @generated
 	 */
 	void setProvidedMessageInterface(MessageInterface value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Queue Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Event Queue Size</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Queue Size</em>' attribute.
+	 * @see #setEventQueueSize(int)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_EventQueueSize()
+	 * @model
+	 * @generated
+	 */
+	int getEventQueueSize();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Queue Size</em>' attribute.
+	 * @see #getEventQueueSize()
+	 * @generated
+	 */
+	void setEventQueueSize(int value);
 } // DiscretePortSpecification

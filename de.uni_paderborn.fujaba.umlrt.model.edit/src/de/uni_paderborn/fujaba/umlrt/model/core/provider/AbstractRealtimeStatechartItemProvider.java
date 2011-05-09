@@ -78,7 +78,6 @@ public class AbstractRealtimeStatechartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addEventQueueSizePropertyDescriptor(object);
 			addWcetDocumentPropertyDescriptor(object);
 			addSecurityLevelPropertyDescriptor(object);
 			addSystemWcetMapPropertyDescriptor(object);
@@ -86,6 +85,7 @@ public class AbstractRealtimeStatechartItemProvider
 			addScheduleDocumentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
+			addAvailableClocksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,28 +108,6 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Event Queue Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEventQueueSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractRealtimeStatechart_eventQueueSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_eventQueueSize_feature", "_UI_AbstractRealtimeStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -289,6 +267,28 @@ public class AbstractRealtimeStatechartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Available Clocks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAvailableClocksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractRealtimeStatechart_availableClocks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_availableClocks_feature", "_UI_AbstractRealtimeStatechart_type"),
+				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -348,13 +348,13 @@ public class AbstractRealtimeStatechartItemProvider
 
 		switch (notification.getFeatureID(AbstractRealtimeStatechart.class)) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:

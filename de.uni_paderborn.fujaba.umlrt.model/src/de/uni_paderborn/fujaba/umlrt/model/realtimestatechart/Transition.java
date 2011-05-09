@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import java.util.Vector;
@@ -559,15 +558,26 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Guard Expr</em>' attribute.
+	 * @see #setGuardExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_GuardExpr()
-	 * @model default="" changeable="false" derived="true"
+	 * @model default=""
 	 * @generated
 	 */
 	String getGuardExpr();
 
 	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Guard Expr</em>' attribute.
+	 * @see #getGuardExpr()
+	 * @generated
+	 */
+	void setGuardExpr(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Synchro Expr</b></em>' attribute.
-	 * The default value is <code>"synchroExpr"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Synchro Expr</em>' attribute isn't clear,
@@ -575,11 +585,23 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Synchro Expr</em>' attribute.
+	 * @see #isSetSynchroExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SynchroExpr()
-	 * @model default="synchroExpr" changeable="false" derived="true"
+	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeSynchroExpr()\r\n'"
 	 * @generated
 	 */
 	String getSynchroExpr();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getSynchroExpr <em>Synchro Expr</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Synchro Expr</em>' attribute is set.
+	 * @see #getSynchroExpr()
+	 * @generated
+	 */
+	boolean isSetSynchroExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Clock Resets Expr</b></em>' attribute.
@@ -594,7 +616,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #isSetClockResetsExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockResetsExpr()
 	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeClockResets()\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeClockResetsExpr()\r\n'"
 	 * @generated
 	 */
 	String getClockResetsExpr();
@@ -622,7 +644,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #isSetSafetyTransitionExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransitionExpr()
 	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif'"
 	 * @generated
 	 */
 	String getSafetyTransitionExpr();
@@ -651,6 +673,14 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\nif(clockResets!=null){\r\njava.util.Iterator<Clock> iter = clockResets.iterator();\r\nwhile(iter.hasNext()){\r\n\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + clock.getName() + clock.getId() + \":=0\";\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId() + \":=0\";\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\nreturn value;'"
 	 * @generated
 	 */
-	String computeClockResets();
+	String computeClockResetsExpr();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\nif(clockResets!=null){\r\njava.util.Iterator<Clock> iter = clockResets.iterator();\r\nwhile(iter.hasNext()){\r\n\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + clock.getName() + clock.getId() + \":=0\";\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId() + \":=0\";\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\nreturn value;'"
+	 * @generated
+	 */
+	String computeSynchroExpr();
 
 } // Transition

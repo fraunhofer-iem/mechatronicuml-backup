@@ -59,7 +59,7 @@ public interface RoleConnector extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,8 +68,8 @@ public interface RoleConnector extends BehavioralConnector {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Role)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRoleConnector_Source()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel
-	 * @model opposite="channel" required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector
+	 * @model opposite="roleConnector" required="true"
 	 * @generated
 	 */
 	Role getSource();
@@ -111,7 +111,6 @@ public interface RoleConnector extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pattern</em>' reference isn't clear,
@@ -121,8 +120,7 @@ public interface RoleConnector extends BehavioralConnector {
 	 * @return the value of the '<em>Pattern</em>' reference.
 	 * @see #setPattern(CoordinationPattern)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRoleConnector_Pattern()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors
-	 * @model opposite="connectors"
+	 * @model
 	 * @generated
 	 */
 	CoordinationPattern getPattern();

@@ -72,7 +72,7 @@ public class RoleItemProvider
 
 			addConstraintPropertyDescriptor(object);
 			addRealtimeStatechartPropertyDescriptor(object);
-			addChannelPropertyDescriptor(object);
+			addRoleConnectorPropertyDescriptor(object);
 			addPatternPropertyDescriptor(object);
 			addAdaptationRealtimeStatechartPropertyDescriptor(object);
 			addEClassPropertyDescriptor(object);
@@ -98,28 +98,6 @@ public class RoleItemProvider
 				 getString("_UI_ConstrainableElement_constraint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
 				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Channel feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChannelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_channel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_channel_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__CHANNEL,
 				 true,
 				 false,
 				 true,
@@ -186,6 +164,28 @@ public class RoleItemProvider
 				 getString("_UI_BehavioralElement_realtimeStatechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_realtimeStatechart_feature", "_UI_BehavioralElement_type"),
 				 CorePackage.Literals.BEHAVIORAL_ELEMENT__REALTIME_STATECHART,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Role Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRoleConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_roleConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_roleConnector_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__ROLE_CONNECTOR,
 				 true,
 				 false,
 				 true,

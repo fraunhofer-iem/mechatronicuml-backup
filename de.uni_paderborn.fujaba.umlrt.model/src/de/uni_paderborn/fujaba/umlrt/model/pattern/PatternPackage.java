@@ -202,7 +202,7 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__ROLES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -455,13 +455,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Channel</b></em>' reference.
+	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CHANNEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' reference.
@@ -509,7 +509,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' reference.
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -801,10 +801,10 @@ public interface PatternPackage extends EPackage {
 	EReference getCoordinationPattern_Roles();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connectors</em>'.
+	 * @return the meta object for the containment reference '<em>Connectors</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern#getConnectors()
 	 * @see #getCoordinationPattern()
 	 * @generated
@@ -822,15 +822,15 @@ public interface PatternPackage extends EPackage {
 	EClass getRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Channel</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel()
+	 * @return the meta object for the reference '<em>Role Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_Channel();
+	EReference getRole_RoleConnector();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPattern <em>Pattern</em>}'.
@@ -888,10 +888,10 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_Provided();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Cardinality</em>'.
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality()
 	 * @see #getRole()
 	 * @generated
@@ -1004,7 +1004,7 @@ public interface PatternPackage extends EPackage {
 		EReference COORDINATION_PATTERN__ROLES = eINSTANCE.getCoordinationPattern_Roles();
 
 		/**
-		 * The meta object literal for the '<em><b>Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Connectors</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1022,12 +1022,12 @@ public interface PatternPackage extends EPackage {
 		EClass ROLE = eINSTANCE.getRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Channel</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Role Connector</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__CHANNEL = eINSTANCE.getRole_Channel();
+		EReference ROLE__ROLE_CONNECTOR = eINSTANCE.getRole_RoleConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' reference feature.
@@ -1070,7 +1070,7 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__PROVIDED = eINSTANCE.getRole_Provided();
 
 		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

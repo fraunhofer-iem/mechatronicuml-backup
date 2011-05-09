@@ -6,42 +6,31 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.core.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
-
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +40,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getWcetDocument <em>Wcet Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getSecurityLevel <em>Security Level</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getSystemWcetMap <em>System Wcet Map</em>}</li>
@@ -63,6 +51,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,26 +77,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventQueueSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int EVENT_QUEUE_SIZE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventQueueSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getWcetDocument() <em>Wcet Document</em>}' attribute.
@@ -280,6 +249,26 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	protected EList<Clock> clocks;
 
 	/**
+	 * The default value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iterator AVAILABLE_CLOCKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iterator availableClocks = AVAILABLE_CLOCKS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -317,27 +306,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getEventQueueSize() {
-		return eventQueueSize;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEventQueueSize(int newEventQueueSize) {
-		int oldEventQueueSize = eventQueueSize;
-		eventQueueSize = newEventQueueSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE, oldEventQueueSize, eventQueueSize));
 	}
 
 	/**
@@ -543,11 +511,33 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBehavioralElement(BehavioralElement newBehavioralElement) {
+	public NotificationChain basicSetBehavioralElement(BehavioralElement newBehavioralElement, NotificationChain msgs) {
 		BehavioralElement oldBehavioralElement = behavioralElement;
 		behavioralElement = newBehavioralElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, oldBehavioralElement, behavioralElement));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, oldBehavioralElement, newBehavioralElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavioralElement(BehavioralElement newBehavioralElement) {
+		if (newBehavioralElement != behavioralElement) {
+			NotificationChain msgs = null;
+			if (behavioralElement != null)
+				msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+			if (newBehavioralElement != null)
+				msgs = ((InternalEObject)newBehavioralElement).eInverseAdd(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+			msgs = basicSetBehavioralElement(newBehavioralElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, newBehavioralElement, newBehavioralElement));
 	}
 
 	/**
@@ -588,6 +578,27 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Iterator getAvailableClocks() {
+		return availableClocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAvailableClocks(Iterator newAvailableClocks) {
+		Iterator oldAvailableClocks = availableClocks;
+		availableClocks = newAvailableClocks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS, oldAvailableClocks, availableClocks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AbstractRealtimeStatechart getHighestParentStatechart() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -599,76 +610,29 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addAllUMLRealtimeStates(Set<Vertex> set, boolean inclusiveStartStates) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addComplexUMLRealtimeStates(Set<State> set) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addAllUMLRealtimeTransitions(Set<Transition> set) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Iterator iteratorOfAllUMLClocks(boolean excludeNoClock) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void addAllUMLClocks(Set<Clock> set, boolean excludeNoClock) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@Override
 	public String toString() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+		if (eIsProxy()) return super.toString();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EObject clone() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(", wcetDocument: ");
+		result.append(wcetDocument);
+		result.append(", securityLevel: ");
+		result.append(securityLevel);
+		result.append(", systemWcetMap: ");
+		result.append(systemWcetMap);
+		result.append(", utilisation: ");
+		result.append(utilisation);
+		result.append(", scheduleDocument: ");
+		result.append(scheduleDocument);
+		result.append(", embedded: ");
+		result.append(embedded);
+		result.append(", availableClocks: ");
+		result.append(availableClocks);
+		result.append(')');
+		return result.toString();
 	}
 
 	/**
@@ -682,6 +646,10 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				if (behavioralElement != null)
+					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
 		}
@@ -702,6 +670,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
 				return basicSetEClass(null, msgs);
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				return basicSetBehavioralElement(null, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
 		}
@@ -718,8 +688,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				return getComment();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				return getEventQueueSize();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				return getWcetDocument();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
@@ -743,6 +711,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return isEmbedded();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				return getClocks();
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return getAvailableClocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -758,9 +728,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				setComment((String)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				setEventQueueSize((Integer)newValue);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				setWcetDocument((String)newValue);
@@ -798,6 +765,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				getClocks().clear();
 				getClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks((Iterator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -812,9 +782,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				setComment(COMMENT_EDEFAULT);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				setWcetDocument(WCET_DOCUMENT_EDEFAULT);
@@ -849,6 +816,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
 				return;
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks(AVAILABLE_CLOCKS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -863,8 +833,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				return WCET_DOCUMENT_EDEFAULT == null ? wcetDocument != null : !WCET_DOCUMENT_EDEFAULT.equals(wcetDocument);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
@@ -887,6 +855,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return embedded != EMBEDDED_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -934,24 +904,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (operationID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART:
 				return getHighestParentStatechart();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_STATES__SET_BOOLEAN:
-				addAllUMLRealtimeStates((Set<Vertex>)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_COMPLEX_UML_REALTIME_STATES__SET:
-				addComplexUMLRealtimeStates((Set<State>)arguments.get(0));
-				return null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_REALTIME_TRANSITIONS__SET:
-				addAllUMLRealtimeTransitions((Set<Transition>)arguments.get(0));
-				return null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___ITERATOR_OF_ALL_UML_CLOCKS__BOOLEAN:
-				return iteratorOfAllUMLClocks((Boolean)arguments.get(0));
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___ADD_ALL_UML_CLOCKS__SET_BOOLEAN:
-				addAllUMLClocks((Set<Clock>)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___TO_STRING:
-				return toString();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART___CLONE:
-				return clone();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

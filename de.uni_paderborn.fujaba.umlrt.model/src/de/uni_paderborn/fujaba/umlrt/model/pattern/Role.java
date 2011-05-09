@@ -13,7 +13,6 @@ import org.storydriven.modeling.NamedElement;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
@@ -31,7 +30,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getPattern <em>Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getEClass <em>EClass</em>}</li>
@@ -49,31 +48,32 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  */
 public interface Role extends NamedElement, ConstrainableElement, BehavioralElement {
 	/**
-	 * Returns the value of the '<em><b>Channel</b></em>' reference.
+	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The channel which connects this role with another role.
+	 * The connector which connects this role with another role.
+	 * Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Channel</em>' reference.
-	 * @see #setChannel(RoleConnector)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_Channel()
+	 * @return the value of the '<em>Role Connector</em>' reference.
+	 * @see #setRoleConnector(RoleConnector)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_RoleConnector()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector#getSource
 	 * @model opposite="source"
 	 * @generated
 	 */
-	RoleConnector getChannel();
+	RoleConnector getRoleConnector();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getChannel <em>Channel</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getRoleConnector <em>Role Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Channel</em>' reference.
-	 * @see #getChannel()
+	 * @param value the new value of the '<em>Role Connector</em>' reference.
+	 * @see #getRoleConnector()
 	 * @generated
 	 */
-	void setChannel(RoleConnector value);
+	void setRoleConnector(RoleConnector value);
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' reference.
@@ -205,26 +205,26 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setProvided(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' reference.
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cardinality</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cardinality</em>' reference.
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage#getRole_Cardinality()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Cardinality getCardinality();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality <em>Cardinality</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.pattern.Role#getCardinality <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' reference.
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
 	 * @see #getCardinality()
 	 * @generated
 	 */

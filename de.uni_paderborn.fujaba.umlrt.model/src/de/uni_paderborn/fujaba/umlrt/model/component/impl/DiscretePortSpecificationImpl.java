@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
@@ -34,6 +33,7 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DiscretePortSpecificationImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,6 +91,26 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	protected MessageInterface providedMessageInterface;
 
 	/**
+	 * The default value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventQueueSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int EVENT_QUEUE_SIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventQueueSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,11 +160,33 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+	public NotificationChain basicSetRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart, NotificationChain msgs) {
 		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
 		realtimeStatechart = newRealtimeStatechart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART, oldRealtimeStatechart, newRealtimeStatechart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
+		if (newRealtimeStatechart != realtimeStatechart) {
+			NotificationChain msgs = null;
+			if (realtimeStatechart != null)
+				msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+			if (newRealtimeStatechart != null)
+				msgs = ((InternalEObject)newRealtimeStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+			msgs = basicSetRealtimeStatechart(newRealtimeStatechart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART, newRealtimeStatechart, newRealtimeStatechart));
 	}
 
 	/**
@@ -326,9 +368,34 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getEventQueueSize() {
+		return eventQueueSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventQueueSize(int newEventQueueSize) {
+		int oldEventQueueSize = eventQueueSize;
+		eventQueueSize = newEventQueueSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE, oldEventQueueSize, eventQueueSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART:
+				if (realtimeStatechart != null)
+					msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
+				return basicSetRealtimeStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				if (refines != null)
 					msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
@@ -345,6 +412,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART:
+				return basicSetRealtimeStatechart(null, msgs);
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
 				return basicSetRefines(null, msgs);
 		}
@@ -374,6 +443,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
 				if (resolve) return getProvidedMessageInterface();
 				return basicGetProvidedMessageInterface();
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
+				return getEventQueueSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -400,6 +471,9 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 				return;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)newValue);
+				return;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
+				setEventQueueSize((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -428,6 +502,9 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)null);
 				return;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
+				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -450,6 +527,8 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 				return requiredMessageInterface != null;
 			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE:
 				return providedMessageInterface != null;
+			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
+				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -484,6 +563,22 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (eventQueueSize: ");
+		result.append(eventQueueSize);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DiscretePortSpecificationImpl

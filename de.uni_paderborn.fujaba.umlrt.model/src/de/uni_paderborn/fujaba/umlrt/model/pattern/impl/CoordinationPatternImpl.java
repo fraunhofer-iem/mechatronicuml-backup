@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -26,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -68,14 +70,14 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	protected EList<Role> roles;
 
 	/**
-	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' reference list.
+	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConnectors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RoleConnector> connectors;
+	protected RoleConnector connectors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,11 +127,42 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RoleConnector> getConnectors() {
-		if (connectors == null) {
-			connectors = new EObjectWithInverseResolvingEList<RoleConnector>(RoleConnector.class, this, PatternPackage.COORDINATION_PATTERN__CONNECTORS, PatternPackage.ROLE_CONNECTOR__PATTERN);
-		}
+	public RoleConnector getConnectors() {
 		return connectors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConnectors(RoleConnector newConnectors, NotificationChain msgs) {
+		RoleConnector oldConnectors = connectors;
+		connectors = newConnectors;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.COORDINATION_PATTERN__CONNECTORS, oldConnectors, newConnectors);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnectors(RoleConnector newConnectors) {
+		if (newConnectors != connectors) {
+			NotificationChain msgs = null;
+			if (connectors != null)
+				msgs = ((InternalEObject)connectors).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTORS, null, msgs);
+			if (newConnectors != null)
+				msgs = ((InternalEObject)newConnectors).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTORS, null, msgs);
+			msgs = basicSetConnectors(newConnectors, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.COORDINATION_PATTERN__CONNECTORS, newConnectors, newConnectors));
 	}
 
 	/**
@@ -145,8 +178,6 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case PatternPackage.COORDINATION_PATTERN__ROLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoles()).basicAdd(otherEnd, msgs);
-			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -164,7 +195,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 			case PatternPackage.COORDINATION_PATTERN__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
-				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
+				return basicSetConnectors(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,8 +236,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				getRoles().addAll((Collection<? extends Role>)newValue);
 				return;
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
-				getConnectors().clear();
-				getConnectors().addAll((Collection<? extends RoleConnector>)newValue);
+				setConnectors((RoleConnector)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,7 +257,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				getRoles().clear();
 				return;
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
-				getConnectors().clear();
+				setConnectors((RoleConnector)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -246,7 +276,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 			case PatternPackage.COORDINATION_PATTERN__ROLES:
 				return roles != null && !roles.isEmpty();
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
-				return connectors != null && !connectors.isEmpty();
+				return connectors != null;
 		}
 		return super.eIsSet(featureID);
 	}

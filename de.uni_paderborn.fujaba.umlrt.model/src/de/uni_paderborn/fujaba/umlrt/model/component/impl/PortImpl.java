@@ -401,18 +401,7 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	public void setRequiredMessageInterface(MessageInterface newRequiredMessageInterface) {
-		//REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRequiredMessageInterface);
-		DiscretePortSpecification discretePortSpecification = null;
-		for (PortSpecification portSpecification : specification) {
-			if (portSpecification instanceof DiscretePortSpecification) {
-				discretePortSpecification = (DiscretePortSpecification) portSpecification;
-			}
-		}
-		if (discretePortSpecification == null) {
-			discretePortSpecification = ComponentFactory.eINSTANCE.createDiscretePortSpecification();
-			specification.add(discretePortSpecification);
-		}
-		discretePortSpecification.setRequiredMessageInterface(newRequiredMessageInterface);
+		REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRequiredMessageInterface);
 	}
 
 

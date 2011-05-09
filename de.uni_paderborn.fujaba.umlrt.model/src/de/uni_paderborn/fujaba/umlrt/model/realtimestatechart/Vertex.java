@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -111,9 +110,10 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
+	 * TODO: Delete?
 	 * <!-- end-model-doc -->
 	 * @model kind="operation"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tAbstractStatechart root = null;\r\n\t\torg.eclipse.emf.ecore.EObject obj = getStatechart();\r\n\t\tfor (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element\r\n\t\t.eContainer()) {\r\n\t\t\tif (element instanceof AbstractStatechart) {\r\n\t\t\t\troot = (AbstractStatechart )element;\r\n\t\t\t}\r\n\t\t}\r\n\treturn root;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='AbstractRealtimeStatechart root = null;\r\norg.eclipse.emf.ecore.EObject obj = getStatechart();\r\nfor (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element\r\n\t.eContainer()) {\r\n\tif (element instanceof AbstractRealtimeStatechart) {\r\n\t\troot = (AbstractRealtimeStatechart)element;\r\n\t}\r\n}\r\nreturn root;'"
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getRootRealtimeStatechart();
