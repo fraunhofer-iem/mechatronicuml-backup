@@ -388,25 +388,25 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		// Install a notification adapter that informs the
 		// clockResetExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, Notification.SET);
+		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, false);
 		clockResetExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS);
 
 		// Install a notification adapter that informs the
 		// relativeDeadlineExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, Notification.SET);
+		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, false);
 		relativeDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 
 		// Install a notification adapter that informs the
 		// absoluteDeadlineExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, Notification.SET);
+		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, false);
 		absoluteDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
 		
 		// Install a notification adapter that informs the
 		// safetyTransitionExpr-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter safetyTransitionExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR, Notification.SET);
+		DerivedAttributeAdapter safetyTransitionExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR, false);
 		safetyTransitionExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION);
 
 	}

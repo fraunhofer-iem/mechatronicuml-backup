@@ -85,11 +85,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	protected EList<ComponentInstance> embeddedInstances;
 
 	/**
-	 * @generated NOT
-	 */
-	private static final String COMPONENT_NAME_DERIVED_EDEFAULT = null;
-
-	/**
 	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
@@ -134,7 +129,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 		DerivedAttributeAdapter componentNameDerived = new DerivedAttributeAdapter(
 				this,
 				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED,
-				Notification.SET);
+				false);
 		componentNameDerived.addNavigatedDependency(
 				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
 				SDMPackage.Literals.NAMED_ELEMENT__NAME);

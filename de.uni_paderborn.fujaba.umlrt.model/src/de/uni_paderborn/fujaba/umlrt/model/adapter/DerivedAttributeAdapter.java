@@ -28,9 +28,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	private EStructuralFeature dependantFeature = null;
 	private EStructuralFeature navigationFeature = null;
 
-	// TODO: Make sure, we do not need to send two events (REMOVE_MANY and
-	// ADD_MANY), when setting a 1..* navigation.
-	protected int eventType;
+	protected boolean isManyFeature;
 	
 	protected final EStructuralFeature derivedFeature;
 	protected final InternalEObject source;
@@ -48,9 +46,9 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	};
 
 	public DerivedAttributeAdapter(EObject source,
-			EStructuralFeature derivedFeature, int eventType) {
+			EStructuralFeature derivedFeature, boolean isManyFeature) {
 		super();
-		this.eventType = eventType;
+		this.isManyFeature = isManyFeature;
 		this.derivedFeature = derivedFeature;
 		this.source = (InternalEObject) source;
 		source.eAdapters().add(this);
@@ -100,6 +98,13 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 
 	protected void notifyNavigationAttributeChange(Notification notification) {
 		if (source.eNotificationRequired()) {
+			int eventType = notification.getEventType();
+			if (notification.getEventType() == Notification.SET && isManyFeature) {
+				// TODO: Is this always working correctly?
+				eventType = Notification.ADD_MANY;
+			} else if (!isManyFeature) {
+				eventType = Notification.SET;
+			}
 			source.eNotify(new ENotificationImpl(source, eventType,
 					derivedFeature, null, source.eGet(derivedFeature, true, true)));
 		}

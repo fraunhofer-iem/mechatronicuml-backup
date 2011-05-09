@@ -180,13 +180,13 @@ public class PortImpl extends NamedElementImpl implements Port {
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE, Notification.ADD);
+		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE, false);
 		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE);
 
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE, Notification.ADD);
+		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE, false);
 		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE);
 	}
 
@@ -394,14 +394,24 @@ public class PortImpl extends NamedElementImpl implements Port {
 		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRequiredMessageInterface(MessageInterface newRequiredMessageInterface) {
-		REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRequiredMessageInterface);
+		//REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRequiredMessageInterface);
+		DiscretePortSpecification discretePortSpecification = null;
+		for (PortSpecification portSpecification : specification) {
+			if (portSpecification instanceof DiscretePortSpecification) {
+				discretePortSpecification = (DiscretePortSpecification) portSpecification;
+			}
+		}
+		if (discretePortSpecification == null) {
+			discretePortSpecification = ComponentFactory.eINSTANCE.createDiscretePortSpecification();
+			specification.add(discretePortSpecification);
+		}
+		discretePortSpecification.setRequiredMessageInterface(newRequiredMessageInterface);
 	}
 
 

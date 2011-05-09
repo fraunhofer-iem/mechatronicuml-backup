@@ -683,6 +683,20 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
+                  changeable="false" volatile="true" transient="true" derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.requiredMessageInterface&#xA;endif"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
+                  changeable="false" volatile="true" transient="true" derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+                  <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.providedMessageInterface&#xA;endif"/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
               <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"

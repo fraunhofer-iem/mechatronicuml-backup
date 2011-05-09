@@ -82,10 +82,10 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	protected SynchronizationChannelImpl() {
 		super();
 		
-		DerivedAttributeAdapter clockConstraintExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
+		DerivedAttributeAdapter clockConstraintExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
 		clockConstraintExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
 
-		DerivedAttributeAdapter clockConstraintExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, Notification.SET);
+		DerivedAttributeAdapter clockConstraintExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
 		clockConstraintExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 	}
 

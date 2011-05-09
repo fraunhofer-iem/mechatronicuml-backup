@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.instance;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
@@ -21,6 +22,8 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,5 +85,37 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setComponentInstance(ComponentInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Required Message Interface</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Message Interface</em>' reference.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_RequiredMessageInterface()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif'"
+	 * @generated
+	 */
+	MessageInterface getRequiredMessageInterface();
+
+	/**
+	 * Returns the value of the '<em><b>Provided Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Provided Message Interface</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided Message Interface</em>' reference.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_ProvidedMessageInterface()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif'"
+	 * @generated
+	 */
+	MessageInterface getProvidedMessageInterface();
 
 } // PortInstance

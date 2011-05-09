@@ -301,6 +301,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPortInstance_RequiredMessageInterface() {
+		return (EReference)portInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortInstance_ProvidedMessageInterface() {
+		return (EReference)portInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAssemblyInstance() {
 		return assemblyInstanceEClass;
 	}
@@ -385,6 +403,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		portInstanceEClass = createEClass(PORT_INSTANCE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_TYPE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__COMPONENT_INSTANCE);
+		createEReference(portInstanceEClass, PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE);
+		createEReference(portInstanceEClass, PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE);
 
 		assemblyInstanceEClass = createEClass(ASSEMBLY_INSTANCE);
 		createEReference(assemblyInstanceEClass, ASSEMBLY_INSTANCE__ASSEMBLY_TYPE);
@@ -420,6 +440,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
 
 		// Create type parameters
@@ -451,6 +472,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_RequiredMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "requiredMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_ProvidedMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "providedMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyInstanceEClass, AssemblyInstance.class, "AssemblyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -484,7 +507,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });							
 	}
 
 	/**
@@ -500,7 +523,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
-		   });			
+		   });				
+		addAnnotation
+		  (getPortInstance_RequiredMessageInterface(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif"
+		   });		
+		addAnnotation
+		  (getPortInstance_ProvidedMessageInterface(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif"
+		   });	
 	}
 
 } //InstancePackageImpl

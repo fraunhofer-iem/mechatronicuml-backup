@@ -484,13 +484,31 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__COMPONENT_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -999,6 +1017,28 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_ComponentInstance();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getRequiredMessageInterface <em>Required Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getRequiredMessageInterface()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_RequiredMessageInterface();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getProvidedMessageInterface()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_ProvidedMessageInterface();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1191,6 +1231,22 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_INSTANCE__COMPONENT_INSTANCE = eINSTANCE.getPortInstance_ComponentInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_RequiredMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_ProvidedMessageInterface();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
