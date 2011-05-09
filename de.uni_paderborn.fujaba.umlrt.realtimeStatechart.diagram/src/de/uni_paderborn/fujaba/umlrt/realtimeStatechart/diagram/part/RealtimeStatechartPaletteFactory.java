@@ -72,7 +72,7 @@ public class RealtimeStatechartPaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.State1CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.State1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.State_2008));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.State_2014));
 		entry.setId("createState1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/c_state16.gif")); //$NON-NLS-1$
@@ -88,7 +88,7 @@ public class RealtimeStatechartPaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.StartState2CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.StartState2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.InitialState_2009));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.InitialState_2015));
 		entry.setId("createStartState2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/startState16.png")); //$NON-NLS-1$
@@ -104,7 +104,7 @@ public class RealtimeStatechartPaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.StopState3CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.StopState3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.FinalState_2010));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.FinalState_2016));
 		entry.setId("createStopState3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/stopState16.png")); //$NON-NLS-1$
@@ -136,7 +136,7 @@ public class RealtimeStatechartPaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock5CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.Clock5CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2012));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2018));
 		entry.setId("createClock5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif")); //$NON-NLS-1$
@@ -152,7 +152,7 @@ public class RealtimeStatechartPaletteFactory {
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History6CreationTool_title,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.Messages.History6CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.HistoryState_2011));
+						.singletonList(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.HistoryState_2017));
 		entry.setId("createHistory6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/history16.png")); //$NON-NLS-1$

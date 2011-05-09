@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.util;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.*;
@@ -98,7 +98,7 @@ public class RealtimeStatechartSwitch<T> {
 				RealtimeStatechart realtimeStatechart = (RealtimeStatechart)theEObject;
 				T result = caseRealtimeStatechart(realtimeStatechart);
 				if (result == null) result = caseFujabaRealtimeStatechart(realtimeStatechart);
-				if (result == null) result = caseAbstractStatechart(realtimeStatechart);
+				if (result == null) result = caseAbstractRealtimeStatechart(realtimeStatechart);
 				if (result == null) result = caseNamedElement(realtimeStatechart);
 				if (result == null) result = caseCommentableElement(realtimeStatechart);
 				if (result == null) result = caseExtendableElement(realtimeStatechart);
@@ -170,17 +170,17 @@ public class RealtimeStatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Statechart</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Statechart</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Realtime Statechart</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAbstractStatechart(AbstractStatechart object) {
+	public T caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
 		return null;
 	}
 

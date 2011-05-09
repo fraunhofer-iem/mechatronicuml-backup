@@ -55,7 +55,7 @@ public class StateSynchroChannelsCompartmentCanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-				.getStateSynchroChannelsCompartment_7003SemanticChildren(viewObject);
+				.getStateSynchroChannelsCompartment_7007SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -88,7 +88,7 @@ public class StateSynchroChannelsCompartmentCanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-				.getStateSynchroChannelsCompartment_7003SemanticChildren((View) getHost()
+				.getStateSynchroChannelsCompartment_7007SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

@@ -16,17 +16,17 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final int reorientDirection;
+	protected final int reorientDirection;
 
 	/**
 	 * @generated
 	 */
-	private final EObject oldEnd;
+	protected final EObject oldEnd;
 
 	/**
 	 * @generated
 	 */
-	private final EObject newEnd;
+	protected final EObject newEnd;
 
 	/**
 	 * @generated
@@ -63,10 +63,10 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex target = getLink()
 				.getTarget();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getLink()
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4001(container,
@@ -82,10 +82,10 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex source = getLink()
 				.getSource();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getLink()
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4001(container,

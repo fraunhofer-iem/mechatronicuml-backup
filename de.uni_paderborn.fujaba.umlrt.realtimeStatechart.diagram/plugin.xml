@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="RealtimeStatechart"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2008,2009,2010,2011,2012,2013,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2014,2015,2016,2017,2018,2019,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -202,16 +202,16 @@
             <method name="getType()" value="RealtimeStatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2008,2009,2010,2011,2012,2013,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
+            <method name="getType()" value="2014,2015,2016,2017,2018,2019,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5005,5014,5015,5016,5017,5012,5013"/>
+            <method name="getType()" value="5018,5019,5015,5016,5017,5012,5013"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004"/>
+            <method name="getType()" value="7005,7006,7007,7008"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -222,13 +222,13 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_1000"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2008"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart" id="InitialState_2009"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart" id="FinalState_2010"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart" id="HistoryState_2011"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart" id="Clock_2012"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart" id="Transition_2013"/>
-         <context elements="RealtimeStatechart_1000,State_2008,InitialState_2009,FinalState_2010,HistoryState_2011,Clock_2012,Transition_2013"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2014"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart" id="InitialState_2015"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart" id="FinalState_2016"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart" id="HistoryState_2017"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart" id="Clock_2018"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart" id="Transition_2019"/>
+         <context elements="RealtimeStatechart_1000,State_2014,InitialState_2015,FinalState_2016,HistoryState_2017,Clock_2018,Transition_2019"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -260,62 +260,62 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2008"
-               name="%metatype.name.State_2008"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2014"
+               name="%metatype.name.State_2014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="State"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.StateEditHelper">
-            <param name="semanticHint" value="2008"/>
+            <param name="semanticHint" value="2014"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2009"
-               name="%metatype.name.InitialState_2009"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2015"
+               name="%metatype.name.InitialState_2015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="InitialState"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.InitialStateEditHelper">
-            <param name="semanticHint" value="2009"/>
+            <param name="semanticHint" value="2015"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2010"
-               name="%metatype.name.FinalState_2010"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2016"
+               name="%metatype.name.FinalState_2016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FinalState"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.FinalStateEditHelper">
-            <param name="semanticHint" value="2010"/>
+            <param name="semanticHint" value="2016"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2011"
-               name="%metatype.name.HistoryState_2011"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2017"
+               name="%metatype.name.HistoryState_2017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HistoryState"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.HistoryStateEditHelper">
-            <param name="semanticHint" value="2011"/>
+            <param name="semanticHint" value="2017"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2012"
-               name="%metatype.name.Clock_2012"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2018"
+               name="%metatype.name.Clock_2018"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Clock"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ClockEditHelper">
-            <param name="semanticHint" value="2012"/>
+            <param name="semanticHint" value="2018"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"
-               name="%metatype.name.Transition_2013"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"
+               name="%metatype.name.Transition_2019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Transition"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.TransitionEditHelper">
-            <param name="semanticHint" value="2013"/>
+            <param name="semanticHint" value="2019"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
@@ -460,7 +460,7 @@
                id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"
                name="%metatype.name.Transition_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"/>
+            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"/>
             <param name="semanticHint" value="4001"/>
          </specializationType>
       </metamodel>
@@ -477,12 +477,12 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeStatechart_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2008"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2009"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2010"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2011"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2012"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2014"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2015"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2016"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2017"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2018"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"/>

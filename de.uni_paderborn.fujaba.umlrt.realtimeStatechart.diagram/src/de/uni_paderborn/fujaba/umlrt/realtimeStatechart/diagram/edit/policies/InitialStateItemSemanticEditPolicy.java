@@ -25,7 +25,7 @@ public class InitialStateItemSemanticEditPolicy
 	 */
 	public InitialStateItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.InitialState_2009);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.InitialState_2015);
 	}
 
 	/**

@@ -53,7 +53,7 @@ public class Transition2CreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createTransition();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
 		owner.getTransitions().add(newElement);
 
 		doConfigure(newElement, monitor, info);

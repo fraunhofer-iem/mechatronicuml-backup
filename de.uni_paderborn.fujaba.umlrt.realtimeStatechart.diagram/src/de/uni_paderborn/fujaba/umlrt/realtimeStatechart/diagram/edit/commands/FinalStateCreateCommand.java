@@ -53,11 +53,11 @@ public class FinalStateCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createFinalState();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
 		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_FinalState_2010(newElement);
+				.getInstance().init_FinalState_2016(newElement);
 
 		doConfigure(newElement, monitor, info);
 

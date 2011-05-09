@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_State_2008(
+	public void init_State_2014(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
@@ -30,7 +30,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_InitialState_2009(
+	public void init_InitialState_2015(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
@@ -49,7 +49,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_FinalState_2010(
+	public void init_FinalState_2016(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
@@ -67,7 +67,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HistoryState_2011(
+	public void init_HistoryState_2017(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
@@ -86,7 +86,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Clock_2012(
+	public void init_Clock_2018(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory

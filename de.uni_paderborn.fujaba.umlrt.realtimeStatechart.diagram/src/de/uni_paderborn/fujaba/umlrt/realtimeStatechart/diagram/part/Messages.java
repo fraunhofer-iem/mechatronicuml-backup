@@ -408,12 +408,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FinalState_2010_incominglinks;
+	public static String NavigatorGroupName_State_2014_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FinalState_2010_outgoinglinks;
+	public static String NavigatorGroupName_State_2014_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialState_2015_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialState_2015_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FinalState_2016_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FinalState_2016_outgoinglinks;
 
 	/**
 	 * @generated
@@ -423,12 +443,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2011_incominglinks;
+	public static String NavigatorGroupName_HistoryState_2017_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2011_outgoinglinks;
+	public static String NavigatorGroupName_HistoryState_2017_outgoinglinks;
 
 	/**
 	 * @generated
@@ -439,26 +459,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Transition_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_InitialState_2009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_InitialState_2009_outgoinglinks;
 
 	/**
 	 * @generated

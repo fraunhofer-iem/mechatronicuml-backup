@@ -7,7 +7,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
@@ -177,7 +177,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"/>
@@ -201,7 +201,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState"/>
@@ -225,7 +225,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryState"/>
@@ -249,7 +249,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/clocks"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
@@ -290,7 +290,7 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
@@ -463,7 +463,7 @@
           href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/synchroExpr"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.3"/>

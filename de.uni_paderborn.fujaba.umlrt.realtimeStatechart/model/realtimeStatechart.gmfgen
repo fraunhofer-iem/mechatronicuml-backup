@@ -526,10 +526,9 @@
       </modelFacet>
     </childNodes>
     <topLevelNodes
-        visualID="2008"
+        visualID="2014"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
@@ -552,9 +551,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -566,10 +565,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5005"
+          visualID="5018"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -589,10 +587,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2009"
+        visualID="2015"
         editPartClassName="InitialStateEditPart"
         itemSemanticEditPolicyClassName="InitialStateItemSemanticEditPolicy"
-        notationViewFactoryClassName="InitialStateViewFactory"
         canonicalEditPolicyClassName="InitialStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InitialStateGraphicalNodeEditPolicy"
         createCommandClassName="InitialStateCreateCommand">
@@ -619,9 +616,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/uMLRealtimeStartState"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -634,10 +631,9 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2010"
+        visualID="2016"
         editPartClassName="FinalStateEditPart"
         itemSemanticEditPolicyClassName="FinalStateItemSemanticEditPolicy"
-        notationViewFactoryClassName="FinalStateViewFactory"
         canonicalEditPolicyClassName="FinalStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FinalStateGraphicalNodeEditPolicy"
         createCommandClassName="FinalStateCreateCommand">
@@ -663,9 +659,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -678,10 +674,9 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2011"
+        visualID="2017"
         editPartClassName="HistoryStateEditPart"
         itemSemanticEditPolicyClassName="HistoryStateItemSemanticEditPolicy"
-        notationViewFactoryClassName="HistoryStateViewFactory"
         canonicalEditPolicyClassName="HistoryStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HistoryStateGraphicalNodeEditPolicy"
         createCommandClassName="HistoryStateCreateCommand">
@@ -702,9 +697,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryState"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -717,10 +712,9 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2012"
+        visualID="2018"
         editPartClassName="ClockEditPart"
         itemSemanticEditPolicyClassName="ClockItemSemanticEditPolicy"
-        notationViewFactoryClassName="ClockViewFactory"
         canonicalEditPolicyClassName="ClockCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockGraphicalNodeEditPolicy"
         createCommandClassName="ClockCreateCommand">
@@ -741,9 +735,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/clocks"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/clocks"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/clocks"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -761,10 +755,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5014"
+          visualID="5019"
           editPartClassName="ClockNameIdEditPart"
-          itemSemanticEditPolicyClassName="ClockNameIdItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClockNameIdViewFactory">
+          itemSemanticEditPolicyClassName="ClockNameIdItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -782,10 +775,9 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2013"
+        visualID="2019"
         editPartClassName="Transition2EditPart"
         itemSemanticEditPolicyClassName="Transition2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="TransitionViewFactory"
         canonicalEditPolicyClassName="TransitionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.9 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13"
         graphicalNodeEditPolicyClassName="TransitionGraphicalNodeEditPolicy"
@@ -803,9 +795,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
       </modelFacet>
     </topLevelNodes>
     <links
@@ -829,9 +821,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions"/>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/source"/>
         <targetMetaFeature
@@ -1074,10 +1066,9 @@
       </labels>
     </links>
     <compartments
-        visualID="7001"
+        visualID="7005"
         editPartClassName="StateActionsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateActionsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateActionsCompartmentViewFactory"
         canonicalEditPolicyClassName="StateActionsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         title="ActionsCompartment"
@@ -1092,10 +1083,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7002"
+        visualID="7006"
         editPartClassName="StateInvariantCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateInvariantCompartmentViewFactory"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="InvariantCompartment"
@@ -1110,10 +1100,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7003"
+        visualID="7007"
         editPartClassName="StateSynchroChannelsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateSynchroChannelsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateSynchroChannelsCompartmentViewFactory"
         canonicalEditPolicyClassName="StateSynchroChannelsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4"
         title="SynchroChannelsCompartment"
@@ -1128,10 +1117,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7004"
+        visualID="7008"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
@@ -1148,18 +1136,18 @@
     <palette>
       <groups
           title="Realtime Statechart"
-          description="Can be casted on statechart."
+          description="Can be casted on statechart"
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State"
-            description="Creation of a state."
+            description="Creation of a state"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/c_state16.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Start State"
-            description="Creation of a start state."
+            description="Creation of a start state"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/startState16.png"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
@@ -1171,7 +1159,7 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"
-            description="Creation of a transition."
+            description="Creation of a transition"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
@@ -1183,18 +1171,18 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="History"
-            description="Creation of a history."
+            description="Creation of a history"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/history16.png"
             genNodes="//@diagram/@topLevelNodes.3"/>
       </groups>
       <groups
           title="Realtime State"
-          description="Can be casted on state."
+          description="Can be casted on state"
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Time Invariant"
-            description="Creation of a time invariant."
+            description="Creation of a time invariant"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
             genNodes="//@diagram/@childNodes.3"/>
         <entries
@@ -1218,13 +1206,13 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"
-            description="Creation of a region for a state."
+            description="Creation of a region for a state"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/andState.gif"
             genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Synchronization Channel"
-            description="Creation of a synchronization channel."
+            description="Creation of a synchronization channel"
             smallIconPath="/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/xAction.gif"
             genNodes="//@diagram/@childNodes.4"/>
       </groups>

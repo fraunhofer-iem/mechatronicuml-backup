@@ -53,11 +53,11 @@ public class ClockCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createClock();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
 		owner.getClocks().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_Clock_2012(newElement);
+				.getInstance().init_Clock_2018(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -30,6 +31,9 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.SynchronizationCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
 public class ModifySynchronizationPage2 extends WizardPage{
 	
@@ -231,6 +235,25 @@ public class ModifySynchronizationPage2 extends WizardPage{
 	
 	private void startCreateSynchronizationCommand(){
 		
+		//first delete existing synchronization
+		Transition tmp = ((ModifySynchronizationWizard)getWizard()).getSelectedTransition();
+		if(tmp.getSendSynchronization()!=null){
+			deleteObject(tmp.getSendSynchronization());
+		}else if(tmp.getReceiveSynchronization()!=null){
+			deleteObject(tmp.getReceiveSynchronization());
+		}
+		
+		//invoke command
+		CreateElementRequest request = new CreateElementRequest(((ModifySynchronizationWizard)getWizard()).getSelectedTransition(),
+				RealtimeStatechartElementTypes.Action_3024);
+						  
+					SynchronizationCreateCommand command = new SynchronizationCreateCommand(request, 
+							parameterValuesHashMap,
+							((ModifySynchronizationWizard)getWizard()).getSelectedSynchronizationChannel(),
+							((ModifySynchronizationWizard)getWizard()).getSelectedSynchronizationType());
+			
+					new ICommandProxy(command).execute();
+					setPageComplete(true);
 	}
 	
 	private boolean allParametersHaveValues(){

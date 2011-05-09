@@ -30,7 +30,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container;
+	private de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container;
 
 	/**
 	 * @generated
@@ -139,7 +139,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart getContainer() {
+	public de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart deduceContainer() {
+	protected de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) {
-				return (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) element;
+			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) {
+				return (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) element;
 			}
 		}
 		return null;

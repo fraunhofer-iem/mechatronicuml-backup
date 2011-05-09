@@ -41,10 +41,6 @@ public class InitialStateCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
-		if (container.getUMLRealtimeStartState() != null) {
-			return false;
-		}
 		return true;
 
 	}
@@ -57,11 +53,11 @@ public class InitialStateCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createInitialState();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
-		owner.setUMLRealtimeStartState(newElement);
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
+		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_InitialState_2009(newElement);
+				.getInstance().init_InitialState_2015(newElement);
 
 		doConfigure(newElement, monitor, info);
 

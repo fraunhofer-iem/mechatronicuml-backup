@@ -20,7 +20,7 @@ public class ClockItemSemanticEditPolicy
 	 */
 	public ClockItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2012);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.Clock_2018);
 	}
 
 	/**

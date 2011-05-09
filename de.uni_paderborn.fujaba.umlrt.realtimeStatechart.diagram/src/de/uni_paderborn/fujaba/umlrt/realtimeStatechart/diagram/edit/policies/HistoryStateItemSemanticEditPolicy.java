@@ -25,7 +25,7 @@ public class HistoryStateItemSemanticEditPolicy
 	 */
 	public HistoryStateItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.HistoryState_2011);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.HistoryState_2017);
 	}
 
 	/**

@@ -61,16 +61,13 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-							.getAbstractStatechart_Vertices());
+							.getAbstractRealtimeStatechart_Vertices());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-							.getAbstractStatechart_UMLRealtimeStartState());
+							.getAbstractRealtimeStatechart_Clocks());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-							.getAbstractStatechart_Clocks());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
-							.getAbstractStatechart_Transitions());
+							.getAbstractRealtimeStatechart_Transitions());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -282,7 +279,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getState_2008ContainedLinks(view));
+						.getState_2014ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -293,7 +290,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getInitialState_2009ContainedLinks(view));
+						.getInitialState_2015ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -304,7 +301,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getFinalState_2010ContainedLinks(view));
+						.getFinalState_2016ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -315,7 +312,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getHistoryState_2011ContainedLinks(view));
+						.getHistoryState_2017ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -326,7 +323,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getClock_2012ContainedLinks(view));
+						.getClock_2018ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -337,7 +334,7 @@ public class RealtimeStatechartCanonicalEditPolicy extends CanonicalEditPolicy {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdater
-						.getTransition_2013ContainedLinks(view));
+						.getTransition_2019ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

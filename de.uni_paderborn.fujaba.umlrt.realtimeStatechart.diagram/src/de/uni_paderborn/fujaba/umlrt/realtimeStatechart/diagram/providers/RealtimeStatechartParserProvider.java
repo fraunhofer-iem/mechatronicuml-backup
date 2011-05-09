@@ -23,41 +23,41 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser stateName_5005Parser;
+	private IParser stateName_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStateName_5005Parser() {
-		if (stateName_5005Parser == null) {
+	private IParser getStateName_5018Parser() {
+		if (stateName_5018Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			stateName_5005Parser = parser;
+			stateName_5018Parser = parser;
 		}
-		return stateName_5005Parser;
+		return stateName_5018Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser clockNameId_5014Parser;
+	private IParser clockNameId_5019Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getClockNameId_5014Parser() {
-		if (clockNameId_5014Parser == null) {
+	private IParser getClockNameId_5019Parser() {
+		if (clockNameId_5019Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					SDMPackage.eINSTANCE.getNamedElement_Name(),
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getClock_Id() };
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			clockNameId_5014Parser = parser;
+			clockNameId_5019Parser = parser;
 		}
-		return clockNameId_5014Parser;
+		return clockNameId_5019Parser;
 	}
 
 	/**
@@ -351,9 +351,9 @@ public class RealtimeStatechartParserProvider extends AbstractProvider
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
-			return getStateName_5005Parser();
+			return getStateName_5018Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockNameIdEditPart.VISUAL_ID:
-			return getClockNameId_5014Parser();
+			return getClockNameId_5019Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionActionExprEditPart.VISUAL_ID:
 			return getEntryActionActionExpr_5015Parser();
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionActionExprEditPart.VISUAL_ID:

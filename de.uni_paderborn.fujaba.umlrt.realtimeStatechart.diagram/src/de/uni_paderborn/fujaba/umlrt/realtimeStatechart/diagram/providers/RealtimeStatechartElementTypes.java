@@ -49,28 +49,32 @@ public class RealtimeStatechartElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_2008 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2008"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType InitialState_2009 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2009"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType FinalState_2010 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2010"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType HistoryState_2011 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2011"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType Clock_2012 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2012"); //$NON-NLS-1$
+	public static final IElementType State_2014 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Transition_2013 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2013"); //$NON-NLS-1$
+	public static final IElementType InitialState_2015 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType FinalState_2016 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2016"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType HistoryState_2017 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Clock_2018 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Transition_2019 = getElementType("de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -264,32 +268,32 @@ public class RealtimeStatechartElementTypes {
 							.getRealtimeStatechart());
 
 			elements.put(
-					State_2008,
+					State_2014,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getState());
 
 			elements.put(
-					InitialState_2009,
+					InitialState_2015,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getInitialState());
 
 			elements.put(
-					FinalState_2010,
+					FinalState_2016,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getFinalState());
 
 			elements.put(
-					HistoryState_2011,
+					HistoryState_2017,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getHistoryState());
 
 			elements.put(
-					Clock_2012,
+					Clock_2018,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getClock());
 
 			elements.put(
-					Transition_2013,
+					Transition_2019,
 					de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition());
 
@@ -385,12 +389,12 @@ public class RealtimeStatechartElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(RealtimeStatechart_1000);
-			KNOWN_ELEMENT_TYPES.add(State_2008);
-			KNOWN_ELEMENT_TYPES.add(InitialState_2009);
-			KNOWN_ELEMENT_TYPES.add(FinalState_2010);
-			KNOWN_ELEMENT_TYPES.add(HistoryState_2011);
-			KNOWN_ELEMENT_TYPES.add(Clock_2012);
-			KNOWN_ELEMENT_TYPES.add(Transition_2013);
+			KNOWN_ELEMENT_TYPES.add(State_2014);
+			KNOWN_ELEMENT_TYPES.add(InitialState_2015);
+			KNOWN_ELEMENT_TYPES.add(FinalState_2016);
+			KNOWN_ELEMENT_TYPES.add(HistoryState_2017);
+			KNOWN_ELEMENT_TYPES.add(Clock_2018);
+			KNOWN_ELEMENT_TYPES.add(Transition_2019);
 			KNOWN_ELEMENT_TYPES.add(EntryAction_3021);
 			KNOWN_ELEMENT_TYPES.add(DoAction_3022);
 			KNOWN_ELEMENT_TYPES.add(ExitAction_3023);
@@ -418,17 +422,17 @@ public class RealtimeStatechartElementTypes {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return RealtimeStatechart_1000;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return State_2008;
+			return State_2014;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
-			return InitialState_2009;
+			return InitialState_2015;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID:
-			return FinalState_2010;
+			return FinalState_2016;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-			return HistoryState_2011;
+			return HistoryState_2017;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-			return Clock_2012;
+			return Clock_2018;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return Transition_2013;
+			return Transition_2019;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
 			return EntryAction_3021;
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:

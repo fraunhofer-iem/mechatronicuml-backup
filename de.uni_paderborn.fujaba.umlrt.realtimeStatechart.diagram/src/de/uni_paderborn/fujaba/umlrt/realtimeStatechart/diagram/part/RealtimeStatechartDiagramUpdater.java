@@ -27,15 +27,15 @@ public class RealtimeStatechartDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return getTransition_2013SemanticChildren(view);
+			return getTransition_2019SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID:
-			return getStateActionsCompartment_7001SemanticChildren(view);
+			return getStateActionsCompartment_7005SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-			return getStateInvariantCompartment_7002SemanticChildren(view);
+			return getStateInvariantCompartment_7006SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateSynchroChannelsCompartmentEditPart.VISUAL_ID:
-			return getStateSynchroChannelsCompartment_7003SemanticChildren(view);
+			return getStateSynchroChannelsCompartment_7007SemanticChildren(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-			return getStateRegionCompartment_7004SemanticChildren(view);
+			return getStateRegionCompartment_7008SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -62,6 +62,11 @@ public class RealtimeStatechartDiagramUpdater {
 						childElement, visualID));
 				continue;
 			}
+			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
 			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
 						childElement, visualID));
@@ -71,16 +76,6 @@ public class RealtimeStatechartDiagramUpdater {
 				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
 						childElement, visualID));
 				continue;
-			}
-		}
-		{
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState childElement = modelElement
-					.getUMLRealtimeStartState();
-			int visualID = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor(
-						childElement, visualID));
 			}
 		}
 		for (Iterator<?> it = modelElement.getClocks().iterator(); it.hasNext();) {
@@ -112,7 +107,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getTransition_2013SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getTransition_2019SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -214,7 +209,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateActionsCompartment_7001SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateActionsCompartment_7005SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -262,7 +257,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateInvariantCompartment_7002SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateInvariantCompartment_7006SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -292,7 +287,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateSynchroChannelsCompartment_7003SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateSynchroChannelsCompartment_7007SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -322,7 +317,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateRegionCompartment_7004SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartNodeDescriptor> getStateRegionCompartment_7008SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -359,17 +354,17 @@ public class RealtimeStatechartDiagramUpdater {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_2008ContainedLinks(view);
+			return getState_2014ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
-			return getInitialState_2009ContainedLinks(view);
+			return getInitialState_2015ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID:
-			return getFinalState_2010ContainedLinks(view);
+			return getFinalState_2016ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-			return getHistoryState_2011ContainedLinks(view);
+			return getHistoryState_2017ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-			return getClock_2012ContainedLinks(view);
+			return getClock_2018ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return getTransition_2013ContainedLinks(view);
+			return getTransition_2019ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
 			return getEntryAction_3021ContainedLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:
@@ -412,17 +407,17 @@ public class RealtimeStatechartDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_2008IncomingLinks(view);
+			return getState_2014IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
-			return getInitialState_2009IncomingLinks(view);
+			return getInitialState_2015IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID:
-			return getFinalState_2010IncomingLinks(view);
+			return getFinalState_2016IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-			return getHistoryState_2011IncomingLinks(view);
+			return getHistoryState_2017IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-			return getClock_2012IncomingLinks(view);
+			return getClock_2018IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return getTransition_2013IncomingLinks(view);
+			return getTransition_2019IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
 			return getEntryAction_3021IncomingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:
@@ -465,17 +460,17 @@ public class RealtimeStatechartDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_2008OutgoingLinks(view);
+			return getState_2014OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
-			return getInitialState_2009OutgoingLinks(view);
+			return getInitialState_2015OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID:
-			return getFinalState_2010OutgoingLinks(view);
+			return getFinalState_2016OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-			return getHistoryState_2011OutgoingLinks(view);
+			return getHistoryState_2017OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-			return getClock_2012OutgoingLinks(view);
+			return getClock_2018OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return getTransition_2013OutgoingLinks(view);
+			return getTransition_2019OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
 			return getEntryAction_3021OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:
@@ -525,7 +520,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2008ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2014ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -533,7 +528,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2009ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2015ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -541,7 +536,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2010ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2016ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -549,7 +544,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2011ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2017ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -557,7 +552,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2012ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2018ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -565,7 +560,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2013ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2019ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -693,7 +688,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2008IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2014IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) view
 				.getElement();
@@ -708,7 +703,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2009IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2015IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState) view
 				.getElement();
@@ -723,7 +718,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2010IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2016IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState) view
 				.getElement();
@@ -738,7 +733,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2011IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2017IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState) view
 				.getElement();
@@ -753,7 +748,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2012IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2018IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -761,7 +756,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2013IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2019IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -889,7 +884,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2008OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getState_2014OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) view
 				.getElement();
@@ -901,7 +896,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2009OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getInitialState_2015OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState) view
 				.getElement();
@@ -913,7 +908,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2010OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getFinalState_2016OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState) view
 				.getElement();
@@ -925,7 +920,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2011OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getHistoryState_2017OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState modelElement = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState) view
 				.getElement();
@@ -937,7 +932,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2012OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getClock_2018OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -945,7 +940,7 @@ public class RealtimeStatechartDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2013OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getTransition_2019OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1074,7 +1069,7 @@ public class RealtimeStatechartDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getContainedTypeModelFacetLinks_Transition_4001(
-			de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container) {
+			de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container) {
 		LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor>();
 		for (Iterator<?> links = container.getTransitions().iterator(); links
 				.hasNext();) {
@@ -1139,14 +1134,14 @@ public class RealtimeStatechartDiagramUpdater {
 	 */
 	private static Collection<de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartLinkDescriptor> getOutgoingTypeModelFacetLinks_Transition_4001(
 			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex source) {
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container = null;
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) {
-				container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) element;
+			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) {
+				container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) element;
 			}
 		}
 		if (container == null) {

@@ -53,11 +53,11 @@ public class HistoryStateCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createHistoryState();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
 		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_HistoryState_2011(newElement);
+				.getInstance().init_HistoryState_2017(newElement);
 
 		doConfigure(newElement, monitor, info);
 

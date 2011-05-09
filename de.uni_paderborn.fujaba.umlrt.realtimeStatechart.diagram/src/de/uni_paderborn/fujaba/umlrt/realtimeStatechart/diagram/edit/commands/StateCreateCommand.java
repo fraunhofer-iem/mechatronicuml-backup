@@ -53,11 +53,11 @@ public class StateCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createState();
 
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart) getElementToEdit();
+		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart owner = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getElementToEdit();
 		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_State_2008(newElement);
+				.getInstance().init_State_2014(newElement);
 
 		doConfigure(newElement, monitor, info);
 

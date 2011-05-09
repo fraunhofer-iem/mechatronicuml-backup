@@ -106,15 +106,6 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__COMMENT = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__EVENT_QUEUE_SIZE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,24 +151,6 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__SCHEDULE_DOCUMENT = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__SCHEDULE_DOCUMENT;
 
 	/**
-	 * The feature id for the '<em><b>UML Realtime Start State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__UML_REALTIME_START_STATE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__UML_REALTIME_START_STATE;
-
-	/**
-	 * The feature id for the '<em><b>UML Complex Realtime State</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__UML_COMPLEX_REALTIME_STATE;
-
-	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -214,24 +187,6 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__BEHAVIORAL_ELEMENT = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Provided Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__PROVIDED_MSG_IFACE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__PROVIDED_MSG_IFACE;
-
-	/**
-	 * The feature id for the '<em><b>Required Msg IFace</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__REQUIRED_MSG_IFACE = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__REQUIRED_MSG_IFACE;
-
-	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -250,6 +205,15 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__CLOCKS = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS;
 
 	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__AVAILABLE_CLOCKS = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS;
+
+	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,6 +221,15 @@ public interface RealtimeStatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int REALTIME_STATECHART__EMBEDDING_REGION = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION;
+
+	/**
+	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART__DATA_TYPES = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.

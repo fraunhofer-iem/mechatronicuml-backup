@@ -25,7 +25,7 @@ public class FinalStateItemSemanticEditPolicy
 	 */
 	public FinalStateItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.FinalState_2010);
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes.FinalState_2016);
 	}
 
 	/**

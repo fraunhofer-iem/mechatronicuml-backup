@@ -250,22 +250,22 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return createState_2008(domainElement, containerView, index,
+			return createState_2014(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
-			return createInitialState_2009(domainElement, containerView, index,
+			return createInitialState_2015(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart.VISUAL_ID:
-			return createFinalState_2010(domainElement, containerView, index,
+			return createFinalState_2016(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-			return createHistoryState_2011(domainElement, containerView, index,
+			return createHistoryState_2017(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-			return createClock_2012(domainElement, containerView, index,
+			return createClock_2018(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
-			return createTransition_2013(domainElement, containerView, index,
+			return createTransition_2019(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
 			return createEntryAction_3021(domainElement, containerView, index,
@@ -335,7 +335,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createState_2008(EObject domainElement, View containerView,
+	public Node createState_2014(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -372,7 +372,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5005 = createLabel(
+		Node label5018 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
@@ -402,7 +402,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createInitialState_2009(EObject domainElement,
+	public Node createInitialState_2015(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -438,7 +438,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createFinalState_2010(EObject domainElement,
+	public Node createFinalState_2016(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
@@ -480,7 +480,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHistoryState_2011(EObject domainElement,
+	public Node createHistoryState_2017(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -524,7 +524,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createClock_2012(EObject domainElement, View containerView,
+	public Node createClock_2018(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -561,7 +561,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5014 = createLabel(
+		Node label5019 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockNameIdEditPart.VISUAL_ID));
@@ -571,7 +571,7 @@ public class RealtimeStatechartViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createTransition_2013(EObject domainElement,
+	public Node createTransition_2019(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();

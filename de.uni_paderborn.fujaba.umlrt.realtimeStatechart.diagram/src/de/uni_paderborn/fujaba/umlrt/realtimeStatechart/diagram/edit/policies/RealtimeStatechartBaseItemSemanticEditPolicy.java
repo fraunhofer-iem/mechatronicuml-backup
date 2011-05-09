@@ -328,7 +328,7 @@ public class RealtimeStatechartBaseItemSemanticEditPolicy extends
 		 * @generated
 		 */
 		public boolean canCreateTransition_4001(
-				de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container,
+				de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container,
 				de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex target) {
 			return canExistTransition_4001(container, null, source, target);
@@ -338,7 +338,7 @@ public class RealtimeStatechartBaseItemSemanticEditPolicy extends
 		 * @generated
 		 */
 		public boolean canExistTransition_4001(
-				de.uni_paderborn.fujaba.umlrt.model.core.AbstractStatechart container,
+				de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container,
 				de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex target) {
