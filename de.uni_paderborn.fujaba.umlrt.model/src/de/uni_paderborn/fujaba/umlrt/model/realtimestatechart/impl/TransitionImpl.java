@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -27,7 +28,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.Expression;
+import org.storydriven.modeling.expressions.LiteralExpression;
 
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
@@ -41,6 +44,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 
@@ -1125,19 +1129,37 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public String computeSynchroExpr() {
-		String value = "";
-		if(clockResets!=null){
-		java.util.Iterator<Clock> iter = clockResets.iterator();
-		while(iter.hasNext()){
-			Clock clock = iter.next();
-				if(value.equals("")){
-					value = value + clock.getName() + clock.getId() + ":=0";
-				}else{
-					value = value + ", " + clock.getName() + clock.getId() + ":=0";
+				String returnString = "";
+				Synchronization synchro = null;
+				if(getSendSynchronization()!=null){
+					synchro = getSendSynchronization();
+				}else if (getReceiveSynchronization()!=null){
+					synchro = getReceiveSynchronization();
+				}
+						
+				if(synchro!=null){
+					returnString = ((SynchronizationChannel)synchro.getCallee()).getName() + "(";
+							
+					java.util.Iterator<ParameterBinding> iter = synchro.getOwnedParameterBindings().iterator();
+					boolean firstTime = true;
+					while(iter.hasNext()){
+						ParameterBinding tmp = iter.next();
+						String value = ((LiteralExpression)tmp.getValueExpression()).getValue();
+						EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();
+						if(firstTime){
+							firstTime = false;
+							returnString = returnString + value + ":" + type.getName();
+						}else{
+							returnString = returnString + ", " + value + ":" + type.getName();
+							}
+						}
+					if(getReceiveSynchronization()!=null){
+						returnString = returnString + ")?";
+					}else{
+						returnString = returnString + ")!";
 					}
 				}
-			}
-		return value;
+				return returnString;
 	}
 
 	/**
