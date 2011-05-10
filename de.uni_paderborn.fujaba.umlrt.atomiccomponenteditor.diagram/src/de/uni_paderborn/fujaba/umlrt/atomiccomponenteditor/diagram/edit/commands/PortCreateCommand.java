@@ -56,6 +56,9 @@ public class PortCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.umlrt.model.component.Component owner = (de.uni_paderborn.fujaba.umlrt.model.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ElementInitializers
+				.getInstance().init_Port_3001(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

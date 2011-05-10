@@ -66,6 +66,11 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public AtomiccomponentDiagramEditorPlugin() {
 	}
 
@@ -87,6 +92,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory.dispose();
 		adapterFactory = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -248,6 +254,21 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory getAtomiccomponentOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setAtomiccomponentOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**
