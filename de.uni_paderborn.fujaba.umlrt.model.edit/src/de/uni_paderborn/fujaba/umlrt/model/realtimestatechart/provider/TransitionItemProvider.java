@@ -60,7 +60,7 @@ public class TransitionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
@@ -69,31 +69,15 @@ public class TransitionItemProvider
 
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
-//			addStatechartPropertyDescriptor(object);
 			addClockResetsPropertyDescriptor(object);
+			addRelativeDeadlinePropertyDescriptor(object);
 			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
-			
 			addGuardExprPropertyDescriptor(object);
-			
-			//removed expr stuff
-			
-//			addGuardPropertyDescriptor(object);
-			
-//			addEventExprPropertyDescriptor(object);
-//			addSideEffectExprPropertyDescriptor(object);
-//			addClockConstraintExprPropertyDescriptor(object);
-//			addAbsoluteDeadlineExprPropertyDescriptor(object);
-//			addRelativeDeadlineExprPropertyDescriptor(object);
-//			addSynchroExprPropertyDescriptor(object);
-//			addClockResetsExprPropertyDescriptor(object);
-			
-			//own stuff
-			addRelativeDeadlinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
-	
+
 	/**
 	 * This adds a property descriptor for the RelativeDeadline feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -163,28 +147,6 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_statechart_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__STATECHART,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Clock Resets feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,138 +191,6 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Guard feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGuardPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_guard_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guard_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Event Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEventExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_eventExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_eventExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__EVENT_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Transition Action Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTransitionActionExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_transitionActionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_transitionActionExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Clock Constraint Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClockConstraintExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_clockConstraintExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockConstraintExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Absolute Deadline Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbsoluteDeadlineExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_absoluteDeadlineExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_absoluteDeadlineExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Relative Deadline Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRelativeDeadlineExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_relativeDeadlineExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_relativeDeadlineExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Guard Expr feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -374,72 +204,6 @@ public class TransitionItemProvider
 				 getString("_UI_Transition_guardExpr_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guardExpr_feature", "_UI_Transition_type"),
 				 RealtimestatechartPackage.Literals.TRANSITION__GUARD_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Synchro Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSynchroExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_synchroExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_synchroExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Clock Resets Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClockResetsExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_clockResetsExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockResetsExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Safety Transition Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSafetyTransitionExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_safetyTransitionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_safetyTransitionExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR,
 				 true,
 				 false,
 				 false,
