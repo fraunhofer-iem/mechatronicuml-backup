@@ -173,12 +173,7 @@ public class MessageTypeMessageTypeExprEditPart extends CompartmentEditPart
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes
-				.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**

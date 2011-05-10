@@ -22,22 +22,27 @@
     <descriptors
         name="MessageInterfaceFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="MessageInterfaceFigure">
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="MessageInterfaceFigure"
+          cornerWidth="12"
+          cornerHeight="12">
         <layout
             xsi:type="gmfgraph:GridLayout"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="MessageInterfaceNameLabel"
-            text="">
+            name="MessageInterfaceNameLabel">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="10"
+              style="BOLD"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="MICompartmentMessageTypeFigure"
+            name="MessageInterfaceCompartmentMessageType"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -46,9 +51,9 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="GeneralizationFigure">
@@ -82,22 +87,41 @@
   </figures>
   <nodes
       name="MessageInterface"
-      figure="MessageInterfaceFigure"/>
+      figure="MessageInterfaceFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="130"
+          dy="90"/>
+    </facets>
+  </nodes>
   <nodes
       name="MessageType"
-      figure="MessageTypeFigure"/>
+      figure="MessageTypeFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="-1"
+          dy="-1"/>
+    </facets>
+  </nodes>
   <connections
       name="Generalization"
       figure="GeneralizationFigure"/>
   <compartments
       name="MessageTypeCompartment"
       figure="MessageInterfaceFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="MessageTypeExpr"
       figure="MessageTypeFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="MessageInterfaceName"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      figure="MessageInterfaceFigure"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

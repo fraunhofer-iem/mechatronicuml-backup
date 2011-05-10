@@ -139,7 +139,7 @@ public class MessageInterfaceNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public void setLabel(IFigure figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -173,12 +173,7 @@ public class MessageInterfaceNameEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes
-				.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**
@@ -508,7 +503,7 @@ public class MessageInterfaceNameEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
@@ -574,16 +569,8 @@ public class MessageInterfaceNameEditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		IFigure label = createFigurePrim();
-		defaultText = getLabelTextHelper(label);
-		return label;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure createFigurePrim() {
-		return new Label();
+		// Parent should assign one using setLabel() method
+		return null;
 	}
 
 }

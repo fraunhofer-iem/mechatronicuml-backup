@@ -8,8 +8,10 @@ import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -29,7 +31,10 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -117,9 +122,15 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart) {
+			((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureMessageInterfaceNameLabel());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureMICompartmentMessageTypeFigure();
+					.getFigureMessageInterfaceCompartmentMessageType();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -132,9 +143,12 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart) {
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureMICompartmentMessageTypeFigure();
+					.getFigureMessageInterfaceCompartmentMessageType();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -168,7 +182,8 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart) {
-			return getPrimaryShape().getFigureMICompartmentMessageTypeFigure();
+			return getPrimaryShape()
+					.getFigureMessageInterfaceCompartmentMessageType();
 		}
 		return getContentPane();
 	}
@@ -177,7 +192,7 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 90);
 		return result;
 	}
 
@@ -340,17 +355,17 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class MessageInterfaceFigure extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureMICompartmentMessageTypeFigure;
+	public class MessageInterfaceFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureMessageInterfaceNameLabel;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureMessageInterfaceCompartmentMessageType;
 
 		/**
 		 * @generated
@@ -362,6 +377,8 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
 			createContents();
 		}
 
@@ -372,6 +389,9 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 
 			fFigureMessageInterfaceNameLabel = new WrappingLabel();
 			fFigureMessageInterfaceNameLabel.setText("");
+
+			fFigureMessageInterfaceNameLabel
+					.setFont(FFIGUREMESSAGEINTERFACENAMELABEL_FONT);
 
 			GridData constraintFFigureMessageInterfaceNameLabel = new GridData();
 			constraintFFigureMessageInterfaceNameLabel.verticalAlignment = GridData.CENTER;
@@ -384,27 +404,20 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 			this.add(fFigureMessageInterfaceNameLabel,
 					constraintFFigureMessageInterfaceNameLabel);
 
-			fFigureMICompartmentMessageTypeFigure = new RectangleFigure();
-			fFigureMICompartmentMessageTypeFigure.setOutline(false);
+			fFigureMessageInterfaceCompartmentMessageType = new RectangleFigure();
+			fFigureMessageInterfaceCompartmentMessageType.setOutline(false);
 
-			GridData constraintFFigureMICompartmentMessageTypeFigure = new GridData();
-			constraintFFigureMICompartmentMessageTypeFigure.verticalAlignment = GridData.CENTER;
-			constraintFFigureMICompartmentMessageTypeFigure.horizontalAlignment = GridData.FILL;
-			constraintFFigureMICompartmentMessageTypeFigure.horizontalIndent = 0;
-			constraintFFigureMICompartmentMessageTypeFigure.horizontalSpan = 1;
-			constraintFFigureMICompartmentMessageTypeFigure.verticalSpan = 1;
-			constraintFFigureMICompartmentMessageTypeFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureMICompartmentMessageTypeFigure.grabExcessVerticalSpace = false;
-			this.add(fFigureMICompartmentMessageTypeFigure,
-					constraintFFigureMICompartmentMessageTypeFigure);
+			GridData constraintFFigureMessageInterfaceCompartmentMessageType = new GridData();
+			constraintFFigureMessageInterfaceCompartmentMessageType.verticalAlignment = GridData.CENTER;
+			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalAlignment = GridData.FILL;
+			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalIndent = 0;
+			constraintFFigureMessageInterfaceCompartmentMessageType.horizontalSpan = 1;
+			constraintFFigureMessageInterfaceCompartmentMessageType.verticalSpan = 1;
+			constraintFFigureMessageInterfaceCompartmentMessageType.grabExcessHorizontalSpace = true;
+			constraintFFigureMessageInterfaceCompartmentMessageType.grabExcessVerticalSpace = false;
+			this.add(fFigureMessageInterfaceCompartmentMessageType,
+					constraintFFigureMessageInterfaceCompartmentMessageType);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureMICompartmentMessageTypeFigure() {
-			return fFigureMICompartmentMessageTypeFigure;
 		}
 
 		/**
@@ -414,6 +427,20 @@ public class MessageInterfaceEditPart extends ShapeNodeEditPart {
 			return fFigureMessageInterfaceNameLabel;
 		}
 
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureMessageInterfaceCompartmentMessageType() {
+			return fFigureMessageInterfaceCompartmentMessageType;
+		}
+
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREMESSAGEINTERFACENAMELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 10, SWT.BOLD);
 
 }
