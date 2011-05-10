@@ -86,5 +86,10 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 		// Delegation.
 		super.doConfigure(newElement, monitor, info);
 	}
+	
+	@Override
+	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+		return parentComponent;
+	}
 
 }

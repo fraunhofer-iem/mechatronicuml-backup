@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.e
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
@@ -97,6 +98,11 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 		newElement.setFrom(sourceComponentPart);
 		newElement.setTo(targetComponentPart);
 		newElement.setParentComponent(sourceComponentPart.getParentComponent());
+	}
+	
+	@Override
+	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+		return sourceComponentPart.getParentComponent();
 	}
 
 }

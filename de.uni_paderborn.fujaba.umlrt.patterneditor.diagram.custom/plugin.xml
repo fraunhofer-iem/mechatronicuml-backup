@@ -7,7 +7,7 @@
       <editor
          id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorID"
          name="%editorName"
-         icon="icons/PatternDiagram.png"
+         icon="icons/PatternDiagram.gif"
          extensions="pattern_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditor"
@@ -19,7 +19,7 @@
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
   	  <wizard
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	     icon="icons/PatternDiagram.png"
+  	     icon="icons/PatternDiagram.gif"
   	     class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
   	     id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
   	     name="Pattern Diagram">
