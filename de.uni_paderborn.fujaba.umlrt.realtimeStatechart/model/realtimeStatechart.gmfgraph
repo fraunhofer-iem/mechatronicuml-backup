@@ -61,7 +61,7 @@
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="StateNameFigure"
+            name="StateNameLabel"
             text="">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -73,7 +73,7 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="StateCompartmentFigureInvariants"
+            name="StateCompartmentInvariants"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -91,7 +91,7 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="StateCompartmentFigureSynchroChannel"
+            name="StateCompartmentSynchroChannel"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -102,7 +102,7 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="StateCompartmentFigureRegions"
+            name="StateCompartmentRegions"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -113,19 +113,19 @@
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureStateNameFigure"
+          accessor="getFigureStateNameLabel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
-          accessor="getFigureStateCompartmentFigureInvariants"
+          accessor="getFigureStateCompartmentInvariants"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
       <accessors
-          accessor="getFigureStateCompartmentFigureActions"
+          accessor="getFigureStateCompartmentActionsFigure"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
       <accessors
-          accessor="getFigureStateCompartmentFigureSynchoChannel"
+          accessor="getFigureStateCompartmentSynchroChannel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.3"/>
       <accessors
-          accessor="getFigureStateCompartmentFigureRegions"
+          accessor="getFigureStateCompartmentRegions"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.4"/>
     </descriptors>
     <descriptors
@@ -411,8 +411,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="20"
-          dy="20"/>
+          dx="-1"
+          dy="-1"/>
     </facets>
   </nodes>
   <nodes
@@ -422,8 +422,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="20"
-          dy="20"/>
+          dx="-1"
+          dy="-1"/>
     </facets>
   </nodes>
   <nodes
@@ -433,8 +433,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="20"
-          dy="20"/>
+          dx="-1"
+          dy="-1"/>
     </facets>
   </nodes>
   <nodes

@@ -158,7 +158,7 @@ public class EntryActionEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());

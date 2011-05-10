@@ -46,8 +46,8 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEActionLabel.horizontalIndent = 0;&#xA;constraintFFigureEEActionLabel.horizontalSpan = 1;&#xA;constraintFFigureEEActionLabel.verticalSpan = 1;&#xA;constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEActionLabel() {&#xA;&#x9;&#x9;return fFigureEEActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="-1"
+            height="-1"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -98,8 +98,8 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class DoActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureDoActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public DoActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureDoActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureDoActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureDoActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureDoActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureDoActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureDoActionLabel.horizontalIndent = 0;&#xA;constraintFFigureDoActionLabel.horizontalSpan = 1;&#xA;constraintFFigureDoActionLabel.verticalSpan = 1;&#xA;constraintFFigureDoActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureDoActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureDoActionLabel, constraintFFigureDoActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDoActionLabel() {&#xA;&#x9;&#x9;return fFigureDoActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="-1"
+            height="-1"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -150,8 +150,8 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EEActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureEEActionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EEActionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureEEActionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureEEActionLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureEEActionLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureEEActionLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureEEActionLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureEEActionLabel.horizontalIndent = 0;&#xA;constraintFFigureEEActionLabel.horizontalSpan = 1;&#xA;constraintFFigureEEActionLabel.verticalSpan = 1;&#xA;constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureEEActionLabel() {&#xA;&#x9;&#x9;return fFigureEEActionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="-1"
+            height="-1"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -252,8 +252,8 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SynchroChannelFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSynchroChannelLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SynchroChannelFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSynchroChannelLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureSynchroChannelLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSynchroChannelLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSynchroChannelLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSynchroChannelLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureSynchroChannelLabel.horizontalIndent = 0;&#xA;constraintFFigureSynchroChannelLabel.horizontalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.verticalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSynchroChannelLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureSynchroChannelLabel, constraintFFigureSynchroChannelLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSynchroChannelLabel() {&#xA;&#x9;&#x9;return fFigureSynchroChannelLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
+            width="-1"
+            height="-1"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -529,6 +529,7 @@
         visualID="2014"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
@@ -541,7 +542,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="StateFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StateFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStateNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentFigureInvariants; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentFigureActions; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentFigureSynchoChannel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentFigureRegions; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StateFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStateNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStateNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureStateNameFigure.setFont(FFIGURESTATENAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameFigure.horizontalIndent = 0;&#xA;constraintFFigureStateNameFigure.horizontalSpan = 1;&#xA;constraintFFigureStateNameFigure.verticalSpan = 1;&#xA;constraintFFigureStateNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateNameFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateNameFigure, constraintFFigureStateNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentFigureInvariants = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentFigureInvariants.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentFigureInvariants = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentFigureInvariants.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateCompartmentFigureInvariants.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureInvariants.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentFigureInvariants.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureInvariants.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureInvariants.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentFigureInvariants.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateCompartmentFigureInvariants, constraintFFigureStateCompartmentFigureInvariants);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentFigureActions = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentFigureActions.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentFigureActions = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentFigureActions.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateCompartmentFigureActions.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureActions.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentFigureActions.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureActions.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureActions.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentFigureActions.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateCompartmentFigureActions, constraintFFigureStateCompartmentFigureActions);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentFigureSynchoChannel = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentFigureSynchoChannel.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentFigureSynchoChannel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentFigureSynchoChannel.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStateCompartmentFigureSynchoChannel, constraintFFigureStateCompartmentFigureSynchoChannel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentFigureRegions = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentFigureRegions.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentFigureRegions = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentFigureRegions.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureRegions.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentFigureRegions.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentFigureRegions.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureRegions.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentFigureRegions.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentFigureRegions.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStateCompartmentFigureRegions, constraintFFigureStateCompartmentFigureRegions);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStateNameFigure() {&#xA;&#x9;&#x9;return fFigureStateNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentFigureInvariants() {&#xA;&#x9;&#x9;return fFigureStateCompartmentFigureInvariants;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentFigureActions() {&#xA;&#x9;&#x9;return fFigureStateCompartmentFigureActions;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentFigureSynchoChannel() {&#xA;&#x9;&#x9;return fFigureStateCompartmentFigureSynchoChannel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentFigureRegions() {&#xA;&#x9;&#x9;return fFigureStateCompartmentFigureRegions;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATENAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class StateFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureStateNameLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentInvariants; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentActionsFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentSynchroChannel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStateCompartmentRegions; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public StateFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureStateNameLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureStateNameLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateNameLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateNameLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateNameLabel.horizontalIndent = 0;&#xA;constraintFFigureStateNameLabel.horizontalSpan = 1;&#xA;constraintFFigureStateNameLabel.verticalSpan = 1;&#xA;constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentInvariants = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentInvariants.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentInvariants = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentInvariants.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateCompartmentInvariants.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentInvariants.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentInvariants.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentInvariants.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentInvariants.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentInvariants.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateCompartmentInvariants, constraintFFigureStateCompartmentInvariants);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentActionsFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentActionsFigure.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentActionsFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentActionsFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureStateCompartmentActionsFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentActionsFigure.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentActionsFigure.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentActionsFigure.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentActionsFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentActionsFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureStateCompartmentActionsFigure, constraintFFigureStateCompartmentActionsFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentSynchroChannel = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentSynchroChannel.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentSynchroChannel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentSynchroChannel.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentSynchroChannel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentSynchroChannel.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentSynchroChannel.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentSynchroChannel.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentSynchroChannel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentSynchroChannel.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStateCompartmentSynchroChannel, constraintFFigureStateCompartmentSynchroChannel);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureStateCompartmentRegions = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureStateCompartmentRegions.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureStateCompartmentRegions = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureStateCompartmentRegions.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentRegions.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureStateCompartmentRegions.horizontalIndent = 0;&#xA;constraintFFigureStateCompartmentRegions.horizontalSpan = 1;&#xA;constraintFFigureStateCompartmentRegions.verticalSpan = 1;&#xA;constraintFFigureStateCompartmentRegions.grabExcessHorizontalSpace = true;&#xA;constraintFFigureStateCompartmentRegions.grabExcessVerticalSpace = true;&#xA;this.add(fFigureStateCompartmentRegions, constraintFFigureStateCompartmentRegions);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStateNameLabel() {&#xA;&#x9;&#x9;return fFigureStateNameLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentInvariants() {&#xA;&#x9;&#x9;return fFigureStateCompartmentInvariants;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentActionsFigure() {&#xA;&#x9;&#x9;return fFigureStateCompartmentActionsFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentSynchroChannel() {&#xA;&#x9;&#x9;return fFigureStateCompartmentSynchroChannel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStateCompartmentRegions() {&#xA;&#x9;&#x9;return fFigureStateCompartmentRegions;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURESTATENAMELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="130"
@@ -567,12 +568,13 @@
       <labels
           visualID="5018"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureStateNameFigure"
+            getterName="getFigureStateNameLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:StyleAttributes"
@@ -590,6 +592,7 @@
         visualID="2015"
         editPartClassName="InitialStateEditPart"
         itemSemanticEditPolicyClassName="InitialStateItemSemanticEditPolicy"
+        notationViewFactoryClassName="InitialStateViewFactory"
         canonicalEditPolicyClassName="InitialStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InitialStateGraphicalNodeEditPolicy"
         createCommandClassName="InitialStateCreateCommand">
@@ -634,6 +637,7 @@
         visualID="2016"
         editPartClassName="FinalStateEditPart"
         itemSemanticEditPolicyClassName="FinalStateItemSemanticEditPolicy"
+        notationViewFactoryClassName="FinalStateViewFactory"
         canonicalEditPolicyClassName="FinalStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FinalStateGraphicalNodeEditPolicy"
         createCommandClassName="FinalStateCreateCommand">
@@ -677,6 +681,7 @@
         visualID="2017"
         editPartClassName="HistoryStateEditPart"
         itemSemanticEditPolicyClassName="HistoryStateItemSemanticEditPolicy"
+        notationViewFactoryClassName="HistoryStateViewFactory"
         canonicalEditPolicyClassName="HistoryStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HistoryStateGraphicalNodeEditPolicy"
         createCommandClassName="HistoryStateCreateCommand">
@@ -715,6 +720,7 @@
         visualID="2018"
         editPartClassName="ClockEditPart"
         itemSemanticEditPolicyClassName="ClockItemSemanticEditPolicy"
+        notationViewFactoryClassName="ClockViewFactory"
         canonicalEditPolicyClassName="ClockCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ClockGraphicalNodeEditPolicy"
         createCommandClassName="ClockCreateCommand">
@@ -757,7 +763,8 @@
       <labels
           visualID="5019"
           editPartClassName="ClockNameIdEditPart"
-          itemSemanticEditPolicyClassName="ClockNameIdItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ClockNameIdItemSemanticEditPolicy"
+          notationViewFactoryClassName="ClockNameIdViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -778,6 +785,7 @@
         visualID="2019"
         editPartClassName="Transition2EditPart"
         itemSemanticEditPolicyClassName="Transition2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="TransitionViewFactory"
         canonicalEditPolicyClassName="TransitionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.9 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13"
         graphicalNodeEditPolicyClassName="TransitionGraphicalNodeEditPolicy"
@@ -1069,6 +1077,7 @@
         visualID="7005"
         editPartClassName="StateActionsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateActionsCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateActionsCompartmentViewFactory"
         canonicalEditPolicyClassName="StateActionsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         title="ActionsCompartment"
@@ -1079,13 +1088,14 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentFigureActions"
+          getterName="getFigureStateCompartmentActionsFigure"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
         visualID="7006"
         editPartClassName="StateInvariantCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateInvariantCompartmentViewFactory"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="InvariantCompartment"
@@ -1096,13 +1106,14 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentFigureInvariants"
+          getterName="getFigureStateCompartmentInvariants"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
         visualID="7007"
         editPartClassName="StateSynchroChannelsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateSynchroChannelsCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateSynchroChannelsCompartmentViewFactory"
         canonicalEditPolicyClassName="StateSynchroChannelsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4"
         title="SynchroChannelsCompartment"
@@ -1113,13 +1124,14 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentFigureSynchoChannel"
+          getterName="getFigureStateCompartmentSynchroChannel"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
         visualID="7008"
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
@@ -1130,7 +1142,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentFigureRegions"
+          getterName="getFigureStateCompartmentRegions"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <palette>

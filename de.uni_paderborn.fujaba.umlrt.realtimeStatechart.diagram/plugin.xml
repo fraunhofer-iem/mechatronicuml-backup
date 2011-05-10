@@ -248,7 +248,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://statechart">
+      <metamodel nsURI="http://uni_paderborn/fujaba/umlrt/realtimeStatechart">
          <metamodelType
                id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeStatechart_1000"
                name="%metatype.name.RealtimeStatechart_1000"
