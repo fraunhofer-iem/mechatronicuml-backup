@@ -6,8 +6,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PatternDiagram">
     <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern" eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="2" eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/Role"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnectors" upperBound="-1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"

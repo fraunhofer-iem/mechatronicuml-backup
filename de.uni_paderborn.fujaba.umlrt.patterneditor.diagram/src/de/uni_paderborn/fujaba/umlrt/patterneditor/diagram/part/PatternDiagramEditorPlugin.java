@@ -71,6 +71,11 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public PatternDiagramEditorPlugin() {
 	}
 
@@ -93,6 +98,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -269,6 +275,21 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory getPatternOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setPatternOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

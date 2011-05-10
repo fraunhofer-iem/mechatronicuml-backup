@@ -73,7 +73,7 @@ public interface PatternDiagram extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage#getPatternDiagram_Roles()
-	 * @model containment="true"
+	 * @model containment="true" upper="2"
 	 * @generated
 	 */
 	EList<Role> getRoles();

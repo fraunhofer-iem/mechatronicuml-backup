@@ -9,8 +9,12 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
+import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
 
@@ -55,12 +59,37 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected EObject createInitialModel() {
+		CoordinationPattern coordinationPattern = createCoordinationPattern();
+		coordinationPattern.getRoles().add(createRole());
+		coordinationPattern.getRoles().add(createRole());
+		
 		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
-				.createPatternDiagram();
-		CoordinationPattern coordinationPattern = PatternFactory.eINSTANCE
-				.createCoordinationPattern();
+			.createPatternDiagram();
+		
 		patternDiagram.setCoordinationPattern(coordinationPattern);
+		
+		for (Role role : coordinationPattern.getRoles()) {
+			patternDiagram.getRoles().add(role);
+		}
+		
 		return patternDiagram;
+	}
+
+	private Role createRole() {
+		Role role = PatternFactory.eINSTANCE.createRole();
+		Cardinality cardinality = CoreFactory.eINSTANCE.createCardinality();
+		NaturalNumber lowerBound = CoreFactory.eINSTANCE.createNaturalNumber();
+		NaturalNumber upperBound = CoreFactory.eINSTANCE.createNaturalNumber();
+		lowerBound.setValue(1);
+		upperBound.setValue(1);
+		cardinality.setLowerBound(lowerBound);
+		cardinality.setUpperBound(upperBound);
+		role.setCardinality(cardinality);
+		return role;
+	}
+
+	private CoordinationPattern createCoordinationPattern() {
+		return PatternFactory.eINSTANCE.createCoordinationPattern();
 	}
 
 	@Override

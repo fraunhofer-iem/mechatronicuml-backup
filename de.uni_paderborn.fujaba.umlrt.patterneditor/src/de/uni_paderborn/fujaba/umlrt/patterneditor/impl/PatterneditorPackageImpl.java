@@ -233,7 +233,7 @@ public class PatterneditorPackageImpl extends EPackageImpl implements Patternedi
 		// Initialize classes and features; add operations and parameters
 		initEClass(patternDiagramEClass, PatternDiagram.class, "PatternDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPatternDiagram_CoordinationPattern(), thePatternPackage.getCoordinationPattern(), null, "coordinationPattern", null, 0, 1, PatternDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPatternDiagram_Roles(), thePatternPackage.getRole(), null, "roles", null, 0, -1, PatternDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPatternDiagram_Roles(), thePatternPackage.getRole(), null, "roles", null, 0, 2, PatternDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPatternDiagram_RoleConnectors(), thePatternPackage.getRoleConnector(), null, "roleConnectors", null, 0, -1, PatternDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPatternDiagram_TextualConstraints(), theConstraintPackage.getTextualConstraint(), null, "textualConstraints", null, 0, -1, PatternDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

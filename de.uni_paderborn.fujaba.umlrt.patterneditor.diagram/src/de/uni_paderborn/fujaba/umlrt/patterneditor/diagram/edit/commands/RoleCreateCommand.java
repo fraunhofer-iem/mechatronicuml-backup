@@ -41,6 +41,10 @@ public class RoleCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram container = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
+		if (container.getRoles().size() >= 2) {
+			return false;
+		}
 		return true;
 
 	}
@@ -55,6 +59,9 @@ public class RoleCreateCommand extends EditElementCommand {
 
 		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram owner = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
 		owner.getRoles().add(newElement);
+
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.ElementInitializers
+				.getInstance().init_Role_2002(newElement);
 
 		doConfigure(newElement, monitor, info);
 
