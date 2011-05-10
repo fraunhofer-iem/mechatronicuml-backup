@@ -13,9 +13,9 @@
           title="MessageInterface"
           description="Create new MessageInterface">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/MessageInterface.gif"
+            bundle="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

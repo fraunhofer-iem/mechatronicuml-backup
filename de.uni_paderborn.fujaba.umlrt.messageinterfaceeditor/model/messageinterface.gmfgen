@@ -181,6 +181,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="MessageInterface"
             description="Create new MessageInterface"
+            smallIconPath="/de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
