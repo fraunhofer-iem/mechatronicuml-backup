@@ -27,6 +27,7 @@ import org.storydriven.modeling.calls.provider.CallableItemProvider;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel} object.

@@ -21,6 +21,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -65,8 +68,31 @@ public class RootNodeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEcoreDataTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Ecore Data Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEcoreDataTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RootNode_ecoreDataTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RootNode_ecoreDataTypes_feature", "_UI_RootNode_type"),
+				 ModelinstancePackage.Literals.ROOT_NODE__ECORE_DATA_TYPES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -155,6 +181,81 @@ public class RootNodeItemProvider
 			(createChildParameter
 				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
 				 ModelinstanceFactory.eINSTANCE.createRootNode()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEEnum()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEEnumLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEFactory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEObject()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createEGenericType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
+				 EcoreFactory.eINSTANCE.createETypeParameter()));
 	}
 
 	/**

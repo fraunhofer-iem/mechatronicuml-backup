@@ -9,7 +9,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 
-public class CommonCreateAction implements IObjectActionDelegate {
+public class CommonTransitionCreateAction implements IObjectActionDelegate {
 
 	protected Transition selectedTransition = null;
 	

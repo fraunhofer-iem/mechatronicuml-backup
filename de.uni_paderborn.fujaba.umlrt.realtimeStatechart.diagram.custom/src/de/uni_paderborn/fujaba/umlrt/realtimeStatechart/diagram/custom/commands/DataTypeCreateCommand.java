@@ -13,6 +13,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 
 
@@ -64,7 +66,9 @@ public class DataTypeCreateCommand extends EditElementCommand {
 		EDataType newElement = EcoreFactory.eINSTANCE.createEDataType();
 
 		RealtimeStatechart owner = (RealtimeStatechart) getElementToEdit();
-		owner.getDataTypes().add(newElement);
+		RootNode root = (RootNode)owner.eContainer();
+		
+		root.getEcoreDataTypes().add(newElement);
 		
 		newElement.setName(name);
 		newElement.setInstanceTypeName(instanceTypeName);

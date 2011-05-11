@@ -16,12 +16,14 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.RootNodeImpl#getDiagrams <em>Diagrams</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.modelinstance.impl.RootNodeImpl#getEcoreDataTypes <em>Ecore Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +50,16 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 	 * @ordered
 	 */
 	protected EList<EObject> diagrams;
+
+	/**
+	 * The cached value of the '{@link #getEcoreDataTypes() <em>Ecore Data Types</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEcoreDataTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EDataType> ecoreDataTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,6 +97,18 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EDataType> getEcoreDataTypes() {
+		if (ecoreDataTypes == null) {
+			ecoreDataTypes = new EObjectResolvingEList<EDataType>(EDataType.class, this, ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES);
+		}
+		return ecoreDataTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -103,6 +128,8 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 		switch (featureID) {
 			case ModelinstancePackage.ROOT_NODE__DIAGRAMS:
 				return getDiagrams();
+			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
+				return getEcoreDataTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +147,10 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 				getDiagrams().clear();
 				getDiagrams().addAll((Collection<? extends EObject>)newValue);
 				return;
+			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
+				getEcoreDataTypes().clear();
+				getEcoreDataTypes().addAll((Collection<? extends EDataType>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -135,6 +166,9 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 			case ModelinstancePackage.ROOT_NODE__DIAGRAMS:
 				getDiagrams().clear();
 				return;
+			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
+				getEcoreDataTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +183,8 @@ public class RootNodeImpl extends EObjectImpl implements RootNode {
 		switch (featureID) {
 			case ModelinstancePackage.ROOT_NODE__DIAGRAMS:
 				return diagrams != null && !diagrams.isEmpty();
+			case ModelinstancePackage.ROOT_NODE__ECORE_DATA_TYPES:
+				return ecoreDataTypes != null && !ecoreDataTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

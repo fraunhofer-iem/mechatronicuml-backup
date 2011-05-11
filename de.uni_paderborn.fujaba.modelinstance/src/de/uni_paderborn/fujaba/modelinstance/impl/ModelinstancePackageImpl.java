@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -76,6 +77,9 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theModelinstancePackage.createPackageContents();
 
@@ -114,6 +118,15 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRootNode_EcoreDataTypes() {
+		return (EReference)rootNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ModelinstanceFactory getModelinstanceFactory() {
 		return (ModelinstanceFactory)getEFactoryInstance();
 	}
@@ -139,6 +152,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Create classes and their features
 		rootNodeEClass = createEClass(ROOT_NODE);
 		createEReference(rootNodeEClass, ROOT_NODE__DIAGRAMS);
+		createEReference(rootNodeEClass, ROOT_NODE__ECORE_DATA_TYPES);
 	}
 
 	/**
@@ -164,6 +178,9 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -173,6 +190,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Initialize classes and features; add operations and parameters
 		initEClass(rootNodeEClass, RootNode.class, "RootNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRootNode_Diagrams(), ecorePackage.getEObject(), null, "diagrams", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRootNode_EcoreDataTypes(), theEcorePackage.getEDataType(), null, "ecoreDataTypes", null, 0, -1, RootNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -10,6 +10,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -103,6 +104,20 @@ public class FujabaModelNewWizard extends Wizard implements INewWizard {
 					throws ExecutionException {
 
 				domainModelResource.getContents().add(rootNode);
+				
+				//general edata types are created
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEString());
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEInt());
+				//rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEIntegerObject());
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEDouble());
+				//rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEDoubleObject());
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEFloat());
+				//rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEFloatObject());
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEBoolean());
+				//rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getEBooleanObject());
+				rootNode.getEcoreDataTypes().add(EcorePackage.eINSTANCE.getELong());
+				
+				
 				return CommandResult.newOKCommandResult();
 			}
 		};

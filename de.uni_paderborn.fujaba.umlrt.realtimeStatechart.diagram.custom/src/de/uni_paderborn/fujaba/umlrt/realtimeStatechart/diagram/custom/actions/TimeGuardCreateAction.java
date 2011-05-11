@@ -6,7 +6,7 @@ import org.eclipse.jface.action.IAction;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.ClockConstraint2CreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class TimeGuardCreateAction extends CommonCreateAction {
+public class TimeGuardCreateAction extends CommonTransitionCreateAction {
 
 	@Override
 	public void run(IAction action) {

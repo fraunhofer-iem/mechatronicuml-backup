@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 
 /**
  * <!-- begin-user-doc -->

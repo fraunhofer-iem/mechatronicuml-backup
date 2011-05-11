@@ -223,15 +223,6 @@ public interface RealtimeStatechartPackage extends EPackage {
 	int REALTIME_STATECHART__EMBEDDING_REGION = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION;
 
 	/**
-	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__DATA_TYPES = RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__DATA_TYPES;
-
-	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -6,7 +6,7 @@ import org.eclipse.jface.action.IAction;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.ActionCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class TransitionActionCreateAction extends CommonCreateAction {
+public class TransitionActionCreateAction extends CommonTransitionCreateAction {
 	
 	@Override
 	public void run(IAction action) {

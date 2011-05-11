@@ -78,13 +78,22 @@ public interface ModelinstancePackage extends EPackage {
 	int ROOT_NODE__DIAGRAMS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Data Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_NODE__ECORE_DATA_TYPES = 1;
+
+	/**
 	 * The number of structural features of the '<em>Root Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_NODE_FEATURE_COUNT = 1;
+	int ROOT_NODE_FEATURE_COUNT = 2;
 
 
 	/**
@@ -107,6 +116,17 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRootNode_Diagrams();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.modelinstance.RootNode#getEcoreDataTypes <em>Ecore Data Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Ecore Data Types</em>'.
+	 * @see de.uni_paderborn.fujaba.modelinstance.RootNode#getEcoreDataTypes()
+	 * @see #getRootNode()
+	 * @generated
+	 */
+	EReference getRootNode_EcoreDataTypes();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -147,6 +167,14 @@ public interface ModelinstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT_NODE__DIAGRAMS = eINSTANCE.getRootNode_Diagrams();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Data Types</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT_NODE__ECORE_DATA_TYPES = eINSTANCE.getRootNode_EcoreDataTypes();
 
 	}
 

@@ -30,6 +30,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.ParameterCreateCommand;
@@ -257,8 +258,7 @@ public class ModifyParameterPage extends WizardPage{
 	private EDataType getSelectedDataType(){
 	      
 		String dataTypeString = parameterTypeCombo.getItem(parameterTypeCombo.getSelectionIndex());
-		Iterator<EDataType> iter = ((ModifyParameterWizard)getWizard()).
-	  		getRealtimeStatechart().getDataTypes().iterator();
+		Iterator<EDataType> iter = getDataTypes().iterator();
 		while(iter.hasNext()){
 			EDataType tmp = iter.next();
 			if(tmp.getName().equals(dataTypeString)){
@@ -272,7 +272,9 @@ public class ModifyParameterPage extends WizardPage{
 		
 		FujabaRealtimeStatechart statechart = ((ModifyParameterWizard)getWizard()).getRealtimeStatechart();
 
-		return statechart.getTopLevelDataTypes();
+		RootNode root = (RootNode)statechart.eContainer();
+		
+		return root.getEcoreDataTypes();
 	}
 	
 	private String getFullParameterName(EParameter parameter){

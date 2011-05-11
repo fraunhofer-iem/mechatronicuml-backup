@@ -446,8 +446,6 @@
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
-                <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/dataTypes"/>
-                <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/getTopLevelDataTypes"/>
               </genClasses>
               <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart"
                   disposableProviderFactory="true" ecorePackage="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper">

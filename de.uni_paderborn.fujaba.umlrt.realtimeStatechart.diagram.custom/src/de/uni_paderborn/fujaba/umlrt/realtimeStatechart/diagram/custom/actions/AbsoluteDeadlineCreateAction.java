@@ -6,7 +6,7 @@ import org.eclipse.jface.action.IAction;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.AbsoluteDeadlineCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class AbsoluteDeadlineCreateAction extends CommonCreateAction {
+public class AbsoluteDeadlineCreateAction extends CommonTransitionCreateAction {
 
 	@Override
 	public void run(IAction action) {

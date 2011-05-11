@@ -7,7 +7,7 @@ import org.eclipse.jface.action.IAction;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands.AsynchronousEvent2CreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class TriggerEventCreateAction extends CommonCreateAction {
+public class TriggerEventCreateAction extends CommonTransitionCreateAction {
 
 
 	@Override

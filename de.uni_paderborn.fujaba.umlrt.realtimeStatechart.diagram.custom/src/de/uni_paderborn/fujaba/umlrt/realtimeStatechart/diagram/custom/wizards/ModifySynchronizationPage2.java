@@ -30,6 +30,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.SynchronizationCreateCommand;
@@ -160,9 +161,9 @@ public class ModifySynchronizationPage2 extends WizardPage{
 	
 	public Object[] getParameters(Object object)
 	{
-        if (object instanceof SynchronizationChannel)
+        if (object instanceof MessageType)
         {
-        	SynchronizationChannel syncChannel = (SynchronizationChannel)object;
+        	MessageType syncChannel = (MessageType)object;
         	ArrayList<String> list = new ArrayList<String>();
         	
         	if(syncChannel.getContainedParameters()!=null){

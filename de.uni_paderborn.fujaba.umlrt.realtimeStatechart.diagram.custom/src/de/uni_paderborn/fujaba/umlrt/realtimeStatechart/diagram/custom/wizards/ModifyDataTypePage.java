@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -27,6 +28,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.DataTypeCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
@@ -185,8 +188,7 @@ public class ModifyDataTypePage extends WizardPage{
 
 	    		  if(obj != null){
 	    			  
-	    			  Iterator<EDataType> iter = ((ModifyDataTypeWizard)getWizard()).
-	    			  	getRealtimeStatechart().getDataTypes().iterator();
+	    			  Iterator<EDataType> iter = getDataTypes().iterator();
 	    			  while(iter.hasNext()){
 	    				  EDataType tmp = iter.next();
 	    				  if(getFullDataType(tmp).equals(obj.toString())){
@@ -203,11 +205,10 @@ public class ModifyDataTypePage extends WizardPage{
 	{
 		if (object instanceof RealtimeStatechart)
 		{
-			RealtimeStatechart realtimeStatechart = (RealtimeStatechart)object;
 			ArrayList<String> list = new ArrayList<String>();
 	        	
-			if(realtimeStatechart.getDataTypes()!=null){
-				Iterator<EDataType> iter = realtimeStatechart.getDataTypes().iterator();
+			if(getDataTypes()!=null){
+				Iterator<EDataType> iter = getDataTypes().iterator();
 				while(iter.hasNext()){
 	
 					list.add(getFullDataType(iter.next()));
@@ -239,5 +240,14 @@ public class ModifyDataTypePage extends WizardPage{
 	protected void deleteObject(EObject obj){
 		new ICommandProxy(new DestroyElementCommand(
 			new DestroyElementRequest(obj, false))).execute();
+	}
+	
+	private List<EDataType> getDataTypes(){
+		
+		FujabaRealtimeStatechart statechart = ((ModifyParameterWizard)getWizard()).getRealtimeStatechart();
+
+		RootNode root = (RootNode)statechart.eContainer();
+		
+		return root.getEcoreDataTypes();
 	}
 }

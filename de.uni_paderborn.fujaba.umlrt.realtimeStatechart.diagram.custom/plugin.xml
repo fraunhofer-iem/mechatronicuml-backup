@@ -77,14 +77,6 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.RelativeDeadlineCreateAction"
-               enablesFor="1"
-               icon="icons/clock.gif"
-               id="Statechart.CreateRelativeDeadlineID"
-               label="RelativeDeadline"
-               menubarPath="RealtimeStatechart.Insert/group1">
-         </action>
-         <action
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.RaisedEventCreateAction"
                enablesFor="1"
                icon="icons/e_raised16.gif"
