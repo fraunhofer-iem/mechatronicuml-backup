@@ -35,7 +35,6 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 
 /**
  * <!-- begin-user-doc -->

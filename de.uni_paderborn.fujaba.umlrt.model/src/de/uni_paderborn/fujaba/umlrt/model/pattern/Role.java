@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 
 /**
  * <!-- begin-user-doc -->

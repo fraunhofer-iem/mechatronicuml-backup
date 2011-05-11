@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands;
+package de.uni_paderborn.fujaba.umlrt.common.command;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;

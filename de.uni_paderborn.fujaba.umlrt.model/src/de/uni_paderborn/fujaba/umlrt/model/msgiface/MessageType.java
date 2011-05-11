@@ -113,7 +113,7 @@ public interface MessageType extends Callable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"test\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value =\"null\";\r\nboolean firstTime = true;\r\nif(name!=null) {\r\nvalue = name ;\r\nif(containedParameters!=null){\r\n\tvalue = value+\"(\";\r\n\tjava.util.Iterator<EParameter> iter = containedParameters.iterator();\r\n\twhile(iter.hasNext()){\r\n\t\tEParameter tmp = iter.next();\r\n\t\tif(tmp.getName()!=null && tmp.getEType()!=null && \r\n\t\t\ttmp.getEType().getInstanceTypeName()!=null){\t\t\t\t\r\n\t\t\t\tif(firstTime){\r\n\t\t\t\t\tfirstTime=false;\r\n\t\t\t\t\tvalue = value + tmp.getName() + \":\" + tmp.getEType().getName();\r\n\t\t\t\t}else{\r\n\t\t\t\t\tvalue = value +\", \"+ tmp.getName() + \":\" + tmp.getEType().getName() ;\r\n\t\t\t\t}\t\r\n\t\t\t}\r\n\t\t}\r\n\tvalue = value + \")\";\r\n\t}else{\r\n\t\tvalue = value+\"()\";\r\n\t}\r\n}\r\nreturn value;'"
 	 * @generated
 	 */
 	String toMyString();

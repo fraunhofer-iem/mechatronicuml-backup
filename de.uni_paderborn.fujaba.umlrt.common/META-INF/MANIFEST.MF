@@ -5,6 +5,7 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.common
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.umlrt.common.action,
+ de.uni_paderborn.fujaba.umlrt.common.command,
  de.uni_paderborn.fujaba.umlrt.common.edit.parts,
  de.uni_paderborn.fujaba.umlrt.common.figures,
  de.uni_paderborn.fujaba.umlrt.common.sheet,

@@ -56,7 +56,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.MessageType;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
