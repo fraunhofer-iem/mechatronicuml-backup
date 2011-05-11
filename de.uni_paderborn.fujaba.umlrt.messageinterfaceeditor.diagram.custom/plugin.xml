@@ -4,10 +4,11 @@
 
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
   	  <wizard
-  	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-  	       class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
-  	       id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
-  	       name="Message-Interface Diagram">
+           category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+           class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+           icon="icons/MessageInterfaceDiagram.gif"
+           id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+           name="Message-Interface Diagram">
   	     
   	  	 <description>Creates a new Message-Interface Diagram.</description>
       </wizard>
@@ -22,7 +23,7 @@
          icon="icons/MessageInterfaceDiagram.gif"
          extensions="messageinterface_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramEditor"
          matchingStrategy="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceMatchingStrategy"
          contributorClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramActionBarContributor">
       </editor>
@@ -52,5 +53,28 @@
          </propertySection>
       </propertySections>
    </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="false"
+           id="objectContribution.MessageType"
+           objectClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart">
+        <menu
+              id="RealtimeStatechart.ModifyEParameter"
+              label="Custom.Insert"
+              path="additions">
+           <separator
+                 name="group1">
+           </separator>
+        </menu>
+        <action
+              class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.action.ModifyMessageTypeWizardAction"
+              enablesFor="1"
+              id="Statechart.ModifyParameterID"
+              label="Modify Parameters"
+              menubarPath="RealtimeStatechart.ModifyEParameter/group1">
+        </action>
+     </objectContribution>
+  </extension>
 
 </plugin>

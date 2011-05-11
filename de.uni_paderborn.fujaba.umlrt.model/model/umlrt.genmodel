@@ -476,7 +476,7 @@
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/messageInterface"/>
                 <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/name"/>
-                <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/MessageTypeExpr"/>
+                <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/MessageTypeExpr"/>
                 <genOperations ecoreOperation="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/toMyString"/>
               </genClasses>
             </nestedGenPackages>

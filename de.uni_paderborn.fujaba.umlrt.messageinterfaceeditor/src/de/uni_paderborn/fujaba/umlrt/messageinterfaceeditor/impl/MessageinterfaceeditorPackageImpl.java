@@ -26,10 +26,12 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -140,6 +142,15 @@ public class MessageinterfaceeditorPackageImpl extends EPackageImpl implements M
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMessageInterfaceDiagram_Name() {
+		return (EAttribute)messageInterfaceDiagramEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MessageinterfaceeditorFactory getMessageinterfaceeditorFactory() {
 		return (MessageinterfaceeditorFactory)getEFactoryInstance();
 	}
@@ -165,6 +176,7 @@ public class MessageinterfaceeditorPackageImpl extends EPackageImpl implements M
 		// Create classes and their features
 		messageInterfaceDiagramEClass = createEClass(MESSAGE_INTERFACE_DIAGRAM);
 		createEReference(messageInterfaceDiagramEClass, MESSAGE_INTERFACE_DIAGRAM__MESSAGE_INTERFACES);
+		createEAttribute(messageInterfaceDiagramEClass, MESSAGE_INTERFACE_DIAGRAM__NAME);
 	}
 
 	/**
@@ -192,6 +204,7 @@ public class MessageinterfaceeditorPackageImpl extends EPackageImpl implements M
 
 		// Obtain other dependent packages
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -202,6 +215,7 @@ public class MessageinterfaceeditorPackageImpl extends EPackageImpl implements M
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceDiagramEClass, MessageInterfaceDiagram.class, "MessageInterfaceDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageInterfaceDiagram_MessageInterfaces(), theMsgifacePackage.getMessageInterface(), null, "messageInterfaces", null, 0, -1, MessageInterfaceDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageInterfaceDiagram_Name(), theEcorePackage.getEString(), "name", null, 0, 1, MessageInterfaceDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

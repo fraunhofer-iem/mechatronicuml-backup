@@ -29,9 +29,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.calls.provider.CallableItemProvider;
 
 /**
@@ -71,7 +68,6 @@ public class MessageTypeItemProvider
 
 			addMessageInterfacePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addMessageTypeExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,28 +87,6 @@ public class MessageTypeItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageType_name_feature", "_UI_MessageType_type"),
 				 MsgifacePackage.Literals.MESSAGE_TYPE__NAME,
 				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Message Type Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMessageTypeExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MessageType_MessageTypeExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MessageType_MessageTypeExpr_feature", "_UI_MessageType_type"),
-				 MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR,
-				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -157,11 +131,12 @@ public class MessageTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageType)object).getName();
+		String label = ((MessageType)object).getMessageInterface().getName()+ "_"+
+			((MessageType)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_MessageType_type") :
 			getString("_UI_MessageType_type") + " " + label;

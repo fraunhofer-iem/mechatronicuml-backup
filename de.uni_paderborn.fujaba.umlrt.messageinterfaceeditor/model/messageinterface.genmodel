@@ -10,6 +10,7 @@
       disposableProviderFactory="true" ecorePackage="messageinterface.ecore#/">
     <genClasses ecoreClass="messageinterface.ecore#//MessageInterfaceDiagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference messageinterface.ecore#//MessageInterfaceDiagram/messageInterfaces"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute messageinterface.ecore#//MessageInterfaceDiagram/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

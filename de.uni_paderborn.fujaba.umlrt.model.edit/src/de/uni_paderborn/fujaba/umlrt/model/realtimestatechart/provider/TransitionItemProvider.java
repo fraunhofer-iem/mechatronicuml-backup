@@ -288,12 +288,13 @@ public class TransitionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		Transition transition = (Transition)object;
-		return getString("_UI_Transition_type") + " " + transition.getPriority();
+		return getString("_UI_Transition_type") + " " + transition.getSource().getName() +" to " +
+			transition.getTarget().getName();
 	}
 
 	/**

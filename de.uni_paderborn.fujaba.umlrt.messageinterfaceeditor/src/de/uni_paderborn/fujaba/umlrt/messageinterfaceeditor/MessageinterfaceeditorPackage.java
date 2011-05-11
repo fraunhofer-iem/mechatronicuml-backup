@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -78,13 +79,22 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 	int MESSAGE_INTERFACE_DIAGRAM__MESSAGE_INTERFACES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_INTERFACE_DIAGRAM__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Message Interface Diagram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_INTERFACE_DIAGRAM_FEATURE_COUNT = 1;
+	int MESSAGE_INTERFACE_DIAGRAM_FEATURE_COUNT = 2;
 
 
 	/**
@@ -107,6 +117,17 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessageInterfaceDiagram_MessageInterfaces();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram#getName()
+	 * @see #getMessageInterfaceDiagram()
+	 * @generated
+	 */
+	EAttribute getMessageInterfaceDiagram_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -147,6 +168,14 @@ public interface MessageinterfaceeditorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_INTERFACE_DIAGRAM__MESSAGE_INTERFACES = eINSTANCE.getMessageInterfaceDiagram_MessageInterfaces();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_INTERFACE_DIAGRAM__NAME = eINSTANCE.getMessageInterfaceDiagram_Name();
 
 	}
 
