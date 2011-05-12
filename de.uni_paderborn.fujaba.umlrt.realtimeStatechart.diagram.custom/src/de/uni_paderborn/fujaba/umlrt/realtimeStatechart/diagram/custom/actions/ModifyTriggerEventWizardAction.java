@@ -2,22 +2,21 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.wizard.WizardDialog;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyTriggerEventWizard;
 
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifySynchronizationWizard;
-
-public class ModifySynchornizationWizardAction extends CommonModifyOnTransitionWizardAction 
+public class ModifyTriggerEventWizardAction extends CommonModifyOnTransitionWizardAction
 {
-	
+
 	@Override
 	public void run(IAction action) {
-		super.run(action);
+		super.run(action);		
+	  
 		org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag = (org.eclipse.gmf.runtime.notation.impl.DiagramImpl) getEditor().getDiagram();
       
-      ModifySynchronizationWizard wizard = new ModifySynchronizationWizard(diag,selectedTransition);
+      ModifyTriggerEventWizard wizard = new ModifyTriggerEventWizard(diag,selectedTransition);
       wizard.init(workbench, null);
       WizardDialog dialog = new WizardDialog(shell, wizard);
       dialog.create();
       dialog.open();
 	}
-
 }

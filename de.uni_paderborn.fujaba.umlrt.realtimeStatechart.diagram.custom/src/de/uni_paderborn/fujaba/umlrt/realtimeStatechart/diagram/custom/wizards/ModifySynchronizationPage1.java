@@ -244,6 +244,7 @@ public class ModifySynchronizationPage1 extends WizardPage{
 	        			
 	        			if(s.toMyString().equals(obj.toString())){
 	        				((ModifySynchronizationWizard)getWizard()).setSelectedSynchronizationChannel(s);
+	        				break;
 	        			}
 	        		}
 	        	}

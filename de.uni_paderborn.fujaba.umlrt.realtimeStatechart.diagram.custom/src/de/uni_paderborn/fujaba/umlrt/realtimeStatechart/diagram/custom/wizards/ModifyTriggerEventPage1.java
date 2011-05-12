@@ -1,0 +1,293 @@
+package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+
+public class ModifyTriggerEventPage1 extends WizardPage{
+
+	protected ListViewer messageTypeLViewer = null;
+	protected ListViewer existingTriggerEvent = null;
+	
+	boolean isChannelSelected = false;
+ 
+	public ModifyTriggerEventPage1(String pageName)
+	{
+		super(pageName);
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+
+		if (visible)
+    	{
+			setPageComplete(false);
+    	}
+
+    	super.setVisible(visible);
+	}
+
+	@Override
+	public void createControl(Composite parent) {
+		initializeDialogUnits(parent);
+		
+	    Composite main = new Composite(parent, SWT.NONE);
+	    FormLayout layout = new FormLayout();
+	    main.setLayout(layout);
+	    main.setFont(parent.getFont());
+	            
+	    setErrorMessage(null);	      
+	    setMessage(null);
+	    setControl(main);
+	    
+	    FormData parameterNameFormData1 = new FormData();
+	    parameterNameFormData1.left = new FormAttachment(0, 0);
+	    parameterNameFormData1.right = new FormAttachment(40, 0);
+	    parameterNameFormData1.top = new FormAttachment(0, 0);
+	    parameterNameFormData1.bottom = new FormAttachment(10, 0);
+	    Label pNameLabel = new Label(main, SWT.NONE);
+	    pNameLabel.setText("Available message types:\n" +
+	    		"help :- choose via double click");
+	    pNameLabel.setLayoutData(parameterNameFormData1);
+	    
+	    FormData syncChannelLViewerFormData = new FormData();
+	    syncChannelLViewerFormData.left = new FormAttachment(0, 0);
+	    syncChannelLViewerFormData.right = new FormAttachment(40, 0);
+	    syncChannelLViewerFormData.top = new FormAttachment(10, 0);
+	    syncChannelLViewerFormData.bottom = new FormAttachment(80, 0);
+	    Composite syncChannelViewerComposite = new Composite(main, SWT.NONE);
+	    syncChannelViewerComposite.setLayout(new FillLayout());
+	    syncChannelViewerComposite.setLayoutData(syncChannelLViewerFormData);
+	    messageTypeLViewer = new ListViewer(syncChannelViewerComposite);
+	    messageTypeLViewer.setContentProvider(new ParametersContentProvider());
+	    messageTypeLViewer.setInput(((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart());
+	    messageTypeLViewer.addDoubleClickListener(new IDoubleClickListener()
+		{
+		  	public void doubleClick(DoubleClickEvent event)
+		  	{
+		  		setSelectedMessageType();
+		  		
+		  		isChannelSelected=true;
+				setPageComplete(isChannelSelected);
+		  	}
+		  
+		 });
+	    
+	    FormData triggerEventFormData2 = new FormData();
+	    triggerEventFormData2.left = new FormAttachment(0, 0);
+	    triggerEventFormData2.right = new FormAttachment(40, 0);
+	    triggerEventFormData2.top = new FormAttachment(0, 0);
+	    triggerEventFormData2.bottom = new FormAttachment(10, 0);
+	    Label triggerEventLabel = new Label(main, SWT.NONE);
+	    triggerEventLabel.setText("Existing trigger events:\n" +
+	    		"help :- choose via double click");
+	    triggerEventLabel.setLayoutData(triggerEventFormData2);
+	    
+	    FormData triggerEventLViewerFormData = new FormData();
+	    triggerEventLViewerFormData.left = new FormAttachment(50, 0);
+	    triggerEventLViewerFormData.right = new FormAttachment(90, 0);
+	    triggerEventLViewerFormData.top = new FormAttachment(10, 0);
+	    triggerEventLViewerFormData.bottom = new FormAttachment(60, 0);
+	    Composite triggerEventViewerComposite = new Composite(main, SWT.NONE);
+	    triggerEventViewerComposite.setLayout(new FillLayout());
+	    triggerEventViewerComposite.setLayoutData(triggerEventLViewerFormData);
+	    existingTriggerEvent = new ListViewer(triggerEventViewerComposite);
+	    existingTriggerEvent.setContentProvider(new TriggerEventContentProvider());
+	    existingTriggerEvent.setInput(((ModifyTriggerEventWizard)getWizard()).getSelectedTransition());
+	        
+	     FormData deleteButtonFormData = new FormData();
+	     deleteButtonFormData.left = new FormAttachment(60, 0);
+	     deleteButtonFormData.right = new FormAttachment(80, 0);
+	     deleteButtonFormData.top = new FormAttachment(80, 0);
+	     deleteButtonFormData.bottom = new FormAttachment(90, 0);
+	     Button deleteButton = new Button(main, SWT.PUSH);
+	     deleteButton.setText("Delete Synchronization");
+	     deleteButton.addListener(SWT.Selection, new Listener()
+	     {
+	    	 public void handleEvent(Event event)
+	    	 {
+	    		 handleDeleteSynchronizationEvent();
+	    		 existingTriggerEvent.refresh();
+	    	 }
+		});
+	     deleteButton.setLayoutData(deleteButtonFormData);		     
+
+	}  
+	
+	
+	private void handleDeleteSynchronizationEvent(){
+	      
+		ISelection selection = existingTriggerEvent.getSelection();
+
+	      if(selection instanceof IStructuredSelection)
+	      {
+	    	  IStructuredSelection sel = (IStructuredSelection) selection;
+
+	    	  for (Object obj : sel.toList()) {
+
+	    		  if(obj != null){
+	    			  
+	    			  Iterator<AsynchronousEvent> iter = ((ModifyTriggerEventWizard)getWizard()).getSelectedTransition().getTriggerEvents().iterator();
+	    			  while(iter.hasNext()){
+	    				  AsynchronousEvent tmp = iter.next();
+	    				  if(tmp.toMyString().equals(obj.toString())){
+	    					  deleteObject(tmp);
+	    					  break;
+	    				  }
+	    			  }
+	    		  }
+	    	  }
+	      }
+	}
+	
+	
+	public Object[] getParameters(Object object)
+	{
+        if (object instanceof RealtimeStatechart)
+        {
+
+        	FujabaRealtimeStatechart statechart = ((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart();
+        	  
+        	MessageInterface messageInterface = null;
+        	  
+        	if(statechart.getBehavioralElement() instanceof Role){
+        		 
+        		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+        	}else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
+        		 
+        		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+        	}
+        	  
+        	ArrayList<String> list = new ArrayList<String>();
+        	
+        	if(messageInterface!=null){
+        		Iterator<MessageType> iter = messageInterface.getMessageTypes().iterator();
+        		while(iter.hasNext()){
+        			MessageType messageTypeTmp = iter.next();
+        			list.add(messageTypeTmp.toMyString());
+        		}
+        		return list.toArray();
+        	}
+        }
+		
+        return new Object[0];
+	}	
+	
+	class ParametersContentProvider implements IStructuredContentProvider
+	{
+		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
+		
+		public Object[] getElements(Object parent)
+		{
+			return getParameters(parent);
+		}
+			
+		public void dispose(){}
+		   
+	}
+	
+	public Object[] getTriggerEvents(Object object)
+	{
+        if (object instanceof Transition)
+        {
+        	Transition transition = (Transition)object;
+        	
+        	ArrayList<String> list = new ArrayList<String>();
+        	
+        	Iterator<AsynchronousEvent> iter = transition.getTriggerEvents().iterator();
+        	while(iter.hasNext()){
+        		AsynchronousEvent asynchronousEvent = iter.next();
+        		list.add(asynchronousEvent.toMyString());
+        	}
+        	return list.toArray();
+        }
+		
+        return new Object[0];
+	}	
+	
+	class TriggerEventContentProvider implements IStructuredContentProvider
+	{
+		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
+		
+		public Object[] getElements(Object parent)
+		{
+			return getTriggerEvents(parent);
+		}
+			
+		public void dispose(){}
+		   
+	}
+	
+	protected void deleteObject(EObject obj){
+		new ICommandProxy(new DestroyElementCommand(
+			new DestroyElementRequest(obj, false))).execute();
+	}
+	
+	private void setSelectedMessageType(){
+		
+	      ISelection selection = messageTypeLViewer.getSelection();
+
+      	  FujabaRealtimeStatechart statechart = ((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart();
+      	  
+      	  MessageInterface messageInterface = null;
+      	  
+      	  if(statechart.getBehavioralElement() instanceof Role){
+      		 
+      		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+      	  }else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
+      		 
+      		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+      	  }
+      	  
+	      if(selection instanceof IStructuredSelection)
+		  {
+	    	  IStructuredSelection sel = (IStructuredSelection) selection;
+
+	    	  for (Object obj : sel.toList()) {
+	          	
+	    		  if(messageInterface != null){
+	        		Iterator<MessageType> iter = messageInterface.getMessageTypes().iterator();
+	        		while(iter.hasNext()){
+	        			MessageType messageTypeTmp = iter.next();
+	        			
+	        			if(messageTypeTmp.toMyString().equals(obj.toString())){
+	        				((ModifyTriggerEventWizard)getWizard()).setSelectedMessageType(messageTypeTmp);
+	        				break;
+	        			}
+	        		}
+	        	}
+	    	  }
+		  }	
+	}
+}

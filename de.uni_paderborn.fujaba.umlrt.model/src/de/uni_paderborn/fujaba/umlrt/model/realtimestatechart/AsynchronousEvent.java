@@ -136,4 +136,12 @@ public interface AsynchronousEvent extends MethodCallExpression {
 	 */
 	void setFullEventName(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String returnString = \"\";\r\n\r\nreturnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.\r\n\t\tMessageType)this.getCallee()).getName() + \"(\";\r\n\t\t\t\t\t\t\t\r\n\tjava.util.Iterator<ParameterBinding> iter = this.getOwnedParameterBindings().iterator();\r\n\tboolean firstTime = true;\r\n\twhile(iter.hasNext()){\r\n\t\tParameterBinding tmp = iter.next();\r\n\t\tString value = ((LiteralExpression)tmp.getValueExpression()).getValue();\r\n\t\tEDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();\r\n\t\tif(firstTime){\r\n\t\t\tfirstTime = false;\r\n\t\t\treturnString = returnString + value + \":\" + type.getName();\r\n\t\t}else{\r\n\t\t\treturnString = returnString + \", \" + value + \":\" + type.getName();\r\n\t\t}\r\n\t}\r\n\r\nreturn returnString + \")\";;'"
+	 * @generated
+	 */
+	String toMyString();
+
 } // AsynchronousEvent

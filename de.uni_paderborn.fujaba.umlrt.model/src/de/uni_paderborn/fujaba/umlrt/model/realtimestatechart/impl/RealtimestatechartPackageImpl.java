@@ -1125,6 +1125,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAsynchronousEvent__ToMyString() {
+		return asynchronousEventEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDoAction() {
 		return doActionEClass;
 	}
@@ -1472,6 +1481,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(asynchronousEventEClass, ASYNCHRONOUS_EVENT__RAISEDTRANSITION);
 		createEAttribute(asynchronousEventEClass, ASYNCHRONOUS_EVENT__NAME);
 		createEAttribute(asynchronousEventEClass, ASYNCHRONOUS_EVENT__FULL_EVENT_NAME);
+		createEOperation(asynchronousEventEClass, ASYNCHRONOUS_EVENT___TO_MY_STRING);
 
 		doActionEClass = createEClass(DO_ACTION);
 		createEReference(doActionEClass, DO_ACTION__ACTION);
@@ -1686,6 +1696,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getAsynchronousEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, AsynchronousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAsynchronousEvent_FullEventName(), ecorePackage.getEString(), "fullEventName", null, 0, 1, AsynchronousEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getAsynchronousEvent__ToMyString(), theEcorePackage.getEString(), "toMyString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(doActionEClass, DoAction.class, "DoAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDoAction_Action(), this.getAction(), null, "action", null, 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDoAction_DoActionRev(), this.getState(), this.getState_DoAction(), "doActionRev", null, 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1752,7 +1764,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																	
+		   });																																																																		
 	}
 
 	/**
@@ -1810,7 +1822,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "toMyString()"
-		   });																
+		   });																	
 		addAnnotation
 		  (getSynchronizationChannel_SynchroChannelExpr(), 
 		   source, 

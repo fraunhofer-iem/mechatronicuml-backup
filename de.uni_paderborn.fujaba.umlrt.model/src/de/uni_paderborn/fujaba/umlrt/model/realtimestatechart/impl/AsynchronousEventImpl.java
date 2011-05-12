@@ -10,17 +10,22 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.calls.expressions.impl.MethodCallExpressionImpl;
+import org.storydriven.modeling.expressions.LiteralExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -227,6 +232,34 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String toMyString() {
+		String returnString = "";
+		
+		returnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.
+				MessageType)this.getCallee()).getName() + "(";
+									
+			java.util.Iterator<ParameterBinding> iter = this.getOwnedParameterBindings().iterator();
+			boolean firstTime = true;
+			while(iter.hasNext()){
+				ParameterBinding tmp = iter.next();
+				String value = ((LiteralExpression)tmp.getValueExpression()).getValue();
+				EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();
+				if(firstTime){
+					firstTime = false;
+					returnString = returnString + value + ":" + type.getName();
+				}else{
+					returnString = returnString + ", " + value + ":" + type.getName();
+				}
+			}
+		
+		return returnString + ")";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -360,6 +393,20 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 				return FULL_EVENT_NAME_EDEFAULT == null ? fullEventName != null : !FULL_EVENT_NAME_EDEFAULT.equals(fullEventName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT___TO_MY_STRING:
+				return toMyString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

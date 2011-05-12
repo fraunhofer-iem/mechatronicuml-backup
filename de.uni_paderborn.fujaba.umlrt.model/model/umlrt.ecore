@@ -1204,6 +1204,11 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
               </eAnnotations>
+              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="body" value="String returnString = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;returnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.&#xD;&#xA;&#x9;&#x9;MessageType)this.getCallee()).getName() + &quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;java.util.Iterator&lt;ParameterBinding> iter = this.getOwnedParameterBindings().iterator();&#xD;&#xA;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;ParameterBinding tmp = iter.next();&#xD;&#xA;&#x9;&#x9;String value = ((LiteralExpression)tmp.getValueExpression()).getValue();&#xD;&#xA;&#x9;&#x9;EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();&#xD;&#xA;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + &quot;, &quot; + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;return returnString + &quot;)&quot;;"/>
+                </eAnnotations>
+              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredtransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents">

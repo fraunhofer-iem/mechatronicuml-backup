@@ -69,7 +69,7 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.AbsoluteDeadlineCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyAbsoluteDeadlineWizardAction"
                enablesFor="1"
                icon="icons/clock.gif"
                id="Statechart.CreateAbsoluteDeadlineID"
@@ -77,7 +77,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.RaisedEventCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyRaisedEventWizardAction"
                enablesFor="1"
                icon="icons/e_raised16.gif"
                id="Statechart.CreateRaisedEventID"
@@ -85,11 +85,11 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TriggerEventCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTriggerEventWizardAction"
                enablesFor="1"
                icon="icons/e_trigger16.gif"
                id="Statechart.CreateTriggerEventID"
-               label="TriggerEvent"
+               label="ModifyTriggerEvent"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
@@ -101,7 +101,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TransitionActionCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTransitionActionWizardAction"
                enablesFor="1"
                icon="icons/setRefMethod.gif"
                id="Statechart.CreateTransitionActionID"
@@ -109,7 +109,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.TimeGuardCreateAction"
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTimeGuardWizardAction"
                enablesFor="1"
                icon="icons/clock.gif"
                id="Statechart.CreateTimeGuardID"
@@ -139,8 +139,8 @@
       </objectContribution>
       <objectContribution
             adaptable="false"
-            id="objectContribution.RealtimeStatechart"
-            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart">
+            id="objectContribution.Diagram"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
          <menu
                id="RealtimeStatechart.CreateEDataType"
                label="Custom.Insert"
