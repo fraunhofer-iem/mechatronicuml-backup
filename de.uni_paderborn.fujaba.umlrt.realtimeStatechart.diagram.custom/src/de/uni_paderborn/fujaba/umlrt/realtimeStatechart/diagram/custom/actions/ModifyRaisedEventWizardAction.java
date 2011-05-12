@@ -2,7 +2,8 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.wizard.WizardDialog;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyTriggerEventWizard;
+
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyRaisedEventWizard;
 
 public class ModifyRaisedEventWizardAction extends CommonModifyOnTransitionWizardAction
 {
@@ -13,7 +14,7 @@ public class ModifyRaisedEventWizardAction extends CommonModifyOnTransitionWizar
 	  
 		org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag = (org.eclipse.gmf.runtime.notation.impl.DiagramImpl) getEditor().getDiagram();
       
-      ModifyTriggerEventWizard wizard = new ModifyTriggerEventWizard(diag,selectedTransition);
+      ModifyRaisedEventWizard wizard = new ModifyRaisedEventWizard(diag,selectedTransition);
       wizard.init(workbench, null);
       WizardDialog dialog = new WizardDialog(shell, wizard);
       dialog.create();

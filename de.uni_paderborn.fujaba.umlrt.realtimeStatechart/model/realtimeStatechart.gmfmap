@@ -419,7 +419,7 @@
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionEventExpr"/>
       <features
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/eventExpr"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/eventsExpr"/>
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"

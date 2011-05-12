@@ -132,8 +132,6 @@ public class RealtimestatechartSwitch<T> {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
 				if (result == null) result = casePrioritizable(region);
-				if (result == null) result = caseNamedElement(region);
-				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

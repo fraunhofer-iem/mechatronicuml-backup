@@ -40,7 +40,7 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getGuard <em>Guard</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventsExpr <em>Events Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}</li>
@@ -410,31 +410,32 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	void setGuard(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Event Expr</b></em>' attribute.
+	 * Returns the value of the '<em><b>Events Expr</b></em>' attribute.
 	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Event Expr</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Events Expr</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Expr</em>' attribute.
-	 * @see #setEventExpr(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_EventExpr()
-	 * @model default="" derived="true"
+	 * @return the value of the '<em>Events Expr</em>' attribute.
+	 * @see #isSetEventsExpr()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_EventsExpr()
+	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeEventsExpr()\r\n'"
 	 * @generated
 	 */
-	String getEventExpr();
+	String getEventsExpr();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}' attribute.
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventsExpr <em>Events Expr</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Expr</em>' attribute.
-	 * @see #getEventExpr()
+	 * @return whether the value of the '<em>Events Expr</em>' attribute is set.
+	 * @see #getEventsExpr()
 	 * @generated
 	 */
-	void setEventExpr(String value);
+	boolean isSetEventsExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Transition Action Expr</b></em>' attribute.
@@ -682,5 +683,13 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	String computeSynchroExpr();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String triggerString = \"\";\r\n\t\t\t\tString raisedString = \"\";\r\n\t\t\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\tboolean firstTime = true;\r\n\t\t\t\twhile(triggerEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = triggerEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\ttriggerString = triggerString + tmp.toMyString();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\ttriggerString = triggerString + \", \" + tmp.toMyString();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getTriggerEvents().isEmpty()){\r\n\t\t\t\t\ttriggerString = \"{\" + triggerString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\tfirstTime = true;\r\n\t\t\t\twhile(raisedEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = raisedEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\traisedString = raisedString + tmp.toMyString();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\traisedString = raisedString + \", \" + tmp.toMyString();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getRaisedEvents().isEmpty()){\r\n\t\t\t\t\traisedString = \" / {\" + raisedString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\treturn triggerString + raisedString;'"
+	 * @generated
+	 */
+	String computeEventsExpr();
 
 } // Transition

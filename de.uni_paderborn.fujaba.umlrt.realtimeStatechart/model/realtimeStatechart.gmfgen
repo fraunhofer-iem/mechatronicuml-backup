@@ -953,7 +953,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/eventExpr"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/eventsExpr"/>
         </modelFacet>
       </labels>
       <labels

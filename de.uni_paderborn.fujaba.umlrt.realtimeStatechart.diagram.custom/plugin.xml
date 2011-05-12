@@ -80,15 +80,15 @@
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyRaisedEventWizardAction"
                enablesFor="1"
                icon="icons/e_raised16.gif"
-               id="Statechart.CreateRaisedEventID"
-               label="RaisedEvent"
+               id="Statechart.ModifyRaisedEventID"
+               label="ModifyRaisedEvent"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTriggerEventWizardAction"
                enablesFor="1"
                icon="icons/e_trigger16.gif"
-               id="Statechart.CreateTriggerEventID"
+               id="Statechart.ModifyTriggerEventID"
                label="ModifyTriggerEvent"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
@@ -96,7 +96,7 @@
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySynchornizationWizardAction"
                enablesFor="1"
                icon="icons/Syn.gif"
-               id="Statechart.CreateSynchroID"
+               id="Statechart.ModifySynchroID"
                label="ModifySynchronization"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>

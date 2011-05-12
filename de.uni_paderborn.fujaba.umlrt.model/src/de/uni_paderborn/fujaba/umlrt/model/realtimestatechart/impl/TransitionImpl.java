@@ -71,7 +71,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#isSafetyTransition <em>Safety Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getEventExpr <em>Event Expr</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getEventsExpr <em>Events Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getTransitionActionExpr <em>Transition Action Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.TransitionImpl#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}</li>
@@ -267,24 +267,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected Expression guard;
 
 	/**
-	 * The default value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getEventsExpr() <em>Events Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventExpr()
+	 * @see #getEventsExpr()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String EVENT_EXPR_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getEventExpr() <em>Event Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String eventExpr = EVENT_EXPR_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate EVENTS_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTransitionActionExpr() <em>Transition Action Expr</em>}' attribute.
@@ -384,30 +374,29 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected TransitionImpl() {
 		super();
 		
-		// Install a notification adapter that informs the
-		// clockResetExpr-reference, whenever one of the dependent features
-		// was modified
 		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, false);
 		clockResetExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS);
 
-		// Install a notification adapter that informs the
-		// relativeDeadlineExpr-reference, whenever one of the dependent features
-		// was modified
 		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, false);
 		relativeDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 
-		// Install a notification adapter that informs the
-		// absoluteDeadlineExpr-reference, whenever one of the dependent features
-		// was modified
 		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, false);
 		absoluteDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
 		
-		// Install a notification adapter that informs the
-		// safetyTransitionExpr-reference, whenever one of the dependent features
-		// was modified
 		DerivedAttributeAdapter safetyTransitionExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR, false);
 		safetyTransitionExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION);
 
+		DerivedAttributeAdapter safetySynchroExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR, false);
+		safetySynchroExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION);
+
+		DerivedAttributeAdapter safetySynchroExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR, false);
+		safetySynchroExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION);
+	
+		DerivedAttributeAdapter safetyEventExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR, false);
+		safetyEventExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
+	
+		DerivedAttributeAdapter safetyEventExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR, false);
+		safetyEventExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
 	}
 
 	/**
@@ -927,8 +916,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getEventExpr() {
-		return eventExpr;
+	public String getEventsExpr() {
+		return (String)EVENTS_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -936,11 +925,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEventExpr(String newEventExpr) {
-		String oldEventExpr = eventExpr;
-		eventExpr = newEventExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__EVENT_EXPR, oldEventExpr, eventExpr));
+	public boolean isSetEventsExpr() {
+		return EVENTS_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -1167,6 +1153,53 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String computeEventsExpr() {
+		String triggerString = "";
+						String raisedString = "";
+				
+						java.util.Iterator<AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();
+						java.util.Iterator<AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();
+																			
+						boolean firstTime = true;
+						while(triggerEIter.hasNext()){
+							AsynchronousEvent tmp = triggerEIter.next();
+				
+							if(firstTime){
+								firstTime = false;
+								triggerString = triggerString + tmp.toMyString();
+							}else{
+								triggerString = triggerString + ", " + tmp.toMyString();
+							}
+						}
+						if(!getTriggerEvents().isEmpty()){
+							triggerString = "{" + triggerString + "}";
+						}
+						
+						
+						firstTime = true;
+						while(raisedEIter.hasNext()){
+							AsynchronousEvent tmp = raisedEIter.next();
+				
+							if(firstTime){
+								firstTime = false;
+								
+								raisedString = raisedString + tmp.toMyString();
+							}else{
+								raisedString = raisedString + ", " + tmp.toMyString();
+							}
+						}
+						if(!getRaisedEvents().isEmpty()){
+							raisedString = " / {" + raisedString + "}";
+						}
+							
+						return triggerString + raisedString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -1353,8 +1386,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return getGuard();
-			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
-				return getEventExpr();
+			case RealtimestatechartPackage.TRANSITION__EVENTS_EXPR:
+				return getEventsExpr();
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
 				return getTransitionActionExpr();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
@@ -1442,9 +1475,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
-				setEventExpr((String)newValue);
-				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
 				setGuardExpr((String)newValue);
 				return;
@@ -1511,9 +1541,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
-				setEventExpr(EVENT_EXPR_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
 				setGuardExpr(GUARD_EXPR_EDEFAULT);
 				return;
@@ -1563,8 +1590,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return guard != null;
-			case RealtimestatechartPackage.TRANSITION__EVENT_EXPR:
-				return EVENT_EXPR_EDEFAULT == null ? eventExpr != null : !EVENT_EXPR_EDEFAULT.equals(eventExpr);
+			case RealtimestatechartPackage.TRANSITION__EVENTS_EXPR:
+				return isSetEventsExpr();
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
 				return isSetTransitionActionExpr();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
@@ -1682,6 +1709,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return computeClockResetsExpr();
 			case RealtimestatechartPackage.TRANSITION___COMPUTE_SYNCHRO_EXPR:
 				return computeSynchroExpr();
+			case RealtimestatechartPackage.TRANSITION___COMPUTE_EVENTS_EXPR:
+				return computeEventsExpr();
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:
@@ -1708,8 +1737,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		result.append(safetyTransition);
 		result.append(", urgent: ");
 		result.append(urgent);
-		result.append(", eventExpr: ");
-		result.append(eventExpr);
 		result.append(", guardExpr: ");
 		result.append(guardExpr);
 		result.append(')');

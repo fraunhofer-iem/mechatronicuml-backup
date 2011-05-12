@@ -14,19 +14,19 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStat
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class ModifyTriggerEventWizard extends AbstractWizard {
+public class ModifyRaisedEventWizard extends AbstractWizard {
 	
-	private final String MODIFY_TRIGGER_EVENT_WIZARD = "ModifyTriggerEventWizard";
+	private final String MODIFY_RAISED_EVENT_WIZARD = "ModifyRaisedEventWizard";
 
 	private FujabaRealtimeStatechart realtimeStatechart = null;
 
-	private ModifyTriggerEventPage1 triggerEventPage1;
-	private ModifyTriggerEventPage2 triggerEventPage2;
+	private ModifyRaisedEventPage1 raisedEventPage1;
+	private ModifyRaisedEventPage2 raisedEventPage2;
 	
 	private Transition selectedTransition = null;
 	private MessageType selectedMessageType = null;
 
-	public ModifyTriggerEventWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, Transition transition)
+	public ModifyRaisedEventWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, Transition transition)
 	{
 		super();
 		
@@ -34,10 +34,10 @@ public class ModifyTriggerEventWizard extends AbstractWizard {
 		this.setSelectedTransition(transition);
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
-		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_TRIGGER_EVENT_WIZARD);
+		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_RAISED_EVENT_WIZARD);
 		if (section == null)
 		{
-			section = workbenchSettings.addNewSection(this.MODIFY_TRIGGER_EVENT_WIZARD);
+			section = workbenchSettings.addNewSection(this.MODIFY_RAISED_EVENT_WIZARD);
 		}
 		setDialogSettings(section);
 		
@@ -46,11 +46,11 @@ public class ModifyTriggerEventWizard extends AbstractWizard {
 	@Override
 	public void addPages() {
 
-		triggerEventPage1 = new ModifyTriggerEventPage1("Create/Delete a trigger events for selected transition");
-		addPage(triggerEventPage1);
+		raisedEventPage1 = new ModifyRaisedEventPage1("Create/Delete a raised events for selected transition");
+		addPage(raisedEventPage1);
 		
-		triggerEventPage2 = new ModifyTriggerEventPage2("Create/Delete a trigger events for selected transition");
-		addPage(triggerEventPage2);
+		raisedEventPage2 = new ModifyRaisedEventPage2("Create/Delete a raised events for selected transition");
+		addPage(raisedEventPage2);
 		
 	}
 

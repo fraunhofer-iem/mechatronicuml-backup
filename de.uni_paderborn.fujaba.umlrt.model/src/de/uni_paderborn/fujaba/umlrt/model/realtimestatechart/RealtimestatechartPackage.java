@@ -591,40 +591,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PRIORITY = PRIORITIZABLE__PRIORITY;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__ANNOTATION = PRIORITIZABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__EXTENSION = PRIORITIZABLE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__NAME = PRIORITIZABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 3;
+	int REGION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent State</b></em>' container reference.
@@ -633,7 +606,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__PARENT_STATE = PRIORITIZABLE_FEATURE_COUNT + 4;
+	int REGION__PARENT_STATE = PRIORITIZABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Region</em>' class.
@@ -642,178 +615,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECLASS = PRIORITIZABLE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EIS_PROXY = PRIORITIZABLE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ERESOURCE = PRIORITIZABLE_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINER = PRIORITIZABLE_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINING_FEATURE = PRIORITIZABLE_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTAINMENT_FEATURE = PRIORITIZABLE_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECONTENTS = PRIORITIZABLE_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EALL_CONTENTS = PRIORITIZABLE_OPERATION_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ECROSS_REFERENCES = PRIORITIZABLE_OPERATION_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EGET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 9;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN = PRIORITIZABLE_OPERATION_COUNT + 10;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___ESET__ESTRUCTURALFEATURE_OBJECT = PRIORITIZABLE_OPERATION_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EIS_SET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EUNSET__ESTRUCTURALFEATURE = PRIORITIZABLE_OPERATION_COUNT + 13;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___EINVOKE__EOPERATION_ELIST = PRIORITIZABLE_OPERATION_COUNT + 14;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___GET_EXTENSION__ECLASS = PRIORITIZABLE_OPERATION_COUNT + 15;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___PROVIDE_EXTENSION__ECLASS = PRIORITIZABLE_OPERATION_COUNT + 16;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___GET_ANNOTATION__STRING = PRIORITIZABLE_OPERATION_COUNT + 17;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION___PROVIDE_ANNOTATION__STRING = PRIORITIZABLE_OPERATION_COUNT + 18;
+	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -822,7 +624,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 19;
+	int REGION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -2162,13 +1964,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Event Expr</b></em>' attribute.
+	 * The feature id for the '<em><b>Events Expr</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 17;
+	int TRANSITION__EVENTS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Transition Action Expr</b></em>' attribute.
@@ -2450,13 +2252,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION___COMPUTE_SYNCHRO_EXPR = PRIORITIZABLE_OPERATION_COUNT + 21;
 
 	/**
+	 * The operation id for the '<em>Compute Events Expr</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION___COMPUTE_EVENTS_EXPR = PRIORITIZABLE_OPERATION_COUNT + 22;
+
+	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 22;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 23;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -5182,15 +4993,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr <em>Event Expr</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventsExpr <em>Events Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Event Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventExpr()
+	 * @return the meta object for the attribute '<em>Events Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getEventsExpr()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_EventExpr();
+	EAttribute getTransition_EventsExpr();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}'.
@@ -5309,6 +5120,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTransition__ComputeSynchroExpr();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeEventsExpr() <em>Compute Events Expr</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compute Events Expr</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeEventsExpr()
+	 * @generated
+	 */
+	EOperation getTransition__ComputeEventsExpr();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
@@ -6308,12 +6129,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Expr</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Events Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__EVENT_EXPR = eINSTANCE.getTransition_EventExpr();
+		EAttribute TRANSITION__EVENTS_EXPR = eINSTANCE.getTransition_EventsExpr();
 
 		/**
 		 * The meta object literal for the '<em><b>Transition Action Expr</b></em>' attribute feature.
@@ -6402,6 +6223,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TRANSITION___COMPUTE_SYNCHRO_EXPR = eINSTANCE.getTransition__ComputeSynchroExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Compute Events Expr</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRANSITION___COMPUTE_EVENTS_EXPR = eINSTANCE.getTransition__ComputeEventsExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

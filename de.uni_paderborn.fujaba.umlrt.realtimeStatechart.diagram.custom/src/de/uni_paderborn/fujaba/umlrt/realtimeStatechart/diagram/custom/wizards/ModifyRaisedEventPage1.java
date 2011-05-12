@@ -35,12 +35,12 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStat
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 
-public class ModifyTriggerEventPage1 extends WizardPage{
+public class ModifyRaisedEventPage1 extends WizardPage{
 
 	protected ListViewer messageTypeLViewer = null;
-	protected ListViewer existingTriggerEvent = null;
-	
-	public ModifyTriggerEventPage1(String pageName)
+	protected ListViewer existingRaisedEvent = null;
+
+	public ModifyRaisedEventPage1(String pageName)
 	{
 		super(pageName);
 	}
@@ -89,13 +89,13 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	    syncChannelViewerComposite.setLayoutData(syncChannelLViewerFormData);
 	    messageTypeLViewer = new ListViewer(syncChannelViewerComposite);
 	    messageTypeLViewer.setContentProvider(new ParametersContentProvider());
-	    messageTypeLViewer.setInput(((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart());
+	    messageTypeLViewer.setInput(((ModifyRaisedEventWizard)getWizard()).getRealtimeStatechart());
 	    messageTypeLViewer.addDoubleClickListener(new IDoubleClickListener()
 		{
 		  	public void doubleClick(DoubleClickEvent event)
 		  	{
 		  		setSelectedMessageType();
-
+		  		
 				setPageComplete(true);
 		  	}
 		  
@@ -107,7 +107,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	    triggerEventFormData2.top = new FormAttachment(0, 0);
 	    triggerEventFormData2.bottom = new FormAttachment(10, 0);
 	    Label triggerEventLabel = new Label(main, SWT.NONE);
-	    triggerEventLabel.setText("Existing trigger events:\n" +
+	    triggerEventLabel.setText("Existing raised events:\n" +
 	    		"help :- choose via double click");
 	    triggerEventLabel.setLayoutData(triggerEventFormData2);
 	    
@@ -119,9 +119,9 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	    Composite triggerEventViewerComposite = new Composite(main, SWT.NONE);
 	    triggerEventViewerComposite.setLayout(new FillLayout());
 	    triggerEventViewerComposite.setLayoutData(triggerEventLViewerFormData);
-	    existingTriggerEvent = new ListViewer(triggerEventViewerComposite);
-	    existingTriggerEvent.setContentProvider(new TriggerEventContentProvider());
-	    existingTriggerEvent.setInput(((ModifyTriggerEventWizard)getWizard()).getSelectedTransition());
+	    existingRaisedEvent = new ListViewer(triggerEventViewerComposite);
+	    existingRaisedEvent.setContentProvider(new RaisedEventContentProvider());
+	    existingRaisedEvent.setInput(((ModifyRaisedEventWizard)getWizard()).getSelectedTransition());
 	        
 	     FormData deleteButtonFormData = new FormData();
 	     deleteButtonFormData.left = new FormAttachment(60, 0);
@@ -129,13 +129,13 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	     deleteButtonFormData.top = new FormAttachment(80, 0);
 	     deleteButtonFormData.bottom = new FormAttachment(90, 0);
 	     Button deleteButton = new Button(main, SWT.PUSH);
-	     deleteButton.setText("Delete Trigger Event");
+	     deleteButton.setText("Delete Raised Event");
 	     deleteButton.addListener(SWT.Selection, new Listener()
 	     {
 	    	 public void handleEvent(Event event)
 	    	 {
 	    		 handleDeleteSynchronizationEvent();
-	    		 existingTriggerEvent.refresh();
+	    		 existingRaisedEvent.refresh();
 	    	 }
 		});
 	     deleteButton.setLayoutData(deleteButtonFormData);		     
@@ -145,7 +145,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	
 	private void handleDeleteSynchronizationEvent(){
 	      
-		ISelection selection = existingTriggerEvent.getSelection();
+		ISelection selection = existingRaisedEvent.getSelection();
 
 	      if(selection instanceof IStructuredSelection)
 	      {
@@ -155,7 +155,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 
 	    		  if(obj != null){
 	    			  
-	    			  Iterator<AsynchronousEvent> iter = ((ModifyTriggerEventWizard)getWizard()).getSelectedTransition().getTriggerEvents().iterator();
+	    			  Iterator<AsynchronousEvent> iter = ((ModifyRaisedEventWizard)getWizard()).getSelectedTransition().getRaisedEvents().iterator();
 	    			  while(iter.hasNext()){
 	    				  AsynchronousEvent tmp = iter.next();
 	    				  if(tmp.toMyString().equals(obj.toString())){
@@ -174,16 +174,16 @@ public class ModifyTriggerEventPage1 extends WizardPage{
         if (object instanceof RealtimeStatechart)
         {
 
-        	FujabaRealtimeStatechart statechart = ((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart();
+        	FujabaRealtimeStatechart statechart = ((ModifyRaisedEventWizard)getWizard()).getRealtimeStatechart();
         	  
         	MessageInterface messageInterface = null;
         	  
         	if(statechart.getBehavioralElement() instanceof Role){
         		 
-        		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+        		  messageInterface = ((Role)statechart.getBehavioralElement()).getRequired();
         	}else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
         		 
-        		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+        		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getRequiredMessageInterface();
         	}
         	  
         	ArrayList<String> list = new ArrayList<String>();
@@ -214,7 +214,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 		   
 	}
 	
-	public Object[] getTriggerEvents(Object object)
+	public Object[] getRaisedEvents(Object object)
 	{
         if (object instanceof Transition)
         {
@@ -222,7 +222,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
         	
         	ArrayList<String> list = new ArrayList<String>();
         	
-        	Iterator<AsynchronousEvent> iter = transition.getTriggerEvents().iterator();
+        	Iterator<AsynchronousEvent> iter = transition.getRaisedEvents().iterator();
         	while(iter.hasNext()){
         		AsynchronousEvent asynchronousEvent = iter.next();
         		list.add(asynchronousEvent.toMyString());
@@ -233,13 +233,13 @@ public class ModifyTriggerEventPage1 extends WizardPage{
         return new Object[0];
 	}	
 	
-	class TriggerEventContentProvider implements IStructuredContentProvider
+	class RaisedEventContentProvider implements IStructuredContentProvider
 	{
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
 		
 		public Object[] getElements(Object parent)
 		{
-			return getTriggerEvents(parent);
+			return getRaisedEvents(parent);
 		}
 			
 		public void dispose(){}
@@ -255,16 +255,16 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 		
 	      ISelection selection = messageTypeLViewer.getSelection();
 
-      	  FujabaRealtimeStatechart statechart = ((ModifyTriggerEventWizard)getWizard()).getRealtimeStatechart();
+      	  FujabaRealtimeStatechart statechart = ((ModifyRaisedEventWizard)getWizard()).getRealtimeStatechart();
       	  
       	  MessageInterface messageInterface = null;
       	  
       	  if(statechart.getBehavioralElement() instanceof Role){
       		 
-      		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+      		  messageInterface = ((Role)statechart.getBehavioralElement()).getRequired();
       	  }else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
       		 
-      		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+      		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getRequiredMessageInterface();
       	  }
       	  
 	      if(selection instanceof IStructuredSelection)
@@ -279,7 +279,7 @@ public class ModifyTriggerEventPage1 extends WizardPage{
 	        			MessageType messageTypeTmp = iter.next();
 	        			
 	        			if(messageTypeTmp.toMyString().equals(obj.toString())){
-	        				((ModifyTriggerEventWizard)getWizard()).setSelectedMessageType(messageTypeTmp);
+	        				((ModifyRaisedEventWizard)getWizard()).setSelectedMessageType(messageTypeTmp);
 	        				break;
 	        			}
 	        		}
