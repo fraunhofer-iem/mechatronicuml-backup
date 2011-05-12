@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.modeling.expressions.ComparingOperator;
 import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
@@ -61,20 +60,16 @@ public class ClockConstraintItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBoundPropertyDescriptor(object);
 			addClockPropertyDescriptor(object);
 			addOperatorPropertyDescriptor(object);
-			
-			//addClockConstraintExprPropertyDescriptor(object);
-			
-			//my stuff
-			addNaturalNumberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,7 +80,7 @@ public class ClockConstraintItemProvider
 	 * 
 	 * @generated NOT
 	 */
-	protected void addNaturalNumberPropertyDescriptor(Object object) {
+	protected void addBoundPropertyDescriptor(Object object) {
 
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
@@ -132,28 +127,6 @@ public class ClockConstraintItemProvider
 				 getString("_UI_ClockConstraint_operator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_operator_feature", "_UI_ClockConstraint_type"),
 				 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Clock Constraint Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClockConstraintExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ClockConstraint_clockConstraintExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_clockConstraintExpr_feature", "_UI_ClockConstraint_type"),
-				 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR,
 				 true,
 				 false,
 				 false,

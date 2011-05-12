@@ -108,6 +108,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart describing the communication behavior of this role.
+	 * there is already a reference called realtimeStatechart, it is inhered from BehaviorElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
 	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
