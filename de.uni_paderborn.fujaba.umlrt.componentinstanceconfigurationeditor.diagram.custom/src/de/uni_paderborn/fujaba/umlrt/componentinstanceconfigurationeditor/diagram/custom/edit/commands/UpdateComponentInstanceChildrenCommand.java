@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
@@ -50,12 +51,20 @@ public class UpdateComponentInstanceChildrenCommand extends AbstractCommand {
 		
 		// Destroy all PortInstances
 		c = new CompoundCommand();
-		for (PortInstance portInstances: componentInstance.getPortInstances()) {
+		for (PortInstance portInstances : componentInstance.getPortInstances()) {
+			for (ConnectorInstance connectorInstance : portInstances.getIncomingConnectorInstances()) {
+				c.add(new ICommandProxy(new DestroyElementCommand(
+						new DestroyElementRequest(connectorInstance, false))));
+			}
+			for (ConnectorInstance connectorInstance : portInstances.getOutgoingConnectorInstances()) {
+				c.add(new ICommandProxy(new DestroyElementCommand(
+						new DestroyElementRequest(connectorInstance, false))));
+			}
 			c.add(new ICommandProxy(new DestroyElementCommand(
 					new DestroyElementRequest(portInstances, false))));
 		}
 		c.execute();
-		
+
 		// Initialize top level component instance.
 		componentInstance.setName(componentInstance.getComponentNameDerived());
 		if (componentInstance.getComponentType() != null) {
@@ -107,7 +116,12 @@ public class UpdateComponentInstanceChildrenCommand extends AbstractCommand {
 						.createPortInstance();
 				newPortInstance.setPortType(port);
 				newPortInstance.setComponentInstance(instance);
+				
+
 			}
+			//FIXME
+			// instantiate connectorInstances for each PortType
+			// (but there can be multiple PortInstances per PortType!!)
 		}
 	}
 

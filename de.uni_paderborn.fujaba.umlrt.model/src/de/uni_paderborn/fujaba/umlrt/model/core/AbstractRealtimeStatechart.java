@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *
  * <!-- begin-model-doc -->
  * This class represents a realtime statechart.
+ * TODO-SD: All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling.
  * <!-- end-model-doc -->
  *
  * <p>

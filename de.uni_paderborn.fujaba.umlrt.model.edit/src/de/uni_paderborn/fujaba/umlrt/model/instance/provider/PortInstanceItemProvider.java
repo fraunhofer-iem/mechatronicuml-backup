@@ -73,6 +73,8 @@ public class PortInstanceItemProvider
 			addPortTypePropertyDescriptor(object);
 			addRequiredMessageInterfacePropertyDescriptor(object);
 			addProvidedMessageInterfacePropertyDescriptor(object);
+			addIncomingConnectorInstancesPropertyDescriptor(object);
+			addOutgoingConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +162,50 @@ public class PortInstanceItemProvider
 				 false,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Connector Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingConnectorInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_incomingConnectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_incomingConnectorInstances_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outgoing Connector Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutgoingConnectorInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_outgoingConnectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_outgoingConnectorInstances_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

@@ -241,6 +241,10 @@
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/requiredMessageInterface"/>
                 <genFeatures property="Readonly" notify="false" createChild="false"
                     ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/providedMessageInterface"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/incomingConnectorInstances"/>
+                <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                    ecoreFeature="ecore:EReference umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/outgoingConnectorInstances"/>
               </genClasses>
               <genClasses ecoreClass="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/instance/AssemblyInstance">
                 <genFeatures notify="false" createChild="false" propertySortChoices="true"

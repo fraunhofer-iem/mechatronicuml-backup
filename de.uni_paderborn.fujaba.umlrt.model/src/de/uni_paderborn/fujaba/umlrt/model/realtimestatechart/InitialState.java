@@ -59,6 +59,7 @@ public interface InitialState extends Vertex {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads.
+	 * TODO-SD: Delete?
 	 * <!-- end-model-doc -->
 	 * @model kind="operation"
 	 * @generated

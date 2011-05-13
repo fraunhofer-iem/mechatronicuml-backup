@@ -59,6 +59,9 @@ public interface RelativeDeadline extends Deadline {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO-SD: Delete?
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null) {\r\nreturn \"[\" + lowerBound+\",\"+ upperBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
 	 * @generated
 	 */

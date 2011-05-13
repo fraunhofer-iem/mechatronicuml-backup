@@ -673,9 +673,11 @@
                 <details key="documentation" value="This one connects two ports of two component instances."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/outgoingConnectorInstances"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/incomingConnectorInstances"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponentInstance"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
@@ -700,6 +702,12 @@
                   <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.providedMessageInterface&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/target"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/source"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
               <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"

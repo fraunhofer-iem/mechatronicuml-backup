@@ -35,6 +35,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 public interface ConnectorInstance extends BehavioralConnector {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear,
@@ -44,7 +45,8 @@ public interface ConnectorInstance extends BehavioralConnector {
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(PortInstance)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_Source()
-	 * @model required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getOutgoingConnectorInstances
+	 * @model opposite="outgoingConnectorInstances" required="true"
 	 * @generated
 	 */
 	PortInstance getSource();
@@ -61,6 +63,7 @@ public interface ConnectorInstance extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference isn't clear,
@@ -70,7 +73,8 @@ public interface ConnectorInstance extends BehavioralConnector {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(PortInstance)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getConnectorInstance_Target()
-	 * @model required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getIncomingConnectorInstances
+	 * @model opposite="incomingConnectorInstances" required="true"
 	 * @generated
 	 */
 	PortInstance getTarget();

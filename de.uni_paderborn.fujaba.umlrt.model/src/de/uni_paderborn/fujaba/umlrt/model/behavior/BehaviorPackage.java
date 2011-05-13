@@ -25,6 +25,9 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * TODO-SD: Delete?
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorFactory
  * @model kind="package"
  * @generated

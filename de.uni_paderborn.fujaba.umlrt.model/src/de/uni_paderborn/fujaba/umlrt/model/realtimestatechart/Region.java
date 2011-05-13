@@ -26,7 +26,7 @@ import org.storydriven.modeling.NamedElement;
  * @model
  * @generated
  */
-public interface Region extends Prioritizable {
+public interface Region extends Prioritizable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.

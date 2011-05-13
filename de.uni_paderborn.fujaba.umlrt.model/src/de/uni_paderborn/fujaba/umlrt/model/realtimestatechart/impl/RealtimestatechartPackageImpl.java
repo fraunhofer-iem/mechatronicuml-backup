@@ -1576,6 +1576,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		relativeDeadlineEClass.getESuperTypes().add(this.getDeadline());
 		clockEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		regionEClass.getESuperTypes().add(this.getPrioritizable());
+		regionEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		stateEClass.getESuperTypes().add(this.getVertex());
 		initialStateEClass.getESuperTypes().add(this.getVertex());
 		finalStateEClass.getESuperTypes().add(this.getVertex());

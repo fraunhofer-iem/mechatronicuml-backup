@@ -123,11 +123,33 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSource(PortInstance newSource) {
+	public NotificationChain basicSetSource(PortInstance newSource, NotificationChain msgs) {
 		PortInstance oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__SOURCE, oldSource, source));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(PortInstance newSource) {
+		if (newSource != source) {
+			NotificationChain msgs = null;
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+			msgs = basicSetSource(newSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -161,11 +183,33 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(PortInstance newTarget) {
+	public NotificationChain basicSetTarget(PortInstance newTarget, NotificationChain msgs) {
 		PortInstance oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__TARGET, oldTarget, target));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(PortInstance newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -218,6 +262,14 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
+				if (source != null)
+					msgs = ((InternalEObject)source).eInverseRemove(this, InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+				return basicSetSource((PortInstance)otherEnd, msgs);
+			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
+				return basicSetTarget((PortInstance)otherEnd, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -234,6 +286,10 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case InstancePackage.CONNECTOR_INSTANCE__SOURCE:
+				return basicSetSource(null, msgs);
+			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
+				return basicSetTarget(null, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				return basicSetParentComponentInstance(null, msgs);
 		}

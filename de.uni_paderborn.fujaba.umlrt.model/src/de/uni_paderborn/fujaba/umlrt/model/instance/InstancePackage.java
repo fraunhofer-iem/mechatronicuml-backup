@@ -502,13 +502,31 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1039,6 +1057,28 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_ProvidedMessageInterface();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incoming Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getIncomingConnectorInstances()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_IncomingConnectorInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outgoing Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getOutgoingConnectorInstances()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_OutgoingConnectorInstances();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1247,6 +1287,22 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_ProvidedMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Connector Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_IncomingConnectorInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Connector Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_OutgoingConnectorInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <!-- begin-model-doc -->
  * This class represents either a natural number or infinity.
+ * TODO-SD: Do we really need that class?
  * <!-- end-model-doc -->
  *
  * <p>

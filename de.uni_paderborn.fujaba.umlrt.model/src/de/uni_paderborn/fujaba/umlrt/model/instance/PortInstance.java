@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.instance;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
@@ -24,6 +25,8 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,5 +120,41 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	MessageInterface getProvidedMessageInterface();
+
+	/**
+	 * Returns the value of the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming Connector Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming Connector Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_IncomingConnectorInstances()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getTarget
+	 * @model opposite="target"
+	 * @generated
+	 */
+	EList<ConnectorInstance> getIncomingConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Connector Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Connector Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_OutgoingConnectorInstances()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance#getSource
+	 * @model opposite="source"
+	 * @generated
+	 */
+	EList<ConnectorInstance> getOutgoingConnectorInstances();
 
 } // PortInstance

@@ -11,20 +11,25 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 
@@ -42,6 +47,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,6 +104,26 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getIncomingConnectorInstances() <em>Incoming Connector Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingConnectorInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorInstance> incomingConnectorInstances;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingConnectorInstances() <em>Outgoing Connector Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingConnectorInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorInstance> outgoingConnectorInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,6 +309,31 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ConnectorInstance> getIncomingConnectorInstances() {
+		if (incomingConnectorInstances == null) {
+			incomingConnectorInstances = new EObjectWithInverseResolvingEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, InstancePackage.CONNECTOR_INSTANCE__TARGET);
+		}
+		return incomingConnectorInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConnectorInstance> getOutgoingConnectorInstances() {
+		if (outgoingConnectorInstances == null) {
+			outgoingConnectorInstances = new EObjectWithInverseResolvingEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES, InstancePackage.CONNECTOR_INSTANCE__SOURCE);
+		}
+		return outgoingConnectorInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -289,6 +341,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponentInstance((ComponentInstance)otherEnd, msgs);
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectorInstances()).basicAdd(otherEnd, msgs);
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingConnectorInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -303,6 +359,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return basicSetComponentInstance(null, msgs);
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				return ((InternalEList<?>)getIncomingConnectorInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				return ((InternalEList<?>)getOutgoingConnectorInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -342,6 +402,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE:
 				if (resolve) return getProvidedMessageInterface();
 				return basicGetProvidedMessageInterface();
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				return getIncomingConnectorInstances();
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				return getOutgoingConnectorInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -351,6 +415,7 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -362,6 +427,14 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				setComponentInstance((ComponentInstance)newValue);
+				return;
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				getIncomingConnectorInstances().clear();
+				getIncomingConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
+				return;
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				getOutgoingConnectorInstances().clear();
+				getOutgoingConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -383,6 +456,12 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				setComponentInstance((ComponentInstance)null);
+				return;
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				getIncomingConnectorInstances().clear();
+				return;
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				getOutgoingConnectorInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -406,6 +485,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE:
 				return PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
+				return incomingConnectorInstances != null && !incomingConnectorInstances.isEmpty();
+			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
+				return outgoingConnectorInstances != null && !outgoingConnectorInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
