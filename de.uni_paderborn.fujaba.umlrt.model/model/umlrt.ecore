@@ -10,13 +10,16 @@
             nsPrefix="model">
           <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
               nsPrefix="behavior">
+            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+              <details key="documentation" value="TODO-SD: Delete?"/>
+            </eAnnotations>
             <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the statechart of a port. The statechart describes the communication behavior of the port.&#xD;&#xA;TODO: Delete?"/>
+                <details key="documentation" value="This class represents the statechart of a port. The statechart describes the communication behavior of the port.&#xD;&#xA;TODO-SD: Delete?"/>
               </eAnnotations>
               <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart.&#xD;&#xA;TODO: Delete?"/>
+                  <details key="documentation" value="After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart.&#xD;&#xA;TODO-SD: Delete?"/>
                 </eAnnotations>
                 <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"/>
               </eOperations>
@@ -427,7 +430,7 @@
               nsPrefix="core">
             <eClassifiers xsi:type="ecore:EClass" name="NaturalNumber">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents either a natural number or infinity."/>
+                <details key="documentation" value="This class represents either a natural number or infinity.&#xD;&#xA;TODO-SD: Do we really need that class?"/>
               </eAnnotations>
               <eOperations name="getValueAsObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -539,7 +542,7 @@
             <eClassifiers xsi:type="ecore:EClass" name="AbstractRealtimeStatechart"
                 abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents a realtime statechart."/>
+                <details key="documentation" value="This class represents a realtime statechart.&#xD;&#xA;TODO-SD: All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling."/>
               </eAnnotations>
               <eOperations name="getHighestParentStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -810,6 +813,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="return null;"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
@@ -824,6 +828,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null &amp;&amp; clock!=null) {&#xD;&#xA;return clock.getName()+clock.getId() + &quot;in [&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
@@ -840,6 +845,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null) {&#xD;&#xA;return &quot;[&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
@@ -852,7 +858,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="if(name!=null &amp;&amp; id!=null) {&#xD;&#xA;return name+&quot;_&quot;+id ;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
-                  <details key="documentation" value="TODO: Delete?"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -869,7 +875,7 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable">
+            <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="parentState"
@@ -933,7 +939,7 @@
               </eAnnotations>
               <eOperations name="getNextState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads."/>
+                  <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads.&#xD;&#xA;TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="startStateRev"
@@ -1152,6 +1158,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="&#x9;&#x9;if(clock!=null &amp;&amp; operator!=null &amp;&amp; bound!=null) {&#xD;&#xA;&#x9;&#x9;&#x9;return clock.getName()+clock.getId() +&quot; &quot;+ operator.toString() +&quot; &quot; + bound.getValue();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;null&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
@@ -1217,6 +1224,7 @@
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="String returnString = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;returnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.&#xD;&#xA;&#x9;&#x9;MessageType)this.getCallee()).getName() + &quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;java.util.Iterator&lt;ParameterBinding> iter = this.getOwnedParameterBindings().iterator();&#xD;&#xA;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;ParameterBinding tmp = iter.next();&#xD;&#xA;&#x9;&#x9;String value = ((LiteralExpression)tmp.getValueExpression()).getValue();&#xD;&#xA;&#x9;&#x9;EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();&#xD;&#xA;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + &quot;, &quot; + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;return returnString + &quot;)&quot;;"/>
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredtransition"
