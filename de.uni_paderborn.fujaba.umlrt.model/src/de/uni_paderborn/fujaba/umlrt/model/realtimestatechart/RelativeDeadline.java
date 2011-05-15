@@ -62,7 +62,7 @@ public interface RelativeDeadline extends Deadline {
 	 * <!-- begin-model-doc -->
 	 * TODO-SD: Delete?
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null) {\r\nreturn \"[\" + lowerBound+\",\"+ upperBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if( (upperBound!=null && lowerBound!=null)) {\r\n\tif(upperBound.getValue()==0 && lowerBound.getValue()==0){\r\n\t\treturn \"\";\r\n\t}else if(upperBound.getValue()<lowerBound.getValue()){\r\n\t\treturn \"invalid bounds\";\r\n\t}\r\n\treturn \"[\" + lowerBound+\",\"+ upperBound +\"]\";\r\n}else{\r\n\treturn \"\";\r\n}'"
 	 * @generated
 	 */
 	String toMyString();
