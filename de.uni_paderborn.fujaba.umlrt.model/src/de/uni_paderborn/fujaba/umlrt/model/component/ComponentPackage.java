@@ -800,31 +800,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>From Port To Connector Rev</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__FROM_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>To Port To Connector Rev</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__TO_PORT_TO_CONNECTOR_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
@@ -833,7 +815,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
@@ -842,7 +824,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -851,7 +833,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -860,7 +842,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -869,7 +860,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2716,28 +2707,6 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Cardinality();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From Port To Connector Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_FromPortToConnectorRev();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>To Port To Connector Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_ToPortToConnectorRev();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2791,6 +2760,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_OutgoingConnectors();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_AdaptationRealtimeStatechart();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#createInstance() <em>Create Instance</em>}' operation.
@@ -3370,22 +3350,6 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__CARDINALITY = eINSTANCE.getPort_Cardinality();
 
 		/**
-		 * The meta object literal for the '<em><b>From Port To Connector Rev</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__FROM_PORT_TO_CONNECTOR_REV = eINSTANCE.getPort_FromPortToConnectorRev();
-
-		/**
-		 * The meta object literal for the '<em><b>To Port To Connector Rev</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__TO_PORT_TO_CONNECTOR_REV = eINSTANCE.getPort_ToPortToConnectorRev();
-
-		/**
 		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3424,6 +3388,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__OUTGOING_CONNECTORS = eINSTANCE.getPort_OutgoingConnectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getPort_AdaptationRealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
@@ -36,13 +37,12 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -163,36 +163,6 @@ public interface Port extends NamedElement, CommentableElement {
 	void setCardinality(Cardinality value);
 
 	/**
-	 * Returns the value of the '<em><b>From Port To Connector Rev</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association stores the connector this port is the source of. The connector can either be a delegation or an assembly.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>From Port To Connector Rev</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_FromPortToConnectorRev()
-	 * @model
-	 * @generated
-	 */
-	EList<ConnectorType> getFromPortToConnectorRev();
-
-	/**
-	 * Returns the value of the '<em><b>To Port To Connector Rev</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association stores the connector this port is the target of. The connector can either be a delegation or an assembly.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>To Port To Connector Rev</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_ToPortToConnectorRev()
-	 * @model
-	 * @generated
-	 */
-	EList<ConnectorType> getToPortToConnectorRev();
-
-	/**
 	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -299,6 +269,32 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<ConnectorType> getOutgoingConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Adaptation Realtime Statechart</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
+	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_AdaptationRealtimeStatechart()
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart\nendif'"
+	 * @generated
+	 */
+	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Adaptation Realtime Statechart</em>' reference.
+	 * @see #getAdaptationRealtimeStatechart()
+	 * @generated
+	 */
+	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

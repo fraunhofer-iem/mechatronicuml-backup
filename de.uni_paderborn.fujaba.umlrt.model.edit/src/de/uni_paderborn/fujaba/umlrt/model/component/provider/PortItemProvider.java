@@ -67,11 +67,12 @@ public class PortItemProvider extends NamedElementItemProvider implements
 			addPortKindPropertyDescriptor(object);
 			addSpecificationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addFromPortToConnectorRevPropertyDescriptor(object);
-			addToPortToConnectorRevPropertyDescriptor(object);
 			addRequiredMessageInterfacePropertyDescriptor(object);
 			addProvidedMessageInterfacePropertyDescriptor(object);
 			addPortInstancesPropertyDescriptor(object);
+			addIncomingConnectorsPropertyDescriptor(object);
+			addOutgoingConnectorsPropertyDescriptor(object);
+			addAdaptationRealtimeStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -197,50 +198,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 	}
 
 	/**
-	 * This adds a property descriptor for the From Port To Connector Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFromPortToConnectorRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_fromPortToConnectorRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_fromPortToConnectorRev_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__FROM_PORT_TO_CONNECTOR_REV,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the To Port To Connector Rev feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addToPortToConnectorRevPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_toPortToConnectorRev_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_toPortToConnectorRev_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__TO_PORT_TO_CONNECTOR_REV,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Required Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,6 +255,72 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 getString("_UI_Port_portInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_portInstances_feature", "_UI_Port_type"),
 				 ComponentPackage.Literals.PORT__PORT_INSTANCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncomingConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_incomingConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_incomingConnectors_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__INCOMING_CONNECTORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outgoing Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutgoingConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_outgoingConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_outgoingConnectors_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__OUTGOING_CONNECTORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Adaptation Realtime Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdaptationRealtimeStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_adaptationRealtimeStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_adaptationRealtimeStatechart_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__ADAPTATION_REALTIME_STATECHART,
 				 true,
 				 false,
 				 true,

@@ -34,6 +34,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
@@ -53,13 +54,12 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -137,26 +137,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected Cardinality cardinality;
 
 	/**
-	 * The cached value of the '{@link #getFromPortToConnectorRev() <em>From Port To Connector Rev</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromPortToConnectorRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorType> fromPortToConnectorRev;
-
-	/**
-	 * The cached value of the '{@link #getToPortToConnectorRev() <em>To Port To Connector Rev</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToPortToConnectorRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorType> toPortToConnectorRev;
-
-	/**
 	 * The cached setting delegate for the '{@link #getRequiredMessageInterface() <em>Required Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,6 +187,16 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected EList<ConnectorType> outgoingConnectors;
 
 	/**
+	 * The cached setting delegate for the '{@link #getAdaptationRealtimeStatechart() <em>Adaptation Realtime Statechart</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdaptationRealtimeStatechart()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__ADAPTATION_REALTIME_STATECHART).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -215,16 +205,22 @@ public class PortImpl extends NamedElementImpl implements Port {
 		super();
 		
 		// Install a notification adapter that informs the
-		// portsDerived-reference, whenever one of the dependent features
+		// requiredMessageInterface-reference, whenever one of the dependent features
 		// was modified
 		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE, false);
 		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE);
 
 		// Install a notification adapter that informs the
-		// portsDerived-reference, whenever one of the dependent features
+		// providedMessageInterface-reference, whenever one of the dependent features
 		// was modified
 		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE, false);
 		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE);
+
+		// Install a notification adapter that informs the
+		// adaptationRealtimeStatechart-reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter statechartDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__ADAPTATION_REALTIME_STATECHART, false);
+		statechartDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART);
 	}
 
 
@@ -393,32 +389,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConnectorType> getFromPortToConnectorRev() {
-		if (fromPortToConnectorRev == null) {
-			fromPortToConnectorRev = new EObjectResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV);
-		}
-		return fromPortToConnectorRev;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorType> getToPortToConnectorRev() {
-		if (toPortToConnectorRev == null) {
-			toPortToConnectorRev = new EObjectResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV);
-		}
-		return toPortToConnectorRev;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public MessageInterface getRequiredMessageInterface() {
 		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -537,6 +507,47 @@ public class PortImpl extends NamedElementImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractRealtimeStatechart getAdaptationRealtimeStatechart() {
+		return (AbstractRealtimeStatechart)ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractRealtimeStatechart basicGetAdaptationRealtimeStatechart() {
+		return (AbstractRealtimeStatechart)ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart newAdaptationRealtimeStatechart) {
+		//ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newAdaptationRealtimeStatechart);
+		DiscretePortSpecification discretePortSpecification = null;
+		for (PortSpecification portSpecification : specification) {
+			if (portSpecification instanceof DiscretePortSpecification) {
+				discretePortSpecification = (DiscretePortSpecification) portSpecification;
+			}
+		}
+		if (discretePortSpecification == null) {
+			discretePortSpecification = ComponentFactory.eINSTANCE.createDiscretePortSpecification();
+			specification.add(discretePortSpecification);
+		}
+		discretePortSpecification.setAdaptationRealtimeStatechart(newAdaptationRealtimeStatechart);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public PortInstance createInstance() {
@@ -627,10 +638,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getSpecification();
 			case ComponentPackage.PORT__CARDINALITY:
 				return getCardinality();
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				return getFromPortToConnectorRev();
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				return getToPortToConnectorRev();
 			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
 				if (resolve) return getRequiredMessageInterface();
 				return basicGetRequiredMessageInterface();
@@ -643,6 +650,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getIncomingConnectors();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return getOutgoingConnectors();
+			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
+				if (resolve) return getAdaptationRealtimeStatechart();
+				return basicGetAdaptationRealtimeStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -676,14 +686,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				getFromPortToConnectorRev().clear();
-				getFromPortToConnectorRev().addAll((Collection<? extends ConnectorType>)newValue);
-				return;
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				getToPortToConnectorRev().clear();
-				getToPortToConnectorRev().addAll((Collection<? extends ConnectorType>)newValue);
-				return;
 			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
 				setRequiredMessageInterface((MessageInterface)newValue);
 				return;
@@ -701,6 +703,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				getOutgoingConnectors().clear();
 				getOutgoingConnectors().addAll((Collection<? extends ConnectorType>)newValue);
+				return;
+			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
+				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -732,12 +737,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				getFromPortToConnectorRev().clear();
-				return;
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				getToPortToConnectorRev().clear();
-				return;
 			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
 				setRequiredMessageInterface((MessageInterface)null);
 				return;
@@ -752,6 +751,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return;
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				getOutgoingConnectors().clear();
+				return;
+			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
+				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -777,10 +779,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return specification != null && !specification.isEmpty();
 			case ComponentPackage.PORT__CARDINALITY:
 				return cardinality != null;
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				return fromPortToConnectorRev != null && !fromPortToConnectorRev.isEmpty();
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				return toPortToConnectorRev != null && !toPortToConnectorRev.isEmpty();
 			case ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE:
 				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
@@ -791,6 +789,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return incomingConnectors != null && !incomingConnectors.isEmpty();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
+			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
+				return ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
