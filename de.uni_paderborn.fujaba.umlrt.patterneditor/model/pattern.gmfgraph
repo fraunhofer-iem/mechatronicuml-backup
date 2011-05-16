@@ -95,7 +95,8 @@
       figure="CoordinationPatternFigure"/>
   <nodes
       name="Role"
-      figure="RoleFigure">
+      figure="RoleFigure"
+      resizeConstraint="NONE">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

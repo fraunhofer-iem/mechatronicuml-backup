@@ -18,6 +18,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
@@ -146,6 +147,18 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
 		return result;
 	}
 

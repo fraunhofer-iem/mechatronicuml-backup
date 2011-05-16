@@ -87,6 +87,8 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
         <attributes
+            xsi:type="gmfgen:ResizeConstraints"/>
+        <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="20"
             height="20"/>

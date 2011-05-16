@@ -15,6 +15,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
 
@@ -60,17 +61,27 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 	@Override
 	protected EObject createInitialModel() {
 		CoordinationPattern coordinationPattern = createCoordinationPattern();
-		coordinationPattern.getRoles().add(createRole());
-		coordinationPattern.getRoles().add(createRole());
+		Role role1 = createRole();
+		Role role2 = createRole();
+		
+		coordinationPattern.getRoles().add(role1);
+		coordinationPattern.getRoles().add(role2);
+		
+		RoleConnector roleConnector = PatternFactory.eINSTANCE.createRoleConnector();
+		roleConnector.setSource(role1);
+		roleConnector.setTarget(role2);
 		
 		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
 			.createPatternDiagram();
 		
 		patternDiagram.setCoordinationPattern(coordinationPattern);
 		
+		
 		for (Role role : coordinationPattern.getRoles()) {
 			patternDiagram.getRoles().add(role);
 		}
+		
+		patternDiagram.getRoleConnectors().add(roleConnector);
 		
 		return patternDiagram;
 	}

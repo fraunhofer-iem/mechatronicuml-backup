@@ -77,27 +77,27 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
 				.getVisualID(view)) {
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/core?ConstrainableElement?constraint", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/pattern?Role?pattern", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/pattern?RoleConnector", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RoleConnector_4001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/constraint?TextualConstraint", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/pattern?CoordinationPattern", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.CoordinationPattern_2001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/patterneditor?PatternDiagram", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.PatternDiagram_1000); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/pattern?Role?pattern", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/pattern?Role", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.Role_2002); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/umlrt/model/core?ConstrainableElement?constraint", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/constraint?TextualConstraint", de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -154,20 +154,20 @@ public class PatternNavigatorLabelProvider extends LabelProvider implements
 		}
 		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
 				.getVisualID(view)) {
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
+			return getConstrainableElementConstraint_4003Text(view);
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID:
+			return getRolePattern_4002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001Text(view);
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID:
-			return getTextualConstraint_2003Text(view);
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
 			return getCoordinationPattern_2001Text(view);
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
 			return getPatternDiagram_1000Text(view);
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID:
-			return getRolePattern_4002Text(view);
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return getRole_2002Text(view);
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return getConstrainableElementConstraint_4003Text(view);
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID:
+			return getTextualConstraint_2003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
