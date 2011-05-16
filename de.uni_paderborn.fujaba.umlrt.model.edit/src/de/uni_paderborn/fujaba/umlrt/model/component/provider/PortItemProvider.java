@@ -71,6 +71,7 @@ public class PortItemProvider extends NamedElementItemProvider implements
 			addToPortToConnectorRevPropertyDescriptor(object);
 			addRequiredMessageInterfacePropertyDescriptor(object);
 			addProvidedMessageInterfacePropertyDescriptor(object);
+			addPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -197,7 +198,8 @@ public class PortItemProvider extends NamedElementItemProvider implements
 
 	/**
 	 * This adds a property descriptor for the From Port To Connector Rev feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addFromPortToConnectorRevPropertyDescriptor(Object object) {
@@ -218,7 +220,8 @@ public class PortItemProvider extends NamedElementItemProvider implements
 
 	/**
 	 * This adds a property descriptor for the To Port To Connector Rev feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addToPortToConnectorRevPropertyDescriptor(Object object) {
@@ -276,6 +279,28 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 true,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_portInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_portInstances_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__PORT_INSTANCES,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

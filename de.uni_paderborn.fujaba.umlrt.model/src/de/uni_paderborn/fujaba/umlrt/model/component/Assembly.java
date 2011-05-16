@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -82,5 +84,13 @@ public interface Assembly extends ConnectorType {
 	 * @generated
 	 */
 	void setFrom(ComponentPart value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	AssemblyInstance createInstance();
 
 } // Assembly

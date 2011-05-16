@@ -11,6 +11,7 @@ import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

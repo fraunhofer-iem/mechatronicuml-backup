@@ -10,9 +10,15 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
+
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -124,6 +130,17 @@ public class DelegationImpl extends ConnectorTypeImpl implements Delegation {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public DelegationInstance createInstance() {
+		DelegationInstance delegationInstance = InstanceFactory.eINSTANCE.createDelegationInstance();
+		delegationInstance.setDelegationType(this);
+		return delegationInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -208,6 +225,20 @@ public class DelegationImpl extends ConnectorTypeImpl implements Delegation {
 				return componentPart != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ComponentPackage.DELEGATION___CREATE_INSTANCE:
+				return createInstance();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DelegationImpl

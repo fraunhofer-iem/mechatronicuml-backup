@@ -11,9 +11,12 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -126,9 +129,9 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 		if (newFromPort != fromPort) {
 			NotificationChain msgs = null;
 			if (fromPort != null)
-				msgs = ((InternalEObject)fromPort).eInverseRemove(this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+				msgs = ((InternalEObject)fromPort).eInverseRemove(this, ComponentPackage.PORT__OUTGOING_CONNECTORS, Port.class, msgs);
 			if (newFromPort != null)
-				msgs = ((InternalEObject)newFromPort).eInverseAdd(this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+				msgs = ((InternalEObject)newFromPort).eInverseAdd(this, ComponentPackage.PORT__OUTGOING_CONNECTORS, Port.class, msgs);
 			msgs = basicSetFromPort(newFromPort, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -186,9 +189,9 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 		if (newToPort != toPort) {
 			NotificationChain msgs = null;
 			if (toPort != null)
-				msgs = ((InternalEObject)toPort).eInverseRemove(this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+				msgs = ((InternalEObject)toPort).eInverseRemove(this, ComponentPackage.PORT__INCOMING_CONNECTORS, Port.class, msgs);
 			if (newToPort != null)
-				msgs = ((InternalEObject)newToPort).eInverseAdd(this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+				msgs = ((InternalEObject)newToPort).eInverseAdd(this, ComponentPackage.PORT__INCOMING_CONNECTORS, Port.class, msgs);
 			msgs = basicSetToPort(newToPort, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -242,16 +245,27 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConnectorInstance createInstance() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				if (fromPort != null)
-					msgs = ((InternalEObject)fromPort).eInverseRemove(this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+					msgs = ((InternalEObject)fromPort).eInverseRemove(this, ComponentPackage.PORT__OUTGOING_CONNECTORS, Port.class, msgs);
 				return basicSetFromPort((Port)otherEnd, msgs);
 			case ComponentPackage.CONNECTOR_TYPE__TO_PORT:
 				if (toPort != null)
-					msgs = ((InternalEObject)toPort).eInverseRemove(this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV, Port.class, msgs);
+					msgs = ((InternalEObject)toPort).eInverseRemove(this, ComponentPackage.PORT__INCOMING_CONNECTORS, Port.class, msgs);
 				return basicSetToPort((Port)otherEnd, msgs);
 			case ComponentPackage.CONNECTOR_TYPE__PARENT_COMPONENT:
 				if (eInternalContainer() != null)
@@ -371,6 +385,20 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 				return getParentComponent() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ComponentPackage.CONNECTOR_TYPE___CREATE_INSTANCE:
+				return createInstance();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ConnectorTypeImpl

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -347,6 +348,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getComponent__CreateInstance() {
+		return componentEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getContinuousComponent() {
 		return continuousComponentEClass;
 	}
@@ -448,6 +458,42 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getPort_ProvidedMessageInterface() {
 		return (EReference)portEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPort_PortInstances() {
+		return (EReference)portEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPort_IncomingConnectors() {
+		return (EReference)portEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPort_OutgoingConnectors() {
+		return (EReference)portEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getPort__CreateInstance() {
+		return portEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -689,6 +735,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getConnectorType__CreateInstance() {
+		return connectorTypeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAssembly() {
 		return assemblyEClass;
 	}
@@ -716,6 +771,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getAssembly__CreateInstance() {
+		return assemblyEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDelegation() {
 		return delegationEClass;
 	}
@@ -727,6 +791,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getDelegation_ComponentPart() {
 		return (EReference)delegationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDelegation__CreateInstance() {
+		return delegationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -801,6 +874,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentEClass, COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES);
 		createEAttribute(componentEClass, COMPONENT__KIND);
 		createEReference(componentEClass, COMPONENT__COMPONENT_INSTANCES);
+		createEOperation(componentEClass, COMPONENT___CREATE_INSTANCE);
 
 		continuousComponentEClass = createEClass(CONTINUOUS_COMPONENT);
 		createEAttribute(continuousComponentEClass, CONTINUOUS_COMPONENT__XML_FILE_NAME);
@@ -815,6 +889,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(portEClass, PORT__TO_PORT_TO_CONNECTOR_REV);
 		createEReference(portEClass, PORT__REQUIRED_MESSAGE_INTERFACE);
 		createEReference(portEClass, PORT__PROVIDED_MESSAGE_INTERFACE);
+		createEReference(portEClass, PORT__PORT_INSTANCES);
+		createEReference(portEClass, PORT__INCOMING_CONNECTORS);
+		createEReference(portEClass, PORT__OUTGOING_CONNECTORS);
+		createEOperation(portEClass, PORT___CREATE_INSTANCE);
 
 		portSpecificationEClass = createEClass(PORT_SPECIFICATION);
 
@@ -849,13 +927,16 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__FROM_PORT);
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__TO_PORT);
 		createEReference(connectorTypeEClass, CONNECTOR_TYPE__PARENT_COMPONENT);
+		createEOperation(connectorTypeEClass, CONNECTOR_TYPE___CREATE_INSTANCE);
 
 		assemblyEClass = createEClass(ASSEMBLY);
 		createEReference(assemblyEClass, ASSEMBLY__TO);
 		createEReference(assemblyEClass, ASSEMBLY__FROM);
+		createEOperation(assemblyEClass, ASSEMBLY___CREATE_INSTANCE);
 
 		delegationEClass = createEClass(DELEGATION);
 		createEReference(delegationEClass, DELEGATION__COMPONENT_PART);
+		createEOperation(delegationEClass, DELEGATION___CREATE_INSTANCE);
 
 		behavioralConnectorEClass = createEClass(BEHAVIORAL_CONNECTOR);
 		createEReference(behavioralConnectorEClass, BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS);
@@ -931,6 +1012,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getComponent_Kind(), this.getComponentKind(), "kind", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ComponentInstances(), theInstancePackage.getComponentInstance(), theInstancePackage.getComponentInstance_ComponentType(), "componentInstances", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getComponent__CreateInstance(), theInstancePackage.getComponentInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(continuousComponentEClass, ContinuousComponent.class, "ContinuousComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContinuousComponent_XMLFileName(), ecorePackage.getEString(), "xMLFileName", null, 0, 1, ContinuousComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -940,10 +1023,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getPort_PortKind(), this.getPortKind(), "portKind", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_Specification(), this.getPortSpecification(), null, "specification", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_FromPortToConnectorRev(), this.getConnectorType(), this.getConnectorType_FromPort(), "fromPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_ToPortToConnectorRev(), this.getConnectorType(), this.getConnectorType_ToPort(), "toPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_FromPortToConnectorRev(), this.getConnectorType(), null, "fromPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_ToPortToConnectorRev(), this.getConnectorType(), null, "toPortToConnectorRev", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_RequiredMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "requiredMessageInterface", null, 0, 1, Port.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_ProvidedMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "providedMessageInterface", null, 0, 1, Port.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_PortInstances(), theInstancePackage.getPortInstance(), theInstancePackage.getPortInstance_PortType(), "portInstances", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_IncomingConnectors(), this.getConnectorType(), this.getConnectorType_ToPort(), "incomingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_OutgoingConnectors(), this.getConnectorType(), this.getConnectorType_FromPort(), "outgoingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getPort__CreateInstance(), theInstancePackage.getPortInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portSpecificationEClass, PortSpecification.class, "PortSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -975,16 +1063,22 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(atomicComponentEClass, AtomicComponent.class, "AtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(connectorTypeEClass, ConnectorType.class, "ConnectorType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorType_FromPort(), this.getPort(), this.getPort_FromPortToConnectorRev(), "fromPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorType_ToPort(), this.getPort(), this.getPort_ToPortToConnectorRev(), "toPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorType_FromPort(), this.getPort(), this.getPort_OutgoingConnectors(), "fromPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorType_ToPort(), this.getPort(), this.getPort_IncomingConnectors(), "toPort", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorType_ParentComponent(), this.getStructuredComponent(), this.getStructuredComponent_Connectors(), "parentComponent", null, 0, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getConnectorType__CreateInstance(), theInstancePackage.getConnectorInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(assemblyEClass, Assembly.class, "Assembly", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssembly_To(), this.getComponentPart(), this.getComponentPart_ToRev(), "to", null, 0, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssembly_From(), this.getComponentPart(), this.getComponentPart_FromRev(), "from", null, 0, 1, Assembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getAssembly__CreateInstance(), theInstancePackage.getAssemblyInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(delegationEClass, Delegation.class, "Delegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegation_ComponentPart(), this.getComponentPart(), this.getComponentPart_Delegation(), "componentPart", null, 1, 1, Delegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getDelegation__CreateInstance(), theInstancePackage.getDelegationInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralConnectorEClass, BehavioralConnector.class, "BehavioralConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralConnector_ConnectorClass(), theEcorePackage.getEClass(), null, "connectorClass", null, 0, 1, BehavioralConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

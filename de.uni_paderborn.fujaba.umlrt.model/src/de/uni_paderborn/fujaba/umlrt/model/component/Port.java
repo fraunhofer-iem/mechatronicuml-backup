@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 import org.eclipse.emf.common.util.EList;
@@ -39,6 +40,9 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -161,7 +165,6 @@ public interface Port extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>From Port To Connector Rev</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getFromPort <em>From Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -169,8 +172,7 @@ public interface Port extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>From Port To Connector Rev</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_FromPortToConnectorRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getFromPort
-	 * @model opposite="fromPort"
+	 * @model
 	 * @generated
 	 */
 	EList<ConnectorType> getFromPortToConnectorRev();
@@ -178,7 +180,6 @@ public interface Port extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>To Port To Connector Rev</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort <em>To Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -186,8 +187,7 @@ public interface Port extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>To Port To Connector Rev</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_ToPortToConnectorRev()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort
-	 * @model opposite="toPort"
+	 * @model
 	 * @generated
 	 */
 	EList<ConnectorType> getToPortToConnectorRev();
@@ -245,5 +245,67 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setProvidedMessageInterface(MessageInterface value);
+
+	/**
+	 * Returns the value of the '<em><b>Port Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType <em>Port Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_PortInstances()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType
+	 * @model opposite="portType"
+	 * @generated
+	 */
+	EList<PortInstance> getPortInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort <em>To Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming Connectors</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_IncomingConnectors()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort
+	 * @model opposite="toPort"
+	 * @generated
+	 */
+	EList<ConnectorType> getIncomingConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getFromPort <em>From Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Connectors</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_OutgoingConnectors()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getFromPort
+	 * @model opposite="fromPort"
+	 * @generated
+	 */
+	EList<ConnectorType> getOutgoingConnectors();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	PortInstance createInstance();
 
 } // Port

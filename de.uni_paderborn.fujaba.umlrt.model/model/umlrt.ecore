@@ -42,6 +42,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
               </eAnnotations>
+              <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" containment="true"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/component">
@@ -103,6 +104,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                 <details key="body" value="self.cardinality.lowerBound->notEmpty()"/>
               </eAnnotations>
+              <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
                   upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -136,15 +138,13 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="fromPortToConnectorRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/fromPort">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the connector this port is the source of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="toPortToConnectorRev"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/toPort">
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores the connector this port is the target of. The connector can either be a delegation or an assembly."/>
                 </eAnnotations>
@@ -163,6 +163,15 @@
                   <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface&#xA;endif"/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/portType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/toPort"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectors"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/fromPort"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -307,14 +316,15 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This abstract class is the common super class of delegations and assemblies."/>
               </eAnnotations>
+              <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/fromPortToConnectorRev">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/outgoingConnectors">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The port this connector originates from."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/toPortToConnectorRev">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/incomingConnectors">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The port this connector leads to."/>
                 </eAnnotations>
@@ -331,6 +341,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
               </eAnnotations>
+              <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/AssemblyInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/toRev">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -348,6 +359,7 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a delegation connector. A delegation connector connects a port of a structured component type and a port part of component part the structured component contains."/>
               </eAnnotations>
+              <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ComponentPart/delegation">
@@ -684,7 +696,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
               <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/portInstances"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>

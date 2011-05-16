@@ -9,7 +9,7 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit
 
 
 /**
- * A customized EditPart for ComponentParts. A customized Figure will be used,
+ * A customized EditPart for ComponentInstances. A customized Figure will be used,
  * which underlines the text.
  * 
  * @author bingo

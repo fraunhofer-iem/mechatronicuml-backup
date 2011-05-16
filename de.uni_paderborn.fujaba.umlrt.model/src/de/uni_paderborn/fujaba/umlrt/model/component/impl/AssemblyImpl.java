@@ -6,17 +6,20 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -195,6 +198,17 @@ public class AssemblyImpl extends ConnectorTypeImpl implements Assembly {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public AssemblyInstance createInstance() {
+		AssemblyInstance assemblyInstance = InstanceFactory.eINSTANCE.createAssemblyInstance();
+		assemblyInstance.setAssemblyType(this);
+		return assemblyInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -296,6 +310,20 @@ public class AssemblyImpl extends ConnectorTypeImpl implements Assembly {
 				return from != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ComponentPackage.ASSEMBLY___CREATE_INSTANCE:
+				return createInstance();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //AssemblyImpl

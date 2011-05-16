@@ -366,13 +366,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___CREATE_INSTANCE = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int COMPONENT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
@@ -682,6 +691,15 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_COMPONENT___CREATE_INSTANCE = COMPONENT___CREATE_INSTANCE;
+
+	/**
 	 * The number of operations of the '<em>Continuous Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -818,13 +836,40 @@ public interface ComponentPackage extends EPackage {
 	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -998,13 +1043,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT___PROVIDE_ANNOTATION__STRING = SDMPackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT___CREATE_INSTANCE = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int PORT_OPERATION_COUNT = SDMPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -1796,6 +1850,15 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT___CREATE_INSTANCE = COMPONENT___CREATE_INSTANCE;
+
+	/**
 	 * The number of operations of the '<em>Structured Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2112,6 +2175,15 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT___CREATE_INSTANCE = COMPONENT___CREATE_INSTANCE;
+
+	/**
 	 * The number of operations of the '<em>Atomic Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2231,13 +2303,22 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_TYPE___CREATE_INSTANCE = BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Connector Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE_OPERATION_COUNT = BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 0;
+	int CONNECTOR_TYPE_OPERATION_COUNT = BEHAVIORAL_CONNECTOR_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
@@ -2322,13 +2403,22 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY___CREATE_INSTANCE = CONNECTOR_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Assembly</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_OPERATION_COUNT = CONNECTOR_TYPE_OPERATION_COUNT + 0;
+	int ASSEMBLY_OPERATION_COUNT = CONNECTOR_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
@@ -2404,13 +2494,22 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Create Instance</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION___CREATE_INSTANCE = CONNECTOR_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Delegation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_OPERATION_COUNT = CONNECTOR_TYPE_OPERATION_COUNT + 0;
+	int DELEGATION_OPERATION_COUNT = CONNECTOR_TYPE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentKind <em>Kind</em>}' enum.
@@ -2519,6 +2618,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_ComponentInstances();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#createInstance() <em>Create Instance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Instance</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Component#createInstance()
+	 * @generated
+	 */
+	EOperation getComponent__CreateInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.ContinuousComponent <em>Continuous Component</em>}'.
@@ -2649,6 +2758,49 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_ProvidedMessageInterface();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_PortInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Incoming Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_IncomingConnectors();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outgoing Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_OutgoingConnectors();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#createInstance() <em>Create Instance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Instance</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#createInstance()
+	 * @generated
+	 */
+	EOperation getPort__CreateInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification <em>Port Specification</em>}'.
@@ -2929,6 +3081,16 @@ public interface ComponentPackage extends EPackage {
 	EReference getConnectorType_ParentComponent();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#createInstance() <em>Create Instance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Instance</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#createInstance()
+	 * @generated
+	 */
+	EOperation getConnectorType__CreateInstance();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.Assembly <em>Assembly</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2961,6 +3123,16 @@ public interface ComponentPackage extends EPackage {
 	EReference getAssembly_From();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Assembly#createInstance() <em>Create Instance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Instance</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Assembly#createInstance()
+	 * @generated
+	 */
+	EOperation getAssembly__CreateInstance();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.Delegation <em>Delegation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2980,6 +3152,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDelegation_ComponentPart();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Delegation#createInstance() <em>Create Instance</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Instance</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Delegation#createInstance()
+	 * @generated
+	 */
+	EOperation getDelegation__CreateInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector <em>Behavioral Connector</em>}'.
@@ -3112,6 +3294,14 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT__COMPONENT_INSTANCES = eINSTANCE.getComponent_ComponentInstances();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMPONENT___CREATE_INSTANCE = eINSTANCE.getComponent__CreateInstance();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3210,6 +3400,38 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPort_ProvidedMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__PORT_INSTANCES = eINSTANCE.getPort_PortInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Connectors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__INCOMING_CONNECTORS = eINSTANCE.getPort_IncomingConnectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Connectors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__OUTGOING_CONNECTORS = eINSTANCE.getPort_OutgoingConnectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PORT___CREATE_INSTANCE = eINSTANCE.getPort__CreateInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -3436,6 +3658,14 @@ public interface ComponentPackage extends EPackage {
 		EReference CONNECTOR_TYPE__PARENT_COMPONENT = eINSTANCE.getConnectorType_ParentComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONNECTOR_TYPE___CREATE_INSTANCE = eINSTANCE.getConnectorType__CreateInstance();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3462,6 +3692,14 @@ public interface ComponentPackage extends EPackage {
 		EReference ASSEMBLY__FROM = eINSTANCE.getAssembly_From();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ASSEMBLY___CREATE_INSTANCE = eINSTANCE.getAssembly__CreateInstance();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3478,6 +3716,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DELEGATION__COMPONENT_PART = eINSTANCE.getDelegation_ComponentPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DELEGATION___CREATE_INSTANCE = eINSTANCE.getDelegation__CreateInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.BehavioralConnectorImpl <em>Behavioral Connector</em>}' class.

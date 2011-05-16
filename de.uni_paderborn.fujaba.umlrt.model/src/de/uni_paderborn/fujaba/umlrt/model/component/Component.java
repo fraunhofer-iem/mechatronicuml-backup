@@ -181,5 +181,13 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 */
 	EList<ComponentInstance> getComponentInstances();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	ComponentInstance createInstance();
+
 
 } // Component

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,6 +35,9 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 /**
@@ -53,6 +57,9 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getToPortToConnectorRev <em>To Port To Connector Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortInstances <em>Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,6 +175,36 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortInstance> portInstances;
+
+	/**
+	 * The cached value of the '{@link #getIncomingConnectors() <em>Incoming Connectors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorType> incomingConnectors;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingConnectors() <em>Outgoing Connectors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorType> outgoingConnectors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -358,10 +395,11 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 */
 	public EList<ConnectorType> getFromPortToConnectorRev() {
 		if (fromPortToConnectorRev == null) {
-			fromPortToConnectorRev = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV, ComponentPackage.CONNECTOR_TYPE__FROM_PORT);
+			fromPortToConnectorRev = new EObjectResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV);
 		}
 		return fromPortToConnectorRev;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -370,10 +408,11 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 */
 	public EList<ConnectorType> getToPortToConnectorRev() {
 		if (toPortToConnectorRev == null) {
-			toPortToConnectorRev = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
+			toPortToConnectorRev = new EObjectResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV);
 		}
 		return toPortToConnectorRev;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -461,6 +500,57 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<PortInstance> getPortInstances() {
+		if (portInstances == null) {
+			portInstances = new EObjectWithInverseResolvingEList<PortInstance>(PortInstance.class, this, ComponentPackage.PORT__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__PORT_TYPE);
+		}
+		return portInstances;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConnectorType> getIncomingConnectors() {
+		if (incomingConnectors == null) {
+			incomingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__INCOMING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
+		}
+		return incomingConnectors;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConnectorType> getOutgoingConnectors() {
+		if (outgoingConnectors == null) {
+			outgoingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__OUTGOING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__FROM_PORT);
+		}
+		return outgoingConnectors;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public PortInstance createInstance() {
+		PortInstance portInstance = InstanceFactory.eINSTANCE.createPortInstance();
+		portInstance.setPortType(this);
+		return portInstance;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -469,10 +559,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponent((Component)otherEnd, msgs);
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFromPortToConnectorRev()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getToPortToConnectorRev()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectors()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingConnectors()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -491,10 +583,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<?>)getSpecification()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
-			case ComponentPackage.PORT__FROM_PORT_TO_CONNECTOR_REV:
-				return ((InternalEList<?>)getFromPortToConnectorRev()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__TO_PORT_TO_CONNECTOR_REV:
-				return ((InternalEList<?>)getToPortToConnectorRev()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				return ((InternalEList<?>)getOutgoingConnectors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -543,6 +637,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				if (resolve) return getProvidedMessageInterface();
 				return basicGetProvidedMessageInterface();
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return getPortInstances();
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				return getIncomingConnectors();
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				return getOutgoingConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -590,6 +690,18 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)newValue);
 				return;
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				getPortInstances().clear();
+				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
+				return;
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				getIncomingConnectors().clear();
+				getIncomingConnectors().addAll((Collection<? extends ConnectorType>)newValue);
+				return;
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				getOutgoingConnectors().clear();
+				getOutgoingConnectors().addAll((Collection<? extends ConnectorType>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -632,6 +744,15 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)null);
 				return;
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				getPortInstances().clear();
+				return;
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				getIncomingConnectors().clear();
+				return;
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				getOutgoingConnectors().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -664,6 +785,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				return PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return portInstances != null && !portInstances.isEmpty();
+			case ComponentPackage.PORT__INCOMING_CONNECTORS:
+				return incomingConnectors != null && !incomingConnectors.isEmpty();
+			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
+				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -699,6 +826,21 @@ public class PortImpl extends NamedElementImpl implements Port {
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ComponentPackage.PORT___CREATE_INSTANCE:
+				return createInstance();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->

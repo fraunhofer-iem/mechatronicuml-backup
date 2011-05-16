@@ -5,10 +5,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 public class PortInstanceBehavior extends AbstractPortBehavior {
 
@@ -45,8 +45,13 @@ public class PortInstanceBehavior extends AbstractPortBehavior {
 
 	@Override
 	public void updatePortType() {
-		updatePortType(portInstance.getRequiredMessageInterface(),
-				portInstance.getProvidedMessageInterface());
+		MessageInterface requiredMessageInterface = null;
+		MessageInterface providedMessageInterface = null;
+		if (portInstance != null) {
+			requiredMessageInterface = portInstance.getRequiredMessageInterface();
+			providedMessageInterface = portInstance.getProvidedMessageInterface();
+		}
+		updatePortType(requiredMessageInterface, providedMessageInterface);
 	}
 
 	@Override

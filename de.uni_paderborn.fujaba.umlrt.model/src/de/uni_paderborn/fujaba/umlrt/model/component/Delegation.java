@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -54,5 +56,13 @@ public interface Delegation extends ConnectorType {
 	 * @generated
 	 */
 	void setComponentPart(ComponentPart value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	DelegationInstance createInstance();
 
 } // Delegation

@@ -37,6 +37,7 @@ import org.storydriven.modeling.NamedElement;
 public interface PortInstance extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port Type</em>' reference isn't clear,
@@ -46,7 +47,8 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see #setPortType(Port)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_PortType()
-	 * @model required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances
+	 * @model opposite="portInstances" required="true"
 	 * @generated
 	 */
 	Port getPortType();

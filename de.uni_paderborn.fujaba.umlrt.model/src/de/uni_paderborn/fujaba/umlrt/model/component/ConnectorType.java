@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +34,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component;
 public interface ConnectorType extends BehavioralConnector {
 	/**
 	 * Returns the value of the '<em><b>From Port</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev <em>From Port To Connector Rev</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -41,8 +43,8 @@ public interface ConnectorType extends BehavioralConnector {
 	 * @return the value of the '<em>From Port</em>' reference.
 	 * @see #setFromPort(Port)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getConnectorType_FromPort()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getFromPortToConnectorRev
-	 * @model opposite="fromPortToConnectorRev" required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors
+	 * @model opposite="outgoingConnectors" required="true"
 	 * @generated
 	 */
 	Port getFromPort();
@@ -59,7 +61,7 @@ public interface ConnectorType extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>To Port</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev <em>To Port To Connector Rev</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,8 +70,8 @@ public interface ConnectorType extends BehavioralConnector {
 	 * @return the value of the '<em>To Port</em>' reference.
 	 * @see #setToPort(Port)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getConnectorType_ToPort()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getToPortToConnectorRev
-	 * @model opposite="toPortToConnectorRev" required="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors
+	 * @model opposite="incomingConnectors" required="true"
 	 * @generated
 	 */
 	Port getToPort();
@@ -110,5 +112,13 @@ public interface ConnectorType extends BehavioralConnector {
 	 * @generated
 	 */
 	void setParentComponent(StructuredComponent value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	ConnectorInstance createInstance();
 
 } // ConnectorType
