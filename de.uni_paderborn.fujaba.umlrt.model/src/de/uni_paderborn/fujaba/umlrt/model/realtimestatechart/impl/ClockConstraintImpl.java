@@ -101,19 +101,15 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 */
 	protected ClockConstraintImpl() {
 		super();
-		
-		// Install a notification adapter that informs the
-		// clockConstraintExpr-reference, whenever one of the dependent features
-		// was modified
+
 		DerivedAttributeAdapter clockConstraintExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
 		clockConstraintExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND);
-		
-		// Install a notification adapter that informs the
-		// clockConstraintExpr-reference, whenever one of the dependent features
-		// was modified
+
 		DerivedAttributeAdapter clockConstraintExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
 		clockConstraintExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR);
 
+		DerivedAttributeAdapter clockConstraintExprAdapter3 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
+		clockConstraintExprAdapter3.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK);
 	}
 
 	/**
