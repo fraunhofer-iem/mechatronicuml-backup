@@ -103,10 +103,12 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * @generated
 	 */
 	public String toMyString() {
+		
 		if( (upperBound!=null && lowerBound!=null)) {
 			if(upperBound.getValue()==0 && lowerBound.getValue()==0){
 				return "";
-			}else if(upperBound.getValue()<lowerBound.getValue()){
+			}else if(upperBound.getValue()<lowerBound.getValue() 
+					&& !upperBound.isInfinity()){
 				return "invalid bounds";
 			}
 			return "[" + lowerBound+","+ upperBound +"]";

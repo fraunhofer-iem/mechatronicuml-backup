@@ -852,7 +852,7 @@
               </eAnnotations>
               <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if( (upperBound!=null &amp;&amp; lowerBound!=null)) {&#xD;&#xA;&#x9;if(upperBound.getValue()==0 &amp;&amp; lowerBound.getValue()==0){&#xD;&#xA;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;}else if(upperBound.getValue()&lt;lowerBound.getValue()){&#xD;&#xA;&#x9;&#x9;return &quot;invalid bounds&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return &quot;[&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;&#x9;return &quot;&quot;;&#xD;&#xA;}"/>
+                  <details key="body" value="&#xD;&#xA;if( (upperBound!=null &amp;&amp; lowerBound!=null)) {&#xD;&#xA;&#x9;if(upperBound.getValue()==0 &amp;&amp; lowerBound.getValue()==0){&#xD;&#xA;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;}else if(upperBound.getValue()&lt;lowerBound.getValue() &#xD;&#xA;&#x9;&#x9;&#x9;&amp;&amp; !upperBound.isInfinity()){&#xD;&#xA;&#x9;&#x9;return &quot;invalid bounds&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return &quot;[&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;&#x9;return &quot;&quot;;&#xD;&#xA;}"/>
                   <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eOperations>
