@@ -8,24 +8,17 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class ModifyDataTypeWizard extends AbstractWizard {
+public class ModifyDataTypeWizard extends CommonModifyWizard {
 	
 	private final String CREATE_EDATATYPE_WIZARD_SECTION = "CreateEDataTypeWizard";
-
-	private FujabaRealtimeStatechart realtimeStatechart = null;
 
 	private ModifyDataTypePage addEDataTypePage;
 	
 	public ModifyDataTypeWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag)
 	{
-		super();
-
-		this.realtimeStatechart = (FujabaRealtimeStatechart)diag.getElement();
-
+		super(diag);
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.CREATE_EDATATYPE_WIZARD_SECTION);
@@ -43,16 +36,5 @@ public class ModifyDataTypeWizard extends AbstractWizard {
 		addEDataTypePage = new ModifyDataTypePage("Create/Delete data types for selected realtime statechart");
 		addPage(addEDataTypePage);
 		
-	}
-
-
-	public FujabaRealtimeStatechart getRealtimeStatechart() {
-		return realtimeStatechart;
-	}
-
-	@Override
-	public boolean performFinish() {
-		
-		return super.performFinish();
 	}
 }

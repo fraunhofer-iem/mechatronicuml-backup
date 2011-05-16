@@ -8,17 +8,13 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class ModifyTriggerEventWizard extends AbstractWizard {
+public class ModifyTriggerEventWizard extends CommonModifyWizard {
 	
 	private final String MODIFY_TRIGGER_EVENT_WIZARD = "ModifyTriggerEventWizard";
-
-	private FujabaRealtimeStatechart realtimeStatechart = null;
 
 	private ModifyTriggerEventPage1 triggerEventPage1;
 	private ModifyTriggerEventPage2 triggerEventPage2;
@@ -28,9 +24,8 @@ public class ModifyTriggerEventWizard extends AbstractWizard {
 
 	public ModifyTriggerEventWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, Transition transition)
 	{
-		super();
+		super(diag);
 		
-		this.realtimeStatechart = (FujabaRealtimeStatechart)diag.getElement();
 		this.setSelectedTransition(transition);
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
@@ -52,17 +47,6 @@ public class ModifyTriggerEventWizard extends AbstractWizard {
 		triggerEventPage2 = new ModifyTriggerEventPage2("Create/Delete a trigger events for selected transition");
 		addPage(triggerEventPage2);
 		
-	}
-
-
-	public FujabaRealtimeStatechart getRealtimeStatechart() {
-		return realtimeStatechart;
-	}
-
-	@Override
-	public boolean performFinish() {
-		
-		return super.performFinish();
 	}
 
 	public void setSelectedTransition(Transition selectedTransition) {

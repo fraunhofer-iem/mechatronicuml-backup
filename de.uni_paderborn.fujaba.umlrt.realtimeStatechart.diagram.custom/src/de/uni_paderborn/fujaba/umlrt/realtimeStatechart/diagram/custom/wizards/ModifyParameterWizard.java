@@ -8,16 +8,12 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
 
-public class ModifyParameterWizard extends AbstractWizard {
+public class ModifyParameterWizard extends CommonModifyWizard {
 	
 	private final String ADD_EPARAMETER_WIZARD_SECTION = "AddEParameterWizard";
-
-	private FujabaRealtimeStatechart realtimeStatechart = null;
 
 	private ModifyParameterPage addEParameterPage;
 	
@@ -25,10 +21,9 @@ public class ModifyParameterWizard extends AbstractWizard {
 
 	public ModifyParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, SynchronizationChannel sC)
 	{
-		super();
-
-		this.realtimeStatechart = (FujabaRealtimeStatechart)diag.getElement();
-		this.setSelectedSyncChannel(sC);
+		super(diag);
+		
+		setSelectedSyncChannel(sC);
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.ADD_EPARAMETER_WIZARD_SECTION);
@@ -46,17 +41,6 @@ public class ModifyParameterWizard extends AbstractWizard {
 		addEParameterPage = new ModifyParameterPage("Create/Delete parameters for selected synchronization channel");
 		addPage(addEParameterPage);
 		
-	}
-
-
-	public FujabaRealtimeStatechart getRealtimeStatechart() {
-		return realtimeStatechart;
-	}
-
-	@Override
-	public boolean performFinish() {
-		
-		return super.performFinish();
 	}
 
 	public void setSelectedSyncChannel(SynchronizationChannel selectedSyncChannel) {
