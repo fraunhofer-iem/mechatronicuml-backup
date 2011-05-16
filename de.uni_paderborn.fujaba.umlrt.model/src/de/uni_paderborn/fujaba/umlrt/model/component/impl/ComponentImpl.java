@@ -35,6 +35,8 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
+
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -339,17 +341,16 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		}
 		return componentInstances;
 	}
-	
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public ComponentInstance createInstance() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		ComponentInstance componentInstance = InstanceFactory.eINSTANCE.createComponentInstance();
+		componentInstance.setComponentType(this);
+		return componentInstance;
 	}
 
 	/**
