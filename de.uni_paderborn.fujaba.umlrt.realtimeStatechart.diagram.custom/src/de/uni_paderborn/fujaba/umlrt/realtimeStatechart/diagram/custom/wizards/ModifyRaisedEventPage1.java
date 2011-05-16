@@ -3,10 +3,6 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
@@ -14,7 +10,6 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
@@ -35,7 +30,7 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStat
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
 
-public class ModifyRaisedEventPage1 extends WizardPage{
+public class ModifyRaisedEventPage1 extends CommonModifyPage{
 
 	protected ListViewer messageTypeLViewer = null;
 	protected ListViewer existingRaisedEvent = null;
@@ -43,17 +38,6 @@ public class ModifyRaisedEventPage1 extends WizardPage{
 	public ModifyRaisedEventPage1(String pageName)
 	{
 		super(pageName);
-	}
-
-	@Override
-	public void setVisible(boolean visible) {
-
-		if (visible)
-    	{
-			setPageComplete(false);
-    	}
-
-    	super.setVisible(visible);
 	}
 
 	@Override
@@ -88,7 +72,7 @@ public class ModifyRaisedEventPage1 extends WizardPage{
 	    syncChannelViewerComposite.setLayout(new FillLayout());
 	    syncChannelViewerComposite.setLayoutData(syncChannelLViewerFormData);
 	    messageTypeLViewer = new ListViewer(syncChannelViewerComposite);
-	    messageTypeLViewer.setContentProvider(new ParametersContentProvider());
+	    messageTypeLViewer.setContentProvider(new MessageTypeContentProvider());
 	    messageTypeLViewer.setInput(((ModifyRaisedEventWizard)getWizard()).getRealtimeStatechart());
 	    messageTypeLViewer.addDoubleClickListener(new IDoubleClickListener()
 		{
@@ -169,7 +153,7 @@ public class ModifyRaisedEventPage1 extends WizardPage{
 	}
 	
 	
-	public Object[] getParameters(Object object)
+	public Object[] getMessageTypes(Object object)
 	{
         if (object instanceof RealtimeStatechart)
         {
@@ -201,13 +185,13 @@ public class ModifyRaisedEventPage1 extends WizardPage{
         return new Object[0];
 	}	
 	
-	class ParametersContentProvider implements IStructuredContentProvider
+	class MessageTypeContentProvider implements IStructuredContentProvider
 	{
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
 		
 		public Object[] getElements(Object parent)
 		{
-			return getParameters(parent);
+			return getMessageTypes(parent);
 		}
 			
 		public void dispose(){}
@@ -244,11 +228,6 @@ public class ModifyRaisedEventPage1 extends WizardPage{
 			
 		public void dispose(){}
 		   
-	}
-	
-	protected void deleteObject(EObject obj){
-		new ICommandProxy(new DestroyElementCommand(
-			new DestroyElementRequest(obj, false))).execute();
 	}
 	
 	private void setSelectedMessageType(){

@@ -1,23 +1,15 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
@@ -34,31 +26,11 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.RaisedEventCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class ModifyRaisedEventPage2 extends WizardPage{
-	
-	protected Text valueText = null;
-	
-	protected ListViewer parameterLViewer = null;
-	
-	protected HashMap<EParameter, String> parameterValuesHashMap = null;
-	protected EParameter selectedEParameter = null;
-	
+public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
+
 	public ModifyRaisedEventPage2(String pageName)
 	{
 		super(pageName);
-	}
-
-	@Override
-	public void setVisible(boolean visible) {
-
-		if (visible)
-    	{
-			setPageComplete(false);
-			parameterValuesHashMap = new HashMap<EParameter, String>();
-			parameterLViewer.setInput(((ModifyRaisedEventWizard)getWizard()).getSelectedMessageType());
-    	}
-
-    	super.setVisible(visible);
 	}
 
 	@Override
@@ -155,49 +127,7 @@ public class ModifyRaisedEventPage2 extends WizardPage{
 	     createSynchronizationButton.setLayoutData(createSynchronizationFormData);
 
 	}  
-		
-	
-	public Object[] getParameters(Object object)
-	{
-        if (object instanceof MessageType)
-        {
-        	MessageType messageType = (MessageType)object;
-        	ArrayList<String> list = new ArrayList<String>();
-        	
-        	if(messageType.getContainedParameters()!=null){
-        		Iterator<EParameter> iter = messageType.getContainedParameters().iterator();
-        		while(iter.hasNext()){
-        			list.add(getFullParameterName(iter.next()));
-        		}
-        		return list.toArray();
-        	}
-        }
-		
-        return new Object[0];
-	}	
-	
-	class ParametersContentProvider implements IStructuredContentProvider
-	{
-		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
-		
-		public Object[] getElements(Object parent)
-		{
-			return getParameters(parent);
-		}
-			
-		public void dispose(){}
-		   
-	}
-	
-	private String getFullParameterName(EParameter parameter){
-		return parameter.getName() +": "+parameter.getEType().getName();
-	}
-	
-	protected void deleteObject(EObject obj){
-		new ICommandProxy(new DestroyElementCommand(
-			new DestroyElementRequest(obj, false))).execute();
-	}
-	
+
 	private void updateValue(){
 	      ISelection selection = parameterLViewer.getSelection();
 
@@ -225,13 +155,6 @@ public class ModifyRaisedEventPage2 extends WizardPage{
 		  }
 	}
 	
-	private void setValue(){
-		if(selectedEParameter!=null && !valueText.getText().equals("")){
-			
-			parameterValuesHashMap.put(selectedEParameter,valueText.getText());
-		}
-	}
-	
 	private void startCreateRaisedEventCommand(){
 		
 		CreateElementRequest request = new CreateElementRequest(((ModifyRaisedEventWizard)getWizard()).getSelectedTransition(),
@@ -245,14 +168,4 @@ public class ModifyRaisedEventPage2 extends WizardPage{
 					setPageComplete(true);
 	}
 	
-	private boolean allParametersHaveValues(){
-   	  
-		MessageType messageType = ((ModifyRaisedEventWizard)getWizard()).getSelectedMessageType();
-   	  		
-		if(parameterValuesHashMap.size()==messageType.getContainedParameters().size()){
-			return true;
-		}
-		
-		return false;
-	}
 }

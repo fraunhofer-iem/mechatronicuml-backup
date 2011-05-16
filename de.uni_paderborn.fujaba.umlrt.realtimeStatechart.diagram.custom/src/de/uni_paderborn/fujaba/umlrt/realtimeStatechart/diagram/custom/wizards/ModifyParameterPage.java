@@ -1,22 +1,16 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
@@ -30,13 +24,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.umlrt.common.command.ParameterCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
-public class ModifyParameterPage extends WizardPage{
+public class ModifyParameterPage extends CommonModifyPage{
 	
 	protected Text parameterNameText = null;
 	protected Combo parameterTypeCombo = null;
@@ -205,42 +196,17 @@ public class ModifyParameterPage extends WizardPage{
 	      }
 	}
 	
-	
-	public Object[] getParameters(Object object)
-	{
-        if (object instanceof SynchronizationChannel)
-        {
-        	SynchronizationChannel syncChannel = (SynchronizationChannel)object;
-        	ArrayList<String> list = new ArrayList<String>();
-        	
-        	if(syncChannel.getContainedParameters()!=null){
-        		Iterator<EParameter> iter = syncChannel.getContainedParameters().iterator();
-        		while(iter.hasNext()){
-        			list.add(getFullParameterName(iter.next()));
-        		}
-        		return list.toArray();
-        	}
-        }
-		
-        return new Object[0];
-	}	
-	
 	class ParametersContentProvider implements IStructuredContentProvider
 	{
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput){}
 		
 		public Object[] getElements(Object parent)
 		{
-			return getParameters(parent);
+			return getParametersFromSynchronizationChannel(parent);
 		}
 			
 		public void dispose(){}
 		   
-	}
-	
-	protected void deleteObject(EObject obj){
-		new ICommandProxy(new DestroyElementCommand(
-			new DestroyElementRequest(obj, false))).execute();
 	}
 	
 	private void instanciateParameterTypeCombo(){
@@ -268,16 +234,4 @@ public class ModifyParameterPage extends WizardPage{
 		return null;
 	}
 	
-	private List<EDataType> getDataTypes(){
-		
-		FujabaRealtimeStatechart statechart = ((ModifyParameterWizard)getWizard()).getRealtimeStatechart();
-
-		RootNode root = (RootNode)statechart.eContainer();
-		
-		return root.getEcoreDataTypes();
-	}
-	
-	private String getFullParameterName(EParameter parameter){
-		return parameter.getName() +": "+parameter.getEType().getName();
-	}
 }
