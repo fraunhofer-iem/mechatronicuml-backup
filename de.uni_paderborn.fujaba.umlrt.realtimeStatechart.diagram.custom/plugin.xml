@@ -112,8 +112,8 @@
                class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTimeGuardWizardAction"
                enablesFor="1"
                icon="icons/clock.gif"
-               id="Statechart.CreateTimeGuardID"
-               label="TimeGuard"
+               id="Statechart.ModifyTimeGuardID"
+               label="ModifyTimeGuard"
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
       </objectContribution>

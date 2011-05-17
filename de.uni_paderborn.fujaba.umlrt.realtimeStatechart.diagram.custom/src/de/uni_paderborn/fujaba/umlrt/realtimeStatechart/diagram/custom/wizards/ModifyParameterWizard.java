@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeSta
 
 public class ModifyParameterWizard extends CommonModifyWizard {
 	
-	private final String ADD_EPARAMETER_WIZARD_SECTION = "AddEParameterWizard";
+	private final String MODIFY_EPARAMETER_WIZARD_SECTION = "ModifyEParameterWizard";
 
 	private ModifyParameterPage addEParameterPage;
 	
@@ -26,10 +26,10 @@ public class ModifyParameterWizard extends CommonModifyWizard {
 		setSelectedSyncChannel(sC);
 
 		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
-		IDialogSettings section = workbenchSettings.getSection(this.ADD_EPARAMETER_WIZARD_SECTION);
+		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_EPARAMETER_WIZARD_SECTION);
 		if (section == null)
 		{
-			section = workbenchSettings.addNewSection(this.ADD_EPARAMETER_WIZARD_SECTION);
+			section = workbenchSettings.addNewSection(this.MODIFY_EPARAMETER_WIZARD_SECTION);
 		}
 		setDialogSettings(section);
 		

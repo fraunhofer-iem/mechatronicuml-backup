@@ -36,7 +36,7 @@ public abstract class CommonModifyPage extends WizardPage{
 	
 	protected List<EDataType> getDataTypes(){
 		
-		FujabaRealtimeStatechart statechart = ((ModifyParameterWizard)getWizard()).getRealtimeStatechart();
+		FujabaRealtimeStatechart statechart = ((CommonModifyWizard)getWizard()).getRealtimeStatechart();
 
 		RootNode root = (RootNode)statechart.eContainer();
 		
