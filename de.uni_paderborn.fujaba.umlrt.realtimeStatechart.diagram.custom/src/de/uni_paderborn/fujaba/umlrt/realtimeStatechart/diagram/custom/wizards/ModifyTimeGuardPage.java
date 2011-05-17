@@ -1,9 +1,10 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -21,6 +22,14 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
+import org.storydriven.modeling.expressions.ComparingOperator;
+
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.TimeGuardCreateCommand;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
 
 public class ModifyTimeGuardPage extends CommonModifyPage{
 	
@@ -148,7 +157,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 	    {
 	    	public void handleEvent(Event event)
 	    	{
-	    		handleCreateParameterEvent();
+	    		handleCreateTimeGuardEvent();
 	    		timeGuardLViewer.refresh();
 	        }
 	     });
@@ -167,23 +176,25 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 	    	 {
 	    		 handleDeleteParameterEvent();
 	    		 timeGuardLViewer.refresh();
+	    		 
 	    	 }
 		});
 	     deleteButton.setLayoutData(deleteButtonFormData);		     
 
 	}  
 	
-	private void handleCreateParameterEvent(){
+	private void handleCreateTimeGuardEvent(){
 	  	  
-//		if(!value.getText().equals("") && getSelectedDataType()!= null){
-//			CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-//					RealtimeStatechartElementTypes.Action_3024);
-//							  
-//						ParameterCreateCommand command = new ParameterCreateCommand(request, 
-//								this.value.getText(), getSelectedDataType());
-//				
-//						new ICommandProxy(command).execute();
-//		}
+		if(!value.getText().equals("") && getSelectedClock()!= null &&
+				getSelectedComparingOperator()!=null){
+			CreateElementRequest request = new CreateElementRequest(((ModifyTimeGuardWizard)getWizard()).getSelectedTransition(),
+					RealtimeStatechartElementTypes.Action_3024);
+							  
+						TimeGuardCreateCommand command = new TimeGuardCreateCommand(request, 
+								getSelectedClock(), getSelectedComparingOperator() ,value.getText());
+				
+						new ICommandProxy(command).execute();
+		}
 	}
 	
 	private void handleDeleteParameterEvent(){
@@ -195,19 +206,19 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 	    	  IStructuredSelection sel = (IStructuredSelection) selection;
 
 	    	  for (Object obj : sel.toList()) {
-//
-//	    		  if(obj != null){
-//	    			  
-//	    			  Iterator<EParameter> iter = ((ModifyParameterWizard)getWizard()).
-//	    			  	getSelectedSyncChannel().getContainedParameters().iterator();
-//	    			  while(iter.hasNext()){
-//	    				  EParameter tmp = iter.next();
-//	    				  if(getFullParameterName(tmp).equals(obj.toString())){
-//	    					  deleteObject(tmp);
-//	    					  break;
-//	    				  }
-//	    			  }
-//	    		  }
+
+	    		  if(obj != null){
+	    			  
+	    			  Iterator<ClockConstraint> iter = ((ModifyTimeGuardWizard)getWizard()).
+	    			  	getSelectedTransition().getClockConstraints().iterator();
+	    			  while(iter.hasNext()){
+	    				  ClockConstraint tmp = iter.next();
+	    				  if(tmp.toMyString().equals(obj.toString())){
+	    					  deleteObject(tmp);
+	    					  break;
+	    				  }
+	    			  }
+	    		  }
 	    	  }
 	      }
 	}
@@ -218,34 +229,81 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 		
 		public Object[] getElements(Object parent)
 		{
-			return getParametersFromSynchronizationChannel(parent);
+			return getTimeGuards(parent);
 		}
 			
 		public void dispose(){}
 		   
 	}
 	
+	public Object[] getTimeGuards(Object object)
+	{
+        if (object instanceof Transition)
+        {
+        	Transition transition = (Transition)object;
+        	ArrayList<String> list = new ArrayList<String>();
+        	
+        	if(transition.getClockConstraints()!=null){
+        		Iterator<ClockConstraint> iter = transition.getClockConstraints().iterator();
+        		while(iter.hasNext()){
+        			ClockConstraint tmp = iter.next();
+        			list.add(tmp.toMyString());
+        		}
+        		return list.toArray();
+        	}
+        }
+		
+        return new Object[0];
+	}
+	
 	private void instanciateClockCombo(){
-//		if(getDataTypes()!=null){
-//		
-//			Iterator<EDataType> iter = getDataTypes().iterator();
-//			while(iter.hasNext()){
-//				EDataType dataType = iter.next();
-//				
-//				clock.add(dataType.getName());
-//			}
-//		}
+		FujabaRealtimeStatechart statechart = ((CommonModifyWizard)getWizard()).getRealtimeStatechart();
+		
+		if(statechart.getClocks()!=null){
+		
+			Iterator<Clock> iter = statechart.getClocks().iterator();
+			while(iter.hasNext()){
+				Clock clockTmp = iter.next();
+				
+				clock.add(clockTmp.toMyString());
+			}
+		}
+	}
+	
+	private Clock getSelectedClock(){
+		FujabaRealtimeStatechart statechart = ((CommonModifyWizard)getWizard()).getRealtimeStatechart();
+		
+		if(statechart.getClocks()!=null){
+			
+			Iterator<Clock> iter = statechart.getClocks().iterator();
+			while(iter.hasNext()){
+				Clock clockTmp = iter.next();
+				
+				if(clockTmp.toMyString().equals(clock.getText())){
+					return clockTmp;
+				}
+			}
+		}
+		return null;
+	}
+	
+	private ComparingOperator getSelectedComparingOperator(){
+		ComparingOperator[] operators = ComparingOperator.values();
+		for(int i=0;i<ComparingOperator.values().length;i++){
+			ComparingOperator tmp = operators[i];
+			if(tmp.getName().equals(operator.getText())){
+				return tmp;
+			}
+		}
+		
+		return null;
 	}
 	
 	private void instanciateOperatorCombo(){
-//		if(getDataTypes()!=null){
-//		
-//			Iterator<EDataType> iter = getDataTypes().iterator();
-//			while(iter.hasNext()){
-//				EDataType dataType = iter.next();
-//				
-//				operator.add(dataType.getName());
-//			}
-//		}
+		ComparingOperator[] operators = ComparingOperator.values();
+		for(int i=0;i<ComparingOperator.values().length;i++){
+			ComparingOperator tmp = operators[i];
+			operator.add(tmp.getName());
+		}
 	}	
 }

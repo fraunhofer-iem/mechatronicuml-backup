@@ -32,7 +32,7 @@ public abstract class CommonEventModifyPage extends CommonModifyPage{
     	{
 			setPageComplete(false);
 			parameterValuesHashMap = new HashMap<EParameter, String>();
-			parameterLViewer.setInput(((ModifyRaisedEventWizard)getWizard()).getSelectedMessageType());		 
+			parameterLViewer.setInput(getSelectedMessageType());		 
     	}
 
     	super.setVisible(visible);
@@ -59,9 +59,13 @@ public abstract class CommonEventModifyPage extends CommonModifyPage{
 		   
 	}
 	
+	protected MessageType getSelectedMessageType(){
+		return null;
+	}
+	
 	protected boolean allParametersHaveValues(){
 	   	  
-		MessageType messageType = ((ModifyTriggerEventWizard)getWizard()).getSelectedMessageType();
+		MessageType messageType = getSelectedMessageType();
    	  		
 		if(parameterValuesHashMap.size()==messageType.getContainedParameters().size()){
 			return true;

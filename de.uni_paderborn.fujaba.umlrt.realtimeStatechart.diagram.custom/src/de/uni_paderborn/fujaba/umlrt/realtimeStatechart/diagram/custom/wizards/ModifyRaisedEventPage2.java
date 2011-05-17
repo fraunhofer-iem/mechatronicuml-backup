@@ -32,6 +32,10 @@ public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 	{
 		super(pageName);
 	}
+	
+	protected MessageType getSelectedMessageType(){
+		return ((ModifyRaisedEventWizard)getWizard()).getSelectedMessageType();
+	}
 
 	@Override
 	public void createControl(Composite parent) {
