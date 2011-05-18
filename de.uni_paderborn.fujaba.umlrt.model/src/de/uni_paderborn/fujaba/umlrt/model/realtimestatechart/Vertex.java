@@ -70,25 +70,27 @@ public interface Vertex extends NamedElement {
 	EList<Transition> getIncomingTransitions();
 
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' reference.
+	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices <em>Vertices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this state belongs to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' reference.
+	 * @return the value of the '<em>Statechart</em>' container reference.
 	 * @see #setStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices
+	 * @model opposite="vertices" transient="false"
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' reference.
+	 * @param value the new value of the '<em>Statechart</em>' container reference.
 	 * @see #getStatechart()
 	 * @generated
 	 */

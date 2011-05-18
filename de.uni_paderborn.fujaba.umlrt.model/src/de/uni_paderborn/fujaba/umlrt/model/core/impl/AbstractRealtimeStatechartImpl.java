@@ -432,7 +432,7 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 */
 	public EList<Vertex> getVertices() {
 		if (vertices == null) {
-			vertices = new EObjectContainmentEList<Vertex>(Vertex.class, this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES);
+			vertices = new EObjectContainmentWithInverseEList<Vertex>(Vertex.class, this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, RealtimestatechartPackage.VERTEX__STATECHART);
 		}
 		return vertices;
 	}
@@ -646,6 +646,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVertices()).basicAdd(otherEnd, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (behavioralElement != null)
 					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);

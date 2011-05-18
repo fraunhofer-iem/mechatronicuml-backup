@@ -596,7 +596,7 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"
-                  containment="true">
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/statechart">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The states of this realtime statechart."/>
                 </eAnnotations>
@@ -997,7 +997,8 @@
                   <details key="documentation" value="The incoming transitions of this state."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this state belongs to."/>
                 </eAnnotations>

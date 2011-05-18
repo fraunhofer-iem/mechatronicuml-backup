@@ -695,7 +695,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String timeGuardString = \"[\";\r\njava.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\nboolean firstTime = true;\r\nwhile(iter.hasNext()){\r\n\tClockConstraint tmp = iter.next();\r\n\t\t\t\t\r\n\tif(firstTime){\r\n\t\tfirstTime = false;\r\n\t\ttimeGuardString = timeGuardString + tmp.toMyString();\r\n\t}else{\r\n\t\ttimeGuardString = timeGuardString + \", \" + tmp.toMyString();\r\n\t}\r\n}\r\n\t\t\r\nreturn timeGuardString+\"]\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(getClockConstraints().isEmpty()){\r\n\t\t\treturn \"\";\r\n\t\t}\r\n\t\t\r\n\t\tString timeGuardString = \"[\";\r\n\t\tjava.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\tboolean firstTime = true;\r\n\t\twhile(iter.hasNext()){\r\n\t\t\tClockConstraint tmp = iter.next();\r\n\t\t\t\t\t\t\r\n\t\t\tif(firstTime){\r\n\t\t\t\tfirstTime = false;\r\n\t\t\t\ttimeGuardString = timeGuardString + tmp.toMyString();\r\n\t\t\t}else{\r\n\t\t\t\ttimeGuardString = timeGuardString + \", \" + tmp.toMyString();\r\n\t\t\t}\r\n\t\t}\r\n\t\t\t\t\r\n\t\treturn timeGuardString+\"]\";'"
 	 * @generated
 	 */
 	String computeTimeGuardExpr();

@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
@@ -59,16 +61,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @ordered
 	 */
 	protected EList<Transition> incomingTransitions;
-
-	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
-	 * @generated
-	 * @ordered
-	 */
-	protected AbstractRealtimeStatechart statechart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,15 +111,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 */
 	public AbstractRealtimeStatechart getStatechart() {
-		if (statechart != null && statechart.eIsProxy()) {
-			InternalEObject oldStatechart = (InternalEObject)statechart;
-			statechart = (AbstractRealtimeStatechart)eResolveProxy(oldStatechart);
-			if (statechart != oldStatechart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.VERTEX__STATECHART, oldStatechart, statechart));
-			}
-		}
-		return statechart;
+		if (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART) return null;
+		return (AbstractRealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -135,8 +120,9 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart basicGetStatechart() {
-		return statechart;
+	public NotificationChain basicSetStatechart(AbstractRealtimeStatechart newStatechart, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.VERTEX__STATECHART, msgs);
+		return msgs;
 	}
 
 	/**
@@ -145,10 +131,19 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 */
 	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
-		AbstractRealtimeStatechart oldStatechart = statechart;
-		statechart = newStatechart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.VERTEX__STATECHART, oldStatechart, statechart));
+		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART && newStatechart != null)) {
+			if (EcoreUtil.isAncestor(this, newStatechart))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newStatechart != null)
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, AbstractRealtimeStatechart.class, msgs);
+			msgs = basicSetStatechart(newStatechart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.VERTEX__STATECHART, newStatechart, newStatechart));
 	}
 
 	/**
@@ -192,6 +187,10 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransitions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.VERTEX__STATECHART:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -208,8 +207,24 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return ((InternalEList<?>)getIncomingTransitions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.VERTEX__STATECHART:
+				return basicSetStatechart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RealtimestatechartPackage.VERTEX__STATECHART:
+				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, AbstractRealtimeStatechart.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -225,8 +240,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return getIncomingTransitions();
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				if (resolve) return getStatechart();
-				return basicGetStatechart();
+				return getStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -289,7 +303,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return incomingTransitions != null && !incomingTransitions.isEmpty();
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return statechart != null;
+				return getStatechart() != null;
 		}
 		return super.eIsSet(featureID);
 	}

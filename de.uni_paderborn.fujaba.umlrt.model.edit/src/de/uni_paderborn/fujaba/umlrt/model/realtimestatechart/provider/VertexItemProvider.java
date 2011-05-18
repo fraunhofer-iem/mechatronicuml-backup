@@ -67,7 +67,6 @@ public class VertexItemProvider
 
 			addOutgoingTransitionsPropertyDescriptor(object);
 			addIncomingTransitionsPropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,28 +107,6 @@ public class VertexItemProvider
 				 getString("_UI_Vertex_incomingTransitions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Vertex_incomingTransitions_feature", "_UI_Vertex_type"),
 				 RealtimestatechartPackage.Literals.VERTEX__INCOMING_TRANSITIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Vertex_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Vertex_statechart_feature", "_UI_Vertex_type"),
-				 RealtimestatechartPackage.Literals.VERTEX__STATECHART,
 				 true,
 				 false,
 				 true,

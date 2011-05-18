@@ -1205,27 +1205,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public String computeTimeGuardExpr() {
-		
-		if(getClockConstraints().isEmpty()){
-			return "";
-		}
-		
-		String timeGuardString = "[";
-		java.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();
-																			
-		boolean firstTime = true;
-		while(iter.hasNext()){
-			ClockConstraint tmp = iter.next();
-						
-			if(firstTime){
-				firstTime = false;
-				timeGuardString = timeGuardString + tmp.toMyString();
-			}else{
-				timeGuardString = timeGuardString + ", " + tmp.toMyString();
-			}
-		}
+				if(getClockConstraints().isEmpty()){
+					return "";
+				}
 				
-		return timeGuardString+"]";
+				String timeGuardString = "[";
+				java.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();
+																					
+				boolean firstTime = true;
+				while(iter.hasNext()){
+					ClockConstraint tmp = iter.next();
+								
+					if(firstTime){
+						firstTime = false;
+						timeGuardString = timeGuardString + tmp.toMyString();
+					}else{
+						timeGuardString = timeGuardString + ", " + tmp.toMyString();
+					}
+				}
+						
+				return timeGuardString+"]";
 	}
 
 	/**

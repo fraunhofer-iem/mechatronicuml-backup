@@ -880,7 +880,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int VERTEX__INCOMING_TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1151,7 +1151,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1485,7 +1485,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int INITIAL_STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1774,7 +1774,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FINAL_STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2605,7 +2605,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int HISTORY_STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4994,10 +4994,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getVertex_IncomingTransitions();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Statechart</em>'.
+	 * @return the meta object for the container reference '<em>Statechart</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart()
 	 * @see #getVertex()
 	 * @generated
@@ -6192,7 +6192,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference VERTEX__INCOMING_TRANSITIONS = eINSTANCE.getVertex_IncomingTransitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Statechart</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -218,6 +218,7 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	/**
 	 * Returns the value of the '<em><b>Vertices</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -225,7 +226,8 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Vertices</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_Vertices()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart
+	 * @model opposite="statechart" containment="true"
 	 * @generated
 	 */
 	EList<Vertex> getVertices();

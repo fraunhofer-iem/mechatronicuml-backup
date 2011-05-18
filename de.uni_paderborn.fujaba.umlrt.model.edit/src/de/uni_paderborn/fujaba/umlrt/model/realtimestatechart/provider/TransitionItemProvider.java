@@ -73,7 +73,6 @@ public class TransitionItemProvider
 			addRelativeDeadlinePropertyDescriptor(object);
 			addSafetyTransitionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
-			addEventsExprPropertyDescriptor(object);
 			addGuardExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -187,28 +186,6 @@ public class TransitionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Events Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEventsExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_eventsExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_eventsExpr_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
