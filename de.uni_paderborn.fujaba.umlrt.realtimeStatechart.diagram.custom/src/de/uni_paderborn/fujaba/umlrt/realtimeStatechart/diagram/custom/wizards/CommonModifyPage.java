@@ -23,17 +23,6 @@ public abstract class CommonModifyPage extends WizardPage{
 		super(pageName);
 	}
 	
-	@Override
-	public void setVisible(boolean visible) {
-
-		if (visible)
-    	{
-			setPageComplete(false);
-    	}
-
-    	super.setVisible(visible);
-	}
-	
 	protected List<EDataType> getDataTypes(){
 		
 		FujabaRealtimeStatechart statechart = ((CommonModifyWizard)getWizard()).getRealtimeStatechart();

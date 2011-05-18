@@ -39,6 +39,17 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
 	{
 		super(pageName);
 	}
+	
+	@Override
+	public void setVisible(boolean visible) {
+
+		if (visible)
+    	{
+			setPageComplete(false);
+    	}
+
+    	super.setVisible(visible);
+	}
 
 	@Override
 	public void createControl(Composite parent) {
