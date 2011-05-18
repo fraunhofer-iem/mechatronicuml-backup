@@ -397,6 +397,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	
 		DerivedAttributeAdapter safetyEventExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR, false);
 		safetyEventExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
+	
+		DerivedAttributeAdapter timeGuardExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT_EXPR, false);
+		timeGuardExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
+
 	}
 
 	/**
@@ -1200,6 +1204,35 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String computeTimeGuardExpr() {
+		
+		if(getClockConstraints().isEmpty()){
+			return "";
+		}
+		
+		String timeGuardString = "[";
+		java.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();
+																			
+		boolean firstTime = true;
+		while(iter.hasNext()){
+			ClockConstraint tmp = iter.next();
+						
+			if(firstTime){
+				firstTime = false;
+				timeGuardString = timeGuardString + tmp.toMyString();
+			}else{
+				timeGuardString = timeGuardString + ", " + tmp.toMyString();
+			}
+		}
+				
+		return timeGuardString+"]";
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -1711,6 +1744,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return computeSynchroExpr();
 			case RealtimestatechartPackage.TRANSITION___COMPUTE_EVENTS_EXPR:
 				return computeEventsExpr();
+			case RealtimestatechartPackage.TRANSITION___COMPUTE_TIME_GUARD_EXPR:
+				return computeTimeGuardExpr();
 			case RealtimestatechartPackage.TRANSITION___GET_EXTENSION__ECLASS:
 				return getExtension((EClass)arguments.get(0));
 			case RealtimestatechartPackage.TRANSITION___PROVIDE_EXTENSION__ECLASS:

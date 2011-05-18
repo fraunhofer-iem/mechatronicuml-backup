@@ -478,7 +478,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #isSetClockConstraintExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraintExpr()
 	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='clockConstraints->iterate( c:ClockConstraint;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) \r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='computeTimeGuardExpr()'"
 	 * @generated
 	 */
 	String getClockConstraintExpr();
@@ -691,5 +691,13 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	String computeEventsExpr();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String timeGuardString = \"[\";\r\njava.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\nboolean firstTime = true;\r\nwhile(iter.hasNext()){\r\n\tClockConstraint tmp = iter.next();\r\n\t\t\t\t\r\n\tif(firstTime){\r\n\t\tfirstTime = false;\r\n\t\ttimeGuardString = timeGuardString + tmp.toMyString();\r\n\t}else{\r\n\t\ttimeGuardString = timeGuardString + \", \" + tmp.toMyString();\r\n\t}\r\n}\r\n\t\t\r\nreturn timeGuardString+\"]\";'"
+	 * @generated
+	 */
+	String computeTimeGuardExpr();
 
 } // Transition

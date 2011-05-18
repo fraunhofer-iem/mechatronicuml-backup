@@ -962,6 +962,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getTransition__ComputeTimeGuardExpr() {
+		return transitionEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSynchronizationChannel() {
 		return synchronizationChannelEClass;
 	}
@@ -1466,6 +1475,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEOperation(transitionEClass, TRANSITION___COMPUTE_CLOCK_RESETS_EXPR);
 		createEOperation(transitionEClass, TRANSITION___COMPUTE_SYNCHRO_EXPR);
 		createEOperation(transitionEClass, TRANSITION___COMPUTE_EVENTS_EXPR);
+		createEOperation(transitionEClass, TRANSITION___COMPUTE_TIME_GUARD_EXPR);
 
 		clockConstraintEClass = createEClass(CLOCK_CONSTRAINT);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__BOUND);
@@ -1681,6 +1691,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEOperation(getTransition__ComputeEventsExpr(), theEcorePackage.getEString(), "computeEventsExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getTransition__ComputeTimeGuardExpr(), theEcorePackage.getEString(), "computeTimeGuardExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(clockConstraintEClass, ClockConstraint.class, "ClockConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClockConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClockConstraint_Clock(), this.getClock(), this.getClock_ClockConstraints(), "clock", null, 0, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1775,7 +1787,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																				
+		   });																																																																					
 	}
 
 	/**
@@ -1785,7 +1797,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																											
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																												
 		addAnnotation
 		  (getTransition_EventsExpr(), 
 		   source, 
@@ -1802,7 +1814,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getTransition_ClockConstraintExpr(), 
 		   source, 
 		   new String[] {
-			 "derivation", "clockConstraints->iterate( c:ClockConstraint;  return: String = \'\' | \r\nreturn.concat(c.toMyString())) \r\n"
+			 "derivation", "computeTimeGuardExpr()"
 		   });		
 		addAnnotation
 		  (getTransition_AbsoluteDeadlineExpr(), 

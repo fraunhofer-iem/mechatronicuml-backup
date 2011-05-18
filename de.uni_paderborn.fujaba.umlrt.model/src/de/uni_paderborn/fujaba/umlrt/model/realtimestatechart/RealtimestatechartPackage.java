@@ -2459,13 +2459,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION___COMPUTE_EVENTS_EXPR = PRIORITIZABLE_OPERATION_COUNT + 22;
 
 	/**
+	 * The operation id for the '<em>Compute Time Guard Expr</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION___COMPUTE_TIME_GUARD_EXPR = PRIORITIZABLE_OPERATION_COUNT + 23;
+
+	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 23;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZABLE_OPERATION_COUNT + 24;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -5330,6 +5339,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	EOperation getTransition__ComputeEventsExpr();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeTimeGuardExpr() <em>Compute Time Guard Expr</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compute Time Guard Expr</em>' operation.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#computeTimeGuardExpr()
+	 * @generated
+	 */
+	EOperation getTransition__ComputeTimeGuardExpr();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6429,6 +6448,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TRANSITION___COMPUTE_EVENTS_EXPR = eINSTANCE.getTransition__ComputeEventsExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Compute Time Guard Expr</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TRANSITION___COMPUTE_TIME_GUARD_EXPR = eINSTANCE.getTransition__ComputeTimeGuardExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
