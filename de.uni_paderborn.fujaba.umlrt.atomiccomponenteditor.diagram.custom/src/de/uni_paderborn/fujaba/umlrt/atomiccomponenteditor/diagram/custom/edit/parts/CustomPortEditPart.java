@@ -90,6 +90,7 @@ public class CustomPortEditPart extends PortEditPart {
 	 */
 	@Override
 	public void activate() {
+		// TODO: Sometimes this method is called and getParent() is an instance of ComponentPart!
 		getDelegation().activate();
 
 		EditPart parentEditPart = getParent();
