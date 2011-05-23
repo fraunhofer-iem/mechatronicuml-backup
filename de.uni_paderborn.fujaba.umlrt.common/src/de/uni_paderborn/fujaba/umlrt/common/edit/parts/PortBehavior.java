@@ -45,8 +45,10 @@ public class PortBehavior extends AbstractPortBehavior {
 
 	@Override
 	public void updatePortType() {
-		updatePortType(port.getRequiredMessageInterface(),
-				port.getProvidedMessageInterface());
+		if (port != null) {
+			updatePortType(port.getRequiredMessageInterface(),
+					port.getProvidedMessageInterface());
+		}
 	}
 
 	@Override
