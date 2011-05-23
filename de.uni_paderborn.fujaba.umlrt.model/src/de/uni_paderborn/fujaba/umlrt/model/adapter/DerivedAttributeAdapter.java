@@ -37,9 +37,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 
 		@Override
 		public void notifyChanged(Notification notification) {
-
-			if (notification.getEventType() == Notification.SET
-					&& notification.getFeature().equals(dependantFeature)) {
+			if (notification.getFeature() != null && notification.getFeature().equals(dependantFeature)) {
 				notifyDerivedAttributeChange(notification);
 			}
 		}
