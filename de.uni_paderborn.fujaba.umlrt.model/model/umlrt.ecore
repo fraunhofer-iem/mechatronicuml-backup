@@ -8,28 +8,6 @@
       <eSubpackages name="umlrt" nsURI="http:///de/uni_paderborn/fujaba/umlrt" nsPrefix="umlrt">
         <eSubpackages name="model" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model"
             nsPrefix="model">
-          <eSubpackages name="behavior" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
-              nsPrefix="behavior">
-            <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-              <details key="documentation" value="TODO-SD: Delete?"/>
-            </eAnnotations>
-            <eClassifiers xsi:type="ecore:EClass" name="ProtocolStatechart" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the statechart of a port. The statechart describes the communication behavior of the port.&#xD;&#xA;TODO-SD: Delete?"/>
-              </eAnnotations>
-              <eOperations name="clone" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="After invocation of this method the realtime statechart given as a parameter is clone of this realtime statechart.&#xD;&#xA;TODO-SD: Delete?"/>
-                </eAnnotations>
-                <eParameters name="newpsc" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"/>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//uni_paderborn/fujaba/umlrt/model/component/Port">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The port this protocol statechart belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-          </eSubpackages>
           <eSubpackages name="component" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component"
               nsPrefix="component">
             <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -82,9 +60,6 @@
                   <details key="documentation" value="The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentType"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ContinuousComponent" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/Component">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -97,7 +72,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+            <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
                 <details key="constraints" value="body"/>
               </eAnnotations>
@@ -108,12 +83,6 @@
                 <details key="body" value="self.cardinality.lowerBound->notEmpty()"/>
               </eAnnotations>
               <eOperations name="createInstance" lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="invisibleInterfaces"
-                  upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Don't know."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/ports">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -127,7 +96,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="specification"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"
+                  upperBound="2" eType="#//uni_paderborn/fujaba/umlrt/model/component/PortSpecification"
                   containment="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This association stores all port specifications this port realizes. Possible port specifications provide continuous or discrete behavior as well as the functionlity a hardware port provides."/>
@@ -160,9 +129,6 @@
                   <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/portType"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/ConnectorType/toPort">
@@ -178,7 +144,8 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
+                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+                  derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart&#xA;endif"/>
                 </eAnnotations>
@@ -432,19 +399,9 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
               </eAnnotations>
-              <eOperations name="getTextAsComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This operation yields the text of this constraint as a C comment e.g.&#xD;&#xA;&lt;constraint text>&#xD;&#xA;TODO: Find out for what this is required."/>
-                </eAnnotations>
-              </eOperations>
               <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This operation yields &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
-                </eAnnotations>
-              </eOperations>
-              <eOperations name="getCorrectnessAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="This operation returns a string representation of the current correctness of the constraint."/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness"
@@ -459,10 +416,6 @@
                   <details key="documentation" value="This attribute decides whether background checking is activated for this constraint. If it is activated the correctness of the constraint is checked whenever the model changes. These checks are performed in the background such that user interaction is not interrupted."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalConstraint"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendAutomatically"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="constrainableElement"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint">
@@ -478,7 +431,6 @@
               <eLiterals name="UNKNOWN" literal="unknown"/>
               <eLiterals name="CORRECT" value="1" literal="correct"/>
               <eLiterals name="VIOLATED" value="2" literal="violated"/>
-              <eLiterals name="UNSAFE" value="3" literal="unsafe"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ModelingConstraint" abstract="true"
                 eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/constraint/Constraint">
@@ -735,8 +687,7 @@
                 <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
-                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Component/componentInstances"/>
+                  lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
                   eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
                   changeable="false" volatile="true" transient="true" defaultValueLiteral=""
@@ -780,7 +731,7 @@
                 <details key="documentation" value="A port instance is a port of a component at instance level."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/portInstances"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
@@ -820,6 +771,14 @@
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
+                  containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance"
+                  containment="true"/>
             </eClassifiers>
           </eSubpackages>
           <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
