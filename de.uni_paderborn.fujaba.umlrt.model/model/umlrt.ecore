@@ -732,7 +732,7 @@
             </eAnnotations>
             <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="An instance of a component. This is not a runtime instance, though. Instead it is&#xD;&#xA;an instantiation of a component type specified by a component."/>
+                <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"
@@ -763,7 +763,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/component/BehavioralConnector">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This one connects two ports of two component instances."/>
+                <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
@@ -776,6 +776,9 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="A port instance is a port of a component at instance level."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/portInstances"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
@@ -803,6 +806,9 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/source"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="This class represents an assembly connector at instance level."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Assembly"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
@@ -810,7 +816,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="A DelegationInstance connects two PortInstances which belong to ComponentInstances that are hierarchical. The source feature represents the PortInstance of the outer ComponentInstance, the target feature represents the inner PortInstance."/>
+                <details key="documentation" value="This class represents a delegation connector at instance level."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Delegation"/>
