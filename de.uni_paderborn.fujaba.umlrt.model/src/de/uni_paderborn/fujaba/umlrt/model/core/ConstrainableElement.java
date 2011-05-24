@@ -17,6 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Constrainable Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all model elements that may carry a constraint.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -25,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getConstrainableElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ConstrainableElement extends EObject {
@@ -39,6 +43,9 @@ public interface ConstrainableElement extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The constraint for this element.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Constraint</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getConstrainableElement_Constraint()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getConstrainableElement

@@ -53,24 +53,6 @@ public interface CoreFactory extends EFactory {
 	Infinity createInfinity();
 
 	/**
-	 * Returns a new object of class '<em>Behavioral Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Behavioral Element</em>'.
-	 * @generated
-	 */
-	BehavioralElement createBehavioralElement();
-
-	/**
-	 * Returns a new object of class '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constrainable Element</em>'.
-	 * @generated
-	 */
-	ConstrainableElement createConstrainableElement();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

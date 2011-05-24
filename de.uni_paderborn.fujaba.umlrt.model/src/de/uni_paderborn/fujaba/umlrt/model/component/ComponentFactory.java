@@ -116,15 +116,6 @@ public interface ComponentFactory extends EFactory {
 	Delegation createDelegation();
 
 	/**
-	 * Returns a new object of class '<em>Behavioral Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Behavioral Connector</em>'.
-	 * @generated
-	 */
-	BehavioralConnector createBehavioralConnector();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

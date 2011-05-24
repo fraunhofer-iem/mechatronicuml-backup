@@ -27,6 +27,11 @@ import org.storydriven.modeling.calls.CallsPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package defines the message interfaces. A MessageInterface defines a set
+ * of event signatures using the class MessageType. These message types are used
+ * to type the events within a realtime statechart. 
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifaceFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
@@ -357,22 +362,22 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__CONTAINED_PARAMETERS = CallsPackage.CALLABLE__CONTAINED_PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Message Interface</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
+	int MESSAGE_TYPE__NAME = CallsPackage.CALLABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Interface</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Message Type Expr</b></em>' attribute.
@@ -636,17 +641,6 @@ public interface MsgifacePackage extends EPackage {
 	EReference getMessageType_MessageInterface();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName()
-	 * @see #getMessageType()
-	 * @generated
-	 */
-	EAttribute getMessageType_Name();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr <em>Message Type Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -729,13 +723,6 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MESSAGE_TYPE__NAME = eINSTANCE.getMessageType_Name();
 		/**
 		 * The meta object literal for the '<em><b>Message Type Expr</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

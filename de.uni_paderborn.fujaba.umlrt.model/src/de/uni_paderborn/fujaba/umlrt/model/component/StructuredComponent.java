@@ -14,9 +14,14 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a structured component which is capable of including arbitrary many component parts.
+ * This class represents a structured component which is capable of including arbitraryly many component parts.
  * 
- * Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role "composite". However structured components do not contain component types directly like in the original composite pattern. Instead they contain component parts which are typed by component types. The reason for this is to get a clear distinction between the component type level and the level of component parts.
+ * Component types are implemented as a variation of the composite design pattern. 
+ * Concerning the composite pattern this class represents the role "composite". 
+ * However structured components do not contain component types directly like 
+ * in the original composite pattern. Instead they contain component parts which 
+ * are typed by component types. The reason for this is to get a clear distinction
+ *  between the component type level and the component instance level.
  * <!-- end-model-doc -->
  *
  * <p>

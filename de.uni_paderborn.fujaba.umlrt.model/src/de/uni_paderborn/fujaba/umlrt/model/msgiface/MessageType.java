@@ -15,11 +15,18 @@ import org.storydriven.modeling.calls.Callable;
  * A representation of the model object '<em><b>Message Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A message type defines the signature of one event. That includes the name
+ * of the event as well as the list of parameters. The message type inherits from
+ * callable because concrete events in a real-time statechart must provide a 
+ * parameter mapping for the parameters of the message type as it is defined for
+ * method invocations.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface <em>Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr <em>Message Type Expr</em>}</li>
  * </ul>
  * </p>
@@ -28,7 +35,7 @@ import org.storydriven.modeling.calls.Callable;
  * @model
  * @generated
  */
-public interface MessageType extends Callable {
+public interface MessageType extends Callable, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Message Interface</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface#getMessageTypes <em>Message Types</em>}'.
@@ -38,6 +45,9 @@ public interface MessageType extends Callable {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message interface this message type belongs to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Interface</em>' container reference.
 	 * @see #setMessageInterface(MessageInterface)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageType_MessageInterface()
@@ -56,32 +66,6 @@ public interface MessageType extends Callable {
 	 * @generated
 	 */
 	void setMessageInterface(MessageInterface value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageType_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Message Type Expr</b></em>' attribute.

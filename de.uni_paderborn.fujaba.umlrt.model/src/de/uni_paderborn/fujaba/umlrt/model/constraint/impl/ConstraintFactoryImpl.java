@@ -61,9 +61,6 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ConstraintPackage.CONSTRAINT: return createConstraint();
-			case ConstraintPackage.MODELING_CONSTRAINT: return createModelingConstraint();
-			case ConstraintPackage.VERIFIABLE_CONSTRAINT: return createVerifiableConstraint();
 			case ConstraintPackage.TEXTUAL_CONSTRAINT: return createTextualConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -98,36 +95,6 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Constraint createConstraint() {
-		ConstraintImpl constraint = new ConstraintImpl();
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelingConstraint createModelingConstraint() {
-		ModelingConstraintImpl modelingConstraint = new ModelingConstraintImpl();
-		return modelingConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VerifiableConstraint createVerifiableConstraint() {
-		VerifiableConstraintImpl verifiableConstraint = new VerifiableConstraintImpl();
-		return verifiableConstraint;
 	}
 
 	/**

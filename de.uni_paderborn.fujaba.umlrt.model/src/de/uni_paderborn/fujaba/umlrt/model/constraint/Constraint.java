@@ -31,12 +31,13 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage#getConstraint()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Constraint extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Correctness</b></em>' attribute.
+	 * The default value is <code>"Correctness.UNKNOWN"</code>.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -47,7 +48,7 @@ public interface Constraint extends EObject {
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness
 	 * @see #setCorrectness(Correctness)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage#getConstraint_Correctness()
-	 * @model
+	 * @model default="Correctness.UNKNOWN"
 	 * @generated
 	 */
 	Correctness getCorrectness();
@@ -149,6 +150,9 @@ public interface Constraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The element this constraint applies to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Constrainable Element</em>' reference.
 	 * @see #setConstrainableElement(ConstrainableElement)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage#getConstraint_ConstrainableElement()

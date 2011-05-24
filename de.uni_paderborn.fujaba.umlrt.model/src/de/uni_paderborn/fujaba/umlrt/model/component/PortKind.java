@@ -17,6 +17,14 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Port Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This enumeration defines the different kinds of ports that may occur in a 
+ * MechatronicUML model. A port is discrete if it possesses a DiscretePortSpecification only.
+ * A port is continuous if it possesses a ContinousPortSpecification only. A port
+ * is hardware if it possesses a HardwarePortSpecification only. A port is hybrid
+ * if it possesses a DiscretePortSpecification and a ContinuousPortSpecification.
+ * All other possible combinations of PortSpecifications are not allowed.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPortKind()
  * @model
  * @generated

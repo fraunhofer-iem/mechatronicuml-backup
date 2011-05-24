@@ -1069,7 +1069,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEOperation(getDelegation__CreateInstance(), theInstancePackage.getDelegationInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(behavioralConnectorEClass, BehavioralConnector.class, "BehavioralConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(behavioralConnectorEClass, BehavioralConnector.class, "BehavioralConnector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralConnector_ConnectorClass(), theEcorePackage.getEClass(), null, "connectorClass", null, 0, 1, BehavioralConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
@@ -1109,19 +1109,19 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });											
+		   });												
 		addAnnotation
 		  (portEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });																			
+		   });																										
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });																							
+		   });																													
 	}
 
 	/**
@@ -1131,7 +1131,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";															
 		addAnnotation
 		  (portEClass, 
 		   source, 
@@ -1143,19 +1143,19 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface\nendif"
-		   });		
+		   });			
 		addAnnotation
 		  (getPort_ProvidedMessageInterface(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface\nendif"
-		   });		
+		   });					
 		addAnnotation
 		  (getPort_AdaptationRealtimeStatechart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart\nendif"
-		   });											
+		   });														
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1169,13 +1169,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
-		   });		
+		   });			
 		addAnnotation
 		  (getComponentPart_ComponentNameDerived(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
-		   });														
+		   });																			
 	}
 
 } //ComponentPackageImpl

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class VerifiableConstraintImpl extends ConstraintImpl implements VerifiableConstraint {
+public abstract class VerifiableConstraintImpl extends ConstraintImpl implements VerifiableConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

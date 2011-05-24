@@ -15,7 +15,12 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a delegation connector. A delegation connector connects a port of a structured component type and a port part of component part the structured component contains.
+ * This class represents a delegation connector. A delegation connector 
+ * connects a port of a structured component type and a port part of 
+ * component part the structured component contains.
+ * The delegation has no behavior. In a running system, the port of the structured
+ * component and the port of the component part will be the same object like 
+ * interfaces of classes where interface and class are the same object at runtime.
  * <!-- end-model-doc -->
  *
  * <p>

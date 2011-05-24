@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BehavioralConnectorImpl extends BehavioralElementImpl implements BehavioralConnector {
+public abstract class BehavioralConnectorImpl extends BehavioralElementImpl implements BehavioralConnector {
 	/**
 	 * The cached value of the '{@link #getConnectorClass() <em>Connector Class</em>}' reference.
 	 * <!-- begin-user-doc -->

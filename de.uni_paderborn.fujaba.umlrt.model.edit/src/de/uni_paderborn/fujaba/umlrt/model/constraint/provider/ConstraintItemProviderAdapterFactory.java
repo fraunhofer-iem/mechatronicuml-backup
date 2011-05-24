@@ -76,75 +76,6 @@ public class ConstraintItemProviderAdapterFactory extends ConstraintAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConstraintItemProvider constraintItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConstraintAdapter() {
-		if (constraintItemProvider == null) {
-			constraintItemProvider = new ConstraintItemProvider(this);
-		}
-
-		return constraintItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.constraint.ModelingConstraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelingConstraintItemProvider modelingConstraintItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.ModelingConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelingConstraintAdapter() {
-		if (modelingConstraintItemProvider == null) {
-			modelingConstraintItemProvider = new ModelingConstraintItemProvider(this);
-		}
-
-		return modelingConstraintItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.constraint.VerifiableConstraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VerifiableConstraintItemProvider verifiableConstraintItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.VerifiableConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVerifiableConstraintAdapter() {
-		if (verifiableConstraintItemProvider == null) {
-			verifiableConstraintItemProvider = new VerifiableConstraintItemProvider(this);
-		}
-
-		return verifiableConstraintItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -266,9 +197,6 @@ public class ConstraintItemProviderAdapterFactory extends ConstraintAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (constraintItemProvider != null) constraintItemProvider.dispose();
-		if (modelingConstraintItemProvider != null) modelingConstraintItemProvider.dispose();
-		if (verifiableConstraintItemProvider != null) verifiableConstraintItemProvider.dispose();
 		if (textualConstraintItemProvider != null) textualConstraintItemProvider.dispose();
 	}
 

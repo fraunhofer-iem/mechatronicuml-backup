@@ -15,6 +15,11 @@ import org.eclipse.emf.ecore.EClass;
  * A representation of the model object '<em><b>Behavioral Connector</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all connectors that have an associated behavior. The 
+ * behavior is specified as a real-time statechart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -23,7 +28,7 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getBehavioralConnector()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface BehavioralConnector extends BehavioralElement {
@@ -35,6 +40,10 @@ public interface BehavioralConnector extends BehavioralElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The class associated with this behavioral connector is used to store local variables
+	 * and operations that are used in the real-time statechart of this connector.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Class</em>' reference.
 	 * @see #setConnectorClass(EClass)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getBehavioralConnector_ConnectorClass()

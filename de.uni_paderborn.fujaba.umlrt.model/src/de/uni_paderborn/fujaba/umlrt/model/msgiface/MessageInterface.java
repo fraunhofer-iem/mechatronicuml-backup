@@ -43,6 +43,11 @@ public interface MessageInterface extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of message interfaces this message interface inherits from. This message
+	 * interface contains all message types that are defined by the super types and their
+	 * super types.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Super Type</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageInterface_SuperType()
 	 * @model
@@ -60,6 +65,9 @@ public interface MessageInterface extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message types being defined in this message interface.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Types</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage#getMessageInterface_MessageTypes()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageInterface

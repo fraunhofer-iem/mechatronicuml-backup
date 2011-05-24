@@ -17,41 +17,17 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Correctness</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This enumeration encodes the correctness result of a constraint. The correctness
+ * is UNKNOWN if the constraint has not yet been verified or if the verification failed
+ * for some reason. The constraint is CORRECT, if the verification returned true.
+ * Otherwise the constraint is VIOLATED.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage#getCorrectness()
  * @model
  * @generated
  */
 public enum Correctness implements Enumerator {
-	/**
-	 * The '<em><b>CORRECT</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CORRECT_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CORRECT(0, "CORRECT", "correct"),
-
-	/**
-	 * The '<em><b>VIOLATED</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #VIOLATED_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	VIOLATED(1, "VIOLATED", "violated"),
-
-	/**
-	 * The '<em><b>UNSAFE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNSAFE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UNSAFE(2, "UNSAFE", "unsafe"),
-
 	/**
 	 * The '<em><b>UNKNOWN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -60,52 +36,31 @@ public enum Correctness implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNKNOWN(3, "UNKNOWN", "unknown");
-
-	/**
-	 * The '<em><b>CORRECT</b></em>' literal value.
+	UNKNOWN(0, "UNKNOWN", "unknown"), /**
+	 * The '<em><b>CORRECT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CORRECT</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CORRECT
-	 * @model literal="correct"
+	 * @see #CORRECT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CORRECT_VALUE = 0;
-
-	/**
-	 * The '<em><b>VIOLATED</b></em>' literal value.
+	CORRECT(1, "CORRECT", "correct"), /**
+	 * The '<em><b>VIOLATED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>VIOLATED</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #VIOLATED
-	 * @model literal="violated"
+	 * @see #VIOLATED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VIOLATED_VALUE = 1;
-
-	/**
-	 * The '<em><b>UNSAFE</b></em>' literal value.
+	VIOLATED(2, "VIOLATED", "violated"), /**
+	 * The '<em><b>UNSAFE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>UNSAFE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #UNSAFE
-	 * @model literal="unsafe"
+	 * @see #UNSAFE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNSAFE_VALUE = 2;
+	UNSAFE(3, "UNSAFE", "unsafe");
 
 	/**
 	 * The '<em><b>UNKNOWN</b></em>' literal value.
@@ -120,7 +75,52 @@ public enum Correctness implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNKNOWN_VALUE = 3;
+	public static final int UNKNOWN_VALUE = 0;
+
+	/**
+	 * The '<em><b>CORRECT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>CORRECT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CORRECT
+	 * @model literal="correct"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CORRECT_VALUE = 1;
+
+	/**
+	 * The '<em><b>VIOLATED</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>VIOLATED</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #VIOLATED
+	 * @model literal="violated"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VIOLATED_VALUE = 2;
+
+	/**
+	 * The '<em><b>UNSAFE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>UNSAFE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UNSAFE
+	 * @model literal="unsafe"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSAFE_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Correctness</b></em>' enumerators.
@@ -130,10 +130,10 @@ public enum Correctness implements Enumerator {
 	 */
 	private static final Correctness[] VALUES_ARRAY =
 		new Correctness[] {
+			UNKNOWN,
 			CORRECT,
 			VIOLATED,
 			UNSAFE,
-			UNKNOWN,
 		};
 
 	/**
@@ -184,10 +184,10 @@ public enum Correctness implements Enumerator {
 	 */
 	public static Correctness get(int value) {
 		switch (value) {
+			case UNKNOWN_VALUE: return UNKNOWN;
 			case CORRECT_VALUE: return CORRECT;
 			case VIOLATED_VALUE: return VIOLATED;
 			case UNSAFE_VALUE: return UNSAFE;
-			case UNKNOWN_VALUE: return UNKNOWN;
 		}
 		return null;
 	}

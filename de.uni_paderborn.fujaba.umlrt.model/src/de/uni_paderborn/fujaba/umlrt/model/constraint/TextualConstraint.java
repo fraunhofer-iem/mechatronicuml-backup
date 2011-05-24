@@ -13,6 +13,12 @@ import org.storydriven.modeling.expressions.TextualExpression;
  * A representation of the model object '<em><b>Textual Constraint</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents all verifable constraints that can be entered as a string in a predefined
+ * constraint language like, e.g., CTL or TCTL. Therefore, it contains a textual expression
+ * which is used to store the constraint text and the language.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -33,6 +39,10 @@ public interface TextualConstraint extends VerifiableConstraint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A textual expression which stores the constraint text and the language in which 
+	 * the constraint is specified.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Textual Expression</em>' containment reference.
 	 * @see #setTextualExpression(TextualExpression)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage#getTextualConstraint_TextualExpression()

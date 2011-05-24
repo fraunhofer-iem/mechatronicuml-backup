@@ -17,6 +17,11 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The entries of the enumeration represent different kinds of components. These
+ * are discrete software components, continous components containing controller
+ * code and hardware components representing physical entities in the system.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentKind()
  * @model
  * @generated

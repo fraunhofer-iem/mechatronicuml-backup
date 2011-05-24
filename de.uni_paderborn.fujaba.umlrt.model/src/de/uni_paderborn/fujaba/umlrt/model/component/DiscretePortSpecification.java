@@ -43,7 +43,7 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The port role this port is a realization of.
+	 * The role of a parameterized coordination pattern that this port refines.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see #setRefines(Role)
@@ -72,6 +72,10 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The adaptation statechart of this port. For a port with cardinality 0..1 or 0..*, it 
+	 * specifies the creation and deletion of instances of this port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
 	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_AdaptationRealtimeStatechart()
@@ -148,6 +152,10 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The size of the event queue of this port. It defines the maximum number of events
+	 * that may be temporarily buffered by the port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Event Queue Size</em>' attribute.
 	 * @see #setEventQueueSize(int)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getDiscretePortSpecification_EventQueueSize()

@@ -71,7 +71,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
-			case ComponentPackage.BEHAVIORAL_CONNECTOR: return createBehavioralConnector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -209,16 +208,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public Delegation createDelegation() {
 		DelegationImpl delegation = new DelegationImpl();
 		return delegation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehavioralConnector createBehavioralConnector() {
-		BehavioralConnectorImpl behavioralConnector = new BehavioralConnectorImpl();
-		return behavioralConnector;
 	}
 
 	/**

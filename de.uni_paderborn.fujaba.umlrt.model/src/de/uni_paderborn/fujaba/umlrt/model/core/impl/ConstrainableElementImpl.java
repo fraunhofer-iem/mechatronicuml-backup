@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ConstrainableElementImpl extends EObjectImpl implements ConstrainableElement {
+public abstract class ConstrainableElementImpl extends EObjectImpl implements ConstrainableElement {
 	/**
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->

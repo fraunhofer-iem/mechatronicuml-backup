@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.impl.CallableImpl;
 
@@ -32,8 +34,8 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageTypeExpr <em>Message Type Expr</em>}</li>
  * </ul>
  * </p>
@@ -80,7 +82,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 		super();
 		
 		DerivedAttributeAdapter messageTypeExprAdapter1 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
-		messageTypeExprAdapter1.addLocalDependency( MsgifacePackage.Literals.MESSAGE_TYPE__NAME);
 
 		DerivedAttributeAdapter messageTypeExprAdapter2 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
 		messageTypeExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
@@ -262,10 +263,10 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return getMessageInterface();
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				return getName();
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+				return getMessageInterface();
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
 				return getMessageTypeExpr();
 		}
@@ -280,11 +281,11 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				setMessageInterface((MessageInterface)newValue);
-				return;
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				setName((String)newValue);
+				return;
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+				setMessageInterface((MessageInterface)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -298,11 +299,11 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				setMessageInterface((MessageInterface)null);
-				return;
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+				setMessageInterface((MessageInterface)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -316,14 +317,46 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
-				return getMessageInterface() != null;
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
+				return getMessageInterface() != null;
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
 				return isSetMessageTypeExpr();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case MsgifacePackage.MESSAGE_TYPE__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case SDMPackage.NAMED_ELEMENT__NAME: return MsgifacePackage.MESSAGE_TYPE__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

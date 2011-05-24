@@ -19,7 +19,11 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a component part. A component part is an instance of a component type on the modelling level. It is typed by its respective component type. A component part is embedded into a structured component.
+ * This class represents a component part. Component parts are used to specify
+ * the inner structure of a structured component. A component part represents
+ * another component that is embedded in a  structured 
+ * component. It is specified on the model level and is 
+ * always typed over a component (either structured or atomic).
  * <!-- end-model-doc -->
  *
  * <p>
@@ -156,6 +160,9 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ports of this part. They are derived from the ports of the componentType of this component part.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see #isSetPortsDerived()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_PortsDerived()
@@ -184,6 +191,9 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of this component part. It is the same as the name of the componentType and derived from there.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Name Derived</em>' attribute.
 	 * @see #isSetComponentNameDerived()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponentPart_ComponentNameDerived()

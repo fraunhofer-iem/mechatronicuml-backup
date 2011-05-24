@@ -386,8 +386,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		textualConstraintEClass.getESuperTypes().add(this.getVerifiableConstraint());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "Correctness.UNKNOWN", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_Background(), theEcorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_InternalConstraint(), theEcorePackage.getEBoolean(), "internalConstraint", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_ExtendAutomatically(), theEcorePackage.getEBoolean(), "extendAutomatically", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -399,19 +399,19 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		initEOperation(getConstraint__GetCorrectnessAsString(), ecorePackage.getEString(), "getCorrectnessAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(modelingConstraintEClass, ModelingConstraint.class, "ModelingConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(modelingConstraintEClass, ModelingConstraint.class, "ModelingConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(verifiableConstraintEClass, VerifiableConstraint.class, "VerifiableConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(verifiableConstraintEClass, VerifiableConstraint.class, "VerifiableConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(textualConstraintEClass, TextualConstraint.class, "TextualConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTextualConstraint_TextualExpression(), theExpressionsPackage.getTextualExpression(), null, "textualExpression", null, 0, 1, TextualConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(correctnessEEnum, Correctness.class, "Correctness");
+		addEEnumLiteral(correctnessEEnum, Correctness.UNKNOWN);
 		addEEnumLiteral(correctnessEEnum, Correctness.CORRECT);
 		addEEnumLiteral(correctnessEEnum, Correctness.VIOLATED);
 		addEEnumLiteral(correctnessEEnum, Correctness.UNSAFE);
-		addEEnumLiteral(correctnessEEnum, Correctness.UNKNOWN);
 
 		// Create resource
 		createResource(eNS_URI);

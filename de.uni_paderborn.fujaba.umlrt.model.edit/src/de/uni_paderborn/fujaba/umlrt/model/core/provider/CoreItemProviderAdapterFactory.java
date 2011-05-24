@@ -145,52 +145,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BehavioralElementItemProvider behavioralElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBehavioralElementAdapter() {
-		if (behavioralElementItemProvider == null) {
-			behavioralElementItemProvider = new BehavioralElementItemProvider(this);
-		}
-
-		return behavioralElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConstrainableElementItemProvider constrainableElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConstrainableElementAdapter() {
-		if (constrainableElementItemProvider == null) {
-			constrainableElementItemProvider = new ConstrainableElementItemProvider(this);
-		}
-
-		return constrainableElementItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -292,8 +246,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (infinityItemProvider != null) infinityItemProvider.dispose();
-		if (behavioralElementItemProvider != null) behavioralElementItemProvider.dispose();
-		if (constrainableElementItemProvider != null) constrainableElementItemProvider.dispose();
 	}
 
 }

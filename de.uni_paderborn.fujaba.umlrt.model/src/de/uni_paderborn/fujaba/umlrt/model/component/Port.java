@@ -170,6 +170,10 @@ public interface Port extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The required message interface contains the signature definitions of all events
+	 * that may be sent by this port. It is derived from the discrete port specification.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Required Message Interface</em>' reference.
 	 * @see #setRequiredMessageInterface(MessageInterface)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_RequiredMessageInterface()
@@ -197,6 +201,10 @@ public interface Port extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The provided message interface contains the signature definitions of all events
+	 * that may be received by this port. It is derived from the discrete port specification.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Provided Message Interface</em>' reference.
 	 * @see #setProvidedMessageInterface(MessageInterface)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_ProvidedMessageInterface()
@@ -244,6 +252,9 @@ public interface Port extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connectors which lead into this port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_IncomingConnectors()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort
@@ -262,6 +273,9 @@ public interface Port extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connectors which originate from this port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_OutgoingConnectors()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getFromPort
@@ -278,6 +292,9 @@ public interface Port extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The adaptation behavior of this port which is derived from the DiscretePortSpecification.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
 	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_AdaptationRealtimeStatechart()

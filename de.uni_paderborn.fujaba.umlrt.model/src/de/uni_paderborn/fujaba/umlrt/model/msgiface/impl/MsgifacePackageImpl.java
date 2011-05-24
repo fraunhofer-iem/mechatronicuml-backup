@@ -198,17 +198,8 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMessageType_Name() {
-		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getMessageType_MessageTypeExpr() {
-		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)messageTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -254,7 +245,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		messageTypeEClass = createEClass(MESSAGE_TYPE);
 		createEReference(messageTypeEClass, MESSAGE_TYPE__MESSAGE_INTERFACE);
-		createEAttribute(messageTypeEClass, MESSAGE_TYPE__NAME);
 		createEAttribute(messageTypeEClass, MESSAGE_TYPE__MESSAGE_TYPE_EXPR);
 		createEOperation(messageTypeEClass, MESSAGE_TYPE___TO_MY_STRING);
 	}
@@ -294,6 +284,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		// Add supertypes to classes
 		messageInterfaceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		messageTypeEClass.getESuperTypes().add(theCallsPackage.getCallable());
+		messageTypeEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -302,7 +293,6 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessageType_Name(), theEcorePackage.getEString(), "name", null, 0, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageType_MessageTypeExpr(), theEcorePackage.getEString(), "MessageTypeExpr", null, 0, 1, MessageType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMessageType__ToMyString(), theEcorePackage.getEString(), "toMyString", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -332,7 +322,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });			
+		   });								
 	}
 
 	/**
@@ -342,7 +332,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";										
 		addAnnotation
 		  (getMessageType_MessageTypeExpr(), 
 		   source, 

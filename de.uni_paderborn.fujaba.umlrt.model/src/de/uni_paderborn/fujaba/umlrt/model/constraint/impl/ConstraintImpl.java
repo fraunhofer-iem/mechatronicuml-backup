@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class ConstraintImpl extends EObjectImpl implements Constraint {
+public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 	/**
 	 * The default value of the '{@link #getCorrectness() <em>Correctness</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Correctness CORRECTNESS_EDEFAULT = Correctness.CORRECT;
+	protected static final Correctness CORRECTNESS_EDEFAULT = Correctness.UNKNOWN;
 
 	/**
 	 * The cached value of the '{@link #getCorrectness() <em>Correctness</em>}' attribute.

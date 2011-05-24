@@ -29,6 +29,10 @@ import org.storydriven.modeling.SDMPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The package components contains all classes for modeling atomic and structured components.
+ * Components are defined on the type level and may be instantiated in a component instance configuration.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"

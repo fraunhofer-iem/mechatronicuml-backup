@@ -306,29 +306,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BehavioralConnectorItemProvider behavioralConnectorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBehavioralConnectorAdapter() {
-		if (behavioralConnectorItemProvider == null) {
-			behavioralConnectorItemProvider = new BehavioralConnectorItemProvider(this);
-		}
-
-		return behavioralConnectorItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -437,7 +414,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();
 		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
 		if (delegationItemProvider != null) delegationItemProvider.dispose();
-		if (behavioralConnectorItemProvider != null) behavioralConnectorItemProvider.dispose();
 	}
 
 }

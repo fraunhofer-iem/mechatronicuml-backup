@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  *
  * @generated
  */
-public class BehavioralElementImpl extends EObjectImpl implements BehavioralElement {
+public abstract class BehavioralElementImpl extends EObjectImpl implements BehavioralElement {
 	/**
 	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
 	 * <!-- begin-user-doc -->

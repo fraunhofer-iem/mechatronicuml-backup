@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Behavioral Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all elements that have a behavior in terms of a real-time statechart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface BehavioralElement extends EObject {
@@ -34,6 +38,9 @@ public interface BehavioralElement extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The real-time statechart that defines the behavior of this behavioral element.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Realtime Statechart</em>' reference.
 	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getBehavioralElement_RealtimeStatechart()
