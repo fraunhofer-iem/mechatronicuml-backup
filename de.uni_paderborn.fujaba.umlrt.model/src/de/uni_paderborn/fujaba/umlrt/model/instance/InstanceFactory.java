@@ -71,6 +71,15 @@ public interface InstanceFactory extends EFactory {
 	DelegationInstance createDelegationInstance();
 
 	/**
+	 * Returns a new object of class '<em>Component Instance Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Instance Configuration</em>'.
+	 * @generated
+	 */
+	ComponentInstanceConfiguration createComponentInstanceConfiguration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

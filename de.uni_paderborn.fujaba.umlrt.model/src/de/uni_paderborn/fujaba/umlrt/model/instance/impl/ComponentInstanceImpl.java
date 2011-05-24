@@ -172,33 +172,11 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComponentType(Component newComponentType,
-			NotificationChain msgs) {
+	public void setComponentType(Component newComponentType) {
 		Component oldComponentType = componentType;
 		componentType = newComponentType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE, oldComponentType, newComponentType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponentType(Component newComponentType) {
-		if (newComponentType != componentType) {
-			NotificationChain msgs = null;
-			if (componentType != null)
-				msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, Component.class, msgs);
-			if (newComponentType != null)
-				msgs = ((InternalEObject)newComponentType).eInverseAdd(this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, Component.class, msgs);
-			msgs = basicSetComponentType(newComponentType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE, newComponentType, newComponentType));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE, oldComponentType, componentType));
 	}
 
 	/**
@@ -299,10 +277,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
-				if (componentType != null)
-					msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, Component.class, msgs);
-				return basicSetComponentType((Component)otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
@@ -319,8 +293,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
-				return basicSetComponentType(null, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 				return ((InternalEList<?>)getEmbeddedInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:

@@ -191,6 +191,29 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentInstanceConfigurationItemProvider componentInstanceConfigurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentInstanceConfigurationAdapter() {
+		if (componentInstanceConfigurationItemProvider == null) {
+			componentInstanceConfigurationItemProvider = new ComponentInstanceConfigurationItemProvider(this);
+		}
+
+		return componentInstanceConfigurationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -294,6 +317,7 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (portInstanceItemProvider != null) portInstanceItemProvider.dispose();
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
+		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
 	}
 
 }

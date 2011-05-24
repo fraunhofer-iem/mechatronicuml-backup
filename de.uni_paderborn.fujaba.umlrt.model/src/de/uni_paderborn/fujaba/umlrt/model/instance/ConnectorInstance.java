@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Port;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This one connects two ports of two component instances.
+ * This class is the common super class of delegation instances and assemly instances.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -63,6 +63,8 @@ public class StateItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommittedPropertyDescriptor(object);
+			addInitialPropertyDescriptor(object);
+			addFinalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +83,50 @@ public class StateItemProvider
 				 getString("_UI_State_committed_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_State_committed_feature", "_UI_State_type"),
 				 RealtimestatechartPackage.Literals.STATE__COMMITTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Initial feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_initial_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_initial_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__INITIAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Final feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFinalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_final_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_final_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__FINAL,
 				 true,
 				 false,
 				 false,
@@ -162,6 +208,8 @@ public class StateItemProvider
 
 		switch (notification.getFeatureID(State.class)) {
 			case RealtimestatechartPackage.STATE__COMMITTED:
+			case RealtimestatechartPackage.STATE__INITIAL:
+			case RealtimestatechartPackage.STATE__FINAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__REGIONS:

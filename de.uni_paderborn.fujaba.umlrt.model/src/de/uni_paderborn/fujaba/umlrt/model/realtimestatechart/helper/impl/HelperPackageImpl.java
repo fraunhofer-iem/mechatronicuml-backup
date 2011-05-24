@@ -156,7 +156,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		SDMPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
@@ -167,7 +166,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 
 		// Create package meta-data objects
 		theHelperPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theCorePackage.createPackageContents();
@@ -178,7 +176,6 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 
 		// Initialize created meta-data
 		theHelperPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();

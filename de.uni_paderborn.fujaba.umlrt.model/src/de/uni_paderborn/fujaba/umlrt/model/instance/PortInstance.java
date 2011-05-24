@@ -18,6 +18,10 @@ import org.storydriven.modeling.NamedElement;
  * A representation of the model object '<em><b>Port Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A port instance is a port of a component at instance level.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,7 +41,6 @@ import org.storydriven.modeling.NamedElement;
 public interface PortInstance extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port Type</em>' reference isn't clear,
@@ -47,8 +50,7 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see #setPortType(Port)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getPortInstance_PortType()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances
-	 * @model opposite="portInstances" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Port getPortType();

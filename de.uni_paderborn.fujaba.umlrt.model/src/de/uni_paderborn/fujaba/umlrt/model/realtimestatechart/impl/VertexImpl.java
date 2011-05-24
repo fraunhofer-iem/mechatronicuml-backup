@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -110,9 +111,9 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getStatechart() {
+	public FujabaRealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART) return null;
-		return (AbstractRealtimeStatechart)eContainer();
+		return (FujabaRealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -120,7 +121,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(AbstractRealtimeStatechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(FujabaRealtimeStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.VERTEX__STATECHART, msgs);
 		return msgs;
 	}
@@ -130,7 +131,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+	public void setStatechart(FujabaRealtimeStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.VERTEX__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -138,7 +139,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, AbstractRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES, FujabaRealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -190,7 +191,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			case RealtimestatechartPackage.VERTEX__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
+				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -222,7 +223,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, AbstractRealtimeStatechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES, FujabaRealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -263,7 +264,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)newValue);
+				setStatechart((FujabaRealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,7 +285,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().clear();
 				return;
 			case RealtimestatechartPackage.VERTEX__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)null);
+				setStatechart((FujabaRealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);

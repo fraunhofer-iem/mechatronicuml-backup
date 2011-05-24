@@ -105,6 +105,10 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createDelegationInstanceAdapter();
 			}
 			@Override
+			public Adapter caseComponentInstanceConfiguration(ComponentInstanceConfiguration object) {
+				return createComponentInstanceConfigurationAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -211,6 +215,20 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDelegationInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration
+	 * @generated
+	 */
+	public Adapter createComponentInstanceConfigurationAdapter() {
 		return null;
 	}
 

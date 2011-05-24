@@ -78,7 +78,6 @@ public class ComponentItemProvider
 			addConstraintPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
-			addComponentInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -167,28 +166,6 @@ public class ComponentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Component Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_componentInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentInstances_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__COMPONENT_INSTANCES,
-				 false,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.umlrt.model.component;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
 
+import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
@@ -32,14 +33,12 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getInvisibleInterfaces <em>Invisible Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
@@ -51,22 +50,7 @@ import org.storydriven.modeling.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='self.cardinality.lowerBound->notEmpty()'"
  * @generated
  */
-public interface Port extends NamedElement, CommentableElement {
-	/**
-	 * Returns the value of the '<em><b>Invisible Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Don't know.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Invisible Interfaces</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_InvisibleInterfaces()
-	 * @model
-	 * @generated
-	 */
-	EList<EClass> getInvisibleInterfaces();
-
+public interface Port extends NamedElement, CommentableElement, ConstrainableElement {
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getPorts <em>Ports</em>}'.
@@ -132,7 +116,7 @@ public interface Port extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Specification</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_Specification()
-	 * @model containment="true"
+	 * @model containment="true" upper="2"
 	 * @generated
 	 */
 	EList<PortSpecification> getSpecification();
@@ -225,24 +209,6 @@ public interface Port extends NamedElement, CommentableElement {
 	void setProvidedMessageInterface(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Port Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType <em>Port Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port Instances</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_PortInstances()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType
-	 * @model opposite="portType"
-	 * @generated
-	 */
-	EList<PortInstance> getPortInstances();
-
-	/**
 	 * Returns the value of the '<em><b>Incoming Connectors</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType#getToPort <em>To Port</em>}'.
@@ -298,7 +264,8 @@ public interface Port extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
 	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_AdaptationRealtimeStatechart()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart\nendif'"
+	 * @model derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart\nendif'"
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();

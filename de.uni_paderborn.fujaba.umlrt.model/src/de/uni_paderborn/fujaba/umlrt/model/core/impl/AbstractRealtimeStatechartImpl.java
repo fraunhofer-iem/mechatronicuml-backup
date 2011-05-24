@@ -45,13 +45,8 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getScheduleDocument <em>Schedule Document</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -179,36 +174,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	protected String scheduleDocument = SCHEDULE_DOCUMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Transition> transitions;
-
-	/**
-	 * The cached value of the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVertices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Vertex> vertices;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
-
-	/**
 	 * The cached value of the '{@link #getBehavioralElement() <em>Behavioral Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -237,36 +202,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected boolean embedded = EMBEDDED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getClocks() <em>Clocks</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClocks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Clock> clocks;
-
-	/**
-	 * The default value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableClocks()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Iterator AVAILABLE_CLOCKS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableClocks()
-	 * @generated
-	 * @ordered
-	 */
-	protected Iterator availableClocks = AVAILABLE_CLOCKS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -418,73 +353,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Transition> getTransitions() {
-		if (transitions == null) {
-			transitions = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS, RealtimestatechartPackage.TRANSITION__STATECHART);
-		}
-		return transitions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Vertex> getVertices() {
-		if (vertices == null) {
-			vertices = new EObjectContainmentWithInverseEList<Vertex>(Vertex.class, this, CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES, RealtimestatechartPackage.VERTEX__STATECHART);
-		}
-		return vertices;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEClass(EClass newEClass, NotificationChain msgs) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS, oldEClass, newEClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEClass(EClass newEClass) {
-		if (newEClass != eClass) {
-			NotificationChain msgs = null;
-			if (eClass != null)
-				msgs = ((InternalEObject)eClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS, null, msgs);
-			if (newEClass != null)
-				msgs = ((InternalEObject)newEClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS, null, msgs);
-			msgs = basicSetEClass(newEClass, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS, newEClass, newEClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public BehavioralElement getBehavioralElement() {
 		if (behavioralElement != null && behavioralElement.eIsProxy()) {
 			InternalEObject oldBehavioralElement = (InternalEObject)behavioralElement;
@@ -566,39 +434,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Clock> getClocks() {
-		if (clocks == null) {
-			clocks = new EObjectContainmentWithInverseEList<Clock>(Clock.class, this, CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS, RealtimestatechartPackage.CLOCK__STATECHART);
-		}
-		return clocks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Iterator getAvailableClocks() {
-		return availableClocks;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAvailableClocks(Iterator newAvailableClocks) {
-		Iterator oldAvailableClocks = availableClocks;
-		availableClocks = newAvailableClocks;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS, oldAvailableClocks, availableClocks));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AbstractRealtimeStatechart getHighestParentStatechart() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -629,8 +464,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		result.append(scheduleDocument);
 		result.append(", embedded: ");
 		result.append(embedded);
-		result.append(", availableClocks: ");
-		result.append(availableClocks);
 		result.append(')');
 		return result.toString();
 	}
@@ -644,16 +477,10 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVertices()).basicAdd(otherEnd, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (behavioralElement != null)
 					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
 				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -666,16 +493,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-				return basicSetEClass(null, msgs);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				return basicSetBehavioralElement(null, msgs);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -700,21 +519,11 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return getUtilisation();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				return getScheduleDocument();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				return getTransitions();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				return getVertices();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-				return getEClass();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (resolve) return getBehavioralElement();
 				return basicGetBehavioralElement();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				return getClocks();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				return getAvailableClocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -746,29 +555,11 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument((String)newValue);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				getTransitions().clear();
-				getTransitions().addAll((Collection<? extends Transition>)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				getVertices().clear();
-				getVertices().addAll((Collection<? extends Vertex>)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-				setEClass((EClass)newValue);
-				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)newValue);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded((Boolean)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				getClocks().clear();
-				getClocks().addAll((Collection<? extends Clock>)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				setAvailableClocks((Iterator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -800,26 +591,11 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument(SCHEDULE_DOCUMENT_EDEFAULT);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				getTransitions().clear();
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				getVertices().clear();
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-				setEClass((EClass)null);
-				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)null);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded(EMBEDDED_EDEFAULT);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				getClocks().clear();
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				setAvailableClocks(AVAILABLE_CLOCKS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -845,20 +621,10 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return utilisation != UTILISATION_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				return SCHEDULE_DOCUMENT_EDEFAULT == null ? scheduleDocument != null : !SCHEDULE_DOCUMENT_EDEFAULT.equals(scheduleDocument);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__TRANSITIONS:
-				return transitions != null && !transitions.isEmpty();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__VERTICES:
-				return vertices != null && !vertices.isEmpty();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__ECLASS:
-				return eClass != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				return behavioralElement != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return embedded != EMBEDDED_EDEFAULT;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS:
-				return clocks != null && !clocks.isEmpty();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -34,8 +34,12 @@ import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
 import de.uni_paderborn.fujaba.umlrt.model.component.PortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
+import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
@@ -49,14 +53,13 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getInvisibleInterfaces <em>Invisible Interfaces</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
@@ -87,14 +90,14 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInvisibleInterfaces() <em>Invisible Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInvisibleInterfaces()
+	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClass> invisibleInterfaces;
+	protected EList<Constraint> constraint;
 
 	/**
 	 * The default value of the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
@@ -155,16 +158,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PortInstance> portInstances;
 
 	/**
 	 * The cached value of the '{@link #getIncomingConnectors() <em>Incoming Connectors</em>}' reference list.
@@ -260,12 +253,13 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EClass> getInvisibleInterfaces() {
-		if (invisibleInterfaces == null) {
-			invisibleInterfaces = new EObjectResolvingEList<EClass>(EClass.class, this, ComponentPackage.PORT__INVISIBLE_INTERFACES);
+	public EList<Constraint> getConstraint() {
+		if (constraint == null) {
+			constraint = new EObjectWithInverseResolvingEList<Constraint>(Constraint.class, this, ComponentPackage.PORT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
-		return invisibleInterfaces;
+		return constraint;
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -470,19 +464,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PortInstance> getPortInstances() {
-		if (portInstances == null) {
-			portInstances = new EObjectWithInverseResolvingEList<PortInstance>(PortInstance.class, this, ComponentPackage.PORT__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__PORT_TYPE);
-		}
-		return portInstances;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ConnectorType> getIncomingConnectors() {
 		if (incomingConnectors == null) {
 			incomingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__INCOMING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
@@ -566,12 +547,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.PORT__CONSTRAINT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__COMPONENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponent((Component)otherEnd, msgs);
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectors()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -588,14 +569,14 @@ public class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.PORT__CONSTRAINT:
+				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__COMPONENT:
 				return basicSetComponent(null, msgs);
 			case ComponentPackage.PORT__SPECIFICATION:
 				return ((InternalEList<?>)getSpecification()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -628,8 +609,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__COMMENT:
 				return getComment();
-			case ComponentPackage.PORT__INVISIBLE_INTERFACES:
-				return getInvisibleInterfaces();
+			case ComponentPackage.PORT__CONSTRAINT:
+				return getConstraint();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent();
 			case ComponentPackage.PORT__PORT_KIND:
@@ -644,8 +625,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				if (resolve) return getProvidedMessageInterface();
 				return basicGetProvidedMessageInterface();
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				return getPortInstances();
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return getIncomingConnectors();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -669,9 +648,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ComponentPackage.PORT__INVISIBLE_INTERFACES:
-				getInvisibleInterfaces().clear();
-				getInvisibleInterfaces().addAll((Collection<? extends EClass>)newValue);
+			case ComponentPackage.PORT__CONSTRAINT:
+				getConstraint().clear();
+				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)newValue);
@@ -691,10 +670,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return;
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)newValue);
-				return;
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				getPortInstances().clear();
-				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
 				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
@@ -722,8 +697,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ComponentPackage.PORT__INVISIBLE_INTERFACES:
-				getInvisibleInterfaces().clear();
+			case ComponentPackage.PORT__CONSTRAINT:
+				getConstraint().clear();
 				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)null);
@@ -742,9 +717,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return;
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				setProvidedMessageInterface((MessageInterface)null);
-				return;
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				getPortInstances().clear();
 				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
@@ -769,8 +741,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ComponentPackage.PORT__INVISIBLE_INTERFACES:
-				return invisibleInterfaces != null && !invisibleInterfaces.isEmpty();
+			case ComponentPackage.PORT__CONSTRAINT:
+				return constraint != null && !constraint.isEmpty();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent() != null;
 			case ComponentPackage.PORT__PORT_KIND:
@@ -783,8 +755,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE:
 				return PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ComponentPackage.PORT__PORT_INSTANCES:
-				return portInstances != null && !portInstances.isEmpty();
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return incomingConnectors != null && !incomingConnectors.isEmpty();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -808,6 +778,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 				default: return -1;
 			}
 		}
+		if (baseClass == ConstrainableElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.PORT__CONSTRAINT: return CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -821,6 +797,12 @@ public class PortImpl extends NamedElementImpl implements Port {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.PORT__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == ConstrainableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
 				default: return -1;
 			}
 		}

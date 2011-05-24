@@ -15,6 +15,10 @@ import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
  * A representation of the model object '<em><b>Assembly Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents an assembly connector at instance level.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

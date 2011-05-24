@@ -181,22 +181,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Component Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__COMPONENT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -497,15 +488,6 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT__KIND = COMPONENT__KIND;
 
 	/**
-	 * The feature id for the '<em><b>Component Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__COMPONENT_INSTANCES = COMPONENT__COMPONENT_INSTANCES;
-
-	/**
 	 * The feature id for the '<em><b>XML File Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -759,13 +741,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Invisible Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__INVISIBLE_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PORT__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -822,22 +804,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -846,7 +819,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
@@ -855,7 +828,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int PORT__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -864,7 +837,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1638,15 +1611,6 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__KIND = COMPONENT__KIND;
 
 	/**
-	 * The feature id for the '<em><b>Component Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT__COMPONENT_INSTANCES = COMPONENT__COMPONENT_INSTANCES;
-
-	/**
 	 * The feature id for the '<em><b>Embedded Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1970,15 +1934,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_COMPONENT__KIND = COMPONENT__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Component Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT__COMPONENT_INSTANCES = COMPONENT__COMPONENT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
@@ -2604,17 +2559,6 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getComponent_Kind();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances <em>Component Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Component Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_ComponentInstances();
-
-	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2654,17 +2598,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPort();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getInvisibleInterfaces <em>Invisible Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Invisible Interfaces</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getInvisibleInterfaces()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_InvisibleInterfaces();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getComponent <em>Component</em>}'.
@@ -2731,17 +2664,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_ProvidedMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_PortInstances();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
@@ -3270,14 +3192,6 @@ public interface ComponentPackage extends EPackage {
 		EAttribute COMPONENT__KIND = eINSTANCE.getComponent_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__COMPONENT_INSTANCES = eINSTANCE.getComponent_ComponentInstances();
-
-		/**
 		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3312,14 +3226,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PORT = eINSTANCE.getPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Invisible Interfaces</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__INVISIBLE_INTERFACES = eINSTANCE.getPort_InvisibleInterfaces();
 
 		/**
 		 * The meta object literal for the '<em><b>Component</b></em>' container reference feature.
@@ -3368,14 +3274,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPort_ProvidedMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__PORT_INSTANCES = eINSTANCE.getPort_PortInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Connectors</b></em>' reference list feature.

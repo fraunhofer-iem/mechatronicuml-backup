@@ -71,6 +71,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.PORT_INSTANCE: return createPortInstance();
 			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
 			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,6 +125,16 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public DelegationInstance createDelegationInstance() {
 		DelegationInstanceImpl delegationInstance = new DelegationInstanceImpl();
 		return delegationInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstanceConfiguration createComponentInstanceConfiguration() {
+		ComponentInstanceConfigurationImpl componentInstanceConfiguration = new ComponentInstanceConfigurationImpl();
+		return componentInstanceConfiguration;
 	}
 
 	/**

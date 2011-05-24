@@ -63,13 +63,12 @@ public class PortItemProvider extends NamedElementItemProvider implements
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addInvisibleInterfacesPropertyDescriptor(object);
+			addConstraintPropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
 			addSpecificationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addRequiredMessageInterfacePropertyDescriptor(object);
 			addProvidedMessageInterfacePropertyDescriptor(object);
-			addPortInstancesPropertyDescriptor(object);
 			addIncomingConnectorsPropertyDescriptor(object);
 			addOutgoingConnectorsPropertyDescriptor(object);
 			addAdaptationRealtimeStatechartPropertyDescriptor(object);
@@ -100,18 +99,19 @@ public class PortItemProvider extends NamedElementItemProvider implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Invisible Interfaces feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Constraint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInvisibleInterfacesPropertyDescriptor(Object object) {
+	protected void addConstraintPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_invisibleInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_invisibleInterfaces_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__INVISIBLE_INTERFACES,
+				 getString("_UI_ConstrainableElement_constraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
+				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -236,28 +236,6 @@ public class PortItemProvider extends NamedElementItemProvider implements
 				 true,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Port Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPortInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_portInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_portInstances_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__PORT_INSTANCES,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));

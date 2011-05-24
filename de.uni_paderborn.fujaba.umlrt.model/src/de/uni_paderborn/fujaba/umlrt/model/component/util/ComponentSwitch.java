@@ -120,6 +120,7 @@ public class ComponentSwitch<T> {
 				T result = casePort(port);
 				if (result == null) result = caseNamedElement(port);
 				if (result == null) result = caseCommentableElement(port);
+				if (result == null) result = caseConstrainableElement(port);
 				if (result == null) result = caseExtendableElement(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

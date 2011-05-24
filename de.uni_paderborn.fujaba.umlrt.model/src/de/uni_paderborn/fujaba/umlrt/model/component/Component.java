@@ -37,7 +37,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getMustImplementProvidedInterfaces <em>Must Implement Provided Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getMustImplementRequiredInterfaces <em>Must Implement Required Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -162,24 +161,6 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * @generated
 	 */
 	void setKind(ComponentKind value);
-
-	/**
-	 * Returns the value of the '<em><b>Component Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component Instances</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getComponent_ComponentInstances()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentType
-	 * @model opposite="componentType"
-	 * @generated
-	 */
-	EList<ComponentInstance> getComponentInstances();
 
 	/**
 	 * <!-- begin-user-doc -->

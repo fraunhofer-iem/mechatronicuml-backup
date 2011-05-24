@@ -71,24 +71,6 @@ public interface RealtimestatechartFactory extends EFactory {
 	State createState();
 
 	/**
-	 * Returns a new object of class '<em>Initial State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Initial State</em>'.
-	 * @generated
-	 */
-	InitialState createInitialState();
-
-	/**
-	 * Returns a new object of class '<em>Final State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Final State</em>'.
-	 * @generated
-	 */
-	FinalState createFinalState();
-
-	/**
 	 * Returns a new object of class '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

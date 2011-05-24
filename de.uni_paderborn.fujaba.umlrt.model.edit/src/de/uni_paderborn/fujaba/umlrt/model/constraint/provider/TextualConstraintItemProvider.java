@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.constraint.provider;
 
-
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import java.util.Collection;
 import java.util.List;
@@ -28,22 +27,17 @@ import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.TextualConstraintEx
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class TextualConstraintItemProvider
-	extends VerifiableConstraintItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class TextualConstraintItemProvider extends
+		VerifiableConstraintItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TextualConstraintItemProvider(AdapterFactory adapterFactory) {
@@ -51,9 +45,9 @@ public class TextualConstraintItemProvider
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,70 +61,63 @@ public class TextualConstraintItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Textual Expression feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Textual Expression feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected void addTextualExpressionPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_TextualConstraint_textualExpression_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
-//				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
-//				 true,
-//				 false,
-//				 true,
-//				 null,
-//				 null,
-//				 null));
-		
-		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 "Expression Text",
-                 "The Expression Text of the Textual Expression",
-                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-		
-		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 "Language",
-                 "The Language of the Textual Expression",
-                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-		
-		itemPropertyDescriptors.add(new TextualConstraintExpressionPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 "Language Version",
-                 "The Language Version of the Textual Expression",
-                 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+		// itemPropertyDescriptors.add
+		// (createItemPropertyDescriptor
+		// (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		// getResourceLocator(),
+		// getString("_UI_TextualConstraint_textualExpression_feature"),
+		// getString("_UI_PropertyDescriptor_description",
+		// "_UI_TextualConstraint_textualExpression_feature",
+		// "_UI_TextualConstraint_type"),
+		// ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
+		// true,
+		// false,
+		// true,
+		// null,
+		// null,
+		// null));
+
+		itemPropertyDescriptors
+				.add(new TextualConstraintExpressionPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Expression Text",
+						"The Expression Text of the Textual Expression",
+						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
+						true, false, true, null, null, null));
+
+		itemPropertyDescriptors
+				.add(new TextualConstraintExpressionPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Language",
+						"The Language of the Textual Expression",
+						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
+						true, false, true, null, null, null));
+
+		itemPropertyDescriptors
+				.add(new TextualConstraintExpressionPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Language Version",
+						"The Language Version of the Textual Expression",
+						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
+						true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns TextualConstraint.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,8 +127,8 @@ public class TextualConstraintItemProvider
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -156,8 +143,8 @@ public class TextualConstraintItemProvider
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -167,14 +154,15 @@ public class TextualConstraintItemProvider
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

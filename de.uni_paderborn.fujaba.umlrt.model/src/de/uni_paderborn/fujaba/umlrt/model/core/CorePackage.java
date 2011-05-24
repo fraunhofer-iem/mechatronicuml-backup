@@ -475,40 +475,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__TRANSITIONS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__VERTICES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -517,25 +490,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Clocks</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Realtime Statechart</em>' class.
@@ -544,7 +499,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1057,39 +1012,6 @@ public interface CorePackage extends EPackage {
 	EAttribute getAbstractRealtimeStatechart_ScheduleDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getTransitions <em>Transitions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getTransitions()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_Transitions();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices <em>Vertices</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Vertices</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_Vertices();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEClass <em>EClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EClass</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEClass()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_EClass();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,28 +1032,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractRealtimeStatechart_Embedded();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Clocks</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_Clocks();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Available Clocks</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_AvailableClocks();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getHighestParentStatechart() <em>Get Highest Parent Statechart</em>}' operation.
@@ -1427,30 +1327,6 @@ public interface CorePackage extends EPackage {
 		EAttribute ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getAbstractRealtimeStatechart_ScheduleDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__TRANSITIONS = eINSTANCE.getAbstractRealtimeStatechart_Transitions();
-
-		/**
-		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__VERTICES = eINSTANCE.getAbstractRealtimeStatechart_Vertices();
-
-		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__ECLASS = eINSTANCE.getAbstractRealtimeStatechart_EClass();
-
-		/**
 		 * The meta object literal for the '<em><b>Behavioral Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1465,22 +1341,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABSTRACT_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getAbstractRealtimeStatechart_Embedded();
-
-		/**
-		 * The meta object literal for the '<em><b>Clocks</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__CLOCKS = eINSTANCE.getAbstractRealtimeStatechart_Clocks();
-
-		/**
-		 * The meta object literal for the '<em><b>Available Clocks</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getAbstractRealtimeStatechart_AvailableClocks();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Highest Parent Statechart</b></em>' operation.

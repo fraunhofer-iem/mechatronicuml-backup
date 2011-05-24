@@ -884,6 +884,53 @@ public interface InstancePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceConfigurationImpl
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Component Instance Configuration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1132,6 +1179,38 @@ public interface InstancePackage extends EPackage {
 	EReference getDelegationInstance_DelegationType();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Instance Configuration</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration
+	 * @generated
+	 */
+	EClass getComponentInstanceConfiguration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Component Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration#getComponentInstances()
+	 * @see #getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getComponentInstanceConfiguration_ComponentInstances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration#getConnectorInstances <em>Connector Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstanceConfiguration#getConnectorInstances()
+	 * @see #getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getComponentInstanceConfiguration_ConnectorInstances();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1347,6 +1426,32 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DELEGATION_INSTANCE__DELEGATION_TYPE = eINSTANCE.getDelegationInstance_DelegationType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceConfigurationImpl
+		 * @see de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl#getComponentInstanceConfiguration()
+		 * @generated
+		 */
+		EClass COMPONENT_INSTANCE_CONFIGURATION = eINSTANCE.getComponentInstanceConfiguration();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ComponentInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Connector Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ConnectorInstances();
 
 	}
 

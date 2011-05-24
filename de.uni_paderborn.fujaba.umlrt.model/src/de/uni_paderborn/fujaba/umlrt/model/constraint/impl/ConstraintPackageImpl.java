@@ -133,7 +133,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		SDMPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
@@ -144,7 +143,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Create package meta-data objects
 		theConstraintPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
@@ -155,7 +153,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Initialize created meta-data
 		theConstraintPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
@@ -205,35 +202,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstraint_InternalConstraint() {
-		return (EAttribute)constraintEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConstraint_ExtendAutomatically() {
-		return (EAttribute)constraintEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getConstraint_ConstrainableElement() {
-		return (EReference)constraintEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getConstraint__GetTextAsComment() {
-		return constraintEClass.getEOperations().get(0);
+		return (EReference)constraintEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -242,16 +212,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	public EOperation getConstraint__IsCorrect() {
-		return constraintEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getConstraint__GetCorrectnessAsString() {
-		return constraintEClass.getEOperations().get(2);
+		return constraintEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -330,12 +291,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		constraintEClass = createEClass(CONSTRAINT);
 		createEAttribute(constraintEClass, CONSTRAINT__CORRECTNESS);
 		createEAttribute(constraintEClass, CONSTRAINT__BACKGROUND);
-		createEAttribute(constraintEClass, CONSTRAINT__INTERNAL_CONSTRAINT);
-		createEAttribute(constraintEClass, CONSTRAINT__EXTEND_AUTOMATICALLY);
 		createEReference(constraintEClass, CONSTRAINT__CONSTRAINABLE_ELEMENT);
-		createEOperation(constraintEClass, CONSTRAINT___GET_TEXT_AS_COMMENT);
 		createEOperation(constraintEClass, CONSTRAINT___IS_CORRECT);
-		createEOperation(constraintEClass, CONSTRAINT___GET_CORRECTNESS_AS_STRING);
 
 		modelingConstraintEClass = createEClass(MODELING_CONSTRAINT);
 
@@ -389,15 +346,9 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "Correctness.UNKNOWN", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_Background(), theEcorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConstraint_InternalConstraint(), theEcorePackage.getEBoolean(), "internalConstraint", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConstraint_ExtendAutomatically(), theEcorePackage.getEBoolean(), "extendAutomatically", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraint_ConstrainableElement(), theCorePackage.getConstrainableElement(), theCorePackage.getConstrainableElement_Constraint(), "constrainableElement", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getConstraint__GetTextAsComment(), ecorePackage.getEString(), "getTextAsComment", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEOperation(getConstraint__IsCorrect(), ecorePackage.getEBoolean(), "isCorrect", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getConstraint__GetCorrectnessAsString(), ecorePackage.getEString(), "getCorrectnessAsString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(modelingConstraintEClass, ModelingConstraint.class, "ModelingConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -411,7 +362,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		addEEnumLiteral(correctnessEEnum, Correctness.UNKNOWN);
 		addEEnumLiteral(correctnessEEnum, Correctness.CORRECT);
 		addEEnumLiteral(correctnessEEnum, Correctness.VIOLATED);
-		addEEnumLiteral(correctnessEEnum, Correctness.UNSAFE);
 
 		// Create resource
 		createResource(eNS_URI);

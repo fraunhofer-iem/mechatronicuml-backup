@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.storydriven.modeling.NamedElement;
@@ -81,7 +79,7 @@ public interface Clock extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Statechart</em>' container reference isn't clear,
@@ -89,13 +87,13 @@ public interface Clock extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(AbstractRealtimeStatechart)
+	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart#getClocks
 	 * @model opposite="clocks" transient="false"
 	 * @generated
 	 */
-	AbstractRealtimeStatechart getStatechart();
+	FujabaRealtimeStatechart getStatechart();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}' container reference.
@@ -105,7 +103,7 @@ public interface Clock extends NamedElement {
 	 * @see #getStatechart()
 	 * @generated
 	 */
-	void setStatechart(AbstractRealtimeStatechart value);
+	void setStatechart(FujabaRealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock Constraints</b></em>' reference list.

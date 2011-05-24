@@ -35,8 +35,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintImpl#getCorrectness <em>Correctness</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintImpl#isBackground <em>Background</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintImpl#isInternalConstraint <em>Internal Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintImpl#isExtendAutomatically <em>Extend Automatically</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintImpl#getConstrainableElement <em>Constrainable Element</em>}</li>
  * </ul>
  * </p>
@@ -83,46 +81,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * @ordered
 	 */
 	protected boolean background = BACKGROUND_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isInternalConstraint() <em>Internal Constraint</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isInternalConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean INTERNAL_CONSTRAINT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isInternalConstraint() <em>Internal Constraint</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isInternalConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean internalConstraint = INTERNAL_CONSTRAINT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isExtendAutomatically() <em>Extend Automatically</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isExtendAutomatically()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean EXTEND_AUTOMATICALLY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isExtendAutomatically() <em>Extend Automatically</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isExtendAutomatically()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean extendAutomatically = EXTEND_AUTOMATICALLY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getConstrainableElement() <em>Constrainable Element</em>}' reference.
@@ -200,48 +158,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isInternalConstraint() {
-		return internalConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInternalConstraint(boolean newInternalConstraint) {
-		boolean oldInternalConstraint = internalConstraint;
-		internalConstraint = newInternalConstraint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintPackage.CONSTRAINT__INTERNAL_CONSTRAINT, oldInternalConstraint, internalConstraint));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isExtendAutomatically() {
-		return extendAutomatically;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExtendAutomatically(boolean newExtendAutomatically) {
-		boolean oldExtendAutomatically = extendAutomatically;
-		extendAutomatically = newExtendAutomatically;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintPackage.CONSTRAINT__EXTEND_AUTOMATICALLY, oldExtendAutomatically, extendAutomatically));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ConstrainableElement getConstrainableElement() {
 		if (constrainableElement != null && constrainableElement.eIsProxy()) {
 			InternalEObject oldConstrainableElement = (InternalEObject)constrainableElement;
@@ -302,29 +218,7 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTextAsComment() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isCorrect() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getCorrectnessAsString() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -372,10 +266,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 				return getCorrectness();
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				return isBackground();
-			case ConstraintPackage.CONSTRAINT__INTERNAL_CONSTRAINT:
-				return isInternalConstraint();
-			case ConstraintPackage.CONSTRAINT__EXTEND_AUTOMATICALLY:
-				return isExtendAutomatically();
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
 				if (resolve) return getConstrainableElement();
 				return basicGetConstrainableElement();
@@ -396,12 +286,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 				return;
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				setBackground((Boolean)newValue);
-				return;
-			case ConstraintPackage.CONSTRAINT__INTERNAL_CONSTRAINT:
-				setInternalConstraint((Boolean)newValue);
-				return;
-			case ConstraintPackage.CONSTRAINT__EXTEND_AUTOMATICALLY:
-				setExtendAutomatically((Boolean)newValue);
 				return;
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
 				setConstrainableElement((ConstrainableElement)newValue);
@@ -424,12 +308,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				setBackground(BACKGROUND_EDEFAULT);
 				return;
-			case ConstraintPackage.CONSTRAINT__INTERNAL_CONSTRAINT:
-				setInternalConstraint(INTERNAL_CONSTRAINT_EDEFAULT);
-				return;
-			case ConstraintPackage.CONSTRAINT__EXTEND_AUTOMATICALLY:
-				setExtendAutomatically(EXTEND_AUTOMATICALLY_EDEFAULT);
-				return;
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
 				setConstrainableElement((ConstrainableElement)null);
 				return;
@@ -449,10 +327,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 				return correctness != CORRECTNESS_EDEFAULT;
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				return background != BACKGROUND_EDEFAULT;
-			case ConstraintPackage.CONSTRAINT__INTERNAL_CONSTRAINT:
-				return internalConstraint != INTERNAL_CONSTRAINT_EDEFAULT;
-			case ConstraintPackage.CONSTRAINT__EXTEND_AUTOMATICALLY:
-				return extendAutomatically != EXTEND_AUTOMATICALLY_EDEFAULT;
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
 				return constrainableElement != null;
 		}
@@ -467,12 +341,8 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ConstraintPackage.CONSTRAINT___GET_TEXT_AS_COMMENT:
-				return getTextAsComment();
 			case ConstraintPackage.CONSTRAINT___IS_CORRECT:
 				return isCorrect();
-			case ConstraintPackage.CONSTRAINT___GET_CORRECTNESS_AS_STRING:
-				return getCorrectnessAsString();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -491,10 +361,6 @@ public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
 		result.append(correctness);
 		result.append(", background: ");
 		result.append(background);
-		result.append(", internalConstraint: ");
-		result.append(internalConstraint);
-		result.append(", extendAutomatically: ");
-		result.append(extendAutomatically);
 		result.append(')');
 		return result.toString();
 	}

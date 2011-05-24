@@ -91,31 +91,13 @@ public interface ConstraintPackage extends EPackage {
 	int CONSTRAINT__BACKGROUND = 1;
 
 	/**
-	 * The feature id for the '<em><b>Internal Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__INTERNAL_CONSTRAINT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Extend Automatically</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT__EXTEND_AUTOMATICALLY = 3;
-
-	/**
 	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT__CONSTRAINABLE_ELEMENT = 4;
+	int CONSTRAINT__CONSTRAINABLE_ELEMENT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -124,16 +106,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_FEATURE_COUNT = 5;
-
-	/**
-	 * The operation id for the '<em>Get Text As Comment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT___GET_TEXT_AS_COMMENT = 0;
+	int CONSTRAINT_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Is Correct</em>' operation.
@@ -142,16 +115,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___IS_CORRECT = 1;
-
-	/**
-	 * The operation id for the '<em>Get Correctness As String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINT___GET_CORRECTNESS_AS_STRING = 2;
+	int CONSTRAINT___IS_CORRECT = 0;
 
 	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
@@ -160,7 +124,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_OPERATION_COUNT = 3;
+	int CONSTRAINT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ModelingConstraintImpl <em>Modeling Constraint</em>}' class.
@@ -191,24 +155,6 @@ public interface ConstraintPackage extends EPackage {
 	int MODELING_CONSTRAINT__BACKGROUND = CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Internal Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODELING_CONSTRAINT__INTERNAL_CONSTRAINT = CONSTRAINT__INTERNAL_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Extend Automatically</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODELING_CONSTRAINT__EXTEND_AUTOMATICALLY = CONSTRAINT__EXTEND_AUTOMATICALLY;
-
-	/**
 	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,15 +173,6 @@ public interface ConstraintPackage extends EPackage {
 	int MODELING_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Get Text As Comment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODELING_CONSTRAINT___GET_TEXT_AS_COMMENT = CONSTRAINT___GET_TEXT_AS_COMMENT;
-
-	/**
 	 * The operation id for the '<em>Is Correct</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -243,15 +180,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @ordered
 	 */
 	int MODELING_CONSTRAINT___IS_CORRECT = CONSTRAINT___IS_CORRECT;
-
-	/**
-	 * The operation id for the '<em>Get Correctness As String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODELING_CONSTRAINT___GET_CORRECTNESS_AS_STRING = CONSTRAINT___GET_CORRECTNESS_AS_STRING;
 
 	/**
 	 * The number of operations of the '<em>Modeling Constraint</em>' class.
@@ -291,24 +219,6 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_CONSTRAINT__BACKGROUND = CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Internal Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIABLE_CONSTRAINT__INTERNAL_CONSTRAINT = CONSTRAINT__INTERNAL_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Extend Automatically</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIABLE_CONSTRAINT__EXTEND_AUTOMATICALLY = CONSTRAINT__EXTEND_AUTOMATICALLY;
-
-	/**
 	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -327,15 +237,6 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Get Text As Comment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIABLE_CONSTRAINT___GET_TEXT_AS_COMMENT = CONSTRAINT___GET_TEXT_AS_COMMENT;
-
-	/**
 	 * The operation id for the '<em>Is Correct</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -343,15 +244,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @ordered
 	 */
 	int VERIFIABLE_CONSTRAINT___IS_CORRECT = CONSTRAINT___IS_CORRECT;
-
-	/**
-	 * The operation id for the '<em>Get Correctness As String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFIABLE_CONSTRAINT___GET_CORRECTNESS_AS_STRING = CONSTRAINT___GET_CORRECTNESS_AS_STRING;
 
 	/**
 	 * The number of operations of the '<em>Verifiable Constraint</em>' class.
@@ -391,24 +283,6 @@ public interface ConstraintPackage extends EPackage {
 	int TEXTUAL_CONSTRAINT__BACKGROUND = VERIFIABLE_CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Internal Constraint</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_CONSTRAINT__INTERNAL_CONSTRAINT = VERIFIABLE_CONSTRAINT__INTERNAL_CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Extend Automatically</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_CONSTRAINT__EXTEND_AUTOMATICALLY = VERIFIABLE_CONSTRAINT__EXTEND_AUTOMATICALLY;
-
-	/**
 	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,15 +310,6 @@ public interface ConstraintPackage extends EPackage {
 	int TEXTUAL_CONSTRAINT_FEATURE_COUNT = VERIFIABLE_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get Text As Comment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_CONSTRAINT___GET_TEXT_AS_COMMENT = VERIFIABLE_CONSTRAINT___GET_TEXT_AS_COMMENT;
-
-	/**
 	 * The operation id for the '<em>Is Correct</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -452,15 +317,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXTUAL_CONSTRAINT___IS_CORRECT = VERIFIABLE_CONSTRAINT___IS_CORRECT;
-
-	/**
-	 * The operation id for the '<em>Get Correctness As String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXTUAL_CONSTRAINT___GET_CORRECTNESS_AS_STRING = VERIFIABLE_CONSTRAINT___GET_CORRECTNESS_AS_STRING;
 
 	/**
 	 * The number of operations of the '<em>Textual Constraint</em>' class.
@@ -515,28 +371,6 @@ public interface ConstraintPackage extends EPackage {
 	EAttribute getConstraint_Background();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#isInternalConstraint <em>Internal Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Internal Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#isInternalConstraint()
-	 * @see #getConstraint()
-	 * @generated
-	 */
-	EAttribute getConstraint_InternalConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#isExtendAutomatically <em>Extend Automatically</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Extend Automatically</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#isExtendAutomatically()
-	 * @see #getConstraint()
-	 * @generated
-	 */
-	EAttribute getConstraint_ExtendAutomatically();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -548,16 +382,6 @@ public interface ConstraintPackage extends EPackage {
 	EReference getConstraint_ConstrainableElement();
 
 	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getTextAsComment() <em>Get Text As Comment</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Text As Comment</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getTextAsComment()
-	 * @generated
-	 */
-	EOperation getConstraint__GetTextAsComment();
-
-	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#isCorrect() <em>Is Correct</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -566,16 +390,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getConstraint__IsCorrect();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getCorrectnessAsString() <em>Get Correctness As String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Correctness As String</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint#getCorrectnessAsString()
-	 * @generated
-	 */
-	EOperation getConstraint__GetCorrectnessAsString();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.ModelingConstraint <em>Modeling Constraint</em>}'.
@@ -678,22 +492,6 @@ public interface ConstraintPackage extends EPackage {
 		EAttribute CONSTRAINT__BACKGROUND = eINSTANCE.getConstraint_Background();
 
 		/**
-		 * The meta object literal for the '<em><b>Internal Constraint</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONSTRAINT__INTERNAL_CONSTRAINT = eINSTANCE.getConstraint_InternalConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Extend Automatically</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONSTRAINT__EXTEND_AUTOMATICALLY = eINSTANCE.getConstraint_ExtendAutomatically();
-
-		/**
 		 * The meta object literal for the '<em><b>Constrainable Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -702,28 +500,12 @@ public interface ConstraintPackage extends EPackage {
 		EReference CONSTRAINT__CONSTRAINABLE_ELEMENT = eINSTANCE.getConstraint_ConstrainableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Text As Comment</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONSTRAINT___GET_TEXT_AS_COMMENT = eINSTANCE.getConstraint__GetTextAsComment();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Correct</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EOperation CONSTRAINT___IS_CORRECT = eINSTANCE.getConstraint__IsCorrect();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Correctness As String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONSTRAINT___GET_CORRECTNESS_AS_STRING = eINSTANCE.getConstraint__GetCorrectnessAsString();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ModelingConstraintImpl <em>Modeling Constraint</em>}' class.

@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
 import org.storydriven.modeling.NamedElement;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Region</b></em>'.

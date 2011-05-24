@@ -20,8 +20,7 @@ import org.storydriven.modeling.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An instance of a component. This is not a runtime instance, though. Instead it is
- * an instantiation of a component type specified by a component.
+ * This class represents a component instance. It is an instantiation of a component.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,7 +42,6 @@ import org.storydriven.modeling.NamedElement;
 public interface ComponentInstance extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances <em>Component Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Type</em>' reference isn't clear,
@@ -53,8 +51,7 @@ public interface ComponentInstance extends NamedElement {
 	 * @return the value of the '<em>Component Type</em>' reference.
 	 * @see #setComponentType(Component)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage#getComponentInstance_ComponentType()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Component#getComponentInstances
-	 * @model opposite="componentInstances" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Component getComponentType();

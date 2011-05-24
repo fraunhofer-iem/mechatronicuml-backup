@@ -222,7 +222,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		SDMPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
@@ -233,7 +232,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Create package meta-data objects
 		theComponentPackage.createPackageContents();
-		theBehaviorPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
@@ -244,7 +242,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Initialize created meta-data
 		theComponentPackage.initializePackageContents();
-		theBehaviorPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
@@ -339,15 +336,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_ComponentInstances() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getComponent__CreateInstance() {
 		return componentEClass.getEOperations().get(0);
 	}
@@ -384,7 +372,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPort_InvisibleInterfaces() {
+	public EReference getPort_Component() {
 		return (EReference)portEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -393,17 +381,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPort_Component() {
-		return (EReference)portEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPort_PortKind() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -412,7 +391,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_Specification() {
-		return (EReference)portEClass.getEStructuralFeatures().get(3);
+		return (EReference)portEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -421,7 +400,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_Cardinality() {
-		return (EReference)portEClass.getEStructuralFeatures().get(4);
+		return (EReference)portEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -430,7 +409,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_RequiredMessageInterface() {
-		return (EReference)portEClass.getEStructuralFeatures().get(5);
+		return (EReference)portEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -439,16 +418,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_ProvidedMessageInterface() {
-		return (EReference)portEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPort_PortInstances() {
-		return (EReference)portEClass.getEStructuralFeatures().get(7);
+		return (EReference)portEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -457,7 +427,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_IncomingConnectors() {
-		return (EReference)portEClass.getEStructuralFeatures().get(8);
+		return (EReference)portEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -466,7 +436,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_OutgoingConnectors() {
-		return (EReference)portEClass.getEStructuralFeatures().get(9);
+		return (EReference)portEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -475,7 +445,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EReference getPort_AdaptationRealtimeStatechart() {
-		return (EReference)portEClass.getEStructuralFeatures().get(10);
+		return (EReference)portEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -864,21 +834,18 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentEClass, COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES);
 		createEReference(componentEClass, COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES);
 		createEAttribute(componentEClass, COMPONENT__KIND);
-		createEReference(componentEClass, COMPONENT__COMPONENT_INSTANCES);
 		createEOperation(componentEClass, COMPONENT___CREATE_INSTANCE);
 
 		continuousComponentEClass = createEClass(CONTINUOUS_COMPONENT);
 		createEAttribute(continuousComponentEClass, CONTINUOUS_COMPONENT__XML_FILE_NAME);
 
 		portEClass = createEClass(PORT);
-		createEReference(portEClass, PORT__INVISIBLE_INTERFACES);
 		createEReference(portEClass, PORT__COMPONENT);
 		createEAttribute(portEClass, PORT__PORT_KIND);
 		createEReference(portEClass, PORT__SPECIFICATION);
 		createEReference(portEClass, PORT__CARDINALITY);
 		createEReference(portEClass, PORT__REQUIRED_MESSAGE_INTERFACE);
 		createEReference(portEClass, PORT__PROVIDED_MESSAGE_INTERFACE);
-		createEReference(portEClass, PORT__PORT_INSTANCES);
 		createEReference(portEClass, PORT__INCOMING_CONNECTORS);
 		createEReference(portEClass, PORT__OUTGOING_CONNECTORS);
 		createEReference(portEClass, PORT__ADAPTATION_REALTIME_STATECHART);
@@ -978,6 +945,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		continuousComponentEClass.getESuperTypes().add(this.getComponent());
 		portEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		portEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		continuousPortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
 		discretePortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
 		discretePortSpecificationEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
@@ -1000,7 +968,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getComponent_MustImplementProvidedInterfaces(), theEcorePackage.getEClass(), null, "mustImplementProvidedInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_MustImplementRequiredInterfaces(), theEcorePackage.getEClass(), null, "mustImplementRequiredInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Kind(), this.getComponentKind(), "kind", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ComponentInstances(), theInstancePackage.getComponentInstance(), theInstancePackage.getComponentInstance_ComponentType(), "componentInstances", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getComponent__CreateInstance(), theInstancePackage.getComponentInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1008,17 +975,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getContinuousComponent_XMLFileName(), ecorePackage.getEString(), "xMLFileName", null, 0, 1, ContinuousComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPort_InvisibleInterfaces(), theEcorePackage.getEClass(), null, "invisibleInterfaces", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_Component(), this.getComponent(), this.getComponent_Ports(), "component", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_PortKind(), this.getPortKind(), "portKind", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_Specification(), this.getPortSpecification(), null, "specification", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_Specification(), this.getPortSpecification(), null, "specification", null, 0, 2, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_RequiredMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "requiredMessageInterface", null, 0, 1, Port.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_ProvidedMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "providedMessageInterface", null, 0, 1, Port.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_PortInstances(), theInstancePackage.getPortInstance(), theInstancePackage.getPortInstance_PortType(), "portInstances", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_IncomingConnectors(), this.getConnectorType(), this.getConnectorType_ToPort(), "incomingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_OutgoingConnectors(), this.getConnectorType(), this.getConnectorType_FromPort(), "outgoingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPort_AdaptationRealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "adaptationRealtimeStatechart", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_AdaptationRealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "adaptationRealtimeStatechart", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getPort__CreateInstance(), theInstancePackage.getPortInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1115,7 +1080,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });																										
+		   });																									
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1137,7 +1102,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "body", "self.cardinality.lowerBound->notEmpty()"
-		   });							
+		   });						
 		addAnnotation
 		  (getPort_RequiredMessageInterface(), 
 		   source, 

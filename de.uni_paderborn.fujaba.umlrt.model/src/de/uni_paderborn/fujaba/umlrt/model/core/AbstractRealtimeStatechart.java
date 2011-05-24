@@ -36,13 +36,8 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getTransitions <em>Transitions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -199,66 +194,6 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	void setScheduleDocument(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The transitions of the realtime statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Transitions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_Transitions()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getStatechart
-	 * @model opposite="statechart" containment="true"
-	 * @generated
-	 */
-	EList<Transition> getTransitions();
-
-	/**
-	 * Returns the value of the '<em><b>Vertices</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The states of this realtime statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Vertices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_Vertices()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex#getStatechart
-	 * @model opposite="statechart" containment="true"
-	 * @generated
-	 */
-	EList<Vertex> getVertices();
-
-	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.
-	 * TODO: Do we really need this?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' containment reference.
-	 * @see #setEClass(EClass)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_EClass()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EClass getEClass();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getEClass <em>EClass</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' containment reference.
-	 * @see #getEClass()
-	 * @generated
-	 */
-	void setEClass(EClass value);
-
-	/**
 	 * Returns the value of the '<em><b>Behavioral Element</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}'.
 	 * <!-- begin-user-doc -->
@@ -309,48 +244,6 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * @generated
 	 */
 	void setEmbedded(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Clocks</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The clocks of this realtime statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Clocks</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_Clocks()
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock#getStatechart
-	 * @model opposite="statechart" containment="true"
-	 * @generated
-	 */
-	EList<Clock> getClocks();
-
-	/**
-	 * Returns the value of the '<em><b>Available Clocks</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Available Clocks</em>' attribute.
-	 * @see #setAvailableClocks(Iterator)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.core.CorePackage#getAbstractRealtimeStatechart_AvailableClocks()
-	 * @model dataType="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Iterator" derived="true"
-	 * @generated
-	 */
-	Iterator getAvailableClocks();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Available Clocks</em>' attribute.
-	 * @see #getAvailableClocks()
-	 * @generated
-	 */
-	void setAvailableClocks(Iterator value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -901,7 +901,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
@@ -997,7 +997,7 @@
                   <details key="documentation" value="The incoming transitions of this state."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/vertices">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this state belongs to."/>
@@ -1059,7 +1059,7 @@
                   <details key="documentation" value="The state which is the source of this transition."/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
+              <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/transitions">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this transition belongs to."/>

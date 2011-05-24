@@ -66,8 +66,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.CLOCK: return createClock();
 			case RealtimestatechartPackage.REGION: return createRegion();
 			case RealtimestatechartPackage.STATE: return createState();
-			case RealtimestatechartPackage.INITIAL_STATE: return createInitialState();
-			case RealtimestatechartPackage.FINAL_STATE: return createFinalState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
 			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
@@ -162,26 +160,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InitialState createInitialState() {
-		InitialStateImpl initialState = new InitialStateImpl();
-		return initialState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FinalState createFinalState() {
-		FinalStateImpl finalState = new FinalStateImpl();
-		return finalState;
 	}
 
 	/**

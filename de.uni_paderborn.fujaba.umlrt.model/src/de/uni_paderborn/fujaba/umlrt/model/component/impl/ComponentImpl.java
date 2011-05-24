@@ -54,7 +54,6 @@ import java.lang.reflect.InvocationTargetException;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentImpl#getMustImplementProvidedInterfaces <em>Must Implement Provided Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentImpl#getMustImplementRequiredInterfaces <em>Must Implement Required Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentImpl#getComponentInstances <em>Component Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -160,16 +159,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @ordered
 	 */
 	protected ComponentKind kind = KIND_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ComponentInstance> componentInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -333,18 +322,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ComponentInstance> getComponentInstances() {
-		if (componentInstances == null) {
-			componentInstances = new EObjectWithInverseResolvingEList<ComponentInstance>(ComponentInstance.class, this, ComponentPackage.COMPONENT__COMPONENT_INSTANCES, InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE);
-		}
-		return componentInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public ComponentInstance createInstance() {
@@ -368,8 +345,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferencingComponentParts()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComponentInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -388,8 +363,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return ((InternalEList<?>)getReferencingComponentParts()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -419,8 +392,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return getMustImplementRequiredInterfaces();
 			case ComponentPackage.COMPONENT__KIND:
 				return getKind();
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				return getComponentInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -463,10 +434,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__KIND:
 				setKind((ComponentKind)newValue);
 				return;
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				getComponentInstances().clear();
-				getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -503,9 +470,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				getComponentInstances().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -534,8 +498,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return mustImplementRequiredInterfaces != null && !mustImplementRequiredInterfaces.isEmpty();
 			case ComponentPackage.COMPONENT__KIND:
 				return kind != KIND_EDEFAULT;
-			case ComponentPackage.COMPONENT__COMPONENT_INSTANCES:
-				return componentInstances != null && !componentInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

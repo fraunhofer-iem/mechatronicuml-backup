@@ -8,14 +8,22 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.umlrt.model.core.impl.AbstractRealtimeStatechartImpl;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +33,11 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +53,61 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected Region embeddingRegion;
+
+	/**
+	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransitions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Transition> transitions;
+	/**
+	 * The cached value of the '{@link #getVertices() <em>Vertices</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVertices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vertex> vertices;
+	/**
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected EClass eClass;
+	/**
+	 * The cached value of the '{@link #getClocks() <em>Clocks</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Clock> clocks;
+	/**
+	 * The default value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iterator AVAILABLE_CLOCKS_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iterator availableClocks = AVAILABLE_CLOCKS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,6 +193,107 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Transition> getTransitions() {
+		if (transitions == null) {
+			transitions = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS, RealtimestatechartPackage.TRANSITION__STATECHART);
+		}
+		return transitions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Vertex> getVertices() {
+		if (vertices == null) {
+			vertices = new EObjectContainmentWithInverseEList<Vertex>(Vertex.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES, RealtimestatechartPackage.VERTEX__STATECHART);
+		}
+		return vertices;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEClass() {
+		return eClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEClass(EClass newEClass, NotificationChain msgs) {
+		EClass oldEClass = eClass;
+		eClass = newEClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, oldEClass, newEClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEClass(EClass newEClass) {
+		if (newEClass != eClass) {
+			NotificationChain msgs = null;
+			if (eClass != null)
+				msgs = ((InternalEObject)eClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, null, msgs);
+			if (newEClass != null)
+				msgs = ((InternalEObject)newEClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, null, msgs);
+			msgs = basicSetEClass(newEClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, newEClass, newEClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Clock> getClocks() {
+		if (clocks == null) {
+			clocks = new EObjectContainmentWithInverseEList<Clock>(Clock.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, RealtimestatechartPackage.CLOCK__STATECHART);
+		}
+		return clocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Iterator getAvailableClocks() {
+		return availableClocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAvailableClocks(Iterator newAvailableClocks) {
+		Iterator oldAvailableClocks = availableClocks;
+		availableClocks = newAvailableClocks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS, oldAvailableClocks, availableClocks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -132,6 +301,12 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				if (embeddingRegion != null)
 					msgs = ((InternalEObject)embeddingRegion).eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
 				return basicSetEmbeddingRegion((Region)otherEnd, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVertices()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClocks()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -146,6 +321,14 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		switch (featureID) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				return basicSetEmbeddingRegion(null, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				return ((InternalEList<?>)getVertices()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
+				return basicSetEClass(null, msgs);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				return ((InternalEList<?>)getClocks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,6 +344,16 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				if (resolve) return getEmbeddingRegion();
 				return basicGetEmbeddingRegion();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				return getTransitions();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				return getVertices();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
+				return getEClass();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				return getClocks();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return getAvailableClocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,6 +370,24 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)newValue);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				getTransitions().clear();
+				getTransitions().addAll((Collection<? extends Transition>)newValue);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				getVertices().clear();
+				getVertices().addAll((Collection<? extends Vertex>)newValue);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
+				setEClass((EClass)newValue);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				getClocks().clear();
+				getClocks().addAll((Collection<? extends Clock>)newValue);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks((Iterator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -192,6 +403,21 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)null);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				getTransitions().clear();
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				getVertices().clear();
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
+				setEClass((EClass)null);
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				getClocks().clear();
+				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks(AVAILABLE_CLOCKS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -206,8 +432,34 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		switch (featureID) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EMBEDDING_REGION:
 				return embeddingRegion != null;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
+				return transitions != null && !transitions.isEmpty();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
+				return vertices != null && !vertices.isEmpty();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
+				return eClass != null;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
+				return clocks != null && !clocks.isEmpty();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (availableClocks: ");
+		result.append(availableClocks);
+		result.append(')');
+		return result.toString();
 	}
 
 

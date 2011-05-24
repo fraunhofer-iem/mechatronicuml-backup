@@ -20,11 +20,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
@@ -141,9 +140,9 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getStatechart() {
+	public FujabaRealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART) return null;
-		return (AbstractRealtimeStatechart)eContainer();
+		return (FujabaRealtimeStatechart)eContainer();
 	}
 
 	/**
@@ -151,7 +150,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(AbstractRealtimeStatechart newStatechart, NotificationChain msgs) {
+	public NotificationChain basicSetStatechart(FujabaRealtimeStatechart newStatechart, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.CLOCK__STATECHART, msgs);
 		return msgs;
 	}
@@ -161,7 +160,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(AbstractRealtimeStatechart newStatechart) {
+	public void setStatechart(FujabaRealtimeStatechart newStatechart) {
 		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART && newStatechart != null)) {
 			if (EcoreUtil.isAncestor(this, newStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -169,7 +168,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS, AbstractRealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, FujabaRealtimeStatechart.class, msgs);
 			msgs = basicSetStatechart(newStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -232,7 +231,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
+				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClockConstraints()).basicAdd(otherEnd, msgs);
 		}
@@ -266,7 +265,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				return eInternalContainer().eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__CLOCKS, AbstractRealtimeStatechart.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, FujabaRealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -308,7 +307,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				getAbsoluteDeadlines().addAll((Collection<? extends AbsoluteDeadline>)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)newValue);
+				setStatechart((FujabaRealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
@@ -333,7 +332,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				getAbsoluteDeadlines().clear();
 				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
-				setStatechart((AbstractRealtimeStatechart)null);
+				setStatechart((FujabaRealtimeStatechart)null);
 				return;
 			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();

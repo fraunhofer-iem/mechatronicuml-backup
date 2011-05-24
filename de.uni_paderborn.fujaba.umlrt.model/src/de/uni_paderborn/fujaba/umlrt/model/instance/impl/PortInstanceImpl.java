@@ -220,33 +220,11 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPortType(Port newPortType, NotificationChain msgs) {
+	public void setPortType(Port newPortType) {
 		Port oldPortType = portType;
 		portType = newPortType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__PORT_TYPE, oldPortType, newPortType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPortType(Port newPortType) {
-		if (newPortType != portType) {
-			NotificationChain msgs = null;
-			if (portType != null)
-				msgs = ((InternalEObject)portType).eInverseRemove(this, ComponentPackage.PORT__PORT_INSTANCES, Port.class, msgs);
-			if (newPortType != null)
-				msgs = ((InternalEObject)newPortType).eInverseAdd(this, ComponentPackage.PORT__PORT_INSTANCES, Port.class, msgs);
-			msgs = basicSetPortType(newPortType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__PORT_TYPE, newPortType, newPortType));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__PORT_TYPE, oldPortType, portType));
 	}
 
 	/**
@@ -359,10 +337,6 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
-				if (portType != null)
-					msgs = ((InternalEObject)portType).eInverseRemove(this, ComponentPackage.PORT__PORT_INSTANCES, Port.class, msgs);
-				return basicSetPortType((Port)otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -383,8 +357,6 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
-				return basicSetPortType(null, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return basicSetComponentInstance(null, msgs);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:

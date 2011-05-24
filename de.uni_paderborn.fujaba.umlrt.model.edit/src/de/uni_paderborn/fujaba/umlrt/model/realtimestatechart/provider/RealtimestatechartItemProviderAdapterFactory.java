@@ -191,52 +191,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InitialStateItemProvider initialStateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInitialStateAdapter() {
-		if (initialStateItemProvider == null) {
-			initialStateItemProvider = new InitialStateItemProvider(this);
-		}
-
-		return initialStateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FinalStateItemProvider finalStateItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFinalStateAdapter() {
-		if (finalStateItemProvider == null) {
-			finalStateItemProvider = new FinalStateItemProvider(this);
-		}
-
-		return finalStateItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -593,8 +547,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (clockItemProvider != null) clockItemProvider.dispose();
 		if (regionItemProvider != null) regionItemProvider.dispose();
 		if (stateItemProvider != null) stateItemProvider.dispose();
-		if (initialStateItemProvider != null) initialStateItemProvider.dispose();
-		if (finalStateItemProvider != null) finalStateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
 		if (historyStateItemProvider != null) historyStateItemProvider.dispose();

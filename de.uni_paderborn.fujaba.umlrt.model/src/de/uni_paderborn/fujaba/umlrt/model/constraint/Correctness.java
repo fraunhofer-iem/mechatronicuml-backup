@@ -52,15 +52,7 @@ public enum Correctness implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VIOLATED(2, "VIOLATED", "violated"), /**
-	 * The '<em><b>UNSAFE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #UNSAFE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	UNSAFE(3, "UNSAFE", "unsafe");
+	VIOLATED(2, "VIOLATED", "violated");
 
 	/**
 	 * The '<em><b>UNKNOWN</b></em>' literal value.
@@ -108,21 +100,6 @@ public enum Correctness implements Enumerator {
 	public static final int VIOLATED_VALUE = 2;
 
 	/**
-	 * The '<em><b>UNSAFE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>UNSAFE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #UNSAFE
-	 * @model literal="unsafe"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int UNSAFE_VALUE = 3;
-
-	/**
 	 * An array of all the '<em><b>Correctness</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -133,7 +110,6 @@ public enum Correctness implements Enumerator {
 			UNKNOWN,
 			CORRECT,
 			VIOLATED,
-			UNSAFE,
 		};
 
 	/**
@@ -187,7 +163,6 @@ public enum Correctness implements Enumerator {
 			case UNKNOWN_VALUE: return UNKNOWN;
 			case CORRECT_VALUE: return CORRECT;
 			case VIOLATED_VALUE: return VIOLATED;
-			case UNSAFE_VALUE: return UNSAFE;
 		}
 		return null;
 	}
