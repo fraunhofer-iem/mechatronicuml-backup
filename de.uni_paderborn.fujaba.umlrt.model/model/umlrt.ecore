@@ -626,26 +626,6 @@
                   <details key="documentation" value="needed for WCET-analysis"/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="transitions"
-                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The transitions of the realtime statechart."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The states of this realtime statechart."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
-                  containment="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.&#xD;&#xA;TODO: Do we really need this?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/BehavioralElement/realtimeStatechart">
@@ -657,20 +637,6 @@
                   derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" upperBound="-1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
-                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/statechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The clocks of this realtime statechart."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Iterator"
-                  derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts "/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
@@ -936,7 +902,7 @@
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/clocks"/>
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
@@ -998,27 +964,9 @@
                   <details key="documentation" value="The synchronization channels provided by this complex state."/>
                 </eAnnotations>
               </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the start state of a realtime statechart."/>
-              </eAnnotations>
-              <eOperations name="getNextState" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Yields the state to which the first outgoing transition of all outgoing transitions of this start state leads.&#xD;&#xA;TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="startStateRev"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The realtime statechart this start state belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-            </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex">
-              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents the stop state of a realtime statechart."/>
-              </eAnnotations>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+                  defaultValueLiteral="false"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1050,7 +998,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/vertices">
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/vertices">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this state belongs to."/>
                 </eAnnotations>
@@ -1112,7 +1060,7 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart"
-                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart/transitions">
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/transitions">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The realtime statechart this transition belongs to."/>
                 </eAnnotations>
@@ -1404,6 +1352,40 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/statechart"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="transitions"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/statechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The transitions of the realtime statechart."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/statechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The states of this realtime statechart."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.&#xD;&#xA;TODO: Do we really need this?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" upperBound="-1"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
+                  containment="true" eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/statechart">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="The clocks of this realtime statechart."/>
+                </eAnnotations>
+              </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper/Iterator"
+                  derived="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts "/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart/helper"
                 nsPrefix="helper">
