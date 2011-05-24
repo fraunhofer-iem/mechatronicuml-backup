@@ -63,6 +63,7 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -188,6 +189,16 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__ADAPTATION_REALTIME_STATECHART).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortInstance> portInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -529,6 +540,19 @@ public class PortImpl extends NamedElementImpl implements Port {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PortInstance> getPortInstances() {
+		if (portInstances == null) {
+			portInstances = new EObjectWithInverseResolvingEList<PortInstance>(PortInstance.class, this, ComponentPackage.PORT__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__PORT_TYPE);
+		}
+		return portInstances;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public PortInstance createInstance() {
@@ -557,6 +581,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectors()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingConnectors()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -581,6 +607,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return ((InternalEList<?>)getOutgoingConnectors()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -632,6 +660,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
 				if (resolve) return getAdaptationRealtimeStatechart();
 				return basicGetAdaptationRealtimeStatechart();
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return getPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -682,6 +712,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
 				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)newValue);
 				return;
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				getPortInstances().clear();
+				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -727,6 +761,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
 				setAdaptationRealtimeStatechart((AbstractRealtimeStatechart)null);
 				return;
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				getPortInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -761,6 +798,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
 			case ComponentPackage.PORT__ADAPTATION_REALTIME_STATECHART:
 				return ADAPTATION_REALTIME_STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT__PORT_INSTANCES:
+				return portInstances != null && !portInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

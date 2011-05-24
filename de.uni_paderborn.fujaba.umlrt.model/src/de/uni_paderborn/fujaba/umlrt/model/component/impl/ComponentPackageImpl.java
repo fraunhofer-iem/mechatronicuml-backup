@@ -453,6 +453,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPort_PortInstances() {
+		return (EReference)portEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getPort__CreateInstance() {
 		return portEClass.getEOperations().get(0);
 	}
@@ -849,6 +858,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(portEClass, PORT__INCOMING_CONNECTORS);
 		createEReference(portEClass, PORT__OUTGOING_CONNECTORS);
 		createEReference(portEClass, PORT__ADAPTATION_REALTIME_STATECHART);
+		createEReference(portEClass, PORT__PORT_INSTANCES);
 		createEOperation(portEClass, PORT___CREATE_INSTANCE);
 
 		portSpecificationEClass = createEClass(PORT_SPECIFICATION);
@@ -984,6 +994,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getPort_IncomingConnectors(), this.getConnectorType(), this.getConnectorType_ToPort(), "incomingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_OutgoingConnectors(), this.getConnectorType(), this.getConnectorType_FromPort(), "outgoingConnectors", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_AdaptationRealtimeStatechart(), theCorePackage.getAbstractRealtimeStatechart(), null, "adaptationRealtimeStatechart", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_PortInstances(), theInstancePackage.getPortInstance(), theInstancePackage.getPortInstance_PortType(), "portInstances", null, 0, -1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getPort__CreateInstance(), theInstancePackage.getPortInstance(), "createInstance", 1, 1, IS_UNIQUE, IS_ORDERED);
 

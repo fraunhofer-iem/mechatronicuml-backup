@@ -831,13 +831,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
+	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2699,6 +2708,17 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_AdaptationRealtimeStatechart();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_PortInstances();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#createInstance() <em>Create Instance</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3298,6 +3318,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getPort_AdaptationRealtimeStatechart();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__PORT_INSTANCES = eINSTANCE.getPort_PortInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Instance</b></em>' operation.

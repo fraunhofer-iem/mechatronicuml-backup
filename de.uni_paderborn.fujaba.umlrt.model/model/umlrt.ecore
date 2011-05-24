@@ -153,6 +153,9 @@
                   <details key="documentation" value="The adaptation behavior of this port which is derived from the DiscretePortSpecification."/>
                 </eAnnotations>
               </eStructuralFeatures>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance"
+                  eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/PortInstance/portType"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -697,7 +700,7 @@
                 <details key="documentation" value="A port instance is a port of a component at instance level."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+                  eType="#//uni_paderborn/fujaba/umlrt/model/component/Port" eOpposite="#//uni_paderborn/fujaba/umlrt/model/component/Port/portInstances"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>

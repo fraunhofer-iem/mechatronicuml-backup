@@ -42,6 +42,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.component.Port#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -279,6 +280,24 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
+
+	/**
+	 * Returns the value of the '<em><b>Port Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType <em>Port Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port Instances</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage#getPort_PortInstances()
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getPortType
+	 * @model opposite="portType"
+	 * @generated
+	 */
+	EList<PortInstance> getPortInstances();
 
 	/**
 	 * <!-- begin-user-doc -->
