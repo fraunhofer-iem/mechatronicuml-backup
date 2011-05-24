@@ -6,20 +6,17 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.pattern.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.BehavioralConnectorImpl;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.BehavioralConnectorImpl;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

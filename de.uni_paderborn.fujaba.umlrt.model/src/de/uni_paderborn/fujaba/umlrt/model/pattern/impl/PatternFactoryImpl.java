@@ -7,14 +7,17 @@
 package de.uni_paderborn.fujaba.umlrt.model.pattern.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.pattern.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

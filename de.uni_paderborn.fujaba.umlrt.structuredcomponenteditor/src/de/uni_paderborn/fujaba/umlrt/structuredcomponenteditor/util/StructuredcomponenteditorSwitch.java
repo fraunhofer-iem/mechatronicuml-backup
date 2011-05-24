@@ -6,12 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.util;
 
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorPackage;
 
 /**
  * <!-- begin-user-doc -->

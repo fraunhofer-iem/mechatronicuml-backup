@@ -22,8 +22,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.BehavioralConnectorItemProvider;
+import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 

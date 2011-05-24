@@ -134,8 +134,6 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.behavior.provider.BehaviorItemProviderAdapterFactory());
-		factories
 				.add(new de.uni_paderborn.fujaba.umlrt.model.component.provider.ComponentItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.umlrt.model.constraint.provider.ConstraintItemProviderAdapterFactory());

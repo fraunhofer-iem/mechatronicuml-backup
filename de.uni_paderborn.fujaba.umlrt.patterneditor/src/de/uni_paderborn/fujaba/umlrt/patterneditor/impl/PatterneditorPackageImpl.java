@@ -6,31 +6,21 @@
  */
 package de.uni_paderborn.fujaba.umlrt.patterneditor.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,7 +83,6 @@ public class PatterneditorPackageImpl extends EPackageImpl implements Patternedi
 		isInited = true;
 
 		// Initialize simple dependencies
-		BehaviorPackage.eINSTANCE.eClass();
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();

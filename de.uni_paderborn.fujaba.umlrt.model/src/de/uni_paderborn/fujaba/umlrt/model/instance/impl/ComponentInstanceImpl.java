@@ -6,9 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -19,17 +17,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;

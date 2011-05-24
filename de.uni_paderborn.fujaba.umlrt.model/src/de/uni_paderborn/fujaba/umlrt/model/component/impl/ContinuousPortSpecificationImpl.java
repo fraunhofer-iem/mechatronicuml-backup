@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ContinuousPortSpecification;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

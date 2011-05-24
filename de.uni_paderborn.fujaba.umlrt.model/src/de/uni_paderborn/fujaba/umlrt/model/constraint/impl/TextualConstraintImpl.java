@@ -6,18 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.constraint.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.modeling.expressions.TextualExpression;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
 
 /**
  * <!-- begin-user-doc -->

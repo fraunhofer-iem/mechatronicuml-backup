@@ -8,8 +8,7 @@ Bundle-Activator: de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEdi
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.umlrt.model.behavior.provider,
- de.uni_paderborn.fujaba.umlrt.model.component.provider,
+Export-Package: de.uni_paderborn.fujaba.umlrt.model.component.provider,
  de.uni_paderborn.fujaba.umlrt.model.constraint.provider,
  de.uni_paderborn.fujaba.umlrt.model.core.provider,
  de.uni_paderborn.fujaba.umlrt.model.instance.provider,

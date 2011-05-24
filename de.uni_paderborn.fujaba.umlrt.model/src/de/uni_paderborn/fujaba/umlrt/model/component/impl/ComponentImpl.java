@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,12 +33,7 @@ import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
-
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->

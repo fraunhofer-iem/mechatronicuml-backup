@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 
 /**
  * <!-- begin-user-doc -->

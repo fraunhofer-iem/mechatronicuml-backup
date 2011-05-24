@@ -6,32 +6,22 @@
  */
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,7 +84,6 @@ public class ComponentinstanceconfigurationPackageImpl extends EPackageImpl impl
 		isInited = true;
 
 		// Initialize simple dependencies
-		BehaviorPackage.eINSTANCE.eClass();
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();

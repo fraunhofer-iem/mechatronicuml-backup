@@ -6,15 +6,12 @@
  */
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.provider;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.storydriven.modeling.provider.SDMEditPlugin;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 
 /**
  * This is the central singleton for the Structuredcomponent edit plugin.

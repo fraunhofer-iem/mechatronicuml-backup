@@ -6,15 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.patterneditor;
 
-import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
+import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

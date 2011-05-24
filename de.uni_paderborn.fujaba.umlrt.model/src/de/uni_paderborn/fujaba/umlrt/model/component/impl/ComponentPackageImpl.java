@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
 import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector;

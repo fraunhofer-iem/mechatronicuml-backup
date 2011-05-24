@@ -7,15 +7,27 @@
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
+import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentKind;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.component.ContinuousComponent;
+import de.uni_paderborn.fujaba.umlrt.model.component.ContinuousPortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
+import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.component.HardwarePortSpecification;
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.component.PortKind;
+import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,12 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.patterneditor.util;
 
-import de.uni_paderborn.fujaba.umlrt.patterneditor.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage;
 
 /**
  * <!-- begin-user-doc -->

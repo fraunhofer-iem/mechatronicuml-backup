@@ -6,15 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.impl;
 
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorFactory;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorPackage;
 
 /**
  * <!-- begin-user-doc -->

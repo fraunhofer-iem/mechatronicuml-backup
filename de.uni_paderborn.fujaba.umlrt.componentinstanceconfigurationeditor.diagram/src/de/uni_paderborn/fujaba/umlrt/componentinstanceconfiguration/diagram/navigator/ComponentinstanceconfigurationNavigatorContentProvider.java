@@ -217,6 +217,49 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements
 		switch (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
 				.getVisualID(view)) {
 
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_PortInstance_3001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_PortInstance_3001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -240,14 +283,14 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyInstance_4001_target,
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationInstance_4002_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyInstance_4001_source,
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationInstance_4002_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(
@@ -283,35 +326,6 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
-			Diagram sv = (Diagram) view;
-			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup links = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ComponentInstanceConfiguration_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
-			}
-			return result.toArray();
-		}
-
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstance2EditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
 			Node sv = (Node) view;
@@ -325,14 +339,14 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationInstance_4002_target,
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyInstance_4001_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_DelegationInstance_4002_source,
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_AssemblyInstance_4001_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(
@@ -411,45 +425,31 @@ public class ComponentinstanceconfigurationNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_PortInstance_3001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_PortInstance_3001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Diagram sv = (Diagram) view;
+			de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup links = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.Messages.NavigatorGroupName_ComponentInstanceConfiguration_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
 					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
 			}
 			return result.toArray();
 		}

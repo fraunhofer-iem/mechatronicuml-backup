@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->

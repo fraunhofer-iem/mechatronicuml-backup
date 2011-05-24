@@ -31,8 +31,6 @@ import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->

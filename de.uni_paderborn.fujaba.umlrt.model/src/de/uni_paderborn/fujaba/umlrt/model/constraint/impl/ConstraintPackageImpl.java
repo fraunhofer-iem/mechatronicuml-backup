@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;

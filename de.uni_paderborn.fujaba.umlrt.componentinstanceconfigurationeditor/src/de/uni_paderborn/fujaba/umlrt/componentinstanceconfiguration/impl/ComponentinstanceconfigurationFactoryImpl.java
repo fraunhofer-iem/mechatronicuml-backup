@@ -6,15 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.impl;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage;
 
 /**
  * <!-- begin-user-doc -->

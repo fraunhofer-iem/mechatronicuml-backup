@@ -6,15 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.impl;
 
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorFactory;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorPackage;
 
 /**
  * <!-- begin-user-doc -->

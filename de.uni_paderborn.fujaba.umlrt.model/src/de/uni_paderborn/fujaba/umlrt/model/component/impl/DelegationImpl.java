@@ -6,23 +6,20 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
-
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
+import de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
 
 /**
  * <!-- begin-user-doc -->

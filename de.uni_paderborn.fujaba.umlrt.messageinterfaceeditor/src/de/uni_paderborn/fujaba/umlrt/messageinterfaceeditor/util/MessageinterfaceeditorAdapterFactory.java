@@ -6,14 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.util;
 
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,32 +6,26 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.pattern.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

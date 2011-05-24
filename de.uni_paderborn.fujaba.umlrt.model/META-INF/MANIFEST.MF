@@ -11,10 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.storydriven.modeling;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.umlrt.model.behavior,
- de.uni_paderborn.fujaba.umlrt.model.behavior.impl,
- de.uni_paderborn.fujaba.umlrt.model.behavior.util,
- de.uni_paderborn.fujaba.umlrt.model.component,
+Export-Package: de.uni_paderborn.fujaba.umlrt.model.component,
  de.uni_paderborn.fujaba.umlrt.model.component.impl,
  de.uni_paderborn.fujaba.umlrt.model.component.util,
  de.uni_paderborn.fujaba.umlrt.model.constraint,

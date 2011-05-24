@@ -10,19 +10,5 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
-            class="de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage"
-            genModel="model/umlrt_model_new.genmodel"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.ecore.generated_package">
-      <package
-            class="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage"
-            genModel="model/umlrt_model_new.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-      </package>
-   </extension>
 
 </plugin>

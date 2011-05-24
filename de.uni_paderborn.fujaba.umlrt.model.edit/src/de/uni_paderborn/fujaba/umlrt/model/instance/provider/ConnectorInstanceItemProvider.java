@@ -20,8 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.BehavioralConnectorItemProvider;
+import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
 
 /**

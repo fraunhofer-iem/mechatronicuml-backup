@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.constraint.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ModelingConstraint;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

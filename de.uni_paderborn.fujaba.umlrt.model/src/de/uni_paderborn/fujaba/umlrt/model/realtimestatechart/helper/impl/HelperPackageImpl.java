@@ -6,42 +6,6 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.impl;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.BehaviorPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.behavior.impl.BehaviorPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
-
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.Pseudo;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -49,13 +13,27 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Vector;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.umlrt.model.constraint.impl.ConstraintPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
+import de.uni_paderborn.fujaba.umlrt.model.core.impl.CorePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.umlrt.model.instance.impl.InstancePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MsgifacePackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.umlrt.model.pattern.impl.PatternPackageImpl;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperFactory;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.HelperPackage;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

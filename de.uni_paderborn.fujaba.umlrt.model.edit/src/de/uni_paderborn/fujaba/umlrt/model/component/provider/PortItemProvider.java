@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;

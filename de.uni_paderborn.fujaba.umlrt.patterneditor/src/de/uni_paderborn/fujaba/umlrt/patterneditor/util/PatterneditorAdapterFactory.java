@@ -6,14 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.patterneditor.util;
 
-import de.uni_paderborn.fujaba.umlrt.patterneditor.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage;
 
 /**
  * <!-- begin-user-doc -->
