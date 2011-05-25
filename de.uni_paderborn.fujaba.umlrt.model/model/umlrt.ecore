@@ -921,7 +921,7 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
                   defaultValueLiteral="false">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Specifies whether this complex state is committed or not. The meaning of being committed is the same as it is with committed states in Uppaal."/>
+                  <details key="documentation" value="The meaning of being committed is the same as it is with committed states in Uppaal."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
@@ -940,6 +940,7 @@
               <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryPoint"
                   derived="true" containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1086,6 +1087,9 @@
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="if transitionAction.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9; transitionAction.toMyString()&#xD;&#xA;endif"/>
                 </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+                </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
@@ -1093,6 +1097,9 @@
                   unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="computeTimeGuardExpr()"/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="absoluteDeadlineExpr"
@@ -1167,7 +1174,7 @@
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
+                <details key="documentation" value="An action might be the side effect of a transition as well as the do, entry, or exit events of a state.&#xD;&#xA;TODO-SD: Discuss meta model for actions."/>
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1176,7 +1183,7 @@
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;."/>
+                  <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;.&#xD;&#xA;TODO-SD: Delete?"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
@@ -1186,7 +1193,11 @@
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-SD: Delete?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="AsynchronousEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1215,8 +1226,15 @@
               </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="DoAction">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-SD: Discuss meta model for actions: Change to inheritance?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="doActionRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/doAction"/>
@@ -1225,22 +1243,35 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  defaultValueLiteral="doEventExpr"/>
+                  defaultValueLiteral="doEventExpr" derived="true"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitAction" abstract="true">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clockResets"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"
-                  containment="true"/>
+                  containment="true">
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-SD: Discuss meta model for actions: Change to inheritance?"/>
+                </eAnnotations>
+              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
                   defaultValueLiteral="entryExitExpr" derived="true"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="EntryAction" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="entryActionRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/entryAction"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="ExitAction" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction">
+              <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+              </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="exitActionRev"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
@@ -1261,6 +1292,9 @@
                   unsettable="true" derived="true">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
                   <details key="derivation" value="toMyString()"/>
+                </eAnnotations>
+                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+                  <details key="documentation" value="TODO-SD: Delete?"/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"
