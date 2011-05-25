@@ -84,15 +84,4 @@ public interface Deadline extends EObject {
 	 */
 	void setLowerBound(NaturalNumber value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO-SD: Delete?
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return null;'"
-	 * @generated
-	 */
-	String toMyString();
-
 } // Deadline

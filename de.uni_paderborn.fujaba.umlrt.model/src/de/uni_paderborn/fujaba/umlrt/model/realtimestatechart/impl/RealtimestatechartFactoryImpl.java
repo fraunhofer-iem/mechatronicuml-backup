@@ -77,6 +77,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
+			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
+			case RealtimestatechartPackage.EXIT_POINT: return createExitPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -270,6 +272,26 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public FujabaRealtimeStatechart createFujabaRealtimeStatechart() {
 		FujabaRealtimeStatechartImpl fujabaRealtimeStatechart = new FujabaRealtimeStatechartImpl();
 		return fujabaRealtimeStatechart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntryPoint createEntryPoint() {
+		EntryPointImpl entryPoint = new EntryPointImpl();
+		return entryPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExitPoint createExitPoint() {
+		ExitPointImpl exitPoint = new ExitPointImpl();
+		return exitPoint;
 	}
 
 	/**

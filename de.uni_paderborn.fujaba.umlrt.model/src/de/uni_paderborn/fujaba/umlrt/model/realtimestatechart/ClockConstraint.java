@@ -148,15 +148,4 @@ public interface ClockConstraint extends EObject {
 	 */
 	boolean isSetClockConstraintExpr();
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO-SD: Delete?
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(clock!=null && operator!=null && bound!=null) {\r\n\t\t\treturn clock.getName()+clock.getId() +\" \"+ operator.toString() +\" \" + bound.getValue();\r\n\t\t}else{\r\n\t\t\treturn \"null\";\r\n\t\t}'"
-	 * @generated
-	 */
-	String toMyString();
-
 } // ClockConstraint

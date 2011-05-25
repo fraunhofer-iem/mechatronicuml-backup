@@ -173,19 +173,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		if(upperBound!=null && lowerBound!=null && clock!=null) {
-		return clock.getName()+clock.getId() + "in [" + lowerBound+","+ upperBound +"]";
-		}else{
-		return "";
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -298,36 +285,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 				return clock != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Deadline.class) {
-			switch (baseOperationID) {
-				case RealtimestatechartPackage.DEADLINE___TO_MY_STRING: return RealtimestatechartPackage.ABSOLUTE_DEADLINE___TO_MY_STRING;
-				default: return super.eDerivedOperationID(baseOperationID, baseClass);
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //AbsoluteDeadlineImpl

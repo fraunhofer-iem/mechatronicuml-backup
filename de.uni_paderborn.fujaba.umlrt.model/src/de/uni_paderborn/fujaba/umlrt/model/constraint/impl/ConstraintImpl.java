@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.modeling.impl.ExtendableElementImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
  *
  * @generated
  */
-public abstract class ConstraintImpl extends EObjectImpl implements Constraint {
+public abstract class ConstraintImpl extends ExtendableElementImpl implements Constraint {
 	/**
 	 * The default value of the '{@link #getCorrectness() <em>Correctness</em>}' attribute.
 	 * <!-- begin-user-doc -->

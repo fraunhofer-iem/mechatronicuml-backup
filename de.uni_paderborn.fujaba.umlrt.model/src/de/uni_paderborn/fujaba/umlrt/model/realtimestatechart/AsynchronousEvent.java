@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.calls.expressions.MethodCallExpression;
 
 /**
@@ -22,7 +23,6 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getTriggeredtransition <em>Triggeredtransition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getRaisedtransition <em>Raisedtransition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getFullEventName <em>Full Event Name</em>}</li>
  * </ul>
  * </p>
@@ -31,7 +31,7 @@ import org.storydriven.modeling.calls.expressions.MethodCallExpression;
  * @model
  * @generated
  */
-public interface AsynchronousEvent extends MethodCallExpression {
+public interface AsynchronousEvent extends MethodCallExpression, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Triggeredtransition</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}'.
@@ -87,31 +87,6 @@ public interface AsynchronousEvent extends MethodCallExpression {
 	void setRaisedtransition(Transition value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name is to be derived from the corresponding message type.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAsynchronousEvent_Name()
-	 * @model derived="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Full Event Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,16 +110,5 @@ public interface AsynchronousEvent extends MethodCallExpression {
 	 * @generated
 	 */
 	void setFullEventName(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO-SD: Delete?
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String returnString = \"\";\r\n\r\nreturnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.\r\n\t\tMessageType)this.getCallee()).getName() + \"(\";\r\n\t\t\t\t\t\t\t\r\n\tjava.util.Iterator<ParameterBinding> iter = this.getOwnedParameterBindings().iterator();\r\n\tboolean firstTime = true;\r\n\twhile(iter.hasNext()){\r\n\t\tParameterBinding tmp = iter.next();\r\n\t\tString value = ((LiteralExpression)tmp.getValueExpression()).getValue();\r\n\t\tEDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();\r\n\t\tif(firstTime){\r\n\t\t\tfirstTime = false;\r\n\t\t\treturnString = returnString + value + \":\" + type.getName();\r\n\t\t}else{\r\n\t\t\treturnString = returnString + \", \" + value + \":\" + type.getName();\r\n\t\t}\r\n\t}\r\n\r\nreturn returnString + \")\";'"
-	 * @generated
-	 */
-	String toMyString();
 
 } // AsynchronousEvent

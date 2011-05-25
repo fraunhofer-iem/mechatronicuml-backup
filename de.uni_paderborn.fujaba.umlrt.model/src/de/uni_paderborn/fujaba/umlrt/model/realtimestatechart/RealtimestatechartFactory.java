@@ -170,6 +170,24 @@ public interface RealtimestatechartFactory extends EFactory {
 	FujabaRealtimeStatechart createFujabaRealtimeStatechart();
 
 	/**
+	 * Returns a new object of class '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entry Point</em>'.
+	 * @generated
+	 */
+	EntryPoint createEntryPoint();
+
+	/**
+	 * Returns a new object of class '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exit Point</em>'.
+	 * @generated
+	 */
+	ExitPoint createExitPoint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

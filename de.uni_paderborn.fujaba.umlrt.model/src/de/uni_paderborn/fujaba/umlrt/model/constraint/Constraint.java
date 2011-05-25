@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.model.constraint;
 
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 
+import org.storydriven.modeling.ExtendableElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Constraint extends EObject {
+public interface Constraint extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Correctness</b></em>' attribute.
 	 * The default value is <code>"Correctness.UNKNOWN"</code>.

@@ -147,7 +147,6 @@ public class MessageTypeItemProvider extends CallableItemProvider implements
 
 		switch (notification.getFeatureID(MessageType.class)) {
 			case MsgifacePackage.MESSAGE_TYPE__NAME:
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

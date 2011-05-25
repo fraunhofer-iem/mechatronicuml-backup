@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.modeling.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintPackage;
@@ -33,7 +34,7 @@ import de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class ConstraintItemProvider extends ItemProviderAdapter implements
+public class ConstraintItemProvider extends ExtendableElementItemProvider implements
 		IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**

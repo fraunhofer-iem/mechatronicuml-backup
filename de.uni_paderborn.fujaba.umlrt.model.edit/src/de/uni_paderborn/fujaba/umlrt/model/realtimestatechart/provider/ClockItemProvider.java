@@ -63,33 +63,10 @@ public class ClockItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
 			addAbsoluteDeadlinesPropertyDescriptor(object);
 			addClockConstraintsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Clock_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Clock_id_feature", "_UI_Clock_type"),
-				 RealtimestatechartPackage.Literals.CLOCK__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -155,9 +132,12 @@ public class ClockItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Clock)object).getStatechart().getName()+ ": " + ((Clock)object).getName()+ "_" + ((Clock)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Clock_type") :
+		// Comment by Ingo Budde:
+		// TODO: I commented out the getId() part, as this attribute was removed.
+		String label = ((Clock) object).getStatechart().getName() + ": "
+				+ ((Clock) object).getName() /* + "_" + ((Clock)object).getId() */;
+		return label == null || label.length() == 0 ? getString("_UI_Clock_type")
+				:
 			getString("_UI_Clock_type") + " " + label;
 	}
 
@@ -171,12 +151,6 @@ public class ClockItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Clock.class)) {
-			case RealtimestatechartPackage.CLOCK__ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -29,6 +29,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#isFinal <em>Final</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getDerivedExitPoints <em>Derived Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#getDerivedEntryPoints <em>Derived Entry Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#isUrgent <em>Urgent</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,7 +161,7 @@ public interface State extends Vertex {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Specifies whether this complex state is committed or not. The meaning of being committed is the same as it is with committed states in Uppaal.
+	 * The meaning of being committed is the same as it is with committed states in Uppaal.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Committed</em>' attribute.
 	 * @see #setCommitted(boolean)
@@ -247,5 +250,63 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	void setFinal(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Derived Exit Points</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitPoint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Derived Exit Points</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Derived Exit Points</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_DerivedExitPoints()
+	 * @model containment="true" derived="true"
+	 * @generated
+	 */
+	EList<ExitPoint> getDerivedExitPoints();
+
+	/**
+	 * Returns the value of the '<em><b>Derived Entry Points</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryPoint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Derived Entry Points</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Derived Entry Points</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_DerivedEntryPoints()
+	 * @model containment="true" derived="true"
+	 * @generated
+	 */
+	EList<EntryPoint> getDerivedEntryPoints();
+
+	/**
+	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Urgent</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Urgent</em>' attribute.
+	 * @see #setUrgent(boolean)
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getState_Urgent()
+	 * @model
+	 * @generated
+	 */
+	boolean isUrgent();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State#isUrgent <em>Urgent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Urgent</em>' attribute.
+	 * @see #isUrgent()
+	 * @generated
+	 */
+	void setUrgent(boolean value);
 
 } // State

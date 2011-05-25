@@ -82,6 +82,16 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	protected Port portType;
 
 	/**
+	 * The cached value of the '{@link #getComponentInstance() <em>Component Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentInstance componentInstance;
+
+	/**
 	 * The cached setting delegate for the '{@link #getRequiredMessageInterface() <em>Required Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,8 +261,24 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @generated
 	 */
 	public ComponentInstance getComponentInstance() {
-		if (eContainerFeatureID() != InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE) return null;
-		return (ComponentInstance)eContainer();
+		if (componentInstance != null && componentInstance.eIsProxy()) {
+			InternalEObject oldComponentInstance = (InternalEObject)componentInstance;
+			componentInstance = (ComponentInstance)eResolveProxy(oldComponentInstance);
+			if (componentInstance != oldComponentInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE, oldComponentInstance, componentInstance));
+			}
+		}
+		return componentInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstance basicGetComponentInstance() {
+		return componentInstance;
 	}
 
 	/**
@@ -261,7 +287,12 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @generated
 	 */
 	public NotificationChain basicSetComponentInstance(ComponentInstance newComponentInstance, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newComponentInstance, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE, msgs);
+		ComponentInstance oldComponentInstance = componentInstance;
+		componentInstance = newComponentInstance;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE, oldComponentInstance, newComponentInstance);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -271,12 +302,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @generated
 	 */
 	public void setComponentInstance(ComponentInstance newComponentInstance) {
-		if (newComponentInstance != eInternalContainer() || (eContainerFeatureID() != InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE && newComponentInstance != null)) {
-			if (EcoreUtil.isAncestor(this, newComponentInstance))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newComponentInstance != componentInstance) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (componentInstance != null)
+				msgs = ((InternalEObject)componentInstance).eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
 			if (newComponentInstance != null)
 				msgs = ((InternalEObject)newComponentInstance).eInverseAdd(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
 			msgs = basicSetComponentInstance(newComponentInstance, msgs);
@@ -360,8 +389,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 					msgs = ((InternalEObject)portType).eInverseRemove(this, ComponentPackage.PORT__PORT_INSTANCES, Port.class, msgs);
 				return basicSetPortType((Port)otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (componentInstance != null)
+					msgs = ((InternalEObject)componentInstance).eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
 				return basicSetComponentInstance((ComponentInstance)otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectorInstances()).basicAdd(otherEnd, msgs);
@@ -397,20 +426,6 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
-				return eInternalContainer().eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
@@ -419,7 +434,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				if (resolve) return getPortType();
 				return basicGetPortType();
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
-				return getComponentInstance();
+				if (resolve) return getComponentInstance();
+				return basicGetComponentInstance();
 			case InstancePackage.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE:
 				if (resolve) return getRequiredMessageInterface();
 				return basicGetRequiredMessageInterface();
@@ -504,7 +520,7 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				return portType != null;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
-				return getComponentInstance() != null;
+				return componentInstance != null;
 			case InstancePackage.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE:
 				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE:

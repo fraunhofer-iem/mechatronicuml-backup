@@ -1086,7 +1086,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber() {
+	public NaturalNumber calculateWorstCaseDeadline() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -1104,9 +1104,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		while(iter.hasNext()){
 			Clock clock = iter.next();
 				if(value.equals("")){
-					value = value + clock.getName() + clock.getId() + ":=0";
+					value = value + clock.getName() /* + clock.getId() */ + ":=0";
 				}else{
-					value = value + ", " + clock.getName() + clock.getId() + ":=0";
+					value = value + ", " + clock.getName() /* + clock.getId() */ + ":=0";
 					}
 				}
 			}
@@ -1171,9 +1171,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				
 							if(firstTime){
 								firstTime = false;
-								triggerString = triggerString + tmp.toMyString();
+								triggerString = triggerString + tmp.getFullEventName();
 							}else{
-								triggerString = triggerString + ", " + tmp.toMyString();
+								triggerString = triggerString + ", " + tmp.getFullEventName();
 							}
 						}
 						if(!getTriggerEvents().isEmpty()){
@@ -1188,9 +1188,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 							if(firstTime){
 								firstTime = false;
 								
-								raisedString = raisedString + tmp.toMyString();
+								raisedString = raisedString + tmp.getFullEventName();
 							}else{
-								raisedString = raisedString + ", " + tmp.toMyString();
+								raisedString = raisedString + ", " + tmp.getFullEventName();
 							}
 						}
 						if(!getRaisedEvents().isEmpty()){
@@ -1219,9 +1219,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 								
 					if(firstTime){
 						firstTime = false;
-						timeGuardString = timeGuardString + tmp.toMyString();
+						timeGuardString = timeGuardString + tmp.getClockConstraintExpr();
 					}else{
-						timeGuardString = timeGuardString + ", " + tmp.toMyString();
+						timeGuardString = timeGuardString + ", " + tmp.getClockConstraintExpr();
 					}
 				}
 						
@@ -1736,8 +1736,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE_AS_NATURAL_NUMBER:
-				return calculateWorstCaseDeadlineAsNaturalNumber();
+			case RealtimestatechartPackage.TRANSITION___CALCULATE_WORST_CASE_DEADLINE:
+				return calculateWorstCaseDeadline();
 			case RealtimestatechartPackage.TRANSITION___COMPUTE_CLOCK_RESETS_EXPR:
 				return computeClockResetsExpr();
 			case RealtimestatechartPackage.TRANSITION___COMPUTE_SYNCHRO_EXPR:

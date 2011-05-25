@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.provider.CallableItemProvider;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
@@ -72,9 +73,9 @@ public class SynchronizationChannelItemProvider extends CallableItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SynchronizationChannel_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SynchronizationChannel_name_feature", "_UI_SynchronizationChannel_type"),
-				 RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -120,8 +121,8 @@ public class SynchronizationChannelItemProvider extends CallableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SynchronizationChannel.class)) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

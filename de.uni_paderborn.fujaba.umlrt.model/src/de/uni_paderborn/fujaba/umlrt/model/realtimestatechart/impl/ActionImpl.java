@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.impl.ExpressionImpl;
 
 /**
@@ -32,7 +34,7 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getBlocking <em>Blocking</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ActionImpl#getTransition <em>Transition</em>}</li>
@@ -44,24 +46,24 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  */
 public class ActionImpl extends ExpressionImpl implements Action {
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getWcet() <em>Wcet</em>}' attribute.
@@ -147,8 +149,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -156,11 +158,11 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION__NAME, oldName, name));
 	}
 
 	/**
@@ -272,15 +274,6 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -328,8 +321,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__ID:
-				return getId();
+			case RealtimestatechartPackage.ACTION__NAME:
+				return getName();
 			case RealtimestatechartPackage.ACTION__WCET:
 				return getWcet();
 			case RealtimestatechartPackage.ACTION__BLOCKING:
@@ -350,8 +343,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__ID:
-				setId((String)newValue);
+			case RealtimestatechartPackage.ACTION__NAME:
+				setName((String)newValue);
 				return;
 			case RealtimestatechartPackage.ACTION__WCET:
 				setWcet((Long)newValue);
@@ -377,8 +370,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__ID:
-				setId(ID_EDEFAULT);
+			case RealtimestatechartPackage.ACTION__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.ACTION__WCET:
 				setWcet(WCET_EDEFAULT);
@@ -404,8 +397,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ACTION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case RealtimestatechartPackage.ACTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.ACTION__WCET:
 				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
 			case RealtimestatechartPackage.ACTION__BLOCKING:
@@ -424,12 +417,30 @@ public class ActionImpl extends ExpressionImpl implements Action {
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.ACTION___TO_MY_STRING:
-				return toMyString();
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.ACTION__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
 		}
-		return super.eInvoke(operationID, arguments);
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case SDMPackage.NAMED_ELEMENT__NAME: return RealtimestatechartPackage.ACTION__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -442,8 +453,8 @@ public class ActionImpl extends ExpressionImpl implements Action {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", wcet: ");
 		result.append(wcet);
 		result.append(", blocking: ");

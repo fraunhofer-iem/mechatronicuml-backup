@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
+import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.expressions.Expression;
 
 /**
@@ -14,13 +15,13 @@ import org.storydriven.modeling.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state.
+ * An action might be the side effect of a transition as well as the do, entry, or exit events of a state.
+ * TODO-SD: Discuss meta model for actions.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getWcet <em>Wcet</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getBlocking <em>Blocking</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getTransition <em>Transition</em>}</li>
@@ -32,32 +33,7 @@ import org.storydriven.modeling.expressions.Expression;
  * @model
  * @generated
  */
-public interface Action extends Expression {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO: Does an action require an id?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_Id()
-	 * @model
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Action#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
+public interface Action extends Expression, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Wcet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,6 +65,7 @@ public interface Action extends Expression {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Used by class "WCETCompRTSC".
+	 * TODO-SD: Delete?
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Blocking</em>' attribute.
 	 * @see #setBlocking(long)
@@ -143,6 +120,9 @@ public interface Action extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO-SD: Delete?
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>WCET Specified By User</em>' attribute.
 	 * @see #setWCETSpecifiedByUser(boolean)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getAction_WCETSpecifiedByUser()
@@ -160,13 +140,5 @@ public interface Action extends Expression {
 	 * @generated
 	 */
 	void setWCETSpecifiedByUser(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return null;'"
-	 * @generated
-	 */
-	String toMyString();
 
 } // Action

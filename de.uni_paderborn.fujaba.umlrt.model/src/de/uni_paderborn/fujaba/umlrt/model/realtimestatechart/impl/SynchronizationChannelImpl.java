@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.impl.CallableImpl;
 
@@ -34,9 +36,9 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.SynchronizationChannelImpl#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
@@ -44,16 +46,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  * @generated
  */
 public class SynchronizationChannelImpl extends CallableImpl implements SynchronizationChannel {
-	/**
-	 * The cached setting delegate for the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchroChannelExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR).getSettingDelegate();
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,6 +67,16 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached setting delegate for the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchroChannelExpr()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -82,11 +84,14 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	protected SynchronizationChannelImpl() {
 		super();
 		
-		DerivedAttributeAdapter synchronizationChannelExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
-		synchronizationChannelExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
-
-		DerivedAttributeAdapter synchronizationChannelExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
-		synchronizationChannelExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
+		// Ingo Budde:
+		// TODO: Removed these DerivedAttributeAdapters, as the model changed.
+		
+//		DerivedAttributeAdapter synchronizationChannelExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
+//		synchronizationChannelExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__NAME);
+//
+//		DerivedAttributeAdapter synchronizationChannelExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR, false);
+//		synchronizationChannelExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 	}
 
 	/**
@@ -225,39 +230,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		String value ="null";
-		boolean firstTime = true;
-		if(name!=null) {
-		value = name ;
-		if(containedParameters!=null){
-			value = value+"(";
-			java.util.Iterator<EParameter> iter = containedParameters.iterator();
-			while(iter.hasNext()){
-				EParameter tmp = iter.next();
-				if(tmp.getName()!=null && tmp.getEType()!=null && 
-					tmp.getEType().getInstanceTypeName()!=null){				
-						if(firstTime){
-							firstTime=false;
-							value = value + tmp.getName() + ":" + tmp.getEType().getName();
-						}else{
-							value = value +", "+ tmp.getName() + ":" + tmp.getEType().getName() ;
-						}	
-					}
-				}
-			value = value + ")";
-			}else{
-				value = value+"()";
-			}
-		}
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -313,12 +285,12 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
+				return getName();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
 				return getSynchroChannelExpr();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				return getName();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				return getRole();
 		}
@@ -333,11 +305,11 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
-				setState((State)newValue);
-				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				setName((String)newValue);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				setState((State)newValue);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				setRole((Role)newValue);
@@ -354,11 +326,11 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
-				setState((State)null);
-				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
+				setState((State)null);
 				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				setRole((Role)null);
@@ -375,12 +347,12 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
 				return isSetSynchroChannelExpr();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				return getRole() != null;
 		}
@@ -393,12 +365,30 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL___TO_MY_STRING:
-				return toMyString();
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
 		}
-		return super.eInvoke(operationID, arguments);
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case SDMPackage.NAMED_ELEMENT__NAME: return RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

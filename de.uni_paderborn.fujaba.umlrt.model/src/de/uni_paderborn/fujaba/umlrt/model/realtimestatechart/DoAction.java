@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Do Action</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * TODO-SD: Discuss meta model for actions.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,6 +41,9 @@ public interface DoAction extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO-SD: Discuss meta model for actions: Change to inheritance?
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference.
 	 * @see #setAction(Action)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoAction_Action()
@@ -147,7 +154,7 @@ public interface DoAction extends EObject {
 	 * @return the value of the '<em>Action Expr</em>' attribute.
 	 * @see #setActionExpr(String)
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getDoAction_ActionExpr()
-	 * @model default="doEventExpr"
+	 * @model default="doEventExpr" derived="true"
 	 * @generated
 	 */
 	String getActionExpr();

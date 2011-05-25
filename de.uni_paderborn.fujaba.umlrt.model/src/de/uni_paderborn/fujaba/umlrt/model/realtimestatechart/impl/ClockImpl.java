@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.ClockImpl#getClockConstraints <em>Clock Constraints</em>}</li>
@@ -43,26 +42,6 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Realtimestatechart
  * @generated
  */
 public class ClockImpl extends NamedElementImpl implements Clock {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getAbsoluteDeadlines() <em>Absolute Deadlines</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -100,27 +79,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartPackage.Literals.CLOCK;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK__ID, oldId, id));
 	}
 
 	/**
@@ -193,35 +151,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		if(name!=null && id!=null) {
-		return name+"_"+id ;
-		}else{
-		return "";
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -278,8 +207,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ID:
-				return getId();
 			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
 				return getAbsoluteDeadlines();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
@@ -299,9 +226,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ID:
-				setId((String)newValue);
-				return;
 			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
 				getAbsoluteDeadlines().clear();
 				getAbsoluteDeadlines().addAll((Collection<? extends AbsoluteDeadline>)newValue);
@@ -325,9 +249,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
 				getAbsoluteDeadlines().clear();
 				return;
@@ -349,8 +270,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
 				return absoluteDeadlines != null && !absoluteDeadlines.isEmpty();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
@@ -359,20 +278,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 				return clockConstraints != null && !clockConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.CLOCK___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ClockImpl

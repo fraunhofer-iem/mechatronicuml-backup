@@ -163,23 +163,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getRootRealtimeStatechart() {
-		AbstractRealtimeStatechart root = null;
-		org.eclipse.emf.ecore.EObject obj = getStatechart();
-		for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element
-			.eContainer()) {
-			if (element instanceof AbstractRealtimeStatechart) {
-				root = (AbstractRealtimeStatechart)element;
-			}
-		}
-		return root;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -319,8 +302,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 		switch (operationID) {
 			case RealtimestatechartPackage.VERTEX___GET_LONG_NAME:
 				return getLongName();
-			case RealtimestatechartPackage.VERTEX___GET_ROOT_REALTIME_STATECHART:
-				return getRootRealtimeStatechart();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
 import org.storydriven.modeling.calls.expressions.provider.MethodCallExpressionItemProvider;
 
@@ -76,9 +77,9 @@ public class AsynchronousEventItemProvider extends
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AsynchronousEvent_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AsynchronousEvent_name_feature", "_UI_AsynchronousEvent_type"),
-				 RealtimestatechartPackage.Literals.ASYNCHRONOUS_EVENT__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,

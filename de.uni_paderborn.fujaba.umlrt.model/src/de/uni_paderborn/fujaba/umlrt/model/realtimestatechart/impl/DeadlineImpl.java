@@ -167,15 +167,6 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -253,20 +244,6 @@ public abstract class DeadlineImpl extends EObjectImpl implements Deadline {
 				return lowerBound != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.DEADLINE___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //DeadlineImpl

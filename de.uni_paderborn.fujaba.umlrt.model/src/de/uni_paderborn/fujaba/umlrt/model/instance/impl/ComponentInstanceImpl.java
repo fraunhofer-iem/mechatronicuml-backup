@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
@@ -36,11 +37,11 @@ import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getEmbeddedInstances <em>Embedded Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,16 +60,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	protected Component componentType;
 
 	/**
-	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentNameDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getEmbeddedInstances() <em>Embedded Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -77,16 +68,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 * @ordered
 	 */
 	protected EList<ComponentInstance> embeddedInstances;
-
-	/**
-	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @see #getPortInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PortInstance> portInstances;
 
 	/**
 	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' containment reference list.
@@ -107,6 +88,26 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 * @ordered
 	 */
 	protected ComponentPart componentPart;
+
+	/**
+	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentNameDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortInstance> portInstances;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -174,22 +175,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComponentNameDerived() {
-		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetComponentNameDerived() {
-		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -199,17 +184,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 			embeddedInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
 		}
 		return embeddedInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<PortInstance> getPortInstances() {
-		if (portInstances == null) {
-			portInstances = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
-		}
-		return portInstances;
 	}
 
 	/**
@@ -263,6 +237,36 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComponentNameDerived() {
+		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetComponentNameDerived() {
+		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PortInstance> getPortInstances() {
+		if (portInstances == null) {
+			portInstances = new EObjectWithInverseResolvingEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
+		}
+		return portInstances;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -271,10 +275,10 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -289,10 +293,10 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 				return ((InternalEList<?>)getEmbeddedInstances()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -307,17 +311,17 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				return getComponentNameDerived();
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 				return getEmbeddedInstances();
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				return getPortInstances();
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return getConnectorInstances();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				if (resolve) return getComponentPart();
 				return basicGetComponentPart();
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
+				return getComponentNameDerived();
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return getPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,16 +341,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 				getEmbeddedInstances().clear();
 				getEmbeddedInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				getPortInstances().clear();
-				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				getConnectorInstances().clear();
 				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)newValue);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				getPortInstances().clear();
+				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -365,14 +369,14 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 				getEmbeddedInstances().clear();
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				getPortInstances().clear();
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				getConnectorInstances().clear();
 				return;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)null);
+				return;
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				getPortInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -387,16 +391,16 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return componentType != null;
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				return isSetComponentNameDerived();
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 				return embeddedInstances != null && !embeddedInstances.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
-				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return connectorInstances != null && !connectorInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				return componentPart != null;
+			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
+				return isSetComponentNameDerived();
+			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+				return portInstances != null && !portInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

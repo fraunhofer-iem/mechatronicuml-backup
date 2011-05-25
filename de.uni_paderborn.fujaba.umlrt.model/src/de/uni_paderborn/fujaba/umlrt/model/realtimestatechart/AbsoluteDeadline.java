@@ -85,15 +85,4 @@ public interface AbsoluteDeadline extends Deadline {
 	 */
 	void setClock(Clock value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO-SD: Delete?
-	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(upperBound!=null && lowerBound!=null && clock!=null) {\r\nreturn clock.getName()+clock.getId() + \"in [\" + lowerBound+\",\"+ upperBound +\"]\";\r\n}else{\r\nreturn \"\";\r\n}'"
-	 * @generated
-	 */
-	String toMyString();
-
 } // AbsoluteDeadline

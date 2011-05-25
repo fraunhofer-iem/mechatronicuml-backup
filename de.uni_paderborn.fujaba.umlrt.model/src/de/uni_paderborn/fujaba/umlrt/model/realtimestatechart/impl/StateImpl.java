@@ -21,7 +21,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryAction;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction;
+import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State;
@@ -43,6 +45,9 @@ import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationCha
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#isFinal <em>Final</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getDerivedExitPoints <em>Derived Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#getDerivedEntryPoints <em>Derived Entry Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.StateImpl#isUrgent <em>Urgent</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,6 +173,46 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected boolean final_ = FINAL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDerivedExitPoints() <em>Derived Exit Points</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDerivedExitPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ExitPoint> derivedExitPoints;
+
+	/**
+	 * The cached value of the '{@link #getDerivedEntryPoints() <em>Derived Entry Points</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDerivedEntryPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntryPoint> derivedEntryPoints;
+
+	/**
+	 * The default value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUrgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean URGENT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUrgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean urgent = URGENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -421,6 +466,51 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ExitPoint> getDerivedExitPoints() {
+		if (derivedExitPoints == null) {
+			derivedExitPoints = new EObjectContainmentEList<ExitPoint>(ExitPoint.class, this, RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS);
+		}
+		return derivedExitPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EntryPoint> getDerivedEntryPoints() {
+		if (derivedEntryPoints == null) {
+			derivedEntryPoints = new EObjectContainmentEList<EntryPoint>(EntryPoint.class, this, RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS);
+		}
+		return derivedEntryPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isUrgent() {
+		return urgent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUrgent(boolean newUrgent) {
+		boolean oldUrgent = urgent;
+		urgent = newUrgent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__URGENT, oldUrgent, urgent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -465,6 +555,10 @@ public class StateImpl extends VertexImpl implements State {
 				return ((InternalEList<?>)getInvariants()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+				return ((InternalEList<?>)getDerivedExitPoints()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+				return ((InternalEList<?>)getDerivedEntryPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -495,6 +589,12 @@ public class StateImpl extends VertexImpl implements State {
 				return isInitial();
 			case RealtimestatechartPackage.STATE__FINAL:
 				return isFinal();
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+				return getDerivedExitPoints();
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+				return getDerivedEntryPoints();
+			case RealtimestatechartPackage.STATE__URGENT:
+				return isUrgent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -538,6 +638,17 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__FINAL:
 				setFinal((Boolean)newValue);
 				return;
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+				getDerivedExitPoints().clear();
+				getDerivedExitPoints().addAll((Collection<? extends ExitPoint>)newValue);
+				return;
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+				getDerivedEntryPoints().clear();
+				getDerivedEntryPoints().addAll((Collection<? extends EntryPoint>)newValue);
+				return;
+			case RealtimestatechartPackage.STATE__URGENT:
+				setUrgent((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -577,6 +688,15 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__FINAL:
 				setFinal(FINAL_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+				getDerivedExitPoints().clear();
+				return;
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+				getDerivedEntryPoints().clear();
+				return;
+			case RealtimestatechartPackage.STATE__URGENT:
+				setUrgent(URGENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -607,6 +727,12 @@ public class StateImpl extends VertexImpl implements State {
 				return initial != INITIAL_EDEFAULT;
 			case RealtimestatechartPackage.STATE__FINAL:
 				return final_ != FINAL_EDEFAULT;
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+				return derivedExitPoints != null && !derivedExitPoints.isEmpty();
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+				return derivedEntryPoints != null && !derivedEntryPoints.isEmpty();
+			case RealtimestatechartPackage.STATE__URGENT:
+				return urgent != URGENT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -627,6 +753,8 @@ public class StateImpl extends VertexImpl implements State {
 		result.append(initial);
 		result.append(", final: ");
 		result.append(final_);
+		result.append(", urgent: ");
+		result.append(urgent);
 		result.append(')');
 		return result.toString();
 	}

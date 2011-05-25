@@ -36,7 +36,6 @@ import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageInterface <em>Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.impl.MessageTypeImpl#getMessageTypeExpr <em>Message Type Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,16 +63,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached setting delegate for the '{@link #getMessageTypeExpr() <em>Message Type Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMessageTypeExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate MESSAGE_TYPE_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR).getSettingDelegate();
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -81,10 +70,13 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 	protected MessageTypeImpl() {
 		super();
 		
-		DerivedAttributeAdapter messageTypeExprAdapter1 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
+		// Ingo Budde:
+		// TODO: Removed these DerivedAttributeAdapters, as the model changed.
 
-		DerivedAttributeAdapter messageTypeExprAdapter2 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
-		messageTypeExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
+//		DerivedAttributeAdapter messageTypeExprAdapter1 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
+//
+//		DerivedAttributeAdapter messageTypeExprAdapter2 = new DerivedAttributeAdapter(this, MsgifacePackage.Literals.MESSAGE_TYPE__MESSAGE_TYPE_EXPR, false);
+//		messageTypeExprAdapter2.addLocalDependency(CallsPackage.Literals.CALLABLE__CONTAINED_PARAMETERS);
 
 	}
 
@@ -117,57 +109,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MsgifacePackage.MESSAGE_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getMessageTypeExpr() {
-		return (String)MESSAGE_TYPE_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetMessageTypeExpr() {
-		return MESSAGE_TYPE_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String toMyString() {
-		String value ="null";
-		boolean firstTime = true;
-		if(name!=null) {
-		value = name ;
-		if(containedParameters!=null){
-			value = value+"(";
-			java.util.Iterator<EParameter> iter = containedParameters.iterator();
-			while(iter.hasNext()){
-				EParameter tmp = iter.next();
-				if(tmp.getName()!=null && tmp.getEType()!=null && 
-					tmp.getEType().getInstanceTypeName()!=null){				
-						if(firstTime){
-							firstTime=false;
-							value = value + tmp.getName() + ":" + tmp.getEType().getName();
-						}else{
-							value = value +", "+ tmp.getName() + ":" + tmp.getEType().getName() ;
-						}	
-					}
-				}
-			value = value + ")";
-			}else{
-				value = value+"()";
-			}
-		}
-		return value;
 	}
 
 	/**
@@ -267,8 +208,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 				return getName();
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface();
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
-				return getMessageTypeExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -321,8 +260,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_INTERFACE:
 				return getMessageInterface() != null;
-			case MsgifacePackage.MESSAGE_TYPE__MESSAGE_TYPE_EXPR:
-				return isSetMessageTypeExpr();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -357,20 +294,6 @@ public class MessageTypeImpl extends CallableImpl implements MessageType {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case MsgifacePackage.MESSAGE_TYPE___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

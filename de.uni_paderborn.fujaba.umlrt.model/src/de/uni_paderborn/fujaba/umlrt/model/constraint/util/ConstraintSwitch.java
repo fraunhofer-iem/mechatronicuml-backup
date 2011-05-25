@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.modeling.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -90,6 +91,7 @@ public class ConstraintSwitch<T> {
 			case ConstraintPackage.CONSTRAINT: {
 				Constraint constraint = (Constraint)theEObject;
 				T result = caseConstraint(constraint);
+				if (result == null) result = caseExtendableElement(constraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -97,6 +99,7 @@ public class ConstraintSwitch<T> {
 				ModelingConstraint modelingConstraint = (ModelingConstraint)theEObject;
 				T result = caseModelingConstraint(modelingConstraint);
 				if (result == null) result = caseConstraint(modelingConstraint);
+				if (result == null) result = caseExtendableElement(modelingConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,6 +107,7 @@ public class ConstraintSwitch<T> {
 				VerifiableConstraint verifiableConstraint = (VerifiableConstraint)theEObject;
 				T result = caseVerifiableConstraint(verifiableConstraint);
 				if (result == null) result = caseConstraint(verifiableConstraint);
+				if (result == null) result = caseExtendableElement(verifiableConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -112,6 +116,7 @@ public class ConstraintSwitch<T> {
 				T result = caseTextualConstraint(textualConstraint);
 				if (result == null) result = caseVerifiableConstraint(textualConstraint);
 				if (result == null) result = caseConstraint(textualConstraint);
+				if (result == null) result = caseExtendableElement(textualConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +181,21 @@ public class ConstraintSwitch<T> {
 	 * @generated
 	 */
 	public T caseTextualConstraint(TextualConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendableElement(ExtendableElement object) {
 		return null;
 	}
 

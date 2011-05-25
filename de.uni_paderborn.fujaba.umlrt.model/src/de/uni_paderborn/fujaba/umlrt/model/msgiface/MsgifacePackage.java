@@ -380,22 +380,13 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__MESSAGE_INTERFACE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Message Type Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE__MESSAGE_TYPE_EXPR = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Message Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
+	int MESSAGE_TYPE_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -569,22 +560,13 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE___PROVIDE_ANNOTATION__STRING = CallsPackage.CALLABLE___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The operation id for the '<em>To My String</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_TYPE___TO_MY_STRING = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Message Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 1;
+	int MESSAGE_TYPE_OPERATION_COUNT = CallsPackage.CALLABLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -639,27 +621,6 @@ public interface MsgifacePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessageType_MessageInterface();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr <em>Message Type Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Message Type Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#getMessageTypeExpr()
-	 * @see #getMessageType()
-	 * @generated
-	 */
-	EAttribute getMessageType_MessageTypeExpr();
-
-	/**
-	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#toMyString() <em>To My String</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>To My String</em>' operation.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType#toMyString()
-	 * @generated
-	 */
-	EOperation getMessageType__ToMyString();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -723,20 +684,6 @@ public interface MsgifacePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_TYPE__MESSAGE_INTERFACE = eINSTANCE.getMessageType_MessageInterface();
-		/**
-		 * The meta object literal for the '<em><b>Message Type Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MESSAGE_TYPE__MESSAGE_TYPE_EXPR = eINSTANCE.getMessageType_MessageTypeExpr();
-		/**
-		 * The meta object literal for the '<em><b>To My String</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MESSAGE_TYPE___TO_MY_STRING = eINSTANCE.getMessageType__ToMyString();
 
 	}
 

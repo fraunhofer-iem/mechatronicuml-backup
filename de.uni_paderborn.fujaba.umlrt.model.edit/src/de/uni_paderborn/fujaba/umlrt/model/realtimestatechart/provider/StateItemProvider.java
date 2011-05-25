@@ -65,6 +65,7 @@ public class StateItemProvider
 			addCommittedPropertyDescriptor(object);
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
+			addUrgentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,6 +137,28 @@ public class StateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Urgent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUrgentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_urgent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_urgent_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__URGENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -153,6 +176,8 @@ public class StateItemProvider
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DERIVED_EXIT_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DERIVED_ENTRY_POINTS);
 		}
 		return childrenFeatures;
 	}
@@ -210,6 +235,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__COMMITTED:
 			case RealtimestatechartPackage.STATE__INITIAL:
 			case RealtimestatechartPackage.STATE__FINAL:
+			case RealtimestatechartPackage.STATE__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__REGIONS:
@@ -218,6 +244,8 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
 			case RealtimestatechartPackage.STATE__INVARIANTS:
 			case RealtimestatechartPackage.STATE__CHANNELS:
+			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
+			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -264,6 +292,16 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__CHANNELS,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.STATE__DERIVED_EXIT_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.STATE__DERIVED_ENTRY_POINTS,
+				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
 	}
 
 }

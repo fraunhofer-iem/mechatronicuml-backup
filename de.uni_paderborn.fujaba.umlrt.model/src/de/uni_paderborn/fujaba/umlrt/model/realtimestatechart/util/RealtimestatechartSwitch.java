@@ -181,6 +181,7 @@ public class RealtimestatechartSwitch<T> {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
 				if (result == null) result = caseExpression(action);
+				if (result == null) result = caseNamedElement(action);
 				if (result == null) result = caseTypedElement(action);
 				if (result == null) result = caseCommentableElement(action);
 				if (result == null) result = caseExtendableElement(action);
@@ -191,6 +192,7 @@ public class RealtimestatechartSwitch<T> {
 				AsynchronousEvent asynchronousEvent = (AsynchronousEvent)theEObject;
 				T result = caseAsynchronousEvent(asynchronousEvent);
 				if (result == null) result = caseMethodCallExpression(asynchronousEvent);
+				if (result == null) result = caseNamedElement(asynchronousEvent);
 				if (result == null) result = caseExpression(asynchronousEvent);
 				if (result == null) result = caseInvocation(asynchronousEvent);
 				if (result == null) result = caseTypedElement(asynchronousEvent);
@@ -229,6 +231,7 @@ public class RealtimestatechartSwitch<T> {
 				SynchronizationChannel synchronizationChannel = (SynchronizationChannel)theEObject;
 				T result = caseSynchronizationChannel(synchronizationChannel);
 				if (result == null) result = caseCallable(synchronizationChannel);
+				if (result == null) result = caseNamedElement(synchronizationChannel);
 				if (result == null) result = caseCommentableElement(synchronizationChannel);
 				if (result == null) result = caseExtendableElement(synchronizationChannel);
 				if (result == null) result = defaultCase(theEObject);
@@ -256,6 +259,24 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = caseNamedElement(fujabaRealtimeStatechart);
 				if (result == null) result = caseCommentableElement(fujabaRealtimeStatechart);
 				if (result == null) result = caseExtendableElement(fujabaRealtimeStatechart);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.ENTRY_POINT: {
+				EntryPoint entryPoint = (EntryPoint)theEObject;
+				T result = caseEntryPoint(entryPoint);
+				if (result == null) result = caseVertex(entryPoint);
+				if (result == null) result = caseNamedElement(entryPoint);
+				if (result == null) result = caseExtendableElement(entryPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.EXIT_POINT: {
+				ExitPoint exitPoint = (ExitPoint)theEObject;
+				T result = caseExitPoint(exitPoint);
+				if (result == null) result = caseVertex(exitPoint);
+				if (result == null) result = caseNamedElement(exitPoint);
+				if (result == null) result = caseExtendableElement(exitPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -560,6 +581,36 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseFujabaRealtimeStatechart(FujabaRealtimeStatechart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntryPoint(EntryPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExitPoint(ExitPoint object) {
 		return null;
 	}
 

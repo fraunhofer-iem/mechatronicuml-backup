@@ -269,19 +269,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-				if(clock!=null && operator!=null && bound!=null) {
-					return clock.getName()+clock.getId() +" "+ operator.toString() +" " + bound.getValue();
-				}else{
-					return "null";
-				}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -390,20 +377,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				return isSetClockConstraintExpr();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -327,6 +327,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
@@ -336,6 +337,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		constraintEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		modelingConstraintEClass.getESuperTypes().add(this.getConstraint());
 		verifiableConstraintEClass.getESuperTypes().add(this.getConstraint());
 		textualConstraintEClass.getESuperTypes().add(this.getVerifiableConstraint());

@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.provider.ExpressionItemProvider;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
@@ -56,7 +57,7 @@ public class ActionItemProvider extends ExpressionItemProvider implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addWcetPropertyDescriptor(object);
 			addBlockingPropertyDescriptor(object);
 			addWCETSpecifiedByUserPropertyDescriptor(object);
@@ -65,19 +66,19 @@ public class ActionItemProvider extends ExpressionItemProvider implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Action_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_id_feature", "_UI_Action_type"),
-				 RealtimestatechartPackage.Literals.ACTION__ID,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -169,7 +170,7 @@ public class ActionItemProvider extends ExpressionItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Action)object).getId();
+		String label = ((Action)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Action_type") :
 			getString("_UI_Action_type") + " " + label;
@@ -187,7 +188,7 @@ public class ActionItemProvider extends ExpressionItemProvider implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-			case RealtimestatechartPackage.ACTION__ID:
+			case RealtimestatechartPackage.ACTION__NAME:
 			case RealtimestatechartPackage.ACTION__WCET:
 			case RealtimestatechartPackage.ACTION__BLOCKING:
 			case RealtimestatechartPackage.ACTION__WCET_SPECIFIED_BY_USER:

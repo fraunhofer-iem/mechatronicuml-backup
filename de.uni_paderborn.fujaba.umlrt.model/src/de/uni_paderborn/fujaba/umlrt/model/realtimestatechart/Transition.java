@@ -443,6 +443,9 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO-SD: Discuss meta model for actions.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transition Action Expr</em>' attribute.
 	 * @see #isSetTransitionActionExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_TransitionActionExpr()
@@ -471,6 +474,9 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * TODO-
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Clock Constraint Expr</em>' attribute.
 	 * @see #isSetClockConstraintExpr()
 	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraintExpr()
@@ -663,12 +669,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @model
 	 * @generated
 	 */
-	NaturalNumber calculateWorstCaseDeadlineAsNaturalNumber();
+	NaturalNumber calculateWorstCaseDeadline();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\nif(clockResets!=null){\r\njava.util.Iterator<Clock> iter = clockResets.iterator();\r\nwhile(iter.hasNext()){\r\n\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + clock.getName() + clock.getId() + \":=0\";\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() + clock.getId() + \":=0\";\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\nreturn value;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String value = \"\";\r\nif(clockResets!=null){\r\njava.util.Iterator<Clock> iter = clockResets.iterator();\r\nwhile(iter.hasNext()){\r\n\tClock clock = iter.next();\r\n\t\tif(value.equals(\"\")){\r\n\t\t\tvalue = value + clock.getName() /* + clock.getId() \052/ + \":=0\";\r\n\t\t}else{\r\n\t\t\tvalue = value + \", \" + clock.getName() /* + clock.getId() \052/ + \":=0\";\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\nreturn value;'"
 	 * @generated
 	 */
 	String computeClockResetsExpr();
@@ -684,7 +690,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String triggerString = \"\";\r\n\t\t\t\tString raisedString = \"\";\r\n\t\t\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\tboolean firstTime = true;\r\n\t\t\t\twhile(triggerEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = triggerEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\ttriggerString = triggerString + tmp.toMyString();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\ttriggerString = triggerString + \", \" + tmp.toMyString();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getTriggerEvents().isEmpty()){\r\n\t\t\t\t\ttriggerString = \"{\" + triggerString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\tfirstTime = true;\r\n\t\t\t\twhile(raisedEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = raisedEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\traisedString = raisedString + tmp.toMyString();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\traisedString = raisedString + \", \" + tmp.toMyString();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getRaisedEvents().isEmpty()){\r\n\t\t\t\t\traisedString = \" / {\" + raisedString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\treturn triggerString + raisedString;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='String triggerString = \"\";\r\n\t\t\t\tString raisedString = \"\";\r\n\t\t\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();\r\n\t\t\t\tjava.util.Iterator<AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\tboolean firstTime = true;\r\n\t\t\t\twhile(triggerEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = triggerEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\ttriggerString = triggerString + tmp.getFullEventName();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\ttriggerString = triggerString + \", \" + tmp.getFullEventName();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getTriggerEvents().isEmpty()){\r\n\t\t\t\t\ttriggerString = \"{\" + triggerString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t\tfirstTime = true;\r\n\t\t\t\twhile(raisedEIter.hasNext()){\r\n\t\t\t\t\tAsynchronousEvent tmp = raisedEIter.next();\r\n\t\t\r\n\t\t\t\t\tif(firstTime){\r\n\t\t\t\t\t\tfirstTime = false;\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\traisedString = raisedString + tmp.getFullEventName();\r\n\t\t\t\t\t}else{\r\n\t\t\t\t\t\traisedString = raisedString + \", \" + tmp.getFullEventName();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t\tif(!getRaisedEvents().isEmpty()){\r\n\t\t\t\t\traisedString = \" / {\" + raisedString + \"}\";\r\n\t\t\t\t}\r\n\t\t\t\t\t\r\n\t\t\t\treturn triggerString + raisedString;'"
 	 * @generated
 	 */
 	String computeEventsExpr();
@@ -692,7 +698,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(getClockConstraints().isEmpty()){\r\n\t\t\treturn \"\";\r\n\t\t}\r\n\t\t\r\n\t\tString timeGuardString = \"[\";\r\n\t\tjava.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\tboolean firstTime = true;\r\n\t\twhile(iter.hasNext()){\r\n\t\t\tClockConstraint tmp = iter.next();\r\n\t\t\t\t\t\t\r\n\t\t\tif(firstTime){\r\n\t\t\t\tfirstTime = false;\r\n\t\t\t\ttimeGuardString = timeGuardString + tmp.toMyString();\r\n\t\t\t}else{\r\n\t\t\t\ttimeGuardString = timeGuardString + \", \" + tmp.toMyString();\r\n\t\t\t}\r\n\t\t}\r\n\t\t\t\t\r\n\t\treturn timeGuardString+\"]\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tif(getClockConstraints().isEmpty()){\r\n\t\t\treturn \"\";\r\n\t\t}\r\n\t\t\r\n\t\tString timeGuardString = \"[\";\r\n\t\tjava.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\tboolean firstTime = true;\r\n\t\twhile(iter.hasNext()){\r\n\t\t\tClockConstraint tmp = iter.next();\r\n\t\t\t\t\t\t\r\n\t\t\tif(firstTime){\r\n\t\t\t\tfirstTime = false;\r\n\t\t\t\ttimeGuardString = timeGuardString + tmp.getClockConstraintExpr();\r\n\t\t\t}else{\r\n\t\t\t\ttimeGuardString = timeGuardString + \", \" + tmp.getClockConstraintExpr();\r\n\t\t\t}\r\n\t\t}\r\n\t\t\t\t\r\n\t\treturn timeGuardString+\"]\";'"
 	 * @generated
 	 */
 	String computeTimeGuardExpr();

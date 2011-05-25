@@ -113,31 +113,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Component Name Derived</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Embedded Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__EMBEDDED_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INSTANCE__EMBEDDED_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
@@ -146,7 +128,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -155,7 +137,25 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__COMPONENT_PART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_INSTANCE__COMPONENT_PART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Component Name Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -475,7 +475,7 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__PORT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * The feature id for the '<em><b>Component Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -952,17 +952,6 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Name Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EAttribute getComponentInstance_ComponentNameDerived();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getEmbeddedInstances <em>Embedded Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -972,17 +961,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstance_EmbeddedInstances();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_PortInstances();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}'.
@@ -1005,6 +983,28 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstance_ComponentPart();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Component Name Derived</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getComponentNameDerived()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EAttribute getComponentInstance_ComponentNameDerived();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance#getPortInstances()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_PortInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance <em>Connector Instance</em>}'.
@@ -1071,10 +1071,10 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_PortType();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Component Instance</em>'.
+	 * @return the meta object for the reference '<em>Component Instance</em>'.
 	 * @see de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance#getComponentInstance()
 	 * @see #getPortInstance()
 	 * @generated
@@ -1252,28 +1252,12 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_TYPE = eINSTANCE.getComponentInstance_ComponentType();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Name Derived</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = eINSTANCE.getComponentInstance_ComponentNameDerived();
-
-		/**
 		 * The meta object literal for the '<em><b>Embedded Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE__EMBEDDED_INSTANCES = eINSTANCE.getComponentInstance_EmbeddedInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Instances</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__PORT_INSTANCES = eINSTANCE.getComponentInstance_PortInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Connector Instances</b></em>' containment reference list feature.
@@ -1290,6 +1274,22 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Name Derived</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = eINSTANCE.getComponentInstance_ComponentNameDerived();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__PORT_INSTANCES = eINSTANCE.getComponentInstance_PortInstances();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.umlrt.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -1344,7 +1344,7 @@ public interface InstancePackage extends EPackage {
 		EReference PORT_INSTANCE__PORT_TYPE = eINSTANCE.getPortInstance_PortType();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Instance</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Component Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

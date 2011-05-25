@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.modeling.NamedElement;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.calls.expressions.impl.MethodCallExpressionImpl;
 import org.storydriven.modeling.expressions.LiteralExpression;
@@ -34,9 +36,9 @@ import org.storydriven.modeling.expressions.LiteralExpression;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl#getTriggeredtransition <em>Triggeredtransition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl#getRaisedtransition <em>Raisedtransition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.AsynchronousEventImpl#getFullEventName <em>Full Event Name</em>}</li>
  * </ul>
  * </p>
@@ -232,34 +234,6 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		String returnString = "";
-		
-		returnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.
-				MessageType)this.getCallee()).getName() + "(";
-									
-			java.util.Iterator<ParameterBinding> iter = this.getOwnedParameterBindings().iterator();
-			boolean firstTime = true;
-			while(iter.hasNext()){
-				ParameterBinding tmp = iter.next();
-				String value = ((LiteralExpression)tmp.getValueExpression()).getValue();
-				EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();
-				if(firstTime){
-					firstTime = false;
-					returnString = returnString + value + ":" + type.getName();
-				}else{
-					returnString = returnString + ", " + value + ":" + type.getName();
-				}
-			}
-		
-		return returnString + ")";
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -315,12 +289,12 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
+				return getName();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
 				return getTriggeredtransition();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
 				return getRaisedtransition();
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
-				return getName();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				return getFullEventName();
 		}
@@ -335,14 +309,14 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
+				setName((String)newValue);
+				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
 				setTriggeredtransition((Transition)newValue);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
 				setRaisedtransition((Transition)newValue);
-				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
-				setName((String)newValue);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				setFullEventName((String)newValue);
@@ -359,14 +333,14 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
 				setTriggeredtransition((Transition)null);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
 				setRaisedtransition((Transition)null);
-				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				setFullEventName(FULL_EVENT_NAME_EDEFAULT);
@@ -383,12 +357,12 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
 				return getTriggeredtransition() != null;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
 				return getRaisedtransition() != null;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				return FULL_EVENT_NAME_EDEFAULT == null ? fullEventName != null : !FULL_EVENT_NAME_EDEFAULT.equals(fullEventName);
 		}
@@ -401,12 +375,30 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT___TO_MY_STRING:
-				return toMyString();
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
 		}
-		return super.eInvoke(operationID, arguments);
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case SDMPackage.NAMED_ELEMENT__NAME: return RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

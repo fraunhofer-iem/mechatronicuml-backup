@@ -102,26 +102,6 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String toMyString() {
-		
-		if( (upperBound!=null && lowerBound!=null)) {
-			if(upperBound.getValue()==0 && lowerBound.getValue()==0){
-				return "";
-			}else if(upperBound.getValue()<lowerBound.getValue() 
-					&& !upperBound.isInfinity()){
-				return "invalid bounds";
-			}
-			return "[" + lowerBound+","+ upperBound +"]";
-		}else{
-			return "";
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -217,36 +197,6 @@ public class RelativeDeadlineImpl extends DeadlineImpl implements RelativeDeadli
 				return getTransition() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
-		if (baseClass == Deadline.class) {
-			switch (baseOperationID) {
-				case RealtimestatechartPackage.DEADLINE___TO_MY_STRING: return RealtimestatechartPackage.RELATIVE_DEADLINE___TO_MY_STRING;
-				default: return super.eDerivedOperationID(baseOperationID, baseClass);
-			}
-		}
-		return super.eDerivedOperationID(baseOperationID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case RealtimestatechartPackage.RELATIVE_DEADLINE___TO_MY_STRING:
-				return toMyString();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //RelativeDeadlineImpl

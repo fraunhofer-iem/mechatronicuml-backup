@@ -165,6 +165,14 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createFujabaRealtimeStatechartAdapter();
 			}
 			@Override
+			public Adapter caseEntryPoint(EntryPoint object) {
+				return createEntryPointAdapter();
+			}
+			@Override
+			public Adapter caseExitPoint(ExitPoint object) {
+				return createExitPointAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -497,6 +505,34 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFujabaRealtimeStatechartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryPoint <em>Entry Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.EntryPoint
+	 * @generated
+	 */
+	public Adapter createEntryPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitPoint <em>Exit Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitPoint
+	 * @generated
+	 */
+	public Adapter createExitPointAdapter() {
 		return null;
 	}
 

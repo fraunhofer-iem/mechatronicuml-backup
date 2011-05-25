@@ -36,7 +36,7 @@
             <diagramLabel
                 href="messageinterface.gmfgraph#MessageTypeExpr"/>
             <features
-                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageType/MessageTypeExpr"/>
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

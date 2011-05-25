@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
  * A representation of the model object '<em><b>Exit Action</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * TODO-SD: Discuss meta model for actions.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
