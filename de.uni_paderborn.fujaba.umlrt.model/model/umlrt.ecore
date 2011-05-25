@@ -970,6 +970,14 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
                   defaultValueLiteral="false"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0"
+                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitPoint"
+                  derived="true" containment="true"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
+                  upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryPoint"
+                  derived="true" containment="true"/>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1390,6 +1398,8 @@
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"/>
+            <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"/>
             <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart/helper"
                 nsPrefix="helper">
               <eClassifiers xsi:type="ecore:EDataType" name="MyMap" instanceClassName="java.util.HashMap">
