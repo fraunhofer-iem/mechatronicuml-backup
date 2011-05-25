@@ -100,7 +100,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
+	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPortInstances()
@@ -261,7 +261,7 @@ public class ComponentInstanceImpl extends NamedElementImpl implements
 	 */
 	public EList<PortInstance> getPortInstances() {
 		if (portInstances == null) {
-			portInstances = new EObjectWithInverseResolvingEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
+			portInstances = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
 		}
 		return portInstances;
 	}
