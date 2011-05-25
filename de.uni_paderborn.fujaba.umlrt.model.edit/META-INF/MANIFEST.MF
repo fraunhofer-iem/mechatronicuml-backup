@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.model.edit;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.umlrt.model.behavior.provider.UmlrtEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
