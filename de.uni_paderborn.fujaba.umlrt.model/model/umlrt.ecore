@@ -657,14 +657,6 @@
               </eAnnotations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="componentType"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/component/Component"/>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
-                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-                  changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-                  unsettable="true" derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedInstances"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"
                   containment="true"/>
@@ -845,12 +837,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="return null;"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
                   containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"
@@ -860,12 +846,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if(upperBound!=null &amp;&amp; lowerBound!=null &amp;&amp; clock!=null) {&#xD;&#xA;return clock.getName()+clock.getId() + &quot;in [&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
@@ -877,12 +857,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="&#xD;&#xA;if( (upperBound!=null &amp;&amp; lowerBound!=null)) {&#xD;&#xA;&#x9;if(upperBound.getValue()==0 &amp;&amp; lowerBound.getValue()==0){&#xD;&#xA;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;}else if(upperBound.getValue()&lt;lowerBound.getValue() &#xD;&#xA;&#x9;&#x9;&#x9;&amp;&amp; !upperBound.isInfinity()){&#xD;&#xA;&#x9;&#x9;return &quot;invalid bounds&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return &quot;[&quot; + lowerBound+&quot;,&quot;+ upperBound +&quot;]&quot;;&#xD;&#xA;}else{&#xD;&#xA;&#x9;return &quot;&quot;;&#xD;&#xA;}"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
             </eClassifiers>
@@ -890,17 +864,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents clocks of a realtime statechart."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="if(name!=null &amp;&amp; id!=null) {&#xD;&#xA;return name+&quot;_&quot;+id ;&#xD;&#xA;}else{&#xD;&#xA;return &quot;&quot;;&#xD;&#xA;}"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Every clock has a unique identifier."/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
@@ -970,8 +933,6 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
                   defaultValueLiteral="false"/>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-              <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0"
-                  eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
                   upperBound="-1" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitPoint"
                   derived="true" containment="true"/>
@@ -986,12 +947,6 @@
               <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
-                </eAnnotations>
-              </eOperations>
-              <eOperations name="getRootRealtimeStatechart" eType="#//uni_paderborn/fujaba/umlrt/model/core/AbstractRealtimeStatechart">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree.&#xD;&#xA;TODO: Delete?"/>
-                  <details key="body" value="AbstractRealtimeStatechart root = null;&#xD;&#xA;org.eclipse.emf.ecore.EObject obj = getStatechart();&#xD;&#xA;for (org.eclipse.emf.ecore.EObject element = obj; element != null; element = element&#xD;&#xA;&#x9;.eContainer()) {&#xD;&#xA;&#x9;if (element instanceof AbstractRealtimeStatechart) {&#xD;&#xA;&#x9;&#x9;root = (AbstractRealtimeStatechart)element;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return root;"/>
                 </eAnnotations>
               </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
@@ -1016,7 +971,7 @@
               </eStructuralFeatures>
             </eClassifiers>
             <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
-              <eOperations name="calculateWorstCaseDeadlineAsNaturalNumber" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
+              <eOperations name="calculateWorstCaseDeadline" eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber"/>
               <eOperations name="computeClockResetsExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="body" value="String value = &quot;&quot;;&#xD;&#xA;if(clockResets!=null){&#xD;&#xA;java.util.Iterator&lt;Clock> iter = clockResets.iterator();&#xD;&#xA;while(iter.hasNext()){&#xD;&#xA;&#x9;Clock clock = iter.next();&#xD;&#xA;&#x9;&#x9;if(value.equals(&quot;&quot;)){&#xD;&#xA;&#x9;&#x9;&#x9;value = value + clock.getName() + clock.getId() + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;, &quot; + clock.getName() + clock.getId() + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;return value;"/>
@@ -1186,12 +1141,6 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="&#x9;&#x9;if(clock!=null &amp;&amp; operator!=null &amp;&amp; bound!=null) {&#xD;&#xA;&#x9;&#x9;&#x9;return clock.getName()+clock.getId() +&quot; &quot;+ operator.toString() +&quot; &quot; + bound.getValue();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;null&quot;;&#xD;&#xA;&#x9;&#x9;}"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
                   eType="#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber" containment="true"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"
@@ -1215,20 +1164,10 @@
               <eLiterals name="deep"/>
               <eLiterals name="shallow" value="1"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+            <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an action. An action might be the side effect of a transition as well as the do, entry, or exit events of a complex state."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="return null;"/>
-                </eAnnotations>
-              </eOperations>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="TODO: Does an action require an id?"/>
-                </eAnnotations>
-              </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The worst case execution time of this action."/>
@@ -1248,16 +1187,10 @@
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
                   eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="AsynchronousEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression">
+            <eClassifiers xsi:type="ecore:EClass" name="AsynchronousEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="String returnString = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;returnString = ((de.uni_paderborn.fujaba.umlrt.model.msgiface.&#xD;&#xA;&#x9;&#x9;MessageType)this.getCallee()).getName() + &quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;java.util.Iterator&lt;ParameterBinding> iter = this.getOwnedParameterBindings().iterator();&#xD;&#xA;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;ParameterBinding tmp = iter.next();&#xD;&#xA;&#x9;&#x9;String value = ((LiteralExpression)tmp.getValueExpression()).getValue();&#xD;&#xA;&#x9;&#x9;EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();&#xD;&#xA;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + &quot;, &quot; + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;return returnString + &quot;)&quot;;"/>
-                  <details key="documentation" value="TODO-SD: Delete?"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredtransition"
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents">
@@ -1270,12 +1203,6 @@
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The transition this event belongs to as raised event."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-                  derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="documentation" value="The name is to be derived from the corresponding message type."/>
                 </eAnnotations>
               </eStructuralFeatures>
               <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName"
@@ -1317,15 +1244,10 @@
                   eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
             </eClassifiers>
-            <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable">
+            <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="Defines a type of a synchronization channel that can be used to synchronize&#xA;between statecharts contained as substatecharts in the same state.&#xA;Serves as a type for Synchronizations."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="String value =&quot;null&quot;;&#xD;&#xA;boolean firstTime = true;&#xD;&#xA;if(name!=null) {&#xD;&#xA;value = name ;&#xD;&#xA;if(containedParameters!=null){&#xD;&#xA;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;if(tmp.getName()!=null &amp;&amp; tmp.getEType()!=null &amp;&amp; &#xD;&#xA;&#x9;&#x9;&#x9;tmp.getEType().getInstanceTypeName()!=null){&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getName() ;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;value = value + &quot;)&quot;;&#xD;&#xA;&#x9;}else{&#xD;&#xA;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return value;"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/channels">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1340,7 +1262,6 @@
                   <details key="derivation" value="toMyString()"/>
                 </eAnnotations>
               </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
               <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//uni_paderborn/fujaba/umlrt/model/pattern/Role"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/pattern/Role/channels"/>
             </eClassifiers>
@@ -1449,24 +1370,11 @@
               <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                 <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
               </eAnnotations>
-              <eOperations name="toMyString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-                  <details key="body" value="String value =&quot;null&quot;;&#xD;&#xA;boolean firstTime = true;&#xD;&#xA;if(name!=null) {&#xD;&#xA;value = name ;&#xD;&#xA;if(containedParameters!=null){&#xD;&#xA;&#x9;value = value+&quot;(&quot;;&#xD;&#xA;&#x9;java.util.Iterator&lt;EParameter> iter = containedParameters.iterator();&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;EParameter tmp = iter.next();&#xD;&#xA;&#x9;&#x9;if(tmp.getName()!=null &amp;&amp; tmp.getEType()!=null &amp;&amp; &#xD;&#xA;&#x9;&#x9;&#x9;tmp.getEType().getInstanceTypeName()!=null){&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime=false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;value = value + tmp.getName() + &quot;:&quot; + tmp.getEType().getName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;value = value +&quot;, &quot;+ tmp.getName() + &quot;:&quot; + tmp.getEType().getName() ;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;value = value + &quot;)&quot;;&#xD;&#xA;&#x9;}else{&#xD;&#xA;&#x9;&#x9;value = value+&quot;()&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return value;"/>
-                </eAnnotations>
-              </eOperations>
               <eStructuralFeatures xsi:type="ecore:EReference" name="messageInterface"
                   lowerBound="1" eType="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface"
                   eOpposite="#//uni_paderborn/fujaba/umlrt/model/msgiface/MessageInterface/messageTypes">
                 <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
                   <details key="documentation" value="The message interface this message type belongs to."/>
-                </eAnnotations>
-              </eStructuralFeatures>
-              <eStructuralFeatures xsi:type="ecore:EAttribute" name="MessageTypeExpr"
-                  eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
-                  changeable="false" volatile="true" transient="true" unsettable="true"
-                  derived="true">
-                <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-                  <details key="derivation" value="toMyString()"/>
                 </eAnnotations>
               </eStructuralFeatures>
             </eClassifiers>
