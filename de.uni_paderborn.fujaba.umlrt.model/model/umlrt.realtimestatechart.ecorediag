@@ -13,7 +13,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PVXyHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PS7gXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PS7gncgEeCgiKL_71ntwQ" x="704" y="970"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PVXyXcgEeCgiKL_71ntwQ" type="1001">
@@ -29,7 +29,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PV-2HcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PVXyncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryAction"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/EntryAction"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PVXy3cgEeCgiKL_71ntwQ" x="801" y="666"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PV-2XcgEeCgiKL_71ntwQ" type="1001">
@@ -45,7 +45,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PWl43cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PV-2ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/ClockConstraint"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PV-23cgEeCgiKL_71ntwQ" x="663" y="534"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PWl5HcgEeCgiKL_71ntwQ" type="1001">
@@ -61,7 +61,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PWl73cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PWl5XcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/DoAction"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PWl5ncgEeCgiKL_71ntwQ" x="1216" y="777"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PWl8HcgEeCgiKL_71ntwQ" type="1001">
@@ -77,7 +77,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PXM-HcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PWl8XcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitAction"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/ExitAction"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PWl8ncgEeCgiKL_71ntwQ" x="955" y="746"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PXM-XcgEeCgiKL_71ntwQ" type="1001">
@@ -93,7 +93,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PX0A3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PXM-ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/EntryOrExitAction"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PXM-3cgEeCgiKL_71ntwQ" x="933" y="664"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PX0BHcgEeCgiKL_71ntwQ" type="1001">
@@ -109,7 +109,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PX0D3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PX0BXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FinalState"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/FinalState"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PX0BncgEeCgiKL_71ntwQ" x="338" y="502"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PX0EHcgEeCgiKL_71ntwQ" type="1001">
@@ -125,7 +125,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PYbGHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PX0EXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/AsynchronousEvent"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PX0EncgEeCgiKL_71ntwQ" x="1205" y="267"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PZCIHcgEeCgiKL_71ntwQ" type="1005">
@@ -136,7 +136,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PaQQ3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PZCIXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryKind"/>
+    <element xmi:type="ecore:EEnum" href="umlrt.ecore#//model/realtimestatechart/HistoryKind"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PZCIncgEeCgiKL_71ntwQ" x="207" y="1101"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3Pa3UHcgEeCgiKL_71ntwQ" type="1002">
@@ -148,7 +148,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3Pa3UXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13150135" lineColor="4210752"/>
     <styles xmi:type="notation:MultiDiagramLinkStyle" xmi:id="_3Pa3UncgEeCgiKL_71ntwQ"/>
-    <element xmi:type="ecore:EPackage" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/helper"/>
+    <element xmi:type="ecore:EPackage" href="umlrt.ecore#//model/realtimestatechart/helper"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Pa3U3cgEeCgiKL_71ntwQ" x="15" y="1101"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PbeZHcgEeCgiKL_71ntwQ" type="1001">
@@ -164,7 +164,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PcFeHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PbeZXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/RelativeDeadline"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PbeZncgEeCgiKL_71ntwQ" x="1174" y="491"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PcFeXcgEeCgiKL_71ntwQ" type="1001">
@@ -180,7 +180,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3Pcsg3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PcFencgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Transition"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PcFe3cgEeCgiKL_71ntwQ" x="765" y="89"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PcshHcgEeCgiKL_71ntwQ" type="1001">
@@ -196,7 +196,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3Pcsj3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PcshXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/SynchronizationChannel"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PcshncgEeCgiKL_71ntwQ" x="472" y="772"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PdTkHcgEeCgiKL_71ntwQ" type="1001">
@@ -212,7 +212,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PdTm3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PdTkXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Clock"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PdTkncgEeCgiKL_71ntwQ" x="928" y="573"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3Pd6oHcgEeCgiKL_71ntwQ" type="1003">
@@ -223,7 +223,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PehtHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3Pd6oXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="14668776" lineColor="4210752"/>
-    <element xmi:type="ecore:EAnnotation" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <element xmi:type="ecore:EAnnotation" href="umlrt.ecore#//model/realtimestatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Pd6oncgEeCgiKL_71ntwQ" x="398" y="1101"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PfIwHcgEeCgiKL_71ntwQ" type="1001">
@@ -239,7 +239,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PfIy3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PfIwXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/InitialState"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/InitialState"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PfIwncgEeCgiKL_71ntwQ" x="15" y="584"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PfIzHcgEeCgiKL_71ntwQ" type="1001">
@@ -255,7 +255,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3Pfv2HcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PfIzXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Vertex"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PfIzncgEeCgiKL_71ntwQ" x="208" y="576"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3Pfv2XcgEeCgiKL_71ntwQ" type="1001">
@@ -271,7 +271,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PgW43cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3Pfv2ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Synchronization"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3Pfv23cgEeCgiKL_71ntwQ" x="764" y="15"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PgW5HcgEeCgiKL_71ntwQ" type="1001">
@@ -287,7 +287,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PiMF3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PgW5XcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Prioritizable"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Prioritizable"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PgW5ncgEeCgiKL_71ntwQ" x="1377" y="893"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PizIHcgEeCgiKL_71ntwQ" type="1001">
@@ -303,7 +303,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PizK3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PizIXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/State"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PizIncgEeCgiKL_71ntwQ" x="734" y="774"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PizLHcgEeCgiKL_71ntwQ" type="1001">
@@ -319,7 +319,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PjaOHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PizLXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Deadline"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Deadline"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PizLncgEeCgiKL_71ntwQ" x="987" y="491"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PkBQHcgEeCgiKL_71ntwQ" type="1001">
@@ -335,7 +335,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PkBS3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PkBQXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/AbsoluteDeadline"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PkBQncgEeCgiKL_71ntwQ" x="801" y="451"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PkBTHcgEeCgiKL_71ntwQ" type="1001">
@@ -351,7 +351,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PkoWHcgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PkBTXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Action"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PkBTncgEeCgiKL_71ntwQ" x="1176" y="633"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PkoWXcgEeCgiKL_71ntwQ" type="1001">
@@ -367,7 +367,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PlPY3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PkoWncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/Region"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PkoW3cgEeCgiKL_71ntwQ" x="763" y="896"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_3PlPZHcgEeCgiKL_71ntwQ" type="1001">
@@ -383,11 +383,11 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_3PlPb3cgEeCgiKL_71ntwQ"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_3PlPZXcgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/HistoryState"/>
+    <element xmi:type="ecore:EClass" href="umlrt.ecore#//model/realtimestatechart/HistoryState"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3PlPZncgEeCgiKL_71ntwQ" x="324" y="675"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_G76HAl-3EeCxjpxJ6mwiaQ"/>
-  <element xmi:type="ecore:EPackage" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart"/>
+  <element xmi:type="ecore:EPackage" href="umlrt.ecore#//model/realtimestatechart"/>
   <edges xmi:type="notation:Edge" xmi:id="_3QYgoHcgEeCgiKL_71ntwQ" type="3002" source="_3PS7gHcgEeCgiKL_71ntwQ" target="_3PkoWXcgEeCgiKL_71ntwQ">
     <children xmi:type="notation:Node" xmi:id="_3QZHsHcgEeCgiKL_71ntwQ" type="4011">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_3QZHsXcgEeCgiKL_71ntwQ" x="-10" y="-10"/>
@@ -397,7 +397,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QYgoXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QYgoncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QYgo3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 31]$[0, -31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NkzZHcgEeCgiKL_71ntwQ" id="(0.5011363636363636,0.001633588005514706)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NkzZXcgEeCgiKL_71ntwQ" id="(0.5024509803921569,1.0038764421329942)"/>
@@ -411,7 +411,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QZHtXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QZHtncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/statechart"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Region/statechart"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QZHt3cgEeCgiKL_71ntwQ" points="[0, 0, 0, -31]$[0, 31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nt9UHcgEeCgiKL_71ntwQ" id="(0.5024509803921569,1.0038764421329942)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nt9UXcgEeCgiKL_71ntwQ" id="(0.5011363636363636,0.001633588005514706)"/>
@@ -425,7 +425,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QenQXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QenQncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryAction/entryActionRev"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/EntryAction/entryActionRev"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QenQ3cgEeCgiKL_71ntwQ" points="[0, 0, 0, -65]$[0, 65, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NladHcgEeCgiKL_71ntwQ" id="(0.4910128724341299,1.0155043491097384)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NladXcgEeCgiKL_71ntwQ" id="(0.7363730376621462,0.011437509574142158)"/>
@@ -447,7 +447,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Qf1YXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Qf1YncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/entryAction"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/entryAction"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Qf1Y3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 65]$[0, -65, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nt9UncgEeCgiKL_71ntwQ" id="(0.7363730376621462,0.011437509574142158)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nt9U3cgEeCgiKL_71ntwQ" id="(0.4910128724341299,1.0155043491097384)"/>
@@ -461,7 +461,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QlU8XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QlU8ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ClockConstraint/clock"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/ClockConstraint/clock"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QlU83cgEeCgiKL_71ntwQ" points="[0, 0, -52, 0]$[52, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmBgHcgEeCgiKL_71ntwQ" id="(1.0039122675506162,0.8914473684210527)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmBgXcgEeCgiKL_71ntwQ" id="(0.0,0.4874164128707627)"/>
@@ -475,7 +475,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Ql8AXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Ql8AncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/clockConstraints"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Clock/clockConstraints"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Ql8A3cgEeCgiKL_71ntwQ" points="[0, 0, 52, 0]$[-52, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NukYHcgEeCgiKL_71ntwQ" id="(0.0,0.4874164128707627)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NukYXcgEeCgiKL_71ntwQ" id="(1.0039122675506162,0.8914473684210527)"/>
@@ -489,7 +489,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QmjEXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QmjEncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/invariants"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/invariants"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QmjE3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 164]$[0, -164, 0, 0]$[0, -164, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UXowHcgEeCgiKL_71ntwQ" id="(0.23742138364779874,0.011437509574142158)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UXowXcgEeCgiKL_71ntwQ" id="(0.51051982467723,1.0)"/>
@@ -503,7 +503,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QnKIXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QnKIncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockConstraints"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/clockConstraints"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QnKI3cgEeCgiKL_71ntwQ" points="[0, 0, 1, -199]$[-1, 198, 0, -1]$[-1, 199, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UchRncgEeCgiKL_71ntwQ" id="(0.01744459198742378,1.000677465423336)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UdIUHcgEeCgiKL_71ntwQ" id="(0.51051982467723,0.0)"/>
@@ -517,7 +517,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3QtQwXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3QtQwncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction/action"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/DoAction/action"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3QtQw3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 34]$[0, -34, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UfklHcgEeCgiKL_71ntwQ" id="(0.49594879150390625,0.004902200137867647)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UfklXcgEeCgiKL_71ntwQ" id="(0.504147628853224,1.0015153364701705)"/>
@@ -531,7 +531,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Qt30XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Qt30ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/DoAction/doActionRev"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/DoAction/doActionRev"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Qt303cgEeCgiKL_71ntwQ" points="[0, 0, 323, 0]$[-323, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmBhncgEeCgiKL_71ntwQ" id="(0.005787319607204861,0.5049022001378677)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmBh3cgEeCgiKL_71ntwQ" id="(1.0047169811320755,0.9003271963082108)"/>
@@ -545,7 +545,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Que4XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Que4ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/doAction"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/doAction"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Que43cgEeCgiKL_71ntwQ" points="[0, 0, -323, 0]$[323, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NukYncgEeCgiKL_71ntwQ" id="(1.0047169811320755,0.9003271963082108)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NukY3cgEeCgiKL_71ntwQ" id="(0.005787319607204861,0.5049022001378677)"/>
@@ -559,7 +559,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Qz-cXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Qz-cncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/ExitAction/exitActionRev"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/ExitAction/exitActionRev"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Qz-c3cgEeCgiKL_71ntwQ" points="[0, 0, 62, 0]$[-62, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmolHcgEeCgiKL_71ntwQ" id="(0.008987127565870098,0.7965116279069767)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NmolXcgEeCgiKL_71ntwQ" id="(1.0047169811320755,0.12254901960784313)"/>
@@ -581,7 +581,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Q1MkXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Q1MkncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/exitAction"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/exitAction"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Q1Mk3cgEeCgiKL_71ntwQ" points="[0, 0, -62, 0]$[62, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvLcHcgEeCgiKL_71ntwQ" id="(1.0047169811320755,0.12254901960784313)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvLcXcgEeCgiKL_71ntwQ" id="(0.008987127565870098,0.7965116279069767)"/>
@@ -595,7 +595,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Q6sIXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Q6sIncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction/clockResets"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/clockResets"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Q6sI3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 32]$[0, -32, 0, 0]$[0, -32, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Ue9gXcgEeCgiKL_71ntwQ" id="(0.5133099026150174,0.001633588005514706)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Ue9gncgEeCgiKL_71ntwQ" id="(0.5090631300403226,1.01129977985964)"/>
@@ -609,7 +609,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Q7TMXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Q7TMncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/EntryOrExitAction/action"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/action"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Q7TM3cgEeCgiKL_71ntwQ" points="[0, 0, -99, 0]$[99, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UVMhHcgEeCgiKL_71ntwQ" id="(1.0034722222222223,0.5016335880055147)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3UVMhXcgEeCgiKL_71ntwQ" id="(0.0041476288532239815,0.5143937544389204)"/>
@@ -631,7 +631,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RGSUXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RGSUncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent/triggeredtransition"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/AsynchronousEvent/triggeredtransition"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RGSU3cgEeCgiKL_71ntwQ" points="[0, 0, 30, 0]$[0, 0, 30, 0]$[-30, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NnPpHcgEeCgiKL_71ntwQ" id="(0.005020325442394578,0.5475033030790442)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NnPpXcgEeCgiKL_71ntwQ" id="(1.0002033512766768,0.875)"/>
@@ -645,7 +645,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RHgcXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RHgcncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AsynchronousEvent/raisedtransition"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/AsynchronousEvent/raisedtransition"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RHgc3cgEeCgiKL_71ntwQ" points="[0, 0, 30, 0]$[0, 0, 30, 0]$[-30, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nn2sHcgEeCgiKL_71ntwQ" id="(0.005020325442394578,0.09236863080193014)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nn2sXcgEeCgiKL_71ntwQ" id="(1.0002033512766768,0.7483062744140625)"/>
@@ -659,7 +659,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RIHgXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RIHgncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/triggerEvents"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/triggerEvents"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RIHg3cgEeCgiKL_71ntwQ" points="[0, 0, -30, 0]$[30, 0, 0, 0]$[30, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvLcncgEeCgiKL_71ntwQ" id="(1.0002033512766768,0.875)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvLc3cgEeCgiKL_71ntwQ" id="(0.005020325442394578,0.5475033030790442)"/>
@@ -673,7 +673,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RIukXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RIukncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/raisedEvents"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/raisedEvents"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RIuk3cgEeCgiKL_71ntwQ" points="[0, 0, -30, 0]$[30, 0, 0, 0]$[30, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvygHcgEeCgiKL_71ntwQ" id="(1.0002033512766768,0.7483062744140625)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvygXcgEeCgiKL_71ntwQ" id="(0.005020325442394578,0.09236863080193014)"/>
@@ -687,7 +687,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RXYEXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RXYEncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/RelativeDeadline/transition"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/RelativeDeadline/transition"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RXYE3cgEeCgiKL_71ntwQ" points="[0, 0, 105, 156]$[0, -31, 105, 125]$[-105, -31, 0, 125]$[-105, -156, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nn2tncgEeCgiKL_71ntwQ" id="(0.037096774193548385,0.004901960784313725)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nn2t3cgEeCgiKL_71ntwQ" id="(0.7553755597370427,1.000677465423336)"/>
@@ -709,7 +709,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RYmNXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RYmNncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/relativeDeadline"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/relativeDeadline"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RYmN3cgEeCgiKL_71ntwQ" points="[0, 0, -105, -156]$[0, 125, -105, -31]$[105, 125, 0, -31]$[105, 156, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NvygncgEeCgiKL_71ntwQ" id="(0.7553755597370427,1.000677465423336)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nvyg3cgEeCgiKL_71ntwQ" id="(0.037096774193548385,0.004901960784313725)"/>
@@ -723,7 +723,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Res0XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Res0ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/sendSynchronization"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/sendSynchronization"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Res03cgEeCgiKL_71ntwQ" points="[0, 0, 1, 31]$[-1, -1, 0, 30]$[-1, -31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NqS8HcgEeCgiKL_71ntwQ" id="(0.01744459198742378,6.774964371347815E-4)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NqS8XcgEeCgiKL_71ntwQ" id="(0.06858407079646017,1.0)"/>
@@ -737,7 +737,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RfT4XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RfT4ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/receiveSynchronization"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/receiveSynchronization"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RfT43cgEeCgiKL_71ntwQ" points="[0, 0, 1, 31]$[-1, -1, 0, 30]$[-1, -31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NqS9ncgEeCgiKL_71ntwQ" id="(0.09330667635289634,6.774964371347815E-4)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NqS93cgEeCgiKL_71ntwQ" id="(0.3443954602806969,1.0)"/>
@@ -751,7 +751,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Rf68XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Rf68ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/transitionAction"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/transitionAction"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Rf683cgEeCgiKL_71ntwQ" points="[0, 0, -255, -298]$[1, 0, -254, -298]$[1, 62, -254, -236]$[256, 62, 1, -236]$[255, 298, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Npr5HcgEeCgiKL_71ntwQ" id="(0.9070997284679878,1.000677465423336)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Npr5XcgEeCgiKL_71ntwQ" id="(0.9763603383059954,0.0015153364701704546)"/>
@@ -765,7 +765,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Rf6-XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Rf6-ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/target"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/target"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Rf6-3cgEeCgiKL_71ntwQ" points="[0, 0, 195, -283]$[-164, 0, 31, -283]$[-164, 283, 31, 0]$[-195, 283, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NpE2HcgEeCgiKL_71ntwQ" id="(2.0320241044207316E-4,0.8519648109994283)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NpE2XcgEeCgiKL_71ntwQ" id="(1.0006906077348066,0.08777573529411764)"/>
@@ -779,7 +779,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RgiBXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RgiBncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/source"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/source"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RgiB3cgEeCgiKL_71ntwQ" points="[0, 0, 195, -281]$[-133, 0, 62, -281]$[-133, 281, 62, 0]$[-195, 281, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NpE0ncgEeCgiKL_71ntwQ" id="(2.0320241044207316E-4,0.9786585365853658)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NpE03cgEeCgiKL_71ntwQ" id="(1.0006906077348066,0.5036764705882353)"/>
@@ -793,7 +793,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RhJFXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RhJFncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/clockResets"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/clockResets"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RhJF3cgEeCgiKL_71ntwQ" points="[0, 0, 22, -266]$[1, 93, 23, -173]$[256, 93, 278, -173]$[256, 266, 278, 0]$[-22, 266, 0, 0]$[-22, 266, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Ue9g3cgEeCgiKL_71ntwQ" id="(0.83123779296875,1.000677465423336)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3Ue9hHcgEeCgiKL_71ntwQ" id="(1.0,0.4874164128707627)"/>
@@ -807,7 +807,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RhwJXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RhwJncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Transition/absoluteDeadlines"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RhwJ3cgEeCgiKL_71ntwQ" points="[0, 0, 0, -116]$[0, 0, 0, -116]$[0, 116, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NodwncgEeCgiKL_71ntwQ" id="(0.2795136242378049,1.000677465423336)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nodw3cgEeCgiKL_71ntwQ" id="(0.5059141097530242,0.011438107958026961)"/>
@@ -829,7 +829,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3Ri-QXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3Ri-QncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/transition"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/AbsoluteDeadline/transition"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Ri-Q3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 116]$[0, -116, 0, 0]$[0, -116, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NwZkHcgEeCgiKL_71ntwQ" id="(0.5059141097530242,0.011438107958026961)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NwZkXcgEeCgiKL_71ntwQ" id="(0.2795136242378049,1.000677465423336)"/>
@@ -843,7 +843,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RjlUXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RjlUncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/outgoingTransitions"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Vertex/outgoingTransitions"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RjlU3cgEeCgiKL_71ntwQ" points="[0, 0, -195, 281]$[62, 0, -133, 281]$[62, -281, -133, 0]$[195, -281, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NxAoHcgEeCgiKL_71ntwQ" id="(1.0006906077348066,0.5036764705882353)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NxAoXcgEeCgiKL_71ntwQ" id="(2.0320241044207316E-4,0.9786585365853658)"/>
@@ -857,7 +857,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RkMYXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RkMYncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Vertex/incomingTransitions"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Vertex/incomingTransitions"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RkMY3cgEeCgiKL_71ntwQ" points="[0, 0, -195, 283]$[31, 0, -164, 283]$[31, -283, -164, 0]$[195, -283, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NxAoncgEeCgiKL_71ntwQ" id="(1.0006906077348066,0.08777573529411764)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NxAo3cgEeCgiKL_71ntwQ" id="(2.0320241044207316E-4,0.8519648109994283)"/>
@@ -871,7 +871,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RkzcXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RkzcncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Action/transition"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Action/transition"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Rkzc3cgEeCgiKL_71ntwQ" points="[0, 0, 255, 298]$[1, -236, 256, 62]$[-254, -236, 1, 62]$[-254, -298, 1, 0]$[-255, -298, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nzc4HcgEeCgiKL_71ntwQ" id="(0.9763603383059954,0.0015153364701704546)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nzc4XcgEeCgiKL_71ntwQ" id="(0.9070997284679878,1.000677465423336)"/>
@@ -885,7 +885,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RlagXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RlagncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/sendSyncRev"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Synchronization/sendSyncRev"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Rlag3cgEeCgiKL_71ntwQ" points="[0, 0, -1, -31]$[0, 30, -1, -1]$[1, 31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nzc4ncgEeCgiKL_71ntwQ" id="(0.06858407079646017,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nzc43cgEeCgiKL_71ntwQ" id="(0.01744459198742378,6.774964371347815E-4)"/>
@@ -899,7 +899,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RmBkXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RmBkncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Synchronization/receiveSyncRev"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Synchronization/receiveSyncRev"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RmBk3cgEeCgiKL_71ntwQ" points="[0, 0, -1, -31]$[0, 30, -1, -1]$[1, 31, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0D8HcgEeCgiKL_71ntwQ" id="(0.3443954602806969,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0D8XcgEeCgiKL_71ntwQ" id="(0.09330667635289634,6.774964371347815E-4)"/>
@@ -913,7 +913,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RrhIXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RrhIncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/SynchronizationChannel/state"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RrhI3cgEeCgiKL_71ntwQ" points="[0, 0, -62, 0]$[0, 0, -62, 0]$[62, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nq6AHcgEeCgiKL_71ntwQ" id="(1.0,0.5185322008634868)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nq6AXcgEeCgiKL_71ntwQ" id="(0.0047169811320754715,0.7336605296415442)"/>
@@ -927,7 +927,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RsIMXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RsIMncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/channels"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/channels"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RsIM3cgEeCgiKL_71ntwQ" points="[0, 0, 62, 0]$[-62, 0, 0, 0]$[-62, 0, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0D8ncgEeCgiKL_71ntwQ" id="(0.0047169811320754715,0.7336605296415442)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0D83cgEeCgiKL_71ntwQ" id="(1.0,0.5185322008634868)"/>
@@ -941,7 +941,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RxnwXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RxnwncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Clock/absoluteDeadlines"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Clock/absoluteDeadlines"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3Rxnw3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 71]$[0, 0, 0, 71]$[0, -71, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nq6BncgEeCgiKL_71ntwQ" id="(0.14654383505544355,0.011299779859639831)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8Nq6B3cgEeCgiKL_71ntwQ" id="(0.9629032258064516,1.0114375095741421)"/>
@@ -955,7 +955,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3RyO1XcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3RyO1ncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/AbsoluteDeadline/clock"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/AbsoluteDeadline/clock"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3RyO13cgEeCgiKL_71ntwQ" points="[0, 0, 0, -71]$[0, 71, 0, 0]$[0, 71, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0rAHcgEeCgiKL_71ntwQ" id="(0.9629032258064516,1.0114375095741421)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0rAXcgEeCgiKL_71ntwQ" id="(0.14654383505544355,0.011299779859639831)"/>
@@ -1001,7 +1001,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3SUaUXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3SUaUncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/State/regions"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/State/regions"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3SUaU3cgEeCgiKL_71ntwQ" points="[0, 0, 0, -71]$[0, 71, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NsIJHcgEeCgiKL_71ntwQ" id="(0.5047169811320755,1.0114375095741421)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8NsIJXcgEeCgiKL_71ntwQ" id="(0.5024509803921569,0.003876442132994186)"/>
@@ -1015,7 +1015,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_3SVBZXcgEeCgiKL_71ntwQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_3SVBZncgEeCgiKL_71ntwQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/realtimestatechart/Region/parentState"/>
+    <element xmi:type="ecore:EReference" href="umlrt.ecore#//model/realtimestatechart/Region/parentState"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3SVBZ3cgEeCgiKL_71ntwQ" points="[0, 0, 0, 71]$[0, -71, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0rAncgEeCgiKL_71ntwQ" id="(0.5024509803921569,0.003876442132994186)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8N0rA3cgEeCgiKL_71ntwQ" id="(0.5047169811320755,1.0114375095741421)"/>
