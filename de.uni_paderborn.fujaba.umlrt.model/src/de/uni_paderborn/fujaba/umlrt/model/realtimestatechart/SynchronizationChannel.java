@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-
 import org.storydriven.modeling.NamedElement;
 import org.storydriven.modeling.calls.Callable;
+
+import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 
 /**
  * <!-- begin-user-doc -->

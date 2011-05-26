@@ -6,12 +6,12 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.Port;
+import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 
 /**
  * <!-- begin-user-doc -->

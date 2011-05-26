@@ -6,13 +6,11 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.ExtendableElement;
-
 import org.storydriven.modeling.expressions.Expression;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

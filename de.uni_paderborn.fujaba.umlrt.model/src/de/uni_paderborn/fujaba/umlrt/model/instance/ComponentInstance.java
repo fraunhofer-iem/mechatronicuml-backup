@@ -6,13 +6,11 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.modeling.NamedElement;
+
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.storydriven.modeling.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
-
 import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
 
 /**

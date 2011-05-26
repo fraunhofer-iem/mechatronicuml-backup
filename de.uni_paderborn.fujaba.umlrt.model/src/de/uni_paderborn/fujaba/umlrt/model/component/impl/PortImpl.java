@@ -24,7 +24,7 @@ import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.component.Component;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;

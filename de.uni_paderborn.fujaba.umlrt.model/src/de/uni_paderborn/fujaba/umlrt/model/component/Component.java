@@ -6,16 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,10 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.NamedElement;
 
 /**

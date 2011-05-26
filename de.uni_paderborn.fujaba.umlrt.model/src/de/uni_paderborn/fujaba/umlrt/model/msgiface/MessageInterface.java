@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.modeling.NamedElement;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

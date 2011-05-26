@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
-
 import org.eclipse.emf.ecore.EClass;
+
+import de.uni_paderborn.fujaba.umlrt.model.core.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

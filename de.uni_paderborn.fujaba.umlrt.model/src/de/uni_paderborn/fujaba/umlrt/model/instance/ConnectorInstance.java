@@ -7,8 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.BehavioralConnector;
-import org.storydriven.modeling.NamedElement;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 
 /**
  * <!-- begin-user-doc -->

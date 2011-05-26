@@ -6,13 +6,10 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.modeling.SDMPackage;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.storydriven.modeling.calls.CallsPackage;
 
 /**

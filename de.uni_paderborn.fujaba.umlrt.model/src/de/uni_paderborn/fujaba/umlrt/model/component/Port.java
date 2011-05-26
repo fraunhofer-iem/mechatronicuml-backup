@@ -6,20 +6,15 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.component;
 
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.modeling.CommentableElement;
+import org.storydriven.modeling.NamedElement;
+
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-
 import de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.EObject;
-import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

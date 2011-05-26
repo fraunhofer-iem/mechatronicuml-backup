@@ -6,15 +6,13 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.instance;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 
 /**
  * <!-- begin-user-doc -->

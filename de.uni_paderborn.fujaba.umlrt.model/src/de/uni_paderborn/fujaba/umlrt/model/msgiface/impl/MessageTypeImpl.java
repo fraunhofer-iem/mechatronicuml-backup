@@ -22,7 +22,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.impl.CallableImpl;
 
-import de.uni_paderborn.fujaba.umlrt.model.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifacePackage;

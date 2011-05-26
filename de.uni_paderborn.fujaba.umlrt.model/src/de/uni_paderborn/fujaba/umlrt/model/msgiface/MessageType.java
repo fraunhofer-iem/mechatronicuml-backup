@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.umlrt.model.msgiface;
 
 import org.storydriven.modeling.NamedElement;
-
 import org.storydriven.modeling.calls.Callable;
 
 /**
