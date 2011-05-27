@@ -27,7 +27,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.RelativeDeadlinePropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.RelativeDeadlinePropertyDescriptor;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;

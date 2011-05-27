@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.Port;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.PortCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.PortCardinalityPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a

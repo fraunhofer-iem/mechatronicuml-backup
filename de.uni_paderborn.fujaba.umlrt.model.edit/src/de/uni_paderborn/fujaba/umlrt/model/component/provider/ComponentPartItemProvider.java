@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.ComponentPartCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.ComponentPartCardinalityPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart} object.

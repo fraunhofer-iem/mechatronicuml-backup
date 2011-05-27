@@ -25,7 +25,7 @@ import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.RoleCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.RoleCardinalityPropertyDescriptor;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory;

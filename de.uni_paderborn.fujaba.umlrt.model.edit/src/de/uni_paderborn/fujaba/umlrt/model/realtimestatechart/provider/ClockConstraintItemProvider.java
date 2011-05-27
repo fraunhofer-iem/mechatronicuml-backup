@@ -28,7 +28,7 @@ import org.storydriven.modeling.expressions.ComparingOperator;
 import de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEditPlugin;
 import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
 

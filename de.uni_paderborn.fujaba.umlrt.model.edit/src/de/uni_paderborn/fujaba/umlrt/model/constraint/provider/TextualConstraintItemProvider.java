@@ -23,7 +23,7 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.umlrt.model.constraint.Correctness;
 import de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.customdescriptors.TextualConstraintExpressionPropertyDescriptor;
+import de.uni_paderborn.fujaba.umlrt.model.descriptor.TextualConstraintExpressionPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint} object.
