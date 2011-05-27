@@ -4,8 +4,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.descriptors.ComponentTypeItemPropertyDescriptor;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.umlrt.model.instance.provider.ComponentInstanceItemProvider;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.provider.ComponentInstanceItemProvider;
 
 public class CustomComponentInstanceItemProvider extends
 		ComponentInstanceItemProvider {

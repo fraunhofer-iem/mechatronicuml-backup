@@ -88,12 +88,12 @@ public class UmlrtInitDiagramFileAction implements IObjectActionDelegate {
 							de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.Messages.InitDiagramFile_ResourceErrorDialogMessage);
 			return;
 		}
-		Wizard wizard = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationNewDiagramFileWizard(
+		Wizard wizard = new de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtNewDiagramFileWizard(
 				domainModelURI, diagramRoot, editingDomain);
 		wizard.setWindowTitle(NLS
 				.bind(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.Messages.InitDiagramFile_WizardTitle,
 						de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID));
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorUtil
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramEditorUtil
 				.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }

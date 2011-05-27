@@ -16,11 +16,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.GetEditContextRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
 /**
  * An EditHelperAdvice for the ComponentPart.

@@ -8,7 +8,7 @@ import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomComponentInstanceItemProvider;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomInstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.sheet.ComponentinstanceconfigurationPropertySection;
-import de.uni_paderborn.fujaba.umlrt.model.instance.provider.ComponentInstanceItemProvider;
+import de.uni_paderborn.fujaba.muml.model.instance.provider.ComponentInstanceItemProvider;
 
 public class CustomComponentinstanceconfigurationPropertySection extends
 		ComponentinstanceconfigurationPropertySection {

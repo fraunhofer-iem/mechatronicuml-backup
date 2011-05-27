@@ -9,16 +9,16 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.ConnectorType;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
-import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ConnectorInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 public class SetComponentTypeCommand extends AbstractCommand {
 
@@ -171,7 +171,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
 		for (ConnectorType connectorType : port.getOutgoingConnectors()) {
 			Port toPort = connectorType.getToPort();
-			for (PortInstance toInstance : port.getPortInstances()) {
+			for (PortInstance toInstance : componentInstance.getPortInstances()) {
 				if (toInstance.getPortType() == toPort) {
 					ConnectorInstance connectorInstance = connectorType
 							.createInstance();

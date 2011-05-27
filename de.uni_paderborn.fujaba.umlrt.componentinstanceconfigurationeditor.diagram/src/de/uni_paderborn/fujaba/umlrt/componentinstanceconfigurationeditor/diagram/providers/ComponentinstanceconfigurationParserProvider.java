@@ -23,16 +23,16 @@ public class ComponentinstanceconfigurationParserProvider extends
 	/**
 	 * @generated
 	 */
-	private IParser componentInstanceNameComponentNameDerived_5005Parser;
+	private IParser componentInstanceNameComponentNameDerived_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentInstanceNameComponentNameDerived_5005Parser() {
-		if (componentInstanceNameComponentNameDerived_5005Parser == null) {
+	private IParser getComponentInstanceNameComponentNameDerived_5007Parser() {
+		if (componentInstanceNameComponentNameDerived_5007Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					SDMPackage.eINSTANCE.getNamedElement_Name(),
-					de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getComponentInstance_ComponentNameDerived() };
 			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -41,24 +41,24 @@ public class ComponentinstanceconfigurationParserProvider extends
 			parser.setViewPattern("{0} : {1}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}"); //$NON-NLS-1$
-			componentInstanceNameComponentNameDerived_5005Parser = parser;
+			componentInstanceNameComponentNameDerived_5007Parser = parser;
 		}
-		return componentInstanceNameComponentNameDerived_5005Parser;
+		return componentInstanceNameComponentNameDerived_5007Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser componentInstanceNameComponentNameDerived_5004Parser;
+	private IParser componentInstanceNameComponentNameDerived_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentInstanceNameComponentNameDerived_5004Parser() {
-		if (componentInstanceNameComponentNameDerived_5004Parser == null) {
+	private IParser getComponentInstanceNameComponentNameDerived_5006Parser() {
+		if (componentInstanceNameComponentNameDerived_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					SDMPackage.eINSTANCE.getNamedElement_Name(),
-					de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getComponentInstance_ComponentNameDerived() };
 			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -67,9 +67,9 @@ public class ComponentinstanceconfigurationParserProvider extends
 			parser.setViewPattern("{0} : {1}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}"); //$NON-NLS-1$
-			componentInstanceNameComponentNameDerived_5004Parser = parser;
+			componentInstanceNameComponentNameDerived_5006Parser = parser;
 		}
-		return componentInstanceNameComponentNameDerived_5004Parser;
+		return componentInstanceNameComponentNameDerived_5006Parser;
 	}
 
 	/**
@@ -78,9 +78,9 @@ public class ComponentinstanceconfigurationParserProvider extends
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceNameComponentNameDeriveEditPart.VISUAL_ID:
-			return getComponentInstanceNameComponentNameDerived_5005Parser();
+			return getComponentInstanceNameComponentNameDerived_5007Parser();
 		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceNameComponentNameDerive2EditPart.VISUAL_ID:
-			return getComponentInstanceNameComponentNameDerived_5004Parser();
+			return getComponentInstanceNameComponentNameDerived_5006Parser();
 		}
 		return null;
 	}
@@ -101,12 +101,12 @@ public class ComponentinstanceconfigurationParserProvider extends
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -118,7 +118,7 @@ public class ComponentinstanceconfigurationParserProvider extends
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes
+			if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

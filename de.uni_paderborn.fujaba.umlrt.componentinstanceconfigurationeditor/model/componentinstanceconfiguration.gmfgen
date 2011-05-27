@@ -13,34 +13,9 @@
       editPartClassName="ComponentInstanceConfigurationDiagramEditPart"
       itemSemanticEditPolicyClassName="ComponentInstanceConfigurationDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ComponentInstanceConfigurationDiagramCanonicalEditPolicy"
-      elementTypesClassName="ComponentinstanceconfigurationElementTypes"
-      notationViewProviderClassName="ComponentinstanceconfigurationViewProvider"
-      editPartProviderClassName="ComponentinstanceconfigurationEditPartProvider"
-      modelingAssistantProviderClassName="ComponentinstanceconfigurationModelingAssistantProvider"
-      iconProviderClassName="ComponentinstanceconfigurationIconProvider"
       iconProviderPriority="Low"
-      reorientConnectionViewCommandClassName="ComponentinstanceconfigurationReorientConnectionViewCommand"
-      baseEditHelperClassName="ComponentinstanceconfigurationBaseEditHelper"
-      editPartFactoryClassName="ComponentinstanceconfigurationEditPartFactory"
-      baseExternalNodeLabelEditPartClassName="ComponentinstanceconfigurationExtNodeLabelEditPart"
-      baseItemSemanticEditPolicyClassName="ComponentinstanceconfigurationBaseItemSemanticEditPolicy"
-      textSelectionEditPolicyClassName="ComponentinstanceconfigurationTextSelectionEditPolicy"
-      textNonResizableEditPolicyClassName="ComponentinstanceconfigurationTextNonResizableEditPolicy"
-      creationWizardClassName="ComponentinstanceconfigurationCreationWizard"
-      creationWizardPageClassName="ComponentinstanceconfigurationCreationWizardPage"
-      diagramEditorUtilClassName="ComponentinstanceconfigurationDiagramEditorUtil"
-      documentProviderClassName="ComponentinstanceconfigurationDocumentProvider"
-      newDiagramFileWizardClassName="ComponentinstanceconfigurationNewDiagramFileWizard"
-      diagramContentInitializerClassName="ComponentinstanceconfigurationDiagramContentInitializer"
-      matchingStrategyClassName="ComponentinstanceconfigurationMatchingStrategy"
-      visualIDRegistryClassName="ComponentinstanceconfigurationVisualIDRegistry"
-      elementChooserClassName="ComponentinstanceconfigurationElementChooserDialog"
-      shortcutsDecoratorProviderClassName="ComponentinstanceconfigurationShortcutsDecoratorProvider"
-      createShortcutDecorationsCommandClassName="ComponentinstanceconfigurationCreateShortcutDecorationsCommand"
-      shortcutPropertyTesterClassName="ComponentinstanceconfigurationShortcutPropertyTester"
       validationProviderClassName="ComponentinstanceconfigurationValidationProvider"
       validationProviderPriority="Low"
-      markerNavigationProviderClassName="ComponentinstanceconfigurationMarkerNavigationProvider"
       validationEnabled="true"
       metricProviderClassName="ComponentinstanceconfigurationMetricProvider"
       validationDecoratorProviderClassName="ComponentinstanceconfigurationValidationDecoratorProvider"
@@ -55,13 +30,12 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3001"
+        visualID="3005"
         editPartClassName="PortInstanceEditPart"
         itemSemanticEditPolicyClassName="PortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="PortInstanceViewFactory"
         canonicalEditPolicyClassName="PortInstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortInstanceGraphicalNodeEditPolicy"
         createCommandClassName="PortInstanceCreateCommand"
@@ -83,18 +57,17 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/PortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3003"
+        visualID="3006"
         editPartClassName="ComponentInstance2EditPart"
         itemSemanticEditPolicyClassName="ComponentInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ComponentInstanceViewFactory"
         canonicalEditPolicyClassName="ComponentInstance2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         graphicalNodeEditPolicyClassName="ComponentInstance2GraphicalNodeEditPolicy"
@@ -116,17 +89,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/embeddedInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/embeddedInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
       </modelFacet>
       <labels
-          visualID="5004"
+          visualID="5006"
           editPartClassName="ComponentInstanceNameComponentNameDerive2EditPart"
-          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDerive2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ComponentInstanceNameComponentNameDerivedViewFactory">
+          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDerive2ItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -146,7 +118,7 @@
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentNameDerived"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
           <editableMetaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -154,10 +126,9 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3004"
+        visualID="3007"
         editPartClassName="PortInstance2EditPart"
         itemSemanticEditPolicyClassName="PortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="PortInstanceViewFactory"
         canonicalEditPolicyClassName="PortInstance2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortInstance2GraphicalNodeEditPolicy"
         createCommandClassName="PortInstance2CreateCommand"
@@ -179,15 +150,15 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/PortInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/PortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
       </modelFacet>
     </childNodes>
     <topLevelNodes
-        visualID="2003"
+        visualID="2004"
         editPartClassName="ComponentInstanceEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ComponentInstanceCanonicalEditPolicy"
@@ -211,14 +182,14 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration/componentInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstanceConfiguration/componentInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
       </modelFacet>
       <labels
-          visualID="5005"
+          visualID="5007"
           editPartClassName="ComponentInstanceNameComponentNameDeriveEditPart"
           itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDeriveItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -240,17 +211,16 @@
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/componentNameDerived"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
           <editableMetaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4003"
         editPartClassName="AssemblyInstanceEditPart"
         itemSemanticEditPolicyClassName="AssemblyInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="AssemblyInstanceViewFactory"
         createCommandClassName="AssemblyInstanceCreateCommand"
         reorientCommandClassName="AssemblyInstanceReorientCommand">
       <diagramRunTimeClass
@@ -264,22 +234,21 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/AssemblyInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/AssemblyInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/source"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/target"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/target"/>
       </modelFacet>
     </links>
     <links
-        visualID="4002"
+        visualID="4004"
         editPartClassName="DelegationInstanceEditPart"
         itemSemanticEditPolicyClassName="DelegationInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="DelegationInstanceViewFactory"
         createCommandClassName="DelegationInstanceCreateCommand"
         reorientCommandClassName="DelegationInstanceReorientCommand">
       <diagramRunTimeClass
@@ -293,19 +262,19 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/DelegationInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/DelegationInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ComponentInstance/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/source"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/instance/ConnectorInstance/target"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/target"/>
       </modelFacet>
     </links>
     <compartments
-        visualID="7004"
+        visualID="7005"
         editPartClassName="ComponentInstanceComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceComponentCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ComponentInstanceComponentCompartmentCanonicalEditPolicy"
@@ -322,8 +291,7 @@
           className="ComponentFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure container0 = new org.eclipse.draw2d.RectangleFigure();&#xA;container0.setFill(false);&#xA;container0.setOutline(false);&#xA;container0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;this.add(container0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutContainer0.numColumns = 2;&#xA;&#x9;layoutContainer0.makeColumnsEqualWidth = false;&#xA;&#x9;container0.setLayoutManager(layoutContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentNameFigure.horizontalIndent = 0;&#xA;constraintFFigureComponentNameFigure.horizontalSpan = 1;&#xA;constraintFFigureComponentNameFigure.verticalSpan = 1;&#xA;constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentNameFigure.grabExcessVerticalSpace = false;&#xA;container0.add(fFigureComponentNameFigure, constraintFFigureComponentNameFigure);&#xA;&#xA;&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure1 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconFigure1.setFill(false);&#xA;componentIconFigure1.setOutline(false);&#xA;componentIconFigure1.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure1 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure1.horizontalIndent = 0;&#xA;constraintComponentIconFigure1.horizontalSpan = 1;&#xA;constraintComponentIconFigure1.verticalSpan = 1;&#xA;constraintComponentIconFigure1.grabExcessHorizontalSpace = false;&#xA;constraintComponentIconFigure1.grabExcessVerticalSpace = false;&#xA;container0.add(componentIconFigure1, constraintComponentIconFigure1);&#xA;&#xA;componentIconFigure1.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter2 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconOuter2.setFill(false);&#xA;componentIconOuter2.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconOuter2);&#xA;componentIconOuter2.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter2.add(b13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner12 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconInner12.setFill(false);&#xA;componentIconInner12.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconInner12);&#xA;componentIconInner12.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner12.add(c13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner22 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconInner22.setFill(false);&#xA;componentIconInner22.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconInner22);&#xA;componentIconInner22.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner22.add(d13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentNameFigure() {&#xA;&#x9;&#x9;return fFigureComponentNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURECOMPONENTNAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;"/>
     </compartments>
-    <palette
-        factoryClassName="ComponentinstanceconfigurationPaletteFactory">
+    <palette>
       <groups
           title="componentinstanceconfiguration">
         <entries
@@ -380,7 +348,6 @@
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
   <editor
-      actionBarContributorClassName="ComponentinstanceconfigurationDiagramActionBarContributor"
       className="ComponentinstanceconfigurationDiagramEditor"/>
   <navigator
       domainContentProviderClassName="ComponentinstanceconfigurationDomainNavigatorContentProvider"
@@ -514,11 +481,7 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
-  <diagramUpdater
-      diagramUpdaterClassName="ComponentinstanceconfigurationDiagramUpdater"
-      nodeDescriptorClassName="ComponentinstanceconfigurationNodeDescriptor"
-      linkDescriptorClassName="ComponentinstanceconfigurationLinkDescriptor"
-      updateCommandClassName="ComponentinstanceconfigurationDiagramUpdateCommand"/>
+  <diagramUpdater/>
   <propertySheet
       labelProviderClassName="ComponentinstanceconfigurationSheetLabelProvider">
     <tabs

@@ -10,8 +10,8 @@
          extensions="componentinstanceconfiguration_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -44,7 +44,7 @@
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"
+		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"
 		  class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -54,7 +54,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>
          <advice ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
       </binding>
    </extension>

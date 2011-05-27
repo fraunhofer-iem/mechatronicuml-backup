@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizardTitle;
+	public static String UmlrtCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizard_DiagramModelFilePageTitle;
+	public static String UmlrtCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizard_DiagramModelFilePageDescription;
+	public static String UmlrtCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizard_DomainModelFilePageTitle;
+	public static String UmlrtCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizard_DomainModelFilePageDescription;
+	public static String UmlrtCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizardOpenEditorError;
+	public static String UmlrtCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizardCreationError;
+	public static String UmlrtCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationCreationWizardPageExtensionError;
+	public static String UmlrtCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_isModifiable;
+	public static String UmlrtDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_handleElementContentChanged;
+	public static String UmlrtDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_IncorrectInputError;
+	public static String UmlrtDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_NoDiagramInResourceError;
+	public static String UmlrtDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_DiagramLoadingError;
+	public static String UmlrtDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_UnsynchronizedFileSaveError;
+	public static String UmlrtDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_SaveDiagramTask;
+	public static String UmlrtDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_SaveNextResourceTask;
+	public static String UmlrtDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationDocumentProvider_SaveAsOperation;
+	public static String UmlrtDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,57 +148,57 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_CreationPageName;
+	public static String UmlrtNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_CreationPageTitle;
+	public static String UmlrtNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_CreationPageDescription;
+	public static String UmlrtNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageName;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_InitDiagramCommand;
+	public static String UmlrtNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationNewDiagramFileWizard_IncorrectRootError;
+	public static String UmlrtNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
@@ -228,7 +228,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationElementChooserDialog_SelectModelElementTitle;
+	public static String UmlrtElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -288,47 +288,47 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PortInstance_3001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_PortInstance_3001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ComponentInstanceConfiguration_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PortInstance_3004_incominglinks;
+	public static String NavigatorGroupName_PortInstance_3007_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_PortInstance_3004_outgoinglinks;
+	public static String NavigatorGroupName_PortInstance_3007_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationInstance_4002_target;
+	public static String NavigatorGroupName_AssemblyInstance_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_DelegationInstance_4002_source;
+	public static String NavigatorGroupName_AssemblyInstance_4003_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AssemblyInstance_4001_target;
+	public static String NavigatorGroupName_DelegationInstance_4004_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_AssemblyInstance_4001_source;
+	public static String NavigatorGroupName_DelegationInstance_4004_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortInstance_3005_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_PortInstance_3005_outgoinglinks;
 
 	/**
 	 * @generated
@@ -358,12 +358,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationModelingAssistantProviderTitle;
+	public static String UmlrtModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentinstanceconfigurationModelingAssistantProviderMessage;
+	public static String UmlrtModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

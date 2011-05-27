@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 
 import org.eclipse.emf.common.notify.Adapter;
 
-import de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory;
 
 public class CustomInstanceItemProviderAdapterFactory extends
 		InstanceItemProviderAdapterFactory {

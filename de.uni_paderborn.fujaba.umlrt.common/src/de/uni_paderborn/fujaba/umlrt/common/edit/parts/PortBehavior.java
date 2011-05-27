@@ -5,10 +5,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.PortImpl;
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 public class PortBehavior extends AbstractPortBehavior {
 

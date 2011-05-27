@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.commands.AssemblyInstanceReorientCommand;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * A customized AssemblyInstanceReorientCommand. We make sure, an assembly

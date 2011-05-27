@@ -7,8 +7,8 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.instantiation.SetComponentTypeCommand;
-import de.uni_paderborn.fujaba.umlrt.model.component.Component;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 
 public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor {
 

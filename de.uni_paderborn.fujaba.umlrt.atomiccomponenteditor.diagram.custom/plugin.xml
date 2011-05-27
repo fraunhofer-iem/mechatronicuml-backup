@@ -38,28 +38,6 @@
          </Priority>
       </editpartProvider>
    </extension>
-   
-    
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
-      
-        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.ComponentPartAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.ComponentPart_3002"
-		  class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-
-      </metamodel>
-   </extension>
-   
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.ComponentPart_3002"/>
-         <advice ref="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.ComponentPartAdvice"/>
-      </binding>
-   </extension>
-
-
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   

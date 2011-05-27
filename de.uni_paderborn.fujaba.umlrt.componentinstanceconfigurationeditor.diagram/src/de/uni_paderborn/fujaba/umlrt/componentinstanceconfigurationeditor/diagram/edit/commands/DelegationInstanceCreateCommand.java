@@ -30,7 +30,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance container;
+	private de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container;
 
 	/**
 	 * @generated
@@ -50,11 +50,11 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -64,8 +64,8 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentinstanceconfigurationBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateDelegationInstance_4002(
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateDelegationInstance_4004(
 						getContainer(), getSource(), getTarget());
 	}
 
@@ -79,7 +79,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance newElement = de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
 				.createDelegationInstance();
 		getContainer().getConnectorInstances().add(newElement);
 		newElement.setSource(getSource());
@@ -94,7 +94,7 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.instance.DelegationInstance newElement,
+			de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -125,21 +125,21 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) source;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) target;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance getContainer() {
+	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class DelegationInstanceCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) {
-				return (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) element;
 			}
 		}
 		return null;

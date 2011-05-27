@@ -42,7 +42,7 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -58,18 +58,18 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance target = getLink()
+		de.uni_paderborn.fujaba.muml.model.instance.PortInstance target = getLink()
 				.getTarget();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance container = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) getLink()
+		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentinstanceconfigurationBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAssemblyInstance_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAssemblyInstance_4003(container,
 						getLink(), getNewSource(), target);
 	}
 
@@ -77,18 +77,18 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.instance.PortInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance source = getLink()
+		de.uni_paderborn.fujaba.muml.model.instance.PortInstance source = getLink()
 				.getSource();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance container = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) getLink()
+		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentinstanceconfigurationBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistAssemblyInstance_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAssemblyInstance_4003(container,
 						getLink(), source, getNewTarget());
 	}
 
@@ -129,35 +129,35 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance getLink() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.AssemblyInstance) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance getLink() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.instance.PortInstance getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.instance.PortInstance) newEnd;
 	}
 }

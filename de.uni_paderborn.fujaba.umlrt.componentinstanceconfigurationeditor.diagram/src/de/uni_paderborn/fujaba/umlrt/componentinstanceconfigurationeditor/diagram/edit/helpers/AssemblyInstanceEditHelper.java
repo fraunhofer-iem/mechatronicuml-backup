@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
  */
 public class AssemblyInstanceEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.ComponentinstanceconfigurationBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

@@ -6,10 +6,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentinstanceconfigurationEditPartFactory;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstanceEditPart;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.UmlrtEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -18,14 +18,14 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagra
  * 
  */
 public class CustomComponentinstanceconfigurationEditPartFactory extends
-		ComponentinstanceconfigurationEditPartFactory {
+		UmlrtEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (ComponentinstanceconfigurationVisualIDRegistry.getVisualID(view)) {
+			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
 			case PortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				

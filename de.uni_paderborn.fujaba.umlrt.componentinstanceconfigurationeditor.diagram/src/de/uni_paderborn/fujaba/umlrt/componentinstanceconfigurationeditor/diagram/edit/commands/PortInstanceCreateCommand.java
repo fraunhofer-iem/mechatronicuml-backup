@@ -50,10 +50,10 @@ public class PortInstanceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance newElement = de.uni_paderborn.fujaba.umlrt.model.instance.InstanceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.instance.PortInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
 				.createPortInstance();
 
-		de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) getElementToEdit();
 		owner.getPortInstances().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -66,7 +66,7 @@ public class PortInstanceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance newElement,
+			de.uni_paderborn.fujaba.muml.model.instance.PortInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

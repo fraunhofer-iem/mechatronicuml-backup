@@ -14,8 +14,8 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagra
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.PortInstanceItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * A customized PortInstanceItemSemanticEditPolicy. We create our customized Delegation
@@ -44,11 +44,11 @@ public class CustomPortInstanceItemSemanticEditPolicy extends
 	@Override
 	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes.DelegationInstance_4002 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.DelegationInstance_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(getDelegationInstanceCreateCommand(req));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes.AssemblyInstance_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.AssemblyInstance_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(getAssemblyInstanceCreateCommand(req));
 		}

@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
 import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.PortItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 
 /**
  * A customized PortItemSemanticEditPolicy. We create our customized Delegation
