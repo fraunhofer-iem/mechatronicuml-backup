@@ -420,7 +420,7 @@
           <details key="documentation" value="A verifiable constraint is a dynamic semantics constraint that will be used for&#xD;&#xA;verification of the model. This class serves as a super class for all types of &#xD;&#xA;verifiable constraints."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//model/constraint/VerifiableConstraint">
+      <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//model/constraint/VerifiableConstraint ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents all verifable constraints that can be entered as a string in a predefined&#xD;&#xA;constraint language like, e.g., CTL or TCTL. Therefore, it contains a textual expression&#xD;&#xA;which is used to store the constraint text and the language."/>
         </eAnnotations>
