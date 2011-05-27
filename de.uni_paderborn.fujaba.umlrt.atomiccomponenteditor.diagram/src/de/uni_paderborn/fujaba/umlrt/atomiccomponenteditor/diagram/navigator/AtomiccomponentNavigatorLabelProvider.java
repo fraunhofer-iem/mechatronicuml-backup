@@ -75,17 +75,17 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/atomiccomponenteditor?AtomicComponentDiagram", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes.AtomicComponentDiagram_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/umlrt/model/component?AtomicComponent", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes.AtomicComponent_2001); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/component?AtomicComponent", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.AtomicComponent_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/umlrt/model/component?Port", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes.Port_3001); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?Port", de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.Port_3002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -99,9 +99,9 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		Image image = imageRegistry.get(key);
 		if (image == null
 				&& elementType != null
-				&& de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes
+				&& de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes
 						.isKnownElementType(elementType)) {
-			image = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes
+			image = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes
 					.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
@@ -140,14 +140,14 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
-			return getAtomicComponentDiagram_1000Text(view);
+			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2001Text(view);
+			return getAtomicComponent_2003Text(view);
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
-			return getPort_3001Text(view);
+			return getPort_3002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -155,19 +155,29 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getAtomicComponentDiagram_1000Text(View view) {
-		return ""; //$NON-NLS-1$
+	private String getModelElementCategory_1000Text(View view) {
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory domainModelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**
 	 * @generated
 	 */
-	private String getAtomicComponent_2001Text(View view) {
+	private String getAtomicComponent_2003Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes.AtomicComponent_2001,
+						de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.AtomicComponent_2003,
 						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+						de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 								.getType(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
@@ -176,7 +186,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5001); //$NON-NLS-1$
+							"Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -184,8 +194,8 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getPort_3001Text(View view) {
-		de.uni_paderborn.fujaba.umlrt.model.component.Port domainModelElement = (de.uni_paderborn.fujaba.umlrt.model.component.Port) view
+	private String getPort_3002Text(View view) {
+		de.uni_paderborn.fujaba.muml.model.component.Port domainModelElement = (de.uni_paderborn.fujaba.muml.model.component.Port) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
@@ -193,7 +203,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance()
 					.logError(
-							"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
+							"No domain element for view with visualID = " + 3002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -242,7 +252,7 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	 */
 	private boolean isOwnView(View view) {
 		return de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 						.getModelID(view));
 	}
 

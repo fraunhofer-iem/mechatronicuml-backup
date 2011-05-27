@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.internal.common.ui.ExtensibleModelSelectionPage;
 import org.eclipse.gmf.internal.common.ui.PredefinedModelExtension;
 import org.eclipse.gmf.internal.common.ui.ResourceLocationProvider;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.newwizard.Messages;
@@ -159,7 +160,7 @@ public class DiagramModelSelectionPage extends ExtensibleModelSelectionPage {
 	 * @return The selected Diagram Element, or null if the Root Node was
 	 *         selected, or no Element was selected at all.
 	 */
-	public EObject getSelectedDiagramElement() {
+	public ExtendableElement getSelectedDiagramElement() {
 		// Add a new element
 		if (!addElementExtension.shouldAddElement()) {
 

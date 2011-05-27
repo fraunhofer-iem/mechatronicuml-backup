@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.ComponentInstanceComponentCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.ComponentInstanceComponentCompartmentItemSemanticEditPolicy;
 
 /**
  * @generated
@@ -19,7 +19,7 @@ public class CustomComponentInstanceComponentCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_3003 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes.ComponentInstance_3003 == req
 				.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}

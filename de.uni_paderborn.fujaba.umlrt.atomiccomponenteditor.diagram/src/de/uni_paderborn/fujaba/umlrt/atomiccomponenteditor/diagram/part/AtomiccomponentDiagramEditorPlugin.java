@@ -56,7 +56,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider documentProvider;
 
 	/**
 	 * @generated
@@ -66,7 +66,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -118,7 +118,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.provider.AtomiccomponenteditorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
@@ -133,21 +133,21 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.component.provider.ComponentItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.constraint.provider.ConstraintItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.core.provider.CoreItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.pattern.provider.PatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -232,9 +232,9 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -257,15 +257,15 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory getAtomiccomponentOCLFactory() {
+	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory getModelinstanceOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setAtomiccomponentOCLFactory(
-			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory f) {
+	public void setModelinstanceOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory f) {
 		this.oclFactory = f;
 	}
 

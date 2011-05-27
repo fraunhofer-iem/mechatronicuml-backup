@@ -7,17 +7,9 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.model.core.Cardinality;
-import de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorFactory;
 
 /**
  * A CreationWizard for Pattern diagrams. It implements the abstract creation
@@ -57,51 +49,51 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditor.ID;
 
 	}
-
-	@Override
-	protected EObject createInitialModel() {
-		CoordinationPattern coordinationPattern = createCoordinationPattern();
-		Role role1 = createRole();
-		Role role2 = createRole();
-		
-		coordinationPattern.getRoles().add(role1);
-		coordinationPattern.getRoles().add(role2);
-		
-		RoleConnector roleConnector = PatternFactory.eINSTANCE.createRoleConnector();
-		roleConnector.setSource(role1);
-		roleConnector.setTarget(role2);
-		
-		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
-			.createPatternDiagram();
-		
-		patternDiagram.setCoordinationPattern(coordinationPattern);
-		
-		
-		for (Role role : coordinationPattern.getRoles()) {
-			patternDiagram.getRoles().add(role);
-		}
-		
-		patternDiagram.getRoleConnectors().add(roleConnector);
-		
-		return patternDiagram;
-	}
-
-	private Role createRole() {
-		Role role = PatternFactory.eINSTANCE.createRole();
-		Cardinality cardinality = CoreFactory.eINSTANCE.createCardinality();
-		NaturalNumber lowerBound = CoreFactory.eINSTANCE.createNaturalNumber();
-		NaturalNumber upperBound = CoreFactory.eINSTANCE.createNaturalNumber();
-		lowerBound.setValue(1);
-		upperBound.setValue(1);
-		cardinality.setLowerBound(lowerBound);
-		cardinality.setUpperBound(upperBound);
-		role.setCardinality(cardinality);
-		return role;
-	}
-
-	private CoordinationPattern createCoordinationPattern() {
-		return PatternFactory.eINSTANCE.createCoordinationPattern();
-	}
+//
+//	@Override
+//	protected EObject createInitialModel() {
+//		CoordinationPattern coordinationPattern = createCoordinationPattern();
+//		Role role1 = createRole();
+//		Role role2 = createRole();
+//		
+//		coordinationPattern.getRoles().add(role1);
+//		coordinationPattern.getRoles().add(role2);
+//		
+//		RoleConnector roleConnector = PatternFactory.eINSTANCE.createRoleConnector();
+//		roleConnector.setSource(role1);
+//		roleConnector.setTarget(role2);
+//		
+//		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
+//			.createPatternDiagram();
+//		
+//		patternDiagram.setCoordinationPattern(coordinationPattern);
+//		
+//		
+//		for (Role role : coordinationPattern.getRoles()) {
+//			patternDiagram.getRoles().add(role);
+//		}
+//		
+//		patternDiagram.getRoleConnectors().add(roleConnector);
+//		
+//		return patternDiagram;
+//	}
+//
+//	private Role createRole() {
+//		Role role = PatternFactory.eINSTANCE.createRole();
+//		Cardinality cardinality = CoreFactory.eINSTANCE.createCardinality();
+//		NaturalNumber lowerBound = CoreFactory.eINSTANCE.createNaturalNumber();
+//		NaturalNumber upperBound = CoreFactory.eINSTANCE.createNaturalNumber();
+//		lowerBound.setValue(1);
+//		upperBound.setValue(1);
+//		cardinality.setLowerBound(lowerBound);
+//		cardinality.setUpperBound(upperBound);
+//		role.setCardinality(cardinality);
+//		return role;
+//	}
+//
+//	private CoordinationPattern createCoordinationPattern() {
+//		return PatternFactory.eINSTANCE.createCoordinationPattern();
+//	}
 
 	@Override
 	public boolean isValidDiagramElement(EObject object) {
@@ -112,6 +104,16 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 								new EObjectAdapter(object),
 								de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID,
 								de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+	}
+
+	@Override
+	protected String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.umlrt.pattern.category";
+	}
+
+	@Override
+	protected ExtendableElement createDiagramElement() {
+		return null;
 	}
 
 }

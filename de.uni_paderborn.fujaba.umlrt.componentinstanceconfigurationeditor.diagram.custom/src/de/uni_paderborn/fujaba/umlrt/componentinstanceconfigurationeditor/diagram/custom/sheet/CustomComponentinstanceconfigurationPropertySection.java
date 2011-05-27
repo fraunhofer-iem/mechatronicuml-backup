@@ -1,25 +1,14 @@
 package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.sheet;
 
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.sheet.ComponentinstanceconfigurationPropertySection;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.parts.CustomPortInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomComponentInstanceItemProvider;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomInstanceItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.sheet.ComponentinstanceconfigurationPropertySection;
 import de.uni_paderborn.fujaba.umlrt.model.instance.provider.ComponentInstanceItemProvider;
-import de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory;
 
 public class CustomComponentinstanceconfigurationPropertySection extends
 		ComponentinstanceconfigurationPropertySection {

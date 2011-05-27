@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram;
@@ -45,16 +46,6 @@ public class CustomMessageinterfaceDiagramCreationWizard extends
 
 	}
 
-	/**
-	 * Create a new instance of domain element associated with canvas.
-	 */
-	@Override
-	protected EObject createInitialModel() {
-		MessageInterfaceDiagram diagram = MessageinterfaceeditorFactory.eINSTANCE
-				.createMessageInterfaceDiagram();
-		return diagram;
-	}
-
 	@Override
 	public boolean isValidDiagramElement(EObject object) {
 		return ViewService
@@ -64,6 +55,16 @@ public class CustomMessageinterfaceDiagramCreationWizard extends
 								new EObjectAdapter(object),
 								de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID,
 								de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+	}
+
+	@Override
+	protected String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.umlrt.messageinterface.category";
+	}
+
+	@Override
+	protected ExtendableElement createDiagramElement() {
+		return null;
 	}
 
 }

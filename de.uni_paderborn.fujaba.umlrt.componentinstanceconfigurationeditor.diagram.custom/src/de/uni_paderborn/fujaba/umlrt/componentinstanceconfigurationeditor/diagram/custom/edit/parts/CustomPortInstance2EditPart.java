@@ -12,9 +12,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortInstanceBehavior;
 import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortInstance2ItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around

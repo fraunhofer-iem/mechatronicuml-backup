@@ -17,6 +17,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.newwizard.Messages;
@@ -39,7 +40,7 @@ public class DiagramModelElementSelectionPageExtension implements
 	/**
 	 * The currently selected Diagram Element.
 	 */
-	protected EObject selectedDiagramElement;
+	protected ExtendableElement selectedDiagramElement;
 
 	/**
 	 * 
@@ -53,7 +54,7 @@ public class DiagramModelElementSelectionPageExtension implements
 		this.wizardPage = wizardPage;
 	}
 
-	public EObject getSelectedDiagramElement() {
+	public ExtendableElement getSelectedDiagramElement() {
 		return selectedDiagramElement;
 	}
 
@@ -149,8 +150,8 @@ public class DiagramModelElementSelectionPageExtension implements
 				selectedElement = ((FeatureMap.Entry) selectedElement)
 						.getValue();
 			}
-			if (selectedElement instanceof EObject) {
-				selectedDiagramElement = (EObject) selectedElement;
+			if (selectedElement instanceof ExtendableElement) {
+				selectedDiagramElement = (ExtendableElement) selectedElement;
 			}
 		}
 		wizardPage.validatePage();

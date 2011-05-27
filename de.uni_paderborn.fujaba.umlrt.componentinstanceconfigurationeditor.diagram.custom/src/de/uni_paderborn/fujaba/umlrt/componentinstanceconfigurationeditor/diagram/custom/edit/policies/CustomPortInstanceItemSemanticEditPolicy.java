@@ -9,11 +9,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies.PortInstanceItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomAssemblyInstanceCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomAssemblyInstanceReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceReorientCommand;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.PortInstanceItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
 
@@ -44,11 +44,11 @@ public class CustomPortInstanceItemSemanticEditPolicy extends
 	@Override
 	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.DelegationInstance_4002 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes.DelegationInstance_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(getDelegationInstanceCreateCommand(req));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationElementTypes.AssemblyInstance_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationElementTypes.AssemblyInstance_4001 == req
 				.getElementType()) {
 			return getGEFWrapper(getAssemblyInstanceCreateCommand(req));
 		}
@@ -59,9 +59,9 @@ public class CustomPortInstanceItemSemanticEditPolicy extends
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
 			return getGEFWrapper(getDelegationInstanceReorientCommand(req));
-		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return getGEFWrapper(getAssemblyInstanceReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);

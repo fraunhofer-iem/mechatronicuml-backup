@@ -4,15 +4,15 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts,
- de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.policies,
- de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.commands,
- de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part,
- de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers,
- de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.sheet
+Export-Package: de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies,
+ de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.commands,
+ de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part,
+ de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers,
+ de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

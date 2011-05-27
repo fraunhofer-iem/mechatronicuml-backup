@@ -7,10 +7,10 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="atomiccomponent.ecore#//AtomicComponentDiagram/atomicComponent"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/AtomicComponent"/>
+          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/AtomicComponent"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -26,29 +26,29 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/Component/ports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/Port"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/component/Port/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/Port/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Cardinality/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/core/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/core/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -58,13 +58,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/Cardinality/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/core/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/core/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -86,9 +86,9 @@
     <diagramCanvas
         href="atomiccomponent.gmfgraph#componenteditor"/>
     <domainModel
-        href="atomiccomponent.ecore#_GmIpQC1MEeCc49nK_bknug"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"/>
     <domainMetaElement
-        href="atomiccomponent.ecore#//AtomicComponentDiagram"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
         href="atomiccomponent.gmftool#//@palette"/>
   </diagram>

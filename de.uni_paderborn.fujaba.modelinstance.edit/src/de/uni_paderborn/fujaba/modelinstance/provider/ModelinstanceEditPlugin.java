@@ -6,11 +6,16 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.provider;
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
+import org.storydriven.modeling.provider.SDMEditPlugin;
+
 /**
  * This is the central singleton for the Modelinstance edit plugin.
  * <!-- begin-user-doc -->
@@ -44,6 +49,8 @@ public final class ModelinstanceEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
+		     SDMEditPlugin.INSTANCE,
+		     UmlrtEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -7,12 +7,9 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
-import de.uni_paderborn.fujaba.umlrt.model.component.AtomicComponent;
-import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.AtomicComponentDiagram;
-import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.AtomiccomponenteditorFactory;
 
 /**
  * A CreationWizard for StructuredComponent diagrams. It implements the abstract
@@ -54,15 +51,15 @@ public class CustomAtomiccomponentDiagramCreationWizard extends
 
 	}
 
-	@Override
-	protected EObject createInitialModel() {
-		AtomicComponentDiagram diagram = AtomiccomponenteditorFactory.eINSTANCE
-				.createAtomicComponentDiagram();
-		AtomicComponent atomicComponent = ComponentFactory.eINSTANCE
-				.createAtomicComponent();
-		diagram.setAtomicComponent(atomicComponent);
-		return diagram;
-	}
+//	@Override
+//	protected EObject createInitialModel() {
+//		AtomicComponentDiagram diagram = AtomiccomponenteditorFactory.eINSTANCE
+//				.createAtomicComponentDiagram();
+//		AtomicComponent atomicComponent = ComponentFactory.eINSTANCE
+//				.createAtomicComponent();
+//		diagram.setAtomicComponent(atomicComponent);
+//		return diagram;
+//	}
 
 	@Override
 	public boolean isValidDiagramElement(EObject object) {
@@ -73,6 +70,17 @@ public class CustomAtomiccomponentDiagramCreationWizard extends
 								new EObjectAdapter(object),
 								de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID,
 								de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+	}
+
+	@Override
+	protected String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.umlrt.components.category";
+	}
+
+	@Override
+	protected ExtendableElement createDiagramElement() {
+		// Return null, to use the ModelElementCategory as the Diagram Element.
+		return null;
 	}
 
 }

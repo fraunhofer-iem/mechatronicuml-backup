@@ -7,10 +7,10 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
 /**
  * A CreationWizard for ComponentInstanceConfiguration diagrams. It implements
@@ -27,7 +27,7 @@ public class CustomComponentinstanceconfigurationDiagramCreationWizard extends
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -39,26 +39,26 @@ public class CustomComponentinstanceconfigurationDiagramCreationWizard extends
 
 	@Override
 	protected String getModelId() {
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID;
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID;
 	}
 
 	@Override
 	protected PreferencesHint getDiagramPreferencesHint() {
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	@Override
 	protected String getEditorId() {
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor.ID;
 
 	}
-
-	@Override
-	protected EObject createInitialModel() {
-		ComponentInstanceConfiguration diagram = ComponentinstanceconfigurationFactory.eINSTANCE
-				.createComponentInstanceConfiguration();
-		return diagram;
-	}
+//
+//	@Override
+//	protected EObject createInitialModel() {
+//		ComponentInstanceConfiguration diagram = ComponentinstanceconfigurationFactory.eINSTANCE
+//				.createComponentInstanceConfiguration();
+//		return diagram;
+//	}
 
 	@Override
 	public boolean isValidDiagramElement(EObject object) {
@@ -67,8 +67,18 @@ public class CustomComponentinstanceconfigurationDiagramCreationWizard extends
 				.provides(
 						new CreateDiagramViewOperation(
 								new EObjectAdapter(object),
-								de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+								de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID,
+								de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+	}
+
+	@Override
+	protected String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.umlrt.instance.category";
+	}
+
+	@Override
+	protected ExtendableElement createDiagramElement() {
+		return InstanceFactory.eINSTANCE.createComponentInstanceConfiguration();
 	}
 
 }

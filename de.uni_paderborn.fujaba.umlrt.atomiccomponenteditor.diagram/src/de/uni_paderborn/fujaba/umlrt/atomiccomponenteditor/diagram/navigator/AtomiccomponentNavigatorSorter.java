@@ -10,7 +10,7 @@ public class AtomiccomponentNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 3003;
+	private static final int GROUP_CATEGORY = 3004;
 
 	/**
 	 * @generated
@@ -18,7 +18,7 @@ public class AtomiccomponentNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.navigator.AtomiccomponentNavigatorItem) {
 			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.navigator.AtomiccomponentNavigatorItem item = (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.navigator.AtomiccomponentNavigatorItem) element;
-			return de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+			return de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 					.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;

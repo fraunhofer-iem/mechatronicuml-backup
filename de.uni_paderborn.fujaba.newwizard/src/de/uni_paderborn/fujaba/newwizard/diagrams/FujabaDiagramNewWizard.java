@@ -32,7 +32,10 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.storydriven.modeling.ExtendableElement;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.uni_paderborn.fujaba.newwizard.Messages;
@@ -111,7 +114,14 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	/**
 	 * Create a new instance of domain element associated with canvas.
 	 */
-	protected abstract EObject createInitialModel();
+//	protected abstract EObject createInitialModel();
+	
+	/**
+	 * Return the Diagram Element, or null if the ModelElementCategory should be used as the Diagram Element. 
+	 */
+	protected abstract ExtendableElement createDiagramElement();
+
+	protected abstract String getModelElementCategoryKey();
 
 	/**
 	 * @generated
@@ -263,22 +273,51 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
 
-				EObject diagramElement = domainModelSelectionPage
+				ModelElementCategory elementCategory = null;
+				
+				ExtendableElement diagramElement = domainModelSelectionPage
 						.getSelectedDiagramElement();
 
 				if (diagramElement == null) {
 					List<?> rootElements = modelResource.getContents();
-					diagramElement = createInitialModel();
+					//diagramElement = createInitialModel();
 					if (!rootElements.isEmpty()) {
 						Object rootElement = rootElements.get(0);
 						if (rootElement instanceof RootNode) {
 							RootNode rootNode = (RootNode) rootElement;
-							rootNode.getDiagrams().add(diagramElement);
+							String categoryKey = getModelElementCategoryKey();
+							for (ModelElementCategory category : rootNode
+									.getCategories()) {
+								if (category.getKey().equals(categoryKey)
+										/*&& category
+												.isValidElement(diagramElement)*/) {
+									elementCategory = category;
+									break;
+								}
+							}
+
+							if (elementCategory == null) {
+								elementCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+								elementCategory.setKey(categoryKey);
+								rootNode.getCategories().add(elementCategory);
+							}
+						
+							
+							diagramElement = createDiagramElement();
+							
+							if (diagramElement != null) {
+								elementCategory.getModelElements().add(diagramElement);
+							}
 						}
 					}
 				}
+				
+				EObject element = diagramElement;
+				if (diagramElement == null) {
+					element = elementCategory;
+				}
 
-				Diagram diagram = ViewService.createDiagram(diagramElement,
+				Diagram diagram = ViewService.createDiagram(element,
 						getModelId(), getDiagramPreferencesHint());
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);

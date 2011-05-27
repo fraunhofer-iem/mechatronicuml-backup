@@ -19,7 +19,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.ui.diagramContext"
+         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -30,9 +30,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="ComponentinstanceconfigurationPresentation">
+         id="UmlrtPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -43,9 +43,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="ComponentinstanceconfigurationPresentationIDE">
+         id="UmlrtPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -53,9 +53,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="ComponentinstanceconfigurationRender">
+            id="UmlrtRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -68,7 +68,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -83,7 +83,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationValidationDecoratorProvider">
+      <decoratorProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationValidationDecoratorProvider">
          <Priority name="Medium"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -92,7 +92,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -100,31 +100,31 @@
       <page
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramGeneralPreferencePage">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.appearance"
             category="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramAppearancePreferencePage">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.connections"
             category="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.printing"
             category="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramPrintingPreferencePage">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.general"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -132,7 +132,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram"
-            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.sheet.ComponentinstanceconfigurationSheetLabelProvider">
+            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.sheet.ComponentinstanceconfigurationSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -186,32 +186,32 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3001,3003,3004"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Umlrt"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3003,3004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Componentinstanceconfiguration"/>
+            <method name="getType()" value="Umlrt"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2002,3001,3003,3004"/>
+            <method name="getType()" value="2003,3001,3003,3004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5003,5004"/>
+            <method name="getType()" value="5005,5004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7003"/>
+            <method name="getType()" value="7004"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -219,48 +219,48 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart" id="ComponentInstanceConfiguration_1000"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceEditPart" id="ComponentInstance_2002"/>
-         <context elements="ComponentInstanceConfiguration_1000,ComponentInstance_2002"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart" id="ComponentInstanceConfiguration_1000"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart" id="ComponentInstance_2003"/>
+         <context elements="ComponentInstanceConfiguration_1000,ComponentInstance_2003"/>
       </modelingAssistantProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.providers.ComponentinstanceconfigurationParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.ComponentinstanceconfigurationParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/componentinstanceconfiguration">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
          <metamodelType
                id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_1000"
                name="%metatype.name.ComponentInstanceConfiguration_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentInstanceConfiguration"
-               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.helpers.ComponentInstanceConfigurationDiagramEditHelper">
+               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.ComponentInstanceConfigurationDiagramEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"
-               name="%metatype.name.ComponentInstance_2002"
+               id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2003"
+               name="%metatype.name.ComponentInstance_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentInstance"
-               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.helpers.ComponentInstanceEditHelper">
-            <param name="semanticHint" value="2002"/>
+               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.ComponentInstanceEditHelper">
+            <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
@@ -269,7 +269,7 @@
                name="%metatype.name.PortInstance_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PortInstance"
-               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.helpers.PortInstanceEditHelper">
+               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.PortInstanceEditHelper">
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
@@ -278,7 +278,7 @@
                id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_3003"
                name="%metatype.name.ComponentInstance_3003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"/>
+            <specializes id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2003"/>
             <param name="semanticHint" value="3003"/>
          </specializationType>
       </metamodel>
@@ -297,7 +297,7 @@
                name="%metatype.name.AssemblyInstance_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyInstance"
-               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.helpers.AssemblyInstanceEditHelper">
+               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.AssemblyInstanceEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -307,7 +307,7 @@
                name="%metatype.name.DelegationInstance_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationInstance"
-               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.helpers.DelegationInstanceEditHelper">
+               edithelper="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.DelegationInstanceEditHelper">
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
@@ -324,7 +324,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2003"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_3003"/>
          <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.PortInstance_3004"/>
@@ -340,7 +340,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationUriEditorInputTester">
+           class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -366,9 +366,9 @@
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorLabelProvider"
-            icon="icons/obj16/ComponentinstanceconfigurationDiagramFile.gif"
+            contentProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorLabelProvider"
+            icon="icons/obj16/InstanceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
@@ -376,24 +376,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="componentinstanceconfiguration_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorSorter">
+               class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="componentinstanceconfiguration_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+                  <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -402,9 +402,9 @@
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorLabelProvider"
-            icon="icons/obj16/ComponentinstanceconfigurationDiagramFile.gif"
+            contentProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorLabelProvider"
+            icon="icons/obj16/InstanceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
@@ -412,19 +412,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorActionProvider">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -434,7 +434,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationNavigatorLinkHelper">
+            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -442,7 +442,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.navigator.ComponentinstanceconfigurationAbstractNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -450,17 +450,17 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.updateDiagram"
+         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.updateDiagram"
-         contextId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.ui.diagramContext"
+         commandId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.updateDiagram"
+         contextId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -475,9 +475,9 @@
          <command commandId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart"/>
+                     <instanceof value="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -487,11 +487,11 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.part.LoadResourceAction"/>
+         categoryId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">

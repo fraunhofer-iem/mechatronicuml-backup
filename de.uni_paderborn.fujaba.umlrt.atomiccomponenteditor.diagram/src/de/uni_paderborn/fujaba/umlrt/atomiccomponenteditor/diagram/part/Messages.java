@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizardTitle;
+	public static String ModelinstanceCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizard_DiagramModelFilePageTitle;
+	public static String ModelinstanceCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizard_DiagramModelFilePageDescription;
+	public static String ModelinstanceCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizard_DomainModelFilePageTitle;
+	public static String ModelinstanceCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizard_DomainModelFilePageDescription;
+	public static String ModelinstanceCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizardOpenEditorError;
+	public static String ModelinstanceCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizardCreationError;
+	public static String ModelinstanceCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentCreationWizardPageExtensionError;
+	public static String ModelinstanceCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String ModelinstanceDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String ModelinstanceDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String ModelinstanceDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String ModelinstanceDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_isModifiable;
+	public static String ModelinstanceDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_handleElementContentChanged;
+	public static String ModelinstanceDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_IncorrectInputError;
+	public static String ModelinstanceDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_NoDiagramInResourceError;
+	public static String ModelinstanceDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_DiagramLoadingError;
+	public static String ModelinstanceDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_UnsynchronizedFileSaveError;
+	public static String ModelinstanceDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_SaveDiagramTask;
+	public static String ModelinstanceDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_SaveNextResourceTask;
+	public static String ModelinstanceDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentDocumentProvider_SaveAsOperation;
+	public static String ModelinstanceDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,57 +148,57 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_CreationPageName;
+	public static String ModelinstanceNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_CreationPageTitle;
+	public static String ModelinstanceNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_CreationPageDescription;
+	public static String ModelinstanceNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageName;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_InitDiagramCommand;
+	public static String ModelinstanceNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentNewDiagramFileWizard_IncorrectRootError;
+	public static String ModelinstanceNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
@@ -228,7 +228,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentElementChooserDialog_SelectModelElementTitle;
+	public static String ModelinstanceElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -298,12 +298,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentModelingAssistantProviderTitle;
+	public static String ModelinstanceModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String AtomiccomponentModelingAssistantProviderMessage;
+	public static String ModelinstanceModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

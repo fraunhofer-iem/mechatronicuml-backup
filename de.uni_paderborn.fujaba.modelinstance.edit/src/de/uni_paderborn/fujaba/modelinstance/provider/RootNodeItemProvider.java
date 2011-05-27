@@ -21,8 +21,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -107,7 +105,7 @@ public class RootNodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS);
+			childrenFeatures.add(ModelinstancePackage.Literals.ROOT_NODE__CATEGORIES);
 		}
 		return childrenFeatures;
 	}
@@ -159,7 +157,7 @@ public class RootNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RootNode.class)) {
-			case ModelinstancePackage.ROOT_NODE__DIAGRAMS:
+			case ModelinstancePackage.ROOT_NODE__CATEGORIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -179,83 +177,8 @@ public class RootNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 ModelinstanceFactory.eINSTANCE.createRootNode()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEDataType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEEnum()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEEnumLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEFactory()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEObject()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEOperation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.create(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY)));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createEGenericType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.ROOT_NODE__DIAGRAMS,
-				 EcoreFactory.eINSTANCE.createETypeParameter()));
+				(ModelinstancePackage.Literals.ROOT_NODE__CATEGORIES,
+				 ModelinstanceFactory.eINSTANCE.createModelElementCategory()));
 	}
 
 	/**

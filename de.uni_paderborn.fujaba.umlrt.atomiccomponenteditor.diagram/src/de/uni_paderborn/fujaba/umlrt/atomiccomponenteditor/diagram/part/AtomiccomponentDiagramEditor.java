@@ -76,7 +76,7 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentPaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstancePaletteFactory()
 				.fillPalette(root);
 		return root;
 	}

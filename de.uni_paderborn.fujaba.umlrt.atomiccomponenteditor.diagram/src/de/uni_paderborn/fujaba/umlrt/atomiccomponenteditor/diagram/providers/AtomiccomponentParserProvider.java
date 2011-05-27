@@ -23,20 +23,20 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser atomicComponentName_5001Parser;
+	private IParser atomicComponentName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAtomicComponentName_5001Parser() {
-		if (atomicComponentName_5001Parser == null) {
+	private IParser getAtomicComponentName_5003Parser() {
+		if (atomicComponentName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			atomicComponentName_5001Parser = parser;
+			atomicComponentName_5003Parser = parser;
 		}
-		return atomicComponentName_5001Parser;
+		return atomicComponentName_5003Parser;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
-			return getAtomicComponentName_5001Parser();
+			return getAtomicComponentName_5003Parser();
 		}
 		return null;
 	}
@@ -66,12 +66,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -83,7 +83,7 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.AtomiccomponentElementTypes
+			if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

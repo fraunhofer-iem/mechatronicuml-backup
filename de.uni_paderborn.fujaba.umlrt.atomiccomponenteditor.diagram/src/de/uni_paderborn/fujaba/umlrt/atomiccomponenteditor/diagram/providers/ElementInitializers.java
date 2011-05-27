@@ -14,38 +14,38 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Port_3001(
-			de.uni_paderborn.fujaba.umlrt.model.component.Port instance) {
+	public void init_Port_3002(
+			de.uni_paderborn.fujaba.muml.model.component.Port instance) {
 		try {
-			de.uni_paderborn.fujaba.umlrt.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory
+			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
 
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentAbstractExpression
+			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceAbstractExpression
 					.performCast(value_0_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
 
-			de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentOCLFactory
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.AtomiccomponentAbstractExpression
+			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceAbstractExpression
 					.performCast(value_0_0_1_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());

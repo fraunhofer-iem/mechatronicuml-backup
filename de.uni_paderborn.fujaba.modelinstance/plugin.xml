@@ -9,12 +9,14 @@
 -->
 
 <plugin>
+   <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http:///de/uni_paderborn/fujaba/umlrt/modelinstance"
             class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage"
-            genModel="model/modelinstance.genmodel"/>
+            genModel="model/modelinstance.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/umlrt/modelinstance">
+      </package>
    </extension>
 
 </plugin>

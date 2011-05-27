@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -13,12 +12,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.common.edit.parts.PortInstanceBehavior;
 import de.uni_paderborn.fujaba.umlrt.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.diagram.edit.parts.PortInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortInstanceItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.umlrt.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.umlrt.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.umlrt.model.instance.impl.PortInstanceImpl;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstanceEditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
