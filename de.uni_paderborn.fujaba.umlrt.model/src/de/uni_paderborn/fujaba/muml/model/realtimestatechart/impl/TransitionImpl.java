@@ -1124,7 +1124,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		}
 								
 		if(synchro!=null){
-			returnString = ((de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.
+			returnString = ((de.uni_paderborn.fujaba.muml.model.realtimestatechart.
 					SynchronizationChannel)synchro.getCallee()).getName() + "(";
 									
 			java.util.Iterator<ParameterBinding> iter = synchro.getOwnedParameterBindings().iterator();

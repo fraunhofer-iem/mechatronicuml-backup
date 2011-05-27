@@ -15,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 
 import java.util.Collection;
 
