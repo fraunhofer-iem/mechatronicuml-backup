@@ -1,3 +1,19 @@
+27.05.2011:
+-------------
+Referenzen ComponentPart.fromRev, toRev umbenennen in incomingAssemblies, outgoingAssemblies?
+
+
+
+
+
+
+
+
+
+
+
+Von Julian:
+
 DONE
 ====
 * Obere und untere Schranke in der Klasse Cardinality sollen durch Assoziationen auf die Klasse NaturalNumber umgesetzt werden.

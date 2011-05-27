@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
 
 import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;

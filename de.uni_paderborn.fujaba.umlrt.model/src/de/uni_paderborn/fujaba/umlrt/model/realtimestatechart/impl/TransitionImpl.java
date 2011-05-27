@@ -32,7 +32,7 @@ import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.LiteralExpression;
 
-import de.uni_paderborn.fujaba.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
 import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
