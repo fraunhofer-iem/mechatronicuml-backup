@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.modeling.impl.ExtendableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentInstanceConfigurationImpl extends EObjectImpl implements ComponentInstanceConfiguration {
+public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl implements ComponentInstanceConfiguration {
 	/**
 	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

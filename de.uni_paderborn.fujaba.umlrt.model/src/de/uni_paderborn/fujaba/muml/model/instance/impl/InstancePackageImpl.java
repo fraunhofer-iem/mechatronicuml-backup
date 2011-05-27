@@ -523,6 +523,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
+		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

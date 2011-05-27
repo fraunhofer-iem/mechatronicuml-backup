@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.storydriven.modeling.ExtendableElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,7 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ComponentInstanceConfiguration extends EObject {
+public interface ComponentInstanceConfiguration extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance}.

@@ -8,9 +8,19 @@ Bundle-Activator: de.uni_paderborn.fujaba.umlrt.model.component.provider.UmlrtEd
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.umlrt.model.component.provider,
+Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
+ de.uni_paderborn.fujaba.muml.model.constraint.provider,
+ de.uni_paderborn.fujaba.muml.model.core.provider,
+ de.uni_paderborn.fujaba.muml.model.descriptor,
+ de.uni_paderborn.fujaba.muml.model.instance.provider,
+ de.uni_paderborn.fujaba.muml.model.msgiface.provider,
+ de.uni_paderborn.fujaba.muml.model.pattern.provider,
+ de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider,
+ de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider,
+ de.uni_paderborn.fujaba.umlrt.model.component.provider,
  de.uni_paderborn.fujaba.umlrt.model.constraint.provider,
  de.uni_paderborn.fujaba.umlrt.model.core.provider,
+ de.uni_paderborn.fujaba.umlrt.model.descriptor,
  de.uni_paderborn.fujaba.umlrt.model.instance.provider,
  de.uni_paderborn.fujaba.umlrt.model.msgiface.provider,
  de.uni_paderborn.fujaba.umlrt.model.pattern.provider,

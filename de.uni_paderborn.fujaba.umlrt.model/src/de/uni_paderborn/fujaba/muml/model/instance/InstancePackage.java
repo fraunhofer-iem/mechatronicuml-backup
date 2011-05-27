@@ -508,13 +508,31 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION = 5;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = 0;
+	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
@@ -523,7 +541,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = 1;
+	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
@@ -532,7 +550,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = 2;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 
 	/**

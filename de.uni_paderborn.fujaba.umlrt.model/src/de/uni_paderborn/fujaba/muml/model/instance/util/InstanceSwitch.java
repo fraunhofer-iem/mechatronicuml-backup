@@ -141,6 +141,7 @@ public class InstanceSwitch<T> {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: {
 				ComponentInstanceConfiguration componentInstanceConfiguration = (ComponentInstanceConfiguration)theEObject;
 				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
+				if (result == null) result = caseExtendableElement(componentInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
