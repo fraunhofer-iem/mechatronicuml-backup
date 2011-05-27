@@ -322,7 +322,6 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
-					diagram.setElement(diagramElement);
 				}
 
 				try {
