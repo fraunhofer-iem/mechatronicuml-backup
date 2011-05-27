@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.adapter;
+package de.uni_paderborn.fujaba.common.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
