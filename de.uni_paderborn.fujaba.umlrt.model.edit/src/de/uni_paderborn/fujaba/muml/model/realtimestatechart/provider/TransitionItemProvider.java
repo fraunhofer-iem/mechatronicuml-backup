@@ -10,7 +10,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.RelativeDeadlinePropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.descriptor.RelativeDeadlinePropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

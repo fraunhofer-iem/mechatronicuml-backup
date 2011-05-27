@@ -39,8 +39,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorPackage.eINSTANCE
-				.getMessageInterfaceDiagram_MessageInterfaces();
+		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+				.getModelElementCategory_ModelElements();
 	}
 
 	/**
@@ -50,9 +50,9 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
-				.getMessageInterfaceDiagram_1000SemanticChildren(viewObject);
-		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor d : childDescriptors) {
+		List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdater
+				.getModelElementCategory_1000SemanticChildren(viewObject);
+		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -71,7 +71,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -83,8 +83,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
-				.getMessageInterfaceDiagram_1000SemanticChildren((View) getHost()
+		List<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdater
+				.getModelElementCategory_1000SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
@@ -99,11 +99,11 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -129,8 +129,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);
@@ -175,13 +175,13 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
-		Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> linkDescriptors = collectAllLinks(
+		Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
 				.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null
@@ -193,9 +193,9 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+			for (Iterator<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
 						.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
@@ -216,20 +216,20 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> collectAllLinks(
+	private Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor> collectAllLinks(
 			View view, Map<EObject, View> domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 						.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor>();
-		switch (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+		LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor>();
+		switch (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
-						.getMessageInterfaceDiagram_1000ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdater
+						.getModelElementCategory_1000ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -239,8 +239,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
-						.getMessageInterface_2001ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdater
+						.getMessageInterface_2002ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -250,8 +250,8 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdater
-						.getMessageType_3001ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdater
+						.getMessageType_3002ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -276,10 +276,10 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<IAdaptable> createConnections(
-			Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor> linkDescriptors,
+			Collection<de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors,
 			Map<EObject, View> domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getEditPart(
 					nextLinkDescriptor.getSource(), domain2NotationMap);
 			EditPart targetEditPart = getEditPart(
@@ -289,7 +289,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(nextLinkDescriptor.getVisualID()),
 					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
 							.getDiagramPreferencesHint());

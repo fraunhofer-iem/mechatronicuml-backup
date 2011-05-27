@@ -41,19 +41,19 @@ public class RolePatternCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.Role) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRolePattern_4002(getSource(),
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateRolePattern_4005(getSource(),
 						getTarget());
 	}
 
@@ -84,14 +84,14 @@ public class RolePatternCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.Role getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.Role) source;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) target;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) target;
 	}
 }

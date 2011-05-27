@@ -4,9 +4,10 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
 import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.UmlrtEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry;
 
 /**
  * Our customized EditPartFactory, which makes sure our overridden
@@ -15,13 +16,16 @@ import de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDR
  * @author bingo
  * 
  */
-public class CustomPatternEditPartFactory extends PatternEditPartFactory {
+public class CustomPatternEditPartFactory extends UmlrtEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (PatternVisualIDRegistry.getVisualID(view)) {
+			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			case PatternDiagramEditPart.VISUAL_ID:
+				return new CustomPatternDiagramEditPart(view);
+
 			case CoordinationPatternEditPart.VISUAL_ID:
 				return new CustomCoordinationPatternEditPart(view);
 

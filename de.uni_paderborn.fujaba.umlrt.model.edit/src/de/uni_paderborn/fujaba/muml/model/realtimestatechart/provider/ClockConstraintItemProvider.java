@@ -13,8 +13,8 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.descriptor.NaturalNumberPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

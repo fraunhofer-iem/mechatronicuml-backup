@@ -12,21 +12,21 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
  */
 public class StructuredComponentDiagramItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StructuredComponentDiagramItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.StructuredComponentDiagram_1000);
+				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.StructuredComponent_2001 == req
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.StructuredComponent_2002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.StructuredComponentCreateCommand(
 					req));

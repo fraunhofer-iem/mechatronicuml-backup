@@ -41,10 +41,6 @@ public class StructuredComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram container = (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram) getElementToEdit();
-		if (container.getStructuredComponent() != null) {
-			return false;
-		}
 		return true;
 
 	}
@@ -54,11 +50,11 @@ public class StructuredComponentCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent newElement = de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
 				.createStructuredComponent();
 
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram owner = (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram) getElementToEdit();
-		owner.setStructuredComponent(newElement);
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -70,7 +66,7 @@ public class StructuredComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent newElement,
+			de.uni_paderborn.fujaba.muml.model.component.StructuredComponent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

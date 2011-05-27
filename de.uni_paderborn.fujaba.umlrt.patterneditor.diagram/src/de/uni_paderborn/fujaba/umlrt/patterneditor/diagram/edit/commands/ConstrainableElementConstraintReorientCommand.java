@@ -51,7 +51,7 @@ public class ConstrainableElementConstraintReorientCommand extends
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,12 +67,12 @@ public class ConstrainableElementConstraintReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canExistConstrainableElementConstraint_4003(getNewSource(),
+				.canExistConstrainableElementConstraint_4006(getNewSource(),
 						getOldTarget());
 	}
 
@@ -80,12 +80,12 @@ public class ConstrainableElementConstraintReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canExistConstrainableElementConstraint_4003(getOldSource(),
+				.canExistConstrainableElementConstraint_4006(getOldSource(),
 						getNewTarget());
 	}
 
@@ -128,28 +128,28 @@ public class ConstrainableElementConstraintReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.constraint.Constraint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.constraint.Constraint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.constraint.Constraint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.constraint.Constraint) newEnd;
 	}
 }

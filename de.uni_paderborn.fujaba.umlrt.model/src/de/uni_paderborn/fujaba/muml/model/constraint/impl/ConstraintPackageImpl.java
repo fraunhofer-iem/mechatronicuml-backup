@@ -347,6 +347,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		modelingConstraintEClass.getESuperTypes().add(this.getConstraint());
 		verifiableConstraintEClass.getESuperTypes().add(this.getConstraint());
 		textualConstraintEClass.getESuperTypes().add(this.getVerifiableConstraint());
+		textualConstraintEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

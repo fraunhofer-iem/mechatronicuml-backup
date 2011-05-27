@@ -50,11 +50,11 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface newElement = de.uni_paderborn.fujaba.umlrt.model.msgiface.MsgifaceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface newElement = de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory.eINSTANCE
 				.createMessageInterface();
 
-		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram owner = (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram) getElementToEdit();
-		owner.getMessageInterfaces().add(newElement);
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +66,7 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface newElement,
+			de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

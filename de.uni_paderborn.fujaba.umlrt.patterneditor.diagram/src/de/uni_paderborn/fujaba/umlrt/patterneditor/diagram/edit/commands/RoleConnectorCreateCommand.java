@@ -30,7 +30,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram container;
+	private de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container;
 
 	/**
 	 * @generated
@@ -50,11 +50,11 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.Role) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.Role) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -64,8 +64,8 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnector_4001(
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateRoleConnector_4004(
 						getContainer(), getSource(), getTarget());
 	}
 
@@ -79,9 +79,9 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector newElement = de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 				.createRoleConnector();
-		getContainer().getRoleConnectors().add(newElement);
+		getContainer().setConnectors(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
 		doConfigure(newElement, monitor, info);
@@ -94,7 +94,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.pattern.RoleConnector newElement,
+			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -125,21 +125,21 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.Role getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.Role) source;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.Role getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.Role) target;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram getContainer() {
+	public de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) {
-				return (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) {
+				return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) element;
 			}
 		}
 		return null;

@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class PatternNavigatorItem
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem {
 
 	/**
 	 * @generated

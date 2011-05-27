@@ -11,8 +11,8 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.umlrt.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.ComponentPartCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.descriptor.ComponentPartCardinalityPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

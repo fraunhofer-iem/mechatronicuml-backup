@@ -35,7 +35,7 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 3004;
 
 	/**
 	 * @generated
@@ -197,9 +197,8 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003);
 		return types;
 	}
 
@@ -210,16 +209,10 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001);
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002);
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003);
 		}
 		return types;
 	}
@@ -229,12 +222,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001);
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003);
-		} else if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001);
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003) {
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3004);
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3006);
 		}
 		return types;
 	}
@@ -243,9 +233,8 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003);
 		return types;
 	}
 
@@ -254,12 +243,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001);
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003);
-		} else if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001);
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3003);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003) {
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3004);
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3006);
 		}
 		return types;
 	}

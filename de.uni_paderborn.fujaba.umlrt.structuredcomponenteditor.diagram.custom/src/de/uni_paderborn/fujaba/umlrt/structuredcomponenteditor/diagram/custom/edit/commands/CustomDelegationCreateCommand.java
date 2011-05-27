@@ -5,10 +5,10 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Delegation;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand;
 
 /**
@@ -88,7 +88,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	}
 	
 	@Override
-	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
 		return parentComponent;
 	}
 

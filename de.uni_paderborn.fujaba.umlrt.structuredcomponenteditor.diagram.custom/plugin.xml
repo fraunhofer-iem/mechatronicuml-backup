@@ -11,8 +11,8 @@
          extensions="structuredcomponent_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -45,7 +45,7 @@
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.ComponentPart_3002"
+		  typeId="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.ComponentPart_3005"
 		  class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -55,7 +55,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.ComponentPart_3002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.ComponentPart_3005"/>
          <advice ref="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"/>
       </binding>
    </extension>

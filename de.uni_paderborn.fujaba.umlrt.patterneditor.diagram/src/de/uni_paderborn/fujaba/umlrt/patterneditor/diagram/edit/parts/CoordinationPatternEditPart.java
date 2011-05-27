@@ -37,7 +37,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2001;
+	public static final int VISUAL_ID = 2004;
 
 	/**
 	 * @generated
@@ -249,7 +249,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));
 	}
 
@@ -258,7 +258,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003);
+		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006);
 		return types;
 	}
 
@@ -269,7 +269,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003);
+			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006);
 		}
 		return types;
 	}
@@ -279,8 +279,8 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003) {
-			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006) {
+			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.TextualConstraint_2006);
 		}
 		return types;
 	}
@@ -290,7 +290,7 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002);
+		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RolePattern_4005);
 		return types;
 	}
 
@@ -299,8 +299,8 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002) {
-			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.Role_2002);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RolePattern_4005) {
+			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.Role_2005);
 		}
 		return types;
 	}

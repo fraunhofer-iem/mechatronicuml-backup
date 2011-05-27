@@ -10,8 +10,6 @@ import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageinterfaceeditorFactory;
 
 public class CustomMessageinterfaceDiagramCreationWizard extends
 		FujabaDiagramNewWizard {

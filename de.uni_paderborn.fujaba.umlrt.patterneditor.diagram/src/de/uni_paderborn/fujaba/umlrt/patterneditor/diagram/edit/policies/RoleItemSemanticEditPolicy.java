@@ -21,14 +21,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class RoleItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RoleItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.Role_2002);
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.Role_2005);
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class RoleItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						incomingLink.getElement(), false);
@@ -52,7 +52,7 @@ public class RoleItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						outgoingLink.getElement(), false);
@@ -60,7 +60,7 @@ public class RoleItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -69,7 +69,7 @@ public class RoleItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -106,17 +106,17 @@ public class RoleItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RoleConnector_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands.RoleConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RolePattern_4005 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands.RolePatternCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands.ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -129,16 +129,16 @@ public class RoleItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RoleConnector_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands.RoleConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RolePattern_4002 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RolePattern_4005 == req
 				.getElementType()) {
 			return null;
 		}
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006 == req
 				.getElementType()) {
 			return null;
 		}

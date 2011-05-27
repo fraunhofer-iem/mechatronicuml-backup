@@ -164,32 +164,32 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Messageinterface"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003"/>
       </viewProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Messageinterface"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001"/>
+            <method name="getType()" value="2002,3002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4002"/>
+            <method name="getType()" value="4003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5002,5001"/>
+            <method name="getType()" value="5004,5003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001"/>
+            <method name="getType()" value="7002"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -197,60 +197,60 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="MessageInterfaceDiagram_1000"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2001"/>
-         <context elements="MessageInterfaceDiagram_1000,MessageInterface_2001"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2002"/>
+         <context elements="ModelElementCategory_1000,MessageInterface_2002"/>
       </modelingAssistantProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/messageinterfaceeditor">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/modelinstance">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceDiagram_1000"
-               name="%metatype.name.MessageInterfaceDiagram_1000"
+               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.ModelElementCategory_1000"
+               name="%metatype.name.ModelElementCategory_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="MessageInterfaceDiagram"
+               eclass="ModelElementCategory"
                edithelper="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helpers.MessageInterfaceDiagramEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2001"
-               name="%metatype.name.MessageInterface_2001"
+               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2002"
+               name="%metatype.name.MessageInterface_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageInterface"
                edithelper="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helpers.MessageInterfaceEditHelper">
-            <param name="semanticHint" value="2001"/>
+            <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageType_3001"
-               name="%metatype.name.MessageType_3001"
+               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageType_3002"
+               name="%metatype.name.MessageType_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="MessageType"
                edithelper="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helpers.MessageTypeEditHelper">
-            <param name="semanticHint" value="3001"/>
+            <param name="semanticHint" value="3002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
          <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4002"
-               name="%metatype.name.MessageInterfaceSuperType_4002"
+               id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4003"
+               name="%metatype.name.MessageInterfaceSuperType_4003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4002"/>
+            <param name="semanticHint" value="4003"/>
          </specializationType>
       </metamodel>
    </extension>
@@ -265,10 +265,10 @@
          </enablement>
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceDiagram_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2001"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageType_3001"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.ModelElementCategory_1000"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterface_2002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageType_3002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.MessageInterfaceSuperType_4003"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -307,7 +307,7 @@
             priority="normal" 
             contentProvider="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorContentProvider" 
             labelProvider="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorLabelProvider"
-            icon="icons/obj16/MessageinterfaceeditorDiagramFile.gif"
+            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
@@ -343,7 +343,7 @@
             priority="normal" 
             contentProvider="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorContentProvider" 
             labelProvider="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorLabelProvider"
-            icon="icons/obj16/MessageinterfaceeditorDiagramFile.gif"
+            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
@@ -389,7 +389,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -438,7 +438,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>

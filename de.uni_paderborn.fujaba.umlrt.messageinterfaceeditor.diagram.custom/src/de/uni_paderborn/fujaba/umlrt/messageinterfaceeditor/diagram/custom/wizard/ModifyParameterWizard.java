@@ -8,26 +8,25 @@ package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.wiza
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.MessageInterfaceDiagram;
 import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
 
 public class ModifyParameterWizard extends AbstractWizard {
 	
 	private final String ADD_EPARAMETER_WIZARD_SECTION = "AddEParameterWizard";
 
-	private MessageInterfaceDiagram messageInterfaceDiagram = null;
+//	private  de.uni_paderborn.fujaba.modelinstance.ModelElementCategory messageInterfaceDiagram = null;
 
 	private ModifyParameterPage addEParameterPage;
 	
 	private MessageType selectedMessageType = null;
 
-	public ModifyParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, MessageType mT)
+	public ModifyParameterWizard(/*org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag,*/ MessageType mT)
 	{
 		super();
 
-		this.messageInterfaceDiagram = (MessageInterfaceDiagram)diag.getElement();
+//		this.messageInterfaceDiagram = ( de.uni_paderborn.fujaba.modelinstance.ModelElementCategory)diag.getElement();
 		this.setSelectedSyncChannel(mT);
 
 		IDialogSettings workbenchSettings = MessageinterfaceDiagramEditorPlugin.getInstance().getDialogSettings();
@@ -49,9 +48,9 @@ public class ModifyParameterWizard extends AbstractWizard {
 	}
 
 
-	public MessageInterfaceDiagram getMessageTypeDiagram() {
-		return messageInterfaceDiagram;
-	}
+//	public de.uni_paderborn.fujaba.modelinstance.ModelElementCategory getMessageTypeDiagram() {
+//		return messageInterfaceDiagram;
+//	}
 
 	@Override
 	public boolean performFinish() {

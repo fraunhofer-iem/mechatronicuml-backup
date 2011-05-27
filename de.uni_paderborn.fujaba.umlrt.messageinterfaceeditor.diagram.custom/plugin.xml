@@ -14,6 +14,16 @@
       </wizard>
    </extension>
    
+      
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
    
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
@@ -23,9 +33,9 @@
          icon="icons/MessageInterfaceDiagram.gif"
          extensions="messageinterface_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
 <!--

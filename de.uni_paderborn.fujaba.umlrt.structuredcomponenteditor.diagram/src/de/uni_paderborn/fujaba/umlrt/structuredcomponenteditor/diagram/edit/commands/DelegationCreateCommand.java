@@ -30,7 +30,7 @@ public class DelegationCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent container;
+	private de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container;
 
 	/**
 	 * @generated
@@ -50,11 +50,11 @@ public class DelegationCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.component.Port) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.component.Port) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -64,8 +64,8 @@ public class DelegationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateDelegation_4001(getContainer(),
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateDelegation_4003(getContainer(),
 						getSource(), getTarget());
 	}
 
@@ -79,7 +79,7 @@ public class DelegationCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.umlrt.model.component.Delegation newElement = de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.component.Delegation newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
 				.createDelegation();
 		getContainer().getConnectors().add(newElement);
 		newElement.setFromPort(getSource());
@@ -94,7 +94,7 @@ public class DelegationCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.component.Delegation newElement,
+			de.uni_paderborn.fujaba.muml.model.component.Delegation newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -125,21 +125,21 @@ public class DelegationCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) source;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) target;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent getContainer() {
+	public de.uni_paderborn.fujaba.muml.model.component.StructuredComponent getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class DelegationCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) {
-				return (de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
+				return (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) element;
 			}
 		}
 		return null;

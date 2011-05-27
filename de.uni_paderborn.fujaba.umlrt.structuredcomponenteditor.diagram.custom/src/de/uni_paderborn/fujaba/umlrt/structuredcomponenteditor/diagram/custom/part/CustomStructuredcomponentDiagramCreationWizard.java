@@ -10,10 +10,6 @@ import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredComponentDiagram;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorFactory;
 
 /**
  * A CreationWizard for StructuredComponent diagrams. It implements the abstract

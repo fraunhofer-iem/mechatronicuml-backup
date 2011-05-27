@@ -41,10 +41,6 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram container = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
-		if (container.getCoordinationPattern() != null) {
-			return false;
-		}
 		return true;
 
 	}
@@ -54,11 +50,11 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern newElement = de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 				.createCoordinationPattern();
 
-		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram owner = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
-		owner.setCoordinationPattern(newElement);
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -70,7 +66,7 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern newElement,
+			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -56,12 +56,12 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
@@ -71,7 +71,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.UmlrtOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -124,7 +124,21 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.provider.StructuredcomponenteditorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
@@ -138,22 +152,6 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.component.provider.ComponentItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.core.provider.CoreItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.pattern.provider.PatternItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -238,9 +236,9 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -248,7 +246,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
@@ -256,7 +254,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy.LinkConstraints lc) {
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -278,15 +276,15 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory getStructuredcomponentOCLFactory() {
+	public de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setStructuredcomponentOCLFactory(
-			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.StructuredcomponentOCLFactory f) {
+	public void setUmlrtOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.expressions.UmlrtOCLFactory f) {
 		this.oclFactory = f;
 	}
 

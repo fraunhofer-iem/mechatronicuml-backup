@@ -9,14 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  */
 public class MessageInterfaceSuperTypeItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageInterfaceSuperTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterfaceSuperType_4002);
+				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageInterfaceSuperType_4003);
 	}
 
 	/**

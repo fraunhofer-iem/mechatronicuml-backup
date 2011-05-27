@@ -41,19 +41,19 @@ public class MessageInterfaceSuperTypeCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateMessageInterfaceSuperType_4002(
+		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateMessageInterfaceSuperType_4003(
 						getSource(), getTarget());
 	}
 
@@ -84,14 +84,14 @@ public class MessageInterfaceSuperTypeCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) source;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) target;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) target;
 	}
 }

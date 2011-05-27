@@ -6,7 +6,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyReorientCommand;
 
 public class CustomAssemblyReorientCommand extends AssemblyReorientCommand {

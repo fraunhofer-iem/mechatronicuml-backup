@@ -42,7 +42,7 @@ public class DelegationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.umlrt.model.component.Delegation) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.component.Delegation) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -58,18 +58,18 @@ public class DelegationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.component.Port target = getLink()
+		de.uni_paderborn.fujaba.muml.model.component.Port target = getLink()
 				.getToPort();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent container = (de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) getLink()
+		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegation_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistDelegation_4003(container,
 						getLink(), getNewSource(), target);
 	}
 
@@ -77,18 +77,18 @@ public class DelegationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.component.Port source = getLink()
+		de.uni_paderborn.fujaba.muml.model.component.Port source = getLink()
 				.getFromPort();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent container = (de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) getLink()
+		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegation_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistDelegation_4003(container,
 						getLink(), source, getNewTarget());
 	}
 
@@ -129,35 +129,35 @@ public class DelegationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Delegation getLink() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Delegation) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.model.component.Delegation getLink() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Delegation) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) newEnd;
 	}
 }

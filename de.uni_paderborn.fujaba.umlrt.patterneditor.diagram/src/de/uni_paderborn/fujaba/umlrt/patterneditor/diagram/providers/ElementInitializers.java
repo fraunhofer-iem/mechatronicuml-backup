@@ -14,38 +14,38 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Role_2002(
-			de.uni_paderborn.fujaba.umlrt.model.pattern.Role instance) {
+	public void init_Role_2005(
+			de.uni_paderborn.fujaba.muml.model.pattern.Role instance) {
 		try {
-			de.uni_paderborn.fujaba.umlrt.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory
+			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
 
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternAbstractExpression
+			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtAbstractExpression
 					.performCast(value_0_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
 
-			de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.umlrt.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternAbstractExpression
+			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtAbstractExpression
 					.performCast(value_0_0_1_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());

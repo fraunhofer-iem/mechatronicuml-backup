@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helper
  */
 public class MessageInterfaceDiagramEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helpers.MessageinterfaceBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

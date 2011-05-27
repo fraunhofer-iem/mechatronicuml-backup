@@ -76,7 +76,7 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfacePaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}
@@ -181,7 +181,8 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(IProgressMonitor progressMonitor) {
+	protected void performSaveAs(
+			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);

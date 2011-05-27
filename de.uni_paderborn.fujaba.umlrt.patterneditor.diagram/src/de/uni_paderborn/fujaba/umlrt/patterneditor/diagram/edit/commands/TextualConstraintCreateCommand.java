@@ -50,11 +50,11 @@ public class TextualConstraintCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint newElement = de.uni_paderborn.fujaba.umlrt.model.constraint.ConstraintFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint newElement = de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory.eINSTANCE
 				.createTextualConstraint();
 
-		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram owner = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
-		owner.getTextualConstraints().add(newElement);
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +66,7 @@ public class TextualConstraintCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.constraint.TextualConstraint newElement,
+			de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -30,7 +30,7 @@ public class AssemblyCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent container;
+	private de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container;
 
 	/**
 	 * @generated
@@ -50,11 +50,11 @@ public class AssemblyCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.component.Port) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -64,8 +64,8 @@ public class AssemblyCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAssembly_4002(getContainer(),
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateAssembly_4004(getContainer(),
 						getSource(), getTarget());
 	}
 
@@ -79,11 +79,11 @@ public class AssemblyCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.umlrt.model.component.Assembly newElement = de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.component.Assembly newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
 				.createAssembly();
 		getContainer().getConnectors().add(newElement);
-		newElement.setFromPort(getSource());
-		newElement.setToPort(getTarget());
+		newElement.setFrom(getSource());
+		newElement.setTo(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -94,7 +94,7 @@ public class AssemblyCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.component.Assembly newElement,
+			de.uni_paderborn.fujaba.muml.model.component.Assembly newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -125,21 +125,21 @@ public class AssemblyCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) source;
+	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.Port getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.component.Port) target;
+	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent getContainer() {
+	public de.uni_paderborn.fujaba.muml.model.component.StructuredComponent getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class AssemblyCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) {
-				return (de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
+				return (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) element;
 			}
 		}
 		return null;

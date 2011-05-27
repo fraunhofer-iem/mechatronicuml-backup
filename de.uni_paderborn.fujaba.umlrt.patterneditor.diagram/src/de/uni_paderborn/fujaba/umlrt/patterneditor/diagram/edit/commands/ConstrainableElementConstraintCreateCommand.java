@@ -42,20 +42,20 @@ public class ConstrainableElementConstraintCreateCommand extends
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canCreateConstrainableElementConstraint_4003(getSource(),
+				.canCreateConstrainableElementConstraint_4006(getSource(),
 						getTarget());
 	}
 
@@ -86,14 +86,14 @@ public class ConstrainableElementConstraintCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.core.ConstrainableElement) source;
+	protected de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.constraint.Constraint) target;
+	protected de.uni_paderborn.fujaba.muml.model.constraint.Constraint getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.constraint.Constraint) target;
 	}
 }

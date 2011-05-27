@@ -41,10 +41,6 @@ public class RoleCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram container = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
-		if (container.getRoles().size() >= 2) {
-			return false;
-		}
 		return true;
 
 	}
@@ -54,14 +50,14 @@ public class RoleCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.pattern.Role newElement = de.uni_paderborn.fujaba.umlrt.model.pattern.PatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.pattern.Role newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 				.createRole();
 
-		de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram owner = (de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram) getElementToEdit();
-		owner.getRoles().add(newElement);
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_Role_2002(newElement);
+				.getInstance().init_Role_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -73,7 +69,7 @@ public class RoleCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.pattern.Role newElement,
+			de.uni_paderborn.fujaba.muml.model.pattern.Role newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

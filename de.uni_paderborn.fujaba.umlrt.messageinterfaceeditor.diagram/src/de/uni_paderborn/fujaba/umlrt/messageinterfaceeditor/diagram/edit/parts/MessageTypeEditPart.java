@@ -31,7 +31,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3001;
+	public static final int VISUAL_ID = 3002;
 
 	/**
 	 * @generated
@@ -107,8 +107,8 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeMessageTypeExprEditPart) {
-			((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeMessageTypeExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart) {
+			((de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureMessageTypeExprLable());
 			return true;
 		}
@@ -119,7 +119,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeMessageTypeExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart) {
 			return true;
 		}
 		return false;
@@ -242,8 +242,8 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeMessageTypeExprEditPart.VISUAL_ID));
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
 	}
 
 	/**

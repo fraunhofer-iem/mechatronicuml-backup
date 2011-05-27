@@ -6,9 +6,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand;
 
 /**
@@ -91,7 +91,7 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 	 * both ComponentParts and the parent component.
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.component.Assembly newElement,
+			de.uni_paderborn.fujaba.muml.model.component.Assembly newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		super.doConfigure(newElement, monitor, info);
@@ -101,7 +101,7 @@ public class CustomAssemblyCreateCommand extends AssemblyCreateCommand {
 	}
 	
 	@Override
-	protected de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
 		return sourceComponentPart.getParentComponent();
 	}
 

@@ -10,124 +10,14 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/behavior"
-            class="de.uni_paderborn.fujaba.umlrt.model.behavior.provider.BehaviorItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/component"
-            class="de.uni_paderborn.fujaba.umlrt.model.component.provider.ComponentItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/constraint"
-            class="de.uni_paderborn.fujaba.umlrt.model.constraint.provider.ConstraintItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/core"
-            class="de.uni_paderborn.fujaba.umlrt.model.core.provider.CoreItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/instance"
-            class="de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/pattern"
-            class="de.uni_paderborn.fujaba.umlrt.model.pattern.provider.PatternItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart"
-            class="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart.reconf"
-            class="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.reconf.provider.ReconfItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/emf/model/realtimestatechart/helper"
-            class="de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http:///de/uni_paderborn/fujaba/umlrt/model/msgiface"
-            class="de.uni_paderborn.fujaba.umlrt.model.msgiface.provider.MsgifaceItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
 
 </plugin>

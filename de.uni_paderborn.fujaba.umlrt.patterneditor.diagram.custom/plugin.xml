@@ -11,8 +11,8 @@
          extensions="pattern_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
     
@@ -33,7 +33,7 @@
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"
+		  typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2005"
 		  class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -43,7 +43,7 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <binding context="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2002"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2005"/>
          <advice ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"/>
       </binding>
    </extension>
@@ -75,7 +75,7 @@
                  type="org.eclipse.gef.EditPart">
            </input>
            <input
-                 type="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem">
+                 type="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem">
            </input>
         </propertySection>
      </propertySections>

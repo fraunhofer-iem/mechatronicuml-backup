@@ -10,7 +10,7 @@ public class StructuredcomponentNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7003;
+	private static final int GROUP_CATEGORY = 7004;
 
 	/**
 	 * @generated
@@ -18,7 +18,7 @@ public class StructuredcomponentNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem) {
 			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem item = (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem) element;
-			return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;

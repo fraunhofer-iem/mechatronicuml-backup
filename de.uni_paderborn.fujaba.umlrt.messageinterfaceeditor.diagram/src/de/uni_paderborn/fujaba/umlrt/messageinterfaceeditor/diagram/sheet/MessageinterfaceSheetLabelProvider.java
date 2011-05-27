@@ -33,7 +33,7 @@ public class MessageinterfaceSheetLabelProvider extends BaseLabelProvider
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes
+				: de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes
 						.getImage(etype);
 	}
 
@@ -66,9 +66,9 @@ public class MessageinterfaceSheetLabelProvider extends BaseLabelProvider
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+			int vid = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view);
-			IElementType etype = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes
+			IElementType etype = de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;

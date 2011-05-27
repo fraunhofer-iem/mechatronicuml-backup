@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.PortCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.descriptor.PortCardinalityPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

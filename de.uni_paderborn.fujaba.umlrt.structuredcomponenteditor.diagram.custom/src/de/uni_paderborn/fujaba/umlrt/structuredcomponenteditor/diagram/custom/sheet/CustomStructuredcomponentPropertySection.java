@@ -10,13 +10,13 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.CustomPortEditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.StructuredcomponentPropertySection;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.UmlrtPropertySection;
 
 public class CustomStructuredcomponentPropertySection extends
-		StructuredcomponentPropertySection {
+		UmlrtPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.

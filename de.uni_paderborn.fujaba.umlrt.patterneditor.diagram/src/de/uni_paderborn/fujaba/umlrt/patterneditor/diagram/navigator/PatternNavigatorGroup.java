@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class PatternNavigatorGroup
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem {
 
 	/**
 	 * @generated

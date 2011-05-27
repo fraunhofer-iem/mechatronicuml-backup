@@ -33,7 +33,7 @@ public class PatternSheetLabelProvider extends BaseLabelProvider implements
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes
+				: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes
 						.getImage(etype);
 	}
 
@@ -66,9 +66,9 @@ public class PatternSheetLabelProvider extends BaseLabelProvider implements
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			int vid = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view);
-			IElementType etype = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes
+			IElementType etype = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;

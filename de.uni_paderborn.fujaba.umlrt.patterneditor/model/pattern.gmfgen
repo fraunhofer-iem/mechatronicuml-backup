@@ -2,18 +2,25 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="pattern_diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram"
+    modelID="Patterneditor"
+    diagramFileExtension="pattern_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.umlrt.common/gmf-templates">
+    templateDirectory="/de.uni_paderborn.fujaba.umlrt.common/gmf-templates"
+    pluginDirectory="/de.uni_paderborn.fujaba.umlrt.patterneditor.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="PatternDiagramEditPart"
       itemSemanticEditPolicyClassName="PatternDiagramItemSemanticEditPolicy"
       canonicalEditPolicyClassName="PatternDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
+      creationWizardIconPath="icons/obj16/PatternDiagramFile.gif"
+      validationProviderClassName="PatternValidationProvider"
       validationProviderPriority="Low"
       validationEnabled="true"
+      metricProviderClassName="PatternMetricProvider"
+      validationDecoratorProviderClassName="PatternValidationDecoratorProvider"
       validationDecorators="true"
       validationDecoratorProviderPriority="Medium">
     <diagramRunTimeClass
@@ -25,9 +32,9 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="pattern.genmodel#//patterneditor/PatternDiagram"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <topLevelNodes
-        visualID="2001"
+        visualID="2004"
         editPartClassName="CoordinationPatternEditPart"
         itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
         notationViewFactoryClassName="CoordinationPatternViewFactory"
@@ -45,14 +52,14 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationPatternFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationPatternNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationPatternNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCoordinationPatternNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationPatternNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationPatternNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationPatternNameFigure, constraintFFigureCoordinationPatternNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationPatternNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationPatternNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/CoordinationPattern"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern"/>
         <containmentMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/coordinationPattern"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/coordinationPattern"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5001"
+          visualID="5003"
           editPartClassName="CoordinationPatternNameEditPart"
           itemSemanticEditPolicyClassName="CoordinationPatternNameItemSemanticEditPolicy"
           notationViewFactoryClassName="CoordinationPatternNameViewFactory">
@@ -71,7 +78,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2005"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
         notationViewFactoryClassName="RoleViewFactory"
@@ -95,41 +102,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/Role"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/Role"/>
         <containmentMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/roles"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/roles"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/Role/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/Role/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.0">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -139,7 +146,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5002"
+          visualID="5004"
           editPartClassName="RoleNameEditPart"
           itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
           notationViewFactoryClassName="RoleNameViewFactory">
@@ -157,7 +164,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2003"
+        visualID="2006"
         editPartClassName="TextualConstraintEditPart"
         itemSemanticEditPolicyClassName="TextualConstraintItemSemanticEditPolicy"
         notationViewFactoryClassName="TextualConstraintViewFactory"
@@ -175,15 +182,15 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TextualConstraintFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTextualConstraintLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TextualConstraintFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTextualConstraintLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTextualConstraintLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTextualConstraintLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTextualConstraintLabelFigure() {&#xA;&#x9;&#x9;return fFigureTextualConstraintLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/constraint/TextualConstraint"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/constraint/TextualConstraint"/>
         <containmentMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/textualConstraints"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/textualConstraints"/>
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4004"
         editPartClassName="RoleConnectorEditPart"
         itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
         notationViewFactoryClassName="RoleConnectorViewFactory"
@@ -200,19 +207,19 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector"/>
         <containmentMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/roleConnectors"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
         <childMetaFeature
-            href="pattern.genmodel#//patterneditor/PatternDiagram/roleConnectors"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/source"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/RoleConnector/target"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
     </links>
     <links
-        visualID="4002"
+        visualID="4005"
         editPartClassName="RolePatternEditPart"
         itemSemanticEditPolicyClassName="RolePatternItemSemanticEditPolicy"
         notationViewFactoryClassName="RolePatternViewFactory"
@@ -229,11 +236,11 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/pattern/Role/pattern"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/pattern/Role/pattern"/>
       </modelFacet>
     </links>
     <links
-        visualID="4003"
+        visualID="4006"
         editPartClassName="ConstrainableElementConstraintEditPart"
         itemSemanticEditPolicyClassName="ConstrainableElementConstraintItemSemanticEditPolicy"
         notationViewFactoryClassName="ConstrainableElementConstraintViewFactory"
@@ -249,7 +256,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//de/uni_paderborn/fujaba/umlrt/model/core/ConstrainableElement/constraint"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
       </modelFacet>
     </links>
     <palette>
@@ -304,12 +311,25 @@
     </preferencePages>
   </diagram>
   <plugin
-      name="Pattern Editor Plugin">
+      iD="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram"
+      name="Pattern Editor Plugin"
+      activatorClassName="PatternDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
-  <editor/>
-  <navigator>
+  <editor
+      className="PatternDiagramEditor"/>
+  <navigator
+      domainContentProviderClassName="PatternDomainNavigatorContentProvider"
+      domainLabelProviderClassName="PatternDomainNavigatorLabelProvider"
+      domainNavigatorItemClassName="PatternDomainNavigatorItem"
+      contentProviderClassName="PatternNavigatorContentProvider"
+      labelProviderClassName="PatternNavigatorLabelProvider"
+      linkHelperClassName="PatternNavigatorLinkHelper"
+      sorterClassName="PatternNavigatorSorter"
+      navigatorGroupClassName="PatternNavigatorGroup"
+      navigatorItemClassName="PatternNavigatorItem"
+      uriInputTesterClassName="PatternUriEditorInputTester">
     <childReferences
         child="//@diagram"/>
     <childReferences
@@ -422,7 +442,8 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet>
+  <propertySheet
+      labelProviderClassName="PatternSheetLabelProvider">
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"
         iD="appearance"/>
@@ -432,7 +453,8 @@
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
-        label="Core">
+        label="Core"
+        className="PatternPropertySection">
       <filter
           xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
@@ -442,7 +464,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="pattern.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -453,6 +475,7 @@
     </providers>
   </expressionProviders>
   <labelParsers
+      className="PatternParserProvider"
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"

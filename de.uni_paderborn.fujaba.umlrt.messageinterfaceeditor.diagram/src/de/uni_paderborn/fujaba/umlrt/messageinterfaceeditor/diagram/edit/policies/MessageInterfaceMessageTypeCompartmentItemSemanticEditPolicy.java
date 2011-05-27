@@ -8,21 +8,21 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  */
 public class MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageInterface_2001);
+				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageInterface_2002);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageType_3001 == req
+		if (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageType_3002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.commands.MessageTypeCreateCommand(
 					req));

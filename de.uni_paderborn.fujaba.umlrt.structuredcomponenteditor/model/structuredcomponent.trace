@@ -3,32 +3,32 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
-      visualID="2001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'StructuredComponent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/structuredcomponenteditor' and _eClass_.name = 'StructuredComponentDiagram') and _containmentMF_.name = 'structuredComponent')">
+      visualID="2002"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'StructuredComponent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/modelinstance' and _eClass_.name = 'ModelElementCategory') and _containmentMF_.name = 'modelElements')">
     <nodeLabelTraces
-        visualID="5001"
+        visualID="5004"
         queryText="true"/>
     <compartmentTraces
-        visualID="7001"
+        visualID="7002"
         queryText="true"/>
   </nodeTraces>
   <childNodeTraces
-      visualID="3001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')"/>
+      visualID="3004"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')"/>
   <childNodeTraces
-      visualID="3002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'ComponentPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'StructuredComponent') and _containmentMF_.name = 'embeddedParts')">
+      visualID="3005"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'ComponentPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'StructuredComponent') and _containmentMF_.name = 'embeddedParts')">
     <nodeLabelTraces
-        visualID="5002"
+        visualID="5003"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'ComponentPart') and _containmentMF_.name = 'portsDerived')"/>
+      visualID="3006"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Port') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'ComponentPart') and _containmentMF_.name = 'portsDerived')"/>
   <linkTraces
-      visualID="4001"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'Delegation')"/>
+      visualID="4003"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Delegation')"/>
   <linkTraces
-      visualID="4002"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/umlrt/model/component' and _eClass_.name = 'Assembly')"/>
+      visualID="4004"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Assembly')"/>
 </trace:TraceModel>

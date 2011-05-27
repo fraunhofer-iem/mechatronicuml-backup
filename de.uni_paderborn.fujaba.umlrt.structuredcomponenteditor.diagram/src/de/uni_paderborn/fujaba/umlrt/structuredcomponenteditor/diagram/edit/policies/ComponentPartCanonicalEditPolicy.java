@@ -29,7 +29,7 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 				.getComponentPart_PortsDerived();
 	}
 
@@ -40,9 +40,9 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramUpdater
-				.getComponentPart_3002SemanticChildren(viewObject);
-		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor d : childDescriptors) {
+		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
+				.getComponentPart_3005SemanticChildren(viewObject);
+		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -61,7 +61,7 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -73,8 +73,8 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramUpdater
-				.getComponentPart_3002SemanticChildren((View) getHost()
+		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
+				.getComponentPart_3005SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
@@ -89,11 +89,11 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -119,8 +119,8 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);

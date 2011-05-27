@@ -18,14 +18,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class PortItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Port_3001);
+				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3004);
 	}
 
 	/**
@@ -38,16 +38,8 @@ public class PortItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						incomingLink.getElement(), false);
-				cmd.add(new DestroyElementCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
-					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
@@ -57,16 +49,8 @@ public class PortItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
-				DestroyElementRequest r = new DestroyElementRequest(
-						outgoingLink.getElement(), false);
-				cmd.add(new DestroyElementCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
-					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
@@ -101,14 +85,9 @@ public class PortItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -119,14 +98,9 @@ public class PortItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -143,9 +117,6 @@ public class PortItemSemanticEditPolicy
 		switch (getVisualID(req)) {
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.DelegationReorientCommand(
-					req));
-		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.commands.AssemblyReorientCommand(
 					req));
 		}
 		return super.getReorientRelationshipCommand(req);

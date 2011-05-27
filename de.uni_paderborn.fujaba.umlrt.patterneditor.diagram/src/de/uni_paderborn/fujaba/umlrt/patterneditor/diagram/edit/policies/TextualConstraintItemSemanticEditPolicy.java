@@ -20,14 +20,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class TextualConstraintItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public TextualConstraintItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.TextualConstraint_2003);
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.TextualConstraint_2006);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class TextualConstraintItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
@@ -77,7 +77,7 @@ public class TextualConstraintItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006 == req
 				.getElementType()) {
 			return null;
 		}
@@ -89,7 +89,7 @@ public class TextualConstraintItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.ConstrainableElementConstraint_4003 == req
+		if (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands.ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));

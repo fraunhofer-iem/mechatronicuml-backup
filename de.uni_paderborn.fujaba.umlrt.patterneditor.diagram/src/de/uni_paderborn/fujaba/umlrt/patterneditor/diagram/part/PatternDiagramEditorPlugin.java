@@ -56,12 +56,12 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
@@ -71,7 +71,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -124,7 +124,21 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.patterneditor.provider.PatterneditorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
@@ -138,22 +152,6 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.component.provider.ComponentItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.core.provider.CoreItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.instance.provider.InstanceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.pattern.provider.PatternItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.umlrt.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -238,9 +236,9 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -248,7 +246,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
@@ -256,7 +254,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy.LinkConstraints lc) {
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -278,15 +276,15 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory getPatternOCLFactory() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setPatternOCLFactory(
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.PatternOCLFactory f) {
+	public void setUmlrtOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory f) {
 		this.oclFactory = f;
 	}
 

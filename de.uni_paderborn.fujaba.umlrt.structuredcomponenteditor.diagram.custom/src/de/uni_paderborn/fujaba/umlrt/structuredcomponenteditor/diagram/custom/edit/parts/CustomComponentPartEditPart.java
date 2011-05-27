@@ -8,10 +8,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.impl.ComponentPartImpl;
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
 
 

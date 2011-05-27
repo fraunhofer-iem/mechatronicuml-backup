@@ -14,10 +14,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.Assembly;
-import de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.umlrt.model.component.Port;
-import de.uni_paderborn.fujaba.umlrt.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.component.Assembly;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomAssemblyCreateCommand;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomAssemblyReorientCommand;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationCreateCommand;
@@ -52,11 +52,11 @@ public class CustomPortItemSemanticEditPolicy extends
 	@Override
 	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Delegation_4001 == req
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(getDelegationCreateCommand(req));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002 == req
+		if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(getAssemblyCreateCommand(req));
 		}

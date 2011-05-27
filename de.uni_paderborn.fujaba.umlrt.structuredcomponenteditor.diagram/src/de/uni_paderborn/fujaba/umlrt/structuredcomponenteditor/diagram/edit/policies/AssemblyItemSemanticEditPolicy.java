@@ -9,14 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
  */
 public class AssemblyItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.StructuredcomponentBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AssemblyItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes.Assembly_4002);
+				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
 	}
 
 	/**

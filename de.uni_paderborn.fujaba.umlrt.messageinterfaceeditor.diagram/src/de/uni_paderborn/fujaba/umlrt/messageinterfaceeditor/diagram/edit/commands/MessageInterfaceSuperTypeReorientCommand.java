@@ -51,7 +51,7 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,11 +67,11 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceSuperType_4002(
+		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
 						getNewSource(), getOldTarget());
 	}
 
@@ -79,11 +79,11 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistMessageInterfaceSuperType_4002(
+		return de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
 						getOldSource(), getNewTarget());
 	}
 
@@ -126,28 +126,28 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface) newEnd;
 	}
 }

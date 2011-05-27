@@ -9,14 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
  */
 public class RoleConnectorItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public RoleConnectorItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.PatternElementTypes.RoleConnector_4001);
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4004);
 	}
 
 	/**

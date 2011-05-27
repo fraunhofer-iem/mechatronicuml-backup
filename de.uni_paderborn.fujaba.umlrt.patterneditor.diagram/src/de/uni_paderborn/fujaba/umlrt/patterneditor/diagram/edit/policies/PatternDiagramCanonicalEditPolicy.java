@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -39,25 +37,9 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Set<EStructuralFeature> myFeaturesToSynchronize;
-
-	/**
-	 * @generated
-	 */
-	protected Set getFeaturesToSynchronize() {
-		if (myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage.eINSTANCE
-							.getPatternDiagram_CoordinationPattern());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage.eINSTANCE
-							.getPatternDiagram_Roles());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.umlrt.patterneditor.PatterneditorPackage.eINSTANCE
-							.getPatternDiagram_TextualConstraints());
-		}
-		return myFeaturesToSynchronize;
+	protected EStructuralFeature getFeatureToSynchronize() {
+		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+				.getModelElementCategory_ModelElements();
 	}
 
 	/**
@@ -67,9 +49,9 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-				.getPatternDiagram_1000SemanticChildren(viewObject);
-		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor d : childDescriptors) {
+		List<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+				.getModelElementCategory_1000SemanticChildren(viewObject);
+		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -88,7 +70,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+		int visualID = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID
@@ -103,8 +85,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-				.getPatternDiagram_1000SemanticChildren((View) getHost()
+		List<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+				.getModelElementCategory_1000SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
@@ -119,11 +101,11 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -149,8 +131,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);
@@ -195,13 +177,13 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
-		Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> linkDescriptors = collectAllLinks(
+		Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
 				.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null
@@ -213,9 +195,9 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+			for (Iterator<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+				de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
 						.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
@@ -236,20 +218,20 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> collectAllLinks(
+	private Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor> collectAllLinks(
 			View view, Map<EObject, View> domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 						.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor>();
-		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+		LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor>();
+		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-						.getPatternDiagram_1000ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+						.getModelElementCategory_1000ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -259,8 +241,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-						.getCoordinationPattern_2001ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+						.getCoordinationPattern_2004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -270,8 +252,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-						.getRole_2002ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+						.getRole_2005ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -281,8 +263,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-						.getTextualConstraint_2003ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+						.getTextualConstraint_2006ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -292,8 +274,8 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramUpdater
-						.getRoleConnector_4001ContainedLinks(view));
+				result.addAll(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdater
+						.getRoleConnector_4004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -318,10 +300,10 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Collection<IAdaptable> createConnections(
-			Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor> linkDescriptors,
+			Collection<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors,
 			Map<EObject, View> domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getEditPart(
 					nextLinkDescriptor.getSource(), domain2NotationMap);
 			EditPart targetEditPart = getEditPart(
@@ -331,7 +313,7 @@ public class PatternDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(nextLinkDescriptor.getVisualID()),
 					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
 							.getDiagramPreferencesHint());

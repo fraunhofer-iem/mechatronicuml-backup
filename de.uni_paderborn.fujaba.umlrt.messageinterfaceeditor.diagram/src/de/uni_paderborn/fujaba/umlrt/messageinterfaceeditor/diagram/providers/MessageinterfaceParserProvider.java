@@ -23,39 +23,39 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser messageInterfaceName_5002Parser;
+	private IParser messageInterfaceName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getMessageInterfaceName_5002Parser() {
-		if (messageInterfaceName_5002Parser == null) {
+	private IParser getMessageInterfaceName_5004Parser() {
+		if (messageInterfaceName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageInterfaceName_5002Parser = parser;
+			messageInterfaceName_5004Parser = parser;
 		}
-		return messageInterfaceName_5002Parser;
+		return messageInterfaceName_5004Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser messageTypeName_5001Parser;
+	private IParser messageTypeName_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getMessageTypeName_5001Parser() {
-		if (messageTypeName_5001Parser == null) {
+	private IParser getMessageTypeName_5003Parser() {
+		if (messageTypeName_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageTypeName_5001Parser = parser;
+			messageTypeName_5003Parser = parser;
 		}
-		return messageTypeName_5001Parser;
+		return messageTypeName_5003Parser;
 	}
 
 	/**
@@ -64,9 +64,9 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID:
-			return getMessageInterfaceName_5002Parser();
-		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeMessageTypeExprEditPart.VISUAL_ID:
-			return getMessageTypeName_5001Parser();
+			return getMessageInterfaceName_5004Parser();
+		case de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
+			return getMessageTypeName_5003Parser();
 		}
 		return null;
 	}
@@ -87,12 +87,12 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -104,7 +104,7 @@ public class MessageinterfaceParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes
+			if (de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

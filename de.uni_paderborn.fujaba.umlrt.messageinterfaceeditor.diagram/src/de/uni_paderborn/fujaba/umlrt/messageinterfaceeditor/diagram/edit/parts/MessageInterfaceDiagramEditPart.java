@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;

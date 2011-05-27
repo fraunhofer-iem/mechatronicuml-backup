@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers;
  */
 public class TextualConstraintEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers.PatternBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

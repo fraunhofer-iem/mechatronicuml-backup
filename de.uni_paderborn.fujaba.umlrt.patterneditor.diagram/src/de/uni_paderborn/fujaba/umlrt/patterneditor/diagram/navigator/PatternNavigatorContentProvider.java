@@ -213,84 +213,28 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
 
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_ConstrainableElementConstraint_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_ConstrainableElementConstraint_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_TextualConstraint_2003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			return result.toArray();
-		}
-
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RoleConnector_4001_target,
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RoleConnector_4004_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RoleConnector_4001_source,
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RoleConnector_4004_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
@@ -299,103 +243,29 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_Role_2002_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_Role_2002_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_2001_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_2001_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
 			}
 			return result.toArray();
 		}
 
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RolePattern_4002_target,
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RolePattern_4005_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RolePattern_4002_source,
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_RolePattern_4005_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
@@ -409,47 +279,177 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 		}
 
 		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem>();
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
 			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup links = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_PatternDiagram_1000_links,
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_ModelElementCategory_1000_links,
 					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_Role_2005_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_Role_2005_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_2004_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_CoordinationPattern_2004_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RolePatternEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_TextualConstraint_2006_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup target = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_ConstrainableElementConstraint_4006_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup source = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternNavigatorGroup(
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.Messages.NavigatorGroupName_ConstrainableElementConstraint_4006_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.TextualConstraintEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
 			}
 			return result.toArray();
 		}
@@ -557,7 +557,7 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private boolean isOwnView(View view) {
 		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 						.getModelID(view));
 	}
 
@@ -579,8 +579,8 @@ public class PatternNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem) {
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.PatternAbstractNavigatorItem) element;
+		if (element instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem) {
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

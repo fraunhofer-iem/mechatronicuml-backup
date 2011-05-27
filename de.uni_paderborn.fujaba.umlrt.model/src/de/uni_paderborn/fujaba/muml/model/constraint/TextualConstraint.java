@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint;
 
+import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.expressions.TextualExpression;
 
 /**
@@ -30,7 +31,7 @@ import org.storydriven.modeling.expressions.TextualExpression;
  * @model
  * @generated
  */
-public interface TextualConstraint extends VerifiableConstraint {
+public interface TextualConstraint extends VerifiableConstraint, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Textual Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

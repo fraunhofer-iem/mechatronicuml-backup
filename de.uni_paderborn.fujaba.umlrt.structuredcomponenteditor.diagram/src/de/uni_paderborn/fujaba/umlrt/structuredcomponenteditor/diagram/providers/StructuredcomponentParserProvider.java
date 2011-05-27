@@ -23,35 +23,35 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser structuredComponentName_5001Parser;
+	private IParser structuredComponentName_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredComponentName_5001Parser() {
-		if (structuredComponentName_5001Parser == null) {
+	private IParser getStructuredComponentName_5004Parser() {
+		if (structuredComponentName_5004Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			structuredComponentName_5001Parser = parser;
+			structuredComponentName_5004Parser = parser;
 		}
-		return structuredComponentName_5001Parser;
+		return structuredComponentName_5004Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser componentPartNameComponentNameDerived_5002Parser;
+	private IParser componentPartNameComponentNameDerived_5003Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentPartNameComponentNameDerived_5002Parser() {
-		if (componentPartNameComponentNameDerived_5002Parser == null) {
+	private IParser getComponentPartNameComponentNameDerived_5003Parser() {
+		if (componentPartNameComponentNameDerived_5003Parser == null) {
 			EAttribute[] features = new EAttribute[] {
 					SDMPackage.eINSTANCE.getNamedElement_Name(),
-					de.uni_paderborn.fujaba.umlrt.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getComponentPart_ComponentNameDerived() };
 			EAttribute[] editableFeatures = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -60,9 +60,9 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 			parser.setViewPattern("{0} : {1}"); //$NON-NLS-1$
 			parser.setEditorPattern("{0}"); //$NON-NLS-1$
 			parser.setEditPattern("{0}"); //$NON-NLS-1$
-			componentPartNameComponentNameDerived_5002Parser = parser;
+			componentPartNameComponentNameDerived_5003Parser = parser;
 		}
-		return componentPartNameComponentNameDerived_5002Parser;
+		return componentPartNameComponentNameDerived_5003Parser;
 	}
 
 	/**
@@ -71,9 +71,9 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID:
-			return getStructuredComponentName_5001Parser();
+			return getStructuredComponentName_5004Parser();
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartNameComponentNameDeriveEditPart.VISUAL_ID:
-			return getComponentPartNameComponentNameDerived_5002Parser();
+			return getComponentPartNameComponentNameDerived_5003Parser();
 		}
 		return null;
 	}
@@ -94,12 +94,12 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -111,7 +111,7 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentElementTypes
+			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

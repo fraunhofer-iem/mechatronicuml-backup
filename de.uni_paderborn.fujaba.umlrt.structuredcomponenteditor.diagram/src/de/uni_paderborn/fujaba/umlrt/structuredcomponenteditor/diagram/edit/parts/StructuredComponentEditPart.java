@@ -44,7 +44,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2001;
+	public static final int VISUAL_ID = 2002;
 
 	/**
 	 * @generated
@@ -91,7 +91,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -287,7 +287,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID));
 	}
 

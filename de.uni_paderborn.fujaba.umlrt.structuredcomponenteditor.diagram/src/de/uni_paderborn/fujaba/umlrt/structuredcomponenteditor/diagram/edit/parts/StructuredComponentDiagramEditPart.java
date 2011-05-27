@@ -20,7 +20,7 @@ public class StructuredComponentDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Structuredcomponent"; //$NON-NLS-1$
+	public final static String MODEL_ID = "de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

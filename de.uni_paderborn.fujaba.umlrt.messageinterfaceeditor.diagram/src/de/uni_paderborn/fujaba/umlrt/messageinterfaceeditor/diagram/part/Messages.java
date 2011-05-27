@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizardTitle;
+	public static String UmlrtCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizard_DiagramModelFilePageTitle;
+	public static String UmlrtCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizard_DiagramModelFilePageDescription;
+	public static String UmlrtCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizard_DomainModelFilePageTitle;
+	public static String UmlrtCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizard_DomainModelFilePageDescription;
+	public static String UmlrtCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizardOpenEditorError;
+	public static String UmlrtCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizardCreationError;
+	public static String UmlrtCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceCreationWizardPageExtensionError;
+	public static String UmlrtCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_isModifiable;
+	public static String UmlrtDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_handleElementContentChanged;
+	public static String UmlrtDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_IncorrectInputError;
+	public static String UmlrtDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_NoDiagramInResourceError;
+	public static String UmlrtDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_DiagramLoadingError;
+	public static String UmlrtDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_UnsynchronizedFileSaveError;
+	public static String UmlrtDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_SaveDiagramTask;
+	public static String UmlrtDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_SaveNextResourceTask;
+	public static String UmlrtDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceDocumentProvider_SaveAsOperation;
+	public static String UmlrtDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,57 +148,57 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_CreationPageName;
+	public static String UmlrtNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_CreationPageTitle;
+	public static String UmlrtNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_CreationPageDescription;
+	public static String UmlrtNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageName;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_InitDiagramCommand;
+	public static String UmlrtNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceNewDiagramFileWizard_IncorrectRootError;
+	public static String UmlrtNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
@@ -228,7 +228,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceElementChooserDialog_SelectModelElementTitle;
+	public static String UmlrtElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -288,27 +288,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2001_incominglinks;
+	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterface_2001_outgoinglinks;
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4002_target;
+	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterfaceSuperType_4002_source;
+	public static String NavigatorGroupName_MessageInterface_2002_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_MessageInterfaceDiagram_1000_links;
+	public static String NavigatorGroupName_MessageInterface_2002_outgoinglinks;
 
 	/**
 	 * @generated
@@ -338,12 +338,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceModelingAssistantProviderTitle;
+	public static String UmlrtModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String MessageinterfaceModelingAssistantProviderMessage;
+	public static String UmlrtModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

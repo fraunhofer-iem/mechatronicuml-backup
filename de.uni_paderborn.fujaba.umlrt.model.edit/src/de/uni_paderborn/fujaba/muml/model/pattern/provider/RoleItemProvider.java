@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.RoleCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.descriptor.RoleCardinalityPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

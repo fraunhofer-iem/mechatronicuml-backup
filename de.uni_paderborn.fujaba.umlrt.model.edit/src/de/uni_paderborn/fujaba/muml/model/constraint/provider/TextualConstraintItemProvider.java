@@ -10,7 +10,7 @@ package de.uni_paderborn.fujaba.muml.model.constraint.provider;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.Correctness;
 import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.descriptor.TextualConstraintExpressionPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.descriptor.TextualConstraintExpressionPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;

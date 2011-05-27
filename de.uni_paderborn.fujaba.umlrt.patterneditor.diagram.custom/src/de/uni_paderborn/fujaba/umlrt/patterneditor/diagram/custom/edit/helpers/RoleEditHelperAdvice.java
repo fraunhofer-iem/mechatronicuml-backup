@@ -10,8 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-import de.uni_paderborn.fujaba.umlrt.patterneditor.PatternDiagram;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
 /**
  * An EditHelperAdvice for Roles. It makes sure newly created Roles are
@@ -32,11 +31,11 @@ public class RoleEditHelperAdvice extends AbstractEditHelperAdvice {
 					throws ExecutionException {
 
 				Role role = (Role) request.getElementToConfigure();
-				EObject eContainer = role.eContainer();
-				if (eContainer instanceof PatternDiagram) {
-					PatternDiagram patternDiagram = (PatternDiagram) eContainer;
-					role.setPattern(patternDiagram.getCoordinationPattern());
-				}
+//				EObject eContainer = role.eContainer();
+//				if (eContainer instanceof PatternDiagram) {
+//					PatternDiagram patternDiagram = (PatternDiagram) eContainer;
+//					role.setPattern(patternDiagram.getCoordinationPattern());
+//				}
 				return CommandResult.newOKCommandResult(role);
 			}
 

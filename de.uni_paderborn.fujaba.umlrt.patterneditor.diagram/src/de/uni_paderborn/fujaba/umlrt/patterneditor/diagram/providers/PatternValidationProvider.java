@@ -58,7 +58,7 @@ public class PatternValidationProvider {
 		if (object instanceof View) {
 			return constraintsActive
 					&& de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtVisualIDRegistry
 									.getModelID((View) object));
 		}
 		return true;

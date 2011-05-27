@@ -50,7 +50,7 @@ public class RolePatternReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.Role) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -66,11 +66,11 @@ public class RolePatternReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.Role)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRolePattern_4002(getNewSource(),
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistRolePattern_4005(getNewSource(),
 						getOldTarget());
 	}
 
@@ -78,11 +78,11 @@ public class RolePatternReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.PatternBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRolePattern_4002(getOldSource(),
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistRolePattern_4005(getOldSource(),
 						getNewTarget());
 	}
 
@@ -124,28 +124,28 @@ public class RolePatternReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.Role getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.Role) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.Role getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.Role) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.pattern.CoordinationPattern) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) newEnd;
 	}
 }

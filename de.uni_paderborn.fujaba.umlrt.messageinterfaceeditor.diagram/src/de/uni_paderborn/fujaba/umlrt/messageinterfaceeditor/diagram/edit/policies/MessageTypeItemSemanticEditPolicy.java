@@ -13,14 +13,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class MessageTypeItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.MessageinterfaceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MessageinterfaceElementTypes.MessageType_3001);
+				de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageType_3002);
 	}
 
 	/**

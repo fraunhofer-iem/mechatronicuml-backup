@@ -50,10 +50,10 @@ public class Port2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.component.Port newElement = de.uni_paderborn.fujaba.umlrt.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.component.Port newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
 				.createPort();
 
-		de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.umlrt.model.component.ComponentPart) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
 		owner.getPortsDerived().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -66,7 +66,7 @@ public class Port2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.component.Port newElement,
+			de.uni_paderborn.fujaba.muml.model.component.Port newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
