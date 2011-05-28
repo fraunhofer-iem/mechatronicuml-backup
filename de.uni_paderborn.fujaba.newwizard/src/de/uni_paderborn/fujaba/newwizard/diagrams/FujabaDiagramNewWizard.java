@@ -19,10 +19,13 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.internal.common.ui.ResourceLocationProvider;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
@@ -114,10 +117,11 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 	/**
 	 * Create a new instance of domain element associated with canvas.
 	 */
-//	protected abstract EObject createInitialModel();
-	
+	// protected abstract EObject createInitialModel();
+
 	/**
-	 * Return the Diagram Element, or null if the ModelElementCategory should be used as the Diagram Element. 
+	 * Return the Diagram Element, or null if the ModelElementCategory should be
+	 * used as the Diagram Element.
 	 */
 	protected abstract ExtendableElement createDiagramElement();
 
@@ -274,13 +278,13 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 					throws ExecutionException {
 
 				ModelElementCategory elementCategory = null;
-				
+
 				ExtendableElement diagramElement = domainModelSelectionPage
 						.getSelectedDiagramElement();
 
 				if (diagramElement == null) {
 					List<?> rootElements = modelResource.getContents();
-					//diagramElement = createInitialModel();
+					// diagramElement = createInitialModel();
 					if (!rootElements.isEmpty()) {
 						Object rootElement = rootElements.get(0);
 						if (rootElement instanceof RootNode) {
@@ -289,29 +293,31 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 							for (ModelElementCategory category : rootNode
 									.getCategories()) {
 								if (category.getKey().equals(categoryKey)
-										/*&& category
-												.isValidElement(diagramElement)*/) {
+								/*
+								 * && category .isValidElement(diagramElement)
+								 */) {
 									elementCategory = category;
 									break;
 								}
 							}
 
 							if (elementCategory == null) {
-								elementCategory = ModelinstanceFactory.eINSTANCE.createModelElementCategory();
+								elementCategory = ModelinstanceFactory.eINSTANCE
+										.createModelElementCategory();
 								elementCategory.setKey(categoryKey);
 								rootNode.getCategories().add(elementCategory);
 							}
-						
-							
+
 							diagramElement = createDiagramElement();
-							
+
 							if (diagramElement != null) {
-								elementCategory.getModelElements().add(diagramElement);
+								elementCategory.getModelElements().add(
+										diagramElement);
 							}
 						}
 					}
 				}
-				
+
 				EObject element = diagramElement;
 				if (diagramElement == null) {
 					element = elementCategory;
@@ -349,4 +355,11 @@ public abstract class FujabaDiagramNewWizard extends Wizard implements
 		return diagramResource;
 	}
 
+	@Override
+	public boolean isValidDiagramElement(EObject object) {
+		IAdaptable adapter = new EObjectAdapter(object);
+		IOperation operation = new CreateDiagramViewOperation(adapter,
+				getModelId(), getDiagramPreferencesHint());
+		return ViewService.getInstance().provides(operation);
+	}
 }

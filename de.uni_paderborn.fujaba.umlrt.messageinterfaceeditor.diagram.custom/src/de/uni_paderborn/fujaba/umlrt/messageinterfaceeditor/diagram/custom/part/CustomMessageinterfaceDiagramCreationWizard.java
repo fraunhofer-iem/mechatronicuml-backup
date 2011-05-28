@@ -45,17 +45,6 @@ public class CustomMessageinterfaceDiagramCreationWizard extends
 	}
 
 	@Override
-	public boolean isValidDiagramElement(EObject object) {
-		return ViewService
-				.getInstance()
-				.provides(
-						new CreateDiagramViewOperation(
-								new EObjectAdapter(object),
-								de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-	}
-
-	@Override
 	protected String getModelElementCategoryKey() {
 		return "de.uni_paderborn.fujaba.umlrt.messageinterface.category";
 	}

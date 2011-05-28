@@ -96,17 +96,6 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 //	}
 
 	@Override
-	public boolean isValidDiagramElement(EObject object) {
-		return ViewService
-				.getInstance()
-				.provides(
-						new CreateDiagramViewOperation(
-								new EObjectAdapter(object),
-								de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-	}
-
-	@Override
 	protected String getModelElementCategoryKey() {
 		return "de.uni_paderborn.fujaba.umlrt.pattern.category";
 	}
