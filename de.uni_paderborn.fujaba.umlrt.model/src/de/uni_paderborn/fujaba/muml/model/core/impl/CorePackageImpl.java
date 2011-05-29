@@ -455,7 +455,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNaturalNumber_Value(), ecorePackage.getELong(), "value", null, 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNaturalNumber_Infinity(), theEcorePackage.getEBoolean(), "infinity", null, 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNaturalNumber_Infinity(), ecorePackage.getEBoolean(), "infinity", null, 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(naturalNumberEClass, theEcorePackage.getEObject(), "getValueAsObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -463,13 +463,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEParameter(op, this.getInfinity(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(naturalNumberEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(naturalNumberEClass, theEcorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(naturalNumberEClass, ecorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(naturalNumberEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(naturalNumberEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(naturalNumberEClass, theEcorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -478,21 +478,21 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(infinityEClass, Infinity.class, "Infinity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(infinityEClass, theEcorePackage.getEByte(), "byteValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEByte(), "byteValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getEDouble(), "doubleValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEDouble(), "doubleValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getEFloat(), "floatValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEFloat(), "floatValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getEInt(), "intValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEInt(), "intValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getEShort(), "shortValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEShort(), "shortValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(infinityEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(infinityEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(infinityEClass, theEcorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(infinityEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -508,7 +508,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getAbstractRealtimeStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractRealtimeStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractRealtimeStatechart_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_RealtimeStatechart(), "behavioralElement", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractRealtimeStatechart_Embedded(), theEcorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractRealtimeStatechartEClass, this.getAbstractRealtimeStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 

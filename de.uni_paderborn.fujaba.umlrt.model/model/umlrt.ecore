@@ -388,7 +388,7 @@
             <details key="documentation" value="The correctness of this constraint encoded as a literal of the enum type &quot;Correctness&quot;."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute decides whether background checking is activated for this constraint. If it is activated the correctness of the constraint is checked whenever the model changes. These checks are performed in the background such that user interaction is not interrupted."/>
           </eAnnotations>
@@ -454,19 +454,19 @@
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Set the value to the value of the given parameter."/>
           </eAnnotations>
-          <eParameters name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+          <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eOperations>
-        <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong">
+        <eOperations name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This operation yields the value of this natural number as a long value."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This operation yields the value of this natural number in a string representation."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
@@ -474,7 +474,7 @@
             <details key="documentation" value="The value of this natural number."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="infinity" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="infinity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Determins whether this natural number represents infinity."/>
           </eAnnotations>
@@ -501,38 +501,38 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class extends java.lang.Number by the capability to represent infinity."/>
         </eAnnotations>
-        <eOperations name="byteValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EByte">
+        <eOperations name="byteValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Byte.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="doubleValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble">
+        <eOperations name="doubleValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Double.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="floatValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat">
+        <eOperations name="floatValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Float.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="intValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+        <eOperations name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Integer.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="longValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong">
+        <eOperations name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Long.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="shortValue" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EShort">
+        <eOperations name="shortValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields Short.MAX_VALUE."/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-        <eOperations name="equals" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
         </eOperations>
       </eClassifiers>
@@ -601,7 +601,7 @@
             <details key="documentation" value="The behovioral element this statechart belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not."/>
@@ -788,7 +788,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute stores the direction of the channel. The direction can either be uni- or bi-direcational. This attribute should probably be renamed to bidirectional."/>
           </eAnnotations>
@@ -945,7 +945,7 @@
             <details key="documentation" value="The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The meaning of being committed is the same as it is with committed states in Uppaal."/>
@@ -958,7 +958,7 @@
             <details key="documentation" value="The synchronization channels provided by this complex state."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
@@ -967,13 +967,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
             upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true"
             containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a basic state of a realtime statechart."/>
         </eAnnotations>
-        <eOperations name="getLongName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="getLongName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'."/>
           </eAnnotations>
@@ -999,22 +999,22 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eOperations name="calculateWorstCaseDeadline" eType="#//model/core/NaturalNumber"/>
-        <eOperations name="computeClockResetsExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="computeClockResetsExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="body" value="String value = &quot;&quot;;&#xD;&#xA;if(clockResets!=null){&#xD;&#xA;java.util.Iterator&lt;Clock> iter = clockResets.iterator();&#xD;&#xA;while(iter.hasNext()){&#xD;&#xA;&#x9;Clock clock = iter.next();&#xD;&#xA;&#x9;&#x9;if(value.equals(&quot;&quot;)){&#xD;&#xA;&#x9;&#x9;&#x9;value = value + clock.getName() /* + clock.getId() */ + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;value = value + &quot;, &quot; + clock.getName() /* + clock.getId() */ + &quot;:=0&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;return value;"/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="computeSynchroExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="computeSynchroExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="body" value="String returnString = &quot;&quot;;&#xD;&#xA;Synchronization synchro = null;&#xD;&#xA;if(getSendSynchronization()!=null){&#xD;&#xA;&#x9;synchro = getSendSynchronization();&#xD;&#xA;}else if (getReceiveSynchronization()!=null){&#xD;&#xA;&#x9;synchro = getReceiveSynchronization();&#xD;&#xA;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;if(synchro!=null){&#xD;&#xA;&#x9;returnString = ((de.uni_paderborn.fujaba.muml.model.realtimestatechart.&#xD;&#xA;&#x9;&#x9;&#x9;SynchronizationChannel)synchro.getCallee()).getName() + &quot;(&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;java.util.Iterator&lt;ParameterBinding> iter = synchro.getOwnedParameterBindings().iterator();&#xD;&#xA;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;ParameterBinding tmp = iter.next();&#xD;&#xA;&#x9;&#x9;String value = ((LiteralExpression)tmp.getValueExpression()).getValue();&#xD;&#xA;&#x9;&#x9;EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();&#xD;&#xA;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;returnString = returnString + &quot;, &quot; + value + &quot;:&quot; + type.getName();&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;if(getReceiveSynchronization()!=null){&#xD;&#xA;&#x9;&#x9;returnString = returnString + &quot;)?&quot;;&#xD;&#xA;&#x9;}else{&#xD;&#xA;&#x9;&#x9;returnString = returnString + &quot;)!&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return returnString;"/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="computeEventsExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="computeEventsExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="body" value="String triggerString = &quot;&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String raisedString = &quot;&quot;;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;java.util.Iterator&lt;AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(triggerEIter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;AsynchronousEvent tmp = triggerEIter.next();&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;triggerString = triggerString + tmp.getFullEventName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;triggerString = triggerString + &quot;, &quot; + tmp.getFullEventName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if(!getTriggerEvents().isEmpty()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;triggerString = &quot;{&quot; + triggerString + &quot;}&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;firstTime = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;while(raisedEIter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;AsynchronousEvent tmp = raisedEIter.next();&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;raisedString = raisedString + tmp.getFullEventName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;raisedString = raisedString + &quot;, &quot; + tmp.getFullEventName();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if(!getRaisedEvents().isEmpty()){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;raisedString = &quot; / {&quot; + raisedString + &quot;}&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return triggerString + raisedString;"/>
           </eAnnotations>
         </eOperations>
-        <eOperations name="computeTimeGuardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        <eOperations name="computeTimeGuardExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="body" value="&#x9;&#x9;if(getClockConstraints().isEmpty()){&#xD;&#xA;&#x9;&#x9;&#x9;return &quot;&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;String timeGuardString = &quot;[&quot;;&#xD;&#xA;&#x9;&#x9;java.util.Iterator&lt;ClockConstraint> iter = getClockConstraints().iterator();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;boolean firstTime = true;&#xD;&#xA;&#x9;&#x9;while(iter.hasNext()){&#xD;&#xA;&#x9;&#x9;&#x9;ClockConstraint tmp = iter.next();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;if(firstTime){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;firstTime = false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;timeGuardString = timeGuardString + tmp.getClockConstraintExpr();&#xD;&#xA;&#x9;&#x9;&#x9;}else{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;timeGuardString = timeGuardString + &quot;, &quot; + tmp.getClockConstraintExpr();&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;return timeGuardString+&quot;]&quot;;"/>
           </eAnnotations>
@@ -1088,13 +1088,13 @@
             eOpposite="#//model/realtimestatechart/AbsoluteDeadline/transition"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline" eType="#//model/realtimestatechart/RelativeDeadline"
             containment="true" eOpposite="#//model/realtimestatechart/RelativeDeadline/transition"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
             containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventsExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventsExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1102,7 +1102,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionActionExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral="sideEffectExpr"
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1113,7 +1113,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1124,7 +1124,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="absoluteDeadlineExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1132,23 +1132,23 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeDeadlineExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if relativeDeadline.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;relativeDeadline.toMyString()&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="guardExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral=""/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="computeSynchroExpr()&#xD;&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetsExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockResetsExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1156,7 +1156,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransitionExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1176,7 +1176,7 @@
             eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
             defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockConstraintExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1212,7 +1212,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="TODO-SD: Delete?"/>
           </eAnnotations>
@@ -1253,9 +1253,9 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="doActionRev" eType="#//model/realtimestatechart/State"
             eOpposite="#//model/realtimestatechart/State/doAction"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="doEventExpr" derived="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitAction" abstract="true">
@@ -1270,7 +1270,7 @@
             <details key="documentation" value="TODO-SD: Discuss meta model for actions: Change to inheritance?"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             defaultValueLiteral="entryExitExpr" derived="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryAction" eSuperTypes="#//model/realtimestatechart/EntryOrExitAction">
@@ -1298,7 +1298,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchroChannelExpr"
-            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
