@@ -45,13 +45,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
             upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Don't know."/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as provided interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
             upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Don't know."/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/component/ComponentKind">
@@ -373,6 +373,9 @@
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/muml/model/constraint"
         nsPrefix="constraint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
@@ -435,6 +438,9 @@
     </eSubpackages>
     <eSubpackages name="core" nsURI="http:///de/uni_paderborn/fujaba/muml/model/core"
         nsPrefix="core">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="NaturalNumber">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents either a natural number or infinity.&#xD;&#xA;TODO-SD: Do we really need that class?"/>
