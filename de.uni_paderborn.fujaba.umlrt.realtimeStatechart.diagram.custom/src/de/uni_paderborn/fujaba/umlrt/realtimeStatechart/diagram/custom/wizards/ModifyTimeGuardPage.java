@@ -24,12 +24,12 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 import org.storydriven.modeling.expressions.ComparingOperator;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.TimeGuardCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
 public class ModifyTimeGuardPage extends CommonModifyPage{
 	
@@ -188,7 +188,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 		if(!value.getText().equals("") && getSelectedClock()!= null &&
 				getSelectedComparingOperator()!=null){
 			CreateElementRequest request = new CreateElementRequest(((ModifyTimeGuardWizard)getWizard()).getSelectedTransition(),
-					RealtimeStatechartElementTypes.Action_3024);
+					UmlrtElementTypes.DoAction_3026);
 							  
 						TimeGuardCreateCommand command = new TimeGuardCreateCommand(request, 
 								getSelectedClock(), getSelectedComparingOperator() ,value.getText());
@@ -213,7 +213,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 	    			  	getSelectedTransition().getClockConstraints().iterator();
 	    			  while(iter.hasNext()){
 	    				  ClockConstraint tmp = iter.next();
-	    				  if(tmp.toMyString().equals(obj.toString())){
+	    				  if(toMyString(tmp).equals(obj.toString())){
 	    					  deleteObject(tmp);
 	    					  break;
 	    				  }
@@ -247,7 +247,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
         		Iterator<ClockConstraint> iter = transition.getClockConstraints().iterator();
         		while(iter.hasNext()){
         			ClockConstraint tmp = iter.next();
-        			list.add(tmp.toMyString());
+        			list.add(toMyString(tmp));
         		}
         		return list.toArray();
         	}
@@ -265,7 +265,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 			while(iter.hasNext()){
 				Clock clockTmp = iter.next();
 				
-				clock.add(clockTmp.toMyString());
+				clock.add(toMyString(clockTmp));
 			}
 		}
 	}
@@ -279,14 +279,18 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 			while(iter.hasNext()){
 				Clock clockTmp = iter.next();
 				
-				if(clockTmp.toMyString().equals(clock.getText())){
+				if(toMyString(clockTmp).equals(clock.getText())){
 					return clockTmp;
 				}
 			}
 		}
 		return null;
 	}
-	
+
+	private String toMyString(Object o) {
+		return o.toString();
+	}
+
 	private ComparingOperator getSelectedComparingOperator(){
 		ComparingOperator[] operators = ComparingOperator.values();
 		for(int i=0;i<ComparingOperator.values().length;i++){

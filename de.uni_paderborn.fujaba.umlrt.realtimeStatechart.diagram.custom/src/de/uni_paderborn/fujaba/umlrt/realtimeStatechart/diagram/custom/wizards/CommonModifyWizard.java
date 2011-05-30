@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.common.wizard.AbstractWizard;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
 
 public abstract class CommonModifyWizard  extends AbstractWizard {
 

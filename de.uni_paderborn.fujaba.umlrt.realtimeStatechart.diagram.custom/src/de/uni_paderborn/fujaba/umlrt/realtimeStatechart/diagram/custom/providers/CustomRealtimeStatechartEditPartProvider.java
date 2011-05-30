@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.providers;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.edit.parts.CustomRealtimeStatechartEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartEditPartProvider;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtEditPartProvider;
 
 
 /**
@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.Realti
  * 
  */
 public class CustomRealtimeStatechartEditPartProvider extends
-		RealtimeStatechartEditPartProvider {
+		UmlrtEditPartProvider {
 
 	public CustomRealtimeStatechartEditPartProvider() {
 		setFactory(new CustomRealtimeStatechartEditPartFactory());

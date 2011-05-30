@@ -14,13 +14,13 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartEditor"
-            contributorClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramActionBarContributor"
+            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+            contributorClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramActionBarContributor"
             default="true"
-            extensions="statechart_diagram"
+            extensions="realtimestatechart_diagram"
             icon="icons/StatechartFile.gif"
-            id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID"
-            matchingStrategy="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartMatchingStrategy"
+            id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
+            matchingStrategy="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtMatchingStrategy"
             name="%editorName">
       </editor>
    </extension>
@@ -40,7 +40,7 @@
                   type="org.eclipse.gef.EditPart">
             </input>
             <input
-                  type="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem">
+                  type="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem">
             </input>
          </propertySection>
       </propertySections>

@@ -24,11 +24,10 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class ModifySynchronizationPage1 extends CommonModifyPage{
 	
@@ -179,16 +178,16 @@ public class ModifySynchronizationPage1 extends CommonModifyPage{
 	
 	public Object[] getSynchronizationChannels(Object object)
 	{
-        if (object instanceof RealtimeStatechart)
+        if (object instanceof FujabaRealtimeStatechart)
         {
-        	RealtimeStatechart statechart = (RealtimeStatechart)object;
+        	FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart)object;
         	ArrayList<String> list = new ArrayList<String>();
         	
         	if(statechart.getEmbeddingRegion()!=null && statechart.getEmbeddingRegion().getParentState() !=null){
         		Iterator<SynchronizationChannel> iter = statechart.getEmbeddingRegion().getParentState().getChannels().iterator();
         		while(iter.hasNext()){
         			SynchronizationChannel s = iter.next();
-        			list.add(s.toMyString());
+        			list.add(toMyString(s));
         		}
         		return list.toArray();
         	}
@@ -233,7 +232,7 @@ public class ModifySynchronizationPage1 extends CommonModifyPage{
 	        		while(iter.hasNext()){
 	        			SynchronizationChannel s = iter.next();
 	        			
-	        			if(s.toMyString().equals(obj.toString())){
+	        			if(toMyString(s).equals(obj.toString())){
 	        				((ModifySynchronizationWizard)getWizard()).setSelectedSynchronizationChannel(s);
 	        				break;
 	        			}
@@ -243,6 +242,10 @@ public class ModifySynchronizationPage1 extends CommonModifyPage{
 		  }	
 	}
 	
+	private String toMyString(Object o) {
+		return o.toString();
+	}
+
 	private void setSelectedSynchronizationType(){
 	      
 		String typeString = synchronizationTypeCombo.getItem(synchronizationTypeCombo.getSelectionIndex());

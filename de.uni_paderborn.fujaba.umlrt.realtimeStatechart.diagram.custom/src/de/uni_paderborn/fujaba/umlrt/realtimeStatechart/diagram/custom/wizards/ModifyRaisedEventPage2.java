@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.RaisedEventCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
 public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 
@@ -162,7 +162,7 @@ public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 	private void startCreateRaisedEventCommand(){
 		
 		CreateElementRequest request = new CreateElementRequest(((ModifyRaisedEventWizard)getWizard()).getSelectedTransition(),
-				RealtimeStatechartElementTypes.Action_3024);
+				UmlrtElementTypes.DoAction_3026);
 						  
 					RaisedEventCreateCommand command = new RaisedEventCreateCommand(request, 
 							parameterValuesHashMap,

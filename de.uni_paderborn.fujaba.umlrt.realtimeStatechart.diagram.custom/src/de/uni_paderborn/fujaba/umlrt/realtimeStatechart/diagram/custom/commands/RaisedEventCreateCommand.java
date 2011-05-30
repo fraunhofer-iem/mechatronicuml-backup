@@ -17,9 +17,10 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 
 
@@ -68,7 +69,7 @@ public class RaisedEventCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		
-		AsynchronousEvent newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.
+		AsynchronousEvent newElement = RealtimestatechartFactory.
 			eINSTANCE.createAsynchronousEvent();
 	
 		Transition owner = (Transition) getElementToEdit();

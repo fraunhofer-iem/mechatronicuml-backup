@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 public class ModifyParameterWizard extends CommonModifyWizard {
 	
@@ -25,7 +25,7 @@ public class ModifyParameterWizard extends CommonModifyWizard {
 		
 		setSelectedSyncChannel(sC);
 
-		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings workbenchSettings = RealtimestatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_EPARAMETER_WIZARD_SECTION);
 		if (section == null)
 		{

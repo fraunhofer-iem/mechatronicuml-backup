@@ -17,32 +17,33 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-
-
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 /**
  * @generated
  */
 public class TriggerEventCreateCommand extends EditElementCommand {
-	
+
 	private HashMap<EParameter, String> parameterValuesHashMap = null;
 	private MessageType messageType = null;
 
 	/**
 	 * @generated
 	 */
-	public TriggerEventCreateCommand(CreateElementRequest req, HashMap<EParameter, String> parameterValuesHashMap, 
+	public TriggerEventCreateCommand(CreateElementRequest req,
+			HashMap<EParameter, String> parameterValuesHashMap,
 			MessageType messageType) {
 		super(req.getLabel(), null, req);
 		this.parameterValuesHashMap = parameterValuesHashMap;
 		this.messageType = messageType;
 	}
-	
+
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -53,7 +54,7 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 		}
 		return container;
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -61,42 +62,41 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 		return true;
 
 	}
-	
+
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		
-		AsynchronousEvent newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.
-			eINSTANCE.createAsynchronousEvent();
-	
+
+		AsynchronousEvent newElement = RealtimestatechartFactory.eINSTANCE
+				.createAsynchronousEvent();
+
 		Transition owner = (Transition) getElementToEdit();
 
 		owner.getTriggerEvents().add(newElement);
 
-
 		newElement.setCallee(messageType);
-		
+
 		Iterator<EParameter> iter = parameterValuesHashMap.keySet().iterator();
-		while(iter.hasNext()){
+		while (iter.hasNext()) {
 			EParameter tmp = iter.next();
 			String value = parameterValuesHashMap.get(tmp);
-			
-			org.storydriven.modeling.calls.ParameterBinding parameterBinding = org.storydriven.modeling.calls.CallsFactory
-				.eINSTANCE.createParameterBinding();
-			
+
+			org.storydriven.modeling.calls.ParameterBinding parameterBinding = org.storydriven.modeling.calls.CallsFactory.eINSTANCE
+					.createParameterBinding();
+
 			newElement.getOwnedParameterBindings().add(parameterBinding);
-			
+
 			parameterBinding.setParameter(tmp);
-			
-			org.storydriven.modeling.expressions.LiteralExpression literalExpr = org.storydriven.modeling.expressions.
-				ExpressionsFactory.eINSTANCE.createLiteralExpression();
-			
+
+			org.storydriven.modeling.expressions.LiteralExpression literalExpr = org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+
 			parameterBinding.setValueExpression(literalExpr);
-			
+
 			literalExpr.setValue(value);
-			literalExpr.setValueType((EDataType)tmp.getEType());
+			literalExpr.setValueType((EDataType) tmp.getEType());
 		}
 
 		doConfigure(newElement, monitor, info);
@@ -104,13 +104,13 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
-	
 
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(AsynchronousEvent newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected void doConfigure(AsynchronousEvent newElement,
+			IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
 				.getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(

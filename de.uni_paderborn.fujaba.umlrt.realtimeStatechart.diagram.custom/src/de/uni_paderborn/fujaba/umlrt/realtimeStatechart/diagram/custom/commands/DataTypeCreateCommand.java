@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 
 
 
@@ -65,7 +65,7 @@ public class DataTypeCreateCommand extends EditElementCommand {
 		
 		EDataType newElement = EcoreFactory.eINSTANCE.createEDataType();
 
-		RealtimeStatechart owner = (RealtimeStatechart) getElementToEdit();
+		FujabaRealtimeStatechart owner = (FujabaRealtimeStatechart) getElementToEdit();
 		RootNode root = (RootNode)owner.eContainer();
 		
 		root.getEcoreDataTypes().add(newElement);

@@ -21,7 +21,7 @@ public class RealtimeStatechartEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "RealtimeStatechart"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Realtimestatechart"; //$NON-NLS-1$
 
 	/**
 	 * @generated

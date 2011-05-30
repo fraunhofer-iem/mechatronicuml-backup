@@ -42,7 +42,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -58,18 +58,18 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex target = getLink()
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target = getLink()
 				.getTarget();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getLink()
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistTransition_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistTransition_4002(container,
 						getLink(), getNewSource(), target);
 	}
 
@@ -77,18 +77,18 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex source = getLink()
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source = getLink()
 				.getSource();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container = (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) getLink()
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistTransition_4001(container,
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistTransition_4002(container,
 						getLink(), source, getNewTarget());
 	}
 
@@ -129,35 +129,35 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition getLink() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition getLink() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getOldSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getNewSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getOldTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getNewTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
 	}
 }

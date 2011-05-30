@@ -41,7 +41,7 @@ public class DoActionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
 		if (container.getDoAction() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class DoActionCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createDoAction();
 
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
 		owner.setDoAction(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -70,7 +70,7 @@ public class DoActionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.DoAction newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

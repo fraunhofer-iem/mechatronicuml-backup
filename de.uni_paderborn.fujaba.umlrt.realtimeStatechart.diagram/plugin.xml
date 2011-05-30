@@ -30,9 +30,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="RealtimeStatechartPresentation">
+         id="RealtimestatechartPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -43,9 +43,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="RealtimeStatechartPresentationIDE">
+         id="RealtimestatechartPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -53,9 +53,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="RealtimeStatechartRender">
+            id="RealtimestatechartRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -68,13 +68,13 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
 
-   <extension id="diagnostic" name="RealtimeStatechart Plugin problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Realtimestatechart Plugin problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -83,7 +83,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartValidationDecoratorProvider">
+      <decoratorProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimestatechartValidationDecoratorProvider">
          <Priority name="Medium"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -132,7 +132,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram"
-            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet.RealtimeStatechartSheetLabelProvider">
+            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet.RealtimestatechartSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -186,32 +186,32 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="RealtimeStatechart"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2014,2015,2016,2017,2018,2019,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Realtimestatechart"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2020,2021,2022,2023,2024,3025,3026,3027,3028,3029,3030"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002"/>
       </viewProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="RealtimeStatechart"/>
+            <method name="getType()" value="Realtimestatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2014,2015,2016,2017,2018,2019,3021,3022,3023,3007,3008,3009,3010,3011,3018,3019,3020,3024,3016,3017"/>
+            <method name="getType()" value="2020,2021,2022,2023,2024,3025,3026,3027,3028,3029,3030"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value="4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5018,5019,5015,5016,5017,5012,5013"/>
+            <method name="getType()" value="5025,5026,5020,5021,5022,5023,5024"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7005,7006,7007,7008"/>
+            <method name="getType()" value="7009,7010,7011,7012"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -219,250 +219,161 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_1000"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2014"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.InitialStateEditPart" id="InitialState_2015"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.FinalStateEditPart" id="FinalState_2016"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart" id="HistoryState_2017"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart" id="Clock_2018"/>
-         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.Transition2EditPart" id="Transition_2019"/>
-         <context elements="RealtimeStatechart_1000,State_2014,InitialState_2015,FinalState_2016,HistoryState_2017,Clock_2018,Transition_2019"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="FujabaRealtimeStatechart_1000"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2020"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.State2EditPart" id="State_2021"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.State3EditPart" id="State_2022"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart" id="HistoryState_2023"/>
+         <object class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.ClockEditPart" id="Clock_2024"/>
+         <context elements="FujabaRealtimeStatechart_1000,State_2020,State_2021,State_2022,HistoryState_2023,Clock_2024"/>
       </modelingAssistantProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimestatechartParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://uni_paderborn/fujaba/umlrt/realtimeStatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeStatechart_1000"
-               name="%metatype.name.RealtimeStatechart_1000"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FujabaRealtimeStatechart_1000"
+               name="%metatype.name.FujabaRealtimeStatechart_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RealtimeStatechart"
+               eclass="FujabaRealtimeStatechart"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.RealtimeStatechartEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2014"
-               name="%metatype.name.State_2014"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2020"
+               name="%metatype.name.State_2020"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="State"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.StateEditHelper">
-            <param name="semanticHint" value="2014"/>
+            <param name="semanticHint" value="2020"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2015"
-               name="%metatype.name.InitialState_2015"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="InitialState"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.InitialStateEditHelper">
-            <param name="semanticHint" value="2015"/>
-         </metamodelType>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+         <specializationType
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2021"
+               name="%metatype.name.State_2021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2020"/>
+            <param name="semanticHint" value="2021"/>
+         </specializationType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2016"
-               name="%metatype.name.FinalState_2016"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="FinalState"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.FinalStateEditHelper">
-            <param name="semanticHint" value="2016"/>
-         </metamodelType>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+         <specializationType
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2022"
+               name="%metatype.name.State_2022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2020"/>
+            <param name="semanticHint" value="2022"/>
+         </specializationType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2017"
-               name="%metatype.name.HistoryState_2017"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2023"
+               name="%metatype.name.HistoryState_2023"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HistoryState"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.HistoryStateEditHelper">
-            <param name="semanticHint" value="2017"/>
+            <param name="semanticHint" value="2023"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2018"
-               name="%metatype.name.Clock_2018"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2024"
+               name="%metatype.name.Clock_2024"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Clock"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ClockEditHelper">
-            <param name="semanticHint" value="2018"/>
+            <param name="semanticHint" value="2024"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"
-               name="%metatype.name.Transition_2019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Transition"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.TransitionEditHelper">
-            <param name="semanticHint" value="2019"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"
-               name="%metatype.name.EntryAction_3021"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3025"
+               name="%metatype.name.EntryAction_3025"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="EntryAction"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.EntryActionEditHelper">
-            <param name="semanticHint" value="3021"/>
+            <param name="semanticHint" value="3025"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"
-               name="%metatype.name.DoAction_3022"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3026"
+               name="%metatype.name.DoAction_3026"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DoAction"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.DoActionEditHelper">
-            <param name="semanticHint" value="3022"/>
+            <param name="semanticHint" value="3026"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"
-               name="%metatype.name.ExitAction_3023"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3027"
+               name="%metatype.name.ExitAction_3027"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ExitAction"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ExitActionEditHelper">
-            <param name="semanticHint" value="3023"/>
+            <param name="semanticHint" value="3027"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"
-               name="%metatype.name.ClockConstraint_3007"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3028"
+               name="%metatype.name.ClockConstraint_3028"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ClockConstraint"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ClockConstraintEditHelper">
-            <param name="semanticHint" value="3007"/>
+            <param name="semanticHint" value="3028"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3008"
-               name="%metatype.name.SynchronizationChannel_3008"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3029"
+               name="%metatype.name.SynchronizationChannel_3029"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="SynchronizationChannel"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.SynchronizationChannelEditHelper">
-            <param name="semanticHint" value="3008"/>
+            <param name="semanticHint" value="3029"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3009"
-               name="%metatype.name.Region_3009"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3030"
+               name="%metatype.name.Region_3030"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Region"
                edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.RegionEditHelper">
-            <param name="semanticHint" value="3009"/>
+            <param name="semanticHint" value="3030"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AbsoluteDeadline_3010"
-               name="%metatype.name.AbsoluteDeadline_3010"
+               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4002"
+               name="%metatype.name.Transition_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AbsoluteDeadline"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.AbsoluteDeadlineEditHelper">
-            <param name="semanticHint" value="3010"/>
+               eclass="Transition"
+               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.TransitionEditHelper">
+            <param name="semanticHint" value="4002"/>
          </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RelativeDeadline_3011"
-               name="%metatype.name.RelativeDeadline_3011"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RelativeDeadline"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.RelativeDeadlineEditHelper">
-            <param name="semanticHint" value="3011"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3018"
-               name="%metatype.name.ClockConstraint_3018"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"/>
-            <param name="semanticHint" value="3018"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3019"
-               name="%metatype.name.AsynchronousEvent_3019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AsynchronousEvent"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.AsynchronousEventEditHelper">
-            <param name="semanticHint" value="3019"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3020"
-               name="%metatype.name.AsynchronousEvent_3020"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3019"/>
-            <param name="semanticHint" value="3020"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3024"
-               name="%metatype.name.Action_3024"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Action"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.ActionEditHelper">
-            <param name="semanticHint" value="3024"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3016"
-               name="%metatype.name.Synchronization_3016"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Synchronization"
-               edithelper="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.SynchronizationEditHelper">
-            <param name="semanticHint" value="3016"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3017"
-               name="%metatype.name.Synchronization_3017"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3016"/>
-            <param name="semanticHint" value="3017"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/realtimestatechart">
-         <specializationType
-               id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"
-               name="%metatype.name.Transition_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"/>
-            <param name="semanticHint" value="4001"/>
-         </specializationType>
       </metamodel>
    </extension>
 
@@ -476,28 +387,19 @@
          </enablement>
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RealtimeStatechart_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2014"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.InitialState_2015"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FinalState_2016"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2017"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2018"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_2019"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3021"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3022"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3023"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3007"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3008"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3009"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AbsoluteDeadline_3010"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.RelativeDeadline_3011"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3018"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3019"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.AsynchronousEvent_3020"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Action_3024"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3016"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Synchronization_3017"/>
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.FujabaRealtimeStatechart_1000"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2020"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2021"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.State_2022"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.HistoryState_2023"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Clock_2024"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.EntryAction_3025"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.DoAction_3026"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ExitAction_3027"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.ClockConstraint_3028"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.SynchronizationChannel_3029"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Region_3030"/>
+         <elementType ref="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.Transition_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -508,7 +410,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartUriEditorInputTester">
+           class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -534,9 +436,9 @@
             id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorLabelProvider"
-            icon="icons/obj16/RealtimeStatechartDiagramFile.gif"
+            contentProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorLabelProvider"
+            icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
@@ -544,24 +446,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="realtimestatechart_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem"/>
+         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorSorter">
+               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="realtimestatechart_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem"/>
+                  <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -570,29 +472,29 @@
             id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartDomainNavigatorLabelProvider"
-            icon="icons/obj16/RealtimeStatechartDiagramFile.gif"
+            contentProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorLabelProvider"
+            icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="realtimestatechart"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartDomainNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartDomainNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorActionProvider">
+            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -602,7 +504,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartNavigatorLinkHelper">
+            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -610,7 +512,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimeStatechartAbstractNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -618,7 +520,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -643,7 +545,7 @@
          <command commandId="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart"/>
                   </iterate></with>
@@ -655,10 +557,10 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorID"
+         categoryId="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
          defaultHandler="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.LoadResourceAction"/>
    </extension>
 

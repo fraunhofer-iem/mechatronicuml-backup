@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizardTitle;
+	public static String UmlrtCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizard_DiagramModelFilePageTitle;
+	public static String UmlrtCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizard_DiagramModelFilePageDescription;
+	public static String UmlrtCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizard_DomainModelFilePageTitle;
+	public static String UmlrtCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizard_DomainModelFilePageDescription;
+	public static String UmlrtCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizardOpenEditorError;
+	public static String UmlrtCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizardCreationError;
+	public static String UmlrtCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartCreationWizardPageExtensionError;
+	public static String UmlrtCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String UmlrtDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String UmlrtDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_isModifiable;
+	public static String UmlrtDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_handleElementContentChanged;
+	public static String UmlrtDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_IncorrectInputError;
+	public static String UmlrtDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_NoDiagramInResourceError;
+	public static String UmlrtDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_DiagramLoadingError;
+	public static String UmlrtDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_UnsynchronizedFileSaveError;
+	public static String UmlrtDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_SaveDiagramTask;
+	public static String UmlrtDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_SaveNextResourceTask;
+	public static String UmlrtDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDocumentProvider_SaveAsOperation;
+	public static String UmlrtDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,87 +148,87 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_CreationPageName;
+	public static String UmlrtNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_CreationPageTitle;
+	public static String UmlrtNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_CreationPageDescription;
+	public static String UmlrtNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageName;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String UmlrtNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_InitDiagramCommand;
+	public static String UmlrtNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartNewDiagramFileWizard_IncorrectRootError;
+	public static String UmlrtNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditor_SavingDeletedFile;
+	public static String RealtimestatechartDiagramEditor_SavingDeletedFile;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditor_SaveAsErrorTitle;
+	public static String RealtimestatechartDiagramEditor_SaveAsErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditor_SaveAsErrorMessage;
+	public static String RealtimestatechartDiagramEditor_SaveAsErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditor_SaveErrorTitle;
+	public static String RealtimestatechartDiagramEditor_SaveErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartDiagramEditor_SaveErrorMessage;
+	public static String RealtimestatechartDiagramEditor_SaveErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartElementChooserDialog_SelectModelElementTitle;
+	public static String UmlrtElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -408,57 +408,57 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2014_incominglinks;
+	public static String NavigatorGroupName_State_2020_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2014_outgoinglinks;
+	public static String NavigatorGroupName_State_2020_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_InitialState_2015_incominglinks;
+	public static String NavigatorGroupName_Transition_4002_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_InitialState_2015_outgoinglinks;
+	public static String NavigatorGroupName_Transition_4002_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FinalState_2016_incominglinks;
+	public static String NavigatorGroupName_FujabaRealtimeStatechart_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_FinalState_2016_outgoinglinks;
+	public static String NavigatorGroupName_State_2021_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
+	public static String NavigatorGroupName_State_2021_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2017_incominglinks;
+	public static String NavigatorGroupName_HistoryState_2023_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2017_outgoinglinks;
+	public static String NavigatorGroupName_HistoryState_2023_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Transition_4001_target;
+	public static String NavigatorGroupName_State_2022_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Transition_4001_source;
+	public static String NavigatorGroupName_State_2022_outgoinglinks;
 
 	/**
 	 * @generated
@@ -488,12 +488,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartModelingAssistantProviderTitle;
+	public static String UmlrtModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String RealtimeStatechartModelingAssistantProviderMessage;
+	public static String UmlrtModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

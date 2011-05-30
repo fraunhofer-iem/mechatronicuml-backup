@@ -8,7 +8,7 @@ import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.widgets.Text;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 public abstract class CommonEventModifyPage extends CommonModifyPage{
 

@@ -1,16 +1,10 @@
-/*
- * Created on 08.07.2007
- *
- * To change the template for this generated file go to
- * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
- */
 package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 public class ModifyTriggerEventWizard extends CommonModifyWizard {
 	
@@ -28,7 +22,7 @@ public class ModifyTriggerEventWizard extends CommonModifyWizard {
 		
 		this.setSelectedTransition(transition);
 
-		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings workbenchSettings = RealtimestatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_TRIGGER_EVENT_WIZARD);
 		if (section == null)
 		{

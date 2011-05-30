@@ -12,17 +12,17 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_State_2014(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State instance) {
+	public void init_State_2020(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -30,36 +30,29 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_InitialState_2015(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.InitialState instance) {
+	public void init_State_2021(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getInitialState(), null)
-					.evaluate(instance);
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
 			instance.setName((String) value_0);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_FinalState_2016(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FinalState instance) {
-		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
 							2,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getFinalState(), null).evaluate(instance);
-			instance.setName((String) value_0);
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
+			instance.setInitial(((Boolean) value_1).booleanValue());
+			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+					.getExpression(
+							3,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
+			instance.setFinal(((Boolean) value_2).booleanValue());
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -67,18 +60,48 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HistoryState_2017(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState instance) {
+	public void init_State_2022(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
-							3,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							4,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
+			instance.setName((String) value_0);
+			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
+			instance.setInitial(((Boolean) value_1).booleanValue());
+			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+					.getExpression(
+							6,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(instance);
+			instance.setFinal(((Boolean) value_2).booleanValue());
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_HistoryState_2023(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+					.getExpression(
+							7,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getHistoryState(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -86,23 +109,17 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Clock_2018(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock instance) {
+	public void init_Clock_2024(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 					.getExpression(
-							4,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							8,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getClock(), null).evaluate(instance);
 			instance.setName((String) value_0);
-			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.RealtimeStatechartOCLFactory
-					.getExpression(
-							5,
-							de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getClock(), null).evaluate(instance);
-			instance.setId((String) value_1);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -111,10 +128,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+		ElementInitializers cached = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.getInstance().getElementInitializers();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().setElementInitializers(
 							cached = new ElementInitializers());
 		}

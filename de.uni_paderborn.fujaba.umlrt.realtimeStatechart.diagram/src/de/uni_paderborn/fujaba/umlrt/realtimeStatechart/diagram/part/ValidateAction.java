@@ -72,7 +72,7 @@ public class ValidateAction extends Action {
 							}
 						}).run(new NullProgressMonitor());
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+				de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 						.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 			}
 		}
@@ -83,7 +83,7 @@ public class ValidateAction extends Action {
 	 */
 	public static void runValidation(View view) {
 		try {
-			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil
+			if (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil
 					.openDiagram(view.eResource())) {
 				IEditorPart editorPart = PlatformUI.getWorkbench()
 						.getActiveWorkbenchWindow().getActivePage()
@@ -98,7 +98,7 @@ public class ValidateAction extends Action {
 				}
 			}
 		} catch (Exception e) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 					.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
@@ -120,7 +120,7 @@ public class ValidateAction extends Action {
 		final View fview = view;
 		TransactionalEditingDomain txDomain = TransactionUtil
 				.getEditingDomain(view);
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartValidationProvider
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimestatechartValidationProvider
 				.runWithConstraints(txDomain, new Runnable() {
 
 					public void run() {
@@ -151,7 +151,7 @@ public class ValidateAction extends Action {
 		IFile target = view.eResource() != null ? WorkspaceSynchronizer
 				.getFile(view.eResource()) : null;
 		if (target != null) {
-			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartMarkerNavigationProvider
+			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtMarkerNavigationProvider
 					.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
@@ -175,12 +175,12 @@ public class ValidateAction extends Action {
 		}
 		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil.LazyElement2ViewMap(
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(), collectTargetElements(
 						rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-			View view = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil
+			View view = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil
 					.findView(diagramEditPart, nextStatus.getTarget(),
 							element2ViewMap);
 			addMarker(diagramEditPart.getViewer(), target, view.eResource()
@@ -200,7 +200,7 @@ public class ValidateAction extends Action {
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil.LazyElement2ViewMap(
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(), collectTargetElements(
 						rootStatus, new HashSet<EObject>(), allDiagnostics));
 		for (Iterator it = emfValidationStatus.getChildren().iterator(); it
@@ -210,7 +210,7 @@ public class ValidateAction extends Action {
 			if (data != null && !data.isEmpty()
 					&& data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
-				View view = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorUtil
+				View view = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil
 						.findView(diagramEditPart, element, element2ViewMap);
 				addMarker(
 						diagramEditPart.getViewer(),
@@ -232,7 +232,7 @@ public class ValidateAction extends Action {
 		if (target == null) {
 			return;
 		}
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartMarkerNavigationProvider
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtMarkerNavigationProvider
 				.addMarker(target, elementId, location, message, statusSeverity);
 	}
 

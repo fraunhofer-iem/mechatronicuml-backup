@@ -8,9 +8,9 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 public class ModifyRaisedEventWizard extends CommonModifyWizard {
 	
@@ -28,7 +28,7 @@ public class ModifyRaisedEventWizard extends CommonModifyWizard {
 		
 		this.setSelectedTransition(transition);
 
-		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings workbenchSettings = RealtimestatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_RAISED_EVENT_WIZARD);
 		if (section == null)
 		{

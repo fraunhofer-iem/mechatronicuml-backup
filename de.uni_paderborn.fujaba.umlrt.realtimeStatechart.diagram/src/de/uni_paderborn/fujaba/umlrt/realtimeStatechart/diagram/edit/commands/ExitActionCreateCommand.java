@@ -41,7 +41,7 @@ public class ExitActionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
 		if (container.getExitAction() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class ExitActionCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitAction newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createExitAction();
 
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
 		owner.setExitAction(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -70,7 +70,7 @@ public class ExitActionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ExitAction newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitAction newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

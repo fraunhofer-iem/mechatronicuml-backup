@@ -17,17 +17,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-
-
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 /**
  * @generated
  */
 public class SynchronizationCreateCommand extends EditElementCommand {
-	
+
 	private HashMap<EParameter, String> parameterValuesHashMap = null;
 	private SynchronizationChannel channel = null;
 	private String type = "";
@@ -35,16 +34,18 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public SynchronizationCreateCommand(CreateElementRequest req, HashMap<EParameter, String> parameterValuesHashMap, 
+	public SynchronizationCreateCommand(CreateElementRequest req,
+			HashMap<EParameter, String> parameterValuesHashMap,
 			SynchronizationChannel channel, String type) {
 		super(req.getLabel(), null, req);
 		this.parameterValuesHashMap = parameterValuesHashMap;
 		this.channel = channel;
 		this.type = type;
 	}
-	
+
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -55,7 +56,7 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 		}
 		return container;
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -63,45 +64,44 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 		return true;
 
 	}
-	
+
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		
-		Synchronization newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.
-			eINSTANCE.createSynchronization();
-	
+
+		Synchronization newElement = RealtimestatechartFactory.eINSTANCE
+				.createSynchronization();
+
 		Transition owner = (Transition) getElementToEdit();
-		if(type.equals("send")){
+		if (type.equals("send")) {
 			owner.setSendSynchronization(newElement);
-		}
-		else{
+		} else {
 			owner.setReceiveSynchronization(newElement);
 		}
 
 		newElement.setCallee(channel);
-		
+
 		Iterator<EParameter> iter = parameterValuesHashMap.keySet().iterator();
-		while(iter.hasNext()){
+		while (iter.hasNext()) {
 			EParameter tmp = iter.next();
 			String value = parameterValuesHashMap.get(tmp);
-			
-			org.storydriven.modeling.calls.ParameterBinding parameterBinding = org.storydriven.modeling.calls.CallsFactory
-				.eINSTANCE.createParameterBinding();
-			
+
+			org.storydriven.modeling.calls.ParameterBinding parameterBinding = org.storydriven.modeling.calls.CallsFactory.eINSTANCE
+					.createParameterBinding();
+
 			newElement.getOwnedParameterBindings().add(parameterBinding);
-			
+
 			parameterBinding.setParameter(tmp);
-			
-			org.storydriven.modeling.expressions.LiteralExpression literalExpr = org.storydriven.modeling.expressions.
-				ExpressionsFactory.eINSTANCE.createLiteralExpression();
-			
+
+			org.storydriven.modeling.expressions.LiteralExpression literalExpr = org.storydriven.modeling.expressions.ExpressionsFactory.eINSTANCE
+					.createLiteralExpression();
+
 			parameterBinding.setValueExpression(literalExpr);
-			
+
 			literalExpr.setValue(value);
-			literalExpr.setValueType((EDataType)tmp.getEType());
+			literalExpr.setValueType((EDataType) tmp.getEType());
 		}
 
 		doConfigure(newElement, monitor, info);
@@ -109,13 +109,13 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
-	
 
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(Synchronization newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected void doConfigure(Synchronization newElement,
+			IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
 				.getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(

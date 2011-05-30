@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.wizard.WizardDialog;
+
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards.ModifyTriggerEventWizard;
 
 public class ModifyTriggerEventWizardAction extends CommonModifyOnTransitionWizardAction

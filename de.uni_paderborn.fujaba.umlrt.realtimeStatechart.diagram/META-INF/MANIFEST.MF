@@ -4,15 +4,9 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -37,7 +31,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  de.uni_paderborn.fujaba.umlrt.realtimeStatechart;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.realtimeStatechart.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
@@ -49,3 +42,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet

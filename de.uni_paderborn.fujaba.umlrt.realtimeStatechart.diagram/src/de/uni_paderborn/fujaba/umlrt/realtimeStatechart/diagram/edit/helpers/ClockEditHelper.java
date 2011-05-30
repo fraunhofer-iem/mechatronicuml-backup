@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers;
  */
 public class ClockEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.RealtimeStatechartBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

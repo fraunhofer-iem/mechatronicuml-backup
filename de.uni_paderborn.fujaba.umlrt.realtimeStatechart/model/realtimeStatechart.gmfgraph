@@ -406,8 +406,7 @@
   </nodes>
   <nodes
       name="SynchroChannelNode"
-      figure="SynchroChannelFigure"
-      affixedParentSide="WEST">
+      figure="SynchroChannelFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -417,8 +416,7 @@
   </nodes>
   <nodes
       name="DoActionNode"
-      figure="DoActionFigure"
-      affixedParentSide="WEST">
+      figure="DoActionFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -428,8 +426,7 @@
   </nodes>
   <nodes
       name="EEActionNode"
-      figure="EEActionFigure"
-      affixedParentSide="WEST">
+      figure="EEActionFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

@@ -29,10 +29,9 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.DataTypeCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
 public class ModifyDataTypePage extends WizardPage{
 	
@@ -167,7 +166,7 @@ public class ModifyDataTypePage extends WizardPage{
 	  	  
 		if(!dataTypeNameText.getText().equals("") && !instanceTypeNameText.getText().equals("")){
 			CreateElementRequest request = new CreateElementRequest(((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart(),
-					RealtimeStatechartElementTypes.Action_3024);
+					UmlrtElementTypes.DoAction_3026);
 							  
 						DataTypeCreateCommand command = new DataTypeCreateCommand(request, 
 								this.dataTypeNameText.getText(), this.instanceTypeNameText.getText());
@@ -203,7 +202,7 @@ public class ModifyDataTypePage extends WizardPage{
 	
 	public Object[] getDataTypes(Object object)
 	{
-		if (object instanceof RealtimeStatechart)
+		if (object instanceof FujabaRealtimeStatechart)
 		{
 			ArrayList<String> list = new ArrayList<String>();
 	        	

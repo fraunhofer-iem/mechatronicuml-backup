@@ -9,10 +9,10 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryKind;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.HistoryState;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.impl.HistoryStateImpl;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryKind;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.HistoryStateImpl;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart;
 
 /**

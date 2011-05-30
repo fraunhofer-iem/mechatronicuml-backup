@@ -30,7 +30,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart container;
+	private de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container;
 
 	/**
 	 * @generated
@@ -50,11 +50,11 @@ public class TransitionCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -64,8 +64,8 @@ public class TransitionCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.RealtimeStatechartBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateTransition_4001(getContainer(),
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+				.getLinkConstraints().canCreateTransition_4002(getContainer(),
 						getSource(), getTarget());
 	}
 
@@ -79,7 +79,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createTransition();
 		getContainer().getTransitions().add(newElement);
 		newElement.setSource(getSource());
@@ -94,7 +94,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -125,21 +125,21 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getSource() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) source;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex getTarget() {
-		return (de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Vertex) target;
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart getContainer() {
+	public de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart getContainer() {
 		if (container == null) {
 			container = deduceContainer();
 		}
@@ -151,14 +151,14 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart deduceContainer() {
+	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart deduceContainer() {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) {
-				return (de.uni_paderborn.fujaba.umlrt.model.core.AbstractRealtimeStatechart) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) {
+				return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) element;
 			}
 		}
 		return null;

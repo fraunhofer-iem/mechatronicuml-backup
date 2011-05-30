@@ -7,10 +7,10 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet.RealtimeStatechartPropertySection;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet.RealtimestatechartPropertySection;
 
 public class CustomRealtimeStatechartPropertySection extends
-		RealtimeStatechartPropertySection {
+		RealtimestatechartPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.
@@ -29,23 +29,6 @@ public class CustomRealtimeStatechartPropertySection extends
 		}
 		return super.getPropertySource(object);
 	}
-
-//	@Override
-//	public void setInput(IWorkbenchPart part, ISelection selection) {
-//		if (selection instanceof StructuredSelection) {
-//			StructuredSelection sel = (StructuredSelection) selection;
-//			if (sel.size() == 1) {
-//				Object ep = sel.getFirstElement();
-//				if (ep instanceof CustomPortEditPart) {
-//					EObject parentElement = getParentElement((CustomPortEditPart) ep);
-//					if (parentElement instanceof ComponentPart) {
-//						selection = StructuredSelection.EMPTY;
-//					}
-//				}
-//			}
-//		}
-//		super.setInput(part, selection);
-//	}
 
 	/**
 	 * Retrieves the model element of the editPart's parent EditPart.

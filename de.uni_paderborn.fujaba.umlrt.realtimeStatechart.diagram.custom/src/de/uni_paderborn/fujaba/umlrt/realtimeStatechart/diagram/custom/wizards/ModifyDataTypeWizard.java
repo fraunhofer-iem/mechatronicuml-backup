@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 public class ModifyDataTypeWizard extends CommonModifyWizard {
 	
@@ -20,7 +20,7 @@ public class ModifyDataTypeWizard extends CommonModifyWizard {
 	{
 		super(diag);
 
-		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings workbenchSettings = RealtimestatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.CREATE_EDATATYPE_WIZARD_SECTION);
 		if (section == null)
 		{

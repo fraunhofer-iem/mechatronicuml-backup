@@ -13,18 +13,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.modeling.expressions.ComparingOperator;
 
-import de.uni_paderborn.fujaba.umlrt.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-
-
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 /**
  * @generated
  */
 public class TimeGuardCreateCommand extends EditElementCommand {
-	
+
 	private ComparingOperator operator = null;
 	private Clock clock = null;
 	private String value = "";
@@ -39,9 +39,10 @@ public class TimeGuardCreateCommand extends EditElementCommand {
 		this.operator = operator;
 		this.value = value;
 	}
-	
+
 	/**
 	 * FIXME: replace with setElementToEdit()
+	 * 
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -52,7 +53,7 @@ public class TimeGuardCreateCommand extends EditElementCommand {
 		}
 		return container;
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -60,28 +61,27 @@ public class TimeGuardCreateCommand extends EditElementCommand {
 		return true;
 
 	}
-	
+
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		
-		ClockConstraint newElement = de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.RealtimestatechartFactory.
-			eINSTANCE.createClockConstraint();
-	
+
+		ClockConstraint newElement = RealtimestatechartFactory.eINSTANCE
+				.createClockConstraint();
+
 		Transition owner = (Transition) getElementToEdit();
 
 		owner.getClockConstraints().add(newElement);
 
 		newElement.setClock(clock);
-		
-		NaturalNumber number = de.uni_paderborn.fujaba.umlrt.model.core.CoreFactory.
-		eINSTANCE.createNaturalNumber();
+
+		NaturalNumber number = CoreFactory.eINSTANCE.createNaturalNumber();
 		number.setValue(value);
-		
+
 		newElement.setBound(number);
-		
+
 		newElement.setOperator(operator);
 
 		doConfigure(newElement, monitor, info);
@@ -89,13 +89,13 @@ public class TimeGuardCreateCommand extends EditElementCommand {
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
-	
 
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(ClockConstraint newElement, IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected void doConfigure(ClockConstraint newElement,
+			IProgressMonitor monitor, IAdaptable info)
+			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
 				.getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(

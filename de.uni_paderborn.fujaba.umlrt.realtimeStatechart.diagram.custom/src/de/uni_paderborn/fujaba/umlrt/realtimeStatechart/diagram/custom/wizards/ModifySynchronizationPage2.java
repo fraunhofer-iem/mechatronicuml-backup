@@ -25,10 +25,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.SynchronizationChannel;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.SynchronizationCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimeStatechartElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
 public class ModifySynchronizationPage2 extends CommonModifyPage{
 	
@@ -213,7 +213,7 @@ public class ModifySynchronizationPage2 extends CommonModifyPage{
 		
 		//invoke command
 		CreateElementRequest request = new CreateElementRequest(((ModifySynchronizationWizard)getWizard()).getSelectedTransition(),
-				RealtimeStatechartElementTypes.Action_3024);
+				UmlrtElementTypes.DoAction_3026);
 						  
 					SynchronizationCreateCommand command = new SynchronizationCreateCommand(request, 
 							parameterValuesHashMap,

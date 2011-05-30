@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.jface.dialogs.IDialogSettings;
 
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimeStatechartDiagramEditorPlugin;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin;
 
 public class ModifyTimeGuardWizard extends CommonModifyWizard {
 	
@@ -19,7 +19,7 @@ public class ModifyTimeGuardWizard extends CommonModifyWizard {
 		
 		setSelectedTransition(transition);
 
-		IDialogSettings workbenchSettings = RealtimeStatechartDiagramEditorPlugin.getInstance().getDialogSettings();
+		IDialogSettings workbenchSettings = RealtimestatechartDiagramEditorPlugin.getInstance().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(this.MODIFY_EPARAMETER_WIZARD_SECTION);
 		if (section == null)
 		{

@@ -21,14 +21,13 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 
-import de.uni_paderborn.fujaba.umlrt.model.component.DiscretePortSpecification;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageInterface;
-import de.uni_paderborn.fujaba.umlrt.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.umlrt.model.pattern.Role;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.AsynchronousEvent;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class ModifyRaisedEventPage1 extends CommonModifyPage{
 
@@ -153,7 +152,7 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
 	    			  Iterator<AsynchronousEvent> iter = ((ModifyRaisedEventWizard)getWizard()).getSelectedTransition().getRaisedEvents().iterator();
 	    			  while(iter.hasNext()){
 	    				  AsynchronousEvent tmp = iter.next();
-	    				  if(tmp.toMyString().equals(obj.toString())){
+	    				  if(toMyString(tmp).equals(obj.toString())){
 	    					  deleteObject(tmp);
 	    					  break;
 	    				  }
@@ -166,7 +165,7 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
 	
 	public Object[] getMessageTypes(Object object)
 	{
-        if (object instanceof RealtimeStatechart)
+        if (object instanceof FujabaRealtimeStatechart)
         {
 
         	FujabaRealtimeStatechart statechart = ((ModifyRaisedEventWizard)getWizard()).getRealtimeStatechart();
@@ -187,7 +186,7 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
         		Iterator<MessageType> iter = messageInterface.getMessageTypes().iterator();
         		while(iter.hasNext()){
         			MessageType messageTypeTmp = iter.next();
-        			list.add(messageTypeTmp.toMyString());
+        			list.add(toMyString(messageTypeTmp));
         		}
         		return list.toArray();
         	}
@@ -220,7 +219,7 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
         	Iterator<AsynchronousEvent> iter = transition.getRaisedEvents().iterator();
         	while(iter.hasNext()){
         		AsynchronousEvent asynchronousEvent = iter.next();
-        		list.add(asynchronousEvent.toMyString());
+        		list.add(toMyString(asynchronousEvent));
         	}
         	return list.toArray();
         }
@@ -268,7 +267,7 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
 	        		while(iter.hasNext()){
 	        			MessageType messageTypeTmp = iter.next();
 	        			
-	        			if(messageTypeTmp.toMyString().equals(obj.toString())){
+	        			if(toMyString(messageTypeTmp).equals(obj.toString())){
 	        				((ModifyRaisedEventWizard)getWizard()).setSelectedMessageType(messageTypeTmp);
 	        				break;
 	        			}
@@ -276,5 +275,10 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage{
 	        	}
 	    	  }
 		  }	
+	}
+
+	// TODO: Implement toMyString!
+	private String toMyString(Object o) {
+		return o.toString();
 	}
 }

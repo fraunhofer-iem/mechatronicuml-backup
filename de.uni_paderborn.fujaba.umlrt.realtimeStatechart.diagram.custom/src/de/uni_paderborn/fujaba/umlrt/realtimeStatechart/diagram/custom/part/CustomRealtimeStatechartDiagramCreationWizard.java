@@ -7,66 +7,65 @@ import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOpera
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
+import org.storydriven.modeling.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.RealtimeStatechartFactory;
 
-public class CustomRealtimeStatechartDiagramCreationWizard extends FujabaDiagramNewWizard {
+public class CustomRealtimeStatechartDiagramCreationWizard extends
+		FujabaDiagramNewWizard {
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.
-				diagram.part.RealtimeStatechartDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/StatechartFile.gif")); //$NON-NLS-1$
 
 	}
 
 	@Override
 	protected String getDiagramFileExtension() {
-		return "statechart_diagram"; //$NON-NLS-1$
+		return "realtimestatechart_diagram"; //$NON-NLS-1$
 	}
 
 	@Override
 	protected String getModelId() {
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.
-		diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID;
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID;
 	}
 
 	@Override
 	protected PreferencesHint getDiagramPreferencesHint() {
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.
-		diagram.part.RealtimeStatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	@Override
 	protected String getEditorId() {
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.
-		diagram.part.RealtimeStatechartDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor.ID;
+	}
+
+	@Override
+	public boolean isValidDiagramElement(EObject object) {
+		return ViewService.getInstance().provides(
+				new CreateDiagramViewOperation(new EObjectAdapter(object),
+						getModelId(), getDiagramPreferencesHint()));
 	}
 
 	/**
 	 * Create a new instance of domain element associated with canvas.
 	 */
 	@Override
-	protected EObject createInitialModel() {
-		RealtimeStatechart failureTypeDiag = RealtimeStatechartFactory.eINSTANCE
-				.createRealtimeStatechart();
+	protected ExtendableElement createDiagramElement() {
+		FujabaRealtimeStatechart failureTypeDiag = RealtimestatechartFactory.eINSTANCE
+				.createFujabaRealtimeStatechart();
 
 		return failureTypeDiag;
 	}
 
 	@Override
-	public boolean isValidDiagramElement(EObject object) {
-		return ViewService
-				.getInstance()
-				.provides(
-						new CreateDiagramViewOperation(
-								new EObjectAdapter(object),
-								getModelId(),
-								getDiagramPreferencesHint()));
+	protected String getModelElementCategoryKey() {
+		return "de.uni_paderborn.fujaba.umlrt.realtimestatechart.category";
 	}
 
 }

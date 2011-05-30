@@ -7,8 +7,8 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartEditor;
-import de.uni_paderborn.fujaba.umlrt.common.action.AbstractAction;;
+import de.uni_paderborn.fujaba.umlrt.common.action.AbstractAction;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor;
 
 public abstract class AbstractRealtimeStatechartEditorAction extends AbstractAction implements
    IEditorActionDelegate, IObjectActionDelegate
@@ -16,7 +16,7 @@ public abstract class AbstractRealtimeStatechartEditorAction extends AbstractAct
    /**
     * No comment provided by developer, please add a comment to improve documentation.
     */
-   private CustomRealtimeStatechartEditor targetEditor;
+   private RealtimestatechartDiagramEditor targetEditor;
 
 
    /**
@@ -24,7 +24,7 @@ public abstract class AbstractRealtimeStatechartEditorAction extends AbstractAct
     *
     * @return   The activeEditor value
     */
-   protected CustomRealtimeStatechartEditor getEditor()
+   protected RealtimestatechartDiagramEditor getEditor()
    {
       return this.targetEditor;
    }
@@ -49,14 +49,14 @@ public abstract class AbstractRealtimeStatechartEditorAction extends AbstractAct
     */
    public void setActiveEditor (IAction action, IEditorPart targetEditor)
    {
-      if (targetEditor != null && ! (targetEditor instanceof CustomRealtimeStatechartEditor))
+      if (targetEditor != null && ! (targetEditor instanceof RealtimestatechartDiagramEditor))
       {
          throw new IllegalArgumentException (
             "Expected targetEditor to be an instance of AbstractASGDiagramEditor, however, it is an instance of "
             + targetEditor.getClass());
       }
       this.action = action;
-      this.targetEditor = (CustomRealtimeStatechartEditor) targetEditor;
+      this.targetEditor = (RealtimestatechartDiagramEditor) targetEditor;
    }
 
 
@@ -67,13 +67,13 @@ public abstract class AbstractRealtimeStatechartEditorAction extends AbstractAct
     */
    public void setActivePart (IAction action, IWorkbenchPart targetPart)
    {
-      if (targetPart != null && ! (targetPart instanceof CustomRealtimeStatechartEditor))
+      if (targetPart != null && ! (targetPart instanceof RealtimestatechartDiagramEditor))
       {
          throw new IllegalArgumentException (
             "Expected targetPart to be an instance of AbstractASGDiagramEditor, however, it is an instance of "
             + targetPart.getClass());
       }
       this.action = action;
-      this.targetEditor = (CustomRealtimeStatechartEditor) targetPart;
+      this.targetEditor = (RealtimestatechartDiagramEditor) targetPart;
    }
 }
