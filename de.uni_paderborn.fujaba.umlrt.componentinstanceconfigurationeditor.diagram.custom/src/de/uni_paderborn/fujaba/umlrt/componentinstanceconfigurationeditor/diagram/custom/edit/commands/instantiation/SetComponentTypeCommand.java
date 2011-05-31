@@ -140,6 +140,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		// Create as many PortInstances as the Port's lowerBound requires.
 		for (long i = 0; i < lowerBound; i++) {
 			PortInstance portInstance = port.createInstance();
+			portInstance.setName(componentInstance.getName() + port.getName());
 			portInstance.setComponentInstance(componentInstance);
 			portInstance.getIncomingConnectorInstances().addAll(createIncomingConnectorInstances(port, componentInstance));
 			portInstance.getOutgoingConnectorInstances().addAll(createOutgoingConnectorInstances(port, componentInstance));
