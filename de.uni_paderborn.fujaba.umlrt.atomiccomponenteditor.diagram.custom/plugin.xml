@@ -11,8 +11,8 @@
          extensions="atomiccomponent_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDiagramActionBarContributor">
       </editor>
    </extension>
 

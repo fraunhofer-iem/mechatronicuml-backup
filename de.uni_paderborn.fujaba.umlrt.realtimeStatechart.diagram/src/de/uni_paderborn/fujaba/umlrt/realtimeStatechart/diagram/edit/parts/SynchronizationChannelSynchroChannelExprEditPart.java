@@ -84,7 +84,7 @@ public class SynchronizationChannelSynchroChannelExprEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
 		installEditPolicy(
@@ -199,13 +199,13 @@ public class SynchronizationChannelSynchroChannelExprEditPart extends
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}
@@ -290,9 +290,9 @@ public class SynchronizationChannelSynchroChannelExprEditPart extends
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.RealtimestatechartParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes.SynchronizationChannel_3029,
+							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes.SynchronizationChannel_3029,
 							getParserElement(),
-							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+							de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.MumlinstanceVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -306,7 +306,7 @@ public class SynchronizationChannelSynchroChannelExprEditPart extends
 			setManager(new TextDirectEditManager(
 					this,
 					TextDirectEditManager.getTextCellEditorClass(this),
-					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory
+					de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.MumlinstanceEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -398,13 +398,13 @@ public class SynchronizationChannelSynchroChannelExprEditPart extends
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}

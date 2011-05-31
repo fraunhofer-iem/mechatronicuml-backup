@@ -56,12 +56,12 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
@@ -71,7 +71,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -123,6 +123,8 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+		factories
+				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
 		factories
@@ -236,9 +238,9 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -246,7 +248,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
@@ -254,7 +256,7 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints lc) {
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -276,15 +278,15 @@ public class PatternDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
+	public de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceOCLFactory getMumlinstanceOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setUmlrtOCLFactory(
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory f) {
+	public void setMumlinstanceOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceOCLFactory f) {
 		this.oclFactory = f;
 	}
 

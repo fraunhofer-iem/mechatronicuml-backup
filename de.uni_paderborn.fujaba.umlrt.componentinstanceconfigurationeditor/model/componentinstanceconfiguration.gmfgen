@@ -31,12 +31,13 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3005"
         editPartClassName="PortInstanceEditPart"
         itemSemanticEditPolicyClassName="PortInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortInstanceViewFactory"
         canonicalEditPolicyClassName="PortInstanceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortInstanceGraphicalNodeEditPolicy"
         createCommandClassName="PortInstanceCreateCommand"
@@ -58,17 +59,18 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/PortInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/PortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
       </modelFacet>
     </childNodes>
     <childNodes
         visualID="3006"
         editPartClassName="ComponentInstance2EditPart"
         itemSemanticEditPolicyClassName="ComponentInstance2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentInstanceViewFactory"
         canonicalEditPolicyClassName="ComponentInstance2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         graphicalNodeEditPolicyClassName="ComponentInstance2GraphicalNodeEditPolicy"
@@ -90,16 +92,17 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/embeddedInstances"/>
       </modelFacet>
       <labels
           visualID="5006"
           editPartClassName="ComponentInstanceNameComponentNameDerive2EditPart"
-          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDerive2ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDerive2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ComponentInstanceNameComponentNameDerivedViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -119,7 +122,7 @@
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
           <editableMetaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -130,6 +133,7 @@
         visualID="3007"
         editPartClassName="PortInstance2EditPart"
         itemSemanticEditPolicyClassName="PortInstance2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortInstanceViewFactory"
         canonicalEditPolicyClassName="PortInstance2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortInstance2GraphicalNodeEditPolicy"
         createCommandClassName="PortInstance2CreateCommand"
@@ -151,17 +155,18 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/PortInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/PortInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
       </modelFacet>
     </childNodes>
     <topLevelNodes
         visualID="2004"
         editPartClassName="ComponentInstanceEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentInstanceViewFactory"
         canonicalEditPolicyClassName="ComponentInstanceCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         compartments="//@diagram/@compartments.0"
@@ -183,16 +188,17 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/componentInstances"/>
       </modelFacet>
       <labels
           visualID="5007"
           editPartClassName="ComponentInstanceNameComponentNameDeriveEditPart"
-          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDeriveItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ComponentInstanceNameComponentNameDeriveItemSemanticEditPolicy"
+          notationViewFactoryClassName="ComponentInstanceNameComponentNameDerivedViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -212,7 +218,7 @@
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
+              href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstance/componentNameDerived"/>
           <editableMetaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -222,6 +228,7 @@
         visualID="4003"
         editPartClassName="AssemblyInstanceEditPart"
         itemSemanticEditPolicyClassName="AssemblyInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="AssemblyInstanceViewFactory"
         createCommandClassName="AssemblyInstanceCreateCommand"
         reorientCommandClassName="AssemblyInstanceReorientCommand">
       <diagramRunTimeClass
@@ -235,21 +242,22 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/AssemblyInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/AssemblyInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/source"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ConnectorInstance/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/target"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ConnectorInstance/target"/>
       </modelFacet>
     </links>
     <links
         visualID="4004"
         editPartClassName="DelegationInstanceEditPart"
         itemSemanticEditPolicyClassName="DelegationInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="DelegationInstanceViewFactory"
         createCommandClassName="DelegationInstanceCreateCommand"
         reorientCommandClassName="DelegationInstanceReorientCommand">
       <diagramRunTimeClass
@@ -263,21 +271,22 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/DelegationInstance"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/DelegationInstance"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ComponentInstanceConfiguration/connectorInstances"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/source"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ConnectorInstance/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/instance/ConnectorInstance/target"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/instance/ConnectorInstance/target"/>
       </modelFacet>
     </links>
     <compartments
         visualID="7005"
         editPartClassName="ComponentInstanceComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="ComponentInstanceComponentCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentInstanceComponentCompartmentViewFactory"
         canonicalEditPolicyClassName="ComponentInstanceComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1"
         title="ComponentCompartment"
@@ -505,7 +514,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#/"/>
   <labelParsers
       className="ComponentinstanceconfigurationParserProvider"
       extensibleViaService="true">

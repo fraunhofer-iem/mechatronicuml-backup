@@ -18,21 +18,21 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class AtomicComponentItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.ModelinstanceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AtomicComponentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.AtomicComponent_2003);
+				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes.AtomicComponent_2003);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.Port_3002 == req
+		if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes.Port_3002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.commands.PortCreateCommand(
 					req));
@@ -68,7 +68,7 @@ public class AtomicComponentItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
-			switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+			switch (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 					.getVisualID(node)) {
 			case de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(

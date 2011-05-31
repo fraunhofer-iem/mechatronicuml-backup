@@ -68,7 +68,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -186,7 +186,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Atomiccomponent"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3002"/>
@@ -195,7 +195,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Atomiccomponent"/>
@@ -218,7 +218,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart" id="ModelElementCategory_1000"/>
          <object class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart" id="AtomicComponent_2003"/>
@@ -228,7 +228,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -407,7 +407,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.updateDiagram"
          name="%update.diagram.name"/>

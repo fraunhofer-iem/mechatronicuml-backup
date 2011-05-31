@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagr
  */
 public class DelegationInstanceEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers
  */
 public class PortEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers.ModelinstanceBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

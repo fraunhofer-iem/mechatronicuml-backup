@@ -56,7 +56,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDocumentProvider documentProvider;
 
 	/**
 	 * @generated
@@ -66,7 +66,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.MumlinstanceOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -119,19 +119,6 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories
 				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new SDMItemProviderAdapterFactory());
-		factories.add(new ActivitiesItemProviderAdapterFactory());
-		factories.add(new ExpressionsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new CallsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new PatternsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
 		factories
@@ -148,6 +135,19 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider.HelperItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
+		factories.add(new EcoreItemProviderAdapterFactory());
+		factories.add(new SDMItemProviderAdapterFactory());
+		factories.add(new ActivitiesItemProviderAdapterFactory());
+		factories.add(new ExpressionsItemProviderAdapterFactory());
+		factories
+				.add(new org.storydriven.modeling.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new CallsItemProviderAdapterFactory());
+		factories
+				.add(new org.storydriven.modeling.calls.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new PatternsItemProviderAdapterFactory());
+		factories
+				.add(new org.storydriven.modeling.patterns.expressions.provider.ExpressionsItemProviderAdapterFactory());
+		factories.add(new TemplatesItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
@@ -232,9 +232,9 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -257,15 +257,15 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory getModelinstanceOCLFactory() {
+	public de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.MumlinstanceOCLFactory getMumlinstanceOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setModelinstanceOCLFactory(
-			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.ModelinstanceOCLFactory f) {
+	public void setMumlinstanceOCLFactory(
+			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.expressions.MumlinstanceOCLFactory f) {
 		this.oclFactory = f;
 	}
 

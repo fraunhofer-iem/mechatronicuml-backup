@@ -84,7 +84,7 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
 		installEditPolicy(
@@ -199,13 +199,13 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}
@@ -290,9 +290,9 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005,
+							de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.ComponentPart_3005,
 							getParserElement(),
-							de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+							de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartNameComponentNameDeriveEditPart.VISUAL_ID));
 		}
 		return parser;
@@ -306,7 +306,7 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 			setManager(new TextDirectEditManager(
 					this,
 					TextDirectEditManager.getTextCellEditorClass(this),
-					de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.UmlrtEditPartFactory
+					de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.MumlinstanceEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -398,13 +398,13 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.UmlrtTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.policies.MumlinstanceTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}

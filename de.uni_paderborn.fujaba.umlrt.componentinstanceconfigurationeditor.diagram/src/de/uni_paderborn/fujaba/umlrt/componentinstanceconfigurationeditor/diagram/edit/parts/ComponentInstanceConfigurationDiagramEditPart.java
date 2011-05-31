@@ -21,7 +21,7 @@ public class ComponentInstanceConfigurationDiagramEditPart extends
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Umlrt"; //$NON-NLS-1$
+	public final static String MODEL_ID = "de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

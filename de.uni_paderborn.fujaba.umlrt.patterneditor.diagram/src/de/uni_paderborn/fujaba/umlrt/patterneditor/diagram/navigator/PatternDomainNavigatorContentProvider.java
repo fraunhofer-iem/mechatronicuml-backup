@@ -212,8 +212,8 @@ public class PatternDomainNavigatorContentProvider implements
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem) {
-			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem) element;
+		if (element instanceof de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem) {
+			de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

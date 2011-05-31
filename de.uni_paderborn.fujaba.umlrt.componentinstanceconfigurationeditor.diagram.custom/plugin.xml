@@ -10,8 +10,8 @@
          extensions="componentinstanceconfiguration_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -68,7 +68,7 @@
             class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.sheet.CustomComponentinstanceconfigurationPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>

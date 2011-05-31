@@ -416,7 +416,7 @@
     <diagramCanvas
         href="realtimeStatechart.gmfgraph#statechart"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/realtimestatechart"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart"/>
     <palette

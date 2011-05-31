@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.hel
  */
 public class StructuredComponentDiagramEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

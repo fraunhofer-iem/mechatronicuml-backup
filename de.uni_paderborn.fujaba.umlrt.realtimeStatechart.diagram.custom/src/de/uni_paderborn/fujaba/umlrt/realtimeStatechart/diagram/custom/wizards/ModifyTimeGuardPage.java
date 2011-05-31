@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.TimeGuardCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes;
 
 public class ModifyTimeGuardPage extends CommonModifyPage{
 	
@@ -188,7 +188,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 		if(!value.getText().equals("") && getSelectedClock()!= null &&
 				getSelectedComparingOperator()!=null){
 			CreateElementRequest request = new CreateElementRequest(((ModifyTimeGuardWizard)getWizard()).getSelectedTransition(),
-					UmlrtElementTypes.DoAction_3026);
+					MumlinstanceElementTypes.DoAction_3026);
 							  
 						TimeGuardCreateCommand command = new TimeGuardCreateCommand(request, 
 								getSelectedClock(), getSelectedComparingOperator() ,value.getText());

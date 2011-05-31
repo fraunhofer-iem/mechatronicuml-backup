@@ -96,7 +96,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -292,7 +292,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartNameComponentNameDeriveEditPart.VISUAL_ID));
 	}
 
@@ -301,7 +301,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
+		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.Assembly_4004);
 		return types;
 	}
 
@@ -312,7 +312,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.Assembly_4004);
 		}
 		return types;
 	}
@@ -322,8 +322,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.Assembly_4004) {
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.ComponentPart_3005);
 		}
 		return types;
 	}
@@ -333,7 +333,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
+		types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.Assembly_4004);
 		return types;
 	}
 
@@ -342,8 +342,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004) {
-			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.Assembly_4004) {
+			types.add(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceElementTypes.ComponentPart_3005);
 		}
 		return types;
 	}

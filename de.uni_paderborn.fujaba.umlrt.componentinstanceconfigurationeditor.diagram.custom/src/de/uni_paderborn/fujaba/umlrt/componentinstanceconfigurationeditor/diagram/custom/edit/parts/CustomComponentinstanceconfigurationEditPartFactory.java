@@ -8,8 +8,8 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagra
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart;
 import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstanceEditPart;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.MumlinstanceEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -18,14 +18,14 @@ import de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagra
  * 
  */
 public class CustomComponentinstanceconfigurationEditPartFactory extends
-		UmlrtEditPartFactory {
+		MumlinstanceEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			case PortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				

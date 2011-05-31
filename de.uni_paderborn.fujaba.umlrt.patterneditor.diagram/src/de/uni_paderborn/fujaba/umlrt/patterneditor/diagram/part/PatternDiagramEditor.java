@@ -76,7 +76,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstancePaletteFactory()
 				.fillPalette(root);
 		return root;
 	}

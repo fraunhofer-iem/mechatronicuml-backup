@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.umlrt.common.command.ParameterCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes;
 
 public class ModifyParameterPage extends CommonModifyPage{
 	
@@ -161,7 +161,7 @@ public class ModifyParameterPage extends CommonModifyPage{
 	  	  
 		if(!parameterNameText.getText().equals("") && getSelectedDataType()!= null){
 			CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-					UmlrtElementTypes.DoAction_3026);
+					MumlinstanceElementTypes.DoAction_3026);
 							  
 						ParameterCreateCommand command = new ParameterCreateCommand(request, 
 								this.parameterNameText.getText(), getSelectedDataType());

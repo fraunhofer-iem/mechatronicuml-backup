@@ -77,11 +77,11 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem) {
 			return;
 		}
 
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem) aSelection
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {

@@ -4,9 +4,9 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart;
-import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.ModelinstanceEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.MumlinstanceEditPartFactory;
 import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart;
-import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -15,14 +15,14 @@ import de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.Modelins
  * 
  */
 public class CustomAtomiccomponentEditPartFactory extends
-		ModelinstanceEditPartFactory {
+		MumlinstanceEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (ModelinstanceVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			case PortEditPart.VISUAL_ID:
 				return new CustomPortEditPart(view);
 			case AtomicComponentDiagramEditPart.VISUAL_ID:

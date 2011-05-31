@@ -12,21 +12,21 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
  */
 public class AtomicComponentDiagramItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.ModelinstanceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AtomicComponentDiagramItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.ModelElementCategory_1000);
+				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes.ModelElementCategory_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.AtomicComponent_2003 == req
+		if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes.AtomicComponent_2003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.commands.AtomicComponentCreateCommand(
 					req));

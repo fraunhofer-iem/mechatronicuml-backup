@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.provider;
 
 import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.edit.part.CustomMessageinterfaceEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.UmlrtEditPartProvider;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.MumlinstanceEditPartProvider;
 
 
 /**
@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.providers.Um
  * 
  */
 public class CustomMessageinterfaceEditPartProvider extends
-		UmlrtEditPartProvider {
+		MumlinstanceEditPartProvider {
 
 	public CustomMessageinterfaceEditPartProvider() {
 		setFactory(new CustomMessageinterfaceEditPartFactory());

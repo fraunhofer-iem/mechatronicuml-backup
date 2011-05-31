@@ -91,7 +91,7 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -287,7 +287,7 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceNameComponentNameDerive2EditPart.VISUAL_ID));
 	}
 

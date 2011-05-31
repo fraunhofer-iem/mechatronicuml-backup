@@ -1,7 +1,7 @@
-#Mon May 30 08:20:56 CEST 2011
+#Tue May 31 10:47:45 CEST 2011
 eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel
-gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore
 gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/model/realtimeStatechart.gmfgen
 gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/model/realtimeStatechart.gmfgraph
 gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.realtimeStatechart/model/realtimeStatechart.gmfmap

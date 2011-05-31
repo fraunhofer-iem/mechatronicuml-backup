@@ -121,7 +121,7 @@ public class AtomiccomponentNavigatorActionProvider extends
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
 					if (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 									.getModelID(diagram))) {
 						myDiagram = diagram;
 					}

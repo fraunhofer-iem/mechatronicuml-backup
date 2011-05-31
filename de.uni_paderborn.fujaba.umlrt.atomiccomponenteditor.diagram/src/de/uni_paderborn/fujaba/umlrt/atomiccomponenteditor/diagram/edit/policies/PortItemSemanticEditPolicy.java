@@ -13,14 +13,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class PortItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.ModelinstanceBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes.Port_3002);
+				de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes.Port_3002);
 	}
 
 	/**

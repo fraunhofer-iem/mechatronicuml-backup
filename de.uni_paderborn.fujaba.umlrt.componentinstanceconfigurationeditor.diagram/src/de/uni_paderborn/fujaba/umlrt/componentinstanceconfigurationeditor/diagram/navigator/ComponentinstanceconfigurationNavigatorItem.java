@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class ComponentinstanceconfigurationNavigatorItem
 		extends
-		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem {
 
 	/**
 	 * @generated

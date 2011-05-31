@@ -76,7 +76,7 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.MumlinstancePaletteFactory()
 				.fillPalette(root);
 		return root;
 	}

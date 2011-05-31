@@ -23,14 +23,14 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory
+			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
 
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtAbstractExpression
+			value_0_0_0_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceAbstractExpression
 					.performCast(value_0_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
@@ -38,14 +38,14 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtOCLFactory
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							1,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.UmlrtAbstractExpression
+			value_0_0_1_0_0 = de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.expressions.MumlinstanceAbstractExpression
 					.performCast(value_0_0_1_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());

@@ -4,8 +4,8 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MumlinstanceEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MumlinstanceVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -14,14 +14,14 @@ import de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVi
  * 
  */
 public class CustomMessageinterfaceEditPartFactory extends
-		UmlrtEditPartFactory {
+		MumlinstanceEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			
 			case MessageInterfaceDiagramEditPart.VISUAL_ID:
 				return new CustomMessageInterfaceDiagramEditPart(view);

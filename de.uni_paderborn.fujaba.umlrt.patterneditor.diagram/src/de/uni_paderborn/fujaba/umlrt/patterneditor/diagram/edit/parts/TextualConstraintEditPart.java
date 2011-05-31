@@ -191,7 +191,7 @@ public class TextualConstraintEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006);
+		types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceElementTypes.ConstrainableElementConstraint_4006);
 		return types;
 	}
 
@@ -200,9 +200,9 @@ public class TextualConstraintEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4006) {
-			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.CoordinationPattern_2004);
-			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtElementTypes.Role_2005);
+		if (relationshipType == de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceElementTypes.ConstrainableElementConstraint_4006) {
+			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceElementTypes.CoordinationPattern_2004);
+			types.add(de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceElementTypes.Role_2005);
 		}
 		return types;
 	}

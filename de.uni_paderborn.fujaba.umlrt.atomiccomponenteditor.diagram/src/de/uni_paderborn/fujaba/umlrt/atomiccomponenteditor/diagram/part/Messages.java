@@ -23,107 +23,107 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizardTitle;
+	public static String MumlinstanceCreationWizardTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizard_DiagramModelFilePageTitle;
+	public static String MumlinstanceCreationWizard_DiagramModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizard_DiagramModelFilePageDescription;
+	public static String MumlinstanceCreationWizard_DiagramModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizard_DomainModelFilePageTitle;
+	public static String MumlinstanceCreationWizard_DomainModelFilePageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizard_DomainModelFilePageDescription;
+	public static String MumlinstanceCreationWizard_DomainModelFilePageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizardOpenEditorError;
+	public static String MumlinstanceCreationWizardOpenEditorError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizardCreationError;
+	public static String MumlinstanceCreationWizardCreationError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceCreationWizardPageExtensionError;
+	public static String MumlinstanceCreationWizardPageExtensionError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+	public static String MumlinstanceDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+	public static String MumlinstanceDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDiagramEditorUtil_CreateDiagramProgressTask;
+	public static String MumlinstanceDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDiagramEditorUtil_CreateDiagramCommandLabel;
+	public static String MumlinstanceDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_isModifiable;
+	public static String MumlinstanceDocumentProvider_isModifiable;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_handleElementContentChanged;
+	public static String MumlinstanceDocumentProvider_handleElementContentChanged;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_IncorrectInputError;
+	public static String MumlinstanceDocumentProvider_IncorrectInputError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_NoDiagramInResourceError;
+	public static String MumlinstanceDocumentProvider_NoDiagramInResourceError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_DiagramLoadingError;
+	public static String MumlinstanceDocumentProvider_DiagramLoadingError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_UnsynchronizedFileSaveError;
+	public static String MumlinstanceDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_SaveDiagramTask;
+	public static String MumlinstanceDocumentProvider_SaveDiagramTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_SaveNextResourceTask;
+	public static String MumlinstanceDocumentProvider_SaveNextResourceTask;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceDocumentProvider_SaveAsOperation;
+	public static String MumlinstanceDocumentProvider_SaveAsOperation;
 
 	/**
 	 * @generated
@@ -148,57 +148,57 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_CreationPageName;
+	public static String MumlinstanceNewDiagramFileWizard_CreationPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_CreationPageTitle;
+	public static String MumlinstanceNewDiagramFileWizard_CreationPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_CreationPageDescription;
+	public static String MumlinstanceNewDiagramFileWizard_CreationPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageName;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageName;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageTitle;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageDescription;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+	public static String MumlinstanceNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_InitDiagramCommand;
+	public static String MumlinstanceNewDiagramFileWizard_InitDiagramCommand;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceNewDiagramFileWizard_IncorrectRootError;
+	public static String MumlinstanceNewDiagramFileWizard_IncorrectRootError;
 
 	/**
 	 * @generated
@@ -228,7 +228,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceElementChooserDialog_SelectModelElementTitle;
+	public static String MumlinstanceElementChooserDialog_SelectModelElementTitle;
 
 	/**
 	 * @generated
@@ -298,12 +298,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceModelingAssistantProviderTitle;
+	public static String MumlinstanceModelingAssistantProviderTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String ModelinstanceModelingAssistantProviderMessage;
+	public static String MumlinstanceModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	
 }

@@ -31,12 +31,13 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3002"
         editPartClassName="PortEditPart"
         itemSemanticEditPolicyClassName="PortItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortViewFactory"
         canonicalEditPolicyClassName="PortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortGraphicalNodeEditPolicy"
         createCommandClassName="PortCreateCommand"
@@ -58,41 +59,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/component/Port"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/component/Port"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/component/Port/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/component/Port/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.0">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -105,6 +106,7 @@
         visualID="2003"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
@@ -125,16 +127,17 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/component/AtomicComponent"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/component/AtomicComponent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
           visualID="5003"
           editPartClassName="AtomicComponentNameEditPart"
-          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AtomicComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -251,7 +254,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">

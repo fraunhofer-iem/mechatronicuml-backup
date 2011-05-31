@@ -44,11 +44,11 @@ public class CustomPortInstance2ItemSemanticEditPolicy extends
 	@Override
 	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.DelegationInstance_4004 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.MumlinstanceElementTypes.DelegationInstance_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(getDelegationInstanceCreateCommand(req));
 		}
-		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.AssemblyInstance_4003 == req
+		if (de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.providers.MumlinstanceElementTypes.AssemblyInstance_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(getAssemblyInstanceCreateCommand(req));
 		}

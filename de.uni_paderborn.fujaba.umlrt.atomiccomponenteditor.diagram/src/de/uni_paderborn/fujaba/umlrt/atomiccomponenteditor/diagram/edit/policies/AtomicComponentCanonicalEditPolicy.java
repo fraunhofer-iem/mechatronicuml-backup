@@ -40,9 +40,9 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDiagramUpdater
+		List<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDiagramUpdater
 				.getAtomicComponent_2003SemanticChildren(viewObject);
-		for (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor d : childDescriptors) {
+		for (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -61,7 +61,7 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+		return de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -73,7 +73,7 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceDiagramUpdater
+		List<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDiagramUpdater
 				.getAtomicComponent_2003SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
@@ -89,11 +89,11 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -119,8 +119,8 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+		for (de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);

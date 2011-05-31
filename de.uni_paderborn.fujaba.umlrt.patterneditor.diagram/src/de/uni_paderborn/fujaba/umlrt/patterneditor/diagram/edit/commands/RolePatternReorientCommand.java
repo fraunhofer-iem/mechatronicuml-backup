@@ -69,7 +69,7 @@ public class RolePatternReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistRolePattern_4005(getNewSource(),
 						getOldTarget());
 	}
@@ -81,7 +81,7 @@ public class RolePatternReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistRolePattern_4005(getOldSource(),
 						getNewTarget());
 	}

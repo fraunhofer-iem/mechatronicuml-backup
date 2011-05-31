@@ -33,7 +33,7 @@ public class AtomiccomponentSheetLabelProvider extends BaseLabelProvider
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes
+				: de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes
 						.getImage(etype);
 	}
 
@@ -66,9 +66,9 @@ public class AtomiccomponentSheetLabelProvider extends BaseLabelProvider
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.ModelinstanceVisualIDRegistry
+			int vid = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
 					.getVisualID(view);
-			IElementType etype = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.ModelinstanceElementTypes
+			IElementType etype = de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers.MumlinstanceElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;

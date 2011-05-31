@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers;
  */
 public class RegionEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

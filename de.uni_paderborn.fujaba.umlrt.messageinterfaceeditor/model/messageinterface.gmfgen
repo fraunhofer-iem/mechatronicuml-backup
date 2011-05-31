@@ -32,7 +32,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         visualID="3002"
         editPartClassName="MessageTypeEditPart"
@@ -58,11 +58,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/msgiface/MessageType"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/msgiface/MessageType"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
       </modelFacet>
       <labels
           visualID="5003"
@@ -109,11 +109,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/msgiface/MessageInterface"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/msgiface/MessageInterface"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
           visualID="5004"
@@ -156,7 +156,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml/model/msgiface/MessageInterface/superType"/>
+            href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#//muml/model/msgiface/MessageInterface/superType"/>
       </modelFacet>
     </links>
     <compartments
@@ -308,7 +308,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel#/"/>
   <labelParsers
       className="MessageinterfaceParserProvider"
       extensibleViaService="true">

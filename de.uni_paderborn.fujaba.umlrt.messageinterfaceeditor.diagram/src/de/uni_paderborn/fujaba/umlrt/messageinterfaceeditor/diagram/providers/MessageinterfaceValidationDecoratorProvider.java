@@ -102,7 +102,7 @@ public class MessageinterfaceValidationDecoratorProvider extends
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
 				&& de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-						.equals(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+						.equals(de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MumlinstanceVisualIDRegistry
 								.getModelID(view));
 	}
 

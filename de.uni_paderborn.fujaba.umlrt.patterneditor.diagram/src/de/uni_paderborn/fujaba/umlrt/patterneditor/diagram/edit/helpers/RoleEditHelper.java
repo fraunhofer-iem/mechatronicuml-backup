@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers;
  */
 public class RoleEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

@@ -4,9 +4,9 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.MumlinstanceEditPartFactory;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.MumlinstanceVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -15,19 +15,19 @@ import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtVisual
  * 
  */
 public class CustomRealtimeStatechartEditPartFactory extends
-		UmlrtEditPartFactory {
+		MumlinstanceEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			case HistoryStateEditPart.VISUAL_ID:
 				return new CustomHistoryStateEditPart(view);
 			}
 			
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);
 			}

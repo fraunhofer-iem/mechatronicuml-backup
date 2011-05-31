@@ -162,7 +162,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Patterneditor"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2005,2006"/>
@@ -172,7 +172,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Patterneditor"/>
@@ -195,7 +195,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.PatternDiagramEditPart" id="ModelElementCategory_1000"/>
          <object class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts.CoordinationPatternEditPart" id="CoordinationPattern_2004"/>
@@ -207,7 +207,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -354,12 +354,12 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+         	   <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -371,7 +371,7 @@
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+                  <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -399,10 +399,10 @@
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtNavigatorActionProvider">
+            class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -420,7 +420,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -428,7 +428,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.UmlrtDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -477,7 +477,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.UmlrtMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers.MumlinstanceMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>

@@ -18,7 +18,7 @@ public class RealtimestatechartNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem) {
 			de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem item = (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem) element;
-			return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+			return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.MumlinstanceVisualIDRegistry
 					.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;

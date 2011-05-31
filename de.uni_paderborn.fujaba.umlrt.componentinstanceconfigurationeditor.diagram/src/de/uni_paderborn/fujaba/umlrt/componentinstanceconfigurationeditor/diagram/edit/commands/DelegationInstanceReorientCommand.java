@@ -68,7 +68,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationInstance_4004(
 						container, getLink(), getNewSource(), target);
 	}
@@ -87,7 +87,7 @@ public class DelegationInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationInstance_4004(
 						container, getLink(), source, getNewTarget());
 	}

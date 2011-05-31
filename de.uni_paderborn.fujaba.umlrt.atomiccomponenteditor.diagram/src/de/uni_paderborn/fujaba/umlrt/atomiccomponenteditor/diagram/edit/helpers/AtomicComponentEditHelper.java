@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers
  */
 public class AtomicComponentEditHelper
 		extends
-		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers.ModelinstanceBaseEditHelper {
+		de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
 }

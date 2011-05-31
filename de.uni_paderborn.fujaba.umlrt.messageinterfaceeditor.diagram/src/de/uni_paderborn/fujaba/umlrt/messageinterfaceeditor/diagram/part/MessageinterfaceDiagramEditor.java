@@ -76,7 +76,7 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MumlinstancePaletteFactory()
 				.fillPalette(root);
 		return root;
 	}

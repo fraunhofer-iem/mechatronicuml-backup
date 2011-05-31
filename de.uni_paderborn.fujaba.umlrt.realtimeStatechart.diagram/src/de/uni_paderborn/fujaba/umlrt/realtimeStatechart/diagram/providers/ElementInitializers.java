@@ -15,7 +15,7 @@ public class ElementInitializers {
 	public void init_State_2020(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -33,19 +33,19 @@ public class ElementInitializers {
 	public void init_State_2021(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							1,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(instance);
 			instance.setName((String) value_0);
-			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							2,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(instance);
 			instance.setInitial(((Boolean) value_1).booleanValue());
-			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							3,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -63,19 +63,19 @@ public class ElementInitializers {
 	public void init_State_2022(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							4,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(instance);
 			instance.setName((String) value_0);
-			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_1 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							5,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(instance);
 			instance.setInitial(((Boolean) value_1).booleanValue());
-			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_2 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							6,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -93,7 +93,7 @@ public class ElementInitializers {
 	public void init_HistoryState_2023(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							7,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -112,7 +112,7 @@ public class ElementInitializers {
 	public void init_Clock_2024(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.expressions.MumlinstanceOCLFactory
 					.getExpression(
 							8,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE

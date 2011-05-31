@@ -8,8 +8,8 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.part
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.MumlinstanceEditPartFactory;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -18,14 +18,14 @@ import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.Umlr
  * 
  */
 public class CustomStructuredcomponentEditPartFactory extends
-		UmlrtEditPartFactory {
+		MumlinstanceEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
 			case StructuredComponentDiagramEditPart.VISUAL_ID:
 				return new CustomStructuredComponentDiagramEditPart(view);
 			case PortEditPart.VISUAL_ID:
