@@ -2,7 +2,8 @@
 -------------
 Referenzen ComponentPart.fromRev, toRev umbenennen in incomingAssemblies, outgoingAssemblies?
 
-
+Referenz ComponentInstace.componentPart löschen
+OCL-Constraint like "ComponentPart.componentType.isUniquelyChoosen()"
 
 
 
