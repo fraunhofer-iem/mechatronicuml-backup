@@ -6,17 +6,17 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.util;
 
-import de.uni_paderborn.fujaba.modelinstance.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,8 +94,6 @@ public class ModelinstanceValidator extends EObjectValidator {
 				return validateRootNode((RootNode)value, diagnostics, context);
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY:
 				return validateModelElementCategory((ModelElementCategory)value, diagnostics, context);
-			case ModelinstancePackage.TEST:
-				return validatetest((test)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -125,25 +123,25 @@ public class ModelinstanceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(modelElementCategory, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelElementCategory, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelElementCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validateModelElementCategory_ContainsValidElements(modelElementCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validateModelElementCategory_ExclusivelyContainsValidElements(modelElementCategory, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the ContainsValidElements constraint of '<em>Model Element Category</em>'.
+	 * The cached validation expression for the ExclusivelyContainsValidElements constraint of '<em>Model Element Category</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MODEL_ELEMENT_CATEGORY__CONTAINS_VALID_ELEMENTS__EEXPRESSION = "self.modelElements->select (e | isValidElement(e))->notEmpty()";
+	protected static final String MODEL_ELEMENT_CATEGORY__EXCLUSIVELY_CONTAINS_VALID_ELEMENTS__EEXPRESSION = "self.modelElements->select (e | !isValidElement(e))->isEmpty()";
 
 	/**
-	 * Validates the ContainsValidElements constraint of '<em>Model Element Category</em>'.
+	 * Validates the ExclusivelyContainsValidElements constraint of '<em>Model Element Category</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateModelElementCategory_ContainsValidElements(ModelElementCategory modelElementCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateModelElementCategory_ExclusivelyContainsValidElements(ModelElementCategory modelElementCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY,
@@ -151,20 +149,11 @@ public class ModelinstanceValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ContainsValidElements",
-				 MODEL_ELEMENT_CATEGORY__CONTAINS_VALID_ELEMENTS__EEXPRESSION,
+				 "ExclusivelyContainsValidElements",
+				 MODEL_ELEMENT_CATEGORY__EXCLUSIVELY_CONTAINS_VALID_ELEMENTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatetest(test test, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(test, diagnostics, context);
 	}
 
 	/**

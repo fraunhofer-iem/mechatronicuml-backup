@@ -6,28 +6,6 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.impl;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.modelinstance.test;
-
-import de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceValidator;
-
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -35,9 +13,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
+
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,13 +42,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * @generated
 	 */
 	private EClass modelElementCategoryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass testEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -114,13 +90,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		isInited = true;
 
 		// Initialize simple dependencies
-		ComponentPackage.eINSTANCE.eClass();
-		ConstraintPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
-		InstancePackage.eINSTANCE.eClass();
-		PatternPackage.eINSTANCE.eClass();
-		RealtimestatechartPackage.eINSTANCE.eClass();
-		MsgifacePackage.eINSTANCE.eClass();
+		SDMPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theModelinstancePackage.createPackageContents();
@@ -214,15 +184,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass gettest() {
-		return testEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ModelinstanceFactory getModelinstanceFactory() {
 		return (ModelinstanceFactory)getEFactoryInstance();
 	}
@@ -254,8 +215,6 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		createEReference(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__KEY);
 		createEAttribute(modelElementCategoryEClass, MODEL_ELEMENT_CATEGORY__NAME);
-
-		testEClass = createEClass(TEST);
 	}
 
 	/**
@@ -284,14 +243,12 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		testEClass.getESuperTypes().add(theComponentPackage.getComponent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(rootNodeEClass, RootNode.class, "RootNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -300,13 +257,11 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 
 		initEClass(modelElementCategoryEClass, ModelElementCategory.class, "ModelElementCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelElementCategory_ModelElements(), theSDMPackage.getExtendableElement(), null, "modelElements", null, 0, -1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElementCategory_Key(), theEcorePackage.getEString(), "key", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElementCategory_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelElementCategory_Key(), ecorePackage.getEString(), "key", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelElementCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElementCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(modelElementCategoryEClass, theEcorePackage.getEBoolean(), "isValidElement", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEObject(), "object", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(testEClass, test.class, "test", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -338,7 +293,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ContainsValidElements"
+			 "constraints", "ExclusivelyContainsValidElements"
 		   });	
 	}
 
@@ -354,7 +309,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
-			 "ContainsValidElements", "self.modelElements->select (e | isValidElement(e))->notEmpty()"
+			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | !isValidElement(e))->isEmpty()"
 		   });
 	}
 

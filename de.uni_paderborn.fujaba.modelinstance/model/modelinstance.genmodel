@@ -4,7 +4,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.modelinstance/src-gen"
     modelPluginID="de.uni_paderborn.fujaba.modelinstance" modelName="Modelinstance"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling ../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.genmodel#//muml">
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
   <foreignModel>modelinstance.ecore</foreignModel>
   <genPackages prefix="Modelinstance" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
       ecorePackage="modelinstance.ecore#/">
@@ -20,6 +20,5 @@
         <genParameters ecoreParameter="modelinstance.ecore#//ModelElementCategory/isValidElement/object"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="modelinstance.ecore#//test"/>
   </genPackages>
 </genmodel:GenModel>

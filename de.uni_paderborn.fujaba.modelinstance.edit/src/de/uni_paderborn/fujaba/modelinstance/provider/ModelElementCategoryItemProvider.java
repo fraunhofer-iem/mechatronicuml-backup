@@ -8,20 +8,7 @@ package de.uni_paderborn.fujaba.modelinstance.provider;
 
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-
-import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
-
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-
-import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,7 +19,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -228,11 +214,6 @@ public class ModelElementCategoryItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ModelinstanceFactory.eINSTANCE.createtest()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -433,126 +414,6 @@ public class ModelElementCategoryItemProvider
 			(createChildParameter
 				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
 				 TemplatesFactory.eINSTANCE.createPropertyBinding()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ComponentFactory.eINSTANCE.createContinuousComponent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ComponentFactory.eINSTANCE.createPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ComponentFactory.eINSTANCE.createComponentPart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ComponentFactory.eINSTANCE.createStructuredComponent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ComponentFactory.eINSTANCE.createAtomicComponent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 InstanceFactory.eINSTANCE.createComponentInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 InstanceFactory.eINSTANCE.createPortInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternFactory.eINSTANCE.createCoordinationPattern()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 PatternFactory.eINSTANCE.createRole()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createClock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createRegion()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createState()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createTransition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createHistoryState()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createFujabaRealtimeStatechart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 MsgifaceFactory.eINSTANCE.createMessageInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				 MsgifaceFactory.eINSTANCE.createMessageType()));
 	}
 
 	/**

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.modelinstance;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.modeling.ExtendableElement;
 
@@ -26,8 +25,8 @@ import org.storydriven.modeling.ExtendableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ContainsValidElements'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ContainsValidElements='self.modelElements->select (e | isValidElement(e))->notEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ExclusivelyContainsValidElements'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExclusivelyContainsValidElements='self.modelElements->select (e | !isValidElement(e))->isEmpty()'"
  * @generated
  */
 public interface ModelElementCategory extends EObject {

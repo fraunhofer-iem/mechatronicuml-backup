@@ -122,29 +122,6 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.modelinstance.test} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected testItemProvider testItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.modelinstance.test}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createtestAdapter() {
-		if (testItemProvider == null) {
-			testItemProvider = new testItemProvider(this);
-		}
-
-		return testItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,7 +222,6 @@ public class ModelinstanceItemProviderAdapterFactory extends ModelinstanceAdapte
 	public void dispose() {
 		if (rootNodeItemProvider != null) rootNodeItemProvider.dispose();
 		if (modelElementCategoryItemProvider != null) modelElementCategoryItemProvider.dispose();
-		if (testItemProvider != null) testItemProvider.dispose();
 	}
 
 }

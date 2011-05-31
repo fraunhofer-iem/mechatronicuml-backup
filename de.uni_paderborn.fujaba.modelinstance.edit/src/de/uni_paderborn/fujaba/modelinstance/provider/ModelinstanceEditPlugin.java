@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.provider;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -50,7 +48,6 @@ public final class ModelinstanceEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
 		     SDMEditPlugin.INSTANCE,
-		     UmlrtEditPlugin.INSTANCE,
 		   });
 	}
 

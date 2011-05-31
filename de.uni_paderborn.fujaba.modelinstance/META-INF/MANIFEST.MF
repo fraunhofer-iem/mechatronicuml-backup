@@ -13,6 +13,6 @@ Export-Package: de.uni_paderborn.fujaba.modelinstance,
  de.uni_paderborn.fujaba.modelinstance.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model;bundle-version="1.0.0"
+ org.storydriven.modeling;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin

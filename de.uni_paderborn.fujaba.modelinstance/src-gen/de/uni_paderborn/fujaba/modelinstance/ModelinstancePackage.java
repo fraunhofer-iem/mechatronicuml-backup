@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.modelinstance;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -146,125 +144,6 @@ public interface ModelinstancePackage extends EPackage {
 	int MODEL_ELEMENT_CATEGORY_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.modelinstance.impl.testImpl <em>test</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.modelinstance.impl.testImpl
-	 * @see de.uni_paderborn.fujaba.modelinstance.impl.ModelinstancePackageImpl#gettest()
-	 * @generated
-	 */
-	int TEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__ANNOTATION = ComponentPackage.COMPONENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__EXTENSION = ComponentPackage.COMPONENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__NAME = ComponentPackage.COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__COMMENT = ComponentPackage.COMPONENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__CONSTRAINT = ComponentPackage.COMPONENT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__PORTS = ComponentPackage.COMPONENT__PORTS;
-
-	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__ECLASS = ComponentPackage.COMPONENT__ECLASS;
-
-	/**
-	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__REFERENCING_COMPONENT_PARTS = ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS;
-
-	/**
-	 * The feature id for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__MUST_IMPLEMENT_PROVIDED_INTERFACES = ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__MUST_IMPLEMENT_REQUIRED_INTERFACES = ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__KIND = ComponentPackage.COMPONENT__KIND;
-
-	/**
-	 * The number of structural features of the '<em>test</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_FEATURE_COUNT = ComponentPackage.COMPONENT_FEATURE_COUNT + 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelinstance.RootNode <em>Root Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -338,16 +217,6 @@ public interface ModelinstancePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getModelElementCategory_Name();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.modelinstance.test <em>test</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>test</em>'.
-	 * @see de.uni_paderborn.fujaba.modelinstance.test
-	 * @generated
-	 */
-	EClass gettest();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -430,16 +299,6 @@ public interface ModelinstancePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT_CATEGORY__NAME = eINSTANCE.getModelElementCategory_Name();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.modelinstance.impl.testImpl <em>test</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.modelinstance.impl.testImpl
-		 * @see de.uni_paderborn.fujaba.modelinstance.impl.ModelinstancePackageImpl#gettest()
-		 * @generated
-		 */
-		EClass TEST = eINSTANCE.gettest();
 
 	}
 

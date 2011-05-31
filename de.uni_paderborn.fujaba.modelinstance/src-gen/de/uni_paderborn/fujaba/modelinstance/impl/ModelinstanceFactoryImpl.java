@@ -6,15 +6,16 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.impl;
 
-import de.uni_paderborn.fujaba.modelinstance.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +63,6 @@ public class ModelinstanceFactoryImpl extends EFactoryImpl implements Modelinsta
 		switch (eClass.getClassifierID()) {
 			case ModelinstancePackage.ROOT_NODE: return createRootNode();
 			case ModelinstancePackage.MODEL_ELEMENT_CATEGORY: return createModelElementCategory();
-			case ModelinstancePackage.TEST: return createtest();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,16 +86,6 @@ public class ModelinstanceFactoryImpl extends EFactoryImpl implements Modelinsta
 	public ModelElementCategory createModelElementCategory() {
 		ModelElementCategoryImpl modelElementCategory = new ModelElementCategoryImpl();
 		return modelElementCategory;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public test createtest() {
-		testImpl test = new testImpl();
-		return test;
 	}
 
 	/**
