@@ -137,15 +137,6 @@
             <details key="documentation" value="The connectors which originate from this port."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
-            eType="#//model/core/AbstractRealtimeStatechart" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The adaptation behavior of this port which is derived from the DiscretePortSpecification."/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PortSpecification" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -167,12 +158,6 @@
             <details key="documentation" value="The role of a parameterized coordination pattern that this port refines."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
-            eType="#//model/core/AbstractRealtimeStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The adaptation statechart of this port. For a port with cardinality 0..1 or 0..*, it &#xD;&#xA;specifies the creation and deletion of instances of this port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -190,6 +175,8 @@
             <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/core/AdaptionBehavior"
+            eOpposite="#//model/core/AdaptionBehavior/adaptionBehavior"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePortSpecification" eSuperTypes="#//model/component/PortSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -386,7 +373,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="constrainableElement"
-            eType="#//model/core/ConstrainableElement" eOpposite="#//model/core/ConstrainableElement/constraint">
+            lowerBound="1" eType="#//model/core/ConstrainableElement" eOpposite="#//model/core/ConstrainableElement/constraint">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The element this constraint applies to."/>
           </eAnnotations>
@@ -591,7 +578,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
-            eType="#//model/core/BehavioralElement" eOpposite="#//model/core/BehavioralElement/realtimeStatechart">
+            lowerBound="1" eType="#//model/core/BehavioralElement" eOpposite="#//model/core/BehavioralElement/realtimeStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The behovioral element this statechart belongs to."/>
           </eAnnotations>
@@ -602,6 +589,21 @@
             <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AdaptionBehavior" eSuperTypes="#//model/core/BehavioralElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
+            eType="#//model/core/AbstractRealtimeStatechart" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart&#xA;endif"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The adaptation behavior of this port which is derived from the DiscretePortSpecification."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//model/pattern/Role"
+            eOpposite="#//model/pattern/Role/adaptionBehavior"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptionBehavior" eType="#//model/component/DiscretePortSpecification"
+            containment="true" eOpposite="#//model/component/DiscretePortSpecification/port"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
@@ -740,8 +742,8 @@
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            lowerBound="1" eType="#//model/pattern/CoordinationPattern">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            lowerBound="1" eType="#//model/pattern/CoordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern that defines the protocol of this assembly instance."/>
           </eAnnotations>
@@ -800,20 +802,21 @@
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//model/pattern/CoordinationPattern"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            lowerBound="1" eType="#//model/pattern/CoordinationProtocol" eOpposite="#//model/pattern/CoordinationProtocol/connectors"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a coordination pattern. A coordination pattern specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
+          <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
-            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/pattern">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
+            upperBound="2" eType="#//model/pattern/Role" containment="true" eOpposite="#//model/pattern/Role/pattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles belonging to this pattern."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" eType="#//model/pattern/RoleConnector"
-            containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" lowerBound="1"
+            eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
           </eAnnotations>
@@ -823,22 +826,16 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" eType="#//model/pattern/RoleConnector"
-            eOpposite="#//model/pattern/RoleConnector/source">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
+            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector which connects this role with another role.&#xD;&#xA;Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//model/pattern/CoordinationPattern"
-            eOpposite="#//model/pattern/CoordinationPattern/roles">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+            eType="#//model/pattern/CoordinationProtocol" eOpposite="#//model/pattern/CoordinationProtocol/roles">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern this role belongs to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
-            eType="#//model/core/AbstractRealtimeStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The realtime statechart describing the communication behavior of this role.&#xD;&#xA;there is already a reference called realtimeStatechart, it is inhered from BehaviorElement"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
@@ -855,6 +852,8 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
             eType="#//model/realtimestatechart/SynchronizationChannel" containment="true"
             eOpposite="#//model/realtimestatechart/SynchronizationChannel/role"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptionBehavior" eType="#//model/core/AdaptionBehavior"
+            containment="true" eOpposite="#//model/core/AdaptionBehavior/role"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
