@@ -175,8 +175,8 @@
             <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/core/AdaptionBehavior"
-            eOpposite="#//model/core/AdaptionBehavior/adaptionBehavior"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
+            eType="#//model/core/AdaptationBehavior" eOpposite="#//model/core/AdaptationBehavior/port"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePortSpecification" eSuperTypes="#//model/component/PortSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -590,20 +590,11 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AdaptionBehavior" eSuperTypes="#//model/core/BehavioralElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationRealtimeStatechart"
-            eType="#//model/core/AbstractRealtimeStatechart" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The adaptation behavior of this port which is derived from the DiscretePortSpecification."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+      <eClassifiers xsi:type="ecore:EClass" name="AdaptationBehavior" eSuperTypes="#//model/core/BehavioralElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//model/pattern/Role"
-            eOpposite="#//model/pattern/Role/adaptionBehavior"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptionBehavior" eType="#//model/component/DiscretePortSpecification"
-            containment="true" eOpposite="#//model/component/DiscretePortSpecification/port"/>
+            eOpposite="#//model/pattern/Role/adaptationBehavior"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/component/DiscretePortSpecification"
+            containment="true" eOpposite="#//model/component/DiscretePortSpecification/adaptationBehavior"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
@@ -852,8 +843,8 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
             eType="#//model/realtimestatechart/SynchronizationChannel" containment="true"
             eOpposite="#//model/realtimestatechart/SynchronizationChannel/role"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptionBehavior" eType="#//model/core/AdaptionBehavior"
-            containment="true" eOpposite="#//model/core/AdaptionBehavior/role"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
+            eType="#//model/core/AdaptationBehavior" containment="true" eOpposite="#//model/core/AdaptationBehavior/role"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
