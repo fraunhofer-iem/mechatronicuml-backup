@@ -18,7 +18,7 @@ public class StructuredcomponentNavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem) {
 			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem item = (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem) element;
-			return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+			return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;

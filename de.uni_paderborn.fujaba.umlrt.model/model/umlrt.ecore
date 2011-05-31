@@ -248,17 +248,6 @@
             <details key="documentation" value="The ports of this part. They are derived from the ports of the componentType of this component part."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-            unsettable="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The name of this component part. It is the same as the name of the componentType and derived from there."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
             eType="#//model/core/Cardinality" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

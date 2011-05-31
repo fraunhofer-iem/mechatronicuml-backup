@@ -13,10 +13,10 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.umlrt.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.edit.parts.CustomPortEditPart;
-import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.MumlinstancePropertySection;
+import de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.sheet.UmlrtPropertySection;
 
 public class CustomStructuredcomponentPropertySection extends
-		MumlinstancePropertySection {
+		UmlrtPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.

@@ -29,6 +29,7 @@ Export-Package: «editorGen.diagram.editPartsPackageName»,
  «editorGen.diagram.editCommandsPackageName»,
  «editorGen.editor.packageName»,
  «editorGen.diagram.providersPackageName»,
+ «editorGen.diagram.parsersPackageName»,
  «editorGen.propertySheet.packageName»
 Require-Bundle: org.eclipse.core.runtime,
 «IF editorGen.application = null-»

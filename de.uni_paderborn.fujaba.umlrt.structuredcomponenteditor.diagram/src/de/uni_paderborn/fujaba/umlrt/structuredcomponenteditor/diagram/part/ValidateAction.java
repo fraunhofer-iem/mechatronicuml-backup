@@ -83,7 +83,7 @@ public class ValidateAction extends Action {
 	 */
 	public static void runValidation(View view) {
 		try {
-			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil
+			if (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil
 					.openDiagram(view.eResource())) {
 				IEditorPart editorPart = PlatformUI.getWorkbench()
 						.getActiveWorkbenchWindow().getActivePage()
@@ -151,7 +151,7 @@ public class ValidateAction extends Action {
 		IFile target = view.eResource() != null ? WorkspaceSynchronizer
 				.getFile(view.eResource()) : null;
 		if (target != null) {
-			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceMarkerNavigationProvider
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtMarkerNavigationProvider
 					.deleteMarkers(target);
 		}
 		Diagnostic diagnostic = runEMFValidator(view);
@@ -175,12 +175,12 @@ public class ValidateAction extends Action {
 		}
 		final IStatus rootStatus = validationStatus;
 		List allStatuses = new ArrayList();
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil.LazyElement2ViewMap(
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(), collectTargetElements(
 						rootStatus, new HashSet<EObject>(), allStatuses));
 		for (Iterator it = allStatuses.iterator(); it.hasNext();) {
 			IConstraintStatus nextStatus = (IConstraintStatus) it.next();
-			View view = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil
+			View view = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil
 					.findView(diagramEditPart, nextStatus.getTarget(),
 							element2ViewMap);
 			addMarker(diagramEditPart.getViewer(), target, view.eResource()
@@ -200,7 +200,7 @@ public class ValidateAction extends Action {
 		}
 		final Diagnostic rootStatus = emfValidationStatus;
 		List allDiagnostics = new ArrayList();
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil.LazyElement2ViewMap(
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap element2ViewMap = new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil.LazyElement2ViewMap(
 				diagramEditPart.getDiagramView(), collectTargetElements(
 						rootStatus, new HashSet<EObject>(), allDiagnostics));
 		for (Iterator it = emfValidationStatus.getChildren().iterator(); it
@@ -210,7 +210,7 @@ public class ValidateAction extends Action {
 			if (data != null && !data.isEmpty()
 					&& data.get(0) instanceof EObject) {
 				EObject element = (EObject) data.get(0);
-				View view = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramEditorUtil
+				View view = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramEditorUtil
 						.findView(diagramEditPart, element, element2ViewMap);
 				addMarker(
 						diagramEditPart.getViewer(),
@@ -232,7 +232,7 @@ public class ValidateAction extends Action {
 		if (target == null) {
 			return;
 		}
-		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.MumlinstanceMarkerNavigationProvider
+		de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.providers.UmlrtMarkerNavigationProvider
 				.addMarker(target, elementId, location, message, statusSeverity);
 	}
 

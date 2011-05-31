@@ -3,8 +3,9 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.umlrt.model/src"
     modelPluginID="de.uni_paderborn.fujaba.umlrt.model" modelName="Umlrt" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance ../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling">
   <foreignModel>umlrt.ecore</foreignModel>
+  <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
       ecorePackage="umlrt.ecore#/">
     <nestedGenPackages prefix="Model" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
@@ -358,7 +359,6 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/ClockConstraint/clock"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/ClockConstraint/operator"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/ClockConstraint/clockConstraintExpr"/>
         </genClasses>
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/HistoryState">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/HistoryState/kind"/>
@@ -379,13 +379,19 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/DoAction/doActionRev"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/periodLower"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/periodUpper"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/actionExpr"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/name"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/wcet"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/blocking"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/DoAction/wCETSpecifiedByUser"/>
         </genClasses>
         <genClasses image="false" ecoreClass="umlrt.ecore#//model/realtimestatechart/EntryOrExitAction">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/clockResets"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/action"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/actionExpr"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/name"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/wcet"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/blocking"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitAction/wCETSpecifiedByUser"/>
         </genClasses>
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/EntryAction">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/EntryAction/entryActionRev"/>
@@ -395,7 +401,6 @@
         </genClasses>
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/SynchronizationChannel">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/SynchronizationChannel/state"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/SynchronizationChannel/synchroChannelExpr"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/SynchronizationChannel/role"/>
         </genClasses>
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/Synchronization">

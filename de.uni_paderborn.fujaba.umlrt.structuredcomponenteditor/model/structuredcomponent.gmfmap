@@ -89,18 +89,13 @@
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/ComponentPart"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} : {1}"
-              editorPattern="{0}"
-              editPattern="{0}">
+              xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="structuredcomponent.gmfgraph#ComponentPartName"/>
-            <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-            <features
-                href="../../de.uni_paderborn.fujaba.umlrt.model/model/umlrt.ecore#//model/component/ComponentPart/componentNameDerived"/>
-            <editableFeatures
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            <viewExpression
+                body="name.concat(' : ').concat(if componentType.oclIsUndefined() then 'null' else componentType.name endif)"/>
+            <editExpression
+                body="this.name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

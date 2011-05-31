@@ -25,6 +25,11 @@ import org.storydriven.modeling.SDMPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The package constraint provides abstract super classes for modeling different
+ * kinds of constraints that may be attached to ConstrainableElements of the
+ * MechatronicUML meta-model. 
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory
  * @model kind="package"
  * @generated

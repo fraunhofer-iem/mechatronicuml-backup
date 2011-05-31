@@ -110,7 +110,10 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Don't know.
+	 * This reference points to all message interfaces that this component must implement
+	 * as provided interfaces via one of its ports. This reference has been used by the
+	 * PG Mauritius to enable creation of sequence diagrams without having modeled
+	 * the complete component structure including all interfaces (see FDays 08 paper).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Must Implement Provided Interfaces</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementProvidedInterfaces()
@@ -125,7 +128,10 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Don't know.
+	 * This reference points to all message interfaces that this component must implement
+	 * as required interfaces via one of its ports. This reference has been used by the
+	 * PG Mauritius to enable creation of sequence diagrams without having modeled
+	 * the complete component structure including all interfaces (see FDays 08 paper).
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Must Implement Required Interfaces</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementRequiredInterfaces()

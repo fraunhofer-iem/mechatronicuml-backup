@@ -76,7 +76,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstancePaletteFactory()
+		new de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}
@@ -181,8 +181,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(
-			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);

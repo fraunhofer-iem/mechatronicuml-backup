@@ -50,9 +50,9 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 				.getModelElementCategory_1000SemanticChildren(viewObject);
-		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor d : childDescriptors) {
+		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
 		return result;
@@ -71,7 +71,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+		return de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID == de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -83,7 +83,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+		List<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 				.getModelElementCategory_1000SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
@@ -99,11 +99,11 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor> descriptorsIterator = childDescriptors
+		for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
-			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor next = descriptorsIterator
+			de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
@@ -129,8 +129,8 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		//
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
-		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceNodeDescriptor next : childDescriptors) {
-			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtNodeDescriptor next : childDescriptors) {
+			String hint = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getType(next.getVisualID());
 			IAdaptable elementAdapter = new CanonicalElementAdapter(
 					next.getModelElement(), hint);
@@ -175,13 +175,13 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
-		Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor> linkDescriptors = collectAllLinks(
+		Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
 		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
 				.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+			int diagramLinkVisualID = de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
 				if (nextDiagramLink.getSource() != null
@@ -193,9 +193,9 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor> linkDescriptorsIterator = linkDescriptors
+			for (Iterator<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> linkDescriptorsIterator = linkDescriptors
 					.iterator(); linkDescriptorsIterator.hasNext();) {
-				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+				de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
 						.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
 						&& diagramLinkSrc == nextLinkDescriptor.getSource()
@@ -216,19 +216,19 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor> collectAllLinks(
+	private Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> collectAllLinks(
 			View view, Map<EObject, View> domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 						.getModelID(view))) {
 			return Collections.emptyList();
 		}
-		LinkedList<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor>();
-		switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+		LinkedList<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
+		switch (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getModelElementCategory_1000ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -239,7 +239,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getStructuredComponent_2002ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -250,7 +250,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getPort_3004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -261,7 +261,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getComponentPart_3005ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -272,7 +272,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getPort_3006ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -283,7 +283,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getDelegation_4003ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -294,7 +294,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		}
 		case de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramUpdater
+				result.addAll(de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramUpdater
 						.getAssembly_4004ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
@@ -320,10 +320,10 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<IAdaptable> createConnections(
-			Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor> linkDescriptors,
+			Collection<de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> linkDescriptors,
 			Map<EObject, View> domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
-		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceLinkDescriptor nextLinkDescriptor : linkDescriptors) {
+		for (de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor nextLinkDescriptor : linkDescriptors) {
 			EditPart sourceEditPart = getEditPart(
 					nextLinkDescriptor.getSource(), domain2NotationMap);
 			EditPart targetEditPart = getEditPart(
@@ -333,7 +333,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
 					nextLinkDescriptor.getSemanticAdapter(),
-					de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceVisualIDRegistry
+					de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 							.getType(nextLinkDescriptor.getVisualID()),
 					ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost())
 							.getDiagramPreferencesHint());

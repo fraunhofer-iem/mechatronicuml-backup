@@ -11,8 +11,8 @@
          extensions="structuredcomponent_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.MumlinstanceDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -76,5 +76,12 @@
       </propertySections>
    </extension>
 
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.diagram.custom.providers.CustomStructuredcomponentParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
 
 </plugin>

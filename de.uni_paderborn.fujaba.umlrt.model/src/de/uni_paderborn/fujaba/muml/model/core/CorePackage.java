@@ -24,6 +24,13 @@ import org.storydriven.modeling.SDMPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package contains several core classes that are used by classes from several other packages.
+ * It provides abstract base classes for Statecharts, meta-model elements that use a statechart to
+ * define their behavior and meta-model elements that may carry a constraint.
+ * Additionally, the package provides classes for modeling cardinalites as natural numbers including
+ * infinity.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.core.CoreFactory
  * @model kind="package"
  * @generated

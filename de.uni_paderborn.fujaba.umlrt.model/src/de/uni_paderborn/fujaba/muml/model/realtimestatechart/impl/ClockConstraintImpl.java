@@ -82,6 +82,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 */
 	protected ComparingOperator operator = OPERATOR_EDEFAULT;
 
+
 	/**
 	 * The cached setting delegate for the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,22 +93,14 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR).getSettingDelegate();
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected ClockConstraintImpl() {
 		super();
-
-		DerivedAttributeAdapter clockConstraintExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
-		clockConstraintExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND);
-
-		DerivedAttributeAdapter clockConstraintExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
-		clockConstraintExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR);
-
-		DerivedAttributeAdapter clockConstraintExprAdapter3 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR, false);
-		clockConstraintExprAdapter3.addLocalDependency(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK);
 	}
 
 	/**

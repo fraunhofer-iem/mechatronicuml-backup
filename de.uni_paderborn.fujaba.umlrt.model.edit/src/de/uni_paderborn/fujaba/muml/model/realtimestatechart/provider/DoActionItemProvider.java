@@ -184,17 +184,15 @@ public class DoActionItemProvider
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DoAction) object).getActionExpr();
-		return label == null || label.length() == 0 ? getString("_UI_Clock_type")
-				: getString("_UI_Clock_type") + " " + label;
-
+		DoAction doAction = (DoAction)object;
+		return getString("_UI_DoAction_type") + " " + doAction.getPeriodLower();
 	}
 
 	/**

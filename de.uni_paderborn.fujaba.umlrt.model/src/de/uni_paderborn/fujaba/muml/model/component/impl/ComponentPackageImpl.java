@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
@@ -233,7 +234,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		SDMPackage.eINSTANCE.eClass();
+		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
