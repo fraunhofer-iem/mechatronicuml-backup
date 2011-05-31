@@ -19,7 +19,7 @@
       <details key="constraints" value="ExclusivelyContainsValidElements"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="ExclusivelyContainsValidElements" value="self.modelElements->select (e | !isValidElement(e))->isEmpty()"/>
+      <details key="ExclusivelyContainsValidElements" value="self.modelElements->select (e | not isValidElement(e))->isEmpty()"/>
     </eAnnotations>
     <eOperations name="isValidElement" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
       <eParameters name="object" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>

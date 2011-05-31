@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.util;
 
+import de.uni_paderborn.fujaba.modelinstance.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -133,7 +134,7 @@ public class ModelinstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MODEL_ELEMENT_CATEGORY__EXCLUSIVELY_CONTAINS_VALID_ELEMENTS__EEXPRESSION = "self.modelElements->select (e | !isValidElement(e))->isEmpty()";
+	protected static final String MODEL_ELEMENT_CATEGORY__EXCLUSIVELY_CONTAINS_VALID_ELEMENTS__EEXPRESSION = "self.modelElements->select (e | not isValidElement(e))->isEmpty()";
 
 	/**
 	 * Validates the ExclusivelyContainsValidElements constraint of '<em>Model Element Category</em>'.

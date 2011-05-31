@@ -309,7 +309,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		  (modelElementCategoryEClass, 
 		   source, 
 		   new String[] {
-			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | !isValidElement(e))->isEmpty()"
+			 "ExclusivelyContainsValidElements", "self.modelElements->select (e | not isValidElement(e))->isEmpty()"
 		   });
 	}
 

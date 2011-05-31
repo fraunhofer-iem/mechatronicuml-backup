@@ -26,7 +26,7 @@ import org.storydriven.modeling.ExtendableElement;
  *
  * @see de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage#getModelElementCategory()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ExclusivelyContainsValidElements'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExclusivelyContainsValidElements='self.modelElements->select (e | !isValidElement(e))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ExclusivelyContainsValidElements='self.modelElements->select (e | not isValidElement(e))->isEmpty()'"
  * @generated
  */
 public interface ModelElementCategory extends EObject {

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.modelinstance.impl;
 
+import de.uni_paderborn.fujaba.modelinstance.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
