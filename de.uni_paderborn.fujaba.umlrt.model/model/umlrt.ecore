@@ -31,7 +31,8 @@
             <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" lowerBound="1"
+            eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component."/>
           </eAnnotations>
@@ -54,7 +55,8 @@
             <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/component/ComponentKind">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/component/ComponentKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports."/>
           </eAnnotations>
@@ -81,20 +83,20 @@
           <details key="body" value="self.cardinality.lowerBound->notEmpty()"/>
         </eAnnotations>
         <eOperations name="createInstance" lowerBound="1" eType="#//model/instance/PortInstance"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//model/component/Component"
-            eOpposite="#//model/component/Component/ports">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+            eType="#//model/component/Component" eOpposite="#//model/component/Component/ports">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component this port belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" eType="#//model/component/PortKind"
-            derived="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="portKind" lowerBound="1"
+            eType="#//model/component/PortKind" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The kind of this port which can be either discrete, continuous, hybrid or hardware. This attribute can be derived by determining which port specifications the port possesses."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="specification" upperBound="2"
-            eType="#//model/component/PortSpecification" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
+            upperBound="2" eType="#//model/component/PortSpecification" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This association stores all port specifications this port realizes. Possible port specifications provide continuous or discrete behavior as well as the functionlity a hardware port provides."/>
           </eAnnotations>
@@ -201,8 +203,8 @@
             <details key="documentation" value="The component type typing this component part."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" eType="#//model/component/StructuredComponent"
-            eOpposite="#//model/component/StructuredComponent/embeddedParts">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" lowerBound="1"
+            eType="#//model/component/StructuredComponent" eOpposite="#//model/component/StructuredComponent/embeddedParts">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The structured component type containing this component part."/>
           </eAnnotations>
@@ -293,14 +295,14 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eOperations name="createInstance" lowerBound="1" eType="#//model/instance/AssemblyInstance"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//model/component/ComponentPart"
-            eOpposite="#//model/component/ComponentPart/toRev">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1"
+            eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/toRev">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component part of the port part to which this assembly leads."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//model/component/ComponentPart"
-            eOpposite="#//model/component/ComponentPart/fromRev">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
+            eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/fromRev">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component part of the port part from which this assembly originates."/>
           </eAnnotations>
@@ -523,7 +525,7 @@
           <details key="documentation" value="Abstract super class for all elements that have a behavior in terms of a real-time statechart."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="realtimeStatechart"
-            eType="#//model/core/AbstractRealtimeStatechart" eOpposite="#//model/core/AbstractRealtimeStatechart/behavioralElement">
+            lowerBound="1" eType="#//model/core/AbstractRealtimeStatechart" eOpposite="#//model/core/AbstractRealtimeStatechart/behavioralElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The real-time statechart that defines the behavior of this behavioral element."/>
           </eAnnotations>
