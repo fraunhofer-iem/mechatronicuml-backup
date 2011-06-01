@@ -43,13 +43,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
-            upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+            upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as provided interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
-            upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
+            upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
@@ -633,17 +633,6 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//model/component/ComponentPart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentNameDerived"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-            unsettable="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if componentType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;componentType.name&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The name of this component instance. It is the same as the name of the componentType and derived from there."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
             eType="#//model/instance/PortInstance" containment="true" eOpposite="#//model/instance/PortInstance/componentInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -831,7 +820,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role."/>
+            <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.&#xD;&#xA;TODO-SD: Delete?"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//model/msgiface/MessageInterface"/>
@@ -1169,13 +1158,6 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HistoryState" eSuperTypes="#//model/realtimestatechart/Vertex">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/realtimestatechart/HistoryKind"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="HistoryKind">
-        <eLiterals name="deep"/>
-        <eLiterals name="shallow" value="1"/>
-      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An action might be the side effect of a transition as well as the do, entry, or exit events of a state.&#xD;&#xA;TODO-SD: Discuss meta model for actions."/>
@@ -1326,7 +1308,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.&#xD;&#xA;TODO: Do we really need this?"/>
+            <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.&#xD;&#xA;TODO-SD: Do we really need this?"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" upperBound="-1"
@@ -1339,6 +1321,11 @@
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts "/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="acts as a shallow history"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
