@@ -35,7 +35,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
@@ -177,33 +176,6 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	boolean isSetPortsDerived();
-
-	/**
-	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name of this component part. It is the same as the name of the componentType and derived from there.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Component Name Derived</em>' attribute.
-	 * @see #isSetComponentNameDerived()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_ComponentNameDerived()
-	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif'"
-	 * @generated
-	 */
-	String getComponentNameDerived();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Component Name Derived</em>' attribute is set.
-	 * @see #getComponentNameDerived()
-	 * @generated
-	 */
-	boolean isSetComponentNameDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.

@@ -53,7 +53,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
@@ -132,16 +131,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentNameDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,12 +153,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 		// was modified
 		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED, true);
 		portsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
-
-		// Install a notification adapter that informs the
-		// componentNameDerived-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter componentNameDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__COMPONENT_NAME_DERIVED, true);
-		componentNameDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -364,24 +347,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComponentNameDerived() {
-		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetComponentNameDerived() {
-		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -510,8 +475,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return getDelegation();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return getPortsDerived();
-			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				return getComponentNameDerived();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return getCardinality();
 		}
@@ -610,8 +573,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return delegation != null && !delegation.isEmpty();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return isSetPortsDerived();
-			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
-				return isSetComponentNameDerived();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
 		}

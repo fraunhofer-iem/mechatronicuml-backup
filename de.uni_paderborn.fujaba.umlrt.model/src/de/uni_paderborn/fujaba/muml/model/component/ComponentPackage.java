@@ -690,22 +690,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Component Name Derived</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_PART__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_PART__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -714,7 +705,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl <em>Structured Component</em>}' class.
@@ -1634,17 +1625,6 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponentPart_PortsDerived();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getComponentNameDerived <em>Component Name Derived</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Name Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getComponentNameDerived()
-	 * @see #getComponentPart()
-	 * @generated
-	 */
-	EAttribute getComponentPart_ComponentNameDerived();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2151,14 +2131,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_PART__PORTS_DERIVED = eINSTANCE.getComponentPart_PortsDerived();
-
-		/**
-		 * The meta object literal for the '<em><b>Component Name Derived</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_PART__COMPONENT_NAME_DERIVED = eINSTANCE.getComponentPart_ComponentNameDerived();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
