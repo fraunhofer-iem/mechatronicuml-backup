@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getActionExpr <em>Action Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,32 +72,5 @@ public interface EntryOrExitAction extends EObject {
 	 * @generated
 	 */
 	void setAction(Action value);
-
-	/**
-	 * Returns the value of the '<em><b>Action Expr</b></em>' attribute.
-	 * The default value is <code>"entryExitExpr"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Action Expr</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action Expr</em>' attribute.
-	 * @see #setActionExpr(String)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitAction_ActionExpr()
-	 * @model default="entryExitExpr" derived="true"
-	 * @generated
-	 */
-	String getActionExpr();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getActionExpr <em>Action Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action Expr</em>' attribute.
-	 * @see #getActionExpr()
-	 * @generated
-	 */
-	void setActionExpr(String value);
 
 } // EntryOrExitAction

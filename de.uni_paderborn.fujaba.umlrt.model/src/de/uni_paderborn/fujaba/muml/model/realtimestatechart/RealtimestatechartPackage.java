@@ -808,94 +808,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Events Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__EVENTS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 17;
-
-	/**
-	 * The feature id for the '<em><b>Transition Action Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__TRANSITION_ACTION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 18;
-
-	/**
-	 * The feature id for the '<em><b>Clock Constraint Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__CLOCK_CONSTRAINT_EXPR = PRIORITIZABLE_FEATURE_COUNT + 19;
-
-	/**
-	 * The feature id for the '<em><b>Absolute Deadline Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__ABSOLUTE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 20;
-
-	/**
-	 * The feature id for the '<em><b>Relative Deadline Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__RELATIVE_DEADLINE_EXPR = PRIORITIZABLE_FEATURE_COUNT + 21;
-
-	/**
-	 * The feature id for the '<em><b>Guard Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__GUARD_EXPR = PRIORITIZABLE_FEATURE_COUNT + 22;
-
-	/**
-	 * The feature id for the '<em><b>Synchro Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__SYNCHRO_EXPR = PRIORITIZABLE_FEATURE_COUNT + 23;
-
-	/**
-	 * The feature id for the '<em><b>Clock Resets Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__CLOCK_RESETS_EXPR = PRIORITIZABLE_FEATURE_COUNT + 24;
-
-	/**
-	 * The feature id for the '<em><b>Safety Transition Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__SAFETY_TRANSITION_EXPR = PRIORITIZABLE_FEATURE_COUNT + 25;
-
-	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 26;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -935,22 +854,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_CONSTRAINT__OPERATOR = 2;
 
 	/**
-	 * The feature id for the '<em><b>Clock Constraint Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR = 3;
-
-	/**
 	 * The number of structural features of the '<em>Clock Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK_CONSTRAINT_FEATURE_COUNT = 4;
+	int CLOCK_CONSTRAINT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.
@@ -1326,22 +1236,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_ACTION__PERIOD_UPPER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_ACTION__ACTION_EXPR = 4;
-
-	/**
 	 * The number of structural features of the '<em>Do Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_ACTION_FEATURE_COUNT = 5;
+	int DO_ACTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitActionImpl <em>Entry Or Exit Action</em>}' class.
@@ -1372,22 +1273,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_ACTION__ACTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_OR_EXIT_ACTION__ACTION_EXPR = 2;
-
-	/**
 	 * The number of structural features of the '<em>Entry Or Exit Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_OR_EXIT_ACTION_FEATURE_COUNT = 3;
+	int ENTRY_OR_EXIT_ACTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryActionImpl <em>Entry Action</em>}' class.
@@ -1416,15 +1308,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTRY_ACTION__ACTION = ENTRY_OR_EXIT_ACTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_ACTION__ACTION_EXPR = ENTRY_OR_EXIT_ACTION__ACTION_EXPR;
 
 	/**
 	 * The feature id for the '<em><b>Entry Action Rev</b></em>' container reference.
@@ -1471,15 +1354,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXIT_ACTION__ACTION = ENTRY_OR_EXIT_ACTION__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>Action Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_ACTION__ACTION_EXPR = ENTRY_OR_EXIT_ACTION__ACTION_EXPR;
 
 	/**
 	 * The feature id for the '<em><b>Exit Action Rev</b></em>' container reference.
@@ -1564,22 +1438,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_CHANNEL__STATE = CallsPackage.CALLABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Synchro Channel Expr</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Role</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL__ROLE = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
+	int SYNCHRONIZATION_CHANNEL__ROLE = CallsPackage.CALLABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Synchronization Channel</em>' class.
@@ -1588,7 +1453,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 4;
+	int SYNCHRONIZATION_CHANNEL_FEATURE_COUNT = CallsPackage.CALLABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -2522,105 +2387,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEventsExpr <em>Events Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Events Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEventsExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_EventsExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionActionExpr <em>Transition Action Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Transition Action Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionActionExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_TransitionActionExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockConstraintExpr <em>Clock Constraint Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clock Constraint Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockConstraintExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_ClockConstraintExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Absolute Deadline Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAbsoluteDeadlineExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_AbsoluteDeadlineExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRelativeDeadlineExpr <em>Relative Deadline Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Relative Deadline Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRelativeDeadlineExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_RelativeDeadlineExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getGuardExpr <em>Guard Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Guard Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getGuardExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_GuardExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchroExpr <em>Synchro Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Synchro Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchroExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_SynchroExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockResetsExpr <em>Clock Resets Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clock Resets Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockResetsExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_ClockResetsExpr();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSafetyTransitionExpr <em>Safety Transition Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Safety Transition Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSafetyTransitionExpr()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EAttribute getTransition_SafetyTransitionExpr();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2662,17 +2428,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getClockConstraint_Operator();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Clock Constraint Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClockConstraintExpr()
-	 * @see #getClockConstraint()
-	 * @generated
-	 */
-	EAttribute getClockConstraint_ClockConstraintExpr();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState <em>History State</em>}'.
@@ -2847,17 +2602,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getDoAction_PeriodUpper();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction#getActionExpr <em>Action Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction#getActionExpr()
-	 * @see #getDoAction()
-	 * @generated
-	 */
-	EAttribute getDoAction_ActionExpr();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction <em>Entry Or Exit Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2888,17 +2632,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntryOrExitAction_Action();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getActionExpr <em>Action Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Action Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitAction#getActionExpr()
-	 * @see #getEntryOrExitAction()
-	 * @generated
-	 */
-	EAttribute getEntryOrExitAction_ActionExpr();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryAction <em>Entry Action</em>}'.
@@ -2962,17 +2695,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSynchronizationChannel_State();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Synchro Channel Expr</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr()
-	 * @see #getSynchronizationChannel()
-	 * @generated
-	 */
-	EAttribute getSynchronizationChannel_SynchroChannelExpr();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}'.
@@ -3567,78 +3289,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Events Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__EVENTS_EXPR = eINSTANCE.getTransition_EventsExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition Action Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__TRANSITION_ACTION_EXPR = eINSTANCE.getTransition_TransitionActionExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Clock Constraint Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__CLOCK_CONSTRAINT_EXPR = eINSTANCE.getTransition_ClockConstraintExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Absolute Deadline Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__ABSOLUTE_DEADLINE_EXPR = eINSTANCE.getTransition_AbsoluteDeadlineExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Relative Deadline Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__RELATIVE_DEADLINE_EXPR = eINSTANCE.getTransition_RelativeDeadlineExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__GUARD_EXPR = eINSTANCE.getTransition_GuardExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Synchro Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__SYNCHRO_EXPR = eINSTANCE.getTransition_SynchroExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Clock Resets Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__CLOCK_RESETS_EXPR = eINSTANCE.getTransition_ClockResetsExpr();
-
-		/**
-		 * The meta object literal for the '<em><b>Safety Transition Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRANSITION__SAFETY_TRANSITION_EXPR = eINSTANCE.getTransition_SafetyTransitionExpr();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3671,14 +3321,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CLOCK_CONSTRAINT__OPERATOR = eINSTANCE.getClockConstraint_Operator();
-
-		/**
-		 * The meta object literal for the '<em><b>Clock Constraint Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR = eINSTANCE.getClockConstraint_ClockConstraintExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.HistoryStateImpl <em>History State</em>}' class.
@@ -3817,14 +3459,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute DO_ACTION__PERIOD_UPPER = eINSTANCE.getDoAction_PeriodUpper();
 
 		/**
-		 * The meta object literal for the '<em><b>Action Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DO_ACTION__ACTION_EXPR = eINSTANCE.getDoAction_ActionExpr();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitActionImpl <em>Entry Or Exit Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3849,14 +3483,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTRY_OR_EXIT_ACTION__ACTION = eINSTANCE.getEntryOrExitAction_Action();
-
-		/**
-		 * The meta object literal for the '<em><b>Action Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTRY_OR_EXIT_ACTION__ACTION_EXPR = eINSTANCE.getEntryOrExitAction_ActionExpr();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryActionImpl <em>Entry Action</em>}' class.
@@ -3911,14 +3537,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SYNCHRONIZATION_CHANNEL__STATE = eINSTANCE.getSynchronizationChannel_State();
-
-		/**
-		 * The meta object literal for the '<em><b>Synchro Channel Expr</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR = eINSTANCE.getSynchronizationChannel_SynchroChannelExpr();
 
 		/**
 		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.

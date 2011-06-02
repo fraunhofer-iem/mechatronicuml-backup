@@ -27,7 +27,6 @@ import org.storydriven.modeling.expressions.ComparingOperator;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getBound <em>Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClock <em>Clock</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getOperator <em>Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,33 +118,5 @@ public interface ClockConstraint extends EObject {
 	 * @generated
 	 */
 	void setOperator(ComparingOperator value);
-
-	/**
-	 * Returns the value of the '<em><b>Clock Constraint Expr</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Clock Constraint Expr</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Clock Constraint Expr</em>' attribute.
-	 * @see #isSetClockConstraintExpr()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_ClockConstraintExpr()
-	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='toMyString()'"
-	 * @generated
-	 */
-	String getClockConstraintExpr();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClockConstraintExpr <em>Clock Constraint Expr</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Clock Constraint Expr</em>' attribute is set.
-	 * @see #getClockConstraintExpr()
-	 * @generated
-	 */
-	boolean isSetClockConstraintExpr();
 
 } // ClockConstraint

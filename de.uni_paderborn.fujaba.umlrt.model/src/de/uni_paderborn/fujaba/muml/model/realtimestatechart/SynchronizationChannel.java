@@ -27,7 +27,6 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
@@ -63,33 +62,6 @@ public interface SynchronizationChannel extends Callable, NamedElement {
 	 * @generated
 	 */
 	void setState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Synchro Channel Expr</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * TODO-SD: Delete?
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Synchro Channel Expr</em>' attribute.
-	 * @see #isSetSynchroChannelExpr()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_SynchroChannelExpr()
-	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='toMyString()'"
-	 * @generated
-	 */
-	String getSynchroChannelExpr();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getSynchroChannelExpr <em>Synchro Channel Expr</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Synchro Channel Expr</em>' attribute is set.
-	 * @see #getSynchroChannelExpr()
-	 * @generated
-	 */
-	boolean isSetSynchroChannelExpr();
 
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' container reference.

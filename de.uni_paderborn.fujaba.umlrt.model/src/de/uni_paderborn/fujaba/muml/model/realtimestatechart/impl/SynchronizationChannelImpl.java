@@ -40,7 +40,6 @@ import org.storydriven.modeling.calls.impl.CallableImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getSynchroChannelExpr <em>Synchro Channel Expr</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
@@ -67,16 +66,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached setting delegate for the '{@link #getSynchroChannelExpr() <em>Synchro Channel Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchroChannelExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,24 +155,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE, newState, newState));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getSynchroChannelExpr() {
-		return (String)SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetSynchroChannelExpr() {
-		return SYNCHRO_CHANNEL_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -291,8 +262,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				return getName();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState();
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				return getSynchroChannelExpr();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				return getRole();
 		}
@@ -353,8 +322,6 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE:
 				return getState() != null;
-			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR:
-				return isSetSynchroChannelExpr();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__ROLE:
 				return getRole() != null;
 		}

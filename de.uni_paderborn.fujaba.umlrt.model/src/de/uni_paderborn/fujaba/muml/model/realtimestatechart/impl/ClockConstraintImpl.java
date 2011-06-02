@@ -35,7 +35,6 @@ import org.storydriven.modeling.expressions.ComparingOperator;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl#getBound <em>Bound</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl#getClock <em>Clock</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl#getOperator <em>Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,17 +80,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @ordered
 	 */
 	protected ComparingOperator operator = OPERATOR_EDEFAULT;
-
-
-	/**
-	 * The cached setting delegate for the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClockConstraintExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR).getSettingDelegate();
 
 
 	/**
@@ -242,24 +230,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getClockConstraintExpr() {
-		return (String)CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetClockConstraintExpr() {
-		return CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -302,8 +272,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				return basicGetClock();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
 				return getOperator();
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				return getClockConstraintExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,8 +332,6 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 				return clock != null;
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR:
-				return isSetClockConstraintExpr();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -768,87 +768,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTransition_EventsExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_TransitionActionExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_ClockConstraintExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(17);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_AbsoluteDeadlineExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_RelativeDeadlineExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_GuardExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_SynchroExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_ClockResetsExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTransition_SafetyTransitionExpr() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(23);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getClockConstraint() {
 		return clockConstraintEClass;
 	}
@@ -878,15 +797,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EAttribute getClockConstraint_Operator() {
 		return (EAttribute)clockConstraintEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getClockConstraint_ClockConstraintExpr() {
-		return (EAttribute)clockConstraintEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1038,15 +948,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDoAction_ActionExpr() {
-		return (EAttribute)doActionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEntryOrExitAction() {
 		return entryOrExitActionEClass;
 	}
@@ -1067,15 +968,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getEntryOrExitAction_Action() {
 		return (EReference)entryOrExitActionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEntryOrExitAction_ActionExpr() {
-		return (EAttribute)entryOrExitActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1137,17 +1029,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSynchronizationChannel_SynchroChannelExpr() {
-		return (EAttribute)synchronizationChannelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSynchronizationChannel_Role() {
-		return (EReference)synchronizationChannelEClass.getEStructuralFeatures().get(2);
+		return (EReference)synchronizationChannelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1368,21 +1251,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(transitionEClass, TRANSITION__SAFETY_TRANSITION);
 		createEAttribute(transitionEClass, TRANSITION__URGENT);
 		createEReference(transitionEClass, TRANSITION__GUARD);
-		createEAttribute(transitionEClass, TRANSITION__EVENTS_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__TRANSITION_ACTION_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__CLOCK_CONSTRAINT_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__ABSOLUTE_DEADLINE_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__RELATIVE_DEADLINE_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__GUARD_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__SYNCHRO_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__CLOCK_RESETS_EXPR);
-		createEAttribute(transitionEClass, TRANSITION__SAFETY_TRANSITION_EXPR);
 
 		clockConstraintEClass = createEClass(CLOCK_CONSTRAINT);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__BOUND);
 		createEReference(clockConstraintEClass, CLOCK_CONSTRAINT__CLOCK);
 		createEAttribute(clockConstraintEClass, CLOCK_CONSTRAINT__OPERATOR);
-		createEAttribute(clockConstraintEClass, CLOCK_CONSTRAINT__CLOCK_CONSTRAINT_EXPR);
 
 		historyStateEClass = createEClass(HISTORY_STATE);
 		createEAttribute(historyStateEClass, HISTORY_STATE__KIND);
@@ -1403,12 +1276,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(doActionEClass, DO_ACTION__DO_ACTION_REV);
 		createEAttribute(doActionEClass, DO_ACTION__PERIOD_LOWER);
 		createEAttribute(doActionEClass, DO_ACTION__PERIOD_UPPER);
-		createEAttribute(doActionEClass, DO_ACTION__ACTION_EXPR);
 
 		entryOrExitActionEClass = createEClass(ENTRY_OR_EXIT_ACTION);
 		createEReference(entryOrExitActionEClass, ENTRY_OR_EXIT_ACTION__CLOCK_RESETS);
 		createEReference(entryOrExitActionEClass, ENTRY_OR_EXIT_ACTION__ACTION);
-		createEAttribute(entryOrExitActionEClass, ENTRY_OR_EXIT_ACTION__ACTION_EXPR);
 
 		entryActionEClass = createEClass(ENTRY_ACTION);
 		createEReference(entryActionEClass, ENTRY_ACTION__ENTRY_ACTION_REV);
@@ -1418,7 +1289,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		synchronizationChannelEClass = createEClass(SYNCHRONIZATION_CHANNEL);
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__STATE);
-		createEAttribute(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__SYNCHRO_CHANNEL_EXPR);
 		createEReference(synchronizationChannelEClass, SYNCHRONIZATION_CHANNEL__ROLE);
 
 		synchronizationEClass = createEClass(SYNCHRONIZATION);
@@ -1566,31 +1436,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getTransition_SafetyTransition(), ecorePackage.getEBoolean(), "safetyTransition", "false", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Urgent(), ecorePackage.getEBoolean(), "urgent", "true", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Guard(), theExpressionsPackage.getExpression(), null, "guard", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_EventsExpr(), ecorePackage.getEString(), "eventsExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_TransitionActionExpr(), ecorePackage.getEString(), "transitionActionExpr", "sideEffectExpr", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_ClockConstraintExpr(), ecorePackage.getEString(), "clockConstraintExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_AbsoluteDeadlineExpr(), ecorePackage.getEString(), "absoluteDeadlineExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_RelativeDeadlineExpr(), ecorePackage.getEString(), "relativeDeadlineExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_GuardExpr(), ecorePackage.getEString(), "guardExpr", "", 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_SynchroExpr(), ecorePackage.getEString(), "synchroExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_ClockResetsExpr(), ecorePackage.getEString(), "clockResetsExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTransition_SafetyTransitionExpr(), ecorePackage.getEString(), "safetyTransitionExpr", "", 0, 1, Transition.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
-		addEOperation(transitionEClass, theCorePackage.getNaturalNumber(), "calculateWorstCaseDeadline", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(transitionEClass, ecorePackage.getEString(), "computeClockResetsExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(transitionEClass, ecorePackage.getEString(), "computeSynchroExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(transitionEClass, ecorePackage.getEString(), "computeEventsExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(transitionEClass, ecorePackage.getEString(), "computeTimeGuardExpr", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(clockConstraintEClass, ClockConstraint.class, "ClockConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClockConstraint_Bound(), theCorePackage.getNaturalNumber(), null, "bound", null, 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClockConstraint_Clock(), this.getClock(), this.getClock_ClockConstraints(), "clock", null, 0, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClockConstraint_Operator(), theExpressionsPackage.getComparingOperator(), "operator", "ComparingOperator.LESS_OR_EQUAL", 1, 1, ClockConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClockConstraint_ClockConstraintExpr(), ecorePackage.getEString(), "clockConstraintExpr", "", 0, 1, ClockConstraint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(historyStateEClass, HistoryState.class, "HistoryState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHistoryState_Kind(), this.getHistoryKind(), "kind", null, 0, 1, HistoryState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1611,12 +1461,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getDoAction_DoActionRev(), this.getState(), this.getState_DoAction(), "doActionRev", null, 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDoAction_PeriodLower(), ecorePackage.getEInt(), "periodLower", null, 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDoAction_PeriodUpper(), ecorePackage.getEInt(), "periodUpper", null, 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDoAction_ActionExpr(), ecorePackage.getEString(), "actionExpr", "doEventExpr", 0, 1, DoAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryOrExitActionEClass, EntryOrExitAction.class, "EntryOrExitAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntryOrExitAction_ClockResets(), this.getClock(), null, "clockResets", null, 0, -1, EntryOrExitAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntryOrExitAction_Action(), this.getAction(), null, "action", null, 0, 1, EntryOrExitAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntryOrExitAction_ActionExpr(), ecorePackage.getEString(), "actionExpr", "entryExitExpr", 0, 1, EntryOrExitAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryActionEClass, EntryAction.class, "EntryAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntryAction_EntryActionRev(), this.getState(), this.getState_EntryAction(), "entryActionRev", null, 0, 1, EntryAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1626,7 +1474,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(synchronizationChannelEClass, SynchronizationChannel.class, "SynchronizationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSynchronizationChannel_State(), this.getState(), this.getState_Channels(), "state", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSynchronizationChannel_SynchroChannelExpr(), ecorePackage.getEString(), "synchroChannelExpr", "", 0, 1, SynchronizationChannel.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getSynchronizationChannel_Role(), thePatternPackage.getRole(), thePatternPackage.getRole_Channels(), "role", null, 0, 1, SynchronizationChannel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(synchronizationEClass, Synchronization.class, "Synchronization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1659,8 +1506,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -1678,77 +1523,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																				
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																		
-		addAnnotation
-		  (getTransition_EventsExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "computeEventsExpr()\r\n"
-		   });		
-		addAnnotation
-		  (getTransition_TransitionActionExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if transitionAction.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\t transitionAction.toMyString()\r\nendif"
-		   });			
-		addAnnotation
-		  (getTransition_ClockConstraintExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "computeTimeGuardExpr()"
-		   });			
-		addAnnotation
-		  (getTransition_AbsoluteDeadlineExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "absoluteDeadlines->iterate( a:AbsoluteDeadline;  return: String = \'\' | \r\nreturn.concat(a.toMyString())) \r\n"
-		   });		
-		addAnnotation
-		  (getTransition_RelativeDeadlineExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if relativeDeadline.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\trelativeDeadline.toMyString()\r\nendif"
-		   });		
-		addAnnotation
-		  (getTransition_SynchroExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "computeSynchroExpr()\r\n"
-		   });		
-		addAnnotation
-		  (getTransition_ClockResetsExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "computeClockResetsExpr()\r\n"
-		   });		
-		addAnnotation
-		  (getTransition_SafetyTransitionExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "\r\n\tif safetyTransition=false then\r\n\t\t\'\'\r\n\telse\r\n\t\t\'<<safetyTransition>>\'\r\n\tendif"
-		   });			
-		addAnnotation
-		  (getClockConstraint_ClockConstraintExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "toMyString()"
-		   });																			
-		addAnnotation
-		  (getSynchronizationChannel_SynchroChannelExpr(), 
-		   source, 
-		   new String[] {
-			 "derivation", "toMyString()"
-		   });							
+		   });																																																			
 	}
 
 } //RealtimestatechartPackageImpl

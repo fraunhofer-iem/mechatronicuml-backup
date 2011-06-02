@@ -68,15 +68,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isSafetyTransition <em>Safety Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEventsExpr <em>Events Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTransitionActionExpr <em>Transition Action Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getClockConstraintExpr <em>Clock Constraint Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAbsoluteDeadlineExpr <em>Absolute Deadline Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getRelativeDeadlineExpr <em>Relative Deadline Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuardExpr <em>Guard Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchroExpr <em>Synchro Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getClockResetsExpr <em>Clock Resets Expr</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSafetyTransitionExpr <em>Safety Transition Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -264,140 +255,12 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected Expression guard;
 
 	/**
-	 * The cached setting delegate for the '{@link #getEventsExpr() <em>Events Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventsExpr()
 	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate EVENTS_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getTransitionActionExpr() <em>Transition Action Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionActionExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate TRANSITION_ACTION_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getClockConstraintExpr() <em>Clock Constraint Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClockConstraintExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getAbsoluteDeadlineExpr() <em>Absolute Deadline Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteDeadlineExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getRelativeDeadlineExpr() <em>Relative Deadline Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelativeDeadlineExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR).getSettingDelegate();
-
-	/**
-	 * The default value of the '{@link #getGuardExpr() <em>Guard Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuardExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String GUARD_EXPR_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getGuardExpr() <em>Guard Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGuardExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String guardExpr = GUARD_EXPR_EDEFAULT;
-
-	/**
-	 * The cached setting delegate for the '{@link #getSynchroExpr() <em>Synchro Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchroExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SYNCHRO_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getClockResetsExpr() <em>Clock Resets Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClockResetsExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate CLOCK_RESETS_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getSafetyTransitionExpr() <em>Safety Transition Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSafetyTransitionExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR).getSettingDelegate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
 	 */
 	protected TransitionImpl() {
 		super();
-		
-		DerivedAttributeAdapter clockResetExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS_EXPR, false);
-		clockResetExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS);
-
-		DerivedAttributeAdapter relativeDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE_EXPR, false);
-		relativeDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
-
-		DerivedAttributeAdapter absoluteDeadlineExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINE_EXPR, false);
-		absoluteDeadlineExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
-		
-		DerivedAttributeAdapter safetyTransitionExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION_EXPR, false);
-		safetyTransitionExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION);
-
-		DerivedAttributeAdapter safetySynchroExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR, false);
-		safetySynchroExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION);
-
-		DerivedAttributeAdapter safetySynchroExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__SYNCHRO_EXPR, false);
-		safetySynchroExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION);
-	
-		DerivedAttributeAdapter safetyEventExprAdapter1 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR, false);
-		safetyEventExprAdapter1.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
-	
-		DerivedAttributeAdapter safetyEventExprAdapter2 = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__EVENTS_EXPR, false);
-		safetyEventExprAdapter2.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
-	
-		DerivedAttributeAdapter timeGuardExprAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINT_EXPR, false);
-		timeGuardExprAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
-
 	}
 
 	/**
@@ -917,318 +780,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getEventsExpr() {
-		return (String)EVENTS_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetEventsExpr() {
-		return EVENTS_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTransitionActionExpr() {
-		return (String)TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetTransitionActionExpr() {
-		return TRANSITION_ACTION_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getClockConstraintExpr() {
-		return (String)CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetClockConstraintExpr() {
-		return CLOCK_CONSTRAINT_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getAbsoluteDeadlineExpr() {
-		return (String)ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetAbsoluteDeadlineExpr() {
-		return ABSOLUTE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getRelativeDeadlineExpr() {
-		return (String)RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetRelativeDeadlineExpr() {
-		return RELATIVE_DEADLINE_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getGuardExpr() {
-		return guardExpr;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGuardExpr(String newGuardExpr) {
-		String oldGuardExpr = guardExpr;
-		guardExpr = newGuardExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__GUARD_EXPR, oldGuardExpr, guardExpr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getSynchroExpr() {
-		return (String)SYNCHRO_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetSynchroExpr() {
-		return SYNCHRO_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getClockResetsExpr() {
-		return (String)CLOCK_RESETS_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetClockResetsExpr() {
-		return CLOCK_RESETS_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getSafetyTransitionExpr() {
-		return (String)SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetSafetyTransitionExpr() {
-		return SAFETY_TRANSITION_EXPR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NaturalNumber calculateWorstCaseDeadline() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String computeClockResetsExpr() {
-		String value = "";
-		if(clockResets!=null){
-		java.util.Iterator<Clock> iter = clockResets.iterator();
-		while(iter.hasNext()){
-			Clock clock = iter.next();
-				if(value.equals("")){
-					value = value + clock.getName() /* + clock.getId() */ + ":=0";
-				}else{
-					value = value + ", " + clock.getName() /* + clock.getId() */ + ":=0";
-					}
-				}
-			}
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String computeSynchroExpr() {
-		String returnString = "";
-		Synchronization synchro = null;
-		if(getSendSynchronization()!=null){
-			synchro = getSendSynchronization();
-		}else if (getReceiveSynchronization()!=null){
-			synchro = getReceiveSynchronization();
-		}
-								
-		if(synchro!=null){
-			returnString = ((de.uni_paderborn.fujaba.muml.model.realtimestatechart.
-					SynchronizationChannel)synchro.getCallee()).getName() + "(";
-									
-			java.util.Iterator<ParameterBinding> iter = synchro.getOwnedParameterBindings().iterator();
-			boolean firstTime = true;
-			while(iter.hasNext()){
-				ParameterBinding tmp = iter.next();
-				String value = ((LiteralExpression)tmp.getValueExpression()).getValue();
-				EDataType type = ((LiteralExpression)tmp.getValueExpression()).getValueType();
-				if(firstTime){
-					firstTime = false;
-					returnString = returnString + value + ":" + type.getName();
-					}else{
-					returnString = returnString + ", " + value + ":" + type.getName();
-					}
-				}
-			if(getReceiveSynchronization()!=null){
-				returnString = returnString + ")?";
-			}else{
-				returnString = returnString + ")!";
-			}
-		}
-		return returnString;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String computeEventsExpr() {
-		String triggerString = "";
-						String raisedString = "";
-				
-						java.util.Iterator<AsynchronousEvent> triggerEIter = getTriggerEvents().iterator();
-						java.util.Iterator<AsynchronousEvent> raisedEIter = getRaisedEvents().iterator();
-																			
-						boolean firstTime = true;
-						while(triggerEIter.hasNext()){
-							AsynchronousEvent tmp = triggerEIter.next();
-				
-							if(firstTime){
-								firstTime = false;
-								triggerString = triggerString + tmp.getFullEventName();
-							}else{
-								triggerString = triggerString + ", " + tmp.getFullEventName();
-							}
-						}
-						if(!getTriggerEvents().isEmpty()){
-							triggerString = "{" + triggerString + "}";
-						}
-						
-						
-						firstTime = true;
-						while(raisedEIter.hasNext()){
-							AsynchronousEvent tmp = raisedEIter.next();
-				
-							if(firstTime){
-								firstTime = false;
-								
-								raisedString = raisedString + tmp.getFullEventName();
-							}else{
-								raisedString = raisedString + ", " + tmp.getFullEventName();
-							}
-						}
-						if(!getRaisedEvents().isEmpty()){
-							raisedString = " / {" + raisedString + "}";
-						}
-							
-						return triggerString + raisedString;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String computeTimeGuardExpr() {
-				if(getClockConstraints().isEmpty()){
-					return "";
-				}
-				
-				String timeGuardString = "[";
-				java.util.Iterator<ClockConstraint> iter = getClockConstraints().iterator();
-																					
-				boolean firstTime = true;
-				while(iter.hasNext()){
-					ClockConstraint tmp = iter.next();
-								
-					if(firstTime){
-						firstTime = false;
-						timeGuardString = timeGuardString + tmp.getClockConstraintExpr();
-					}else{
-						timeGuardString = timeGuardString + ", " + tmp.getClockConstraintExpr();
-					}
-				}
-						
-				return timeGuardString+"]";
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -1415,24 +966,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return getGuard();
-			case RealtimestatechartPackage.TRANSITION__EVENTS_EXPR:
-				return getEventsExpr();
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
-				return getTransitionActionExpr();
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
-				return getClockConstraintExpr();
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
-				return getAbsoluteDeadlineExpr();
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
-				return getRelativeDeadlineExpr();
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				return getGuardExpr();
-			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-				return getSynchroExpr();
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
-				return getClockResetsExpr();
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
-				return getSafetyTransitionExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1504,9 +1037,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				setGuardExpr((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1570,9 +1100,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				setGuardExpr(GUARD_EXPR_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1619,24 +1146,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return guard != null;
-			case RealtimestatechartPackage.TRANSITION__EVENTS_EXPR:
-				return isSetEventsExpr();
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
-				return isSetTransitionActionExpr();
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
-				return isSetClockConstraintExpr();
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
-				return isSetAbsoluteDeadlineExpr();
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
-				return isSetRelativeDeadlineExpr();
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-				return GUARD_EXPR_EDEFAULT == null ? guardExpr != null : !GUARD_EXPR_EDEFAULT.equals(guardExpr);
-			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-				return isSetSynchroExpr();
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
-				return isSetClockResetsExpr();
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
-				return isSetSafetyTransitionExpr();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1699,8 +1208,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		result.append(safetyTransition);
 		result.append(", urgent: ");
 		result.append(urgent);
-		result.append(", guardExpr: ");
-		result.append(guardExpr);
 		result.append(')');
 		return result.toString();
 	}

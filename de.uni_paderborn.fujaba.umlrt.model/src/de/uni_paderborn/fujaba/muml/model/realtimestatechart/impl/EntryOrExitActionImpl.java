@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitActionImpl#getClockResets <em>Clock Resets</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitActionImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitActionImpl#getActionExpr <em>Action Expr</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,26 +61,6 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 	 * @ordered
 	 */
 	protected Action action;
-
-	/**
-	 * The default value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ACTION_EXPR_EDEFAULT = "entryExitExpr";
-
-	/**
-	 * The cached value of the '{@link #getActionExpr() <em>Action Expr</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActionExpr()
-	 * @generated
-	 * @ordered
-	 */
-	protected String actionExpr = ACTION_EXPR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,27 +141,6 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getActionExpr() {
-		return actionExpr;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActionExpr(String newActionExpr) {
-		String oldActionExpr = actionExpr;
-		actionExpr = newActionExpr;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR, oldActionExpr, actionExpr));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -204,8 +162,6 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 				return getClockResets();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION:
 				return getAction();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR:
-				return getActionExpr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,9 +182,6 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION:
 				setAction((Action)newValue);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR:
-				setActionExpr((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,9 +200,6 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION:
 				setAction((Action)null);
 				return;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR:
-				setActionExpr(ACTION_EXPR_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,26 +216,8 @@ public abstract class EntryOrExitActionImpl extends EObjectImpl implements Entry
 				return clockResets != null && !clockResets.isEmpty();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION:
 				return action != null;
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR:
-				return ACTION_EXPR_EDEFAULT == null ? actionExpr != null : !ACTION_EXPR_EDEFAULT.equals(actionExpr);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (actionExpr: ");
-		result.append(actionExpr);
-		result.append(')');
-		return result.toString();
 	}
 
 } //EntryOrExitActionImpl
