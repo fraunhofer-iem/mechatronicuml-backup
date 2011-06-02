@@ -296,15 +296,6 @@ public class TransitionItemProvider
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
-			case RealtimestatechartPackage.TRANSITION__EVENTS_EXPR:
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION_EXPR:
-			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINT_EXPR:
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINE_EXPR:
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE_EXPR:
-			case RealtimestatechartPackage.TRANSITION__GUARD_EXPR:
-			case RealtimestatechartPackage.TRANSITION__SYNCHRO_EXPR:
-			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS_EXPR:
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:

@@ -68,7 +68,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4002(container,
 						getLink(), getNewSource(), target);
 	}
@@ -87,7 +87,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.MumlinstanceBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4002(container,
 						getLink(), source, getNewTarget());
 	}

@@ -71,7 +71,6 @@ public class DoActionItemProvider
 
 			addPeriodLowerPropertyDescriptor(object);
 			addPeriodUpperPropertyDescriptor(object);
-			addActionExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,28 +115,6 @@ public class DoActionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Action Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DoAction_actionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DoAction_actionExpr_feature", "_UI_DoAction_type"),
-				 RealtimestatechartPackage.Literals.DO_ACTION__ACTION_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -209,7 +186,6 @@ public class DoActionItemProvider
 		switch (notification.getFeatureID(DoAction.class)) {
 			case RealtimestatechartPackage.DO_ACTION__PERIOD_LOWER:
 			case RealtimestatechartPackage.DO_ACTION__PERIOD_UPPER:
-			case RealtimestatechartPackage.DO_ACTION__ACTION_EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.DO_ACTION__ACTION:

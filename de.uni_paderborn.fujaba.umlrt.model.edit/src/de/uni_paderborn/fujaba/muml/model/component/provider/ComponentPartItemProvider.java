@@ -321,7 +321,6 @@ public class ComponentPartItemProvider
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
 			case ComponentPackage.COMPONENT_PART__COMMENT:
-			case ComponentPackage.COMPONENT_PART__COMPONENT_NAME_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:

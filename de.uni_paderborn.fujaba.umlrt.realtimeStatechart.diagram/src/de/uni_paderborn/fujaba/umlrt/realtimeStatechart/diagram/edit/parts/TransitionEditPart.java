@@ -94,13 +94,13 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionSafetyTransitionLabel());
+							.getFigureTransitionSynchroExprLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
 			((de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionSynchroExprLabel());
+							.getFigureTransitionSafetyTransitionLabel());
 			return true;
 		}
 		return false;
@@ -244,52 +244,52 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		private void createContents() {
 
 			fFigureTransitionPriorityFigure = new WrappingLabel();
-			fFigureTransitionPriorityFigure.setText("");
+			fFigureTransitionPriorityFigure.setText("-");
 
 			this.add(fFigureTransitionPriorityFigure);
 
 			fFigureTransitionEventExprLabel = new WrappingLabel();
-			fFigureTransitionEventExprLabel.setText("");
+			fFigureTransitionEventExprLabel.setText("-");
 
 			this.add(fFigureTransitionEventExprLabel);
 
 			fFigureTransitionAbsoluteDeadlineExprLabel = new WrappingLabel();
-			fFigureTransitionAbsoluteDeadlineExprLabel.setText("");
+			fFigureTransitionAbsoluteDeadlineExprLabel.setText("-");
 
 			this.add(fFigureTransitionAbsoluteDeadlineExprLabel);
 
 			fFigureTransitionRelativeDeadlineExprLabel = new WrappingLabel();
-			fFigureTransitionRelativeDeadlineExprLabel.setText("");
+			fFigureTransitionRelativeDeadlineExprLabel.setText("-");
 
 			this.add(fFigureTransitionRelativeDeadlineExprLabel);
 
 			fFigureTransitionClockConstraintExprLabel = new WrappingLabel();
-			fFigureTransitionClockConstraintExprLabel.setText("");
+			fFigureTransitionClockConstraintExprLabel.setText("-");
 
 			this.add(fFigureTransitionClockConstraintExprLabel);
 
 			fFigureTransitionGuardExprLabel = new WrappingLabel();
-			fFigureTransitionGuardExprLabel.setText("");
+			fFigureTransitionGuardExprLabel.setText("-");
 
 			this.add(fFigureTransitionGuardExprLabel);
 
 			fFigureTransitionClockResetExprLabel = new WrappingLabel();
-			fFigureTransitionClockResetExprLabel.setText("");
+			fFigureTransitionClockResetExprLabel.setText("-");
 
 			this.add(fFigureTransitionClockResetExprLabel);
 
 			fFigureTransitionActionExprLabel = new WrappingLabel();
-			fFigureTransitionActionExprLabel.setText("");
+			fFigureTransitionActionExprLabel.setText("-");
 
 			this.add(fFigureTransitionActionExprLabel);
 
 			fFigureTransitionSafetyTransitionLabel = new WrappingLabel();
-			fFigureTransitionSafetyTransitionLabel.setText("");
+			fFigureTransitionSafetyTransitionLabel.setText("-");
 
 			this.add(fFigureTransitionSafetyTransitionLabel);
 
 			fFigureTransitionSynchroExprLabel = new WrappingLabel();
-			fFigureTransitionSynchroExprLabel.setText("");
+			fFigureTransitionSynchroExprLabel.setText("-");
 
 			this.add(fFigureTransitionSynchroExprLabel);
 

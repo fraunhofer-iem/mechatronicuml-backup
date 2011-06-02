@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Text;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.commands.DataTypeCreateCommand;
-import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes;
+import de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
 public class ModifyDataTypePage extends WizardPage{
 	
@@ -166,7 +166,7 @@ public class ModifyDataTypePage extends WizardPage{
 	  	  
 		if(!dataTypeNameText.getText().equals("") && !instanceTypeNameText.getText().equals("")){
 			CreateElementRequest request = new CreateElementRequest(((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart(),
-					MumlinstanceElementTypes.DoAction_3026);
+					UmlrtElementTypes.DoAction_3026);
 							  
 						DataTypeCreateCommand command = new DataTypeCreateCommand(request, 
 								this.dataTypeNameText.getText(), this.instanceTypeNameText.getText());

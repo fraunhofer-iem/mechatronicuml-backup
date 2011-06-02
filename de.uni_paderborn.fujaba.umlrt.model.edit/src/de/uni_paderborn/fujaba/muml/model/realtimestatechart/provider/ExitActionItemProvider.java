@@ -80,10 +80,7 @@ public class ExitActionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExitAction)object).getActionExpr();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ExitAction_type") :
-			getString("_UI_ExitAction_type") + " " + label;
+		return getString("_UI_ExitAction_type");
 	}
 
 	/**

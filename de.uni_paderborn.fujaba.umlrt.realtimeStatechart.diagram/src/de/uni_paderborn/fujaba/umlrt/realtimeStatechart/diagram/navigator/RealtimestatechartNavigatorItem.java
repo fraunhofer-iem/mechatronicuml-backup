@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class RealtimestatechartNavigatorItem
 		extends
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.MumlinstanceAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem {
 
 	/**
 	 * @generated

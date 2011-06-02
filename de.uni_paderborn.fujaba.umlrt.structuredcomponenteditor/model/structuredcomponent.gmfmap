@@ -93,9 +93,9 @@
             <diagramLabel
                 href="structuredcomponent.gmfgraph#ComponentPartName"/>
             <viewExpression
-                body="name.concat(' : ').concat(if componentType.oclIsUndefined() then 'null' else componentType.name endif)"/>
+                body="self.name.concat(' : ').concat(if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif)"/>
             <editExpression
-                body="this.name"/>
+                body="self.name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

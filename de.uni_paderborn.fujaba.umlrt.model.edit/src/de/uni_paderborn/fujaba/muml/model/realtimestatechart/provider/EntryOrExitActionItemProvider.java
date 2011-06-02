@@ -70,7 +70,6 @@ public class EntryOrExitActionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addClockResetsPropertyDescriptor(object);
-			addActionExprPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,28 +92,6 @@ public class EntryOrExitActionItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Action Expr feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addActionExprPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntryOrExitAction_actionExpr_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitAction_actionExpr_feature", "_UI_EntryOrExitAction_type"),
-				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_ACTION__ACTION_EXPR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -157,10 +134,7 @@ public class EntryOrExitActionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EntryOrExitAction)object).getActionExpr();
-		return label == null || label.length() == 0 ?
-			getString("_UI_EntryOrExitAction_type") :
-			getString("_UI_EntryOrExitAction_type") + " " + label;
+		return getString("_UI_EntryOrExitAction_type");
 	}
 
 	/**
@@ -175,9 +149,6 @@ public class EntryOrExitActionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntryOrExitAction.class)) {
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION_EXPR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION__ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

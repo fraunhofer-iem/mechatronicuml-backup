@@ -76,11 +76,11 @@ public class RealtimestatechartNavigatorLinkHelper implements ILinkHelper {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.MumlinstanceAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem) {
 			return;
 		}
 
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.MumlinstanceAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.MumlinstanceAbstractNavigatorItem) aSelection
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem) {

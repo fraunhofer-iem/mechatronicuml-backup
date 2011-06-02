@@ -80,10 +80,7 @@ public class EntryActionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EntryAction)object).getActionExpr();
-		return label == null || label.length() == 0 ?
-			getString("_UI_EntryAction_type") :
-			getString("_UI_EntryAction_type") + " " + label;
+		return getString("_UI_EntryAction_type");
 	}
 
 	/**

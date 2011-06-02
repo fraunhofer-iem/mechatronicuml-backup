@@ -52,8 +52,8 @@ public class UmlrtOCLFactory {
 			final String[] exprBodies = new String[] {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"name.concat(\' : \').concat(if componentType.oclIsUndefined() then \'null\' else componentType.name endif)", //$NON-NLS-1$
-					"this.name", //$NON-NLS-1$
+					"self.name.concat(\' : \').concat(if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif)", //$NON-NLS-1$
+					"self.name", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

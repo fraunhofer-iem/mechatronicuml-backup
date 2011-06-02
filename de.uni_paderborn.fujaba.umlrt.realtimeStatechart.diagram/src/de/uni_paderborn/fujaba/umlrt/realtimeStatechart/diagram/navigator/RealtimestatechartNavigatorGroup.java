@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class RealtimestatechartNavigatorGroup
 		extends
-		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.MumlinstanceAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem {
 
 	/**
 	 * @generated

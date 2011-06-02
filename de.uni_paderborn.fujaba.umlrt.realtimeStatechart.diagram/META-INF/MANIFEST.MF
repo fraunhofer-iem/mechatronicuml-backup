@@ -12,6 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.pa
  de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.commands,
  de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part,
  de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers,
+ de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.parsers,
  de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -36,14 +37,16 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport
+ org.eclipse.gef;visibility:=reexport,
+ de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

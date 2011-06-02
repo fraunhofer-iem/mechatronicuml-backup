@@ -191,7 +191,7 @@ public boolean isSaveAsAllowed() {
 «DEFINE doSave FOR gmfgen::GenEditorView-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
-	public void doSave(IProgressMonitor progressMonitor) {
+	public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
 				.getDiagramView());
 		super.doSave(progressMonitor);

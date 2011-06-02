@@ -33,7 +33,7 @@ public class RealtimestatechartSheetLabelProvider extends BaseLabelProvider
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes
+				: de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes
 						.getImage(etype);
 	}
 
@@ -66,9 +66,9 @@ public class RealtimestatechartSheetLabelProvider extends BaseLabelProvider
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.MumlinstanceVisualIDRegistry
+			int vid = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view);
-			IElementType etype = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.MumlinstanceElementTypes
+			IElementType etype = de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.providers.UmlrtElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;

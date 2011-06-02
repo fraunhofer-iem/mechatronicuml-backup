@@ -152,36 +152,44 @@
           targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.10">
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionPriorityLabel"/>
+            name="TransitionPriorityLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionEventExprLabel"
-            text=""/>
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionAbsoluteDeadlineExprLabel"/>
+            name="TransitionAbsoluteDeadlineExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionRelativeDeadlineExprLabel"/>
+            name="TransitionRelativeDeadlineExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionClockConstraintExprLabel"/>
+            name="TransitionClockConstraintExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionGuardExprLabel"/>
+            name="TransitionGuardExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionClockResetExprLabel"/>
+            name="TransitionClockResetExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionActionExprLabel"/>
+            name="TransitionActionExprLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionSafetyTransitionLabel"/>
+            name="TransitionSafetyTransitionLabel"
+            text="-"/>
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionSynchroExprLabel"
-            text=""/>
+            text="-"/>
         <children
             xsi:type="gmfgraph:PolylineDecoration"
             name="TransitionFigure"/>
