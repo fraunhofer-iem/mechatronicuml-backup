@@ -229,7 +229,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portsDerived" upperBound="-1"
             eType="#//model/component/Port" changeable="false" volatile="true" transient="true"
-            unsettable="true" derived="true" containment="true">
+            unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
           </eAnnotations>
@@ -929,11 +929,9 @@
             defaultValueLiteral="false"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint" derived="true"
-            containment="true"/>
+            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint" derived="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true"
-            containment="true"/>
+            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
             eType="#//model/realtimestatechart/SynchronizationChannel" containment="true"
@@ -1055,7 +1053,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
-            eType="#//model/realtimestatechart/Clock"/>
+            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/clockConstraints"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
             eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
             defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
