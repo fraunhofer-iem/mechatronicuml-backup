@@ -725,8 +725,8 @@
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-            lowerBound="1" eType="#//model/pattern/CoordinationProtocol">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+            lowerBound="1" eType="#//model/pattern/CoordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern that defines the protocol of this assembly instance."/>
           </eAnnotations>
@@ -785,21 +785,21 @@
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-            lowerBound="1" eType="#//model/pattern/CoordinationProtocol" eOpposite="#//model/pattern/CoordinationProtocol/connectors"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/connectors"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
-            upperBound="2" eType="#//model/pattern/Role" containment="true" eOpposite="#//model/pattern/Role/pattern">
+            upperBound="2" eType="#//model/pattern/Role" containment="true" eOpposite="#//model/pattern/Role/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles belonging to this pattern."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" lowerBound="1"
-            eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationProtocol">
+            eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
           </eAnnotations>
@@ -815,8 +815,8 @@
             <details key="documentation" value="The connector which connects this role with another role.&#xD;&#xA;Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
-            eType="#//model/pattern/CoordinationProtocol" eOpposite="#//model/pattern/CoordinationProtocol/roles">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
+            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/roles">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern this role belongs to."/>
           </eAnnotations>
@@ -1055,7 +1055,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
-            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/clockConstraints"/>
+            eType="#//model/realtimestatechart/Clock"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
             eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
             defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
@@ -1169,7 +1169,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="receivingTransition"
             eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/receiveSynchronization"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" lowerBound="1"
-            eType="#//model/realtimestatechart/SynchronizationChannel"/>
+            eType="#//model/realtimestatechart/SynchronizationChannel" derived="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
