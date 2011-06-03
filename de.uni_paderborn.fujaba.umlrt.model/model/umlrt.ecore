@@ -322,11 +322,12 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="ComponentKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code and hardware components representing physical entities in the system."/>
+          <details key="documentation" value="The entries of the enumeration represent different kinds of components. These&#xD;&#xA;are discrete software components, continous components containing controller&#xD;&#xA;code, hybrid components that is a discrete software component which may have &#xD;&#xA;continuous input signals, and hardware components representing physical entities in the system."/>
         </eAnnotations>
         <eLiterals name="SOFTWARE_COMPONENT" literal="software component"/>
         <eLiterals name="CONTINUOUS_COMPONENT" value="1" literal="continuous component"/>
-        <eLiterals name="HARDWARE_COMPONENT" value="2" literal="hardware component"/>
+        <eLiterals name="HYBRID_COMPONENT" value="2" literal="hybrid component"/>
+        <eLiterals name="HARDWARE_COMPONENT" value="3" literal="hardware component"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="PortKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
