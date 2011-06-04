@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram plug-in
+# Tracing options for the de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram/debug=false
+de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram/debug/visualID=false
+de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram/debug/visualID=false

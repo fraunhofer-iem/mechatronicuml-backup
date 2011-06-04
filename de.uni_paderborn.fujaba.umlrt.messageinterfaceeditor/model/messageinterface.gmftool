@@ -15,7 +15,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/MessageInterface.gif"
-            bundle="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom"/>
+            bundle="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -33,7 +33,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Generalization.gif"
-            bundle="de.uni_paderborn.fujaba.umlrt.common"/>
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>
   </palette>

@@ -1,0 +1,110 @@
+/*
+ * Copyright (c) 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Artem Tikhomirov (Borland) - initial API and implementation
+ */
+modeltype GMFMAP uses mappings('http://www.eclipse.org/gmf/2006/mappings');
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation Navigator(in mapModel : GMFMAP, inout gmfgenModel : GMFGEN);
+
+-- FIXME result is not completely correct now
+main() {
+	var mapRoot := mapModel.rootObjects()![GMFMAP::Mapping];
+	var genEditor := gmfgenModel.rootObjects()![GMFGEN::GenEditorGenerator];
+	genEditor.navigator := mapRoot.diagram.map navigator(genEditor.diagram);
+}
+
+mapping GMFMAP::CanvasMapping::navigator(genDiagram : GMFGEN::GenDiagram) : GMFGEN::GenNavigator {
+	childReferences += genDiagram.map navigator();
+	childReferences += genDiagram.topLevelNodes.map navigator();
+	childReferences += genDiagram.childNodes->collect(n | n.containers.getNode().map navigator(n));
+	childReferences += genDiagram.links.map navigator();
+	childReferences += genDiagram.links->collect(l | l.getTargetGenNodes().showLinkTargets(l));
+	childReferences += genDiagram.links->collect(l | l.getSourceGenNodes().showLinkSources(l));
+	-- Instead, may use GenLinkEnd.genOutgoingLinks/genIncomingLinks, but they seem to be less effective as they 
+	-- go through GenLink.sources/targets anyway
+	childReferences += genDiagram.links->collect(l | l.getTargetGenNodes().showIncomingLinks(l));
+	childReferences += genDiagram.links->collect(l | l.getSourceGenNodes().showOutgoingLinks(l));
+}
+
+mapping GMFGEN::GenDiagram::navigator() : GMFGEN::GenNavigatorChildReference {
+	GMFGEN::GenNavigatorReferenceType::children.populate(result, self, null);
+}
+mapping GMFGEN::GenTopLevelNode::navigator() : GMFGEN::GenNavigatorChildReference {
+	GMFGEN::GenNavigatorReferenceType::children.populate(result, self, self.diagram);
+}
+mapping GMFGEN::GenNode::navigator(childNode : GMFGEN::GenChildNode) : GMFGEN::GenNavigatorChildReference {
+	GMFGEN::GenNavigatorReferenceType::children.populate(result, childNode, self);
+}
+
+mapping GMFGEN::GenLink::navigator() : GMFGEN::GenNavigatorChildReference {
+	GMFGEN::GenNavigatorReferenceType::children.populate(result, self, self.diagram);
+	groupName := 'links';
+	groupIcon := 'icons/linksNavigatorGroup.gif';
+}
+
+helper GMFGEN::GenNavigatorReferenceType::populate(inout ref : GMFGEN::GenNavigatorChildReference, child : GMFGEN::GenCommonBase, parent : GMFGEN::GenCommonBase) : GMFGEN::GenNavigatorChildReference {
+	ref.child := child;
+	ref.referenceType := self;
+	ref.parent := parent;
+	return ref;
+}
+
+helper GMFGEN::GenLinkEnd::showLinkTargets(link : GMFGEN::GenLink) : GMFGEN::GenNavigatorChildReference {
+	var rv := object GMFGEN::GenNavigatorChildReference {};
+	GMFGEN::GenNavigatorReferenceType::out_target.populate(rv, self, link);
+	rv.groupName := 'target';
+	rv.groupIcon := 'icons/linkTargetNavigatorGroup.gif';
+	return rv;
+}
+-- XXX Odd. Processing a link, adding a childreference to GenNode. Perhaps, using GenLinkEnd.genIncomingLinks would be better?
+helper GMFGEN::GenLinkEnd::showIncomingLinks(link : GMFGEN::GenLink) : GMFGEN::GenNavigatorChildReference {
+	var rv := object GMFGEN::GenNavigatorChildReference {};
+	GMFGEN::GenNavigatorReferenceType::in_source.populate(rv, link, self);
+	rv.groupName := 'incoming links';
+	rv.groupIcon := 'icons/linkTargetNavigatorGroup.gif';
+	return rv;
+}
+helper GMFGEN::GenLinkEnd::showLinkSources(link : GMFGEN::GenLink) : GMFGEN::GenNavigatorChildReference {
+	var rv := object GMFGEN::GenNavigatorChildReference {};
+	GMFGEN::GenNavigatorReferenceType::in_source.populate(rv, self, link);
+	rv.groupName := 'source';
+	rv.groupIcon := 'icons/linkSourceNavigatorGroup.gif';
+	return rv;
+}
+helper GMFGEN::GenLinkEnd::showOutgoingLinks(link : GMFGEN::GenLink) : GMFGEN::GenNavigatorChildReference {
+	var rv := object GMFGEN::GenNavigatorChildReference {};
+	GMFGEN::GenNavigatorReferenceType::out_target.populate(rv, link, self);
+	rv.groupName := 'outgoing links';
+	rv.groupIcon := 'icons/outgoingLinksNavigatorGroup.gif';
+	return rv;
+}
+
+query GMFGEN::GenChildContainer::getNode() : GMFGEN::GenNode { assert (false) with log ('Abstract query call'); return null }
+query GMFGEN::GenNode::getNode() : GMFGEN::GenNode { return self }
+query GMFGEN::GenCompartment::getNode() : GMFGEN::GenNode { return self.node }
+
+query GMFGEN::GenLink::getSourceGenNodes() : OrderedSet(GMFGEN::GenLinkEnd) {
+	if self.modelFacet.oclIsUndefined() then return self.diagram.getAllPossibleLinkEnds() endif;
+	return self.sources;
+}
+query GMFGEN::GenLink::getTargetGenNodes() : OrderedSet(GMFGEN::GenLinkEnd) {
+	if self.modelFacet.oclIsUndefined() then return self.diagram.getAllPossibleLinkEnds() endif;
+	return self.targets;
+}
+query GMFGEN::GenDiagram::getAllPossibleLinkEnds() : OrderedSet(GMFGEN::GenLinkEnd) {
+	-- XXX original DGMT's NavigatorHandler used getAllNodes here, which is not completely correct:
+	-- first, links can go to links, second, links can't go to GenChildLabelNode
+	var rv : OrderedSet(GMFGEN::GenLinkEnd) := OrderedSet {};
+	rv += self.topLevelNodes;
+	rv += self.childNodes - self.childNodes[GMFGEN::GenChildLabelNode]; -- child nodes, excluding labels
+	rv += self.links;
+	return rv;
+}

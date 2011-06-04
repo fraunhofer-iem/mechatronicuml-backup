@@ -6,7 +6,7 @@
   <nodes
       name="Component">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -17,7 +17,7 @@
   <nodes
       name="ComponentPart">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentMultiFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentMultiFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -29,7 +29,7 @@
       name="Port"
       affixedParentSide="NORTH">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -40,32 +40,32 @@
   <connections
       name="Delegation">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ConnectorFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
   <connections
       name="Assembly">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ConnectorFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
   <compartments
       name="ComponentCompartment">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
   </compartments>
   <labels
       name="ComponentName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
   <labels
       name="ComponentPartName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.umlrt.common/model/component.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
 </gmfgraph:Canvas>

@@ -5,14 +5,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"
          name="%editorName"
          icon="icons/PatternDiagram.gif"
          extensions="pattern_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.MumlinstanceDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstanceMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstanceDiagramActionBarContributor">
       </editor>
    </extension>
     
@@ -20,8 +20,8 @@
   	  <wizard
   	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     icon="icons/PatternDiagram.gif"
-  	     class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
-  	     id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
   	     name="Pattern Diagram">
   	     
   	     
@@ -32,9 +32,9 @@
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern">
       
-        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2005"
-		  class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"
+		  class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
 
@@ -42,9 +42,9 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.Role_2005"/>
-         <advice ref="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.RoleAdvice"/>
+      <binding context="de.uni_paderborn.fujaba.muml.patterneditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"/>
       </binding>
    </extension>
    
@@ -52,7 +52,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.providers.CustomPatternEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.providers.CustomPatternEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -63,9 +63,9 @@
         id="propsections"
         point="org.eclipse.ui.views.properties.tabbed.propertySections">
      <propertySections
-           contributorId="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram">
+           contributorId="de.uni_paderborn.fujaba.muml.patterneditor.diagram">
         <propertySection
-              class="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.custom.sheet.CustomPatternPropertySection"
+              class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.sheet.CustomPatternPropertySection"
               id="property.section.domain"
               tab="property.tab.domain">
            <input
@@ -75,7 +75,7 @@
                  type="org.eclipse.gef.EditPart">
            </input>
            <input
-                 type="de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem">
+                 type="de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.MumlinstanceAbstractNavigatorItem">
            </input>
         </propertySection>
      </propertySections>

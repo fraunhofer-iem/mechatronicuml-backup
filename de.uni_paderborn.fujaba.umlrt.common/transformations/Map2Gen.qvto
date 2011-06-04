@@ -1,0 +1,762 @@
+/*
+ * Copyright (c) 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Artem Tikhomirov (Borland) - initial API and implementation
+ */
+modeltype GMFMAP uses mappings('http://www.eclipse.org/gmf/2006/mappings');
+modeltype GMFTOOL uses tooldef('http://www.eclipse.org/gmf/2005/ToolDefinition');
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+modeltype GMFGRAPH uses gmfgraph('http://www.eclipse.org/gmf/2006/GraphicalDefinition');
+modeltype ECORE uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype GENMODEL uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+
+-- import transformations. To be replaced with access keyword, once supported
+import DiagramRunTimeModel;
+import PropertySheet;
+import PreferencePages;
+import Navigator;
+import Actions;
+import RichClientPlatformApp;
+--import Viewmaps;
+import Identity;
+--
+import gmf.GenModelAccess;
+
+import xpt.XpandFacade;
+
+--
+-- Next attempt to author GMFMap-to-GMFGen transformation
+--
+transformation Map2Gen(in mapModel : GMFMAP, in domainGenModel : GENMODEL, in diagramRuntimeGenModel : GENMODEL, out gmfgenModel : GMFGEN)
+--	access transformation Structure(in GMFMAP, inout GMFGEN)
+--	access transformation DiagramRunTimeModel(in GMFMAP, inout GMFGEN)
+	;
+
+--configuration property options : Dict(String, OclAny);
+configuration property rcp : Boolean;
+configuration property useMapMode : Boolean;
+configuration property useFullRunTime : Boolean;
+
+property domainGenModel : GENMODEL::GenModel = null;
+	
+main() {
+	var mapRoot := mapModel.rootObjects()![GMFMAP::Mapping];
+	this.domainGenModel := domainGenModel.rootObjects()![GENMODEL::GenModel];
+	--
+	var genEditor := mapRoot.map structure();
+	genEditor.diagram.compartments += genEditor.diagram.getAllNodes().compartments; -- DGMT#createGenCompartment
+	new Identity(mapModel, gmfgenModel).transform();
+	--new Viewmaps(mapModel, gmfgenModel).transform();
+	-- ???genEditor.diagram.palette := mapRoot.diagram.map palette();
+	genEditor.diagram.palette := mapRoot.diagram.map palette();
+	genEditor.domainGenModel := mapRoot.diagram.domainModel.findGenPackage().genModel;
+	genEditor.plugin := object GenPlugin {};
+	genEditor.editor := object GenEditorView {};
+	genEditor.diagramUpdater := object GenDiagramUpdater {};
+	genEditor.audits := mapRoot.audits.map audits(); -- these two should go before expression providers collection
+	genEditor.metrics := mapRoot.metrics.map metrics();
+	-- FIXME allInstances HACK
+	if not GMFGEN::GenParserImplementation.allInstances()->isEmpty() then {
+		genEditor.labelParsers := object GenParsers {
+			implementations += GMFGEN::GenParserImplementation.allInstances();
+			if this.designLabelParser <> null then implementations += this.designLabelParser endif;
+			if this.auxParser <> null then implementations += this.auxParser endif;
+			extensibleViaService := false;
+		};
+	} endif;
+	if not GMFGEN::GenExpressionProviderBase.allInstances()->isEmpty() then {
+		genEditor.expressionProviders := object GMFGEN::GenExpressionProviderContainer {
+			providers += GMFGEN::GenExpressionProviderBase.allInstances();
+		}
+	} endif;
+--	var xx : GENMODEL := GENMODEL::createEmptyModel().oclAsType(GENMODEL);
+--	var notationGenModel@xx : GENMODEL::GenModel := loadNotationGenModel(genEditor.oclAsType(ECORE::EObject));
+	new DiagramRunTimeModel(diagramRuntimeGenModel, gmfgenModel).transform();
+	if not rcp then new Navigator(mapModel, gmfgenModel).transform() endif;
+	new PropertySheet(mapModel, gmfgenModel).transform();
+	new PreferencePages(mapModel, gmfgenModel).transform();
+	new Actions(mapModel, gmfgenModel).transform();
+	if rcp then new RichClientPlatformApp(mapModel, gmfgenModel).transform() endif;
+}
+
+mapping GMFMAP::Mapping::structure() : GMFGEN::GenEditorGenerator@gmfgenModel {
+--	new Structure(self, result)->transform();
+	diagram := self.diagram.map structure();
+	diagram.topLevelNodes += self.nodes.structure();
+	-- FIXME allInstances is a HACK
+	diagram.childNodes += GMFMAP::ChildReference.allInstances().child.resolve(GMFGEN::GenChildNode);
+	diagram.links := self.links->map structure()->asOrderedSet();
+	-- model facets
+	--
+	-- element types
+	-- For now, for legacy reasons, setupElementType is invoked at the same places where DGMT used to invoke it
+	-- However, for real M2M, I'd prefer to have a single place for all elementTypes setting. FIXME:refactor later
+	--diagram.getAllNodes()->forEach(n) { setupElementType(n) };
+	--diagram.links->forEach(l) { setupElementType(l) };
+	-- <end of element types>
+	diagram.viewmap := self.diagram.diagramCanvas.map viewmap(); 
+}
+
+-- XXX review - Specialization type is created again and again - why not reuse it?
+-- static, for some reasons, helpers couldn't specify 'inout' for context element
+-- XXX, actually, don't need GenNode here, GenClass should be sufficient
+helper setupElementType(inout genNode : GMFGEN::GenNode) {
+	if genNode.modelFacet.oclIsUndefined() then genNode.elementType := object GMFGEN::NotationType {}
+	else genNode.elementType := genNode.modelFacet.metaClass.getOrCreateRuntimeMetamodelType() endif;
+	return;
+}
+helper setupElementType(inout genLink : GMFGEN::GenLink) {
+	if genLink.modelFacet.oclIsUndefined() then genLink.elementType := object GMFGEN::NotationType {}
+	else if genLink.modelFacet.oclIsKindOf(GMFGEN::TypeModelFacet) then
+			genLink.elementType := genLink.modelFacet.oclAsType(GMFGEN::TypeModelFacet).metaClass.getOrCreateRuntimeMetamodelType()
+		else -- ref-based link; specialize null
+			genLink.elementType := object GMFGEN::SpecializationType {} 
+		endif
+	endif;
+	return;
+}
+query GENMODEL::GenClass::getOrCreateRuntimeMetamodelType() : GMFGEN::ElementType {
+	var mmt = self.resolveoneIn(GENMODEL::GenClass::gmfRuntimeMetamodelType, GMFGEN::MetamodelType);
+	if mmt.oclIsUndefined() then 
+		return self.map gmfRuntimeMetamodelType() 
+	endif;
+	return object GMFGEN::SpecializationType { metamodelType := mmt }
+}
+-- XXX ElementType as return value, disjunct?
+mapping GENMODEL::GenClass::gmfRuntimeMetamodelType() : GMFGEN::MetamodelType {
+}
+
+mapping GMFMAP::CanvasMapping::structure() : GMFGEN::GenDiagram {
+	result.domainDiagramElement := self.domainMetaElement.findGenClass();
+	if result.domainDiagramElement.oclIsUndefined() then 
+		result.elementType := object GMFGEN::NotationType {}
+	else
+		result.elementType := result.domainDiagramElement.getOrCreateRuntimeMetamodelType()
+	endif;
+}
+
+helper GMFMAP::TopNodeReference::structure() : GMFGEN::GenTopLevelNode {
+	var rv = object GMFGEN::GenTopLevelNode {};
+	rv.modelFacet := self.createModelFacet();
+	setupElementType(rv);
+	self.child.tool.map paletteEntry().oclAsType(ToolEntry).genNodes += rv;
+	self.child.processAbstractNode(rv);
+	rv.viewmap := self.child.diagramNode.viewmap();
+	return rv;
+}
+
+helper GMFMAP::NodeReference::createModelFacet() : GMFGEN::TypeModelFacet {
+	if self.child.domainMetaElement.oclIsUndefined() then return null endif;
+	var mf := object TypeModelFacet {};
+	mf.metaClass := self.child.domainMetaElement.findGenClass();
+	mf.containmentMetaFeature := self.containmentFeature.findGenFeature();
+	if self.childrenFeature.oclIsUndefined() then mf.childMetaFeature := mf.containmentMetaFeature else mf.childMetaFeature := self.childrenFeature.findGenFeature() endif;
+	mf.modelElementSelector := self.child.domainSpecialization.map structure(); 
+	mf.modelElementInitializer := self.child.domainInitializer.map structure();
+	return mf;
+}
+
+mapping GMFMAP::LinkMapping::structure() : GMFGEN::GenLink {
+	-- model facet
+	if self.domainMetaElement.oclIsUndefined() then {
+		if self.linkMetaFeature.oclIsUndefined() then result.modelFacet := null else {
+			result.modelFacet := object FeatureLinkModelFacet {
+				metaFeature := self.linkMetaFeature.findGenFeature();
+			};
+		} endif 
+	} else {
+		result.modelFacet := object TypeLinkModelFacet {
+			metaClass := self.domainMetaElement.findGenClass();
+			containmentMetaFeature := self.containmentFeature.findGenFeature();
+			childMetaFeature := containmentMetaFeature;
+			sourceMetaFeature := self.sourceMetaFeature.findGenFeature();
+			targetMetaFeature := self.linkMetaFeature.findGenFeature();
+			modelElementSelector := self.domainSpecialization.map structure(); -- ALTERNATIVE: if not self.domainSpecialization.oclIsUndefined() then modelElementSelector := self.domainSpecialization.map structure() endif; 
+			modelElementInitializer := self.domainInitializer.map structure();
+		}
+	} endif;
+	-- labels
+	self.labelMappings->forEach(lm) {
+		var gl := object GMFGEN::GenLinkLabel {};
+		result.labels += gl;
+		gl.readOnly := lm.readOnly;
+		gl.elementIcon := lm.diagramLabel.elementIcon;
+		gl.modelFacet := lm.map createLabelModelFacet();
+		gl.viewmap := lm.diagramLabel.viewmap();
+	};
+	self.tool.map paletteEntry().oclAsType(ToolEntry).genLinks += result;
+	setupElementType(result);
+	result.viewmap := self.diagramLink.viewmap();
+	result.creationConstraints := self.creationConstraints.map structure();
+}
+query EClass::findGenClass() : GENMODEL::GenClass {
+	return self.ePackage.findGenPackage().genClassifiers[GenClass]->select(gc | gc.ecoreClass.name = self.name)->first();
+}
+query EPackage::findGenPackage() : GENMODEL::GenPackage {
+	-- XXX GenModel.findGenPackage does more than this (staticGenPackage and nestedGenPackages). FIXME
+	-- ->union(genModel.staticGenPackages)
+	return this.domainGenModel.genPackages->union(this.domainGenModel.usedGenPackages)->select(gp | gp.ecorePackage.nsURI = self.nsURI)->asSequence()->first();
+}
+query EStructuralFeature::findGenFeature() : GENMODEL::GenFeature {
+	return self.eContainingClass.findGenClass().genFeatures->select(f | f.ecoreFeature = self)->first();
+}
+
+helper GMFMAP::NodeMapping::processAbstractNode(inout genNode : GMFGEN::GenNode) {
+	genNode.compartments += self.compartments.map structure();
+	self.children->forEach(ch) {
+		var genChildContainer : GMFGEN::GenChildContainer = genNode;
+		if not ch.compartment.oclIsUndefined() then genChildContainer := ch.compartment.resolveone(GMFGEN::GenCompartment) endif;
+		var childGenNode : GMFGEN::GenChildNode;
+		if ch.child.resolve(GMFGEN::GenChildNode)->isEmpty() then childGenNode := ch.createGenChildNode() else {
+			childGenNode := ch.child.resolve(GMFGEN::GenChildNode)->selectOne(matchChildReferenceFeatures(ch));
+			if childGenNode.oclIsUndefined() then childGenNode := ch.createGenChildNode() endif;
+		} endif;
+		if (genChildContainer.oclIsKindOf(GMFGEN::GenCompartment) and ch.child.children->size() > 0) then {
+			genChildContainer.oclAsType(GMFGEN::GenCompartment).listLayout := false
+		} endif;
+		genChildContainer.childNodes += childGenNode;
+	};
+	genNode.labels += self.labelMappings.map createNodeLabel(genNode);
+	genNode.behaviour += self.relatedDiagrams.handleRelatedDiagram(self);
+	return null;
+}
+query GMFGEN::GenChildNode::matchChildReferenceFeatures(childNodeRef : GMFMAP::ChildReference) : Boolean {
+	var containmentFeatureMatch : Boolean;
+	var childrenFeatureMatch : Boolean;
+	if self.modelFacet.containmentMetaFeature.oclIsUndefined() then 
+		containmentFeatureMatch := childNodeRef.containmentFeature = null 
+	else 
+		containmentFeatureMatch := childNodeRef.containmentFeature = self.modelFacet.containmentMetaFeature.ecoreFeature
+	endif;
+	if self.modelFacet.childMetaFeature.oclIsUndefined() then
+		childrenFeatureMatch := childNodeRef.childrenFeature = null
+	else
+		if childNodeRef.childrenFeature = null then 
+			childrenFeatureMatch := self.modelFacet.childMetaFeature = self.modelFacet.containmentMetaFeature
+		else
+			childrenFeatureMatch := self.modelFacet.childMetaFeature.ecoreFeature = childNodeRef.childrenFeature
+		endif
+	endif;
+	return containmentFeatureMatch and childrenFeatureMatch;
+} 
+mapping GMFMAP::NodeMapping::structure() : GMFGEN::GenChildNode
+	disjuncts GMFMAP::NodeMapping::createGenChildLabelNode, GMFMAP::NodeMapping::createGenChildSideAffixedNode, GMFMAP::NodeMapping::createGenChildNode 
+{}
+
+mapping GMFMAP::NodeMapping::createGenChildLabelNode() : GMFGEN::GenChildLabelNode when { self.isPureLabelNode() } {
+	var soleLabel := self.labelMappings->first();
+	labelModelFacet := soleLabel.map createLabelModelFacet();
+	labelReadOnly := soleLabel.readOnly;
+	labelElementIcon := soleLabel.diagramLabel.elementIcon;
+	viewmap := soleLabel.diagramLabel.viewmap();
+	 -- needCompartmentChildrenLabelProcessing = false, no need to processAbstractNode
+}
+mapping GMFMAP::NodeMapping::createGenChildSideAffixedNode() : GMFGEN::GenChildSideAffixedNode when { self.diagramNode.affixedParentSide <> GMFGRAPH::Direction::NONE} {
+	viewmap := self.diagramNode.viewmap();
+	preferredSideName := self.diagramNode.getAffixedSideAsPositionConstantsName();
+	self.processAbstractNode(result);
+}
+mapping GMFMAP::NodeMapping::createGenChildNode() : GMFGEN::GenChildNode {
+	viewmap := self.diagramNode.viewmap();
+	self.processAbstractNode(result); -- needCompartmentChildrenLabelProcessing = true
+}
+helper GMFMAP::ChildReference::createGenChildNode() : GMFGEN::GenChildNode {
+	-- XXX perhaps, no need to keep this helper, move the code into corresponding mapping operations?
+	var rv : GMFGEN::GenChildNode = self.child.map structure();
+	self.child.tool.map paletteEntry().oclAsType(ToolEntry).genNodes += rv;
+	rv.modelFacet := self.createModelFacet();
+	setupElementType(rv);
+	return rv;
+}
+query GMFMAP::NodeMapping::isPureLabelNode() : Boolean {
+	return self.labelMappings->size() = 1 and self.children->isEmpty() and self.labelMappings->first().diagramLabel = self.diagramNode;
+}
+query GMFGRAPH::Node::getAffixedSideAsPositionConstantsName() : String {
+	switch {
+		case (self.affixedParentSide = GMFGRAPH::Direction::NONE) assert (false) with log('DiagramNode is not side-affixed', self);
+		case (self.affixedParentSide = GMFGRAPH::Direction::EAST) return 'EAST';
+		case (self.affixedParentSide = GMFGRAPH::Direction::WEST) return 'WEST';
+		case (self.affixedParentSide = GMFGRAPH::Direction::NORTH) return 'NORTH';
+		case (self.affixedParentSide = GMFGRAPH::Direction::SOUTH) return 'SOUTH';
+		case (self.affixedParentSide = GMFGRAPH::Direction::NSEW) return 'NONE'; -- any side
+		--else return 'NONE'; -- any side
+	};
+	return 'NONE'; -- any side
+}
+helper GMFMAP::CanvasMapping::handleRelatedDiagram(in mapElement : GMFMAP::MappingEntry) : GMFGEN::OpenDiagramBehaviour {
+	var rv = object GMFGEN::OpenDiagramBehaviour {};
+	-- XXX alternative approach to tell whether related diagram is the same we are processing now, 
+	-- originally self.eResource() != mapElement.eResource()
+	if self <> mapElement.container() then {
+		rv.diagramKind := 'FIXME put GenEditorGenerator.modelID value here';
+		rv.editorID := 'FIXME put GenEditorView.id value here';
+	} endif;
+	return rv;
+}
+
+mapping GMFMAP::CompartmentMapping::structure() : GMFGEN::GenCompartment {
+	-- visualID, viewmap and diagramRTclass should get assigned universally
+	result.canCollapse := self.compartment.collapsible;
+	result.needsTitle := self.compartment.needsTitle;
+	result.title := self.compartment.name;
+	result.viewmap := self.compartment.viewmap();
+}
+
+mapping GMFMAP::LabelMapping::createNodeLabel(in genNode : GMFGEN::GenNode) : GMFGEN::GenNodeLabel {
+	init {
+		if self.diagramLabel.external then
+			result := object GenExternalNodeLabel {}
+		else 
+			result := object GenNodeLabel {}
+		endif
+	}
+	-- visualID, diagramRTclass and viewmap should get assigned universally
+	result.modelFacet := self.map createLabelModelFacet();
+	result.readOnly := self.readOnly;
+	result.elementIcon := self.diagramLabel.elementIcon;
+	result.viewmap := self.diagramLabel.viewmap();
+}
+
+-- XXX perhaps, can replace with mapping WTF::auxParser() and WTF::externalParser, to use QVTO to create instances when
+-- neccessary, the problem is finding a proper WTF (labelMapping knows it's MappingEntry, but latter doesn't keep track of CanvasMapping or similar)
+property designLabelParser : GMFGEN::ExternalParser = null;
+property auxParser : GMFGEN::ExternalParser = null;
+	
+-- DGMT#createLabelModelFacet
+mapping GMFMAP::LabelMapping::createLabelModelFacet() : GMFGEN::LabelModelFacet {
+	if this.auxParser = null then this.auxParser := object GMFGEN::ExternalParser {} endif;
+	parser := this.auxParser;
+}
+-- FIXME use disjuncts instead
+mapping GMFMAP::FeatureLabelMapping::createLabelModelFacet() : GMFGEN::LabelModelFacet {
+	init {
+		var r := object GMFGEN::FeatureLabelModelFacet {};
+		r.metaFeatures += self.features.findGenFeature();
+		r.editableMetaFeatures += self.editableFeatures.findGenFeature();
+		r.viewPattern := self.viewPattern;
+		r.editPattern := self.editPattern;
+		r.editorPattern := self.editorPattern;
+		r.viewMethod := self.viewMethod.convertLabelTextAccessMethod();
+		r.editMethod := self.editMethod.convertLabelTextAccessMethod();
+		-- if exists then select else 
+		-- FIXME allInstances == hack
+		var p = GMFGEN::PredefinedParser.allInstances()->any(pp | pp.viewMethod = r.viewMethod and pp.editMethod = r.editMethod);
+		if p.oclIsUndefined() then p := object PredefinedParser {viewMethod := r.viewMethod; editMethod := r.editMethod; } endif;
+		r.parser := p;
+		result := r;
+	}
+}
+query GMFMAP::LabelTextAccessMethod::convertLabelTextAccessMethod() : GMFGEN::LabelTextAccessMethod {
+	switch {
+		case (self = GMFMAP::LabelTextAccessMethod::NATIVE) return GMFGEN::LabelTextAccessMethod::NATIVE;
+		case (self = GMFMAP::LabelTextAccessMethod::REGEXP) return GMFGEN::LabelTextAccessMethod::REGEXP;
+		case (self = GMFMAP::LabelTextAccessMethod::PRINTF) return GMFGEN::LabelTextAccessMethod::PRINTF;
+		else return GMFGEN::LabelTextAccessMethod::MESSAGE_FORMAT;
+	};
+	return GMFGEN::LabelTextAccessMethod::MESSAGE_FORMAT;
+}
+mapping GMFMAP::DesignLabelMapping::createLabelModelFacet() : GMFGEN::LabelModelFacet {
+	init {
+		result := object GMFGEN::DesignLabelModelFacet {};
+	}
+	if this.designLabelParser = null then this.designLabelParser := object GMFGEN::ExternalParser {} endif;
+	parser := this.designLabelParser;
+}
+
+
+-- *************************************************************************************
+-- Constraints and initializers
+-- *************************************************************************************
+
+mapping GMFMAP::LinkConstraints::structure() : GMFGEN::GenLinkConstraints {
+	sourceEnd := self.sourceEnd.map structure();
+	targetEnd := self.targetEnd.map structure();
+}
+
+-- note, Constraints may be reused through reuse of NodeMappings, hence need to keep track of the relation
+mapping GMFMAP::Constraint::structure() : GMFGEN::GenConstraint {
+	result._body := self._body;
+	result.bindToProvider(self);
+}
+mapping GMFMAP::ValueExpression::structure_ve() : GMFGEN::ValueExpression { --XXX think about naming, how to avoid conflict with GenConstraint::structure - disjuncts?
+	result._body := self._body;
+	result.bindToProvider(self);
+}
+helper GMFGEN::ValueExpression::bindToProvider(in expression : GMFMAP::ValueExpression) {
+	if expression.language.detectGenLanguage().oclIsUndefined() then return endif; -- XXX perhaps, don't need this line, if .map would give OclInvalid
+	expression.language.detectGenLanguage().map expressionProvider().expressions += self;
+	return;
+}
+-- XXX actually, looks like I don't need GenLanguage - I can make most decisions based on 
+query GMFMAP::Language::detectGenLanguage() : GMFGEN::GenLanguage {
+	switch {
+		case (self = GMFMAP::Language::ocl) return GMFGEN::GenLanguage::ocl;
+		case (self = GMFMAP::Language::java) return GMFGEN::GenLanguage::java;
+		case (self = GMFMAP::Language::regexp) return GMFGEN::GenLanguage::regexp;
+		case (self = GMFMAP::Language::nregexp) return GMFGEN::GenLanguage::nregexp;
+		case (self = GMFMAP::Language::_literal) return GMFGEN::GenLanguage::_literal;
+		else { assert (false) with log ('Unknown expression language literal', self); }
+	};
+	return GMFGEN::GenLanguage::ocl;
+}
+mapping GMFGEN::GenLanguage::expressionProvider() : GMFGEN::GenExpressionProviderBase {
+	init {
+		switch {
+			case (self = GMFGEN::GenLanguage::ocl) result := object GMFGEN::GenExpressionInterpreter { language := self };
+			case (self = GMFGEN::GenLanguage::java) result := object GMFGEN::GenJavaExpressionProvider {};
+			case (self = GMFGEN::GenLanguage::regexp) result := object GMFGEN::GenExpressionInterpreter { language := self };
+			case (self = GMFGEN::GenLanguage::nregexp) result := object GMFGEN::GenExpressionInterpreter { language := self };
+			case (self = GMFGEN::GenLanguage::_literal) result := object GMFGEN::GenLiteralExpressionProvider {};
+			else { 
+				assert (false) with log ('Unknown expression language literal', self);
+				-- fake provider with no language set to fail validation (XXX perhaps, makes sense to add 'unrecognized' language?)
+				result := object GMFGEN::GenExpressionInterpreter {};
+			}
+		}
+	}
+}
+
+mapping GMFMAP::ElementInitializer::structure() : GMFGEN::GenElementInitializer {
+	init {
+		assert (false) with log ('No idea how to process ElementInitializer', self);
+	}
+}
+
+mapping GMFMAP::FeatureSeqInitializer::structure() : GMFGEN::GenElementInitializer {
+	init {
+		result := object GenFeatureSeqInitializer {
+			initializers += self.initializers.map structure();
+			elementClass := self.elementClass.findGenClass();
+		}
+	}
+}
+mapping GMFMAP::FeatureInitializer::structure() : GMFGEN::GenFeatureInitializer {
+	init {
+		assert (false) with log ('No idea how to process FeatureInitializer', self);
+	}
+}
+
+mapping GMFMAP::FeatureValueSpec::structure() : GMFGEN::GenFeatureInitializer {
+	init {
+		result := object GenFeatureValueSpec {
+			feature := self.feature.findGenFeature();
+			value := self.value.map structure_ve();
+		}
+	}
+}
+
+mapping GMFMAP::ReferenceNewElementSpec::structure() : GMFGEN::GenFeatureInitializer {
+	init {
+		result := object GenReferenceNewElementSpec {
+			feature := self.feature.findGenFeature();
+			-- cast to GenFeatureSeqInitializer was in the original DGMT
+			newElementInitializers += self.newElementInitializers.map structure().oclAsType(GMFGEN::GenFeatureSeqInitializer);
+		}
+	}
+}
+
+-- *************************************************************************************
+-- Palette
+-- *************************************************************************************
+
+mapping GMFMAP::CanvasMapping::palette() : GMFGEN::Palette 
+	when { not self.palette.oclIsUndefined(); } {
+	--if self.palette.oclIsUndefined() return OclInvalid;
+	var paletteItems : Sequence(GMFGEN::ToolGroupItem) := self.palette.tools.map paletteEntry();
+	var topLevelTools := paletteItems->asOrderedSet() - paletteItems[GMFGEN::ToolGroup]->asOrderedSet();
+	if topLevelTools->notEmpty() then {
+		var defaultGroup := object GMFGEN::ToolGroup {
+			title := 'Default';
+			description := 'Holds top-level non-container tools';
+			collapse := false;
+			entries += topLevelTools;				
+		};
+		result.groups := result.groups->prepend(defaultGroup);
+	} endif;
+	result.groups += paletteItems[GMFGEN::ToolGroup];
+	result.flyout := true;
+	if (self.palette._default <> null) then {
+		var te := self.palette._default.resolveone(GMFGEN::ToolEntry);
+		if te <> null then te._default := true else log ('There\'s default tool specified for palette, but can\'t find gmfgen counterpart') endif;
+	} endif;
+}
+
+mapping GMFTOOL::AbstractTool::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		assert (false) with log('Can\'t dispatch paletteEntry() for ', self);
+	}
+}
+
+mapping GMFTOOL::PaletteSeparator::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		result := object GMFGEN::Separator {};
+	}
+}
+
+mapping GMFTOOL::CreationTool::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		var r := object GMFGEN::ToolEntry {};
+		setupCommonToolEntry(self, r);
+		result := r;
+	}
+}
+
+mapping GMFTOOL::GenericTool::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		var r := object GMFGEN::ToolEntry {};
+		r.qualifiedToolName := self.toolClass;
+		setupCommonToolEntry(self, r);
+		result := r;
+	}
+}
+
+mapping GMFTOOL::StandardTool::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		var r := object GMFGEN::StandardEntry {};
+		switch {
+			case (self.toolKind = StandardToolKind::SELECT) r.kind := StandardEntryKind::SELECT;  
+			case (self.toolKind = StandardToolKind::MARQUEE) r.kind := StandardEntryKind::MARQUEE;			
+			case (self.toolKind = StandardToolKind::ZOOM_PAN) r.kind := StandardEntryKind::ZOOM;			
+		};
+		setupCommonToolEntry(self, r);
+		result := r;
+	}
+}
+
+mapping GMFTOOL::ToolGroup::paletteEntry() : GMFGEN::ToolGroupItem {
+	init {
+		var r := object GMFGEN::ToolGroup {};
+		r.stack := self.stack;
+		r.collapse := self.collapsible;
+		setupCommonToolEntry(self, r);
+		r.entries += self.tools.map paletteEntry();
+		result := r;
+	}
+}
+
+-- XXX or helper GMFGEN::EntryBase::setupCommonToolEntry()?
+helper setupCommonToolEntry(in tool : GMFTOOL::AbstractTool, inout genTool : GMFGEN::EntryBase){
+	genTool.title := tool.title;
+	genTool.description := tool.description;
+	if tool.largeIcon.oclIsTypeOf(GMFTOOL::BundleImage) then 
+		genTool.largeIconPath := tool.largeIcon.oclAsType(GMFTOOL::BundleImage).constructIconPath() 
+	endif;
+	if tool.smallIcon.oclIsTypeOf(GMFTOOL::BundleImage) then 
+		genTool.smallIconPath := tool.smallIcon.oclAsType(GMFTOOL::BundleImage).constructIconPath()
+	endif;
+	return null;
+}
+
+-- FIXME process path (makeRelative/makeAbsolute) as in original java code
+query GMFTOOL::BundleImage::constructIconPath() : String {
+	if self.path = null or self.path.size() = 0 then return null endif;
+	if self.bundle = null then return self.path endif;
+	return self.bundle + '/' + self.path;
+}
+
+
+-- *************************************************************************************
+-- Audits
+-- *************************************************************************************
+mapping GMFMAP::AuditContainer::audits() : GMFGEN::GenAuditRoot {
+	result.categories += self.allContainers().map category();
+	result.rules += self.allContainers().audits.map rule();
+	var allRulesWithContext := result.rules->select(not target.oclIsUndefined());
+	var rulesWithDiagramElementTarget := allRulesWithContext->select(target.oclIsTypeOf(GMFGEN::GenDiagramElementTarget));
+	rulesWithDiagramElementTarget.target[GMFGEN::GenDiagramElementTarget]->forEach(t) {
+		-- Basically, all rules with targets != null
+		-- get a context (emf.validation), which is a scope or set of elements audit is evaluated against.
+		-- For certain cases, e.g. diagram elements as audit targets, special logic to select these
+		-- elements should get generated - to filter diagram views by visualID, and hence
+		-- there's another implementation of IClientSelector and dedicated context.
+		var ctx : GMFGEN::GenAuditContext;
+		-- use of exists seems to be sufficient, as all ruleTargets for a given context should get same elements
+		-- by the nature of construction. However, more honest way would be to use forAll, accompanied with not isEmpty():
+		-- not cc.ruleTargets[GMFGEN::GenDiagramElementTarget]->isEmpty() and cc.ruleTargets[...]->forAll(element = t.element) 
+		ctx := result.clientContexts->selectOne(cc | cc.ruleTargets[GMFGEN::GenDiagramElementTarget]->exists(element = t.element));
+		-- there might be already a context to pick same elements this target has 
+		if ctx.oclIsUndefined() then {
+			ctx := object GMFGEN::GenAuditContext {};
+			ctx.id := t.element.visualID.repr()->asList()->joinfields('_','Ctx','');
+			result.clientContexts += ctx;
+		} endif;
+		t.contextSelector := ctx;
+	};
+	var defaultAuditContext := object GMFGEN::GenAuditContext {};
+	result.clientContexts += defaultAuditContext;
+	(allRulesWithContext - rulesWithDiagramElementTarget).target->forEach(t) { t.contextSelector := defaultAuditContext };
+	
+}
+query GMFMAP::AuditContainer::allContainers() : Sequence(GMFMAP::AuditContainer) {
+	var nested := self.childContainers.allContainers(); --hope, there's implicit flatten
+	return nested->prepend(self);
+}
+mapping GMFMAP::AuditContainer::category() : GMFGEN::GenAuditContainer {
+	id := self.id;
+	name := self.name;
+	description := self.description;
+	path += self.parentContainer.resolveone(GMFGEN::GenAuditContainer).path;
+	-- alternative, not sure which one is better: 
+	-- path += self.parentContainer.map category().path;
+	path += result;
+}
+mapping GMFMAP::AuditRule::rule() : GMFGEN::GenAuditRule {
+	id := self.id;
+	name := self.name;
+	message := self.message;
+	description := self.description;
+	useInLiveMode := self.useInLiveMode;
+	target := self.target.map auditTarget();
+	rule := self.rule.map structure();
+	severity := self.severity.severity();
+	category := self.container.map category();
+}
+mapping GMFMAP::Auditable::auditTarget() : GMFGEN::GenAuditable  
+	disjuncts GMFMAP::DomainElementTarget::ruleTarget, GMFMAP::NotationElementTarget::ruleTarget, GMFMAP::DiagramElementTarget::ruleTarget,
+		GMFMAP::AuditedMetricTarget::ruleTarget, GMFMAP::DomainAttributeTarget::ruleTarget
+	{} --assert (false) with log ('Unknown rule target', self);
+mapping GMFMAP::DomainElementTarget::ruleTarget() : GMFGEN::GenDomainElementTarget {
+	element := self.element.findGenClass();
+}
+mapping GMFMAP::NotationElementTarget::ruleTarget() : GMFGEN::GenNotationElementTarget {
+	element := self.element.findGenClass(); -- XXX double-check if domain's genmodel should be consulted here, not notation's
+}
+mapping GMFMAP::DiagramElementTarget::ruleTarget() : GMFGEN::GenDiagramElementTarget {
+	-- alternatives:
+--	element += self.element.resolveIn(GMFMAP::NodeMapping::structure, GMFGEN::GenCommonBase);
+--	element += self.element.resolveIn(GMFMAP::LinkMapping::structure, GMFGEN::GenCommonBase);
+--	element += self.element.resolveIn(GMFMAP::TopNodeReference::structure, GMFGEN::GenCommonBase);
+	element += self.element.resolve(GMFGEN::GenCommonBase);
+}
+mapping GMFMAP::AuditedMetricTarget::ruleTarget() : GMFGEN::GenAuditedMetricTarget {
+	result.metric := self.metric.map rule();
+	var resultClassifier := loadEcoreGenModel().genPackages->first().genClassifiers[GENMODEL::GenDataType]->selectOne(ecoreDataType.name='EDoubleObject');
+	assert (not resultClassifier.oclIsUndefined()) with log ('Troubles loading ecore.genmodel and accessing EDoubleObject');
+	result.metricValueContext := resultClassifier;
+}
+mapping GMFMAP::DomainAttributeTarget::ruleTarget() : GMFGEN::GenDomainAttributeTarget {
+	attribute := self.attribute.findGenFeature();
+	nullAsError := self.nullAsError;
+}
+
+query GMFMAP::Severity::severity() : GMFGEN::GenSeverity {
+	switch  {
+		case (self = GMFMAP::Severity::INFO) return GMFGEN::GenSeverity::INFO;
+		case (self = GMFMAP::Severity::WARNING) return GMFGEN::GenSeverity::WARNING;
+		case (self = GMFMAP::Severity::ERROR) return GMFGEN::GenSeverity::ERROR;
+	};
+	assert (false) with log ('Unrecognized Severity::* value', self);
+	return null;
+}
+
+-- *************************************************************************************
+-- Metrics
+-- *************************************************************************************
+mapping GMFMAP::MetricContainer::metrics() : GMFGEN::GenMetricContainer {
+	metrics += self.metrics.map rule();
+}
+
+mapping GMFMAP::MetricRule::rule() : GMFGEN::GenMetricRule {
+	key := self.key;
+	name := self.name;
+	description := self.description;
+	lowLimit := self.lowLimit;
+	highLimit := self.highLimit;
+	rule := self.rule.map structure_ve();
+	target := self.target.map metricTarget();
+	
+}
+mapping GMFMAP::Measurable::metricTarget() : GMFGEN::GenMeasurable
+	disjuncts GMFMAP::DomainElementTarget::ruleTarget, GMFMAP::NotationElementTarget::ruleTarget, GMFMAP::DiagramElementTarget::ruleTarget
+	{} --assert (false) with log ('Unknown rule target', self);
+
+
+	
+-- *************************************************************************************
+-- Viewmaps
+-- *************************************************************************************
+
+property templateRoots : Sequence(String) = Sequence {'platform:/plugin/org.eclipse.gmf.graphdef.codegen/templates/'};
+
+mapping GMFGRAPH::Canvas::viewmap() : GMFGEN::Viewmap {
+	init {
+		result := object GMFGEN::FigureViewmap {
+			figureQualifiedClassName := 'org.eclipse.draw2d.FreeformLayer';
+		};
+	}
+}
+helper GMFGRAPH::Node::viewmap() : GMFGEN::Viewmap {
+	--result := object ModeledViewmap { figureModel := self.oclAsType(ECORE::EObject); };
+	var rv := self.figure.viewmap();
+	if self.figure.actualFigure.layout.oclIsKindOf(GMFGRAPH::FlowLayout) then {
+		var fl := self.figure.actualFigure.layout.oclAsType(GMFGRAPH::FlowLayout);
+		if fl.forceSingleLine then rv.layoutType := GMFGEN::ViewmapLayoutType::TOOLBAR_LAYOUT else rv.layoutType := GMFGEN::ViewmapLayoutType::FLOW_LAYOUT endif;
+	} else 
+		if self.figure.actualFigure.layout.oclIsKindOf(GMFGRAPH::XYLayout) then rv.layoutType := GMFGEN::ViewmapLayoutType::XY_LAYOUT endif
+	endif;
+	return rv;
+}
+helper GMFGRAPH::Compartment::viewmap() : GMFGEN::Viewmap {
+	-- FIXME check self.accessor, see InnerClassViewapProducer
+	if self.accessor.oclIsUndefined() then return self.figure.viewmap() endif;
+	return self.figure.viewmap(self.accessor);
+}
+helper GMFGRAPH::Connection::viewmap() : GMFGEN::Viewmap {
+	return self.figure.viewmap();
+}
+helper GMFGRAPH::DiagramLabel::viewmap() : GMFGEN::Viewmap {
+	--object ModeledViewmap { figureModel := self.oclAsType(ECORE::EObject); };
+	if self.accessor.oclIsUndefined() then return self.figure.viewmap() endif;
+	-- for GenLinkLabel, need to specify alignment based on AlignmentFacet
+	-- besides, need to create LabelOffsetAttributes and optionally populate it from LabelOffsetFacet
+	return self.figure.viewmap(self.accessor);
+}
+
+helper GMFGRAPH::FigureDescriptor::viewmap() : GMFGEN::Viewmap {
+	if self.actualFigure.isBareInstance() then 
+		return object GMFGEN::FigureViewmap {
+			figureQualifiedClassName := self.actualFigure.xpand('Runtime::fqn', templateRoots);
+		}
+	endif;
+	return object GMFGEN::InnerClassViewmap { 
+		classBody := self.xpand('top::Descriptor::Inner', templateRoots);
+		className := self.name.firstToUpper(); -- FIXME InnerClassViewmapProducer has validJavaIdentifier(capName()) 
+	};
+}
+helper GMFGRAPH::FigureDescriptor::viewmap(childAccess : GMFGRAPH::ChildAccess) : GMFGEN::Viewmap {
+	return object GMFGEN::ParentAssignedViewmap {
+		getterName := childAccess.accessor;
+		figureQualifiedClassName := childAccess.figure.xpand('Runtime::fqn', templateRoots);
+		--FIXME setupStyleAttributes
+	};
+}
+query GMFGRAPH::Figure::isBareInstance() : Boolean { return false; }
+query GMFGRAPH::RealFigure::isBareInstance() : Boolean {
+	if self.children->notEmpty() then return false endif;
+	if self.oclIsKindOf(GMFGRAPH::Label) then {
+		if self.oclAsType(GMFGRAPH::Label).text <> null then return false endif;
+	} endif;
+	if self.oclIsKindOf(GMFGRAPH::Shape) then {
+		var sh : Shape := self.oclAsType(GMFGRAPH::Shape);
+		if sh.lineWidth <> 1 then return false endif;
+		if sh.lineKind <> LineKind::LINE_SOLID then return false endif;
+		if not sh.outline or not sh.fill or sh.xorFill or sh.xorOutline then return false endif;
+	} endif;
+	if self.border <> null then return false endif;
+	if self.font <> null then return false endif;
+	if self.foregroundColor <> null then return false endif;
+	if self.backgroundColor <> null then return false endif;
+	if self.maximumSize <> null then return false endif;
+	if self.minimumSize <> null then return false endif;
+	if self.preferredSize <> null then return false endif;
+	if self.insets <> null then return false endif;
+	if self.location <> null then return false endif;
+	if self.size <> null then return false endif;
+	return true;
+}

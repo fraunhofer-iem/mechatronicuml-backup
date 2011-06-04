@@ -5,9 +5,9 @@
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
   	  <wizard
            category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-           class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+           class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
            icon="icons/MessageInterfaceDiagram.gif"
-           id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
+           id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
            name="Message-Interface Diagram">
   	     
   	  	 <description>Creates a new Message-Interface Diagram.</description>
@@ -18,7 +18,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -28,21 +28,21 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
          name="%editorName"
          icon="icons/MessageInterfaceDiagram.gif"
          extensions="messageinterface_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MumlinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.part.MumlinstanceDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
 <!--
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.providers.CustomMessageinterfaceEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.providers.CustomMessageinterfaceEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -52,14 +52,14 @@
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram">
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram">
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.sheet.CustomMessageinterfacePropertySection">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.sheet.CustomMessageinterfacePropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -68,7 +68,7 @@
      <objectContribution
            adaptable="false"
            id="objectContribution.MessageType"
-           objectClass="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart">
+           objectClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart">
         <menu
               id="RealtimeStatechart.ModifyEParameter"
               label="Custom.Insert"
@@ -78,7 +78,7 @@
            </separator>
         </menu>
         <action
-              class="de.uni_paderborn.fujaba.umlrt.messageinterfaceeditor.diagram.custom.action.ModifyMessageTypeWizardAction"
+              class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.action.ModifyMessageTypeWizardAction"
               enablesFor="1"
               id="Statechart.ModifyParameterID"
               label="Modify Parameters"

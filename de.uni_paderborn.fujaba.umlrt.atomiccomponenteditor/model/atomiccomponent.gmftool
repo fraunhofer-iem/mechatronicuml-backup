@@ -15,7 +15,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/AtomicComponent.gif"
-            bundle="de.uni_paderborn.fujaba.umlrt.common"/>
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -24,7 +24,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Port.gif"
-            bundle="de.uni_paderborn.fujaba.umlrt.common"/>
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>
   </palette>

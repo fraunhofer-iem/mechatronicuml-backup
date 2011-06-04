@@ -5,14 +5,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
          name="%editorName"
          icon="icons/AtomicComponentDiagram.gif"
          extensions="atomiccomponent_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.MumlinstanceDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
 
@@ -20,8 +20,8 @@
   	  <wizard
   	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	       icon="icons/AtomicComponentDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
-  	       id="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+  	       class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
   	       name="Atomic Component Diagram">
   	     
   	  	 <description>Creates a new Atomic Component Diagram.</description>
@@ -32,7 +32,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.providers.CustomAtomiccomponentEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.providers.CustomAtomiccomponentEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -41,14 +41,14 @@
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram">
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram">
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.custom.sheet.CustomAtomiccomponentPropertySection">
+            class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.sheet.CustomAtomiccomponentPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.navigator.AtomiccomponentAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.navigator.AtomiccomponentAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>

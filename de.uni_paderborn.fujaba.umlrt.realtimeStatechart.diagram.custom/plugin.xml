@@ -5,22 +5,22 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartDiagramCreationWizard"
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartDiagramCreationWizard"
             icon="icons/StatechartFile.gif"
-            id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.realtimestatechartwizard"
+            id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.realtimestatechartwizard"
             name="Realtime Statechart Diagram">
       </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
-            contributorClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtDiagramActionBarContributor"
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+            contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramActionBarContributor"
             default="true"
             extensions="realtimestatechart_diagram"
             icon="icons/StatechartFile.gif"
-            id="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
-            matchingStrategy="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.part.UmlrtMatchingStrategy"
+            id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
+            matchingStrategy="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtMatchingStrategy"
             name="%editorName">
       </editor>
    </extension>
@@ -28,9 +28,9 @@
          id="propSections"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections
-            contributorId="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram">
+            contributorId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram">
          <propertySection
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.sheet.CustomRealtimeStatechartPropertySection"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.sheet.CustomRealtimeStatechartPropertySection"
                id="property.section.domain"
                tab="property.tab.domain">
             <input
@@ -40,7 +40,7 @@
                   type="org.eclipse.gef.EditPart">
             </input>
             <input
-                  type="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem">
+                  type="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem">
             </input>
          </propertySection>
       </propertySections>
@@ -48,7 +48,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.providers.CustomRealtimeStatechartEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimeStatechartEditPartProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -59,7 +59,7 @@
       <objectContribution
             adaptable="false"
             id="objectContribution.Transition"
-            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
          <menu
                id="RealtimeStatechart.Insert"
                label="Custom.Insert"
@@ -69,7 +69,7 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyAbsoluteDeadlineWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifyAbsoluteDeadlineWizardAction"
                enablesFor="1"
                icon="icons/clock.gif"
                id="Statechart.CreateAbsoluteDeadlineID"
@@ -77,7 +77,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyRaisedEventWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifyRaisedEventWizardAction"
                enablesFor="1"
                icon="icons/e_raised16.gif"
                id="Statechart.ModifyRaisedEventID"
@@ -85,7 +85,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTriggerEventWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifyTriggerEventWizardAction"
                enablesFor="1"
                icon="icons/e_trigger16.gif"
                id="Statechart.ModifyTriggerEventID"
@@ -93,7 +93,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySynchornizationWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifySynchornizationWizardAction"
                enablesFor="1"
                icon="icons/Syn.gif"
                id="Statechart.ModifySynchroID"
@@ -101,7 +101,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTransitionActionWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifyTransitionActionWizardAction"
                enablesFor="1"
                icon="icons/setRefMethod.gif"
                id="Statechart.CreateTransitionActionID"
@@ -109,7 +109,7 @@
                menubarPath="RealtimeStatechart.Insert/group1">
          </action>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifyTimeGuardWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifyTimeGuardWizardAction"
                enablesFor="1"
                icon="icons/clock.gif"
                id="Statechart.ModifyTimeGuardID"
@@ -120,7 +120,7 @@
       <objectContribution
             adaptable="false"
             id="objectContribution.SynchronizationChannel"
-            objectClass="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart">
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart">
          <menu
                id="RealtimeStatechart.CreateEParameter"
                label="Custom.Insert"
@@ -130,7 +130,7 @@
             </separator>
          </menu>
          <action
-               class="de.uni_paderborn.fujaba.umlrt.realtimeStatechart.diagram.custom.actions.ModifySyncChannelWizardAction"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifySyncChannelWizardAction"
                enablesFor="1"
                id="Statechart.ModifyParameterID"
                label="Modify Parameters"

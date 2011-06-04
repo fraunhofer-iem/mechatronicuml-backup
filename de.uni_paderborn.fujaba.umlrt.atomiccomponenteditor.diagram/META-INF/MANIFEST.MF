@@ -1,18 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram; singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.policies,
- de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.edit.commands,
- de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.part,
- de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.providers,
- de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor.diagram.sheet
+Export-Package: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -40,12 +41,14 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport
+ de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -21,7 +21,7 @@ import org.osgi.framework.BundleContext;
 public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String ID = "de.uni_paderborn.fujaba.umlrt.modelwizard"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.muml.modelwizard"; //$NON-NLS-1$
 
 	public static final String FUJABA_MODEL_EXTENSION = "fujaba";
 

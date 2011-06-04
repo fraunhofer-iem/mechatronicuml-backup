@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.model.edit;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin$Implementation
@@ -18,7 +18,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.provider,
  de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider
 Require-Bundle: org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,

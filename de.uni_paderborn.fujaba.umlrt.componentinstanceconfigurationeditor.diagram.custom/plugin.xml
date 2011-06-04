@@ -4,14 +4,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
          name="%editorName"
          icon="icons/ComponentInstanceConfDiagram.gif"
          extensions="componentinstanceconfiguration_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.part.MumlinstanceDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -20,8 +20,8 @@
   	  <wizard
   	       category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	       icon="icons/ComponentInstanceConfDiagram.gif"
-  	       class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
-  	       id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
+  	       class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
+  	       id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part.CustomComponentinstanceconfigurationDiagramCreationWizard"
   	       name="ComponentInstance Configuration Diagram">
   	     
   	  	 <description>Creates a new ComponentInstance Configuration Diagram.</description>
@@ -32,7 +32,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -43,9 +43,9 @@
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
       
-        <adviceBinding  id="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
-		  typeId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"
-		  class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"
+		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.helpers.ComponentInstanceEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
 
@@ -53,22 +53,22 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-      <binding context="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>
-         <advice ref="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
+      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"/>
       </binding>
    </extension>
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram">
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram">
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.custom.sheet.CustomComponentinstanceconfigurationPropertySection">
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.sheet.CustomComponentinstanceconfigurationPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.umlrt.componentinstanceconfigurationeditor.diagram.navigator.MumlinstanceAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>

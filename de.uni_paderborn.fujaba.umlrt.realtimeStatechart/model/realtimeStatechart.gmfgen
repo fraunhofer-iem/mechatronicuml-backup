@@ -19,25 +19,10 @@
         visualID="3001"
         editPartClassName="RegionEditPart"
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
         createCommandClassName="RegionCreateCommand"
-        containers="//@diagram/@compartments.3">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="RegionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(1, 1, 1, 1));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet/>
-    </childNodes>
-    <childNodes
-        visualID="3002"
-        editPartClassName="DoActionEditPart"
-        itemSemanticEditPolicyClassName="DoActionItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="DoActionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DoActionGraphicalNodeEditPolicy"
-        createCommandClassName="DoActionCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -48,9 +33,27 @@
       <modelFacet/>
     </childNodes>
     <childNodes
+        visualID="3002"
+        editPartClassName="DoActionEditPart"
+        itemSemanticEditPolicyClassName="DoActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="DoActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DoActionGraphicalNodeEditPolicy"
+        createCommandClassName="DoActionCreateCommand"
+        containers="//@diagram/@compartments.3">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="RegionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(1, 1, 1, 1));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet/>
+    </childNodes>
+    <childNodes
         visualID="3003"
         editPartClassName="EEActionEditPart"
         itemSemanticEditPolicyClassName="EEActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="EEActionCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EEActionGraphicalNodeEditPolicy"
         createCommandClassName="EEActionCreateCommand"
@@ -67,39 +70,10 @@
         visualID="3004"
         editPartClassName="SynchroChannelEditPart"
         itemSemanticEditPolicyClassName="SynchroChannelItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="SynchroChannelCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SynchroChannelGraphicalNodeEditPolicy"
         createCommandClassName="SynchroChannelCreateCommand"
-        containers="//@diagram/@compartments.2">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="SynchroChannelFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SynchroChannelFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSynchroChannelLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SynchroChannelFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSynchroChannelLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureSynchroChannelLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSynchroChannelLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSynchroChannelLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSynchroChannelLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureSynchroChannelLabel.horizontalIndent = 0;&#xA;constraintFFigureSynchroChannelLabel.horizontalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.verticalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSynchroChannelLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureSynchroChannelLabel, constraintFFigureSynchroChannelLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSynchroChannelLabel() {&#xA;&#x9;&#x9;return fFigureSynchroChannelLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet/>
-      <labels
-          visualID="5003"
-          editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureSynchroChannelLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
-      </labels>
-    </childNodes>
-    <childNodes
-        visualID="3005"
-        editPartClassName="EEAction2EditPart"
-        itemSemanticEditPolicyClassName="EEAction2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EEAction2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EEAction2GraphicalNodeEditPolicy"
-        createCommandClassName="EEAction2CreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -110,12 +84,13 @@
       <modelFacet/>
     </childNodes>
     <childNodes
-        visualID="3006"
-        editPartClassName="TimeInvariantEditPart"
-        itemSemanticEditPolicyClassName="TimeInvariantItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="TimeInvariantCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="TimeInvariantGraphicalNodeEditPolicy"
-        createCommandClassName="TimeInvariantCreateCommand"
+        visualID="3005"
+        editPartClassName="EEAction2EditPart"
+        itemSemanticEditPolicyClassName="EEAction2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="EEAction2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EEAction2GraphicalNodeEditPolicy"
+        createCommandClassName="EEAction2CreateCommand"
         containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -126,9 +101,9 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TimeInvariantFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTimeInvariantExpr; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TimeInvariantFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTimeInvariantExpr = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTimeInvariantExpr.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTimeInvariantExpr);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTimeInvariantExpr() {&#xA;&#x9;&#x9;return fFigureTimeInvariantExpr;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet/>
       <labels
-          visualID="5004"
-          editPartClassName="WrappingLabel2EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          visualID="5003"
+          editPartClassName="WrappingLabelEditPart"
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -137,13 +112,46 @@
             getterName="getFigureTimeInvariantExpr"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3006"
+        editPartClassName="TimeInvariantEditPart"
+        itemSemanticEditPolicyClassName="TimeInvariantItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="TimeInvariantCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="TimeInvariantGraphicalNodeEditPolicy"
+        createCommandClassName="TimeInvariantCreateCommand"
+        containers="//@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="SynchroChannelFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class SynchroChannelFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureSynchroChannelLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public SynchroChannelFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSynchroChannelLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureSynchroChannelLabel.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSynchroChannelLabel = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSynchroChannelLabel.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSynchroChannelLabel.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureSynchroChannelLabel.horizontalIndent = 0;&#xA;constraintFFigureSynchroChannelLabel.horizontalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.verticalSpan = 1;&#xA;constraintFFigureSynchroChannelLabel.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSynchroChannelLabel.grabExcessVerticalSpace = false;&#xA;this.add(fFigureSynchroChannelLabel, constraintFFigureSynchroChannelLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureSynchroChannelLabel() {&#xA;&#x9;&#x9;return fFigureSynchroChannelLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet/>
+      <labels
+          visualID="5004"
+          editPartClassName="WrappingLabel2EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="NodeLabelViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureSynchroChannelLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
     </childNodes>
     <topLevelNodes
         visualID="2001"
         editPartClassName="StateEditPart"
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
@@ -168,7 +176,8 @@
       <labels
           visualID="5001"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="NodeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -177,7 +186,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.1">
+            parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -187,97 +196,10 @@
         visualID="2002"
         editPartClassName="InitialStateEditPart"
         itemSemanticEditPolicyClassName="InitialStateItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="InitialStateCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="InitialStateGraphicalNodeEditPolicy"
         createCommandClassName="InitialStateCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="InitialStateFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class InitialStateFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public InitialStateFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;this.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.1">
-            <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.2"/>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.3"/>
-        </modelElementInitializer>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2003"
-        editPartClassName="FinalStateEditPart"
-        itemSemanticEditPolicyClassName="FinalStateItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="FinalStateCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="FinalStateGraphicalNodeEditPolicy"
-        createCommandClassName="FinalStateCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="FinalStateFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FinalStateFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FinalStateFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(10, 10, 10, 10));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse innerFinalStateFigure0 = new org.eclipse.draw2d.Ellipse();&#xA;innerFinalStateFigure0.setFillXOR(true);&#xA;&#x9;innerFinalStateFigure0.setBackgroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#xA;this.add(innerFinalStateFigure0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.4">
-            <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.5"/>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.6"/>
-        </modelElementInitializer>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2004"
-        editPartClassName="HistoryEditPart"
-        itemSemanticEditPolicyClassName="HistoryItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="HistoryCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HistoryGraphicalNodeEditPolicy"
-        createCommandClassName="HistoryCreateCommand">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="HistoryFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HistoryFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HistoryFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineWidth(3);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel historyLabel0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;historyLabel0.setText(&quot;H*&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintHistoryLabel0 = new org.eclipse.draw2d.GridData();&#xA;constraintHistoryLabel0.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHistoryLabel0.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintHistoryLabel0.horizontalIndent = 0;&#xA;constraintHistoryLabel0.horizontalSpan = 1;&#xA;constraintHistoryLabel0.verticalSpan = 1;&#xA;constraintHistoryLabel0.grabExcessHorizontalSpace = true;&#xA;constraintHistoryLabel0.grabExcessVerticalSpace = true;&#xA;this.add(historyLabel0, constraintHistoryLabel0);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.7">
-            <feature
-                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-          </initializers>
-        </modelElementInitializer>
-      </modelFacet>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2005"
-        editPartClassName="ClockEditPart"
-        itemSemanticEditPolicyClassName="ClockItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ClockCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ClockGraphicalNodeEditPolicy"
-        createCommandClassName="ClockCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -289,7 +211,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.8">
+              value="//@expressionProviders/@providers.0/@expressions.1">
             <feature
                 href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
@@ -307,7 +229,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.1">
+            parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -339,7 +261,7 @@
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.1"/>
+            parser="//@labelParsers/@implementations.0"/>
       </labels>
       <labels
           visualID="6002"
@@ -352,7 +274,7 @@
             getterName="getFigureTransitionClockResetExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6003"
@@ -365,7 +287,7 @@
             getterName="getFigureTransitionAbsoluteDeadlineExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6004"
@@ -378,7 +300,7 @@
             getterName="getFigureTransitionRelativeDeadlineExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6005"
@@ -391,7 +313,7 @@
             getterName="getFigureTransitionEventExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6006"
@@ -404,7 +326,7 @@
             getterName="getFigureTransitionGuardExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6007"
@@ -417,7 +339,7 @@
             getterName="getFigureTransitionActionExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6008"
@@ -430,7 +352,7 @@
             getterName="getFigureTransitionClockConstraintExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6009"
@@ -443,7 +365,7 @@
             getterName="getFigureTransitionSafetyTransitionLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
           visualID="6010"
@@ -456,18 +378,15 @@
             getterName="getFigureTransitionSynchroExprLabel"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
-      <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.9"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.10"/>
     </links>
     <compartments
         visualID="7001"
         editPartClassName="StateActionsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateActionsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="StateActionsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
+        childNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.0 //@diagram/@childNodes.3"
         title="ActionsCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -484,7 +403,7 @@
         editPartClassName="StateInvariantCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.5"
+        childNodes="//@diagram/@childNodes.4"
         title="InvariantCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -501,7 +420,7 @@
         editPartClassName="StateSynchroChannelsCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateSynchroChannelsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="StateSynchroChannelsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.3"
+        childNodes="//@diagram/@childNodes.5"
         title="SynchroChannelsCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -518,7 +437,7 @@
         editPartClassName="StateRegionCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0"
+        childNodes="//@diagram/@childNodes.1"
         title="RegionCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -539,37 +458,35 @@
             xsi:type="gmfgen:ToolEntry"
             title="State"
             description="Creation of a state"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/c_state16.gif"
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/c_state16.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Start State"
             description="Creation of a start state"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/startState16.png"
-            genNodes="//@diagram/@topLevelNodes.1 //@diagram/@topLevelNodes.2"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/startState16.png"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Stop State"
             description="Creation of a stop state."
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/stopState16.png"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/stopState16.png"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"
             description="Creation of a transition"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/transition16.gif"
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/transition16.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Clock"
             description="Creation of a clock for a statechart"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
-            genNodes="//@diagram/@topLevelNodes.4"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/clock.gif"
+            genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="History"
             description="Creation of a history"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/history16.png"
-            genNodes="//@diagram/@topLevelNodes.3"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/history16.png"/>
       </groups>
       <groups
           title="Realtime State"
@@ -579,38 +496,38 @@
             xsi:type="gmfgen:ToolEntry"
             title="Time Invariant"
             description="Creation of a time invariant"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/clock.gif"
-            genNodes="//@diagram/@childNodes.5"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/clock.gif"
+            genNodes="//@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Entry Action"
             description="Creation of a entry action"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/entry_action16.gif"
-            genNodes="//@diagram/@childNodes.4"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/entry_action16.gif"
+            genNodes="//@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Do Action"
             description="Creation of a do action"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/do_action16.gif"
-            genNodes="//@diagram/@childNodes.1"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/do_action16.gif"
+            genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Action"
             description="Creation of a exit action"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/exit_action16.gif"
-            genNodes="//@diagram/@childNodes.2"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/exit_action16.gif"
+            genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creation of a region for a state"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/andState.gif"
-            genNodes="//@diagram/@childNodes.0"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/andState.gif"
+            genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Synchronization Channel"
             description="Creation of a synchronization channel"
-            smallIconPath="de.uni_paderborn.fujaba.umlrt.realtimeStatechart/icon/xAction.gif"
-            genNodes="//@diagram/@childNodes.3"/>
+            smallIconPath="de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/xAction.gif"
+            genNodes="//@diagram/@childNodes.5"/>
       </groups>
     </palette>
     <preferencePages
@@ -650,15 +567,6 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.2"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.3"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.4"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.0"/>
@@ -709,36 +617,16 @@
       <expressions
           body="'State'"/>
       <expressions
-          body="'InitialState'"/>
-      <expressions
-          body="true"/>
-      <expressions
-          body="false"/>
-      <expressions
-          body="'FinalState'"/>
-      <expressions
-          body="false"/>
-      <expressions
-          body="true"/>
-      <expressions
-          body="'History'"/>
-      <expressions
           body="'c'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="if oclIsKindOf(State) then&#xA;&#x9;not self.oclAsType(State).final&#xA;else&#xA;&#x9;true&#xA;endif"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="if oclIsKindOf(State) then&#xA;&#x9;not self.oclAsType(State).initial&#xA;else&#xA;&#x9;if oclIsKindOf(HistoryState) then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;true&#xA;&#x9;endif&#xA;endif"/>
     </providers>
   </expressionProviders>
   <labelParsers>
     <implementations
-        xsi:type="gmfgen:ExternalParser"
-        uses="//@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.0/@labels.3/@modelFacet //@diagram/@links.0/@labels.4/@modelFacet //@diagram/@links.0/@labels.5/@modelFacet //@diagram/@links.0/@labels.6/@modelFacet //@diagram/@links.0/@labels.7/@modelFacet //@diagram/@links.0/@labels.8/@modelFacet //@diagram/@links.0/@labels.9/@modelFacet"/>
-    <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExternalParser"
+        uses="//@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.0/@labels.3/@modelFacet //@diagram/@links.0/@labels.4/@modelFacet //@diagram/@links.0/@labels.5/@modelFacet //@diagram/@links.0/@labels.6/@modelFacet //@diagram/@links.0/@labels.7/@modelFacet //@diagram/@links.0/@labels.8/@modelFacet //@diagram/@links.0/@labels.9/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram; singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.patterneditor.diagram;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part.PatternDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.part,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.providers,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.policies,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.edit.commands,
- de.uni_paderborn.fujaba.umlrt.patterneditor.diagram.sheet
+Export-Package: de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.part,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -36,13 +36,13 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.patterneditor;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.patterneditor;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model;visibility:=reexport,
- de.uni_paderborn.fujaba.umlrt.model.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport

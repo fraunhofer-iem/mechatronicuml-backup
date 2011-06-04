@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http:///de/uni_paderborn/fujaba/umlrt/structuredcomponenteditor"
-            class="de.uni_paderborn.fujaba.umlrt.structuredcomponenteditor.StructuredcomponenteditorPackage"
+            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.StructuredcomponenteditorPackage"
             genModel="model/structuredcomponent.genmodel"/>
    </extension>
 

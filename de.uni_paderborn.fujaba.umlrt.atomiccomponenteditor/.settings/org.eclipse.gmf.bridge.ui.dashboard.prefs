@@ -1,8 +1,8 @@
-#Tue May 31 11:13:29 CEST 2011
+#Sat Jun 04 14:25:08 CEST 2011
 eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.model/model/mumlinstance.genmodel
-gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor/model/atomiccomponent.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor/model/atomiccomponent.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor/model/atomiccomponent.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.umlrt.atomiccomponenteditor/model/atomiccomponent.gmftool
+gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel
+gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmftool

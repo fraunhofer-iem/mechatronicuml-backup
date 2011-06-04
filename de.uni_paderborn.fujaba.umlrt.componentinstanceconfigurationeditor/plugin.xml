@@ -13,7 +13,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http:///de/uni_paderborn/fujaba/umlrt/componentinstanceconfiguration"
-            class="de.uni_paderborn.fujaba.umlrt.componentinstanceconfiguration.ComponentinstanceconfigurationPackage"
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.ComponentinstanceconfigurationPackage"
             genModel="model/componentinstanceconfiguration.genmodel"/>
    </extension>
 
