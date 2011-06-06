@@ -905,7 +905,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints" upperBound="-1"
-            eType="#//model/realtimestatechart/ClockConstraint" eOpposite="#//model/realtimestatechart/ClockConstraint/clock"/>
+            eType="#//model/realtimestatechart/ClockConstraint" eOpposite="#//model/realtimestatechart/ClockConstraint/clock">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The clock constraint which uses this clock.&#xD;&#xA;\todosd{Do we need this information?}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1112,7 +1116,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todosd{What is a safety transition? Do we need that?}"/>
+            <details key="documentation" value="\todosd{Rename to safety?}&#xD;&#xA;\todosd{What is a safety transition? Do we need that for failure propagation?}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -1121,16 +1125,16 @@
             <details key="documentation" value="If a transition is urgent it has the fire immediately after its execution (no time is allowed to pass)."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparisonExpression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The guard of a transition is defined be an expression (via a comparison). &#xD;&#xA;\todosd{refine to a comparison, not an expression}"/>
+            <details key="documentation" value="The guard of a transition is defined by an comparison expression. Comparing clock values is not allowed (use clock constraints instead)."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
+          <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.&#xD;&#xA;\todosd{Inherit from ComparisonExpression?}"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true">
