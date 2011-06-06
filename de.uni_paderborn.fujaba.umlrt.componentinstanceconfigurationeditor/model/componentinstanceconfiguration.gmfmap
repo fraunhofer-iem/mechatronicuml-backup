@@ -11,6 +11,15 @@
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/instance/ComponentInstance"/>
+      <labelMappings
+          xsi:type="gmfmap:ExpressionLabelMapping">
+        <diagramLabel
+            href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
+        <viewExpression
+            body="self.name.concat(' : ').concat(&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.componentType.name&#xA;&#x9;end if&#xA;)"/>
+        <editExpression
+            body="self.name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -37,6 +46,15 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/instance/ComponentInstance"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
+            <viewExpression
+                body="self.name.concat(' : ').concat(&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.componentType.name&#xA;&#x9;end if&#xA;)"/>
+            <editExpression
+                body="self.name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.0"/>
