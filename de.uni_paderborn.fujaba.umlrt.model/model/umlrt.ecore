@@ -848,42 +848,81 @@
           <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" eType="#//model/core/NaturalNumber"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The upper bound of a deadline is a natural number."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" eType="#//model/core/NaturalNumber"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The lower bound of a deadline is a natural number."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AbsoluteDeadline" eSuperTypes="#//model/realtimestatechart/Deadline">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/absoluteDeadlines"/>
+            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/absoluteDeadlines">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the transition for that this absolute deadline is defined"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
-            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/absoluteDeadlines"/>
+            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/absoluteDeadlines">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the references clock of the absolute deadline."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RelativeDeadline" eSuperTypes="#//model/realtimestatechart/Deadline">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/relativeDeadline"/>
+            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/relativeDeadline">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the transition for that this relative deadline is defined"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents clocks of a realtime statechart."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
-            upperBound="-1" eType="#//model/realtimestatechart/AbsoluteDeadline" eOpposite="#//model/realtimestatechart/AbsoluteDeadline/clock"/>
+            upperBound="-1" eType="#//model/realtimestatechart/AbsoluteDeadline" eOpposite="#//model/realtimestatechart/AbsoluteDeadline/clock">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the absolute deadlines which use this clock&#xD;&#xA;\todosd{delete, because info is not necessary?}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
+            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/clocks">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The realtime statechart this clock belongs to.&#xD;&#xA;\todosd{is this info necessary?}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints" upperBound="-1"
             eType="#//model/realtimestatechart/ClockConstraint" eOpposite="#//model/realtimestatechart/ClockConstraint/clock"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion"/>
+            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/embeddingRegion">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The realtime statechart this region embeds."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parentState" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/regions"/>
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/regions">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The state this region is embedded."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -904,13 +943,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="#//model/realtimestatechart/ExitAction"
             containment="true" eOpposite="#//model/realtimestatechart/ExitAction/state">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The exit action. It is exectuted once when the corresponding complex state is left."/>
+            <details key="documentation" value="The exit action is exectuted once when the corresponding state is left."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction" eType="#//model/realtimestatechart/EntryAction"
             containment="true" eOpposite="#//model/realtimestatechart/EntryAction/state">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The entry action. It is exectuted once when the corresponding complex state is entered."/>
+            <details key="documentation" value="The entry action is exectuted once when the corresponding state is entered."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
@@ -922,17 +961,37 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="committed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The meaning of being committed is the same as it is with committed states in Uppaal."/>
+            <details key="documentation" value="If a state is active and commited, no time is allowed to pass and no other transition is allowed to fire until the state is leaved.&#xD;&#xA;The meaning of being committed is the same as it is with committed states in Uppaal."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+            defaultValueLiteral="false">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="An initial state is the first one to active if the statechart is activated. There is only one initial state allowed at the top hierarchy of a statechart."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="final" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="a final state is not allowed to have outgoing transitions."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint" derived="true"/>
+            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The exit points of this state."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The entry points of this state."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If a state is active and urgent, no time is allowed to pass until the state is leaved."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
             eType="#//model/realtimestatechart/SynchronizationChannel" containment="true"
             eOpposite="#//model/realtimestatechart/SynchronizationChannel/state">
@@ -943,23 +1002,23 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a basic state of a realtime statechart."/>
+          <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
         </eAnnotations>
         <eOperations name="getLongName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'.&#xD;&#xA;TODO-SD: Delete "/>
+            <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'.&#xD;&#xA;\todosd{Delete, because this is a view info.}"/>
           </eAnnotations>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
             upperBound="-1" eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The outgoing transitions of this state."/>
+            <details key="documentation" value="The outgoing transitions of this vertex"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingTransitions"
             upperBound="-1" eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The incoming transitions of this state."/>
+            <details key="documentation" value="The incoming transitions of this vertex"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
@@ -970,6 +1029,9 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="sendSynchronization"
             eType="#//model/realtimestatechart/Synchronization" containment="true"
             eOpposite="#//model/realtimestatechart/Synchronization/sendingTransition">
@@ -1031,45 +1093,77 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints" upperBound="-1"
             eType="#//model/realtimestatechart/ClockConstraint" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x&lt;=2 the transition would only be allowed to be activated if x has a value less or equal to 2."/>
+            <details key="documentation" value="A clock constraint restricts when the transition can be activeted in dependency of the values of the clock."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
             upperBound="-1" eType="#//model/realtimestatechart/AbsoluteDeadline" containment="true"
-            eOpposite="#//model/realtimestatechart/AbsoluteDeadline/transition"/>
+            eOpposite="#//model/realtimestatechart/AbsoluteDeadline/transition">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="a transition can has one or more absolute deadlines"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline" eType="#//model/realtimestatechart/RelativeDeadline"
-            containment="true" eOpposite="#//model/realtimestatechart/RelativeDeadline/transition"/>
+            containment="true" eOpposite="#//model/realtimestatechart/RelativeDeadline/transition">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="a transition can have one relative deadline&#xD;&#xA;\todosd{delete? can be described by an absolute deadline}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="false"/>
+            defaultValueLiteral="false">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="\todosd{What is a safety transition? Do we need that?}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            defaultValueLiteral="true"/>
+            defaultValueLiteral="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="If a transition is urgent it has the fire immediately after its execution (no time is allowed to pass)."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The guard of a transition is defined be an expression (via a comparison). &#xD;&#xA;\todosd{refine to a comparison, not an expression}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true"/>
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The bound of a deadline (upper or lower) is a natural number."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
-            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/clockConstraints"/>
+            eType="#//model/realtimestatechart/Clock" eOpposite="#//model/realtimestatechart/Clock/clockConstraints">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The clock references in this clock constraint."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
             eType="ecore:EEnum ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparingOperator"
-            defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL"/>
+            defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The operator that is used in this clock constraint."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An action might be the side effect of a transition as well as the do, entry, or exit events of a state.&#xD;&#xA;TODO-SD: Discuss meta model for actions."/>
+          <details key="documentation" value="An action might be the side effect of a transition as well as the do, entry, or exit events of a state."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The worst case execution time of this action."/>
+            <details key="documentation" value="The worst case execution time of this action.&#xD;&#xA;\todosd{Why is the type an ELongObject?}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="blocking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;.&#xD;&#xA;TODO-SD: Delete?"/>
+            <details key="documentation" value="Used by class &quot;WCETCompRTSC&quot;.&#xD;&#xA;\todosd{Do we need that? Class does not longer exist.}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//model/realtimestatechart/Transition"
@@ -1081,7 +1175,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="wCETSpecifiedByUser"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="TODO-SD: Delete?"/>
+            <details key="documentation" value="\todosd{Do we need that?}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1104,51 +1198,75 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type."/>
+            <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type.&#xD;&#xA;\todosd{Delete, because this is a view information.}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DoAction">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+          <details key="documentation" value="The action of a state that is executed periodically as long as this state is active. The first period starts after the execution of the entry-action."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//model/realtimestatechart/Action"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="TODO-SD: Discuss meta model for actions: Change to inheritance?"/>
+            <details key="documentation" value="\todosd{Change to inheritance?}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/doAction"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/doAction">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The state this do-action belongs to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the lower bound of the period"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the upper bound of the period"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitAction" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+          <details key="documentation" value="This class represents an entry or an exit action."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clockResets" upperBound="-1"
-            eType="#//model/realtimestatechart/Clock"/>
+            eType="#//model/realtimestatechart/Clock">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The clock resets of this action"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//model/realtimestatechart/Action"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="TODO-SD: Discuss meta model for actions: Change to inheritance?"/>
+            <details key="documentation" value="Each entry or exit action can have one action.&#xD;&#xA;\todosd{Change to inheritance?}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryAction" eSuperTypes="#//model/realtimestatechart/EntryOrExitAction">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+          <details key="documentation" value="An entry action is executed if a state is activated."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/entryAction"/>
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/entryAction">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The state this entry action belongs to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ExitAction" eSuperTypes="#//model/realtimestatechart/EntryOrExitAction">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="TODO-SD: Discuss meta model for actions."/>
+          <details key="documentation" value="An exit action is executed if a state is leaved."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/exitAction"/>
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/exitAction">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The state this exit action belongs to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Callable ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1162,15 +1280,37 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Two transitions can synchron fire. One transition is the sender, the other the receiver. This means that both transitions (exactly one sender and one receiver) must be activated and has to fire at the same time. "/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="sendingTransition"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/sendSynchronization"/>
+            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/sendSynchronization">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the sending transition of a synchronization"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receivingTransition"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/receiveSynchronization"/>
+            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/receiveSynchronization">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the receiving transition of a synchronization"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" lowerBound="1"
-            eType="#//model/realtimestatechart/SynchronizationChannel" derived="true"/>
+            eType="#//model/realtimestatechart/SynchronizationChannel" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the channel that is used by the synchronization&#xD;&#xA;\todosd{delete, because its derived?}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Enables the priorization of elements."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="the priority of the element"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechart" eSuperTypes="#//model/core/AbstractRealtimeStatechart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1193,7 +1333,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.&#xD;&#xA;TODO-SD: Do we really need this?"/>
+            <details key="documentation" value="The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" upperBound="-1"
@@ -1205,17 +1345,25 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks" eType="#//model/realtimestatechart/helper/Iterator"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts "/>
+            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts "/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="acts as a shallow history"/>
+            <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex"/>
+      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Entry points are defined points on a state that can be used to reach inner states."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Exit points are defined points on a state inner states can use to leave this state."/>
+        </eAnnotations>
+      </eClassifiers>
       <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"
           nsPrefix="helper">
         <eClassifiers xsi:type="ecore:EDataType" name="MyMap" instanceClassName="java.util.HashMap">
