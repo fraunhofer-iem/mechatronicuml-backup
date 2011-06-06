@@ -45,13 +45,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementProvidedInterfaces"
             upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as provided interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as provided interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper).&#xD;&#xA;\todosd{Uwe and my oponion: rename to MustImplementSenderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementRequiredInterfaces"
             upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper).&#xD;&#xA;\todosd{Uwe and my oponion: rename to MustImplementReceiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -107,7 +107,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification."/>
+            <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification.&#xD;&#xA;\todosd{Uwe and my oponion: rename to ReceiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
@@ -117,7 +117,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification."/>
+            <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification.&#xD;&#xA;\todosd{Uwe and my oponion: rename to SenderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
@@ -156,13 +156,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port."/>
+            <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to ReceiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the provided message interface of this port. The required message interface defines which messages are allowed to be received by this port."/>
+            <details key="documentation" value="This association stores the provided message interface of this port. The provided message interface defines which messages are allowed to be received by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to SenderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
@@ -576,7 +576,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
             lowerBound="1" eType="#//model/core/BehavioralElement" eOpposite="#//model/core/BehavioralElement/realtimeStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The behovioral element this statechart belongs to."/>
+            <details key="documentation" value="The behavioral element this statechart belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -587,6 +587,9 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AdaptationBehavior" eSuperTypes="#//model/core/BehavioralElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The adaptation behavior is needed, if the role is a multi-role or the port is a multi-port."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//model/pattern/Role"
             eOpposite="#//model/pattern/Role/adaptationBehavior">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -686,7 +689,7 @@
             <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.requiredMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The required message interface derived from the port type of this port instance."/>
+            <details key="documentation" value="The required message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to ReceiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
@@ -696,7 +699,7 @@
             <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.providedMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provided message interface derived from the port type of this port instance."/>
+            <details key="documentation" value="The provided message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to SenderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorInstances"
@@ -827,8 +830,16 @@
             <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.&#xD;&#xA;\todosd{Delete, because it is possible to store them in the statechart directly?}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//model/msgiface/MessageInterface"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//model/msgiface/MessageInterface"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//model/msgiface/MessageInterface">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This association stores the required message interface of this role. The required message interface defines which messages are allowed to be received by this role.&#xD;&#xA;\todosd{Uwe and my oponion: rename to ReceiverMessageInterface}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//model/msgiface/MessageInterface">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This association stores the provided message interface of this role. The provided message interface defines which messages are allowed to be received by this role.&#xD;&#xA;\todosd{Uwe and my oponion: rename to SenderMessageInterface}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
             eType="#//model/core/Cardinality" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1141,7 +1152,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead)."/>
+            <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).&#xD;&#xA;\todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
