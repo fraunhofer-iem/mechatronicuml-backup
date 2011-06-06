@@ -1138,10 +1138,10 @@
             <details key="documentation" value="If a transition is urgent it has the fire immediately after its execution (no time is allowed to pass)."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/ComparisonExpression"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The guard of a transition is defined by an comparison expression. Comparing clock values is not allowed (use clock constraints instead)."/>
+            <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead)."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
