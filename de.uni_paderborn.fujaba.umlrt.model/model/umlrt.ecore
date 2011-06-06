@@ -24,7 +24,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
         </eAnnotations>
-        <eOperations name="createInstance" lowerBound="1" eType="#//model/instance/ComponentInstance"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
             eType="#//model/component/Port" containment="true" eOpposite="#//model/component/Port/component">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -34,7 +33,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" lowerBound="1"
             eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component."/>
+            <details key="documentation" value="The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component.&#xD;&#xA;\todosd{Delete, because it is possible to store them in the statechart directly?}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="referencingComponentParts"
@@ -53,12 +52,6 @@
             upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
-            eType="#//model/component/ComponentKind">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -157,7 +150,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
             eOpposite="#//model/pattern/Role/port">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The role of a parameterized coordination pattern that this port refines."/>
+            <details key="documentation" value="The role of a coordination pattern that this port refines."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
@@ -595,7 +588,11 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AdaptationBehavior" eSuperTypes="#//model/core/BehavioralElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//model/pattern/Role"
-            eOpposite="#//model/pattern/Role/adaptationBehavior"/>
+            eOpposite="#//model/pattern/Role/adaptationBehavior">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The role this adaptation behavior is assigned."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/component/DiscretePortSpecification"
             containment="true" eOpposite="#//model/component/DiscretePortSpecification/adaptationBehavior"/>
       </eClassifiers>
@@ -786,7 +783,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/connectors"/>
+            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/connectors">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The coordination pattern this role connector is part of."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -801,7 +802,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" lowerBound="1"
             eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
+            <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -812,7 +813,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
             eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connector which connects this role with another role.&#xD;&#xA;Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*"/>
+            <details key="documentation" value="The connector which connects this role with another role.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
@@ -823,17 +824,29 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.&#xD;&#xA;TODO-SD: Delete?"/>
+            <details key="documentation" value="The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.&#xD;&#xA;\todosd{Delete, because it is possible to store them in the statechart directly?}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="required" eType="#//model/msgiface/MessageInterface"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="provided" eType="#//model/msgiface/MessageInterface"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-            eType="#//model/core/Cardinality" containment="true"/>
+            eType="#//model/core/Cardinality" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A role has a cardinality."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
-            eType="#//model/component/DiscretePortSpecification" eOpposite="#//model/component/DiscretePortSpecification/refines"/>
+            eType="#//model/component/DiscretePortSpecification" eOpposite="#//model/component/DiscretePortSpecification/refines">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The ports this role is assigned to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
-            eType="#//model/core/AdaptationBehavior" containment="true" eOpposite="#//model/core/AdaptationBehavior/role"/>
+            eType="#//model/core/AdaptationBehavior" containment="true" eOpposite="#//model/core/AdaptationBehavior/role">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The adaptation behavior of this role. Note that only multi-ports have an adaptation behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
