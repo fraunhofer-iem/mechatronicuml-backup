@@ -1,5 +1,6 @@
 %\documentclass[12pt,a4paper,twoside,titlepage,headsepline,pointlessnumbers,liststotoc,idxtotoc,bibtotoc,ngerman]{scrartcl}
-\documentclass[12pt,a4paper,twoside,titlepage,headsepline,pointlessnumbers,liststotoc,idxtotoc,bibtotoc,ngerman,english]{scrartcl}
+\documentclass[12pt,a4paper,twoside,titlepage,headsepline,pointlessnumbers,liststotoc,idxtotoc,bibtotoc,ngerman,english]{scrreprt}
+%\documentclass[12pt,a4paper,twoside,titlepage,openright,headsepline,listof=totoc,index=totoc,chapterprefix,bibliography=totoc]{scrreprt}
 
 \ifx\pdfoutput\undefined
 \pdffalse % we are not running pdflatex
@@ -96,9 +97,9 @@
                     
       \vspace{4cm}									
 
-			{\LARGE  \textbf{GMF-Tutorials}} \\ 
+			{\LARGE  \textbf{Tutorials}} \\ 
 			\vspace{0.5cm}
-			{\Large Fujaba Diagram Editors with GMF} \\ 
+			{\Large From the Fujaba context} \\ 
 			\vspace{2.5cm}
 
 			\vspace{0.5cm}
@@ -120,35 +121,10 @@
   
   \pagenumbering{arabic}
 	\setcounter{page}{1}
+
+	\input{01_Fujaba-Diagram-Editors}
+	\input{02_Techreport-Generator}
 	
-\section{Overview}
-\subsection{Introduction}
-In this document several solutions will be provided that help developing a
-GMF-Diagram Editor for Fujaba.
-It is not necessary to do it exactly this way, but it should give the reader a
-good orientation.
-
-\subsection{Multiple ways of modifying the generated editor}
-Basically there are multiple ways to modify the look and behavior of the
-generated editor.
-\begin{enumerate}
-    \item Adjusting the generated code directly (myeditor.diagram)
-	\item Creation of a "Extension"-Plugin (myeditor.diagram.custom)
-\end{enumerate}
-
-In this document, the second variant will be chosen, so that the GMF-Code can be
-regenerated without problems. Furthermore, this way there is a strict separation
-of generated and manually written sourcecode. This idea was taken from Dr. Köhnlein's
-\href{http://www.slideshare.net/itemis/gmf-fr-anspruchsvolle-presentation}{slides}
-at w-jax08 (slides 20-22). \\
-In case, changes on the generated code are unavoidable, this can be achieved by
-modifying the gmf-templates used to generate the code.
-
-
-\subsection{Conventions}
-It is assumed that the editor is called MyEditor. 
-
-\include{sections/newwizard/newwizard}
 
 %	\listoffigures % Abbildungsverzeichnis
 
