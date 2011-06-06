@@ -156,7 +156,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="requiredMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface"/>
+            <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
