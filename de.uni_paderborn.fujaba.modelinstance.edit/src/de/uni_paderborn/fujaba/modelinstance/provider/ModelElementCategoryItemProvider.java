@@ -86,44 +86,44 @@ public class ModelElementCategoryItemProvider
 	 * This adds a property descriptor for the Key feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelElementCategory_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_key_feature", "_UI_ModelElementCategory_type"),
-				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_ModelElementCategory_key_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_key_feature", "_UI_ModelElementCategory_type"),
+//				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__KEY,
+//				 true,
+//				 false,
+//				 false,
+//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+//				 null,
+//				 null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelElementCategory_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_name_feature", "_UI_ModelElementCategory_type"),
-				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_ModelElementCategory_name_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementCategory_name_feature", "_UI_ModelElementCategory_type"),
+//				 ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__NAME,
+//				 true,
+//				 false,
+//				 false,
+//				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+//				 null,
+//				 null));
 	}
 
 	/**
