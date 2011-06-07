@@ -107,7 +107,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
+            <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="providedMessageInterface"
@@ -117,7 +117,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
+            <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
@@ -632,9 +632,6 @@
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector instances that connect the component part instances of this component instance."/>
           </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//model/component/ComponentPart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
             eType="#//model/instance/PortInstance" containment="true" eOpposite="#//model/instance/PortInstance/componentInstance">
