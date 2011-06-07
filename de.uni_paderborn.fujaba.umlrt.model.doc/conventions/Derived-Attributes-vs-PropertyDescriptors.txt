@@ -22,10 +22,4 @@ Both problems can be solved using a derived attribute AND using a customized Pro
 In order to gain a clean Meta-Model, adding a customized ItemProvider should be the way to
 go, if possible.
 
-In the first example, it is possible to use a customized PropertyDescriptor
-(see de.uni_paderborn.fujaba.muml.model.component.provider.PortItemProvider.
-addCardinalityPropertyDescriptor()).
-
-In the second example, we need to use a Derived Attribute, because we need to get
-notifications, when the requiredMessageInterface Attribute changes.
-Therefore we use a Derived Attribute and add a DerivedAttributeAdapter.
+In both examples it is possible to use the ItemProvider.
