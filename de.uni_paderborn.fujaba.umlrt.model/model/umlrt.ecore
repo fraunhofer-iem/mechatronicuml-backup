@@ -682,7 +682,7 @@
             eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.requiredMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.senderMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The required message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface"/>
@@ -692,7 +692,7 @@
             eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.providedMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.receiverMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The provided message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
