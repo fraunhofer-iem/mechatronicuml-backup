@@ -32,23 +32,20 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(5);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2020);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2021);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2022);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.HistoryState_2023);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Clock_2024);
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2001);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Clock_2002);
 			return types;
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.EntryAction_3025);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.DoAction_3026);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.ExitAction_3027);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.ClockConstraint_3028);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.SynchronizationChannel_3029);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Region_3030);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.EntryEvent_3007);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.DoEvent_3008);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.ExitEvent_3009);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.ClockConstraint_3004);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.SynchronizationChannel_3005);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Region_3006);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -64,18 +61,6 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -87,18 +72,6 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) {
 			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
@@ -117,18 +90,6 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -143,18 +104,6 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -167,18 +116,6 @@ public class UmlrtModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) {
 			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

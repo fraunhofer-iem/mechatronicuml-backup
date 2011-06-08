@@ -16,7 +16,7 @@ import org.storydriven.modeling.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a basic state of a realtime statechart.
+ * This class represents a node in a realtime statechart that is connected with other nodes via transitions.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,7 +40,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The outgoing transitions of this state.
+	 * The outgoing transitions of this vertex
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Outgoing Transitions</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_OutgoingTransitions()
@@ -57,7 +57,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The incoming transitions of this state.
+	 * The incoming transitions of this vertex
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Incoming Transitions</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_IncomingTransitions()
@@ -79,7 +79,7 @@ public interface Vertex extends NamedElement {
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices
-	 * @model opposite="vertices" transient="false"
+	 * @model opposite="vertices" required="true" transient="false"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechart();
@@ -99,6 +99,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'.
+	 * \todosd{Delete, because this is a view info.}
 	 * <!-- end-model-doc -->
 	 * @model kind="operation"
 	 * @generated

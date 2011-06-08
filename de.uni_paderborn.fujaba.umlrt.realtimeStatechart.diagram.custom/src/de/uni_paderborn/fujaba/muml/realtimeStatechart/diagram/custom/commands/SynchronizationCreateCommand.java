@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 /**
@@ -75,10 +76,11 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 				.createSynchronization();
 
 		Transition owner = (Transition) getElementToEdit();
+		owner.setSynchronization(newElement);
 		if (type.equals("send")) {
-			owner.setSendSynchronization(newElement);
+			newElement.setSynchronizationKind(SynchronizationKind.SEND);
 		} else {
-			owner.setReceiveSynchronization(newElement);
+			newElement.setSynchronizationKind(SynchronizationKind.RECEIVE);
 		}
 
 		newElement.setCallee(channel);

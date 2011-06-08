@@ -34,8 +34,8 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getFromRev <em>From Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,7 +84,7 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * @see #setParentComponent(StructuredComponent)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_ParentComponent()
 	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getEmbeddedParts
-	 * @model opposite="embeddedParts" transient="false"
+	 * @model opposite="embeddedParts" required="true" transient="false"
 	 * @generated
 	 */
 	StructuredComponent getParentComponent();
@@ -156,7 +156,12 @@ public interface ComponentPart extends NamedElement, CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The ports of this part. They are derived from the ports of the componentType of this component part.
+	 * The ports of this part. They are derived from the ports of the
+	 * componentType of this component part. It is a containment
+	 * reference, so that GMF is able to let them flow around the
+	 * component.
+	 * Because this feature is derived, transient, volatile the model file
+	 * will not store the ports in this feature.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see #isSetPortsDerived()

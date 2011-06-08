@@ -13,6 +13,10 @@ import org.storydriven.modeling.NamedElement;
  * A representation of the model object '<em><b>Region</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Regions enables hierarchy and parallelism. Each state can have zero, one or more regions.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,11 +39,14 @@ public interface Region extends Prioritizable, NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The realtime statechart this region embeds.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion
-	 * @model opposite="embeddingRegion"
+	 * @model opposite="embeddingRegion" required="true"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechart();
@@ -63,11 +70,14 @@ public interface Region extends Prioritizable, NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The state this region is embedded.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent State</em>' container reference.
 	 * @see #setParentState(State)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRegion_ParentState()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getRegions
-	 * @model opposite="regions" transient="false"
+	 * @model opposite="regions" required="true" transient="false"
 	 * @generated
 	 */
 	State getParentState();

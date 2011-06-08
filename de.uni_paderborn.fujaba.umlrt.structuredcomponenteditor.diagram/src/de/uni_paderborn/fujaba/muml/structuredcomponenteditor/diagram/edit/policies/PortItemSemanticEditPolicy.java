@@ -46,11 +46,27 @@ public class PortItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(
+						incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(
+						outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
@@ -90,6 +106,11 @@ public class PortItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
+		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -101,6 +122,11 @@ public class PortItemSemanticEditPolicy
 		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.AssemblyCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -117,6 +143,9 @@ public class PortItemSemanticEditPolicy
 		switch (getVisualID(req)) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.DelegationReorientCommand(
+					req));
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.AssemblyReorientCommand(
 					req));
 		}
 		return super.getReorientRelationshipCommand(req);

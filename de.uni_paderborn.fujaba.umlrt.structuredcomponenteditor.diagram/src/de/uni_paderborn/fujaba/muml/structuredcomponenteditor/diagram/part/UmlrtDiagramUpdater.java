@@ -295,6 +295,8 @@ public class UmlrtDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Delegation_4003(
 				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Assembly_4004(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -303,14 +305,7 @@ public class UmlrtDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> getComponentPart_3005IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart modelElement = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Assembly_4004(
-				modelElement, crossReferences));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -324,6 +319,8 @@ public class UmlrtDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Delegation_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Assembly_4004(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -361,6 +358,7 @@ public class UmlrtDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Delegation_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Assembly_4004(modelElement));
 		return result;
 	}
 
@@ -369,11 +367,7 @@ public class UmlrtDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> getComponentPart_3005OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart modelElement = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Assembly_4004(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -385,6 +379,7 @@ public class UmlrtDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Delegation_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Assembly_4004(modelElement));
 		return result;
 	}
 
@@ -452,10 +447,10 @@ public class UmlrtDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart dst = link
-					.getTo();
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart src = link
-					.getFrom();
+			de.uni_paderborn.fujaba.muml.model.component.Port dst = link
+					.getToPort();
+			de.uni_paderborn.fujaba.muml.model.component.Port src = link
+					.getFromPort();
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor(
 					src,
 					dst,
@@ -503,14 +498,14 @@ public class UmlrtDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> getIncomingTypeModelFacetLinks_Assembly_4004(
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart target,
+			de.uni_paderborn.fujaba.muml.model.component.Port target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-					.getAssembly_To()
+					.getConnectorType_ToPort()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.component.Assembly) {
 				continue;
 			}
@@ -520,8 +515,8 @@ public class UmlrtDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart src = link
-					.getFrom();
+			de.uni_paderborn.fujaba.muml.model.component.Port src = link
+					.getFromPort();
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor(
 					src,
 					target,
@@ -583,7 +578,7 @@ public class UmlrtDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtLinkDescriptor> getOutgoingTypeModelFacetLinks_Assembly_4004(
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart source) {
+			de.uni_paderborn.fujaba.muml.model.component.Port source) {
 		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -609,10 +604,10 @@ public class UmlrtDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart dst = link
-					.getTo();
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart src = link
-					.getFrom();
+			de.uni_paderborn.fujaba.muml.model.component.Port dst = link
+					.getToPort();
+			de.uni_paderborn.fujaba.muml.model.component.Port src = link
+					.getFromPort();
 			if (src != source) {
 				continue;
 			}

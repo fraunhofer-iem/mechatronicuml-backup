@@ -41,13 +41,13 @@ public class StateActionsCompartmentCanonicalEditPolicy extends
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_EntryAction());
+							.getState_EntryEvent());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_DoAction());
+							.getState_DoEvent());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getState_ExitAction());
+							.getState_ExitEvent());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -60,7 +60,7 @@ public class StateActionsCompartmentCanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramUpdater
-				.getStateActionsCompartment_7009SemanticChildren(viewObject);
+				.getStateActionsCompartment_7001SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -82,9 +82,9 @@ public class StateActionsCompartmentCanonicalEditPolicy extends
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitActionEditPart.VISUAL_ID;
+		return visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class StateActionsCompartmentCanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramUpdater
-				.getStateActionsCompartment_7009SemanticChildren((View) getHost()
+				.getStateActionsCompartment_7001SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

@@ -65,9 +65,8 @@ public class DiscretePortSpecificationItemProvider
 
 			addRealtimeStatechartPropertyDescriptor(object);
 			addRefinesPropertyDescriptor(object);
-			addAdaptationRealtimeStatechartPropertyDescriptor(object);
-			addRequiredMessageInterfacePropertyDescriptor(object);
-			addProvidedMessageInterfacePropertyDescriptor(object);
+			addSenderMessageInterfacePropertyDescriptor(object);
+			addReceiverMessageInterfacePropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -118,19 +117,19 @@ public class DiscretePortSpecificationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Adaptation Realtime Statechart feature.
+	 * This adds a property descriptor for the Sender Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAdaptationRealtimeStatechartPropertyDescriptor(Object object) {
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_adaptationRealtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_adaptationRealtimeStatechart_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART,
+				 getString("_UI_DiscretePortSpecification_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_senderMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -140,41 +139,19 @@ public class DiscretePortSpecificationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required Message Interface feature.
+	 * This adds a property descriptor for the Receiver Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredMessageInterfacePropertyDescriptor(Object object) {
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_requiredMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_requiredMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Provided Message Interface feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProvidedMessageInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_providedMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_providedMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePortSpecification_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_receiverMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,

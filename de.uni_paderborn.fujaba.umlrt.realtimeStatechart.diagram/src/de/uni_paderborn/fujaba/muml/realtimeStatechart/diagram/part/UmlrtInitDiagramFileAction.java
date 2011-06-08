@@ -92,7 +92,7 @@ public class UmlrtInitDiagramFileAction implements IObjectActionDelegate {
 				domainModelURI, diagramRoot, editingDomain);
 		wizard.setWindowTitle(NLS
 				.bind(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.InitDiagramFile_WizardTitle,
-						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID));
+						de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID));
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramEditorUtil
 				.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}

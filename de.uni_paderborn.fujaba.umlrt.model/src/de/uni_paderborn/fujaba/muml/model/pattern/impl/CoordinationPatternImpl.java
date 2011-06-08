@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -51,7 +52,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  */
 public class CoordinationPatternImpl extends NamedElementImpl implements CoordinationPattern {
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConstraint()
@@ -61,7 +62,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' reference list.
+	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoles()
@@ -106,7 +107,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 */
 	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectWithInverseResolvingEList<Constraint>(Constraint.class, this, PatternPackage.COORDINATION_PATTERN__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
+			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, PatternPackage.COORDINATION_PATTERN__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
 	}
@@ -118,7 +119,7 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 */
 	public EList<Role> getRoles() {
 		if (roles == null) {
-			roles = new EObjectWithInverseResolvingEList<Role>(Role.class, this, PatternPackage.COORDINATION_PATTERN__ROLES, PatternPackage.ROLE__PATTERN);
+			roles = new EObjectContainmentWithInverseEList<Role>(Role.class, this, PatternPackage.COORDINATION_PATTERN__ROLES, PatternPackage.ROLE__COORDINATION_PATTERN);
 		}
 		return roles;
 	}
@@ -156,9 +157,9 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 		if (newConnectors != connectors) {
 			NotificationChain msgs = null;
 			if (connectors != null)
-				msgs = ((InternalEObject)connectors).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTORS, null, msgs);
+				msgs = ((InternalEObject)connectors).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN, RoleConnector.class, msgs);
 			if (newConnectors != null)
-				msgs = ((InternalEObject)newConnectors).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTORS, null, msgs);
+				msgs = ((InternalEObject)newConnectors).eInverseAdd(this, PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN, RoleConnector.class, msgs);
 			msgs = basicSetConnectors(newConnectors, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -179,6 +180,10 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case PatternPackage.COORDINATION_PATTERN__ROLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoles()).basicAdd(otherEnd, msgs);
+			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
+				if (connectors != null)
+					msgs = ((InternalEObject)connectors).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.COORDINATION_PATTERN__CONNECTORS, null, msgs);
+				return basicSetConnectors((RoleConnector)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

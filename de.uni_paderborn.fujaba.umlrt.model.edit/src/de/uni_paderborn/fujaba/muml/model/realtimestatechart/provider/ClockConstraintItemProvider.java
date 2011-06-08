@@ -13,8 +13,8 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockConstraintBoundPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.descriptor.NaturalNumberPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;
@@ -89,7 +89,7 @@ public class ClockConstraintItemProvider
 	 */
 	protected void addBoundPropertyDescriptor(Object object) {
 
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add(new ClockConstraintBoundPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				"NaturalNumber", "The bound of the clock constraint",

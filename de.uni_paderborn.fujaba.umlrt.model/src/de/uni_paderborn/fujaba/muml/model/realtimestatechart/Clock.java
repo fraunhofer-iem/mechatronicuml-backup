@@ -22,9 +22,7 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getClockConstraints <em>Clock Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,24 +32,6 @@ import org.storydriven.modeling.NamedElement;
  */
 public interface Clock extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Absolute Deadlines</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Absolute Deadlines</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Absolute Deadlines</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClock_AbsoluteDeadlines()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getClock
-	 * @model opposite="clock"
-	 * @generated
-	 */
-	EList<AbsoluteDeadline> getAbsoluteDeadlines();
-
-	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}'.
 	 * <!-- begin-user-doc -->
@@ -60,11 +40,15 @@ public interface Clock extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The realtime statechart this clock belongs to.
+	 * \todosd{is this info necessary?}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks
-	 * @model opposite="clocks" transient="false"
+	 * @model opposite="clocks" required="true" transient="false"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechart();
@@ -78,23 +62,5 @@ public interface Clock extends NamedElement {
 	 * @generated
 	 */
 	void setStatechart(FujabaRealtimeStatechart value);
-
-	/**
-	 * Returns the value of the '<em><b>Clock Constraints</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClock <em>Clock</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Clock Constraints</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Clock Constraints</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClock_ClockConstraints()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint#getClock
-	 * @model opposite="clock"
-	 * @generated
-	 */
-	EList<ClockConstraint> getClockConstraints();
 
 } // Clock

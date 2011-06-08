@@ -16,7 +16,7 @@ public class TransitionItemSemanticEditPolicy
 	 */
 	public TransitionItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Transition_4002);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Transition_4001);
 	}
 
 	/**

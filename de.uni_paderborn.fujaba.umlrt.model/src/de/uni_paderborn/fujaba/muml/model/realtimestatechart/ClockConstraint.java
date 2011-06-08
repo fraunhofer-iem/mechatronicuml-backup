@@ -19,6 +19,7 @@ import org.storydriven.modeling.expressions.ComparingOperator;
  *
  * <!-- begin-model-doc -->
  * This class represents an arbitrary time constraint that can either be used as an invariant constraint of a state or as a transition guard.
+ * \todosd{Inherit from ComparisonExpression?}
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,6 +44,9 @@ public interface ClockConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The bound of a deadline (upper or lower) is a natural number.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bound</em>' containment reference.
 	 * @see #setBound(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Bound()
@@ -63,18 +67,19 @@ public interface ClockConstraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Clock</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getClockConstraints <em>Clock Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clock</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The clock references in this clock constraint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Clock</em>' reference.
 	 * @see #setClock(Clock)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Clock()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getClockConstraints
-	 * @model opposite="clockConstraints"
+	 * @model required="true"
 	 * @generated
 	 */
 	Clock getClock();
@@ -99,6 +104,9 @@ public interface ClockConstraint extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The operator that is used in this clock constraint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operator</em>' attribute.
 	 * @see org.storydriven.modeling.expressions.ComparingOperator
 	 * @see #setOperator(ComparingOperator)

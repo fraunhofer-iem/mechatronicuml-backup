@@ -145,6 +145,29 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AdaptationBehaviorItemProvider adaptationBehaviorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdaptationBehaviorAdapter() {
+		if (adaptationBehaviorItemProvider == null) {
+			adaptationBehaviorItemProvider = new AdaptationBehaviorItemProvider(this);
+		}
+
+		return adaptationBehaviorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +269,7 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (infinityItemProvider != null) infinityItemProvider.dispose();
+		if (adaptationBehaviorItemProvider != null) adaptationBehaviorItemProvider.dispose();
 	}
 
 }

@@ -174,10 +174,10 @@ public class ModifyTriggerEventPage1 extends CommonModifyPage{
         	  
         	if(statechart.getBehavioralElement() instanceof Role){
         		 
-        		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+        		  messageInterface = ((Role)statechart.getBehavioralElement()).getSenderMessageInterface();
         	}else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
         		 
-        		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+        		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getSenderMessageInterface();
         	}
         	  
         	ArrayList<String> list = new ArrayList<String>();
@@ -250,10 +250,10 @@ public class ModifyTriggerEventPage1 extends CommonModifyPage{
       	  
       	  if(statechart.getBehavioralElement() instanceof Role){
       		 
-      		  messageInterface = ((Role)statechart.getBehavioralElement()).getProvided();
+      		  messageInterface = ((Role)statechart.getBehavioralElement()).getSenderMessageInterface();
       	  }else if(statechart.getBehavioralElement() instanceof DiscretePortSpecification){
       		 
-      		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getProvidedMessageInterface();
+      		  messageInterface = ((DiscretePortSpecification)statechart.getBehavioralElement()).getSenderMessageInterface();
       	  }
       	  
 	      if(selection instanceof IStructuredSelection)

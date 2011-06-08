@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,29 +110,30 @@ public interface RoleConnector extends BehavioralConnector {
 	void setTarget(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Pattern</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pattern</em>' reference.
-	 * @see #setPattern(CoordinationPattern)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_Pattern()
-	 * @model
+	 * <!-- begin-model-doc -->
+	 * The coordination pattern this role connector is part of.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Coordination Pattern</em>' container reference.
+	 * @see #setCoordinationPattern(CoordinationPattern)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_CoordinationPattern()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors
+	 * @model opposite="connectors" required="true" transient="false"
 	 * @generated
 	 */
-	CoordinationPattern getPattern();
+	CoordinationPattern getCoordinationPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getPattern <em>Pattern</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern</em>' reference.
-	 * @see #getPattern()
+	 * @param value the new value of the '<em>Coordination Pattern</em>' container reference.
+	 * @see #getCoordinationPattern()
 	 * @generated
 	 */
-	void setPattern(CoordinationPattern value);
+	void setCoordinationPattern(CoordinationPattern value);
 
 } // RoleConnector

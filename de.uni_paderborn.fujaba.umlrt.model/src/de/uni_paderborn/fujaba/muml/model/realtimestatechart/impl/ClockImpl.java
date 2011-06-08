@@ -37,35 +37,13 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockImpl#getStatechart <em>Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockImpl#getClockConstraints <em>Clock Constraints</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ClockImpl extends NamedElementImpl implements Clock {
-	/**
-	 * The cached value of the '{@link #getAbsoluteDeadlines() <em>Absolute Deadlines</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteDeadlines()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AbsoluteDeadline> absoluteDeadlines;
-
-	/**
-	 * The cached value of the '{@link #getClockConstraints() <em>Clock Constraints</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClockConstraints()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ClockConstraint> clockConstraints;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,18 +61,6 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartPackage.Literals.CLOCK;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<AbsoluteDeadline> getAbsoluteDeadlines() {
-		if (absoluteDeadlines == null) {
-			absoluteDeadlines = new EObjectWithInverseResolvingEList<AbsoluteDeadline>(AbsoluteDeadline.class, this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK);
-		}
-		return absoluteDeadlines;
 	}
 
 	/**
@@ -143,30 +109,14 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ClockConstraint> getClockConstraints() {
-		if (clockConstraints == null) {
-			clockConstraints = new EObjectWithInverseResolvingEList<ClockConstraint>(ClockConstraint.class, this, RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK);
-		}
-		return clockConstraints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAbsoluteDeadlines()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClockConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -179,12 +129,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				return ((InternalEList<?>)getAbsoluteDeadlines()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				return basicSetStatechart(null, msgs);
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				return ((InternalEList<?>)getClockConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,12 +157,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				return getAbsoluteDeadlines();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				return getStatechart();
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				return getClockConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,16 +172,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				getAbsoluteDeadlines().clear();
-				getAbsoluteDeadlines().addAll((Collection<? extends AbsoluteDeadline>)newValue);
-				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				setStatechart((FujabaRealtimeStatechart)newValue);
-				return;
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				getClockConstraints().clear();
-				getClockConstraints().addAll((Collection<? extends ClockConstraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,14 +187,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				getAbsoluteDeadlines().clear();
-				return;
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				setStatechart((FujabaRealtimeStatechart)null);
-				return;
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				getClockConstraints().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -274,12 +202,8 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES:
-				return absoluteDeadlines != null && !absoluteDeadlines.isEmpty();
 			case RealtimestatechartPackage.CLOCK__STATECHART:
 				return getStatechart() != null;
-			case RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS:
-				return clockConstraints != null && !clockConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

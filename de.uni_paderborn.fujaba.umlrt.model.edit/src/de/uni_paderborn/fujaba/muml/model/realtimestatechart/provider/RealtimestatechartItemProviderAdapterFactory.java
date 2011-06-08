@@ -237,49 +237,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HistoryStateItemProvider historyStateItemProvider;
+	protected ActionExpressionItemProvider actionExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.HistoryState}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHistoryStateAdapter() {
-		if (historyStateItemProvider == null) {
-			historyStateItemProvider = new HistoryStateItemProvider(this);
+	public Adapter createActionExpressionAdapter() {
+		if (actionExpressionItemProvider == null) {
+			actionExpressionItemProvider = new ActionExpressionItemProvider(this);
 		}
 
-		return historyStateItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
+		return actionExpressionItemProvider;
 	}
 
 	/**
@@ -306,72 +283,72 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DoActionItemProvider doActionItemProvider;
+	protected DoEventItemProvider doEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoAction}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDoActionAdapter() {
-		if (doActionItemProvider == null) {
-			doActionItemProvider = new DoActionItemProvider(this);
+	public Adapter createDoEventAdapter() {
+		if (doEventItemProvider == null) {
+			doEventItemProvider = new DoEventItemProvider(this);
 		}
 
-		return doActionItemProvider;
+		return doEventItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryAction} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntryActionItemProvider entryActionItemProvider;
+	protected EntryEventItemProvider entryEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryAction}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEntryActionAdapter() {
-		if (entryActionItemProvider == null) {
-			entryActionItemProvider = new EntryActionItemProvider(this);
+	public Adapter createEntryEventAdapter() {
+		if (entryEventItemProvider == null) {
+			entryEventItemProvider = new EntryEventItemProvider(this);
 		}
 
-		return entryActionItemProvider;
+		return entryEventItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitAction} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExitActionItemProvider exitActionItemProvider;
+	protected ExitEventItemProvider exitEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitAction}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExitActionAdapter() {
-		if (exitActionItemProvider == null) {
-			exitActionItemProvider = new ExitActionItemProvider(this);
+	public Adapter createExitEventAdapter() {
+		if (exitEventItemProvider == null) {
+			exitEventItemProvider = new ExitEventItemProvider(this);
 		}
 
-		return exitActionItemProvider;
+		return exitEventItemProvider;
 	}
 
 	/**
@@ -595,12 +572,11 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (stateItemProvider != null) stateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
-		if (historyStateItemProvider != null) historyStateItemProvider.dispose();
-		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (actionExpressionItemProvider != null) actionExpressionItemProvider.dispose();
 		if (asynchronousEventItemProvider != null) asynchronousEventItemProvider.dispose();
-		if (doActionItemProvider != null) doActionItemProvider.dispose();
-		if (entryActionItemProvider != null) entryActionItemProvider.dispose();
-		if (exitActionItemProvider != null) exitActionItemProvider.dispose();
+		if (doEventItemProvider != null) doEventItemProvider.dispose();
+		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
+		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();

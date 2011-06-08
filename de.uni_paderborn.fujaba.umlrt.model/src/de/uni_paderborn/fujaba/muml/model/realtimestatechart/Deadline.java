@@ -40,6 +40,9 @@ public interface Deadline extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The upper bound of a deadline is a natural number.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Upper Bound</em>' containment reference.
 	 * @see #setUpperBound(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDeadline_UpperBound()
@@ -66,6 +69,9 @@ public interface Deadline extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The lower bound of a deadline is a natural number.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lower Bound</em>' containment reference.
 	 * @see #setLowerBound(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDeadline_LowerBound()

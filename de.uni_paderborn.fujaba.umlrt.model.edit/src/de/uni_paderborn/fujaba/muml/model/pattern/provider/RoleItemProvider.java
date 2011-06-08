@@ -7,27 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.pattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.descriptor.RoleCardinalityPropertyDescriptor;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -36,8 +22,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.provider.NamedElementItemProvider;
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.descriptor.RoleCardinalityPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.Role} object.
@@ -77,14 +69,11 @@ public class RoleItemProvider
 			addConstraintPropertyDescriptor(object);
 			addRealtimeStatechartPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
-			addPatternPropertyDescriptor(object);
-			addAdaptationRealtimeStatechartPropertyDescriptor(object);
 			addEClassPropertyDescriptor(object);
-			addRequiredPropertyDescriptor(object);
-			addProvidedPropertyDescriptor(object);
+			addSenderMessageInterfacePropertyDescriptor(object);
+			addReceiverMessageInterfacePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
-			addChannelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -156,50 +145,6 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_pattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_pattern_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__PATTERN,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Adaptation Realtime Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAdaptationRealtimeStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_adaptationRealtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_adaptationRealtimeStatechart_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ADAPTATION_REALTIME_STATECHART,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the EClass feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,19 +167,19 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required feature.
+	 * This adds a property descriptor for the Sender Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredPropertyDescriptor(Object object) {
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_required_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_required_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__REQUIRED,
+				 getString("_UI_Role_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_senderMessageInterface_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__SENDER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -244,19 +189,19 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided feature.
+	 * This adds a property descriptor for the Receiver Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidedPropertyDescriptor(Object object) {
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Role_provided_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_provided_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__PROVIDED,
+				 getString("_UI_Role_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageInterface_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__RECEIVER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -325,28 +270,6 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Channels feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChannelsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_channels_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_channels_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__CHANNELS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -359,7 +282,7 @@ public class RoleItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PatternPackage.Literals.ROLE__CARDINALITY);
-			childrenFeatures.add(PatternPackage.Literals.ROLE__CHANNELS);
+			childrenFeatures.add(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR);
 		}
 		return childrenFeatures;
 	}
@@ -415,7 +338,7 @@ public class RoleItemProvider
 
 		switch (notification.getFeatureID(Role.class)) {
 			case PatternPackage.ROLE__CARDINALITY:
-			case PatternPackage.ROLE__CHANNELS:
+			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -440,8 +363,8 @@ public class RoleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.ROLE__CHANNELS,
-				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
+				(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
+				 CoreFactory.eINSTANCE.createAdaptationBehavior()));
 	}
 
 	/**

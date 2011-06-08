@@ -31,15 +31,14 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortKind <em>Port Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,27 +49,28 @@ import org.storydriven.modeling.NamedElement;
  */
 public interface Port extends NamedElement, CommentableElement, ConstrainableElement {
 	/**
-	 * Returns the value of the '<em><b>Component</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}'.
+	 * Returns the value of the '<em><b>Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The component this port belongs to.
+	 * The component, this port belongs to. Theoretically the bounds
+	 * should be 1..1, but that would prevent the possibility for
+	 * ComponentPart.portsDerived to be a containment reference
+	 * (see ComponentPart.portsDerived)
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Component</em>' container reference.
+	 * @return the value of the '<em>Component</em>' reference.
 	 * @see #setComponent(Component)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Component()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getPorts
-	 * @model opposite="ports" transient="false"
+	 * @model
 	 * @generated
 	 */
 	Component getComponent();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component</em>' container reference.
+	 * @param value the new value of the '<em>Component</em>' reference.
 	 * @see #getComponent()
 	 * @generated
 	 */
@@ -88,7 +88,7 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
 	 * @see #setPortKind(PortKind)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_PortKind()
-	 * @model derived="true"
+	 * @model required="true" derived="true"
 	 * @generated
 	 */
 	PortKind getPortKind();
@@ -114,7 +114,7 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Specification</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Specification()
-	 * @model containment="true" upper="2"
+	 * @model containment="true" required="true" upper="2"
 	 * @generated
 	 */
 	EList<PortSpecification> getSpecification();
@@ -145,58 +145,62 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	void setCardinality(Cardinality value);
 
 	/**
-	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The required message interface contains the signature definitions of all events
-	 * that may be sent by this port. It is derived from the discrete port specification.
+	 * that may be sent by this port. It is derived from the discrete port specification
+	 * to receive notifications.
+	 * \todosd{Uwe and my oponion: rename to senderMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required Message Interface</em>' reference.
-	 * @see #setRequiredMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_RequiredMessageInterface()
+	 * @return the value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #setSenderMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_SenderMessageInterface()
 	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).senderMessageInterface\nendif'"
 	 * @generated
 	 */
-	MessageInterface getRequiredMessageInterface();
+	MessageInterface getSenderMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required Message Interface</em>' reference.
-	 * @see #getRequiredMessageInterface()
+	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #getSenderMessageInterface()
 	 * @generated
 	 */
-	void setRequiredMessageInterface(MessageInterface value);
+	void setSenderMessageInterface(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Provided Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The provided message interface contains the signature definitions of all events
-	 * that may be received by this port. It is derived from the discrete port specification.
+	 * that may be received by this port. It is derived from the discrete port specification
+	 * to receive notifications.
+	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Provided Message Interface</em>' reference.
-	 * @see #setProvidedMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_ProvidedMessageInterface()
+	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #setReceiverMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_ReceiverMessageInterface()
 	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).receiverMessageInterface\nendif'"
 	 * @generated
 	 */
-	MessageInterface getProvidedMessageInterface();
+	MessageInterface getReceiverMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided Message Interface</em>' reference.
-	 * @see #getProvidedMessageInterface()
+	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #getReceiverMessageInterface()
 	 * @generated
 	 */
-	void setProvidedMessageInterface(MessageInterface value);
+	void setReceiverMessageInterface(MessageInterface value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -231,32 +235,6 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	EList<ConnectorType> getOutgoingConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The adaptation behavior of this port which is derived from the DiscretePortSpecification.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_AdaptationRealtimeStatechart()
-	 * @model derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).adaptationRealtimeStatechart\nendif'"
-	 * @generated
-	 */
-	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #getAdaptationRealtimeStatechart()
-	 * @generated
-	 */
-	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->

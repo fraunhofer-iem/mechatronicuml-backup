@@ -230,26 +230,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentInstance_ComponentPart() {
-		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getComponentInstance_ComponentNameDerived() {
-		return (EAttribute)componentInstanceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getComponentInstance_PortInstances() {
-		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(5);
+		return (EReference)componentInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -320,7 +302,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortInstance_RequiredMessageInterface() {
+	public EReference getPortInstance_SenderMessageInterface() {
 		return (EReference)portInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -329,7 +311,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortInstance_ProvidedMessageInterface() {
+	public EReference getPortInstance_ReceiverMessageInterface() {
 		return (EReference)portInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -455,8 +437,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_TYPE);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
-		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_PART);
-		createEAttribute(componentInstanceEClass, COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED);
 		createEReference(componentInstanceEClass, COMPONENT_INSTANCE__PORT_INSTANCES);
 
 		connectorInstanceEClass = createEClass(CONNECTOR_INSTANCE);
@@ -467,8 +447,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		portInstanceEClass = createEClass(PORT_INSTANCE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_TYPE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__COMPONENT_INSTANCE);
-		createEReference(portInstanceEClass, PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE);
-		createEReference(portInstanceEClass, PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE);
+		createEReference(portInstanceEClass, PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
+		createEReference(portInstanceEClass, PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES);
 		createEReference(portInstanceEClass, PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES);
 
@@ -531,8 +511,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getComponentInstance_ComponentType(), theComponentPackage.getComponent(), null, "componentType", null, 1, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_EmbeddedInstances(), this.getComponentInstance(), null, "embeddedInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_ConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_ParentComponentInstance(), "connectorInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstance_ComponentPart(), theComponentPackage.getComponentPart(), null, "componentPart", null, 0, 1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentInstance_ComponentNameDerived(), ecorePackage.getEString(), "componentNameDerived", "", 0, 1, ComponentInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstance_PortInstances(), this.getPortInstance(), this.getPortInstance_ComponentInstance(), "portInstances", null, 0, -1, ComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorInstanceEClass, ConnectorInstance.class, "ConnectorInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -543,8 +521,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortInstance_RequiredMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "requiredMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPortInstance_ProvidedMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "providedMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_IncomingConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_Target(), "incomingConnectorInstances", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_OutgoingConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_Source(), "outgoingConnectorInstances", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -584,7 +562,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																														
+		   });																											
 	}
 
 	/**
@@ -594,21 +572,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																
 		addAnnotation
-		  (getComponentInstance_ComponentNameDerived(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif"
-		   });											
-		addAnnotation
-		  (getPortInstance_RequiredMessageInterface(), 
+		  (getPortInstance_SenderMessageInterface(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif"
 		   });			
 		addAnnotation
-		  (getPortInstance_ProvidedMessageInterface(), 
+		  (getPortInstance_ReceiverMessageInterface(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif"

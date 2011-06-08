@@ -42,7 +42,7 @@ public class StateInvariantCompartmentCanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramUpdater
-				.getStateInvariantCompartment_7010SemanticChildren(viewObject);
+				.getStateInvariantCompartment_7002SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -62,7 +62,7 @@ public class StateInvariantCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -75,7 +75,7 @@ public class StateInvariantCompartmentCanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramUpdater
-				.getStateInvariantCompartment_7010SemanticChildren((View) getHost()
+				.getStateInvariantCompartment_7002SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ConstrainableElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Constraint</b></em>' reference list.
+	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}'.
 	 * <!-- begin-user-doc -->
@@ -42,10 +42,10 @@ public interface ConstrainableElement extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The constraint for this element.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Constraint</em>' reference list.
+	 * @return the value of the '<em>Constraint</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getConstrainableElement_Constraint()
 	 * @see de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement
-	 * @model opposite="constrainableElement"
+	 * @model opposite="constrainableElement" containment="true"
 	 * @generated
 	 */
 	EList<Constraint> getConstraint();

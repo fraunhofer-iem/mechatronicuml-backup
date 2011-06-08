@@ -408,12 +408,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2020_incominglinks;
+	public static String NavigatorGroupName_Transition_4001_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_2020_outgoinglinks;
+	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
 	 * @generated
@@ -423,42 +423,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2023_incominglinks;
+	public static String NavigatorGroupName_State_2001_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HistoryState_2023_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2022_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2022_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2021_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_State_2021_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_source;
+	public static String NavigatorGroupName_State_2001_outgoinglinks;
 
 	/**
 	 * @generated

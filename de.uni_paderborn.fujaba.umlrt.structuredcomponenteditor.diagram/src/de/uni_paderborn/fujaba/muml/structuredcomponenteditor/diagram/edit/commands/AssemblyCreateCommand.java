@@ -50,11 +50,11 @@ public class AssemblyCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.component.Port) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.component.Port) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -82,8 +82,8 @@ public class AssemblyCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.component.Assembly newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
 				.createAssembly();
 		getContainer().getConnectors().add(newElement);
-		newElement.setFrom(getSource());
-		newElement.setTo(getTarget());
+		newElement.setFromPort(getSource());
+		newElement.setToPort(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -125,15 +125,15 @@ public class AssemblyCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) source;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) target;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) target;
 	}
 
 	/**

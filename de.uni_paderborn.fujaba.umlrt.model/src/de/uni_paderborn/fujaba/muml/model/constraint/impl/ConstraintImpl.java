@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.modeling.impl.ExtendableElementImpl;
 
 /**
@@ -78,16 +79,6 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 * @ordered
 	 */
 	protected boolean background = BACKGROUND_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getConstrainableElement() <em>Constrainable Element</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstrainableElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected ConstrainableElement constrainableElement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,24 +147,8 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 * @generated
 	 */
 	public ConstrainableElement getConstrainableElement() {
-		if (constrainableElement != null && constrainableElement.eIsProxy()) {
-			InternalEObject oldConstrainableElement = (InternalEObject)constrainableElement;
-			constrainableElement = (ConstrainableElement)eResolveProxy(oldConstrainableElement);
-			if (constrainableElement != oldConstrainableElement) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT, oldConstrainableElement, constrainableElement));
-			}
-		}
-		return constrainableElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConstrainableElement basicGetConstrainableElement() {
-		return constrainableElement;
+		if (eContainerFeatureID() != ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT) return null;
+		return (ConstrainableElement)eContainer();
 	}
 
 	/**
@@ -182,12 +157,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 * @generated
 	 */
 	public NotificationChain basicSetConstrainableElement(ConstrainableElement newConstrainableElement, NotificationChain msgs) {
-		ConstrainableElement oldConstrainableElement = constrainableElement;
-		constrainableElement = newConstrainableElement;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT, oldConstrainableElement, newConstrainableElement);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newConstrainableElement, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT, msgs);
 		return msgs;
 	}
 
@@ -197,10 +167,12 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 * @generated
 	 */
 	public void setConstrainableElement(ConstrainableElement newConstrainableElement) {
-		if (newConstrainableElement != constrainableElement) {
+		if (newConstrainableElement != eInternalContainer() || (eContainerFeatureID() != ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT && newConstrainableElement != null)) {
+			if (EcoreUtil.isAncestor(this, newConstrainableElement))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (constrainableElement != null)
-				msgs = ((InternalEObject)constrainableElement).eInverseRemove(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newConstrainableElement != null)
 				msgs = ((InternalEObject)newConstrainableElement).eInverseAdd(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
 			msgs = basicSetConstrainableElement(newConstrainableElement, msgs);
@@ -230,8 +202,8 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
-				if (constrainableElement != null)
-					msgs = ((InternalEObject)constrainableElement).eInverseRemove(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetConstrainableElement((ConstrainableElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -257,6 +229,20 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
+				return eInternalContainer().eInverseRemove(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConstraintPackage.CONSTRAINT__CORRECTNESS:
@@ -264,8 +250,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				return isBackground();
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
-				if (resolve) return getConstrainableElement();
-				return basicGetConstrainableElement();
+				return getConstrainableElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,7 +310,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 			case ConstraintPackage.CONSTRAINT__BACKGROUND:
 				return background != BACKGROUND_EDEFAULT;
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
-				return constrainableElement != null;
+				return getConstrainableElement() != null;
 		}
 		return super.eIsSet(featureID);
 	}

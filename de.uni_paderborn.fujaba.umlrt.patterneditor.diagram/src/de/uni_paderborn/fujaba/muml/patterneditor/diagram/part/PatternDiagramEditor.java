@@ -76,7 +76,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstancePaletteFactory()
+		new de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}
@@ -85,14 +85,14 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin.ID;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput
 				|| input instanceof URIEditorInput) {
-			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 					.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
@@ -140,7 +140,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput
 				|| input instanceof URIEditorInput) {
-			setDocumentProvider(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+			setDocumentProvider(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 					.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
@@ -181,8 +181,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	/**
 	 * @generated
 	 */
-	protected void performSaveAs(
-			org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
@@ -282,7 +281,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 		Diagram diagram = document.getDiagram();
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.PatternNavigatorItem item = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.PatternNavigatorItem(
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.UmlrtNavigatorItem item = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.UmlrtNavigatorItem(
 					diagram, file, false);
 			return new StructuredSelection(item);
 		}

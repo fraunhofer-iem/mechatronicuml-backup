@@ -119,13 +119,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR__TARGET = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__PATTERN = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
+	int ROLE_CONNECTOR__COORDINATION_PATTERN = ComponentPackage.BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Role Connector</em>' class.
@@ -174,7 +174,7 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -183,7 +183,7 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -247,7 +247,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -274,22 +274,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ROLE_CONNECTOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__COORDINATION_PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>EClass</b></em>' reference.
@@ -298,25 +289,25 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Required</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REQUIRED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ROLE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Provided</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PROVIDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ROLE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -325,7 +316,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ROLE__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -334,16 +325,16 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Channels</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CHANNELS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int ROLE__ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -352,7 +343,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 
 	/**
@@ -399,15 +390,15 @@ public interface PatternPackage extends EPackage {
 	EReference getRoleConnector_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getPattern()
+	 * @return the meta object for the container reference '<em>Coordination Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern()
 	 * @see #getRoleConnector()
 	 * @generated
 	 */
-	EReference getRoleConnector_Pattern();
+	EReference getRoleConnector_CoordinationPattern();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern <em>Coordination Pattern</em>}'.
@@ -420,10 +411,10 @@ public interface PatternPackage extends EPackage {
 	EClass getCoordinationPattern();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Roles</em>'.
+	 * @return the meta object for the containment reference list '<em>Roles</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles()
 	 * @see #getCoordinationPattern()
 	 * @generated
@@ -463,26 +454,15 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_RoleConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getPattern()
+	 * @return the meta object for the container reference '<em>Coordination Pattern</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_Pattern();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationRealtimeStatechart()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_AdaptationRealtimeStatechart();
+	EReference getRole_CoordinationPattern();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}'.
@@ -496,26 +476,26 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_EClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getRequired()
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_Required();
+	EReference getRole_SenderMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getProvided <em>Provided</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getProvided()
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_Provided();
+	EReference getRole_ReceiverMessageInterface();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}'.
@@ -540,15 +520,15 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_Port();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getChannels <em>Channels</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Channels</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getChannels()
+	 * @return the meta object for the containment reference '<em>Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior()
 	 * @see #getRole()
 	 * @generated
 	 */
-	EReference getRole_Channels();
+	EReference getRole_AdaptationBehavior();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -607,12 +587,12 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE_CONNECTOR__TARGET = eINSTANCE.getRoleConnector_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE_CONNECTOR__PATTERN = eINSTANCE.getRoleConnector_Pattern();
+		EReference ROLE_CONNECTOR__COORDINATION_PATTERN = eINSTANCE.getRoleConnector_CoordinationPattern();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl <em>Coordination Pattern</em>}' class.
@@ -625,7 +605,7 @@ public interface PatternPackage extends EPackage {
 		EClass COORDINATION_PATTERN = eINSTANCE.getCoordinationPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -659,20 +639,12 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__ROLE_CONNECTOR = eINSTANCE.getRole_RoleConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__PATTERN = eINSTANCE.getRole_Pattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getRole_AdaptationRealtimeStatechart();
+		EReference ROLE__COORDINATION_PATTERN = eINSTANCE.getRole_CoordinationPattern();
 
 		/**
 		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
@@ -683,20 +655,20 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__ECLASS = eINSTANCE.getRole_EClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Required</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__REQUIRED = eINSTANCE.getRole_Required();
+		EReference ROLE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getRole_SenderMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__PROVIDED = eINSTANCE.getRole_Provided();
+		EReference ROLE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getRole_ReceiverMessageInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
@@ -715,12 +687,12 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__PORT = eINSTANCE.getRole_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Channels</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE__CHANNELS = eINSTANCE.getRole_Channels();
+		EReference ROLE__ADAPTATION_BEHAVIOR = eINSTANCE.getRole_AdaptationBehavior();
 
 	}
 

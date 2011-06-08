@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.TextualConstraintEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart;
 
 /**
  * A custom EditPart for TextualConstraints. We customize the NodeFigure here.
@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.TextualCons
  * @author bingo
  * 
  */
-public class CustomTextualConstraintEditPart extends TextualConstraintEditPart {
+public class CustomTextualConstraintEditPart extends ConstrainableElementConstraintEditPart {
 
 	public CustomTextualConstraintEditPart(View view) {
 		super(view);

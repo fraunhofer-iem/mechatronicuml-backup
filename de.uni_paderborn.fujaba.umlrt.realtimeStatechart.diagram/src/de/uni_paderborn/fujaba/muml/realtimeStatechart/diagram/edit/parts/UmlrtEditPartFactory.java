@@ -28,8 +28,8 @@ public class UmlrtEditPartFactory implements EditPartFactory {
 			switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 					.getVisualID(view)) {
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
@@ -40,56 +40,44 @@ public class UmlrtEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State3EditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryActionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryActionEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoActionEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitActionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitActionEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintClockConstraintExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelSynchroChannelExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TimeInvariantEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TimeInvariantEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionsCompartmentEditPart.VISUAL_ID:
@@ -116,40 +104,40 @@ public class UmlrtEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockResetsExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockResetsExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionAbsoluteDeadlineExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionAbsoluteDeadlineExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionRelativeDeadlineExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionRelativeDeadlineExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEventsExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEventsExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionTransitionActionExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionTransitionActionExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockConstraintExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockConstraintExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart(
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart(
 						view);
 
 			}

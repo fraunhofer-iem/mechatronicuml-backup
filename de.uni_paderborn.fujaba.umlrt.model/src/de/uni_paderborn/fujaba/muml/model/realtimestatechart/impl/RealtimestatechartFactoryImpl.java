@@ -68,12 +68,11 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
-			case RealtimestatechartPackage.HISTORY_STATE: return createHistoryState();
-			case RealtimestatechartPackage.ACTION: return createAction();
+			case RealtimestatechartPackage.ACTION_EXPRESSION: return createActionExpression();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: return createAsynchronousEvent();
-			case RealtimestatechartPackage.DO_ACTION: return createDoAction();
-			case RealtimestatechartPackage.ENTRY_ACTION: return createEntryAction();
-			case RealtimestatechartPackage.EXIT_ACTION: return createExitAction();
+			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
+			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
+			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
@@ -92,8 +91,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case RealtimestatechartPackage.HISTORY_KIND:
-				return createHistoryKindFromString(eDataType, initialValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION_KIND:
+				return createSynchronizationKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -107,8 +106,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case RealtimestatechartPackage.HISTORY_KIND:
-				return convertHistoryKindToString(eDataType, instanceValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION_KIND:
+				return convertSynchronizationKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -189,19 +188,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HistoryState createHistoryState() {
-		HistoryStateImpl historyState = new HistoryStateImpl();
-		return historyState;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
+	public ActionExpression createActionExpression() {
+		ActionExpressionImpl actionExpression = new ActionExpressionImpl();
+		return actionExpression;
 	}
 
 	/**
@@ -219,9 +208,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoAction createDoAction() {
-		DoActionImpl doAction = new DoActionImpl();
-		return doAction;
+	public DoEvent createDoEvent() {
+		DoEventImpl doEvent = new DoEventImpl();
+		return doEvent;
 	}
 
 	/**
@@ -229,9 +218,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryAction createEntryAction() {
-		EntryActionImpl entryAction = new EntryActionImpl();
-		return entryAction;
+	public EntryEvent createEntryEvent() {
+		EntryEventImpl entryEvent = new EntryEventImpl();
+		return entryEvent;
 	}
 
 	/**
@@ -239,9 +228,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExitAction createExitAction() {
-		ExitActionImpl exitAction = new ExitActionImpl();
-		return exitAction;
+	public ExitEvent createExitEvent() {
+		ExitEventImpl exitEvent = new ExitEventImpl();
+		return exitEvent;
 	}
 
 	/**
@@ -299,8 +288,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HistoryKind createHistoryKindFromString(EDataType eDataType, String initialValue) {
-		HistoryKind result = HistoryKind.get(initialValue);
+	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
+		SynchronizationKind result = SynchronizationKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -310,7 +299,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertHistoryKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertSynchronizationKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

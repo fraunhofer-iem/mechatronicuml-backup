@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * A representation of the model object '<em><b>Exit Point</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Exit points are defined points on a state inner states can use to leave this state.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getExitPoint()
  * @model

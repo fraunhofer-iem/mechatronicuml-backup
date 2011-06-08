@@ -11,7 +11,7 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+		setPreferenceStore(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 				.getInstance().getPreferenceStore());
 	}
 }

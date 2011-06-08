@@ -11,7 +11,6 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.wizards.ModifyParameterWizard;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart;
 
 public class ModifySyncChannelWizardAction extends AbstractRealtimeStatechartEditorAction implements IWorkbenchWindowActionDelegate
 {
@@ -60,6 +59,7 @@ public class ModifySyncChannelWizardAction extends AbstractRealtimeStatechartEdi
 	     
 		if ((selection instanceof IStructuredSelection))
 	  	{
+			/*
 			IStructuredSelection structured = (IStructuredSelection) selection;
 			Object obj = structured.getFirstElement();
 
@@ -68,6 +68,7 @@ public class ModifySyncChannelWizardAction extends AbstractRealtimeStatechartEdi
 	        	 
 	        	 selectedSyncChannel =(SynchronizationChannel) ((SynchronizationChannelEditPart) obj).getNotationView().getElement();
 	         }
+	         */
 	  	}
 		
 		super.selectionChanged(action, selection);

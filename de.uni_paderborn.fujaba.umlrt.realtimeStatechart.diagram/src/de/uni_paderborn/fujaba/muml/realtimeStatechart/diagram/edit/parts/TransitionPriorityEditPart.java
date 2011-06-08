@@ -49,7 +49,7 @@ public class TransitionPriorityEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6011;
+	public static final int VISUAL_ID = 6001;
 
 	/**
 	 * @generated
@@ -100,7 +100,7 @@ public class TransitionPriorityEditPart extends LabelEditPart implements
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.UmlrtTextSelectionEditPolicy());
 		installEditPolicy(
 				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.LinkLabelDragPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -306,9 +306,9 @@ public class TransitionPriorityEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.RealtimestatechartParserProvider
+			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Transition_4002,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Transition_4001,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID));

@@ -151,10 +151,10 @@
         href="structuredcomponent.gmfgraph#Assembly"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/component/Assembly/from"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/component/ConnectorType/fromPort"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/component/Assembly/to"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/component/ConnectorType/toPort"/>
   </links>
   <diagram>
     <diagramCanvas

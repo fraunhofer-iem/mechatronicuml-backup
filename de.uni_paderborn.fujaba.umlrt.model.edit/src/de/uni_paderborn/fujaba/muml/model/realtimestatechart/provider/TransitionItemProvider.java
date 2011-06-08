@@ -10,7 +10,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.model.descriptor.RelativeDeadlinePropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.RelativeDeadlinePropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;
@@ -232,8 +232,7 @@ public class TransitionItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
@@ -300,8 +299,7 @@ public class TransitionItemProvider
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
@@ -343,18 +341,13 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION,
-				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION,
+				(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createAction()));
+				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -384,7 +377,7 @@ public class TransitionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 RealtimestatechartFactory.eINSTANCE.createAction()));
+				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -469,8 +462,6 @@ public class TransitionItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__SEND_SYNCHRONIZATION ||
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__RECEIVE_SYNCHRONIZATION ||
 			childFeature == RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION ||
 			childFeature == RealtimestatechartPackage.Literals.TRANSITION__GUARD ||
 			childFeature == RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS ||

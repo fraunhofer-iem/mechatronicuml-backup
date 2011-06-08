@@ -169,23 +169,14 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.HISTORY_STATE: {
-				HistoryState historyState = (HistoryState)theEObject;
-				T result = caseHistoryState(historyState);
-				if (result == null) result = caseVertex(historyState);
-				if (result == null) result = caseNamedElement(historyState);
-				if (result == null) result = caseExtendableElement(historyState);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.ACTION: {
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = caseExpression(action);
-				if (result == null) result = caseNamedElement(action);
-				if (result == null) result = caseTypedElement(action);
-				if (result == null) result = caseCommentableElement(action);
-				if (result == null) result = caseExtendableElement(action);
+			case RealtimestatechartPackage.ACTION_EXPRESSION: {
+				ActionExpression actionExpression = (ActionExpression)theEObject;
+				T result = caseActionExpression(actionExpression);
+				if (result == null) result = caseExpression(actionExpression);
+				if (result == null) result = caseNamedElement(actionExpression);
+				if (result == null) result = caseTypedElement(actionExpression);
+				if (result == null) result = caseCommentableElement(actionExpression);
+				if (result == null) result = caseExtendableElement(actionExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -202,29 +193,29 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.DO_ACTION: {
-				DoAction doAction = (DoAction)theEObject;
-				T result = caseDoAction(doAction);
+			case RealtimestatechartPackage.DO_EVENT: {
+				DoEvent doEvent = (DoEvent)theEObject;
+				T result = caseDoEvent(doEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_ACTION: {
-				EntryOrExitAction entryOrExitAction = (EntryOrExitAction)theEObject;
-				T result = caseEntryOrExitAction(entryOrExitAction);
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: {
+				EntryOrExitEvent entryOrExitEvent = (EntryOrExitEvent)theEObject;
+				T result = caseEntryOrExitEvent(entryOrExitEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ENTRY_ACTION: {
-				EntryAction entryAction = (EntryAction)theEObject;
-				T result = caseEntryAction(entryAction);
-				if (result == null) result = caseEntryOrExitAction(entryAction);
+			case RealtimestatechartPackage.ENTRY_EVENT: {
+				EntryEvent entryEvent = (EntryEvent)theEObject;
+				T result = caseEntryEvent(entryEvent);
+				if (result == null) result = caseEntryOrExitEvent(entryEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.EXIT_ACTION: {
-				ExitAction exitAction = (ExitAction)theEObject;
-				T result = caseExitAction(exitAction);
-				if (result == null) result = caseEntryOrExitAction(exitAction);
+			case RealtimestatechartPackage.EXIT_EVENT: {
+				ExitEvent exitEvent = (ExitEvent)theEObject;
+				T result = caseExitEvent(exitEvent);
+				if (result == null) result = caseEntryOrExitEvent(exitEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -421,32 +412,17 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>History State</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Action Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>History State</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Action Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseHistoryState(HistoryState object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAction(Action object) {
+	public T caseActionExpression(ActionExpression object) {
 		return null;
 	}
 
@@ -466,62 +442,62 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Do Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Do Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Do Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Do Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDoAction(DoAction object) {
+	public T caseDoEvent(DoEvent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entry Or Exit Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Or Exit Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entry Or Exit Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Or Exit Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntryOrExitAction(EntryOrExitAction object) {
+	public T caseEntryOrExitEvent(EntryOrExitEvent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entry Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entry Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntryAction(EntryAction object) {
+	public T caseEntryEvent(EntryEvent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Exit Action</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Exit Action</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExitAction(ExitAction object) {
+	public T caseExitEvent(ExitEvent object) {
 		return null;
 	}
 

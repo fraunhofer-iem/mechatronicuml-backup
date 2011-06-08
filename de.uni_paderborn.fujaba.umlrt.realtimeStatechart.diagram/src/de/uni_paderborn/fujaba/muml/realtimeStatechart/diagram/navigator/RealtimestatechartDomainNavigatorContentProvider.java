@@ -185,9 +185,9 @@ public class RealtimestatechartDomainNavigatorContentProvider implements
 					parentElement);
 		}
 
-		if (parentElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorItem) {
+		if (parentElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem) {
 			return wrapEObjects(
-					myAdapterFctoryContentProvier.getChildren(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorItem) parentElement)
+					myAdapterFctoryContentProvier.getChildren(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem) parentElement)
 							.getEObject()), parentElement);
 		}
 		return EMPTY_ARRAY;
@@ -200,7 +200,7 @@ public class RealtimestatechartDomainNavigatorContentProvider implements
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorItem(
+				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem(
 						(EObject) objects[i], parentElement,
 						myAdapterFctoryContentProvier));
 			}
@@ -212,8 +212,8 @@ public class RealtimestatechartDomainNavigatorContentProvider implements
 	 * @generated
 	 */
 	public Object getParent(Object element) {
-		if (element instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem) {
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem) element;
+		if (element instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) {
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;

@@ -30,7 +30,7 @@ public class UmlrtOCLFactory {
 	 * @generated
 	 */
 	protected UmlrtOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtAbstractExpression[21];
+		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtAbstractExpression[13];
 	}
 
 	/**
@@ -53,13 +53,6 @@ public class UmlrtOCLFactory {
 					"\'State\'", //$NON-NLS-1$
 					"if self.clock.name.oclIsUndefined() or self.operator.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.clock.name.concat(\' \').concat(\'self.operator\').concat(\' \').concat(\n\t\tif self.bound.oclIsUndefined() then\n\t\t\t\'null\'\n\t\telse\n\t\t\tself.bound.toString()\n\t\tendif\n\t)\nendif", //$NON-NLS-1$
 					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\n\t\'(\'.concat(\n\t\tself.containedParameters->iterate(param; result : String = \'\' | \n\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\tparam.name.concat(\' : \').concat(\n\t\t\t\t\tif param.eType.oclIsUndefined() then\n\t\t\t\t\t\t\'null\'\n\t\t\t\t\telse\n\t\t\t\t\t\tparam.eType.name\n\t\t\t\t\tendif\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t).concat(\')\')\n)", //$NON-NLS-1$
-					"\'InitialState\'", //$NON-NLS-1$
-					"true", //$NON-NLS-1$
-					"false", //$NON-NLS-1$
-					"\'FinalState\'", //$NON-NLS-1$
-					"false", //$NON-NLS-1$
-					"true", //$NON-NLS-1$
-					"\'History\'", //$NON-NLS-1$
 					"\'c\'", //$NON-NLS-1$
 					"self.clockResets->iterate(clockReset; result : String = \'\' | \n(\n\tif result = \'\' then \'\' else result.concat(\', \') endif\n).concat(if clockReset.name.oclIsUndefined() then \'null\' else clockReset.name endif).concat(\':=0\'))", //$NON-NLS-1$
 					"self.absoluteDeadlines->iterate(absoluteDeadline; result : String = \'\' | \n(\n\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t(if absoluteDeadline.clock.name.oclIsUndefined() then \'\' else absoluteDeadline.clock.name endif).concat(\' in [\').concat(\n\t\t\t\tif absoluteDeadline.lowerBound.oclIsUndefined() then \'null\' else absoluteDeadline.lowerBound.toString() endif\n\t\t\t).concat(\',\').concat(\n\t\t\t\tif absoluteDeadline.upperBound.oclIsUndefined() then \'null\' else absoluteDeadline.upperBound.toString() endif\n\t\t\t).concat(\']\')\n\t)\n))\n", //$NON-NLS-1$
@@ -68,9 +61,8 @@ public class UmlrtOCLFactory {
 					"\'guard\'", //$NON-NLS-1$
 					"\'transitionAction\'", //$NON-NLS-1$
 					"\'[\'.concat(\n\tself.clockConstraints->iterate(clockConstraint; result : String = \'\' | (\n\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\tclockConstraint.clock.name.concat(\' \').concat(\'clockConstraint.operator\').concat(\' \').concat(clockConstraint.bound.toString())\n\t\t)\n\t))\n).concat(\']\')", //$NON-NLS-1$
+					"if safetyTransition=false then\r\n\t\'\'\r\nelse\r\n\t\'<<safetyTransition>>\'\r\nendif", //$NON-NLS-1$
 					"OrderedSet { self.sendSynchronization, self.receiveSynchronization }->select(synchronization | not synchronization.oclIsUndefined())->iterate(synchronization; completeResult : String = \'\' | \n\t(if completeResult = \'\' then \'\' else completeResult.concat(\' \') endif).concat(\n\t\tsynchronization.callee.oclAsType(SynchronizationChannel).name.concat(\'(\').concat(\n\t\t\tsynchronization.ownedParameterBindings->iterate(binding; result : String = \'\' | \n\t\t\t(\n\t\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\t\tbinding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.concat(\':\').concat(\n\t\t\t\t\t\tbinding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name\n\t\t\t\t)\n\t\t\t)))\n\t\t).concat(\')\').concat(if completeResult = \'\' then \'!\' else \'?\' endif)\n\t)\n)", //$NON-NLS-1$
-					"if oclIsKindOf(State) then\n\tnot self.oclAsType(State).final\nelse\n\ttrue\nendif", //$NON-NLS-1$
-					"if oclIsKindOf(State) then\n\tnot self.oclAsType(State).initial\nelse\n\tif oclIsKindOf(HistoryState) then\n\t\tfalse\n\telse\n\t\ttrue\n\tendif\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

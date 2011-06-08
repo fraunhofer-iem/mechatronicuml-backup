@@ -1,10 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies;
 
-import java.util.Collections;
 import java.util.Iterator;
 
-import java.util.Map;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -328,67 +325,22 @@ public class UmlrtBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateTransition_4002(
+		public boolean canCreateTransition_4001(
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {
-			return canExistTransition_4002(container, null, source, target);
+			return canExistTransition_4001(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistTransition_4002(
+		public boolean canExistTransition_4001(
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {
-			try {
-				if (source == null) {
-					return true;
-				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
-					Object sourceVal = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
-							.getExpression(
-									19,
-									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(), env).evaluate(
-									source,
-									Collections.singletonMap(
-											"oppositeEnd", target)); //$NON-NLS-1$
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
-						return false;
-					} // else fall-through
-				}
-				if (target == null) {
-					return true;
-				} else {
-					Map<String, EClassifier> env = Collections
-							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
-					Object targetVal = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
-							.getExpression(
-									20,
-									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-											.getVertex(), env).evaluate(
-									target,
-									Collections.singletonMap(
-											"oppositeEnd", source)); //$NON-NLS-1$
-					if (false == targetVal instanceof Boolean
-							|| !((Boolean) targetVal).booleanValue()) {
-						return false;
-					} // else fall-through
-				}
-				return true;
-			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-						.getInstance().logError(
-								"Link constraint evaluation error", e); //$NON-NLS-1$
-				return false;
-			}
+			return true;
 		}
 	}
 

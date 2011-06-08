@@ -73,6 +73,7 @@ public class FujabaRealtimeStatechartItemProvider
 
 			addEmbeddingRegionPropertyDescriptor(object);
 			addAvailableClocksPropertyDescriptor(object);
+			addHistoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -117,6 +118,28 @@ public class FujabaRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the History feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHistoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FujabaRealtimeStatechart_history_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_history_feature", "_UI_FujabaRealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__HISTORY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -192,6 +215,7 @@ public class FujabaRealtimeStatechartItemProvider
 
 		switch (notification.getFeatureID(FujabaRealtimeStatechart.class)) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
@@ -224,11 +248,6 @@ public class FujabaRealtimeStatechartItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES,
 				 RealtimestatechartFactory.eINSTANCE.createState()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createHistoryState()));
 
 		newChildDescriptors.add
 			(createChildParameter

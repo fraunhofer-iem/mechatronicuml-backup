@@ -20,7 +20,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-model-doc -->
  * The entries of the enumeration represent different kinds of components. These
  * are discrete software components, continous components containing controller
- * code and hardware components representing physical entities in the system.
+ * code, hybrid components that is a discrete software component which may have 
+ * continuous input signals, and hardware components representing physical entities in the system.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentKind()
  * @model
@@ -48,6 +49,14 @@ public enum ComponentKind implements Enumerator {
 	CONTINUOUS_COMPONENT(1, "CONTINUOUS_COMPONENT", "continuous component"),
 
 	/**
+	 * The '<em><b>HYBRID COMPONENT</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HYBRID_COMPONENT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	HYBRID_COMPONENT(2, "HYBRID_COMPONENT", "hybrid component"), /**
 	 * The '<em><b>HARDWARE COMPONENT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -55,7 +64,7 @@ public enum ComponentKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HARDWARE_COMPONENT(2, "HARDWARE_COMPONENT", "hardware component");
+	HARDWARE_COMPONENT(3, "HARDWARE_COMPONENT", "hardware component");
 
 	/**
 	 * The '<em><b>SOFTWARE COMPONENT</b></em>' literal value.
@@ -88,6 +97,21 @@ public enum ComponentKind implements Enumerator {
 	public static final int CONTINUOUS_COMPONENT_VALUE = 1;
 
 	/**
+	 * The '<em><b>HYBRID COMPONENT</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>HYBRID COMPONENT</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #HYBRID_COMPONENT
+	 * @model literal="hybrid component"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HYBRID_COMPONENT_VALUE = 2;
+
+	/**
 	 * The '<em><b>HARDWARE COMPONENT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -100,7 +124,7 @@ public enum ComponentKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HARDWARE_COMPONENT_VALUE = 2;
+	public static final int HARDWARE_COMPONENT_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Kind</b></em>' enumerators.
@@ -112,6 +136,7 @@ public enum ComponentKind implements Enumerator {
 		new ComponentKind[] {
 			SOFTWARE_COMPONENT,
 			CONTINUOUS_COMPONENT,
+			HYBRID_COMPONENT,
 			HARDWARE_COMPONENT,
 		};
 
@@ -165,6 +190,7 @@ public enum ComponentKind implements Enumerator {
 		switch (value) {
 			case SOFTWARE_COMPONENT_VALUE: return SOFTWARE_COMPONENT;
 			case CONTINUOUS_COMPONENT_VALUE: return CONTINUOUS_COMPONENT;
+			case HYBRID_COMPONENT_VALUE: return HYBRID_COMPONENT;
 			case HARDWARE_COMPONENT_VALUE: return HARDWARE_COMPONENT;
 		}
 		return null;

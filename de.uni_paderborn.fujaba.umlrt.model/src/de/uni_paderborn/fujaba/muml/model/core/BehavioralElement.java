@@ -41,7 +41,7 @@ public interface BehavioralElement extends EObject {
 	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavioralElement_RealtimeStatechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement
-	 * @model opposite="behavioralElement"
+	 * @model opposite="behavioralElement" required="true"
 	 * @generated
 	 */
 	AbstractRealtimeStatechart getRealtimeStatechart();

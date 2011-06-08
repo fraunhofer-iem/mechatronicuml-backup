@@ -89,22 +89,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	ClockConstraint createClockConstraint();
 
 	/**
-	 * Returns a new object of class '<em>History State</em>'.
+	 * Returns a new object of class '<em>Action Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>History State</em>'.
+	 * @return a new object of class '<em>Action Expression</em>'.
 	 * @generated
 	 */
-	HistoryState createHistoryState();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
+	ActionExpression createActionExpression();
 
 	/**
 	 * Returns a new object of class '<em>Asynchronous Event</em>'.
@@ -116,31 +107,31 @@ public interface RealtimestatechartFactory extends EFactory {
 	AsynchronousEvent createAsynchronousEvent();
 
 	/**
-	 * Returns a new object of class '<em>Do Action</em>'.
+	 * Returns a new object of class '<em>Do Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Do Action</em>'.
+	 * @return a new object of class '<em>Do Event</em>'.
 	 * @generated
 	 */
-	DoAction createDoAction();
+	DoEvent createDoEvent();
 
 	/**
-	 * Returns a new object of class '<em>Entry Action</em>'.
+	 * Returns a new object of class '<em>Entry Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Action</em>'.
+	 * @return a new object of class '<em>Entry Event</em>'.
 	 * @generated
 	 */
-	EntryAction createEntryAction();
+	EntryEvent createEntryEvent();
 
 	/**
-	 * Returns a new object of class '<em>Exit Action</em>'.
+	 * Returns a new object of class '<em>Exit Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exit Action</em>'.
+	 * @return a new object of class '<em>Exit Event</em>'.
 	 * @generated
 	 */
-	ExitAction createExitAction();
+	ExitEvent createExitEvent();
 
 	/**
 	 * Returns a new object of class '<em>Synchronization Channel</em>'.

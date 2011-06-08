@@ -200,7 +200,7 @@ public interface CorePackage extends EPackage {
 	int CONSTRAINABLE_ELEMENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -337,6 +337,53 @@ public interface CorePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl <em>Adaptation Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAdaptationBehavior()
+	 * @generated
+	 */
+	int ADAPTATION_BEHAVIOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTATION_BEHAVIOR__REALTIME_STATECHART = BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTATION_BEHAVIOR__ROLE = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Port</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTATION_BEHAVIOR__PORT = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Adaptation Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADAPTATION_BEHAVIOR_FEATURE_COUNT = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -442,10 +489,10 @@ public interface CorePackage extends EPackage {
 	EClass getConstrainableElement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint <em>Constraint</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Constraint</em>'.
+	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint()
 	 * @see #getConstrainableElement()
 	 * @generated
@@ -538,6 +585,38 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractRealtimeStatechart_Embedded();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior
+	 * @generated
+	 */
+	EClass getAdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Role</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole()
+	 * @see #getAdaptationBehavior()
+	 * @generated
+	 */
+	EReference getAdaptationBehavior_Role();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort()
+	 * @see #getAdaptationBehavior()
+	 * @generated
+	 */
+	EReference getAdaptationBehavior_Port();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -652,7 +731,7 @@ public interface CorePackage extends EPackage {
 		EClass CONSTRAINABLE_ELEMENT = eINSTANCE.getConstrainableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Constraint</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -724,6 +803,32 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABSTRACT_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getAbstractRealtimeStatechart_Embedded();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl <em>Adaptation Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAdaptationBehavior()
+		 * @generated
+		 */
+		EClass ADAPTATION_BEHAVIOR = eINSTANCE.getAdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADAPTATION_BEHAVIOR__ROLE = eINSTANCE.getAdaptationBehavior_Role();
+
+		/**
+		 * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADAPTATION_BEHAVIOR__PORT = eINSTANCE.getAdaptationBehavior_Port();
 
 	}
 

@@ -181,7 +181,7 @@ public class AsynchronousEventItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				 RealtimestatechartFactory.eINSTANCE.createAction()));
+				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

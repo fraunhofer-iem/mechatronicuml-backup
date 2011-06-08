@@ -3,11 +3,10 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.TextualConstraintEditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlinstanceEditPartFactory;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstanceVisualIDRegistry;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.UmlrtEditPartFactory;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry;
 
 /**
  * Our customized EditPartFactory, which makes sure our overridden
@@ -16,20 +15,20 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstanceVisua
  * @author bingo
  * 
  */
-public class CustomPatternEditPartFactory extends MumlinstanceEditPartFactory {
+public class CustomPatternEditPartFactory extends UmlrtEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (MumlinstanceVisualIDRegistry.getVisualID(view)) {
+			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
 			case PatternDiagramEditPart.VISUAL_ID:
 				return new CustomPatternDiagramEditPart(view);
-
+/*
 			case CoordinationPatternEditPart.VISUAL_ID:
 				return new CustomCoordinationPatternEditPart(view);
-
-			case TextualConstraintEditPart.VISUAL_ID:
+*/
+			case ConstrainableElementConstraintEditPart.VISUAL_ID:
 				return new CustomTextualConstraintEditPart(view);
 
 			}

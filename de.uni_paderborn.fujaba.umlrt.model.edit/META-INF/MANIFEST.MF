@@ -11,7 +11,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.model.component.provider,
  de.uni_paderborn.fujaba.muml.model.constraint.provider,
  de.uni_paderborn.fujaba.muml.model.core.provider,
- de.uni_paderborn.fujaba.muml.model.descriptor,
  de.uni_paderborn.fujaba.muml.model.instance.provider,
  de.uni_paderborn.fujaba.muml.model.msgiface.provider,
  de.uni_paderborn.fujaba.muml.model.pattern.provider,
@@ -22,8 +21,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.common;bundle-version="1.0.0",
- de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="1.0.0";visibility:=reexport
+ de.uni_paderborn.fujaba.common;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

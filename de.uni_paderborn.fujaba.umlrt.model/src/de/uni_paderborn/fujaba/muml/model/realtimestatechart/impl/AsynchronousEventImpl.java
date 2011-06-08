@@ -33,8 +33,8 @@ import org.storydriven.modeling.calls.expressions.impl.MethodCallExpressionImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getTriggeredtransition <em>Triggeredtransition</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getRaisedtransition <em>Raisedtransition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getTriggeredTransition <em>Triggered Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getRaisedTransition <em>Raised Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl#getFullEventName <em>Full Event Name</em>}</li>
  * </ul>
  * </p>
@@ -127,8 +127,8 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition getTriggeredtransition() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION) return null;
+	public Transition getTriggeredTransition() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION) return null;
 		return (Transition)eContainer();
 	}
 
@@ -137,8 +137,8 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTriggeredtransition(Transition newTriggeredtransition, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTriggeredtransition, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION, msgs);
+	public NotificationChain basicSetTriggeredTransition(Transition newTriggeredTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newTriggeredTransition, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION, msgs);
 		return msgs;
 	}
 
@@ -147,20 +147,20 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTriggeredtransition(Transition newTriggeredtransition) {
-		if (newTriggeredtransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION && newTriggeredtransition != null)) {
-			if (EcoreUtil.isAncestor(this, newTriggeredtransition))
+	public void setTriggeredTransition(Transition newTriggeredTransition) {
+		if (newTriggeredTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION && newTriggeredTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newTriggeredTransition))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTriggeredtransition != null)
-				msgs = ((InternalEObject)newTriggeredtransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, Transition.class, msgs);
-			msgs = basicSetTriggeredtransition(newTriggeredtransition, msgs);
+			if (newTriggeredTransition != null)
+				msgs = ((InternalEObject)newTriggeredTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, Transition.class, msgs);
+			msgs = basicSetTriggeredTransition(newTriggeredTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION, newTriggeredtransition, newTriggeredtransition));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION, newTriggeredTransition, newTriggeredTransition));
 	}
 
 	/**
@@ -168,8 +168,8 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition getRaisedtransition() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION) return null;
+	public Transition getRaisedTransition() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION) return null;
 		return (Transition)eContainer();
 	}
 
@@ -178,8 +178,8 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRaisedtransition(Transition newRaisedtransition, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRaisedtransition, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION, msgs);
+	public NotificationChain basicSetRaisedTransition(Transition newRaisedTransition, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRaisedTransition, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION, msgs);
 		return msgs;
 	}
 
@@ -188,20 +188,20 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRaisedtransition(Transition newRaisedtransition) {
-		if (newRaisedtransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION && newRaisedtransition != null)) {
-			if (EcoreUtil.isAncestor(this, newRaisedtransition))
+	public void setRaisedTransition(Transition newRaisedTransition) {
+		if (newRaisedTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION && newRaisedTransition != null)) {
+			if (EcoreUtil.isAncestor(this, newRaisedTransition))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRaisedtransition != null)
-				msgs = ((InternalEObject)newRaisedtransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, Transition.class, msgs);
-			msgs = basicSetRaisedtransition(newRaisedtransition, msgs);
+			if (newRaisedTransition != null)
+				msgs = ((InternalEObject)newRaisedTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, Transition.class, msgs);
+			msgs = basicSetRaisedTransition(newRaisedTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION, newRaisedtransition, newRaisedtransition));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION, newRaisedTransition, newRaisedTransition));
 	}
 
 	/**
@@ -233,14 +233,14 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTriggeredtransition((Transition)otherEnd, msgs);
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
+				return basicSetTriggeredTransition((Transition)otherEnd, msgs);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetRaisedtransition((Transition)otherEnd, msgs);
+				return basicSetRaisedTransition((Transition)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -253,10 +253,10 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
-				return basicSetTriggeredtransition(null, msgs);
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
-				return basicSetRaisedtransition(null, msgs);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
+				return basicSetTriggeredTransition(null, msgs);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
+				return basicSetRaisedTransition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -269,9 +269,9 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, Transition.class, msgs);
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, Transition.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -287,10 +287,10 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
 				return getName();
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
-				return getTriggeredtransition();
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
-				return getRaisedtransition();
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
+				return getTriggeredTransition();
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
+				return getRaisedTransition();
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				return getFullEventName();
 		}
@@ -308,11 +308,11 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
 				setName((String)newValue);
 				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
-				setTriggeredtransition((Transition)newValue);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
+				setTriggeredTransition((Transition)newValue);
 				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
-				setRaisedtransition((Transition)newValue);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
+				setRaisedTransition((Transition)newValue);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				setFullEventName((String)newValue);
@@ -332,11 +332,11 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
-				setTriggeredtransition((Transition)null);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
+				setTriggeredTransition((Transition)null);
 				return;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
-				setRaisedtransition((Transition)null);
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
+				setRaisedTransition((Transition)null);
 				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				setFullEventName(FULL_EVENT_NAME_EDEFAULT);
@@ -355,10 +355,10 @@ public class AsynchronousEventImpl extends MethodCallExpressionImpl implements A
 		switch (featureID) {
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION:
-				return getTriggeredtransition() != null;
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION:
-				return getRaisedtransition() != null;
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION:
+				return getTriggeredTransition() != null;
+			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION:
+				return getRaisedTransition() != null;
 			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
 				return FULL_EVENT_NAME_EDEFAULT == null ? fullEventName != null : !FULL_EVENT_NAME_EDEFAULT.equals(fullEventName);
 		}

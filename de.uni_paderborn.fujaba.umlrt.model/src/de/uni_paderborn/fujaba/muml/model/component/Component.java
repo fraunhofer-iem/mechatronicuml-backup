@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
 
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 
 import org.eclipse.emf.common.util.EList;
@@ -34,9 +35,8 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementProvidedInterfaces <em>Must Implement Provided Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementRequiredInterfaces <em>Must Implement Required Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,7 +48,6 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Port}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -56,8 +55,7 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_Ports()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getComponent
-	 * @model opposite="component" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();
@@ -68,11 +66,12 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component.
+	 * \todosd{Delete, because it is possible to store them in the statechart directly?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_EClass()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EClass getEClass();
@@ -105,8 +104,8 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	EList<ComponentPart> getReferencingComponentParts();
 
 	/**
-	 * Returns the value of the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
+	 * Returns the value of the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -114,17 +113,18 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * as provided interfaces via one of its ports. This reference has been used by the
 	 * PG Mauritius to enable creation of sequence diagrams without having modeled
 	 * the complete component structure including all interfaces (see FDays 08 paper).
+	 * \todosd{Uwe and my oponion: rename to mustImplementReceiverMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Must Implement Provided Interfaces</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementProvidedInterfaces()
+	 * @return the value of the '<em>Must Implement Receiver Interfaces</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementReceiverInterfaces()
 	 * @model
 	 * @generated
 	 */
-	EList<EClass> getMustImplementProvidedInterfaces();
+	EList<MessageInterface> getMustImplementReceiverInterfaces();
 
 	/**
-	 * Returns the value of the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
+	 * Returns the value of the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -132,48 +132,13 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * as required interfaces via one of its ports. This reference has been used by the
 	 * PG Mauritius to enable creation of sequence diagrams without having modeled
 	 * the complete component structure including all interfaces (see FDays 08 paper).
+	 * \todosd{Uwe and my oponion: rename to mustImplementSenderMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Must Implement Required Interfaces</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementRequiredInterfaces()
+	 * @return the value of the '<em>Must Implement Sender Interfaces</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementSenderInterfaces()
 	 * @model
 	 * @generated
 	 */
-	EList<EClass> getMustImplementRequiredInterfaces();
-
-	/**
-	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The component kind allows the distinction between different kinds of component types such as hardware and software components. The kind of component in turn can restrict the possible properties of a component e.g. a hardware component is only allowed to have hardware ports.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentKind
-	 * @see #setKind(ComponentKind)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_Kind()
-	 * @model
-	 * @generated
-	 */
-	ComponentKind getKind();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getKind <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentKind
-	 * @see #getKind()
-	 * @generated
-	 */
-	void setKind(ComponentKind value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	ComponentInstance createInstance();
+	EList<MessageInterface> getMustImplementSenderInterfaces();
 
 } // Component

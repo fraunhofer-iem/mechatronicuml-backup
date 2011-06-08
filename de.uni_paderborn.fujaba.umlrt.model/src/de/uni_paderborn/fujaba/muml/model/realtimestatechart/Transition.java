@@ -19,11 +19,14 @@ import org.storydriven.modeling.expressions.Expression;
  * A representation of the model object '<em><b>Transition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A transition connects different vertices. If the vertex is a state a self-transition is also possible.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSource <em>Source</em>}</li>
@@ -46,85 +49,44 @@ import org.storydriven.modeling.expressions.Expression;
  */
 public interface Transition extends Prioritizable, ExtendableElement {
 	/**
-	 * Returns the value of the '<em><b>Send Synchronization</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSendSyncRev <em>Send Sync Rev</em>}'.
+	 * Returns the value of the '<em><b>Synchronization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The synchronisation which is sent upon activation of this transition.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Send Synchronization</em>' containment reference.
-	 * @see #setSendSynchronization(Synchronization)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_SendSynchronization()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSendSyncRev
-	 * @model opposite="sendSyncRev" containment="true"
+	 * @return the value of the '<em>Synchronization</em>' containment reference.
+	 * @see #setSynchronization(Synchronization)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Synchronization()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Synchronization getSendSynchronization();
+	Synchronization getSynchronization();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSendSynchronization <em>Send Synchronization</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronization <em>Synchronization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Send Synchronization</em>' containment reference.
-	 * @see #getSendSynchronization()
+	 * @param value the new value of the '<em>Synchronization</em>' containment reference.
+	 * @see #getSynchronization()
 	 * @generated
 	 */
-	void setSendSynchronization(Synchronization value);
+	void setSynchronization(Synchronization value);
 
 	/**
-	 * Returns the value of the '<em><b>Receive Synchronization</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getReceiveSyncRev <em>Receive Sync Rev</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The synchronisation which is to be received upon activation of this transition.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receive Synchronization</em>' containment reference.
-	 * @see #setReceiveSynchronization(Synchronization)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_ReceiveSynchronization()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getReceiveSyncRev
-	 * @model opposite="receiveSyncRev" containment="true"
-	 * @generated
-	 */
-	Synchronization getReceiveSynchronization();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiveSynchronization <em>Receive Synchronization</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receive Synchronization</em>' containment reference.
-	 * @see #getReceiveSynchronization()
-	 * @generated
-	 */
-	void setReceiveSynchronization(Synchronization value);
-
-	/**
-	 * Returns the value of the '<em><b>Transition Action</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action#getTransition <em>Transition</em>}'.
+	 * Returns the value of the '<em><b>Transition Action</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Transition Action</em>' containment reference.
-	 * @see #setTransitionAction(Action)
+	 * @return the value of the '<em>Transition Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TransitionAction()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action#getTransition
-	 * @model opposite="transition" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	Action getTransitionAction();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transition Action</em>' containment reference.
-	 * @see #getTransitionAction()
-	 * @generated
-	 */
-	void setTransitionAction(Action value);
+	EList<ActionExpression> getTransitionAction();
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
@@ -225,7 +187,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Trigger Events</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredtransition <em>Triggeredtransition</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredTransition <em>Triggered Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -233,8 +195,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerEvents()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredtransition
-	 * @model opposite="triggeredtransition" containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredTransition
+	 * @model opposite="triggeredTransition" containment="true"
 	 * @generated
 	 */
 	EList<AsynchronousEvent> getTriggerEvents();
@@ -242,7 +204,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Raised Events</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedtransition <em>Raisedtransition</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedTransition <em>Raised Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -250,8 +212,8 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raised Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaisedEvents()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedtransition
-	 * @model opposite="raisedtransition" containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedTransition
+	 * @model opposite="raisedTransition" containment="true"
 	 * @generated
 	 */
 	EList<AsynchronousEvent> getRaisedEvents();
@@ -262,7 +224,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The time guard of this transition. It restricts when the transition can be activeted in dependency of the values of the clock. For time guard x<=2 the transition would only be allowed to be activated if x has a value less or equal to 2.
+	 * A clock constraint restricts when the transition can be activeted in dependency of the values of the clock.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Clock Constraints</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_ClockConstraints()
@@ -281,6 +243,9 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * a transition can has one or more absolute deadlines
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Absolute Deadlines</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_AbsoluteDeadlines()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getTransition
@@ -298,6 +263,10 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * a transition can have one relative deadline
+	 * \todosd{delete? can be described by an absolute deadline}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Relative Deadline</em>' containment reference.
 	 * @see #setRelativeDeadline(RelativeDeadline)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RelativeDeadline()
@@ -326,6 +295,10 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * \todosd{Rename to safety?}
+	 * \todosd{What is a safety transition? Do we need that for failure propagation?}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Safety Transition</em>' attribute.
 	 * @see #setSafetyTransition(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_SafetyTransition()
@@ -353,6 +326,9 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If a transition is urgent it has the fire immediately after its execution (no time is allowed to pass).
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Urgent</em>' attribute.
 	 * @see #setUrgent(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Urgent()
@@ -379,6 +355,10 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).
+	 * \todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Guard()

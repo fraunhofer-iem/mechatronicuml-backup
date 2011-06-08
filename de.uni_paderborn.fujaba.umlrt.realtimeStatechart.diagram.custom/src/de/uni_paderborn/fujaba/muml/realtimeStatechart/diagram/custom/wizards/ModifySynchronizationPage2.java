@@ -205,15 +205,13 @@ public class ModifySynchronizationPage2 extends CommonModifyPage{
 		
 		//first delete existing synchronization
 		Transition tmp = ((ModifySynchronizationWizard)getWizard()).getSelectedTransition();
-		if(tmp.getSendSynchronization()!=null){
-			deleteObject(tmp.getSendSynchronization());
-		}else if(tmp.getReceiveSynchronization()!=null){
-			deleteObject(tmp.getReceiveSynchronization());
+		if(tmp.getSynchronization()!=null){
+			deleteObject(tmp.getSynchronization());
 		}
 		
 		//invoke command
 		CreateElementRequest request = new CreateElementRequest(((ModifySynchronizationWizard)getWizard()).getSelectedTransition(),
-				UmlrtElementTypes.DoAction_3026);
+				UmlrtElementTypes.DoEvent_3008);
 						  
 					SynchronizationCreateCommand command = new SynchronizationCreateCommand(request, 
 							parameterValuesHashMap,

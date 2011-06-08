@@ -48,7 +48,7 @@ public class StateNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5025;
+	public static final int VISUAL_ID = 5003;
 
 	/**
 	 * @generated
@@ -89,7 +89,7 @@ public class StateNameEditPart extends CompartmentEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.NodeLabelDragPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -288,9 +288,9 @@ public class StateNameEditPart extends CompartmentEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.RealtimestatechartParserProvider
+			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2020,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.State_2001,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));

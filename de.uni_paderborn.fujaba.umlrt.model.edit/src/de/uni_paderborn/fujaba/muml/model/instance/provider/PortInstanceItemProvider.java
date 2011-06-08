@@ -71,8 +71,8 @@ public class PortInstanceItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addPortTypePropertyDescriptor(object);
-			addRequiredMessageInterfacePropertyDescriptor(object);
-			addProvidedMessageInterfacePropertyDescriptor(object);
+			addSenderMessageInterfacePropertyDescriptor(object);
+			addReceiverMessageInterfacePropertyDescriptor(object);
 			addIncomingConnectorInstancesPropertyDescriptor(object);
 			addOutgoingConnectorInstancesPropertyDescriptor(object);
 		}
@@ -124,20 +124,20 @@ public class PortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required Message Interface feature.
+	 * This adds a property descriptor for the Sender Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredMessageInterfacePropertyDescriptor(Object object) {
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortInstance_requiredMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_requiredMessageInterface_feature", "_UI_PortInstance_type"),
-				 InstancePackage.Literals.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE,
-				 true,
+				 getString("_UI_PortInstance_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_senderMessageInterface_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE,
+				 false,
 				 false,
 				 false,
 				 null,
@@ -146,20 +146,20 @@ public class PortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided Message Interface feature.
+	 * This adds a property descriptor for the Receiver Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidedMessageInterfacePropertyDescriptor(Object object) {
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortInstance_providedMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_providedMessageInterface_feature", "_UI_PortInstance_type"),
-				 InstancePackage.Literals.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE,
-				 true,
+				 getString("_UI_PortInstance_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_receiverMessageInterface_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE,
+				 false,
 				 false,
 				 false,
 				 null,

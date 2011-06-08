@@ -13,9 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -26,14 +24,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.Extension;
 import org.storydriven.modeling.SDMPackage;
-import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.Expression;
-import org.storydriven.modeling.expressions.LiteralExpression;
 
-import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
@@ -53,8 +47,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSendSynchronization <em>Send Synchronization</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getReceiveSynchronization <em>Receive Synchronization</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronization <em>Synchronization</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTransitionAction <em>Transition Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
@@ -95,34 +88,24 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected EList<Extension> extensions;
 
 	/**
-	 * The cached value of the '{@link #getSendSynchronization() <em>Send Synchronization</em>}' containment reference.
+	 * The cached value of the '{@link #getSynchronization() <em>Synchronization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSendSynchronization()
+	 * @see #getSynchronization()
 	 * @generated
 	 * @ordered
 	 */
-	protected Synchronization sendSynchronization;
+	protected Synchronization synchronization;
 
 	/**
-	 * The cached value of the '{@link #getReceiveSynchronization() <em>Receive Synchronization</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiveSynchronization()
-	 * @generated
-	 * @ordered
-	 */
-	protected Synchronization receiveSynchronization;
-
-	/**
-	 * The cached value of the '{@link #getTransitionAction() <em>Transition Action</em>}' containment reference.
+	 * The cached value of the '{@link #getTransitionAction() <em>Transition Action</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTransitionAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected Action transitionAction;
+	protected EList<ActionExpression> transitionAction;
 
 	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -302,8 +285,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Synchronization getSendSynchronization() {
-		return sendSynchronization;
+	public Synchronization getSynchronization() {
+		return synchronization;
 	}
 
 	/**
@@ -311,11 +294,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSendSynchronization(Synchronization newSendSynchronization, NotificationChain msgs) {
-		Synchronization oldSendSynchronization = sendSynchronization;
-		sendSynchronization = newSendSynchronization;
+	public NotificationChain basicSetSynchronization(Synchronization newSynchronization, NotificationChain msgs) {
+		Synchronization oldSynchronization = synchronization;
+		synchronization = newSynchronization;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION, oldSendSynchronization, newSendSynchronization);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION, oldSynchronization, newSynchronization);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -326,18 +309,18 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSendSynchronization(Synchronization newSendSynchronization) {
-		if (newSendSynchronization != sendSynchronization) {
+	public void setSynchronization(Synchronization newSynchronization) {
+		if (newSynchronization != synchronization) {
 			NotificationChain msgs = null;
-			if (sendSynchronization != null)
-				msgs = ((InternalEObject)sendSynchronization).eInverseRemove(this, RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV, Synchronization.class, msgs);
-			if (newSendSynchronization != null)
-				msgs = ((InternalEObject)newSendSynchronization).eInverseAdd(this, RealtimestatechartPackage.SYNCHRONIZATION__SEND_SYNC_REV, Synchronization.class, msgs);
-			msgs = basicSetSendSynchronization(newSendSynchronization, msgs);
+			if (synchronization != null)
+				msgs = ((InternalEObject)synchronization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION, null, msgs);
+			if (newSynchronization != null)
+				msgs = ((InternalEObject)newSynchronization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION, null, msgs);
+			msgs = basicSetSynchronization(newSynchronization, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION, newSendSynchronization, newSendSynchronization));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION, newSynchronization, newSynchronization));
 	}
 
 	/**
@@ -345,85 +328,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Synchronization getReceiveSynchronization() {
-		return receiveSynchronization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetReceiveSynchronization(Synchronization newReceiveSynchronization, NotificationChain msgs) {
-		Synchronization oldReceiveSynchronization = receiveSynchronization;
-		receiveSynchronization = newReceiveSynchronization;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, oldReceiveSynchronization, newReceiveSynchronization);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<ActionExpression> getTransitionAction() {
+		if (transitionAction == null) {
+			transitionAction = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReceiveSynchronization(Synchronization newReceiveSynchronization) {
-		if (newReceiveSynchronization != receiveSynchronization) {
-			NotificationChain msgs = null;
-			if (receiveSynchronization != null)
-				msgs = ((InternalEObject)receiveSynchronization).eInverseRemove(this, RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV, Synchronization.class, msgs);
-			if (newReceiveSynchronization != null)
-				msgs = ((InternalEObject)newReceiveSynchronization).eInverseAdd(this, RealtimestatechartPackage.SYNCHRONIZATION__RECEIVE_SYNC_REV, Synchronization.class, msgs);
-			msgs = basicSetReceiveSynchronization(newReceiveSynchronization, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, newReceiveSynchronization, newReceiveSynchronization));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action getTransitionAction() {
 		return transitionAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTransitionAction(Action newTransitionAction, NotificationChain msgs) {
-		Action oldTransitionAction = transitionAction;
-		transitionAction = newTransitionAction;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, oldTransitionAction, newTransitionAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransitionAction(Action newTransitionAction) {
-		if (newTransitionAction != transitionAction) {
-			NotificationChain msgs = null;
-			if (transitionAction != null)
-				msgs = ((InternalEObject)transitionAction).eInverseRemove(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
-			if (newTransitionAction != null)
-				msgs = ((InternalEObject)newTransitionAction).eInverseAdd(this, RealtimestatechartPackage.ACTION__TRANSITION, Action.class, msgs);
-			msgs = basicSetTransitionAction(newTransitionAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, newTransitionAction, newTransitionAction));
 	}
 
 	/**
@@ -606,7 +515,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public EList<AsynchronousEvent> getTriggerEvents() {
 		if (triggerEvents == null) {
-			triggerEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGEREDTRANSITION);
+			triggerEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION);
 		}
 		return triggerEvents;
 	}
@@ -618,7 +527,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public EList<AsynchronousEvent> getRaisedEvents() {
 		if (raisedEvents == null) {
-			raisedEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISEDTRANSITION);
+			raisedEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION);
 		}
 		return raisedEvents;
 	}
@@ -830,18 +739,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		switch (featureID) {
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				if (sendSynchronization != null)
-					msgs = ((InternalEObject)sendSynchronization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION, null, msgs);
-				return basicSetSendSynchronization((Synchronization)otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				if (receiveSynchronization != null)
-					msgs = ((InternalEObject)receiveSynchronization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION, null, msgs);
-				return basicSetReceiveSynchronization((Synchronization)otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				if (transitionAction != null)
-					msgs = ((InternalEObject)transitionAction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION, null, msgs);
-				return basicSetTransitionAction((Action)otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (target != null)
 					msgs = ((InternalEObject)target).eInverseRemove(this, RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS, Vertex.class, msgs);
@@ -880,12 +777,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				return basicSetSendSynchronization(null, msgs);
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				return basicSetReceiveSynchronization(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
+				return basicSetSynchronization(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				return basicSetTransitionAction(null, msgs);
+				return ((InternalEList<?>)getTransitionAction()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return basicSetTarget(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
@@ -934,10 +829,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getAnnotations();
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return getExtensions();
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				return getSendSynchronization();
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				return getReceiveSynchronization();
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
+				return getSynchronization();
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
 				return getTransitionAction();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
@@ -987,14 +880,12 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				setSendSynchronization((Synchronization)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				setReceiveSynchronization((Synchronization)newValue);
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
+				setSynchronization((Synchronization)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				setTransitionAction((Action)newValue);
+				getTransitionAction().clear();
+				getTransitionAction().addAll((Collection<? extends ActionExpression>)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)newValue);
@@ -1055,14 +946,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				getExtensions().clear();
 				return;
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				setSendSynchronization((Synchronization)null);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				setReceiveSynchronization((Synchronization)null);
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
+				setSynchronization((Synchronization)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				setTransitionAction((Action)null);
+				getTransitionAction().clear();
 				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)null);
@@ -1116,12 +1004,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return annotations != null && !annotations.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 				return extensions != null && !extensions.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__SEND_SYNCHRONIZATION:
-				return sendSynchronization != null;
-			case RealtimestatechartPackage.TRANSITION__RECEIVE_SYNCHRONIZATION:
-				return receiveSynchronization != null;
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
+				return synchronization != null;
 			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				return transitionAction != null;
+				return transitionAction != null && !transitionAction.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return target != null;
 			case RealtimestatechartPackage.TRANSITION__SOURCE:

@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers;
  */
 public class RoleConnectorEditHelper
 		extends
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers.MumlinstanceBaseEditHelper {
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

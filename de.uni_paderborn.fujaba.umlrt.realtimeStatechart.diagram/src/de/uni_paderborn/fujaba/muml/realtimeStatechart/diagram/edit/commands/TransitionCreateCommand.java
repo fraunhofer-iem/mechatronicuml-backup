@@ -65,7 +65,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateTransition_4002(getContainer(),
+				.getLinkConstraints().canCreateTransition_4001(getContainer(),
 						getSource(), getTarget());
 	}
 

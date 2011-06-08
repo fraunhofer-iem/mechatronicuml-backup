@@ -173,13 +173,13 @@ public class StateItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__REGIONS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DO_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DO_EVENT);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_EVENT);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__INVARIANTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DERIVED_EXIT_POINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DERIVED_ENTRY_POINTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__CHANNELS);
 		}
 		return childrenFeatures;
 	}
@@ -241,13 +241,13 @@ public class StateItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__REGIONS:
-			case RealtimestatechartPackage.STATE__DO_ACTION:
-			case RealtimestatechartPackage.STATE__EXIT_ACTION:
-			case RealtimestatechartPackage.STATE__ENTRY_ACTION:
+			case RealtimestatechartPackage.STATE__DO_EVENT:
+			case RealtimestatechartPackage.STATE__EXIT_EVENT:
+			case RealtimestatechartPackage.STATE__ENTRY_EVENT:
 			case RealtimestatechartPackage.STATE__INVARIANTS:
-			case RealtimestatechartPackage.STATE__CHANNELS:
 			case RealtimestatechartPackage.STATE__DERIVED_EXIT_POINTS:
 			case RealtimestatechartPackage.STATE__DERIVED_ENTRY_POINTS:
+			case RealtimestatechartPackage.STATE__CHANNELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -272,28 +272,23 @@ public class StateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__DO_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createDoAction()));
+				(RealtimestatechartPackage.Literals.STATE__DO_EVENT,
+				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EXIT_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createExitAction()));
+				(RealtimestatechartPackage.Literals.STATE__EXIT_EVENT,
+				 RealtimestatechartFactory.eINSTANCE.createExitEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__ENTRY_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createEntryAction()));
+				(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT,
+				 RealtimestatechartFactory.eINSTANCE.createEntryEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__INVARIANTS,
 				 RealtimestatechartFactory.eINSTANCE.createClockConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__CHANNELS,
-				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -304,6 +299,11 @@ public class StateItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__DERIVED_ENTRY_POINTS,
 				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.STATE__CHANNELS,
+				 RealtimestatechartFactory.eINSTANCE.createSynchronizationChannel()));
 	}
 
 }

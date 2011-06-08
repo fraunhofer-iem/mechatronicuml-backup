@@ -45,8 +45,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedInstances <em>Embedded Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentNameDerived <em>Component Name Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -85,26 +83,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	protected EList<ConnectorInstance> connectorInstances;
 
 	/**
-	 * The cached value of the '{@link #getComponentPart() <em>Component Part</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentPart()
-	 * @generated
-	 * @ordered
-	 */
-	protected ComponentPart componentPart;
-
-	/**
-	 * The cached setting delegate for the '{@link #getComponentNameDerived() <em>Component Name Derived</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponentNameDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate COMPONENT_NAME_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,22 +95,10 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected ComponentInstanceImpl() {
 		super();
-
-		// Install a notification adapter that informs the
-		// componentNameDerived-reference, whenever one of the dependent
-		// features
-		// was modified
-		DerivedAttributeAdapter componentNameDerived = new DerivedAttributeAdapter(
-				this,
-				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED,
-				false);
-		componentNameDerived.addNavigatedDependency(
-				InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
-				SDMPackage.Literals.NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -212,62 +178,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentPart getComponentPart() {
-		if (componentPart != null && componentPart.eIsProxy()) {
-			InternalEObject oldComponentPart = (InternalEObject)componentPart;
-			componentPart = (ComponentPart)eResolveProxy(oldComponentPart);
-			if (componentPart != oldComponentPart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART, oldComponentPart, componentPart));
-			}
-		}
-		return componentPart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentPart basicGetComponentPart() {
-		return componentPart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponentPart(ComponentPart newComponentPart) {
-		ComponentPart oldComponentPart = componentPart;
-		componentPart = newComponentPart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART, oldComponentPart, componentPart));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComponentNameDerived() {
-		return (String)COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetComponentNameDerived() {
-		return COMPONENT_NAME_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<PortInstance> getPortInstances() {
 		if (portInstances == null) {
 			portInstances = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this, InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES, InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE);
@@ -325,11 +235,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return getEmbeddedInstances();
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return getConnectorInstances();
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
-				if (resolve) return getComponentPart();
-				return basicGetComponentPart();
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				return getComponentNameDerived();
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return getPortInstances();
 		}
@@ -356,9 +261,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				getConnectorInstances().clear();
 				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
-				setComponentPart((ComponentPart)newValue);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
 				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
@@ -384,9 +286,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				getConnectorInstances().clear();
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
-				setComponentPart((ComponentPart)null);
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
 				return;
@@ -408,10 +307,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return embeddedInstances != null && !embeddedInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				return connectorInstances != null && !connectorInstances.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
-				return componentPart != null;
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				return isSetComponentNameDerived();
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return portInstances != null && !portInstances.isEmpty();
 		}

@@ -116,7 +116,7 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -152,31 +152,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__REFERENCING_COMPONENT_PARTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -185,7 +176,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
@@ -234,7 +225,7 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT__COMMENT = COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -270,31 +261,22 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES = COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES;
+	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES = COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__KIND = COMPONENT__KIND;
+	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
 
 	/**
 	 * The feature id for the '<em><b>XML File Name</b></em>' attribute.
@@ -361,7 +343,7 @@ public interface ComponentPackage extends EPackage {
 	int PORT__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -370,22 +352,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PORT_KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PORT__PORT_KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Specification</b></em>' containment reference list.
@@ -394,7 +367,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -403,25 +376,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -430,7 +403,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -439,16 +412,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__ADAPTATION_REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -457,7 +430,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -526,31 +499,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__REFINES = PORT_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 2;
+	int DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+	int DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -559,7 +523,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = PORT_SPECIFICATION_FEATURE_COUNT + 5;
+	int DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
@@ -681,22 +654,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART__DELEGATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Ports Derived</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_PART__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Ports Derived</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -754,7 +727,7 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__COMMENT = COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -790,31 +763,22 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES = COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES;
+	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES = COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT__KIND = COMPONENT__KIND;
+	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Parts</b></em>' containment reference list.
@@ -890,7 +854,7 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__COMMENT = COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference list.
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -926,31 +890,22 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES = COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES;
+	int ATOMIC_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Required Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES = COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT__KIND = COMPONENT__KIND;
+	int ATOMIC_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
 
 	/**
 	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
@@ -1291,37 +1246,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponent_ReferencingComponentParts();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementProvidedInterfaces <em>Must Implement Provided Interfaces</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Must Implement Provided Interfaces</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementProvidedInterfaces()
+	 * @return the meta object for the reference list '<em>Must Implement Receiver Interfaces</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_MustImplementProvidedInterfaces();
+	EReference getComponent_MustImplementReceiverInterfaces();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementRequiredInterfaces <em>Must Implement Required Interfaces</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Must Implement Required Interfaces</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementRequiredInterfaces()
+	 * @return the meta object for the reference list '<em>Must Implement Sender Interfaces</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_MustImplementRequiredInterfaces();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getKind <em>Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getKind()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EAttribute getComponent_Kind();
+	EReference getComponent_MustImplementSenderInterfaces();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent <em>Continuous Component</em>}'.
@@ -1355,10 +1299,10 @@ public interface ComponentPackage extends EPackage {
 	EClass getPort();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Component</em>'.
+	 * @return the meta object for the reference '<em>Component</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getComponent()
 	 * @see #getPort()
 	 * @generated
@@ -1399,26 +1343,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Cardinality();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getRequiredMessageInterface <em>Required Message Interface</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getRequiredMessageInterface()
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPort_RequiredMessageInterface();
+	EReference getPort_SenderMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getProvidedMessageInterface()
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPort_ProvidedMessageInterface();
+	EReference getPort_ReceiverMessageInterface();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
@@ -1441,17 +1385,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_OutgoingConnectors();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getAdaptationRealtimeStatechart()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_AdaptationRealtimeStatechart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PortSpecification <em>Port Specification</em>}'.
@@ -1495,37 +1428,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePortSpecification_Refines();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface <em>Sender Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart()
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface()
 	 * @see #getDiscretePortSpecification()
 	 * @generated
 	 */
-	EReference getDiscretePortSpecification_AdaptationRealtimeStatechart();
+	EReference getDiscretePortSpecification_SenderMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRequiredMessageInterface()
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface()
 	 * @see #getDiscretePortSpecification()
 	 * @generated
 	 */
-	EReference getDiscretePortSpecification_RequiredMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getProvidedMessageInterface()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_ProvidedMessageInterface();
+	EReference getDiscretePortSpecification_ReceiverMessageInterface();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}'.
@@ -1537,6 +1459,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDiscretePortSpecification_EventQueueSize();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_AdaptationBehavior();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
@@ -1871,28 +1804,20 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT__REFERENCING_COMPONENT_PARTS = eINSTANCE.getComponent_ReferencingComponentParts();
 
 		/**
-		 * The meta object literal for the '<em><b>Must Implement Provided Interfaces</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES = eINSTANCE.getComponent_MustImplementProvidedInterfaces();
+		EReference COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = eINSTANCE.getComponent_MustImplementReceiverInterfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Must Implement Required Interfaces</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES = eINSTANCE.getComponent_MustImplementRequiredInterfaces();
-
-		/**
-		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT__KIND = eINSTANCE.getComponent_Kind();
+		EReference COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = eINSTANCE.getComponent_MustImplementSenderInterfaces();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
@@ -1923,7 +1848,7 @@ public interface ComponentPackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1955,20 +1880,20 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__CARDINALITY = eINSTANCE.getPort_Cardinality();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getPort_RequiredMessageInterface();
+		EReference PORT__SENDER_MESSAGE_INTERFACE = eINSTANCE.getPort_SenderMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPort_ProvidedMessageInterface();
+		EReference PORT__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getPort_ReceiverMessageInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Connectors</b></em>' reference list feature.
@@ -1985,14 +1910,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__OUTGOING_CONNECTORS = eINSTANCE.getPort_OutgoingConnectors();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getPort_AdaptationRealtimeStatechart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
@@ -2033,28 +1950,20 @@ public interface ComponentPackage extends EPackage {
 		EReference DISCRETE_PORT_SPECIFICATION__REFINES = eINSTANCE.getDiscretePortSpecification_Refines();
 
 		/**
-		 * The meta object literal for the '<em><b>Adaptation Realtime Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_REALTIME_STATECHART = eINSTANCE.getDiscretePortSpecification_AdaptationRealtimeStatechart();
+		EReference DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_SenderMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_SPECIFICATION__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_RequiredMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ProvidedMessageInterface();
+		EReference DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ReceiverMessageInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Event Queue Size</b></em>' attribute feature.
@@ -2063,6 +1972,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = eINSTANCE.getDiscretePortSpecification_EventQueueSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePortSpecification_AdaptationBehavior();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

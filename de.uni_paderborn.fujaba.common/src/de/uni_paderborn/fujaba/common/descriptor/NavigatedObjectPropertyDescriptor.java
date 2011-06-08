@@ -4,7 +4,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 /**
@@ -31,17 +30,30 @@ public abstract class NavigatedObjectPropertyDescriptor extends
 	public void setPropertyValue(Object object, Object value) {
 		EObject oldObject = getNavigatedObject(object);
 
-		// Create a new TextualExpression object.
 		EObject newObject;
 		if (oldObject == null) {
 			newObject = createNewObject();
 		} else {
-			newObject = EcoreUtil.copy(oldObject);
+			// It is no good style to create a copy, just to fire the notification.
+			//newObject = EcoreUtil.copy(oldObject);
+			
+			// We reuse the old object.
+			newObject = oldObject;
 		}
 
 		configureObject(newObject, (EStructuralFeature) getFeature(this), value);
 
+		// We could use this hack to send the notification:
+		setNavigatedObject(object, null);
+
+		//
+		// Another possibility would be to install a DerivedAttributeAdapter in the model code.
+		//
+
+		// Set the new Object.
 		setNavigatedObject(object, newObject);
+		
+		
 	}
 
 	@Override
@@ -62,7 +74,12 @@ public abstract class NavigatedObjectPropertyDescriptor extends
 
 	protected abstract void setNavigatedObject(Object object, EObject newObject);
 
-	protected abstract Object getObjectValue(EObject navigatedObject,
-			EStructuralFeature feature);
+	protected Object getObjectValue(EObject navigatedObject,
+			EStructuralFeature feature) {
+		if (feature.getContainerClass() == navigatedObject.getClass()) {
+			return navigatedObject.eGet(feature);
+		}
+		return null;
+	}
 
 }

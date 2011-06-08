@@ -29,8 +29,8 @@ import org.storydriven.modeling.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
@@ -94,34 +94,36 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	void setComponentInstance(ComponentInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The required message interface derived from the port type of this port instance.
+	 * \todosd{Uwe and my oponion: rename to senderMessageInterface
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_RequiredMessageInterface()
+	 * @return the value of the '<em>Sender Message Interface</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_SenderMessageInterface()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif'"
 	 * @generated
 	 */
-	MessageInterface getRequiredMessageInterface();
+	MessageInterface getSenderMessageInterface();
 
 	/**
-	 * Returns the value of the '<em><b>Provided Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The provided message interface derived from the port type of this port instance.
+	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Provided Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ProvidedMessageInterface()
+	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ReceiverMessageInterface()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif'"
 	 * @generated
 	 */
-	MessageInterface getProvidedMessageInterface();
+	MessageInterface getReceiverMessageInterface();
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Connector Instances</b></em>' reference list.

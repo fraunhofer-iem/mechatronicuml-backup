@@ -78,7 +78,7 @@ public class TransitionLabelExpressionLabelParser implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
 				.getExpression(
-						18,
+						12,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getTransition(), null).evaluate(target);
 		return String.valueOf(result);

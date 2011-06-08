@@ -49,8 +49,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
@@ -90,24 +90,24 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	protected Port portType;
 
 	/**
-	 * The cached setting delegate for the '{@link #getRequiredMessageInterface() <em>Required Message Interface</em>}' reference.
+	 * The cached setting delegate for the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiredMessageInterface()
+	 * @see #getSenderMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getProvidedMessageInterface() <em>Provided Message Interface</em>}' reference.
+	 * The cached setting delegate for the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedMessageInterface()
+	 * @see #getReceiverMessageInterface()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getIncomingConnectorInstances() <em>Incoming Connector Instances</em>}' reference list.
@@ -143,11 +143,11 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		// was modified
 		DerivedAttributeAdapter requiredMessageInterfaceDerived = new DerivedAttributeAdapter(
 				this,
-				InstancePackage.Literals.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE,
+				InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE,
 				false);
 		requiredMessageInterfaceDerived.addNavigatedDependency(
 				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
-				ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE);
+				ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
 
 		// Install a notification adapter that informs the
 		// providedMessageInterfaceDerived-reference, whenever one of the dependent
@@ -155,11 +155,11 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		// was modified
 		DerivedAttributeAdapter providedMessageInterfaceDerived = new DerivedAttributeAdapter(
 				this,
-				InstancePackage.Literals.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE,
+				InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE,
 				false);
 		providedMessageInterfaceDerived.addNavigatedDependency(
 				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
-				ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE);
+				ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
 	}
 
 	/**
@@ -277,8 +277,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getRequiredMessageInterface() {
-		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public MessageInterface getSenderMessageInterface() {
+		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -286,8 +286,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetRequiredMessageInterface() {
-		return (MessageInterface)REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public MessageInterface basicGetSenderMessageInterface() {
+		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -295,8 +295,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getProvidedMessageInterface() {
-		return (MessageInterface)PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public MessageInterface getReceiverMessageInterface() {
+		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -304,8 +304,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface basicGetProvidedMessageInterface() {
-		return (MessageInterface)PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public MessageInterface basicGetReceiverMessageInterface() {
+		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -400,12 +400,12 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return basicGetPortType();
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return getComponentInstance();
-			case InstancePackage.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE:
-				if (resolve) return getRequiredMessageInterface();
-				return basicGetRequiredMessageInterface();
-			case InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE:
-				if (resolve) return getProvidedMessageInterface();
-				return basicGetProvidedMessageInterface();
+			case InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
+				if (resolve) return getSenderMessageInterface();
+				return basicGetSenderMessageInterface();
+			case InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
+				if (resolve) return getReceiverMessageInterface();
+				return basicGetReceiverMessageInterface();
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
 				return getIncomingConnectorInstances();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
@@ -485,10 +485,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				return portType != null;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return getComponentInstance() != null;
-			case InstancePackage.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE:
-				return REQUIRED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE:
-				return PROVIDED_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
+				return SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
+				return RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
 				return incomingConnectorInstances != null && !incomingConnectorInstances.isEmpty();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:

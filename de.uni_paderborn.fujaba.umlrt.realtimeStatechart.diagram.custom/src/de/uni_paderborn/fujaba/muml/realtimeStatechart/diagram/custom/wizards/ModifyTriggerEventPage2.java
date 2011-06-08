@@ -162,7 +162,7 @@ public class ModifyTriggerEventPage2 extends CommonEventModifyPage{
 	private void startCreateTriggerEventCommand(){
 		
 		CreateElementRequest request = new CreateElementRequest(((ModifyTriggerEventWizard)getWizard()).getSelectedTransition(),
-				UmlrtElementTypes.DoAction_3026);
+				UmlrtElementTypes.DoEvent_3008);
 						  
 					TriggerEventCreateCommand command = new TriggerEventCreateCommand(request, 
 							parameterValuesHashMap,

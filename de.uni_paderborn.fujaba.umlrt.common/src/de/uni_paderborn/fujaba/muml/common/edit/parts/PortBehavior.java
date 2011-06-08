@@ -46,8 +46,8 @@ public class PortBehavior extends AbstractPortBehavior {
 	@Override
 	public void updatePortType() {
 		if (port != null) {
-			updatePortType(port.getRequiredMessageInterface(),
-					port.getProvidedMessageInterface());
+			updatePortType(port.getSenderMessageInterface(),
+					port.getReceiverMessageInterface());
 		}
 	}
 
@@ -71,10 +71,10 @@ public class PortBehavior extends AbstractPortBehavior {
 			EReference reference = (EReference) feature;
 			if (reference.getContainerClass() == Port.class) {
 				int featureID = notification.getFeatureID(PortImpl.class);
-				if (featureID == ComponentPackage.PORT__PROVIDED_MESSAGE_INTERFACE
-						|| featureID == ComponentPackage.PORT__REQUIRED_MESSAGE_INTERFACE) {
-					updatePortType(port.getRequiredMessageInterface(),
-							port.getProvidedMessageInterface());
+				if (featureID == ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE
+						|| featureID == ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE) {
+					updatePortType(port.getSenderMessageInterface(),
+							port.getReceiverMessageInterface());
 				} else if (featureID == ComponentPackage.PORT__CARDINALITY) {
 					updatePortCardinality();
 				}

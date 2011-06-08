@@ -7,10 +7,10 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.RealtimestatechartPropertySection;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.UmlrtPropertySection;
 
 public class CustomRealtimeStatechartPropertySection extends
-		RealtimestatechartPropertySection {
+		UmlrtPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.

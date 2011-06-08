@@ -162,7 +162,7 @@ public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 	private void startCreateRaisedEventCommand(){
 		
 		CreateElementRequest request = new CreateElementRequest(((ModifyRaisedEventWizard)getWizard()).getSelectedTransition(),
-				UmlrtElementTypes.DoAction_3026);
+				UmlrtElementTypes.DoEvent_3008);
 						  
 					RaisedEventCreateCommand command = new RaisedEventCreateCommand(request, 
 							parameterValuesHashMap,

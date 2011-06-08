@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,7 +109,6 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.
-	 * TODO: Do we really need this?
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' containment reference.
 	 * @see #setEClass(EClass)
@@ -150,7 +150,7 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * store the available clocks for this Real-Time Statechart. Available clocks are all clocks that were defined in this statechart or in ancestor statecharts 
+	 * Available clocks are all clocks that were defined in this statechart or in ancestor statecharts 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Available Clocks</em>' attribute.
 	 * @see #setAvailableClocks(Iterator)
@@ -169,5 +169,30 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * @generated
 	 */
 	void setAvailableClocks(Iterator value);
+
+	/**
+	 * Returns the value of the '<em><b>History</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>History</em>' attribute.
+	 * @see #setHistory(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_History()
+	 * @model
+	 * @generated
+	 */
+	boolean isHistory();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>History</em>' attribute.
+	 * @see #isHistory()
+	 * @generated
+	 */
+	void setHistory(boolean value);
 
 } // FujabaRealtimeStatechart

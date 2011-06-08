@@ -38,6 +38,9 @@ public interface AbsoluteDeadline extends Deadline {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * the transition for that this absolute deadline is defined
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transition</em>' container reference.
 	 * @see #setTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_Transition()
@@ -59,18 +62,19 @@ public interface AbsoluteDeadline extends Deadline {
 
 	/**
 	 * Returns the value of the '<em><b>Clock</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getAbsoluteDeadlines <em>Absolute Deadlines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clock</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * the references clock of the absolute deadline.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Clock</em>' reference.
 	 * @see #setClock(Clock)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getAbsoluteDeadline_Clock()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock#getAbsoluteDeadlines
-	 * @model opposite="absoluteDeadlines" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Clock getClock();

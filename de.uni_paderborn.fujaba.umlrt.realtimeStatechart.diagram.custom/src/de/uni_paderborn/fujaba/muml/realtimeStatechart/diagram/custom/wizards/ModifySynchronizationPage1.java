@@ -161,15 +161,8 @@ public class ModifySynchronizationPage1 extends CommonModifyPage{
 	private void handleDeleteSynchronizationEvent(){
 		Transition transition = ((ModifySynchronizationWizard)getWizard()).getSelectedTransition();
 		
-		Synchronization event = null;
-		
-		if(transition.getReceiveSynchronization()!=null){
-			event = transition.getReceiveSynchronization();
-		}
-		else if(transition.getSendSynchronization()!=null){
-			event = transition.getSendSynchronization();
-		}
-		
+		Synchronization event = transition.getSynchronization();
+
 		if(event!=null){
 			deleteObject(event);
 		}

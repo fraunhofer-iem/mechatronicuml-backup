@@ -37,11 +37,14 @@ public interface RelativeDeadline extends Deadline {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * the transition for that this relative deadline is defined
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transition</em>' container reference.
 	 * @see #setTransition(Transition)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRelativeDeadline_Transition()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRelativeDeadline
-	 * @model opposite="relativeDeadline" transient="false"
+	 * @model opposite="relativeDeadline" required="true" transient="false"
 	 * @generated
 	 */
 	Transition getTransition();

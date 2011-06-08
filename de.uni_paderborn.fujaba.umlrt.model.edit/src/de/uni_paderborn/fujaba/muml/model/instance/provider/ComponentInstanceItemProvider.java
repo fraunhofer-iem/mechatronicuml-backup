@@ -72,7 +72,6 @@ public class ComponentInstanceItemProvider
 			addComponentTypePropertyDescriptor(object);
 			addEmbeddedInstancesPropertyDescriptor(object);
 			addConnectorInstancesPropertyDescriptor(object);
-			addComponentPartPropertyDescriptor(object);
 			addPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -139,28 +138,6 @@ public class ComponentInstanceItemProvider
 				 false,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Component Part feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentPartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_componentPart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_componentPart_feature", "_UI_ComponentInstance_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_PART,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));
@@ -257,9 +234,6 @@ public class ComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
-			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:

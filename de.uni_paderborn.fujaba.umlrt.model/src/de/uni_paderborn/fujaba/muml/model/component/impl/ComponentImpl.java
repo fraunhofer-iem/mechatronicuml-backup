@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -31,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
@@ -46,9 +48,8 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementProvidedInterfaces <em>Must Implement Provided Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementRequiredInterfaces <em>Must Implement Required Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,7 +77,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConstraint()
@@ -116,44 +117,24 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected EList<ComponentPart> referencingComponentParts;
 
 	/**
-	 * The cached value of the '{@link #getMustImplementProvidedInterfaces() <em>Must Implement Provided Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getMustImplementReceiverInterfaces() <em>Must Implement Receiver Interfaces</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMustImplementProvidedInterfaces()
+	 * @see #getMustImplementReceiverInterfaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClass> mustImplementProvidedInterfaces;
+	protected EList<MessageInterface> mustImplementReceiverInterfaces;
 
 	/**
-	 * The cached value of the '{@link #getMustImplementRequiredInterfaces() <em>Must Implement Required Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getMustImplementSenderInterfaces() <em>Must Implement Sender Interfaces</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMustImplementRequiredInterfaces()
+	 * @see #getMustImplementSenderInterfaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EClass> mustImplementRequiredInterfaces;
-
-	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ComponentKind KIND_EDEFAULT = ComponentKind.SOFTWARE_COMPONENT;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected ComponentKind kind = KIND_EDEFAULT;
+	protected EList<MessageInterface> mustImplementSenderInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +183,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 */
 	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectWithInverseResolvingEList<Constraint>(Constraint.class, this, ComponentPackage.COMPONENT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
+			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ComponentPackage.COMPONENT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
 	}
@@ -214,7 +195,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 */
 	public EList<Port> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, ComponentPackage.COMPONENT__PORTS, ComponentPackage.PORT__COMPONENT);
+			ports = new EObjectContainmentEList<Port>(Port.class, this, ComponentPackage.COMPONENT__PORTS);
 		}
 		return ports;
 	}
@@ -274,11 +255,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EClass> getMustImplementProvidedInterfaces() {
-		if (mustImplementProvidedInterfaces == null) {
-			mustImplementProvidedInterfaces = new EObjectResolvingEList<EClass>(EClass.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES);
+	public EList<MessageInterface> getMustImplementReceiverInterfaces() {
+		if (mustImplementReceiverInterfaces == null) {
+			mustImplementReceiverInterfaces = new EObjectResolvingEList<MessageInterface>(MessageInterface.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES);
 		}
-		return mustImplementProvidedInterfaces;
+		return mustImplementReceiverInterfaces;
 	}
 
 	/**
@@ -286,44 +267,23 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EClass> getMustImplementRequiredInterfaces() {
-		if (mustImplementRequiredInterfaces == null) {
-			mustImplementRequiredInterfaces = new EObjectResolvingEList<EClass>(EClass.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES);
+	public EList<MessageInterface> getMustImplementSenderInterfaces() {
+		if (mustImplementSenderInterfaces == null) {
+			mustImplementSenderInterfaces = new EObjectResolvingEList<MessageInterface>(MessageInterface.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES);
 		}
-		return mustImplementRequiredInterfaces;
+		return mustImplementSenderInterfaces;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentKind getKind() {
-		return kind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKind(ComponentKind newKind) {
-		ComponentKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__KIND, oldKind, kind));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public ComponentInstance createInstance() {
-		ComponentInstance componentInstance = InstanceFactory.eINSTANCE.createComponentInstance();
-		componentInstance.setComponentType(this);
-		return componentInstance;
-	}
+	//	/**
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	public ComponentInstance createInstance() {
+//		ComponentInstance componentInstance = InstanceFactory.eINSTANCE.createComponentInstance();
+//		componentInstance.setComponentType(this);
+//		return componentInstance;
+//	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -336,8 +296,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__PORTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferencingComponentParts()).basicAdd(otherEnd, msgs);
 		}
@@ -381,12 +339,10 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return basicGetEClass();
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return getReferencingComponentParts();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES:
-				return getMustImplementProvidedInterfaces();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES:
-				return getMustImplementRequiredInterfaces();
-			case ComponentPackage.COMPONENT__KIND:
-				return getKind();
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
+				return getMustImplementReceiverInterfaces();
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
+				return getMustImplementSenderInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -418,16 +374,13 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				getReferencingComponentParts().clear();
 				getReferencingComponentParts().addAll((Collection<? extends ComponentPart>)newValue);
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES:
-				getMustImplementProvidedInterfaces().clear();
-				getMustImplementProvidedInterfaces().addAll((Collection<? extends EClass>)newValue);
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
+				getMustImplementReceiverInterfaces().clear();
+				getMustImplementReceiverInterfaces().addAll((Collection<? extends MessageInterface>)newValue);
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES:
-				getMustImplementRequiredInterfaces().clear();
-				getMustImplementRequiredInterfaces().addAll((Collection<? extends EClass>)newValue);
-				return;
-			case ComponentPackage.COMPONENT__KIND:
-				setKind((ComponentKind)newValue);
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
+				getMustImplementSenderInterfaces().clear();
+				getMustImplementSenderInterfaces().addAll((Collection<? extends MessageInterface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -456,14 +409,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				getReferencingComponentParts().clear();
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES:
-				getMustImplementProvidedInterfaces().clear();
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
+				getMustImplementReceiverInterfaces().clear();
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES:
-				getMustImplementRequiredInterfaces().clear();
-				return;
-			case ComponentPackage.COMPONENT__KIND:
-				setKind(KIND_EDEFAULT);
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
+				getMustImplementSenderInterfaces().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -487,12 +437,10 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return eClass != null;
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return referencingComponentParts != null && !referencingComponentParts.isEmpty();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES:
-				return mustImplementProvidedInterfaces != null && !mustImplementProvidedInterfaces.isEmpty();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES:
-				return mustImplementRequiredInterfaces != null && !mustImplementRequiredInterfaces.isEmpty();
-			case ComponentPackage.COMPONENT__KIND:
-				return kind != KIND_EDEFAULT;
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
+				return mustImplementReceiverInterfaces != null && !mustImplementReceiverInterfaces.isEmpty();
+			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
+				return mustImplementSenderInterfaces != null && !mustImplementSenderInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -553,8 +501,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", kind: ");
-		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}

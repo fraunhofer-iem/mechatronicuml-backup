@@ -137,33 +137,11 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetClock(Clock newClock, NotificationChain msgs) {
+	public void setClock(Clock newClock) {
 		Clock oldClock = clock;
 		clock = newClock;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK, oldClock, newClock);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClock(Clock newClock) {
-		if (newClock != clock) {
-			NotificationChain msgs = null;
-			if (clock != null)
-				msgs = ((InternalEObject)clock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
-			if (newClock != null)
-				msgs = ((InternalEObject)newClock).eInverseAdd(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
-			msgs = basicSetClock(newClock, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK, newClock, newClock));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK, oldClock, clock));
 	}
 
 	/**
@@ -178,10 +156,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTransition((Transition)otherEnd, msgs);
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
-				if (clock != null)
-					msgs = ((InternalEObject)clock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__ABSOLUTE_DEADLINES, Clock.class, msgs);
-				return basicSetClock((Clock)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -196,8 +170,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 		switch (featureID) {
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
 				return basicSetTransition(null, msgs);
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
-				return basicSetClock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

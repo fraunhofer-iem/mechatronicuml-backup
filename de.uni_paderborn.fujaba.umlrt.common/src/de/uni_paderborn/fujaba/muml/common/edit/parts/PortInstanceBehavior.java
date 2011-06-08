@@ -48,8 +48,8 @@ public class PortInstanceBehavior extends AbstractPortBehavior {
 		MessageInterface requiredMessageInterface = null;
 		MessageInterface providedMessageInterface = null;
 		if (portInstance != null) {
-			requiredMessageInterface = portInstance.getRequiredMessageInterface();
-			providedMessageInterface = portInstance.getProvidedMessageInterface();
+			requiredMessageInterface = portInstance.getSenderMessageInterface();
+			providedMessageInterface = portInstance.getSenderMessageInterface();
 		}
 		updatePortType(requiredMessageInterface, providedMessageInterface);
 	}
@@ -66,10 +66,10 @@ public class PortInstanceBehavior extends AbstractPortBehavior {
 			EReference reference = (EReference) feature;
 			if (reference.getContainerClass() == PortInstance.class) {
 				int featureID = notification.getFeatureID(PortInstanceImpl.class);
-				if (featureID == InstancePackage.PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE
-						|| featureID == InstancePackage.PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE) {
-					updatePortType(portInstance.getRequiredMessageInterface(),
-							portInstance.getProvidedMessageInterface());
+				if (featureID == InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
+						|| featureID == InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE) {
+					updatePortType(portInstance.getSenderMessageInterface(),
+							portInstance.getReceiverMessageInterface());
 				}
 			}
 		}

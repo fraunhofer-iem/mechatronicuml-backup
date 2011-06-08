@@ -353,7 +353,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "Correctness.UNKNOWN", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_Background(), ecorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConstraint_ConstrainableElement(), theCorePackage.getConstrainableElement(), theCorePackage.getConstrainableElement_Constraint(), "constrainableElement", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_ConstrainableElement(), theCorePackage.getConstrainableElement(), theCorePackage.getConstrainableElement_Constraint(), "constrainableElement", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isCorrect", 0, 1, IS_UNIQUE, IS_ORDERED);
 

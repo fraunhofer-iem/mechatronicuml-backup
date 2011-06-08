@@ -48,7 +48,7 @@ public class ClockNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5026;
+	public static final int VISUAL_ID = 5004;
 
 	/**
 	 * @generated
@@ -89,7 +89,7 @@ public class ClockNameEditPart extends CompartmentEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.NodeLabelDragPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -288,9 +288,9 @@ public class ClockNameEditPart extends CompartmentEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.RealtimestatechartParserProvider
+			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Clock_2024,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes.Clock_2002,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID));

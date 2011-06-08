@@ -134,31 +134,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Component Part</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__COMPONENT_PART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Component Name Derived</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -167,7 +149,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -298,22 +280,22 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__COMPONENT_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Required Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Provided Message Interface</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
@@ -597,28 +579,6 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ConnectorInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_ComponentPart();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Name Derived</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentNameDerived()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EAttribute getComponentInstance_ComponentNameDerived();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -705,26 +665,26 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_ComponentInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getRequiredMessageInterface <em>Required Message Interface</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Required Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getRequiredMessageInterface()
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface()
 	 * @see #getPortInstance()
 	 * @generated
 	 */
-	EReference getPortInstance_RequiredMessageInterface();
+	EReference getPortInstance_SenderMessageInterface();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getProvidedMessageInterface <em>Provided Message Interface</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Provided Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getProvidedMessageInterface()
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface()
 	 * @see #getPortInstance()
 	 * @generated
 	 */
-	EReference getPortInstance_ProvidedMessageInterface();
+	EReference getPortInstance_ReceiverMessageInterface();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}'.
@@ -890,22 +850,6 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstance_ConnectorInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Part</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Component Name Derived</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT_INSTANCE__COMPONENT_NAME_DERIVED = eINSTANCE.getComponentInstance_ComponentNameDerived();
-
-		/**
 		 * The meta object literal for the '<em><b>Port Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -974,20 +918,20 @@ public interface InstancePackage extends EPackage {
 		EReference PORT_INSTANCE__COMPONENT_INSTANCE = eINSTANCE.getPortInstance_ComponentInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_INSTANCE__REQUIRED_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_RequiredMessageInterface();
+		EReference PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_SenderMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided Message Interface</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_INSTANCE__PROVIDED_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_ProvidedMessageInterface();
+		EReference PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_ReceiverMessageInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Connector Instances</b></em>' reference list feature.

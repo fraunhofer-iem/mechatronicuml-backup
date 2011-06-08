@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Prioritizable</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Enables the priorization of elements.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -33,6 +37,9 @@ public interface Prioritizable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * the priority of the element
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(int)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getPrioritizable_Priority()

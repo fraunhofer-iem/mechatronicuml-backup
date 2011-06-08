@@ -281,7 +281,7 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 		Diagram diagram = document.getDiagram();
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorItem(
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem(
 					diagram, file, false);
 			return new StructuredSelection(item);
 		}

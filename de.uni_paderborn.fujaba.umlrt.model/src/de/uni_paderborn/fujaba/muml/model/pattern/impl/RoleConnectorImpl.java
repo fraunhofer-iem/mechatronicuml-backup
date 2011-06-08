@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleConnectorImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,16 +78,6 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 	 * @ordered
 	 */
 	protected Role target;
-
-	/**
-	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPattern()
-	 * @generated
-	 * @ordered
-	 */
-	protected CoordinationPattern pattern;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,37 +222,40 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationPattern getPattern() {
-		if (pattern != null && pattern.eIsProxy()) {
-			InternalEObject oldPattern = (InternalEObject)pattern;
-			pattern = (CoordinationPattern)eResolveProxy(oldPattern);
-			if (pattern != oldPattern) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE_CONNECTOR__PATTERN, oldPattern, pattern));
-			}
+	public CoordinationPattern getCoordinationPattern() {
+		if (eContainerFeatureID() != PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN) return null;
+		return (CoordinationPattern)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCoordinationPattern(CoordinationPattern newCoordinationPattern, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newCoordinationPattern, PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCoordinationPattern(CoordinationPattern newCoordinationPattern) {
+		if (newCoordinationPattern != eInternalContainer() || (eContainerFeatureID() != PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN && newCoordinationPattern != null)) {
+			if (EcoreUtil.isAncestor(this, newCoordinationPattern))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newCoordinationPattern != null)
+				msgs = ((InternalEObject)newCoordinationPattern).eInverseAdd(this, PatternPackage.COORDINATION_PATTERN__CONNECTORS, CoordinationPattern.class, msgs);
+			msgs = basicSetCoordinationPattern(newCoordinationPattern, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
-		return pattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CoordinationPattern basicGetPattern() {
-		return pattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPattern(CoordinationPattern newPattern) {
-		CoordinationPattern oldPattern = pattern;
-		pattern = newPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__PATTERN, oldPattern, pattern));
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN, newCoordinationPattern, newCoordinationPattern));
 	}
 
 	/**
@@ -276,6 +270,10 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 				if (source != null)
 					msgs = ((InternalEObject)source).eInverseRemove(this, PatternPackage.ROLE__ROLE_CONNECTOR, Role.class, msgs);
 				return basicSetSource((Role)otherEnd, msgs);
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetCoordinationPattern((CoordinationPattern)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -290,8 +288,24 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 		switch (featureID) {
 			case PatternPackage.ROLE_CONNECTOR__SOURCE:
 				return basicSetSource(null, msgs);
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				return basicSetCoordinationPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				return eInternalContainer().eInverseRemove(this, PatternPackage.COORDINATION_PATTERN__CONNECTORS, CoordinationPattern.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -310,9 +324,8 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 			case PatternPackage.ROLE_CONNECTOR__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case PatternPackage.ROLE_CONNECTOR__PATTERN:
-				if (resolve) return getPattern();
-				return basicGetPattern();
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				return getCoordinationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -334,8 +347,8 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 			case PatternPackage.ROLE_CONNECTOR__TARGET:
 				setTarget((Role)newValue);
 				return;
-			case PatternPackage.ROLE_CONNECTOR__PATTERN:
-				setPattern((CoordinationPattern)newValue);
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				setCoordinationPattern((CoordinationPattern)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,8 +371,8 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 			case PatternPackage.ROLE_CONNECTOR__TARGET:
 				setTarget((Role)null);
 				return;
-			case PatternPackage.ROLE_CONNECTOR__PATTERN:
-				setPattern((CoordinationPattern)null);
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				setCoordinationPattern((CoordinationPattern)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -379,8 +392,8 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 				return source != null;
 			case PatternPackage.ROLE_CONNECTOR__TARGET:
 				return target != null;
-			case PatternPackage.ROLE_CONNECTOR__PATTERN:
-				return pattern != null;
+			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
+				return getCoordinationPattern() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -20,7 +20,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4002;
+	public static final int VISUAL_ID = 4001;
 
 	/**
 	 * @generated
@@ -49,58 +49,58 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 							.getFigureTransitionPriorityFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockResetsExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockResetsExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionClockResetExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionAbsoluteDeadlineExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionAbsoluteDeadlineExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionAbsoluteDeadlineExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionRelativeDeadlineExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionRelativeDeadlineExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionRelativeDeadlineExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEventsExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEventsExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionEventExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionGuardExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionTransitionActionExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionTransitionActionExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionActionExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockConstraintExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockConstraintExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionClockConstraintExprLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionSynchroExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionSafetyTransitionLabel());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureTransitionSynchroExprLabel());
 			return true;
 		}
 		return false;
@@ -123,31 +123,31 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockResetsExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionAbsoluteDeadlineExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionRelativeDeadlineExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEventsExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionGuardExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionTransitionActionExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionClockConstraintExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSafetyTransitionExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionSynchroExprEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) {
 			return true;
 		}
 		return false;

@@ -299,58 +299,6 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004) {
-			types.add(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004) {
-			types.add(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
 	public class ComponentMultiFigure extends RectangleFigure {
 
 		/**

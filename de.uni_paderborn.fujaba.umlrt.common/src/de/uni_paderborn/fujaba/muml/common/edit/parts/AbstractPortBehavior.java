@@ -75,14 +75,14 @@ public abstract class AbstractPortBehavior {
 	 * Updates the PortFigure to visualize a generic port, an InPort, OutPort or
 	 * InOutPort, according to the current model state.
 	 */
-	public void updatePortType(MessageInterface required, MessageInterface provided) {
+	public void updatePortType(MessageInterface sender, MessageInterface receiver) {
 		if (portFigure != null) {
 			CustomPortFigure.PortType portType;
-			if (required != null && provided != null) {
+			if (sender != null && receiver != null) {
 				portType = CustomPortFigure.PortType.INOUT_PORT;
-			} else if (provided != null) {
+			} else if (receiver != null) {
 				portType = CustomPortFigure.PortType.IN_PORT;
-			} else if (required != null) {
+			} else if (sender != null) {
 				portType = CustomPortFigure.PortType.OUT_PORT;
 			} else {
 				portType = CustomPortFigure.PortType.NONE;

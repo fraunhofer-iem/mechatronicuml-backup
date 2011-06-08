@@ -10,10 +10,10 @@ package de.uni_paderborn.fujaba.muml.model.component.provider;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.descriptor.PortCardinalityPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.descriptor.PortCardinalityPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;
@@ -76,15 +76,14 @@ public class PortItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
-			addComponentPropertyDescriptor(object);
 			addPortKindPropertyDescriptor(object);
 			addSpecificationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addRequiredMessageInterfacePropertyDescriptor(object);
-			addProvidedMessageInterfacePropertyDescriptor(object);
+			addSenderMessageInterfacePropertyDescriptor(object);
+			addReceiverMessageInterfacePropertyDescriptor(object);
 			addIncomingConnectorsPropertyDescriptor(object);
 			addOutgoingConnectorsPropertyDescriptor(object);
-			addAdaptationRealtimeStatechartPropertyDescriptor(object);
+			addComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -181,22 +180,23 @@ public class PortItemProvider
 	 * This adds a property descriptor for the Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSpecificationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_specification_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_specification_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__SPECIFICATION,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Port_specification_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Port_specification_feature", "_UI_Port_type"),
+//				 ComponentPackage.Literals.PORT__SPECIFICATION,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+//				 null));
+		
 	}
 
 	/**
@@ -232,19 +232,19 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required Message Interface feature.
+	 * This adds a property descriptor for the Sender Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredMessageInterfacePropertyDescriptor(Object object) {
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_requiredMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_requiredMessageInterface_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__REQUIRED_MESSAGE_INTERFACE,
+				 getString("_UI_Port_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_senderMessageInterface_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -254,19 +254,19 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided Message Interface feature.
+	 * This adds a property descriptor for the Receiver Message Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidedMessageInterfacePropertyDescriptor(Object object) {
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_providedMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_providedMessageInterface_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__PROVIDED_MESSAGE_INTERFACE,
+				 getString("_UI_Port_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_receiverMessageInterface_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -312,28 +312,6 @@ public class PortItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_outgoingConnectors_feature", "_UI_Port_type"),
 				 ComponentPackage.Literals.PORT__OUTGOING_CONNECTORS,
 				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Adaptation Realtime Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAdaptationRealtimeStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_adaptationRealtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_adaptationRealtimeStatechart_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__ADAPTATION_REALTIME_STATECHART,
-				 true,
 				 false,
 				 true,
 				 null,

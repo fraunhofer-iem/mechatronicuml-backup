@@ -84,12 +84,30 @@ public class StructuredComponentItemSemanticEditPolicy
 								incomingLink));
 						continue;
 					}
+					if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it
 						.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
 					if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
+					if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
@@ -110,32 +128,6 @@ public class StructuredComponentItemSemanticEditPolicy
 					switch (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
-								.hasNext();) {
-							Edge incomingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										incomingLink.getElement(), false);
-								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										incomingLink));
-								continue;
-							}
-						}
-						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
-								.hasNext();) {
-							Edge outgoingLink = (Edge) it.next();
-							if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
-									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID) {
-								DestroyElementRequest r = new DestroyElementRequest(
-										outgoingLink.getElement(), false);
-								cmd.add(new DestroyElementCommand(r));
-								cmd.add(new DeleteCommand(getEditingDomain(),
-										outgoingLink));
-								continue;
-							}
-						}
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
 										cnode.getElement(), false))); // directlyOwned: true

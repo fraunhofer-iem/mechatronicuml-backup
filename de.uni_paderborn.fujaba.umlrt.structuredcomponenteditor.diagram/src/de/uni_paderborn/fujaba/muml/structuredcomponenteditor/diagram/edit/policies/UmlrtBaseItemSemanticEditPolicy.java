@@ -337,8 +337,8 @@ public class UmlrtBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateAssembly_4004(
 				de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container,
-				de.uni_paderborn.fujaba.muml.model.component.ComponentPart source,
-				de.uni_paderborn.fujaba.muml.model.component.ComponentPart target) {
+				de.uni_paderborn.fujaba.muml.model.component.Port source,
+				de.uni_paderborn.fujaba.muml.model.component.Port target) {
 			return canExistAssembly_4004(container, null, source, target);
 		}
 
@@ -359,8 +359,8 @@ public class UmlrtBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistAssembly_4004(
 				de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container,
 				de.uni_paderborn.fujaba.muml.model.component.Assembly linkInstance,
-				de.uni_paderborn.fujaba.muml.model.component.ComponentPart source,
-				de.uni_paderborn.fujaba.muml.model.component.ComponentPart target) {
+				de.uni_paderborn.fujaba.muml.model.component.Port source,
+				de.uni_paderborn.fujaba.muml.model.component.Port target) {
 			return true;
 		}
 	}

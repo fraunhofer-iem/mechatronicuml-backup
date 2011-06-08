@@ -88,27 +88,27 @@ public interface Constraint extends ExtendableElement {
 	void setBackground(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Constrainable Element</b></em>' reference.
+	 * Returns the value of the '<em><b>Constrainable Element</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The element this constraint applies to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Constrainable Element</em>' reference.
+	 * @return the value of the '<em>Constrainable Element</em>' container reference.
 	 * @see #setConstrainableElement(ConstrainableElement)
 	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage#getConstraint_ConstrainableElement()
 	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint
-	 * @model opposite="constraint"
+	 * @model opposite="constraint" required="true" transient="false"
 	 * @generated
 	 */
 	ConstrainableElement getConstrainableElement();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Constrainable Element</em>' reference.
+	 * @param value the new value of the '<em>Constrainable Element</em>' container reference.
 	 * @see #getConstrainableElement()
 	 * @generated
 	 */

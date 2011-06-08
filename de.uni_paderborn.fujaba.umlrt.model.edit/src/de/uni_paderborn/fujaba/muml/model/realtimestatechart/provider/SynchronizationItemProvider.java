@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 
 import java.util.Collection;
@@ -19,6 +20,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -26,6 +28,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.calls.provider.InvocationItemProvider;
 
 /**
@@ -63,8 +67,54 @@ public class SynchronizationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSyncChannelPropertyDescriptor(object);
+			addSynchronizationKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sync Channel feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSyncChannelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Synchronization_syncChannel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_syncChannel_feature", "_UI_Synchronization_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Synchronization Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchronizationKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Synchronization_synchronizationKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_synchronizationKind_feature", "_UI_Synchronization_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNCHRONIZATION_KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -102,6 +152,12 @@ public class SynchronizationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Synchronization.class)) {
+			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

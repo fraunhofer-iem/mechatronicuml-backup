@@ -114,7 +114,7 @@ public interface ConstraintPackage extends EPackage {
 	int CONSTRAINT__BACKGROUND = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
+	 * The feature id for the '<em><b>Constrainable Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -178,7 +178,7 @@ public interface ConstraintPackage extends EPackage {
 	int MODELING_CONSTRAINT__BACKGROUND = CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
+	 * The feature id for the '<em><b>Constrainable Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,7 +242,7 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_CONSTRAINT__BACKGROUND = CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
+	 * The feature id for the '<em><b>Constrainable Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -306,7 +306,7 @@ public interface ConstraintPackage extends EPackage {
 	int TEXTUAL_CONSTRAINT__BACKGROUND = VERIFIABLE_CONSTRAINT__BACKGROUND;
 
 	/**
-	 * The feature id for the '<em><b>Constrainable Element</b></em>' reference.
+	 * The feature id for the '<em><b>Constrainable Element</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -376,10 +376,10 @@ public interface ConstraintPackage extends EPackage {
 	EAttribute getConstraint_Background();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Constrainable Element</em>'.
+	 * @return the meta object for the container reference '<em>Constrainable Element</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement()
 	 * @see #getConstraint()
 	 * @generated
@@ -486,7 +486,7 @@ public interface ConstraintPackage extends EPackage {
 		EAttribute CONSTRAINT__BACKGROUND = eINSTANCE.getConstraint_Background();
 
 		/**
-		 * The meta object literal for the '<em><b>Constrainable Element</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Constrainable Element</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

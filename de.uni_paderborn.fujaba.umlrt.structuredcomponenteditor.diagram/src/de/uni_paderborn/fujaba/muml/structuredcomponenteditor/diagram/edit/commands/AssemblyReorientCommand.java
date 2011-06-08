@@ -58,11 +58,11 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart target = getLink()
-				.getTo();
+		de.uni_paderborn.fujaba.muml.model.component.Port target = getLink()
+				.getToPort();
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent)) {
 			return false;
 		}
@@ -77,11 +77,11 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.ComponentPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.Port)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart source = getLink()
-				.getFrom();
+		de.uni_paderborn.fujaba.muml.model.component.Port source = getLink()
+				.getFromPort();
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent)) {
 			return false;
 		}
@@ -114,7 +114,7 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setFrom(getNewSource());
+		getLink().setFromPort(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -122,7 +122,7 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setTo(getNewTarget());
+		getLink().setToPort(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -136,28 +136,28 @@ public class AssemblyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.ComponentPart getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.component.Port getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.component.Port) newEnd;
 	}
 }

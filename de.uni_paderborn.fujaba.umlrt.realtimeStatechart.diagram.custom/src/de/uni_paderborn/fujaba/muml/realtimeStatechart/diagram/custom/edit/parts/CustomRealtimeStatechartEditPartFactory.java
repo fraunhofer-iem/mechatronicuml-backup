@@ -3,9 +3,8 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.HistoryStateEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry;
 
 /**
@@ -22,11 +21,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
-			case HistoryStateEditPart.VISUAL_ID:
-				return new CustomHistoryStateEditPart(view);
-			}
-			
 			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);

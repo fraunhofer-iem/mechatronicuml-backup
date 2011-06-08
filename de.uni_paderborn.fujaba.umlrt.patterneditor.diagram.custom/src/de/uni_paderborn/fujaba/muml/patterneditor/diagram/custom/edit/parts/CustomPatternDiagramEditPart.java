@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
 
 public class CustomPatternDiagramEditPart extends PatternDiagramEditPart {
-
 	public CustomPatternDiagramEditPart(View view) {
 		super(view);
 	}

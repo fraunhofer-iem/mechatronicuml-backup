@@ -100,6 +100,10 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createAbstractRealtimeStatechartAdapter();
 			}
 			@Override
+			public Adapter caseAdaptationBehavior(AdaptationBehavior object) {
+				return createAdaptationBehaviorAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -212,6 +216,20 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractRealtimeStatechartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior
+	 * @generated
+	 */
+	public Adapter createAdaptationBehaviorAdapter() {
 		return null;
 	}
 

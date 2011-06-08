@@ -69,7 +69,6 @@ public class RoleConnectorItemProvider
 			addBidirectionalPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -132,28 +131,6 @@ public class RoleConnectorItemProvider
 				 getString("_UI_RoleConnector_target_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_target_feature", "_UI_RoleConnector_type"),
 				 PatternPackage.Literals.ROLE_CONNECTOR__TARGET,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RoleConnector_pattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_pattern_feature", "_UI_RoleConnector_type"),
-				 PatternPackage.Literals.ROLE_CONNECTOR__PATTERN,
 				 false,
 				 false,
 				 true,

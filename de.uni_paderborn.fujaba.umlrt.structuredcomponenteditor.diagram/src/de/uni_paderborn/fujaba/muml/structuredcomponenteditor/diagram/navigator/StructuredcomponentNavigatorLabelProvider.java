@@ -77,27 +77,27 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/component?Delegation", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/component?Assembly", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?ComponentPart", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ComponentPart_3005); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/component?Delegation", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?Port", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3004); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/component?StructuredComponent", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.StructuredComponent_2002); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?Port", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Port_3006); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/component?Assembly", de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Assembly_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -154,20 +154,20 @@ public class StructuredcomponentNavigatorLabelProvider extends LabelProvider
 		}
 		switch (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return getDelegation_4003Text(view);
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return getAssembly_4004Text(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 			return getComponentPart_3005Text(view);
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
+			return getModelElementCategory_1000Text(view);
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
+			return getDelegation_4003Text(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
 			return getPort_3004Text(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
 			return getStructuredComponent_2002Text(view);
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
-			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.Port2EditPart.VISUAL_ID:
 			return getPort_3006Text(view);
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
+			return getAssembly_4004Text(view);
 		}
 		return getUnknownElementText(view);
 	}

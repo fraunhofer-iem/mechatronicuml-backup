@@ -65,7 +65,7 @@ public class UmlrtNewDiagramFileWizard extends Wizard {
 		myFileCreationPage
 				.setDescription(NLS
 						.bind(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.UmlrtNewDiagramFileWizard_CreationPageDescription,
-								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID));
+								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension()
 				.lastSegment());
@@ -129,7 +129,7 @@ public class UmlrtNewDiagramFileWizard extends Wizard {
 				int diagramVID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage
 								.getModelElement());
-				if (diagramVID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID) {
+				if (diagramVID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID) {
 					return CommandResult
 							.newErrorCommandResult(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.UmlrtNewDiagramFileWizard_IncorrectRootError);
 				}
@@ -137,7 +137,7 @@ public class UmlrtNewDiagramFileWizard extends Wizard {
 						.createDiagram(
 								diagramRootElementSelectionPage
 										.getModelElement(),
-								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID,
+								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID,
 								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
@@ -201,7 +201,7 @@ public class UmlrtNewDiagramFileWizard extends Wizard {
 					.provides(
 							new CreateDiagramViewOperation(
 									new EObjectAdapter(selectedModelElement),
-									de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.MODEL_ID,
+									de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID,
 									de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.UmlrtNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);

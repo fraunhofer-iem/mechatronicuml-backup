@@ -30,7 +30,7 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 				.getInstance().getPreferenceStore();
 	}
 }

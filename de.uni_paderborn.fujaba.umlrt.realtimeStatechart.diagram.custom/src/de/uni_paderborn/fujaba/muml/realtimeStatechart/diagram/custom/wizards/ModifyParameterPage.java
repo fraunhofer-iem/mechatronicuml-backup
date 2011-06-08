@@ -161,7 +161,7 @@ public class ModifyParameterPage extends CommonModifyPage{
 	  	  
 		if(!parameterNameText.getText().equals("") && getSelectedDataType()!= null){
 			CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-					UmlrtElementTypes.DoAction_3026);
+					UmlrtElementTypes.DoEvent_3008);
 							  
 						ParameterCreateCommand command = new ParameterCreateCommand(request, 
 								this.parameterNameText.getText(), getSelectedDataType());

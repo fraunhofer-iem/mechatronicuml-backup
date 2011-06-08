@@ -5,9 +5,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.sheet.PatternPropertySection;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.sheet.UmlrtPropertySection;
 
-public class CustomPatternPropertySection extends PatternPropertySection {
+public class CustomPatternPropertySection extends UmlrtPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.

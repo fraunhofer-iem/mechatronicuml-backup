@@ -1,14 +1,11 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
-import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
@@ -24,7 +21,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -41,7 +38,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected PreferencesHint getDiagramPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	@Override
@@ -102,7 +99,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected ExtendableElement createDiagramElement() {
-		return null;
+		return PatternFactory.eINSTANCE.createCoordinationPattern();
 	}
 
 }

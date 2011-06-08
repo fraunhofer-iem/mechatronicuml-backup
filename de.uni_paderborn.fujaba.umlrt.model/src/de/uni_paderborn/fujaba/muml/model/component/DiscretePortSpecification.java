@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 
@@ -26,10 +27,10 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines <em>Refines</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,7 +45,7 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The role of a parameterized coordination pattern that this port refines.
+	 * The role of a coordination pattern that this port refines.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see #setRefines(Role)
@@ -66,80 +67,56 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	void setRefines(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The adaptation statechart of this port. For a port with cardinality 0..1 or 0..*, it 
-	 * specifies the creation and deletion of instances of this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_AdaptationRealtimeStatechart()
-	 * @model
-	 * @generated
-	 */
-	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #getAdaptationRealtimeStatechart()
-	 * @generated
-	 */
-	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
-
-	/**
-	 * Returns the value of the '<em><b>Required Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.
+	 * \todosd{Uwe and my oponion: rename to senderMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required Message Interface</em>' reference.
-	 * @see #setRequiredMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_RequiredMessageInterface()
+	 * @return the value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #setSenderMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_SenderMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getRequiredMessageInterface();
+	MessageInterface getSenderMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRequiredMessageInterface <em>Required Message Interface</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required Message Interface</em>' reference.
-	 * @see #getRequiredMessageInterface()
+	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #getSenderMessageInterface()
 	 * @generated
 	 */
-	void setRequiredMessageInterface(MessageInterface value);
+	void setSenderMessageInterface(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Provided Message Interface</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This association stores the provided message interface of this port. The required message interface defines which messages are allowed to be received by this port.
+	 * This association stores the provided message interface of this port. The provided message interface defines which messages are allowed to be received by this port.
+	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Provided Message Interface</em>' reference.
-	 * @see #setProvidedMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_ProvidedMessageInterface()
+	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #setReceiverMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_ReceiverMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getProvidedMessageInterface();
+	MessageInterface getReceiverMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getProvidedMessageInterface <em>Provided Message Interface</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided Message Interface</em>' reference.
-	 * @see #getProvidedMessageInterface()
+	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #getReceiverMessageInterface()
 	 * @generated
 	 */
-	void setProvidedMessageInterface(MessageInterface value);
+	void setReceiverMessageInterface(MessageInterface value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Queue Size</b></em>' attribute.
@@ -166,5 +143,33 @@ public interface DiscretePortSpecification extends PortSpecification, Behavioral
 	 * @generated
 	 */
 	void setEventQueueSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort <em>Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Adaptation Behavior</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Adaptation Behavior</em>' container reference.
+	 * @see #setAdaptationBehavior(AdaptationBehavior)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePortSpecification_AdaptationBehavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort
+	 * @model opposite="port" transient="false"
+	 * @generated
+	 */
+	AdaptationBehavior getAdaptationBehavior();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Adaptation Behavior</em>' container reference.
+	 * @see #getAdaptationBehavior()
+	 * @generated
+	 */
+	void setAdaptationBehavior(AdaptationBehavior value);
 
 } // DiscretePortSpecification

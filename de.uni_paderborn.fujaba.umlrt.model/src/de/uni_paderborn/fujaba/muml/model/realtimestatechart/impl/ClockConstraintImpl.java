@@ -175,33 +175,11 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetClock(Clock newClock, NotificationChain msgs) {
+	public void setClock(Clock newClock) {
 		Clock oldClock = clock;
 		clock = newClock;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK, oldClock, newClock);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClock(Clock newClock) {
-		if (newClock != clock) {
-			NotificationChain msgs = null;
-			if (clock != null)
-				msgs = ((InternalEObject)clock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS, Clock.class, msgs);
-			if (newClock != null)
-				msgs = ((InternalEObject)newClock).eInverseAdd(this, RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS, Clock.class, msgs);
-			msgs = basicSetClock(newClock, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK, newClock, newClock));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK, oldClock, clock));
 	}
 
 	/**
@@ -231,28 +209,10 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK:
-				if (clock != null)
-					msgs = ((InternalEObject)clock).eInverseRemove(this, RealtimestatechartPackage.CLOCK__CLOCK_CONSTRAINTS, Clock.class, msgs);
-				return basicSetClock((Clock)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT__BOUND:
 				return basicSetBound(null, msgs);
-			case RealtimestatechartPackage.CLOCK_CONSTRAINT__CLOCK:
-				return basicSetClock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

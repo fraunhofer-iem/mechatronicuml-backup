@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.providers;
 
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts.CustomPatternEditPartFactory;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlinstanceEditPartProvider;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtEditPartProvider;
 
 /**
  * Our custom EditPartProvider, which uses the customized EditPartFactory.
@@ -9,7 +9,7 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.Mumlinstance
  * @author bingo
  * 
  */
-public class CustomPatternEditPartProvider extends MumlinstanceEditPartProvider {
+public class CustomPatternEditPartProvider extends UmlrtEditPartProvider {
 
 	public CustomPatternEditPartProvider() {
 		setFactory(new CustomPatternEditPartFactory());

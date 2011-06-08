@@ -9,10 +9,10 @@ package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.descriptor.ComponentPartCardinalityPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.descriptor.ComponentPartCardinalityPropertyDescriptor;
 
 import java.util.Collection;
 import java.util.List;
@@ -264,8 +264,8 @@ public class ComponentPartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY);
+			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
 		}
 		return childrenFeatures;
 	}
@@ -323,8 +323,8 @@ public class ComponentPartItemProvider
 			case ComponentPackage.COMPONENT_PART__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

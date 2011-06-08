@@ -27,7 +27,6 @@ import org.storydriven.modeling.calls.Callable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getState <em>State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,7 +47,7 @@ public interface SynchronizationChannel extends Callable, NamedElement {
 	 * @see #setState(State)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_State()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels
-	 * @model opposite="channels" transient="false"
+	 * @model opposite="channels" required="true" transient="false"
 	 * @generated
 	 */
 	State getState();
@@ -62,33 +61,5 @@ public interface SynchronizationChannel extends Callable, NamedElement {
 	 * @generated
 	 */
 	void setState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Role</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getChannels <em>Channels</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Role</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' container reference.
-	 * @see #setRole(Role)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_Role()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getChannels
-	 * @model opposite="channels" transient="false"
-	 * @generated
-	 */
-	Role getRole();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role</em>' container reference.
-	 * @see #getRole()
-	 * @generated
-	 */
-	void setRole(Role value);
 
 } // SynchronizationChannel

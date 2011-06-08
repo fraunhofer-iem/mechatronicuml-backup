@@ -28,8 +28,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedInstances <em>Embedded Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -95,59 +93,6 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	EList<ConnectorInstance> getConnectorInstances();
-
-	/**
-	 * Returns the value of the '<em><b>Component Part</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Component Part</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Part</em>' reference.
-	 * @see #setComponentPart(ComponentPart)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_ComponentPart()
-	 * @model
-	 * @generated
-	 */
-	ComponentPart getComponentPart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentPart <em>Component Part</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Part</em>' reference.
-	 * @see #getComponentPart()
-	 * @generated
-	 */
-	void setComponentPart(ComponentPart value);
-
-	/**
-	 * Returns the value of the '<em><b>Component Name Derived</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The name of this component instance. It is the same as the name of the componentType and derived from there.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Component Name Derived</em>' attribute.
-	 * @see #isSetComponentNameDerived()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_ComponentNameDerived()
-	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\n\tnull\nelse\n\tcomponentType.name\nendif'"
-	 * @generated
-	 */
-	String getComponentNameDerived();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentNameDerived <em>Component Name Derived</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Component Name Derived</em>' attribute is set.
-	 * @see #getComponentNameDerived()
-	 * @generated
-	 */
-	boolean isSetComponentNameDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.

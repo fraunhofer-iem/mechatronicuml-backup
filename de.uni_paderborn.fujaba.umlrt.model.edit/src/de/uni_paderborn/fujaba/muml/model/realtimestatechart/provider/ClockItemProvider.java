@@ -65,54 +65,8 @@ public class ClockItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAbsoluteDeadlinesPropertyDescriptor(object);
-			addClockConstraintsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Absolute Deadlines feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbsoluteDeadlinesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Clock_absoluteDeadlines_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Clock_absoluteDeadlines_feature", "_UI_Clock_type"),
-				 RealtimestatechartPackage.Literals.CLOCK__ABSOLUTE_DEADLINES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Clock Constraints feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClockConstraintsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Clock_clockConstraints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Clock_clockConstraints_feature", "_UI_Clock_type"),
-				 RealtimestatechartPackage.Literals.CLOCK__CLOCK_CONSTRAINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

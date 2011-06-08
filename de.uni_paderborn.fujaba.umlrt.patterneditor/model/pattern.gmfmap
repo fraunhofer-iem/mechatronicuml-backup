@@ -6,17 +6,8 @@
     xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings"
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
-    <ownedChild>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="pattern.gmftool#//@palette/@tools.0/@tools.1"/>
-      <diagramNode
-          href="pattern.gmfgraph#CoordinationPattern"/>
-    </ownedChild>
-  </nodes>
-  <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationProtocol/roles"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationPattern/roles"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/Role"/>
@@ -78,6 +69,8 @@
     </ownedChild>
   </nodes>
   <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/core/ConstrainableElement/constraint"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/constraint/TextualConstraint"/>
@@ -89,7 +82,7 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/RoleConnector"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationProtocol/connectors"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationPattern/connectors"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -101,13 +94,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/RoleConnector/target"/>
-  </links>
-  <links>
-    <diagramLink
-        href="pattern.gmfgraph#RolePattern"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/Role/pattern"/>
   </links>
   <links>
     <tool
@@ -125,7 +111,7 @@
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationProtocol"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/pattern/CoordinationPattern"/>
     <palette
         href="pattern.gmftool#//@palette"/>
   </diagram>

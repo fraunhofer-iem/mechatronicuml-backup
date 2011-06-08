@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,7 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class ConstrainableElementImpl extends EObjectImpl implements ConstrainableElement {
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference list.
+	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConstraint()
@@ -76,7 +77,7 @@ public abstract class ConstrainableElementImpl extends EObjectImpl implements Co
 	 */
 	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectWithInverseResolvingEList<Constraint>(Constraint.class, this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
+			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
 	}

@@ -166,7 +166,7 @@ public class ModifyDataTypePage extends WizardPage{
 	  	  
 		if(!dataTypeNameText.getText().equals("") && !instanceTypeNameText.getText().equals("")){
 			CreateElementRequest request = new CreateElementRequest(((ModifyDataTypeWizard)getWizard()).getRealtimeStatechart(),
-					UmlrtElementTypes.DoAction_3026);
+					UmlrtElementTypes.DoEvent_3008);
 							  
 						DataTypeCreateCommand command = new DataTypeCreateCommand(request, 
 								this.dataTypeNameText.getText(), this.instanceTypeNameText.getText());

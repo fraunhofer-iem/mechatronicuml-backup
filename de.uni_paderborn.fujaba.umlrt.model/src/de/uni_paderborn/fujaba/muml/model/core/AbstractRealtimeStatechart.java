@@ -172,13 +172,13 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The behovioral element this statechart belongs to.
+	 * The behavioral element this statechart belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Behavioral Element</em>' reference.
 	 * @see #setBehavioralElement(BehavioralElement)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getAbstractRealtimeStatechart_BehavioralElement()
 	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart
-	 * @model opposite="realtimeStatechart"
+	 * @model opposite="realtimeStatechart" required="true"
 	 * @generated
 	 */
 	BehavioralElement getBehavioralElement();

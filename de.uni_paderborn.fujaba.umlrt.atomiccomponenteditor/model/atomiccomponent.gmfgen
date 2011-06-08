@@ -37,6 +37,7 @@
         visualID="3001"
         editPartClassName="PortEditPart"
         itemSemanticEditPolicyClassName="PortItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortViewFactory"
         canonicalEditPolicyClassName="PortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortGraphicalNodeEditPolicy"
         createCommandClassName="PortCreateCommand"
@@ -105,6 +106,7 @@
         visualID="2001"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
@@ -134,7 +136,8 @@
       <labels
           visualID="5001"
           editPartClassName="AtomicComponentNameEditPart"
-          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AtomicComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

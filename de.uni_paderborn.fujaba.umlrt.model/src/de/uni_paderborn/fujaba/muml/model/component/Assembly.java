@@ -42,7 +42,7 @@ public interface Assembly extends ConnectorType {
 	 * @see #setTo(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_To()
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev
-	 * @model opposite="toRev"
+	 * @model opposite="toRev" required="true"
 	 * @generated
 	 */
 	ComponentPart getTo();
@@ -69,7 +69,7 @@ public interface Assembly extends ConnectorType {
 	 * @see #setFrom(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_From()
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getFromRev
-	 * @model opposite="fromRev"
+	 * @model opposite="fromRev" required="true"
 	 * @generated
 	 */
 	ComponentPart getFrom();

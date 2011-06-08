@@ -51,7 +51,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin.ID
+	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
@@ -102,7 +102,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
 				&& de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
-						.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlinstanceVisualIDRegistry
+						.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
 								.getModelID(view));
 	}
 
@@ -140,7 +140,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 								}
 							});
 				} catch (Exception e) {
-					de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 							.getInstance().logError(
 									"Decorator refresh failure", e); //$NON-NLS-1$
 				}
@@ -175,7 +175,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 							}
 						});
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 						.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
@@ -212,7 +212,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 				markers = resource.findMarkers(MARKER_TYPE, true,
 						IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation markers refresh failure", e); //$NON-NLS-1$
 			}
@@ -439,7 +439,7 @@ public class PatternValidationDecoratorProvider extends AbstractProvider
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$

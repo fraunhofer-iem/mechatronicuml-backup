@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 public class SetComponentTypeCommand extends AbstractCommand {
@@ -54,7 +55,11 @@ public class SetComponentTypeCommand extends AbstractCommand {
 	}
 
 	public ComponentInstance createComponentInstance(Component component) {
-		ComponentInstance newInstance = component.createInstance();
+		//ComponentInstance newInstance = component.createInstance();
+		ComponentInstance newInstance = InstanceFactory.eINSTANCE.createComponentInstance();
+		newInstance.setName(component.getName());
+		newInstance.setComponentType(component);
+		
 		configureComponentInstance(newInstance, component);
 		return newInstance;
 	}
@@ -119,7 +124,6 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			ComponentPart componentPart) {
 		ComponentInstance newInstance = createComponentInstance(componentPart
 				.getComponentType());
-		newInstance.setComponentPart(componentPart);
 		return newInstance;
 	}
 

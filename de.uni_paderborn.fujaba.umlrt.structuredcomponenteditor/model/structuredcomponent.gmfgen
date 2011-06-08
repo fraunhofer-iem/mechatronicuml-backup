@@ -298,9 +298,9 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/StructuredComponent/connectors"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Assembly/from"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/ConnectorType/fromPort"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Assembly/to"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/ConnectorType/toPort"/>
       </modelFacet>
     </links>
     <compartments
@@ -479,24 +479,48 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.1"
+        child="//@diagram/@childNodes.0"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.1"
+        parent="//@diagram/@childNodes.0"
         child="//@diagram/@links.1"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.1"
+        child="//@diagram/@childNodes.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.2"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.1"
+        parent="//@diagram/@childNodes.0"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.2"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.2"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"

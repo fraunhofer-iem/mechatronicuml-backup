@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
 
+import de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -36,14 +37,13 @@ import org.storydriven.modeling.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPattern <em>Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRequired <em>Required</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getProvided <em>Provided</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getChannels <em>Channels</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,13 +59,13 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The connector which connects this role with another role.
-	 * Cardinality is 0..1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, that change cardinality to 0..*
+	 * Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role Connector</em>' reference.
 	 * @see #setRoleConnector(RoleConnector)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_RoleConnector()
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getSource
-	 * @model opposite="source"
+	 * @model opposite="source" required="true"
 	 * @generated
 	 */
 	RoleConnector getRoleConnector();
@@ -81,57 +81,31 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setRoleConnector(RoleConnector value);
 
 	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The coordination pattern this role belongs to.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Pattern</em>' reference.
-	 * @see #setPattern(CoordinationPattern)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Pattern()
+	 * @return the value of the '<em>Coordination Pattern</em>' container reference.
+	 * @see #setCoordinationPattern(CoordinationPattern)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_CoordinationPattern()
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles
-	 * @model opposite="roles"
+	 * @model opposite="roles" required="true" transient="false"
 	 * @generated
 	 */
-	CoordinationPattern getPattern();
+	CoordinationPattern getCoordinationPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPattern <em>Pattern</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pattern</em>' reference.
-	 * @see #getPattern()
+	 * @param value the new value of the '<em>Coordination Pattern</em>' container reference.
+	 * @see #getCoordinationPattern()
 	 * @generated
 	 */
-	void setPattern(CoordinationPattern value);
-
-	/**
-	 * Returns the value of the '<em><b>Adaptation Realtime Statechart</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The realtime statechart describing the communication behavior of this role.
-	 * there is already a reference called realtimeStatechart, it is inhered from BehaviorElement
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #setAdaptationRealtimeStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_AdaptationRealtimeStatechart()
-	 * @model
-	 * @generated
-	 */
-	AbstractRealtimeStatechart getAdaptationRealtimeStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationRealtimeStatechart <em>Adaptation Realtime Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Realtime Statechart</em>' reference.
-	 * @see #getAdaptationRealtimeStatechart()
-	 * @generated
-	 */
-	void setAdaptationRealtimeStatechart(AbstractRealtimeStatechart value);
+	void setCoordinationPattern(CoordinationPattern value);
 
 	/**
 	 * Returns the value of the '<em><b>EClass</b></em>' reference.
@@ -139,6 +113,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
+	 * \todosd{Delete, because it is possible to store them in the statechart directly?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)
@@ -159,56 +134,56 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setEClass(EClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Required</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Required</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' reference.
-	 * @see #setRequired(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Required()
+	 * <!-- begin-model-doc -->
+	 * This association stores the required message interface of this role. The required message interface defines which messages are allowed to be received by this role.
+	 * \todosd{Uwe and my oponion: rename to senderMessageInterface
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #setSenderMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_SenderMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getRequired();
+	MessageInterface getSenderMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRequired <em>Required</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Required</em>' reference.
-	 * @see #getRequired()
+	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
+	 * @see #getSenderMessageInterface()
 	 * @generated
 	 */
-	void setRequired(MessageInterface value);
+	void setSenderMessageInterface(MessageInterface value);
 
 	/**
-	 * Returns the value of the '<em><b>Provided</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Provided</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provided</em>' reference.
-	 * @see #setProvided(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Provided()
+	 * <!-- begin-model-doc -->
+	 * This association stores the provided message interface of this role. The provided message interface defines which messages are allowed to be received by this role.
+	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #setReceiverMessageInterface(MessageInterface)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_ReceiverMessageInterface()
 	 * @model
 	 * @generated
 	 */
-	MessageInterface getProvided();
+	MessageInterface getReceiverMessageInterface();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getProvided <em>Provided</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provided</em>' reference.
-	 * @see #getProvided()
+	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
+	 * @see #getReceiverMessageInterface()
 	 * @generated
 	 */
-	void setProvided(MessageInterface value);
+	void setReceiverMessageInterface(MessageInterface value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
@@ -218,6 +193,9 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A role has a cardinality.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Cardinality()
@@ -246,6 +224,9 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ports this role is assigned to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Port()
 	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines
@@ -255,21 +236,30 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	EList<DiscretePortSpecification> getPort();
 
 	/**
-	 * Returns the value of the '<em><b>Channels</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole <em>Role</em>}'.
+	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Channels</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Channels</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Channels()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel#getRole
+	 * <!-- begin-model-doc -->
+	 * The adaptation behavior of this role. Note that only multi-ports have an adaptation behavior.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Adaptation Behavior</em>' containment reference.
+	 * @see #setAdaptationBehavior(AdaptationBehavior)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_AdaptationBehavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole
 	 * @model opposite="role" containment="true"
 	 * @generated
 	 */
-	EList<SynchronizationChannel> getChannels();
+	AdaptationBehavior getAdaptationBehavior();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Adaptation Behavior</em>' containment reference.
+	 * @see #getAdaptationBehavior()
+	 * @generated
+	 */
+	void setAdaptationBehavior(AdaptationBehavior value);
 
 } // Role

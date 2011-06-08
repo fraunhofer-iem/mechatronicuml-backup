@@ -52,8 +52,8 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getFromRev <em>From Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getToRev <em>To Rev</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,16 +121,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	protected EList<Delegation> delegation;
 
 	/**
-	 * The cached setting delegate for the '{@link #getPortsDerived() <em>Ports Derived</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortsDerived()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +129,16 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * @ordered
 	 */
 	protected Cardinality cardinality;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPortsDerived() <em>Ports Derived</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortsDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -430,10 +430,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return ((InternalEList<?>)getToRev()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT_PART__DELEGATION:
 				return ((InternalEList<?>)getDelegation()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return ((InternalEList<?>)getPortsDerived()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return basicSetCardinality(null, msgs);
+			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
+				return ((InternalEList<?>)getPortsDerived()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -473,10 +473,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return getToRev();
 			case ComponentPackage.COMPONENT_PART__DELEGATION:
 				return getDelegation();
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return getPortsDerived();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return getCardinality();
+			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
+				return getPortsDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -571,10 +571,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return toRev != null && !toRev.isEmpty();
 			case ComponentPackage.COMPONENT_PART__DELEGATION:
 				return delegation != null && !delegation.isEmpty();
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return isSetPortsDerived();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
+			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
+				return isSetPortsDerived();
 		}
 		return super.eIsSet(featureID);
 	}

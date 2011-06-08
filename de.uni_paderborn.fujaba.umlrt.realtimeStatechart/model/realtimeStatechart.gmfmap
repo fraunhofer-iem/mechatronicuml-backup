@@ -37,10 +37,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/entryAction"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/entryEvent"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/EntryAction"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/EntryEvent"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -51,10 +51,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/doAction"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/doEvent"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/DoAction"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/DoEvent"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
@@ -65,10 +65,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/exitAction"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/exitEvent"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/ExitAction"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/ExitEvent"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>

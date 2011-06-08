@@ -77,9 +77,8 @@ public class ComponentItemProvider
 			addPortsPropertyDescriptor(object);
 			addEClassPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
-			addMustImplementProvidedInterfacesPropertyDescriptor(object);
-			addMustImplementRequiredInterfacesPropertyDescriptor(object);
-			addKindPropertyDescriptor(object);
+			addMustImplementReceiverInterfacesPropertyDescriptor(object);
+			addMustImplementSenderInterfacesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -195,19 +194,19 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Must Implement Provided Interfaces feature.
+	 * This adds a property descriptor for the Must Implement Receiver Interfaces feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMustImplementProvidedInterfacesPropertyDescriptor(Object object) {
+	protected void addMustImplementReceiverInterfacesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementProvidedInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementProvidedInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_PROVIDED_INTERFACES,
+				 getString("_UI_Component_mustImplementReceiverInterfaces_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementReceiverInterfaces_feature", "_UI_Component_type"),
+				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES,
 				 true,
 				 false,
 				 true,
@@ -217,45 +216,23 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Must Implement Required Interfaces feature.
+	 * This adds a property descriptor for the Must Implement Sender Interfaces feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMustImplementRequiredInterfacesPropertyDescriptor(Object object) {
+	protected void addMustImplementSenderInterfacesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementRequiredInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementRequiredInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_REQUIRED_INTERFACES,
+				 getString("_UI_Component_mustImplementSenderInterfaces_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementSenderInterfaces_feature", "_UI_Component_type"),
+				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_kind_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -317,7 +294,6 @@ public class ComponentItemProvider
 
 		switch (notification.getFeatureID(Component.class)) {
 			case ComponentPackage.COMPONENT__COMMENT:
-			case ComponentPackage.COMPONENT__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT__PORTS:

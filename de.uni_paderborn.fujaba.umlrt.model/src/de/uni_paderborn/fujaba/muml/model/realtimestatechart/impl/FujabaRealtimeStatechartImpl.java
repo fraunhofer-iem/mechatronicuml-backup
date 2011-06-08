@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isHistory <em>History</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,6 +120,26 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected Iterator availableClocks = AVAILABLE_CLOCKS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isHistory() <em>History</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHistory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HISTORY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isHistory() <em>History</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHistory()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean history = HISTORY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,6 +325,27 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isHistory() {
+		return history;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHistory(boolean newHistory) {
+		boolean oldHistory = history;
+		history = newHistory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY, oldHistory, history));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -365,6 +407,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return getClocks();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				return getAvailableClocks();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
+				return isHistory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -399,6 +443,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				setAvailableClocks((Iterator)newValue);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
+				setHistory((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -429,6 +476,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				setAvailableClocks(AVAILABLE_CLOCKS_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
+				setHistory(HISTORY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -453,6 +503,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return clocks != null && !clocks.isEmpty();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
+				return history != HISTORY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -469,6 +521,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (availableClocks: ");
 		result.append(availableClocks);
+		result.append(", history: ");
+		result.append(history);
 		result.append(')');
 		return result.toString();
 	}
