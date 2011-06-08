@@ -177,7 +177,7 @@
           <details key="documentation" value="This is concrete port specification which provides the functionality of a hardware port."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"/>
         </eAnnotations>
@@ -886,12 +886,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an absolute deadline. It is always associated with a transition of the statechart. The deadline depends on the value of a certain clock."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/absoluteDeadlines">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="the transition for that this absolute deadline is defined"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clock" lowerBound="1"
             eType="#//model/realtimestatechart/Clock">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -903,12 +897,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a relative deadline. It is always associated with a transition of the statechart. The deadlin is relative to the point in time when the execution of the transition starts."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/relativeDeadline">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="the transition for that this relative deadline is defined"/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Clock" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -949,21 +937,21 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="doEvent" eType="#//model/realtimestatechart/DoEvent"
-            containment="true" eOpposite="#//model/realtimestatechart/DoEvent/state">
+            derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The do action. It is executed periodically while the corresponding complex state is active."/>
+            <details key="documentation" value="The do event. It is executed periodically while the corresponding state is active.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exitEvent" eType="#//model/realtimestatechart/ExitEvent"
-            containment="true" eOpposite="#//model/realtimestatechart/ExitEvent/state">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="exitEvent" eType="#//model/realtimestatechart/EntryOrExitEvent"
+            derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The exit action is exectuted once when the corresponding state is left."/>
+            <details key="documentation" value="The exit action is exectuted once when the corresponding state is left.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entryEvent" eType="#//model/realtimestatechart/EntryEvent"
-            containment="true" eOpposite="#//model/realtimestatechart/EntryEvent/state">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="entryEvent" eType="#//model/realtimestatechart/EntryOrExitEvent"
+            derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The entry action is exectuted once when the corresponding state is entered."/>
+            <details key="documentation" value="The entry action is exectuted once when the corresponding state is entered.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
@@ -989,14 +977,14 @@
             <details key="documentation" value="a final state is not allowed to have outgoing transitions."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="derivedExitPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/ExitPoint" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoints" upperBound="-1"
+            eType="#//model/realtimestatechart/ExitPoint" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The exit points of this state."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="derivedEntryPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/EntryPoint" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoints" upperBound="-1"
+            eType="#//model/realtimestatechart/EntryPoint" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The entry points of this state."/>
           </eAnnotations>
@@ -1013,16 +1001,13 @@
             <details key="documentation" value="The synchronization channels provided by this state."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+            eType="#//model/realtimestatechart/StateEvent" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
         </eAnnotations>
-        <eOperations name="getLongName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'.&#xD;&#xA;\todosd{Delete, because this is a view info.}"/>
-          </eAnnotations>
-        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
             upperBound="-1" eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1052,12 +1037,6 @@
             <details key="documentation" value="The synchronisation which is sent upon activation of this transition."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="transitionAction" upperBound="-1"
-            eType="#//model/realtimestatechart/ActionExpression" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//model/realtimestatechart/Vertex"
             eOpposite="#//model/realtimestatechart/Vertex/incomingTransitions">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1082,18 +1061,16 @@
             <details key="documentation" value="The clock resets of this transition."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="triggerEvents" upperBound="-1"
-            eType="#//model/realtimestatechart/AsynchronousEvent" containment="true"
-            eOpposite="#//model/realtimestatechart/AsynchronousEvent/triggeredTransition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="triggerMessageEvent"
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The trigger events of this transition. They are required for this transition to be activated."/>
+            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="raisedEvents" upperBound="-1"
-            eType="#//model/realtimestatechart/AsynchronousEvent" containment="true"
-            eOpposite="#//model/realtimestatechart/AsynchronousEvent/raisedTransition">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="raiseMessageEvent"
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The events which are raised upon activiation of this transition."/>
+            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="clockConstraints" upperBound="-1"
@@ -1103,19 +1080,18 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="absoluteDeadlines"
-            upperBound="-1" eType="#//model/realtimestatechart/AbsoluteDeadline" containment="true"
-            eOpposite="#//model/realtimestatechart/AbsoluteDeadline/transition">
+            upperBound="-1" eType="#//model/realtimestatechart/AbsoluteDeadline" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="a transition can has one or more absolute deadlines"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline" eType="#//model/realtimestatechart/RelativeDeadline"
-            containment="true" eOpposite="#//model/realtimestatechart/RelativeDeadline/transition">
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="a transition can have one relative deadline&#xD;&#xA;\todosd{delete? can be described by an absolute deadline}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safetyTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="\todosd{Rename to safety?}&#xD;&#xA;\todosd{What is a safety transition? Do we need that for failure propagation?}"/>
@@ -1131,6 +1107,14 @@
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).&#xD;&#xA;\todosd{restrict type of expression to ComparisionExpression or NotExpression or BinaryLogicExpression}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+            eType="#//model/realtimestatechart/TransitionEvent" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+            upperBound="-1" eType="#//model/realtimestatechart/ActionExpression" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1158,55 +1142,26 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ActionExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An action might be the side effect of a transition as well as the do, entry, or exit events of a state."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject">
+      <eClassifiers xsi:type="ecore:EClass" name="ActionExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/StateEvent">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The worst case execution time of this action.&#xD;&#xA;\todosd{Why is the type an ELongObject?}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AsynchronousEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/expressions/MethodCallExpression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="AsynchronousMessageEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/TransitionEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="triggeredTransition"
-            eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/triggerEvents">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The transition this events belongs to as trigger event."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="raisedTransition" eType="#//model/realtimestatechart/Transition"
-            eOpposite="#//model/realtimestatechart/Transition/raisedEvents">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The transition this event belongs to as raised event."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullEventName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The full event name is to be derived by the corresponding message type prefixed with the name of the message interface that defines the message type.&#xD;&#xA;\todosd{Delete, because this is a view information.}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+            eType="#//model/realtimestatechart/Message" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DoEvent">
+      <eClassifiers xsi:type="ecore:EClass" name="DoEvent" eSuperTypes="#//model/realtimestatechart/StateEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The action of a state that is executed periodically as long as this state is active. The first period starts after the execution of the entry-action."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-            upperBound="-1" eType="#//model/realtimestatechart/ActionExpression" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todosd{Change to inheritance?}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/doEvent">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The state this do-action belongs to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            upperBound="-1" eType="#//model/realtimestatechart/ActionExpression" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="the lower bound of the period"/>
@@ -1218,7 +1173,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent" abstract="true">
+      <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an entry or an exit action."/>
         </eAnnotations>
@@ -1231,29 +1186,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
             eType="#//model/realtimestatechart/ActionExpression" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Each entry or exit action can have one action.&#xD;&#xA;\todosd{Change to inheritance?}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryEvent" eSuperTypes="#//model/realtimestatechart/EntryOrExitEvent">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An entry action is executed if a state is activated."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/entryEvent">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The state this entry action belongs to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExitEvent" eSuperTypes="#//model/realtimestatechart/EntryOrExitEvent">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="An exit action is executed if a state is leaved."/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/exitEvent">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The state this exit action belongs to."/>
+            <details key="documentation" value="Each entry or exit action can have one or more actions."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1275,7 +1208,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" lowerBound="1"
             eType="#//model/realtimestatechart/SynchronizationChannel" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="the channel that is used by the synchronization&#xD;&#xA;\todosd{delete, because its derived?}"/>
+            <details key="documentation" value="the channel that is used by the synchronization&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationKind"
@@ -1346,6 +1279,24 @@
       <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
         <eLiterals name="SEND" literal=""/>
         <eLiterals name="RECEIVE" value="1"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/realtimestatechart/EventKind"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="TransitionEvent" abstract="true"
+          eSuperTypes="#//model/realtimestatechart/Event"/>
+      <eClassifiers xsi:type="ecore:EClass" name="StateEvent" abstract="true" eSuperTypes="#//model/realtimestatechart/Event"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//calls/Invocation">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
+            eType="#//model/msgiface/MessageType" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="EventKind">
+        <eLiterals name="RAISE"/>
+        <eLiterals name="TRIGGER" value="1"/>
       </eClassifiers>
       <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"
           nsPrefix="helper">
