@@ -98,7 +98,7 @@
             eType="#//model/msgiface/MessageInterface" volatile="true" transient="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).requiredMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).senderMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
@@ -108,7 +108,7 @@
             eType="#//model/msgiface/MessageInterface" volatile="true" transient="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).providedMessageInterface&#xA;endif"/>
+            <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).receiverMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
@@ -529,7 +529,7 @@
           <details key="documentation" value="Abstract super class for all model elements that may carry a constraint."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
-            eType="#//model/constraint/Constraint" eOpposite="#//model/constraint/Constraint/constrainableElement">
+            eType="#//model/constraint/Constraint" containment="true" eOpposite="#//model/constraint/Constraint/constrainableElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The constraint for this element."/>
           </eAnnotations>
