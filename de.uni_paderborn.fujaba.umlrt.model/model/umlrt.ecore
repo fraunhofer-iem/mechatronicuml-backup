@@ -937,19 +937,19 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="doEvent" eType="#//model/realtimestatechart/DoEvent"
-            derived="true">
+            derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The do event. It is executed periodically while the corresponding state is active.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="exitEvent" eType="#//model/realtimestatechart/EntryOrExitEvent"
-            derived="true">
+            derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The exit action is exectuted once when the corresponding state is left.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="entryEvent" eType="#//model/realtimestatechart/EntryOrExitEvent"
-            derived="true">
+            derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The entry action is exectuted once when the corresponding state is entered.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
