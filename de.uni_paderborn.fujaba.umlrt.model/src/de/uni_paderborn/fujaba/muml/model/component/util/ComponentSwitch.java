@@ -156,7 +156,6 @@ public class ComponentSwitch<T> {
 			case ComponentPackage.COMPONENT_PART: {
 				ComponentPart componentPart = (ComponentPart)theEObject;
 				T result = caseComponentPart(componentPart);
-				if (result == null) result = caseNamedElement(componentPart);
 				if (result == null) result = caseCommentableElement(componentPart);
 				if (result == null) result = caseExtendableElement(componentPart);
 				if (result == null) result = defaultCase(theEObject);

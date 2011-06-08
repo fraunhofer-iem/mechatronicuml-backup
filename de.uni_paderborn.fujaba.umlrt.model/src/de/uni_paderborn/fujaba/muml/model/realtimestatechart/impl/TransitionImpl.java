@@ -28,7 +28,7 @@ import org.storydriven.modeling.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 
 /**
@@ -48,19 +49,20 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAnnotations <em>Annotation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getExtensions <em>Extension</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronization <em>Synchronization</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTransitionAction <em>Transition Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getStatechart <em>Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getClockResets <em>Clock Resets</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTriggerEvents <em>Trigger Events</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getRaisedEvents <em>Raised Events</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getTriggerMessageEvent <em>Trigger Message Event</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getRaiseMessageEvent <em>Raise Message Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getClockConstraints <em>Clock Constraints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAbsoluteDeadlines <em>Absolute Deadlines</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getRelativeDeadline <em>Relative Deadline</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isSafetyTransition <em>Safety Transition</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isSafe <em>Safe</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,16 +100,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected Synchronization synchronization;
 
 	/**
-	 * The cached value of the '{@link #getTransitionAction() <em>Transition Action</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitionAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ActionExpression> transitionAction;
-
-	/**
 	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,24 +130,24 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected EList<Clock> clockResets;
 
 	/**
-	 * The cached value of the '{@link #getTriggerEvents() <em>Trigger Events</em>}' containment reference list.
+	 * The cached value of the '{@link #getTriggerMessageEvent() <em>Trigger Message Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTriggerEvents()
+	 * @see #getTriggerMessageEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AsynchronousEvent> triggerEvents;
+	protected AsynchronousMessageEvent triggerMessageEvent;
 
 	/**
-	 * The cached value of the '{@link #getRaisedEvents() <em>Raised Events</em>}' containment reference list.
+	 * The cached value of the '{@link #getRaiseMessageEvent() <em>Raise Message Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRaisedEvents()
+	 * @see #getRaiseMessageEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AsynchronousEvent> raisedEvents;
+	protected AsynchronousMessageEvent raiseMessageEvent;
 
 	/**
 	 * The cached value of the '{@link #getClockConstraints() <em>Clock Constraints</em>}' containment reference list.
@@ -188,24 +180,24 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected RelativeDeadline relativeDeadline;
 
 	/**
-	 * The default value of the '{@link #isSafetyTransition() <em>Safety Transition</em>}' attribute.
+	 * The default value of the '{@link #isSafe() <em>Safe</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSafetyTransition()
+	 * @see #isSafe()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SAFETY_TRANSITION_EDEFAULT = false;
+	protected static final boolean SAFE_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isSafetyTransition() <em>Safety Transition</em>}' attribute.
+	 * The cached value of the '{@link #isSafe() <em>Safe</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSafetyTransition()
+	 * @see #isSafe()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean safetyTransition = SAFETY_TRANSITION_EDEFAULT;
+	protected boolean safe = SAFE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
@@ -236,6 +228,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected Expression guard;
+
+	/**
+	 * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TransitionEvent> events;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ActionExpression> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -321,18 +333,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION, newSynchronization, newSynchronization));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ActionExpression> getTransitionAction() {
-		if (transitionAction == null) {
-			transitionAction = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION);
-		}
-		return transitionAction;
 	}
 
 	/**
@@ -513,11 +513,16 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AsynchronousEvent> getTriggerEvents() {
-		if (triggerEvents == null) {
-			triggerEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION);
+	public AsynchronousMessageEvent getTriggerMessageEvent() {
+		if (triggerMessageEvent != null && triggerMessageEvent.eIsProxy()) {
+			InternalEObject oldTriggerMessageEvent = (InternalEObject)triggerMessageEvent;
+			triggerMessageEvent = (AsynchronousMessageEvent)eResolveProxy(oldTriggerMessageEvent);
+			if (triggerMessageEvent != oldTriggerMessageEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT, oldTriggerMessageEvent, triggerMessageEvent));
+			}
 		}
-		return triggerEvents;
+		return triggerMessageEvent;
 	}
 
 	/**
@@ -525,11 +530,58 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AsynchronousEvent> getRaisedEvents() {
-		if (raisedEvents == null) {
-			raisedEvents = new EObjectContainmentWithInverseEList<AsynchronousEvent>(AsynchronousEvent.class, this, RealtimestatechartPackage.TRANSITION__RAISED_EVENTS, RealtimestatechartPackage.ASYNCHRONOUS_EVENT__RAISED_TRANSITION);
+	public AsynchronousMessageEvent basicGetTriggerMessageEvent() {
+		return triggerMessageEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTriggerMessageEvent(AsynchronousMessageEvent newTriggerMessageEvent) {
+		AsynchronousMessageEvent oldTriggerMessageEvent = triggerMessageEvent;
+		triggerMessageEvent = newTriggerMessageEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT, oldTriggerMessageEvent, triggerMessageEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AsynchronousMessageEvent getRaiseMessageEvent() {
+		if (raiseMessageEvent != null && raiseMessageEvent.eIsProxy()) {
+			InternalEObject oldRaiseMessageEvent = (InternalEObject)raiseMessageEvent;
+			raiseMessageEvent = (AsynchronousMessageEvent)eResolveProxy(oldRaiseMessageEvent);
+			if (raiseMessageEvent != oldRaiseMessageEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT, oldRaiseMessageEvent, raiseMessageEvent));
+			}
 		}
-		return raisedEvents;
+		return raiseMessageEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AsynchronousMessageEvent basicGetRaiseMessageEvent() {
+		return raiseMessageEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRaiseMessageEvent(AsynchronousMessageEvent newRaiseMessageEvent) {
+		AsynchronousMessageEvent oldRaiseMessageEvent = raiseMessageEvent;
+		raiseMessageEvent = newRaiseMessageEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT, oldRaiseMessageEvent, raiseMessageEvent));
 	}
 
 	/**
@@ -551,7 +603,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 */
 	public EList<AbsoluteDeadline> getAbsoluteDeadlines() {
 		if (absoluteDeadlines == null) {
-			absoluteDeadlines = new EObjectContainmentWithInverseEList<AbsoluteDeadline>(AbsoluteDeadline.class, this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES, RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION);
+			absoluteDeadlines = new EObjectContainmentEList<AbsoluteDeadline>(AbsoluteDeadline.class, this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES);
 		}
 		return absoluteDeadlines;
 	}
@@ -589,9 +641,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		if (newRelativeDeadline != relativeDeadline) {
 			NotificationChain msgs = null;
 			if (relativeDeadline != null)
-				msgs = ((InternalEObject)relativeDeadline).eInverseRemove(this, RealtimestatechartPackage.RELATIVE_DEADLINE__TRANSITION, RelativeDeadline.class, msgs);
+				msgs = ((InternalEObject)relativeDeadline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE, null, msgs);
 			if (newRelativeDeadline != null)
-				msgs = ((InternalEObject)newRelativeDeadline).eInverseAdd(this, RealtimestatechartPackage.RELATIVE_DEADLINE__TRANSITION, RelativeDeadline.class, msgs);
+				msgs = ((InternalEObject)newRelativeDeadline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE, null, msgs);
 			msgs = basicSetRelativeDeadline(newRelativeDeadline, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -604,8 +656,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSafetyTransition() {
-		return safetyTransition;
+	public boolean isSafe() {
+		return safe;
 	}
 
 	/**
@@ -613,11 +665,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSafetyTransition(boolean newSafetyTransition) {
-		boolean oldSafetyTransition = safetyTransition;
-		safetyTransition = newSafetyTransition;
+	public void setSafe(boolean newSafe) {
+		boolean oldSafe = safe;
+		safe = newSafe;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION, oldSafetyTransition, safetyTransition));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__SAFE, oldSafe, safe));
 	}
 
 	/**
@@ -689,6 +741,30 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<TransitionEvent> getEvents() {
+		if (events == null) {
+			events = new EObjectContainmentEList<TransitionEvent>(TransitionEvent.class, this, RealtimestatechartPackage.TRANSITION__EVENTS);
+		}
+		return events;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ActionExpression> getAction() {
+		if (action == null) {
+			action = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.TRANSITION__ACTION);
+		}
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -751,16 +827,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetStatechart((FujabaRealtimeStatechart)otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTriggerEvents()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRaisedEvents()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAbsoluteDeadlines()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
-				if (relativeDeadline != null)
-					msgs = ((InternalEObject)relativeDeadline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE, null, msgs);
-				return basicSetRelativeDeadline((RelativeDeadline)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -779,18 +845,12 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return basicSetSynchronization(null, msgs);
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				return ((InternalEList<?>)getTransitionAction()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return basicSetTarget(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				return basicSetSource(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
 				return basicSetStatechart(null, msgs);
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				return ((InternalEList<?>)getTriggerEvents()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				return ((InternalEList<?>)getRaisedEvents()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				return ((InternalEList<?>)getClockConstraints()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -799,6 +859,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return basicSetRelativeDeadline(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return basicSetGuard(null, msgs);
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.TRANSITION__ACTION:
+				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -831,8 +895,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getExtensions();
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return getSynchronization();
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				return getTransitionAction();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
@@ -843,22 +905,28 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getStatechart();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				return getClockResets();
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				return getTriggerEvents();
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				return getRaisedEvents();
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
+				if (resolve) return getTriggerMessageEvent();
+				return basicGetTriggerMessageEvent();
+			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
+				if (resolve) return getRaiseMessageEvent();
+				return basicGetRaiseMessageEvent();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				return getClockConstraints();
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 				return getAbsoluteDeadlines();
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				return getRelativeDeadline();
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
-				return isSafetyTransition();
+			case RealtimestatechartPackage.TRANSITION__SAFE:
+				return isSafe();
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return getGuard();
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+				return getEvents();
+			case RealtimestatechartPackage.TRANSITION__ACTION:
+				return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -883,10 +951,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				getTransitionAction().clear();
-				getTransitionAction().addAll((Collection<? extends ActionExpression>)newValue);
-				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)newValue);
 				return;
@@ -900,13 +964,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getClockResets().clear();
 				getClockResets().addAll((Collection<? extends Clock>)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				getTriggerEvents().clear();
-				getTriggerEvents().addAll((Collection<? extends AsynchronousEvent>)newValue);
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
+				setTriggerMessageEvent((AsynchronousMessageEvent)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				getRaisedEvents().clear();
-				getRaisedEvents().addAll((Collection<? extends AsynchronousEvent>)newValue);
+			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
+				setRaiseMessageEvent((AsynchronousMessageEvent)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
@@ -919,14 +981,22 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				setRelativeDeadline((RelativeDeadline)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
-				setSafetyTransition((Boolean)newValue);
+			case RealtimestatechartPackage.TRANSITION__SAFE:
+				setSafe((Boolean)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent((Boolean)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+				getEvents().clear();
+				getEvents().addAll((Collection<? extends TransitionEvent>)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__ACTION:
+				getAction().clear();
+				getAction().addAll((Collection<? extends ActionExpression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -949,9 +1019,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				setSynchronization((Synchronization)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				getTransitionAction().clear();
-				return;
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				setTarget((Vertex)null);
 				return;
@@ -964,11 +1031,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				getTriggerEvents().clear();
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
+				setTriggerMessageEvent((AsynchronousMessageEvent)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				getRaisedEvents().clear();
+			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
+				setRaiseMessageEvent((AsynchronousMessageEvent)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
@@ -979,14 +1046,20 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				setRelativeDeadline((RelativeDeadline)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
-				setSafetyTransition(SAFETY_TRANSITION_EDEFAULT);
+			case RealtimestatechartPackage.TRANSITION__SAFE:
+				setSafe(SAFE_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent(URGENT_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				setGuard((Expression)null);
+				return;
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+				getEvents().clear();
+				return;
+			case RealtimestatechartPackage.TRANSITION__ACTION:
+				getAction().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -1006,8 +1079,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return extensions != null && !extensions.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 				return synchronization != null;
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-				return transitionAction != null && !transitionAction.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__TARGET:
 				return target != null;
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
@@ -1016,22 +1087,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getStatechart() != null;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				return clockResets != null && !clockResets.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-				return triggerEvents != null && !triggerEvents.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
-				return raisedEvents != null && !raisedEvents.isEmpty();
+			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
+				return triggerMessageEvent != null;
+			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
+				return raiseMessageEvent != null;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				return clockConstraints != null && !clockConstraints.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 				return absoluteDeadlines != null && !absoluteDeadlines.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 				return relativeDeadline != null;
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
-				return safetyTransition != SAFETY_TRANSITION_EDEFAULT;
+			case RealtimestatechartPackage.TRANSITION__SAFE:
+				return safe != SAFE_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.TRANSITION__GUARD:
 				return guard != null;
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+				return events != null && !events.isEmpty();
+			case RealtimestatechartPackage.TRANSITION__ACTION:
+				return action != null && !action.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1090,8 +1165,8 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (safetyTransition: ");
-		result.append(safetyTransition);
+		result.append(" (safe: ");
+		result.append(safe);
 		result.append(", urgent: ");
 		result.append(urgent);
 		result.append(')');

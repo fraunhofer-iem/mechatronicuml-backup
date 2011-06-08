@@ -34,13 +34,7 @@ public class ComponentPartLabelExpressionLabelParser implements IParser {
 	 * @generated
 	 */
 	public String getEditString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.UmlrtOCLFactory
-				.getExpression(
-						3,
-						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-								.getComponentPart(), null).evaluate(target);
-		return String.valueOf(result);
+		return getPrintString(element, flags);
 	}
 
 	/**

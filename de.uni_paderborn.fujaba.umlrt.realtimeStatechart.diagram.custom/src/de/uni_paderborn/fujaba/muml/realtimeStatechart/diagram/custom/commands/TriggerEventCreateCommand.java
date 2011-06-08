@@ -18,7 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -69,13 +69,15 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 
-		AsynchronousEvent newElement = RealtimestatechartFactory.eINSTANCE
-				.createAsynchronousEvent();
+		AsynchronousMessageEvent newElement = RealtimestatechartFactory.eINSTANCE
+				.createAsynchronousMessageEvent();
 
 		Transition owner = (Transition) getElementToEdit();
 
-		owner.getTriggerEvents().add(newElement);
+		owner.setTriggerMessageEvent(newElement);
 
+		// TODO: Fix this old code.
+		/*
 		newElement.setCallee(messageType);
 
 		Iterator<EParameter> iter = parameterValuesHashMap.keySet().iterator();
@@ -98,6 +100,7 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 			literalExpr.setValue(value);
 			literalExpr.setValueType((EDataType) tmp.getEType());
 		}
+		*/
 
 		doConfigure(newElement, monitor, info);
 
@@ -108,7 +111,7 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(AsynchronousEvent newElement,
+	protected void doConfigure(AsynchronousMessageEvent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -40,7 +40,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/entryEvent"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/EntryEvent"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/EntryOrExitEvent"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -68,7 +68,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/exitEvent"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/ExitEvent"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/EntryOrExitEvent"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>

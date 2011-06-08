@@ -579,7 +579,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
+	int COMPONENT_PART__ANNOTATION = SDMPackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -588,16 +588,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_PART__NAME = SDMPackage.NAMED_ELEMENT__NAME;
+	int COMPONENT_PART__EXTENSION = SDMPackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -606,7 +597,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_PART__COMMENT = SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
@@ -615,7 +606,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_PART__COMPONENT_TYPE = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -624,7 +615,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__PARENT_COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_PART__PARENT_COMPONENT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Rev</b></em>' reference list.
@@ -633,7 +624,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__FROM_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_PART__FROM_REV = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>To Rev</b></em>' reference list.
@@ -642,7 +633,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__TO_REV = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_PART__TO_REV = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Delegation</b></em>' reference list.
@@ -651,7 +642,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__DELEGATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_PART__DELEGATION = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -660,7 +651,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_PART__CARDINALITY = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ports Derived</b></em>' containment reference list.
@@ -669,7 +660,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_PART__PORTS_DERIVED = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -678,7 +669,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_PART_FEATURE_COUNT = SDMPackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl <em>Structured Component</em>}' class.

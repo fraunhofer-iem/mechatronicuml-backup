@@ -44,7 +44,7 @@ import org.storydriven.modeling.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()'"
  * @generated
  */
-public interface ComponentPart extends NamedElement, CommentableElement {
+public interface ComponentPart extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.

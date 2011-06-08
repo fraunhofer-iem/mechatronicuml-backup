@@ -126,8 +126,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createActionExpressionAdapter();
 			}
 			@Override
-			public Adapter caseAsynchronousEvent(AsynchronousEvent object) {
-				return createAsynchronousEventAdapter();
+			public Adapter caseAsynchronousMessageEvent(AsynchronousMessageEvent object) {
+				return createAsynchronousMessageEventAdapter();
 			}
 			@Override
 			public Adapter caseDoEvent(DoEvent object) {
@@ -136,14 +136,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEntryOrExitEvent(EntryOrExitEvent object) {
 				return createEntryOrExitEventAdapter();
-			}
-			@Override
-			public Adapter caseEntryEvent(EntryEvent object) {
-				return createEntryEventAdapter();
-			}
-			@Override
-			public Adapter caseExitEvent(ExitEvent object) {
-				return createExitEventAdapter();
 			}
 			@Override
 			public Adapter caseSynchronizationChannel(SynchronizationChannel object) {
@@ -170,6 +162,22 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createExitPointAdapter();
 			}
 			@Override
+			public Adapter caseEvent(Event object) {
+				return createEventAdapter();
+			}
+			@Override
+			public Adapter caseTransitionEvent(TransitionEvent object) {
+				return createTransitionEventAdapter();
+			}
+			@Override
+			public Adapter caseStateEvent(StateEvent object) {
+				return createStateEventAdapter();
+			}
+			@Override
+			public Adapter caseMessage(Message object) {
+				return createMessageAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -190,16 +198,12 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createExpressionAdapter();
 			}
 			@Override
-			public Adapter caseInvocation(Invocation object) {
-				return createInvocationAdapter();
-			}
-			@Override
-			public Adapter caseMethodCallExpression(MethodCallExpression object) {
-				return createMethodCallExpressionAdapter();
-			}
-			@Override
 			public Adapter caseCallable(Callable object) {
 				return createCallableAdapter();
+			}
+			@Override
+			public Adapter caseInvocation(Invocation object) {
+				return createInvocationAdapter();
 			}
 			@Override
 			public Adapter caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
@@ -366,16 +370,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent <em>Asynchronous Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent <em>Asynchronous Message Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent
 	 * @generated
 	 */
-	public Adapter createAsynchronousEventAdapter() {
+	public Adapter createAsynchronousMessageEventAdapter() {
 		return null;
 	}
 
@@ -404,34 +408,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntryOrExitEventAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent <em>Entry Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent
-	 * @generated
-	 */
-	public Adapter createEntryEventAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent <em>Exit Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent
-	 * @generated
-	 */
-	public Adapter createExitEventAdapter() {
 		return null;
 	}
 
@@ -520,6 +496,62 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event <em>Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event
+	 * @generated
+	 */
+	public Adapter createEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent <em>Transition Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent
+	 * @generated
+	 */
+	public Adapter createTransitionEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent <em>State Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent
+	 * @generated
+	 */
+	public Adapter createStateEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message
+	 * @generated
+	 */
+	public Adapter createMessageAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -600,20 +632,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInvocationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.calls.expressions.MethodCallExpression <em>Method Call Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.modeling.calls.expressions.MethodCallExpression
-	 * @generated
-	 */
-	public Adapter createMethodCallExpressionAdapter() {
 		return null;
 	}
 

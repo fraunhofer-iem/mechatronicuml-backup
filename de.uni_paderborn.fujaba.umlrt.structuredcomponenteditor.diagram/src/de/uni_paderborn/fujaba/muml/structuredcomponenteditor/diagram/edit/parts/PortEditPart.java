@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -21,11 +22,15 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -285,6 +290,18 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 		 * @generated
 		 */
 		private RectangleFigure fFigureInnerRectContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureOutlineRectangle;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureShadowRectangle;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureHardwareTypeLabel;
 
 		/**
 		 * @generated
@@ -311,9 +328,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			this.add(aux10);
 			aux10.setLayoutManager(new StackLayout());
 
-			RectangleFigure shadow1 = new RectangleFigure();
+			fFigureShadowRectangle = new RectangleFigure();
 
-			aux10.add(shadow1);
+			aux10.add(fFigureShadowRectangle);
 
 			fFigureInnerRectContainer = new RectangleFigure();
 			fFigureInnerRectContainer.setFill(false);
@@ -325,9 +342,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			this.add(fFigureInnerRectContainer);
 			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
 
-			RectangleFigure innerRectangle1 = new RectangleFigure();
+			fFigureOutlineRectangle = new RectangleFigure();
 
-			fFigureInnerRectContainer.add(innerRectangle1);
+			fFigureInnerRectContainer.add(fFigureOutlineRectangle);
 
 			RectangleFigure inPolygonContainer1 = new RectangleFigure();
 			inPolygonContainer1.setFill(false);
@@ -346,7 +363,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 					getMapMode().DPtoLP(1)));
 			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(2)));
+			fFigureInPolygon.setFill(true);
 			fFigureInPolygon.setOutline(false);
+			fFigureInPolygon.setBackgroundColor(ColorConstants.gray);
 
 			inPolygonContainer1.add(fFigureInPolygon);
 
@@ -367,7 +386,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 					getMapMode().DPtoLP(1)));
 			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(2)));
+			fFigureOutPolygon.setFill(true);
 			fFigureOutPolygon.setOutline(false);
+			fFigureOutPolygon.setBackgroundColor(ColorConstants.gray);
 
 			outPolygonContainer1.add(fFigureOutPolygon);
 
@@ -394,9 +415,18 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 					getMapMode().DPtoLP(1)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(2)));
+			fFigureInOutPolygon.setFill(true);
 			fFigureInOutPolygon.setOutline(false);
+			fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);
 
 			inOutPolygonContainer1.add(fFigureInOutPolygon);
+
+			fFigureHardwareTypeLabel = new WrappingLabel();
+			fFigureHardwareTypeLabel.setText("");
+
+			fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);
+
+			fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);
 
 		}
 
@@ -428,6 +458,34 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			return fFigureInnerRectContainer;
 		}
 
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutlineRectangle() {
+			return fFigureOutlineRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureShadowRectangle() {
+			return fFigureShadowRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureHardwareTypeLabel() {
+			return fFigureHardwareTypeLabel;
+		}
+
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREHARDWARETYPELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 7, SWT.NORMAL);
 
 }

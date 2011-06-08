@@ -91,11 +91,11 @@ public class UmlrtDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent childElement = modelElement
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
 					.getEntryEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID) {
+			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEventEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor(
 						childElement, visualID));
 			}
@@ -111,11 +111,11 @@ public class UmlrtDiagramUpdater {
 			}
 		}
 		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent childElement = modelElement
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
 					.getExitEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID) {
+			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEvent2EditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtNodeDescriptor(
 						childElement, visualID));
 			}
@@ -226,12 +226,12 @@ public class UmlrtDiagramUpdater {
 			return getState_2001ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
 			return getClock_2002ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getEntryEvent_3007ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEventEditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3010ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3008ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return getExitEvent_3009ContainedLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEvent2EditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3011ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID:
 			return getClockConstraint_3004ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID:
@@ -255,12 +255,12 @@ public class UmlrtDiagramUpdater {
 			return getState_2001IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
 			return getClock_2002IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getEntryEvent_3007IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEventEditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3010IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3008IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return getExitEvent_3009IncomingLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEvent2EditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3011IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID:
 			return getClockConstraint_3004IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID:
@@ -284,12 +284,12 @@ public class UmlrtDiagramUpdater {
 			return getState_2001OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
 			return getClock_2002OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return getEntryEvent_3007OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEventEditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3010OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
 			return getDoEvent_3008OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return getExitEvent_3009OutgoingLinks(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEvent2EditPart.VISUAL_ID:
+			return getEntryOrExitEvent_3011OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID:
 			return getClockConstraint_3004OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID:
@@ -333,7 +333,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryEvent_3007ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3010ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -349,7 +349,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getExitEvent_3009ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3011ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -412,7 +412,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryEvent_3007IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3010IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -428,7 +428,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getExitEvent_3009IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3011IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -488,7 +488,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryEvent_3007OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3010OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -504,7 +504,7 @@ public class UmlrtDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getExitEvent_3009OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtLinkDescriptor> getEntryOrExitEvent_3011OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

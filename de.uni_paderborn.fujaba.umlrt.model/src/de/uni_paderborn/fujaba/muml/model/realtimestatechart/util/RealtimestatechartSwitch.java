@@ -174,48 +174,35 @@ public class RealtimestatechartSwitch<T> {
 				T result = caseActionExpression(actionExpression);
 				if (result == null) result = caseExpression(actionExpression);
 				if (result == null) result = caseNamedElement(actionExpression);
+				if (result == null) result = caseStateEvent(actionExpression);
 				if (result == null) result = caseTypedElement(actionExpression);
 				if (result == null) result = caseCommentableElement(actionExpression);
+				if (result == null) result = caseEvent(actionExpression);
 				if (result == null) result = caseExtendableElement(actionExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: {
-				AsynchronousEvent asynchronousEvent = (AsynchronousEvent)theEObject;
-				T result = caseAsynchronousEvent(asynchronousEvent);
-				if (result == null) result = caseMethodCallExpression(asynchronousEvent);
-				if (result == null) result = caseNamedElement(asynchronousEvent);
-				if (result == null) result = caseExpression(asynchronousEvent);
-				if (result == null) result = caseInvocation(asynchronousEvent);
-				if (result == null) result = caseTypedElement(asynchronousEvent);
-				if (result == null) result = caseCommentableElement(asynchronousEvent);
-				if (result == null) result = caseExtendableElement(asynchronousEvent);
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT: {
+				AsynchronousMessageEvent asynchronousMessageEvent = (AsynchronousMessageEvent)theEObject;
+				T result = caseAsynchronousMessageEvent(asynchronousMessageEvent);
+				if (result == null) result = caseNamedElement(asynchronousMessageEvent);
+				if (result == null) result = caseTransitionEvent(asynchronousMessageEvent);
+				if (result == null) result = caseExtendableElement(asynchronousMessageEvent);
+				if (result == null) result = caseEvent(asynchronousMessageEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RealtimestatechartPackage.DO_EVENT: {
 				DoEvent doEvent = (DoEvent)theEObject;
 				T result = caseDoEvent(doEvent);
+				if (result == null) result = caseStateEvent(doEvent);
+				if (result == null) result = caseEvent(doEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: {
 				EntryOrExitEvent entryOrExitEvent = (EntryOrExitEvent)theEObject;
 				T result = caseEntryOrExitEvent(entryOrExitEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.ENTRY_EVENT: {
-				EntryEvent entryEvent = (EntryEvent)theEObject;
-				T result = caseEntryEvent(entryEvent);
-				if (result == null) result = caseEntryOrExitEvent(entryEvent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RealtimestatechartPackage.EXIT_EVENT: {
-				ExitEvent exitEvent = (ExitEvent)theEObject;
-				T result = caseExitEvent(exitEvent);
-				if (result == null) result = caseEntryOrExitEvent(exitEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,6 +256,35 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = caseVertex(exitPoint);
 				if (result == null) result = caseNamedElement(exitPoint);
 				if (result == null) result = caseExtendableElement(exitPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.EVENT: {
+				Event event = (Event)theEObject;
+				T result = caseEvent(event);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.TRANSITION_EVENT: {
+				TransitionEvent transitionEvent = (TransitionEvent)theEObject;
+				T result = caseTransitionEvent(transitionEvent);
+				if (result == null) result = caseEvent(transitionEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.STATE_EVENT: {
+				StateEvent stateEvent = (StateEvent)theEObject;
+				T result = caseStateEvent(stateEvent);
+				if (result == null) result = caseEvent(stateEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.MESSAGE: {
+				Message message = (Message)theEObject;
+				T result = caseMessage(message);
+				if (result == null) result = caseInvocation(message);
+				if (result == null) result = caseCommentableElement(message);
+				if (result == null) result = caseExtendableElement(message);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -427,17 +443,17 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Asynchronous Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Asynchronous Message Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Asynchronous Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Asynchronous Message Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAsynchronousEvent(AsynchronousEvent object) {
+	public T caseAsynchronousMessageEvent(AsynchronousMessageEvent object) {
 		return null;
 	}
 
@@ -468,36 +484,6 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseEntryOrExitEvent(EntryOrExitEvent object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entry Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entry Event</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntryEvent(EntryEvent object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Exit Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Exit Event</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExitEvent(ExitEvent object) {
 		return null;
 	}
 
@@ -592,6 +578,66 @@ public class RealtimestatechartSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEvent(Event object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Transition Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Transition Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTransitionEvent(TransitionEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateEvent(StateEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessage(Message object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -678,21 +724,6 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseInvocation(Invocation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Method Call Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Method Call Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMethodCallExpression(MethodCallExpression object) {
 		return null;
 	}
 

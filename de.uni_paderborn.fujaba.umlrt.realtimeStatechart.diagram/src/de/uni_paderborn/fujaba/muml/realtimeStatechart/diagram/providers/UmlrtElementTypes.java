@@ -57,7 +57,7 @@ public class UmlrtElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EntryEvent_3007 = getElementType("de.uni_paderborn.fujaba.realtimeStatechart.diagram.EntryEvent_3007"); //$NON-NLS-1$
+	public static final IElementType EntryOrExitEvent_3010 = getElementType("de.uni_paderborn.fujaba.realtimeStatechart.diagram.EntryOrExitEvent_3010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public class UmlrtElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExitEvent_3009 = getElementType("de.uni_paderborn.fujaba.realtimeStatechart.diagram.ExitEvent_3009"); //$NON-NLS-1$
+	public static final IElementType EntryOrExitEvent_3011 = getElementType("de.uni_paderborn.fujaba.realtimeStatechart.diagram.EntryOrExitEvent_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -210,9 +210,9 @@ public class UmlrtElementTypes {
 							.getClock());
 
 			elements.put(
-					EntryEvent_3007,
+					EntryOrExitEvent_3010,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getEntryEvent());
+							.getEntryOrExitEvent());
 
 			elements.put(
 					DoEvent_3008,
@@ -220,9 +220,9 @@ public class UmlrtElementTypes {
 							.getDoEvent());
 
 			elements.put(
-					ExitEvent_3009,
+					EntryOrExitEvent_3011,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-							.getExitEvent());
+							.getEntryOrExitEvent());
 
 			elements.put(
 					ClockConstraint_3004,
@@ -263,9 +263,9 @@ public class UmlrtElementTypes {
 			KNOWN_ELEMENT_TYPES.add(FujabaRealtimeStatechart_1000);
 			KNOWN_ELEMENT_TYPES.add(State_2001);
 			KNOWN_ELEMENT_TYPES.add(Clock_2002);
-			KNOWN_ELEMENT_TYPES.add(EntryEvent_3007);
+			KNOWN_ELEMENT_TYPES.add(EntryOrExitEvent_3010);
 			KNOWN_ELEMENT_TYPES.add(DoEvent_3008);
-			KNOWN_ELEMENT_TYPES.add(ExitEvent_3009);
+			KNOWN_ELEMENT_TYPES.add(EntryOrExitEvent_3011);
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3004);
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3005);
 			KNOWN_ELEMENT_TYPES.add(Region_3006);
@@ -285,12 +285,12 @@ public class UmlrtElementTypes {
 			return State_2001;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart.VISUAL_ID:
 			return Clock_2002;
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return EntryEvent_3007;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEventEditPart.VISUAL_ID:
+			return EntryOrExitEvent_3010;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
 			return DoEvent_3008;
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return ExitEvent_3009;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryOrExitEvent2EditPart.VISUAL_ID:
+			return EntryOrExitEvent_3011;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID:
 			return ClockConstraint_3004;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID:

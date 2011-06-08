@@ -94,16 +94,4 @@ public interface Vertex extends NamedElement {
 	 */
 	void setStatechart(FujabaRealtimeStatechart value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Yields the name of this state prefixed with the names of all realtime statecharts reachable upwards in the hierarchy seperated by '_'.
-	 * \todosd{Delete, because this is a view info.}
-	 * <!-- end-model-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	String getLongName();
-
 } // Vertex

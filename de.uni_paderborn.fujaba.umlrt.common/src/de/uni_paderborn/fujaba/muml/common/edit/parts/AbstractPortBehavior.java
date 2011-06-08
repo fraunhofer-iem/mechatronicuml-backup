@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.muml.model.component.PortKind;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 /**
@@ -72,10 +73,9 @@ public abstract class AbstractPortBehavior {
 	}
 
 	/**
-	 * Updates the PortFigure to visualize a generic port, an InPort, OutPort or
-	 * InOutPort, according to the current model state.
+	 * Updates the PortFigure to visualize a specific kind of port.
 	 */
-	public void updatePortType(MessageInterface sender, MessageInterface receiver) {
+	public void updatePortKindAndPortType(PortKind portKind, MessageInterface sender, MessageInterface receiver) {
 		if (portFigure != null) {
 			CustomPortFigure.PortType portType;
 			if (sender != null && receiver != null) {
@@ -88,7 +88,7 @@ public abstract class AbstractPortBehavior {
 				portType = CustomPortFigure.PortType.NONE;
 			}
 
-			portFigure.setPortType(portType);
+			portFigure.setPortKindAndPortType(portKind, portType);
 		}
 	}
 
@@ -128,12 +128,12 @@ public abstract class AbstractPortBehavior {
 		if (locator instanceof BorderItemLocator) {
 			((BorderItemLocator) locator).setBorderItemOffset(offset);
 		}
-		updatePortType();
+		updatePortKindAndPortType();
 		updatePortCardinality();
 	}
 
-	public abstract void updatePortType();
 	public abstract void updatePortCardinality();
+	public abstract void updatePortKindAndPortType();
 
 	/**
 	 * Called whenever the EditPart is going to be deactivated. Cleans up

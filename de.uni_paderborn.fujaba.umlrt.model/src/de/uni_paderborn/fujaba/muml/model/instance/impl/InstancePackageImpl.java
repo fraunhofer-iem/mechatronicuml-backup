@@ -577,13 +577,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getPortInstance_SenderMessageInterface(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif"
+			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.senderMessageInterface\nendif"
 		   });			
 		addAnnotation
 		  (getPortInstance_ReceiverMessageInterface(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif"
+			 "derivation", "if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.receiverMessageInterface\nendif"
 		   });											
 	}
 

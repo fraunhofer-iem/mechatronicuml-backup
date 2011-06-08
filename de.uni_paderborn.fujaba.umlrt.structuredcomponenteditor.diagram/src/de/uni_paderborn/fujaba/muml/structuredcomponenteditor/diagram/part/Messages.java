@@ -308,27 +308,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Port_3004_incominglinks;
+	public static String NavigatorGroupName_Port_3006_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Port_3004_outgoinglinks;
+	public static String NavigatorGroupName_Port_3006_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Assembly_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Assembly_4004_source;
 
 	/**
 	 * @generated
@@ -343,12 +333,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Port_3006_incominglinks;
+	public static String NavigatorGroupName_Port_3004_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Port_3006_outgoinglinks;
+	public static String NavigatorGroupName_Port_3004_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Assembly_4004_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Assembly_4004_source;
 
 	/**
 	 * @generated

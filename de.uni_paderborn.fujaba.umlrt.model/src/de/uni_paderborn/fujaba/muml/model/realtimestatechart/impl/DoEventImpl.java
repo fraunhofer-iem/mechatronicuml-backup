@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl#getState <em>State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl#getPeriodLower <em>Period Lower</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl#getPeriodUpper <em>Period Upper</em>}</li>
  * </ul>
@@ -44,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DoEventImpl extends EObjectImpl implements DoEvent {
+public class DoEventImpl extends StateEventImpl implements DoEvent {
 	/**
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -131,47 +130,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public State getState() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.DO_EVENT__STATE) return null;
-		return (State)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetState(State newState, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newState, RealtimestatechartPackage.DO_EVENT__STATE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setState(State newState) {
-		if (newState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.DO_EVENT__STATE && newState != null)) {
-			if (EcoreUtil.isAncestor(this, newState))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newState != null)
-				msgs = ((InternalEObject)newState).eInverseAdd(this, RealtimestatechartPackage.STATE__DO_EVENT, State.class, msgs);
-			msgs = basicSetState(newState, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__STATE, newState, newState));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getPeriodLower() {
 		return periodLower;
 	}
@@ -215,44 +173,12 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetState((State)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				return basicSetState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__DO_EVENT, State.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -265,8 +191,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return getAction();
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				return getState();
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				return getPeriodLower();
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
@@ -287,9 +211,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				getAction().clear();
 				getAction().addAll((Collection<? extends ActionExpression>)newValue);
-				return;
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				setState((State)newValue);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				setPeriodLower((Integer)newValue);
@@ -312,9 +233,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				getAction().clear();
 				return;
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				setState((State)null);
-				return;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				setPeriodLower(PERIOD_LOWER_EDEFAULT);
 				return;
@@ -335,8 +253,6 @@ public class DoEventImpl extends EObjectImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return action != null && !action.isEmpty();
-			case RealtimestatechartPackage.DO_EVENT__STATE:
-				return getState() != null;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				return periodLower != PERIOD_LOWER_EDEFAULT;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:

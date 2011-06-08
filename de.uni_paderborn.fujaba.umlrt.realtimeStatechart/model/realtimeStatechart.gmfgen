@@ -33,18 +33,18 @@
     <domainDiagramElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
     <childNodes
-        visualID="3007"
-        editPartClassName="EntryEventEditPart"
-        itemSemanticEditPolicyClassName="EntryEventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="EntryEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EntryEventGraphicalNodeEditPolicy"
-        createCommandClassName="EntryEventCreateCommand"
+        visualID="3010"
+        editPartClassName="EntryOrExitEventEditPart"
+        itemSemanticEditPolicyClassName="EntryOrExitEventItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EntryOrExitEventCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryOrExitEventGraphicalNodeEditPolicy"
+        createCommandClassName="EntryOrExitEventCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="EntryEventEditHelper"/>
+          editHelperClassName="EntryOrExitEventEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="EEActionFigure"
@@ -56,7 +56,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/EntryEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
         <childMetaFeature
@@ -67,6 +67,7 @@
         visualID="3008"
         editPartClassName="DoEventEditPart"
         itemSemanticEditPolicyClassName="DoEventItemSemanticEditPolicy"
+        notationViewFactoryClassName="DoEventViewFactory"
         canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
         createCommandClassName="DoEventCreateCommand"
@@ -95,18 +96,18 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3009"
-        editPartClassName="ExitEventEditPart"
-        itemSemanticEditPolicyClassName="ExitEventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ExitEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ExitEventGraphicalNodeEditPolicy"
-        createCommandClassName="ExitEventCreateCommand"
+        visualID="3011"
+        editPartClassName="EntryOrExitEvent2EditPart"
+        itemSemanticEditPolicyClassName="EntryOrExitEvent2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EntryOrExitEvent2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryOrExitEvent2GraphicalNodeEditPolicy"
+        createCommandClassName="EntryOrExitEvent2CreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ExitEventEditHelper"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="EEActionFigure"
@@ -118,7 +119,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/ExitEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
         <childMetaFeature

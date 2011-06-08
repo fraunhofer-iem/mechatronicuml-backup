@@ -415,8 +415,7 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	public void setReceiverMessageInterface(MessageInterface newReceiverMessageInterface) {
-		// RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newReceiverMessageInterface);
-		getSafeDiscretePortSpecification().setReceiverMessageInterface(newReceiverMessageInterface);
+		RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newReceiverMessageInterface);
 	}
 
 	/**

@@ -15,10 +15,6 @@ import org.storydriven.modeling.expressions.Expression;
  * A representation of the model object '<em><b>Action Expression</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc -->
- * An action might be the side effect of a transition as well as the do, entry, or exit events of a state.
- * <!-- end-model-doc -->
- *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +26,7 @@ import org.storydriven.modeling.expressions.Expression;
  * @model
  * @generated
  */
-public interface ActionExpression extends Expression, NamedElement {
+public interface ActionExpression extends Expression, NamedElement, StateEvent {
 	/**
 	 * Returns the value of the '<em><b>Wcet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -40,12 +36,12 @@ public interface ActionExpression extends Expression, NamedElement {
 	 * \todosd{Why is the type an ELongObject?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Wcet</em>' attribute.
-	 * @see #setWcet(Long)
+	 * @see #setWcet(long)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getActionExpression_Wcet()
 	 * @model
 	 * @generated
 	 */
-	Long getWcet();
+	long getWcet();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression#getWcet <em>Wcet</em>}' attribute.
@@ -55,6 +51,6 @@ public interface ActionExpression extends Expression, NamedElement {
 	 * @see #getWcet()
 	 * @generated
 	 */
-	void setWcet(Long value);
+	void setWcet(long value);
 
 } // ActionExpression

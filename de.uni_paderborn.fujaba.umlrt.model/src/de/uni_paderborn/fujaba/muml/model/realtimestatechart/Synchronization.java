@@ -36,7 +36,7 @@ public interface Synchronization extends Invocation {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * the channel that is used by the synchronization
-	 * \todosd{delete, because its derived?}
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sync Channel</em>' reference.
 	 * @see #setSyncChannel(SynchronizationChannel)

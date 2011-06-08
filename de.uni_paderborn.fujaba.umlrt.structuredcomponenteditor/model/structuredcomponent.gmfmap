@@ -89,13 +89,12 @@
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/component/ComponentPart"/>
           <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping">
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
             <diagramLabel
                 href="structuredcomponent.gmfgraph#ComponentPartName"/>
             <viewExpression
-                body="self.name.concat(' : ').concat(if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif)"/>
-            <editExpression
-                body="self.name"/>
+                body="if self.componentType.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.componentType.name&#xA;endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

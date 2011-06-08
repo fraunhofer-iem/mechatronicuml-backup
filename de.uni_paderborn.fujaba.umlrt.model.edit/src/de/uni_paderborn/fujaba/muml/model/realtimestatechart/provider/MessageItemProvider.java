@@ -9,8 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 import java.util.Collection;
@@ -28,23 +27,17 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.calls.expressions.ExpressionsPackage;
-
-import org.storydriven.modeling.calls.expressions.provider.MethodCallExpressionItemProvider;
+import org.storydriven.modeling.calls.provider.InvocationItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AsynchronousEventItemProvider
-	extends MethodCallExpressionItemProvider
+public class MessageItemProvider
+	extends InvocationItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -57,7 +50,7 @@ public class AsynchronousEventItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AsynchronousEventItemProvider(AdapterFactory adapterFactory) {
+	public MessageItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,65 +65,42 @@ public class AsynchronousEventItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addFullEventNamePropertyDescriptor(object);
+			addInstanceOfPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Instance Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addInstanceOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_Message_instanceOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Message_instanceOf_feature", "_UI_Message_type"),
+				 RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Full Event Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFullEventNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AsynchronousEvent_fullEventName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AsynchronousEvent_fullEventName_feature", "_UI_AsynchronousEvent_type"),
-				 RealtimestatechartPackage.Literals.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns AsynchronousEvent.gif.
+	 * This returns Message.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AsynchronousEvent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Message"));
 	}
 
 	/**
@@ -141,10 +111,10 @@ public class AsynchronousEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AsynchronousEvent)object).getName();
+		String label = ((Message)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AsynchronousEvent_type") :
-			getString("_UI_AsynchronousEvent_type") + " " + label;
+			getString("_UI_Message_type") :
+			getString("_UI_Message_type") + " " + label;
 	}
 
 	/**
@@ -157,13 +127,6 @@ public class AsynchronousEventItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(AsynchronousEvent.class)) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__NAME:
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT__FULL_EVENT_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -177,16 +140,6 @@ public class AsynchronousEventItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExpressionsPackage.Literals.METHOD_CALL_EXPRESSION__TARGET,
-				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
 	}
 
 	/**

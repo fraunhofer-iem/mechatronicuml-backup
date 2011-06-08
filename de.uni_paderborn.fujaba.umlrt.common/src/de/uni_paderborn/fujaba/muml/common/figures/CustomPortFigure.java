@@ -1,14 +1,23 @@
 package de.uni_paderborn.fujaba.muml.common.figures;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
+
+import de.uni_paderborn.fujaba.muml.model.component.PortKind;
 
 /**
  * Copied code from generated class
@@ -28,8 +37,7 @@ public class CustomPortFigure extends RectangleFigure {
 	public enum PortType {
 		NONE, IN_PORT, OUT_PORT, INOUT_PORT
 	};
-	
-	
+
 	private boolean multiPort;
 
 	/**
@@ -52,6 +60,21 @@ public class CustomPortFigure extends RectangleFigure {
 	private RectangleFigure fFigureInnerRectContainer;
 
 	/**
+	 * @generated
+	 */
+	private RectangleFigure fFigureOutlineRectangle;
+
+	/**
+	 * @generated
+	 */
+	private RectangleFigure fFigureShadowRectangle;
+
+	/**
+	 * @generated
+	 */
+	private WrappingLabel fFigureHardwareTypeLabel;
+
+	/**
 	 * The EditPart's MapMode.
 	 */
 	private IMapMode mapMode;
@@ -70,25 +93,49 @@ public class CustomPortFigure extends RectangleFigure {
 		this.setOutline(false);
 		this.mapMode = mapMode;
 		createContents();
+		fFigureHardwareTypeLabel.setAlignment(PositionConstants.CENTER);
 		setPortMulti(false);
-		setPortType(PortType.INOUT_PORT);
+		setPortKindAndPortType(null, PortType.INOUT_PORT);
 		setPortSide(PositionConstants.NORTH);
-		getFigureInPolygon().setOutline(true);
-		getFigureOutPolygon().setOutline(true);
-		getFigureInOutPolygon().setOutline(true);
 	}
 
-	/**
-	 * Sets the Port Type.
-	 * 
-	 * @param portType
-	 *            The new PortType to set.
-	 */
-	public void setPortType(PortType portType) {
+	public void setPortKindAndPortType(PortKind portKind, PortType portType) {
 		// Chooses the right polygon to display.
 		getFigureInPolygon().setVisible(portType == PortType.IN_PORT);
 		getFigureOutPolygon().setVisible(portType == PortType.OUT_PORT);
 		getFigureInOutPolygon().setVisible(portType == PortType.INOUT_PORT);
+
+		// Set Outline
+		getFigureInPolygon().setOutline(portKind == PortKind.CONTINUOUS);
+		getFigureOutPolygon().setOutline(portKind == PortKind.CONTINUOUS);
+		getFigureInOutPolygon().setOutline(portKind == PortKind.CONTINUOUS);
+
+		// Set Background Color
+		Color backgroundColor = null;
+		if (portKind == PortKind.DISCRETE) {
+			backgroundColor = ColorConstants.gray;
+		}
+		getFigureInPolygon().setBackgroundColor(backgroundColor);
+		getFigureOutPolygon().setBackgroundColor(backgroundColor);
+		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
+
+		// Activate Rectangle for Port only if it is no continuous port.
+		getFigureShadowRectangle().setVisible(portKind != PortKind.CONTINUOUS);
+		getFigureOutlineRectangle().setOutline(portKind != PortKind.CONTINUOUS);
+		getFigureOutlineRectangle().setFill(portKind != PortKind.CONTINUOUS);
+
+		// Set the Text for Hareware Ports
+		String hardwareTypeText = "";
+		if (portKind == PortKind.HARDWARE) {
+			if (portType == PortType.IN_PORT) {
+				hardwareTypeText = "i";
+			} else if (portType == PortType.OUT_PORT) {
+				hardwareTypeText = "o";
+			} else if (portType == PortType.INOUT_PORT) {
+				hardwareTypeText = "i/o";
+			}
+		}
+		getFigureHardwareTypeLabel().setText(hardwareTypeText);
 	}
 
 	/**
@@ -140,11 +187,11 @@ public class CustomPortFigure extends RectangleFigure {
 		if (getParent() != null) {
 			Dimension preferredSize = getParent().getPreferredSize().getCopy();
 			preferredSize.expand(-marginBottomRight, -marginBottomRight);
-	
-			// Set the new margin and the new preferred size. 
+
+			// Set the new margin and the new preferred size.
 			RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-			innerRectContainer.setBorder(new MarginBorder(0, 0, marginBottomRight,
-					marginBottomRight));
+			innerRectContainer.setBorder(new MarginBorder(0, 0,
+					marginBottomRight, marginBottomRight));
 			innerRectContainer.setPreferredSize(preferredSize);
 		}
 	}
@@ -173,6 +220,9 @@ public class CustomPortFigure extends RectangleFigure {
 	/**
 	 * @generated
 	 */
+	/**
+	 * @generated
+	 */
 	private void createContents() {
 
 		RectangleFigure aux10 = new RectangleFigure();
@@ -184,23 +234,23 @@ public class CustomPortFigure extends RectangleFigure {
 		this.add(aux10);
 		aux10.setLayoutManager(new StackLayout());
 
-		RectangleFigure shadow1 = new RectangleFigure();
+		fFigureShadowRectangle = new RectangleFigure();
 
-		aux10.add(shadow1);
+		aux10.add(fFigureShadowRectangle);
 
 		fFigureInnerRectContainer = new RectangleFigure();
 		fFigureInnerRectContainer.setFill(false);
 		fFigureInnerRectContainer.setOutline(false);
 		fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
-				.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(3),
-				getMapMode().DPtoLP(3)));
+				.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
+				getMapMode().DPtoLP(0)));
 
 		this.add(fFigureInnerRectContainer);
 		fFigureInnerRectContainer.setLayoutManager(new StackLayout());
 
-		RectangleFigure innerRectangle1 = new RectangleFigure();
+		fFigureOutlineRectangle = new RectangleFigure();
 
-		fFigureInnerRectContainer.add(innerRectangle1);
+		fFigureInnerRectContainer.add(fFigureOutlineRectangle);
 
 		RectangleFigure inPolygonContainer1 = new RectangleFigure();
 		inPolygonContainer1.setFill(false);
@@ -219,7 +269,9 @@ public class CustomPortFigure extends RectangleFigure {
 				getMapMode().DPtoLP(1)));
 		fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
 				getMapMode().DPtoLP(2)));
+		fFigureInPolygon.setFill(true);
 		fFigureInPolygon.setOutline(false);
+		fFigureInPolygon.setBackgroundColor(ColorConstants.gray);
 
 		inPolygonContainer1.add(fFigureInPolygon);
 
@@ -240,7 +292,9 @@ public class CustomPortFigure extends RectangleFigure {
 				getMapMode().DPtoLP(1)));
 		fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 				getMapMode().DPtoLP(2)));
+		fFigureOutPolygon.setFill(true);
 		fFigureOutPolygon.setOutline(false);
+		fFigureOutPolygon.setBackgroundColor(ColorConstants.gray);
 
 		outPolygonContainer1.add(fFigureOutPolygon);
 
@@ -255,23 +309,39 @@ public class CustomPortFigure extends RectangleFigure {
 		inOutPolygonContainer1.setLayoutManager(new StackLayout());
 
 		fFigureInOutPolygon = new ScalableRotableTriangleShape();
+		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+				getMapMode().DPtoLP(1)));
 		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(2),
 				getMapMode().DPtoLP(2)));
 		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 				getMapMode().DPtoLP(3)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(2),
-				getMapMode().DPtoLP(4)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(0)));
 		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(1)));
+				getMapMode().DPtoLP(0)));
 		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
+				getMapMode().DPtoLP(1)));
+		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 				getMapMode().DPtoLP(2)));
+		fFigureInOutPolygon.setFill(true);
 		fFigureInOutPolygon.setOutline(false);
+		fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);
 
 		inOutPolygonContainer1.add(fFigureInOutPolygon);
 
+		fFigureHardwareTypeLabel = new WrappingLabel();
+		fFigureHardwareTypeLabel.setText("");
+
+		fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);
+
+		fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);
+
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREHARDWARETYPELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 7, SWT.NORMAL);
 
 	/**
 	 * @generated
@@ -301,14 +371,36 @@ public class CustomPortFigure extends RectangleFigure {
 		return fFigureInnerRectContainer;
 	}
 
+	/**
+	 * @generated
+	 */
+	public RectangleFigure getFigureOutlineRectangle() {
+		return fFigureOutlineRectangle;
+	}
+
+	/**
+	 * @generated
+	 */
+	public RectangleFigure getFigureShadowRectangle() {
+		return fFigureShadowRectangle;
+	}
+
+	/**
+	 * @generated
+	 */
+	public WrappingLabel getFigureHardwareTypeLabel() {
+		return fFigureHardwareTypeLabel;
+	}
+
 	public PointList getCustomPolygonPoints(Rectangle anchRect) {
 		if (multiPort) {
 			PointList points = new PointList(9);
 			points.addPoint(anchRect.x, anchRect.y);
 			points.addPoint(anchRect.x + anchRect.width - 3, anchRect.y);
-			points.addPoint(anchRect.x + anchRect.width - 3, anchRect.y  + 3);
+			points.addPoint(anchRect.x + anchRect.width - 3, anchRect.y + 3);
 			points.addPoint(anchRect.x + anchRect.width, anchRect.y + 3);
-			points.addPoint(anchRect.x + anchRect.width, anchRect.y + anchRect.height);
+			points.addPoint(anchRect.x + anchRect.width, anchRect.y
+					+ anchRect.height);
 			points.addPoint(anchRect.x + 3, anchRect.y + anchRect.height);
 			points.addPoint(anchRect.x + 3, anchRect.y + anchRect.height - 3);
 			points.addPoint(anchRect.x, anchRect.y + anchRect.height - 3);
@@ -317,6 +409,5 @@ public class CustomPortFigure extends RectangleFigure {
 		}
 		return null;
 	}
-
 
 }

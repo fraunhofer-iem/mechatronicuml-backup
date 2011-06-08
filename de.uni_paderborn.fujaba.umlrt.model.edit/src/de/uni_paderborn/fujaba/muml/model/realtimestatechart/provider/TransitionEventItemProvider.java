@@ -7,6 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -21,13 +24,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntryEventItemProvider
-	extends EntryOrExitEventItemProvider
+public class TransitionEventItemProvider
+	extends EventItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +43,7 @@ public class EntryEventItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryEventItemProvider(AdapterFactory adapterFactory) {
+	public TransitionEventItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,17 +63,6 @@ public class EntryEventItemProvider
 	}
 
 	/**
-	 * This returns EntryEvent.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EntryEvent"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +70,11 @@ public class EntryEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_EntryEvent_type");
+		EventKind labelValue = ((TransitionEvent)object).getKind();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_TransitionEvent_type") :
+			getString("_UI_TransitionEvent_type") + " " + label;
 	}
 
 	/**

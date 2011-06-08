@@ -30,7 +30,7 @@ public class UmlrtOCLFactory {
 	 * @generated
 	 */
 	protected UmlrtOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.UmlrtAbstractExpression[4];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.UmlrtAbstractExpression[3];
 	}
 
 	/**
@@ -52,8 +52,7 @@ public class UmlrtOCLFactory {
 			final String[] exprBodies = new String[] {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"self.name.concat(\' : \').concat(if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif)", //$NON-NLS-1$
-					"self.name", //$NON-NLS-1$
+					"if self.componentType.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.componentType.name\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

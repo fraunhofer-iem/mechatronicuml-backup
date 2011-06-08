@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AbsoluteDeadlineImpl#getTransition <em>Transition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AbsoluteDeadlineImpl#getClock <em>Clock</em>}</li>
  * </ul>
  * </p>
@@ -63,47 +62,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Transition getTransition() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION) return null;
-		return (Transition)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTransition, RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransition(Transition newTransition) {
-		if (newTransition != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION && newTransition != null)) {
-			if (EcoreUtil.isAncestor(this, newTransition))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTransition != null)
-				msgs = ((InternalEObject)newTransition).eInverseAdd(this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES, Transition.class, msgs);
-			msgs = basicSetTransition(newTransition, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION, newTransition, newTransition));
 	}
 
 	/**
@@ -150,54 +108,8 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTransition((Transition)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				return basicSetTransition(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES, Transition.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				return getTransition();
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
 				if (resolve) return getClock();
 				return basicGetClock();
@@ -213,9 +125,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				setTransition((Transition)newValue);
-				return;
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
 				setClock((Clock)newValue);
 				return;
@@ -231,9 +140,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				setTransition((Transition)null);
-				return;
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
 				setClock((Clock)null);
 				return;
@@ -249,8 +155,6 @@ public class AbsoluteDeadlineImpl extends DeadlineImpl implements AbsoluteDeadli
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__TRANSITION:
-				return getTransition() != null;
 			case RealtimestatechartPackage.ABSOLUTE_DEADLINE__CLOCK:
 				return clock != null;
 		}

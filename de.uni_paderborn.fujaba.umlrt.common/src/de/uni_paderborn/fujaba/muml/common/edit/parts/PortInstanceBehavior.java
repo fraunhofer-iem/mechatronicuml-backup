@@ -44,14 +44,14 @@ public class PortInstanceBehavior extends AbstractPortBehavior {
 
 
 	@Override
-	public void updatePortType() {
+	public void updatePortKindAndPortType() {
 		MessageInterface requiredMessageInterface = null;
 		MessageInterface providedMessageInterface = null;
 		if (portInstance != null) {
 			requiredMessageInterface = portInstance.getSenderMessageInterface();
 			providedMessageInterface = portInstance.getSenderMessageInterface();
 		}
-		updatePortType(requiredMessageInterface, providedMessageInterface);
+		updatePortKindAndPortType(null, requiredMessageInterface, providedMessageInterface);
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class PortInstanceBehavior extends AbstractPortBehavior {
 				int featureID = notification.getFeatureID(PortInstanceImpl.class);
 				if (featureID == InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
 						|| featureID == InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE) {
-					updatePortType(portInstance.getSenderMessageInterface(),
+					updatePortKindAndPortType(null, portInstance.getSenderMessageInterface(),
 							portInstance.getReceiverMessageInterface());
 				}
 			}

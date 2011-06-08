@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.modeling.impl.CommentableElementImpl;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
 
@@ -46,7 +47,6 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getFromRev <em>From Rev</em>}</li>
@@ -59,27 +59,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *
  * @generated
  */
-public class ComponentPartImpl extends NamedElementImpl implements ComponentPart {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
+public class ComponentPartImpl extends CommentableElementImpl implements ComponentPart {
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -163,27 +143,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentPackage.Literals.COMPONENT_PART;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -460,8 +419,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMMENT:
-				return getComment();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
@@ -490,9 +447,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMMENT:
-				setComment((String)newValue);
-				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
@@ -526,9 +480,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
@@ -559,8 +510,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
@@ -577,54 +526,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return isSetPortsDerived();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case ComponentPackage.COMPONENT_PART__COMMENT: return SDMPackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.COMPONENT_PART__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ComponentPartImpl

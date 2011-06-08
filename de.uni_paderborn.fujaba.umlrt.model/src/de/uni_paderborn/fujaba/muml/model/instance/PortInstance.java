@@ -104,7 +104,7 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Sender Message Interface</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_SenderMessageInterface()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.requiredMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.senderMessageInterface\nendif'"
 	 * @generated
 	 */
 	MessageInterface getSenderMessageInterface();
@@ -120,7 +120,7 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ReceiverMessageInterface()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.providedMessageInterface\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() then\n\tnull\nelse\n\tportType.receiverMessageInterface\nendif'"
 	 * @generated
 	 */
 	MessageInterface getReceiverMessageInterface();

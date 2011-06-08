@@ -77,8 +77,10 @@ public class TransitionItemProvider
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addClockResetsPropertyDescriptor(object);
+			addTriggerMessageEventPropertyDescriptor(object);
+			addRaiseMessageEventPropertyDescriptor(object);
 			addRelativeDeadlinePropertyDescriptor(object);
-			addSafetyTransitionPropertyDescriptor(object);
+			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -151,6 +153,50 @@ public class TransitionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Trigger Message Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTriggerMessageEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_triggerMessageEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_triggerMessageEvent_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Raise Message Event feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRaiseMessageEventPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_raiseMessageEvent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_raiseMessageEvent_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the RelativeDeadline feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -175,19 +221,19 @@ public class TransitionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Safety Transition feature.
+	 * This adds a property descriptor for the Safe feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSafetyTransitionPropertyDescriptor(Object object) {
+	protected void addSafePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_safetyTransition_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_safetyTransition_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__SAFETY_TRANSITION,
+				 getString("_UI_Transition_safe_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_safe_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SAFE,
 				 true,
 				 false,
 				 false,
@@ -233,13 +279,12 @@ public class TransitionItemProvider
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__GUARD);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__EVENTS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ACTION);
 		}
 		return childrenFeatures;
 	}
@@ -293,20 +338,19 @@ public class TransitionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
-			case RealtimestatechartPackage.TRANSITION__SAFETY_TRANSITION:
+			case RealtimestatechartPackage.TRANSITION__SAFE:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
 			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
-			case RealtimestatechartPackage.TRANSITION__TRANSITION_ACTION:
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_EVENTS:
-			case RealtimestatechartPackage.TRANSITION__RAISED_EVENTS:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
 			case RealtimestatechartPackage.TRANSITION__RELATIVE_DEADLINE:
 			case RealtimestatechartPackage.TRANSITION__GUARD:
+			case RealtimestatechartPackage.TRANSITION__EVENTS:
+			case RealtimestatechartPackage.TRANSITION__ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -346,21 +390,6 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS,
 				 RealtimestatechartFactory.eINSTANCE.createClockConstraint()));
 
@@ -378,11 +407,6 @@ public class TransitionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 RealtimestatechartFactory.eINSTANCE.createAsynchronousEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -448,6 +472,16 @@ public class TransitionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 				 org.storydriven.modeling.patterns.expressions.ExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
+				 RealtimestatechartFactory.eINSTANCE.createAsynchronousMessageEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.TRANSITION__ACTION,
+				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
 	}
 
 	/**
@@ -462,10 +496,8 @@ public class TransitionItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__TRANSITION_ACTION ||
 			childFeature == RealtimestatechartPackage.Literals.TRANSITION__GUARD ||
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_EVENTS ||
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__RAISED_EVENTS;
+			childFeature == RealtimestatechartPackage.Literals.TRANSITION__ACTION;
 
 		if (qualify) {
 			return getString

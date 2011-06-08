@@ -135,22 +135,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ABSOLUTE_DEADLINE__LOWER_BOUND = DEADLINE__LOWER_BOUND;
 
 	/**
-	 * The feature id for the '<em><b>Transition</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_DEADLINE__TRANSITION = DEADLINE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_DEADLINE__CLOCK = DEADLINE_FEATURE_COUNT + 1;
+	int ABSOLUTE_DEADLINE__CLOCK = DEADLINE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Absolute Deadline</em>' class.
@@ -159,7 +150,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 2;
+	int ABSOLUTE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RelativeDeadlineImpl <em>Relative Deadline</em>}' class.
@@ -190,22 +181,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int RELATIVE_DEADLINE__LOWER_BOUND = DEADLINE__LOWER_BOUND;
 
 	/**
-	 * The feature id for the '<em><b>Transition</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIVE_DEADLINE__TRANSITION = DEADLINE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Relative Deadline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIVE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 1;
+	int RELATIVE_DEADLINE_FEATURE_COUNT = DEADLINE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockImpl <em>Clock</em>}' class.
@@ -270,7 +252,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizable()
 	 * @generated
 	 */
-	int PRIORITIZABLE = 17;
+	int PRIORITIZABLE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -573,22 +555,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__FINAL = VERTEX_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Derived Exit Points</b></em>' reference list.
+	 * The feature id for the '<em><b>Exit Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__DERIVED_EXIT_POINTS = VERTEX_FEATURE_COUNT + 8;
+	int STATE__EXIT_POINTS = VERTEX_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Derived Entry Points</b></em>' reference list.
+	 * The feature id for the '<em><b>Entry Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__DERIVED_ENTRY_POINTS = VERTEX_FEATURE_COUNT + 9;
+	int STATE__ENTRY_POINTS = VERTEX_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -609,13 +591,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__CHANNELS = VERTEX_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__EVENTS = VERTEX_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 12;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -664,22 +655,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__SYNCHRONIZATION = PRIORITIZABLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Transition Action</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__TRANSITION_ACTION = PRIORITIZABLE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = PRIORITIZABLE_FEATURE_COUNT + 4;
+	int TRANSITION__TARGET = PRIORITIZABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -688,7 +670,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = PRIORITIZABLE_FEATURE_COUNT + 5;
+	int TRANSITION__SOURCE = PRIORITIZABLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
@@ -697,7 +679,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 6;
+	int TRANSITION__STATECHART = PRIORITIZABLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
@@ -706,25 +688,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 7;
+	int TRANSITION__CLOCK_RESETS = PRIORITIZABLE_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Trigger Events</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Trigger Message Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 8;
+	int TRANSITION__TRIGGER_MESSAGE_EVENT = PRIORITIZABLE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Raised Events</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Raise Message Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISED_EVENTS = PRIORITIZABLE_FEATURE_COUNT + 9;
+	int TRANSITION__RAISE_MESSAGE_EVENT = PRIORITIZABLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
@@ -733,7 +715,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZABLE_FEATURE_COUNT + 10;
+	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZABLE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -742,7 +724,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 11;
+	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZABLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -751,16 +733,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 12;
+	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZABLE_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Safety Transition</b></em>' attribute.
+	 * The feature id for the '<em><b>Safe</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SAFETY_TRANSITION = PRIORITIZABLE_FEATURE_COUNT + 13;
+	int TRANSITION__SAFE = PRIORITIZABLE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -769,7 +751,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 14;
+	int TRANSITION__URGENT = PRIORITIZABLE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -778,7 +760,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 15;
+	int TRANSITION__GUARD = PRIORITIZABLE_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__EVENTS = PRIORITIZABLE_FEATURE_COUNT + 15;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__ACTION = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -787,7 +787,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 16;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -900,13 +900,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ACTION_EXPRESSION__NAME = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_EXPRESSION__KIND = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Wcet</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_EXPRESSION__WCET = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int ACTION_EXPRESSION__WCET = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Action Expression</em>' class.
@@ -915,17 +924,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int ACTION_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl <em>Asynchronous Event</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl <em>Asynchronous Message Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousEvent()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousMessageEvent()
 	 * @generated
 	 */
-	int ASYNCHRONOUS_EVENT = 10;
+	int ASYNCHRONOUS_MESSAGE_EVENT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -934,7 +943,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__ANNOTATION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__ANNOTATION;
+	int ASYNCHRONOUS_MESSAGE_EVENT__ANNOTATION = SDMPackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -943,70 +952,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__EXTENSION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__GENERIC_TYPE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__GENERIC_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__COMMENT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__OWNED_PARAMETER_BINDINGS = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS;
-
-	/**
-	 * The feature id for the '<em><b>Callee</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__CALLEE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__CALLEE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__TARGET = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__TARGET;
-
-	/**
-	 * The feature id for the '<em><b>Opaque Callable</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASYNCHRONOUS_EVENT__OPAQUE_CALLABLE = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION__OPAQUE_CALLABLE;
+	int ASYNCHRONOUS_MESSAGE_EVENT__EXTENSION = SDMPackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1015,43 +961,90 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 0;
+	int ASYNCHRONOUS_MESSAGE_EVENT__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Triggered Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 1;
+	int ASYNCHRONOUS_MESSAGE_EVENT__KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Raised Transition</b></em>' container reference.
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__RAISED_TRANSITION = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 2;
+	int ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Full Event Name</b></em>' attribute.
+	 * The number of structural features of the '<em>Asynchronous Message Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT__FULL_EVENT_NAME = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 3;
+	int ASYNCHRONOUS_MESSAGE_EVENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Asynchronous Event</em>' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl <em>Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEvent()
+	 * @generated
+	 */
+	int EVENT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASYNCHRONOUS_EVENT_FEATURE_COUNT = org.storydriven.modeling.calls.expressions.ExpressionsPackage.METHOD_CALL_EXPRESSION_FEATURE_COUNT + 4;
+	int EVENT__KIND = 0;
+
+	/**
+	 * The number of structural features of the '<em>Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEventImpl <em>State Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEventImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEvent()
+	 * @generated
+	 */
+	int STATE_EVENT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_EVENT__KIND = EVENT__KIND;
+
+	/**
+	 * The number of structural features of the '<em>State Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl <em>Do Event</em>}' class.
@@ -1064,22 +1057,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT = 11;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DO_EVENT__KIND = STATE_EVENT__KIND;
+
+	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT__ACTION = 0;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_EVENT__STATE = 1;
+	int DO_EVENT__ACTION = STATE_EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Period Lower</b></em>' attribute.
@@ -1088,7 +1081,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT__PERIOD_LOWER = 2;
+	int DO_EVENT__PERIOD_LOWER = STATE_EVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Period Upper</b></em>' attribute.
@@ -1097,7 +1090,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT__PERIOD_UPPER = 3;
+	int DO_EVENT__PERIOD_UPPER = STATE_EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Do Event</em>' class.
@@ -1106,7 +1099,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT_FEATURE_COUNT = 4;
+	int DO_EVENT_FEATURE_COUNT = STATE_EVENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
@@ -1146,98 +1139,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
-	 * @generated
-	 */
-	int ENTRY_EVENT = 13;
-
-	/**
-	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_EVENT__CLOCK_RESETS = ENTRY_OR_EXIT_EVENT__CLOCK_RESETS;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_EVENT__ACTION = ENTRY_OR_EXIT_EVENT__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_EVENT__STATE = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Entry Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTRY_EVENT_FEATURE_COUNT = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitEventImpl <em>Exit Event</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitEventImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
-	 * @generated
-	 */
-	int EXIT_EVENT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_EVENT__CLOCK_RESETS = ENTRY_OR_EXIT_EVENT__CLOCK_RESETS;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_EVENT__ACTION = ENTRY_OR_EXIT_EVENT__ACTION;
-
-	/**
-	 * The feature id for the '<em><b>State</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_EVENT__STATE = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Exit Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXIT_EVENT_FEATURE_COUNT = ENTRY_OR_EXIT_EVENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl <em>Synchronization Channel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1245,7 +1146,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationChannel()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_CHANNEL = 15;
+	int SYNCHRONIZATION_CHANNEL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1318,7 +1219,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronization()
 	 * @generated
 	 */
-	int SYNCHRONIZATION = 16;
+	int SYNCHRONIZATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1400,7 +1301,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getFujabaRealtimeStatechart()
 	 * @generated
 	 */
-	int FUJABA_REALTIME_STATECHART = 18;
+	int FUJABA_REALTIME_STATECHART = 16;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1581,7 +1482,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryPoint()
 	 * @generated
 	 */
-	int ENTRY_POINT = 19;
+	int ENTRY_POINT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1654,7 +1555,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitPoint()
 	 * @generated
 	 */
-	int EXIT_POINT = 20;
+	int EXIT_POINT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1720,6 +1621,107 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_POINT_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionEventImpl <em>Transition Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionEventImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getTransitionEvent()
+	 * @generated
+	 */
+	int TRANSITION_EVENT = 20;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_EVENT__KIND = EVENT__KIND;
+
+	/**
+	 * The number of structural features of the '<em>Transition Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getMessage()
+	 * @generated
+	 */
+	int MESSAGE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__ANNOTATION = CallsPackage.INVOCATION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__EXTENSION = CallsPackage.INVOCATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__COMMENT = CallsPackage.INVOCATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__OWNED_PARAMETER_BINDINGS = CallsPackage.INVOCATION__OWNED_PARAMETER_BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Callee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__CALLEE = CallsPackage.INVOCATION__CALLEE;
+
+	/**
+	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__INSTANCE_OF = CallsPackage.INVOCATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Message</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1727,7 +1729,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getSynchronizationKind()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_KIND = 21;
+	int SYNCHRONIZATION_KIND = 23;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind <em>Event Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEventKind()
+	 * @generated
+	 */
+	int EVENT_KIND = 24;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline <em>Deadline</em>}'.
@@ -1772,17 +1784,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getAbsoluteDeadline();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getTransition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getTransition()
-	 * @see #getAbsoluteDeadline()
-	 * @generated
-	 */
-	EReference getAbsoluteDeadline_Transition();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline#getClock <em>Clock</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1802,17 +1803,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRelativeDeadline();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline#getTransition <em>Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline#getTransition()
-	 * @see #getRelativeDeadline()
-	 * @generated
-	 */
-	EReference getRelativeDeadline_Transition();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock <em>Clock</em>}'.
@@ -1955,6 +1945,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_Channels();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Events</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_Events();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1977,26 +1978,26 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getState_Final();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedExitPoints <em>Derived Exit Points</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints <em>Exit Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Derived Exit Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedExitPoints()
+	 * @return the meta object for the reference list '<em>Exit Points</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_DerivedExitPoints();
+	EReference getState_ExitPoints();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedEntryPoints <em>Derived Entry Points</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints <em>Entry Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Derived Entry Points</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedEntryPoints()
+	 * @return the meta object for the reference list '<em>Entry Points</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints()
 	 * @see #getState()
 	 * @generated
 	 */
-	EReference getState_DerivedEntryPoints();
+	EReference getState_EntryPoints();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isUrgent <em>Urgent</em>}'.
@@ -2074,17 +2075,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Synchronization();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionAction <em>Transition Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Transition Action</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTransitionAction()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_TransitionAction();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2129,26 +2119,26 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_ClockResets();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTriggerEvents <em>Trigger Events</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTriggerMessageEvent <em>Trigger Message Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Trigger Events</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTriggerEvents()
+	 * @return the meta object for the reference '<em>Trigger Message Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTriggerMessageEvent()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_TriggerEvents();
+	EReference getTransition_TriggerMessageEvent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRaisedEvents <em>Raised Events</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRaiseMessageEvent <em>Raise Message Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Raised Events</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRaisedEvents()
+	 * @return the meta object for the reference '<em>Raise Message Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRaiseMessageEvent()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EReference getTransition_RaisedEvents();
+	EReference getTransition_RaiseMessageEvent();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getClockConstraints <em>Clock Constraints</em>}'.
@@ -2184,15 +2174,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_RelativeDeadline();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafetyTransition <em>Safety Transition</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe <em>Safe</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Safety Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafetyTransition()
+	 * @return the meta object for the attribute '<em>Safe</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isSafe()
 	 * @see #getTransition()
 	 * @generated
 	 */
-	EAttribute getTransition_SafetyTransition();
+	EAttribute getTransition_Safe();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}'.
@@ -2215,6 +2205,28 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTransition_Guard();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEvents <em>Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Events</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEvents()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Events();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Action();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
@@ -2281,47 +2293,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getActionExpression_Wcet();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent <em>Asynchronous Event</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent <em>Asynchronous Message Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Asynchronous Event</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent
+	 * @return the meta object for class '<em>Asynchronous Message Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent
 	 * @generated
 	 */
-	EClass getAsynchronousEvent();
+	EClass getAsynchronousMessageEvent();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredTransition <em>Triggered Transition</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Triggered Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getTriggeredTransition()
-	 * @see #getAsynchronousEvent()
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent#getMessage()
+	 * @see #getAsynchronousMessageEvent()
 	 * @generated
 	 */
-	EReference getAsynchronousEvent_TriggeredTransition();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedTransition <em>Raised Transition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Raised Transition</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getRaisedTransition()
-	 * @see #getAsynchronousEvent()
-	 * @generated
-	 */
-	EReference getAsynchronousEvent_RaisedTransition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getFullEventName <em>Full Event Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Full Event Name</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent#getFullEventName()
-	 * @see #getAsynchronousEvent()
-	 * @generated
-	 */
-	EAttribute getAsynchronousEvent_FullEventName();
+	EReference getAsynchronousMessageEvent_Message();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent <em>Do Event</em>}'.
@@ -2343,17 +2333,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDoEvent_Action();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getState <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getState()
-	 * @see #getDoEvent()
-	 * @generated
-	 */
-	EReference getDoEvent_State();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}'.
@@ -2408,48 +2387,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntryOrExitEvent_Action();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent <em>Entry Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entry Event</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent
-	 * @generated
-	 */
-	EClass getEntryEvent();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent#getState <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent#getState()
-	 * @see #getEntryEvent()
-	 * @generated
-	 */
-	EReference getEntryEvent_State();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent <em>Exit Event</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Exit Event</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent
-	 * @generated
-	 */
-	EClass getExitEvent();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent#getState <em>State</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>State</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent#getState()
-	 * @see #getExitEvent()
-	 * @generated
-	 */
-	EReference getExitEvent_State();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel <em>Synchronization Channel</em>}'.
@@ -2633,6 +2570,68 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getExitPoint();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event <em>Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event
+	 * @generated
+	 */
+	EClass getEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event#getKind()
+	 * @see #getEvent()
+	 * @generated
+	 */
+	EAttribute getEvent_Kind();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent <em>Transition Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transition Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent
+	 * @generated
+	 */
+	EClass getTransitionEvent();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent <em>State Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State Event</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent
+	 * @generated
+	 */
+	EClass getStateEvent();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message
+	 * @generated
+	 */
+	EClass getMessage();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getInstanceOf <em>Instance Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Instance Of</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getInstanceOf()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EReference getMessage_InstanceOf();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2641,6 +2640,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getSynchronizationKind();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind <em>Event Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Event Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind
+	 * @generated
+	 */
+	EEnum getEventKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2701,14 +2710,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass ABSOLUTE_DEADLINE = eINSTANCE.getAbsoluteDeadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSOLUTE_DEADLINE__TRANSITION = eINSTANCE.getAbsoluteDeadline_Transition();
-
-		/**
 		 * The meta object literal for the '<em><b>Clock</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2725,14 +2726,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RELATIVE_DEADLINE = eINSTANCE.getRelativeDeadline();
-
-		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIVE_DEADLINE__TRANSITION = eINSTANCE.getRelativeDeadline_Transition();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockImpl <em>Clock</em>}' class.
@@ -2845,6 +2838,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__CHANNELS = eINSTANCE.getState_Channels();
 
 		/**
+		 * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__EVENTS = eINSTANCE.getState_Events();
+
+		/**
 		 * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2861,20 +2862,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute STATE__FINAL = eINSTANCE.getState_Final();
 
 		/**
-		 * The meta object literal for the '<em><b>Derived Exit Points</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Exit Points</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__DERIVED_EXIT_POINTS = eINSTANCE.getState_DerivedExitPoints();
+		EReference STATE__EXIT_POINTS = eINSTANCE.getState_ExitPoints();
 
 		/**
-		 * The meta object literal for the '<em><b>Derived Entry Points</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Entry Points</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE__DERIVED_ENTRY_POINTS = eINSTANCE.getState_DerivedEntryPoints();
+		EReference STATE__ENTRY_POINTS = eINSTANCE.getState_EntryPoints();
 
 		/**
 		 * The meta object literal for the '<em><b>Urgent</b></em>' attribute feature.
@@ -2937,14 +2938,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__SYNCHRONIZATION = eINSTANCE.getTransition_Synchronization();
 
 		/**
-		 * The meta object literal for the '<em><b>Transition Action</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__TRANSITION_ACTION = eINSTANCE.getTransition_TransitionAction();
-
-		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2977,20 +2970,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__CLOCK_RESETS = eINSTANCE.getTransition_ClockResets();
 
 		/**
-		 * The meta object literal for the '<em><b>Trigger Events</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Trigger Message Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__TRIGGER_EVENTS = eINSTANCE.getTransition_TriggerEvents();
+		EReference TRANSITION__TRIGGER_MESSAGE_EVENT = eINSTANCE.getTransition_TriggerMessageEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Raised Events</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Raise Message Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRANSITION__RAISED_EVENTS = eINSTANCE.getTransition_RaisedEvents();
+		EReference TRANSITION__RAISE_MESSAGE_EVENT = eINSTANCE.getTransition_RaiseMessageEvent();
 
 		/**
 		 * The meta object literal for the '<em><b>Clock Constraints</b></em>' containment reference list feature.
@@ -3017,12 +3010,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__RELATIVE_DEADLINE = eINSTANCE.getTransition_RelativeDeadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Safety Transition</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Safe</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TRANSITION__SAFETY_TRANSITION = eINSTANCE.getTransition_SafetyTransition();
+		EAttribute TRANSITION__SAFE = eINSTANCE.getTransition_Safe();
 
 		/**
 		 * The meta object literal for the '<em><b>Urgent</b></em>' attribute feature.
@@ -3039,6 +3032,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
+
+		/**
+		 * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__EVENTS = eINSTANCE.getTransition_Events();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__ACTION = eINSTANCE.getTransition_Action();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -3093,38 +3102,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute ACTION_EXPRESSION__WCET = eINSTANCE.getActionExpression_Wcet();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl <em>Asynchronous Event</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl <em>Asynchronous Message Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousEventImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousEvent()
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getAsynchronousMessageEvent()
 		 * @generated
 		 */
-		EClass ASYNCHRONOUS_EVENT = eINSTANCE.getAsynchronousEvent();
+		EClass ASYNCHRONOUS_MESSAGE_EVENT = eINSTANCE.getAsynchronousMessageEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Triggered Transition</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASYNCHRONOUS_EVENT__TRIGGERED_TRANSITION = eINSTANCE.getAsynchronousEvent_TriggeredTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Raised Transition</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASYNCHRONOUS_EVENT__RAISED_TRANSITION = eINSTANCE.getAsynchronousEvent_RaisedTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Full Event Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ASYNCHRONOUS_EVENT__FULL_EVENT_NAME = eINSTANCE.getAsynchronousEvent_FullEventName();
+		EReference ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE = eINSTANCE.getAsynchronousMessageEvent_Message();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.DoEventImpl <em>Do Event</em>}' class.
@@ -3143,14 +3136,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DO_EVENT__ACTION = eINSTANCE.getDoEvent_Action();
-
-		/**
-		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DO_EVENT__STATE = eINSTANCE.getDoEvent_State();
 
 		/**
 		 * The meta object literal for the '<em><b>Period Lower</b></em>' attribute feature.
@@ -3193,42 +3178,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTRY_OR_EXIT_EVENT__ACTION = eINSTANCE.getEntryOrExitEvent_Action();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl <em>Entry Event</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryEventImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEntryEvent()
-		 * @generated
-		 */
-		EClass ENTRY_EVENT = eINSTANCE.getEntryEvent();
-
-		/**
-		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTRY_EVENT__STATE = eINSTANCE.getEntryEvent_State();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitEventImpl <em>Exit Event</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ExitEventImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getExitEvent()
-		 * @generated
-		 */
-		EClass EXIT_EVENT = eINSTANCE.getExitEvent();
-
-		/**
-		 * The meta object literal for the '<em><b>State</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXIT_EVENT__STATE = eINSTANCE.getExitEvent_State();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationChannelImpl <em>Synchronization Channel</em>}' class.
@@ -3379,6 +3328,62 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass EXIT_POINT = eINSTANCE.getExitPoint();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl <em>Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EventImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEvent()
+		 * @generated
+		 */
+		EClass EVENT = eINSTANCE.getEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT__KIND = eINSTANCE.getEvent_Kind();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionEventImpl <em>Transition Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionEventImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getTransitionEvent()
+		 * @generated
+		 */
+		EClass TRANSITION_EVENT = eINSTANCE.getTransitionEvent();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEventImpl <em>State Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEventImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getStateEvent()
+		 * @generated
+		 */
+		EClass STATE_EVENT = eINSTANCE.getStateEvent();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl <em>Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.MessageImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getMessage()
+		 * @generated
+		 */
+		EClass MESSAGE = eINSTANCE.getMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Instance Of</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE__INSTANCE_OF = eINSTANCE.getMessage_InstanceOf();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind <em>Synchronization Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3387,6 +3392,16 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum SYNCHRONIZATION_KIND = eINSTANCE.getSynchronizationKind();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind <em>Event Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getEventKind()
+		 * @generated
+		 */
+		EEnum EVENT_KIND = eINSTANCE.getEventKind();
 
 	}
 

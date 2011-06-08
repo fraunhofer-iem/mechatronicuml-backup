@@ -260,26 +260,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AsynchronousEventItemProvider asynchronousEventItemProvider;
+	protected AsynchronousMessageEventItemProvider asynchronousMessageEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAsynchronousEventAdapter() {
-		if (asynchronousEventItemProvider == null) {
-			asynchronousEventItemProvider = new AsynchronousEventItemProvider(this);
+	public Adapter createAsynchronousMessageEventAdapter() {
+		if (asynchronousMessageEventItemProvider == null) {
+			asynchronousMessageEventItemProvider = new AsynchronousMessageEventItemProvider(this);
 		}
 
-		return asynchronousEventItemProvider;
+		return asynchronousMessageEventItemProvider;
 	}
 
 	/**
@@ -306,49 +306,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntryEventItemProvider entryEventItemProvider;
+	protected EntryOrExitEventItemProvider entryOrExitEventItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEntryEventAdapter() {
-		if (entryEventItemProvider == null) {
-			entryEventItemProvider = new EntryEventItemProvider(this);
+	public Adapter createEntryOrExitEventAdapter() {
+		if (entryOrExitEventItemProvider == null) {
+			entryOrExitEventItemProvider = new EntryOrExitEventItemProvider(this);
 		}
 
-		return entryEventItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExitEventItemProvider exitEventItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createExitEventAdapter() {
-		if (exitEventItemProvider == null) {
-			exitEventItemProvider = new ExitEventItemProvider(this);
-		}
-
-		return exitEventItemProvider;
+		return entryOrExitEventItemProvider;
 	}
 
 	/**
@@ -467,6 +444,29 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageItemProvider messageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageAdapter() {
+		if (messageItemProvider == null) {
+			messageItemProvider = new MessageItemProvider(this);
+		}
+
+		return messageItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -573,15 +573,15 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
 		if (actionExpressionItemProvider != null) actionExpressionItemProvider.dispose();
-		if (asynchronousEventItemProvider != null) asynchronousEventItemProvider.dispose();
+		if (asynchronousMessageEventItemProvider != null) asynchronousMessageEventItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
-		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
-		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
+		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
 		if (entryPointItemProvider != null) entryPointItemProvider.dispose();
 		if (exitPointItemProvider != null) exitPointItemProvider.dispose();
+		if (messageItemProvider != null) messageItemProvider.dispose();
 	}
 
 }

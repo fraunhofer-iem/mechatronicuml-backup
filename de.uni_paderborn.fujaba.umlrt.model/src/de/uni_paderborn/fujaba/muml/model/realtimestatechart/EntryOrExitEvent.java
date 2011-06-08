@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface EntryOrExitEvent extends EObject {
@@ -53,8 +53,7 @@ public interface EntryOrExitEvent extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entry or exit action can have one action.
-	 * \todosd{Change to inheritance?}
+	 * Each entry or exit action can have one or more actions.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_Action()

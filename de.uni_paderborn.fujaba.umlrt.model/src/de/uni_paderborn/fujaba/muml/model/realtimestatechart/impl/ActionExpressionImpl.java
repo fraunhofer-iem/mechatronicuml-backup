@@ -7,8 +7,11 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -28,6 +31,7 @@ import org.storydriven.modeling.expressions.impl.ExpressionImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ActionExpressionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ActionExpressionImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ActionExpressionImpl#getWcet <em>Wcet</em>}</li>
  * </ul>
  * </p>
@@ -56,6 +60,26 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EventKind KIND_EDEFAULT = EventKind.RAISE;
+
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventKind kind = KIND_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getWcet() <em>Wcet</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,7 +87,7 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long WCET_EDEFAULT = null;
+	protected static final long WCET_EDEFAULT = 0L;
 
 	/**
 	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' attribute.
@@ -73,7 +97,7 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 	 * @generated
 	 * @ordered
 	 */
-	protected Long wcet = WCET_EDEFAULT;
+	protected long wcet = WCET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,7 +144,28 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Long getWcet() {
+	public EventKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(EventKind newKind) {
+		EventKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION_EXPRESSION__KIND, oldKind, kind));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public long getWcet() {
 		return wcet;
 	}
 
@@ -129,8 +174,8 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWcet(Long newWcet) {
-		Long oldWcet = wcet;
+	public void setWcet(long newWcet) {
+		long oldWcet = wcet;
 		wcet = newWcet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ACTION_EXPRESSION__WCET, oldWcet, wcet));
@@ -146,6 +191,8 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 		switch (featureID) {
 			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
 				return getName();
+			case RealtimestatechartPackage.ACTION_EXPRESSION__KIND:
+				return getKind();
 			case RealtimestatechartPackage.ACTION_EXPRESSION__WCET:
 				return getWcet();
 		}
@@ -162,6 +209,9 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 		switch (featureID) {
 			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
 				setName((String)newValue);
+				return;
+			case RealtimestatechartPackage.ACTION_EXPRESSION__KIND:
+				setKind((EventKind)newValue);
 				return;
 			case RealtimestatechartPackage.ACTION_EXPRESSION__WCET:
 				setWcet((Long)newValue);
@@ -181,6 +231,9 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.ACTION_EXPRESSION__KIND:
+				setKind(KIND_EDEFAULT);
+				return;
 			case RealtimestatechartPackage.ACTION_EXPRESSION__WCET:
 				setWcet(WCET_EDEFAULT);
 				return;
@@ -198,8 +251,10 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 		switch (featureID) {
 			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case RealtimestatechartPackage.ACTION_EXPRESSION__KIND:
+				return kind != KIND_EDEFAULT;
 			case RealtimestatechartPackage.ACTION_EXPRESSION__WCET:
-				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
+				return wcet != WCET_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,6 +269,17 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case RealtimestatechartPackage.ACTION_EXPRESSION__NAME: return SDMPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == Event.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.ACTION_EXPRESSION__KIND: return RealtimestatechartPackage.EVENT__KIND;
+				default: return -1;
+			}
+		}
+		if (baseClass == StateEvent.class) {
+			switch (derivedFeatureID) {
 				default: return -1;
 			}
 		}
@@ -233,6 +299,17 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 				default: return -1;
 			}
 		}
+		if (baseClass == Event.class) {
+			switch (baseFeatureID) {
+				case RealtimestatechartPackage.EVENT__KIND: return RealtimestatechartPackage.ACTION_EXPRESSION__KIND;
+				default: return -1;
+			}
+		}
+		if (baseClass == StateEvent.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -248,6 +325,8 @@ public class ActionExpressionImpl extends ExpressionImpl implements ActionExpres
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", kind: ");
+		result.append(kind);
 		result.append(", wcet: ");
 		result.append(wcet);
 		result.append(')');

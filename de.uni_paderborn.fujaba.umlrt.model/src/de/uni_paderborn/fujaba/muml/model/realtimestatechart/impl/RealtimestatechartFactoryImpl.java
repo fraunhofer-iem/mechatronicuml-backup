@@ -69,15 +69,15 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
 			case RealtimestatechartPackage.ACTION_EXPRESSION: return createActionExpression();
-			case RealtimestatechartPackage.ASYNCHRONOUS_EVENT: return createAsynchronousEvent();
+			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT: return createAsynchronousMessageEvent();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
-			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
-			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
 			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
 			case RealtimestatechartPackage.EXIT_POINT: return createExitPoint();
+			case RealtimestatechartPackage.MESSAGE: return createMessage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +93,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 		switch (eDataType.getClassifierID()) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_KIND:
 				return createSynchronizationKindFromString(eDataType, initialValue);
+			case RealtimestatechartPackage.EVENT_KIND:
+				return createEventKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +110,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 		switch (eDataType.getClassifierID()) {
 			case RealtimestatechartPackage.SYNCHRONIZATION_KIND:
 				return convertSynchronizationKindToString(eDataType, instanceValue);
+			case RealtimestatechartPackage.EVENT_KIND:
+				return convertEventKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -198,9 +202,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AsynchronousEvent createAsynchronousEvent() {
-		AsynchronousEventImpl asynchronousEvent = new AsynchronousEventImpl();
-		return asynchronousEvent;
+	public AsynchronousMessageEvent createAsynchronousMessageEvent() {
+		AsynchronousMessageEventImpl asynchronousMessageEvent = new AsynchronousMessageEventImpl();
+		return asynchronousMessageEvent;
 	}
 
 	/**
@@ -218,19 +222,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryEvent createEntryEvent() {
-		EntryEventImpl entryEvent = new EntryEventImpl();
-		return entryEvent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExitEvent createExitEvent() {
-		ExitEventImpl exitEvent = new ExitEventImpl();
-		return exitEvent;
+	public EntryOrExitEvent createEntryOrExitEvent() {
+		EntryOrExitEventImpl entryOrExitEvent = new EntryOrExitEventImpl();
+		return entryOrExitEvent;
 	}
 
 	/**
@@ -288,6 +282,16 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Message createMessage() {
+		MessageImpl message = new MessageImpl();
+		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
 		SynchronizationKind result = SynchronizationKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -300,6 +304,26 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * @generated
 	 */
 	public String convertSynchronizationKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventKind createEventKindFromString(EDataType eDataType, String initialValue) {
+		EventKind result = EventKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

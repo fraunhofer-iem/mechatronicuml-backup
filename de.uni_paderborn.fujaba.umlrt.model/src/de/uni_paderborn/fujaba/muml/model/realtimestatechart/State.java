@@ -28,10 +28,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isFinal <em>Final</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedExitPoints <em>Derived Exit Points</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getDerivedEntryPoints <em>Derived Entry Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints <em>Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints <em>Entry Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,17 +62,16 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Do Event</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The do action. It is executed periodically while the corresponding complex state is active.
+	 * The do event. It is executed periodically while the corresponding state is active.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Do Event</em>' containment reference.
 	 * @see #setDoEvent(DoEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_DoEvent()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getState
-	 * @model opposite="state" containment="true"
+	 * @model containment="true" derived="true"
 	 * @generated
 	 */
 	DoEvent getDoEvent();
@@ -88,20 +88,19 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Exit Event</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The exit action is exectuted once when the corresponding state is left.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Event</em>' containment reference.
-	 * @see #setExitEvent(ExitEvent)
+	 * @see #setExitEvent(EntryOrExitEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_ExitEvent()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent#getState
-	 * @model opposite="state" containment="true"
+	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	ExitEvent getExitEvent();
+	EntryOrExitEvent getExitEvent();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitEvent <em>Exit Event</em>}' containment reference.
@@ -111,24 +110,23 @@ public interface State extends Vertex {
 	 * @see #getExitEvent()
 	 * @generated
 	 */
-	void setExitEvent(ExitEvent value);
+	void setExitEvent(EntryOrExitEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Entry Event</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The entry action is exectuted once when the corresponding state is entered.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Event</em>' containment reference.
-	 * @see #setEntryEvent(EntryEvent)
+	 * @see #setEntryEvent(EntryOrExitEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_EntryEvent()
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent#getState
-	 * @model opposite="state" containment="true"
+	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EntryEvent getEntryEvent();
+	EntryOrExitEvent getEntryEvent();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryEvent <em>Entry Event</em>}' containment reference.
@@ -138,7 +136,7 @@ public interface State extends Vertex {
 	 * @see #getEntryEvent()
 	 * @generated
 	 */
-	void setEntryEvent(EntryEvent value);
+	void setEntryEvent(EntryOrExitEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.
@@ -200,6 +198,22 @@ public interface State extends Vertex {
 	EList<SynchronizationChannel> getChannels();
 
 	/**
+	 * Returns the value of the '<em><b>Events</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Events</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Events()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<StateEvent> getEvents();
+
+	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
@@ -259,42 +273,34 @@ public interface State extends Vertex {
 	void setFinal(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Derived Exit Points</b></em>' reference list.
+	 * Returns the value of the '<em><b>Exit Points</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Derived Exit Points</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The exit points of this state.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Derived Exit Points</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_DerivedExitPoints()
+	 * @return the value of the '<em>Exit Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_ExitPoints()
 	 * @model derived="true"
 	 * @generated
 	 */
-	EList<ExitPoint> getDerivedExitPoints();
+	EList<ExitPoint> getExitPoints();
 
 	/**
-	 * Returns the value of the '<em><b>Derived Entry Points</b></em>' reference list.
+	 * Returns the value of the '<em><b>Entry Points</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Derived Entry Points</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The entry points of this state.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Derived Entry Points</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_DerivedEntryPoints()
+	 * @return the value of the '<em>Entry Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_EntryPoints()
 	 * @model derived="true"
 	 * @generated
 	 */
-	EList<EntryPoint> getDerivedEntryPoints();
+	EList<EntryPoint> getEntryPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.

@@ -885,7 +885,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		discretePortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
 		discretePortSpecificationEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		hardwarePortSpecificationEClass.getESuperTypes().add(this.getPortSpecification());
-		componentPartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		componentPartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());

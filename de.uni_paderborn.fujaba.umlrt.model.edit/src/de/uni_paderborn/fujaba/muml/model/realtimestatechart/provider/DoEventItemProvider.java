@@ -10,6 +10,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -41,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class DoEventItemProvider
-	extends ItemProviderAdapter
+	extends StateEventItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -168,8 +169,11 @@ public class DoEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DoEvent doEvent = (DoEvent)object;
-		return getString("_UI_DoEvent_type") + " " + doEvent.getPeriodLower();
+		EventKind labelValue = ((DoEvent)object).getKind();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DoEvent_type") :
+			getString("_UI_DoEvent_type") + " " + label;
 	}
 
 	/**
@@ -210,17 +214,6 @@ public class DoEventItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DO_EVENT__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

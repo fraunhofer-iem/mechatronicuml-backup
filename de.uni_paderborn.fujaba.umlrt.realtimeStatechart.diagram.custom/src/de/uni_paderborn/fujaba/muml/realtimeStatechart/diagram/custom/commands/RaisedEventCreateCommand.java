@@ -1,12 +1,10 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.commands;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -18,7 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
@@ -68,15 +66,16 @@ public class RaisedEventCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		
-		AsynchronousEvent newElement = RealtimestatechartFactory.
-			eINSTANCE.createAsynchronousEvent();
+
+		AsynchronousMessageEvent newElement = RealtimestatechartFactory.
+			eINSTANCE.createAsynchronousMessageEvent();
 	
 		Transition owner = (Transition) getElementToEdit();
 
-		owner.getRaisedEvents().add(newElement);
+		owner.setRaiseMessageEvent(newElement);
 
-
+		// TODO: Fix this old code
+/*
 		newElement.setCallee(messageType);
 		
 		Iterator<EParameter> iter = parameterValuesHashMap.keySet().iterator();
@@ -101,7 +100,7 @@ public class RaisedEventCreateCommand extends EditElementCommand {
 		}
 
 		doConfigure(newElement, monitor, info);
-
+*/
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
@@ -110,7 +109,7 @@ public class RaisedEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(AsynchronousEvent newElement, IProgressMonitor monitor,
+	protected void doConfigure(AsynchronousMessageEvent newElement, IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
 				.getElementType();

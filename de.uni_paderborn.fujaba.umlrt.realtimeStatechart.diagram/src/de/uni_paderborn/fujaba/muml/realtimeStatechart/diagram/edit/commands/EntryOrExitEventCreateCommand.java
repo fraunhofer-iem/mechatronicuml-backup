@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class EntryEventCreateCommand extends EditElementCommand {
+public class EntryOrExitEventCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public EntryEventCreateCommand(CreateElementRequest req) {
+	public EntryOrExitEventCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -54,8 +54,8 @@ public class EntryEventCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createEntryEvent();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createEntryOrExitEvent();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
 		owner.setEntryEvent(newElement);
@@ -70,7 +70,7 @@ public class EntryEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

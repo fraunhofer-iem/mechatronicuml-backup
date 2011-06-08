@@ -98,13 +98,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	ActionExpression createActionExpression();
 
 	/**
-	 * Returns a new object of class '<em>Asynchronous Event</em>'.
+	 * Returns a new object of class '<em>Asynchronous Message Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Asynchronous Event</em>'.
+	 * @return a new object of class '<em>Asynchronous Message Event</em>'.
 	 * @generated
 	 */
-	AsynchronousEvent createAsynchronousEvent();
+	AsynchronousMessageEvent createAsynchronousMessageEvent();
 
 	/**
 	 * Returns a new object of class '<em>Do Event</em>'.
@@ -116,22 +116,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	DoEvent createDoEvent();
 
 	/**
-	 * Returns a new object of class '<em>Entry Event</em>'.
+	 * Returns a new object of class '<em>Entry Or Exit Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Event</em>'.
+	 * @return a new object of class '<em>Entry Or Exit Event</em>'.
 	 * @generated
 	 */
-	EntryEvent createEntryEvent();
-
-	/**
-	 * Returns a new object of class '<em>Exit Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exit Event</em>'.
-	 * @generated
-	 */
-	ExitEvent createExitEvent();
+	EntryOrExitEvent createEntryOrExitEvent();
 
 	/**
 	 * Returns a new object of class '<em>Synchronization Channel</em>'.
@@ -177,6 +168,15 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	ExitPoint createExitPoint();
+
+	/**
+	 * Returns a new object of class '<em>Message</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message</em>'.
+	 * @generated
+	 */
+	Message createMessage();
 
 	/**
 	 * Returns the package supported by this factory.
