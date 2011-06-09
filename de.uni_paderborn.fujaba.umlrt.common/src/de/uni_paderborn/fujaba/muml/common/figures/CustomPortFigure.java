@@ -134,7 +134,7 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureOutPolygon().setBackgroundColor(backgroundColor);
 		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
 
-		// Activate Rectangle for Port only if it is no continuous port.
+		// Show Rectangle for Port only if it is no continuous port.
 		getFigureShadowRectangle().setVisible(portKind != PortKind.CONTINUOUS);
 		getFigureOutlineRectangle().setOutline(portKind != PortKind.CONTINUOUS);
 		getFigureOutlineRectangle().setFill(portKind != PortKind.CONTINUOUS);

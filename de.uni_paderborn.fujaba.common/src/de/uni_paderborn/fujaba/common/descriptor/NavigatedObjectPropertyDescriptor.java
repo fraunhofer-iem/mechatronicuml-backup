@@ -7,15 +7,17 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 /**
- * 
- * @generated NOT
+ * A PropertyDescriptor for navigated features.
  * 
  * @author bingo
- *
+ * 
  */
 public abstract class NavigatedObjectPropertyDescriptor extends
 		ItemPropertyDescriptor {
 
+	/**
+	 * Constructs this NavigatedObjectPropertyDescriptor.
+	 */
 	public NavigatedObjectPropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,
 			String description, EStructuralFeature feature, boolean isSettable,
@@ -26,17 +28,29 @@ public abstract class NavigatedObjectPropertyDescriptor extends
 				category, filterFlags);
 	}
 
+	/**
+	 * Sets the value for the property.
+	 * 
+	 * @param object
+	 *            The object to set a value for.
+	 * @param value
+	 *            The value to set
+	 */
 	@Override
 	public void setPropertyValue(Object object, Object value) {
+		// TODO: Use commands, see super implementation!
+
 		EObject oldObject = getNavigatedObject(object);
 
 		EObject newObject;
 		if (oldObject == null) {
 			newObject = createNewObject();
 		} else {
-			// It is no good style to create a copy, just to fire the notification.
-			//newObject = EcoreUtil.copy(oldObject);
+			// It is no good style to create a copy, just to fire the
+			// notification.
 			
+			// newObject = EcoreUtil.copy(oldObject);
+
 			// We reuse the old object.
 			newObject = oldObject;
 		}
@@ -47,13 +61,13 @@ public abstract class NavigatedObjectPropertyDescriptor extends
 		setNavigatedObject(object, null);
 
 		//
-		// Another possibility would be to install a DerivedAttributeAdapter in the model code.
+		// Another possibility would be to install a DerivedAttributeAdapter in
+		// the model code.
 		//
 
 		// Set the new Object.
 		setNavigatedObject(object, newObject);
-		
-		
+
 	}
 
 	@Override

@@ -196,13 +196,13 @@ public class PortImpl extends NamedElementImpl implements Port {
 		// Install a notification adapter that informs the
 		// requiredMessageInterface-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE, false);
+		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
 		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE);
 
 		// Install a notification adapter that informs the
 		// providedMessageInterface-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE, false);
+		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
 		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE);
 	}
 

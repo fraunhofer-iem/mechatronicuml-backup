@@ -131,7 +131,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		// Install a notification adapter that informs the
 		// portsDerived-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED, true);
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
 		portsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
 	}
 

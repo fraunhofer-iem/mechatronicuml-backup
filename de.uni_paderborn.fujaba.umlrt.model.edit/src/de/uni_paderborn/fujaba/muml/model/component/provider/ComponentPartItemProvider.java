@@ -7,23 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.descriptor.ComponentPartCardinalityPropertyDescriptor;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -31,13 +21,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.provider.CommentableElementItemProvider;
-import org.storydriven.modeling.SDMPackage;
 
-import org.storydriven.modeling.provider.NamedElementItemProvider;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.descriptor.ComponentPartCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart} object.
@@ -276,11 +268,13 @@ public class ComponentPartItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentPart)object).getComment();
+		//String label = ((ComponentPart)object).getComment();
+		Component componentType = ((ComponentPart) object).getComponentType();
+		String label = componentType == null ? "null" : componentType.getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ComponentPart_type") :
 			getString("_UI_ComponentPart_type") + " " + label;
