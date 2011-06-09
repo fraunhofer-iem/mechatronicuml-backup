@@ -165,8 +165,6 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
-            eType="#//model/core/AdaptationBehavior" eOpposite="#//model/core/AdaptationBehavior/port"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
             eType="#//model/core/Behavior"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
             eType="#//model/core/Behavior"/>
@@ -583,7 +581,7 @@
           <details key="documentation" value="The adaptation behavior is needed, if the role is a multi-role or the port is a multi-port."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/component/DiscretePortSpecification"
-            containment="true" eOpposite="#//model/component/DiscretePortSpecification/adaptationBehavior"/>
+            containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
