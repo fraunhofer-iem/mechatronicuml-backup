@@ -164,13 +164,12 @@
             <details key="documentation" value="This association stores the provided message interface of this port. The provided message interface defines which messages are allowed to be received by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
             eType="#//model/core/AdaptationBehavior" eOpposite="#//model/core/AdaptationBehavior/port"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
+            eType="#//model/core/Behavior"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
+            eType="#//model/core/Behavior"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePortSpecification" eSuperTypes="#//model/component/PortSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -517,8 +516,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Abstract super class for all elements that have a behavior in terms of a real-time statechart."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="realtimeStatechart"
-            lowerBound="1" eType="#//model/core/AbstractRealtimeStatechart" eOpposite="#//model/core/AbstractRealtimeStatechart/behavioralElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
+            eType="#//model/core/Behavior" eOpposite="#//model/core/Behavior/behavioralElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The real-time statechart that defines the behavior of this behavioral element."/>
           </eAnnotations>
@@ -536,7 +535,7 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AbstractRealtimeStatechart" abstract="true"
-          eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+          eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a realtime statechart.&#xD;&#xA;TODO-SD: All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling."/>
         </eAnnotations>
@@ -572,12 +571,6 @@
             <details key="documentation" value="needed for WCET-analysis"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
-            lowerBound="1" eType="#//model/core/BehavioralElement" eOpposite="#//model/core/BehavioralElement/realtimeStatechart">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The behavioral element this statechart belongs to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -585,18 +578,20 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AdaptationBehavior" eSuperTypes="#//model/core/BehavioralElement">
+      <eClassifiers xsi:type="ecore:EClass" name="AdaptationBehavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The adaptation behavior is needed, if the role is a multi-role or the port is a multi-port."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//model/pattern/Role"
-            eOpposite="#//model/pattern/Role/adaptationBehavior">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The role this adaptation behavior is assigned."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="#//model/component/DiscretePortSpecification"
             containment="true" eOpposite="#//model/component/DiscretePortSpecification/adaptationBehavior"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElement"
+            eType="#//model/core/BehavioralElement" eOpposite="#//model/core/BehavioralElement/behavior">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The behavioral element this statechart belongs to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
@@ -851,11 +846,13 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
-            eType="#//model/core/AdaptationBehavior" containment="true" eOpposite="#//model/core/AdaptationBehavior/role">
+            eType="#//model/core/Behavior">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The adaptation behavior of this role. Note that only multi-ports have an adaptation behavior."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
+            eType="#//model/core/Behavior"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="realtimestatechart" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart"
@@ -1263,6 +1260,11 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
