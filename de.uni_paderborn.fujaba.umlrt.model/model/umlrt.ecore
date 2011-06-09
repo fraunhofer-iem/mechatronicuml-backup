@@ -45,13 +45,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementReceiverInterfaces"
             upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as provided interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper).&#xD;&#xA;\todosd{Uwe and my oponion: rename to mustImplementReceiverMessageInterface}"/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as received message interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementSenderInterfaces"
             upperBound="-1" eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as required interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper).&#xD;&#xA;\todosd{Uwe and my oponion: rename to mustImplementSenderMessageInterface}"/>
+            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as sender message interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -101,7 +101,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).senderMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The required message interface contains the signature definitions of all events&#xD;&#xA;that may be sent by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
+            <details key="documentation" value="The sender message interface defines which messages this port sends.&#xD;&#xA;It is derived from the sender message interface of its discrete port specification.&#xD;&#xA;\todosd{implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
@@ -111,7 +111,7 @@
             <details key="derivation" value="if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).receiverMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provided message interface contains the signature definitions of all events&#xD;&#xA;that may be received by this port. It is derived from the discrete port specification&#xA;to receive notifications.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
+            <details key="documentation" value="The receiver message interface defines which messages this port receives.&#xD;&#xA;It is derived from the receiver message interface of its discrete port specification.&#xD;&#xA;\todosd{implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
@@ -155,13 +155,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the required message interface of this port. The required message interface defines which messages are allowed to be sent by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface}"/>
+            <details key="documentation" value="The sender message interface defines which messages this discrete port specification sends."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the provided message interface of this port. The provided message interface defines which messages are allowed to be received by this port.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
+            <details key="documentation" value="The receiver message interface defines which messages this discrete port specification receives."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehavior"
@@ -680,7 +680,7 @@
             <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.senderMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The required message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface"/>
+            <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
@@ -690,7 +690,7 @@
             <details key="derivation" value="if portType.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.receiverMessageInterface&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provided message interface derived from the port type of this port instance.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
+            <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorInstances"
@@ -824,13 +824,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the required message interface of this role. The required message interface defines which messages are allowed to be received by this role.&#xD;&#xA;\todosd{Uwe and my oponion: rename to senderMessageInterface"/>
+            <details key="documentation" value="The sender message interface defines which messages this port sends."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This association stores the provided message interface of this role. The provided message interface defines which messages are allowed to be received by this role.&#xD;&#xA;\todosd{Uwe and my oponion: rename to receiverMessageInterface}"/>
+            <details key="documentation" value="The receiver message interface defines which messages this port receives."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
@@ -1139,13 +1139,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ActionExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/StateEvent">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="wcet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The worst case execution time of this action.&#xD;&#xA;\todosd{Why is the type an ELongObject?}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ActionExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression ../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/StateEvent"/>
       <eClassifiers xsi:type="ecore:EClass" name="AsynchronousMessageEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/TransitionEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events."/>
