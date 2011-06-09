@@ -19,10 +19,6 @@ public class UmlrtSheetLabelProvider extends BaseLabelProvider implements
 	 */
 	public String getText(Object element) {
 		element = unwrap(element);
-		if (element instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorGroup) {
-			return ((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorGroup) element)
-					.getGroupName();
-		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
 	}

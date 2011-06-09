@@ -308,56 +308,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Port_3006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Port_3006_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ModelElementCategory_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Delegation_4003_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Delegation_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Port_3004_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Port_3004_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Assembly_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Assembly_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorActionProvider_OpenDiagramActionName;
-
-	/**
-	 * @generated
-	 */
 	public static String AbstractParser_UnexpectedValueType;
 
 	/**

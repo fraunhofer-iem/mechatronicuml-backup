@@ -260,21 +260,21 @@
                   xsi:type="gmfgraph:ConstantColor"
                   value="gray"/>
               <template
-                  x="1"
-                  y="1"/>
+                  x="6"/>
               <template
-                  x="2"
-                  y="2"/>
-              <template
-                  x="1"
                   y="3"/>
               <template
-                  x="1"/>
-              <template
-                  y="1"/>
+                  x="6"
+                  y="6"/>
               <template
                   x="1"
-                  y="2"/>
+                  y="5"/>
+              <template
+                  x="7"
+                  y="8"/>
+              <template
+                  x="1"
+                  y="11"/>
             </children>
           </children>
           <children
@@ -300,6 +300,12 @@
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3"/>
     </descriptors>
     <descriptors
         name="ComponentIconFigure">

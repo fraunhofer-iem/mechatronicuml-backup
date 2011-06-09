@@ -11,7 +11,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gmf.runtime.common.ui.services.marker.MarkerNavigationService;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
@@ -20,12 +19,9 @@ import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocu
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocumentProvider;
 import org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
@@ -36,9 +32,7 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
-import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
 
 /**
@@ -93,21 +87,6 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	public String getContributorId() {
 		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin.ID;
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("rawtypes")
-	public Object getAdapter(Class type) {
-		if (type == IShowInTargetList.class) {
-			return new IShowInTargetList() {
-				public String[] getShowInTargetIds() {
-					return new String[] { ProjectExplorer.VIEW_ID };
-				}
-			};
-		}
-		return super.getAdapter(type);
 	}
 
 	/**
@@ -267,25 +246,8 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	public ShowInContext getShowInContext() {
-		return new ShowInContext(getEditorInput(), getNavigatorSelection());
-	}
-
-	/**
-	 * @generated
-	 */
-	private ISelection getNavigatorSelection() {
-		IDiagramDocument document = getDiagramDocument();
-		if (document == null) {
-			return StructuredSelection.EMPTY;
-		}
-		Diagram diagram = document.getDiagram();
-		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
-		if (file != null) {
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem item = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.navigator.StructuredcomponentNavigatorItem(
-					diagram, file, false);
-			return new StructuredSelection(item);
-		}
-		return StructuredSelection.EMPTY;
+		return new ShowInContext(getEditorInput(), getGraphicalViewer()
+				.getSelection());
 	}
 
 	/**
