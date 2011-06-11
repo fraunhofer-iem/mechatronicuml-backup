@@ -63,29 +63,29 @@ public class DiscretePortSpecificationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRealtimeStatechartPropertyDescriptor(object);
+			addBehaviorPropertyDescriptor(object);
 			addRefinesPropertyDescriptor(object);
 			addSenderMessageInterfacePropertyDescriptor(object);
 			addReceiverMessageInterfacePropertyDescriptor(object);
-			addEventQueueSizePropertyDescriptor(object);
+			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Realtime Statechart feature.
+	 * This adds a property descriptor for the Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRealtimeStatechartPropertyDescriptor(Object object) {
+	protected void addBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_realtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_realtimeStatechart_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__REALTIME_STATECHART,
+				 getString("_UI_BehavioralElement_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -161,23 +161,23 @@ public class DiscretePortSpecificationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Event Queue Size feature.
+	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEventQueueSizePropertyDescriptor(Object object) {
+	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_eventQueueSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_eventQueueSize_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE,
+				 getString("_UI_DiscretePortSpecification_roleAndAdaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_roleAndAdaptationBehavior_feature", "_UI_DiscretePortSpecification_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -201,8 +201,7 @@ public class DiscretePortSpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		DiscretePortSpecification discretePortSpecification = (DiscretePortSpecification)object;
-		return getString("_UI_DiscretePortSpecification_type") + " " + discretePortSpecification.getEventQueueSize();
+		return getString("_UI_DiscretePortSpecification_type");
 	}
 
 	/**
@@ -215,12 +214,6 @@ public class DiscretePortSpecificationItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DiscretePortSpecification.class)) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

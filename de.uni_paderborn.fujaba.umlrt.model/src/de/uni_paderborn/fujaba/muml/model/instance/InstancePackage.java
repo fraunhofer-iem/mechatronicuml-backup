@@ -162,13 +162,13 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__REALTIME_STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__REALTIME_STATECHART;
+	int CONNECTOR_INSTANCE__BEHAVIOR = ComponentPackage.BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -335,13 +335,13 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_INSTANCE__REALTIME_STATECHART = CONNECTOR_INSTANCE__REALTIME_STATECHART;
+	int ASSEMBLY_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -417,13 +417,13 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__REALTIME_STATECHART = CONNECTOR_INSTANCE__REALTIME_STATECHART;
+	int DELEGATION_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.

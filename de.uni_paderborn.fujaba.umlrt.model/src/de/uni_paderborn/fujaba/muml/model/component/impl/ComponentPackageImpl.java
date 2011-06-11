@@ -495,8 +495,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDiscretePortSpecification_EventQueueSize() {
-		return (EAttribute)discretePortSpecificationEClass.getEStructuralFeatures().get(3);
+	public EReference getDiscretePortSpecification_AdaptationBehavior() {
+		return (EReference)discretePortSpecificationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -504,7 +504,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscretePortSpecification_AdaptationBehavior() {
+	public EReference getDiscretePortSpecification_RoleAndAdaptationBehavior() {
 		return (EReference)discretePortSpecificationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -798,8 +798,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__REFINES);
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE);
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE);
-		createEAttribute(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE);
 		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR);
+		createEReference(discretePortSpecificationEClass, DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR);
 
 		hardwarePortSpecificationEClass = createEClass(HARDWARE_PORT_SPECIFICATION);
 
@@ -925,8 +925,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getDiscretePortSpecification_Refines(), thePatternPackage.getRole(), thePatternPackage.getRole_Port(), "refines", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortSpecification_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortSpecification_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDiscretePortSpecification_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscretePortSpecification_AdaptationBehavior(), theCorePackage.getAdaptationBehavior(), theCorePackage.getAdaptationBehavior_Port(), "adaptationBehavior", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortSpecification_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortSpecification_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscretePortSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hardwarePortSpecificationEClass, HardwarePortSpecification.class, "HardwarePortSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1010,7 +1010,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });																						
+		   });																					
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1044,7 +1044,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).receiverMessageInterface\nendif"
-		   });																
+		   });															
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 

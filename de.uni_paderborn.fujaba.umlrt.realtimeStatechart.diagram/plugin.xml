@@ -160,7 +160,14 @@
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
-
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.UmlrtPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem"/>
+         </propertySection>
       </propertySections>
    </extension>
 
@@ -191,7 +198,7 @@
             <method name="getType()" value="5003,5004,5001,5002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004"/>
+            <method name="getType()" value="7001,7002"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -533,6 +540,48 @@
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/RealtimestatechartDiagramFile.gif"
+         extensions="realtimestatechart_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramActionBarContributor">
+      </editor>
+   </extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/RealtimestatechartDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.realtimeStatechart.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.realtimeStatechart.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
 
 

@@ -110,10 +110,9 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This reference points to all message interfaces that this component must implement
-	 * as provided interfaces via one of its ports. This reference has been used by the
+	 * as received message interfaces via one of its ports. This reference has been used by the
 	 * PG Mauritius to enable creation of sequence diagrams without having modeled
 	 * the complete component structure including all interfaces (see FDays 08 paper).
-	 * \todosd{Uwe and my oponion: rename to mustImplementReceiverMessageInterface}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Must Implement Receiver Interfaces</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementReceiverInterfaces()
@@ -129,10 +128,9 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This reference points to all message interfaces that this component must implement
-	 * as required interfaces via one of its ports. This reference has been used by the
+	 * as sender message interfaces via one of its ports. This reference has been used by the
 	 * PG Mauritius to enable creation of sequence diagrams without having modeled
 	 * the complete component structure including all interfaces (see FDays 08 paper).
-	 * \todosd{Uwe and my oponion: rename to mustImplementSenderMessageInterface}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Must Implement Sender Interfaces</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementSenderInterfaces()

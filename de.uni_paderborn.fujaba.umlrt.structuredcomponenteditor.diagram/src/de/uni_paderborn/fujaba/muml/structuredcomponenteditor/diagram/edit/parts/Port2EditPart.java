@@ -422,11 +422,11 @@ public class Port2EditPart extends AbstractBorderItemEditPart {
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
 					getMapMode().DPtoLP(6)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(4)));
+					getMapMode().DPtoLP(5)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(7),
-					getMapMode().DPtoLP(7)));
+					getMapMode().DPtoLP(8)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(10)));
+					getMapMode().DPtoLP(11)));
 			fFigureInOutPolygon.setFill(true);
 			fFigureInOutPolygon.setOutline(false);
 			fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);

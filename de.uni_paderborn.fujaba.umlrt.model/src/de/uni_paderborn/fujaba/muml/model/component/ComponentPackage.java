@@ -481,13 +481,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__REALTIME_STATECHART = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int DISCRETE_PORT_SPECIFICATION__BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -517,22 +517,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' container reference.
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 5;
+	int DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
@@ -899,13 +899,13 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__REALTIME_STATECHART = COMPONENT_FEATURE_COUNT + 0;
+	int ATOMIC_COMPONENT__BEHAVIOR = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
@@ -927,13 +927,13 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR = 13;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__REALTIME_STATECHART = CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -964,13 +964,13 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__REALTIME_STATECHART = BEHAVIORAL_CONNECTOR__REALTIME_STATECHART;
+	int CONNECTOR_TYPE__BEHAVIOR = BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -1028,13 +1028,13 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY = 11;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY__REALTIME_STATECHART = CONNECTOR_TYPE__REALTIME_STATECHART;
+	int ASSEMBLY__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -1110,13 +1110,13 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION = 12;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__REALTIME_STATECHART = CONNECTOR_TYPE__REALTIME_STATECHART;
+	int DELEGATION__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -1441,26 +1441,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePortSpecification_ReceiverMessageInterface();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getEventQueueSize <em>Event Queue Size</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Event Queue Size</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getEventQueueSize()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EAttribute getDiscretePortSpecification_EventQueueSize();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Adaptation Behavior</em>'.
+	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior()
 	 * @see #getDiscretePortSpecification()
 	 * @generated
 	 */
 	EReference getDiscretePortSpecification_AdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRoleAndAdaptationBehavior()
+	 * @see #getDiscretePortSpecification()
+	 * @generated
+	 */
+	EReference getDiscretePortSpecification_RoleAndAdaptationBehavior();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
@@ -1957,20 +1957,20 @@ public interface ComponentPackage extends EPackage {
 		EReference DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ReceiverMessageInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Queue Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DISCRETE_PORT_SPECIFICATION__EVENT_QUEUE_SIZE = eINSTANCE.getDiscretePortSpecification_EventQueueSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePortSpecification_AdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePortSpecification_RoleAndAdaptationBehavior();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.

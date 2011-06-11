@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isHistory <em>History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -140,6 +141,26 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected boolean history = HISTORY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventQueueSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int EVENT_QUEUE_SIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventQueueSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,6 +367,27 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getEventQueueSize() {
+		return eventQueueSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEventQueueSize(int newEventQueueSize) {
+		int oldEventQueueSize = eventQueueSize;
+		eventQueueSize = newEventQueueSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE, oldEventQueueSize, eventQueueSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -409,6 +451,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return getAvailableClocks();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				return isHistory();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
+				return getEventQueueSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -446,6 +490,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				setHistory((Boolean)newValue);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
+				setEventQueueSize((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -479,6 +526,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				setHistory(HISTORY_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
+				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -505,6 +555,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				return history != HISTORY_EDEFAULT;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
+				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -523,6 +575,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		result.append(availableClocks);
 		result.append(", history: ");
 		result.append(history);
+		result.append(", eventQueueSize: ");
+		result.append(eventQueueSize);
 		result.append(')');
 		return result.toString();
 	}

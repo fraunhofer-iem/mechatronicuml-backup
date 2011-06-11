@@ -6,47 +6,34 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
-
-import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
-import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.modeling.impl.NamedElementImpl;
+
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +43,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getEClass <em>EClass</em>}</li>
@@ -65,6 +52,7 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,14 +70,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealtimeStatechart()
+	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractRealtimeStatechart realtimeStatechart;
+	protected EList<Behavior> behavior;
 
 	/**
 	 * The cached value of the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
@@ -152,14 +140,24 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected EList<DiscretePortSpecification> port;
 
 	/**
-	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' containment reference.
+	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAdaptationBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected AdaptationBehavior adaptationBehavior;
+	protected Behavior adaptationBehavior;
+
+	/**
+	 * The cached value of the '{@link #getRoleAndAdaptationBehavior() <em>Role And Adaptation Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleAndAdaptationBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior roleAndAdaptationBehavior;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,59 +195,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getRealtimeStatechart() {
-		if (realtimeStatechart != null && realtimeStatechart.eIsProxy()) {
-			InternalEObject oldRealtimeStatechart = (InternalEObject)realtimeStatechart;
-			realtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldRealtimeStatechart);
-			if (realtimeStatechart != oldRealtimeStatechart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
-			}
+	public EList<Behavior> getBehavior() {
+		if (behavior == null) {
+			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, PatternPackage.ROLE__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
 		}
-		return realtimeStatechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AbstractRealtimeStatechart basicGetRealtimeStatechart() {
-		return realtimeStatechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart, NotificationChain msgs) {
-		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
-		realtimeStatechart = newRealtimeStatechart;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__REALTIME_STATECHART, oldRealtimeStatechart, newRealtimeStatechart);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
-		if (newRealtimeStatechart != realtimeStatechart) {
-			NotificationChain msgs = null;
-			if (realtimeStatechart != null)
-				msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-			if (newRealtimeStatechart != null)
-				msgs = ((InternalEObject)newRealtimeStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-			msgs = basicSetRealtimeStatechart(newRealtimeStatechart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__REALTIME_STATECHART, newRealtimeStatechart, newRealtimeStatechart));
+		return behavior;
 	}
 
 	/**
@@ -527,7 +477,15 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AdaptationBehavior getAdaptationBehavior() {
+	public Behavior getAdaptationBehavior() {
+		if (adaptationBehavior != null && adaptationBehavior.eIsProxy()) {
+			InternalEObject oldAdaptationBehavior = (InternalEObject)adaptationBehavior;
+			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
+			if (adaptationBehavior != oldAdaptationBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			}
+		}
 		return adaptationBehavior;
 	}
 
@@ -536,14 +494,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAdaptationBehavior(AdaptationBehavior newAdaptationBehavior, NotificationChain msgs) {
-		AdaptationBehavior oldAdaptationBehavior = adaptationBehavior;
-		adaptationBehavior = newAdaptationBehavior;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, newAdaptationBehavior);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Behavior basicGetAdaptationBehavior() {
+		return adaptationBehavior;
 	}
 
 	/**
@@ -551,18 +503,49 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAdaptationBehavior(AdaptationBehavior newAdaptationBehavior) {
-		if (newAdaptationBehavior != adaptationBehavior) {
-			NotificationChain msgs = null;
-			if (adaptationBehavior != null)
-				msgs = ((InternalEObject)adaptationBehavior).eInverseRemove(this, CorePackage.ADAPTATION_BEHAVIOR__ROLE, AdaptationBehavior.class, msgs);
-			if (newAdaptationBehavior != null)
-				msgs = ((InternalEObject)newAdaptationBehavior).eInverseAdd(this, CorePackage.ADAPTATION_BEHAVIOR__ROLE, AdaptationBehavior.class, msgs);
-			msgs = basicSetAdaptationBehavior(newAdaptationBehavior, msgs);
-			if (msgs != null) msgs.dispatch();
+	public void setAdaptationBehavior(Behavior newAdaptationBehavior) {
+		Behavior oldAdaptationBehavior = adaptationBehavior;
+		adaptationBehavior = newAdaptationBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getRoleAndAdaptationBehavior() {
+		if (roleAndAdaptationBehavior != null && roleAndAdaptationBehavior.eIsProxy()) {
+			InternalEObject oldRoleAndAdaptationBehavior = (InternalEObject)roleAndAdaptationBehavior;
+			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
+			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			}
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ADAPTATION_BEHAVIOR, newAdaptationBehavior, newAdaptationBehavior));
+		return roleAndAdaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetRoleAndAdaptationBehavior() {
+		return roleAndAdaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoleAndAdaptationBehavior(Behavior newRoleAndAdaptationBehavior) {
+		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
+		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
 	}
 
 	/**
@@ -576,10 +559,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				if (realtimeStatechart != null)
-					msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-				return basicSetRealtimeStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
+			case PatternPackage.ROLE__BEHAVIOR:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				if (roleConnector != null)
 					msgs = ((InternalEObject)roleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
@@ -590,10 +571,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicSetCoordinationPattern((CoordinationPattern)otherEnd, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				if (adaptationBehavior != null)
-					msgs = ((InternalEObject)adaptationBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.ROLE__ADAPTATION_BEHAVIOR, null, msgs);
-				return basicSetAdaptationBehavior((AdaptationBehavior)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -608,8 +585,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				return basicSetRealtimeStatechart(null, msgs);
+			case PatternPackage.ROLE__BEHAVIOR:
+				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				return basicSetRoleConnector(null, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
@@ -618,8 +595,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicSetCardinality(null, msgs);
 			case PatternPackage.ROLE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
-			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				return basicSetAdaptationBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -648,9 +623,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return getConstraint();
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				if (resolve) return getRealtimeStatechart();
-				return basicGetRealtimeStatechart();
+			case PatternPackage.ROLE__BEHAVIOR:
+				return getBehavior();
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				if (resolve) return getRoleConnector();
 				return basicGetRoleConnector();
@@ -670,7 +644,11 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__PORT:
 				return getPort();
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				return getAdaptationBehavior();
+				if (resolve) return getAdaptationBehavior();
+				return basicGetAdaptationBehavior();
+			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
+				if (resolve) return getRoleAndAdaptationBehavior();
+				return basicGetRoleAndAdaptationBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -688,8 +666,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
+			case PatternPackage.ROLE__BEHAVIOR:
+				getBehavior().clear();
+				getBehavior().addAll((Collection<? extends Behavior>)newValue);
 				return;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)newValue);
@@ -714,7 +693,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getPort().addAll((Collection<? extends DiscretePortSpecification>)newValue);
 				return;
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((AdaptationBehavior)newValue);
+				setAdaptationBehavior((Behavior)newValue);
+				return;
+			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
+				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -731,8 +713,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				getConstraint().clear();
 				return;
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)null);
+			case PatternPackage.ROLE__BEHAVIOR:
+				getBehavior().clear();
 				return;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)null);
@@ -756,7 +738,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getPort().clear();
 				return;
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
-				setAdaptationBehavior((AdaptationBehavior)null);
+				setAdaptationBehavior((Behavior)null);
+				return;
+			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
+				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -772,8 +757,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		switch (featureID) {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case PatternPackage.ROLE__REALTIME_STATECHART:
-				return realtimeStatechart != null;
+			case PatternPackage.ROLE__BEHAVIOR:
+				return behavior != null && !behavior.isEmpty();
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				return roleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
@@ -790,6 +775,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return port != null && !port.isEmpty();
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
+			case PatternPackage.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR:
+				return roleAndAdaptationBehavior != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -809,7 +796,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		}
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case PatternPackage.ROLE__REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+				case PatternPackage.ROLE__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -831,7 +818,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		}
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART: return PatternPackage.ROLE__REALTIME_STATECHART;
+				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return PatternPackage.ROLE__BEHAVIOR;
 				default: return -1;
 			}
 		}

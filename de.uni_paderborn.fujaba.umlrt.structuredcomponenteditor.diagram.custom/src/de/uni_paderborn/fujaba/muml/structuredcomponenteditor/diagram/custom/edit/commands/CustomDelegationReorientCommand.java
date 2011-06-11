@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.DelegationReorientCommand;
 
@@ -41,12 +42,22 @@ public class CustomDelegationReorientCommand extends DelegationReorientCommand {
 
 	/**
 	 * Checks if this Delegation is allowed to be reoriented.
+	 * 
+	 * @return <code>true</code>, if this Delegation is allowed to be reoriented
+	 *         this way.
 	 */
 	@Override
 	public boolean canExecute() {
+		Port newSource = getOldSource();
+		Port newTarget = getOldTarget();
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			newSource = getNewSource();
+		} else if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+			newTarget = getNewTarget();
+		}
 
 		// Make sure both Ports are set.
-		if (getNewSource() == null || getNewTarget() == null) {
+		if (newSource == null || newTarget == null) {
 			return false;
 		}
 
@@ -55,6 +66,11 @@ public class CustomDelegationReorientCommand extends DelegationReorientCommand {
 			return false;
 		}
 
+		boolean valid = DelegationConstraints.isValidDelegation(newSource,
+				newTarget, parentComponent, componentPart);
+		if (!valid) {
+			return false;
+		}
 		return super.canExecute();
 	}
 

@@ -393,16 +393,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateSynchroChannelsCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String StateRegionCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -413,22 +403,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Transition_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4001_source;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_State_2001_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_State_2001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
 	 * @generated

@@ -74,6 +74,7 @@ public class FujabaRealtimeStatechartItemProvider
 			addEmbeddingRegionPropertyDescriptor(object);
 			addAvailableClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
+			addEventQueueSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,6 +141,28 @@ public class FujabaRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Event Queue Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEventQueueSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FujabaRealtimeStatechart_eventQueueSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_eventQueueSize_feature", "_UI_FujabaRealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -216,6 +239,7 @@ public class FujabaRealtimeStatechartItemProvider
 		switch (notification.getFeatureID(FujabaRealtimeStatechart.class)) {
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:

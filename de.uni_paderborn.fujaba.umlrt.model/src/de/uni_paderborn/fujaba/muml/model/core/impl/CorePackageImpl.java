@@ -6,17 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.modeling.SDMPackage;
+
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
@@ -24,37 +29,16 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Infinity;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +94,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass adaptationBehaviorEClass = null;
+	private EClass behaviorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -276,7 +260,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehavioralElement_RealtimeStatechart() {
+	public EReference getBehavioralElement_Behavior() {
 		return (EReference)behavioralElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -357,17 +341,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractRealtimeStatechart_BehavioralElement() {
-		return (EReference)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAbstractRealtimeStatechart_Embedded() {
-		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)abstractRealtimeStatechartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -375,8 +350,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAdaptationBehavior() {
-		return adaptationBehaviorEClass;
+	public EClass getBehavior() {
+		return behaviorEClass;
 	}
 
 	/**
@@ -384,17 +359,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAdaptationBehavior_Role() {
-		return (EReference)adaptationBehaviorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAdaptationBehavior_Port() {
-		return (EReference)adaptationBehaviorEClass.getEStructuralFeatures().get(1);
+	public EReference getBehavior_BehavioralElement() {
+		return (EReference)behaviorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -436,7 +402,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		infinityEClass = createEClass(INFINITY);
 
 		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
-		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__REALTIME_STATECHART);
+		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__BEHAVIOR);
 
 		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
 		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
@@ -447,12 +413,10 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP);
 		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__UTILISATION);
 		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT);
-		createEReference(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT);
 		createEAttribute(abstractRealtimeStatechartEClass, ABSTRACT_REALTIME_STATECHART__EMBEDDED);
 
-		adaptationBehaviorEClass = createEClass(ADAPTATION_BEHAVIOR);
-		createEReference(adaptationBehaviorEClass, ADAPTATION_BEHAVIOR__ROLE);
-		createEReference(adaptationBehaviorEClass, ADAPTATION_BEHAVIOR__PORT);
+		behaviorEClass = createEClass(BEHAVIOR);
+		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
 	}
 
 	/**
@@ -483,8 +447,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		HelperPackage theHelperPackage = (HelperPackage)EPackage.Registry.INSTANCE.getEPackage(HelperPackage.eNS_URI);
-		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -493,7 +455,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
-		adaptationBehaviorEClass.getESuperTypes().add(this.getBehavioralElement());
+		abstractRealtimeStatechartEClass.getESuperTypes().add(this.getBehavior());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -539,7 +501,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElement_RealtimeStatechart(), this.getAbstractRealtimeStatechart(), this.getAbstractRealtimeStatechart_BehavioralElement(), "realtimeStatechart", null, 1, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, -1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstrainableElement_Constraint(), theConstraintPackage.getConstraint(), theConstraintPackage.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -550,14 +512,12 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getAbstractRealtimeStatechart_SystemWcetMap(), theHelperPackage.getMap(), "systemWcetMap", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractRealtimeStatechart_Utilisation(), ecorePackage.getEDouble(), "utilisation", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractRealtimeStatechart_ScheduleDocument(), ecorePackage.getEString(), "scheduleDocument", "\\\"schedule.xml\\\"", 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractRealtimeStatechart_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_RealtimeStatechart(), "behavioralElement", null, 1, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", null, 0, 1, AbstractRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractRealtimeStatechartEClass, this.getAbstractRealtimeStatechart(), "getHighestParentStatechart", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(adaptationBehaviorEClass, AdaptationBehavior.class, "AdaptationBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAdaptationBehavior_Role(), thePatternPackage.getRole(), thePatternPackage.getRole_AdaptationBehavior(), "role", null, 0, 1, AdaptationBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAdaptationBehavior_Port(), theComponentPackage.getDiscretePortSpecification(), theComponentPackage.getDiscretePortSpecification_AdaptationBehavior(), "port", null, 0, 1, AdaptationBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

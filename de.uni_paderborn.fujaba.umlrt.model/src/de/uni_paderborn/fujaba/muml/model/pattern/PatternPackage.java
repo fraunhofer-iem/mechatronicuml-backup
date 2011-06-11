@@ -74,13 +74,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__REALTIME_STATECHART = ComponentPackage.BEHAVIORAL_CONNECTOR__REALTIME_STATECHART;
+	int ROLE_CONNECTOR__BEHAVIOR = ComponentPackage.BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -256,13 +256,13 @@ public interface PatternPackage extends EPackage {
 	int ROLE__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REALTIME_STATECHART = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -328,7 +328,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE__PORT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' containment reference.
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -337,13 +337,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int ROLE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 
 	/**
@@ -520,15 +529,26 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_Port();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Adaptation Behavior</em>'.
+	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior()
 	 * @see #getRole()
 	 * @generated
 	 */
 	EReference getRole_AdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_RoleAndAdaptationBehavior();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -687,12 +707,20 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__PORT = eINSTANCE.getRole_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ROLE__ADAPTATION_BEHAVIOR = eINSTANCE.getRole_AdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getRole_RoleAndAdaptationBehavior();
 
 	}
 

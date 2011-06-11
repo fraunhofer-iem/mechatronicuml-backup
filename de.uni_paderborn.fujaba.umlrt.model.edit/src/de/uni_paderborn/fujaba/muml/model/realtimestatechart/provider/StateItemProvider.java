@@ -342,12 +342,12 @@ public class StateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
+				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createDoEvent()));
+				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
 	}
 
 	/**

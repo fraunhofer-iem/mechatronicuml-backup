@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.wizards;
 
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.IDialogSettings;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
@@ -19,7 +20,7 @@ public class ModifyParameterWizard extends CommonModifyWizard {
 	
 	private SynchronizationChannel selectedSyncChannel = null;
 
-	public ModifyParameterWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, SynchronizationChannel sC)
+	public ModifyParameterWizard(Diagram diag, SynchronizationChannel sC)
 	{
 		super(diag);
 		

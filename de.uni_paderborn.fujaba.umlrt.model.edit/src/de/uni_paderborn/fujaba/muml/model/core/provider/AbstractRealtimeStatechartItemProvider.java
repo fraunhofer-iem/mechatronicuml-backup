@@ -70,12 +70,12 @@ public class AbstractRealtimeStatechartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addBehavioralElementPropertyDescriptor(object);
 			addWcetDocumentPropertyDescriptor(object);
 			addSecurityLevelPropertyDescriptor(object);
 			addSystemWcetMapPropertyDescriptor(object);
 			addUtilisationPropertyDescriptor(object);
 			addScheduleDocumentPropertyDescriptor(object);
-			addBehavioralElementPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -99,6 +99,28 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Behavioral Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBehavioralElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Behavior_behavioralElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_behavioralElement_feature", "_UI_Behavior_type"),
+				 CorePackage.Literals.BEHAVIOR__BEHAVIORAL_ELEMENT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -209,28 +231,6 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Behavioral Element feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBehavioralElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractRealtimeStatechart_behavioralElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_behavioralElement_feature", "_UI_AbstractRealtimeStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

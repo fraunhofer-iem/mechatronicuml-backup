@@ -6,23 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.storydriven.modeling.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior;
-import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.storydriven.modeling.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +37,7 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -138,8 +132,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This association stores the required message interface of this role. The required message interface defines which messages are allowed to be received by this role.
-	 * \todosd{Uwe and my oponion: rename to senderMessageInterface
+	 * The sender message interface defines which messages this port sends.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Interface</em>' reference.
 	 * @see #setSenderMessageInterface(MessageInterface)
@@ -164,8 +157,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This association stores the provided message interface of this role. The provided message interface defines which messages are allowed to be received by this role.
-	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
+	 * The receiver message interface defines which messages this port receives.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
 	 * @see #setReceiverMessageInterface(MessageInterface)
@@ -236,30 +228,54 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	EList<DiscretePortSpecification> getPort();
 
 	/**
-	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole <em>Role</em>}'.
+	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The adaptation behavior of this role. Note that only multi-ports have an adaptation behavior.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Adaptation Behavior</em>' containment reference.
-	 * @see #setAdaptationBehavior(AdaptationBehavior)
+	 * @return the value of the '<em>Adaptation Behavior</em>' reference.
+	 * @see #setAdaptationBehavior(Behavior)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_AdaptationBehavior()
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole
-	 * @model opposite="role" containment="true"
+	 * @model
 	 * @generated
 	 */
-	AdaptationBehavior getAdaptationBehavior();
+	Behavior getAdaptationBehavior();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getAdaptationBehavior <em>Adaptation Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Adaptation Behavior</em>' containment reference.
+	 * @param value the new value of the '<em>Adaptation Behavior</em>' reference.
 	 * @see #getAdaptationBehavior()
 	 * @generated
 	 */
-	void setAdaptationBehavior(AdaptationBehavior value);
+	void setAdaptationBehavior(Behavior value);
+
+	/**
+	 * Returns the value of the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role And Adaptation Behavior</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role And Adaptation Behavior</em>' reference.
+	 * @see #setRoleAndAdaptationBehavior(Behavior)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_RoleAndAdaptationBehavior()
+	 * @model
+	 * @generated
+	 */
+	Behavior getRoleAndAdaptationBehavior();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role And Adaptation Behavior</em>' reference.
+	 * @see #getRoleAndAdaptationBehavior()
+	 * @generated
+	 */
+	void setRoleAndAdaptationBehavior(Behavior value);
 
 } // Role

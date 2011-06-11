@@ -77,7 +77,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1">
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/invariants"/>
         <ownedChild>
@@ -99,7 +99,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.2">
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/channels"/>
         <ownedChild>
@@ -121,7 +121,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.3">
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/State/regions"/>
         <ownedChild>
@@ -135,19 +135,9 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4">
         <compartment
-            href="realtimeStatechart.gmfgraph#ActionsCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.3">
-        <compartment
-            href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.0/@ownedChild/@children.4">
-        <compartment
-            href="realtimeStatechart.gmfgraph#SynchroChannelsCompartment"/>
+            href="realtimeStatechart.gmfgraph#CompoundCompartment"/>
       </compartments>
       <compartments
           children="//@nodes.0/@ownedChild/@children.5">

@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.wizards;
 
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.IDialogSettings;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
@@ -13,7 +14,7 @@ public class ModifyTimeGuardWizard extends CommonModifyWizard {
 	
 	private Transition selectedTransition = null;
 
-	public ModifyTimeGuardWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, Transition transition)
+	public ModifyTimeGuardWizard(Diagram diag, Transition transition)
 	{
 		super(diag);
 		

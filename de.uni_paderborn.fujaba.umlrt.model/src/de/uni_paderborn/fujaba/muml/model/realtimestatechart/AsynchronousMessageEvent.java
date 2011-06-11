@@ -14,7 +14,12 @@ import org.storydriven.modeling.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents an event. Events are associated with transitions. They are instances of certain message types. Events are used to model asynchronous communication between realtime statecharts. Events can be required for a transition to be activated. In this case the event is considered to be a trigger event. Events can also be sent when a transition is activated. Those events are considered as raised events.
+ * An AsynchronousMessageEvent is a TransitionEvent that corresponds to 
+ * receiving or sending a message. They are used to model asynchronous 
+ * communication between realtime statecharts. A trigger events specifies
+ * that the corresponding message has to be received for the transition to be
+ * enabled, a raised event specifies that the corresponding message will be 
+ * sent upon execution of the transition. 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -37,6 +42,10 @@ public interface AsynchronousMessageEvent extends NamedElement, TransitionEvent 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message associated with this event. The message is either requested to be
+	 * received (trigger event) or it will be sent (raise event).
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message</em>' containment reference.
 	 * @see #setMessage(Message)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getAsynchronousMessageEvent_Message()

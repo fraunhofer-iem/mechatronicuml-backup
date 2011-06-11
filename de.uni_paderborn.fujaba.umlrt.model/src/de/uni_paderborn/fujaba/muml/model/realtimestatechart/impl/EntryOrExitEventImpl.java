@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EntryOrExitEventImpl extends EObjectImpl implements EntryOrExitEvent {
+public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitEvent {
 	/**
 	 * The cached value of the '{@link #getClockResets() <em>Clock Resets</em>}' reference list.
 	 * <!-- begin-user-doc -->

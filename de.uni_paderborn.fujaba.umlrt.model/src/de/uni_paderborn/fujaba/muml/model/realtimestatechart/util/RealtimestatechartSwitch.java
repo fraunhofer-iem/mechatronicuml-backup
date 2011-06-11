@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.util;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 
 import java.util.List;
@@ -174,10 +175,8 @@ public class RealtimestatechartSwitch<T> {
 				T result = caseActionExpression(actionExpression);
 				if (result == null) result = caseExpression(actionExpression);
 				if (result == null) result = caseNamedElement(actionExpression);
-				if (result == null) result = caseStateEvent(actionExpression);
 				if (result == null) result = caseTypedElement(actionExpression);
 				if (result == null) result = caseCommentableElement(actionExpression);
-				if (result == null) result = caseEvent(actionExpression);
 				if (result == null) result = caseExtendableElement(actionExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -203,6 +202,8 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: {
 				EntryOrExitEvent entryOrExitEvent = (EntryOrExitEvent)theEObject;
 				T result = caseEntryOrExitEvent(entryOrExitEvent);
+				if (result == null) result = caseStateEvent(entryOrExitEvent);
+				if (result == null) result = caseEvent(entryOrExitEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,6 +238,7 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = caseAbstractRealtimeStatechart(fujabaRealtimeStatechart);
 				if (result == null) result = caseNamedElement(fujabaRealtimeStatechart);
 				if (result == null) result = caseCommentableElement(fujabaRealtimeStatechart);
+				if (result == null) result = caseBehavior(fujabaRealtimeStatechart);
 				if (result == null) result = caseExtendableElement(fujabaRealtimeStatechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -724,6 +726,21 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseInvocation(Invocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavior(Behavior object) {
 		return null;
 	}
 

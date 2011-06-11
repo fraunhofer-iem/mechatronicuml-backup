@@ -35,11 +35,6 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	private Map<EStructuralFeature, EStructuralFeature> navigations = new HashMap<EStructuralFeature, EStructuralFeature>();
 
 	/**
-	 * The navigation features that this Adapter should listen to.
-	 */
-	private List<EStructuralFeature> navigationFeatures = new ArrayList<EStructuralFeature>();
-
-	/**
 	 * The derived feature that should be notified.
 	 */
 	protected final EStructuralFeature derivedFeature;
@@ -111,7 +106,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * 
 	 * @return the navigated features.
 	 */
-	public Collection<EStructuralFeature> getNavigatedFeatures() {
+	public Collection<EStructuralFeature> getNavigationFeatures() {
 		return navigations.keySet();
 	}
 
@@ -136,7 +131,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	public void notifyChanged(Notification notification) {
 
 		if (notification != null && notification.getFeature() != null
-				&& navigationFeatures.contains(notification.getFeature())) {
+				&& getNavigationFeatures().contains(notification.getFeature())) {
 			switch (notification.getEventType()) {
 			// TODO support ADD_MANY/REMOVE_MANY?
 			case Notification.ADD:
@@ -190,7 +185,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	}
 
 	/**
-	 * Notifies about the change of the dependant attribute.
+	 * Notifies about the change of the dependent attribute.
 	 * 
 	 * @param notification
 	 *            The notification received.

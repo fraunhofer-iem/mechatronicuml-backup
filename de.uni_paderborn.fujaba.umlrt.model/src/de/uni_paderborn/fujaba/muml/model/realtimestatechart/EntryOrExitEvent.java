@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents an entry or an exit action.
+ * This class represents an entry or an exit event. The action associated with this 
+ * events will be executed when the state is entered or left respectively.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EntryOrExitEvent extends EObject {
+public interface EntryOrExitEvent extends StateEvent {
 	/**
 	 * Returns the value of the '<em><b>Clock Resets</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock}.

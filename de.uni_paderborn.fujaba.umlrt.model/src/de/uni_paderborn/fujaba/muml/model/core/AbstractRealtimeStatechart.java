@@ -29,7 +29,6 @@ import org.storydriven.modeling.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
  * </ul>
  * </p>
@@ -38,7 +37,7 @@ import org.storydriven.modeling.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractRealtimeStatechart extends NamedElement, CommentableElement {
+public interface AbstractRealtimeStatechart extends NamedElement, CommentableElement, Behavior {
 	/**
 	 * Returns the value of the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -165,33 +164,6 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * @generated
 	 */
 	void setScheduleDocument(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Behavioral Element</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The behavioral element this statechart belongs to.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Behavioral Element</em>' reference.
-	 * @see #setBehavioralElement(BehavioralElement)
-	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getAbstractRealtimeStatechart_BehavioralElement()
-	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart
-	 * @model opposite="realtimeStatechart" required="true"
-	 * @generated
-	 */
-	BehavioralElement getBehavioralElement();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavioral Element</em>' reference.
-	 * @see #getBehavioralElement()
-	 * @generated
-	 */
-	void setBehavioralElement(BehavioralElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.

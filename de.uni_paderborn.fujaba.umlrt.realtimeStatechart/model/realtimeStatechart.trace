@@ -14,12 +14,6 @@
     <compartmentTraces
         visualID="7002"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7003"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7004"
-        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2002"

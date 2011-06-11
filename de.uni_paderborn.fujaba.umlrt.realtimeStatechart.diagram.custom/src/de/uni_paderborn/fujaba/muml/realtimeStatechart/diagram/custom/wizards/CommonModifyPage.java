@@ -17,66 +17,64 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 
-public abstract class CommonModifyPage extends WizardPage{
+public abstract class CommonModifyPage extends WizardPage {
 
 	protected CommonModifyPage(String pageName) {
 		super(pageName);
 	}
-	
-	protected List<EDataType> getDataTypes(){
-		
-		FujabaRealtimeStatechart statechart = ((CommonModifyWizard)getWizard()).getRealtimeStatechart();
 
-		RootNode root = (RootNode)statechart.eContainer();
-		
+	protected List<EDataType> getDataTypes() {
+
+		FujabaRealtimeStatechart statechart = ((CommonModifyWizard) getWizard())
+				.getRealtimeStatechart();
+
+		RootNode root = (RootNode) statechart.eContainer();
+
 		return root.getEcoreDataTypes();
 	}
-	
-	protected String getFullParameterName(EParameter parameter){
-		return parameter.getName() +": "+parameter.getEType().getName();
+
+	protected String getFullParameterName(EParameter parameter) {
+		return parameter.getName() + ": " + parameter.getEType().getName();
 	}
 
-	protected void deleteObject(EObject obj){
-		new ICommandProxy(new DestroyElementCommand(
-			new DestroyElementRequest(obj, false))).execute();
+	protected void deleteObject(EObject obj) {
+		new ICommandProxy(new DestroyElementCommand(new DestroyElementRequest(
+				obj, false))).execute();
 	}
-	
-	public Object[] getParametersFromSynchronizationChannel(Object object)
-	{
-        if (object instanceof SynchronizationChannel)
-        {
-        	SynchronizationChannel syncChannel = (SynchronizationChannel)object;
-        	ArrayList<String> list = new ArrayList<String>();
-        	
-        	if(syncChannel.getContainedParameters()!=null){
-        		Iterator<EParameter> iter = syncChannel.getContainedParameters().iterator();
-        		while(iter.hasNext()){
-        			list.add(getFullParameterName(iter.next()));
-        		}
-        		return list.toArray();
-        	}
-        }
-		
-        return new Object[0];
+
+	public Object[] getParametersFromSynchronizationChannel(Object object) {
+		if (object instanceof SynchronizationChannel) {
+			SynchronizationChannel syncChannel = (SynchronizationChannel) object;
+			ArrayList<String> list = new ArrayList<String>();
+
+			if (syncChannel.getContainedParameters() != null) {
+				Iterator<EParameter> iter = syncChannel
+						.getContainedParameters().iterator();
+				while (iter.hasNext()) {
+					list.add(getFullParameterName(iter.next()));
+				}
+				return list.toArray();
+			}
+		}
+
+		return new Object[0];
 	}
-	
-	
-	public Object[] getParametersFromMessageType(Object object)
-	{
-        if (object instanceof MessageType)
-        {
-        	MessageType messageType = (MessageType)object;
-        	ArrayList<String> list = new ArrayList<String>();
-        	
-        	if(messageType.getContainedParameters()!=null){
-        		Iterator<EParameter> iter = messageType.getContainedParameters().iterator();
-        		while(iter.hasNext()){
-        			list.add(getFullParameterName(iter.next()));
-        		}
-        		return list.toArray();
-        	}
-        }
-		
-        return new Object[0];
-	}	
+
+	public Object[] getParametersFromMessageType(Object object) {
+		if (object instanceof MessageType) {
+			MessageType messageType = (MessageType) object;
+			ArrayList<String> list = new ArrayList<String>();
+
+			if (messageType.getContainedParameters() != null) {
+				Iterator<EParameter> iter = messageType
+						.getContainedParameters().iterator();
+				while (iter.hasNext()) {
+					list.add(getFullParameterName(iter.next()));
+				}
+				return list.toArray();
+			}
+		}
+
+		return new Object[0];
+	}
 }

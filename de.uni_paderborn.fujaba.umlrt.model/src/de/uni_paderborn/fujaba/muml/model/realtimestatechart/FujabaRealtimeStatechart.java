@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  * </ul>
  * </p>
  *
@@ -194,5 +195,31 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * @generated
 	 */
 	void setHistory(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Queue Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The size of the event queue of this port. It defines the maximum number of events
+	 * that may be temporarily buffered by the port.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Event Queue Size</em>' attribute.
+	 * @see #setEventQueueSize(int)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_EventQueueSize()
+	 * @model
+	 * @generated
+	 */
+	int getEventQueueSize();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Event Queue Size</em>' attribute.
+	 * @see #getEventQueueSize()
+	 * @generated
+	 */
+	void setEventQueueSize(int value);
 
 } // FujabaRealtimeStatechart

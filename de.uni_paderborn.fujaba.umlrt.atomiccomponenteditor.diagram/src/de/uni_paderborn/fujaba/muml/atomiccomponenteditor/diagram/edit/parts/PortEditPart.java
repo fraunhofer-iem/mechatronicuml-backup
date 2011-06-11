@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -16,10 +17,14 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -212,6 +217,31 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureOutlineRectangle;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureShadowRectangle;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureHardwareTypeLabel;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInPolygonContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureOutPolygonContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureInOutPolygonContainer;
+
+		/**
+		 * @generated
+		 */
 		public PortFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
@@ -234,9 +264,9 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			this.add(aux10);
 			aux10.setLayoutManager(new StackLayout());
 
-			RectangleFigure shadow1 = new RectangleFigure();
+			fFigureShadowRectangle = new RectangleFigure();
 
-			aux10.add(shadow1);
+			aux10.add(fFigureShadowRectangle);
 
 			fFigureInnerRectContainer = new RectangleFigure();
 			fFigureInnerRectContainer.setFill(false);
@@ -248,19 +278,19 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			this.add(fFigureInnerRectContainer);
 			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
 
-			RectangleFigure innerRectangle1 = new RectangleFigure();
+			fFigureOutlineRectangle = new RectangleFigure();
 
-			fFigureInnerRectContainer.add(innerRectangle1);
+			fFigureInnerRectContainer.add(fFigureOutlineRectangle);
 
-			RectangleFigure inPolygonContainer1 = new RectangleFigure();
-			inPolygonContainer1.setFill(false);
-			inPolygonContainer1.setOutline(false);
-			inPolygonContainer1.setBorder(new MarginBorder(getMapMode().DPtoLP(
-					5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			fFigureInPolygonContainer = new RectangleFigure();
+			fFigureInPolygonContainer.setFill(false);
+			fFigureInPolygonContainer.setOutline(false);
+			fFigureInPolygonContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			fFigureInnerRectContainer.add(inPolygonContainer1);
-			inPolygonContainer1.setLayoutManager(new StackLayout());
+			fFigureInnerRectContainer.add(fFigureInPolygonContainer);
+			fFigureInPolygonContainer.setLayoutManager(new StackLayout());
 
 			fFigureInPolygon = new ScalablePolygonShape();
 			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
@@ -269,19 +299,21 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 					getMapMode().DPtoLP(1)));
 			fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(2)));
+			fFigureInPolygon.setFill(true);
 			fFigureInPolygon.setOutline(false);
+			fFigureInPolygon.setBackgroundColor(ColorConstants.gray);
 
-			inPolygonContainer1.add(fFigureInPolygon);
+			fFigureInPolygonContainer.add(fFigureInPolygon);
 
-			RectangleFigure outPolygonContainer1 = new RectangleFigure();
-			outPolygonContainer1.setFill(false);
-			outPolygonContainer1.setOutline(false);
-			outPolygonContainer1.setBorder(new MarginBorder(getMapMode()
+			fFigureOutPolygonContainer = new RectangleFigure();
+			fFigureOutPolygonContainer.setFill(false);
+			fFigureOutPolygonContainer.setOutline(false);
+			fFigureOutPolygonContainer.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			fFigureInnerRectContainer.add(outPolygonContainer1);
-			outPolygonContainer1.setLayoutManager(new StackLayout());
+			fFigureInnerRectContainer.add(fFigureOutPolygonContainer);
+			fFigureOutPolygonContainer.setLayoutManager(new StackLayout());
 
 			fFigureOutPolygon = new ScalablePolygonShape();
 			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
@@ -290,36 +322,47 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 					getMapMode().DPtoLP(1)));
 			fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
 					getMapMode().DPtoLP(2)));
+			fFigureOutPolygon.setFill(true);
 			fFigureOutPolygon.setOutline(false);
+			fFigureOutPolygon.setBackgroundColor(ColorConstants.gray);
 
-			outPolygonContainer1.add(fFigureOutPolygon);
+			fFigureOutPolygonContainer.add(fFigureOutPolygon);
 
-			RectangleFigure inOutPolygonContainer1 = new RectangleFigure();
-			inOutPolygonContainer1.setFill(false);
-			inOutPolygonContainer1.setOutline(false);
-			inOutPolygonContainer1.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3)));
+			fFigureInOutPolygonContainer = new RectangleFigure();
+			fFigureInOutPolygonContainer.setFill(false);
+			fFigureInOutPolygonContainer.setOutline(false);
+			fFigureInOutPolygonContainer.setBorder(new MarginBorder(
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
 
-			fFigureInnerRectContainer.add(inOutPolygonContainer1);
-			inOutPolygonContainer1.setLayoutManager(new StackLayout());
+			fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);
+			fFigureInOutPolygonContainer.setLayoutManager(new StackLayout());
 
 			fFigureInOutPolygon = new ScalablePolygonShape();
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(1)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(2),
-					getMapMode().DPtoLP(2)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(3)));
-			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
 					getMapMode().DPtoLP(0)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(1)));
+					getMapMode().DPtoLP(3)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
+					getMapMode().DPtoLP(6)));
 			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(2)));
+					getMapMode().DPtoLP(5)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(7),
+					getMapMode().DPtoLP(8)));
+			fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(11)));
+			fFigureInOutPolygon.setFill(true);
 			fFigureInOutPolygon.setOutline(false);
+			fFigureInOutPolygon.setBackgroundColor(ColorConstants.gray);
 
-			inOutPolygonContainer1.add(fFigureInOutPolygon);
+			fFigureInOutPolygonContainer.add(fFigureInOutPolygon);
+
+			fFigureHardwareTypeLabel = new WrappingLabel();
+			fFigureHardwareTypeLabel.setText("");
+
+			fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);
+
+			fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);
 
 		}
 
@@ -351,6 +394,55 @@ public class PortEditPart extends AbstractBorderItemEditPart {
 			return fFigureInnerRectContainer;
 		}
 
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutlineRectangle() {
+			return fFigureOutlineRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureShadowRectangle() {
+			return fFigureShadowRectangle;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureHardwareTypeLabel() {
+			return fFigureHardwareTypeLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInPolygonContainer() {
+			return fFigureInPolygonContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureOutPolygonContainer() {
+			return fFigureOutPolygonContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInOutPolygonContainer() {
+			return fFigureInOutPolygonContainer;
+		}
+
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGUREHARDWARETYPELABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 7, SWT.NORMAL);
 
 }

@@ -70,8 +70,6 @@ public class ActionExpressionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addKindPropertyDescriptor(object);
-			addWcetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,50 +92,6 @@ public class ActionExpressionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Event_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Event_kind_feature", "_UI_Event_type"),
-				 RealtimestatechartPackage.Literals.EVENT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Wcet feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addWcetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ActionExpression_wcet_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ActionExpression_wcet_feature", "_UI_ActionExpression_type"),
-				 RealtimestatechartPackage.Literals.ACTION_EXPRESSION__WCET,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -180,8 +134,6 @@ public class ActionExpressionItemProvider
 
 		switch (notification.getFeatureID(ActionExpression.class)) {
 			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
-			case RealtimestatechartPackage.ACTION_EXPRESSION__KIND:
-			case RealtimestatechartPackage.ACTION_EXPRESSION__WCET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

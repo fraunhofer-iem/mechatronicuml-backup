@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.DelegationCreateCommand;
 
@@ -54,7 +55,9 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 	}
 
 	/**
-	 * Checks if this Assembly is allowed to be created.
+	 * Checks if this Delegation is allowed to be created.
+	 * 
+	 * @return <code>true</code>, if the Delegation is allowed to be created.
 	 */
 	@Override
 	public boolean canExecute() {
@@ -67,7 +70,11 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 				return false;
 			}
 		}
-
+		boolean valid = DelegationConstraints.isValidDelegation(
+				getSource(), getTarget(), parentComponent, componentPart);
+		if (!valid) {
+			return false;
+		}
 		return super.canExecute();
 	}
 
@@ -86,7 +93,7 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 		// Delegation.
 		super.doConfigure(newElement, monitor, info);
 	}
-	
+
 	@Override
 	protected de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainer() {
 		return parentComponent;

@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
@@ -33,12 +34,12 @@ import org.storydriven.modeling.impl.NamedElementImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getWcetDocument <em>Wcet Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getSecurityLevel <em>Security Level</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getScheduleDocument <em>Schedule Document</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
  * </ul>
  * </p>
@@ -65,6 +66,16 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBehavioralElement() <em>Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavioralElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected BehavioralElement behavioralElement;
 
 	/**
 	 * The default value of the '{@link #getWcetDocument() <em>Wcet Document</em>}' attribute.
@@ -165,16 +176,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected String scheduleDocument = SCHEDULE_DOCUMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getBehavioralElement() <em>Behavioral Element</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavioralElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected BehavioralElement behavioralElement;
 
 	/**
 	 * The default value of the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
@@ -391,9 +392,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		if (newBehavioralElement != behavioralElement) {
 			NotificationChain msgs = null;
 			if (behavioralElement != null)
-				msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+				msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 			if (newBehavioralElement != null)
-				msgs = ((InternalEObject)newBehavioralElement).eInverseAdd(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+				msgs = ((InternalEObject)newBehavioralElement).eInverseAdd(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 			msgs = basicSetBehavioralElement(newBehavioralElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -443,7 +444,7 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (behavioralElement != null)
-					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART, BehavioralElement.class, msgs);
+					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -473,6 +474,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				return getComment();
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				if (resolve) return getBehavioralElement();
+				return basicGetBehavioralElement();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				return getWcetDocument();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
@@ -483,9 +487,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return getUtilisation();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				return getScheduleDocument();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
-				if (resolve) return getBehavioralElement();
-				return basicGetBehavioralElement();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
 		}
@@ -503,6 +504,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				setComment((String)newValue);
 				return;
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				setBehavioralElement((BehavioralElement)newValue);
+				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				setWcetDocument((String)newValue);
 				return;
@@ -517,9 +521,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument((String)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
-				setBehavioralElement((BehavioralElement)newValue);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded((Boolean)newValue);
@@ -539,6 +540,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				setBehavioralElement((BehavioralElement)null);
+				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				setWcetDocument(WCET_DOCUMENT_EDEFAULT);
 				return;
@@ -553,9 +557,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument(SCHEDULE_DOCUMENT_EDEFAULT);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
-				setBehavioralElement((BehavioralElement)null);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				setEmbedded(EMBEDDED_EDEFAULT);
@@ -574,6 +575,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		switch (featureID) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
+				return behavioralElement != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 				return WCET_DOCUMENT_EDEFAULT == null ? wcetDocument != null : !WCET_DOCUMENT_EDEFAULT.equals(wcetDocument);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
@@ -584,8 +587,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return utilisation != UTILISATION_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				return SCHEDULE_DOCUMENT_EDEFAULT == null ? scheduleDocument != null : !SCHEDULE_DOCUMENT_EDEFAULT.equals(scheduleDocument);
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
-				return behavioralElement != null;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
 				return embedded != EMBEDDED_EDEFAULT;
 		}
@@ -605,6 +606,12 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				default: return -1;
 			}
 		}
+		if (baseClass == Behavior.class) {
+			switch (derivedFeatureID) {
+				case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT: return CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -618,6 +625,12 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == Behavior.class) {
+			switch (baseFeatureID) {
+				case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT: return CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 				default: return -1;
 			}
 		}

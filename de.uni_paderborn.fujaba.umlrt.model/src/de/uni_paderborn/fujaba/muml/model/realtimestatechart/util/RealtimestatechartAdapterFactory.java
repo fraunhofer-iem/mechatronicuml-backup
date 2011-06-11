@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.util;
 
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -204,6 +205,10 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInvocation(Invocation object) {
 				return createInvocationAdapter();
+			}
+			@Override
+			public Adapter caseBehavior(Behavior object) {
+				return createBehaviorAdapter();
 			}
 			@Override
 			public Adapter caseAbstractRealtimeStatechart(AbstractRealtimeStatechart object) {
@@ -632,6 +637,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInvocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior
+	 * @generated
+	 */
+	public Adapter createBehaviorAdapter() {
 		return null;
 	}
 

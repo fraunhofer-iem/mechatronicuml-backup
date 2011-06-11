@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry;
@@ -24,6 +25,10 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);
+			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
+				return new CustomFujabaRealtimeStatechartEditPart(view);
+			default:
+				break;
 			}
 		}
 		return super.createEditPart(context, model);

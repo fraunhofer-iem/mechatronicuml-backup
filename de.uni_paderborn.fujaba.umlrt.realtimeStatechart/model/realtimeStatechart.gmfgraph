@@ -459,24 +459,13 @@
       name="Transition"
       figure="TransitionFigure"/>
   <compartments
-      name="InvariantCompartment"
-      figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments
-      name="ActionsCompartment"
+      name="CompoundCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.2"/>
-  <compartments
-      name="SynchroChannelsCompartment"
-      figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.3"/>
   <compartments
       name="RegionCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.4"/>
-  <compartments
-      name="SubstateCompartment"
-      figure="RegionFigure"/>
   <labels
       name="TransitionPriority"
       figure="TransitionFigure"

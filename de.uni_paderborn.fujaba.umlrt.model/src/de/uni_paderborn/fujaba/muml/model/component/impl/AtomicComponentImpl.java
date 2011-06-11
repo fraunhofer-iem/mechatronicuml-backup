@@ -9,16 +9,21 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -28,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,15 +41,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AtomicComponentImpl extends ComponentImpl implements AtomicComponent {
 	/**
-	 * The cached value of the '{@link #getRealtimeStatechart() <em>Realtime Statechart</em>}' reference.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRealtimeStatechart()
+	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbstractRealtimeStatechart realtimeStatechart;
-
+	protected EList<Behavior> behavior;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,16 +73,11 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart getRealtimeStatechart() {
-		if (realtimeStatechart != null && realtimeStatechart.eIsProxy()) {
-			InternalEObject oldRealtimeStatechart = (InternalEObject)realtimeStatechart;
-			realtimeStatechart = (AbstractRealtimeStatechart)eResolveProxy(oldRealtimeStatechart);
-			if (realtimeStatechart != oldRealtimeStatechart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, realtimeStatechart));
-			}
+	public EList<Behavior> getBehavior() {
+		if (behavior == null) {
+			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
 		}
-		return realtimeStatechart;
+		return behavior;
 	}
 
 	/**
@@ -86,56 +85,12 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AbstractRealtimeStatechart basicGetRealtimeStatechart() {
-		return realtimeStatechart;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart, NotificationChain msgs) {
-		AbstractRealtimeStatechart oldRealtimeStatechart = realtimeStatechart;
-		realtimeStatechart = newRealtimeStatechart;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, oldRealtimeStatechart, newRealtimeStatechart);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRealtimeStatechart(AbstractRealtimeStatechart newRealtimeStatechart) {
-		if (newRealtimeStatechart != realtimeStatechart) {
-			NotificationChain msgs = null;
-			if (realtimeStatechart != null)
-				msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-			if (newRealtimeStatechart != null)
-				msgs = ((InternalEObject)newRealtimeStatechart).eInverseAdd(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-			msgs = basicSetRealtimeStatechart(newRealtimeStatechart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART, newRealtimeStatechart, newRealtimeStatechart));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				if (realtimeStatechart != null)
-					msgs = ((InternalEObject)realtimeStatechart).eInverseRemove(this, CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT, AbstractRealtimeStatechart.class, msgs);
-				return basicSetRealtimeStatechart((AbstractRealtimeStatechart)otherEnd, msgs);
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -148,8 +103,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				return basicSetRealtimeStatechart(null, msgs);
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -162,9 +117,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				if (resolve) return getRealtimeStatechart();
-				return basicGetRealtimeStatechart();
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				return getBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,11 +128,13 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)newValue);
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				getBehavior().clear();
+				getBehavior().addAll((Collection<? extends Behavior>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +148,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				setRealtimeStatechart((AbstractRealtimeStatechart)null);
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				getBehavior().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,8 +163,8 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART:
-				return realtimeStatechart != null;
+			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
+				return behavior != null && !behavior.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,7 +178,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART: return CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+				case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -238,7 +194,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__REALTIME_STATECHART: return ComponentPackage.ATOMIC_COMPONENT__REALTIME_STATECHART;
+				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR;
 				default: return -1;
 			}
 		}

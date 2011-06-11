@@ -63,7 +63,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.NATURAL_NUMBER: return createNaturalNumber();
 			case CorePackage.CARDINALITY: return createCardinality();
 			case CorePackage.INFINITY: return createInfinity();
-			case CorePackage.ADAPTATION_BEHAVIOR: return createAdaptationBehavior();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -97,16 +96,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public Infinity createInfinity() {
 		InfinityImpl infinity = new InfinityImpl();
 		return infinity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdaptationBehavior createAdaptationBehavior() {
-		AdaptationBehaviorImpl adaptationBehavior = new AdaptationBehaviorImpl();
-		return adaptationBehavior;
 	}
 
 	/**

@@ -172,13 +172,13 @@ public interface CorePackage extends EPackage {
 	int BEHAVIORAL_ELEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_ELEMENT__REALTIME_STATECHART = 0;
+	int BEHAVIORAL_ELEMENT__BEHAVIOR = 0;
 
 	/**
 	 * The number of structural features of the '<em>Behavioral Element</em>' class.
@@ -264,13 +264,22 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
@@ -279,7 +288,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
@@ -288,7 +297,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -297,7 +306,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -306,16 +315,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -337,51 +337,32 @@ public interface CorePackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl <em>Adaptation Behavior</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAdaptationBehavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 	 * @generated
 	 */
-	int ADAPTATION_BEHAVIOR = 6;
+	int BEHAVIOR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Realtime Statechart</b></em>' reference.
+	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADAPTATION_BEHAVIOR__REALTIME_STATECHART = BEHAVIORAL_ELEMENT__REALTIME_STATECHART;
+	int BEHAVIOR__BEHAVIORAL_ELEMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' container reference.
+	 * The number of structural features of the '<em>Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADAPTATION_BEHAVIOR__ROLE = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Port</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTATION_BEHAVIOR__PORT = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Adaptation Behavior</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADAPTATION_BEHAVIOR_FEATURE_COUNT = BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
-
+	int BEHAVIOR_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -468,15 +449,15 @@ public interface CorePackage extends EPackage {
 	EClass getBehavioralElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Realtime Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart()
+	 * @return the meta object for the reference list '<em>Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior()
 	 * @see #getBehavioralElement()
 	 * @generated
 	 */
-	EReference getBehavioralElement_RealtimeStatechart();
+	EReference getBehavioralElement_Behavior();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
@@ -565,17 +546,6 @@ public interface CorePackage extends EPackage {
 	EAttribute getAbstractRealtimeStatechart_ScheduleDocument();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Behavioral Element</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EReference getAbstractRealtimeStatechart_BehavioralElement();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -587,36 +557,25 @@ public interface CorePackage extends EPackage {
 	EAttribute getAbstractRealtimeStatechart_Embedded();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior
+	 * @return the meta object for class '<em>Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior
 	 * @generated
 	 */
-	EClass getAdaptationBehavior();
+	EClass getBehavior();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole <em>Role</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Role</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getRole()
-	 * @see #getAdaptationBehavior()
+	 * @return the meta object for the reference '<em>Behavioral Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement()
+	 * @see #getBehavior()
 	 * @generated
 	 */
-	EReference getAdaptationBehavior_Role();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AdaptationBehavior#getPort()
-	 * @see #getAdaptationBehavior()
-	 * @generated
-	 */
-	EReference getAdaptationBehavior_Port();
+	EReference getBehavior_BehavioralElement();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -713,12 +672,12 @@ public interface CorePackage extends EPackage {
 		EClass BEHAVIORAL_ELEMENT = eINSTANCE.getBehavioralElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Realtime Statechart</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Behavior</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BEHAVIORAL_ELEMENT__REALTIME_STATECHART = eINSTANCE.getBehavioralElement_RealtimeStatechart();
+		EReference BEHAVIORAL_ELEMENT__BEHAVIOR = eINSTANCE.getBehavioralElement_Behavior();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
@@ -789,14 +748,6 @@ public interface CorePackage extends EPackage {
 		EAttribute ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = eINSTANCE.getAbstractRealtimeStatechart_ScheduleDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavioral Element</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = eINSTANCE.getAbstractRealtimeStatechart_BehavioralElement();
-
-		/**
 		 * The meta object literal for the '<em><b>Embedded</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -805,30 +756,22 @@ public interface CorePackage extends EPackage {
 		EAttribute ABSTRACT_REALTIME_STATECHART__EMBEDDED = eINSTANCE.getAbstractRealtimeStatechart_Embedded();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl <em>Adaptation Behavior</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AdaptationBehaviorImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAdaptationBehavior()
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 		 * @generated
 		 */
-		EClass ADAPTATION_BEHAVIOR = eINSTANCE.getAdaptationBehavior();
+		EClass BEHAVIOR = eINSTANCE.getBehavior();
 
 		/**
-		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Behavioral Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ADAPTATION_BEHAVIOR__ROLE = eINSTANCE.getAdaptationBehavior_Role();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADAPTATION_BEHAVIOR__PORT = eINSTANCE.getAdaptationBehavior_Port();
+		EReference BEHAVIOR__BEHAVIORAL_ELEMENT = eINSTANCE.getBehavior_BehavioralElement();
 
 	}
 

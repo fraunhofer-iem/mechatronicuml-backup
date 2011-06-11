@@ -1,12 +1,10 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.commands;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;

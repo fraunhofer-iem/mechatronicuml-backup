@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,13 +15,13 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Abstract super class for all elements that have a behavior in terms of a real-time statechart.
+ * Abstract super class for all elements that have a behavior.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior <em>Behavior</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,30 +31,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BehavioralElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Realtime Statechart</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement <em>Behavioral Element</em>}'.
+	 * Returns the value of the '<em><b>Behavior</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Behavior}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The real-time statechart that defines the behavior of this behavioral element.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Realtime Statechart</em>' reference.
-	 * @see #setRealtimeStatechart(AbstractRealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavioralElement_RealtimeStatechart()
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getBehavioralElement
-	 * @model opposite="behavioralElement" required="true"
+	 * @return the value of the '<em>Behavior</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavioralElement_Behavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement
+	 * @model opposite="behavioralElement"
 	 * @generated
 	 */
-	AbstractRealtimeStatechart getRealtimeStatechart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getRealtimeStatechart <em>Realtime Statechart</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Realtime Statechart</em>' reference.
-	 * @see #getRealtimeStatechart()
-	 * @generated
-	 */
-	void setRealtimeStatechart(AbstractRealtimeStatechart value);
+	EList<Behavior> getBehavior();
 
 } // BehavioralElement

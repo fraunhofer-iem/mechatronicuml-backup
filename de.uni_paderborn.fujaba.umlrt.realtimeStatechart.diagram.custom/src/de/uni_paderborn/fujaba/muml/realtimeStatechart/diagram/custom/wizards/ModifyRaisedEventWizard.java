@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.wizards;
 
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.IDialogSettings;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
@@ -22,7 +23,7 @@ public class ModifyRaisedEventWizard extends CommonModifyWizard {
 	private Transition selectedTransition = null;
 	private MessageType selectedMessageType = null;
 
-	public ModifyRaisedEventWizard(org.eclipse.gmf.runtime.notation.impl.DiagramImpl diag, Transition transition)
+	public ModifyRaisedEventWizard(Diagram diag, Transition transition)
 	{
 		super(diag);
 		

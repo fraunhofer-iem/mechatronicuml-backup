@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.descriptor.RoleCardinalityPropertyDescriptor;
 
 /**
@@ -67,13 +68,14 @@ public class RoleItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConstraintPropertyDescriptor(object);
-			addRealtimeStatechartPropertyDescriptor(object);
+			addBehaviorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addEClassPropertyDescriptor(object);
 			addSenderMessageInterfacePropertyDescriptor(object);
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
+			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,19 +103,19 @@ public class RoleItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Realtime Statechart feature.
+	 * This adds a property descriptor for the Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRealtimeStatechartPropertyDescriptor(Object object) {
+	protected void addBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_realtimeStatechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_realtimeStatechart_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__REALTIME_STATECHART,
+				 getString("_UI_BehavioralElement_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -270,6 +272,28 @@ public class RoleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_roleAndAdaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_roleAndAdaptationBehavior_feature", "_UI_Role_type"),
+				 PatternPackage.Literals.ROLE__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -345,6 +369,7 @@ public class RoleItemProvider
 		super.notifyChanged(notification);
 	}
 
+
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
@@ -364,7 +389,7 @@ public class RoleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PatternPackage.Literals.ROLE__ADAPTATION_BEHAVIOR,
-				 CoreFactory.eINSTANCE.createAdaptationBehavior()));
+				 RealtimestatechartFactory.eINSTANCE.createFujabaRealtimeStatechart()));
 	}
 
 	/**

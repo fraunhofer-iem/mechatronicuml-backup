@@ -149,10 +149,9 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The required message interface contains the signature definitions of all events
-	 * that may be sent by this port. It is derived from the discrete port specification
-	 * to receive notifications.
-	 * \todosd{Uwe and my oponion: rename to senderMessageInterface}
+	 * The sender message interface defines which messages this port sends.
+	 * It is derived from the sender message interface of its discrete port specification.
+	 * \todosd{implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Interface</em>' reference.
 	 * @see #setSenderMessageInterface(MessageInterface)
@@ -178,10 +177,9 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The provided message interface contains the signature definitions of all events
-	 * that may be received by this port. It is derived from the discrete port specification
-	 * to receive notifications.
-	 * \todosd{Uwe and my oponion: rename to receiverMessageInterface}
+	 * The receiver message interface defines which messages this port receives.
+	 * It is derived from the receiver message interface of its discrete port specification.
+	 * \todosd{implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
 	 * @see #setReceiverMessageInterface(MessageInterface)

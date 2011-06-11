@@ -6,7 +6,6 @@
     modelID="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
     diagramFileExtension="realtimestatechart_diagram"
     domainFileExtension="fujaba"
-    dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.muml.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/src">
   <diagram
@@ -36,6 +35,7 @@
         visualID="3010"
         editPartClassName="EntryOrExitEventEditPart"
         itemSemanticEditPolicyClassName="EntryOrExitEventItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryOrExitEventViewFactory"
         canonicalEditPolicyClassName="EntryOrExitEventCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryOrExitEventGraphicalNodeEditPolicy"
         createCommandClassName="EntryOrExitEventCreateCommand"
@@ -99,6 +99,7 @@
         visualID="3011"
         editPartClassName="EntryOrExitEvent2EditPart"
         itemSemanticEditPolicyClassName="EntryOrExitEvent2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryOrExitEventViewFactory"
         canonicalEditPolicyClassName="EntryOrExitEvent2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EntryOrExitEvent2GraphicalNodeEditPolicy"
         createCommandClassName="EntryOrExitEvent2CreateCommand"
@@ -134,7 +135,7 @@
         canonicalEditPolicyClassName="SynchroChannelCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SynchroChannelGraphicalNodeEditPolicy"
         createCommandClassName="SynchroChannelCreateCommand"
-        containers="//@diagram/@compartments.1">
+        containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -182,7 +183,7 @@
         canonicalEditPolicyClassName="EEAction2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EEAction2GraphicalNodeEditPolicy"
         createCommandClassName="EEAction2CreateCommand"
-        containers="//@diagram/@compartments.2">
+        containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -230,7 +231,7 @@
         canonicalEditPolicyClassName="TimeInvariantCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="TimeInvariantGraphicalNodeEditPolicy"
         createCommandClassName="TimeInvariantCreateCommand"
-        containers="//@diagram/@compartments.3">
+        containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -255,7 +256,7 @@
         itemSemanticEditPolicyClassName="StateItemSemanticEditPolicy"
         notationViewFactoryClassName="NodeViewFactory"
         canonicalEditPolicyClassName="StateCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2 //@diagram/@compartments.3"
+        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="StateGraphicalNodeEditPolicy"
         createCommandClassName="StateCreateCommand">
       <diagramRunTimeClass
@@ -602,8 +603,8 @@
         itemSemanticEditPolicyClassName="StateActionsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StateActionsCompartmentViewFactory"
         canonicalEditPolicyClassName="StateActionsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
-        title="ActionsCompartment"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
+        title="CompoundCompartment"
         canCollapse="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.0">
@@ -620,42 +621,6 @@
         itemSemanticEditPolicyClassName="StateInvariantCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StateInvariantCompartmentViewFactory"
         canonicalEditPolicyClassName="StateInvariantCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.3"
-        title="InvariantCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentInvariants"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
-    <compartments
-        visualID="7003"
-        editPartClassName="StateSynchroChannelsCompartmentEditPart"
-        itemSemanticEditPolicyClassName="StateSynchroChannelsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateSynchroChannelsCompartmentViewFactory"
-        canonicalEditPolicyClassName="StateSynchroChannelsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.4"
-        title="SynchroChannelsCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureStateCompartmentSynchroChannel"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
-    <compartments
-        visualID="7004"
-        editPartClassName="StateRegionCompartmentEditPart"
-        itemSemanticEditPolicyClassName="StateRegionCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateRegionCompartmentViewFactory"
-        canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
         canCollapse="false"

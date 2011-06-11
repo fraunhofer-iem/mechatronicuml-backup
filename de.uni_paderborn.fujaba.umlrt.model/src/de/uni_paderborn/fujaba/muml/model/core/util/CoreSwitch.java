@@ -126,14 +126,14 @@ public class CoreSwitch<T> {
 				T result = caseAbstractRealtimeStatechart(abstractRealtimeStatechart);
 				if (result == null) result = caseNamedElement(abstractRealtimeStatechart);
 				if (result == null) result = caseCommentableElement(abstractRealtimeStatechart);
+				if (result == null) result = caseBehavior(abstractRealtimeStatechart);
 				if (result == null) result = caseExtendableElement(abstractRealtimeStatechart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.ADAPTATION_BEHAVIOR: {
-				AdaptationBehavior adaptationBehavior = (AdaptationBehavior)theEObject;
-				T result = caseAdaptationBehavior(adaptationBehavior);
-				if (result == null) result = caseBehavioralElement(adaptationBehavior);
+			case CorePackage.BEHAVIOR: {
+				Behavior behavior = (Behavior)theEObject;
+				T result = caseBehavior(behavior);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -232,17 +232,17 @@ public class CoreSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Adaptation Behavior</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Adaptation Behavior</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAdaptationBehavior(AdaptationBehavior object) {
+	public T caseBehavior(Behavior object) {
 		return null;
 	}
 
