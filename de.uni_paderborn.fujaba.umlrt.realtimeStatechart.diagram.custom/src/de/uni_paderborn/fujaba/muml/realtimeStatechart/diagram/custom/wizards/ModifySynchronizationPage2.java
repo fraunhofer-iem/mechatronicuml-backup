@@ -211,7 +211,7 @@ public class ModifySynchronizationPage2 extends CommonModifyPage{
 		
 		//invoke command
 		CreateElementRequest request = new CreateElementRequest(((ModifySynchronizationWizard)getWizard()).getSelectedTransition(),
-				UmlrtElementTypes.DoEvent_3008);
+				UmlrtElementTypes.DoEvent_3002);
 						  
 					SynchronizationCreateCommand command = new SynchronizationCreateCommand(request, 
 							parameterValuesHashMap,

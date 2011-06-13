@@ -188,7 +188,7 @@ public class ModifyTimeGuardPage extends CommonModifyPage{
 		if(!value.getText().equals("") && getSelectedClock()!= null &&
 				getSelectedComparingOperator()!=null){
 			CreateElementRequest request = new CreateElementRequest(((ModifyTimeGuardWizard)getWizard()).getSelectedTransition(),
-					UmlrtElementTypes.DoEvent_3008);
+					UmlrtElementTypes.DoEvent_3002);
 							  
 						TimeGuardCreateCommand command = new TimeGuardCreateCommand(request, 
 								getSelectedClock(), getSelectedComparingOperator() ,value.getText());

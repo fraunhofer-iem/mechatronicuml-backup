@@ -32,13 +32,13 @@
     <domainDiagramElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
     <childNodes
-        visualID="3010"
-        editPartClassName="EntryOrExitEventEditPart"
-        itemSemanticEditPolicyClassName="EntryOrExitEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryOrExitEventViewFactory"
-        canonicalEditPolicyClassName="EntryOrExitEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EntryOrExitEventGraphicalNodeEditPolicy"
-        createCommandClassName="EntryOrExitEventCreateCommand"
+        visualID="3001"
+        editPartClassName="EEActionEditPart"
+        itemSemanticEditPolicyClassName="EEActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="EEActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EEActionGraphicalNodeEditPolicy"
+        createCommandClassName="EEActionCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -64,13 +64,13 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3008"
-        editPartClassName="DoEventEditPart"
-        itemSemanticEditPolicyClassName="DoEventItemSemanticEditPolicy"
-        notationViewFactoryClassName="DoEventViewFactory"
-        canonicalEditPolicyClassName="DoEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DoEventGraphicalNodeEditPolicy"
-        createCommandClassName="DoEventCreateCommand"
+        visualID="3002"
+        editPartClassName="SynchroChannel2EditPart"
+        itemSemanticEditPolicyClassName="SynchroChannel2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="SynchroChannel2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="SynchroChannel2GraphicalNodeEditPolicy"
+        createCommandClassName="SynchroChannel2CreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -96,13 +96,13 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3011"
-        editPartClassName="EntryOrExitEvent2EditPart"
-        itemSemanticEditPolicyClassName="EntryOrExitEvent2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="EntryOrExitEventViewFactory"
-        canonicalEditPolicyClassName="EntryOrExitEvent2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="EntryOrExitEvent2GraphicalNodeEditPolicy"
-        createCommandClassName="EntryOrExitEvent2CreateCommand"
+        visualID="3003"
+        editPartClassName="DoActionEditPart"
+        itemSemanticEditPolicyClassName="DoActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="NodeViewFactory"
+        canonicalEditPolicyClassName="DoActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DoActionGraphicalNodeEditPolicy"
+        createCommandClassName="DoActionCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -162,7 +162,6 @@
           visualID="5001"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClockConstraintLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -210,7 +209,6 @@
           visualID="5002"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="SynchronizationChannelLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -293,8 +291,7 @@
       <labels
           visualID="5003"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateNameViewFactory">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -354,8 +351,7 @@
       <labels
           visualID="5004"
           editPartClassName="ClockNameEditPart"
-          itemSemanticEditPolicyClassName="ClockNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ClockNameViewFactory">
+          itemSemanticEditPolicyClassName="ClockNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
