@@ -72,6 +72,11 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public ComponentinstanceconfigurationDiagramEditorPlugin() {
 	}
 
@@ -94,6 +99,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -268,6 +274,21 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setUmlrtOCLFactory(
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

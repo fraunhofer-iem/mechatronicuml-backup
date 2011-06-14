@@ -16,9 +16,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
         <viewExpression
-            body="self.name.concat(' : ').concat(&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.componentType.name&#xA;&#x9;end if&#xA;)"/>
-        <editExpression
-            body="self.name"/>
+            body="self.name.concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -51,9 +49,7 @@
             <diagramLabel
                 href="componentinstanceconfiguration.gmfgraph#ComponentName"/>
             <viewExpression
-                body="self.name.concat(' : ').concat(&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.componentType.name&#xA;&#x9;end if&#xA;)"/>
-            <editExpression
-                body="self.name"/>
+                body="self.name.concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

@@ -12,7 +12,8 @@ Export-Package: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationedito
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part,
  de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers,
- de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.sheet
+ de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.sheet,
+ de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
@@ -45,6 +46,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport
+ de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
