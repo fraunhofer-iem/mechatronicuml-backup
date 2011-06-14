@@ -69,13 +69,12 @@ public class CustomDelegationCreateCommand extends DelegationCreateCommand {
 			if (parentComponent == null || componentPart == null) {
 				return false;
 			}
-			boolean valid = DelegationConstraints.isValidDelegation(
-					getSource(), getTarget(), parentComponent, componentPart);
-			if (!valid) {
-				return false;
-			}
 		}
-		
+		boolean valid = DelegationConstraints.isValidDelegation(
+				getSource(), getTarget(), parentComponent, componentPart);
+		if (!valid) {
+			return false;
+		}
 		return super.canExecute();
 	}
 
