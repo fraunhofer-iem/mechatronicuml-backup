@@ -39,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
@@ -470,9 +471,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	public PortInstance createInstance() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		PortInstance portInstance = InstanceFactory.eINSTANCE.createPortInstance();
+		portInstance.setPortType(this);
+		return portInstance;
 	}
 
 	/**

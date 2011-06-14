@@ -238,6 +238,7 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='PortInstance portInstance = InstanceFactory.eINSTANCE.createPortInstance();\r\nportInstance.setPortType(this);\r\nreturn portInstance;'"
 	 * @generated
 	 */
 	PortInstance createInstance();

@@ -1010,7 +1010,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });																					
+		   });																						
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1032,7 +1032,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "body", "self.cardinality.lowerBound->notEmpty()"
-		   });					
+		   });						
 		addAnnotation
 		  (getPort_SenderMessageInterface(), 
 		   source, 
