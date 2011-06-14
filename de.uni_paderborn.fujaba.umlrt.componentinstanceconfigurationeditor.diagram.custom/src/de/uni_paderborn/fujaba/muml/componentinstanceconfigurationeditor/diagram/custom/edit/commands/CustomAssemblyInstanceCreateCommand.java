@@ -40,14 +40,14 @@ public class CustomAssemblyInstanceCreateCommand extends
 		// We add checks that are only performed, when both source and target
 		// are set.
 		if (getSource() != null && getTarget() != null) {
-			// Make sure, the source's and the target's ComponentInstance are the same.
+			// Make sure, the source's and the target's ComponentInstance are not the same.
 			ComponentInstance sourceComponentInstance = getSource()
 					.getComponentInstance();
 
 			ComponentInstance targetComponentInstance = getTarget()
 					.getComponentInstance();
 
-			if (sourceComponentInstance != targetComponentInstance) {
+			if (sourceComponentInstance == targetComponentInstance) {
 				return false;
 			}
 		}
