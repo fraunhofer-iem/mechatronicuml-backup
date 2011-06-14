@@ -9,6 +9,9 @@ public class DelegationConstraints {
 
 	public static boolean isValidDelegation(Port source, Port target,
 			StructuredComponent parentComponent, ComponentPart componentPart) {
+		if (source == null || target == null) {
+			return false;
+		}
 		boolean sourceReceiver = source.getReceiverMessageInterface() != null;
 		boolean sourceSender = source.getSenderMessageInterface() != null;
 		boolean targetReceiver = target.getReceiverMessageInterface() != null;
