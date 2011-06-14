@@ -8,6 +8,7 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.storydriven.modeling.Extension;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
@@ -55,18 +56,19 @@ public class SetComponentTypeCommand extends AbstractCommand {
 	}
 
 	public ComponentInstance createComponentInstance(Component component) {
-		//ComponentInstance newInstance = component.createInstance();
-		ComponentInstance newInstance = InstanceFactory.eINSTANCE.createComponentInstance();
-		newInstance.setName(component.getName());
+		// ComponentInstance newInstance = component.createInstance();
+		ComponentInstance newInstance = InstanceFactory.eINSTANCE
+				.createComponentInstance();
+		newInstance.setName(componentInstance.getName());
 		newInstance.setComponentType(component);
-		
+
 		configureComponentInstance(newInstance, component);
 		return newInstance;
 	}
 
 	public void configureComponentInstance(ComponentInstance newInstance,
 			Component component) {
-		
+
 		CompoundCommand compoundCommand = new CompoundCommand();
 		destroyContents(newInstance, compoundCommand);
 		compoundCommand.execute();
@@ -86,23 +88,27 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				StructuredComponent structuredComponent = (StructuredComponent) component;
 				for (ComponentPart componentPart : structuredComponent
 						.getEmbeddedParts()) {
-					ComponentInstance partInstance = createComponentPartInstance(componentPart);
-					newInstance.getEmbeddedInstances().add(partInstance);
+					createComponentPartInstance(newInstance,componentPart);					
 				}
 			}
 		}
 	}
 
-	private void destroyContents(ComponentInstance newInstance, CompoundCommand compoundCommand) {
-		
+	private void destroyContents(ComponentInstance newInstance,
+			CompoundCommand compoundCommand) {
+
 		for (PortInstance portInstance : newInstance.getPortInstances()) {
-			for (ConnectorInstance connectorInstance : portInstance.getIncomingConnectorInstances()) {
-				compoundCommand.add(new ICommandProxy(new DestroyElementCommand(
-						new DestroyElementRequest(connectorInstance, false))));
+			for (ConnectorInstance connectorInstance : portInstance
+					.getIncomingConnectorInstances()) {
+				compoundCommand.add(new ICommandProxy(
+						new DestroyElementCommand(new DestroyElementRequest(
+								connectorInstance, false))));
 			}
-			for (ConnectorInstance connectorInstance : portInstance.getOutgoingConnectorInstances()) {
-				compoundCommand.add(new ICommandProxy(new DestroyElementCommand(
-						new DestroyElementRequest(connectorInstance, false))));
+			for (ConnectorInstance connectorInstance : portInstance
+					.getOutgoingConnectorInstances()) {
+				compoundCommand.add(new ICommandProxy(
+						new DestroyElementCommand(new DestroyElementRequest(
+								connectorInstance, false))));
 			}
 			compoundCommand.add(new ICommandProxy(new DestroyElementCommand(
 					new DestroyElementRequest(portInstance, false))));
@@ -112,25 +118,37 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		for (ComponentInstance componentInstance : newInstance
 				.getEmbeddedInstances()) {
 			destroyContents(componentInstance, compoundCommand);
-			 
+
 			compoundCommand.add(new ICommandProxy(new DestroyElementCommand(
 					new DestroyElementRequest(componentInstance, false))));
 		}
-	
-	
 	}
 
-	public ComponentInstance createComponentPartInstance(
+	public void createComponentPartInstance(ComponentInstance parentInstance,
 			ComponentPart componentPart) {
-		ComponentInstance newInstance = createComponentInstance(componentPart
-				.getComponentType());
-		return newInstance;
+
+		// Find out the lowerBound of the component part's cardinality.
+		long lowerBound = 0;
+		Cardinality cardinality = componentPart.getCardinality();
+		if (cardinality != null) {
+			NaturalNumber lowerBoundNumber = cardinality.getLowerBound();
+			if (lowerBoundNumber != null) {
+				lowerBound = lowerBoundNumber.getValue();
+			}
+		}
+
+		// Create as many component instances as the lowerBound demand.
+		for (long i = 0; i < lowerBound; i++) {
+			ComponentInstance newInstance = createComponentInstance(componentPart
+					.getComponentType());
+			parentInstance.getEmbeddedInstances().add(newInstance);
+		}
 	}
 
 	public List<PortInstance> createPortInstances(Port port,
 			ComponentInstance componentInstance) {
 		List<PortInstance> newInstances = new ArrayList<PortInstance>();
-		
+
 		// Find out the lowerBound of the Port's Cardinality.
 		long lowerBound = 0;
 		Cardinality cardinality = port.getCardinality();
@@ -146,33 +164,38 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			PortInstance portInstance = port.createInstance();
 			portInstance.setName(componentInstance.getName() + port.getName());
 			portInstance.setComponentInstance(componentInstance);
-			portInstance.getIncomingConnectorInstances().addAll(createIncomingConnectorInstances(port, componentInstance));
-			portInstance.getOutgoingConnectorInstances().addAll(createOutgoingConnectorInstances(port, componentInstance));
-			
+			portInstance.getIncomingConnectorInstances().addAll(
+					createIncomingConnectorInstances(port, componentInstance));
+			portInstance.getOutgoingConnectorInstances().addAll(
+					createOutgoingConnectorInstances(port, componentInstance));
+
 		}
 		return newInstances;
 	}
 
-	private List<ConnectorInstance> createIncomingConnectorInstances(Port port, ComponentInstance componentInstance) {
+	private List<ConnectorInstance> createIncomingConnectorInstances(Port port,
+			ComponentInstance componentInstance) {
 		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
 		for (ConnectorType connectorType : port.getIncomingConnectors()) {
 			Port fromPort = connectorType.getFromPort();
-			
-			for (PortInstance fromInstance : componentInstance.getPortInstances()) {
+
+			for (PortInstance fromInstance : componentInstance
+					.getPortInstances()) {
 				if (fromInstance.getPortType() == fromPort) {
 					ConnectorInstance newInstance = connectorType
 							.createInstance();
 					newInstance.setSource(fromInstance);
-					// target is set, when this ConnectorInstance is added to its opposite feature "incomingConnectors".
-					newInstance
-							.setParentComponentInstance(componentInstance);
+					// target is set, when this ConnectorInstance is added to
+					// its opposite feature "incomingConnectors".
+					newInstance.setParentComponentInstance(componentInstance);
 				}
 			}
 		}
 		return connectorInstances;
 	}
 
-	private List<ConnectorInstance> createOutgoingConnectorInstances(Port port, ComponentInstance componentInstance) {
+	private List<ConnectorInstance> createOutgoingConnectorInstances(Port port,
+			ComponentInstance componentInstance) {
 		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
 		for (ConnectorType connectorType : port.getOutgoingConnectors()) {
 			Port toPort = connectorType.getToPort();
@@ -180,7 +203,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				if (toInstance.getPortType() == toPort) {
 					ConnectorInstance connectorInstance = connectorType
 							.createInstance();
-					// source is set, when this ConnectorInstance is added to its opposite feature "incomingConnectors".
+					// source is set, when this ConnectorInstance is added to
+					// its opposite feature "incomingConnectors".
 					connectorInstance.setTarget(toInstance);
 					connectorInstance
 							.setParentComponentInstance(componentInstance);
