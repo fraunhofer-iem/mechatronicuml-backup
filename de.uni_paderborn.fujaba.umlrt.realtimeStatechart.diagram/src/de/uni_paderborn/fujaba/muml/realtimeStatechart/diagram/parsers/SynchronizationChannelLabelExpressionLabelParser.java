@@ -113,7 +113,7 @@ public class SynchronizationChannelLabelExpressionLabelParser implements
 	/**
 	 * @generated
 	 */
-	private IStatus updateValues(EObject target, String newString)
+	protected IStatus updateValues(EObject target, String newString)
 			throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT

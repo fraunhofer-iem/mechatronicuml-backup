@@ -16,17 +16,17 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final int reorientDirection;
+	protected final int reorientDirection;
 
 	/**
 	 * @generated
 	 */
-	private final EObject oldEnd;
+	protected final EObject oldEnd;
 
 	/**
 	 * @generated
 	 */
-	private final EObject newEnd;
+	protected final EObject newEnd;
 
 	/**
 	 * @generated

@@ -171,6 +171,16 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
@@ -269,9 +279,6 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
-		if (diagram == null || diagram.eResource() == null) {
-			return StructuredSelection.EMPTY;
-		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem(

@@ -6,6 +6,7 @@
     modelID="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
     diagramFileExtension="realtimestatechart_diagram"
     domainFileExtension="fujaba"
+    dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.muml.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/src">
   <diagram
@@ -726,7 +727,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.realtimeStatechart.diagram"
+      iD="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
       name="Realtimestatechart Plugin"
       activatorClassName="RealtimestatechartDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>

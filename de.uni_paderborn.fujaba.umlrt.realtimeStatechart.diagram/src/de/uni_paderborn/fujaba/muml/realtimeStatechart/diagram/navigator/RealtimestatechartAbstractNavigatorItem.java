@@ -18,7 +18,7 @@ public abstract class RealtimestatechartAbstractNavigatorItem extends
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.realtimeStatechart.diagram"; //$NON-NLS-1$
+				return "de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(

@@ -18,7 +18,7 @@ public class UmlrtVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.realtimeStatechart.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
