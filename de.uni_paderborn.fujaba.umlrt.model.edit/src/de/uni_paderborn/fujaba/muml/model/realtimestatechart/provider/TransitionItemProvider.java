@@ -82,6 +82,7 @@ public class TransitionItemProvider
 			addRelativeDeadlinePropertyDescriptor(object);
 			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
+			addGuardPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -260,6 +261,28 @@ public class TransitionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Guard feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGuardPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_guard_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guard_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
