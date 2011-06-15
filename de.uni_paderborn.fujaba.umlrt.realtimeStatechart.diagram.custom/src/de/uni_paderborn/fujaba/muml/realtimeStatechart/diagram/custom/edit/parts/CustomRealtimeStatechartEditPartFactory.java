@@ -23,8 +23,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			View view = (View) model;
 
 			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
-			case TransitionEditPart.VISUAL_ID:
-				return new CustomTransitionEditPart(view);
 			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
 				return new CustomFujabaRealtimeStatechartEditPart(view);
 			default:

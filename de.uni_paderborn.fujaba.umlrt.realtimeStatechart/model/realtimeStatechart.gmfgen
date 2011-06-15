@@ -162,6 +162,7 @@
           visualID="5001"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="ClockConstraintLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -209,6 +210,7 @@
           visualID="5002"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="SynchronizationChannelLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -291,7 +293,8 @@
       <labels
           visualID="5003"
           editPartClassName="StateNameEditPart"
-          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -351,7 +354,8 @@
       <labels
           visualID="5004"
           editPartClassName="ClockNameEditPart"
-          itemSemanticEditPolicyClassName="ClockNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ClockNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ClockNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -642,16 +646,6 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Start State"
-            description="Creation of a start state"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/startState16.png"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Stop State"
-            description="Creation of a stop state."
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/stopState16.png"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Transition"
             description="Creation of a transition"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/transition16.gif"
@@ -662,11 +656,6 @@
             description="Creation of a clock for a statechart"
             smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/clock.gif"
             genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="History"
-            description="Creation of a history"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/history16.png"/>
       </groups>
       <groups
           title="Realtime State"

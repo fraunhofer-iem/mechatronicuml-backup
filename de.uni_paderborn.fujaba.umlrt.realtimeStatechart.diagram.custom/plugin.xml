@@ -40,7 +40,7 @@
                   type="org.eclipse.gef.EditPart">
             </input>
             <input
-                  type="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtAbstractNavigatorItem">
+                  type="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem">
             </input>
          </propertySection>
       </propertySections>

@@ -273,52 +273,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StartState2CreationTool_title;
+	public static String Transition2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StartState2CreationTool_desc;
+	public static String Transition2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StopState3CreationTool_title;
+	public static String Clock3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StopState3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Transition4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Transition4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Clock5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Clock5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String History6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String History6CreationTool_desc;
+	public static String Clock3CreationTool_desc;
 
 	/**
 	 * @generated
