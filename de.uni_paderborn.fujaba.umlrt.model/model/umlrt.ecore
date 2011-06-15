@@ -972,18 +972,6 @@
             <details key="documentation" value="a final state is not allowed to have outgoing transitions."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoints" upperBound="-1"
-            eType="#//model/realtimestatechart/ExitPoint" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The exit points of this state.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoints" upperBound="-1"
-            eType="#//model/realtimestatechart/EntryPoint" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The entry points of this state.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If a state is active and urgent, no time is allowed to pass until the state is leaved."/>
@@ -998,6 +986,12 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
             eType="#//model/realtimestatechart/StateEvent" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
+            upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1219,8 +1213,11 @@
             <details key="documentation" value="the channel that is used by the synchronization&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationKind"
-            eType="#//model/realtimestatechart/SynchronizationKind"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/realtimestatechart/SynchronizationKind">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Decides the kind: Is this a send or a reveive synchronization?"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1279,19 +1276,31 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+      <eClassifiers xsi:type="ecore:EClass" name="EntryOrExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Entry points are defined points on a state that can be used to reach inner states."/>
         </eAnnotations>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Exit points are defined points on a state inner states can use to leave this state."/>
-        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/realtimestatechart/EntryExitPointKind">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Decides the kind: Is this an entry or an exit point?"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
-        <eLiterals name="SEND" literal=""/>
-        <eLiterals name="RECEIVE" value="1"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A synchronization has two kinds: send and receive."/>
+        </eAnnotations>
+        <eLiterals name="SEND" literal="">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents a send synchronization."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="RECEIVE" value="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents a receive synchronization."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1299,7 +1308,7 @@
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/realtimestatechart/EventKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A event may either be a trigger event or a raise event. A trigger event triggers &#xD;&#xA;some action within the statechart, a raise event is generated by the statechart &#xD;&#xA;and will be processed by another statechart."/>
+            <details key="documentation" value="Decides the kind: Is this a raise event or a trigger event?&#xD;&#xA;&#xD;&#xA;A event may either be a trigger event or a raise event. A trigger event triggers &#xD;&#xA;some action within the statechart, a raise event is generated by the statechart &#xD;&#xA;and will be processed by another statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1326,8 +1335,47 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="EventKind">
-        <eLiterals name="RAISE"/>
-        <eLiterals name="TRIGGER" value="1"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An event has two kinds: raise and trigger."/>
+        </eAnnotations>
+        <eLiterals name="RAISE">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents a raise event."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="TRIGGER" value="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents a trigger event."/>
+          </eAnnotations>
+        </eLiterals>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="StateEntryOrExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The entry and exit points that are assigned to a state. They are derived from the entry and exit points of the statecharts, the state embeds."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="entryOrExitPoint" eType="#//model/realtimestatechart/EntryOrExitPoint"
+            derived="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/realtimestatechart/EntryExitPointKind">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Decides the kind: Is this an entry or an exit point?"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="EntryExitPointKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Entry points has the kind entry, exit points has the kinds exit."/>
+        </eAnnotations>
+        <eLiterals name="ENTRY">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents an entry point."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="EXIT" value="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represents an exit point."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
       <eSubpackages name="helper" nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart/helper"
           nsPrefix="helper">
