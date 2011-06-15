@@ -21,24 +21,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Start State"
-          description="Creation of a start state">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/startState16.png"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Stop State"
-          description="Creation of a stop state.">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/stopState16.png"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Transition"
           description="Creation of a transition">
         <smallIcon
@@ -53,15 +35,6 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/clock.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="History"
-          description="Creation of a history">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/history16.png"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
     </tools>

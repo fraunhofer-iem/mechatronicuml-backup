@@ -172,7 +172,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
           href="realtimeStatechart.gmfgraph#ClockNode"/>
     </ownedChild>
@@ -254,7 +254,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.3"/>
+        href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
         href="realtimeStatechart.gmfgraph#Transition"/>
     <sourceMetaFeature
