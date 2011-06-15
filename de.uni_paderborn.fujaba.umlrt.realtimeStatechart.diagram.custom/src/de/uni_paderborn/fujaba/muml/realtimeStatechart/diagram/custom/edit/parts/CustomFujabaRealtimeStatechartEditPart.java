@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.figures.HistoryFigure;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.figures.CustomHistoryFigure;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes;
 
@@ -18,7 +18,7 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 
 	private static final int ELLIPSE_RADIUS = 20;
 
-	private HistoryFigure historyFigure;
+	private CustomHistoryFigure historyFigure;
 
 	public CustomFujabaRealtimeStatechartEditPart(View view) {
 		super(view);
@@ -38,7 +38,7 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 	@Override
 	protected IFigure createFigure() {
 		IFigure diagram = super.createFigure();
-		historyFigure = new HistoryFigure();
+		historyFigure = new CustomHistoryFigure();
 		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
 		diagram.add(historyFigure);
 		return diagram;

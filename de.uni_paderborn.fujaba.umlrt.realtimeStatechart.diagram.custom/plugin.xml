@@ -132,23 +132,11 @@
          <action
                class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions.ModifySyncChannelWizardAction"
                enablesFor="1"
+               icon="icons/Syn.gif"
                id="Statechart.ModifyParameterID"
                label="Modify Parameters"
                menubarPath="RealtimeStatechart.CreateEParameter/group1">
          </action>
-      </objectContribution>
-      <objectContribution
-            adaptable="false"
-            id="objectContribution.Diagram"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
-         <menu
-               id="RealtimeStatechart.CreateEDataType"
-               label="Custom.Insert"
-               path="additions">
-            <separator
-                  name="group1">
-            </separator>
-         </menu>
       </objectContribution>
    </extension>
 

@@ -5,11 +5,11 @@ import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
-public class HistoryFigure extends Ellipse {
+public class CustomHistoryFigure extends Ellipse {
 	/**
 	 * @generated
 	 */
-	public HistoryFigure() {
+	public CustomHistoryFigure() {
 
 		GridLayout layoutThis = new GridLayout();
 		layoutThis.numColumns = 1;
