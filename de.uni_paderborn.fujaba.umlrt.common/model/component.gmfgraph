@@ -94,11 +94,18 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="ComponentFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="container"
             outline="false"
             fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              verticalAlignment="BEGINNING"
+              horizontalAlignment="FILL"/>
           <layout
               xsi:type="gmfgraph:GridLayout"
               numColumns="2"
@@ -126,9 +133,23 @@
               xsi:type="gmfgraph:FigureRef"
               figure="//@figures.0/@descriptors.4/@actualFigure"/>
         </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="children"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
+        </children>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="ConnectorFigure">

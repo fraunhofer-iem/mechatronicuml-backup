@@ -138,6 +138,13 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureChildren();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
@@ -155,6 +162,13 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart) {
+			IFigure pane = getPrimaryShape().getFigureChildren();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart) {
@@ -191,6 +205,9 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart) {
+			return getPrimaryShape().getFigureChildren();
+		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
@@ -304,7 +321,18 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureChildren;
+
+		/**
+		 * @generated
+		 */
 		public ComponentFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -320,7 +348,15 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			this.add(container0);
+			GridData constraintContainer0 = new GridData();
+			constraintContainer0.verticalAlignment = GridData.BEGINNING;
+			constraintContainer0.horizontalAlignment = GridData.FILL;
+			constraintContainer0.horizontalIndent = 0;
+			constraintContainer0.horizontalSpan = 1;
+			constraintContainer0.verticalSpan = 1;
+			constraintContainer0.grabExcessHorizontalSpace = true;
+			constraintContainer0.grabExcessVerticalSpace = false;
+			this.add(container0, constraintContainer0);
 
 			GridLayout layoutContainer0 = new GridLayout();
 			layoutContainer0.numColumns = 2;
@@ -403,6 +439,20 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			fFigureChildren = new RectangleFigure();
+			fFigureChildren.setFill(false);
+			fFigureChildren.setOutline(false);
+
+			GridData constraintFFigureChildren = new GridData();
+			constraintFFigureChildren.verticalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalIndent = 0;
+			constraintFFigureChildren.horizontalSpan = 1;
+			constraintFFigureChildren.verticalSpan = 1;
+			constraintFFigureChildren.grabExcessHorizontalSpace = true;
+			constraintFFigureChildren.grabExcessVerticalSpace = true;
+			this.add(fFigureChildren, constraintFFigureChildren);
+
 		}
 
 		/**
@@ -410,6 +460,13 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureChildren() {
+			return fFigureChildren;
 		}
 
 	}

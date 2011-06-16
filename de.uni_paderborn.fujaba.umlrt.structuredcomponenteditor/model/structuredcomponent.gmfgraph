@@ -51,6 +51,8 @@
       name="ComponentCompartment">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+    <accessor
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.1/@accessors.1"/>
   </compartments>
   <labels
       name="ComponentName"
