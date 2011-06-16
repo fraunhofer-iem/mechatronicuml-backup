@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 
@@ -47,11 +48,10 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChan
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isFinal <em>Final</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getExitPoints <em>Exit Points</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getEntryPoints <em>Entry Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}</li>
  * </ul>
  * </p>
  *
@@ -169,26 +169,6 @@ public class StateImpl extends VertexImpl implements State {
 	protected boolean final_ = FINAL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getExitPoints() <em>Exit Points</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExitPoints()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ExitPoint> exitPoints;
-
-	/**
-	 * The cached value of the '{@link #getEntryPoints() <em>Entry Points</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntryPoints()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntryPoint> entryPoints;
-
-	/**
 	 * The default value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +207,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EList<StateEvent> events;
+
+	/**
+	 * The cached value of the '{@link #getStateEntryOrExitPoints() <em>State Entry Or Exit Points</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStateEntryOrExitPoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<StateEntryOrExitPoint> stateEntryOrExitPoints;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,6 +440,18 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<StateEntryOrExitPoint> getStateEntryOrExitPoints() {
+		if (stateEntryOrExitPoints == null) {
+			stateEntryOrExitPoints = new EObjectResolvingEList<StateEntryOrExitPoint>(StateEntryOrExitPoint.class, this, RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS);
+		}
+		return stateEntryOrExitPoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isInitial() {
 		return initial;
 	}
@@ -485,30 +487,6 @@ public class StateImpl extends VertexImpl implements State {
 		final_ = newFinal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__FINAL, oldFinal, final_));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ExitPoint> getExitPoints() {
-		if (exitPoints == null) {
-			exitPoints = new EObjectResolvingEList<ExitPoint>(ExitPoint.class, this, RealtimestatechartPackage.STATE__EXIT_POINTS);
-		}
-		return exitPoints;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EntryPoint> getEntryPoints() {
-		if (entryPoints == null) {
-			entryPoints = new EObjectResolvingEList<EntryPoint>(EntryPoint.class, this, RealtimestatechartPackage.STATE__ENTRY_POINTS);
-		}
-		return entryPoints;
 	}
 
 	/**
@@ -599,16 +577,14 @@ public class StateImpl extends VertexImpl implements State {
 				return isInitial();
 			case RealtimestatechartPackage.STATE__FINAL:
 				return isFinal();
-			case RealtimestatechartPackage.STATE__EXIT_POINTS:
-				return getExitPoints();
-			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
-				return getEntryPoints();
 			case RealtimestatechartPackage.STATE__URGENT:
 				return isUrgent();
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return getChannels();
 			case RealtimestatechartPackage.STATE__EVENTS:
 				return getEvents();
+			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
+				return getStateEntryOrExitPoints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -648,14 +624,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__FINAL:
 				setFinal((Boolean)newValue);
 				return;
-			case RealtimestatechartPackage.STATE__EXIT_POINTS:
-				getExitPoints().clear();
-				getExitPoints().addAll((Collection<? extends ExitPoint>)newValue);
-				return;
-			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
-				getEntryPoints().clear();
-				getEntryPoints().addAll((Collection<? extends EntryPoint>)newValue);
-				return;
 			case RealtimestatechartPackage.STATE__URGENT:
 				setUrgent((Boolean)newValue);
 				return;
@@ -666,6 +634,10 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__EVENTS:
 				getEvents().clear();
 				getEvents().addAll((Collection<? extends StateEvent>)newValue);
+				return;
+			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
+				getStateEntryOrExitPoints().clear();
+				getStateEntryOrExitPoints().addAll((Collection<? extends StateEntryOrExitPoint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -703,12 +675,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__FINAL:
 				setFinal(FINAL_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.STATE__EXIT_POINTS:
-				getExitPoints().clear();
-				return;
-			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
-				getEntryPoints().clear();
-				return;
 			case RealtimestatechartPackage.STATE__URGENT:
 				setUrgent(URGENT_EDEFAULT);
 				return;
@@ -717,6 +683,9 @@ public class StateImpl extends VertexImpl implements State {
 				return;
 			case RealtimestatechartPackage.STATE__EVENTS:
 				getEvents().clear();
+				return;
+			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
+				getStateEntryOrExitPoints().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -746,16 +715,14 @@ public class StateImpl extends VertexImpl implements State {
 				return initial != INITIAL_EDEFAULT;
 			case RealtimestatechartPackage.STATE__FINAL:
 				return final_ != FINAL_EDEFAULT;
-			case RealtimestatechartPackage.STATE__EXIT_POINTS:
-				return exitPoints != null && !exitPoints.isEmpty();
-			case RealtimestatechartPackage.STATE__ENTRY_POINTS:
-				return entryPoints != null && !entryPoints.isEmpty();
 			case RealtimestatechartPackage.STATE__URGENT:
 				return urgent != URGENT_EDEFAULT;
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return channels != null && !channels.isEmpty();
 			case RealtimestatechartPackage.STATE__EVENTS:
 				return events != null && !events.isEmpty();
+			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
+				return stateEntryOrExitPoints != null && !stateEntryOrExitPoints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

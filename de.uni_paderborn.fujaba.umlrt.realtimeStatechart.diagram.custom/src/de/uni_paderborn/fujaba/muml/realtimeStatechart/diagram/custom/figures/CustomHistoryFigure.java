@@ -16,7 +16,7 @@ public class CustomHistoryFigure extends Ellipse {
 		layoutThis.makeColumnsEqualWidth = true;
 		this.setLayoutManager(layoutThis);
 
-		this.setLineWidth(3);
+		this.setLineWidth(1);
 		createContents();
 	}
 

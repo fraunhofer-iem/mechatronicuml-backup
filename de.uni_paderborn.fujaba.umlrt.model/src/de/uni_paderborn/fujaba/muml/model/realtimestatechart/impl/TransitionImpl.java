@@ -27,6 +27,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
@@ -247,7 +248,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActionExpression> action;
+	protected EList<Action> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -753,9 +754,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActionExpression> getAction() {
+	public EList<Action> getAction() {
 		if (action == null) {
-			action = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.TRANSITION__ACTION);
+			action = new EObjectContainmentEList<Action>(Action.class, this, RealtimestatechartPackage.TRANSITION__ACTION);
 		}
 		return action;
 	}
@@ -996,7 +997,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return;
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				getAction().clear();
-				getAction().addAll((Collection<? extends ActionExpression>)newValue);
+				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

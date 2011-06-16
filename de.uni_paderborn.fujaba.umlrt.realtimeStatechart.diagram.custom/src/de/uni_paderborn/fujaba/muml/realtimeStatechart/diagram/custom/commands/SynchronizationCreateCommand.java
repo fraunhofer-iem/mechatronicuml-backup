@@ -78,9 +78,9 @@ public class SynchronizationCreateCommand extends EditElementCommand {
 		Transition owner = (Transition) getElementToEdit();
 		owner.setSynchronization(newElement);
 		if (type.equals("send")) {
-			newElement.setSynchronizationKind(SynchronizationKind.SEND);
+			newElement.setKind(SynchronizationKind.SEND);
 		} else {
-			newElement.setSynchronizationKind(SynchronizationKind.RECEIVE);
+			newElement.setKind(SynchronizationKind.RECEIVE);
 		}
 
 		newElement.setCallee(channel);

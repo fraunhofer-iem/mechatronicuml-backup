@@ -83,6 +83,7 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The kind of this port which can be either discrete, continuous, hybrid or hardware. This attribute can be derived by determining which port specifications the port possesses.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind

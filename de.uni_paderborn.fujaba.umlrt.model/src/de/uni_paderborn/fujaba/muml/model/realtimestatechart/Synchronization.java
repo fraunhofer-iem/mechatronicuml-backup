@@ -21,7 +21,7 @@ import org.storydriven.modeling.calls.Invocation;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSyncChannel <em>Sync Channel</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSynchronizationKind <em>Synchronization Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,32 +57,31 @@ public interface Synchronization extends Invocation {
 	void setSyncChannel(SynchronizationChannel value);
 
 	/**
-	 * Returns the value of the '<em><b>Synchronization Kind</b></em>' attribute.
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Synchronization Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Synchronization Kind</em>' attribute.
+	 * <!-- begin-model-doc -->
+	 * Decides the kind: Is this a send or a reveive synchronization?
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
-	 * @see #setSynchronizationKind(SynchronizationKind)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_SynchronizationKind()
+	 * @see #setKind(SynchronizationKind)
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_Kind()
 	 * @model
 	 * @generated
 	 */
-	SynchronizationKind getSynchronizationKind();
+	SynchronizationKind getKind();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSynchronizationKind <em>Synchronization Kind</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Synchronization Kind</em>' attribute.
+	 * @param value the new value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
-	 * @see #getSynchronizationKind()
+	 * @see #getKind()
 	 * @generated
 	 */
-	void setSynchronizationKind(SynchronizationKind value);
+	void setKind(SynchronizationKind value);
 
 } // Synchronization

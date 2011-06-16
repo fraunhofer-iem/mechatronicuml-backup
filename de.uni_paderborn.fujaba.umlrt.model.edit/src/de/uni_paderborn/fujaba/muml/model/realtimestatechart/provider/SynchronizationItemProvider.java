@@ -68,7 +68,7 @@ public class SynchronizationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSyncChannelPropertyDescriptor(object);
-			addSynchronizationKindPropertyDescriptor(object);
+			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,19 +96,19 @@ public class SynchronizationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Synchronization Kind feature.
+	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSynchronizationKindPropertyDescriptor(Object object) {
+	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Synchronization_synchronizationKind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_synchronizationKind_feature", "_UI_Synchronization_type"),
-				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNCHRONIZATION_KIND,
+				 getString("_UI_Synchronization_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_kind_feature", "_UI_Synchronization_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
 				 true,
 				 false,
 				 false,
@@ -154,7 +154,7 @@ public class SynchronizationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Synchronization.class)) {
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
+			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

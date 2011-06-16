@@ -32,7 +32,7 @@ import org.storydriven.modeling.calls.impl.InvocationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getSyncChannel <em>Sync Channel</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getSynchronizationKind <em>Synchronization Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,23 +50,24 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	protected SynchronizationChannel syncChannel;
 
 	/**
-	 * The default value of the '{@link #getSynchronizationKind() <em>Synchronization Kind</em>}' attribute.
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSynchronizationKind()
+	 * @see #getKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SynchronizationKind SYNCHRONIZATION_KIND_EDEFAULT = SynchronizationKind.SEND;
+	protected static final SynchronizationKind KIND_EDEFAULT = SynchronizationKind.SEND;
+
 	/**
-	 * The cached value of the '{@link #getSynchronizationKind() <em>Synchronization Kind</em>}' attribute.
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSynchronizationKind()
+	 * @see #getKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected SynchronizationKind synchronizationKind = SYNCHRONIZATION_KIND_EDEFAULT;
+	protected SynchronizationKind kind = KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,8 +131,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SynchronizationKind getSynchronizationKind() {
-		return synchronizationKind;
+	public SynchronizationKind getKind() {
+		return kind;
 	}
 
 	/**
@@ -139,11 +140,11 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSynchronizationKind(SynchronizationKind newSynchronizationKind) {
-		SynchronizationKind oldSynchronizationKind = synchronizationKind;
-		synchronizationKind = newSynchronizationKind == null ? SYNCHRONIZATION_KIND_EDEFAULT : newSynchronizationKind;
+	public void setKind(SynchronizationKind newKind) {
+		SynchronizationKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND, oldSynchronizationKind, synchronizationKind));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__KIND, oldKind, kind));
 	}
 
 	/**
@@ -157,8 +158,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
 				if (resolve) return getSyncChannel();
 				return basicGetSyncChannel();
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
-				return getSynchronizationKind();
+			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
+				return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,8 +175,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
 				setSyncChannel((SynchronizationChannel)newValue);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
-				setSynchronizationKind((SynchronizationKind)newValue);
+			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
+				setKind((SynchronizationKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +193,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
 				setSyncChannel((SynchronizationChannel)null);
 				return;
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
-				setSynchronizationKind(SYNCHRONIZATION_KIND_EDEFAULT);
+			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
+				setKind(KIND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -209,8 +210,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
 				return syncChannel != null;
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNCHRONIZATION_KIND:
-				return synchronizationKind != SYNCHRONIZATION_KIND_EDEFAULT;
+			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
+				return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -225,8 +226,8 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (synchronizationKind: ");
-		result.append(synchronizationKind);
+		result.append(" (kind: ");
+		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}

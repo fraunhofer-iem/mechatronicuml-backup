@@ -50,7 +50,7 @@ public interface EntryOrExitEvent extends StateEvent {
 
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -61,6 +61,6 @@ public interface EntryOrExitEvent extends StateEvent {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ActionExpression> getAction();
+	EList<Action> getAction();
 
 } // EntryOrExitEvent

@@ -237,26 +237,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActionExpressionItemProvider actionExpressionItemProvider;
+	protected ActionItemProvider actionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createActionExpressionAdapter() {
-		if (actionExpressionItemProvider == null) {
-			actionExpressionItemProvider = new ActionExpressionItemProvider(this);
+	public Adapter createActionAdapter() {
+		if (actionItemProvider == null) {
+			actionItemProvider = new ActionItemProvider(this);
 		}
 
-		return actionExpressionItemProvider;
+		return actionItemProvider;
 	}
 
 	/**
@@ -398,49 +398,26 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EntryPointItemProvider entryPointItemProvider;
+	protected EntryOrExitPointItemProvider entryOrExitPointItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEntryPointAdapter() {
-		if (entryPointItemProvider == null) {
-			entryPointItemProvider = new EntryPointItemProvider(this);
+	public Adapter createEntryOrExitPointAdapter() {
+		if (entryOrExitPointItemProvider == null) {
+			entryOrExitPointItemProvider = new EntryOrExitPointItemProvider(this);
 		}
 
-		return entryPointItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExitPointItemProvider exitPointItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createExitPointAdapter() {
-		if (exitPointItemProvider == null) {
-			exitPointItemProvider = new ExitPointItemProvider(this);
-		}
-
-		return exitPointItemProvider;
+		return entryOrExitPointItemProvider;
 	}
 
 	/**
@@ -464,6 +441,29 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		}
 
 		return messageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateEntryOrExitPointItemProvider stateEntryOrExitPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateEntryOrExitPointAdapter() {
+		if (stateEntryOrExitPointItemProvider == null) {
+			stateEntryOrExitPointItemProvider = new StateEntryOrExitPointItemProvider(this);
+		}
+
+		return stateEntryOrExitPointItemProvider;
 	}
 
 	/**
@@ -572,16 +572,16 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (stateItemProvider != null) stateItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (clockConstraintItemProvider != null) clockConstraintItemProvider.dispose();
-		if (actionExpressionItemProvider != null) actionExpressionItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (asynchronousMessageEventItemProvider != null) asynchronousMessageEventItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
 		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();
-		if (entryPointItemProvider != null) entryPointItemProvider.dispose();
-		if (exitPointItemProvider != null) exitPointItemProvider.dispose();
+		if (entryOrExitPointItemProvider != null) entryOrExitPointItemProvider.dispose();
 		if (messageItemProvider != null) messageItemProvider.dispose();
+		if (stateEntryOrExitPointItemProvider != null) stateEntryOrExitPointItemProvider.dispose();
 	}
 
 }

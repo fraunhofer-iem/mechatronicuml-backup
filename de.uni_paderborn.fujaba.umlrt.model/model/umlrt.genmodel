@@ -271,6 +271,10 @@
           <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//model/realtimestatechart/EventKind/RAISE"/>
           <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//model/realtimestatechart/EventKind/TRIGGER"/>
         </genEnums>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="umlrt.ecore#//model/realtimestatechart/EntryExitPointKind">
+          <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//model/realtimestatechart/EntryExitPointKind/ENTRY"/>
+          <genEnumLiterals ecoreEnumLiteral="umlrt.ecore#//model/realtimestatechart/EntryExitPointKind/EXIT"/>
+        </genEnums>
         <genClasses image="false" ecoreClass="umlrt.ecore#//model/realtimestatechart/Deadline">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/Deadline/upperBound"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/Deadline/lowerBound"/>
@@ -297,13 +301,11 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/State/committed"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/State/initial"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/State/final"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/State/exitPoints"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/State/entryPoints"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/State/urgent"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/State/channels"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/State/events"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
         </genClasses>
         <genClasses image="false" ecoreClass="umlrt.ecore#//model/realtimestatechart/Vertex">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -340,7 +342,9 @@
               ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/ClockConstraint/clock"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/ClockConstraint/operator"/>
         </genClasses>
-        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/ActionExpression"/>
+        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/Action">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/Action/expressions"/>
+        </genClasses>
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/AsynchronousMessageEvent">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/AsynchronousMessageEvent/message"/>
         </genClasses>
@@ -360,7 +364,7 @@
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/Synchronization">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/Synchronization/syncChannel"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/Synchronization/synchronizationKind"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/Synchronization/kind"/>
         </genClasses>
         <genClasses image="false" ecoreClass="umlrt.ecore#//model/realtimestatechart/Prioritizable">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/Prioritizable/priority"/>
@@ -376,8 +380,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/history"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
         </genClasses>
-        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/EntryPoint"/>
-        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/ExitPoint"/>
+        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/EntryOrExitPoint">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/EntryOrExitPoint/kind"/>
+        </genClasses>
         <genClasses image="false" ecoreClass="umlrt.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/Event/kind"/>
         </genClasses>
@@ -386,6 +391,11 @@
         <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/Message">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/Message/instanceOf"/>
+        </genClasses>
+        <genClasses ecoreClass="umlrt.ecore#//model/realtimestatechart/StateEntryOrExitPoint">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference umlrt.ecore#//model/realtimestatechart/StateEntryOrExitPoint/entryOrExitPoint"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute umlrt.ecore#//model/realtimestatechart/StateEntryOrExitPoint/kind"/>
         </genClasses>
         <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart"
             disposableProviderFactory="true" ecorePackage="umlrt.ecore#//model/realtimestatechart/helper">

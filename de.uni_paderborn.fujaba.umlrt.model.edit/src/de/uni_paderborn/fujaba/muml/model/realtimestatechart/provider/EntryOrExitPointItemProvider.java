@@ -7,9 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 import java.util.Collection;
@@ -17,8 +15,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -30,18 +26,14 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.modeling.SDMPackage;
-
-import org.storydriven.modeling.expressions.provider.ExpressionItemProvider;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionExpressionItemProvider
-	extends ExpressionItemProvider
+public class EntryOrExitPointItemProvider
+	extends VertexItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -54,7 +46,7 @@ public class ActionExpressionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionExpressionItemProvider(AdapterFactory adapterFactory) {
+	public EntryOrExitPointItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,25 +61,25 @@ public class ActionExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_EntryOrExitPoint_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitPoint_kind_feature", "_UI_EntryOrExitPoint_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_POINT__KIND,
 				 true,
 				 false,
 				 false,
@@ -97,14 +89,14 @@ public class ActionExpressionItemProvider
 	}
 
 	/**
-	 * This returns ActionExpression.gif.
+	 * This returns EntryOrExitPoint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionExpression"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EntryOrExitPoint"));
 	}
 
 	/**
@@ -115,10 +107,10 @@ public class ActionExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActionExpression)object).getName();
+		String label = ((EntryOrExitPoint)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ActionExpression_type") :
-			getString("_UI_ActionExpression_type") + " " + label;
+			getString("_UI_EntryOrExitPoint_type") :
+			getString("_UI_EntryOrExitPoint_type") + " " + label;
 	}
 
 	/**
@@ -132,8 +124,8 @@ public class ActionExpressionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ActionExpression.class)) {
-			case RealtimestatechartPackage.ACTION_EXPRESSION__NAME:
+		switch (notification.getFeatureID(EntryOrExitPoint.class)) {
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_POINT__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -150,17 +142,6 @@ public class ActionExpressionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
 	}
 
 }

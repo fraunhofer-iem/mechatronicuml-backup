@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
@@ -59,7 +60,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActionExpression> action;
+	protected EList<Action> action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,9 +98,9 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActionExpression> getAction() {
+	public EList<Action> getAction() {
 		if (action == null) {
-			action = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION);
+			action = new EObjectContainmentEList<Action>(Action.class, this, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION);
 		}
 		return action;
 	}
@@ -149,7 +150,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
 				getAction().clear();
-				getAction().addAll((Collection<? extends ActionExpression>)newValue);
+				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

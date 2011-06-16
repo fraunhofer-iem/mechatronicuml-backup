@@ -836,7 +836,7 @@
       <expressions
           body="'['.concat(&#xA;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;).concat(',').concat(&#xA;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;).concat(']')"/>
       <expressions
-          body="'{'.concat(&#xA;&#x9;OrderedSet { self.triggerEvents, self.raisedEvents }->iterate(events; eventsResults : String = '' | (&#xA;&#x9;&#x9;(if eventsResults = '' then '' else eventsResults.concat('} / {') endif).concat(&#xA;&#x9;&#x9;&#x9;events->iterate(event; singleEventResult : String = '' | &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;(if singleEventResult = '' then '' else singleEventResult.concat(', ') endif).concat(event.callee.oclAsType(MessageType).name).concat('(').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;event.ownedParameterBindings->iterate(binding; bindingResult : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(':').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(LiteralExpression).valueType&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)).concat(')')&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;))&#xA;&#x9;))&#xA;).concat('}')"/>
+          body="'{'.concat(&#xA;&#x9;OrderedSet { OrderedSet { self.triggerMessageEvent }, OrderedSet{ self.raiseMessageEvent } }->iterate(events; eventsResults : String = '' | (&#xA;&#x9;&#x9;(if eventsResults = '' then '' else eventsResults.concat('} / {') endif).concat(&#xA;&#x9;&#x9;&#x9;events->iterate(event; singleEventResult : String = '' | &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;(if singleEventResult = '' then '' else singleEventResult.concat(', ') endif).concat(event.message.callee.oclAsType(msgiface::MessageType).name).concat('(').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;event.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(':').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)).concat(')')&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;))&#xA;&#x9;))&#xA;).concat('}')&#xA;&#xA;&#xA;"/>
       <expressions
           body="'guard'"/>
       <expressions
@@ -844,9 +844,9 @@
       <expressions
           body="'['.concat(&#xA;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;clockConstraint.clock.name.concat(' ').concat('clockConstraint.operator').concat(' ').concat(clockConstraint.bound.toString())&#xA;&#x9;&#x9;)&#xA;&#x9;))&#xA;).concat(']')"/>
       <expressions
-          body="if safetyTransition=false then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;endif"/>
+          body="if not safe then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;endif"/>
       <expressions
-          body="OrderedSet { self.sendSynchronization, self.receiveSynchronization }->select(synchronization | not synchronization.oclIsUndefined())->iterate(synchronization; completeResult : String = '' | &#xA;&#x9;(if completeResult = '' then '' else completeResult.concat(' ') endif).concat(&#xA;&#x9;&#x9;synchronization.callee.oclAsType(SynchronizationChannel).name.concat('(').concat(&#xA;&#x9;&#x9;&#x9;synchronization.ownedParameterBindings->iterate(binding; result : String = '' | &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.concat(':').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)))&#xA;&#x9;&#x9;).concat(')').concat(if completeResult = '' then '!' else '?' endif)&#xA;&#x9;)&#xA;)"/>
+          body="if self.synchronization.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name.concat('(').concat(&#xA;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(binding; result : String = '' | &#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.concat(':').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)))&#xA;&#x9;).concat(')').concat(&#xA;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -854,6 +854,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
+        className="ClockConstraintLabelExpressionLabelParser5001"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
@@ -861,6 +862,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
+        className="SynchronizationChannelLabelExpressionLabelParser5002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
@@ -871,6 +873,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -878,6 +881,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.2/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -885,6 +889,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.3/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6004"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -892,6 +897,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.4/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -899,6 +905,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.5/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -906,6 +913,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.6/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6007"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -913,6 +921,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.7/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6008"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -920,6 +929,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.8/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6009"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
@@ -927,6 +937,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.9/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6010"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>

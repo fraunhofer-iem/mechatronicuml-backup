@@ -276,12 +276,12 @@ public class FujabaRealtimeStatechartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
+				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitPoint()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES,
-				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
+				 RealtimestatechartFactory.eINSTANCE.createStateEntryOrExitPoint()));
 
 		newChildDescriptors.add
 			(createChildParameter

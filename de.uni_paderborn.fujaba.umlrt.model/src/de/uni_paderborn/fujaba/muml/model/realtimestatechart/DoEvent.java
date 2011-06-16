@@ -35,15 +35,18 @@ import org.eclipse.emf.ecore.EObject;
 public interface DoEvent extends StateEvent {
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Each entry or exit action has one or more actions.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_Action()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<ActionExpression> getAction();
+	EList<Action> getAction();
 
 	/**
 	 * Returns the value of the '<em><b>Period Lower</b></em>' attribute.

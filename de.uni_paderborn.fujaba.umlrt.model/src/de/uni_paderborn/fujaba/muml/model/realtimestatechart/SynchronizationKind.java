@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Synchronization Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * A synchronization has two kinds: send and receive.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronizationKind()
  * @model
  * @generated
@@ -50,6 +53,9 @@ public enum SynchronizationKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a send synchronization.
+	 * <!-- end-model-doc -->
 	 * @see #SEND
 	 * @model literal=""
 	 * @generated
@@ -65,6 +71,9 @@ public enum SynchronizationKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a receive synchronization.
+	 * <!-- end-model-doc -->
 	 * @see #RECEIVE
 	 * @model
 	 * @generated

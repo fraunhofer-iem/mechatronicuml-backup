@@ -171,6 +171,7 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This attribute specifies whether this realtime statechart is embedded into a region or not.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded</em>' attribute.
 	 * @see #setEmbedded(boolean)

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -52,7 +53,7 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ActionExpression> action;
+	protected EList<Action> action;
 
 	/**
 	 * The default value of the '{@link #getPeriodLower() <em>Period Lower</em>}' attribute.
@@ -118,9 +119,9 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ActionExpression> getAction() {
+	public EList<Action> getAction() {
 		if (action == null) {
-			action = new EObjectContainmentEList<ActionExpression>(ActionExpression.class, this, RealtimestatechartPackage.DO_EVENT__ACTION);
+			action = new EObjectContainmentEList<Action>(Action.class, this, RealtimestatechartPackage.DO_EVENT__ACTION);
 		}
 		return action;
 	}
@@ -210,7 +211,7 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				getAction().clear();
-				getAction().addAll((Collection<? extends ActionExpression>)newValue);
+				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 				setPeriodLower((Integer)newValue);

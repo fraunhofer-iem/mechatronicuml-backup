@@ -67,9 +67,8 @@ public class StateItemProvider
 			addCommittedPropertyDescriptor(object);
 			addInitialPropertyDescriptor(object);
 			addFinalPropertyDescriptor(object);
-			addExitPointsPropertyDescriptor(object);
-			addEntryPointsPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
+			addStateEntryOrExitPointsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -141,50 +140,6 @@ public class StateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Exit Points feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addExitPointsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_exitPoints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_exitPoints_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__EXIT_POINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Entry Points feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntryPointsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_entryPoints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_entryPoints_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__ENTRY_POINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Urgent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +157,28 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the State Entry Or Exit Points feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStateEntryOrExitPointsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_stateEntryOrExitPoints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_stateEntryOrExitPoints_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__STATE_ENTRY_OR_EXIT_POINTS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

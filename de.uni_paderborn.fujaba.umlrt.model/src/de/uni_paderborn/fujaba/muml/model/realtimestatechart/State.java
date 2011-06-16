@@ -28,11 +28,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isCommitted <em>Committed</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isFinal <em>Final</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitPoints <em>Exit Points</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryPoints <em>Entry Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isUrgent <em>Urgent</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}</li>
  * </ul>
  * </p>
  *
@@ -214,6 +213,21 @@ public interface State extends Vertex {
 	EList<StateEvent> getEvents();
 
 	/**
+	 * Returns the value of the '<em><b>State Entry Or Exit Points</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>State Entry Or Exit Points</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateEntryOrExitPoints()
+	 * @model
+	 * @generated
+	 */
+	EList<StateEntryOrExitPoint> getStateEntryOrExitPoints();
+
+	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
@@ -271,36 +285,6 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	void setFinal(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Exit Points</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The exit points of this state.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Exit Points</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_ExitPoints()
-	 * @model derived="true"
-	 * @generated
-	 */
-	EList<ExitPoint> getExitPoints();
-
-	/**
-	 * Returns the value of the '<em><b>Entry Points</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The entry points of this state.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Entry Points</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_EntryPoints()
-	 * @model derived="true"
-	 * @generated
-	 */
-	EList<EntryPoint> getEntryPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.

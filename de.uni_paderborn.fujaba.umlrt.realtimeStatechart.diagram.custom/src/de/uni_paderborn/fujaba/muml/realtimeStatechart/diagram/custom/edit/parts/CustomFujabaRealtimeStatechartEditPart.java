@@ -1,8 +1,12 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.figures.CustomHistoryFigure;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 
@@ -15,17 +19,6 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 
 	public CustomFujabaRealtimeStatechartEditPart(View view) {
 		super(view);
-//		CreateViewRequest.ViewDescriptor viewDescriptor = new CreateViewRequest.ViewDescriptor(
-//				new EObjectAdapter((EObject) this.getModel()),
-//				Node.class,
-//				((IHintedType) UmlrtElementTypes
-//						.getElementType(FujabaRealtimeStatechartEditPart.VISUAL_ID))
-//						.getSemanticHint(), true, null);
-//		viewDescriptor.setPersisted(true);
-//		CreateViewRequest createViewRequest = new CreateViewRequest(
-//				viewDescriptor);
-//		Command createViewCommand = this.getCommand(createViewRequest);
-//		createViewCommand.execute();
 	}
 
 	@Override
@@ -33,8 +26,41 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 		IFigure diagram = super.createFigure();
 		historyFigure = new CustomHistoryFigure();
 		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
-		diagram.add(historyFigure);
+		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
+				.getElement();
+		updateHistoryState(diagram, statechart.isHistory());
 		return diagram;
 	}
 
+	@Override
+	protected final void handleNotificationEvent(final Notification notification) {
+		Object feature = notification.getFeature();
+		if (feature instanceof EStructuralFeature) {
+			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
+			if (structuralFeature.getContainerClass() == FujabaRealtimeStatechart.class) {
+				int featureID = notification
+						.getFeatureID(FujabaRealtimeStatechart.class);
+				if (featureID == RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY) {
+					Object newState = notification.getNewValue();
+					if (newState instanceof Boolean) {
+						updateHistoryState(getFigure(), (Boolean) newState);
+					}
+				}
+			}
+		}
+		super.handleNotificationEvent(notification);
+	}
+
+	private void updateHistoryState(IFigure diagramFigure, boolean newState) {
+
+		boolean oldState = historyFigure.getParent() == diagramFigure;
+
+		if (oldState != newState) {
+			if (newState) {
+				diagramFigure.add(historyFigure);
+			} else {
+				diagramFigure.remove(historyFigure);
+			}
+		}
+	}
 }

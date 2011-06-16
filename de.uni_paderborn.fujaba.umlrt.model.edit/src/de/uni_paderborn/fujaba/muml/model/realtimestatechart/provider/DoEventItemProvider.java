@@ -213,7 +213,7 @@ public class DoEventItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DO_EVENT__ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
+				 RealtimestatechartFactory.eINSTANCE.createAction()));
 	}
 
 }

@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Event Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * An event has two kinds: raise and trigger.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEventKind()
  * @model
  * @generated
@@ -50,6 +53,9 @@ public enum EventKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a raise event.
+	 * <!-- end-model-doc -->
 	 * @see #RAISE
 	 * @model
 	 * @generated
@@ -65,6 +71,9 @@ public enum EventKind implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Represents a trigger event.
+	 * <!-- end-model-doc -->
 	 * @see #TRIGGER
 	 * @model
 	 * @generated

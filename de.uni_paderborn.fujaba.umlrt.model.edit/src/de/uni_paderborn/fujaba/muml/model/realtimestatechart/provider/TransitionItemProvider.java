@@ -429,11 +429,6 @@ public class TransitionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 				 ExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
 
 		newChildDescriptors.add
@@ -504,30 +499,7 @@ public class TransitionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__GUARD ||
-			childFeature == RealtimestatechartPackage.Literals.TRANSITION__ACTION;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+				 RealtimestatechartFactory.eINSTANCE.createAction()));
 	}
 
 }

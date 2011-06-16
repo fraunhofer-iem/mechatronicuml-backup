@@ -81,6 +81,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The state which is the target of this transition.
+	 * \todosd{discuss for v0.2:change cardinality to 1..1}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Vertex)
@@ -108,6 +109,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The state which is the source of this transition.
+	 * \todosd{discuss for v0.2: change cardinality to 1..1}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Vertex)
@@ -177,6 +179,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-model-doc -->
 	 * The trigger event of this transition.
 	 * \todosd{ocl: implement derived}
+	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
 	 * @see #setTriggerMessageEvent(AsynchronousMessageEvent)
@@ -203,6 +206,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-model-doc -->
 	 * The event which is raised upon activiation of this transition.
 	 * \todosd{ocl: implement derived}
+	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
 	 * @see #setRaiseMessageEvent(AsynchronousMessageEvent)
@@ -391,7 +395,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Action</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -402,6 +406,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ActionExpression> getAction();
+	EList<Action> getAction();
 
 } // Transition

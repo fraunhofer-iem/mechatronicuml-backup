@@ -123,8 +123,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createClockConstraintAdapter();
 			}
 			@Override
-			public Adapter caseActionExpression(ActionExpression object) {
-				return createActionExpressionAdapter();
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
 			}
 			@Override
 			public Adapter caseAsynchronousMessageEvent(AsynchronousMessageEvent object) {
@@ -155,12 +155,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createFujabaRealtimeStatechartAdapter();
 			}
 			@Override
-			public Adapter caseEntryPoint(EntryPoint object) {
-				return createEntryPointAdapter();
-			}
-			@Override
-			public Adapter caseExitPoint(ExitPoint object) {
-				return createExitPointAdapter();
+			public Adapter caseEntryOrExitPoint(EntryOrExitPoint object) {
+				return createEntryOrExitPointAdapter();
 			}
 			@Override
 			public Adapter caseEvent(Event object) {
@@ -179,6 +175,10 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createMessageAdapter();
 			}
 			@Override
+			public Adapter caseStateEntryOrExitPoint(StateEntryOrExitPoint object) {
+				return createStateEntryOrExitPointAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -187,16 +187,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseTypedElement(TypedElement object) {
-				return createTypedElementAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter caseCallable(Callable object) {
@@ -361,16 +353,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression <em>Action Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ActionExpression
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action
 	 * @generated
 	 */
-	public Adapter createActionExpressionAdapter() {
+	public Adapter createActionAdapter() {
 		return null;
 	}
 
@@ -473,30 +465,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint <em>Entry Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint <em>Entry Or Exit Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint
 	 * @generated
 	 */
-	public Adapter createEntryPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint <em>Exit Point</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint
-	 * @generated
-	 */
-	public Adapter createExitPointAdapter() {
+	public Adapter createEntryOrExitPointAdapter() {
 		return null;
 	}
 
@@ -557,6 +535,20 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint <em>State Entry Or Exit Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint
+	 * @generated
+	 */
+	public Adapter createStateEntryOrExitPointAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -585,20 +577,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.TypedElement <em>Typed Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.modeling.TypedElement
-	 * @generated
-	 */
-	public Adapter createTypedElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.CommentableElement <em>Commentable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -609,20 +587,6 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.modeling.expressions.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.modeling.expressions.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

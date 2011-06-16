@@ -100,7 +100,7 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * <!-- begin-model-doc -->
 	 * The sender message interface defines which messages this port instance sends.
 	 * It is derived from the sender message interface of its port.
-	 * \todosd{implement derived}
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Interface</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_SenderMessageInterface()
@@ -117,7 +117,7 @@ public interface PortInstance extends NamedElement, CommentableElement {
 	 * <!-- begin-model-doc -->
 	 * The receiver message interface defines which messages this port instance receives
 	 * It is derived from the receiver message interface of its port.
-	 * \todosd{implement derived}
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ReceiverMessageInterface()

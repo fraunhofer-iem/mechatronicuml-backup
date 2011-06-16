@@ -89,13 +89,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	ClockConstraint createClockConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Action Expression</em>'.
+	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action Expression</em>'.
+	 * @return a new object of class '<em>Action</em>'.
 	 * @generated
 	 */
-	ActionExpression createActionExpression();
+	Action createAction();
 
 	/**
 	 * Returns a new object of class '<em>Asynchronous Message Event</em>'.
@@ -152,22 +152,13 @@ public interface RealtimestatechartFactory extends EFactory {
 	FujabaRealtimeStatechart createFujabaRealtimeStatechart();
 
 	/**
-	 * Returns a new object of class '<em>Entry Point</em>'.
+	 * Returns a new object of class '<em>Entry Or Exit Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entry Point</em>'.
+	 * @return a new object of class '<em>Entry Or Exit Point</em>'.
 	 * @generated
 	 */
-	EntryPoint createEntryPoint();
-
-	/**
-	 * Returns a new object of class '<em>Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exit Point</em>'.
-	 * @generated
-	 */
-	ExitPoint createExitPoint();
+	EntryOrExitPoint createEntryOrExitPoint();
 
 	/**
 	 * Returns a new object of class '<em>Message</em>'.
@@ -177,6 +168,15 @@ public interface RealtimestatechartFactory extends EFactory {
 	 * @generated
 	 */
 	Message createMessage();
+
+	/**
+	 * Returns a new object of class '<em>State Entry Or Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State Entry Or Exit Point</em>'.
+	 * @generated
+	 */
+	StateEntryOrExitPoint createStateEntryOrExitPoint();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -68,16 +68,16 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.STATE: return createState();
 			case RealtimestatechartPackage.TRANSITION: return createTransition();
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: return createClockConstraint();
-			case RealtimestatechartPackage.ACTION_EXPRESSION: return createActionExpression();
+			case RealtimestatechartPackage.ACTION: return createAction();
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT: return createAsynchronousMessageEvent();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
-			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
-			case RealtimestatechartPackage.EXIT_POINT: return createExitPoint();
+			case RealtimestatechartPackage.ENTRY_OR_EXIT_POINT: return createEntryOrExitPoint();
 			case RealtimestatechartPackage.MESSAGE: return createMessage();
+			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT: return createStateEntryOrExitPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +95,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 				return createSynchronizationKindFromString(eDataType, initialValue);
 			case RealtimestatechartPackage.EVENT_KIND:
 				return createEventKindFromString(eDataType, initialValue);
+			case RealtimestatechartPackage.ENTRY_EXIT_POINT_KIND:
+				return createEntryExitPointKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,6 +114,8 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 				return convertSynchronizationKindToString(eDataType, instanceValue);
 			case RealtimestatechartPackage.EVENT_KIND:
 				return convertEventKindToString(eDataType, instanceValue);
+			case RealtimestatechartPackage.ENTRY_EXIT_POINT_KIND:
+				return convertEntryExitPointKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -192,9 +196,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionExpression createActionExpression() {
-		ActionExpressionImpl actionExpression = new ActionExpressionImpl();
-		return actionExpression;
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
 	}
 
 	/**
@@ -262,19 +266,9 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryPoint createEntryPoint() {
-		EntryPointImpl entryPoint = new EntryPointImpl();
-		return entryPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExitPoint createExitPoint() {
-		ExitPointImpl exitPoint = new ExitPointImpl();
-		return exitPoint;
+	public EntryOrExitPoint createEntryOrExitPoint() {
+		EntryOrExitPointImpl entryOrExitPoint = new EntryOrExitPointImpl();
+		return entryOrExitPoint;
 	}
 
 	/**
@@ -285,6 +279,16 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public Message createMessage() {
 		MessageImpl message = new MessageImpl();
 		return message;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateEntryOrExitPoint createStateEntryOrExitPoint() {
+		StateEntryOrExitPointImpl stateEntryOrExitPoint = new StateEntryOrExitPointImpl();
+		return stateEntryOrExitPoint;
 	}
 
 	/**
@@ -324,6 +328,26 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * @generated
 	 */
 	public String convertEventKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntryExitPointKind createEntryExitPointKindFromString(EDataType eDataType, String initialValue) {
+		EntryExitPointKind result = EntryExitPointKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEntryExitPointKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

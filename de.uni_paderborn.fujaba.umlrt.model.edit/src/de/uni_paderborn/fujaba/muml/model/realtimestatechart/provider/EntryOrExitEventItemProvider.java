@@ -174,7 +174,7 @@ public class EntryOrExitEventItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
-				 RealtimestatechartFactory.eINSTANCE.createActionExpression()));
+				 RealtimestatechartFactory.eINSTANCE.createAction()));
 	}
 
 }
