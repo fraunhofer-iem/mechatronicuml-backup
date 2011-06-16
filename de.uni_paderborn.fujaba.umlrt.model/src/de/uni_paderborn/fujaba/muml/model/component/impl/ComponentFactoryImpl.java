@@ -63,14 +63,15 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eClass.getClassifierID()) {
 			case ComponentPackage.CONTINUOUS_COMPONENT: return createContinuousComponent();
 			case ComponentPackage.PORT: return createPort();
-			case ComponentPackage.CONTINUOUS_PORT_SPECIFICATION: return createContinuousPortSpecification();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION: return createDiscretePortSpecification();
-			case ComponentPackage.HARDWARE_PORT_SPECIFICATION: return createHardwarePortSpecification();
+			case ComponentPackage.CONTINUOUS_PORT: return createContinuousPort();
+			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
+			case ComponentPackage.HARDWARE_PORT: return createHardwarePort();
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
 			case ComponentPackage.STRUCTURED_COMPONENT: return createStructuredComponent();
 			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
+			case ComponentPackage.HYBRID_PORT: return createHybridPort();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,8 +87,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return createComponentKindFromString(eDataType, initialValue);
-			case ComponentPackage.PORT_KIND:
-				return createPortKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -103,8 +102,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return convertComponentKindToString(eDataType, instanceValue);
-			case ComponentPackage.PORT_KIND:
-				return convertPortKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -135,9 +132,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContinuousPortSpecification createContinuousPortSpecification() {
-		ContinuousPortSpecificationImpl continuousPortSpecification = new ContinuousPortSpecificationImpl();
-		return continuousPortSpecification;
+	public ContinuousPort createContinuousPort() {
+		ContinuousPortImpl continuousPort = new ContinuousPortImpl();
+		return continuousPort;
 	}
 
 	/**
@@ -145,9 +142,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiscretePortSpecification createDiscretePortSpecification() {
-		DiscretePortSpecificationImpl discretePortSpecification = new DiscretePortSpecificationImpl();
-		return discretePortSpecification;
+	public DiscretePort createDiscretePort() {
+		DiscretePortImpl discretePort = new DiscretePortImpl();
+		return discretePort;
 	}
 
 	/**
@@ -155,9 +152,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HardwarePortSpecification createHardwarePortSpecification() {
-		HardwarePortSpecificationImpl hardwarePortSpecification = new HardwarePortSpecificationImpl();
-		return hardwarePortSpecification;
+	public HardwarePort createHardwarePort() {
+		HardwarePortImpl hardwarePort = new HardwarePortImpl();
+		return hardwarePort;
 	}
 
 	/**
@@ -215,6 +212,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public HybridPort createHybridPort() {
+		HybridPortImpl hybridPort = new HybridPortImpl();
+		return hybridPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentKind createComponentKindFromString(EDataType eDataType, String initialValue) {
 		ComponentKind result = ComponentKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -227,26 +234,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * @generated
 	 */
 	public String convertComponentKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortKind createPortKindFromString(EDataType eDataType, String initialValue) {
-		PortKind result = PortKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPortKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

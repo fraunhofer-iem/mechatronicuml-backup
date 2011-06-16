@@ -112,12 +112,4 @@ public interface ConnectorType extends BehavioralConnector {
 	 */
 	void setParentComponent(StructuredComponent value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	ConnectorInstance createInstance();
-
 } // ConnectorType

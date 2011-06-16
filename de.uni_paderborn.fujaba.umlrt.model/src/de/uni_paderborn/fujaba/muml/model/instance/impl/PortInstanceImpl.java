@@ -137,27 +137,27 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	protected PortInstanceImpl() {
 		super();
 
-		// Install a notification adapter that informs the
-		// requiredMessageInterfaceDerived-reference, whenever one of the dependent
-		// features
-		// was modified
-		DerivedAttributeAdapter requiredMessageInterfaceDerived = new DerivedAttributeAdapter(
-				this,
-				InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
-		requiredMessageInterfaceDerived.addNavigatedDependency(
-				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
-				ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
-
-		// Install a notification adapter that informs the
-		// providedMessageInterfaceDerived-reference, whenever one of the dependent
-		// features
-		// was modified
-		DerivedAttributeAdapter providedMessageInterfaceDerived = new DerivedAttributeAdapter(
-				this,
-				InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
-		providedMessageInterfaceDerived.addNavigatedDependency(
-				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
-				ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
+//		// Install a notification adapter that informs the
+//		// requiredMessageInterfaceDerived-reference, whenever one of the dependent
+//		// features
+//		// was modified
+//		DerivedAttributeAdapter requiredMessageInterfaceDerived = new DerivedAttributeAdapter(
+//				this,
+//				InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
+//		requiredMessageInterfaceDerived.addNavigatedDependency(
+//				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
+//				ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
+//
+//		// Install a notification adapter that informs the
+//		// providedMessageInterfaceDerived-reference, whenever one of the dependent
+//		// features
+//		// was modified
+//		DerivedAttributeAdapter providedMessageInterfaceDerived = new DerivedAttributeAdapter(
+//				this,
+//				InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
+//		providedMessageInterfaceDerived.addNavigatedDependency(
+//				InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE,
+//				ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
 	}
 
 	/**

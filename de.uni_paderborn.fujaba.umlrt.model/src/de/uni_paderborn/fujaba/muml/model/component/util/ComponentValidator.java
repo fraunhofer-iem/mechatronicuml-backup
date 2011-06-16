@@ -96,14 +96,12 @@ public class ComponentValidator extends EObjectValidator {
 				return validateContinuousComponent((ContinuousComponent)value, diagnostics, context);
 			case ComponentPackage.PORT:
 				return validatePort((Port)value, diagnostics, context);
-			case ComponentPackage.PORT_SPECIFICATION:
-				return validatePortSpecification((PortSpecification)value, diagnostics, context);
-			case ComponentPackage.CONTINUOUS_PORT_SPECIFICATION:
-				return validateContinuousPortSpecification((ContinuousPortSpecification)value, diagnostics, context);
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION:
-				return validateDiscretePortSpecification((DiscretePortSpecification)value, diagnostics, context);
-			case ComponentPackage.HARDWARE_PORT_SPECIFICATION:
-				return validateHardwarePortSpecification((HardwarePortSpecification)value, diagnostics, context);
+			case ComponentPackage.CONTINUOUS_PORT:
+				return validateContinuousPort((ContinuousPort)value, diagnostics, context);
+			case ComponentPackage.DISCRETE_PORT:
+				return validateDiscretePort((DiscretePort)value, diagnostics, context);
+			case ComponentPackage.HARDWARE_PORT:
+				return validateHardwarePort((HardwarePort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_PART:
 				return validateComponentPart((ComponentPart)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
@@ -118,10 +116,10 @@ public class ComponentValidator extends EObjectValidator {
 				return validateDelegation((Delegation)value, diagnostics, context);
 			case ComponentPackage.BEHAVIORAL_CONNECTOR:
 				return validateBehavioralConnector((BehavioralConnector)value, diagnostics, context);
+			case ComponentPackage.HYBRID_PORT:
+				return validateHybridPort((HybridPort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
-			case ComponentPackage.PORT_KIND:
-				return validatePortKind((PortKind)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -198,8 +196,18 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePortSpecification(PortSpecification portSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(portSpecification, diagnostics, context);
+	public boolean validateContinuousPort(ContinuousPort continuousPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(continuousPort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePort_body(continuousPort, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -207,8 +215,18 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContinuousPortSpecification(ContinuousPortSpecification continuousPortSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(continuousPortSpecification, diagnostics, context);
+	public boolean validateDiscretePort(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(discretePort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePort_body(discretePort, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -216,17 +234,18 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePortSpecification(DiscretePortSpecification discretePortSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discretePortSpecification, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateHardwarePortSpecification(HardwarePortSpecification hardwarePortSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hardwarePortSpecification, diagnostics, context);
+	public boolean validateHardwarePort(HardwarePort hardwarePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(hardwarePort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hardwarePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePort_body(hardwarePort, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -396,8 +415,18 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponentKind(ComponentKind componentKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+	public boolean validateHybridPort(HybridPort hybridPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(hybridPort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePort_body(hybridPort, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -405,7 +434,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePortKind(PortKind portKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponentKind(ComponentKind componentKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

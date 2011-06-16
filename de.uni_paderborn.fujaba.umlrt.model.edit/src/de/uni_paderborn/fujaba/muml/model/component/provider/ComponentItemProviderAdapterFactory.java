@@ -122,72 +122,72 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContinuousPortSpecificationItemProvider continuousPortSpecificationItemProvider;
+	protected ContinuousPortItemProvider continuousPortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContinuousPortSpecificationAdapter() {
-		if (continuousPortSpecificationItemProvider == null) {
-			continuousPortSpecificationItemProvider = new ContinuousPortSpecificationItemProvider(this);
+	public Adapter createContinuousPortAdapter() {
+		if (continuousPortItemProvider == null) {
+			continuousPortItemProvider = new ContinuousPortItemProvider(this);
 		}
 
-		return continuousPortSpecificationItemProvider;
+		return continuousPortItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DiscretePortSpecificationItemProvider discretePortSpecificationItemProvider;
+	protected DiscretePortItemProvider discretePortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDiscretePortSpecificationAdapter() {
-		if (discretePortSpecificationItemProvider == null) {
-			discretePortSpecificationItemProvider = new DiscretePortSpecificationItemProvider(this);
+	public Adapter createDiscretePortAdapter() {
+		if (discretePortItemProvider == null) {
+			discretePortItemProvider = new DiscretePortItemProvider(this);
 		}
 
-		return discretePortSpecificationItemProvider;
+		return discretePortItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HardwarePortSpecificationItemProvider hardwarePortSpecificationItemProvider;
+	protected HardwarePortItemProvider hardwarePortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHardwarePortSpecificationAdapter() {
-		if (hardwarePortSpecificationItemProvider == null) {
-			hardwarePortSpecificationItemProvider = new HardwarePortSpecificationItemProvider(this);
+	public Adapter createHardwarePortAdapter() {
+		if (hardwarePortItemProvider == null) {
+			hardwarePortItemProvider = new HardwarePortItemProvider(this);
 		}
 
-		return hardwarePortSpecificationItemProvider;
+		return hardwarePortItemProvider;
 	}
 
 	/**
@@ -306,6 +306,29 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.HybridPort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HybridPortItemProvider hybridPortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HybridPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHybridPortAdapter() {
+		if (hybridPortItemProvider == null) {
+			hybridPortItemProvider = new HybridPortItemProvider(this);
+		}
+
+		return hybridPortItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -406,14 +429,15 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	public void dispose() {
 		if (continuousComponentItemProvider != null) continuousComponentItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
-		if (continuousPortSpecificationItemProvider != null) continuousPortSpecificationItemProvider.dispose();
-		if (discretePortSpecificationItemProvider != null) discretePortSpecificationItemProvider.dispose();
-		if (hardwarePortSpecificationItemProvider != null) hardwarePortSpecificationItemProvider.dispose();
+		if (continuousPortItemProvider != null) continuousPortItemProvider.dispose();
+		if (discretePortItemProvider != null) discretePortItemProvider.dispose();
+		if (hardwarePortItemProvider != null) hardwarePortItemProvider.dispose();
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();
 		if (structuredComponentItemProvider != null) structuredComponentItemProvider.dispose();
 		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();
 		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
 		if (delegationItemProvider != null) delegationItemProvider.dispose();
+		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
 	}
 
 }

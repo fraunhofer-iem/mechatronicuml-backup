@@ -6,45 +6,53 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Discrete Port Specification</b></em>'.
+ * An implementation of the model object '<em><b>Hybrid Port</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getRefines <em>Refines</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getRefines <em>Refines</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DiscretePortSpecificationImpl extends PortSpecificationImpl implements DiscretePortSpecification {
+public class HybridPortImpl extends ContinuousPortImpl implements HybridPort {
 	/**
 	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -110,7 +118,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DiscretePortSpecificationImpl() {
+	protected HybridPortImpl() {
 		super();
 	}
 
@@ -121,7 +129,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION;
+		return ComponentPackage.Literals.HYBRID_PORT;
 	}
 
 	/**
@@ -131,7 +139,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	 */
 	public EList<Behavior> getBehavior() {
 		if (behavior == null) {
-			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
+			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.HYBRID_PORT__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
 		}
 		return behavior;
 	}
@@ -147,7 +155,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			refines = (Role)eResolveProxy(oldRefines);
 			if (refines != oldRefines) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES, oldRefines, refines));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.HYBRID_PORT__REFINES, oldRefines, refines));
 			}
 		}
 		return refines;
@@ -171,7 +179,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 		Role oldRefines = refines;
 		refines = newRefines;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES, oldRefines, newRefines);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__REFINES, oldRefines, newRefines);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -193,7 +201,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES, newRefines, newRefines));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__REFINES, newRefines, newRefines));
 	}
 
 	/**
@@ -207,7 +215,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			senderMessageInterface = (MessageInterface)eResolveProxy(oldSenderMessageInterface);
 			if (senderMessageInterface != oldSenderMessageInterface) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
 			}
 		}
 		return senderMessageInterface;
@@ -231,7 +239,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 		MessageInterface oldSenderMessageInterface = senderMessageInterface;
 		senderMessageInterface = newSenderMessageInterface;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE, oldSenderMessageInterface, senderMessageInterface));
 	}
 
 	/**
@@ -245,7 +253,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			receiverMessageInterface = (MessageInterface)eResolveProxy(oldReceiverMessageInterface);
 			if (receiverMessageInterface != oldReceiverMessageInterface) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
 			}
 		}
 		return receiverMessageInterface;
@@ -269,7 +277,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 		MessageInterface oldReceiverMessageInterface = receiverMessageInterface;
 		receiverMessageInterface = newReceiverMessageInterface;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE, oldReceiverMessageInterface, receiverMessageInterface));
 	}
 
 	/**
@@ -283,7 +291,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
 			if (adaptationBehavior != oldAdaptationBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
 			}
 		}
 		return adaptationBehavior;
@@ -307,7 +315,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 		Behavior oldAdaptationBehavior = adaptationBehavior;
 		adaptationBehavior = newAdaptationBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
 	}
 
 	/**
@@ -321,7 +329,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
 			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
 			}
 		}
 		return roleAndAdaptationBehavior;
@@ -345,7 +353,7 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
 		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
 	}
 
 	/**
@@ -357,9 +365,9 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				if (refines != null)
 					msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
 				return basicSetRefines((Role)otherEnd, msgs);
@@ -375,9 +383,9 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				return basicSetRefines(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -391,21 +399,21 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				return getBehavior();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				if (resolve) return getRefines();
 				return basicGetRefines();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE:
 				if (resolve) return getSenderMessageInterface();
 				return basicGetSenderMessageInterface();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE:
 				if (resolve) return getReceiverMessageInterface();
 				return basicGetReceiverMessageInterface();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR:
 				if (resolve) return getAdaptationBehavior();
 				return basicGetAdaptationBehavior();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
 		}
@@ -421,23 +429,23 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				getBehavior().clear();
 				getBehavior().addAll((Collection<? extends Behavior>)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				setRefines((Role)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE:
 				setSenderMessageInterface((MessageInterface)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE:
 				setReceiverMessageInterface((MessageInterface)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
 		}
@@ -452,22 +460,22 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				getBehavior().clear();
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				setRefines((Role)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE:
 				setSenderMessageInterface((MessageInterface)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE:
 				setReceiverMessageInterface((MessageInterface)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
 		}
@@ -482,17 +490,17 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__BEHAVIOR:
 				return behavior != null && !behavior.isEmpty();
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES:
+			case ComponentPackage.HYBRID_PORT__REFINES:
 				return refines != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE:
 				return senderMessageInterface != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE:
+			case ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE:
 				return receiverMessageInterface != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
 		}
 		return super.eIsSet(featureID);
@@ -507,7 +515,17 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ComponentPackage.HYBRID_PORT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				default: return -1;
+			}
+		}
+		if (baseClass == DiscretePort.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.HYBRID_PORT__REFINES: return ComponentPackage.DISCRETE_PORT__REFINES;
+				case ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE: return ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE;
+				case ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE;
+				case ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+				case ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -523,11 +541,21 @@ public class DiscretePortSpecificationImpl extends PortSpecificationImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.DISCRETE_PORT_SPECIFICATION__BEHAVIOR;
+				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.HYBRID_PORT__BEHAVIOR;
+				default: return -1;
+			}
+		}
+		if (baseClass == DiscretePort.class) {
+			switch (baseFeatureID) {
+				case ComponentPackage.DISCRETE_PORT__REFINES: return ComponentPackage.HYBRID_PORT__REFINES;
+				case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE: return ComponentPackage.HYBRID_PORT__SENDER_MESSAGE_INTERFACE;
+				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE: return ComponentPackage.HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE;
+				case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR: return ComponentPackage.HYBRID_PORT__ADAPTATION_BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //DiscretePortSpecificationImpl
+} //HybridPortImpl

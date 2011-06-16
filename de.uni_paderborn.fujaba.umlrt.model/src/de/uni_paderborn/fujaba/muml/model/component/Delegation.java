@@ -61,12 +61,4 @@ public interface Delegation extends ConnectorType {
 	 */
 	void setComponentPart(ComponentPart value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	DelegationInstance createInstance();
-
 } // Delegation

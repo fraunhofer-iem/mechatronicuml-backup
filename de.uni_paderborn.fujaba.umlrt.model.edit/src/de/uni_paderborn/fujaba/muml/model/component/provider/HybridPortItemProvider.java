@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
@@ -25,17 +25,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HybridPort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiscretePortSpecificationItemProvider
-	extends PortSpecificationItemProvider
+public class HybridPortItemProvider
+	extends ContinuousPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -48,7 +46,7 @@ public class DiscretePortSpecificationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiscretePortSpecificationItemProvider(AdapterFactory adapterFactory) {
+	public HybridPortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,6 +65,7 @@ public class DiscretePortSpecificationItemProvider
 			addRefinesPropertyDescriptor(object);
 			addSenderMessageInterfacePropertyDescriptor(object);
 			addReceiverMessageInterfacePropertyDescriptor(object);
+			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -105,9 +104,9 @@ public class DiscretePortSpecificationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_refines_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_refines_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__REFINES,
+				 getString("_UI_DiscretePort_refines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_refines_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__REFINES,
 				 true,
 				 false,
 				 true,
@@ -127,9 +126,9 @@ public class DiscretePortSpecificationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_senderMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_senderMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePort_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_senderMessageInterface_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE,
 				 true,
 				 false,
 				 true,
@@ -149,9 +148,31 @@ public class DiscretePortSpecificationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_receiverMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_receiverMessageInterface_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE,
+				 getString("_UI_DiscretePort_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageInterface_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Adaptation Behavior feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdaptationBehaviorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_adaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_adaptationBehavior_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -171,9 +192,9 @@ public class DiscretePortSpecificationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePortSpecification_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortSpecification_roleAndAdaptationBehavior_feature", "_UI_DiscretePortSpecification_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscretePort_roleAndAdaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_roleAndAdaptationBehavior_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -183,14 +204,14 @@ public class DiscretePortSpecificationItemProvider
 	}
 
 	/**
-	 * This returns DiscretePortSpecification.gif.
+	 * This returns HybridPort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DiscretePortSpecification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/HybridPort"));
 	}
 
 	/**
@@ -201,7 +222,10 @@ public class DiscretePortSpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_DiscretePortSpecification_type");
+		String label = ((HybridPort)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_HybridPort_type") :
+			getString("_UI_HybridPort_type") + " " + label;
 	}
 
 	/**

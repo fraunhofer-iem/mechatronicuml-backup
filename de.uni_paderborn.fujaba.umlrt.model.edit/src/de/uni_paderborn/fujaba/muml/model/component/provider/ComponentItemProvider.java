@@ -318,6 +318,26 @@ public class ComponentItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
 				 ComponentFactory.eINSTANCE.createPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ComponentFactory.eINSTANCE.createContinuousPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ComponentFactory.eINSTANCE.createDiscretePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ComponentFactory.eINSTANCE.createHardwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ComponentFactory.eINSTANCE.createHybridPort()));
 	}
 
 	/**

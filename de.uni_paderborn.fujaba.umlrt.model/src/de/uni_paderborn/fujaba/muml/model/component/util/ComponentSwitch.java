@@ -125,31 +125,37 @@ public class ComponentSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.PORT_SPECIFICATION: {
-				PortSpecification portSpecification = (PortSpecification)theEObject;
-				T result = casePortSpecification(portSpecification);
+			case ComponentPackage.CONTINUOUS_PORT: {
+				ContinuousPort continuousPort = (ContinuousPort)theEObject;
+				T result = caseContinuousPort(continuousPort);
+				if (result == null) result = casePort(continuousPort);
+				if (result == null) result = caseNamedElement(continuousPort);
+				if (result == null) result = caseCommentableElement(continuousPort);
+				if (result == null) result = caseConstrainableElement(continuousPort);
+				if (result == null) result = caseExtendableElement(continuousPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.CONTINUOUS_PORT_SPECIFICATION: {
-				ContinuousPortSpecification continuousPortSpecification = (ContinuousPortSpecification)theEObject;
-				T result = caseContinuousPortSpecification(continuousPortSpecification);
-				if (result == null) result = casePortSpecification(continuousPortSpecification);
+			case ComponentPackage.DISCRETE_PORT: {
+				DiscretePort discretePort = (DiscretePort)theEObject;
+				T result = caseDiscretePort(discretePort);
+				if (result == null) result = caseBehavioralElement(discretePort);
+				if (result == null) result = casePort(discretePort);
+				if (result == null) result = caseNamedElement(discretePort);
+				if (result == null) result = caseCommentableElement(discretePort);
+				if (result == null) result = caseConstrainableElement(discretePort);
+				if (result == null) result = caseExtendableElement(discretePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.DISCRETE_PORT_SPECIFICATION: {
-				DiscretePortSpecification discretePortSpecification = (DiscretePortSpecification)theEObject;
-				T result = caseDiscretePortSpecification(discretePortSpecification);
-				if (result == null) result = casePortSpecification(discretePortSpecification);
-				if (result == null) result = caseBehavioralElement(discretePortSpecification);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentPackage.HARDWARE_PORT_SPECIFICATION: {
-				HardwarePortSpecification hardwarePortSpecification = (HardwarePortSpecification)theEObject;
-				T result = caseHardwarePortSpecification(hardwarePortSpecification);
-				if (result == null) result = casePortSpecification(hardwarePortSpecification);
+			case ComponentPackage.HARDWARE_PORT: {
+				HardwarePort hardwarePort = (HardwarePort)theEObject;
+				T result = caseHardwarePort(hardwarePort);
+				if (result == null) result = casePort(hardwarePort);
+				if (result == null) result = caseNamedElement(hardwarePort);
+				if (result == null) result = caseCommentableElement(hardwarePort);
+				if (result == null) result = caseConstrainableElement(hardwarePort);
+				if (result == null) result = caseExtendableElement(hardwarePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,6 +223,20 @@ public class ComponentSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentPackage.HYBRID_PORT: {
+				HybridPort hybridPort = (HybridPort)theEObject;
+				T result = caseHybridPort(hybridPort);
+				if (result == null) result = caseContinuousPort(hybridPort);
+				if (result == null) result = caseDiscretePort(hybridPort);
+				if (result == null) result = casePort(hybridPort);
+				if (result == null) result = caseBehavioralElement(hybridPort);
+				if (result == null) result = caseNamedElement(hybridPort);
+				if (result == null) result = caseCommentableElement(hybridPort);
+				if (result == null) result = caseConstrainableElement(hybridPort);
+				if (result == null) result = caseExtendableElement(hybridPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -267,62 +287,47 @@ public class ComponentSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Specification</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Continuous Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Specification</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Continuous Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePortSpecification(PortSpecification object) {
+	public T caseContinuousPort(ContinuousPort object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Continuous Port Specification</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Continuous Port Specification</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContinuousPortSpecification(ContinuousPortSpecification object) {
+	public T caseDiscretePort(DiscretePort object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port Specification</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Hardware Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discrete Port Specification</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Hardware Port</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDiscretePortSpecification(DiscretePortSpecification object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hardware Port Specification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hardware Port Specification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHardwarePortSpecification(HardwarePortSpecification object) {
+	public T caseHardwarePort(HardwarePort object) {
 		return null;
 	}
 
@@ -428,6 +433,21 @@ public class ComponentSwitch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralConnector(BehavioralConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hybrid Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hybrid Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHybridPort(HybridPort object) {
 		return null;
 	}
 

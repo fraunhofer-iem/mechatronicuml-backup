@@ -7,28 +7,26 @@
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.PortSpecification;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Port Specification</b></em>'.
+ * An implementation of the model object '<em><b>Continuous Port</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class PortSpecificationImpl extends EObjectImpl implements PortSpecification {
+public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortSpecificationImpl() {
+	protected ContinuousPortImpl() {
 		super();
 	}
 
@@ -39,7 +37,7 @@ public abstract class PortSpecificationImpl extends EObjectImpl implements PortS
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentPackage.Literals.PORT_SPECIFICATION;
+		return ComponentPackage.Literals.CONTINUOUS_PORT;
 	}
 
-} //PortSpecificationImpl
+} //ContinuousPortImpl

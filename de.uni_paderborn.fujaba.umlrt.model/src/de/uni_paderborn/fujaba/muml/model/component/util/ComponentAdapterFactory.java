@@ -91,20 +91,16 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createPortAdapter();
 			}
 			@Override
-			public Adapter casePortSpecification(PortSpecification object) {
-				return createPortSpecificationAdapter();
+			public Adapter caseContinuousPort(ContinuousPort object) {
+				return createContinuousPortAdapter();
 			}
 			@Override
-			public Adapter caseContinuousPortSpecification(ContinuousPortSpecification object) {
-				return createContinuousPortSpecificationAdapter();
+			public Adapter caseDiscretePort(DiscretePort object) {
+				return createDiscretePortAdapter();
 			}
 			@Override
-			public Adapter caseDiscretePortSpecification(DiscretePortSpecification object) {
-				return createDiscretePortSpecificationAdapter();
-			}
-			@Override
-			public Adapter caseHardwarePortSpecification(HardwarePortSpecification object) {
-				return createHardwarePortSpecificationAdapter();
+			public Adapter caseHardwarePort(HardwarePort object) {
+				return createHardwarePortAdapter();
 			}
 			@Override
 			public Adapter caseComponentPart(ComponentPart object) {
@@ -133,6 +129,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehavioralConnector(BehavioralConnector object) {
 				return createBehavioralConnectorAdapter();
+			}
+			@Override
+			public Adapter caseHybridPort(HybridPort object) {
+				return createHybridPortAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -217,58 +217,44 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.PortSpecification <em>Port Specification</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort <em>Continuous Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortSpecification
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort
 	 * @generated
 	 */
-	public Adapter createPortSpecificationAdapter() {
+	public Adapter createContinuousPortAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification <em>Continuous Port Specification</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort
 	 * @generated
 	 */
-	public Adapter createContinuousPortSpecificationAdapter() {
+	public Adapter createDiscretePortAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification <em>Discrete Port Specification</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort <em>Hardware Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification
+	 * @see de.uni_paderborn.fujaba.muml.model.component.HardwarePort
 	 * @generated
 	 */
-	public Adapter createDiscretePortSpecificationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification
-	 * @generated
-	 */
-	public Adapter createHardwarePortSpecificationAdapter() {
+	public Adapter createHardwarePortAdapter() {
 		return null;
 	}
 
@@ -367,6 +353,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehavioralConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort <em>Hybrid Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.HybridPort
+	 * @generated
+	 */
+	public Adapter createHybridPortAdapter() {
 		return null;
 	}
 

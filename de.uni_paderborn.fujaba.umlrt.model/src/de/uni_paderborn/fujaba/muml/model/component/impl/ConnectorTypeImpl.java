@@ -244,17 +244,6 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorInstance createInstance() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {

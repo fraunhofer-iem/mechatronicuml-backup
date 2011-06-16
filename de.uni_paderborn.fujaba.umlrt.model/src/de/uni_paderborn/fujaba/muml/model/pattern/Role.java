@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.storydriven.modeling.NamedElement;
@@ -208,8 +209,8 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines <em>Refines</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRefines <em>Refines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Port</em>' reference list isn't clear,
@@ -221,11 +222,11 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_Port()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRefines
 	 * @model opposite="refines"
 	 * @generated
 	 */
-	EList<DiscretePortSpecification> getPort();
+	EList<DiscretePort> getPort();
 
 	/**
 	 * Returns the value of the '<em><b>Adaptation Behavior</b></em>' reference.

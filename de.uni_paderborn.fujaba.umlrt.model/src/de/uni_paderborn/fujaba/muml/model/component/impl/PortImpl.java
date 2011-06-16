@@ -52,11 +52,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getPortKind <em>Port Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
@@ -97,36 +93,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The default value of the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final PortKind PORT_KIND_EDEFAULT = PortKind.DISCRETE;
-
-	/**
-	 * The cached value of the '{@link #getPortKind() <em>Port Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected PortKind portKind = PORT_KIND_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSpecification() <em>Specification</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSpecification()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PortSpecification> specification;
-
-	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,26 +101,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected Cardinality cardinality;
-
-	/**
-	 * The cached setting delegate for the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageInterface()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageInterface()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getIncomingConnectors() <em>Incoming Connectors</em>}' reference list.
@@ -194,17 +140,17 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected PortImpl() {
 		super();
 		
-		// Install a notification adapter that informs the
-		// requiredMessageInterface-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
-		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE);
-
-		// Install a notification adapter that informs the
-		// providedMessageInterface-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
-		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE);
+//		// Install a notification adapter that informs the
+//		// requiredMessageInterface-reference, whenever one of the dependent features
+//		// was modified
+//		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__SENDER_MESSAGE_INTERFACE);
+//		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE);
+//
+//		// Install a notification adapter that informs the
+//		// providedMessageInterface-reference, whenever one of the dependent features
+//		// was modified
+//		DerivedAttributeAdapter providedDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT__RECEIVER_MESSAGE_INTERFACE);
+//		providedDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT__SPECIFICATION, ComponentPackage.Literals.DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE);
 	}
 
 	/**
@@ -293,39 +239,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortKind getPortKind() {
-		return portKind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPortKind(PortKind newPortKind) {
-		PortKind oldPortKind = portKind;
-		portKind = newPortKind == null ? PORT_KIND_EDEFAULT : newPortKind;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__PORT_KIND, oldPortKind, portKind));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<PortSpecification> getSpecification() {
-		if (specification == null) {
-			specification = new EObjectContainmentEList<PortSpecification>(PortSpecification.class, this, ComponentPackage.PORT__SPECIFICATION);
-		}
-		return specification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -369,83 +282,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setSenderMessageInterface(MessageInterface newSenderMessageInterface) {
-		// SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSenderMessageInterface);
-		getSafeDiscretePortSpecification().setSenderMessageInterface(newSenderMessageInterface);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setReceiverMessageInterface(MessageInterface newReceiverMessageInterface) {
-		// RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newReceiverMessageInterface);
-		getSafeDiscretePortSpecification().setReceiverMessageInterface(newReceiverMessageInterface);
-	}
-
-	/**
-	 * Returns the DiscretePortSpecification of this Port if it exists. If it
-	 * did not exist, it will be created before.
-	 * 
-	 * @return The DiscretePortSpecitifation - never <code>null</code>.
-	 */
-	private DiscretePortSpecification getSafeDiscretePortSpecification() {
-		DiscretePortSpecification discretePortSpecification = null;
-		for (PortSpecification portSpecification : getSpecification()) {
-			if (portSpecification instanceof DiscretePortSpecification) {
-				discretePortSpecification = (DiscretePortSpecification) portSpecification;
-			}
-		}
-		if (discretePortSpecification == null) {
-			discretePortSpecification = ComponentFactory.eINSTANCE
-					.createDiscretePortSpecification();
-			getSpecification().add(discretePortSpecification);
-		}
-		return discretePortSpecification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ConnectorType> getIncomingConnectors() {
 		if (incomingConnectors == null) {
 			incomingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__INCOMING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
@@ -463,17 +299,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 			outgoingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__OUTGOING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__FROM_PORT);
 		}
 		return outgoingConnectors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortInstance createInstance() {
-		PortInstance portInstance = InstanceFactory.eINSTANCE.createPortInstance();
-		portInstance.setPortType(this);
-		return portInstance;
 	}
 
 	/**
@@ -505,8 +330,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__SPECIFICATION:
-				return ((InternalEList<?>)getSpecification()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
@@ -529,18 +352,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return getComment();
 			case ComponentPackage.PORT__CONSTRAINT:
 				return getConstraint();
-			case ComponentPackage.PORT__PORT_KIND:
-				return getPortKind();
-			case ComponentPackage.PORT__SPECIFICATION:
-				return getSpecification();
 			case ComponentPackage.PORT__CARDINALITY:
 				return getCardinality();
-			case ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE:
-				if (resolve) return getSenderMessageInterface();
-				return basicGetSenderMessageInterface();
-			case ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE:
-				if (resolve) return getReceiverMessageInterface();
-				return basicGetReceiverMessageInterface();
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return getIncomingConnectors();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -568,21 +381,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
-			case ComponentPackage.PORT__PORT_KIND:
-				setPortKind((PortKind)newValue);
-				return;
-			case ComponentPackage.PORT__SPECIFICATION:
-				getSpecification().clear();
-				getSpecification().addAll((Collection<? extends PortSpecification>)newValue);
-				return;
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
-				return;
-			case ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)newValue);
-				return;
-			case ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)newValue);
 				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
@@ -613,20 +413,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
 				return;
-			case ComponentPackage.PORT__PORT_KIND:
-				setPortKind(PORT_KIND_EDEFAULT);
-				return;
-			case ComponentPackage.PORT__SPECIFICATION:
-				getSpecification().clear();
-				return;
 			case ComponentPackage.PORT__CARDINALITY:
 				setCardinality((Cardinality)null);
-				return;
-			case ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE:
-				setSenderMessageInterface((MessageInterface)null);
-				return;
-			case ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE:
-				setReceiverMessageInterface((MessageInterface)null);
 				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
@@ -653,16 +441,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.PORT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case ComponentPackage.PORT__PORT_KIND:
-				return portKind != PORT_KIND_EDEFAULT;
-			case ComponentPackage.PORT__SPECIFICATION:
-				return specification != null && !specification.isEmpty();
 			case ComponentPackage.PORT__CARDINALITY:
 				return cardinality != null;
-			case ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE:
-				return SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE:
-				return RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return incomingConnectors != null && !incomingConnectors.isEmpty();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -729,8 +509,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", portKind: ");
-		result.append(portKind);
 		result.append(')');
 		return result.toString();
 	}

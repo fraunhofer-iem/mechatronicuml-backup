@@ -84,12 +84,4 @@ public interface Assembly extends ConnectorType {
 	 */
 	void setFrom(ComponentPart value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 * @generated
-	 */
-	AssemblyInstance createInstance();
-
 } // Assembly

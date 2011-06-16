@@ -7,6 +7,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
+import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.UmlrtPropertySection;
 
 public class CustomRealtimeStatechartPropertySection extends
@@ -24,22 +25,9 @@ public class CustomRealtimeStatechartPropertySection extends
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new CustomStatechartPropertySource(object, ips);
+				return new CustomPropertySource(object, ips);
 			}
 		}
 		return super.getPropertySource(object);
-	}
-
-	/**
-	 * Retrieves the model element of the editPart's parent EditPart.
-	 * 
-	 * @param editPart
-	 *            the editPart.
-	 * @return the model element of the parent EditPart.
-	 */
-	protected EObject getParentElement(EditPart editPart) {
-		ShapeNodeEditPart parentEditPart = (ShapeNodeEditPart) editPart
-				.getParent();
-		return parentEditPart.getNotationView().getElement();
 	}
 }

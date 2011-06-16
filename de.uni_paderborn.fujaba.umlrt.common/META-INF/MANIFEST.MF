@@ -14,4 +14,5 @@ Require-Bundle: org.eclipse.draw2d;bundle-version="3.6.1",
  org.eclipse.gmf.runtime.draw2d.ui;bundle-version="1.4.1",
  org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  de.uni_paderborn.fujaba.muml.model;bundle-version="1.0.0",
- org.eclipse.emf.edit.ui;bundle-version="2.6.0"
+ org.eclipse.emf.edit.ui;bundle-version="2.6.0",
+ org.storydriven.modeling.edit.ui;bundle-version="1.0.0"

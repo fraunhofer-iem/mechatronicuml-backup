@@ -88,7 +88,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				StructuredComponent structuredComponent = (StructuredComponent) component;
 				for (ComponentPart componentPart : structuredComponent
 						.getEmbeddedParts()) {
-					createComponentPartInstance(newInstance,componentPart);					
+					createComponentPartInstance(newInstance, componentPart);
 				}
 			}
 		}
@@ -161,7 +161,9 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		// Create as many PortInstances as the Port's lowerBound requires.
 		for (long i = 0; i < lowerBound; i++) {
-			PortInstance portInstance = port.createInstance();
+			PortInstance portInstance = InstanceFactory.eINSTANCE
+					.createPortInstance();
+			portInstance.setPortType(port);
 			portInstance.setName(componentInstance.getName() + port.getName());
 			portInstance.setComponentInstance(componentInstance);
 			portInstance.getIncomingConnectorInstances().addAll(

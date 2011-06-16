@@ -31,11 +31,7 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortKind <em>Port Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSpecification <em>Specification</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
@@ -77,50 +73,6 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	void setComponent(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Port Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.PortKind}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The kind of this port which can be either discrete, continuous, hybrid or hardware. This attribute can be derived by determining which port specifications the port possesses.
-	 * \todosd{ocl: implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
-	 * @see #setPortKind(PortKind)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_PortKind()
-	 * @model required="true" derived="true"
-	 * @generated
-	 */
-	PortKind getPortKind();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortKind <em>Port Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
-	 * @see #getPortKind()
-	 * @generated
-	 */
-	void setPortKind(PortKind value);
-
-	/**
-	 * Returns the value of the '<em><b>Specification</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.PortSpecification}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association stores all port specifications this port realizes. Possible port specifications provide continuous or discrete behavior as well as the functionlity a hardware port provides.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Specification</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Specification()
-	 * @model containment="true" required="true" upper="2"
-	 * @generated
-	 */
-	EList<PortSpecification> getSpecification();
-
-	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,62 +96,6 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
-
-	/**
-	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The sender message interface defines which messages this port sends.
-	 * It is derived from the sender message interface of its discrete port specification.
-	 * \todosd{implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #setSenderMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_SenderMessageInterface()
-	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).senderMessageInterface\nendif'"
-	 * @generated
-	 */
-	MessageInterface getSenderMessageInterface();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sender Message Interface</em>' reference.
-	 * @see #getSenderMessageInterface()
-	 * @generated
-	 */
-	void setSenderMessageInterface(MessageInterface value);
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The receiver message interface defines which messages this port receives.
-	 * It is derived from the receiver message interface of its discrete port specification.
-	 * \todosd{implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #setReceiverMessageInterface(MessageInterface)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_ReceiverMessageInterface()
-	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if specification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclIsUndefined() then\n\tnull\nelse\n\tspecification->select(s|s.oclIsKindOf(DiscretePortSpecification))->first().oclAsType(DiscretePortSpecification).receiverMessageInterface\nendif'"
-	 * @generated
-	 */
-	MessageInterface getReceiverMessageInterface();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see #getReceiverMessageInterface()
-	 * @generated
-	 */
-	void setReceiverMessageInterface(MessageInterface value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -234,14 +130,5 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * @generated
 	 */
 	EList<ConnectorType> getOutgoingConnectors();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='PortInstance portInstance = InstanceFactory.eINSTANCE.createPortInstance();\r\nportInstance.setPortType(this);\r\nreturn portInstance;'"
-	 * @generated
-	 */
-	PortInstance createInstance();
 
 } // Port

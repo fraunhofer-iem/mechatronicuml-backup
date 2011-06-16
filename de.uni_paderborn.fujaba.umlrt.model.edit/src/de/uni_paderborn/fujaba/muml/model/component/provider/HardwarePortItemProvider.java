@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -21,13 +23,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class HardwarePortSpecificationItemProvider
-	extends PortSpecificationItemProvider
+public class HardwarePortItemProvider
+	extends PortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +42,7 @@ public class HardwarePortSpecificationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HardwarePortSpecificationItemProvider(AdapterFactory adapterFactory) {
+	public HardwarePortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,14 +62,14 @@ public class HardwarePortSpecificationItemProvider
 	}
 
 	/**
-	 * This returns HardwarePortSpecification.gif.
+	 * This returns HardwarePort.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/HardwarePortSpecification"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/HardwarePort"));
 	}
 
 	/**
@@ -78,7 +80,10 @@ public class HardwarePortSpecificationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_HardwarePortSpecification_type");
+		String label = ((HardwarePort)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_HardwarePort_type") :
+			getString("_UI_HardwarePort_type") + " " + label;
 	}
 
 	/**

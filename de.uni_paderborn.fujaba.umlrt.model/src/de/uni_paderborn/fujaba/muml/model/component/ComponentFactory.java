@@ -44,31 +44,31 @@ public interface ComponentFactory extends EFactory {
 	Port createPort();
 
 	/**
-	 * Returns a new object of class '<em>Continuous Port Specification</em>'.
+	 * Returns a new object of class '<em>Continuous Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Continuous Port Specification</em>'.
+	 * @return a new object of class '<em>Continuous Port</em>'.
 	 * @generated
 	 */
-	ContinuousPortSpecification createContinuousPortSpecification();
+	ContinuousPort createContinuousPort();
 
 	/**
-	 * Returns a new object of class '<em>Discrete Port Specification</em>'.
+	 * Returns a new object of class '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Discrete Port Specification</em>'.
+	 * @return a new object of class '<em>Discrete Port</em>'.
 	 * @generated
 	 */
-	DiscretePortSpecification createDiscretePortSpecification();
+	DiscretePort createDiscretePort();
 
 	/**
-	 * Returns a new object of class '<em>Hardware Port Specification</em>'.
+	 * Returns a new object of class '<em>Hardware Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hardware Port Specification</em>'.
+	 * @return a new object of class '<em>Hardware Port</em>'.
 	 * @generated
 	 */
-	HardwarePortSpecification createHardwarePortSpecification();
+	HardwarePort createHardwarePort();
 
 	/**
 	 * Returns a new object of class '<em>Part</em>'.
@@ -114,6 +114,15 @@ public interface ComponentFactory extends EFactory {
 	 * @generated
 	 */
 	Delegation createDelegation();
+
+	/**
+	 * Returns a new object of class '<em>Hybrid Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hybrid Port</em>'.
+	 * @generated
+	 */
+	HybridPort createHybridPort();
 
 	/**
 	 * Returns the package supported by this factory.

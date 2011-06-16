@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -137,7 +138,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DiscretePortSpecification> port;
+	protected EList<DiscretePort> port;
 
 	/**
 	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
@@ -465,9 +466,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DiscretePortSpecification> getPort() {
+	public EList<DiscretePort> getPort() {
 		if (port == null) {
-			port = new EObjectWithInverseResolvingEList<DiscretePortSpecification>(DiscretePortSpecification.class, this, PatternPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT_SPECIFICATION__REFINES);
+			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, PatternPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINES);
 		}
 		return port;
 	}
@@ -690,7 +691,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return;
 			case PatternPackage.ROLE__PORT:
 				getPort().clear();
-				getPort().addAll((Collection<? extends DiscretePortSpecification>)newValue);
+				getPort().addAll((Collection<? extends DiscretePort>)newValue);
 				return;
 			case PatternPackage.ROLE__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);

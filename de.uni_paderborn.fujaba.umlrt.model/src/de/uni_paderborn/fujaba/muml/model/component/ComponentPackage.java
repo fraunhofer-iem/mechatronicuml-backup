@@ -352,49 +352,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Port Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PORT_KIND = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Specification</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__SPECIFICATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT__CARDINALITY = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -403,7 +367,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT__INCOMING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -412,7 +376,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -421,7 +385,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT__COMPONENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -430,55 +394,117 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int PORT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortSpecification()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPort()
 	 * @generated
 	 */
-	int PORT_SPECIFICATION = 3;
+	int CONTINUOUS_PORT = 3;
 
 	/**
-	 * The number of structural features of the '<em>Port Specification</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_SPECIFICATION_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortSpecificationImpl <em>Continuous Port Specification</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortSpecificationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortSpecification()
-	 * @generated
-	 */
-	int CONTINUOUS_PORT_SPECIFICATION = 4;
-
-	/**
-	 * The number of structural features of the '<em>Continuous Port Specification</em>' class.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int CONTINUOUS_PORT__ANNOTATION = PORT__ANNOTATION;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl <em>Discrete Port Specification</em>}' class.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDiscretePortSpecification()
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__EXTENSION = PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__COMMENT = PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__CONSTRAINT = PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__CARDINALITY = PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The number of structural features of the '<em>Continuous Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDiscretePort()
 	 * @generated
 	 */
-	int DISCRETE_PORT_SPECIFICATION = 5;
+	int DISCRETE_PORT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -487,7 +513,88 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int DISCRETE_PORT__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__COMMENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__CONSTRAINT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__CARDINALITY = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__INCOMING_CONNECTORS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__OUTGOING_CONNECTORS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__COMPONENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -496,7 +603,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__REFINES = PORT_SPECIFICATION_FEATURE_COUNT + 1;
+	int DISCRETE_PORT__REFINES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -505,7 +612,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 2;
+	int DISCRETE_PORT__SENDER_MESSAGE_INTERFACE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -514,7 +621,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = PORT_SPECIFICATION_FEATURE_COUNT + 3;
+	int DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -523,7 +630,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 4;
+	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -532,35 +639,116 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_SPECIFICATION_FEATURE_COUNT + 5;
+	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
-	 * The number of structural features of the '<em>Discrete Port Specification</em>' class.
+	 * The number of structural features of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 6;
+	int DISCRETE_PORT_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePortSpecification()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePort()
 	 * @generated
 	 */
-	int HARDWARE_PORT_SPECIFICATION = 6;
+	int HARDWARE_PORT = 5;
 
 	/**
-	 * The number of structural features of the '<em>Hardware Port Specification</em>' class.
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_SPECIFICATION_FEATURE_COUNT = PORT_SPECIFICATION_FEATURE_COUNT + 0;
+	int HARDWARE_PORT__ANNOTATION = PORT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__EXTENSION = PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__COMMENT = PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__CONSTRAINT = PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__CARDINALITY = PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The number of structural features of the '<em>Hardware Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
@@ -570,7 +758,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentPart()
 	 * @generated
 	 */
-	int COMPONENT_PART = 7;
+	int COMPONENT_PART = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -679,7 +867,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStructuredComponent()
 	 * @generated
 	 */
-	int STRUCTURED_COMPONENT = 8;
+	int STRUCTURED_COMPONENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -806,7 +994,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAtomicComponent()
 	 * @generated
 	 */
-	int ATOMIC_COMPONENT = 9;
+	int ATOMIC_COMPONENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -924,7 +1112,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getBehavioralConnector()
 	 * @generated
 	 */
-	int BEHAVIORAL_CONNECTOR = 13;
+	int BEHAVIORAL_CONNECTOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -961,7 +1149,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getConnectorType()
 	 * @generated
 	 */
-	int CONNECTOR_TYPE = 10;
+	int CONNECTOR_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -1025,7 +1213,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssembly()
 	 * @generated
 	 */
-	int ASSEMBLY = 11;
+	int ASSEMBLY = 10;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -1107,7 +1295,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegation()
 	 * @generated
 	 */
-	int DELEGATION = 12;
+	int DELEGATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -1173,6 +1361,160 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHybridPort()
+	 * @generated
+	 */
+	int HYBRID_PORT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__ANNOTATION = CONTINUOUS_PORT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__EXTENSION = CONTINUOUS_PORT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__NAME = CONTINUOUS_PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__COMMENT = CONTINUOUS_PORT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__CONSTRAINT = CONTINUOUS_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__CARDINALITY = CONTINUOUS_PORT__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__INCOMING_CONNECTORS = CONTINUOUS_PORT__INCOMING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__OUTGOING_CONNECTORS = CONTINUOUS_PORT__OUTGOING_CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__COMPONENT = CONTINUOUS_PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__REFINES = CONTINUOUS_PORT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__SENDER_MESSAGE_INTERFACE = CONTINUOUS_PORT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE = CONTINUOUS_PORT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Hybrid Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_FEATURE_COUNT = CONTINUOUS_PORT_FEATURE_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1181,17 +1523,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	int COMPONENT_KIND = 14;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.PortKind <em>Port Kind</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortKind()
-	 * @generated
-	 */
-	int PORT_KIND = 15;
-
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -1301,26 +1632,89 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Component();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortKind <em>Port Kind</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort <em>Continuous Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getPortKind()
-	 * @see #getPort()
+	 * @return the meta object for class '<em>Continuous Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort
 	 * @generated
 	 */
-	EAttribute getPort_PortKind();
+	EClass getContinuousPort();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSpecification <em>Specification</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Specification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getSpecification()
-	 * @see #getPort()
+	 * @return the meta object for class '<em>Discrete Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort
 	 * @generated
 	 */
-	EReference getPort_Specification();
+	EClass getDiscretePort();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRefines <em>Refines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refines</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRefines()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_Refines();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageInterface <em>Sender Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getSenderMessageInterface()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_SenderMessageInterface();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_ReceiverMessageInterface();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_AdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_RoleAndAdaptationBehavior();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort <em>Hardware Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hardware Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.HardwarePort
+	 * @generated
+	 */
+	EClass getHardwarePort();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getCardinality <em>Cardinality</em>}'.
@@ -1332,28 +1726,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_Cardinality();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface <em>Sender Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getSenderMessageInterface()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_SenderMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getReceiverMessageInterface()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_ReceiverMessageInterface();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
@@ -1376,101 +1748,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_OutgoingConnectors();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PortSpecification <em>Port Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Port Specification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortSpecification
-	 * @generated
-	 */
-	EClass getPortSpecification();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification <em>Continuous Port Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Continuous Port Specification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification
-	 * @generated
-	 */
-	EClass getContinuousPortSpecification();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification <em>Discrete Port Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Discrete Port Specification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification
-	 * @generated
-	 */
-	EClass getDiscretePortSpecification();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines <em>Refines</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refines</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRefines()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_Refines();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface <em>Sender Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getSenderMessageInterface()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_SenderMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getReceiverMessageInterface()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_ReceiverMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getAdaptationBehavior()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_AdaptationBehavior();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification#getRoleAndAdaptationBehavior()
-	 * @see #getDiscretePortSpecification()
-	 * @generated
-	 */
-	EReference getDiscretePortSpecification_RoleAndAdaptationBehavior();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification <em>Hardware Port Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hardware Port Specification</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification
-	 * @generated
-	 */
-	EClass getHardwarePortSpecification();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart <em>Part</em>}'.
@@ -1719,6 +1996,16 @@ public interface ComponentPackage extends EPackage {
 	EReference getBehavioralConnector_ConnectorClass();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort <em>Hybrid Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hybrid Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.HybridPort
+	 * @generated
+	 */
+	EClass getHybridPort();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1727,16 +2014,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getComponentKind();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.PortKind <em>Port Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Port Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
-	 * @generated
-	 */
-	EEnum getPortKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1847,20 +2124,74 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__COMPONENT = eINSTANCE.getPort_Component();
 
 		/**
-		 * The meta object literal for the '<em><b>Port Kind</b></em>' attribute feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPort()
 		 * @generated
 		 */
-		EAttribute PORT__PORT_KIND = eINSTANCE.getPort_PortKind();
+		EClass CONTINUOUS_PORT = eINSTANCE.getContinuousPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Specification</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDiscretePort()
+		 * @generated
+		 */
+		EClass DISCRETE_PORT = eINSTANCE.getDiscretePort();
+
+		/**
+		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__SPECIFICATION = eINSTANCE.getPort_Specification();
+		EReference DISCRETE_PORT__REFINES = eINSTANCE.getDiscretePort_Refines();
+
+		/**
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__SENDER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePort_SenderMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePort_ReceiverMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_AdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePort()
+		 * @generated
+		 */
+		EClass HARDWARE_PORT = eINSTANCE.getHardwarePort();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
@@ -1869,22 +2200,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__CARDINALITY = eINSTANCE.getPort_Cardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__SENDER_MESSAGE_INTERFACE = eINSTANCE.getPort_SenderMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getPort_ReceiverMessageInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Connectors</b></em>' reference list feature.
@@ -1901,86 +2216,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__OUTGOING_CONNECTORS = eINSTANCE.getPort_OutgoingConnectors();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl <em>Port Specification</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PortSpecificationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortSpecification()
-		 * @generated
-		 */
-		EClass PORT_SPECIFICATION = eINSTANCE.getPortSpecification();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortSpecificationImpl <em>Continuous Port Specification</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortSpecificationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortSpecification()
-		 * @generated
-		 */
-		EClass CONTINUOUS_PORT_SPECIFICATION = eINSTANCE.getContinuousPortSpecification();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl <em>Discrete Port Specification</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortSpecificationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDiscretePortSpecification()
-		 * @generated
-		 */
-		EClass DISCRETE_PORT_SPECIFICATION = eINSTANCE.getDiscretePortSpecification();
-
-		/**
-		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__REFINES = eINSTANCE.getDiscretePortSpecification_Refines();
-
-		/**
-		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__SENDER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_SenderMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortSpecification_ReceiverMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePortSpecification_AdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT_SPECIFICATION__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePortSpecification_RoleAndAdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl <em>Hardware Port Specification</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortSpecificationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHardwarePortSpecification()
-		 * @generated
-		 */
-		EClass HARDWARE_PORT_SPECIFICATION = eINSTANCE.getHardwarePortSpecification();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
@@ -2181,6 +2416,16 @@ public interface ComponentPackage extends EPackage {
 		EReference BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS = eINSTANCE.getBehavioralConnector_ConnectorClass();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHybridPort()
+		 * @generated
+		 */
+		EClass HYBRID_PORT = eINSTANCE.getHybridPort();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2189,16 +2434,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COMPONENT_KIND = eINSTANCE.getComponentKind();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.PortKind <em>Port Kind</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.PortKind
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortKind()
-		 * @generated
-		 */
-		EEnum PORT_KIND = eINSTANCE.getPortKind();
 
 	}
 

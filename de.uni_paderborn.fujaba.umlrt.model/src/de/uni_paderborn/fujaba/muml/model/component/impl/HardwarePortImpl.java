@@ -7,26 +7,26 @@
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Hardware Port Specification</b></em>'.
+ * An implementation of the model object '<em><b>Hardware Port</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class HardwarePortSpecificationImpl extends PortSpecificationImpl implements HardwarePortSpecification {
+public class HardwarePortImpl extends PortImpl implements HardwarePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HardwarePortSpecificationImpl() {
+	protected HardwarePortImpl() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class HardwarePortSpecificationImpl extends PortSpecificationImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentPackage.Literals.HARDWARE_PORT_SPECIFICATION;
+		return ComponentPackage.Literals.HARDWARE_PORT;
 	}
 
-} //HardwarePortSpecificationImpl
+} //HardwarePortImpl

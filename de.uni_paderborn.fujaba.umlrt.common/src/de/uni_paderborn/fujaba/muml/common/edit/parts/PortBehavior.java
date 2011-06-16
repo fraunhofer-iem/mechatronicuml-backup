@@ -45,11 +45,11 @@ public class PortBehavior extends AbstractPortBehavior {
 
 	@Override
 	public void updatePortKindAndPortType() {
-		if (port != null) {
-			updatePortKindAndPortType(port.getPortKind(),
-					port.getSenderMessageInterface(),
-					port.getReceiverMessageInterface());
-		}
+//		if (port != null) {
+//			updatePortKindAndPortType(port.getPortKind(),
+//					port.getSenderMessageInterface(),
+//					port.getReceiverMessageInterface());
+//		}
 	}
 
 	@Override
@@ -67,24 +67,24 @@ public class PortBehavior extends AbstractPortBehavior {
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		Object feature = notification.getFeature();
-		if (feature instanceof EStructuralFeature) {
-			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-			if (structuralFeature.getContainerClass() == Port.class) {
-				int featureID = notification.getFeatureID(PortImpl.class);
-				if (featureID == ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE
-						|| featureID == ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE
-						|| featureID == ComponentPackage.PORT__PORT_KIND) {
-
-					updatePortKindAndPortType(port.getPortKind(),
-							port.getSenderMessageInterface(),
-							port.getReceiverMessageInterface());
-
-				} else if (featureID == ComponentPackage.PORT__CARDINALITY) {
-					updatePortCardinality();
-				}
-			}
-		}
+//		Object feature = notification.getFeature();
+//		if (feature instanceof EStructuralFeature) {
+//			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
+//			if (structuralFeature.getContainerClass() == Port.class) {
+//				int featureID = notification.getFeatureID(PortImpl.class);
+//				if (featureID == ComponentPackage.PORT__RECEIVER_MESSAGE_INTERFACE
+//						|| featureID == ComponentPackage.PORT__SENDER_MESSAGE_INTERFACE
+//						|| featureID == ComponentPackage.PORT__PORT_KIND) {
+//
+//					updatePortKindAndPortType(port.getPortKind(),
+//							port.getSenderMessageInterface(),
+//							port.getReceiverMessageInterface());
+//
+//				} else if (featureID == ComponentPackage.PORT__CARDINALITY) {
+//					updatePortCardinality();
+//				}
+//			}
+//		}
 	}
 
 }
