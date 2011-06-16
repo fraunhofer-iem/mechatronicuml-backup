@@ -26,9 +26,10 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 		IFigure diagram = super.createFigure();
 		historyFigure = new CustomHistoryFigure();
 		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
+		diagram.add(historyFigure);
 		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
 				.getElement();
-		updateHistoryState(diagram, statechart.isHistory());
+		updateHistoryState(statechart.isHistory());
 		return diagram;
 	}
 
@@ -43,7 +44,7 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 				if (featureID == RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY) {
 					Object newState = notification.getNewValue();
 					if (newState instanceof Boolean) {
-						updateHistoryState(getFigure(), (Boolean) newState);
+						updateHistoryState((Boolean) newState);
 					}
 				}
 			}
@@ -51,16 +52,8 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 		super.handleNotificationEvent(notification);
 	}
 
-	private void updateHistoryState(IFigure diagramFigure, boolean newState) {
-
-		boolean oldState = historyFigure.getParent() == diagramFigure;
-
-		if (oldState != newState) {
-			if (newState) {
-				diagramFigure.add(historyFigure);
-			} else {
-				diagramFigure.remove(historyFigure);
-			}
-		}
+	private void updateHistoryState(boolean newState) {
+		historyFigure.setVisible(newState);
 	}
+
 }
