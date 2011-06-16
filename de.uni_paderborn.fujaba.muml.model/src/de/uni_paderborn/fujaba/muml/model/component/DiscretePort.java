@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * @model
  * @generated
  */
-public interface DiscretePort extends BehavioralElement, Port {
+public interface DiscretePort extends Port, BehavioralElement {
 	/**
 	 * Returns the value of the '<em><b>Refines</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}'.

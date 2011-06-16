@@ -139,8 +139,8 @@ public class ComponentSwitch<T> {
 			case ComponentPackage.DISCRETE_PORT: {
 				DiscretePort discretePort = (DiscretePort)theEObject;
 				T result = caseDiscretePort(discretePort);
-				if (result == null) result = caseBehavioralElement(discretePort);
 				if (result == null) result = casePort(discretePort);
+				if (result == null) result = caseBehavioralElement(discretePort);
 				if (result == null) result = caseNamedElement(discretePort);
 				if (result == null) result = caseCommentableElement(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);

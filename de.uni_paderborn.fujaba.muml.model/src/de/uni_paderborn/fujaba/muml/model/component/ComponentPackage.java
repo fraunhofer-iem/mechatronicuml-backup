@@ -507,22 +507,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int DISCRETE_PORT__ANNOTATION = PORT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -531,7 +522,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int DISCRETE_PORT__EXTENSION = PORT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -540,7 +531,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int DISCRETE_PORT__NAME = PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -549,7 +540,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__COMMENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int DISCRETE_PORT__COMMENT = PORT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -558,7 +549,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__CONSTRAINT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int DISCRETE_PORT__CONSTRAINT = PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -567,7 +558,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__CARDINALITY = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int DISCRETE_PORT__CARDINALITY = PORT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -576,7 +567,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__INCOMING_CONNECTORS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
+	int DISCRETE_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -585,7 +576,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__OUTGOING_CONNECTORS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
+	int DISCRETE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -594,7 +585,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__COMPONENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
+	int DISCRETE_PORT__COMPONENT = PORT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__BEHAVIOR = PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -603,7 +603,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__REFINES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 9;
+	int DISCRETE_PORT__REFINES = PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -612,7 +612,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__SENDER_MESSAGE_INTERFACE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 10;
+	int DISCRETE_PORT__SENDER_MESSAGE_INTERFACE = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -621,7 +621,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 11;
+	int DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -630,7 +630,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 12;
+	int DISCRETE_PORT__ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -639,7 +639,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 13;
+	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
@@ -648,7 +648,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 14;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
