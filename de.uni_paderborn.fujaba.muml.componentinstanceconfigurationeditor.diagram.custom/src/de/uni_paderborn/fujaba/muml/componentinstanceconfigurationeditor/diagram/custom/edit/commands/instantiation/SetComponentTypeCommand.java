@@ -8,17 +8,20 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.storydriven.modeling.Extension;
 
+import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
@@ -182,18 +185,21 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			for (PortInstance fromInstance : componentInstance
 					.getPortInstances()) {
 				if (fromInstance.getPortType() == fromPort) {
-					ConnectorInstance newInstance = connectorType
-							.createInstance();
-					newInstance.setSource(fromInstance);
-					newInstance.setTarget(toInstance);
-
-					newInstance.setParentComponentInstance(componentInstance);
-					connectorInstances.add(newInstance);
+					ConnectorInstance newInstance = createConnectorInstance(connectorType);
+					if (newInstance != null) {
+						newInstance.setSource(fromInstance);
+						newInstance.setTarget(toInstance);
+	
+						newInstance.setParentComponentInstance(componentInstance);
+						connectorInstances.add(newInstance);
+					}
 				}
 			}
 		}
 		return connectorInstances;
 	}
+
+
 
 	private List<ConnectorInstance> createOutgoingConnectorInstances(Port port,
 			ComponentInstance componentInstance, PortInstance fromInstance) {
@@ -202,18 +208,35 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			Port toPort = connectorType.getToPort();
 			for (PortInstance toInstance : componentInstance.getPortInstances()) {
 				if (toInstance.getPortType() == toPort) {
-					ConnectorInstance newInstance = connectorType
-							.createInstance();
-					newInstance.setSource(fromInstance);
-					newInstance.setTarget(toInstance);
-					newInstance
-							.setParentComponentInstance(componentInstance);
-
-					connectorInstances.add(newInstance);
+					ConnectorInstance newInstance = createConnectorInstance(connectorType);
+					if (newInstance != null) {
+						newInstance.setSource(fromInstance);
+						newInstance.setTarget(toInstance);
+						newInstance
+								.setParentComponentInstance(componentInstance);
+	
+						connectorInstances.add(newInstance);
+					}
 				}
 			}
 		}
 		return connectorInstances;
+	}
+	
+
+	// TODO: Implement in model.
+	private ConnectorInstance createConnectorInstance(
+			ConnectorType connectorType) {
+		ConnectorInstance connectorInstance = null;
+		if (connectorType instanceof Assembly) {
+			connectorInstance = InstanceFactory.eINSTANCE.createAssemblyInstance();
+			((AssemblyInstance)connectorInstance).setAssemblyType((Assembly)connectorType);
+		} else if (connectorType instanceof Delegation) {
+			connectorInstance = InstanceFactory.eINSTANCE.createDelegationInstance();
+			((DelegationInstance)connectorInstance).setDelegationType((Delegation)connectorType);
+		}
+		
+		return connectorInstance;
 	}
 
 }
