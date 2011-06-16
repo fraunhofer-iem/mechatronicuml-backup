@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edi
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationCreateCommand;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.commands.CustomDelegationReorientCommand;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.PortItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.DiscretePortItemSemanticEditPolicy;
 
 /**
  * A customized PortItemSemanticEditPolicy. We create our customized Delegation
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.polic
  * 
  */
 public class CustomPortItemSemanticEditPolicy extends
-		PortItemSemanticEditPolicy {
+		DiscretePortItemSemanticEditPolicy {
 
 	// TODO: Can we forbid deleting the view element.
 	/**

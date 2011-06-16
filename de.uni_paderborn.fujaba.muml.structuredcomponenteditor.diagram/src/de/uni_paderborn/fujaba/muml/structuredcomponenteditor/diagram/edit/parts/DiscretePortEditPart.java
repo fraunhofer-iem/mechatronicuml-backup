@@ -35,12 +35,12 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class Port2EditPart extends AbstractBorderItemEditPart {
+public class DiscretePortEditPart extends AbstractBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3006;
+	public static final int VISUAL_ID = 3008;
 
 	/**
 	 * @generated
@@ -55,7 +55,7 @@ public class Port2EditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public Port2EditPart(View view) {
+	public DiscretePortEditPart(View view) {
 		super(view);
 	}
 
@@ -68,7 +68,7 @@ public class Port2EditPart extends AbstractBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.Port2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.DiscretePortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

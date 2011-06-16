@@ -7,7 +7,9 @@
       title="componenteditorPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="componenteditor">
+        title="Components"
+        collapsible="true"
+        active="//@palette/@tools.0/@tools.0">
       <tools
           xsi:type="gmftool:CreationTool"
           title="StructuredComponent"
@@ -26,13 +28,53 @@
             path="icons/ComponentPart.gif"
             bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Ports"
+        collapsible="true"
+        active="//@palette/@tools.1/@tools.0">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Port"
-          description="Create new Port">
+          title="DiscretePort"
+          description="Create new DiscretePort">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/Port.gif"
+            path="icons/DiscretePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ContinuousPort"
+          description="Create new ContinuousPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ContinuousPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybridPort"
+          description="Create new HybridPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connectors"
+        description=""
+        collapsible="true"
+        active="//@palette/@tools.2/@tools.0">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Assembly"
+          description="Create new Assembly">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
             bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
@@ -42,15 +84,6 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Delegation.gif"
-            bundle="/de.uni_paderborn.fujaba.muml.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Assembly"
-          description="Create new Assembly">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/Assembly.gif"
             bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

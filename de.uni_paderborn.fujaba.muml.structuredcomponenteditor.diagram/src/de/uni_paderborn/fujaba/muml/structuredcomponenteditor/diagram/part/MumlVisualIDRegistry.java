@@ -127,8 +127,16 @@ public class MumlVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-					.getPort().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID;
+					.getHybridPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
@@ -182,7 +190,13 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentComponentCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

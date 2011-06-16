@@ -243,7 +243,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Componenteditor1Group_title;
+	public static String Components1Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Ports2Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Connectors3Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Connectors3Group_desc;
 
 	/**
 	 * @generated
@@ -268,32 +283,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Port3CreationTool_title;
+	public static String DiscretePort1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Port3CreationTool_desc;
+	public static String DiscretePort1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Delegation4CreationTool_title;
+	public static String ContinuousPort2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Delegation4CreationTool_desc;
+	public static String ContinuousPort2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Assembly5CreationTool_title;
+	public static String HybridPort3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Assembly5CreationTool_desc;
+	public static String HybridPort3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Assembly1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Assembly1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Delegation2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Delegation2CreationTool_desc;
 
 	/**
 	 * @generated

@@ -34,20 +34,20 @@
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3002"
-        editPartClassName="DiscretePortEditPart"
-        itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
-        notationViewFactoryClassName="DiscretePortViewFactory"
-        canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
-        createCommandClassName="DiscretePortCreateCommand"
+        visualID="3004"
+        editPartClassName="HybridPortEditPart"
+        itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortViewFactory"
+        canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
+        createCommandClassName="HybridPortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="DiscretePortEditHelper"/>
+          editHelperClassName="HybridPortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -59,7 +59,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HybridPort"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
@@ -104,20 +104,20 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3003"
-        editPartClassName="ContinuousPortEditPart"
-        itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
-        notationViewFactoryClassName="ContinuousPortViewFactory"
-        canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
-        createCommandClassName="ContinuousPortCreateCommand"
+        visualID="3002"
+        editPartClassName="DiscretePortEditPart"
+        itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
+        notationViewFactoryClassName="DiscretePortViewFactory"
+        canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
+        createCommandClassName="DiscretePortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ContinuousPortEditHelper"/>
+          editHelperClassName="DiscretePortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -129,7 +129,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
@@ -174,20 +174,20 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3004"
-        editPartClassName="HybridPortEditPart"
-        itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortViewFactory"
-        canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
-        createCommandClassName="HybridPortCreateCommand"
+        visualID="3003"
+        editPartClassName="ContinuousPortEditPart"
+        itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
+        notationViewFactoryClassName="ContinuousPortViewFactory"
+        canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
+        createCommandClassName="ContinuousPortCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="HybridPortEditHelper"/>
+          editHelperClassName="ContinuousPortEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -199,7 +199,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HybridPort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
@@ -310,19 +310,19 @@
             title="DiscretePort"
             description="Create new DiscretePort"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"
-            genNodes="//@diagram/@childNodes.0"/>
+            genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ContinuousPort"
             description="Create new ContinuousPort"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif"
-            genNodes="//@diagram/@childNodes.1"/>
+            genNodes="//@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="HybridPort"
             description="Create new HybridPort"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
-            genNodes="//@diagram/@childNodes.2"/>
+            genNodes="//@diagram/@childNodes.0"/>
       </groups>
     </palette>
     <preferencePages

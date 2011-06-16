@@ -185,6 +185,11 @@ public class MumlElementTypes {
 							.getAtomicComponent());
 
 			elements.put(
+					HybridPort_3004,
+					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+							.getHybridPort());
+
+			elements.put(
 					DiscretePort_3002,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
@@ -193,11 +198,6 @@ public class MumlElementTypes {
 					ContinuousPort_3003,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
-
-			elements.put(
-					HybridPort_3004,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-							.getHybridPort());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -217,9 +217,9 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
 			KNOWN_ELEMENT_TYPES.add(AtomicComponent_2001);
+			KNOWN_ELEMENT_TYPES.add(HybridPort_3004);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3002);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3003);
-			KNOWN_ELEMENT_TYPES.add(HybridPort_3004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -233,12 +233,12 @@ public class MumlElementTypes {
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return AtomicComponent_2001;
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+			return HybridPort_3004;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return DiscretePort_3002;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return ContinuousPort_3003;
-		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return HybridPort_3004;
 		}
 		return null;
 	}

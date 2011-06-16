@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.common.edit.parts.PortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.PortEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
  * @author bingo
  * 
  */
-public class CustomPortEditPart extends PortEditPart {
+public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
@@ -36,7 +36,7 @@ public class CustomPortEditPart extends PortEditPart {
 	 * @param view
 	 *            The graphical model.
 	 */
-	public CustomPortEditPart(View view) {
+	public CustomDiscretePortEditPart(View view) {
 		super(view);
 
 	}

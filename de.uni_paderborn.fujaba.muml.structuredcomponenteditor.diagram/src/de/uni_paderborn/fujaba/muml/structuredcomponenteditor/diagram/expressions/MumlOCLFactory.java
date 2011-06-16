@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[3];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[7];
 	}
 
 	/**
@@ -50,6 +50,10 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"if self.componentType.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.componentType.name\nendif", //$NON-NLS-1$

@@ -29,7 +29,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/ports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/HybridPort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -75,14 +75,128 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.2"/>
+              href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.2"/>
+          <diagramNode
+              href="structuredcomponent.gmfgraph#Port"/>
+        </ownedChild>
+      </children>
+      <children
+          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/ports"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/cardinality"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+          </domainInitializer>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.0"/>
+          <diagramNode
+              href="structuredcomponent.gmfgraph#Port"/>
+        </ownedChild>
+      </children>
+      <children
+          referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component/ports"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/cardinality"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+          </domainInitializer>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="structuredcomponent.gmfgraph#Port"/>
         </ownedChild>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
+          referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/embeddedParts"/>
         <ownedChild>
@@ -102,7 +216,7 @@
           <diagramNode
               href="structuredcomponent.gmfgraph#ComponentPart"/>
           <children
-              referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild">
+              referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
             <ownedChild>
@@ -115,7 +229,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.1">
+          children="//@nodes.0/@ownedChild/@children.3">
         <compartment
             href="structuredcomponent.gmfgraph#ComponentCompartment"/>
       </compartments>
@@ -128,7 +242,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.3"/>
+        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.1"/>
     <diagramLink
         href="structuredcomponent.gmfgraph#Delegation"/>
     <sourceMetaFeature
@@ -145,7 +259,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.4"/>
+        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.0"/>
     <diagramLink
         href="structuredcomponent.gmfgraph#Assembly"/>
     <sourceMetaFeature

@@ -4,12 +4,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.parts.CustomPortEditPart;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.sheet.MumlPropertySection;
 
 public class CustomStructuredcomponentPropertySection extends
@@ -25,8 +26,8 @@ public class CustomStructuredcomponentPropertySection extends
 		Object transformed = super.transformSelection(object);
 
 		boolean readOnlyOverride = false;
-		if (object instanceof EditPart) {
-			readOnlyOverride = isReadOnlyPart((EditPart) object);
+		if (object instanceof GraphicalEditPart) {
+			readOnlyOverride = isReadOnlyPart((GraphicalEditPart) object);
 		}
 
 		AdapterFactory af = getAdapterFactory(transformed);
@@ -41,9 +42,9 @@ public class CustomStructuredcomponentPropertySection extends
 		return super.getPropertySource(transformed);
 	}
 
-	private boolean isReadOnlyPart(EditPart part) {
-		if (part instanceof CustomPortEditPart) {
-			EObject parentElement = getParentElement((CustomPortEditPart) part);
+	private boolean isReadOnlyPart(GraphicalEditPart part) {
+		if (part.getNotationView().getElement() instanceof Port) {
+			EObject parentElement = getParentElement(part);
 			if (parentElement instanceof ComponentPart) {
 				return true;
 			}
