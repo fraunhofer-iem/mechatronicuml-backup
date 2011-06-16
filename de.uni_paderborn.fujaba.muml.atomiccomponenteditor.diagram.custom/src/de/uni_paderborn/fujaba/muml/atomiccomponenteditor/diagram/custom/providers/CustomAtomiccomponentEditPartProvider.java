@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.providers;
 
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.parts.CustomAtomiccomponentEditPartFactory;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtEditPartProvider;
+import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlEditPartProvider;
 
 /**
  * Our custom EditPartProvider, which uses the customized EditPartFactory.
@@ -10,7 +10,7 @@ import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.Umlr
  * 
  */
 public class CustomAtomiccomponentEditPartProvider extends
-		UmlrtEditPartProvider {
+		MumlEditPartProvider {
 
 	public CustomAtomiccomponentEditPartProvider() {
 		setFactory(new CustomAtomiccomponentEditPartFactory());

@@ -68,7 +68,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
@@ -186,7 +186,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,3005,3006,3007"/>
@@ -196,7 +196,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
@@ -219,7 +219,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart" id="ComponentInstanceConfiguration_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart" id="ComponentInstance_2004"/>
@@ -229,7 +229,7 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
@@ -370,12 +370,12 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="componentinstanceconfiguration_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+         	   <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -387,7 +387,7 @@
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="componentinstanceconfiguration_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+                  <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -415,10 +415,10 @@
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtNavigatorActionProvider">
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -436,7 +436,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -444,7 +444,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -493,7 +493,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>

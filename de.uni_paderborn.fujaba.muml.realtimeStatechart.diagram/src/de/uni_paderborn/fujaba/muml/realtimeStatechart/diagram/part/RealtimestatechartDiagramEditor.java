@@ -76,7 +76,7 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}
@@ -281,7 +281,7 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 		Diagram diagram = document.getDiagram();
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem(
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem(
 					diagram, file, false);
 			return new StructuredSelection(item);
 		}

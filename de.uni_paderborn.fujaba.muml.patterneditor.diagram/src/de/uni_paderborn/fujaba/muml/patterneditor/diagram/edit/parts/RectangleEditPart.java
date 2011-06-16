@@ -191,7 +191,7 @@ public class RectangleEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002);
 		return types;
 	}
 
@@ -200,8 +200,8 @@ public class RectangleEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.Role_2001);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001);
 		}
 		return types;
 	}

@@ -81,7 +81,7 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
@@ -239,7 +239,7 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
 	}
 
@@ -248,8 +248,8 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002);
 		return types;
 	}
 
@@ -260,10 +260,10 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001);
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RectangleEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002);
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002);
 		}
 		return types;
 	}
@@ -273,10 +273,10 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.Role_2001);
-		} else if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.TextualConstraint_2002);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001);
+		} else if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.TextualConstraint_2002);
 		}
 		return types;
 	}
@@ -286,7 +286,7 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001);
 		return types;
 	}
 
@@ -295,8 +295,8 @@ public class CoordinationPatternEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.Role_2001);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001);
 		}
 		return types;
 	}

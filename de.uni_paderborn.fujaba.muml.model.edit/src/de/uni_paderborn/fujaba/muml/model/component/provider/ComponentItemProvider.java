@@ -348,7 +348,7 @@ public class ComponentItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

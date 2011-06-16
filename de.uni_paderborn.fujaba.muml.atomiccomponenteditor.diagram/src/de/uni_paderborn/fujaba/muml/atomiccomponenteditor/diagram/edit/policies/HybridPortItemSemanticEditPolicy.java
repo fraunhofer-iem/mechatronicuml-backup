@@ -13,14 +13,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class HybridPortItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public HybridPortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.HybridPort_3004);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3004);
 	}
 
 	/**

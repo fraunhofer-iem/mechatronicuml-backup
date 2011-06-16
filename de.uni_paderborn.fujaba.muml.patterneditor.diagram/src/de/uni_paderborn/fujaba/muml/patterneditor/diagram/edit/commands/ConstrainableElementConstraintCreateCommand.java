@@ -53,7 +53,7 @@ public class ConstrainableElementConstraintCreateCommand extends
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canCreateConstrainableElementConstraint_4002(getSource(),
 						getTarget());

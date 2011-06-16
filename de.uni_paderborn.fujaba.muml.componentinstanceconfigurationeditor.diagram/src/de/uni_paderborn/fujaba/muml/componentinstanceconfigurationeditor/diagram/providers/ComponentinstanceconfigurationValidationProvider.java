@@ -58,7 +58,7 @@ public class ComponentinstanceconfigurationValidationProvider {
 		if (object instanceof View) {
 			return constraintsActive
 					&& de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}
 		return true;

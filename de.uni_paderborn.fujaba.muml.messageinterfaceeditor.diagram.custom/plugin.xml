@@ -34,8 +34,8 @@
          extensions="messageinterface_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    </extension>
 <!--

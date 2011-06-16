@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Text;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.command.ParameterCreateCommand;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes;
 
 public class ModifyParameterPage extends WizardPage{
 	
@@ -161,7 +161,7 @@ public class ModifyParameterPage extends WizardPage{
 //	  	  
 //		if(!parameterNameText.getText().equals("") && getSelectedDataType()!= null){
 //			CreateElementRequest request = new CreateElementRequest(((ModifyParameterWizard)getWizard()).getSelectedSyncChannel(),
-//					UmlrtElementTypes.MessageInterface_2002);
+//					MumlElementTypes.MessageInterface_2002);
 //							  
 //						ParameterCreateCommand command = new ParameterCreateCommand(request, 
 //								this.parameterNameText.getText(), getSelectedDataType());
@@ -261,7 +261,7 @@ public class ModifyParameterPage extends WizardPage{
 	
 	private List<EDataType> getDataTypes(){
 //		
-//		UmlrtDiagram messageTypeDiagram = ((ModifyParameterWizard)getWizard()).getMessageTypeDiagram();
+//		MumlDiagram messageTypeDiagram = ((ModifyParameterWizard)getWizard()).getMessageTypeDiagram();
 //
 //		RootNode root = (RootNode)messageTypeDiagram.eContainer();
 //		

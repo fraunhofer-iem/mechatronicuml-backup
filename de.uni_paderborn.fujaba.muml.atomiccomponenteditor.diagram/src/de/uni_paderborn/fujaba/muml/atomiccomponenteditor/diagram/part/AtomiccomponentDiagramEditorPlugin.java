@@ -56,7 +56,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDocumentProvider documentProvider;
 
 	/**
 	 * @generated
@@ -66,7 +66,7 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.UmlrtOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -232,9 +232,9 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -257,15 +257,15 @@ public class AtomiccomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
+	public de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setUmlrtOCLFactory(
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.UmlrtOCLFactory f) {
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory f) {
 		this.oclFactory = f;
 	}
 

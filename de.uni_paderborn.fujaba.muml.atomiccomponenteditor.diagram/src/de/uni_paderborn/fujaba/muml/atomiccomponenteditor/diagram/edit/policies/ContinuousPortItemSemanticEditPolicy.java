@@ -13,14 +13,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class ContinuousPortItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ContinuousPortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.ContinuousPort_3003);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3003);
 	}
 
 	/**

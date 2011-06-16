@@ -9,14 +9,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
  */
 public class DelegationItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public DelegationItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes.Delegation_4003);
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Delegation_4003);
 	}
 
 	/**

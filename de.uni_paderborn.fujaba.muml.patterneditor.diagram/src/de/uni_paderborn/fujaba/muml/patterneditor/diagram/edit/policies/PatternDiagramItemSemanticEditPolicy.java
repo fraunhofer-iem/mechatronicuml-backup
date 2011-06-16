@@ -12,26 +12,26 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
  */
 public class PatternDiagramItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public PatternDiagramItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.CoordinationPattern_1000);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.Role_2001 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationPatternCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.TextualConstraint_2002 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.TextualConstraint_2002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RectangleCreateCommand(
 					req));

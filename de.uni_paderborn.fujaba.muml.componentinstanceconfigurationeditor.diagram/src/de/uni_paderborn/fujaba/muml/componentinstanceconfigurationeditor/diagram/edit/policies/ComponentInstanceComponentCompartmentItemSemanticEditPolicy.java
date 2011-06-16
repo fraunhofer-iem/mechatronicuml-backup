@@ -8,21 +8,21 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  */
 public class ComponentInstanceComponentCompartmentItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ComponentInstanceComponentCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.ComponentInstance_2004);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstance_2004);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.ComponentInstance_3006 == req
+		if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstance_3006 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands.ComponentInstance2CreateCommand(
 					req));

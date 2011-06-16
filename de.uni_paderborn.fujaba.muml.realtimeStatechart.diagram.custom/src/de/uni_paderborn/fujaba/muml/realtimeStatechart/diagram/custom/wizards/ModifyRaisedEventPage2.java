@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Text;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.commands.RaisedEventCreateCommand;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtElementTypes;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes;
 
 public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 
@@ -162,7 +162,7 @@ public class ModifyRaisedEventPage2 extends CommonEventModifyPage{
 	private void startCreateRaisedEventCommand(){
 		
 		CreateElementRequest request = new CreateElementRequest(((ModifyRaisedEventWizard)getWizard()).getSelectedTransition(),
-				UmlrtElementTypes.DoEvent_3002);
+				MumlElementTypes.DoEvent_3002);
 						  
 					RaisedEventCreateCommand command = new RaisedEventCreateCommand(request, 
 							parameterValuesHashMap,

@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
@@ -232,7 +232,7 @@ public class ComponentInstanceConfigurationItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

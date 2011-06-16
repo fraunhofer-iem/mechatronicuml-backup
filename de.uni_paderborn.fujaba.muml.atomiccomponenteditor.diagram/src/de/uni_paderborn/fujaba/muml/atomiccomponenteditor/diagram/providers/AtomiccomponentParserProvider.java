@@ -66,12 +66,12 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -83,7 +83,7 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

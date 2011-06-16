@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -400,7 +400,7 @@ public class RoleItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

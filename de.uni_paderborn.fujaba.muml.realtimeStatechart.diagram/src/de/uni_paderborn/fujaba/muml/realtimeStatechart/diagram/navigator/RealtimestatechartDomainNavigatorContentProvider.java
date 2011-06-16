@@ -185,9 +185,9 @@ public class RealtimestatechartDomainNavigatorContentProvider implements
 					parentElement);
 		}
 
-		if (parentElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem) {
+		if (parentElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorItem) {
 			return wrapEObjects(
-					myAdapterFctoryContentProvier.getChildren(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem) parentElement)
+					myAdapterFctoryContentProvier.getChildren(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorItem) parentElement)
 							.getEObject()), parentElement);
 		}
 		return EMPTY_ARRAY;
@@ -200,7 +200,7 @@ public class RealtimestatechartDomainNavigatorContentProvider implements
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
 			if (objects[i] instanceof EObject) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem(
+				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorItem(
 						(EObject) objects[i], parentElement,
 						myAdapterFctoryContentProvier));
 			}

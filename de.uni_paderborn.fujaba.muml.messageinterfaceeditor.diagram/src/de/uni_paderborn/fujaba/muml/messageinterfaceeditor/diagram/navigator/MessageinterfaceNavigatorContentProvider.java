@@ -214,7 +214,7 @@ public class MessageinterfaceNavigatorContentProvider implements
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID: {
@@ -226,13 +226,13 @@ public class MessageinterfaceNavigatorContentProvider implements
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getDiagramLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
@@ -253,13 +253,13 @@ public class MessageinterfaceNavigatorContentProvider implements
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target,
 					true));
 			connectedViews = getLinksSourceByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source,
 					true));
@@ -284,23 +284,23 @@ public class MessageinterfaceNavigatorContentProvider implements
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceMessageTypeCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(
 					connectedViews,
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getIncomingLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews,
 					incominglinks, true));
 			connectedViews = getOutgoingLinksByType(
 					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
 					outgoinglinks, true));
@@ -416,7 +416,7 @@ public class MessageinterfaceNavigatorContentProvider implements
 	 */
 	private boolean isOwnView(View view) {
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 						.getModelID(view));
 	}
 

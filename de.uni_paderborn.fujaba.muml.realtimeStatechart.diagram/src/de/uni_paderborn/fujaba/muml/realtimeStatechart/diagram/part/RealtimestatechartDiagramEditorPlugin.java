@@ -56,12 +56,12 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
@@ -71,7 +71,7 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -238,9 +238,9 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -248,7 +248,7 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
@@ -256,7 +256,7 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints lc) {
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -278,15 +278,15 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
+	public de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setUmlrtOCLFactory(
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory f) {
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory f) {
 		this.oclFactory = f;
 	}
 

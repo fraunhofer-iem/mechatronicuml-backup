@@ -76,7 +76,7 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}
@@ -166,6 +166,16 @@ public class AtomiccomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public void doSave(IProgressMonitor progressMonitor) {
+		ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+				.getDiagramView());
+		super.doSave(progressMonitor);
 	}
 
 	/**

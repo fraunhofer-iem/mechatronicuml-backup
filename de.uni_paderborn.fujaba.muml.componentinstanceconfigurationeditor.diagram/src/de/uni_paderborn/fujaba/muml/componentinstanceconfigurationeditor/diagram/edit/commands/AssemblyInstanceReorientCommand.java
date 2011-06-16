@@ -68,7 +68,7 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAssemblyInstance_4003(container,
 						getLink(), getNewSource(), target);
 	}
@@ -87,7 +87,7 @@ public class AssemblyInstanceReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistAssemblyInstance_4003(container,
 						getLink(), source, getNewTarget());
 	}

@@ -33,7 +33,7 @@ public class ComponentinstanceconfigurationSheetLabelProvider extends
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null
-				: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes
+				: de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes
 						.getImage(etype);
 	}
 
@@ -66,9 +66,9 @@ public class ComponentinstanceconfigurationSheetLabelProvider extends
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
-			int vid = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+			int vid = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view);
-			IElementType etype = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes
+			IElementType etype = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes
 					.getElementType(vid);
 			if (etype != null) {
 				return etype;

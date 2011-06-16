@@ -6,6 +6,7 @@
     modelID="Atomiccomponent"
     diagramFileExtension="atomiccomponent_diagram"
     domainFileExtension="fujaba"
+    dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.muml.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram/src">
   <diagram
@@ -58,41 +59,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/DiscretePort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Port/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Port/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.0">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -128,41 +129,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/ContinuousPort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Port/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Port/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.2">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.3">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -198,41 +199,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/HybridPort"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HybridPort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/Port/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Port/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.4">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.5">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -266,7 +267,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/component/AtomicComponent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/AtomicComponent"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -411,7 +412,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">

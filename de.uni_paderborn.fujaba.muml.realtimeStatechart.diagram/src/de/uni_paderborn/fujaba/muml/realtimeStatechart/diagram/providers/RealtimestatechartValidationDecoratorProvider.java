@@ -102,7 +102,7 @@ public class RealtimestatechartValidationDecoratorProvider extends
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
 				&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID
-						.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+						.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 								.getModelID(view));
 	}
 

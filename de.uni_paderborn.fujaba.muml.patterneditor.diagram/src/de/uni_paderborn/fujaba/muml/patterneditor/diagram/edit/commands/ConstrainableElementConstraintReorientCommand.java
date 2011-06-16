@@ -70,7 +70,7 @@ public class ConstrainableElementConstraintReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canExistConstrainableElementConstraint_4002(getNewSource(),
 						getOldTarget());
@@ -83,7 +83,7 @@ public class ConstrainableElementConstraintReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.constraint.Constraint)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
 				.canExistConstrainableElementConstraint_4002(getOldSource(),
 						getNewTarget());

@@ -57,12 +57,12 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDocumentProvider documentProvider;
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDocumentProvider documentProvider;
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
 	 * @generated
@@ -72,7 +72,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory oclFactory;
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory oclFactory;
 
 	/**
 	 * @generated
@@ -239,9 +239,9 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDocumentProvider getDocumentProvider() {
+	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDocumentProvider();
+			documentProvider = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
 	}
@@ -249,7 +249,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
@@ -257,7 +257,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	 * @generated
 	 */
 	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy.LinkConstraints lc) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
@@ -279,15 +279,15 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory getUmlrtOCLFactory() {
+	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setUmlrtOCLFactory(
-			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.UmlrtOCLFactory f) {
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory f) {
 		this.oclFactory = f;
 	}
 

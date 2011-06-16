@@ -32,7 +32,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern"/>
     <topLevelNodes
         visualID="2001"
         editPartClassName="CoordinationPatternEditPart"
@@ -58,41 +58,41 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/Role"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/roles"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/Role/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/Role/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.0">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -138,11 +138,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TextualConstraintFigure extends org.eclipse.draw2d.ScalablePolygonShape {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTextualConstraintLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TextualConstraintFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(40)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;this.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(40)&#xA;));&#xA;this.setFill(true);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTextualConstraintLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTextualConstraintLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTextualConstraintLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTextualConstraintLabelFigure() {&#xA;&#x9;&#x9;return fFigureTextualConstraintLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/constraint/TextualConstraint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/constraint/TextualConstraint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
       </modelFacet>
     </topLevelNodes>
     <links
@@ -163,15 +163,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector/source"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/pattern/RoleConnector/target"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
     </links>
     <links
@@ -191,7 +191,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/ConstrainableElement/constraint"/>
       </modelFacet>
     </links>
     <palette>
@@ -221,7 +221,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.diagram.general"
-        name="Umlrt Diagram">
+        name="Muml Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.diagram.appearance"
@@ -342,7 +342,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">

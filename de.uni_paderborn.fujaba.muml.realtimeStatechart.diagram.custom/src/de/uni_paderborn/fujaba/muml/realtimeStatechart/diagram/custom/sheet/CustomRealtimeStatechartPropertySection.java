@@ -8,10 +8,10 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.UmlrtPropertySection;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.MumlPropertySection;
 
 public class CustomRealtimeStatechartPropertySection extends
-		UmlrtPropertySection {
+		MumlPropertySection {
 
 	/**
 	 * Customized to create our own CustomPropertySource objects.

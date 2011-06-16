@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
@@ -183,7 +183,7 @@ public class MessageTypeItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

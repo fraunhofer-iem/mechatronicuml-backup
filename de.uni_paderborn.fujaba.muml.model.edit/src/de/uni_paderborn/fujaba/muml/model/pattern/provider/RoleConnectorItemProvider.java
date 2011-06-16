@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.pattern.provider;
 
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.BehavioralConnectorItemProvider;
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
@@ -201,7 +201,7 @@ public class RoleConnectorItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

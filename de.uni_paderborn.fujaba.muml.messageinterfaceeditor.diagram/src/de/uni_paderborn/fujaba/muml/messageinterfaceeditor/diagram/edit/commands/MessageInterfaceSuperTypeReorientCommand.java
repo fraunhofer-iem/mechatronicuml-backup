@@ -70,7 +70,7 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
 						getNewSource(), getOldTarget());
 	}
@@ -82,7 +82,7 @@ public class MessageInterfaceSuperTypeReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface && newEnd instanceof de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface)) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistMessageInterfaceSuperType_4003(
 						getOldSource(), getNewTarget());
 	}

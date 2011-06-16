@@ -5,8 +5,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry;
 
 /**
  * Our customized EditPartFactory, which makes sure our overridden
@@ -15,13 +15,13 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegi
  * @author bingo
  * 
  */
-public class CustomPatternEditPartFactory extends UmlrtEditPartFactory {
+public class CustomPatternEditPartFactory extends MumlEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case PatternDiagramEditPart.VISUAL_ID:
 				return new CustomPatternDiagramEditPart(view);
 /*

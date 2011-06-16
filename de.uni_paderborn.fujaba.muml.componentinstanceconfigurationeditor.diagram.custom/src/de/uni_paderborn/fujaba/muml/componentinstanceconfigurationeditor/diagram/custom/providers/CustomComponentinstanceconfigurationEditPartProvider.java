@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.parts.CustomComponentinstanceconfigurationEditPartFactory;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtEditPartProvider;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlEditPartProvider;
 
 
 /**
@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
  * 
  */
 public class CustomComponentinstanceconfigurationEditPartProvider extends
-		UmlrtEditPartProvider {
+		MumlEditPartProvider {
 
 	public CustomComponentinstanceconfigurationEditPartProvider() {
 		setFactory(new CustomComponentinstanceconfigurationEditPartFactory());

@@ -23,14 +23,14 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.UmlrtOCLFactory
+			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
 
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.UmlrtAbstractExpression
+			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
 					.performCast(value_0_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
@@ -38,20 +38,20 @@ public class ElementInitializers {
 			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.UmlrtOCLFactory
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							1,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.UmlrtAbstractExpression
+			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
 					.performCast(value_0_0_1_0_0,
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -60,10 +60,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+		ElementInitializers cached = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 				.getInstance().getElementInitializers();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().setElementInitializers(
 							cached = new ElementInitializers());
 		}

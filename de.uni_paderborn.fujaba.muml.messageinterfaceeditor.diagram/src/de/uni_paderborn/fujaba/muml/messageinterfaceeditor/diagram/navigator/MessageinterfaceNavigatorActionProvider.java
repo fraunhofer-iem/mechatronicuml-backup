@@ -121,7 +121,7 @@ public class MessageinterfaceNavigatorActionProvider extends
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
 					if (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 									.getModelID(diagram))) {
 						myDiagram = diagram;
 					}

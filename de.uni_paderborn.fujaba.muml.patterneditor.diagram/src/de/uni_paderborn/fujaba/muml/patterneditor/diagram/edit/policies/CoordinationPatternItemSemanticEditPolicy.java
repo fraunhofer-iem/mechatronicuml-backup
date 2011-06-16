@@ -27,14 +27,14 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public class CoordinationPatternItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CoordinationPatternItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.Role_2001);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						incomingLink.getElement(), false);
@@ -58,7 +58,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						outgoingLink.getElement(), false);
@@ -66,7 +66,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -116,12 +116,12 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RoleConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.ConstrainableElementConstraintCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -134,12 +134,12 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.RoleConnector_4001 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RoleConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002 == req
 				.getElementType()) {
 			return null;
 		}

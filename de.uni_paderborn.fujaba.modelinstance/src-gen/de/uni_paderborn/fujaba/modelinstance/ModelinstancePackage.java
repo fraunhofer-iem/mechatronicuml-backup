@@ -42,7 +42,7 @@ public interface ModelinstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///de/uni_paderborn/fujaba/umlrt/modelinstance";
+	String eNS_URI = "http:///de/uni_paderborn/fujaba/muml/modelinstance";
 
 	/**
 	 * The package namespace name.

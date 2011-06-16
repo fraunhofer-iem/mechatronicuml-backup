@@ -5,8 +5,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.UmlrtEditPartFactory;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
 
 /**
  * The custom EditPartFactory that creates our overridden EditParts.
@@ -15,14 +15,14 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualI
  * 
  */
 public class CustomRealtimeStatechartEditPartFactory extends
-		UmlrtEditPartFactory {
+		MumlEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
 
-			switch (UmlrtVisualIDRegistry.getVisualID(view)) {
+			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
 				return new CustomFujabaRealtimeStatechartEditPart(view);
 			default:

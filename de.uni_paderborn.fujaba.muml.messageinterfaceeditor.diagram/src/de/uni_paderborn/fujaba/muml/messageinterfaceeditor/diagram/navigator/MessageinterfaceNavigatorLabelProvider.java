@@ -75,20 +75,20 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	 * @generated
 	 */
 	public Image getImage(View view) {
-		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/umlrt/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageInterfaceSuperType_4003); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageInterface_2002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageType_3002); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3002); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/muml/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -102,9 +102,9 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 		Image image = imageRegistry.get(key);
 		if (image == null
 				&& elementType != null
-				&& de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes
+				&& de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
 						.isKnownElementType(elementType)) {
-			image = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes
+			image = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes
 					.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
@@ -143,16 +143,16 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 		if (view.getElement() != null && view.getElement().eIsProxy()) {
 			return getUnresolvedDomainElementProxyText(view);
 		}
-		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+		switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
+		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+			return getMessageType_3002Text(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return getMessageInterfaceSuperType_4003Text(view);
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
 			return getMessageInterface_2002Text(view);
-		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
-			return getMessageType_3002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -160,20 +160,13 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getMessageInterfaceSuperType_4003Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getMessageInterface_2002Text(View view) {
+	private String getMessageType_3002Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageInterface_2002,
+						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3002,
 						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID));
+						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
 					view.getElement() != null ? view.getElement() : view),
@@ -181,7 +174,7 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5004); //$NON-NLS-1$
+							"Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -206,13 +199,20 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getMessageType_3002Text(View view) {
+	private String getMessageInterfaceSuperType_4003Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getMessageInterface_2002Text(View view) {
 		IParser parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider
 				.getParser(
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtElementTypes.MessageType_3002,
+						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2002,
 						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID));
+						de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
 					view.getElement() != null ? view.getElement() : view),
@@ -220,7 +220,7 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 		} else {
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
 					.getInstance().logError(
-							"Parser was not found for label " + 5003); //$NON-NLS-1$
+							"Parser was not found for label " + 5004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -269,7 +269,7 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 	 */
 	private boolean isOwnView(View view) {
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID
-				.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtVisualIDRegistry
+				.equals(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 						.getModelID(view));
 	}
 

@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers;
  */
 public class PatternDiagramEditHelper
 		extends
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.helpers.MumlBaseEditHelper {
 }

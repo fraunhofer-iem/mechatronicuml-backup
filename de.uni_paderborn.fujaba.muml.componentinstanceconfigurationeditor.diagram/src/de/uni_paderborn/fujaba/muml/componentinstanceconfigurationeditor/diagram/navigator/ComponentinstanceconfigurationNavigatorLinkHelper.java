@@ -60,9 +60,6 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
-		if (diagram == null || diagram.eResource() == null) {
-			return StructuredSelection.EMPTY;
-		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorItem item = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorItem(
@@ -80,11 +77,11 @@ public class ComponentinstanceconfigurationNavigatorLinkHelper implements
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
-		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem) {
+		if (false == aSelection.getFirstElement() instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem) {
 			return;
 		}
 
-		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem) aSelection
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem abstractNavigatorItem = (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem) aSelection
 				.getFirstElement();
 		View navigatorView = null;
 		if (abstractNavigatorItem instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.ComponentinstanceconfigurationNavigatorItem) {

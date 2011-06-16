@@ -19,7 +19,7 @@ public class CustomComponentInstanceComponentCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.UmlrtElementTypes.ComponentInstance_3006 == req
+		if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.ComponentInstance_3006 == req
 				.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}

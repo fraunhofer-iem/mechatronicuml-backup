@@ -10,8 +10,8 @@
          extensions="componentinstanceconfiguration_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -41,7 +41,7 @@
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/instance">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.ComponentInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"
@@ -68,7 +68,7 @@
             class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.sheet.CustomComponentinstanceconfigurationPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>

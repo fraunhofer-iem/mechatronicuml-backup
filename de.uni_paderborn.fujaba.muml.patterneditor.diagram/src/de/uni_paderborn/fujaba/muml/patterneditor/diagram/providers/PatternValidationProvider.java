@@ -40,7 +40,7 @@ public class PatternValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
@@ -58,7 +58,7 @@ public class PatternValidationProvider {
 		if (object instanceof View) {
 			return constraintsActive
 					&& de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}
 		return true;

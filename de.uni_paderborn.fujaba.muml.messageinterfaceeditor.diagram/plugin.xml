@@ -164,7 +164,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Messageinterface"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3002"/>
@@ -174,7 +174,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Messageinterface"/>
@@ -197,7 +197,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart" id="MessageInterface_2002"/>
@@ -207,14 +207,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/modelinstance">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/modelinstance">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -389,7 +389,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.UmlrtDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -438,7 +438,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.UmlrtMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>

@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.help
  */
 public class DelegationEditHelper
 		extends
-		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.MumlBaseEditHelper {
 }

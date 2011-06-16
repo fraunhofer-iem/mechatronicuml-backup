@@ -11,8 +11,8 @@
          extensions="pattern_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    </extension>
     
@@ -28,7 +28,7 @@
    </extension>
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/pattern">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"
@@ -73,7 +73,7 @@
                  type="org.eclipse.gef.EditPart">
            </input>
            <input
-                 type="de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.UmlrtAbstractNavigatorItem">
+                 type="de.uni_paderborn.fujaba.muml.patterneditor.diagram.navigator.MumlAbstractNavigatorItem">
            </input>
         </propertySection>
      </propertySections>

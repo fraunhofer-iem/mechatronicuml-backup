@@ -77,7 +77,7 @@ public class SynchronizationChannelLabelExpressionLabelParser5002 implements
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						2,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE

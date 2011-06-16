@@ -42,14 +42,14 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser componentPartLabel_5003Parser;
+	private de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5003 componentPartLabel_5003Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentPartLabel_5003Parser() {
 		if (componentPartLabel_5003Parser == null) {
-			componentPartLabel_5003Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser();
+			componentPartLabel_5003Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5003();
 		}
 		return componentPartLabel_5003Parser;
 	}
@@ -83,12 +83,12 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+			return getParser(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view));
 		}
 		return null;
@@ -100,7 +100,7 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.UmlrtElementTypes
+			if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes
 					.getElement(hint) == null) {
 				return false;
 			}

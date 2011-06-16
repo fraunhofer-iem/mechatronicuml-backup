@@ -76,7 +76,7 @@ public class TransitionLabelExpressionLabelParser6002 implements IParser {
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						4,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE

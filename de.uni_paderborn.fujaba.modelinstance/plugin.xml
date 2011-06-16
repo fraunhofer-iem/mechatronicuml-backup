@@ -15,7 +15,7 @@
       <package
             class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage"
             genModel="model/modelinstance.genmodel"
-            uri="http:///de/uni_paderborn/fujaba/umlrt/modelinstance">
+            uri="http:///de/uni_paderborn/fujaba/muml/modelinstance">
       </package>
    </extension>
 

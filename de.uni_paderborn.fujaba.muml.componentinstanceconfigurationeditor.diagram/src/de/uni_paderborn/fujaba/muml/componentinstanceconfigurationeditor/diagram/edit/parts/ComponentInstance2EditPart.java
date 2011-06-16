@@ -91,7 +91,7 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -287,7 +287,7 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.UmlrtVisualIDRegistry
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 
@@ -300,11 +300,21 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureComponentNameFigure;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureChildren;
 
 		/**
 		 * @generated
 		 */
 		public ComponentFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -320,7 +330,15 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			this.add(container0);
+			GridData constraintContainer0 = new GridData();
+			constraintContainer0.verticalAlignment = GridData.BEGINNING;
+			constraintContainer0.horizontalAlignment = GridData.FILL;
+			constraintContainer0.horizontalIndent = 0;
+			constraintContainer0.horizontalSpan = 1;
+			constraintContainer0.verticalSpan = 1;
+			constraintContainer0.grabExcessHorizontalSpace = true;
+			constraintContainer0.grabExcessVerticalSpace = false;
+			this.add(container0, constraintContainer0);
 
 			GridLayout layoutContainer0 = new GridLayout();
 			layoutContainer0.numColumns = 2;
@@ -403,6 +421,20 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			fFigureChildren = new RectangleFigure();
+			fFigureChildren.setFill(false);
+			fFigureChildren.setOutline(false);
+
+			GridData constraintFFigureChildren = new GridData();
+			constraintFFigureChildren.verticalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalIndent = 0;
+			constraintFFigureChildren.horizontalSpan = 1;
+			constraintFFigureChildren.verticalSpan = 1;
+			constraintFFigureChildren.grabExcessHorizontalSpace = true;
+			constraintFFigureChildren.grabExcessVerticalSpace = true;
+			this.add(fFigureChildren, constraintFFigureChildren);
+
 		}
 
 		/**
@@ -410,6 +442,13 @@ public class ComponentInstance2EditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureChildren() {
+			return fFigureChildren;
 		}
 
 	}

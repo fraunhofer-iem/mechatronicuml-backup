@@ -15,7 +15,7 @@ public class ElementInitializers {
 	public void init_State_2001(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -33,7 +33,7 @@ public class ElementInitializers {
 	public void init_Clock_2002(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock instance) {
 		try {
-			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.UmlrtOCLFactory
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							3,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE

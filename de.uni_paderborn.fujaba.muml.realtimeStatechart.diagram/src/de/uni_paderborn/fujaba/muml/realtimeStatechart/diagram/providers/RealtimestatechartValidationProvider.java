@@ -58,7 +58,7 @@ public class RealtimestatechartValidationProvider {
 		if (object instanceof View) {
 			return constraintsActive
 					&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}
 		return true;

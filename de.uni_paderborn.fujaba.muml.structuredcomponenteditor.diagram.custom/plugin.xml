@@ -11,8 +11,8 @@
          extensions="structuredcomponent_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtDiagramActionBarContributor">
+         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -42,7 +42,7 @@
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http:///de/uni_paderborn/fujaba/umlrt/model/component">
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"

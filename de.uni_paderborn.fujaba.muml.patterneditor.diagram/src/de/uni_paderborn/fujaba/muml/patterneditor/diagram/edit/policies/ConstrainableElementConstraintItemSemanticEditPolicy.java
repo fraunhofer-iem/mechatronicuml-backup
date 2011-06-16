@@ -15,14 +15,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
  */
 public class ConstrainableElementConstraintItemSemanticEditPolicy
 		extends
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ConstrainableElementConstraintItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.UmlrtElementTypes.ConstrainableElementConstraint_4002);
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002);
 	}
 
 	/**

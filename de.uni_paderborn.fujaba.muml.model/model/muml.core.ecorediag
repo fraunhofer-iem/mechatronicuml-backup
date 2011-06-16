@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_pUNncOT2Ed-6o-WXKAhH2A" type="EcoreTools" name="muml.ecorediag" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_pUQqwOT2Ed-6o-WXKAhH2A" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_pURR0OT2Ed-6o-WXKAhH2A" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_pUR44OT2Ed-6o-WXKAhH2A" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_pUR45OT2Ed-6o-WXKAhH2A" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core/Cardinality/One"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pUR45eT2Ed-6o-WXKAhH2A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_pUSf8OT2Ed-6o-WXKAhH2A" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core/Cardinality/ZeroToOne"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pUSf8eT2Ed-6o-WXKAhH2A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_pUSf8uT2Ed-6o-WXKAhH2A" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core/Cardinality/ZeroToMany"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pUSf8-T2Ed-6o-WXKAhH2A"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_pUSf9OT2Ed-6o-WXKAhH2A" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core/Cardinality/OneToMany"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_pUSf9eT2Ed-6o-WXKAhH2A"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pUR44eT2Ed-6o-WXKAhH2A"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pUR44uT2Ed-6o-WXKAhH2A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pUR44-T2Ed-6o-WXKAhH2A"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pUQqweT2Ed-6o-WXKAhH2A" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core/Cardinality"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pUQqwuT2Ed-6o-WXKAhH2A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_pUNnceT2Ed-6o-WXKAhH2A"/>
+  <element xmi:type="ecore:EPackage" href="muml.ecore#//uni_paderborn/fujaba/muml/model/core"/>
+</notation:Diagram>

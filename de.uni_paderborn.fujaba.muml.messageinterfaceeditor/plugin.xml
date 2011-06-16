@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http:///de/uni_paderborn/fujaba/umlrt/messageinterfaceeditor"
+            uri="http:///de/uni_paderborn/fujaba/muml/messageinterfaceeditor"
             class="messageinterfaceeditor.MessageinterfaceeditorPackage"
             genModel="model/messageinterface.genmodel"/>
    </extension>

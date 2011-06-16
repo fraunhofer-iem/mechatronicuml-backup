@@ -64,7 +64,7 @@ public class DelegationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateDelegation_4003(getContainer(),
 						getSource(), getTarget());
 	}

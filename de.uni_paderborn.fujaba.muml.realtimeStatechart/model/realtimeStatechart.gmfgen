@@ -31,7 +31,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart"/>
     <childNodes
         visualID="3001"
         editPartClassName="EEActionEditPart"
@@ -57,11 +57,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/entryEvent"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -89,11 +89,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/DoEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/DoEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/doEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/doEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/doEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/doEvent"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -121,11 +121,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/EntryOrExitEvent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/exitEvent"/>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -153,11 +153,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/invariants"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/invariants"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/invariants"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/invariants"/>
       </modelFacet>
       <labels
           visualID="5001"
@@ -201,11 +201,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/channels"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/channels"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/channels"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/channels"/>
       </modelFacet>
       <labels
           visualID="5002"
@@ -244,11 +244,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Region"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Region"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/regions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/regions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State/regions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State/regions"/>
       </modelFacet>
     </childNodes>
     <topLevelNodes
@@ -276,11 +276,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/State"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/State"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -337,11 +337,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Clock"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Clock"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -390,15 +390,15 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition/source"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/source"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition/target"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition/target"/>
       </modelFacet>
       <labels
           visualID="6001"
@@ -420,7 +420,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.2">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
         </modelFacet>
       </labels>
       <labels
@@ -703,7 +703,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.diagram.general"
-        name="Umlrt Diagram">
+        name="Muml Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.diagram.appearance"
@@ -817,7 +817,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
@@ -857,7 +857,7 @@
         className="ClockConstraintLabelExpressionLabelParser5001"
         viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/ClockConstraint"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -865,7 +865,7 @@
         className="SynchronizationChannelLabelExpressionLabelParser5002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/SynchronizationChannel"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
@@ -876,7 +876,7 @@
         className="TransitionLabelExpressionLabelParser6002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -884,7 +884,7 @@
         className="TransitionLabelExpressionLabelParser6003"
         viewExpression="//@expressionProviders/@providers.0/@expressions.5">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -892,7 +892,7 @@
         className="TransitionLabelExpressionLabelParser6004"
         viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -900,7 +900,7 @@
         className="TransitionLabelExpressionLabelParser6005"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -908,7 +908,7 @@
         className="TransitionLabelExpressionLabelParser6006"
         viewExpression="//@expressionProviders/@providers.0/@expressions.8">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -916,7 +916,7 @@
         className="TransitionLabelExpressionLabelParser6007"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -924,7 +924,7 @@
         className="TransitionLabelExpressionLabelParser6008"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -932,7 +932,7 @@
         className="TransitionLabelExpressionLabelParser6009"
         viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
@@ -940,7 +940,7 @@
         className="TransitionLabelExpressionLabelParser6010"
         viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.genmodel#//muml/model/realtimestatechart/Transition"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
   </labelParsers>
   <contextMenus

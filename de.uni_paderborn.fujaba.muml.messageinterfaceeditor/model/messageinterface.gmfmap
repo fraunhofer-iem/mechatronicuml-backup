@@ -10,7 +10,7 @@
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/msgiface/MessageInterface"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -26,10 +26,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/msgiface/MessageInterface/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/messageTypes"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/msgiface/MessageType"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
               readOnly="true">
@@ -60,13 +60,13 @@
         href="messageinterface.gmfgraph#Generalization"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/msgiface/MessageInterface/superType"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageInterface/superType"/>
   </links>
   <diagram>
     <diagramCanvas
         href="messageinterface.gmfgraph#messageinterfaceeditor"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.model/model/umlrt.ecore#//model/msgiface"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette

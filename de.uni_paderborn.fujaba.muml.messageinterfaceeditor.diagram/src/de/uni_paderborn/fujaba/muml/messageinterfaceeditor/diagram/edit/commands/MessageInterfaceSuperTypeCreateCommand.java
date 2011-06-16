@@ -52,7 +52,7 @@ public class MessageInterfaceSuperTypeCreateCommand extends EditElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateMessageInterfaceSuperType_4003(
 						getSource(), getTarget());
 	}

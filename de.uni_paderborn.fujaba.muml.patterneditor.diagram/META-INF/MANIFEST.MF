@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.patterneditor.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts,

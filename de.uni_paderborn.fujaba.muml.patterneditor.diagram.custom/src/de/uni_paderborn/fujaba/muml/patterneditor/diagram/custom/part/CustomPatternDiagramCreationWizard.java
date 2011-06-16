@@ -21,7 +21,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 		super.init(workbench, selection);
 
 		setWindowTitle(getWindowTitle());
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewPatterneditorWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -38,7 +38,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected PreferencesHint getDiagramPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.UmlrtDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	@Override

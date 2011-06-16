@@ -58,7 +58,7 @@ public class StructuredcomponentValidationProvider {
 		if (object instanceof View) {
 			return constraintsActive
 					&& de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}
 		return true;

@@ -112,7 +112,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.UmlrtSheetLabelProvider">
+            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -166,7 +166,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,3001,3002,3003,3004,3005,3006"/>
@@ -176,7 +176,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
@@ -199,7 +199,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart" id="FujabaRealtimeStatechart_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2001"/>
@@ -210,14 +210,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -355,7 +355,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtUriEditorInputTester">
+           class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -382,7 +382,7 @@
             name="%navigatorContentName" 
             priority="normal" 
             contentProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorLabelProvider"
+            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorLabelProvider"
             icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -401,7 +401,7 @@
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorSorter">
+               class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
@@ -418,7 +418,7 @@
             name="%domainNavigatorContentName" 
             priority="normal" 
             contentProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.RealtimestatechartDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorLabelProvider"
+            labelProvider="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorLabelProvider"
             icon="icons/obj16/RealtimestatechartDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -427,11 +427,11 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtDomainNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
@@ -449,7 +449,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorLinkHelper">
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -465,7 +465,7 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
          id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.updateDiagram"
          name="%update.diagram.name"/>
@@ -514,7 +514,7 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.UmlrtMarkerNavigationProvider">
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlMarkerNavigationProvider">
          <MarkerType name="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>

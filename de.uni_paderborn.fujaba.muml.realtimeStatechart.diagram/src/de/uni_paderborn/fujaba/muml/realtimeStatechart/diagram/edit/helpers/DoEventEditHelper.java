@@ -5,5 +5,5 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers;
  */
 public class DoEventEditHelper
 		extends
-		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.UmlrtBaseEditHelper {
+		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.MumlBaseEditHelper {
 }

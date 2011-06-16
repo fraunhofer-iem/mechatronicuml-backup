@@ -1,10 +1,10 @@
 #Mon Jun 06 15:47:12 CEST 2011
 eclipse.preferences.version=1
-encoding//model/umlrt.behavior.ecorediag=UTF-8
-encoding//model/umlrt.component.ecorediag=UTF-8
-encoding//model/umlrt.constraint.ecorediag=UTF-8
-encoding//model/umlrt.core.ecorediag=UTF-8
-encoding//model/umlrt.instance.ecorediag=UTF-8
-encoding//model/umlrt.msgiface.ecorediag=UTF-8
-encoding//model/umlrt.realtimestatechart.ecorediag=UTF-8
-encoding//model/umlrt.realtimestatechart.reconf.ecorediag=UTF-8
+encoding//model/muml.behavior.ecorediag=UTF-8
+encoding//model/muml.component.ecorediag=UTF-8
+encoding//model/muml.constraint.ecorediag=UTF-8
+encoding//model/muml.core.ecorediag=UTF-8
+encoding//model/muml.instance.ecorediag=UTF-8
+encoding//model/muml.msgiface.ecorediag=UTF-8
+encoding//model/muml.realtimestatechart.ecorediag=UTF-8
+encoding//model/muml.realtimestatechart.reconf.ecorediag=UTF-8

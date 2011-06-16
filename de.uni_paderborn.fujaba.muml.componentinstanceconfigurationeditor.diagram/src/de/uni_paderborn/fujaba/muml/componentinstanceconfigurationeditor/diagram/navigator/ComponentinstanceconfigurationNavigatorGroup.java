@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class ComponentinstanceconfigurationNavigatorGroup
 		extends
-		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.UmlrtAbstractNavigatorItem {
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.navigator.MumlAbstractNavigatorItem {
 
 	/**
 	 * @generated

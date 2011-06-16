@@ -70,7 +70,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.UmlrtPaletteFactory()
+		new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlPaletteFactory()
 				.fillPalette(root);
 		return root;
 	}

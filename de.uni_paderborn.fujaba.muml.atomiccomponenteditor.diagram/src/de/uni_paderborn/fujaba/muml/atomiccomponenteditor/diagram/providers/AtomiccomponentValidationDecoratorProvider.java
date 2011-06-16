@@ -102,7 +102,7 @@ public class AtomiccomponentValidationDecoratorProvider extends
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
 				&& de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.MODEL_ID
-						.equals(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtVisualIDRegistry
+						.equals(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 								.getModelID(view));
 	}
 

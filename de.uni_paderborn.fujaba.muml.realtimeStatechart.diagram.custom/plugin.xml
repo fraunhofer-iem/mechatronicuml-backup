@@ -15,12 +15,12 @@
          point="org.eclipse.ui.editors">
       <editor
             class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
-            contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtDiagramActionBarContributor"
+            contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramActionBarContributor"
             default="true"
             extensions="realtimestatechart_diagram"
             icon="icons/StatechartFile.gif"
             id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"
-            matchingStrategy="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtMatchingStrategy"
+            matchingStrategy="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlMatchingStrategy"
             name="%editorName">
       </editor>
    </extension>

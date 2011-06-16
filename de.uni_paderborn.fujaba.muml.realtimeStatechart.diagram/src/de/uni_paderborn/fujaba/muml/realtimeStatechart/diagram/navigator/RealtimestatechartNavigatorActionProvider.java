@@ -111,8 +111,8 @@ public class RealtimestatechartNavigatorActionProvider extends
 			myDiagram = null;
 			if (selection.size() == 1) {
 				Object selectedElement = selection.getFirstElement();
-				if (selectedElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem) {
-					selectedElement = ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.UmlrtNavigatorItem) selectedElement)
+				if (selectedElement instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem) {
+					selectedElement = ((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem) selectedElement)
 							.getView();
 				} else if (selectedElement instanceof IAdaptable) {
 					selectedElement = ((IAdaptable) selectedElement)
@@ -121,7 +121,7 @@ public class RealtimestatechartNavigatorActionProvider extends
 				if (selectedElement instanceof Diagram) {
 					Diagram diagram = (Diagram) selectedElement;
 					if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID
-							.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.UmlrtVisualIDRegistry
+							.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 									.getModelID(diagram))) {
 						myDiagram = diagram;
 					}

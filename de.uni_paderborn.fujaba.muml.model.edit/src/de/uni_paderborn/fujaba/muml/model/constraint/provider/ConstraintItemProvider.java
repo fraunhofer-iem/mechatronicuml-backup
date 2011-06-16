@@ -7,7 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.constraint.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.UmlrtEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -196,7 +196,7 @@ public class ConstraintItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return UmlrtEditPlugin.INSTANCE;
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }
