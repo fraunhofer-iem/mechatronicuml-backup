@@ -83,9 +83,15 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/component?AtomicComponent", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.AtomicComponent_2001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?Port", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.Port_3001); //$NON-NLS-1$
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?DiscretePort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.DiscretePort_3002); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?ContinuousPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.ContinuousPort_3003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http:///de/uni_paderborn/fujaba/muml/model/component?HybridPort", de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.HybridPort_3004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -146,8 +152,12 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 			return getModelElementCategory_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getAtomicComponent_2001Text(view);
-		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
-			return getPort_3001Text(view);
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+			return getDiscretePort_3002Text(view);
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+			return getContinuousPort_3003Text(view);
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+			return getHybridPort_3004Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -194,8 +204,8 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getPort_3001Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.component.Port domainModelElement = (de.uni_paderborn.fujaba.muml.model.component.Port) view
+	private String getDiscretePort_3002Text(View view) {
+		de.uni_paderborn.fujaba.muml.model.component.DiscretePort domainModelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
@@ -203,7 +213,41 @@ public class AtomiccomponentNavigatorLabelProvider extends LabelProvider
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 					.getInstance()
 					.logError(
-							"No domain element for view with visualID = " + 3001); //$NON-NLS-1$
+							"No domain element for view with visualID = " + 3002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getContinuousPort_3003Text(View view) {
+		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort domainModelElement = (de.uni_paderborn.fujaba.muml.model.component.ContinuousPort) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 3003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getHybridPort_3004Text(View view) {
+		de.uni_paderborn.fujaba.muml.model.component.HybridPort domainModelElement = (de.uni_paderborn.fujaba.muml.model.component.HybridPort) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 3004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

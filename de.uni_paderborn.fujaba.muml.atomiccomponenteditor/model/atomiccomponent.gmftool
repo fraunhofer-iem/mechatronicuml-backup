@@ -19,11 +19,29 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Port"
-          description="Create new Port">
+          title="DiscretePort"
+          description="Create new DiscretePort">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/Port.gif"
+            path="icons/DiscretePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ContinuousPort"
+          description="Create new ContinuousPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ContinuousPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybridPort"
+          description="Create new HybridPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

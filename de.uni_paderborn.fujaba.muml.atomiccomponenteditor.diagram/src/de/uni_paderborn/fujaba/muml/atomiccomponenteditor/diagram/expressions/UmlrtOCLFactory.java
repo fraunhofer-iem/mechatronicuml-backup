@@ -30,7 +30,7 @@ public class UmlrtOCLFactory {
 	 * @generated
 	 */
 	protected UmlrtOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.UmlrtAbstractExpression[2];
+		this.expressions = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.UmlrtAbstractExpression[6];
 	}
 
 	/**
@@ -50,6 +50,10 @@ public class UmlrtOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] { "1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

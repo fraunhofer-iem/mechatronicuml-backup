@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortCreateCommand extends EditElementCommand {
+public class ContinuousPortCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public PortCreateCommand(CreateElementRequest req) {
+	public ContinuousPortCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,14 +50,14 @@ public class PortCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.Port newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
-				.createPort();
+		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+				.createContinuousPort();
 
 		de.uni_paderborn.fujaba.muml.model.component.Component owner = (de.uni_paderborn.fujaba.muml.model.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.ElementInitializers
-				.getInstance().init_Port_3001(newElement);
+				.getInstance().init_ContinuousPort_3003(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -69,7 +69,7 @@ public class PortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.Port newElement,
+			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

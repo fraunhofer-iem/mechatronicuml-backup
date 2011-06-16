@@ -93,7 +93,9 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -138,12 +140,30 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NORTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.NORTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -157,10 +177,24 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}
@@ -300,11 +334,21 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureComponentNameFigure;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureChildren;
 
 		/**
 		 * @generated
 		 */
 		public ComponentFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -320,7 +364,15 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			this.add(container0);
+			GridData constraintContainer0 = new GridData();
+			constraintContainer0.verticalAlignment = GridData.BEGINNING;
+			constraintContainer0.horizontalAlignment = GridData.FILL;
+			constraintContainer0.horizontalIndent = 0;
+			constraintContainer0.horizontalSpan = 1;
+			constraintContainer0.verticalSpan = 1;
+			constraintContainer0.grabExcessHorizontalSpace = true;
+			constraintContainer0.grabExcessVerticalSpace = false;
+			this.add(container0, constraintContainer0);
 
 			GridLayout layoutContainer0 = new GridLayout();
 			layoutContainer0.numColumns = 2;
@@ -403,6 +455,20 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			fFigureChildren = new RectangleFigure();
+			fFigureChildren.setFill(false);
+			fFigureChildren.setOutline(false);
+
+			GridData constraintFFigureChildren = new GridData();
+			constraintFFigureChildren.verticalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
+			constraintFFigureChildren.horizontalIndent = 0;
+			constraintFFigureChildren.horizontalSpan = 1;
+			constraintFFigureChildren.verticalSpan = 1;
+			constraintFFigureChildren.grabExcessHorizontalSpace = true;
+			constraintFFigureChildren.grabExcessVerticalSpace = true;
+			this.add(fFigureChildren, constraintFFigureChildren);
+
 		}
 
 		/**
@@ -410,6 +476,13 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureChildren() {
+			return fFigureChildren;
 		}
 
 	}

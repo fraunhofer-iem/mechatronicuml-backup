@@ -258,12 +258,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Port2CreationTool_title;
+	public static String DiscretePort2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Port2CreationTool_desc;
+	public static String DiscretePort2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ContinuousPort3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ContinuousPort3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String HybridPort4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String HybridPort4CreationTool_desc;
 
 	/**
 	 * @generated

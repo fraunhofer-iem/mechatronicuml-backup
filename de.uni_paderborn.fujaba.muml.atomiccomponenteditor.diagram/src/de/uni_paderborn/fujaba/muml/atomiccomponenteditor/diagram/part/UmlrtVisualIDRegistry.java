@@ -126,8 +126,16 @@ public class UmlrtVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-					.getPort().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID;
+					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.getHybridPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -166,7 +174,13 @@ public class UmlrtVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

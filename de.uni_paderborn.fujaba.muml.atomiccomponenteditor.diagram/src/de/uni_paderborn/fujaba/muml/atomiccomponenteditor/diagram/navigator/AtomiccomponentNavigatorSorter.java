@@ -10,7 +10,7 @@ public class AtomiccomponentNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 3003;
+	private static final int GROUP_CATEGORY = 3006;
 
 	/**
 	 * @generated

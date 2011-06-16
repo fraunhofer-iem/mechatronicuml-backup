@@ -11,16 +11,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortItemSemanticEditPolicy
+public class HybridPortItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.UmlrtBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public PortItemSemanticEditPolicy() {
+	public HybridPortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.Port_3001);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtElementTypes.HybridPort_3004);
 	}
 
 	/**

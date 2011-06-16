@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers;
 /**
  * @generated
  */
-public class PortEditHelper
+public class HybridPortEditHelper
 		extends
 		de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.UmlrtBaseEditHelper {
 }

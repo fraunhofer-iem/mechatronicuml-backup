@@ -180,7 +180,14 @@
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
-
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.sheet.AtomiccomponentPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.navigator.AtomiccomponentAbstractNavigatorItem"/>
+         </propertySection>
       </propertySections>
    </extension>
 
@@ -189,7 +196,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.UmlrtViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Atomiccomponent"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3002,3003,3004"/>
       </viewProvider>
    </extension>
 
@@ -201,7 +208,7 @@
             <method name="getType()" value="Atomiccomponent"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001"/>
+            <method name="getType()" value="2001,3002,3003,3004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
@@ -264,12 +271,32 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.Port_3001"
-               name="%metatype.name.Port_3001"
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3002"
+               name="%metatype.name.DiscretePort_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Port"
-               edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.PortEditHelper">
-            <param name="semanticHint" value="3001"/>
+               eclass="DiscretePort"
+               edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.DiscretePortEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3003"
+               name="%metatype.name.ContinuousPort_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ContinuousPort"
+               edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.ContinuousPortEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"
+               name="%metatype.name.HybridPort_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HybridPort"
+               edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.HybridPortEditHelper">
+            <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -286,7 +313,9 @@
       <binding context="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2001"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.Port_3001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3002"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3003"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -454,6 +483,48 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/AtomiccomponentDiagramFile.gif"
+         extensions="atomiccomponent_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtDiagramActionBarContributor">
+      </editor>
+   </extension>
+
+<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.InitDiagram"
+            nameFilter="*.fujaba"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.UmlrtInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
 
 
 

@@ -3,16 +3,12 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.p
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.PortEditPart;
+import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart;
 import de.uni_paderborn.fujaba.muml.common.edit.parts.PortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 
@@ -23,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
  * @author bingo
  * 
  */
-public class CustomPortEditPart extends PortEditPart {
+public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
@@ -36,9 +32,8 @@ public class CustomPortEditPart extends PortEditPart {
 	 * @param view
 	 *            The graphical model.
 	 */
-	public CustomPortEditPart(View view) {
+	public CustomDiscretePortEditPart(View view) {
 		super(view);
-
 	}
 
 	/**
@@ -125,18 +120,6 @@ public class CustomPortEditPart extends PortEditPart {
 		}
 		getDelegation().deactivate();
 		super.deactivate();
-	}
-
-	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new CustomPortGraphicalNodeEditPolicy());
-
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CustomPortItemSemanticEditPolicy());
-
 	}
 
 }
