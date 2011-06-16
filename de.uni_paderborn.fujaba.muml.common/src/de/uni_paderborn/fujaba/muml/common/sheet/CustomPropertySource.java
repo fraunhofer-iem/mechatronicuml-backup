@@ -1,12 +1,8 @@
 package de.uni_paderborn.fujaba.muml.common.sheet;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -16,8 +12,8 @@ import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
-import org.storydriven.modeling.edit.ui.celleditor.ParametersExtendedDialogCellEditor;
 
+import de.uni_paderborn.fujaba.muml.common.celleditor.ParametersExtendedDialogCellEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 public class CustomPropertySource extends PropertySource {
