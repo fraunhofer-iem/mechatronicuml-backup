@@ -166,17 +166,15 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			portInstance.setPortType(port);
 			portInstance.setName(componentInstance.getName() + port.getName());
 			portInstance.setComponentInstance(componentInstance);
-			portInstance.getIncomingConnectorInstances().addAll(
-					createIncomingConnectorInstances(port, componentInstance));
-			portInstance.getOutgoingConnectorInstances().addAll(
-					createOutgoingConnectorInstances(port, componentInstance));
+			createIncomingConnectorInstances(port, componentInstance, portInstance);
+			createOutgoingConnectorInstances(port, componentInstance, portInstance);
 
 		}
 		return newInstances;
 	}
 
 	private List<ConnectorInstance> createIncomingConnectorInstances(Port port,
-			ComponentInstance componentInstance) {
+			ComponentInstance componentInstance, PortInstance toInstance) {
 		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
 		for (ConnectorType connectorType : port.getIncomingConnectors()) {
 			Port fromPort = connectorType.getFromPort();
@@ -187,9 +185,10 @@ public class SetComponentTypeCommand extends AbstractCommand {
 					ConnectorInstance newInstance = connectorType
 							.createInstance();
 					newInstance.setSource(fromInstance);
-					// target is set, when this ConnectorInstance is added to
-					// its opposite feature "incomingConnectors".
+					newInstance.setTarget(toInstance);
+
 					newInstance.setParentComponentInstance(componentInstance);
+					connectorInstances.add(newInstance);
 				}
 			}
 		}
@@ -197,20 +196,20 @@ public class SetComponentTypeCommand extends AbstractCommand {
 	}
 
 	private List<ConnectorInstance> createOutgoingConnectorInstances(Port port,
-			ComponentInstance componentInstance) {
+			ComponentInstance componentInstance, PortInstance fromInstance) {
 		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
 		for (ConnectorType connectorType : port.getOutgoingConnectors()) {
 			Port toPort = connectorType.getToPort();
 			for (PortInstance toInstance : componentInstance.getPortInstances()) {
 				if (toInstance.getPortType() == toPort) {
-					ConnectorInstance connectorInstance = connectorType
+					ConnectorInstance newInstance = connectorType
 							.createInstance();
-					// source is set, when this ConnectorInstance is added to
-					// its opposite feature "incomingConnectors".
-					connectorInstance.setTarget(toInstance);
-					connectorInstance
+					newInstance.setSource(fromInstance);
+					newInstance.setTarget(toInstance);
+					newInstance
 							.setParentComponentInstance(componentInstance);
-					connectorInstances.add(connectorInstance);
+
+					connectorInstances.add(newInstance);
 				}
 			}
 		}
