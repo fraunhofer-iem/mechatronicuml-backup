@@ -5,9 +5,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
@@ -25,32 +22,38 @@ public class CustomStructuredcomponentPropertySection extends
 		if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
 		}
-		AdapterFactory af = getAdapterFactory(object);
+		Object transformed = super.transformSelection(object);
+
+		boolean readOnlyOverride = false;
+		if (object instanceof EditPart) {
+			readOnlyOverride = isReadOnlyPart((EditPart) object);
+		}
+
+		AdapterFactory af = getAdapterFactory(transformed);
 		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-					IItemPropertySource.class);
+			IItemPropertySource ips = (IItemPropertySource) af.adapt(
+					transformed, IItemPropertySource.class);
 			if (ips != null) {
-				return new CustomPropertySource(object, ips);
+				return new CustomPropertySource(transformed, ips,
+						readOnlyOverride);
 			}
 		}
-		return super.getPropertySource(object);
+		return super.getPropertySource(transformed);
+	}
+
+	private boolean isReadOnlyPart(EditPart part) {
+		if (part instanceof CustomPortEditPart) {
+			EObject parentElement = getParentElement((CustomPortEditPart) part);
+			if (parentElement instanceof ComponentPart) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		if (selection instanceof StructuredSelection) {
-			StructuredSelection sel = (StructuredSelection) selection;
-			if (sel.size() == 1) {
-				Object ep = sel.getFirstElement();
-				if (ep instanceof CustomPortEditPart) {
-					EObject parentElement = getParentElement((CustomPortEditPart) ep);
-					if (parentElement instanceof ComponentPart) {
-						selection = StructuredSelection.EMPTY;
-					}
-				}
-			}
-		}
-		super.setInput(part, selection);
+	protected Object transformSelection(Object selected) {
+		return selected;
 	}
 
 	/**

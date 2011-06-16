@@ -16,18 +16,27 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 public class CustomPropertySource extends PropertySource {
 
+	private final boolean readOnlyOverride;
+
 	public CustomPropertySource(Object object,
 			IItemPropertySource itemPropertySource) {
+		this(object, itemPropertySource, false);
+	}
+	public CustomPropertySource(Object object,
+			IItemPropertySource itemPropertySource, boolean readOnlyOverride) {
 		super(object, itemPropertySource);
-		
+		this.readOnlyOverride = readOnlyOverride;
 	}
 
 	protected IPropertyDescriptor createPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor) {
-
+		
 		return new PropertyDescriptor(this.object, itemPropertyDescriptor) {
 
 			public CellEditor createPropertyEditor(Composite composite) {
+				if (readOnlyOverride) {
+					return null;
+				}
 
 				Object feature = itemPropertyDescriptor
 						.getFeature(itemPropertyDescriptor);
