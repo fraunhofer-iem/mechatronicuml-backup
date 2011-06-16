@@ -9,6 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.descriptor.ComponentPartCardinalityPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.component.descriptor.PortCardinalityPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -166,19 +168,33 @@ public class DiscretePortItemProvider
 	 * @generated
 	 */
 	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__CARDINALITY,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Port_cardinality_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
+//				 ComponentPackage.Literals.PORT__CARDINALITY,
+//				 false,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+//				 null));
+		
+		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Cardinality Lower Bound", "The lower bound of the ComponentPart's Cardinality",
+				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+				true, null, null, null));
+
+		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				"Cardinality Upper Bound", "The upper bound of the ComponentPart's Cardinality",
+				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+				true, null, null, null));
 	}
 
 	/**
