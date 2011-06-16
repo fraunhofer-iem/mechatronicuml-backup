@@ -169,7 +169,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 */
 	protected void notifyNavigationAttributeChange(Notification notification) {
 		if (containerObject.eNotificationRequired()) {
-			boolean isManyFeature = derivedFeature.getUpperBound() > 1;
+			boolean isManyFeature = derivedFeature.getUpperBound() > 1 || derivedFeature.getUpperBound() == -1;
 			int eventType = notification.getEventType();
 			if (notification.getEventType() == Notification.SET
 					&& isManyFeature) {
