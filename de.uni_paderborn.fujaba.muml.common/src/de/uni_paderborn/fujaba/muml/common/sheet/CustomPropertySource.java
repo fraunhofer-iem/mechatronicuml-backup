@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.muml.common.sheet;
 
+import java.util.Arrays;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
@@ -13,6 +17,7 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.celleditor.ParametersExtendedDialogCellEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
@@ -55,11 +60,35 @@ public class CustomPropertySource extends PropertySource {
 
 					} else if (instanceClass.isAssignableFrom(EParameter.class)) {
 						return new ParametersExtendedDialogCellEditor(parent,
-								getLabelProvider(), (EObject) object, structuralFeature);
+								getLabelProvider(), (EObject) object,
+								structuralFeature, getTypeClassifiers());
+
 					}
 				}
 				return super.createPropertyEditor(parent);
 			}
+
 		};
+	}
+
+	private RootNode getRootNodeElement() {
+		List<EObject> contents = ((EObject) object).eResource().getContents();
+		if (!contents.isEmpty() && contents.get(0) instanceof RootNode) {
+			return (RootNode) contents.get(0);
+		}
+		return null;
+	}
+
+	private List<EClassifier> getTypeClassifiers() {
+		RootNode rootNode = getRootNodeElement();
+		if (rootNode != null) {
+			// We must convert this list into List<EClassifier>
+			List<EDataType> ecoreDataTypes = rootNode.getEcoreDataTypes();
+			
+			EDataType[] array = ecoreDataTypes.toArray(
+					new EDataType[] {});
+			return Arrays.asList((EClassifier[]) array);
+		}
+		return null;
 	}
 }
