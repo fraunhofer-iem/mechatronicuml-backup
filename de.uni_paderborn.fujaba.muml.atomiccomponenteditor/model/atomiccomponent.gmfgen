@@ -242,13 +242,83 @@
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
+    <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
+        visualID="3005"
+        editPartClassName="HardwarePortEditPart"
+        itemSemanticEditPolicyClassName="HardwarePortItemSemanticEditPolicy"
+        notationViewFactoryClassName="HardwarePortViewFactory"
+        canonicalEditPolicyClassName="HardwarePortCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HardwarePortGraphicalNodeEditPolicy"
+        createCommandClassName="HardwarePortCreateCommand"
+        containers="//@diagram/@topLevelNodes.0"
+        preferredSideName="NORTH">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="HardwarePortEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="PortFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PortFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.ScalablePolygonShape fFigureInPolygon; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.ScalablePolygonShape fFigureOutPolygon; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.ScalablePolygonShape fFigureInOutPolygon; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInnerRectContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureOutlineRectangle; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureShadowRectangle; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureHardwareTypeLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInPolygonContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureOutPolygonContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInOutPolygonContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PortFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure aux10 = new org.eclipse.draw2d.RectangleFigure();&#xA;aux10.setFill(false);&#xA;aux10.setOutline(false);&#xA;aux10.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(aux10);&#xA;aux10.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureShadowRectangle = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;aux10.add(fFigureShadowRectangle);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureInnerRectContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInnerRectContainer.setFill(false);&#xA;fFigureInnerRectContainer.setOutline(false);&#xA;fFigureInnerRectContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#xA;this.add(fFigureInnerRectContainer);&#xA;fFigureInnerRectContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureOutlineRectangle = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureInnerRectContainer.add(fFigureOutlineRectangle);&#xA;&#xA;&#xA;&#xA;fFigureInPolygonContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInPolygonContainer.setFill(false);&#xA;fFigureInPolygonContainer.setOutline(false);&#xA;fFigureInPolygonContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;fFigureInnerRectContainer.add(fFigureInPolygonContainer);&#xA;fFigureInPolygonContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureInPolygon = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;fFigureInPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigureInPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;fFigureInPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;fFigureInPolygon.setFill(true);&#xA;fFigureInPolygon.setOutline(false);&#xA;&#x9;fFigureInPolygon.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;fFigureInPolygonContainer.add(fFigureInPolygon);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureOutPolygonContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureOutPolygonContainer.setFill(false);&#xA;fFigureOutPolygonContainer.setOutline(false);&#xA;fFigureOutPolygonContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;fFigureInnerRectContainer.add(fFigureOutPolygonContainer);&#xA;fFigureOutPolygonContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureOutPolygon = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;fFigureOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigureOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;fFigureOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(2)&#xA;));&#xA;fFigureOutPolygon.setFill(true);&#xA;fFigureOutPolygon.setOutline(false);&#xA;&#x9;fFigureOutPolygon.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;fFigureOutPolygonContainer.add(fFigureOutPolygon);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureInOutPolygonContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureInOutPolygonContainer.setFill(false);&#xA;fFigureInOutPolygonContainer.setOutline(false);&#xA;fFigureInOutPolygonContainer.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;&#xA;fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);&#xA;fFigureInOutPolygonContainer.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;fFigureInOutPolygon = new org.eclipse.draw2d.ScalablePolygonShape();&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(3)&#xA;));&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(6)&#xA;, getMapMode().DPtoLP(6)&#xA;));&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;fFigureInOutPolygon.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(11)&#xA;));&#xA;fFigureInOutPolygon.setFill(true);&#xA;fFigureInOutPolygon.setOutline(false);&#xA;&#x9;fFigureInOutPolygon.setBackgroundColor(org.eclipse.draw2d.ColorConstants.gray);&#xA;&#xA;fFigureInOutPolygonContainer.add(fFigureInOutPolygon);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureHardwareTypeLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureHardwareTypeLabel.setText(&quot;&quot;);&#xA;&#xA;fFigureHardwareTypeLabel.setFont(FFIGUREHARDWARETYPELABEL_FONT);&#xA;&#xA;&#xA;&#xA;fFigureInnerRectContainer.add(fFigureHardwareTypeLabel);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.ScalablePolygonShape getFigureInPolygon() {&#xA;&#x9;&#x9;return fFigureInPolygon;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.ScalablePolygonShape getFigureOutPolygon() {&#xA;&#x9;&#x9;return fFigureOutPolygon;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.ScalablePolygonShape getFigureInOutPolygon() {&#xA;&#x9;&#x9;return fFigureInOutPolygon;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInnerRectContainer() {&#xA;&#x9;&#x9;return fFigureInnerRectContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureOutlineRectangle() {&#xA;&#x9;&#x9;return fFigureOutlineRectangle;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureShadowRectangle() {&#xA;&#x9;&#x9;return fFigureShadowRectangle;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureHardwareTypeLabel() {&#xA;&#x9;&#x9;return fFigureHardwareTypeLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInPolygonContainer() {&#xA;&#x9;&#x9;return fFigureInPolygonContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureOutPolygonContainer() {&#xA;&#x9;&#x9;return fFigureOutPolygonContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInOutPolygonContainer() {&#xA;&#x9;&#x9;return fFigureInOutPolygonContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREHARDWARETYPELABEL_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 7, org.eclipse.swt.SWT.NORMAL);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="24"
+            height="24"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HardwarePort"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Component/ports"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/Port/cardinality"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.6">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.7">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+    </childNodes>
     <topLevelNodes
         visualID="2001"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
         notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
         createCommandClassName="AtomicComponentCreateCommand">
       <diagramRunTimeClass
@@ -298,13 +368,19 @@
     </topLevelNodes>
     <palette>
       <groups
-          title="componenteditor">
+          title="Components"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="AtomicComponent"
             description="Create new AtomicComponent"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif"
+            default="true"
             genNodes="//@diagram/@topLevelNodes.0"/>
+      </groups>
+      <groups
+          title="Ports"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="DiscretePort"
@@ -323,6 +399,12 @@
             description="Create new HybridPort"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
             genNodes="//@diagram/@childNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="HardwarePort"
+            description="Create new HardwarePort"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HardwarePort.gif"
+            genNodes="//@diagram/@childNodes.3"/>
       </groups>
     </palette>
     <preferencePages
@@ -386,6 +468,9 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.2"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.3"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
   </navigator>
@@ -416,6 +501,10 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
       <expressions
           body="1"/>
       <expressions

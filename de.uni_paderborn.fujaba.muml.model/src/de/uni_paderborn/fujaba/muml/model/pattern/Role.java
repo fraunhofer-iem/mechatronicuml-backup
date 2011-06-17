@@ -6,12 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.storydriven.modeling.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;

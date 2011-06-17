@@ -18,4 +18,7 @@
   <childNodeTraces
       visualID="3004"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'HybridPort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')"/>
+  <childNodeTraces
+      visualID="3005"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'HardwarePort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/component' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')"/>
 </trace:TraceModel>

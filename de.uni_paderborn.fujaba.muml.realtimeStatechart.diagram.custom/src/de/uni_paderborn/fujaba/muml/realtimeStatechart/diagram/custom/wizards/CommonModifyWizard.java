@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.wizards;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
 
 import de.uni_paderborn.fujaba.muml.common.wizard.AbstractWizard;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;

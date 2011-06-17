@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -166,9 +166,9 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage {
 
 				messageInterface = ((Role) statechart.getBehavioralElement())
 						.getSenderMessageInterface();
-			} else if (statechart.getBehavioralElement() instanceof DiscretePortSpecification) {
+			} else if (statechart.getBehavioralElement() instanceof DiscretePort) {
 
-				messageInterface = ((DiscretePortSpecification) statechart
+				messageInterface = ((DiscretePort) statechart
 						.getBehavioralElement()).getSenderMessageInterface();
 			}
 
@@ -237,9 +237,9 @@ public class ModifyRaisedEventPage1 extends CommonModifyPage {
 
 			messageInterface = ((Role) statechart.getBehavioralElement())
 					.getSenderMessageInterface();
-		} else if (statechart.getBehavioralElement() instanceof DiscretePortSpecification) {
+		} else if (statechart.getBehavioralElement() instanceof DiscretePort) {
 
-			messageInterface = ((DiscretePortSpecification) statechart
+			messageInterface = ((DiscretePort) statechart
 					.getBehavioralElement()).getSenderMessageInterface();
 		}
 

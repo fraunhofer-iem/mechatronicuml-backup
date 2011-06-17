@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Atomiccomponent"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3004,3002,3003"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3004,3002,3003,3005"/>
       </viewProvider>
    </extension>
 
@@ -201,7 +201,7 @@
             <method name="getType()" value="Atomiccomponent"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3004,3002,3003"/>
+            <method name="getType()" value="2001,3004,3002,3003,3005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value=""/>
@@ -292,6 +292,16 @@
             <param name="semanticHint" value="3003"/>
          </metamodelType>
       </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HardwarePort_3005"
+               name="%metatype.name.HardwarePort_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HardwarePort"
+               edithelper="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.helpers.HardwarePortEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -309,6 +319,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3003"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HardwarePort_3005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

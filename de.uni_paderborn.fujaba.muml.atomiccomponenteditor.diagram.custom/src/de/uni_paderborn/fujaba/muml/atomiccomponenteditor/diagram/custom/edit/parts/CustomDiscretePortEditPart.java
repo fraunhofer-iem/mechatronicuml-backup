@@ -2,19 +2,15 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.p
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gef.EditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.common.edit.parts.PortBehavior;
+import de.uni_paderborn.fujaba.muml.common.edit.parts.DiscretePortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 
 /**
- * A customized PortEditPart. It is responsible for ports around
- * StructuredComponents and ComponentParts.
+ * A customized PortEditPart for discrete ports.
  * 
  * @author bingo
  * 
@@ -24,7 +20,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
 	 */
-	private PortBehavior delegation;
+	private DiscretePortBehavior behavior;
 
 	/**
 	 * Constructs this EditPart.
@@ -43,7 +39,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	protected IFigure createNodeShape() {
 		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
 		primaryShape = portFigure;
-		getDelegation().setPortFigure(portFigure);
+		getBehavior().setPortFigure(portFigure);
 		return primaryShape;
 	}
 
@@ -54,7 +50,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 */
 	@Override
 	protected NodeFigure createNodePlate() {
-		return getDelegation().createNodePlate();
+		return getBehavior().createNodePlate();
 	}
 
 	/**
@@ -63,11 +59,11 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 * 
 	 * @return The PortBehavior object.
 	 */
-	private PortBehavior getDelegation() {
-		if (delegation == null) {
-			delegation = new PortBehavior(this);
+	private DiscretePortBehavior getBehavior() {
+		if (behavior == null) {
+			behavior = new DiscretePortBehavior(this);
 		}
-		return delegation;
+		return behavior;
 	}
 
 	/**
@@ -76,7 +72,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		getDelegation().handleNotificationEvent(notification);
+		getBehavior().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
 	}
 
@@ -85,20 +81,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 */
 	@Override
 	public void activate() {
-		// TODO: Sometimes this method is called and getParent() is an instance of ComponentPart!
-		getDelegation().activate();
-
-		EditPart parentEditPart = getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().addPortContainerLayoutListener(portContainerFigure);
-		}
-
+		getBehavior().activate();
 		super.activate();
 	}
 
@@ -107,18 +90,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 */
 	@Override
 	public void deactivate() {
-		EditPart parentEditPart = getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			getDelegation().removePortContainerLayoutListener(
-					portContainerFigure);
-		}
-		getDelegation().deactivate();
+		getBehavior().deactivate();
 		super.deactivate();
 	}
 

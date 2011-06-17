@@ -17,8 +17,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
-import de.uni_paderborn.fujaba.muml.model.component.PortKind;
-
 /**
  * Copied code from generated class
  * structuredcomponenteditor.diagram.edit.parts.PortEditPart
@@ -30,13 +28,17 @@ public class CustomPortFigure extends RectangleFigure {
 
 	/**
 	 * The visualization of this PortFigure.
-	 * 
-	 * @author bingo
-	 * 
 	 */
 	public enum PortType {
 		NONE, IN_PORT, OUT_PORT, INOUT_PORT
 	};
+
+	/**
+	 * The kind of the Port visualization.
+	 */
+	public enum PortKind {
+		DISCRETE, CONTINUOUS, HYBRID, HARDWARE
+	}
 
 	private boolean multiPort;
 

@@ -137,6 +137,10 @@ public class MumlVisualIDRegistry {
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
 			}
+			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.getHardwarePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -181,6 +185,9 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -1,229 +1,104 @@
 package de.uni_paderborn.fujaba.muml.common.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LayoutListener;
-import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
-import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
-import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.muml.model.component.PortKind;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
-/**
- * This class contains all the behavior for port edit parts.
- * 
- * @author bingo
- * 
- */
-public abstract class AbstractPortBehavior {
-	/**
-	 * The port's EditPart.
-	 */
-	protected AbstractBorderItemEditPart editPart;
+public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 
 	/**
-	 * The port's figure.
+	 * The model object. It will be set, while the EditPart is active (between
+	 * calls to activate() and deactivate()).
 	 */
-	private CustomPortFigure portFigure;
+	private Port port;
 
-	/**
-	 * The offset that the port lies within it's container.
-	 */
-	private static final Dimension offset = new Dimension(12, 12);
-
-	/**
-	 * The LayoutListener for layouting the port's container.
-	 */
-	private LayoutListener portContainerLayoutListener;
-
-	/**
-	 * Constructs this instance.
-	 * 
-	 * @param editPart
-	 *            The port's EditPart.
-	 * @param portFigure
-	 *            The port's figure.
-	 */
 	public AbstractPortBehavior(AbstractBorderItemEditPart editPart) {
-		this.editPart = editPart;
+		super(editPart);
+		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * Handle model-change event. We update the PortFigure's visualization
-	 * according to the current state of the model (Port).
-	 * 
-	 * @param notification
-	 *            The notification sent by the model.
-	 */
-	public abstract void handleNotificationEvent(final Notification notification);
-
-	/**
-	 * Updates the PortFigure to visualize a multi-port, if necessary.
-	 */
-	public void updatePortCardinality(boolean isMultiPort) {
-		if (portFigure != null) {
-			portFigure.setPortMulti(isMultiPort);
-		}
-	}
-
-	/**
-	 * Updates the PortFigure to visualize a specific kind of port.
-	 */
-	public void updatePortKindAndPortType(PortKind portKind, MessageInterface sender, MessageInterface receiver) {
-		if (portFigure != null) {
-			CustomPortFigure.PortType portType;
-			if (sender != null && receiver != null) {
-				portType = CustomPortFigure.PortType.INOUT_PORT;
-			} else if (receiver != null) {
-				portType = CustomPortFigure.PortType.IN_PORT;
-			} else if (sender != null) {
-				portType = CustomPortFigure.PortType.OUT_PORT;
-			} else {
-				portType = CustomPortFigure.PortType.NONE;
-			}
-
-			portFigure.setPortKindAndPortType(portKind, portType);
-		}
-	}
-
-	/**
-	 * Adds a LayoutListener to the given port container figure. This listener
-	 * will hook into layout changes (movements) and update the port's visual
-	 * orientation according to the side it lies at.
-	 * 
-	 * @param portContainerFigure
-	 *            The port's container figure.
-	 */
-	public void addPortContainerLayoutListener(IFigure portContainerFigure) {
-		portContainerLayoutListener = new PortContainerLayoutListener(editPart,
-				portFigure);
-		portContainerFigure.addLayoutListener(portContainerLayoutListener);
-	}
-
-	/**
-	 * Removes the LayoutListener from the given port container figure.
-	 * 
-	 * @param portContainerFigure
-	 *            The port's container figure.
-	 */
-	public void removePortContainerLayoutListener(IFigure portContainerFigure) {
-		if (portContainerLayoutListener != null) {
-			portContainerFigure
-					.removeLayoutListener(portContainerLayoutListener);
-		}
-	}
-
-	/**
-	 * Called whenever the EditPart is going to be activated. Initializes
-	 * objects.
-	 */
+	@Override
 	public void activate() {
-		IBorderItemLocator locator = editPart.getBorderItemLocator();
-		if (locator instanceof BorderItemLocator) {
-			((BorderItemLocator) locator).setBorderItemOffset(offset);
+		EObject element = editPart.getNotationView().getElement();
+		if (element instanceof Port) {
+			port = (Port) editPart.getNotationView().getElement();
 		}
-		updatePortKindAndPortType();
-		updatePortCardinality();
+
+		EditPart parentEditPart = editPart.getParent();
+		IFigure figure = null;
+		if (parentEditPart instanceof GraphicalEditPart) {
+			figure = ((GraphicalEditPart) parentEditPart).getFigure();
+		}
+		if (figure instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+			IFigure portContainerFigure = bnf.getBorderItemContainer();
+			addPortContainerLayoutListener(portContainerFigure);
+		}
+
+		super.activate();
 	}
 
-	public abstract void updatePortCardinality();
-	public abstract void updatePortKindAndPortType();
+	public Port getPort() {
+		return port;
+	}
 
 	/**
 	 * Called whenever the EditPart is going to be deactivated. Cleans up
 	 * objects.
 	 */
+	@Override
 	public void deactivate() {
-	}
+		port = null;
 
-	public CustomPortFigure getPortFigure() {
-		return portFigure;
-	}
-
-	public void setPortFigure(CustomPortFigure portFigure) {
-		this.portFigure = portFigure;
-	}
-
-	/**
-	 * The Port's Node Plate to use. It defines the size to use and is
-	 * responsible to return custom PolygonPoints, that help connecting
-	 * Connections at the right Point.
-	 * 
-	 * @return The Port's Node Plate to use. 
-	 */
-	public NodeFigure createNodePlate() {
-		// Copied from generated PortEditPart.java.
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
-			public PointList getPolygonPoints() {
-				PointList customPolygonPoints = null;
-				if (portFigure != null) {
-					customPolygonPoints = portFigure
-							.getCustomPolygonPoints(getHandleBounds());
-				}
-				if (customPolygonPoints != null) {
-					return customPolygonPoints;
-				}
-				return super.getPolygonPoints();
-			}
-		};
-
-		// FIXME: workaround for #154536
-		result.getBounds().setSize(result.getPreferredSize());
-		return result;
-	}
-
-	/**
-	 * A LayoutListener that listens to changes in the container's layout. After
-	 * the ports are layouted, we check at which side they are, to rotate their
-	 * polygon.
-	 * 
-	 * @author bingo
-	 * 
-	 */
-	private class PortContainerLayoutListener extends LayoutListener.Stub {
-		/**
-		 * The port's EditPart.
-		 */
-		private AbstractBorderItemEditPart editPart;
-
-		/**
-		 * The port's figure that should be rotated.
-		 */
-		private CustomPortFigure portFigure;
-
-		/**
-		 * Constructs this LayoutListener.
-		 * 
-		 * @param editPart
-		 *            The port's EditPart
-		 * @param portFigure
-		 *            The port's figure that should be rotated.
-		 */
-		public PortContainerLayoutListener(AbstractBorderItemEditPart editPart,
-				CustomPortFigure portFigure) {
-			this.editPart = editPart;
-			this.portFigure = portFigure;
+		EditPart parentEditPart = editPart.getParent();
+		IFigure figure = null;
+		if (parentEditPart instanceof GraphicalEditPart) {
+			figure = ((GraphicalEditPart) parentEditPart).getFigure();
+		}
+		if (figure instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
+			IFigure portContainerFigure = bnf.getBorderItemContainer();
+			removePortContainerLayoutListener(portContainerFigure);
 		}
 
-		/**
-		 * Rotate the port's figure according to the side that the port
-		 * currently is at.
-		 */
-		@Override
-		public void postLayout(IFigure container) {
-			IBorderItemLocator borderItemLocator = editPart
-					.getBorderItemLocator();
-			if (borderItemLocator != null) {
-				borderItemLocator.relocate(editPart.getFigure());
-				int side = borderItemLocator.getCurrentSideOfParent();
-				portFigure.setPortSide(side);
+		super.deactivate();
+	}
+
+	@Override
+	public boolean isMultiPort() {
+		boolean isMulti = false;
+		if (port != null && port.getCardinality() != null) {
+			NaturalNumber upperBound = port.getCardinality().getUpperBound();
+			if (upperBound != null
+					&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
+				isMulti = true;
+			}
+		}
+		return isMulti;
+	}
+
+	@Override
+	public void handleNotificationEvent(Notification notification) {
+		Object feature = notification.getFeature();
+		if (feature instanceof EStructuralFeature) {
+			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
+			if (structuralFeature.getContainerClass() == Port.class) {
+				int featureID = notification.getFeatureID(Port.class);
+				if (featureID == ComponentPackage.PORT__CARDINALITY) {
+					updatePortCardinality();
+				}
 			}
 		}
 	}
+
 }

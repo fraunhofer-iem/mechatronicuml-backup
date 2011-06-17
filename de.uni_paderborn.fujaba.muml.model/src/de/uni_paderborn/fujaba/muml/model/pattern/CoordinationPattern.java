@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->

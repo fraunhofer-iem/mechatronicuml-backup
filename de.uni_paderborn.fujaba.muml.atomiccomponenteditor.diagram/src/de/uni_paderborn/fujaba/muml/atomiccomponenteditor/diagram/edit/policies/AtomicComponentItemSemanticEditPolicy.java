@@ -47,6 +47,11 @@ public class AtomicComponentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.commands.ContinuousPortCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HardwarePort_3005 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.commands.HardwarePortCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 
@@ -93,6 +98,12 @@ public class AtomicComponentItemSemanticEditPolicy
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 				break;
 			case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+				break;
+			case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
 						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 

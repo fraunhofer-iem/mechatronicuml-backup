@@ -6,6 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.modeling.SDMPackage;
+
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
@@ -18,59 +28,27 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortSpecification;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePortSpecification;
-import de.uni_paderborn.fujaba.muml.model.component.HardwarePortSpecification;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.PortKind;
-import de.uni_paderborn.fujaba.muml.model.component.PortSpecification;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-
 import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
-
 import de.uni_paderborn.fujaba.muml.model.msgiface.impl.MsgifacePackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
-
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.storydriven.modeling.SDMPackage;
 
 /**
  * <!-- begin-user-doc -->

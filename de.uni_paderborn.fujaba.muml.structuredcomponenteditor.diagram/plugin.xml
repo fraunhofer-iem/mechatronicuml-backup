@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3007,3008,3009,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3007,3008,3009,3010,3005,3011,3012,3013,3014"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004"/>
       </viewProvider>
    </extension>
@@ -202,7 +202,7 @@
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2002,3007,3008,3009,3005,3006"/>
+            <method name="getType()" value="2002,3007,3008,3009,3010,3005,3011,3012,3013,3014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4003,4004"/>
@@ -295,6 +295,16 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
          <metamodelType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HardwarePort_3010"
+               name="%metatype.name.HardwarePort_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HardwarePort"
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.HardwarePortEditHelper">
+            <param name="semanticHint" value="3010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"
                name="%metatype.name.ComponentPart_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -304,14 +314,40 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Port_3006"
-               name="%metatype.name.Port_3006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Port"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.PortEditHelper">
-            <param name="semanticHint" value="3006"/>
-         </metamodelType>
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3011"
+               name="%metatype.name.HybridPort_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3007"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3012"
+               name="%metatype.name.DiscretePort_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3008"/>
+            <param name="semanticHint" value="3012"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3013"
+               name="%metatype.name.ContinuousPort_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3009"/>
+            <param name="semanticHint" value="3013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HardwarePort_3014"
+               name="%metatype.name.HardwarePort_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HardwarePort_3010"/>
+            <param name="semanticHint" value="3014"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/component">
          <metamodelType
@@ -350,8 +386,12 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3007"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3008"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3009"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HardwarePort_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Port_3006"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3011"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3012"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3013"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HardwarePort_3014"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Delegation_4003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Assembly_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>

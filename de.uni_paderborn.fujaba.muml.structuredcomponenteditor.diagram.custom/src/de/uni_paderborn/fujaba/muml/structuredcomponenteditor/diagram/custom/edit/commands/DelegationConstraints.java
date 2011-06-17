@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 public class DelegationConstraints {
