@@ -69,6 +69,7 @@ public class ParameterListSelectionDialog extends Dialog {
 	protected Map<EParameter, TextSelection> parameterTextSelections;;
 	protected ISelectionChangedListener parameterSelectionChangedListener;
 	protected ModifyListener txtParameterLineModifyListener;
+	protected CaretListener txtParameterLineCaretListener;
 	protected boolean isValidParameterName;
 
 	private StyledText txtName;
@@ -354,7 +355,7 @@ public class ParameterListSelectionDialog extends Dialog {
 		parameterTableViewer
 				.addSelectionChangedListener(parameterSelectionChangedListener);
 
-		txtParameterLine.addCaretListener(new CaretListener() {
+		txtParameterLineCaretListener = new CaretListener() {
 
 			@Override
 			public void caretMoved(CaretEvent event) {
@@ -375,7 +376,8 @@ public class ParameterListSelectionDialog extends Dialog {
 				}
 			}
 
-		});
+		};
+		txtParameterLine.addCaretListener(txtParameterLineCaretListener);
 
 		txtParameterLineModifyListener = new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
@@ -407,6 +409,7 @@ public class ParameterListSelectionDialog extends Dialog {
 			@Override
 			public void focusLost(FocusEvent e) {
 				rebuildTextualParameterLine();
+				parameterTableViewer.setSelection(parameterTableViewer.getSelection());
 			}
 		});
 
@@ -519,9 +522,11 @@ public class ParameterListSelectionDialog extends Dialog {
 	}
 
 	private void setParameterLine(String textualParameterLine) {
+		txtParameterLine.removeCaretListener(txtParameterLineCaretListener);
 		txtParameterLine.removeModifyListener(txtParameterLineModifyListener);
 		txtParameterLine.setText(textualParameterLine);
 		txtParameterLine.addModifyListener(txtParameterLineModifyListener);
+		txtParameterLine.addCaretListener(txtParameterLineCaretListener);
 	}
 
 	private void setParameterSelection(ISelection parameterSelection) {
