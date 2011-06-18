@@ -55,6 +55,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 
+/**
+ * 
+ * @author bingo
+ * 
+ */
 public class ParameterListSelectionDialog extends Dialog {
 
 	protected ILabelProvider labelProvider;
@@ -67,7 +72,8 @@ public class ParameterListSelectionDialog extends Dialog {
 	protected java.util.List<?> choiceOfValues;
 	protected EList<?> result;
 	protected Map<EParameter, TextSelection> parameterTextSelections;;
-	protected ISelectionChangedListener parameterSelectionChangedListener;
+	protected ISelectionChangedListener parameterSelectionToTextSelectionListener;
+	protected ISelectionChangedListener parameterSelectionToButtonEnablementListener;
 	protected ModifyListener txtParameterLineModifyListener;
 	protected CaretListener txtParameterLineCaretListener;
 	protected boolean isValidParameterName;
@@ -78,9 +84,6 @@ public class ParameterListSelectionDialog extends Dialog {
 	private StyledText txtParameterLine;
 	private Button btnModify;
 
-	/**
-	 * @wbp.parser.constructor
-	 */
 	public ParameterListSelectionDialog(Shell parent,
 			ILabelProvider labelProvider, EObject eObject,
 			EStructuralFeature eStructuralFeature,
@@ -110,8 +113,7 @@ public class ParameterListSelectionDialog extends Dialog {
 	}
 
 	/**
-	 * Create contents of the dialog. This method was created by the
-	 * SWT-Designer Eclipse Plugin.
+	 * Create contents of the dialog.
 	 * 
 	 * @param parent
 	 */
@@ -330,8 +332,8 @@ public class ParameterListSelectionDialog extends Dialog {
 			}
 		});
 
-		// Create SelectionListener for parameterTableViewer
-		parameterSelectionChangedListener = new ISelectionChangedListener() {
+		// Create SelectionListener for parameterTableViewer to update text selection accordingly
+		parameterSelectionToTextSelectionListener = new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof IStructuredSelection) {
 					IStructuredSelection selection = (IStructuredSelection) event
@@ -339,6 +341,18 @@ public class ParameterListSelectionDialog extends Dialog {
 					Object selectedElement = selection.getFirstElement();
 					if (selectedElement != null) {
 						setTextSelection((EParameter) selectedElement);
+					}
+				}
+			}
+		};
+		// Create SelectionListener for parameterTableViewer to update Button-enablement accordingly
+		parameterSelectionToButtonEnablementListener = new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (event.getSelection() instanceof IStructuredSelection) {
+					IStructuredSelection selection = (IStructuredSelection) event
+							.getSelection();
+					Object selectedElement = selection.getFirstElement();
+					if (selectedElement != null) {
 						int index = values.getChildren().indexOf(
 								selectedElement);
 						btnUp.setEnabled(index > 0);
@@ -352,8 +366,10 @@ public class ParameterListSelectionDialog extends Dialog {
 				}
 			}
 		};
+		
 		parameterTableViewer
-				.addSelectionChangedListener(parameterSelectionChangedListener);
+				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
+		parameterTableViewer.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
 
 		txtParameterLineCaretListener = new CaretListener() {
 
@@ -531,10 +547,10 @@ public class ParameterListSelectionDialog extends Dialog {
 
 	private void setParameterSelection(ISelection parameterSelection) {
 		parameterTableViewer
-				.removeSelectionChangedListener(parameterSelectionChangedListener);
+				.removeSelectionChangedListener(parameterSelectionToTextSelectionListener);
 		parameterTableViewer.setSelection(parameterSelection);
 		parameterTableViewer
-				.addSelectionChangedListener(parameterSelectionChangedListener);
+				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
 	}
 
 	private void onConfigureParameter(EParameter parameter) {
