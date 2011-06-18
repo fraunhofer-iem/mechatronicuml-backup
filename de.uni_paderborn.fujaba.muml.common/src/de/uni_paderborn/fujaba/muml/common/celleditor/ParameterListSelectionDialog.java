@@ -332,7 +332,8 @@ public class ParameterListSelectionDialog extends Dialog {
 			}
 		});
 
-		// Create SelectionListener for parameterTableViewer to update text selection accordingly
+		// Create SelectionListener for parameterTableViewer to update text
+		// selection accordingly
 		parameterSelectionToTextSelectionListener = new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof IStructuredSelection) {
@@ -345,7 +346,8 @@ public class ParameterListSelectionDialog extends Dialog {
 				}
 			}
 		};
-		// Create SelectionListener for parameterTableViewer to update Button-enablement accordingly
+		// Create SelectionListener for parameterTableViewer to update
+		// Button-enablement accordingly
 		parameterSelectionToButtonEnablementListener = new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				if (event.getSelection() instanceof IStructuredSelection) {
@@ -366,30 +368,17 @@ public class ParameterListSelectionDialog extends Dialog {
 				}
 			}
 		};
-		
+
 		parameterTableViewer
 				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
-		parameterTableViewer.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
+		parameterTableViewer
+				.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
 
 		txtParameterLineCaretListener = new CaretListener() {
 
 			@Override
 			public void caretMoved(CaretEvent event) {
-				if (parameterTextSelections != null) {
-					for (EParameter parameter : parameterTextSelections
-							.keySet()) {
-						TextSelection textSelection = parameterTextSelections
-								.get(parameter);
-						int start = textSelection.getOffset();
-						int end = start + textSelection.getLength();
-						if (event.caretOffset >= start
-								&& event.caretOffset <= end) {
-							ISelection parameterSelection = new StructuredSelection(
-									new Object[] { parameter });
-							setParameterSelection(parameterSelection);
-						}
-					}
-				}
+				onParameterLineCaretMoved(event.caretOffset);
 			}
 
 		};
@@ -397,9 +386,14 @@ public class ParameterListSelectionDialog extends Dialog {
 
 		txtParameterLineModifyListener = new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
-				parameterTextSelections = null;
+				parameterTextSelections = new HashMap<EParameter, TextSelection>();
 				values.getChildren().clear();
+				int pos = 0;
 				for (String s : txtParameterLine.getText().split(",")) {
+					int allWhitespaces = s.length() - s.trim().length();
+					int leadingWhitespaces = s.length()
+							- s.concat("A").trim().length() + 1;
+
 					String[] parts = s.split("\\:");
 
 					EClassifier type = null;
@@ -416,8 +410,15 @@ public class ParameterListSelectionDialog extends Dialog {
 					parameter.setEType(type);
 					parameter.setName(parts[0].trim());
 					values.getChildren().add(parameter);
+
+					TextSelection textSelection = new TextSelection(pos
+							+ leadingWhitespaces, s.length() - allWhitespaces);
+					parameterTextSelections.put(parameter, textSelection);
+
+					pos += s.length() + 1; // Add one for the comma-delimiter.
 				}
 				parameterTableViewer.refresh();
+				onParameterLineCaretMoved(txtParameterLine.getCaretOffset());
 			}
 		};
 		txtParameterLine.addModifyListener(txtParameterLineModifyListener);
@@ -425,7 +426,8 @@ public class ParameterListSelectionDialog extends Dialog {
 			@Override
 			public void focusLost(FocusEvent e) {
 				rebuildTextualParameterLine();
-				parameterTableViewer.setSelection(parameterTableViewer.getSelection());
+				parameterTableViewer.setSelection(parameterTableViewer
+						.getSelection());
 			}
 		});
 
@@ -460,6 +462,22 @@ public class ParameterListSelectionDialog extends Dialog {
 				typeClassifiers));
 
 		return container;
+	}
+
+	protected void onParameterLineCaretMoved(int caretOffset) {
+		if (parameterTextSelections != null) {
+			for (EParameter parameter : parameterTextSelections.keySet()) {
+				TextSelection textSelection = parameterTextSelections
+						.get(parameter);
+				int start = textSelection.getOffset();
+				int end = start + textSelection.getLength();
+				if (caretOffset >= start && caretOffset <= end) {
+					ISelection parameterSelection = new StructuredSelection(
+							new Object[] { parameter });
+					setParameterSelection(parameterSelection);
+				}
+			}
+		}
 	}
 
 	protected boolean validateParameterName(StyledText styledText) {
