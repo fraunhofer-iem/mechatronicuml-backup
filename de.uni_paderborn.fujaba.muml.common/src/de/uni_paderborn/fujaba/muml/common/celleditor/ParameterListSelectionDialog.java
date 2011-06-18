@@ -35,7 +35,12 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CaretEvent;
 import org.eclipse.swt.custom.CaretListener;
+import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Point;
@@ -49,7 +54,6 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
-import org.eclipse.swt.widgets.Text;
 
 public class ParameterListSelectionDialog extends Dialog {
 
@@ -64,11 +68,14 @@ public class ParameterListSelectionDialog extends Dialog {
 	protected EList<?> result;
 	protected Map<EParameter, TextSelection> parameterTextSelections;;
 	protected ISelectionChangedListener parameterSelectionChangedListener;
+	protected ModifyListener txtParameterLineModifyListener;
+	protected boolean isValidParameterName;
 
-	private Text txtName;
+	private StyledText txtName;
 	private TableViewer parameterTableViewer;
 	private ComboViewer typeComboViewer;
 	private StyledText txtParameterLine;
+	private Button btnModify;
 
 	/**
 	 * @wbp.parser.constructor
@@ -123,7 +130,7 @@ public class ParameterListSelectionDialog extends Dialog {
 				1, 1));
 		lblName.setText("Name:");
 
-		txtName = new Text(grpParameterProps, SWT.BORDER);
+		txtName = new StyledText(grpParameterProps, SWT.BORDER | SWT.SINGLE);
 		txtName.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
 				1, 1));
 
@@ -144,10 +151,36 @@ public class ParameterListSelectionDialog extends Dialog {
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false,
 				1, 1));
 
-		Button btnCreate = new Button(composite, SWT.NONE);
+		final Button btnCreate = new Button(composite, SWT.NONE);
 		btnCreate.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
 				1, 1));
 		btnCreate.setText("&Create");
+
+		btnModify = new Button(composite, SWT.NONE);
+		btnModify.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
+				1, 1));
+		btnModify.setText("&Modify");
+
+		// Add SelectionListener to btnModify
+		btnModify.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				EParameter oldParameter = getSelectedParameter();
+				int index = values.getChildren().indexOf(oldParameter);
+
+				if (index > -1) {
+					EParameter newParameter = EcoreUtil.copy(oldParameter);
+					onConfigureParameter(newParameter);
+					values.getChildren().set(index, newParameter);
+					rebuildTextualParameterLine();
+
+					// Update visuals
+					parameterTableViewer.refresh();
+					parameterTableViewer.setSelection(new StructuredSelection(
+							new EParameter[] { newParameter }));
+				}
+			}
+		});
 
 		Label lblParameterList = new Label(container, SWT.NONE);
 		GridData gd_lblParameterList = new GridData(SWT.LEFT, SWT.CENTER,
@@ -167,11 +200,6 @@ public class ParameterListSelectionDialog extends Dialog {
 		compositeActions.setLayout(new GridLayout(1, false));
 		compositeActions.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false,
 				false, 1, 1));
-
-		final Button btnModify = new Button(compositeActions, SWT.NONE);
-		btnModify.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
-				1, 1));
-		btnModify.setText("&Modify");
 
 		final Button btnRemove = new Button(compositeActions, SWT.NONE);
 		btnRemove.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
@@ -202,7 +230,17 @@ public class ParameterListSelectionDialog extends Dialog {
 		// txtParameterLine.setEnabled(false);
 		txtParameterLine.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				false, 1, 1));
+
 		new Label(container, SWT.NONE);
+
+		txtName.addModifyListener(new ModifyListener() {
+			public void modifyText(ModifyEvent event) {
+				boolean valid = validateParameterName(txtName);
+				isValidParameterName = !txtName.getText().isEmpty() && valid;
+				btnCreate.setEnabled(isValidParameterName);
+				updateModifyButton();
+			}
+		});
 
 		// Initialize btnCreate
 		btnCreate.addSelectionListener(new SelectionAdapter() {
@@ -218,27 +256,6 @@ public class ParameterListSelectionDialog extends Dialog {
 				parameterTableViewer.refresh();
 				parameterTableViewer.setSelection(new StructuredSelection(
 						new EParameter[] { newParameter }));
-			}
-		});
-
-		// Add SelectionListener to btnModify
-		btnModify.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent event) {
-				EParameter oldParameter = getSelectedParameter();
-				int index = values.getChildren().indexOf(oldParameter);
-
-				if (index > -1) {
-					EParameter newParameter = EcoreUtil.copy(oldParameter);
-					onConfigureParameter(newParameter);
-					values.getChildren().set(index, newParameter);
-					rebuildTextualParameterLine();
-
-					// Update visuals
-					parameterTableViewer.refresh();
-					parameterTableViewer.setSelection(new StructuredSelection(
-							new EParameter[] { newParameter }));
-				}
 			}
 		});
 
@@ -259,7 +276,7 @@ public class ParameterListSelectionDialog extends Dialog {
 
 					// Update visuals
 					parameterTableViewer.refresh();
-					if (index > 0) {
+					if (index >= 0) {
 						EParameter newSelectedParameter = (EParameter) values
 								.getChildren().get(index);
 						parameterTableViewer
@@ -321,7 +338,8 @@ public class ParameterListSelectionDialog extends Dialog {
 					Object selectedElement = selection.getFirstElement();
 					if (selectedElement != null) {
 						setTextSelection((EParameter) selectedElement);
-						int index = values.getChildren().indexOf(selectedElement);
+						int index = values.getChildren().indexOf(
+								selectedElement);
 						btnUp.setEnabled(index > 0);
 						btnDown.setEnabled(index < values.getChildren().size() - 1);
 					} else {
@@ -329,8 +347,7 @@ public class ParameterListSelectionDialog extends Dialog {
 						btnDown.setEnabled(false);
 					}
 					btnRemove.setEnabled(selectedElement != null);
-					btnModify.setEnabled(selectedElement != null);
-					
+					updateModifyButton();
 				}
 			}
 		};
@@ -341,26 +358,56 @@ public class ParameterListSelectionDialog extends Dialog {
 
 			@Override
 			public void caretMoved(CaretEvent event) {
-
-				for (EParameter parameter : parameterTextSelections.keySet()) {
-					TextSelection textSelection = parameterTextSelections
-							.get(parameter);
-					int start = textSelection.getOffset();
-					int end = start + textSelection.getLength();
-					if (event.caretOffset >= start && event.caretOffset <= end) {
-						parameterTableViewer
-								.removeSelectionChangedListener(parameterSelectionChangedListener);
-						ISelection parameterSelection = new StructuredSelection(
-								new Object[] { parameter });
-						parameterTableViewer.setSelection(parameterSelection);
-						parameterTableViewer
-								.addSelectionChangedListener(parameterSelectionChangedListener);
-
+				if (parameterTextSelections != null) {
+					for (EParameter parameter : parameterTextSelections
+							.keySet()) {
+						TextSelection textSelection = parameterTextSelections
+								.get(parameter);
+						int start = textSelection.getOffset();
+						int end = start + textSelection.getLength();
+						if (event.caretOffset >= start
+								&& event.caretOffset <= end) {
+							ISelection parameterSelection = new StructuredSelection(
+									new Object[] { parameter });
+							setParameterSelection(parameterSelection);
+						}
 					}
 				}
-
 			}
 
+		});
+
+		txtParameterLineModifyListener = new ModifyListener() {
+			public void modifyText(ModifyEvent e) {
+				parameterTextSelections = null;
+				values.getChildren().clear();
+				for (String s : txtParameterLine.getText().split(",")) {
+					String[] parts = s.split("\\:");
+
+					EClassifier type = null;
+					if (parts.length > 1) {
+						type = getTypeClassifierByName(parts[1].trim(), true);
+					}
+
+					EParameter parameter = EcoreFactory.eINSTANCE
+							.createEParameter();
+					parameter.setLowerBound(1);
+					parameter.setUpperBound(1);
+					parameter.setOrdered(true);
+					parameter.setUnique(true);
+					parameter.setEType(type);
+					parameter.setName(parts[0].trim());
+					values.getChildren().add(parameter);
+				}
+				parameterTableViewer.refresh();
+			}
+		};
+		txtParameterLine.addModifyListener(txtParameterLineModifyListener);
+		txtParameterLine.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				rebuildTextualParameterLine();
+			}
 		});
 
 		// Initialize Textual Parameter Line
@@ -370,10 +417,10 @@ public class ParameterListSelectionDialog extends Dialog {
 		parameterTableViewer.setContentProvider(contentProvider);
 		parameterTableViewer.setLabelProvider(labelProvider);
 		parameterTableViewer.setInput(values);
-		if (!values.getChildren().isEmpty()) {
-			parameterTableViewer.setSelection(new StructuredSelection(values
-					.getChildren().get(0)));
-		}
+
+		// Create an empty selection.
+		parameterTableViewer.setSelection(new StructuredSelection(
+				new Object[] {}));
 
 		// Initialize typeComboViewer
 		typeComboViewer.setContentProvider(contentProvider);
@@ -386,12 +433,54 @@ public class ParameterListSelectionDialog extends Dialog {
 			}
 		});
 
+		txtName.setText("");
+
 		AdapterFactory adapterFactory = new ComposedAdapterFactory(
 				Collections.<AdapterFactory> emptyList());
 		typeComboViewer.setInput(new ItemProvider(adapterFactory,
 				typeClassifiers));
 
 		return container;
+	}
+
+	protected boolean validateParameterName(StyledText styledText) {
+		boolean error = false;
+		StyleRange errorStyle = new StyleRange();
+		errorStyle.length = 1;
+		errorStyle.underline = true;
+		errorStyle.fontStyle = SWT.BOLD;
+		errorStyle.underlineStyle = SWT.UNDERLINE_ERROR;
+
+		String text = styledText.getText();
+
+		for (int i = 0; i < text.length(); i++) {
+			char ch = text.charAt(i);
+			if (!Character.isJavaIdentifierPart(ch)) {
+				errorStyle.start = i;
+				styledText.setStyleRange(errorStyle);
+				error = true;
+			}
+		}
+		return !error;
+	}
+
+	protected EClassifier getTypeClassifierByName(String string,
+			boolean ignoreCase) {
+		for (EClassifier typeClassifier : typeClassifiers) {
+			String text = typeClassifier.getName();
+			if (text != null) {
+				if (ignoreCase && text.equalsIgnoreCase(string)
+						|| text.equals(string)) {
+					return typeClassifier;
+				}
+			}
+		}
+		return null;
+	}
+
+	protected void updateModifyButton() {
+		btnModify.setEnabled(getSelectedParameter() != null
+				&& isValidParameterName);
 	}
 
 	private void setTextSelection(EParameter selectedElement) {
@@ -409,7 +498,6 @@ public class ParameterListSelectionDialog extends Dialog {
 	private void rebuildTextualParameterLine() {
 		parameterTextSelections = new HashMap<EParameter, TextSelection>();
 		String textualParameterLine = "";
-		int pos = 0;
 		boolean first = true;
 		for (Object element : values.getChildren()) {
 			EParameter parameter = (EParameter) element;
@@ -427,7 +515,21 @@ public class ParameterListSelectionDialog extends Dialog {
 			textualParameterLine += text;
 
 		}
+		setParameterLine(textualParameterLine);
+	}
+
+	private void setParameterLine(String textualParameterLine) {
+		txtParameterLine.removeModifyListener(txtParameterLineModifyListener);
 		txtParameterLine.setText(textualParameterLine);
+		txtParameterLine.addModifyListener(txtParameterLineModifyListener);
+	}
+
+	private void setParameterSelection(ISelection parameterSelection) {
+		parameterTableViewer
+				.removeSelectionChangedListener(parameterSelectionChangedListener);
+		parameterTableViewer.setSelection(parameterSelection);
+		parameterTableViewer
+				.addSelectionChangedListener(parameterSelectionChangedListener);
 	}
 
 	private void onConfigureParameter(EParameter parameter) {
@@ -482,4 +584,5 @@ public class ParameterListSelectionDialog extends Dialog {
 	public EList<?> getResult() {
 		return result;
 	}
+
 }
