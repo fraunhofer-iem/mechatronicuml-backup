@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.celleditor;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -62,44 +63,142 @@ import org.eclipse.swt.widgets.Table;
  */
 public class ParameterListSelectionDialog extends Dialog {
 
+	/**
+	 * The LabelProvider used to get Labels for Parameters and typeClassifiers.
+	 */
 	protected ILabelProvider labelProvider;
+
+	/**
+	 * The ContentProvider to access items of an ItemProvider.
+	 */
 	protected IContentProvider contentProvider;
-	protected EObject object;
-	protected EClassifier eClassifier;
-	protected List<EClassifier> typeClassifiers;
-	protected String displayName;
+
+	/**
+	 * Stores the Parameters currently set; they can be accessed using
+	 * values.getChildren().
+	 */
 	protected ItemProvider values;
-	protected java.util.List<?> choiceOfValues;
-	protected EList<?> result;
-	protected Map<EParameter, TextSelection> parameterTextSelections;;
+
+	/**
+	 * The Object containing the StructuralFeature, we are setting the values
+	 * for.
+	 */
+	protected EObject containerObject;
+
+	/**
+	 * The StructuralFeature that we set the values for.
+	 */
+	protected EStructuralFeature structuralFeature;
+
+	/**
+	 * The Classifiers allowed to be used as EType of Parameters. They will be
+	 * added into the Type-ComboBox.
+	 */
+	protected List<EClassifier> typeClassifiers;
+
+	/**
+	 * The areas in the Parameter-Line Textfield that contain certain
+	 * Parameters.
+	 */
+	protected Map<EParameter, TextSelection> parameterTextSelections;
+
+	// NOTE: We store Listeners in order to be able to remove/add them
+	// afterwards.
+
+	/**
+	 * A SelectionChangedListener, which is notified about selection changes in
+	 * the Parameter List and updates the Parameter-Line Textfield selection
+	 * accordingly.
+	 */
 	protected ISelectionChangedListener parameterSelectionToTextSelectionListener;
+
+	/**
+	 * A SelectionChangedListener, which is notified about selection changes in
+	 * the Parameter List and updates the enable-status of the Buttons "Up",
+	 * "Down" and "Modify" accordingly.
+	 */
 	protected ISelectionChangedListener parameterSelectionToButtonEnablementListener;
+
+	/**
+	 * A ModifyListener, which is notified when the Parameter-Line Text was
+	 * edited by the user.
+	 */
 	protected ModifyListener txtParameterLineModifyListener;
+
+	/**
+	 * A CaretListener, which is notified when the user changes the
+	 * Caret-Position in the Parameter-Line Textfield.
+	 */
 	protected CaretListener txtParameterLineCaretListener;
+
+	/**
+	 * A field, which remembers, if the Parameter-Name currently entered is
+	 * valid.
+	 */
 	protected boolean isValidParameterName;
 
+	/**
+	 * The result, which can be accessed using getResult(), after the dialog was
+	 * closed.
+	 */
+	protected EList<?> result;
+
+	// UI-Controls:
+
+	/**
+	 * The Parameter-Name Textfield.
+	 */
 	private StyledText txtName;
+
+	/**
+	 * The Parameters-List TableViewer.
+	 */
 	private TableViewer parameterTableViewer;
+
+	/**
+	 * The Parameter-Type ComboViewer.
+	 */
 	private ComboViewer typeComboViewer;
+
+	/**
+	 * The textual Parameter-Line Textfield.
+	 */
 	private StyledText txtParameterLine;
+
+	/**
+	 * The Modify-Button.
+	 */
 	private Button btnModify;
 
-	public ParameterListSelectionDialog(Shell parent,
-			ILabelProvider labelProvider, EObject eObject,
-			EStructuralFeature eStructuralFeature,
+	/**
+	 * Constructs this parameterListSelectionDialog.
+	 * 
+	 * @param parentShell
+	 *            The parent shell to use for this Dialog.
+	 * @param labelProvider
+	 *            The LabelProvider to use in order to create element names.
+	 * @param containingObject
+	 *            The object containing the <code>structuralFeature</code>.
+	 * @param structuralFeature
+	 *            The StructuralFeature to set values for.
+	 * @param typeClassifiers
+	 *            The allowed Parameter Types.
+	 */
+	public ParameterListSelectionDialog(Shell parentShell,
+			ILabelProvider labelProvider, EObject containingObject,
+			EStructuralFeature structuralFeature,
 			List<EClassifier> typeClassifiers) {
-		super(parent);
+		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
 		this.labelProvider = labelProvider;
-		this.object = eObject;
-		this.eClassifier = eStructuralFeature.getEType();
-		this.displayName = eStructuralFeature.getName();
+		this.containerObject = containingObject;
+		this.structuralFeature = structuralFeature;
 		this.typeClassifiers = typeClassifiers;
 
 		AdapterFactory adapterFactory = new ComposedAdapterFactory(
 				Collections.<AdapterFactory> emptyList());
 		values = new ItemProvider(adapterFactory,
-				(java.util.List<?>) eObject.eGet(eStructuralFeature));
+				(java.util.List<?>) containingObject.eGet(structuralFeature));
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
 
@@ -107,15 +206,18 @@ public class ParameterListSelectionDialog extends Dialog {
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
 		shell.setText(EMFEditUIPlugin.INSTANCE.getString(
-				"_UI_FeatureEditorDialog_title", new Object[] { displayName,
-						labelProvider.getText(object) }));
-		shell.setImage(labelProvider.getImage(object));
+				"_UI_FeatureEditorDialog_title",
+				new Object[] { structuralFeature.getName(),
+						labelProvider.getText(containerObject) }));
+		shell.setImage(labelProvider.getImage(containerObject));
 	}
 
 	/**
-	 * Create contents of the dialog.
+	 * Create contents of the dialog window.
 	 * 
 	 * @param parent
+	 *            the parent composite to contain the dialog area.
+	 * @return The dialog area.
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
@@ -164,27 +266,6 @@ public class ParameterListSelectionDialog extends Dialog {
 				1, 1));
 		btnModify.setText("&Modify");
 
-		// Add SelectionListener to btnModify
-		btnModify.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent event) {
-				EParameter oldParameter = getSelectedParameter();
-				int index = values.getChildren().indexOf(oldParameter);
-
-				if (index > -1) {
-					EParameter newParameter = EcoreUtil.copy(oldParameter);
-					onConfigureParameter(newParameter);
-					values.getChildren().set(index, newParameter);
-					rebuildTextualParameterLine();
-
-					// Update visuals
-					parameterTableViewer.refresh();
-					parameterTableViewer.setSelection(new StructuredSelection(
-							new EParameter[] { newParameter }));
-				}
-			}
-		});
-
 		Label lblParameterList = new Label(container, SWT.NONE);
 		GridData gd_lblParameterList = new GridData(SWT.LEFT, SWT.CENTER,
 				false, false, 1, 1);
@@ -230,43 +311,70 @@ public class ParameterListSelectionDialog extends Dialog {
 		new Label(container, SWT.NONE);
 
 		txtParameterLine = new StyledText(container, SWT.BORDER | SWT.SINGLE);
-		// txtParameterLine.setEnabled(false);
 		txtParameterLine.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				false, 1, 1));
 
 		new Label(container, SWT.NONE);
 
+		// Initialize controls:
+
 		txtName.addModifyListener(new ModifyListener() {
 			public void modifyText(ModifyEvent event) {
-				boolean valid = validateParameterName(txtName);
-				isValidParameterName = !txtName.getText().isEmpty() && valid;
+				clearTextStyle(txtName);
+				String name = getValidatedParameterName(txtName, 0,
+						txtName.getCharCount());
+				isValidParameterName = name != null && !name.isEmpty();
 				btnCreate.setEnabled(isValidParameterName);
-				updateModifyButton();
+				updateModifyButtonEnablement();
 			}
 		});
 
-		// Initialize btnCreate
 		btnCreate.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				EParameter newParameter = EcoreFactory.eINSTANCE
 						.createEParameter();
-				onConfigureParameter(newParameter);
+				configureParameter(newParameter, txtName.getText(),
+						getSelectedType());
 				values.getChildren().add(newParameter);
 				rebuildTextualParameterLine();
 
 				// Update visuals
+				txtName.setSelection(0, txtName.getText().length());
+				txtName.setFocus();
 				parameterTableViewer.refresh();
 				parameterTableViewer.setSelection(new StructuredSelection(
 						new EParameter[] { newParameter }));
 			}
 		});
 
-		// Add SelectionListener to btnRemove
+		btnModify.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+				EParameter oldParameter = getParameterListSelection();
+				int index = values.getChildren().indexOf(oldParameter);
+
+				if (index > -1) {
+					EParameter newParameter = EcoreUtil.copy(oldParameter);
+					configureParameter(newParameter, txtName.getText(),
+							getSelectedType());
+					values.getChildren().set(index, newParameter);
+					rebuildTextualParameterLine();
+
+					// Update visuals
+					txtName.setSelection(0, txtName.getText().length());
+					txtName.setFocus();
+					parameterTableViewer.refresh();
+					parameterTableViewer.setSelection(new StructuredSelection(
+							new EParameter[] { newParameter }));
+				}
+			}
+		});
+
 		btnRemove.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				EParameter oldParameter = getSelectedParameter();
+				EParameter oldParameter = getParameterListSelection();
 				if (oldParameter != null) {
 					int index = values.getChildren().indexOf(oldParameter);
 					values.getChildren().remove(oldParameter);
@@ -290,11 +398,10 @@ public class ParameterListSelectionDialog extends Dialog {
 			}
 		});
 
-		// Add SelectionListener to btnUp
 		btnUp.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				EParameter firstParameter = getSelectedParameter();
+				EParameter firstParameter = getParameterListSelection();
 				int index = values.getChildren().indexOf(firstParameter);
 				if (index > 0) {
 					EParameter secondParameter = (EParameter) values
@@ -311,11 +418,10 @@ public class ParameterListSelectionDialog extends Dialog {
 			}
 		});
 
-		// Add SelectionListener to btnDown
 		btnDown.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				EParameter firstParameter = getSelectedParameter();
+				EParameter firstParameter = getParameterListSelection();
 				int index = values.getChildren().indexOf(firstParameter);
 				if (index < values.getChildren().size() - 1) {
 					EParameter secondParameter = (EParameter) values
@@ -341,11 +447,14 @@ public class ParameterListSelectionDialog extends Dialog {
 							.getSelection();
 					Object selectedElement = selection.getFirstElement();
 					if (selectedElement != null) {
-						setTextSelection((EParameter) selectedElement);
+						setParameterTextSelection((EParameter) selectedElement);
 					}
 				}
 			}
 		};
+		parameterTableViewer
+				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
+
 		// Create SelectionListener for parameterTableViewer to update
 		// Button-enablement accordingly
 		parameterSelectionToButtonEnablementListener = new ISelectionChangedListener() {
@@ -364,60 +473,40 @@ public class ParameterListSelectionDialog extends Dialog {
 						btnDown.setEnabled(false);
 					}
 					btnRemove.setEnabled(selectedElement != null);
-					updateModifyButton();
+					updateModifyButtonEnablement();
 				}
 			}
 		};
-
-		parameterTableViewer
-				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
 		parameterTableViewer
 				.addSelectionChangedListener(parameterSelectionToButtonEnablementListener);
 
+		// Create CaretListener for txtParameterLine to update Parameter-List
+		// selection accordingly.
 		txtParameterLineCaretListener = new CaretListener() {
-
 			@Override
 			public void caretMoved(CaretEvent event) {
 				onParameterLineCaretMoved(event.caretOffset);
 			}
-
 		};
 		txtParameterLine.addCaretListener(txtParameterLineCaretListener);
 
+		// Create ModifyListener for txtParameterLine to recreate all
+		// parameters.
 		txtParameterLineModifyListener = new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
-				parameterTextSelections = new HashMap<EParameter, TextSelection>();
+				clearTextStyle(txtParameterLine);
+				parameterTextSelections = null;
+
+				Map<EParameter, TextSelection> newTextSelections = new HashMap<EParameter, TextSelection>();
+				List<EParameter> newParameters = new ArrayList<EParameter>();
+
+				getValidatedParameters(txtParameterLine, newParameters,
+						newTextSelections);
+				parameterTextSelections = newTextSelections;
 				values.getChildren().clear();
-				int pos = 0;
-				for (String s : txtParameterLine.getText().split(",")) {
-					int allWhitespaces = s.length() - s.trim().length();
-					int leadingWhitespaces = s.length()
-							- s.concat("A").trim().length() + 1;
-
-					String[] parts = s.split("\\:");
-
-					EClassifier type = null;
-					if (parts.length > 1) {
-						type = getTypeClassifierByName(parts[1].trim(), true);
-					}
-
-					EParameter parameter = EcoreFactory.eINSTANCE
-							.createEParameter();
-					parameter.setLowerBound(1);
-					parameter.setUpperBound(1);
-					parameter.setOrdered(true);
-					parameter.setUnique(true);
-					parameter.setEType(type);
-					parameter.setName(parts[0].trim());
-					values.getChildren().add(parameter);
-
-					TextSelection textSelection = new TextSelection(pos
-							+ leadingWhitespaces, s.length() - allWhitespaces);
-					parameterTextSelections.put(parameter, textSelection);
-
-					pos += s.length() + 1; // Add one for the comma-delimiter.
-				}
+				values.getChildren().addAll(newParameters);
 				parameterTableViewer.refresh();
+
 				onParameterLineCaretMoved(txtParameterLine.getCaretOffset());
 			}
 		};
@@ -426,6 +515,8 @@ public class ParameterListSelectionDialog extends Dialog {
 			@Override
 			public void focusLost(FocusEvent e) {
 				rebuildTextualParameterLine();
+
+				// Make sure, the selection for txtParameterLine will be set.
 				parameterTableViewer.setSelection(parameterTableViewer
 						.getSelection());
 			}
@@ -464,50 +555,64 @@ public class ParameterListSelectionDialog extends Dialog {
 		return container;
 	}
 
+	/**
+	 * Clears the TextStyle of the passed StyledText control.
+	 * 
+	 * @param styledText
+	 *            The StyledText Control to clear the style for.
+	 */
+	private void clearTextStyle(StyledText styledText) {
+		StyleRange styleRange = new StyleRange();
+		styleRange.start = 0;
+		styleRange.length = styledText.getCharCount();
+		styledText.setStyleRange(styleRange);
+	}
+
+	/**
+	 * Updates the Parameter-List selection based on the caret position in the
+	 * Parameter-Line Textfield.
+	 * 
+	 * @param caretOffset
+	 *            The new caret offset.
+	 */
 	protected void onParameterLineCaretMoved(int caretOffset) {
 		if (parameterTextSelections != null) {
-			for (EParameter parameter : parameterTextSelections.keySet()) {
+			EParameter selectedParameter = null;
+			for (Object parameter : values.getChildren()) {
+				selectedParameter = (EParameter) parameter;
 				TextSelection textSelection = parameterTextSelections
 						.get(parameter);
 				int start = textSelection.getOffset();
 				int end = start + textSelection.getLength();
-				if (caretOffset >= start && caretOffset <= end) {
-					ISelection parameterSelection = new StructuredSelection(
-							new Object[] { parameter });
-					setParameterSelection(parameterSelection);
+				if (end >= caretOffset) {
+					break;
 				}
 			}
-		}
-	}
-
-	protected boolean validateParameterName(StyledText styledText) {
-		boolean error = false;
-		StyleRange errorStyle = new StyleRange();
-		errorStyle.length = 1;
-		errorStyle.underline = true;
-		errorStyle.fontStyle = SWT.BOLD;
-		errorStyle.underlineStyle = SWT.UNDERLINE_ERROR;
-
-		String text = styledText.getText();
-
-		for (int i = 0; i < text.length(); i++) {
-			char ch = text.charAt(i);
-			if (!Character.isJavaIdentifierPart(ch)) {
-				errorStyle.start = i;
-				styledText.setStyleRange(errorStyle);
-				error = true;
+			if (selectedParameter != null) {
+				ISelection parameterSelection = new StructuredSelection(
+						new Object[] { selectedParameter });
+				setParameterSelection(parameterSelection);
 			}
 		}
-		return !error;
 	}
 
-	protected EClassifier getTypeClassifierByName(String string,
+	/**
+	 * Finds the parameter type Classifier using the passed name.
+	 * 
+	 * @param name
+	 *            The name of the Classifier to find.
+	 * @param ignoreCase
+	 *            Specifies, if the search should ignore upper-case /
+	 *            lower-case.
+	 * @return The Classifier, or <code>null</code> if none was found.
+	 */
+	protected EClassifier getTypeClassifierByName(String name,
 			boolean ignoreCase) {
 		for (EClassifier typeClassifier : typeClassifiers) {
 			String text = typeClassifier.getName();
 			if (text != null) {
-				if (ignoreCase && text.equalsIgnoreCase(string)
-						|| text.equals(string)) {
+				if (ignoreCase && text.equalsIgnoreCase(name)
+						|| text.equals(name)) {
 					return typeClassifier;
 				}
 			}
@@ -515,15 +620,24 @@ public class ParameterListSelectionDialog extends Dialog {
 		return null;
 	}
 
-	protected void updateModifyButton() {
-		btnModify.setEnabled(getSelectedParameter() != null
+	/**
+	 * Updates the enable-status of the modify button.
+	 */
+	protected void updateModifyButtonEnablement() {
+		btnModify.setEnabled(getParameterListSelection() != null
 				&& isValidParameterName);
 	}
 
-	private void setTextSelection(EParameter selectedElement) {
+	/**
+	 * Selects the substring representing the passed parameter.
+	 * 
+	 * @param selectedParameter
+	 *            The parameter to select.
+	 */
+	private void setParameterTextSelection(EParameter selectedParameter) {
 		if (parameterTextSelections != null) {
 			TextSelection textSelection = parameterTextSelections
-					.get(selectedElement);
+					.get(selectedParameter);
 			if (textSelection != null) {
 				int start = textSelection.getOffset();
 				int end = start + textSelection.getLength();
@@ -532,6 +646,11 @@ public class ParameterListSelectionDialog extends Dialog {
 		}
 	}
 
+	/**
+	 * Fills the textual Parameter-Line with the existing parameters and updates
+	 * the parameterTextSelections hash-map to store the new
+	 * substring-positions.
+	 */
 	private void rebuildTextualParameterLine() {
 		parameterTextSelections = new HashMap<EParameter, TextSelection>();
 		String textualParameterLine = "";
@@ -555,14 +674,28 @@ public class ParameterListSelectionDialog extends Dialog {
 		setParameterLine(textualParameterLine);
 	}
 
-	private void setParameterLine(String textualParameterLine) {
+	/**
+	 * Sets the text of the Parameter-Line Control without firing notifications,
+	 * which are only useful, if the user enters a value.
+	 * 
+	 * @param parameterLineString
+	 *            The string to set.
+	 */
+	private void setParameterLine(String parameterLineString) {
 		txtParameterLine.removeCaretListener(txtParameterLineCaretListener);
 		txtParameterLine.removeModifyListener(txtParameterLineModifyListener);
-		txtParameterLine.setText(textualParameterLine);
+		txtParameterLine.setText(parameterLineString);
 		txtParameterLine.addModifyListener(txtParameterLineModifyListener);
 		txtParameterLine.addCaretListener(txtParameterLineCaretListener);
 	}
 
+	/**
+	 * Selects the given parameter within the Parameters-List without firing
+	 * notifications, which are only useful, if the users selects a parameter.
+	 * 
+	 * @param parameterSelection
+	 *            The parameter to select.
+	 */
 	private void setParameterSelection(ISelection parameterSelection) {
 		parameterTableViewer
 				.removeSelectionChangedListener(parameterSelectionToTextSelectionListener);
@@ -571,21 +704,33 @@ public class ParameterListSelectionDialog extends Dialog {
 				.addSelectionChangedListener(parameterSelectionToTextSelectionListener);
 	}
 
-	private void onConfigureParameter(EParameter parameter) {
-		EClassifier type = getSelectedType();
-		parameter.setName(txtName.getText());
+	/**
+	 * Initializes the parameter using the passed values and default values.
+	 * 
+	 * @param parameter
+	 *            The parameter to set features for.
+	 * @param name
+	 *            The name to set.
+	 * @param type
+	 *            The EType to set.
+	 */
+	private void configureParameter(EParameter parameter, String name,
+			EClassifier type) {
+		parameter.setName(name);
 		parameter.setLowerBound(1);
 		parameter.setUpperBound(1);
 		parameter.setUnique(true);
 		parameter.setOrdered(true);
 		parameter.setEType(type);
-
-		// Reset txtName Textfield.
-		txtName.setSelection(0, txtName.getText().length());
-		txtName.setFocus();
 	}
 
-	private EParameter getSelectedParameter() {
+	/**
+	 * Returns the parameter currently selected within the Parameter-List.
+	 * 
+	 * @return The parameter currently selected, or <code>null</code> if none is
+	 *         selected.
+	 */
+	private EParameter getParameterListSelection() {
 		if (parameterTableViewer.getSelection() instanceof IStructuredSelection) {
 			IStructuredSelection selection = (IStructuredSelection) parameterTableViewer
 					.getSelection();
@@ -594,13 +739,157 @@ public class ParameterListSelectionDialog extends Dialog {
 		return null;
 	}
 
+	/**
+	 * Returns the parameter type currently selected within the ComboBox.
+	 * 
+	 * @return The Classifier to use as parameter type.
+	 */
 	private EClassifier getSelectedType() {
 		if (typeComboViewer.getSelection() instanceof StructuredSelection) {
 			IStructuredSelection selection = (IStructuredSelection) typeComboViewer
 					.getSelection();
-			return (EDataType) selection.getFirstElement();
+			return (EClassifier) selection.getFirstElement();
 		}
 		return null;
+	}
+
+	/**
+	 * Returns the parameter name entered in the passed StyledText between
+	 * positions "start" and "end". Additionally it marks forbidden characters
+	 * within this name.
+	 * 
+	 * @param styledText
+	 *            The StyledText to parse and validate.
+	 * @param start
+	 *            The beginning index of the substring to handle
+	 * @param end
+	 *            The ending index of the substring to handle.
+	 * @return The substring from "start" to "end", or <code>null</code> if
+	 *         errors were found.
+	 */
+	protected String getValidatedParameterName(StyledText styledText,
+			int start, int end) {
+		boolean error = false;
+		StyleRange errorStyle = new StyleRange();
+		errorStyle.length = 1;
+		errorStyle.underline = true;
+		errorStyle.fontStyle = SWT.BOLD;
+		errorStyle.underlineStyle = SWT.UNDERLINE_ERROR;
+
+		String text = styledText.getText();
+
+		for (int i = start; i < end; i++) {
+			char ch = text.charAt(i);
+			if (!Character.isJavaIdentifierPart(ch)) {
+				errorStyle.start = i;
+				styledText.setStyleRange(errorStyle);
+				error = true;
+			}
+		}
+		if (error) {
+			return null;
+		}
+		return text.substring(start, end);
+	}
+
+	/**
+	 * Returns the Classifier for the parameter type entered in the passed
+	 * StyledText between positions "start" and "end". Additionally it marks an
+	 * unrecognized type as syntax error.
+	 * 
+	 * @param styledText
+	 *            The StyledText control to parse and validate.
+	 * @param start
+	 *            The beginning index of the substring to handle.
+	 * @param end
+	 *            The ending index of the substring to handle.
+	 * @return The classifier for the parameter type, or <code>null</code> if
+	 *         none was found.
+	 */
+	private EClassifier getValidatedParameterType(StyledText styledText,
+			int start, int end) {
+		String strType = styledText.getText().substring(start, end);
+
+		// Find the Classifier ignoring uppercase/lowercase.
+		EClassifier type = getTypeClassifierByName(strType, true);
+
+		// Allow entering no Classifier, when only whitespaces are entered.
+		if (type == null && !strType.trim().isEmpty()) {
+			StyleRange errorStyle = new StyleRange();
+			errorStyle.start = start;
+			errorStyle.length = end - start;
+			errorStyle.underline = true;
+			errorStyle.fontStyle = SWT.BOLD;
+			errorStyle.underlineStyle = SWT.UNDERLINE_ERROR;
+			styledText.setStyleRange(errorStyle);
+		}
+		return type;
+	}
+
+	/**
+	 * Creates Parameters for the text in the passed StyledText-Control.
+	 * Additionally it marks syntax errors within the text, if any were found.
+	 * 
+	 * The generated Parameters will be put into the list provided as
+	 * returnedParameters-Argument.
+	 * 
+	 * @param styledText
+	 *            The StyledText control to parse and validate.
+	 * @param returnedParameters
+	 *            A list to put the created parameters into.
+	 * @param returnedTextSelections
+	 *            A map to put the substring boundaries for each Parameter
+	 *            within the StyledText into.
+	 * @return <code>true</code>, if and only if no error was found.
+	 */
+	protected boolean getValidatedParameters(StyledText styledText,
+			List<EParameter> returnedParameters,
+			Map<EParameter, TextSelection> returnedTextSelections) {
+		boolean error = false;
+		int pos = 0;
+		for (String s : txtParameterLine.getText().split(",")) {
+			if (!s.isEmpty()) {
+				String[] parts = s.split("\\:");
+				int leadingWhitespacesName = s.length()
+						- s.concat("A").trim().length() + 1;
+				int startName = pos + leadingWhitespacesName;
+
+				EClassifier type = null;
+				if (parts.length > 1) {
+					int leadingWhitespacesType = parts[1].length()
+							- parts[1].concat("A").trim().length() + 1;
+					int startType = pos + parts[0].length()
+							+ leadingWhitespacesType + 1; // Add one for the
+															// colon
+
+					type = getValidatedParameterType(styledText, startType,
+							startType + parts[1].trim().length());
+					if (type == null && !parts[1].trim().isEmpty()) {
+						error = true;
+					}
+
+					type = getTypeClassifierByName(parts[1].trim(), true);
+				}
+
+				if (getValidatedParameterName(styledText, startName, startName
+						+ parts[0].trim().length()) == null) {
+					error = true;
+				} else {
+					EParameter parameter = EcoreFactory.eINSTANCE
+							.createEParameter();
+					configureParameter(parameter, parts[0].trim(), type);
+					returnedParameters.add(parameter);
+
+					TextSelection textSelection = new TextSelection(pos,
+							s.length());
+					if (returnedTextSelections != null) {
+						returnedTextSelections.put(parameter, textSelection);
+					}
+				}
+			}
+			pos += s.length() + 1; // Add one for the comma-delimiter.
+		}
+		return !error;
 	}
 
 	@Override
@@ -620,8 +909,15 @@ public class ParameterListSelectionDialog extends Dialog {
 		return super.close();
 	}
 
+	/**
+	 * Returns the results that should be applied to the structuralFeature.
+	 * 
+	 * @return Returns the parameters to set, or <code>null</code>, if cancel
+	 *         was clicked.
+	 */
 	public EList<?> getResult() {
 		return result;
 	}
+
 
 }
