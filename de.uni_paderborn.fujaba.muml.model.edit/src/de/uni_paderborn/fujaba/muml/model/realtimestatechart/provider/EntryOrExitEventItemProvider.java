@@ -70,6 +70,7 @@ public class EntryOrExitEventItemProvider
 			super.getPropertyDescriptors(object);
 
 			addClockResetsPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class EntryOrExitEventItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntryOrExitEvent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

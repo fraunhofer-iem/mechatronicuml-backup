@@ -70,10 +70,33 @@ public class DoEventItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addActionPropertyDescriptor(object);
 			addPeriodLowerPropertyDescriptor(object);
 			addPeriodUpperPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DoEvent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_action_feature", "_UI_DoEvent_type"),
+				 RealtimestatechartPackage.Literals.DO_EVENT__ACTION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
