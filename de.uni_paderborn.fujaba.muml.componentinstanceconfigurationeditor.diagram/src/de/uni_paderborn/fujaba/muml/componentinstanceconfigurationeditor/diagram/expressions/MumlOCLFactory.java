@@ -50,8 +50,8 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"self.name.concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
-					"self.name.concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
+					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
+					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\' : \').concat(\r\n\tif self.componentType.oclIsUndefined() then\r\n\t\t\'null\'\r\n\telse\r\n\t\tself.componentType.name\r\n\tendif\r\n)", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
