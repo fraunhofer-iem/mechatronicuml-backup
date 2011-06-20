@@ -379,7 +379,7 @@ public interface ComponentPackage extends EPackage {
 	int PORT__OUTGOING_CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -479,7 +479,7 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -588,7 +588,7 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -742,7 +742,7 @@ public interface ComponentPackage extends EPackage {
 	int HARDWARE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1452,7 +1452,7 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__OUTGOING_CONNECTORS = CONTINUOUS_PORT__OUTGOING_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1649,10 +1649,10 @@ public interface ComponentPackage extends EPackage {
 	EClass getPort();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component</em>'.
+	 * @return the meta object for the container reference '<em>Component</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getComponent()
 	 * @see #getPort()
 	 * @generated
@@ -2165,7 +2165,7 @@ public interface ComponentPackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

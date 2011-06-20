@@ -25,7 +25,7 @@
           <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-            eType="#//model/component/Port" containment="true">
+            eType="#//model/component/Port" containment="true" eOpposite="#//model/component/Port/component">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
           </eAnnotations>
@@ -93,7 +93,8 @@
             <details key="documentation" value="The connectors which originate from this port."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//model/component/Component">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//model/component/Component"
+            eOpposite="#//model/component/Component/ports">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component, this port belongs to. Theoretically the bounds&#xA;should be 1..1, but that would prevent the possibility for&#xA;ComponentPart.portsDerived to be a containment reference&#xA;(see ComponentPart.portsDerived)"/>
           </eAnnotations>

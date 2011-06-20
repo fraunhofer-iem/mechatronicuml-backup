@@ -48,6 +48,7 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Port}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -55,7 +56,8 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_Ports()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getComponent
+	 * @model opposite="component" containment="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();

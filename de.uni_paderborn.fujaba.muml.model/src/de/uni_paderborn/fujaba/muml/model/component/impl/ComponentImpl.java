@@ -195,7 +195,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 */
 	public EList<Port> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, ComponentPackage.COMPONENT__PORTS);
+			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, ComponentPackage.COMPONENT__PORTS, ComponentPackage.PORT__COMPONENT);
 		}
 		return ports;
 	}
@@ -296,6 +296,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.COMPONENT__PORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferencingComponentParts()).basicAdd(otherEnd, msgs);
 		}

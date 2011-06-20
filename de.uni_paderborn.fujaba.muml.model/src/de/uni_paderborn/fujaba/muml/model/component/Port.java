@@ -45,7 +45,8 @@ import org.storydriven.modeling.NamedElement;
  */
 public interface Port extends NamedElement, CommentableElement, ConstrainableElement {
 	/**
-	 * Returns the value of the '<em><b>Component</b></em>' reference.
+	 * Returns the value of the '<em><b>Component</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -54,19 +55,20 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	 * ComponentPart.portsDerived to be a containment reference
 	 * (see ComponentPart.portsDerived)
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Component</em>' reference.
+	 * @return the value of the '<em>Component</em>' container reference.
 	 * @see #setComponent(Component)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Component()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getPorts
+	 * @model opposite="ports" transient="false"
 	 * @generated
 	 */
 	Component getComponent();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component</em>' reference.
+	 * @param value the new value of the '<em>Component</em>' container reference.
 	 * @see #getComponent()
 	 * @generated
 	 */

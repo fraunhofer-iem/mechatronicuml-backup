@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.SDMPackage;
@@ -111,16 +112,6 @@ public class PortImpl extends NamedElementImpl implements Port {
 	protected EList<ConnectorType> outgoingConnectors;
 
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComponent()
-	 * @generated
-	 * @ordered
-	 */
-	protected Component component;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -190,15 +181,8 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	public Component getComponent() {
-		if (component != null && component.eIsProxy()) {
-			InternalEObject oldComponent = (InternalEObject)component;
-			component = (Component)eResolveProxy(oldComponent);
-			if (component != oldComponent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT__COMPONENT, oldComponent, component));
-			}
-		}
-		return component;
+		if (eContainerFeatureID() != ComponentPackage.PORT__COMPONENT) return null;
+		return (Component)eContainer();
 	}
 
 	/**
@@ -206,8 +190,9 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetComponent() {
-		return component;
+	public NotificationChain basicSetComponent(Component newComponent, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newComponent, ComponentPackage.PORT__COMPONENT, msgs);
+		return msgs;
 	}
 
 	/**
@@ -216,10 +201,19 @@ public class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	public void setComponent(Component newComponent) {
-		Component oldComponent = component;
-		component = newComponent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__COMPONENT, oldComponent, component));
+		if (newComponent != eInternalContainer() || (eContainerFeatureID() != ComponentPackage.PORT__COMPONENT && newComponent != null)) {
+			if (EcoreUtil.isAncestor(this, newComponent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newComponent != null)
+				msgs = ((InternalEObject)newComponent).eInverseAdd(this, ComponentPackage.COMPONENT__PORTS, Component.class, msgs);
+			msgs = basicSetComponent(newComponent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__COMPONENT, newComponent, newComponent));
 	}
 
 	/**
@@ -304,6 +298,10 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectors()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingConnectors()).basicAdd(otherEnd, msgs);
+			case ComponentPackage.PORT__COMPONENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetComponent((Component)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -324,8 +322,24 @@ public class PortImpl extends NamedElementImpl implements Port {
 				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return ((InternalEList<?>)getOutgoingConnectors()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.PORT__COMPONENT:
+				return basicSetComponent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ComponentPackage.PORT__COMPONENT:
+				return eInternalContainer().eInverseRemove(this, ComponentPackage.COMPONENT__PORTS, Component.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -347,8 +361,7 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return getOutgoingConnectors();
 			case ComponentPackage.PORT__COMPONENT:
-				if (resolve) return getComponent();
-				return basicGetComponent();
+				return getComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -436,7 +449,7 @@ public class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
 				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
 			case ComponentPackage.PORT__COMPONENT:
-				return component != null;
+				return getComponent() != null;
 		}
 		return super.eIsSet(featureID);
 	}
