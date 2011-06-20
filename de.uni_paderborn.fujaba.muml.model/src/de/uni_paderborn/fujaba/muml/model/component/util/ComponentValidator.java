@@ -120,6 +120,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validateHybridPort((HybridPort)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
+			case ComponentPackage.CONTINOUS_PORT_DIRECTION_KIND:
+				return validateContinousPortDirectionKind((ContinousPortDirectionKind)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -435,6 +437,15 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponentKind(ComponentKind componentKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContinousPortDirectionKind(ContinousPortDirectionKind continousPortDirectionKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

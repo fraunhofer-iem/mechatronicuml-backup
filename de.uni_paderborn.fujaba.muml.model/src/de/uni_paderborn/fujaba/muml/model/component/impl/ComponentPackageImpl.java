@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
@@ -161,6 +162,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EEnum componentKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum continousPortDirectionKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -355,6 +363,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EClass getContinuousPort() {
 		return continuousPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContinuousPort_Kind() {
+		return (EAttribute)continuousPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -677,6 +694,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getContinousPortDirectionKind() {
+		return continousPortDirectionKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentFactory getComponentFactory() {
 		return (ComponentFactory)getEFactoryInstance();
 	}
@@ -717,6 +743,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(portEClass, PORT__COMPONENT);
 
 		continuousPortEClass = createEClass(CONTINUOUS_PORT);
+		createEAttribute(continuousPortEClass, CONTINUOUS_PORT__KIND);
 
 		discretePortEClass = createEClass(DISCRETE_PORT);
 		createEReference(discretePortEClass, DISCRETE_PORT__REFINES);
@@ -761,6 +788,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
+		continousPortDirectionKindEEnum = createEEnum(CONTINOUS_PORT_DIRECTION_KIND);
 	}
 
 	/**
@@ -838,6 +866,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getPort_Component(), this.getComponent(), null, "component", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousPortEClass, ContinuousPort.class, "ContinuousPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContinuousPort_Kind(), this.getContinousPortDirectionKind(), "kind", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discretePortEClass, DiscretePort.class, "DiscretePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscretePort_Refines(), thePatternPackage.getRole(), thePatternPackage.getRole_Port(), "refines", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -887,6 +916,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		addEEnumLiteral(componentKindEEnum, ComponentKind.HYBRID_COMPONENT);
 		addEEnumLiteral(componentKindEEnum, ComponentKind.HARDWARE_COMPONENT);
 
+		initEEnum(continousPortDirectionKindEEnum, ContinousPortDirectionKind.class, "ContinousPortDirectionKind");
+		addEEnumLiteral(continousPortDirectionKindEEnum, ContinousPortDirectionKind.IN);
+		addEEnumLiteral(continousPortDirectionKindEEnum, ContinousPortDirectionKind.OUT);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -918,13 +951,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "body"
-		   });														
+		   });															
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });																											
+		   });																														
 	}
 
 	/**
@@ -940,7 +973,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "body", "self.cardinality.lowerBound->notEmpty()"
-		   });														
+		   });															
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -954,7 +987,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
-		   });																		
+		   });																					
 	}
 
 } //ComponentPackageImpl

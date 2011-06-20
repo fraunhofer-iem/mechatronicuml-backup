@@ -87,6 +87,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return createComponentKindFromString(eDataType, initialValue);
+			case ComponentPackage.CONTINOUS_PORT_DIRECTION_KIND:
+				return createContinousPortDirectionKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +104,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return convertComponentKindToString(eDataType, instanceValue);
+			case ComponentPackage.CONTINOUS_PORT_DIRECTION_KIND:
+				return convertContinousPortDirectionKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -234,6 +238,26 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * @generated
 	 */
 	public String convertComponentKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContinousPortDirectionKind createContinousPortDirectionKindFromString(EDataType eDataType, String initialValue) {
+		ContinousPortDirectionKind result = ContinousPortDirectionKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertContinousPortDirectionKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
