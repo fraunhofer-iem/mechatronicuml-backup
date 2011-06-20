@@ -103,6 +103,12 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the continuous functionality of a port.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/component/ContinousPortDirectionKind">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Decides the direction of a continous port."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/core/BehavioralElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -292,6 +298,21 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a A/D or an D/A converter.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ContinousPortDirectionKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Decides the direction of a continous port."/>
+        </eAnnotations>
+        <eLiterals name="IN">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represent an IN-Port of a continous port."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="OUT" value="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Represent an OUT-Port of a continous port."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http:///de/uni_paderborn/fujaba/muml/model/constraint"
