@@ -78,7 +78,7 @@ public class ClockConstraintLabelExpressionLabelParser5001 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						3,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getClockConstraint(), null).evaluate(target);
 		return String.valueOf(result);

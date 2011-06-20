@@ -23,12 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class SynchronizationChannelLabelExpressionLabelParser5002 implements
-		IParser {
+public class DoEventLabelExpressionLabelParser5005 implements IParser {
 	/**
 	 * @generated
 	 */
-	public SynchronizationChannelLabelExpressionLabelParser5002() {
+	public DoEventLabelExpressionLabelParser5005() {
 	}
 
 	/**
@@ -79,10 +78,9 @@ public class SynchronizationChannelLabelExpressionLabelParser5002 implements
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						4,
+						2,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-								.getSynchronizationChannel(), null).evaluate(
-						target);
+								.getDoEvent(), null).evaluate(target);
 		return String.valueOf(result);
 	}
 

@@ -61,6 +61,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005 doEventLabel_5005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDoEventLabel_5005Parser() {
+		if (doEventLabel_5005Parser == null) {
+			doEventLabel_5005Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.DoEventLabelExpressionLabelParser5005();
+		}
+		return doEventLabel_5005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5001 clockConstraintLabel_5001Parser;
 
 	/**
@@ -251,6 +266,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getStateName_5003Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID:
 			return getClockName_5004Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
+			return getDoEventLabel_5005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getClockConstraintLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

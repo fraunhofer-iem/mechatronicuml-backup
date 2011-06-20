@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class SynchroChannel2CreateCommand extends EditElementCommand {
+public class InitialStateCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public SynchroChannel2CreateCommand(CreateElementRequest req) {
+	public InitialStateCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -41,10 +41,6 @@ public class SynchroChannel2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
-		if (container.getDoEvent() != null) {
-			return false;
-		}
 		return true;
 
 	}
@@ -54,14 +50,14 @@ public class SynchroChannel2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createDoEvent();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createClock();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
-		owner.setDoEvent(newElement);
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getElementToEdit();
+		owner.getClocks().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_DoEvent_3002(newElement);
+				.getInstance().init_Clock_2002(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -73,7 +69,7 @@ public class SynchroChannel2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

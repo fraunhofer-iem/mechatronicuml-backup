@@ -4,14 +4,22 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PolylineDecoration;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -390,7 +398,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StateFigure extends RoundedRectangle {
+	public class StateFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -416,15 +424,34 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureInnerContainer;
+		/**
+		 * @generated
+		 */
+		private RoundedRectangle fFigureFinalStateOutline;
+
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureStateContainer;
+
+		/**
+		 * @generated
+		 */
+		private PolylineShape fFigureInitialStateLine;
+
+		/**
+		 * @generated
+		 */
+		private Ellipse fFigureInitialStateEllipse;
+
+		/**
+		 * @generated
+		 */
 		public StateFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = false;
-			this.setLayoutManager(layoutThis);
-
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
+			this.setLayoutManager(new StackLayout());
+			this.setFill(false);
+			this.setOutline(false);
 			createContents();
 		}
 
@@ -432,6 +459,43 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
+
+			fFigureStateContainer = new RectangleFigure();
+			fFigureStateContainer.setFill(false);
+			fFigureStateContainer.setOutline(false);
+			fFigureStateContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(0), getMapMode().DPtoLP(30),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
+
+			this.add(fFigureStateContainer);
+			fFigureStateContainer.setLayoutManager(new StackLayout());
+
+			fFigureFinalStateOutline = new RoundedRectangle();
+			fFigureFinalStateOutline.setCornerDimensions(new Dimension(
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
+
+			fFigureStateContainer.add(fFigureFinalStateOutline);
+
+			fFigureInnerContainer = new RectangleFigure();
+			fFigureInnerContainer.setFill(false);
+			fFigureInnerContainer.setOutline(false);
+			fFigureInnerContainer.setBorder(new MarginBorder(getMapMode()
+					.DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4),
+					getMapMode().DPtoLP(4)));
+
+			fFigureStateContainer.add(fFigureInnerContainer);
+			fFigureInnerContainer.setLayoutManager(new StackLayout());
+
+			RoundedRectangle stateFigure2 = new RoundedRectangle();
+			stateFigure2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(
+					12), getMapMode().DPtoLP(12)));
+
+			fFigureInnerContainer.add(stateFigure2);
+
+			GridLayout layoutStateFigure2 = new GridLayout();
+			layoutStateFigure2.numColumns = 1;
+			layoutStateFigure2.makeColumnsEqualWidth = false;
+			stateFigure2.setLayoutManager(layoutStateFigure2);
 
 			fFigureStateNameLabel = new WrappingLabel();
 			fFigureStateNameLabel.setText("");
@@ -446,7 +510,8 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateNameLabel.verticalSpan = 1;
 			constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureStateNameLabel, constraintFFigureStateNameLabel);
+			stateFigure2.add(fFigureStateNameLabel,
+					constraintFFigureStateNameLabel);
 
 			fFigureStateCompartmentInvariants = new RectangleFigure();
 			fFigureStateCompartmentInvariants.setOutline(false);
@@ -459,7 +524,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateCompartmentInvariants.verticalSpan = 1;
 			constraintFFigureStateCompartmentInvariants.grabExcessHorizontalSpace = true;
 			constraintFFigureStateCompartmentInvariants.grabExcessVerticalSpace = false;
-			this.add(fFigureStateCompartmentInvariants,
+			stateFigure2.add(fFigureStateCompartmentInvariants,
 					constraintFFigureStateCompartmentInvariants);
 
 			fFigureStateCompartmentActionsFigure = new RectangleFigure();
@@ -473,7 +538,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateCompartmentActionsFigure.verticalSpan = 1;
 			constraintFFigureStateCompartmentActionsFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureStateCompartmentActionsFigure.grabExcessVerticalSpace = false;
-			this.add(fFigureStateCompartmentActionsFigure,
+			stateFigure2.add(fFigureStateCompartmentActionsFigure,
 					constraintFFigureStateCompartmentActionsFigure);
 
 			fFigureStateCompartmentSynchroChannel = new RectangleFigure();
@@ -487,7 +552,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateCompartmentSynchroChannel.verticalSpan = 1;
 			constraintFFigureStateCompartmentSynchroChannel.grabExcessHorizontalSpace = true;
 			constraintFFigureStateCompartmentSynchroChannel.grabExcessVerticalSpace = true;
-			this.add(fFigureStateCompartmentSynchroChannel,
+			stateFigure2.add(fFigureStateCompartmentSynchroChannel,
 					constraintFFigureStateCompartmentSynchroChannel);
 
 			fFigureStateCompartmentRegions = new RectangleFigure();
@@ -501,8 +566,37 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateCompartmentRegions.verticalSpan = 1;
 			constraintFFigureStateCompartmentRegions.grabExcessHorizontalSpace = true;
 			constraintFFigureStateCompartmentRegions.grabExcessVerticalSpace = true;
-			this.add(fFigureStateCompartmentRegions,
+			stateFigure2.add(fFigureStateCompartmentRegions,
 					constraintFFigureStateCompartmentRegions);
+
+			fFigureInitialStateLine = new PolylineShape();
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
+					getMapMode().DPtoLP(30)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(29),
+					getMapMode().DPtoLP(25)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
+					getMapMode().DPtoLP(30)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(25),
+					getMapMode().DPtoLP(31)));
+
+			this.add(fFigureInitialStateLine);
+
+			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
+			initialStateFigureContainer0.setFill(false);
+			initialStateFigureContainer0.setOutline(false);
+
+			this.add(initialStateFigureContainer0);
+			initialStateFigureContainer0.setLayoutManager(new XYLayout());
+
+			fFigureInitialStateEllipse = new Ellipse();
+			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
+
+			initialStateFigureContainer0.add(fFigureInitialStateEllipse,
+					new Rectangle(getMapMode().DPtoLP(0), getMapMode()
+							.DPtoLP(0), getMapMode().DPtoLP(10), getMapMode()
+							.DPtoLP(10)));
 
 		}
 
@@ -539,6 +633,41 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		public RectangleFigure getFigureStateCompartmentRegions() {
 			return fFigureStateCompartmentRegions;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureInnerContainer() {
+			return fFigureInnerContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RoundedRectangle getFigureFinalStateOutline() {
+			return fFigureFinalStateOutline;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureStateContainer() {
+			return fFigureStateContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public PolylineShape getFigureInitialStateLine() {
+			return fFigureInitialStateLine;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Ellipse getFigureInitialStateEllipse() {
+			return fFigureInitialStateEllipse;
 		}
 
 	}
