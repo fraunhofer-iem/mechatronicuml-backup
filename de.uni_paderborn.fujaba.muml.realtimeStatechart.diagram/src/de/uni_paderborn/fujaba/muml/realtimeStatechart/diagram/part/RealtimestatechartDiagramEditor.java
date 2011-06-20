@@ -10,6 +10,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.ui.URIEditorInput;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.palette.PaletteRoot;
@@ -56,6 +57,8 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	public static final String CONTEXT_ID = "de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ui.diagramContext"; //$NON-NLS-1$
+
+	private TransactionalEditingDomain helperTransactionalEditingDomain;
 
 	/**
 	 * @generated
@@ -279,6 +282,9 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
+		if (diagram == null || diagram.eResource() == null) {
+			return StructuredSelection.EMPTY;
+		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem item = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.navigator.MumlNavigatorItem(
@@ -298,6 +304,18 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
 				provider, getDiagramGraphicalViewer());
+	}
+
+	/**
+	 * @generated
+	 */
+	public TransactionalEditingDomain getHelperTransactionalEditingDomain() {
+		if (helperTransactionalEditingDomain == null) {
+			helperTransactionalEditingDomain = createEditingDomain();
+			helperTransactionalEditingDomain.getResourceSet().createResource(
+					URI.createURI(""));
+		}
+		return helperTransactionalEditingDomain;
 	}
 
 }

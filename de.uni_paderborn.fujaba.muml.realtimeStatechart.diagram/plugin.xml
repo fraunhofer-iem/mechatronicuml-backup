@@ -203,7 +203,7 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart" id="FujabaRealtimeStatechart_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2001"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.InitialStateEditPart" id="Clock_2002"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockEditPart" id="Clock_2002"/>
          <context elements="FujabaRealtimeStatechart_1000,State_2001,Clock_2002"/>
       </modelingAssistantProvider>
    </extension>

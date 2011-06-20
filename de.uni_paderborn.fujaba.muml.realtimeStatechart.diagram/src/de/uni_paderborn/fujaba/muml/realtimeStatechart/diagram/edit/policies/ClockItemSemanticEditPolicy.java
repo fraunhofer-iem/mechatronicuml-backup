@@ -11,14 +11,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class InitialStateItemSemanticEditPolicy
+public class ClockItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public InitialStateItemSemanticEditPolicy() {
+	public ClockItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Clock_2002);
 	}

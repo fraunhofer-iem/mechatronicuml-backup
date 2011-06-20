@@ -27,7 +27,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class InitialStateEditPart extends ShapeNodeEditPart {
+public class ClockEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -47,7 +47,7 @@ public class InitialStateEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public InitialStateEditPart(View view) {
+	public ClockEditPart(View view) {
 		super(view);
 	}
 
@@ -58,7 +58,7 @@ public class InitialStateEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.InitialStateItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ClockItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class InitialStateCreateCommand extends EditElementCommand {
+public class FinalStateCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public InitialStateCreateCommand(CreateElementRequest req) {
+	public FinalStateCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,8 +50,8 @@ public class InitialStateCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.InitialState newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createInitialState();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FinalState newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createFinalState();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getElementToEdit();
 		owner.getVertices().add(newElement);
@@ -66,7 +66,7 @@ public class InitialStateCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.InitialState newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.FinalState newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
