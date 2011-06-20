@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.impl.BehavioralConnectorImpl;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getParentComponentInstance <em>Parent Component Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getConnectorType <em>Connector Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +60,16 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	 * @ordered
 	 */
 	protected PortInstance target;
+
+	/**
+	 * The cached value of the '{@link #getConnectorType() <em>Connector Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConnectorType connectorType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,6 +256,44 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ConnectorType getConnectorType() {
+		if (connectorType != null && connectorType.eIsProxy()) {
+			InternalEObject oldConnectorType = (InternalEObject)connectorType;
+			connectorType = (ConnectorType)eResolveProxy(oldConnectorType);
+			if (connectorType != oldConnectorType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE, oldConnectorType, connectorType));
+			}
+		}
+		return connectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectorType basicGetConnectorType() {
+		return connectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnectorType(ConnectorType newConnectorType) {
+		ConnectorType oldConnectorType = connectorType;
+		connectorType = newConnectorType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE, oldConnectorType, connectorType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -311,6 +361,9 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 				return basicGetTarget();
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				return getParentComponentInstance();
+			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
+				if (resolve) return getConnectorType();
+				return basicGetConnectorType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -331,6 +384,9 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 				return;
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				setParentComponentInstance((ComponentInstance)newValue);
+				return;
+			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
+				setConnectorType((ConnectorType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -353,6 +409,9 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				setParentComponentInstance((ComponentInstance)null);
 				return;
+			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
+				setConnectorType((ConnectorType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -371,6 +430,8 @@ public class ConnectorInstanceImpl extends BehavioralConnectorImpl implements Co
 				return target != null;
 			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
 				return getParentComponentInstance() != null;
+			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
+				return connectorType != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -626,6 +626,8 @@
             <details key="documentation" value="The component instance that this component instance is embedded in. Component instances may be embedded into other component instances. At type level embedded component instances are called component parts."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" lowerBound="1"
+            eType="#//model/component/ConnectorType"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

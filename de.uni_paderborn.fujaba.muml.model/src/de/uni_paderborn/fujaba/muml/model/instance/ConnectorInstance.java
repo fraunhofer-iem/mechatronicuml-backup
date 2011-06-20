@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance;
 
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
+import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType <em>Connector Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,5 +113,31 @@ public interface ConnectorInstance extends BehavioralConnector {
 	 * @generated
 	 */
 	void setParentComponentInstance(ComponentInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector Type</em>' reference.
+	 * @see #setConnectorType(ConnectorType)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getConnectorInstance_ConnectorType()
+	 * @model required="true"
+	 * @generated
+	 */
+	ConnectorType getConnectorType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType <em>Connector Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Connector Type</em>' reference.
+	 * @see #getConnectorType()
+	 * @generated
+	 */
+	void setConnectorType(ConnectorType value);
 
 } // ConnectorInstance
