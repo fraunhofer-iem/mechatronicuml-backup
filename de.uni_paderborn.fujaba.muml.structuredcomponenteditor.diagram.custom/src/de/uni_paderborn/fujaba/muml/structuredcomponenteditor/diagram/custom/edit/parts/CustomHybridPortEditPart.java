@@ -2,11 +2,15 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.HybridPortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomPortItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart;
 
 /**
@@ -92,6 +96,18 @@ public class CustomHybridPortEditPart extends HybridPortEditPart {
 	public void deactivate() {
 		getBehavior().deactivate();
 		super.deactivate();
+	}
+
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+				new CustomPortGraphicalNodeEditPolicy());
+
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CustomPortItemSemanticEditPolicy());
+
 	}
 
 }
