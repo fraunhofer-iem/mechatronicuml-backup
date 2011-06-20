@@ -460,6 +460,35 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
+			fFigureInitialStateLine = new PolylineShape();
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
+					getMapMode().DPtoLP(30)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(29),
+					getMapMode().DPtoLP(25)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
+					getMapMode().DPtoLP(30)));
+			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(25),
+					getMapMode().DPtoLP(31)));
+
+			this.add(fFigureInitialStateLine);
+
+			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
+			initialStateFigureContainer0.setFill(false);
+			initialStateFigureContainer0.setOutline(false);
+
+			this.add(initialStateFigureContainer0);
+			initialStateFigureContainer0.setLayoutManager(new XYLayout());
+
+			fFigureInitialStateEllipse = new Ellipse();
+			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
+
+			initialStateFigureContainer0.add(fFigureInitialStateEllipse,
+					new Rectangle(getMapMode().DPtoLP(0), getMapMode()
+							.DPtoLP(0), getMapMode().DPtoLP(10), getMapMode()
+							.DPtoLP(10)));
+
 			fFigureStateContainer = new RectangleFigure();
 			fFigureStateContainer.setFill(false);
 			fFigureStateContainer.setOutline(false);
@@ -568,35 +597,6 @@ public class StateEditPart extends ShapeNodeEditPart {
 			constraintFFigureStateCompartmentRegions.grabExcessVerticalSpace = true;
 			stateFigure2.add(fFigureStateCompartmentRegions,
 					constraintFFigureStateCompartmentRegions);
-
-			fFigureInitialStateLine = new PolylineShape();
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(30)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(29),
-					getMapMode().DPtoLP(25)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(30)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(25),
-					getMapMode().DPtoLP(31)));
-
-			this.add(fFigureInitialStateLine);
-
-			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
-			initialStateFigureContainer0.setFill(false);
-			initialStateFigureContainer0.setOutline(false);
-
-			this.add(initialStateFigureContainer0);
-			initialStateFigureContainer0.setLayoutManager(new XYLayout());
-
-			fFigureInitialStateEllipse = new Ellipse();
-			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
-
-			initialStateFigureContainer0.add(fFigureInitialStateEllipse,
-					new Rectangle(getMapMode().DPtoLP(0), getMapMode()
-							.DPtoLP(0), getMapMode().DPtoLP(10), getMapMode()
-							.DPtoLP(10)));
 
 		}
 

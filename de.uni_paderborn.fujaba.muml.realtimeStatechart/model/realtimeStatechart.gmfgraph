@@ -59,6 +59,47 @@
         <layout
             xsi:type="gmfgraph:StackLayout"/>
         <children
+            xsi:type="gmfgraph:Polyline"
+            name="InitialStateLine">
+          <template
+              x="5"
+              y="5"/>
+          <template
+              x="30"
+              y="30"/>
+          <template
+              x="29"
+              y="25"/>
+          <template
+              x="30"
+              y="30"/>
+          <template
+              x="25"
+              y="31"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="InitialStateFigureContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:XYLayout"/>
+          <children
+              xsi:type="gmfgraph:Ellipse"
+              name="InitialStateEllipse">
+            <layoutData
+                xsi:type="gmfgraph:XYLayoutData">
+              <topLeft/>
+              <size
+                  dx="10"
+                  dy="10"/>
+            </layoutData>
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"
+                value="gray"/>
+          </children>
+        </children>
+        <children
             xsi:type="gmfgraph:Rectangle"
             name="StateContainer"
             outline="false"
@@ -153,73 +194,32 @@
             </children>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:Polyline"
-            name="InitialStateLine">
-          <template
-              x="5"
-              y="5"/>
-          <template
-              x="30"
-              y="30"/>
-          <template
-              x="29"
-              y="25"/>
-          <template
-              x="30"
-              y="30"/>
-          <template
-              x="25"
-              y="31"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InitialStateFigureContainer"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:XYLayout"/>
-          <children
-              xsi:type="gmfgraph:Ellipse"
-              name="InitialStateEllipse">
-            <layoutData
-                xsi:type="gmfgraph:XYLayoutData">
-              <topLeft/>
-              <size
-                  dx="10"
-                  dy="10"/>
-            </layoutData>
-            <backgroundColor
-                xsi:type="gmfgraph:ConstantColor"
-                value="gray"/>
-          </children>
-        </children>
       </actualFigure>
       <accessors
           accessor="getFigureStateNameLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getFigureStateCompartmentInvariants"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
       <accessors
           accessor="getFigureStateCompartmentActionsFigure"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.2"/>
       <accessors
           accessor="getFigureStateCompartmentSynchroChannel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1/@children.0/@children.3"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.3"/>
       <accessors
           accessor="getFigureStateCompartmentRegions"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1/@children.0/@children.4"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.4"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
