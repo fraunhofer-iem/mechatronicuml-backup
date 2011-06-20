@@ -223,8 +223,6 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return connectorInstances;
 	}
 	
-
-	// TODO: Implement in model.
 	private ConnectorInstance createConnectorInstance(
 			ConnectorType connectorType) {
 		ConnectorInstance connectorInstance = null;
