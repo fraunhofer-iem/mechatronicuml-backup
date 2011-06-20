@@ -29,6 +29,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 	private ComponentInstance componentInstance;
 	private Component newComponentType;
+	private int counter = 1;
 
 	public SetComponentTypeCommand(ComponentInstance componentInstance,
 			Component newComponentType) {
@@ -62,7 +63,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		// ComponentInstance newInstance = component.createInstance();
 		ComponentInstance newInstance = InstanceFactory.eINSTANCE
 				.createComponentInstance();
-		newInstance.setName(componentInstance.getName());
+		newInstance.setName(componentInstance.getName() + counter++);
 		newInstance.setComponentType(component);
 
 		configureComponentInstance(newInstance, component);
@@ -93,8 +94,104 @@ public class SetComponentTypeCommand extends AbstractCommand {
 						.getEmbeddedParts()) {
 					createComponentPartInstance(newInstance, componentPart);
 				}
+
+				// instantiate the connector types
+				for (ConnectorType connectorType : structuredComponent
+						.getConnectors()) {
+					List<PortInstance> portInstances = getAllContainedPortInstances(newInstance);
+					// have to be added because of possible delegation
+					// connectors
+					portInstances.addAll(newInstance.getPortInstances());
+
+					createConnectorInstance(connectorType, portInstances,
+							getLowestCardinality(connectorType));
+				}
 			}
 		}
+	}
+
+	private long getLowestCardinality(ConnectorType connectorType) {
+
+		long cardinality = -1;
+
+		if (connectorType.getFromPort().getCardinality().getUpperBound()
+				.getValue() > 1) {
+			if (cardinality == -1
+					|| cardinality > connectorType.getFromPort()
+							.getCardinality().getLowerBound().getValue()) {
+				cardinality = connectorType.getFromPort().getCardinality()
+						.getLowerBound().getValue();
+			}
+		}
+
+		if (connectorType.getToPort().getCardinality().getUpperBound()
+				.getValue() > 1) {
+			if (cardinality == -1
+					|| cardinality > connectorType.getToPort().getCardinality()
+							.getLowerBound().getValue()) {
+				cardinality = connectorType.getToPort().getCardinality()
+						.getLowerBound().getValue();
+			}
+		}
+
+		ComponentPart part = getAccordingPart(
+				connectorType.getParentComponent(), connectorType.getFromPort());
+		if (part != null
+				&& connectorType.getFromPort().getCardinality().getUpperBound()
+						.getValue() <= 1) {
+			if (cardinality == -1
+					|| cardinality > part.getCardinality().getLowerBound()
+							.getValue()) {
+				cardinality = part.getCardinality().getLowerBound().getValue();
+			}
+
+		}
+
+		part = getAccordingPart(connectorType.getParentComponent(),
+				connectorType.getToPort());
+		if (part != null
+				&& connectorType.getToPort().getCardinality().getUpperBound()
+						.getValue() <= 1) {
+			if (cardinality == -1
+					|| cardinality > part.getCardinality().getLowerBound()
+							.getValue()) {
+				cardinality = part.getCardinality().getLowerBound().getValue();
+			}
+		}
+		if (cardinality != -1) {
+			return cardinality;
+		} else {
+			return 1;
+		}
+	}
+
+	private ComponentPart getAccordingPart(Component comp, Port port) {
+
+		List<ComponentPart> parts = port.getComponent()
+				.getReferencingComponentParts();
+
+		for (ComponentPart part : parts) {
+			if (part.getParentComponent().equals(comp)) {
+				return part;
+			}
+		}
+
+		return null;
+	}
+
+	private List<PortInstance> getAllContainedPortInstances(
+			ComponentInstance compInstance) {
+		ArrayList<PortInstance> portInstanceList = new ArrayList<PortInstance>();
+
+		for (ComponentInstance tmpCompInstance : compInstance
+				.getEmbeddedInstances()) {
+			for (PortInstance tmpPortInstance : tmpCompInstance
+					.getPortInstances()) {
+				portInstanceList.add(tmpPortInstance);
+			}
+		}
+
+		return portInstanceList;
 	}
 
 	private void destroyContents(ComponentInstance newInstance,
@@ -167,73 +264,146 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			PortInstance portInstance = InstanceFactory.eINSTANCE
 					.createPortInstance();
 			portInstance.setPortType(port);
-			portInstance.setName(componentInstance.getName() + port.getName());
+			portInstance.setName(componentInstance.getName() + port.getName() + i);
 			portInstance.setComponentInstance(componentInstance);
-			createIncomingConnectorInstances(port, componentInstance, portInstance);
-			createOutgoingConnectorInstances(port, componentInstance, portInstance);
+			// createIncomingConnectorInstances(port, componentInstance,
+			// portInstance);
+			// createOutgoingConnectorInstances(port, componentInstance,
+			// portInstance);
 
 		}
 		return newInstances;
 	}
 
-	private List<ConnectorInstance> createIncomingConnectorInstances(Port port,
-			ComponentInstance componentInstance, PortInstance toInstance) {
-		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
-		for (ConnectorType connectorType : port.getIncomingConnectors()) {
-			Port fromPort = connectorType.getFromPort();
+	// private List<ConnectorInstance> createIncomingConnectorInstances(Port
+	// port,
+	// ComponentInstance componentInstance, PortInstance toInstance) {
+	// List<ConnectorInstance> connectorInstances = new
+	// ArrayList<ConnectorInstance>();
+	// for (ConnectorType connectorType : port.getIncomingConnectors()) {
+	// Port fromPort = connectorType.getFromPort();
+	//
+	// for (PortInstance fromInstance : componentInstance
+	// .getPortInstances()) {
+	// if (fromInstance.getPortType() == fromPort) {
+	// ConnectorInstance newInstance = createConnectorInstance(connectorType);
+	// if (newInstance != null) {
+	// newInstance.setSource(fromInstance);
+	// newInstance.setTarget(toInstance);
+	//
+	// newInstance
+	// .setParentComponentInstance(componentInstance);
+	// connectorInstances.add(newInstance);
+	// }
+	// }
+	// }
+	// }
+	// return connectorInstances;
+	// }
 
-			for (PortInstance fromInstance : componentInstance
-					.getPortInstances()) {
-				if (fromInstance.getPortType() == fromPort) {
-					ConnectorInstance newInstance = createConnectorInstance(connectorType);
-					if (newInstance != null) {
-						newInstance.setSource(fromInstance);
-						newInstance.setTarget(toInstance);
-	
-						newInstance.setParentComponentInstance(componentInstance);
-						connectorInstances.add(newInstance);
-					}
+	// private List<ConnectorInstance> createOutgoingConnectorInstances(Port
+	// port,
+	// ComponentInstance componentInstance, PortInstance fromInstance) {
+	// List<ConnectorInstance> connectorInstances = new
+	// ArrayList<ConnectorInstance>();
+	// for (ConnectorType connectorType : port.getOutgoingConnectors()) {
+	// Port toPort = connectorType.getToPort();
+	// for (PortInstance toInstance : componentInstance.getPortInstances()) {
+	// if (toInstance.getPortType() == toPort) {
+	// ConnectorInstance newInstance = createConnectorInstance(connectorType);
+	// if (newInstance != null) {
+	// newInstance.setSource(fromInstance);
+	// newInstance.setTarget(toInstance);
+	// newInstance
+	// .setParentComponentInstance(componentInstance);
+	//
+	// connectorInstances.add(newInstance);
+	// }
+	// }
+	// }
+	// }
+	// return connectorInstances;
+	// }
+
+	private void createConnectorInstance(ConnectorType connectorType,
+			List<PortInstance> portInstanceList, long cardinality) {
+
+		for (int i = 0; i < cardinality; i++) {
+			createConnectorInstance(connectorType, portInstanceList);
+		}
+	}
+
+	public void createConnectorInstance(ConnectorType connectorType,
+			List<PortInstance> portInstanceList) {
+		PortInstance toPortInstance = null;
+		PortInstance fromPortInstance = null;
+
+		Port toPort = connectorType.getToPort();
+		Port fromPort = connectorType.getFromPort();
+		// List<PortInstance> test = portInstanceList.
+		for (PortInstance portInstance : portInstanceList) {
+
+			if (toPortInstance != null && fromPortInstance != null) {
+				break;
+			} else if (portInstance.getPortType() == toPort) {
+				if (!isConnectorInstanceAlreadyInstanciated(connectorType,
+						portInstance)) {
+					toPortInstance = portInstance;
+				}
+			} else if (portInstance.getPortType() == fromPort) {
+				if (!isConnectorInstanceAlreadyInstanciated(connectorType,
+						portInstance)) {
+					fromPortInstance = portInstance;
 				}
 			}
 		}
-		return connectorInstances;
+
+		if (toPortInstance != null && fromPortInstance != null) {
+			ConnectorInstance newInstance = createConnectorInstance(connectorType);
+
+			newInstance.setSource(fromPortInstance);
+			newInstance.setTarget(toPortInstance);
+			newInstance.setParentComponentInstance(componentInstance);
+		}
+
 	}
 
+	private boolean isConnectorInstanceAlreadyInstanciated(
+			ConnectorType connectorType, PortInstance portInstance) {
 
-
-	private List<ConnectorInstance> createOutgoingConnectorInstances(Port port,
-			ComponentInstance componentInstance, PortInstance fromInstance) {
-		List<ConnectorInstance> connectorInstances = new ArrayList<ConnectorInstance>();
-		for (ConnectorType connectorType : port.getOutgoingConnectors()) {
-			Port toPort = connectorType.getToPort();
-			for (PortInstance toInstance : componentInstance.getPortInstances()) {
-				if (toInstance.getPortType() == toPort) {
-					ConnectorInstance newInstance = createConnectorInstance(connectorType);
-					if (newInstance != null) {
-						newInstance.setSource(fromInstance);
-						newInstance.setTarget(toInstance);
-						newInstance
-								.setParentComponentInstance(componentInstance);
-	
-						connectorInstances.add(newInstance);
-					}
-				}
+		for (ConnectorInstance connectorInstance : portInstance
+				.getOutgoingConnectorInstances()) {
+			if (connectorInstance.getConnectorType().equals(connectorType)) {
+				return true;
 			}
 		}
-		return connectorInstances;
+
+		for (ConnectorInstance connectorInstance : portInstance
+				.getIncomingConnectorInstances()) {
+			if (connectorInstance.getConnectorType().equals(connectorType)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
-	
 	private ConnectorInstance createConnectorInstance(
 			ConnectorType connectorType) {
 		ConnectorInstance connectorInstance = null;
 		if (connectorType instanceof Assembly) {
-			connectorInstance = InstanceFactory.eINSTANCE.createAssemblyInstance();
-			((AssemblyInstance)connectorInstance).setAssemblyType((Assembly)connectorType);
+			connectorInstance = InstanceFactory.eINSTANCE
+					.createAssemblyInstance();
+			((AssemblyInstance) connectorInstance)
+					.setAssemblyType((Assembly) connectorType);
 		} else if (connectorType instanceof Delegation) {
-			connectorInstance = InstanceFactory.eINSTANCE.createDelegationInstance();
-			((DelegationInstance)connectorInstance).setDelegationType((Delegation)connectorType);
+			connectorInstance = InstanceFactory.eINSTANCE
+					.createDelegationInstance();
+			((DelegationInstance) connectorInstance)
+					.setDelegationType((Delegation) connectorType);
 		}
-		
+
+		connectorInstance.setConnectorType(connectorType);
+
 		return connectorInstance;
 	}
 

@@ -24,12 +24,13 @@ public class ComponentTypeItemPropertyDescriptor extends ItemPropertyDescriptor 
 
 	@Override
 	public void setPropertyValue(Object object, Object value) {
-		EditingDomain editingDomain = getEditingDomain(object);
-		if (editingDomain != null) {
-			editingDomain.getCommandStack().execute(
-					new SetComponentTypeCommand((ComponentInstance) object,
-							(Component) value));
+		if (((ComponentInstance) object).getName() != null) {
+			EditingDomain editingDomain = getEditingDomain(object);
+			if (editingDomain != null) {
+				editingDomain.getCommandStack().execute(
+						new SetComponentTypeCommand((ComponentInstance) object,
+								(Component) value));
+			}
 		}
 	}
-
 }
