@@ -538,11 +538,11 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getPortInstance_OutgoingConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_Source(), "outgoingConnectorInstances", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyInstanceEClass, AssemblyInstance.class, "AssemblyInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssemblyInstance_AssemblyType(), theComponentPackage.getAssembly(), null, "assemblyType", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAssemblyInstance_CoordinationPattern(), thePatternPackage.getCoordinationPattern(), null, "coordinationPattern", null, 1, 1, AssemblyInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationInstanceEClass, DelegationInstance.class, "DelegationInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDelegationInstance_DelegationType(), theComponentPackage.getDelegation(), null, "delegationType", null, 1, 1, DelegationInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDelegationInstance_DelegationType(), theComponentPackage.getDelegation(), null, "delegationType", null, 1, 1, DelegationInstance.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentInstanceConfigurationEClass, ComponentInstanceConfiguration.class, "ComponentInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentInstanceConfiguration_ComponentInstances(), this.getComponentInstance(), null, "componentInstances", null, 0, -1, ComponentInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -573,7 +573,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																											
+		   });																														
 	}
 
 	/**
@@ -583,7 +583,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																	
 		addAnnotation
 		  (getPortInstance_SenderMessageInterface(), 
 		   source, 
@@ -595,7 +595,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).receiverMessageInterface\nendif"
-		   });											
+		   });							
+		addAnnotation
+		  (getAssemblyInstance_AssemblyType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "connectorType.oclAsType(component::Assembly)"
+		   });					
+		addAnnotation
+		  (getDelegationInstance_DelegationType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "connectorType.oclAsType(component::Delegation)"
+		   });			
 	}
 
 } //InstancePackageImpl

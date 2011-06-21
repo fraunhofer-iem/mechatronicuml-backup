@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -36,14 +37,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements AssemblyInstance {
 	/**
-	 * The cached value of the '{@link #getAssemblyType() <em>Assembly Type</em>}' reference.
+	 * The cached setting delegate for the '{@link #getAssemblyType() <em>Assembly Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssemblyType()
 	 * @generated
 	 * @ordered
 	 */
-	protected Assembly assemblyType;
+	protected EStructuralFeature.Internal.SettingDelegate ASSEMBLY_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getCoordinationPattern() <em>Coordination Pattern</em>}' reference.
@@ -80,15 +81,7 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	 * @generated
 	 */
 	public Assembly getAssemblyType() {
-		if (assemblyType != null && assemblyType.eIsProxy()) {
-			InternalEObject oldAssemblyType = (InternalEObject)assemblyType;
-			assemblyType = (Assembly)eResolveProxy(oldAssemblyType);
-			if (assemblyType != oldAssemblyType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE, oldAssemblyType, assemblyType));
-			}
-		}
-		return assemblyType;
+		return (Assembly)ASSEMBLY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -97,19 +90,7 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	 * @generated
 	 */
 	public Assembly basicGetAssemblyType() {
-		return assemblyType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssemblyType(Assembly newAssemblyType) {
-		Assembly oldAssemblyType = assemblyType;
-		assemblyType = newAssemblyType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE, oldAssemblyType, assemblyType));
+		return (Assembly)ASSEMBLY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -176,9 +157,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
-				setAssemblyType((Assembly)newValue);
-				return;
 			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
 				return;
@@ -194,9 +172,6 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
-				setAssemblyType((Assembly)null);
-				return;
 			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
@@ -213,7 +188,7 @@ public class AssemblyInstanceImpl extends ConnectorInstanceImpl implements Assem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE:
-				return assemblyType != null;
+				return ASSEMBLY_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.ASSEMBLY_INSTANCE__COORDINATION_PATTERN:
 				return coordinationPattern != null;
 		}

@@ -628,7 +628,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" lowerBound="1"
-            eType="#//model/component/ConnectorType"/>
+            eType="#//model/component/ConnectorType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The connector type of this connector instance."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -684,9 +688,12 @@
           <details key="documentation" value="This class represents an assembly connector at instance level."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType" lowerBound="1"
-            eType="#//model/component/Assembly">
+            eType="#//model/component/Assembly" changeable="false" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="connectorType.oclAsType(component::Assembly)"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
@@ -701,9 +708,12 @@
           <details key="documentation" value="This class represents a delegation connector at instance level."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType" lowerBound="1"
-            eType="#//model/component/Delegation">
+            eType="#//model/component/Delegation" changeable="false" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The delegation type of this delegation instance."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="connectorType.oclAsType(component::Delegation)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

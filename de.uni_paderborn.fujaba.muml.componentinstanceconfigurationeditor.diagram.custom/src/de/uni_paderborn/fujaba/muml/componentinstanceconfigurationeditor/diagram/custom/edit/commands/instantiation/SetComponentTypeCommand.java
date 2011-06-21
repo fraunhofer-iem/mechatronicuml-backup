@@ -393,13 +393,9 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		if (connectorType instanceof Assembly) {
 			connectorInstance = InstanceFactory.eINSTANCE
 					.createAssemblyInstance();
-			((AssemblyInstance) connectorInstance)
-					.setAssemblyType((Assembly) connectorType);
 		} else if (connectorType instanceof Delegation) {
 			connectorInstance = InstanceFactory.eINSTANCE
 					.createDelegationInstance();
-			((DelegationInstance) connectorInstance)
-					.setDelegationType((Delegation) connectorType);
 		}
 
 		connectorInstance.setConnectorType(connectorType);

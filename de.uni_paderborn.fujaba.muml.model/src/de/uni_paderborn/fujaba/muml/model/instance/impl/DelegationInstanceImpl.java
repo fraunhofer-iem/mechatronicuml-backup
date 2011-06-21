@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -33,15 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DelegationInstanceImpl extends ConnectorInstanceImpl implements DelegationInstance {
 	/**
-	 * The cached value of the '{@link #getDelegationType() <em>Delegation Type</em>}' reference.
+	 * The cached setting delegate for the '{@link #getDelegationType() <em>Delegation Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDelegationType()
 	 * @generated
 	 * @ordered
 	 */
-	protected Delegation delegationType;
-
+	protected EStructuralFeature.Internal.SettingDelegate DELEGATION_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DELEGATION_INSTANCE__DELEGATION_TYPE).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,15 +67,7 @@ public class DelegationInstanceImpl extends ConnectorInstanceImpl implements Del
 	 * @generated
 	 */
 	public Delegation getDelegationType() {
-		if (delegationType != null && delegationType.eIsProxy()) {
-			InternalEObject oldDelegationType = (InternalEObject)delegationType;
-			delegationType = (Delegation)eResolveProxy(oldDelegationType);
-			if (delegationType != oldDelegationType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE, oldDelegationType, delegationType));
-			}
-		}
-		return delegationType;
+		return (Delegation)DELEGATION_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -84,19 +76,7 @@ public class DelegationInstanceImpl extends ConnectorInstanceImpl implements Del
 	 * @generated
 	 */
 	public Delegation basicGetDelegationType() {
-		return delegationType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDelegationType(Delegation newDelegationType) {
-		Delegation oldDelegationType = delegationType;
-		delegationType = newDelegationType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE, oldDelegationType, delegationType));
+		return (Delegation)DELEGATION_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -120,40 +100,10 @@ public class DelegationInstanceImpl extends ConnectorInstanceImpl implements Del
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE:
-				setDelegationType((Delegation)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE:
-				setDelegationType((Delegation)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InstancePackage.DELEGATION_INSTANCE__DELEGATION_TYPE:
-				return delegationType != null;
+				return DELEGATION_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

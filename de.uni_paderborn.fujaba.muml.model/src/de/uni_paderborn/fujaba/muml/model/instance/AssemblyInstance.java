@@ -40,22 +40,12 @@ public interface AssemblyInstance extends ConnectorInstance {
 	 * The assembly that this assembly instance is built from.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Assembly Type</em>' reference.
-	 * @see #setAssemblyType(Assembly)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_AssemblyType()
-	 * @model required="true"
+	 * @model required="true" changeable="false" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='connectorType.oclAsType(component::Assembly)'"
 	 * @generated
 	 */
 	Assembly getAssemblyType();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Assembly Type</em>' reference.
-	 * @see #getAssemblyType()
-	 * @generated
-	 */
-	void setAssemblyType(Assembly value);
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' reference.

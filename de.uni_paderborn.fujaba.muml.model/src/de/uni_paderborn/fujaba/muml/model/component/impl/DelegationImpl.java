@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
-import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -120,18 +118,6 @@ public class DelegationImpl extends ConnectorTypeImpl implements Delegation {
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DELEGATION__COMPONENT_PART, newComponentPart, newComponentPart));
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public DelegationInstance createInstance() {
-		DelegationInstance delegationInstance = InstanceFactory.eINSTANCE.createDelegationInstance();
-		delegationInstance.setDelegationType(this);
-		return delegationInstance;
-	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

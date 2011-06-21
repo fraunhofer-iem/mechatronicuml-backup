@@ -15,8 +15,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -191,18 +189,7 @@ public class AssemblyImpl extends ConnectorTypeImpl implements Assembly {
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ASSEMBLY__FROM, newFrom, newFrom));
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public AssemblyInstance createInstance() {
-		AssemblyInstance assemblyInstance = InstanceFactory.eINSTANCE.createAssemblyInstance();
-		assemblyInstance.setAssemblyType(this);
-		return assemblyInstance;
-	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
