@@ -30,6 +30,8 @@ public class MumlDiagramUpdater {
 			return getStateCompoundCompartment_7001SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
 			return getStateRegionCompartment_7002SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitEventCompartmentEditPart.VISUAL_ID:
+			return getStateExitEventCompartment_7003SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -106,16 +108,6 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 			}
 		}
-		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
-					.getExitEvent();
-			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-			}
-		}
 		for (Iterator<?> it = modelElement.getInvariants().iterator(); it
 				.hasNext();) {
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint) it
@@ -168,6 +160,34 @@ public class MumlDiagramUpdater {
 				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateExitEventCompartment_7003SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
+		{
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
+					.getExitEvent();
+			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoActionEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
 			}
 		}
 		return result;

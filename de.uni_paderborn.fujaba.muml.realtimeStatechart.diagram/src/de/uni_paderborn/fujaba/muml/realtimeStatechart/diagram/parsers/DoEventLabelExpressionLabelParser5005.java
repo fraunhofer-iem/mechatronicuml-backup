@@ -78,7 +78,7 @@ public class DoEventLabelExpressionLabelParser5005 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						2,
+						3,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getDoEvent(), null).evaluate(target);
 		return String.valueOf(result);

@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[15];
+		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[17];
 	}
 
 	/**
@@ -51,8 +51,10 @@ public class MumlOCLFactory {
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
 					"\'State\'", //$NON-NLS-1$
+					"\'entry / \'.concat(if self.action->isEmpty() then \'null\' else\n\tself.action->first().name.concat(if self.action->size() > 1 then\n\t\t\'...\'\n\telse\n\t\t\'\'\n\tendif)\nendif)", //$NON-NLS-1$
 					"\'action\'", //$NON-NLS-1$
 					"\'do / \'.concat(if self.action->isEmpty() then \'null\' else\n\tself.action->first().name.concat(if self.action->size() > 1 then\n\t\t\'...\'\n\telse\n\t\t\'\'\n\tendif)\nendif)", //$NON-NLS-1$
+					"\'exit / \'.concat(if self.action->isEmpty() then \'null\' else\n\tself.action->first().name.concat(if self.action->size() > 1 then\n\t\t\'...\'\n\telse\n\t\t\'\'\n\tendif)\nendif)", //$NON-NLS-1$
 					"if self.clock.name.oclIsUndefined() or self.operator.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.clock.name.concat(\' \').concat(\'self.operator\').concat(\' \').concat(\n\t\tif self.bound.oclIsUndefined() then\n\t\t\t\'null\'\n\t\telse\n\t\t\tself.bound.toString()\n\t\tendif\n\t)\nendif", //$NON-NLS-1$
 					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\n\t\'(\'.concat(\n\t\tself.containedParameters->iterate(param; result : String = \'\' | \n\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\tparam.name.concat(\' : \').concat(\n\t\t\t\t\tif param.eType.oclIsUndefined() then\n\t\t\t\t\t\t\'null\'\n\t\t\t\t\telse\n\t\t\t\t\t\tparam.eType.name\n\t\t\t\t\tendif\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t).concat(\')\')\n)", //$NON-NLS-1$
 					"\'c\'", //$NON-NLS-1$

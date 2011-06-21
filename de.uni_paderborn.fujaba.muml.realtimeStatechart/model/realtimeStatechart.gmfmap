@@ -41,6 +41,14 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryOrExitEvent"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#EEActionExpr"/>
+            <viewExpression
+                body="'entry / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -90,12 +98,20 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.0">
+          compartment="//@nodes.0/@ownedChild/@compartments.2">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/exitEvent"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryOrExitEvent"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="realtimeStatechart.gmfgraph#EEActionExpr"/>
+            <viewExpression
+                body="'exit / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -162,7 +178,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4">
         <compartment
             href="realtimeStatechart.gmfgraph#CompoundCompartment"/>
       </compartments>
@@ -170,6 +186,11 @@
           children="//@nodes.0/@ownedChild/@children.5">
         <compartment
             href="realtimeStatechart.gmfgraph#RegionCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.2">
+        <compartment
+            href="realtimeStatechart.gmfgraph#ExitEventCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

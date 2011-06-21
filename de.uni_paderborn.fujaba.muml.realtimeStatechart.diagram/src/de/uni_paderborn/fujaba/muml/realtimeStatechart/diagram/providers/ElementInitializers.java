@@ -35,7 +35,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							5,
+							7,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getClock(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -56,7 +56,7 @@ public class ElementInitializers {
 			instance.getAction().add(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							2,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getAction(), null).evaluate(
 							newInstance_0_0);

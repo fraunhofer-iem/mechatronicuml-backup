@@ -153,7 +153,7 @@
               </children>
               <children
                   xsi:type="gmfgraph:Rectangle"
-                  name="StateCompartmentInvariants"
+                  name="StateCompartmentExitEvent"
                   outline="false">
                 <layoutData
                     xsi:type="gmfgraph:GridLayoutData"
@@ -199,9 +199,6 @@
           accessor="getFigureStateNameLabel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.0"/>
       <accessors
-          accessor="getFigureStateCompartmentInvariants"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
-      <accessors
           accessor="getFigureStateCompartmentActionsFigure"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.2"/>
       <accessors
@@ -220,6 +217,8 @@
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -554,11 +553,15 @@
   <compartments
       name="CompoundCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
       name="RegionCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.4"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.3"/>
+  <compartments
+      name="ExitEventCompartment"
+      figure="StateFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.9"/>
   <labels
       name="TransitionPriority"
       figure="TransitionFigure"
