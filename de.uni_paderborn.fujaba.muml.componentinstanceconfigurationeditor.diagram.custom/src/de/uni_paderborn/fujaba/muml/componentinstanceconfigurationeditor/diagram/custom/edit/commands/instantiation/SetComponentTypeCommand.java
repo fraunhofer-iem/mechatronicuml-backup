@@ -18,10 +18,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
@@ -60,7 +58,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 	}
 
 	public ComponentInstance createComponentInstance(Component component) {
-		// ComponentInstance newInstance = component.createInstance();
+
 		ComponentInstance newInstance = InstanceFactory.eINSTANCE
 				.createComponentInstance();
 		newInstance.setName(componentInstance.getName() + counter++);
@@ -98,7 +96,9 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				// instantiate the connector types
 				for (ConnectorType connectorType : structuredComponent
 						.getConnectors()) {
-					List<PortInstance> portInstances = getAllContainedPortInstances(newInstance);
+					//this list is needed for identifying later on which concrete port instances needed to be connected 
+					//with the new generated connector instance
+					List<PortInstance> portInstances = getAllDirectContainedPortInstances(newInstance);
 					// have to be added because of possible delegation
 					// connectors
 					portInstances.addAll(newInstance.getPortInstances());
@@ -110,6 +110,9 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
+	//computes the lowest cardinality. But the lowest cardinality of the port or part should be online considered
+	//if the port or port can appear multiple times.
+	//if non of them is appearing multiple times we know we have to instantiate the connector instance online once
 	private long getLowestCardinality(ConnectorType connectorType) {
 
 		long cardinality = -1;
@@ -165,6 +168,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
+	//computes with the help of the parent component (comp) the part of the port's component
+	//is needed to get the cardinality of the part, to know how often the connector instance needs to be instantiated
 	private ComponentPart getAccordingPart(Component comp, Port port) {
 
 		List<ComponentPart> parts = port.getComponent()
@@ -179,7 +184,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return null;
 	}
 
-	private List<PortInstance> getAllContainedPortInstances(
+	//computes all ports of the embedded component instances, here is no recursive call needed
+	private List<PortInstance> getAllDirectContainedPortInstances(
 			ComponentInstance compInstance) {
 		ArrayList<PortInstance> portInstanceList = new ArrayList<PortInstance>();
 
@@ -194,6 +200,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return portInstanceList;
 	}
 
+	//for cleaning up the model
 	private void destroyContents(ComponentInstance newInstance,
 			CompoundCommand compoundCommand) {
 
@@ -266,64 +273,10 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			portInstance.setPortType(port);
 			portInstance.setName(componentInstance.getName() + port.getName() + i);
 			portInstance.setComponentInstance(componentInstance);
-			// createIncomingConnectorInstances(port, componentInstance,
-			// portInstance);
-			// createOutgoingConnectorInstances(port, componentInstance,
-			// portInstance);
 
 		}
 		return newInstances;
 	}
-
-	// private List<ConnectorInstance> createIncomingConnectorInstances(Port
-	// port,
-	// ComponentInstance componentInstance, PortInstance toInstance) {
-	// List<ConnectorInstance> connectorInstances = new
-	// ArrayList<ConnectorInstance>();
-	// for (ConnectorType connectorType : port.getIncomingConnectors()) {
-	// Port fromPort = connectorType.getFromPort();
-	//
-	// for (PortInstance fromInstance : componentInstance
-	// .getPortInstances()) {
-	// if (fromInstance.getPortType() == fromPort) {
-	// ConnectorInstance newInstance = createConnectorInstance(connectorType);
-	// if (newInstance != null) {
-	// newInstance.setSource(fromInstance);
-	// newInstance.setTarget(toInstance);
-	//
-	// newInstance
-	// .setParentComponentInstance(componentInstance);
-	// connectorInstances.add(newInstance);
-	// }
-	// }
-	// }
-	// }
-	// return connectorInstances;
-	// }
-
-	// private List<ConnectorInstance> createOutgoingConnectorInstances(Port
-	// port,
-	// ComponentInstance componentInstance, PortInstance fromInstance) {
-	// List<ConnectorInstance> connectorInstances = new
-	// ArrayList<ConnectorInstance>();
-	// for (ConnectorType connectorType : port.getOutgoingConnectors()) {
-	// Port toPort = connectorType.getToPort();
-	// for (PortInstance toInstance : componentInstance.getPortInstances()) {
-	// if (toInstance.getPortType() == toPort) {
-	// ConnectorInstance newInstance = createConnectorInstance(connectorType);
-	// if (newInstance != null) {
-	// newInstance.setSource(fromInstance);
-	// newInstance.setTarget(toInstance);
-	// newInstance
-	// .setParentComponentInstance(componentInstance);
-	//
-	// connectorInstances.add(newInstance);
-	// }
-	// }
-	// }
-	// }
-	// return connectorInstances;
-	// }
 
 	private void createConnectorInstance(ConnectorType connectorType,
 			List<PortInstance> portInstanceList, long cardinality) {
@@ -340,7 +293,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		Port toPort = connectorType.getToPort();
 		Port fromPort = connectorType.getFromPort();
-		// List<PortInstance> test = portInstanceList.
+		
 		for (PortInstance portInstance : portInstanceList) {
 
 			if (toPortInstance != null && fromPortInstance != null) {
@@ -368,6 +321,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 	}
 
+	//in case connector instances of the same type have to be instantiated several times because of occurring cardinality
+	//we need to know whether given the port instance is already connected to a connector instance of the given connector type
 	private boolean isConnectorInstanceAlreadyInstanciated(
 			ConnectorType connectorType, PortInstance portInstance) {
 
@@ -387,6 +342,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		return false;
 	}
+	
 	private ConnectorInstance createConnectorInstance(
 			ConnectorType connectorType) {
 		ConnectorInstance connectorInstance = null;
