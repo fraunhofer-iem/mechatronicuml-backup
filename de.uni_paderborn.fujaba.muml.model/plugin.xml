@@ -9,6 +9,44 @@
 -->
 
 <plugin>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/component">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/constraint">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/core">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/instance">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/pattern">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
+      </package>
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage"
+            genModel="model/muml.genmodel"
+            uri="http:///de/uni_paderborn/fujaba/muml/model/msgiface">
+      </package>
+   </extension>
 
 
 </plugin>
