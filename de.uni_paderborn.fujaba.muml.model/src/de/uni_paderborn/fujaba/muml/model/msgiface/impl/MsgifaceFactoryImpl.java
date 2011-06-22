@@ -6,15 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
  * <!-- begin-user-doc -->

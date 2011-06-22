@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.instance;
 
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
-
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 
 /**

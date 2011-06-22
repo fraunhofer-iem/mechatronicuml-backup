@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.msgiface;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.NamedElement;
 
 /**

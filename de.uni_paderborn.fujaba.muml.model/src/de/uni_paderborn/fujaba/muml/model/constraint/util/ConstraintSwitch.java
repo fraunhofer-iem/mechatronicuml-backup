@@ -6,14 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.model.constraint.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.model.constraint.ModelingConstraint;
+import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
+import de.uni_paderborn.fujaba.muml.model.constraint.VerifiableConstraint;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.CommentableElement;
-import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

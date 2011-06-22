@@ -6,15 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

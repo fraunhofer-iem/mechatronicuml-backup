@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 
 /**
  * <!-- begin-user-doc -->

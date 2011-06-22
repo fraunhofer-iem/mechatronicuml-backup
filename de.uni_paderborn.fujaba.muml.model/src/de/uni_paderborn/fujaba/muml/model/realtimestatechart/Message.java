@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
-
 import org.storydriven.modeling.calls.Invocation;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 /**
  * <!-- begin-user-doc -->

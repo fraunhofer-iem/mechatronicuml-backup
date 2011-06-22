@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
-import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,12 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.ExtendableElement;
-
 import org.storydriven.modeling.expressions.Expression;
 
 /**

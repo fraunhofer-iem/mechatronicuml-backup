@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint;
 
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
 import org.storydriven.modeling.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->

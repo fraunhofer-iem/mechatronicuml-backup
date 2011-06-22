@@ -9,9 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.msgiface;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.calls.CallsPackage;
 
 /**

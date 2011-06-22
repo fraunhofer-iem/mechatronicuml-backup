@@ -6,16 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint.impl;
 
-import de.uni_paderborn.fujaba.muml.model.constraint.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.model.constraint.Correctness;
+import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
 
 /**
  * <!-- begin-user-doc -->

@@ -6,20 +6,23 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
-
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-
-import de.uni_paderborn.fujaba.muml.model.instance.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->

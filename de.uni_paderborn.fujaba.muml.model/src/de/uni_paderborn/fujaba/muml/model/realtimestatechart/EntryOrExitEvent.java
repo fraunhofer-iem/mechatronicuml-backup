@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entry Or Exit Event</b></em>'.

@@ -6,20 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.model.pattern.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
-
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
-import de.uni_paderborn.fujaba.muml.model.pattern.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

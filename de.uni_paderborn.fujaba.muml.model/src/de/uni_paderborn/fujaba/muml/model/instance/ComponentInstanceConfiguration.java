@@ -7,9 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.storydriven.modeling.ExtendableElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

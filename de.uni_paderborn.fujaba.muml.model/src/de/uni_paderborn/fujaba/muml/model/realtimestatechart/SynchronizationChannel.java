@@ -6,10 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
-
 import org.storydriven.modeling.NamedElement;
-
 import org.storydriven.modeling.calls.Callable;
 
 /**

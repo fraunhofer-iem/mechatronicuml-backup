@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.*;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -19,10 +17,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
 
 /**
  * <!-- begin-user-doc -->

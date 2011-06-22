@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-
 import org.eclipse.emf.ecore.EClass;
+
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

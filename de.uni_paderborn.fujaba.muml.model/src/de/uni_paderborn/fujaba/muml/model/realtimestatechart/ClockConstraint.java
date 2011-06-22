@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.expressions.ComparingOperator;
+
+import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

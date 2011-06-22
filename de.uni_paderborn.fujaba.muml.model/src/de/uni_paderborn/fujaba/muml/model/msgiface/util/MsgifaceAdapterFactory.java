@@ -6,20 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.model.msgiface.util;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.modeling.CommentableElement;
 import org.storydriven.modeling.ExtendableElement;
 import org.storydriven.modeling.NamedElement;
-
 import org.storydriven.modeling.calls.Callable;
+
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
 
 /**
  * <!-- begin-user-doc -->
