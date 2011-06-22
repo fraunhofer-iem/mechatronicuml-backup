@@ -21,8 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
  org.storydriven.modeling;visibility:=reexport,
  org.storydriven.modeling.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.common;bundle-version="1.0.0"

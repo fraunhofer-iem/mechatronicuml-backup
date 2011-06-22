@@ -7,25 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockConstraintBoundPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -36,8 +24,14 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.modeling.expressions.ComparingOperator;
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockConstraintBoundPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint} object.
