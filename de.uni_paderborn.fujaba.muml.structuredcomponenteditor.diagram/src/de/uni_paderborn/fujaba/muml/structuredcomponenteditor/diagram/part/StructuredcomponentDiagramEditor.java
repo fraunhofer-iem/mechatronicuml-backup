@@ -55,11 +55,6 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	private TransactionalEditingDomain helperTransactionalEditingDomain;
-
-	/**
-	 * @generated
-	 */
 	public StructuredcomponentDiagramEditor() {
 		super(true);
 	}
@@ -266,18 +261,6 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU,
 				provider, getDiagramGraphicalViewer());
-	}
-
-	/**
-	 * @generated
-	 */
-	public TransactionalEditingDomain getHelperTransactionalEditingDomain() {
-		if (helperTransactionalEditingDomain == null) {
-			helperTransactionalEditingDomain = createEditingDomain();
-			helperTransactionalEditingDomain.getResourceSet().createResource(
-					URI.createURI(""));
-		}
-		return helperTransactionalEditingDomain;
 	}
 
 }

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
+import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;

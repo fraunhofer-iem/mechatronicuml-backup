@@ -306,16 +306,4 @@ public class RealtimestatechartDiagramEditor extends DiagramDocumentEditor
 				provider, getDiagramGraphicalViewer());
 	}
 
-	/**
-	 * @generated
-	 */
-	public TransactionalEditingDomain getHelperTransactionalEditingDomain() {
-		if (helperTransactionalEditingDomain == null) {
-			helperTransactionalEditingDomain = createEditingDomain();
-			helperTransactionalEditingDomain.getResourceSet().createResource(
-					URI.createURI(""));
-		}
-		return helperTransactionalEditingDomain;
-	}
-
 }

@@ -16,6 +16,7 @@ import org.storydriven.modeling.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.instance.*;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;

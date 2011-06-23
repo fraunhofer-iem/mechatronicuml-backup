@@ -279,6 +279,9 @@ public class MessageinterfaceDiagramEditor extends DiagramDocumentEditor
 			return StructuredSelection.EMPTY;
 		}
 		Diagram diagram = document.getDiagram();
+		if (diagram == null || diagram.eResource() == null) {
+			return StructuredSelection.EMPTY;
+		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorItem item = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorItem(

@@ -702,6 +702,7 @@
         visualID="7003"
         editPartClassName="StateExitEventCompartmentEditPart"
         itemSemanticEditPolicyClassName="StateExitEventCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateExitEventCompartmentViewFactory"
         canonicalEditPolicyClassName="StateExitEventCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         title="ExitEventCompartment"

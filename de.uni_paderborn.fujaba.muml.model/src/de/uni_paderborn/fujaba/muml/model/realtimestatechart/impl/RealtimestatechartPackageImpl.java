@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -296,7 +297,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		isInited = true;
 
 		// Initialize simple dependencies
-		SDMPackage.eINSTANCE.eClass();
+		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
