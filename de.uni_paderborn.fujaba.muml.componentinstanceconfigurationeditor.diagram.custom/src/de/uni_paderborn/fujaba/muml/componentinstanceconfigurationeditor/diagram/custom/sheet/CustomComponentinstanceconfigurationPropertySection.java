@@ -4,10 +4,10 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.ui.views.properties.IPropertySource;
 
+import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomComponentInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.providers.CustomInstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.sheet.ComponentinstanceconfigurationPropertySection;
-import de.uni_paderborn.fujaba.muml.common.sheet.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.model.instance.provider.ComponentInstanceItemProvider;
 
 public class CustomComponentinstanceconfigurationPropertySection extends

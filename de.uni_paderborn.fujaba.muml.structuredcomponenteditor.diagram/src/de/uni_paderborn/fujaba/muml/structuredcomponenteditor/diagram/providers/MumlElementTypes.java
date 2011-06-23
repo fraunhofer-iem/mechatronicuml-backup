@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -49,7 +50,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StructuredComponent_2002 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2002"); //$NON-NLS-1$
+	public static final IElementType StructuredComponent_2003 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StructuredComponent_2003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -211,13 +213,11 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-							.getModelElementCategory());
+			elements.put(ModelElementCategory_1000,
+					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					StructuredComponent_2002,
+					StructuredComponent_2003,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getStructuredComponent());
 
@@ -293,7 +293,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(StructuredComponent_2002);
+			KNOWN_ELEMENT_TYPES.add(StructuredComponent_2003);
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3007);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3008);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3009);
@@ -317,7 +317,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentEditPart.VISUAL_ID:
-			return StructuredComponent_2002;
+			return StructuredComponent_2003;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3007;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:

@@ -46,7 +46,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
- de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport
+ de.fujaba.modelinstance;visibility:=reexport,
+ de.fujaba.modelinstance.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

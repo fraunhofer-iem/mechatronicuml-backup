@@ -9,9 +9,9 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.wizard.ModifyParameterWizard;
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart;
+import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 
 public class ModifyMessageTypeWizardAction extends
 		AbstractMessageinterfaceEditorAction implements

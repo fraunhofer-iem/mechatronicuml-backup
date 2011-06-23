@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -51,7 +52,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+		return ModelinstancePackage.eINSTANCE
 				.getModelElementCategory_ModelElements();
 	}
 
@@ -252,7 +253,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-						.getMessageInterface_2002ContainedLinks(view));
+						.getMessageInterface_2003ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

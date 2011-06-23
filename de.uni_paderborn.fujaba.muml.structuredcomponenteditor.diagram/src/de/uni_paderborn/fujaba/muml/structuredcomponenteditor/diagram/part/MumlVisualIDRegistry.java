@@ -5,6 +5,8 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -83,10 +85,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-				.getModelElementCategory()
+		if (ModelinstancePackage.eINSTANCE.getModelElementCategory()
 				.isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) domainElement)) {
+				&& isDiagram((ModelElementCategory) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -269,8 +270,7 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.modelinstance.ModelElementCategory element) {
+	private static boolean isDiagram(ModelElementCategory element) {
 		return true;
 	}
 

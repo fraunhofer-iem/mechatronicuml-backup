@@ -33,7 +33,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3007"
@@ -684,7 +684,7 @@
       </modelFacet>
     </childNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2003"
         editPartClassName="StructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentItemSemanticEditPolicy"
         notationViewFactoryClassName="StructuredComponentViewFactory"
@@ -711,12 +711,12 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5004"
+          visualID="5005"
           editPartClassName="StructuredComponentNameEditPart"
           itemSemanticEditPolicyClassName="StructuredComponentNameItemSemanticEditPolicy"
           notationViewFactoryClassName="StructuredComponentNameViewFactory">
@@ -797,7 +797,7 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7002"
+        visualID="7003"
         editPartClassName="StructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StructuredComponentComponentCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StructuredComponentComponentCompartmentViewFactory"

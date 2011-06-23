@@ -1,15 +1,11 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.part;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
-import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
-import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
+import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 
 /**

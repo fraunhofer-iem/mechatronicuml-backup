@@ -5,8 +5,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
+import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
-import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
  * A CreationWizard for Pattern diagrams. It implements the abstract creation

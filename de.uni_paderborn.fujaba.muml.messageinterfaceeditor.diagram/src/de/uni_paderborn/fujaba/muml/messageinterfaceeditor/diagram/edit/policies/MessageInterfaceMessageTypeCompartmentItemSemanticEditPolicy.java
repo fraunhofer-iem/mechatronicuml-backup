@@ -15,7 +15,7 @@ public class MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy
 	 */
 	public MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2002);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003);
 	}
 
 	/**

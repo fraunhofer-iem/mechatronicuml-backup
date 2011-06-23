@@ -9,9 +9,9 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
+import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 public class CustomRealtimeStatechartDiagramCreationWizard extends
 		FujabaDiagramNewWizard {

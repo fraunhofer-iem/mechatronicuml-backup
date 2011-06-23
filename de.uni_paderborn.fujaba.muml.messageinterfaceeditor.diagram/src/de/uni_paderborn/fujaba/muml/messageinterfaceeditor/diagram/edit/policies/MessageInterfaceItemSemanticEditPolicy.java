@@ -29,7 +29,7 @@ public class MessageInterfaceItemSemanticEditPolicy
 	 */
 	public MessageInterfaceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2002);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003);
 	}
 
 	/**

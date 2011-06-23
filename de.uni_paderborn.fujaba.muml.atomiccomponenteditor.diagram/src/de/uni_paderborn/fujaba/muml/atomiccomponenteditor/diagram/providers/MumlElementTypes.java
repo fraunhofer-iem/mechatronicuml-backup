@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -49,7 +50,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType AtomicComponent_2001 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2001"); //$NON-NLS-1$
+	public static final IElementType AtomicComponent_2002 = getElementType("de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2002"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -179,13 +181,11 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-							.getModelElementCategory());
+			elements.put(ModelElementCategory_1000,
+					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					AtomicComponent_2001,
+					AtomicComponent_2002,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getAtomicComponent());
 
@@ -226,7 +226,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(AtomicComponent_2001);
+			KNOWN_ELEMENT_TYPES.add(AtomicComponent_2002);
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3004);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3002);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3003);
@@ -243,7 +243,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return AtomicComponent_2001;
+			return AtomicComponent_2002;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return HybridPort_3004;
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:

@@ -17,7 +17,7 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 
-import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.celleditor.ParametersExtendedDialogCellEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 

@@ -32,7 +32,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+        href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         visualID="3002"
         editPartClassName="MessageTypeEditPart"
@@ -85,7 +85,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2003"
         editPartClassName="MessageInterfaceEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceItemSemanticEditPolicy"
         notationViewFactoryClassName="MessageInterfaceViewFactory"
@@ -111,12 +111,12 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+            href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5004"
+          visualID="5005"
           editPartClassName="MessageInterfaceNameEditPart"
           itemSemanticEditPolicyClassName="MessageInterfaceNameItemSemanticEditPolicy"
           notationViewFactoryClassName="MessageInterfaceNameViewFactory">
@@ -160,7 +160,7 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7002"
+        visualID="7003"
         editPartClassName="MessageInterfaceMessageTypeCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageInterfaceMessageTypeCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="MessageInterfaceMessageTypeCompartmentViewFactory"

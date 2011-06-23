@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -43,7 +44,7 @@ public class AtomicComponentDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+		return ModelinstancePackage.eINSTANCE
 				.getModelElementCategory_ModelElements();
 	}
 

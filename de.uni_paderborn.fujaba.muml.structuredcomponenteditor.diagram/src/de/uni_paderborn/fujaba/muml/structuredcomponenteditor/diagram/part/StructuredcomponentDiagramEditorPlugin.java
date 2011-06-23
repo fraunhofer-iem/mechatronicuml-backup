@@ -26,6 +26,7 @@ import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
 import org.storydriven.modeling.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.modeling.provider.SDMItemProviderAdapterFactory;
 import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterFactory;
+import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
  * @generated
@@ -140,8 +141,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.msgiface.provider.MsgifaceItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
+		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new SDMItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());

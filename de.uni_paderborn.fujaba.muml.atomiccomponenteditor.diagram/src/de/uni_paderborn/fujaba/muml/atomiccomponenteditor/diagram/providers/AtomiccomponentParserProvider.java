@@ -23,20 +23,20 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser atomicComponentName_5001Parser;
+	private IParser atomicComponentName_5002Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAtomicComponentName_5001Parser() {
-		if (atomicComponentName_5001Parser == null) {
+	private IParser getAtomicComponentName_5002Parser() {
+		if (atomicComponentName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			atomicComponentName_5001Parser = parser;
+			atomicComponentName_5002Parser = parser;
 		}
-		return atomicComponentName_5001Parser;
+		return atomicComponentName_5002Parser;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
-			return getAtomicComponentName_5001Parser();
+			return getAtomicComponentName_5002Parser();
 		}
 		return null;
 	}

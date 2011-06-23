@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -49,7 +50,8 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageInterface_2002 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2002"); //$NON-NLS-1$
+	public static final IElementType MessageInterface_2003 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageInterface_2003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -170,13 +172,11 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(
-					ModelElementCategory_1000,
-					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
-							.getModelElementCategory());
+			elements.put(ModelElementCategory_1000,
+					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					MessageInterface_2002,
+					MessageInterface_2003,
 					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 							.getMessageInterface());
 
@@ -207,7 +207,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(MessageInterface_2002);
+			KNOWN_ELEMENT_TYPES.add(MessageInterface_2003);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3002);
 			KNOWN_ELEMENT_TYPES.add(MessageInterfaceSuperType_4003);
 		}
@@ -222,7 +222,7 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceEditPart.VISUAL_ID:
-			return MessageInterface_2002;
+			return MessageInterface_2003;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3002;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:

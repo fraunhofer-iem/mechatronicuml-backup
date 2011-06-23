@@ -5,7 +5,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
-import de.uni_paderborn.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
+import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
  * A CreationWizard for StructuredComponent diagrams. It implements the abstract

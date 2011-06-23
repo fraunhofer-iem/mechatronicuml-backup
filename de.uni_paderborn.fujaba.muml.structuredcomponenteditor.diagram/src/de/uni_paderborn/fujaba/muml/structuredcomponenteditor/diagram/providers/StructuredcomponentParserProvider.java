@@ -23,20 +23,20 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser structuredComponentName_5004Parser;
+	private IParser structuredComponentName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredComponentName_5004Parser() {
-		if (structuredComponentName_5004Parser == null) {
+	private IParser getStructuredComponentName_5005Parser() {
+		if (structuredComponentName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			structuredComponentName_5004Parser = parser;
+			structuredComponentName_5005Parser = parser;
 		}
-		return structuredComponentName_5004Parser;
+		return structuredComponentName_5005Parser;
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class StructuredcomponentParserProvider extends AbstractProvider
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentNameEditPart.VISUAL_ID:
-			return getStructuredComponentName_5004Parser();
+			return getStructuredComponentName_5005Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartNameComponentNameDeriveEditPart.VISUAL_ID:
 			return getComponentPartLabel_5003Parser();
 		}

@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;

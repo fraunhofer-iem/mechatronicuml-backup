@@ -293,22 +293,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_MessageInterface_2003_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_MessageInterface_2003_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_MessageInterfaceSuperType_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterface_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MessageInterface_2002_outgoinglinks;
 
 	/**
 	 * @generated
