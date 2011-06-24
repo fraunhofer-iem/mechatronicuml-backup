@@ -74,23 +74,25 @@ public abstract class NavigatedObjectPropertyDescriptor extends
 	protected Object getValue(EObject object, EStructuralFeature feature) {
 		EObject navigatedObject = getNavigatedObject(object);
 		if (navigatedObject != null) {
-			return getObjectValue(navigatedObject, feature);
+			return getObjectValue(navigatedObject, feature).toString();
 		}
-		return null;
+		return "";
 	}
 
 	protected abstract EObject getNavigatedObject(Object object);
 
 	protected abstract EObject createNewObject();
 
-	protected abstract void configureObject(EObject newObject,
-			EStructuralFeature feature, Object value);
+	protected void configureObject(EObject newObject,
+			EStructuralFeature feature, Object newValue) {
+		newObject.eSet(feature, newValue);
+	}
 
 	protected abstract void setNavigatedObject(Object object, EObject newObject);
 
 	protected Object getObjectValue(EObject navigatedObject,
 			EStructuralFeature feature) {
-		if (feature.getContainerClass() == navigatedObject.getClass()) {
+		if (feature.getContainerClass().isAssignableFrom(navigatedObject.getClass())) {
 			return navigatedObject.eGet(feature);
 		}
 		return null;
