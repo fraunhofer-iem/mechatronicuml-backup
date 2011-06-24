@@ -24,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoi
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryOrExitPointImpl#getEntryOrExitPoint <em>Entry Or Exit Point</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateEntryOrExitPointImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,26 +39,6 @@ public class StateEntryOrExitPointImpl extends VertexImpl implements StateEntryO
 	 * @ordered
 	 */
 	protected EntryOrExitPoint entryOrExitPoint;
-
-	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EntryExitPointKind KIND_EDEFAULT = EntryExitPointKind.ENTRY;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntryExitPointKind kind = KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,35 +102,12 @@ public class StateEntryOrExitPointImpl extends VertexImpl implements StateEntryO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntryExitPointKind getKind() {
-		return kind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKind(EntryExitPointKind newKind) {
-		EntryExitPointKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND, oldKind, kind));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__ENTRY_OR_EXIT_POINT:
 				if (resolve) return getEntryOrExitPoint();
 				return basicGetEntryOrExitPoint();
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND:
-				return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,9 +122,6 @@ public class StateEntryOrExitPointImpl extends VertexImpl implements StateEntryO
 		switch (featureID) {
 			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__ENTRY_OR_EXIT_POINT:
 				setEntryOrExitPoint((EntryOrExitPoint)newValue);
-				return;
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND:
-				setKind((EntryExitPointKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,9 +138,6 @@ public class StateEntryOrExitPointImpl extends VertexImpl implements StateEntryO
 			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__ENTRY_OR_EXIT_POINT:
 				setEntryOrExitPoint((EntryOrExitPoint)null);
 				return;
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,26 +152,8 @@ public class StateEntryOrExitPointImpl extends VertexImpl implements StateEntryO
 		switch (featureID) {
 			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__ENTRY_OR_EXIT_POINT:
 				return entryOrExitPoint != null;
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND:
-				return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
-		result.append(kind);
-		result.append(')');
-		return result.toString();
 	}
 
 } //StateEntryOrExitPointImpl

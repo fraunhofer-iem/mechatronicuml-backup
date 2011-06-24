@@ -466,6 +466,144 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntryEventItemProvider entryEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntryEventAdapter() {
+		if (entryEventItemProvider == null) {
+			entryEventItemProvider = new EntryEventItemProvider(this);
+		}
+
+		return entryEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExitEventItemProvider exitEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExitEventAdapter() {
+		if (exitEventItemProvider == null) {
+			exitEventItemProvider = new ExitEventItemProvider(this);
+		}
+
+		return exitEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EntryPointItemProvider entryPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEntryPointAdapter() {
+		if (entryPointItemProvider == null) {
+			entryPointItemProvider = new EntryPointItemProvider(this);
+		}
+
+		return entryPointItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExitPointItemProvider exitPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExitPointAdapter() {
+		if (exitPointItemProvider == null) {
+			exitPointItemProvider = new ExitPointItemProvider(this);
+		}
+
+		return exitPointItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateEntryPointItemProvider stateEntryPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateEntryPointAdapter() {
+		if (stateEntryPointItemProvider == null) {
+			stateEntryPointItemProvider = new StateEntryPointItemProvider(this);
+		}
+
+		return stateEntryPointItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateExitPointItemProvider stateExitPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateExitPointAdapter() {
+		if (stateExitPointItemProvider == null) {
+			stateExitPointItemProvider = new StateExitPointItemProvider(this);
+		}
+
+		return stateExitPointItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -581,6 +719,12 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (entryOrExitPointItemProvider != null) entryOrExitPointItemProvider.dispose();
 		if (messageItemProvider != null) messageItemProvider.dispose();
 		if (stateEntryOrExitPointItemProvider != null) stateEntryOrExitPointItemProvider.dispose();
+		if (entryEventItemProvider != null) entryEventItemProvider.dispose();
+		if (exitEventItemProvider != null) exitEventItemProvider.dispose();
+		if (entryPointItemProvider != null) entryPointItemProvider.dispose();
+		if (exitPointItemProvider != null) exitPointItemProvider.dispose();
+		if (stateEntryPointItemProvider != null) stateEntryPointItemProvider.dispose();
+		if (stateExitPointItemProvider != null) stateExitPointItemProvider.dispose();
 	}
 
 }

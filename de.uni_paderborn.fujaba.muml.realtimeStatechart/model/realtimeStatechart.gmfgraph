@@ -153,15 +153,6 @@
               </children>
               <children
                   xsi:type="gmfgraph:Rectangle"
-                  name="StateCompartmentExitEvent"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"
-                    horizontalAlignment="FILL"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
                   name="StateCompartmentActionsFigure"
                   outline="false">
                 <layoutData
@@ -200,13 +191,13 @@
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getFigureStateCompartmentActionsFigure"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
       <accessors
           accessor="getFigureStateCompartmentSynchroChannel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.3"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.2"/>
       <accessors
           accessor="getFigureStateCompartmentRegions"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.4"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.3"/>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1"/>
       <accessors
@@ -217,8 +208,6 @@
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -558,10 +547,6 @@
       name="RegionCompartment"
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.3"/>
-  <compartments
-      name="ExitEventCompartment"
-      figure="StateFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.9"/>
   <labels
       name="TransitionPriority"
       figure="TransitionFigure"

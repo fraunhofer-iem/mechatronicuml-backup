@@ -168,6 +168,24 @@ public interface MsgifacePackage extends EPackage {
 	int MESSAGE_TYPE__COMMENT = CallsPackage.CALLABLE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>In Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__IN_PARAMETER = CallsPackage.CALLABLE__IN_PARAMETER;
+
+	/**
+	 * The feature id for the '<em><b>Out Parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_TYPE__OUT_PARAMETER = CallsPackage.CALLABLE__OUT_PARAMETER;
+
+	/**
 	 * The feature id for the '<em><b>Contained Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

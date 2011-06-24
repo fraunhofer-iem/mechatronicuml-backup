@@ -363,12 +363,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateExitEventCompartmentEditPart_title;
+	public static String CommandName_OpenDiagram;
 
 	/**
 	 * @generated
 	 */
-	public static String CommandName_OpenDiagram;
+	public static String NavigatorGroupName_Transition_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
 	 * @generated
@@ -384,16 +389,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_FujabaRealtimeStatechart_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
 	 * @generated

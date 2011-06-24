@@ -264,10 +264,6 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/realtimestatechart/EventKind/RAISE"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/realtimestatechart/EventKind/TRIGGER"/>
         </genEnums>
-        <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/realtimestatechart/EntryExitPointKind">
-          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/realtimestatechart/EntryExitPointKind/ENTRY"/>
-          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/realtimestatechart/EntryExitPointKind/EXIT"/>
-        </genEnums>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Deadline">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/upperBound"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/lowerBound"/>
@@ -373,9 +369,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/history"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryOrExitPoint">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/EntryOrExitPoint/kind"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryOrExitPoint"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Event/kind"/>
         </genClasses>
@@ -388,7 +382,18 @@
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateEntryOrExitPoint">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryOrExitPoint/entryOrExitPoint"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/StateEntryOrExitPoint/kind"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryEvent"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitEvent"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitPoint"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateEntryPoint">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateEntryPoint/entryPoint"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/StateExitPoint">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/StateExitPoint/exitPoint"/>
         </genClasses>
         <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart"
             disposableProviderFactory="true" ecorePackage="muml.ecore#//model/realtimestatechart/helper">

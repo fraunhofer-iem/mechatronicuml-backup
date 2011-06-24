@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
  * @generated
  */
 public class ExitPointItemProvider
-	extends VertexItemProvider
+	extends EntryOrExitPointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

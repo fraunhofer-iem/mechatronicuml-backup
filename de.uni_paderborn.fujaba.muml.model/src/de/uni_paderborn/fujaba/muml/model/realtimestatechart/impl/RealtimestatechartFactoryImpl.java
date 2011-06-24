@@ -98,6 +98,12 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_POINT: return createEntryOrExitPoint();
 			case RealtimestatechartPackage.MESSAGE: return createMessage();
 			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT: return createStateEntryOrExitPoint();
+			case RealtimestatechartPackage.ENTRY_EVENT: return createEntryEvent();
+			case RealtimestatechartPackage.EXIT_EVENT: return createExitEvent();
+			case RealtimestatechartPackage.ENTRY_POINT: return createEntryPoint();
+			case RealtimestatechartPackage.EXIT_POINT: return createExitPoint();
+			case RealtimestatechartPackage.STATE_ENTRY_POINT: return createStateEntryPoint();
+			case RealtimestatechartPackage.STATE_EXIT_POINT: return createStateExitPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -115,8 +121,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 				return createSynchronizationKindFromString(eDataType, initialValue);
 			case RealtimestatechartPackage.EVENT_KIND:
 				return createEventKindFromString(eDataType, initialValue);
-			case RealtimestatechartPackage.ENTRY_EXIT_POINT_KIND:
-				return createEntryExitPointKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -134,8 +138,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 				return convertSynchronizationKindToString(eDataType, instanceValue);
 			case RealtimestatechartPackage.EVENT_KIND:
 				return convertEventKindToString(eDataType, instanceValue);
-			case RealtimestatechartPackage.ENTRY_EXIT_POINT_KIND:
-				return convertEntryExitPointKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -316,6 +318,66 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntryEvent createEntryEvent() {
+		EntryEventImpl entryEvent = new EntryEventImpl();
+		return entryEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExitEvent createExitEvent() {
+		ExitEventImpl exitEvent = new ExitEventImpl();
+		return exitEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntryPoint createEntryPoint() {
+		EntryPointImpl entryPoint = new EntryPointImpl();
+		return entryPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExitPoint createExitPoint() {
+		ExitPointImpl exitPoint = new ExitPointImpl();
+		return exitPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateEntryPoint createStateEntryPoint() {
+		StateEntryPointImpl stateEntryPoint = new StateEntryPointImpl();
+		return stateEntryPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateExitPoint createStateExitPoint() {
+		StateExitPointImpl stateExitPoint = new StateExitPointImpl();
+		return stateExitPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SynchronizationKind createSynchronizationKindFromString(EDataType eDataType, String initialValue) {
 		SynchronizationKind result = SynchronizationKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -348,26 +410,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 * @generated
 	 */
 	public String convertEventKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntryExitPointKind createEntryExitPointKindFromString(EDataType eDataType, String initialValue) {
-		EntryExitPointKind result = EntryExitPointKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEntryExitPointKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

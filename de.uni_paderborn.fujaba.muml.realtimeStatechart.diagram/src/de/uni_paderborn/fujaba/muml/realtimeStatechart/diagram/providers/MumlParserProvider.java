@@ -61,16 +61,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryOrExitEventLabelExpressionLabelParser5006 entryOrExitEventLabel_5006Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5008 entryEventLabel_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryOrExitEventLabel_5006Parser() {
-		if (entryOrExitEventLabel_5006Parser == null) {
-			entryOrExitEventLabel_5006Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryOrExitEventLabelExpressionLabelParser5006();
+	private IParser getEntryEventLabel_5008Parser() {
+		if (entryEventLabel_5008Parser == null) {
+			entryEventLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5008();
 		}
-		return entryOrExitEventLabel_5006Parser;
+		return entryEventLabel_5008Parser;
 	}
 
 	/**
@@ -91,16 +91,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryOrExitEventLabelExpressionLabelParser5007 entryOrExitEventLabel_5007Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5009 exitEventLabel_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryOrExitEventLabel_5007Parser() {
-		if (entryOrExitEventLabel_5007Parser == null) {
-			entryOrExitEventLabel_5007Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryOrExitEventLabelExpressionLabelParser5007();
+	private IParser getExitEventLabel_5009Parser() {
+		if (exitEventLabel_5009Parser == null) {
+			exitEventLabel_5009Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5009();
 		}
-		return entryOrExitEventLabel_5007Parser;
+		return exitEventLabel_5009Parser;
 	}
 
 	/**
@@ -297,11 +297,11 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID:
 			return getClockName_5004Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID:
-			return getEntryOrExitEventLabel_5006Parser();
+			return getEntryEventLabel_5008Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
 			return getDoEventLabel_5005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID:
-			return getEntryOrExitEventLabel_5007Parser();
+			return getExitEventLabel_5009Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getClockConstraintLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:

@@ -37,11 +37,15 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryExitPointKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
@@ -51,7 +55,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
@@ -234,6 +240,48 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entryEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass exitEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entryPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass exitPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateEntryPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateExitPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum synchronizationKindEEnum = null;
 
 	/**
@@ -242,13 +290,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	private EEnum eventKindEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum entryExitPointKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1026,15 +1067,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntryOrExitPoint_Kind() {
-		return (EAttribute)entryOrExitPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEvent() {
 		return eventEClass;
 	}
@@ -1107,8 +1139,71 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStateEntryOrExitPoint_Kind() {
-		return (EAttribute)stateEntryOrExitPointEClass.getEStructuralFeatures().get(1);
+	public EClass getEntryEvent() {
+		return entryEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExitEvent() {
+		return exitEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntryPoint() {
+		return entryPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExitPoint() {
+		return exitPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStateEntryPoint() {
+		return stateEntryPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateEntryPoint_EntryPoint() {
+		return (EReference)stateEntryPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStateExitPoint() {
+		return stateExitPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateExitPoint_ExitPoint() {
+		return (EReference)stateExitPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1127,15 +1222,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EEnum getEventKind() {
 		return eventKindEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getEntryExitPointKind() {
-		return entryExitPointKindEEnum;
 	}
 
 	/**
@@ -1259,7 +1345,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE);
 
 		entryOrExitPointEClass = createEClass(ENTRY_OR_EXIT_POINT);
-		createEAttribute(entryOrExitPointEClass, ENTRY_OR_EXIT_POINT__KIND);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__KIND);
@@ -1273,12 +1358,24 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		stateEntryOrExitPointEClass = createEClass(STATE_ENTRY_OR_EXIT_POINT);
 		createEReference(stateEntryOrExitPointEClass, STATE_ENTRY_OR_EXIT_POINT__ENTRY_OR_EXIT_POINT);
-		createEAttribute(stateEntryOrExitPointEClass, STATE_ENTRY_OR_EXIT_POINT__KIND);
+
+		entryEventEClass = createEClass(ENTRY_EVENT);
+
+		exitEventEClass = createEClass(EXIT_EVENT);
+
+		entryPointEClass = createEClass(ENTRY_POINT);
+
+		exitPointEClass = createEClass(EXIT_POINT);
+
+		stateEntryPointEClass = createEClass(STATE_ENTRY_POINT);
+		createEReference(stateEntryPointEClass, STATE_ENTRY_POINT__ENTRY_POINT);
+
+		stateExitPointEClass = createEClass(STATE_EXIT_POINT);
+		createEReference(stateExitPointEClass, STATE_EXIT_POINT__EXIT_POINT);
 
 		// Create enums
 		synchronizationKindEEnum = createEEnum(SYNCHRONIZATION_KIND);
 		eventKindEEnum = createEEnum(EVENT_KIND);
-		entryExitPointKindEEnum = createEEnum(ENTRY_EXIT_POINT_KIND);
 	}
 
 	/**
@@ -1344,6 +1441,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		stateEventEClass.getESuperTypes().add(this.getEvent());
 		messageEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		stateEntryOrExitPointEClass.getESuperTypes().add(this.getVertex());
+		entryEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
+		exitEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
+		entryPointEClass.getESuperTypes().add(this.getEntryOrExitPoint());
+		exitPointEClass.getESuperTypes().add(this.getEntryOrExitPoint());
+		stateEntryPointEClass.getESuperTypes().add(this.getStateEntryOrExitPoint());
+		stateExitPointEClass.getESuperTypes().add(this.getStateEntryOrExitPoint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deadlineEClass, Deadline.class, "Deadline", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1439,7 +1542,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getFujabaRealtimeStatechart_EventQueueSize(), ecorePackage.getEInt(), "eventQueueSize", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryOrExitPointEClass, EntryOrExitPoint.class, "EntryOrExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntryOrExitPoint_Kind(), this.getEntryExitPointKind(), "kind", null, 1, 1, EntryOrExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Kind(), this.getEventKind(), "kind", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1453,7 +1555,20 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(stateEntryOrExitPointEClass, StateEntryOrExitPoint.class, "StateEntryOrExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateEntryOrExitPoint_EntryOrExitPoint(), this.getEntryOrExitPoint(), null, "entryOrExitPoint", null, 0, 1, StateEntryOrExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStateEntryOrExitPoint_Kind(), this.getEntryExitPointKind(), "kind", null, 1, 1, StateEntryOrExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entryEventEClass, EntryEvent.class, "EntryEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(exitEventEClass, ExitEvent.class, "ExitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entryPointEClass, EntryPoint.class, "EntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(exitPointEClass, ExitPoint.class, "ExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stateEntryPointEClass, StateEntryPoint.class, "StateEntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStateEntryPoint_EntryPoint(), this.getEntryPoint(), null, "entryPoint", null, 0, 1, StateEntryPoint.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(stateExitPointEClass, StateExitPoint.class, "StateExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStateExitPoint_ExitPoint(), this.getExitPoint(), null, "exitPoint", null, 0, 1, StateExitPoint.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchronizationKindEEnum, SynchronizationKind.class, "SynchronizationKind");
@@ -1464,16 +1579,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		addEEnumLiteral(eventKindEEnum, EventKind.RAISE);
 		addEEnumLiteral(eventKindEEnum, EventKind.TRIGGER);
 
-		initEEnum(entryExitPointKindEEnum, EntryExitPointKind.class, "EntryExitPointKind");
-		addEEnumLiteral(entryExitPointKindEEnum, EntryExitPointKind.ENTRY);
-		addEEnumLiteral(entryExitPointKindEEnum, EntryExitPointKind.EXIT);
-
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -1491,7 +1604,29 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																																											
+		   });																																																																																								
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																																																																									
+		addAnnotation
+		  (getStateEntryPoint_EntryPoint(), 
+		   source, 
+		   new String[] {
+			 "derivation", "entryOrExitPoint.oclAsType(realtimestatechart::EntryPoint)"
+		   });		
+		addAnnotation
+		  (getStateExitPoint_ExitPoint(), 
+		   source, 
+		   new String[] {
+			 "derivation", "entryOrExitPoint.oclAsType(realtimestatechart::ExitPoint)"
+		   });
 	}
 
 } //RealtimestatechartPackageImpl

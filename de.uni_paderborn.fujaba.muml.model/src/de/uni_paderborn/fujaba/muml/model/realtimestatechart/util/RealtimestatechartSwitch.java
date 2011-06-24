@@ -303,6 +303,64 @@ public class RealtimestatechartSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RealtimestatechartPackage.ENTRY_EVENT: {
+				EntryEvent entryEvent = (EntryEvent)theEObject;
+				T result = caseEntryEvent(entryEvent);
+				if (result == null) result = caseEntryOrExitEvent(entryEvent);
+				if (result == null) result = caseStateEvent(entryEvent);
+				if (result == null) result = caseEvent(entryEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.EXIT_EVENT: {
+				ExitEvent exitEvent = (ExitEvent)theEObject;
+				T result = caseExitEvent(exitEvent);
+				if (result == null) result = caseEntryOrExitEvent(exitEvent);
+				if (result == null) result = caseStateEvent(exitEvent);
+				if (result == null) result = caseEvent(exitEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.ENTRY_POINT: {
+				EntryPoint entryPoint = (EntryPoint)theEObject;
+				T result = caseEntryPoint(entryPoint);
+				if (result == null) result = caseEntryOrExitPoint(entryPoint);
+				if (result == null) result = caseVertex(entryPoint);
+				if (result == null) result = caseNamedElement(entryPoint);
+				if (result == null) result = caseExtendableElement(entryPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.EXIT_POINT: {
+				ExitPoint exitPoint = (ExitPoint)theEObject;
+				T result = caseExitPoint(exitPoint);
+				if (result == null) result = caseEntryOrExitPoint(exitPoint);
+				if (result == null) result = caseVertex(exitPoint);
+				if (result == null) result = caseNamedElement(exitPoint);
+				if (result == null) result = caseExtendableElement(exitPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.STATE_ENTRY_POINT: {
+				StateEntryPoint stateEntryPoint = (StateEntryPoint)theEObject;
+				T result = caseStateEntryPoint(stateEntryPoint);
+				if (result == null) result = caseStateEntryOrExitPoint(stateEntryPoint);
+				if (result == null) result = caseVertex(stateEntryPoint);
+				if (result == null) result = caseNamedElement(stateEntryPoint);
+				if (result == null) result = caseExtendableElement(stateEntryPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RealtimestatechartPackage.STATE_EXIT_POINT: {
+				StateExitPoint stateExitPoint = (StateExitPoint)theEObject;
+				T result = caseStateExitPoint(stateExitPoint);
+				if (result == null) result = caseStateEntryOrExitPoint(stateExitPoint);
+				if (result == null) result = caseVertex(stateExitPoint);
+				if (result == null) result = caseNamedElement(stateExitPoint);
+				if (result == null) result = caseExtendableElement(stateExitPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -649,6 +707,96 @@ public class RealtimestatechartSwitch<T> {
 	 * @generated
 	 */
 	public T caseStateEntryOrExitPoint(StateEntryOrExitPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntryEvent(EntryEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExitEvent(ExitEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entry Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntryPoint(EntryPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exit Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExitPoint(ExitPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Entry Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateEntryPoint(StateEntryPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Exit Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateExitPoint(StateExitPoint object) {
 		return null;
 	}
 

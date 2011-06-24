@@ -61,7 +61,6 @@ public class StateEntryOrExitPointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEntryOrExitPointPropertyDescriptor(object);
-			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,28 +83,6 @@ public class StateEntryOrExitPointItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StateEntryOrExitPoint_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StateEntryOrExitPoint_kind_feature", "_UI_StateEntryOrExitPoint_type"),
-				 RealtimestatechartPackage.Literals.STATE_ENTRY_OR_EXIT_POINT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -145,12 +122,6 @@ public class StateEntryOrExitPointItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(StateEntryOrExitPoint.class)) {
-			case RealtimestatechartPackage.STATE_ENTRY_OR_EXIT_POINT__KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

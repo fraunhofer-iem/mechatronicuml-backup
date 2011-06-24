@@ -179,6 +179,60 @@ public interface RealtimestatechartFactory extends EFactory {
 	StateEntryOrExitPoint createStateEntryOrExitPoint();
 
 	/**
+	 * Returns a new object of class '<em>Entry Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entry Event</em>'.
+	 * @generated
+	 */
+	EntryEvent createEntryEvent();
+
+	/**
+	 * Returns a new object of class '<em>Exit Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exit Event</em>'.
+	 * @generated
+	 */
+	ExitEvent createExitEvent();
+
+	/**
+	 * Returns a new object of class '<em>Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Entry Point</em>'.
+	 * @generated
+	 */
+	EntryPoint createEntryPoint();
+
+	/**
+	 * Returns a new object of class '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exit Point</em>'.
+	 * @generated
+	 */
+	ExitPoint createExitPoint();
+
+	/**
+	 * Returns a new object of class '<em>State Entry Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State Entry Point</em>'.
+	 * @generated
+	 */
+	StateEntryPoint createStateEntryPoint();
+
+	/**
+	 * Returns a new object of class '<em>State Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State Exit Point</em>'.
+	 * @generated
+	 */
+	StateExitPoint createStateExitPoint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
