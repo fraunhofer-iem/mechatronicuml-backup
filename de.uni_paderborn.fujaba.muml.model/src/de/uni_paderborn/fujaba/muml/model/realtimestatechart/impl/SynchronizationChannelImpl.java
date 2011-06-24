@@ -6,8 +6,11 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import java.util.Collections;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EParameter;
@@ -307,16 +310,16 @@ public class SynchronizationChannelImpl extends CallableImpl implements Synchron
 		return result.toString();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public EList<EParameter> getInParameters() {
-		// TODO Auto-generated method stub
-		return null;
+		return (EList<EParameter>)ECollections.EMPTY_ELIST;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public EList<EParameter> getOutParameters() {
-		// TODO Auto-generated method stub
-		return null;
+		return (EList<EParameter>)ECollections.EMPTY_ELIST;
 	}
 
 } //SynchronizationChannelImpl
