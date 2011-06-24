@@ -12,6 +12,13 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * A representation of the model object '<em><b>State Exit Point</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The exit point that is assigned to a state. It is derived from the exit point of the statechart, the state embeds.
+ * \paragraph{Note}
+ * We need this subclass, because GMF forbids using the same semantic
+ * element for different notational elements within the same container.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -32,6 +39,9 @@ public interface StateExitPoint extends StateEntryOrExitPoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is the inherited entryOrExitPoint casted as ExitPoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Point</em>' reference.
 	 * @see #setExitPoint(ExitPoint)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateExitPoint_ExitPoint()

@@ -13,7 +13,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The entry and exit points that are assigned to a state. They are derived from the entry and exit points of the statecharts, the state embeds.
+ * The entry and exit points that are assigned to a state. They are derived from the entry and exit points of the statechart, the state embeds.
  * <!-- end-model-doc -->
  *
  * <p>

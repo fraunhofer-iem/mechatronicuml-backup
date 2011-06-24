@@ -37,7 +37,7 @@ public interface DoEvent extends StateEvent {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entry or exit action has one or more actions.
+	 * Each entry or exit action has one or more actions. \todoib{Many-features should have a name in plural.}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDoEvent_Action()

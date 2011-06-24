@@ -395,7 +395,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.
+	 * The side effect of this transition. A side effect might be a variable assignment as well as a method invocation. \todoib{Many-features should have a name in plural.}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Action()

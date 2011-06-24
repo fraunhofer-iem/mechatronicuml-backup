@@ -13,7 +13,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Entry points are defined points on a state that can be used to reach inner states.
+ * Entry points are defined points on a state that can be used to reach inner states. \todoib{This is the documentation for EntryPoint.}
  * <!-- end-model-doc -->
  *
  *

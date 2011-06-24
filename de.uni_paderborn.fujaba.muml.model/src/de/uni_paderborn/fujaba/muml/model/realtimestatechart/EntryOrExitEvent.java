@@ -14,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents an entry or an exit event. The action associated with this 
- * events will be executed when the state is entered or left respectively.
+ * This class represents an entry or an exit event. The actions associated with this 
+ * event will be executed when the state is entered or left respectively.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -52,7 +52,7 @@ public interface EntryOrExitEvent extends StateEvent {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entry or exit action can have one or more actions.
+	 * Each entry or exit event can have one or more actions. \todoib{Many-features should have a name in plural.}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent_Action()

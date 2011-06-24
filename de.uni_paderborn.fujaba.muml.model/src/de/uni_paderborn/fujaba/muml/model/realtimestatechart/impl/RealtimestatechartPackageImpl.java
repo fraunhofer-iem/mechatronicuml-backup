@@ -1604,7 +1604,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																																								
+		   });																																																																																																
 	}
 
 	/**
@@ -1614,19 +1614,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																																																																									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																																																																														
 		addAnnotation
 		  (getStateEntryPoint_EntryPoint(), 
 		   source, 
 		   new String[] {
 			 "derivation", "entryOrExitPoint.oclAsType(realtimestatechart::EntryPoint)"
-		   });		
+		   });				
 		addAnnotation
 		  (getStateExitPoint_ExitPoint(), 
 		   source, 
 		   new String[] {
 			 "derivation", "entryOrExitPoint.oclAsType(realtimestatechart::ExitPoint)"
-		   });
+		   });	
 	}
 
 } //RealtimestatechartPackageImpl

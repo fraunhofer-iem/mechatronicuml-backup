@@ -12,6 +12,13 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * A representation of the model object '<em><b>State Entry Point</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The entry point that is assigned to a state. It is derived from the entry point of the statechart, the state embeds.
+ * \paragraph{Note}
+ * We need this subclass, because GMF forbids using the same semantic
+ * element for different notational elements within the same container.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -32,6 +39,9 @@ public interface StateEntryPoint extends StateEntryOrExitPoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is the inherited entryOrExitPoint casted as EntryPoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Point</em>' reference.
 	 * @see #setEntryPoint(EntryPoint)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getStateEntryPoint_EntryPoint()
