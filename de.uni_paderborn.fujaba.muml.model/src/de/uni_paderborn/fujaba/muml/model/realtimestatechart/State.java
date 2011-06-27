@@ -94,12 +94,12 @@ public interface State extends Vertex {
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exit Event</em>' containment reference.
-	 * @see #setExitEvent(EntryOrExitEvent)
+	 * @see #setExitEvent(ExitEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_ExitEvent()
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EntryOrExitEvent getExitEvent();
+	ExitEvent getExitEvent();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getExitEvent <em>Exit Event</em>}' containment reference.
@@ -109,7 +109,7 @@ public interface State extends Vertex {
 	 * @see #getExitEvent()
 	 * @generated
 	 */
-	void setExitEvent(EntryOrExitEvent value);
+	void setExitEvent(ExitEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Entry Event</b></em>' containment reference.
@@ -120,12 +120,12 @@ public interface State extends Vertex {
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Entry Event</em>' containment reference.
-	 * @see #setEntryEvent(EntryOrExitEvent)
+	 * @see #setEntryEvent(EntryEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_EntryEvent()
 	 * @model containment="true" derived="true"
 	 * @generated
 	 */
-	EntryOrExitEvent getEntryEvent();
+	EntryEvent getEntryEvent();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEntryEvent <em>Entry Event</em>}' containment reference.
@@ -135,7 +135,7 @@ public interface State extends Vertex {
 	 * @see #getEntryEvent()
 	 * @generated
 	 */
-	void setEntryEvent(EntryOrExitEvent value);
+	void setEntryEvent(EntryEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Invariants</b></em>' containment reference list.
