@@ -1084,11 +1084,25 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//model/realtimestatechart/TransitionEvent" containment="true"/>
+            eType="#//model/realtimestatechart/TransitionEvent" transient="true" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
             eType="#//model/realtimestatechart/Action" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation. \todoib{Many-features should have a name in plural.}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchronizationChannelKind"
+            ordered="false" eType="#//model/realtimestatechart/SynchronizationKind"
+            volatile="true" transient="true" defaultValueLiteral="TRIGGER" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if synchronization.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;synchronization.kind&#xD;&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="synchronizationChannel"
+            eType="#//model/realtimestatechart/SynchronizationChannel" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if synchronization.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;synchronization.syncChannel&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1198,7 +1212,8 @@
             <details key="documentation" value="the channel that is used by the synchronization&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//model/realtimestatechart/SynchronizationKind">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+            eType="#//model/realtimestatechart/SynchronizationKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Decides the kind: Is this a send or a reveive synchronization?"/>
           </eAnnotations>

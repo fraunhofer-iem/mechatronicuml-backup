@@ -324,6 +324,9 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/guard"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/events"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/action"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/synchronizationChannelKind"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/synchronizationChannel"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ClockConstraint">
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/ClockConstraint/bound"/>

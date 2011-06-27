@@ -68,7 +68,7 @@ public interface Synchronization extends Invocation {
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
 	 * @see #setKind(SynchronizationKind)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_Kind()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	SynchronizationKind getKind();

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,9 +33,12 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessage
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
@@ -63,12 +67,17 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronizationChannelKind <em>Synchronization Channel Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronizationChannel <em>Synchronization Channel</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class TransitionImpl extends PrioritizableImpl implements Transition {
+	// TODO: Why is this not generated?
+	protected static final SynchronizationKind SYNCHRONIZATION_CHANNEL_KIND_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -248,6 +257,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected EList<Action> action;
+
+	/**
+	 * The cached setting delegate for the '{@link #getSynchronizationChannelKind() <em>Synchronization Channel Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchronizationChannelKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getSynchronizationChannel() <em>Synchronization Channel</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSynchronizationChannel()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -765,6 +794,63 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SynchronizationKind getSynchronizationChannelKind() {
+		return (SynchronizationKind)SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSynchronizationChannelKind(SynchronizationKind newSynchronizationChannelKind) {
+		// SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchronizationChannelKind);
+		getSynchronizationSafely().setKind(newSynchronizationChannelKind);
+	}
+	
+	private Synchronization getSynchronizationSafely() {
+		Synchronization synchronization = getSynchronization();
+		if (synchronization == null) {
+			synchronization =RealtimestatechartFactory.eINSTANCE.createSynchronization();
+			setSynchronization(synchronization);
+		}
+		return synchronization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SynchronizationChannel getSynchronizationChannel() {
+		return (SynchronizationChannel)SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SynchronizationChannel basicGetSynchronizationChannel() {
+		return (SynchronizationChannel)SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setSynchronizationChannel(SynchronizationChannel newSynchronizationChannel) {
+		// SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchronizationChannel);
+		Synchronization synchronization = getSynchronizationSafely();
+		synchronization.setSyncChannel(newSynchronizationChannel);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -927,6 +1013,11 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getEvents();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return getAction();
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
+				return getSynchronizationChannelKind();
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
+				if (resolve) return getSynchronizationChannel();
+				return basicGetSynchronizationChannel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -998,6 +1089,12 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getAction().clear();
 				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
+				setSynchronizationChannelKind((SynchronizationKind)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
+				setSynchronizationChannel((SynchronizationChannel)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1061,6 +1158,12 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				getAction().clear();
 				return;
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
+				setSynchronizationChannelKind(SYNCHRONIZATION_CHANNEL_KIND_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
+				setSynchronizationChannel((SynchronizationChannel)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1107,6 +1210,10 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return events != null && !events.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return action != null && !action.isEmpty();
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
+				return SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
+				return SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -77,6 +77,8 @@ public class TransitionItemProvider
 			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
+			addSynchronizationChannelKindPropertyDescriptor(object);
+			addSynchronizationChannelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -282,6 +284,50 @@ public class TransitionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Synchronization Channel Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchronizationChannelKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_synchronizationChannelKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_synchronizationChannelKind_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Synchronization Channel feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSynchronizationChannelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_synchronizationChannel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_synchronizationChannel_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -357,6 +403,7 @@ public class TransitionItemProvider
 		switch (notification.getFeatureID(Transition.class)) {
 			case RealtimestatechartPackage.TRANSITION__SAFE:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
+			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__ANNOTATION:

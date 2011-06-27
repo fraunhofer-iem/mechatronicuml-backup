@@ -768,13 +768,31 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__ACTION = PRIORITIZABLE_FEATURE_COUNT + 16;
 
 	/**
+	 * The feature id for the '<em><b>Synchronization Channel Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SYNCHRONIZATION_CHANNEL_KIND = PRIORITIZABLE_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Synchronization Channel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SYNCHRONIZATION_CHANNEL = PRIORITIZABLE_FEATURE_COUNT + 18;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 17;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -2634,6 +2652,28 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Action();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannelKind <em>Synchronization Channel Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Synchronization Channel Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannelKind()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_SynchronizationChannelKind();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannel <em>Synchronization Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Synchronization Channel</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannel()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_SynchronizationChannel();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3549,6 +3589,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__ACTION = eINSTANCE.getTransition_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Synchronization Channel Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__SYNCHRONIZATION_CHANNEL_KIND = eINSTANCE.getTransition_SynchronizationChannelKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Synchronization Channel</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__SYNCHRONIZATION_CHANNEL = eINSTANCE.getTransition_SynchronizationChannel();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
