@@ -12,13 +12,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
  * @author bingo
  * 
  */
-public abstract class NavigatedObjectPropertyDescriptor extends
+public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 		ItemPropertyDescriptor {
 
 	/**
 	 * Constructs this NavigatedObjectPropertyDescriptor.
 	 */
-	public NavigatedObjectPropertyDescriptor(AdapterFactory adapterFactory,
+	public AbstractNavigatedObjectPropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,
 			String description, EStructuralFeature feature, boolean isSettable,
 			boolean multiLine, boolean sortChoices, Object staticImage,
