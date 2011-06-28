@@ -45,8 +45,6 @@ public abstract class AbstractBasePortBehavior {
 	 * 
 	 * @param editPart
 	 *            The port's EditPart.
-	 * @param portFigure
-	 *            The port's figure.
 	 */
 	public AbstractBasePortBehavior(AbstractBorderItemEditPart editPart) {
 		this.editPart = editPart;

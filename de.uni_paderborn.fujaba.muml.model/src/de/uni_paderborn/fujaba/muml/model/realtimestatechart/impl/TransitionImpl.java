@@ -67,8 +67,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronizationChannelKind <em>Synchronization Channel Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSynchronizationChannel <em>Synchronization Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -139,24 +137,24 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected EList<Clock> clockResets;
 
 	/**
-	 * The cached value of the '{@link #getTriggerMessageEvent() <em>Trigger Message Event</em>}' reference.
+	 * The cached setting delegate for the '{@link #getTriggerMessageEvent() <em>Trigger Message Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTriggerMessageEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected AsynchronousMessageEvent triggerMessageEvent;
+	protected EStructuralFeature.Internal.SettingDelegate TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getRaiseMessageEvent() <em>Raise Message Event</em>}' reference.
+	 * The cached setting delegate for the '{@link #getRaiseMessageEvent() <em>Raise Message Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRaiseMessageEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected AsynchronousMessageEvent raiseMessageEvent;
+	protected EStructuralFeature.Internal.SettingDelegate RAISE_MESSAGE_EVENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getClockConstraints() <em>Clock Constraints</em>}' containment reference list.
@@ -257,26 +255,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @ordered
 	 */
 	protected EList<Action> action;
-
-	/**
-	 * The cached setting delegate for the '{@link #getSynchronizationChannelKind() <em>Synchronization Channel Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchronizationChannelKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getSynchronizationChannel() <em>Synchronization Channel</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSynchronizationChannel()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION_CHANNEL).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -543,15 +521,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public AsynchronousMessageEvent getTriggerMessageEvent() {
-		if (triggerMessageEvent != null && triggerMessageEvent.eIsProxy()) {
-			InternalEObject oldTriggerMessageEvent = (InternalEObject)triggerMessageEvent;
-			triggerMessageEvent = (AsynchronousMessageEvent)eResolveProxy(oldTriggerMessageEvent);
-			if (triggerMessageEvent != oldTriggerMessageEvent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT, oldTriggerMessageEvent, triggerMessageEvent));
-			}
-		}
-		return triggerMessageEvent;
+		return (AsynchronousMessageEvent)TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -560,7 +530,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public AsynchronousMessageEvent basicGetTriggerMessageEvent() {
-		return triggerMessageEvent;
+		return (AsynchronousMessageEvent)TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -569,10 +539,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public void setTriggerMessageEvent(AsynchronousMessageEvent newTriggerMessageEvent) {
-		AsynchronousMessageEvent oldTriggerMessageEvent = triggerMessageEvent;
-		triggerMessageEvent = newTriggerMessageEvent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT, oldTriggerMessageEvent, triggerMessageEvent));
+		TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTriggerMessageEvent);
 	}
 
 	/**
@@ -581,15 +548,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public AsynchronousMessageEvent getRaiseMessageEvent() {
-		if (raiseMessageEvent != null && raiseMessageEvent.eIsProxy()) {
-			InternalEObject oldRaiseMessageEvent = (InternalEObject)raiseMessageEvent;
-			raiseMessageEvent = (AsynchronousMessageEvent)eResolveProxy(oldRaiseMessageEvent);
-			if (raiseMessageEvent != oldRaiseMessageEvent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT, oldRaiseMessageEvent, raiseMessageEvent));
-			}
-		}
-		return raiseMessageEvent;
+		return (AsynchronousMessageEvent)RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -598,7 +557,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public AsynchronousMessageEvent basicGetRaiseMessageEvent() {
-		return raiseMessageEvent;
+		return (AsynchronousMessageEvent)RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -607,10 +566,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * @generated
 	 */
 	public void setRaiseMessageEvent(AsynchronousMessageEvent newRaiseMessageEvent) {
-		AsynchronousMessageEvent oldRaiseMessageEvent = raiseMessageEvent;
-		raiseMessageEvent = newRaiseMessageEvent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT, oldRaiseMessageEvent, raiseMessageEvent));
+		RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRaiseMessageEvent);
 	}
 
 	/**
@@ -789,25 +745,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		return action;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationKind getSynchronizationChannelKind() {
-		return (SynchronizationKind)SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setSynchronizationChannelKind(SynchronizationKind newSynchronizationChannelKind) {
-		// SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchronizationChannelKind);
-		getSynchronizationSafely().setKind(newSynchronizationChannelKind);
-	}
-	
 	private Synchronization getSynchronizationSafely() {
 		Synchronization synchronization = getSynchronization();
 		if (synchronization == null) {
@@ -815,35 +752,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			setSynchronization(synchronization);
 		}
 		return synchronization;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationChannel getSynchronizationChannel() {
-		return (SynchronizationChannel)SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SynchronizationChannel basicGetSynchronizationChannel() {
-		return (SynchronizationChannel)SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setSynchronizationChannel(SynchronizationChannel newSynchronizationChannel) {
-		// SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSynchronizationChannel);
-		Synchronization synchronization = getSynchronizationSafely();
-		synchronization.setSyncChannel(newSynchronizationChannel);
 	}
 
 	/**
@@ -1013,11 +921,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return getEvents();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return getAction();
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
-				return getSynchronizationChannelKind();
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
-				if (resolve) return getSynchronizationChannel();
-				return basicGetSynchronizationChannel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1089,12 +992,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getAction().clear();
 				getAction().addAll((Collection<? extends Action>)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
-				setSynchronizationChannelKind((SynchronizationKind)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
-				setSynchronizationChannel((SynchronizationChannel)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1158,12 +1055,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				getAction().clear();
 				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
-				setSynchronizationChannelKind(SYNCHRONIZATION_CHANNEL_KIND_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
-				setSynchronizationChannel((SynchronizationChannel)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1191,9 +1082,9 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				return clockResets != null && !clockResets.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
-				return triggerMessageEvent != null;
+				return TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
-				return raiseMessageEvent != null;
+				return RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				return clockConstraints != null && !clockConstraints.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -1210,10 +1101,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return events != null && !events.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return action != null && !action.isEmpty();
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL_KIND:
-				return SYNCHRONIZATION_CHANNEL_KIND__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION_CHANNEL:
-				return SYNCHRONIZATION_CHANNEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

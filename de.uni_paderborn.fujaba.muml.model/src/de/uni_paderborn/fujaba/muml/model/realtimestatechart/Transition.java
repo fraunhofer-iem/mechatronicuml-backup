@@ -37,8 +37,6 @@ import org.storydriven.modeling.expressions.Expression;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannelKind <em>Synchronization Channel Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannel <em>Synchronization Channel</em>}</li>
  * </ul>
  * </p>
  *
@@ -183,6 +181,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setTriggerMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerMessageEvent()
 	 * @model derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getTriggerMessageEvent();
@@ -210,6 +209,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @see #setRaiseMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaiseMessageEvent()
 	 * @model derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getRaiseMessageEvent();
@@ -405,63 +405,5 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @generated
 	 */
 	EList<Action> getAction();
-
-	/**
-	 * Returns the value of the '<em><b>Synchronization Channel Kind</b></em>' attribute.
-	 * The default value is <code>"TRIGGER"</code>.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Synchronization Channel Kind</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Synchronization Channel Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
-	 * @see #setSynchronizationChannelKind(SynchronizationKind)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_SynchronizationChannelKind()
-	 * @model default="TRIGGER" transient="true" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if synchronization.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tsynchronization.kind\r\nendif'"
-	 * @generated
-	 */
-	SynchronizationKind getSynchronizationChannelKind();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannelKind <em>Synchronization Channel Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Synchronization Channel Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
-	 * @see #getSynchronizationChannelKind()
-	 * @generated
-	 */
-	void setSynchronizationChannelKind(SynchronizationKind value);
-
-	/**
-	 * Returns the value of the '<em><b>Synchronization Channel</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Synchronization Channel</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Synchronization Channel</em>' reference.
-	 * @see #setSynchronizationChannel(SynchronizationChannel)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_SynchronizationChannel()
-	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if synchronization.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tsynchronization.syncChannel\r\nendif'"
-	 * @generated
-	 */
-	SynchronizationChannel getSynchronizationChannel();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSynchronizationChannel <em>Synchronization Channel</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Synchronization Channel</em>' reference.
-	 * @see #getSynchronizationChannel()
-	 * @generated
-	 */
-	void setSynchronizationChannel(SynchronizationChannel value);
 
 } // Transition

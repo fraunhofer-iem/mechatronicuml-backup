@@ -55,7 +55,7 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 			newObject = oldObject;
 		}
 
-		configureObject(newObject, (EStructuralFeature) getFeature(this), value);
+ 		configureObject(newObject, (EStructuralFeature) getFeature(this), value);
 
 		// We could use this hack to send the notification:
 		setNavigatedObject(object, null);
@@ -74,9 +74,9 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 	protected Object getValue(EObject object, EStructuralFeature feature) {
 		EObject navigatedObject = getNavigatedObject(object);
 		if (navigatedObject != null) {
-			return getObjectValue(navigatedObject, feature).toString();
+			return getObjectValue(navigatedObject, feature);
 		}
-		return "";
+		return null;
 	}
 
 	protected abstract EObject getNavigatedObject(Object object);
