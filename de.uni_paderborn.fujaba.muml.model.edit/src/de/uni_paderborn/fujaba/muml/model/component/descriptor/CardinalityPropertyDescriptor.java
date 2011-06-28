@@ -5,7 +5,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import de.uni_paderborn.fujaba.common.descriptor.NavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.AbstractNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * 
  */
 public abstract class CardinalityPropertyDescriptor extends
-		NavigatedObjectPropertyDescriptor {
+		AbstractNavigatedObjectPropertyDescriptor {
 
 	public CardinalityPropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,

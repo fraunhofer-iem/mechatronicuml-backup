@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.modeling.expressions.ExpressionsFactory;
 import org.storydriven.modeling.expressions.TextualExpression;
 
-import de.uni_paderborn.fujaba.common.descriptor.NavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.AbstractNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
 
 /**
@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
  * 
  */
 public class TextualConstraintExpressionPropertyDescriptor extends
-		NavigatedObjectPropertyDescriptor {
+		AbstractNavigatedObjectPropertyDescriptor {
 
 	public TextualConstraintExpressionPropertyDescriptor(
 			AdapterFactory adapterFactory, ResourceLocator resourceLocator,
