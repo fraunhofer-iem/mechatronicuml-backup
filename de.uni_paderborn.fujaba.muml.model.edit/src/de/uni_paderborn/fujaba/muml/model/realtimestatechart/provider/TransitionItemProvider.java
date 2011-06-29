@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartF
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.RelativeDeadlinePropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.SynchronizationImpl;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition} object.
@@ -118,8 +117,7 @@ public class TransitionItemProvider
 						null,
 						null,
 						null,
-						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
-						RealtimestatechartPackage.Literals.SYNCHRONIZATION));
+						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION));
 		
 		itemPropertyDescriptors
 				.add(new DefaultNavigatedObjectPropertyDescriptor(
@@ -135,8 +133,7 @@ public class TransitionItemProvider
 						null,
 						null,
 						null,
-						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
-						RealtimestatechartPackage.Literals.SYNCHRONIZATION));
+						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION));
 		
 	}
 
@@ -322,22 +319,72 @@ public class TransitionItemProvider
 	 * This adds a property descriptor for the Guard feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addGuardPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_guard_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guard_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Transition_guard_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_guard_feature", "_UI_Transition_type"),
+//				 RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+		// null));
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Guard Expression Text",
+						"The Expression Text of the Textual Expression",
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
+						true,
+						false,
+						false,
+						null,
+						null,
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
+
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Guard Expression Language",
+						"The Expression Language of the Textual Expression",
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
+						true,
+						false,
+						false,
+						null,
+						null,
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
+
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Guard Expression Language Version",
+						"The Expression Language Version of the Textual Expression",
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
+						true,
+						false,
+						false,
+						null,
+						null,
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
 	}
 
 	/**
