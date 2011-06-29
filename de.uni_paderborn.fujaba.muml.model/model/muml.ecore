@@ -1091,8 +1091,8 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
             eType="#//model/realtimestatechart/TransitionEvent" transient="true" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
-            eType="#//model/realtimestatechart/Action" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//model/realtimestatechart/Action"
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The side effect of this transition. A side effect might be a variable assignment as well as a method invocation. \todoib{Many-features should have a name in plural.}"/>
           </eAnnotations>
@@ -1150,7 +1150,7 @@
           <details key="documentation" value="The action of a state that is executed periodically as long as this state is active. The first period starts after the execution of the entry-action."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-            upperBound="-1" eType="#//model/realtimestatechart/Action" containment="true">
+            eType="#//model/realtimestatechart/Action" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Each entry or exit action has one or more actions. \todoib{Many-features should have a name in plural.}"/>
           </eAnnotations>
@@ -1176,8 +1176,8 @@
             <details key="documentation" value="The clock resets of this action"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
-            eType="#//model/realtimestatechart/Action" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//model/realtimestatechart/Action"
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Each entry or exit event can have one or more actions. \todoib{Many-features should have a name in plural.}"/>
           </eAnnotations>
