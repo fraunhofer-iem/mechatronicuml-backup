@@ -87,7 +87,7 @@ public class MumlDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent childElement = modelElement
 					.getEntryEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -107,7 +107,7 @@ public class MumlDiagramUpdater {
 			}
 		}
 		{
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent childElement = modelElement
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent childElement = modelElement
 					.getExitEvent();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);

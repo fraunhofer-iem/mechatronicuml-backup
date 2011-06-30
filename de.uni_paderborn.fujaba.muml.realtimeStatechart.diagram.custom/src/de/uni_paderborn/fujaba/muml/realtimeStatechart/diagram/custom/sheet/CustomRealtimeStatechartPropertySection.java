@@ -22,7 +22,7 @@ public class CustomRealtimeStatechartPropertySection extends
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
 			if (ips != null) {
-				return new CustomPropertySource(object, ips);
+				return new CustomPropertySource(object, ips, af);
 			}
 		}
 		return super.getPropertySource(object);
