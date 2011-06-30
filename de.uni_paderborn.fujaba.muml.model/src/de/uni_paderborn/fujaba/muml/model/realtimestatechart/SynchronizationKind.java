@@ -33,7 +33,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SEND(0, "SEND", ""),
+	SEND(0, "SEND", "SEND"),
 
 	/**
 	 * The '<em><b>RECEIVE</b></em>' literal object.
@@ -57,7 +57,7 @@ public enum SynchronizationKind implements Enumerator {
 	 * Represents a send synchronization.
 	 * <!-- end-model-doc -->
 	 * @see #SEND
-	 * @model literal=""
+	 * @model
 	 * @generated
 	 * @ordered
 	 */

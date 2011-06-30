@@ -8,10 +8,12 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -47,14 +49,14 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 	protected EList<Clock> clockResets;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> action;
+	protected Action action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +94,42 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getAction() {
-		if (action == null) {
-			action = new EObjectContainmentEList<Action>(Action.class, this, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION);
-		}
+	public Action getAction() {
 		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAction(Action newAction) {
+		if (newAction != action) {
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -108,7 +141,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
-				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
+				return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,8 +176,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 				getClockResets().addAll((Collection<? extends Clock>)newValue);
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
-				getAction().clear();
-				getAction().addAll((Collection<? extends Action>)newValue);
+				setAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,7 +194,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 				getClockResets().clear();
 				return;
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
-				getAction().clear();
+				setAction((Action)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -179,7 +211,7 @@ public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitE
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__CLOCK_RESETS:
 				return clockResets != null && !clockResets.isEmpty();
 			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT__ACTION:
-				return action != null && !action.isEmpty();
+				return action != null;
 		}
 		return super.eIsSet(featureID);
 	}

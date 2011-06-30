@@ -247,14 +247,14 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	protected EList<TransitionEvent> events;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> action;
+	protected Action action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -738,11 +738,42 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getAction() {
-		if (action == null) {
-			action = new EObjectContainmentEList<Action>(Action.class, this, RealtimestatechartPackage.TRANSITION__ACTION);
-		}
+	public Action getAction() {
 		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAction(Action newAction) {
+		if (newAction != action) {
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.TRANSITION__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__ACTION, newAction, newAction));
 	}
 
 	private Synchronization getSynchronizationSafely() {
@@ -856,7 +887,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENTS:
 				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__ACTION:
-				return ((InternalEList<?>)getAction()).basicRemove(otherEnd, msgs);
+				return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -989,8 +1020,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getEvents().addAll((Collection<? extends TransitionEvent>)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__ACTION:
-				getAction().clear();
-				getAction().addAll((Collection<? extends Action>)newValue);
+				setAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1053,7 +1083,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getEvents().clear();
 				return;
 			case RealtimestatechartPackage.TRANSITION__ACTION:
-				getAction().clear();
+				setAction((Action)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1100,7 +1130,7 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 			case RealtimestatechartPackage.TRANSITION__EVENTS:
 				return events != null && !events.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
-				return action != null && !action.isEmpty();
+				return action != null;
 		}
 		return super.eIsSet(featureID);
 	}

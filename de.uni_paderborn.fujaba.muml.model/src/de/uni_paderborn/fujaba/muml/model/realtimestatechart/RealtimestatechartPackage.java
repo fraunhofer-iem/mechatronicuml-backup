@@ -759,7 +759,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__EVENTS = PRIORITIZABLE_FEATURE_COUNT + 15;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1017,7 +1017,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT__KIND = STATE_EVENT__KIND;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1081,7 +1081,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_OR_EXIT_EVENT__CLOCK_RESETS = STATE_EVENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1746,7 +1746,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_EVENT__CLOCK_RESETS = ENTRY_OR_EXIT_EVENT__CLOCK_RESETS;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1792,7 +1792,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int EXIT_EVENT__CLOCK_RESETS = ENTRY_OR_EXIT_EVENT__CLOCK_RESETS;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2623,10 +2623,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Events();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @return the meta object for the containment reference '<em>Action</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getAction()
 	 * @see #getTransition()
 	 * @generated
@@ -2729,10 +2729,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getDoEvent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @return the meta object for the containment reference '<em>Action</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getAction()
 	 * @see #getDoEvent()
 	 * @generated
@@ -2783,10 +2783,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getEntryOrExitEvent_ClockResets();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @return the meta object for the containment reference '<em>Action</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent#getAction()
 	 * @see #getEntryOrExitEvent()
 	 * @generated
@@ -3543,7 +3543,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__EVENTS = eINSTANCE.getTransition_Events();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3631,7 +3631,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass DO_EVENT = eINSTANCE.getDoEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3673,7 +3673,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference ENTRY_OR_EXIT_EVENT__CLOCK_RESETS = eINSTANCE.getEntryOrExitEvent_ClockResets();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

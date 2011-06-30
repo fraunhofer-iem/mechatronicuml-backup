@@ -1277,7 +1277,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A synchronization has two kinds: send and receive."/>
         </eAnnotations>
-        <eLiterals name="SEND" literal="">
+        <eLiterals name="SEND" literal="SEND">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Represents a send synchronization."/>
           </eAnnotations>
