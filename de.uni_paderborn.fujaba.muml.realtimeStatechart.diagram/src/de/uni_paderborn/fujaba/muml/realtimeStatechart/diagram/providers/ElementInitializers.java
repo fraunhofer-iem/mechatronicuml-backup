@@ -53,7 +53,7 @@ public class ElementInitializers {
 		try {
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 					.createAction();
-			instance.getAction().add(newInstance_0_0);
+			instance.setAction(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							2,
