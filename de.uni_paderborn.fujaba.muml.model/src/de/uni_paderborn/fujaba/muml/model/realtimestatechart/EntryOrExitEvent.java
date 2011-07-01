@@ -51,7 +51,7 @@ public interface EntryOrExitEvent extends StateEvent {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each entry or exit event can have one or more actions. \todoib{Many-features should have a name in plural.}
+	 * Each entry or exit event can have one or more actions.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference.
 	 * @see #setAction(Action)

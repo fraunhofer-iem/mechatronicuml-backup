@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.common.descriptor;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -76,6 +77,9 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 		if (navigatedObject != null) {
 			return getObjectValue(navigatedObject, feature);
 		}
+		if (feature.isMany()) {
+			return ECollections.EMPTY_ELIST;
+		}
 		return null;
 	}
 
@@ -94,6 +98,9 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 			EStructuralFeature feature) {
 		if (feature.getContainerClass().isAssignableFrom(navigatedObject.getClass())) {
 			return navigatedObject.eGet(feature);
+		}
+		if (feature.isMany()) {
+			return ECollections.EMPTY_ELIST;
 		}
 		return null;
 	}

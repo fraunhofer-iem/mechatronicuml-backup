@@ -79,6 +79,7 @@ public class TransitionItemProvider
 			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -385,6 +386,45 @@ public class TransitionItemProvider
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
+	}
+
+	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Transition_action_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_action_feature", "_UI_Transition_type"),
+//				 RealtimestatechartPackage.Literals.TRANSITION__ACTION,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+//				 null));
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(), getResourceLocator(),
+						"Action Name", "The Name of the Action",
+						SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false,
+						false, null, null, null,
+						RealtimestatechartPackage.Literals.TRANSITION__ACTION));
+
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(), getResourceLocator(),
+						"Action Expressions", "The Expressions of the Action",
+						RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS, true, false,
+						false, null, null, null,
+						RealtimestatechartPackage.Literals.TRANSITION__ACTION));
 	}
 
 	/**
