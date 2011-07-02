@@ -907,8 +907,19 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="OneInvarianPerClock" value="self.invariants->isUnique(clock)"/>
+          <details key="OneInitialState" value="self.statechart.vertices.oclAsType(State)->one(s|  s.initial)"/>
+          <details key="NoOutgoingTransitionOfFinalState" value="self.final implies self.outgoingTransitions->isEmpty()"/>
+          <details key="NoRegionsOfFinalState" value="self.final implies self.regions->isEmpty()"/>
+          <details key="UniquePrioritiesOfOutgoingTransitions" value="self.outgoingTransitions->isUnique(priority) "/>
+          <details key="UniquePrioritiesOfRegions" value="self.regions->isUnique(priority)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
             eType="#//model/realtimestatechart/Region" containment="true" eOpposite="#//model/realtimestatechart/Region/parentState">
@@ -1002,8 +1013,15 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//model/realtimestatechart/Prioritizable ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SetTargetAndSource NoCrossingOfRegionBorders"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="SetTargetAndSource" value="self.target->notEmpty() and self.source->notEmpty()"/>
+          <details key="NoCrossingOfRegionBorders" value="self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or&#xD;&#xA;self.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=&#xD;&#xA;self.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or &#x9;&#x9;&#x9;&#x9;&#xD;&#xA;self.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=&#xD;&#xA;self.target.oclAsType(StateExitPoint).statechart.embeddingRegion"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//model/realtimestatechart/Synchronization"
             containment="true">
@@ -1225,6 +1243,13 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="UniqueNameOfStates" value="self.vertices.oclAsType(State)->isUnique(name) "/>
+          <details key="MinOneState" value="self.vertices.oclAsType(State)->notEmpty()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="UniqueNameOfStates MinOneState"/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddingRegion" eType="#//model/realtimestatechart/Region"
             eOpposite="#//model/realtimestatechart/Region/statechart"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
@@ -1353,18 +1378,36 @@
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/EntryOrExitPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="OneOutgoingTransition"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Entry points are defined points on a state that can be used to reach inner states.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
+        </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/EntryOrExitPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="AtMostOneOutgoingTransition"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="\todoib{\textbf{Suggestion:} Exit points are defined points on a state that can be used to exit inner states.}&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="AtMostOneOutgoingTransition" value="self.outgoingTransitions->size() &lt;= 1"/>
+        </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StateEntryPoint" eSuperTypes="#//model/realtimestatechart/StateEntryOrExitPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="AtLeastOneIncomingTransition"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The entry point that is assigned to a state. It is derived from the entry point of the statechart, the state embeds.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->size()>0"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoint" eType="#//model/realtimestatechart/EntryPoint"
             transient="true" derived="true">
@@ -1377,8 +1420,14 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="StateExitPoint" eSuperTypes="#//model/realtimestatechart/StateEntryOrExitPoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="OneOutgoingTransition"/>
+        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The exit point that is assigned to a state. It is derived from the exit point of the statechart, the state embeds.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoint" eType="#//model/realtimestatechart/ExitPoint"
             transient="true" derived="true">

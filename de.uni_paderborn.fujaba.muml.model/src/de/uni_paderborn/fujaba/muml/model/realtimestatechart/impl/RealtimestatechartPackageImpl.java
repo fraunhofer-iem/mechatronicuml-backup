@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
@@ -66,6 +67,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.HelperPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.impl.HelperPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.RealtimestatechartValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -368,6 +370,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		thePatternPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theRealtimestatechartPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return RealtimestatechartValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theRealtimestatechartPackage.freeze();
@@ -1604,7 +1615,49 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																																																																																		
+		   });													
+		addAnnotation
+		  (stateEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions"
+		   });																			
+		addAnnotation
+		  (transitionEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SetTargetAndSource NoCrossingOfRegionBorders"
+		   });																																												
+		addAnnotation
+		  (fujabaRealtimeStatechartEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueNameOfStates MinOneState"
+		   });																									
+		addAnnotation
+		  (entryPointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OneOutgoingTransition"
+		   });				
+		addAnnotation
+		  (exitPointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AtMostOneOutgoingTransition"
+		   });				
+		addAnnotation
+		  (stateEntryPointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AtLeastOneIncomingTransition"
+		   });						
+		addAnnotation
+		  (stateExitPointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "OneOutgoingTransition"
+		   });				
 	}
 
 	/**
@@ -1614,7 +1667,25 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																
+		addAnnotation
+		  (stateEClass, 
+		   source, 
+		   new String[] {
+			 "OneInvarianPerClock", "self.invariants->isUnique(clock)",
+			 "OneInitialState", "self.statechart.vertices.oclAsType(State)->one(s|  s.initial)",
+			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
+			 "NoRegionsOfFinalState", "self.final implies self.regions->isEmpty()",
+			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",
+			 "UniquePrioritiesOfRegions", "self.regions->isUnique(priority)"
+		   });																			
+		addAnnotation
+		  (transitionEClass, 
+		   source, 
+		   new String[] {
+			 "SetTargetAndSource", "self.target->notEmpty() and self.source->notEmpty()",
+			 "NoCrossingOfRegionBorders", "self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or\r\nself.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=\r\nself.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or \t\t\t\t\r\nself.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=\r\nself.target.oclAsType(StateExitPoint).statechart.embeddingRegion"
+		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
 		   source, 
@@ -1626,13 +1697,44 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n"
-		   });																																																										
+		   });																																
+		addAnnotation
+		  (fujabaRealtimeStatechartEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
+			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()"
+		   });																												
+		addAnnotation
+		  (entryPointEClass, 
+		   source, 
+		   new String[] {
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
+		   });				
+		addAnnotation
+		  (exitPointEClass, 
+		   source, 
+		   new String[] {
+			 "AtMostOneOutgoingTransition", "self.outgoingTransitions->size() <= 1"
+		   });				
+		addAnnotation
+		  (stateEntryPointEClass, 
+		   source, 
+		   new String[] {
+			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0"
+		   });		
 		addAnnotation
 		  (getStateEntryPoint_EntryPoint(), 
 		   source, 
 		   new String[] {
 			 "derivation", "entryOrExitPoint.oclAsType(realtimestatechart::EntryPoint)"
-		   });				
+		   });					
+		addAnnotation
+		  (stateExitPointEClass, 
+		   source, 
+		   new String[] {
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
+		   });		
 		addAnnotation
 		  (getStateExitPoint_ExitPoint(), 
 		   source, 

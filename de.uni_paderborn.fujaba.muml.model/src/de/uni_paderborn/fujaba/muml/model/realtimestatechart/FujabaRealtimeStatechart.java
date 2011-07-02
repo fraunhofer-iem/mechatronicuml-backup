@@ -37,7 +37,8 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='self.vertices.oclAsType(State)->isUnique(name) ' MinOneState='self.vertices.oclAsType(State)->notEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates MinOneState'"
  * @generated
  */
 public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {

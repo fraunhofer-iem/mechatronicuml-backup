@@ -41,7 +41,8 @@ import org.storydriven.modeling.expressions.Expression;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SetTargetAndSource NoCrossingOfRegionBorders'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SetTargetAndSource='self.target->notEmpty() and self.source->notEmpty()' NoCrossingOfRegionBorders='self.source.statechart.embeddingRegion=self.target.statechart.embeddingRegion or\r\nself.source.oclAsType(StateEntryPoint).statechart.embeddingRegion=\r\nself.target.statechart.embeddingRegion.parentState.statechart.embeddingRegion  or \t\t\t\t\r\nself.source.statechart.embeddingRegion.parentState.statechart.embeddingRegion=\r\nself.target.oclAsType(StateExitPoint).statechart.embeddingRegion'"
  * @generated
  */
 public interface Transition extends Prioritizable, ExtendableElement {
