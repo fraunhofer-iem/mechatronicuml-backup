@@ -21,7 +21,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -94,22 +96,53 @@ public class EntryOrExitEventItemProvider
 	 * This adds a property descriptor for the Action feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addActionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntryOrExitEvent_action_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
-				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_EntryOrExitEvent_action_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
+//				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+//				 null));
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Action Name",
+						"The Name of the Action",
+						SDMPackage.Literals.NAMED_ELEMENT__NAME,
+						true,
+						false,
+						false,
+						null,
+						null,
+						null,
+						RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION));
+
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						"Action Expressions",
+						"The Expressions of the Action",
+						RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
+						true,
+						false,
+						false,
+						null,
+						null,
+						null,
+						RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION));
 	}
 
 	/**
