@@ -5,7 +5,7 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: Fujaba Common Code Style
+    Checkstyle-Configuration: Fujaba Common Checkstyle Config
     Description: none
 -->
 <module name="Checker">
@@ -35,7 +35,10 @@
       <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
     </module>
     <module name="MethodLength"/>
-    <module name="ParameterNumber"/>
+    <module name="ParameterNumber">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
     <module name="EmptyForIteratorPad"/>
     <module name="MethodParamPad"/>
     <module name="NoWhitespaceAfter">

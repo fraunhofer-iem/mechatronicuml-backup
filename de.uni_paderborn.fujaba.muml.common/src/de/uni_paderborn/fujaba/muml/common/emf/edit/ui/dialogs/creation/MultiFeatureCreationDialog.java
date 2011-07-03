@@ -1,6 +1,7 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,18 +10,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelection;
@@ -29,8 +25,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CaretEvent;
 import org.eclipse.swt.custom.CaretListener;
@@ -46,13 +40,17 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
+
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidationListener;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 
 /**
  * 
@@ -65,6 +63,12 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 * The initial size for this dialog.
 	 */
 	private static final Point INITIAL_DIALOG_SIZE = new Point(500, 470);
+
+	/**
+	 * A field, which remembers, if the values currently entered are valid.
+	 */
+
+	protected boolean validInput;
 
 	protected EObject newObject;
 
@@ -92,11 +96,9 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 	protected EClass instanceClass;
 
-	protected List<EStructuralFeature> properties;
+	protected List<Property> properties;
 
-	protected AdapterFactory itemProvidersAdapterFactory;
-
-	protected List<EClassifier> typeChoices;
+	protected AdapterFactory adapterFactory;
 
 	/**
 	 * Stores the Parameters currently set; they can be accessed using
@@ -151,12 +153,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 	protected CaretListener txtParameterLineCaretListener;
 
 	/**
-	 * A field, which remembers, if the Parameter-Name currently entered is
-	 * valid.
-	 */
-	protected boolean isValidParameterName;
-
-	/**
 	 * The result, which can be accessed using getResult(), after the dialog was
 	 * closed.
 	 */
@@ -165,19 +161,9 @@ public class MultiFeatureCreationDialog extends Dialog {
 	// UI-Controls:
 
 	/**
-	 * The Parameter-Name Textfield.
-	 */
-	protected StyledText txtName;
-
-	/**
 	 * The Parameters-List TableViewer.
 	 */
 	protected TableViewer parameterTableViewer;
-
-	/**
-	 * The Parameter-Type ComboViewer.
-	 */
-	protected ComboViewer typeComboViewer;
 
 	/**
 	 * The textual Parameter-Line Textfield.
@@ -217,39 +203,24 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 */
 	public MultiFeatureCreationDialog(Shell parentShell,
 			ILabelProvider labelProvider, EObject containerObject,
-			EStructuralFeature structuralFeature,
-			List<EClassifier> typeChoices,
-			AdapterFactory itemProvidersAdapterFactory,
-			List<EStructuralFeature> properties, ITextParser textParser,
-			ITextProvider textProvider) {
-		this(parentShell, labelProvider, containerObject, structuralFeature,
-				typeChoices, itemProvidersAdapterFactory, properties,
-				textParser, textProvider, (EClass) structuralFeature.getEType());
-	}
-
-	public MultiFeatureCreationDialog(Shell parentShell,
-			ILabelProvider labelProvider, EObject containerObject,
-			EStructuralFeature structuralFeature,
-			List<EClassifier> typeChoices,
-			AdapterFactory itemProvidersAdapterFactory,
-			List<EStructuralFeature> properties, ITextParser textParser,
+			EStructuralFeature structuralFeature, Collection<?> currentValues,
+			AdapterFactory adapterFactory,
+			List<Property> properties, ITextParser textParser,
 			ITextProvider textProvider, EClass instanceClass) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
 		this.labelProvider = labelProvider;
-		this.containerObject = containerObject;
 		this.structuralFeature = structuralFeature;
-		this.typeChoices = typeChoices;
+		this.containerObject = containerObject;
 		this.textParser = textParser;
 		this.textProvider = textProvider;
 		this.instanceClass = instanceClass;
 		this.properties = properties;
-		this.itemProvidersAdapterFactory = itemProvidersAdapterFactory;
+		this.adapterFactory = adapterFactory;
 
-		values = new ItemProvider(itemProvidersAdapterFactory,
-				(java.util.List<?>) containerObject.eGet(structuralFeature));
+		this.values = new ItemProvider(adapterFactory, currentValues);
 		contentProvider = new AdapterFactoryContentProvider(
-				itemProvidersAdapterFactory);
+				adapterFactory);
 
 		newObject = EcoreUtil.create(instanceClass);
 
@@ -277,30 +248,57 @@ public class MultiFeatureCreationDialog extends Dialog {
 		Composite container = (Composite) super.createDialogArea(parent);
 		container.setLayout(new GridLayout(2, false));
 
+		boolean extendGroupVertically = false;
+		
+		for (Property property : properties) {
+			if (property.getPropertyEditor().isExtendVertically()) {
+				extendGroupVertically = true;
+				break;
+			}
+		}
+
 		Group grpParameterProps = new Group(container, SWT.NONE);
 		grpParameterProps.setLayout(new GridLayout(2, false));
 		grpParameterProps.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				false, 1, 1));
+				extendGroupVertically, 1, 1));
 		grpParameterProps.setText("&Properties");
 
-		Label lblName = new Label(grpParameterProps, SWT.NONE);
-		lblName.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
-				1, 1));
-		lblName.setText("Name:");
+		IValidationListener validationListener = new IValidationListener() {
 
-		txtName = new StyledText(grpParameterProps, SWT.BORDER | SWT.SINGLE);
-		txtName.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
-				1, 1));
+			@Override
+			public void validationOccurred(boolean valid) {
+				boolean allValid = true;
+				for (Property property : properties) {
+					if (!property.getPropertyEditor().isValid()) {
+						allValid = false;
+						break;
+					}
+				}
+				validInput = allValid;
+				updateModifyButtonEnablement();
+				updateCreateButtonEnablement();
+			}
+		};
 
-		Label lblType = new Label(grpParameterProps, SWT.NONE);
-		lblType.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false,
-				1, 1));
-		lblType.setText("Type:");
+		for (Property property : properties) {
+			Label lblName = new Label(grpParameterProps, SWT.NONE);
+			lblName.setLayoutData(new GridData(SWT.RIGHT, SWT.TOP, false,
+					false, 1, 1));
+			lblName.setText(property.getDisplayName() + ":");
 
-		typeComboViewer = new ComboViewer(grpParameterProps, SWT.NONE);
-		Combo cmbType = typeComboViewer.getCombo();
-		cmbType.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
-				1, 1));
+			AbstractPropertyEditor editor = property.getPropertyEditor();
+			editor.addValidationListener(validationListener);
+
+			Control editorControl = editor.create(grpParameterProps);
+			boolean extendVertically = editor.isExtendVertically();
+			int verticalAlignment = SWT.CENTER;
+			if (extendVertically) {
+				verticalAlignment = SWT.FILL;
+			}
+			editorControl.setLayoutData(new GridData(SWT.FILL, verticalAlignment,
+					true, extendVertically, 1, 1));
+			
+		}
 
 		Composite composite = new Composite(container, SWT.NONE);
 		GridLayout glComposite = new GridLayout(1, false);
@@ -374,37 +372,25 @@ public class MultiFeatureCreationDialog extends Dialog {
 			new Label(container, SWT.NONE);
 		}
 
-		// Initialize controls:
-
-		txtName.addModifyListener(new ModifyListener() {
-			public void modifyText(ModifyEvent event) {
-				clearTextStyle(txtName);
-				String name = txtName.getText();
-				
-				// TODO: Validate name
-				isValidParameterName = name != null && !name.isEmpty();
-				updateCreateButtonEnablement();
-				updateModifyButtonEnablement();
-			}
-		});
-
 		btnCreate.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				// TODO: Implement Button Create
-				EParameter newParameter = EcoreFactory.eINSTANCE
-						.createEParameter();
-				configureParameter(newParameter, txtName.getText(),
-						getSelectedType());
-				values.getChildren().add(newParameter);
+				EObject newObject = EcoreUtil.create(instanceClass);
+
+				for (Property property : properties) {
+					property.getPropertyEditor().setPropertyValue(newObject);
+				}
+				
+				values.getChildren().add(newObject);
 				rebuildTextualParameterLine();
 
 				// Update visuals
-				txtName.setSelection(0, txtName.getText().length());
-				txtName.setFocus();
+				// TODO:
+				// txtName.setSelection(0, txtName.getText().length());
+				// txtName.setFocus();
 				parameterTableViewer.refresh();
 				parameterTableViewer.setSelection(new StructuredSelection(
-						new Object[] { newParameter }));
+						new Object[] { newObject }));
 			}
 		});
 
@@ -415,19 +401,24 @@ public class MultiFeatureCreationDialog extends Dialog {
 				int index = values.getChildren().indexOf(oldObject);
 
 				if (index > -1) {
-					// TODO: Implement Button Modify
-					EObject newParameter = EcoreUtil.copy(oldObject);
-					configureParameter((EParameter) newParameter,
-							txtName.getText(), getSelectedType());
-					values.getChildren().set(index, newParameter);
+					EObject newObject = EcoreUtil.copy(oldObject);
+					
+					for (Property property : properties) {
+						property.getPropertyEditor().setPropertyValue(newObject);
+					}
+					
+					// configureParameter((EParameter) newParameter,
+					// txtName.getText(), getSelectedType());
+					values.getChildren().set(index, newObject);
 					rebuildTextualParameterLine();
 
 					// Update visuals
-					txtName.setSelection(0, txtName.getText().length());
-					txtName.setFocus();
+					// TODO:
+					// txtName.setSelection(0, txtName.getText().length());
+					// txtName.setFocus();
 					parameterTableViewer.refresh();
 					parameterTableViewer.setSelection(new StructuredSelection(
-							new EObject[] { newParameter }));
+							new EObject[] { newObject }));
 				}
 			}
 		});
@@ -604,21 +595,27 @@ public class MultiFeatureCreationDialog extends Dialog {
 		parameterTableViewer.setSelection(new StructuredSelection(
 				new Object[] {}));
 
-		// Initialize typeComboViewer
-		typeComboViewer.setContentProvider(contentProvider);
-		typeComboViewer.setLabelProvider(labelProvider);
-		typeComboViewer.addFilter(new ViewerFilter() {
-			@Override
-			public boolean select(Viewer viewer, Object parentElement,
-					Object element) {
-				return element instanceof EDataType;
-			}
-		});
-
-		txtName.setText("");
-
-		typeComboViewer.setInput(new ItemProvider(itemProvidersAdapterFactory,
-				typeChoices));
+		// TODO:
+		// // Initialize typeComboViewer
+		// typeComboViewer.setContentProvider(contentProvider);
+		// typeComboViewer.setLabelProvider(labelProvider);
+		// typeComboViewer.addFilter(new ViewerFilter() {
+		// @Override
+		// public boolean select(Viewer viewer, Object parentElement,
+		// Object element) {
+		// return element instanceof EDataType;
+		// }
+		// });
+		//
+		// txtName.setText("");
+		//
+		// typeComboViewer.setInput(new
+		// ItemProvider(itemProvidersAdapterFactory,
+		// typeChoices));
+		
+		for (Property property : properties) {
+			property.getPropertyEditor().setDefaultValue();
+		}
 
 		return container;
 	}
@@ -679,8 +676,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 * Updates the enable-status of the modify button.
 	 */
 	protected void updateModifyButtonEnablement() {
-		btnModify.setEnabled(getParameterListSelection() != null
-				&& isValidParameterName);
+		btnModify.setEnabled(getParameterListSelection() != null && validInput);
 	}
 
 	/**
@@ -691,7 +687,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 		boolean canCreateOneMore = upperBound == -1
 				|| upperBound > values.getChildren().size();
 
-		btnCreate.setEnabled(isValidParameterName && canCreateOneMore);
+		btnCreate.setEnabled(validInput && canCreateOneMore);
 	}
 
 	/**
@@ -762,26 +758,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 	}
 
 	/**
-	 * Initializes the parameter using the passed values and default values.
-	 * 
-	 * @param parameter
-	 *            The parameter to set features for.
-	 * @param name
-	 *            The name to set.
-	 * @param type
-	 *            The EType to set.
-	 */
-	private void configureParameter(EParameter parameter, String name,
-			EClassifier type) {
-		parameter.setName(name);
-		parameter.setLowerBound(1);
-		parameter.setUpperBound(1);
-		parameter.setUnique(true);
-		parameter.setOrdered(true);
-		parameter.setEType(type);
-	}
-
-	/**
 	 * Returns the parameter currently selected within the Parameter-List.
 	 * 
 	 * @return The parameter currently selected, or <code>null</code> if none is
@@ -796,19 +772,19 @@ public class MultiFeatureCreationDialog extends Dialog {
 		return null;
 	}
 
-	/**
-	 * Returns the parameter type currently selected within the ComboBox.
-	 * 
-	 * @return The Classifier to use as parameter type.
-	 */
-	private EClassifier getSelectedType() {
-		if (typeComboViewer.getSelection() instanceof StructuredSelection) {
-			IStructuredSelection selection = (IStructuredSelection) typeComboViewer
-					.getSelection();
-			return (EClassifier) selection.getFirstElement();
-		}
-		return null;
-	}
+	// /**
+	// * Returns the parameter type currently selected within the ComboBox.
+	// *
+	// * @return The Classifier to use as parameter type.
+	// */
+	// private EClassifier getSelectedType() {
+	// if (typeComboViewer.getSelection() instanceof StructuredSelection) {
+	// IStructuredSelection selection = (IStructuredSelection) typeComboViewer
+	// .getSelection();
+	// return (EClassifier) selection.getFirstElement();
+	// }
+	// return null;
+	// }
 
 	@Override
 	protected Point getInitialSize() {
@@ -836,5 +812,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 	public EList<?> getResult() {
 		return result;
 	}
+
 
 }

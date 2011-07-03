@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.parameter;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter;
 
 import java.util.List;
 import java.util.Map;
@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.jface.viewers.ILabelProvider;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.ITextProvider;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.Range;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.ITextProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 
 /**
  * 

@@ -1,9 +1,11 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation;
 
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 
 /**
  * An ITextProvider is able to provide a text for a set of objects.

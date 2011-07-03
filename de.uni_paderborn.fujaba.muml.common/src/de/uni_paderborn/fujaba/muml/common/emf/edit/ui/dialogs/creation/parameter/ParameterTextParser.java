@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.parameter;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcoreFactory;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.ITextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialog.Range;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.ITextParser;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextValidationStatus;
 
 /**
  * 
@@ -19,9 +21,12 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.multifeaturecreationdialo
  */
 public class ParameterTextParser implements ITextParser {
 	private List<EClassifier> typeChoices;
+	private IValidator nameValidator;
 
-	public ParameterTextParser(List<EClassifier> typeChoices) {
+	public ParameterTextParser(List<EClassifier> typeChoices,
+			IValidator nameValidator) {
 		this.typeChoices = typeChoices;
+		this.nameValidator = nameValidator;
 	}
 
 	@Override
@@ -51,15 +56,13 @@ public class ParameterTextParser implements ITextParser {
 									parts[1].trim().length()));
 						}
 					}
-
-					type = getTypeClassifierByName(parts[1].trim(), true);
 				}
 
-				if (!isValidParameterName(parts[0].trim())) {
-					if (returnedErrorRanges != null) {
-						returnedErrorRanges.add(new Range(startName, parts[0]
-								.trim().length()));
-					}
+				TextValidationStatus validationStatus = (TextValidationStatus) nameValidator
+						.validate(parts[0].trim());
+
+				if (validationStatus != null && validationStatus.getInvalidRanges() != null) {
+					returnedErrorRanges.addAll(validationStatus.getInvalidRanges());
 				} else {
 					EParameter parameter = EcoreFactory.eINSTANCE
 							.createEParameter();
@@ -75,16 +78,6 @@ public class ParameterTextParser implements ITextParser {
 			pos += s.length() + 1; // Add one for the comma-delimiter.
 		}
 		return returnedParameters;
-	}
-
-	protected boolean isValidParameterName(String text) {
-		for (int i = 0; i < text.length(); i++) {
-			char ch = text.charAt(i);
-			if (!Character.isJavaIdentifierPart(ch)) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 	/**
