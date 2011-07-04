@@ -57,32 +57,9 @@ public class AssemblyInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssemblyTypePropertyDescriptor(object);
 			addCoordinationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Assembly Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssemblyTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssemblyInstance_assemblyType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyInstance_assemblyType_feature", "_UI_AssemblyInstance_type"),
-				 InstancePackage.Literals.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
