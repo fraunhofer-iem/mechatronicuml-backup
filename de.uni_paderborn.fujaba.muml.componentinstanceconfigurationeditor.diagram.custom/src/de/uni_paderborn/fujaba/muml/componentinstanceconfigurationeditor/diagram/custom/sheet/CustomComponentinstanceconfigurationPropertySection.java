@@ -25,10 +25,18 @@ public class CustomComponentinstanceconfigurationPropertySection extends
 		if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
 		}
+
+		IItemPropertySource ips = null;
 		AdapterFactory af = getAdapterFactory(object);
 		if (af != null) {
-			IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
+			ips = (IItemPropertySource) af.adapt(object,
 					IItemPropertySource.class);
+			if (ips instanceof ComponentInstanceItemProvider) {
+				CustomComponentInstanceItemProvider adapter = (CustomComponentInstanceItemProvider) instanceFactory
+						.createComponentInstanceAdapter();
+				ips = (IItemPropertySource) adapter;
+			}
+
 			if (ips != null) {
 				return new CustomPropertySource(object, ips, af);
 			}
