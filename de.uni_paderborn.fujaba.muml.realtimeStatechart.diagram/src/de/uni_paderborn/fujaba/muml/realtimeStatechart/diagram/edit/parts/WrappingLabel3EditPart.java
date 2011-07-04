@@ -78,7 +78,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID),
-				new Point(0, -20));
+				new Point(0, 50));
 	}
 
 	/**

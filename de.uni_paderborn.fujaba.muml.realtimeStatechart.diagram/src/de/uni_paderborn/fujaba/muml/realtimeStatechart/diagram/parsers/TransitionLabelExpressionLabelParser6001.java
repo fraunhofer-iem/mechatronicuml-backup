@@ -23,11 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class TransitionLabelExpressionLabelParser6003 implements IParser {
+public class TransitionLabelExpressionLabelParser6001 implements IParser {
 	/**
 	 * @generated
 	 */
-	public TransitionLabelExpressionLabelParser6003() {
+	public TransitionLabelExpressionLabelParser6001() {
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class TransitionLabelExpressionLabelParser6003 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						10,
+						8,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getTransition(), null).evaluate(target);
 		return String.valueOf(result);

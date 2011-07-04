@@ -230,7 +230,8 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="TransitionFigure"
-          targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.10">
+          sourceDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.10"
+          targetDecoration="//@figures.0/@descriptors.4/@actualFigure/@children.11">
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionPriorityLabel"
@@ -272,8 +273,17 @@
             name="TransitionSynchroExprLabel"
             text="-"/>
         <children
+            xsi:type="gmfgraph:CustomDecoration"
+            name="TransitionPriority"
+            qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration">
+          <location/>
+          <size
+              x="16"
+              y="16"/>
+        </children>
+        <children
             xsi:type="gmfgraph:PolylineDecoration"
-            name="TransitionFigure"/>
+            name="TransitionArrow"/>
       </actualFigure>
       <accessors
           accessor="getFigureTransitionPriorityFigure"
@@ -305,17 +315,6 @@
       <accessors
           accessor="getFigureTransitionSynchroExprLabel"
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.9"/>
-    </descriptors>
-    <descriptors
-        name="TestTransitionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="TransitionFigure"
-          targetDecoration="//@figures.0/@descriptors.5/@actualFigure/@children.0">
-        <children
-            xsi:type="gmfgraph:PolylineDecoration"
-            name="TransitionFigure"/>
-      </actualFigure>
     </descriptors>
     <descriptors
         name="HistoryFigure">
@@ -355,7 +354,7 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="TimeInvariantFigure">
@@ -369,7 +368,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureTimeInvariantExpr"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="SynchroChannelFigure">
@@ -391,7 +390,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureSynchroChannelLabel"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DoActionFigure">
@@ -413,7 +412,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureDoActionLabel"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="EEActionFigure">
@@ -435,7 +434,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureEEActionLabel"
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -533,12 +532,12 @@
           dy="-1"/>
     </facets>
   </nodes>
-  <nodes
-      name="TestTransitionNode"
-      figure="TestTransitionFigure"/>
   <connections
       name="Transition"
-      figure="TransitionFigure"/>
+      figure="TransitionFigure">
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"/>
+  </connections>
   <compartments
       name="CompoundCompartment"
       figure="StateFigure"
@@ -669,7 +668,7 @@
       figure="StateFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
   <labels
       name="StateName"
       figure="StateFigure"
@@ -680,20 +679,20 @@
       name="TimeInvariant"
       figure="TimeInvariantFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="SynchroChannelExpr"
       figure="SynchroChannelFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="DoActionExpr"
       figure="DoActionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
       name="EEActionExpr"
       figure="EEActionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
 </gmfgraph:Canvas>

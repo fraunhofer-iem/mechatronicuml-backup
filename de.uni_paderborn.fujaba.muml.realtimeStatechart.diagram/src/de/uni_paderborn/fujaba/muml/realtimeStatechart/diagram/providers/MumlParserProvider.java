@@ -136,20 +136,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser transitionPriority_6001Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getTransitionPriority_6001Parser() {
-		if (transitionPriority_6001Parser == null) {
-			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getPrioritizable_Priority() };
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
-					features);
-			transitionPriority_6001Parser = parser;
+	private IParser getTransitionLabel_6001Parser() {
+		if (transitionLabel_6001Parser == null) {
+			transitionLabel_6001Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001();
 		}
-		return transitionPriority_6001Parser;
+		return transitionLabel_6001Parser;
 	}
 
 	/**
@@ -275,21 +271,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6010 transitionLabel_6010Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getTransitionLabel_6010Parser() {
-		if (transitionLabel_6010Parser == null) {
-			transitionLabel_6010Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6010();
-		}
-		return transitionLabel_6010Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
@@ -307,7 +288,7 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getSynchronizationChannelLabel_5002Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID:
-			return getTransitionPriority_6001Parser();
+			return getTransitionLabel_6001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getTransitionLabel_6002Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
@@ -324,8 +305,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getTransitionLabel_6008Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
 			return getTransitionLabel_6009Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
-			return getTransitionLabel_6010Parser();
 		}
 		return null;
 	}

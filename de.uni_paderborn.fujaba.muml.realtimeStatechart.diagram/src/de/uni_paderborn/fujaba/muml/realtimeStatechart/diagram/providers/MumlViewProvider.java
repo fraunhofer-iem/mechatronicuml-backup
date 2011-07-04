@@ -708,7 +708,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				.createLocation());
 		Location location6001 = (Location) label6001.getLayoutConstraint();
 		location6001.setX(0);
-		location6001.setY(20);
+		location6001.setY(-20);
 		Node label6002 = createLabel(
 				edge,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
@@ -717,7 +717,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				.createLocation());
 		Location location6002 = (Location) label6002.getLayoutConstraint();
 		location6002.setX(0);
-		location6002.setY(-20);
+		location6002.setY(50);
 		Node label6003 = createLabel(
 				edge,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
@@ -735,7 +735,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				.createLocation());
 		Location location6004 = (Location) label6004.getLayoutConstraint();
 		location6004.setX(0);
-		location6004.setY(50);
+		location6004.setY(-20);
 		Node label6005 = createLabel(
 				edge,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
@@ -781,15 +781,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Location location6009 = (Location) label6009.getLayoutConstraint();
 		location6009.setX(0);
 		location6009.setY(-20);
-		Node label6010 = createLabel(
-				edge,
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
-		label6010.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location6010 = (Location) label6010.getLayoutConstraint();
-		location6010.setX(0);
-		location6010.setY(-20);
 		return edge;
 	}
 

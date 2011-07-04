@@ -283,9 +283,6 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		}
 		return false;

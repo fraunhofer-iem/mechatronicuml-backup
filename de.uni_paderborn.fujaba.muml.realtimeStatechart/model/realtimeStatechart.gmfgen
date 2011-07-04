@@ -450,7 +450,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="TransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionPriorityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionEventExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionRelativeDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockConstraintExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionGuardExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockResetExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionActionExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSafetyTransitionLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSynchroExprLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionPriorityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionPriorityFigure.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionPriorityFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionEventExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionEventExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionEventExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionAbsoluteDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionAbsoluteDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionAbsoluteDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionRelativeDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionRelativeDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionRelativeDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockConstraintExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockConstraintExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockConstraintExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionGuardExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionGuardExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionGuardExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockResetExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockResetExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockResetExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionActionExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionActionExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionActionExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSafetyTransitionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSafetyTransitionLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSafetyTransitionLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSynchroExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSynchroExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSynchroExprLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionPriorityFigure() {&#xA;&#x9;&#x9;return fFigureTransitionPriorityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionEventExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionEventExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionAbsoluteDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionRelativeDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockConstraintExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockConstraintExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionGuardExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionGuardExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockResetExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockResetExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionActionExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionActionExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSafetyTransitionLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSafetyTransitionLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSynchroExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSynchroExprLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionPriorityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionEventExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionRelativeDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockConstraintExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionGuardExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockResetExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionActionExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSafetyTransitionLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSynchroExprLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionPriorityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionPriorityFigure.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionPriorityFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionEventExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionEventExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionEventExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionAbsoluteDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionAbsoluteDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionAbsoluteDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionRelativeDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionRelativeDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionRelativeDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockConstraintExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockConstraintExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockConstraintExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionGuardExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionGuardExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionGuardExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockResetExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockResetExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockResetExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionActionExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionActionExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionActionExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSafetyTransitionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSafetyTransitionLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSafetyTransitionLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSynchroExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSynchroExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSynchroExprLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xA;&#x9;&#x9;de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();&#xA;&#xA;&#xA;df.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;df.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionPriorityFigure() {&#xA;&#x9;&#x9;return fFigureTransitionPriorityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionEventExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionEventExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionAbsoluteDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionRelativeDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockConstraintExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockConstraintExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionGuardExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionGuardExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockResetExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockResetExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionActionExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionActionExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSafetyTransitionLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSafetyTransitionLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSynchroExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSynchroExprLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -469,29 +469,6 @@
           editPartClassName="TransitionPriorityEditPart"
           itemSemanticEditPolicyClassName="TransitionPriorityItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionPriorityViewFactory"
-          alignment="TARGET">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionPriorityFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.5">
-          <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
-        </modelFacet>
-      </labels>
-      <labels
-          visualID="6002"
-          editPartClassName="WrappingLabel3EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
           alignment="SOURCE">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -508,9 +485,9 @@
             parser="//@labelParsers/@implementations.6"/>
       </labels>
       <labels
-          visualID="6003"
-          editPartClassName="WrappingLabel4EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
+          visualID="6002"
+          editPartClassName="WrappingLabel3EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory"
           alignment="SOURCE">
         <diagramRunTimeClass
@@ -528,9 +505,9 @@
             parser="//@labelParsers/@implementations.7"/>
       </labels>
       <labels
-          visualID="6004"
-          editPartClassName="WrappingLabel5EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
+          visualID="6003"
+          editPartClassName="WrappingLabel4EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory"
           alignment="SOURCE">
         <diagramRunTimeClass
@@ -548,9 +525,9 @@
             parser="//@labelParsers/@implementations.8"/>
       </labels>
       <labels
-          visualID="6005"
-          editPartClassName="WrappingLabel6EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
+          visualID="6004"
+          editPartClassName="WrappingLabel5EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -567,9 +544,9 @@
             parser="//@labelParsers/@implementations.9"/>
       </labels>
       <labels
-          visualID="6006"
-          editPartClassName="WrappingLabel7EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
+          visualID="6005"
+          editPartClassName="WrappingLabel6EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -586,9 +563,9 @@
             parser="//@labelParsers/@implementations.10"/>
       </labels>
       <labels
-          visualID="6007"
-          editPartClassName="WrappingLabel8EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
+          visualID="6006"
+          editPartClassName="WrappingLabel7EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -605,9 +582,9 @@
             parser="//@labelParsers/@implementations.11"/>
       </labels>
       <labels
-          visualID="6008"
-          editPartClassName="WrappingLabel9EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
+          visualID="6007"
+          editPartClassName="WrappingLabel8EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -624,9 +601,9 @@
             parser="//@labelParsers/@implementations.12"/>
       </labels>
       <labels
-          visualID="6009"
-          editPartClassName="WrappingLabel10EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
+          visualID="6008"
+          editPartClassName="WrappingLabel9EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -643,9 +620,9 @@
             parser="//@labelParsers/@implementations.13"/>
       </labels>
       <labels
-          visualID="6010"
-          editPartClassName="WrappingLabel11EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy"
+          visualID="6009"
+          editPartClassName="WrappingLabel10EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -965,12 +942,20 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@links.0/@labels.0/@modelFacet"
+        className="TransitionLabelExpressionLabelParser6001"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
+    </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
         className="TransitionLabelExpressionLabelParser6002"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.8">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -978,7 +963,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.2/@modelFacet"
         className="TransitionLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.9">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -986,7 +971,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.3/@modelFacet"
         className="TransitionLabelExpressionLabelParser6004"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.10">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -994,7 +979,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.4/@modelFacet"
         className="TransitionLabelExpressionLabelParser6005"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -1002,7 +987,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.5/@modelFacet"
         className="TransitionLabelExpressionLabelParser6006"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -1010,7 +995,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.6/@modelFacet"
         className="TransitionLabelExpressionLabelParser6007"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -1018,7 +1003,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.7/@modelFacet"
         className="TransitionLabelExpressionLabelParser6008"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>
@@ -1026,14 +1011,6 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.8/@modelFacet"
         className="TransitionLabelExpressionLabelParser6009"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.9/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6010"
         viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>

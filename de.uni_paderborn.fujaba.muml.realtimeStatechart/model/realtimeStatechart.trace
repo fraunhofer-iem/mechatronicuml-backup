@@ -90,8 +90,5 @@
     <linkLabelTraces
         visualID="6009"
         queryText="true"/>
-    <linkLabelTraces
-        visualID="6010"
-        queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

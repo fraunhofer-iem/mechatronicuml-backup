@@ -78,7 +78,7 @@ public class TransitionPriorityEditPart extends LabelEditPart implements
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID),
-				new Point(0, 20));
+				new Point(0, -20));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class TransitionPriorityEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.TARGET;
+		return ConnectionLocator.SOURCE;
 	}
 
 	/**

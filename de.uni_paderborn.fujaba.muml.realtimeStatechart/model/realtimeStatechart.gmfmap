@@ -224,13 +224,6 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="realtimeStatechart.gmfgraph#TransitionPriority"/>
-      <features
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
-    </labelMappings>
-    <labelMappings
         xsi:type="gmfmap:ExpressionLabelMapping">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionClockResetExpr"/>
