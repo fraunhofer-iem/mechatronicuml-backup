@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -43,7 +44,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	/**
 	 * The list of valid choices to show in the ComboBox.
 	 */
-	protected List<?> choices;
+	protected List<?> choices = Collections.EMPTY_LIST;
 
 	/**
 	 * Creates this ComboPropertyEditor.

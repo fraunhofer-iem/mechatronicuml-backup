@@ -41,6 +41,8 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 public class CustomPropertySource extends PropertySource {
 
@@ -80,10 +82,11 @@ public class CustomPropertySource extends PropertySource {
 							.getPropertyValue(object);
 					Collection<?> currentValues;
 					if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
-						value = ((ItemPropertyDescriptor.PropertyValueWrapper) value).getEditableValue(value);
+						value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
+								.getEditableValue(value);
 					}
 					if (value instanceof Collection) {
-						currentValues = (Collection<?>)value;
+						currentValues = (Collection<?>) value;
 					} else {
 						currentValues = new ArrayList();
 					}
@@ -101,6 +104,11 @@ public class CustomPropertySource extends PropertySource {
 								currentValues);
 					} else if (instanceClass.isAssignableFrom(Expression.class)) {
 						return createTextualExpressionCellEditor(parent,
+								getLabelProvider(), structuralFeature,
+								currentValues);
+					} else if (instanceClass
+							.isAssignableFrom(ClockConstraint.class)) {
+						return createClockConstraintCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								currentValues);
 					}
@@ -154,9 +162,9 @@ public class CustomPropertySource extends PropertySource {
 			// Dialog creation
 			MultiFeatureCreationDialog dialog = new MultiFeatureCreationDialog(
 					PlatformUI.getWorkbench().getDisplay().getActiveShell(),
-					labelProvider, (EObject) object, structuralFeature, currentValues,
-					adapterFactory, properties, textParser, textProvider,
-					instanceClass);
+					labelProvider, (EObject) object, structuralFeature,
+					currentValues, adapterFactory, properties, textParser,
+					textProvider, instanceClass);
 
 			// Open the dialog and retrieve the user
 			// selection
@@ -199,8 +207,7 @@ public class CustomPropertySource extends PropertySource {
 		TextPropertyEditor nameEditor = new TextPropertyEditor(adapterFactory);
 		nameEditor.addValidator(parameterNameValidator);
 
-		ComboPropertyEditor typeEditor = new ComboPropertyEditor(
-				adapterFactory);
+		ComboPropertyEditor typeEditor = new ComboPropertyEditor(adapterFactory);
 		typeEditor.setLabelProvider(labelProvider);
 		typeEditor.setChoices(choices);
 
@@ -219,26 +226,59 @@ public class CustomPropertySource extends PropertySource {
 	private MultiFeatureCreationCellEditor createTextualExpressionCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
-		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
+		MultiFeatureCreationCellEditor textualExpressionCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
-		parameterCellEditor
+		textualExpressionCellEditor
 				.setInstanceClass(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 
-		parameterCellEditor
+		textualExpressionCellEditor
 				.addProperty(new Property(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						new TextPropertyEditor(adapterFactory, true)));
 
-		parameterCellEditor.addProperty(new Property(
+		textualExpressionCellEditor.addProperty(new Property(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
 				new TextPropertyEditor(adapterFactory)));
 
-		parameterCellEditor
+		textualExpressionCellEditor
 				.addProperty(new Property(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						new TextPropertyEditor(adapterFactory)));
 
-		return parameterCellEditor;
+		return textualExpressionCellEditor;
 	}
+
+	private CellEditor createClockConstraintCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
+			Collection<?> currentValues) {
+		
+		MultiFeatureCreationCellEditor clockConstraintCellEditor = new MultiFeatureCreationCellEditor(
+				parent, labelProvider, structuralFeature, currentValues);
+
+		ComboPropertyEditor clockPropertyEditor = new ComboPropertyEditor(adapterFactory);
+		clockPropertyEditor.setLabelProvider(labelProvider);
+		// TODO:
+//		clockPropertyEditor.setChoices(choices);
+		clockConstraintCellEditor
+				.addProperty(new Property(
+						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
+						clockPropertyEditor));
+
+		ComboPropertyEditor operatorPropertyEditor = new ComboPropertyEditor(adapterFactory);
+		operatorPropertyEditor.setLabelProvider(labelProvider);
+		// TODO:
+//		operatorPropertyEditor.setChoices(choices);
+		clockConstraintCellEditor.addProperty(new Property(
+				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
+				operatorPropertyEditor));
+
+		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor(adapterFactory);
+		clockConstraintCellEditor
+				.addProperty(new Property(
+						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+						boundPropertyEditor));
+		return clockConstraintCellEditor;
+	}
+
 }

@@ -75,6 +75,7 @@ public class TransitionItemProvider
 			addClockResetsPropertyDescriptor(object);
 			addTriggerMessageEventPropertyDescriptor(object);
 			addRaiseMessageEventPropertyDescriptor(object);
+			addClockConstraintsPropertyDescriptor(object);
 			addRelativeDeadlinePropertyDescriptor(object);
 			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
@@ -243,6 +244,28 @@ public class TransitionItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clock Constraints feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClockConstraintsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_clockConstraints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockConstraints_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
