@@ -24,9 +24,7 @@ import org.storydriven.modeling.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getWcetDocument <em>Wcet Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSecurityLevel <em>Security Level</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getScheduleDocument <em>Schedule Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
@@ -38,31 +36,6 @@ import org.storydriven.modeling.NamedElement;
  * @generated
  */
 public interface AbstractRealtimeStatechart extends NamedElement, CommentableElement, Behavior {
-	/**
-	 * Returns the value of the '<em><b>Wcet Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * needed for WCET-analysis
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Wcet Document</em>' attribute.
-	 * @see #setWcetDocument(String)
-	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getAbstractRealtimeStatechart_WcetDocument()
-	 * @model
-	 * @generated
-	 */
-	String getWcetDocument();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getWcetDocument <em>Wcet Document</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Wcet Document</em>' attribute.
-	 * @see #getWcetDocument()
-	 * @generated
-	 */
-	void setWcetDocument(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Security Level</b></em>' attribute.
 	 * The default value is <code>"0"</code>.
@@ -88,31 +61,6 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * @generated
 	 */
 	void setSecurityLevel(int value);
-
-	/**
-	 * Returns the value of the '<em><b>System Wcet Map</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * needed for WCET-analysis
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>System Wcet Map</em>' attribute.
-	 * @see #setSystemWcetMap(Map)
-	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getAbstractRealtimeStatechart_SystemWcetMap()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.Map"
-	 * @generated
-	 */
-	Map getSystemWcetMap();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>System Wcet Map</em>' attribute.
-	 * @see #getSystemWcetMap()
-	 * @generated
-	 */
-	void setSystemWcetMap(Map value);
 
 	/**
 	 * Returns the value of the '<em><b>Utilisation</b></em>' attribute.

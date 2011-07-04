@@ -85,7 +85,7 @@ public class TransitionItemProvider
 		return itemPropertyDescriptors;
 	}
 
-	/**
+/**
 	 * This adds a property descriptor for the Synchronization feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,21 +103,22 @@ public class TransitionItemProvider
 //				 false,
 //				 false,
 //				 null,
-//				 null,
+//				 getString("_UI_SynchronizationPropertyCategory"),
 //				 null));
+
 		itemPropertyDescriptors
 				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Synchronization Kind",
-						"The kind of the synchronization",
-						RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
+						getString("_UI_Synchronization_syncChannel_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_syncChannel_feature", "_UI_Synchronization_type"),
+						RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
 						true,
 						false,
 						false,
 						null,
-						null,
+						getString("_UI_SynchronizationPropertyCategory"),
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION));
 		
@@ -126,14 +127,14 @@ public class TransitionItemProvider
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Synchronization Channel",
-						"The Synchronization Channel of the Synchronization",
-						RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
+						getString("_UI_Synchronization_kind_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_kind_feature", "_UI_Synchronization_type"),
+						RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
 						true,
 						false,
 						false,
 						null,
-						null,
+						getString("_UI_SynchronizationPropertyCategory"),
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION));
 		
@@ -270,29 +271,52 @@ public class TransitionItemProvider
 				 null,
 				 null));
 	}
-
-	/**
-	 * This adds a property descriptor for the RelativeDeadline feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+/**
+	 * This adds a property descriptor for the Relative Deadline feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	protected void addRelativeDeadlinePropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Transition_relativeDeadline_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_relativeDeadline_feature", "_UI_Transition_type"),
+//				 RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE,
+//				 false,
+//				 false,
+//				 false,
+//				 null,
+//				 getString("_UI_RelativeDeadlinePropertyCategory"),
+//				 null));
 
-		itemPropertyDescriptors.add(new RelativeDeadlinePropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				"RelativeDeadline - Lower Bound", "The lower bound of the Transition's RelativeDeadline",
-				RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND, true, false,
-				true, null, null, null));
+		itemPropertyDescriptors
+				.add(new RelativeDeadlinePropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Deadline_lowerBound_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Deadline_lowerBound_feature",
+								"_UI_Deadline_type"),
+						RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
+						true, false, true, null,
+						getString("_UI_RelativeDeadlinePropertyCategory"), null));
 
-		itemPropertyDescriptors.add(new RelativeDeadlinePropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				"RelativeDeadline - Upper Bound", "The upper bound of the Transition's RelativeDeadline",
-				RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND, true, false,
-				true, null, null, null));
-
+		itemPropertyDescriptors
+				.add(new RelativeDeadlinePropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Deadline_upperBound_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Deadline_upperBound_feature",
+								"_UI_Deadline_type"),
+						RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
+						true, false, true, null,
+						getString("_UI_RelativeDeadlinePropertyCategory"), null));
 	}
 
 	/**
@@ -339,7 +363,7 @@ public class TransitionItemProvider
 				 null));
 	}
 
-	/**
+/**
 	 * This adds a property descriptor for the Guard feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,21 +381,22 @@ public class TransitionItemProvider
 //				 false,
 //				 false,
 //				 null,
-//				 null,
-		// null));
+//				 getString("_UI_GuardPropertyCategory"),
+//				 null));
+		
+
 		itemPropertyDescriptors
 				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Guard Expression Text",
-						"The Expression Text of the Textual Expression",
+						getString("_UI_TextualExpression_expressionText_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_expressionText_feature", "_UI_TextualExpression_type"),
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						true,
 						false,
 						false,
 						null,
-						null,
+						getString("_UI_GuardPropertyCategory"),
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
@@ -381,14 +406,13 @@ public class TransitionItemProvider
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Guard Expression Language",
-						"The Expression Language of the Textual Expression",
+						getString("_UI_TextualExpression_language_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_language_feature", "_UI_TextualExpression_type"),
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
 						true,
 						false,
 						false,
 						null,
-						null,
+						getString("_UI_GuardPropertyCategory"),
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
@@ -398,14 +422,13 @@ public class TransitionItemProvider
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Guard Expression Language Version",
-						"The Expression Language Version of the Textual Expression",
+						getString("_UI_TextualExpression_languageVersion_feature"), getString("_UI_PropertyDescriptor_description", "_UI_TextualExpression_languageVersion_feature", "_UI_TextualExpression_type"),
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						true,
 						false,
 						false,
 						null,
-						null,
+						getString("_UI_GuardPropertyCategory"),
 						null,
 						RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION));
@@ -429,25 +452,27 @@ public class TransitionItemProvider
 //				 false,
 //				 false,
 //				 null,
-//				 null,
+//				 getString("_UI_ActionPropertyCategory"),
 //				 null));
+		
 		itemPropertyDescriptors
 				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(), getResourceLocator(),
-						"Action Name", "The Name of the Action",
+								getString("_UI_NamedElement_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
 						SDMPackage.Literals.NAMED_ELEMENT__NAME, true, false,
-						false, null, null, null,
+						false, null, getString("_UI_ActionPropertyCategory"), null,
 						RealtimestatechartPackage.Literals.TRANSITION__ACTION));
 
 		itemPropertyDescriptors
 				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(), getResourceLocator(),
-						"Action Expressions", "The Expressions of the Action",
-						RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS, true, false,
-						false, null, null, null,
+								getString("_UI_Action_expressions_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Action_expressions_feature", "_UI_Action_type"),
+						RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
+						true, false, false, null, getString("_UI_ActionPropertyCategory"), null,
 						RealtimestatechartPackage.Literals.TRANSITION__ACTION));
+
 	}
 
 	/**

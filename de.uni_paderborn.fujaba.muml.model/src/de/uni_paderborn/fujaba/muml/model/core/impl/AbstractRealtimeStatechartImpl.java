@@ -31,9 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getWcetDocument <em>Wcet Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getSecurityLevel <em>Security Level</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getSystemWcetMap <em>System Wcet Map</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getUtilisation <em>Utilisation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#getScheduleDocument <em>Schedule Document</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AbstractRealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
@@ -74,26 +72,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	protected BehavioralElement behavioralElement;
 
 	/**
-	 * The default value of the '{@link #getWcetDocument() <em>Wcet Document</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWcetDocument()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WCET_DOCUMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWcetDocument() <em>Wcet Document</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWcetDocument()
-	 * @generated
-	 * @ordered
-	 */
-	protected String wcetDocument = WCET_DOCUMENT_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getSecurityLevel() <em>Security Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,26 +90,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @ordered
 	 */
 	protected int securityLevel = SECURITY_LEVEL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSystemWcetMap() <em>System Wcet Map</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSystemWcetMap()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Map SYSTEM_WCET_MAP_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSystemWcetMap() <em>System Wcet Map</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSystemWcetMap()
-	 * @generated
-	 * @ordered
-	 */
-	protected Map systemWcetMap = SYSTEM_WCET_MAP_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUtilisation() <em>Utilisation</em>}' attribute.
@@ -238,27 +196,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getWcetDocument() {
-		return wcetDocument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setWcetDocument(String newWcetDocument) {
-		String oldWcetDocument = wcetDocument;
-		wcetDocument = newWcetDocument;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT, oldWcetDocument, wcetDocument));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getSecurityLevel() {
 		return securityLevel;
 	}
@@ -273,27 +210,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		securityLevel = newSecurityLevel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL, oldSecurityLevel, securityLevel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map getSystemWcetMap() {
-		return systemWcetMap;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSystemWcetMap(Map newSystemWcetMap) {
-		Map oldSystemWcetMap = systemWcetMap;
-		systemWcetMap = newSystemWcetMap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP, oldSystemWcetMap, systemWcetMap));
 	}
 
 	/**
@@ -473,12 +389,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (resolve) return getBehavioralElement();
 				return basicGetBehavioralElement();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
-				return getWcetDocument();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
 				return getSecurityLevel();
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
-				return getSystemWcetMap();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 				return getUtilisation();
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
@@ -503,14 +415,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)newValue);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
-				setWcetDocument((String)newValue);
-				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
 				setSecurityLevel((Integer)newValue);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
-				setSystemWcetMap((Map)newValue);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 				setUtilisation((Double)newValue);
@@ -539,14 +445,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)null);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
-				setWcetDocument(WCET_DOCUMENT_EDEFAULT);
-				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
 				setSecurityLevel(SECURITY_LEVEL_EDEFAULT);
-				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
-				setSystemWcetMap(SYSTEM_WCET_MAP_EDEFAULT);
 				return;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 				setUtilisation(UTILISATION_EDEFAULT);
@@ -573,12 +473,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				return behavioralElement != null;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
-				return WCET_DOCUMENT_EDEFAULT == null ? wcetDocument != null : !WCET_DOCUMENT_EDEFAULT.equals(wcetDocument);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
 				return securityLevel != SECURITY_LEVEL_EDEFAULT;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
-				return SYSTEM_WCET_MAP_EDEFAULT == null ? systemWcetMap != null : !SYSTEM_WCET_MAP_EDEFAULT.equals(systemWcetMap);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 				return utilisation != UTILISATION_EDEFAULT;
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
@@ -645,12 +541,8 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", wcetDocument: ");
-		result.append(wcetDocument);
 		result.append(", securityLevel: ");
 		result.append(securityLevel);
-		result.append(", systemWcetMap: ");
-		result.append(systemWcetMap);
 		result.append(", utilisation: ");
 		result.append(utilisation);
 		result.append(", scheduleDocument: ");

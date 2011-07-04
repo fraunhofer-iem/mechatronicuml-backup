@@ -1327,15 +1327,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__WCET_DOCUMENT = CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT;
-
-	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1343,15 +1334,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int FUJABA_REALTIME_STATECHART__SECURITY_LEVEL = CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL;
-
-	/**
-	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__SYSTEM_WCET_MAP = CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -1408,7 +1390,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__VERTICES = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2911,10 +2893,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFujabaRealtimeStatechart_Vertices();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EClass</em>'.
+	 * @return the meta object for the reference '<em>EClass</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass()
 	 * @see #getFujabaRealtimeStatechart()
 	 * @generated
@@ -3777,7 +3759,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference FUJABA_REALTIME_STATECHART__VERTICES = eINSTANCE.getFujabaRealtimeStatechart_Vertices();
 
 		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

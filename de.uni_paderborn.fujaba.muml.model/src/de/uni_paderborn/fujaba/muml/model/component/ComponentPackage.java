@@ -650,13 +650,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__ECLASS = PORT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -1523,13 +1532,22 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__ECLASS = CONTINUOUS_PORT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = CONTINUOUS_PORT_FEATURE_COUNT + 6;
+	int HYBRID_PORT_FEATURE_COUNT = CONTINUOUS_PORT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
@@ -1743,6 +1761,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscretePort_RoleAndAdaptationBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>EClass</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_EClass();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort <em>Hardware Port</em>}'.
@@ -2238,6 +2267,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__ECLASS = eINSTANCE.getDiscretePort_EClass();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.

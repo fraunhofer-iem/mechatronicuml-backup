@@ -105,25 +105,26 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	EList<Vertex> getVertices();
 
 	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.
+	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' containment reference.
+	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_EClass()
-	 * @model containment="true"
+	 * @model derived="true"
 	 * @generated
 	 */
 	EClass getEClass();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' containment reference.
+	 * @param value the new value of the '<em>EClass</em>' reference.
 	 * @see #getEClass()
 	 * @generated
 	 */

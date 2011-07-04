@@ -66,9 +66,7 @@ public class AbstractRealtimeStatechartItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
-			addWcetDocumentPropertyDescriptor(object);
 			addSecurityLevelPropertyDescriptor(object);
-			addSystemWcetMapPropertyDescriptor(object);
 			addUtilisationPropertyDescriptor(object);
 			addScheduleDocumentPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
@@ -121,28 +119,6 @@ public class AbstractRealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Wcet Document feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addWcetDocumentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractRealtimeStatechart_wcetDocument_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_wcetDocument_feature", "_UI_AbstractRealtimeStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Security Level feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,28 +136,6 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the System Wcet Map feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSystemWcetMapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractRealtimeStatechart_systemWcetMap_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_systemWcetMap_feature", "_UI_AbstractRealtimeStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -279,9 +233,7 @@ public class AbstractRealtimeStatechartItemProvider
 
 		switch (notification.getFeatureID(AbstractRealtimeStatechart.class)) {
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__COMMENT:
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL:
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__UTILISATION:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:

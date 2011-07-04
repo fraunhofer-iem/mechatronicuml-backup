@@ -272,31 +272,13 @@ public interface CorePackage extends EPackage {
 	int ABSTRACT_REALTIME_STATECHART__BEHAVIORAL_ELEMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Wcet Document</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Security Level</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>System Wcet Map</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Utilisation</b></em>' attribute.
@@ -305,7 +287,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int ABSTRACT_REALTIME_STATECHART__UTILISATION = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Schedule Document</b></em>' attribute.
@@ -314,7 +296,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -323,7 +305,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int ABSTRACT_REALTIME_STATECHART__EMBEDDED = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Realtime Statechart</em>' class.
@@ -332,7 +314,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 
 	/**
@@ -490,17 +472,6 @@ public interface CorePackage extends EPackage {
 	EClass getAbstractRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getWcetDocument <em>Wcet Document</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Wcet Document</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getWcetDocument()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_WcetDocument();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSecurityLevel <em>Security Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -510,17 +481,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractRealtimeStatechart_SecurityLevel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSystemWcetMap <em>System Wcet Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>System Wcet Map</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getSystemWcetMap()
-	 * @see #getAbstractRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getAbstractRealtimeStatechart_SystemWcetMap();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#getUtilisation <em>Utilisation</em>}'.
@@ -707,28 +667,12 @@ public interface CorePackage extends EPackage {
 		EClass ABSTRACT_REALTIME_STATECHART = eINSTANCE.getAbstractRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Wcet Document</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__WCET_DOCUMENT = eINSTANCE.getAbstractRealtimeStatechart_WcetDocument();
-
-		/**
 		 * The meta object literal for the '<em><b>Security Level</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute ABSTRACT_REALTIME_STATECHART__SECURITY_LEVEL = eINSTANCE.getAbstractRealtimeStatechart_SecurityLevel();
-
-		/**
-		 * The meta object literal for the '<em><b>System Wcet Map</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_REALTIME_STATECHART__SYSTEM_WCET_MAP = eINSTANCE.getAbstractRealtimeStatechart_SystemWcetMap();
 
 		/**
 		 * The meta object literal for the '<em><b>Utilisation</b></em>' attribute feature.

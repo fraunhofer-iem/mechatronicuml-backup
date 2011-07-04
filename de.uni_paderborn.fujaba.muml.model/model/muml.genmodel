@@ -209,7 +209,7 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/AssemblyInstance">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/AssemblyInstance/assemblyType"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+          <genFeatures notify="false" createChild="false" propertyCategory="" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/AssemblyInstance/coordinationPattern"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/DelegationInstance">
@@ -304,9 +304,10 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Vertex/statechart"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Transition">
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/synchronization"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/target"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Synchronization"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/synchronization"/>
+          <genFeatures notify="false" createChild="false" propertyCategory="" propertyDescription=""
+              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/target"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/source"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/statechart"/>
@@ -318,12 +319,15 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/raiseMessageEvent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/clockConstraints"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/relativeDeadline"/>
+          <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Relative Deadline"
+              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/relativeDeadline"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/safe"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/urgent"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/guard"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Guard"
+              propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/guard"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/events"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/action"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Action"
+              propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/action"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ClockConstraint">
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/ClockConstraint/bound"/>
@@ -332,7 +336,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/ClockConstraint/operator"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/Action">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Action/expressions"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Action/expressions"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent/message"/>

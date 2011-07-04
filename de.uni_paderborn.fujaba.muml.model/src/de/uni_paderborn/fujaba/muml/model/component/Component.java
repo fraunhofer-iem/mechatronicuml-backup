@@ -64,12 +64,11 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component.
-	 * \todosd{Delete, because it is possible to store them in the statechart directly?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_EClass()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EClass getEClass();

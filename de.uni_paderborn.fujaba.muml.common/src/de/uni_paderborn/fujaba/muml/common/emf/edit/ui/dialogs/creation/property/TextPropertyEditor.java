@@ -25,6 +25,11 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	protected StyledText styledText;
 
 	/**
+	 * The multiLine attribute for the StyledText.
+	 */
+	protected boolean multiLine;
+
+	/**
 	 * Constructs this TextPropertyEditor.
 	 * 
 	 * @param adapterFactory
@@ -39,13 +44,30 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	 * 
 	 * @param adapterFactory
 	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
+	 * 
+	 * @param multiLine
+	 *            The multiLine attribute for the StyledText.
+	 */
+	public TextPropertyEditor(AdapterFactory adapterFactory, boolean multiLine) {
+		super(adapterFactory);
+		this.multiLine = multiLine;
+	}
+
+	/**
+	 * Constructs this TextPropertyEditor.
+	 * 
+	 * @param adapterFactory
+	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
 	 * @param extendVertically
 	 *            <code>true</code>, if the control should extend vertically and
 	 *            take more place.
+	 * @param multiLine
+	 *            The multiLine attribute for the StyledText.
 	 */
 	public TextPropertyEditor(AdapterFactory adapterFactory,
-			boolean extendVertically) {
+			boolean extendVertically, boolean multiLine) {
 		super(adapterFactory, extendVertically);
+		this.multiLine = multiLine;
 	}
 
 	/**
@@ -57,7 +79,13 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	 */
 	@Override
 	protected Control createControl(Composite parent) {
-		styledText = new StyledText(parent, SWT.BORDER | SWT.SINGLE);
+		int style = SWT.BORDER;
+		if (multiLine) {
+			style |= SWT.MULTI;
+		} else {
+			style |= SWT.SINGLE;
+		}
+		styledText = new StyledText(parent, style);
 		styledText.addModifyListener(new ModifyListener() {
 
 			@Override

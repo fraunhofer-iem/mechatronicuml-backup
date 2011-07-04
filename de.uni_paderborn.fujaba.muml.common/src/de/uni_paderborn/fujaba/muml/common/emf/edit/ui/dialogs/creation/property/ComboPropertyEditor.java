@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
@@ -44,7 +46,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	/**
 	 * The list of valid choices to show in the ComboBox.
 	 */
-	protected List<?> choices = Collections.EMPTY_LIST;
+	protected List<?> choices;
 
 	/**
 	 * Creates this ComboPropertyEditor.
@@ -78,7 +80,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 		// comboViewer.setContentProvider(new ArrayContentProvider());
 		comboViewer.setContentProvider(contentProvider);
 		comboViewer.setLabelProvider(labelProvider);
-		comboViewer.setInput(new ItemProvider(adapterFactory, choices));
+		comboViewer.setInput(new ItemProvider(adapterFactory, getChoices()));
 		return comboViewer.getCombo();
 	}
 
@@ -105,6 +107,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	@Override
 	public void setDefaultValue() {
 		Object selectedElement = null;
+		List<?> choices = getChoices();
 		if (choices != null && !choices.isEmpty()) {
 			selectedElement = choices.get(0);
 		}
@@ -138,6 +141,11 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * @return The choices for the viewer.
 	 */
 	public List<?> getChoices() {
+		if (choices == null) {
+			choices = ECollections.EMPTY_ELIST;
+//			EObject helperObject = EcoreUtil.create();
+//			choices = property.getPossibleChoices(helperObject);
+		}
 		return choices;
 	}
 

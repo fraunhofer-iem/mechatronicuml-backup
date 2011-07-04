@@ -106,8 +106,7 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The class of this port role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
-	 * \todosd{Delete, because it is possible to store them in the statechart directly?}
+	 * The class of this role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)

@@ -235,7 +235,7 @@ public class CustomPropertySource extends PropertySource {
 		textualExpressionCellEditor
 				.addProperty(new Property(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-						new TextPropertyEditor(adapterFactory, true)));
+						new TextPropertyEditor(adapterFactory, true, true)));
 
 		textualExpressionCellEditor.addProperty(new Property(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
