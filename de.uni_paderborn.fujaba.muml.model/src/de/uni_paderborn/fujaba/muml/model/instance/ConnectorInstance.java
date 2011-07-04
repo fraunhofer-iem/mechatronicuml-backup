@@ -128,7 +128,7 @@ public interface ConnectorInstance extends BehavioralConnector {
 	 * @return the value of the '<em>Connector Type</em>' reference.
 	 * @see #setConnectorType(ConnectorType)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getConnectorInstance_ConnectorType()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	ConnectorType getConnectorType();

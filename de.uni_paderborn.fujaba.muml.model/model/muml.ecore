@@ -621,8 +621,7 @@
             <details key="documentation" value="The component instance that this component instance is embedded in. Component instances may be embedded into other component instances. At type level embedded component instances are called component parts."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" lowerBound="1"
-            eType="#//model/component/ConnectorType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" eType="#//model/component/ConnectorType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector type of this connector instance."/>
           </eAnnotations>
@@ -681,8 +680,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an assembly connector at instance level."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType" lowerBound="1"
-            eType="#//model/component/Assembly" changeable="false" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType" eType="#//model/component/Assembly"
+            changeable="false" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
           </eAnnotations>
@@ -701,8 +700,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a delegation connector at instance level."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType" lowerBound="1"
-            eType="#//model/component/Delegation" changeable="false" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType" eType="#//model/component/Delegation"
+            changeable="false" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The delegation type of this delegation instance."/>
           </eAnnotations>

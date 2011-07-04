@@ -40,7 +40,7 @@ public interface AssemblyInstance extends ConnectorInstance {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Assembly Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getAssemblyInstance_AssemblyType()
-	 * @model required="true" changeable="false" derived="true"
+	 * @model changeable="false" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='connectorType.oclAsType(component::Assembly)'"
 	 * @generated
 	 */

@@ -38,7 +38,7 @@ public interface DelegationInstance extends ConnectorInstance {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Delegation Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDelegationInstance_DelegationType()
-	 * @model required="true" changeable="false" derived="true"
+	 * @model changeable="false" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='connectorType.oclAsType(component::Delegation)'"
 	 * @generated
 	 */
