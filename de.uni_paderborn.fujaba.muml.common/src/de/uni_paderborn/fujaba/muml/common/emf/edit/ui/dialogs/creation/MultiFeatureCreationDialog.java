@@ -70,8 +70,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 	protected boolean validInput;
 
-	protected EObject newObject;
-
 	/**
 	 * The text parser for the structural feature. It can parse a String to
 	 * create new objects.
@@ -94,10 +92,19 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 */
 	protected IContentProvider contentProvider;
 
+	/**
+	 * The instance class of the objects to create.
+	 */
 	protected EClass instanceClass;
 
+	/**
+	 * The properties to display.
+	 */
 	protected List<Property> properties;
 
+	/**
+	 * The AdapterFactory to use to create ItemPropertyDescriptors.
+	 */
 	protected AdapterFactory adapterFactory;
 
 	/**
@@ -191,8 +198,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 *            The object containing the <code>structuralFeature</code>.
 	 * @param structuralFeature
 	 *            The StructuralFeature to set values for.
-	 * @param typeClassifiers
-	 *            The allowed Parameter Types.
 	 * @param textParser
 	 *            The TextParser that is able to create objects represented by a
 	 *            text.
@@ -204,9 +209,9 @@ public class MultiFeatureCreationDialog extends Dialog {
 	public MultiFeatureCreationDialog(Shell parentShell,
 			ILabelProvider labelProvider, EObject containerObject,
 			EStructuralFeature structuralFeature, Collection<?> currentValues,
-			AdapterFactory adapterFactory,
-			List<Property> properties, ITextParser textParser,
-			ITextProvider textProvider, EClass instanceClass) {
+			AdapterFactory adapterFactory, List<Property> properties,
+			ITextParser textParser, ITextProvider textProvider,
+			EClass instanceClass) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
 		this.labelProvider = labelProvider;
@@ -219,11 +224,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 		this.adapterFactory = adapterFactory;
 
 		this.values = new ItemProvider(adapterFactory, currentValues);
-		contentProvider = new AdapterFactoryContentProvider(
-				adapterFactory);
-
-		newObject = EcoreUtil.create(instanceClass);
-
+		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
 
 	@Override
@@ -249,7 +250,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 		container.setLayout(new GridLayout(2, false));
 
 		boolean extendGroupVertically = false;
-		
+
 		for (Property property : properties) {
 			if (property.getPropertyEditor().isExtendVertically()) {
 				extendGroupVertically = true;
@@ -295,9 +296,9 @@ public class MultiFeatureCreationDialog extends Dialog {
 			if (extendVertically) {
 				verticalAlignment = SWT.FILL;
 			}
-			editorControl.setLayoutData(new GridData(SWT.FILL, verticalAlignment,
-					true, extendVertically, 1, 1));
-			
+			editorControl.setLayoutData(new GridData(SWT.FILL,
+					verticalAlignment, true, extendVertically, 1, 1));
+
 		}
 
 		Composite composite = new Composite(container, SWT.NONE);
@@ -380,7 +381,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 				for (Property property : properties) {
 					property.getPropertyEditor().setPropertyValue(newObject);
 				}
-				
+
 				values.getChildren().add(newObject);
 				rebuildTextualParameterLine();
 
@@ -402,11 +403,12 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 				if (index > -1) {
 					EObject newObject = EcoreUtil.copy(oldObject);
-					
+
 					for (Property property : properties) {
-						property.getPropertyEditor().setPropertyValue(newObject);
+						property.getPropertyEditor()
+								.setPropertyValue(newObject);
 					}
-					
+
 					// configureParameter((EParameter) newParameter,
 					// txtName.getText(), getSelectedType());
 					values.getChildren().set(index, newObject);
@@ -612,7 +614,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 		// typeComboViewer.setInput(new
 		// ItemProvider(itemProvidersAdapterFactory,
 		// typeChoices));
-		
+
 		for (Property property : properties) {
 			property.getPropertyEditor().setDefaultValue();
 		}
@@ -812,6 +814,5 @@ public class MultiFeatureCreationDialog extends Dialog {
 	public EList<?> getResult() {
 		return result;
 	}
-
 
 }

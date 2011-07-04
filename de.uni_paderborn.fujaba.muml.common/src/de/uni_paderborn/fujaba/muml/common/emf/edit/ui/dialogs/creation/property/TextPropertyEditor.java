@@ -11,19 +11,50 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
-
+/**
+ * A PropertyEditor using a TextField to create Strings.
+ * 
+ * @author bingo
+ * 
+ */
 public class TextPropertyEditor extends AbstractPropertyEditor {
 
+	/**
+	 * The StyledText control.
+	 */
 	protected StyledText styledText;
 
+	/**
+	 * Constructs this TextPropertyEditor.
+	 * 
+	 * @param adapterFactory
+	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
+	 */
 	public TextPropertyEditor(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
-	public TextPropertyEditor(AdapterFactory adapterFactory, boolean extendVertically) {
+	/**
+	 * Constructs this TextPropertyEditor.
+	 * 
+	 * @param adapterFactory
+	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
+	 * @param extendVertically
+	 *            <code>true</code>, if the control should extend vertically and
+	 *            take more place.
+	 */
+	public TextPropertyEditor(AdapterFactory adapterFactory,
+			boolean extendVertically) {
 		super(adapterFactory, extendVertically);
 	}
 
+	/**
+	 * Creates the StyledText control.
+	 * 
+	 * @param parent
+	 *            the parent control.
+	 * @return The ComboBox control.
+	 */
 	@Override
 	protected Control createControl(Composite parent) {
 		styledText = new StyledText(parent, SWT.BORDER | SWT.SINGLE);
@@ -40,6 +71,14 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 		return styledText;
 	}
 
+	/**
+	 * Applies the validation status. We use it to mark errors in the text
+	 * field.
+	 * 
+	 * @param validationStatus
+	 *            The validation status to apply.
+	 */
+	@Override
 	protected void applyValidationStatus(IValidationStatus validationStatus) {
 		if (validationStatus instanceof TextValidationStatus) {
 			List<Range> invalidRanges = ((TextValidationStatus) validationStatus)
@@ -55,15 +94,23 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 					styledText.setStyleRange(errorStyle);
 				}
 			}
-
 		}
+		super.applyValidationStatus(validationStatus);
 	}
 
+	/**
+	 * Gets the current text in the text field.
+	 * 
+	 * @return The current text.
+	 */
 	@Override
 	protected Object doGetValue() {
 		return styledText.getText();
 	}
 
+	/**
+	 * Sets an empty string as text for the text field.
+	 */
 	@Override
 	public void setDefaultValue() {
 		styledText.setText("");

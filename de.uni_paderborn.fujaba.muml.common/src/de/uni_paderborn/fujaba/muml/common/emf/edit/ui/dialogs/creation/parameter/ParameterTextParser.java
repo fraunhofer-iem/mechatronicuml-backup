@@ -15,14 +15,31 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextValidationStatus;
 
 /**
+ * A text parser, which can create Parameters from a textual representation
+ * describing multiple parameters (for example: "p1 : EString, p2 : EInt").
  * 
  * @author bingo
  * 
  */
 public class ParameterTextParser implements ITextParser {
+	/**
+	 * The valid types for parameters.
+	 */
 	private List<EClassifier> typeChoices;
+
+	/**
+	 * The validator for the Parameter name.
+	 */
 	private IValidator nameValidator;
 
+	/**
+	 * Constructs this ParameterTextParser.
+	 * 
+	 * @param typeChoices
+	 *            The valid types for parameters.
+	 * @param nameValidator
+	 *            The validator for the Parameter name.F
+	 */
 	public ParameterTextParser(List<EClassifier> typeChoices,
 			IValidator nameValidator) {
 		this.typeChoices = typeChoices;
@@ -38,10 +55,6 @@ public class ParameterTextParser implements ITextParser {
 		for (String s : text.split(",")) {
 			if (!s.isEmpty()) {
 				String[] parts = s.split("\\:");
-				int leadingWhitespacesName = s.length()
-						- s.concat("A").trim().length() + 1;
-				int startName = pos + leadingWhitespacesName;
-
 				EClassifier type = null;
 				if (parts.length > 1) {
 					int leadingWhitespacesType = parts[1].length()
@@ -61,8 +74,10 @@ public class ParameterTextParser implements ITextParser {
 				TextValidationStatus validationStatus = (TextValidationStatus) nameValidator
 						.validate(parts[0].trim());
 
-				if (validationStatus != null && validationStatus.getInvalidRanges() != null) {
-					returnedErrorRanges.addAll(validationStatus.getInvalidRanges());
+				if (validationStatus != null
+						&& validationStatus.getInvalidRanges() != null) {
+					returnedErrorRanges.addAll(validationStatus
+							.getInvalidRanges());
 				} else {
 					EParameter parameter = EcoreFactory.eINSTANCE
 							.createEParameter();
@@ -79,40 +94,6 @@ public class ParameterTextParser implements ITextParser {
 		}
 		return returnedParameters;
 	}
-
-	/**
-	 * Returns the Classifier for the parameter type entered in the passed
-	 * StyledText between positions "start" and "end". Additionally it marks an
-	 * unrecognized type as syntax error.
-	 * 
-	 * @param styledText
-	 *            The StyledText control to parse and validate.
-	 * @param start
-	 *            The beginning index of the substring to handle.
-	 * @param end
-	 *            The ending index of the substring to handle.
-	 * @return The classifier for the parameter type, or <code>null</code> if
-	 *         none was found.
-	 */
-	// private EClassifier getValidatedParameterType(String strType, int start,
-	// int end) {
-	// String strType = styledText.getText().substring(start, end);
-	//
-	// // Find the Classifier ignoring uppercase/lowercase.
-	// EClassifier type = getTypeClassifierByName(strType, true);
-	//
-	// // Allow entering no Classifier, when only whitespaces are entered.
-	// if (type == null && !strType.trim().isEmpty()) {
-	// StyleRange errorStyle = new StyleRange();
-	// errorStyle.start = start;
-	// errorStyle.length = end - start;
-	// errorStyle.underline = true;
-	// errorStyle.fontStyle = SWT.BOLD;
-	// errorStyle.underlineStyle = SWT.UNDERLINE_ERROR;
-	// styledText.setStyleRange(errorStyle);
-	// }
-	// return type;
-	// }
 
 	/**
 	 * Finds the parameter type Classifier using the passed name.
@@ -151,10 +132,10 @@ public class ParameterTextParser implements ITextParser {
 	private void configureParameter(EParameter parameter, String name,
 			EClassifier type) {
 		parameter.setName(name);
-		parameter.setLowerBound(1);
-		parameter.setUpperBound(1);
-		parameter.setUnique(true);
-		parameter.setOrdered(true);
+//		parameter.setLowerBound(1);
+//		parameter.setUpperBound(1);
+//		parameter.setUnique(true);
+//		parameter.setOrdered(true);
 		parameter.setEType(type);
 	}
 

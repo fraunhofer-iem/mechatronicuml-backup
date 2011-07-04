@@ -200,7 +200,9 @@ public class CustomPropertySource extends PropertySource {
 		nameEditor.addValidator(parameterNameValidator);
 
 		ComboPropertyEditor typeEditor = new ComboPropertyEditor(
-				adapterFactory, labelProvider, choices);
+				adapterFactory);
+		typeEditor.setLabelProvider(labelProvider);
+		typeEditor.setChoices(choices);
 
 		parameterCellEditor.setTextParser(new ParameterTextParser(choices,
 				parameterNameValidator));

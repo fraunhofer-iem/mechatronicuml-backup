@@ -21,8 +21,13 @@ public interface ITextParser {
 	 * 
 	 * @param text
 	 *            The text representing the objects to create.
+	 * @param returnedSelectionRanges
+	 *            The ranges in the text representing the created objects.
+	 * @param returnedErrorRanges
+	 *            The error ranges in the text.
 	 * @return The created objects.
 	 */
-	List<EObject> createObjects(String text, Map<EObject, Range> returnedSelectionRanges,
+	List<EObject> createObjects(String text,
+			Map<EObject, Range> returnedSelectionRanges,
 			List<Range> returnedErrorRanges);
 }

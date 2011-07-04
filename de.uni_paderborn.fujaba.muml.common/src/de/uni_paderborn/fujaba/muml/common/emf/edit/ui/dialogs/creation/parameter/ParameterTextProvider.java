@@ -11,14 +11,15 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.ITextPro
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 
 /**
- * 
+ * A text provider, which generates a text for a set of parameters (for example
+ * "p1 : EString, p2 : EInt").
  * 
  * @author bingo
  * 
  */
 public class ParameterTextProvider implements ITextProvider {
 	/**
-	 * 
+	 * The LabelProvider to use for a single parameter.
 	 */
 	private ILabelProvider parameterLabelProvider;
 

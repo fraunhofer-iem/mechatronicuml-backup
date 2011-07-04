@@ -17,24 +17,52 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
+/**
+ * A PropertyEditor using a ComboBox with predefined choices.
+ * 
+ * @author bingo
+ * 
+ */
 public class ComboPropertyEditor extends AbstractPropertyEditor {
 
+	/**
+	 * The Viewer for the ComboBox.
+	 */
 	protected ComboViewer comboViewer;
+
+	/**
+	 * The ContentProvider for the Viewer.
+	 */
 	protected IContentProvider contentProvider;
+
+	/**
+	 * The LabelProvider for the Viewer.
+	 */
 	protected ILabelProvider labelProvider;
 
+	/**
+	 * The list of valid choices to show in the ComboBox.
+	 */
 	protected List<?> choices;
 
-	// TODO: Remove all args except "adapterFactory", and create setters for
-	// them instead.
-	public ComboPropertyEditor(AdapterFactory adapterFactory,
-			ILabelProvider labelProvider, List<?> choices) {
+	/**
+	 * Creates this ComboPropertyEditor.
+	 * 
+	 * @param adapterFactory
+	 *            The AdapterFactory to use to create the ContentProvider.
+	 */
+	public ComboPropertyEditor(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
-		this.labelProvider = labelProvider;
-		this.choices = choices;
 	}
 
+	/**
+	 * Creates the ComboBox control.
+	 * 
+	 * @param parent
+	 *            the parent control.
+	 * @return The ComboBox control.
+	 */
 	@Override
 	protected Control createControl(Composite parent) {
 		comboViewer = new ComboViewer(parent, SWT.NONE);
@@ -53,6 +81,11 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 		return comboViewer.getCombo();
 	}
 
+	/**
+	 * Retrieves the current selection of the ComboBox.
+	 * 
+	 * @return the current selection.
+	 */
 	@Override
 	protected Object doGetValue() {
 		ISelection selection = comboViewer.getSelection();
@@ -65,6 +98,9 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 		return null;
 	}
 
+	/**
+	 * Selects the first element in the ComboBox, if it exists.
+	 */
 	@Override
 	public void setDefaultValue() {
 		Object selectedElement = null;
@@ -74,6 +110,44 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 		comboViewer.setSelection(new StructuredSelection(
 				new Object[] { selectedElement }));
 
+	}
+
+	/**
+	 * Gets the value of the LabelProvider for the viewer.
+	 * 
+	 * @return The LabelProvider for the viewer.
+	 */
+	public ILabelProvider getLabelProvider() {
+		return labelProvider;
+	}
+
+	/**
+	 * Sets the value of the LabelProvider for the viewer.
+	 * 
+	 * @param labelProvider
+	 *            The LabelProvider to use for the viewer.
+	 */
+	public void setLabelProvider(ILabelProvider labelProvider) {
+		this.labelProvider = labelProvider;
+	}
+
+	/**
+	 * Gets the choices for the viewer.
+	 * 
+	 * @return The choices for the viewer.
+	 */
+	public List<?> getChoices() {
+		return choices;
+	}
+
+	/**
+	 * Sets the choices for the viewer.
+	 * 
+	 * @param choices
+	 *            The choices to use for the viewer.
+	 */
+	public void setChoices(List<?> choices) {
+		this.choices = choices;
 	}
 
 }

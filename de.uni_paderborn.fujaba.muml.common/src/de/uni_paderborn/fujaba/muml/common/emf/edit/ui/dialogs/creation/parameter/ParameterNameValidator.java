@@ -8,6 +8,13 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextValidationStatus;
 
+/**
+ * A Validator, which checks if the parameter name contains only valid
+ * characters.
+ * 
+ * @author bingo
+ * 
+ */
 public class ParameterNameValidator implements IValidator {
 
 	@Override
