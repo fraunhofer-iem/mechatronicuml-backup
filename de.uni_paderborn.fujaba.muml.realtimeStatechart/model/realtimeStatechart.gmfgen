@@ -888,13 +888,13 @@
       <expressions
           body="'State'"/>
       <expressions
-          body="'entry / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+          body="'entry / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
       <expressions
           body="'action'"/>
       <expressions
-          body="'do / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+          body="'do / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
       <expressions
-          body="'exit / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+          body="'exit / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
       <expressions
           body="if self.clock.name.oclIsUndefined() or self.operator.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.clock.name.concat(' ').concat('self.operator').concat(' ').concat(&#xA;&#x9;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.bound.toString()&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;endif"/>
       <expressions

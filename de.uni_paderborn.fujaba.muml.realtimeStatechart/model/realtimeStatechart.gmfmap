@@ -47,7 +47,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#EEActionExpr"/>
             <viewExpression
-                body="'entry / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+                body="'entry / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -88,7 +88,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#DoActionExpr"/>
             <viewExpression
-                body="'do / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+                body="'do / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -110,7 +110,7 @@
             <diagramLabel
                 href="realtimeStatechart.gmfgraph#EEActionExpr"/>
             <viewExpression
-                body="'exit / '.concat(if self.action->isEmpty() then 'null' else&#xA;&#x9;self.action->first().name.concat(if self.action->size() > 1 then&#xA;&#x9;&#x9;'...'&#xA;&#x9;else&#xA;&#x9;&#x9;''&#xA;&#x9;endif)&#xA;endif)"/>
+                body="'exit / '.concat(if self.action.oclIsUndefined() then 'null' else self.action.name endif)"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
