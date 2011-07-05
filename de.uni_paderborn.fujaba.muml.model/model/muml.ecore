@@ -30,7 +30,7 @@
             <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component."/>
           </eAnnotations>
@@ -136,7 +136,7 @@
             eType="#//model/core/Behavior"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roleAndAdaptationBehavior"
             eType="#//model/core/Behavior"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The class of this port storing attributes and methods local to the port. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this port."/>
           </eAnnotations>
@@ -293,7 +293,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Abstract super class for all connectors that have an associated behavior. The &#xD;&#xA;behavior is specified as a real-time statechart."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The class associated with this behavioral connector is used to store local variables&#xD;&#xA;and operations that are used in the real-time statechart of this connector."/>
           </eAnnotations>
@@ -394,7 +394,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents either a natural number or infinity.&#xD;&#xA;TODO-SD: Do we really need that class?"/>
         </eAnnotations>
-        <eOperations name="getValueAsObject" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+        <eOperations name="getValueAsObject" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Dependend on whether this object represents a natural number or infinity an object of type &quot;Long&quot; or &quot;Infinity&quot; is returned."/>
           </eAnnotations>
@@ -422,7 +422,7 @@
           </eAnnotations>
         </eOperations>
         <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-          <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -488,7 +488,7 @@
         </eOperations>
         <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-          <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+          <eParameters name="o" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
         </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement" abstract="true">
@@ -792,7 +792,7 @@
             <details key="documentation" value="The coordination pattern this role belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The class of this role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role."/>
           </eAnnotations>
@@ -1275,7 +1275,7 @@
             <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
           </eAnnotations>
