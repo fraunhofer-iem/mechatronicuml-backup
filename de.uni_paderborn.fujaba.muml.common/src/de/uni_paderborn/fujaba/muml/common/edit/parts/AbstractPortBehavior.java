@@ -11,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
@@ -92,7 +91,7 @@ public abstract class AbstractPortBehavior extends AbstractBasePortBehavior {
 		Object feature = notification.getFeature();
 		if (feature instanceof EStructuralFeature) {
 			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-			if (structuralFeature.getContainerClass() == Port.class) {
+			if (structuralFeature.getContainerClass().isAssignableFrom(Port.class)) {
 				int featureID = notification.getFeatureID(Port.class);
 				if (featureID == ComponentPackage.PORT__CARDINALITY) {
 					updatePortCardinality();

@@ -50,7 +50,7 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 		Object feature = notification.getFeature();
 		if (feature instanceof EReference) {
 			EReference reference = (EReference) feature;
-			if (reference.getContainerClass() == PortInstance.class) {
+			if (reference.getContainerClass().isAssignableFrom(PortInstance.class)) {
 				int featureID = notification.getFeatureID(PortInstanceImpl.class);
 				if (featureID == InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
 						|| featureID == InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE) {

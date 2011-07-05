@@ -8,14 +8,14 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 
 public class ContinuousPortBehavior extends AbstractPortBehavior {
 
 	public ContinuousPortBehavior(AbstractBorderItemEditPart editPart) {
 		super(editPart);
 	}
-	
+
 	@Override
 	public PortKind getPortKind() {
 		return CustomPortFigure.PortKind.CONTINUOUS;
@@ -23,7 +23,19 @@ public class ContinuousPortBehavior extends AbstractPortBehavior {
 
 	@Override
 	public CustomPortFigure.PortType getPortType() {
-		CustomPortFigure.PortType type = CustomPortFigure.PortType.IN_PORT;
+		CustomPortFigure.PortType type;
+		ContinuousPort continuousPort = (ContinuousPort) getPort();
+		switch (continuousPort.getKind()) {
+		case IN:
+			type = CustomPortFigure.PortType.IN_PORT;
+			break;
+		case OUT:
+			type = CustomPortFigure.PortType.OUT_PORT;
+			break;
+		default:
+			type = CustomPortFigure.PortType.NONE;
+			break;
+		}
 		return type;
 	}
 
@@ -32,10 +44,10 @@ public class ContinuousPortBehavior extends AbstractPortBehavior {
 		Object feature = notification.getFeature();
 		if (feature instanceof EStructuralFeature) {
 			EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-			if (structuralFeature.getContainerClass() == ContinuousPort.class) {
+			if (structuralFeature.getContainerClass().isAssignableFrom(
+					ContinuousPort.class)) {
 				int featureID = notification.getFeatureID(ContinuousPort.class);
-				if (featureID == ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE
-						|| featureID == ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE) {
+				if (featureID == ComponentPackage.CONTINUOUS_PORT__KIND) {
 					updatePortType();
 				}
 			}

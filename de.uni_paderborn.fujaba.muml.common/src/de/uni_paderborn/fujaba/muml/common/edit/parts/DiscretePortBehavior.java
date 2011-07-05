@@ -8,8 +8,6 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 
 public class DiscretePortBehavior extends AbstractPortBehavior {
