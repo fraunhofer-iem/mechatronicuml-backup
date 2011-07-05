@@ -283,7 +283,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 		for (Property property : properties) {
 			Label lblName = new Label(grpParameterProps, SWT.NONE);
-			lblName.setLayoutData(new GridData(SWT.RIGHT, SWT.TOP, false,
+			lblName.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false,
 					false, 1, 1));
 			lblName.setText(property.getDisplayName() + ":");
 

@@ -20,14 +20,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.expressions.ExpressionsFactory;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.Correctness;
 import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.muml.model.constraint.descriptor.TextualConstraintExpressionPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint} object.
@@ -69,58 +70,81 @@ public class TextualConstraintItemProvider
 		return itemPropertyDescriptors;
 	}
 
-	/**
+/**
 	 * This adds a property descriptor for the Textual Expression feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	protected void addTextualExpressionPropertyDescriptor(Object object) {
-		// itemPropertyDescriptors.add
-		// (createItemPropertyDescriptor
-		// (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-		// getResourceLocator(),
-		// getString("_UI_TextualConstraint_textualExpression_feature"),
-		// getString("_UI_PropertyDescriptor_description",
-		// "_UI_TextualConstraint_textualExpression_feature",
-		// "_UI_TextualConstraint_type"),
-		// ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
-		// true,
-		// false,
-		// true,
-		// null,
-		// null,
-		// null));
-
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_TextualConstraint_textualExpression_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
+//				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 getString("_UI_TextualExpressionPropertyCategory"),
+//				 null));
 		itemPropertyDescriptors
-				.add(new TextualConstraintExpressionPropertyDescriptor(
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Expression Text",
-						"The Expression Text of the Textual Expression",
+						getString("_UI_TextualExpression_expressionText_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_TextualExpression_expressionText_feature",
+								"_UI_TextualExpression_type"),
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
-						true, false, true, null, null, null));
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						getString("_UI_TextualExpressionPropertyCategory"),
+						null,
+						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
 
 		itemPropertyDescriptors
-				.add(new TextualConstraintExpressionPropertyDescriptor(
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Language",
-						"The Language of the Textual Expression",
+						getString("_UI_TextualExpression_language_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_TextualExpression_language_feature",
+								"_UI_TextualExpression_type"),
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
-						true, false, true, null, null, null));
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						getString("_UI_TextualExpressionPropertyCategory"),
+						null,
+						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
 
 		itemPropertyDescriptors
-				.add(new TextualConstraintExpressionPropertyDescriptor(
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						"Language Version",
-						"The Language Version of the Textual Expression",
+						getString("_UI_TextualExpression_languageVersion_feature"),
+						getString(
+								"_UI_PropertyDescriptor_description",
+								"_UI_TextualExpression_languageVersion_feature",
+								"_UI_TextualExpression_type"),
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-						true, false, true, null, null, null));
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						getString("_UI_TextualExpressionPropertyCategory"),
+						null,
+						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
+
 	}
 
 	/**

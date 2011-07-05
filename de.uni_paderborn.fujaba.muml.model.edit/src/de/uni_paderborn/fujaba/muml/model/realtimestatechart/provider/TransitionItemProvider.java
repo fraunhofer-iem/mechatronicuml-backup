@@ -27,6 +27,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.CallsFactory;
+import org.storydriven.modeling.calls.CallsPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -111,9 +112,9 @@ public class TransitionItemProvider
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Synchronization_syncChannel_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_syncChannel_feature", "_UI_Synchronization_type"),
-						RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
+						getString("_UI_Invocation_callee_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
+						CallsPackage.Literals.INVOCATION__CALLEE,
 						true,
 						false,
 						false,
@@ -130,6 +131,25 @@ public class TransitionItemProvider
 						getString("_UI_Synchronization_kind_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_kind_feature", "_UI_Synchronization_type"),
 						RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
+						true,
+						false,
+						false,
+						null,
+						getString("_UI_SynchronizationPropertyCategory"),
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION));
+		
+		itemPropertyDescriptors
+				.add(new DefaultNavigatedObjectPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Invocation_ownedParameterBindings_feature"),
+						getString(
+								"_UI_PropertyDescriptor_description",
+								"_UI_Invocation_ownedParameterBindings_feature",
+								"_UI_Invocation_type"),
+						CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
 						true,
 						false,
 						false,

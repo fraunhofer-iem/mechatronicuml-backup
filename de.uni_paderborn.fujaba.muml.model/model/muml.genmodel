@@ -37,7 +37,8 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousComponent/xMLFileName"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/Port">
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/cardinality"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+              propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/cardinality"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/Port/incomingConnectors"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
@@ -72,7 +73,8 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/toRev"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/delegation"/>
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/cardinality"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+              ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/cardinality"/>
           <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/portsDerived"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/StructuredComponent">
@@ -120,7 +122,8 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/constraint/ModelingConstraint"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/constraint/VerifiableConstraint"/>
         <genClasses ecoreClass="muml.ecore#//model/constraint/TextualConstraint">
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/constraint/TextualConstraint/textualExpression"/>
+          <genFeatures children="true" createChild="true" propertyCategory="TextualExpression"
+              ecoreFeature="ecore:EReference muml.ecore#//model/constraint/TextualConstraint/textualExpression"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.fujaba.muml.model"
@@ -142,8 +145,8 @@
           </genOperations>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/Cardinality">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/lowerBound"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/upperBound"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/lowerBound"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/upperBound"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/core/Infinity">
           <genOperations ecoreOperation="muml.ecore#//model/core/Infinity/byteValue"/>
@@ -246,7 +249,8 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/senderMessageInterface"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/receiverMessageInterface"/>
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/cardinality"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/cardinality"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/port"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/Role/adaptationBehavior"/>

@@ -28,9 +28,9 @@ import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.descriptor.PortCardinalityPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Port} object.
@@ -122,6 +122,51 @@ public class PortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Port_cardinality_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
+//				 ComponentPackage.Literals.PORT__CARDINALITY,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 getString("_UI_CardinalityPropertyCategory"),
+//				 null));
+
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Cardinality_lowerBound_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_Cardinality_lowerBound_feature",
+						"_UI_Cardinality_type"),
+				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+				false, null, getString("_UI_CardinalityPropertyCategory"),
+				null, ComponentPackage.Literals.PORT__CARDINALITY));
+		
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Cardinality_upperBound_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_Cardinality_upperBound_feature",
+						"_UI_Cardinality_type"),
+				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+				false, null, getString("_UI_CardinalityPropertyCategory"),
+				null, ComponentPackage.Literals.PORT__CARDINALITY));
+	}
+
+
+	/**
 	 * This adds a property descriptor for the Component feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,61 +186,6 @@ public class PortItemProvider
 				 null,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Specification feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSpecificationPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_Port_specification_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_Port_specification_feature", "_UI_Port_type"),
-//				 ComponentPackage.Literals.PORT__SPECIFICATION,
-//				 true,
-//				 false,
-//				 false,
-//				 null,
-//				 null,
-//				 null));
-		
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-//				((ComposeableAdapterFactory) adapterFactory)
-//						.getRootAdapterFactory(),
-//				getResourceLocator(),
-//				getString("_UI_Port_cardinality_feature"),
-//				getString("_UI_PropertyDescriptor_description",
-//						"_UI_Port_cardinality_feature", "_UI_Port_type"),
-//				ComponentPackage.Literals.PORT__CARDINALITY, true, false, true,
-//				null, null, null));
-		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				"Lower Bound", "The lower bound of the Port's Cardinality",
-				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
-				true, null, null, null));
-
-		itemPropertyDescriptors.add(new PortCardinalityPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				"Upper Bound", "The upper bound of the Port's Cardinality",
-				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
-				true, null, null, null));
-
 	}
 
 	/**

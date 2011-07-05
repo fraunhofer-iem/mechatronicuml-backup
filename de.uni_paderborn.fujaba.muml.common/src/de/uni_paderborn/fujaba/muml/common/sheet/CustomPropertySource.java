@@ -26,6 +26,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
+import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
@@ -109,6 +111,11 @@ public class CustomPropertySource extends PropertySource {
 					} else if (instanceClass
 							.isAssignableFrom(ClockConstraint.class)) {
 						return createClockConstraintCellEditor(parent,
+								getLabelProvider(), structuralFeature,
+								currentValues);
+					} else if (instanceClass
+							.isAssignableFrom(ParameterBinding.class)) {
+						return createParameterBindingCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								currentValues);
 					}
@@ -252,33 +259,67 @@ public class CustomPropertySource extends PropertySource {
 	private CellEditor createClockConstraintCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
 			Collection<?> currentValues) {
-		
+
 		MultiFeatureCreationCellEditor clockConstraintCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
-		ComboPropertyEditor clockPropertyEditor = new ComboPropertyEditor(adapterFactory);
+		ComboPropertyEditor clockPropertyEditor = new ComboPropertyEditor(
+				adapterFactory);
 		clockPropertyEditor.setLabelProvider(labelProvider);
 		// TODO:
-//		clockPropertyEditor.setChoices(choices);
-		clockConstraintCellEditor
-				.addProperty(new Property(
-						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
-						clockPropertyEditor));
+		// clockPropertyEditor.setChoices(choices);
+		clockConstraintCellEditor.addProperty(new Property(
+				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
+				clockPropertyEditor));
 
-		ComboPropertyEditor operatorPropertyEditor = new ComboPropertyEditor(adapterFactory);
+		ComboPropertyEditor operatorPropertyEditor = new ComboPropertyEditor(
+				adapterFactory);
 		operatorPropertyEditor.setLabelProvider(labelProvider);
 		// TODO:
-//		operatorPropertyEditor.setChoices(choices);
+		// operatorPropertyEditor.setChoices(choices);
 		clockConstraintCellEditor.addProperty(new Property(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
 				operatorPropertyEditor));
 
-		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor(adapterFactory);
-		clockConstraintCellEditor
-				.addProperty(new Property(
-						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
-						boundPropertyEditor));
+		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor(
+				adapterFactory);
+		clockConstraintCellEditor.addProperty(new Property(
+				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+				boundPropertyEditor));
 		return clockConstraintCellEditor;
+	}
+
+	private CellEditor createParameterBindingCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
+			Collection<?> currentValues) {
+
+		MultiFeatureCreationCellEditor parameterBindingCellEditor = new MultiFeatureCreationCellEditor(
+				parent, labelProvider, structuralFeature, currentValues);
+
+		ComboPropertyEditor invocationEditor = new ComboPropertyEditor(
+				adapterFactory);
+		invocationEditor.setLabelProvider(labelProvider);
+		// TODO:
+		// clockPropertyEditor.setChoices(choices);
+		parameterBindingCellEditor.addProperty(new Property(
+				CallsPackage.Literals.PARAMETER_BINDING__INVOCATION,
+				invocationEditor));
+
+		ComboPropertyEditor parameterEditor = new ComboPropertyEditor(
+				adapterFactory);
+		parameterEditor.setLabelProvider(labelProvider);
+		// TODO:
+		// operatorPropertyEditor.setChoices(choices);
+		parameterBindingCellEditor.addProperty(new Property(
+				CallsPackage.Literals.PARAMETER_BINDING__PARAMETER,
+				parameterEditor));
+
+		TextPropertyEditor valueExpressionEditor = new TextPropertyEditor(
+				adapterFactory);
+		parameterBindingCellEditor.addProperty(new Property(
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				valueExpressionEditor));
+		return parameterBindingCellEditor;
 	}
 
 }
