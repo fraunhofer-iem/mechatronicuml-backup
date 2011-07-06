@@ -24,13 +24,18 @@ public class NaturalNumberPropertyDescriptor extends ItemPropertyDescriptor {
 			String description, EStructuralFeature feature, boolean isSettable,
 			boolean multiLine, boolean sortChoices, Object staticImage,
 			String category, String[] filterFlags) {
-		super(adapterFactory, resourceLocator, displayName, description, feature,
-				isSettable, multiLine, sortChoices, staticImage, category, filterFlags);
+		super(adapterFactory, resourceLocator, displayName, description,
+				feature, isSettable, multiLine, sortChoices, staticImage,
+				category, filterFlags);
 	}
 
 	@Override
 	protected Object getValue(EObject object, EStructuralFeature feature) {
-		return super.getValue(object, feature).toString();
+		Object value = super.getValue(object, feature);
+		if (value != null) {
+			return value.toString();
+		}
+		return null;
 	}
 
 	@Override
@@ -38,7 +43,7 @@ public class NaturalNumberPropertyDescriptor extends ItemPropertyDescriptor {
 		NaturalNumber naturalNumber = CoreFactory.eINSTANCE
 				.createNaturalNumber();
 		naturalNumber.setValue((String) value);
-		
+
 		super.setPropertyValue(object, naturalNumber);
 	}
 

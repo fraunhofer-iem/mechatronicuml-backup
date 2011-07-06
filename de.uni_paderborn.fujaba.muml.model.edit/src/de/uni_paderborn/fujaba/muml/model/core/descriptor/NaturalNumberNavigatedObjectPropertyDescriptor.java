@@ -44,7 +44,11 @@ public class NaturalNumberNavigatedObjectPropertyDescriptor extends
 
 	@Override
 	protected Object getValue(EObject object, EStructuralFeature feature) {
-		return super.getValue(object, feature).toString();
+		Object value = super.getValue(object, feature);
+		if (value != null) {
+			return value.toString();
+		}
+		return null;
 	}
 
 	@Override
