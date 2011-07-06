@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.sheet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -80,18 +82,7 @@ public class CustomPropertySource extends PropertySource {
 				if (object instanceof EObject
 						&& feature instanceof EStructuralFeature) {
 					final EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-					Object value = itemPropertyDescriptor
-							.getPropertyValue(object);
-					Collection<?> currentValues;
-					if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
-						value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
-								.getEditableValue(value);
-					}
-					if (value instanceof Collection) {
-						currentValues = (Collection<?>) value;
-					} else {
-						currentValues = new ArrayList();
-					}
+
 					Class<?> instanceClass = structuralFeature.getEType()
 							.getInstanceClass();
 					if (instanceClass.isAssignableFrom(NaturalNumber.class)) {
@@ -103,29 +94,45 @@ public class CustomPropertySource extends PropertySource {
 						// itemPropertyDescriptor.getPropertyValue(itemPropertyDescriptor)
 						return createParameterCellEditor(parent,
 								getLabelProvider(), structuralFeature,
-								currentValues);
+								getCurrentValues());
 					} else if (instanceClass.isAssignableFrom(Expression.class)) {
 						return createTextualExpressionCellEditor(parent,
 								getLabelProvider(), structuralFeature,
-								currentValues);
+								getCurrentValues());
 					} else if (instanceClass
 							.isAssignableFrom(ClockConstraint.class)) {
 						return createClockConstraintCellEditor(parent,
 								getLabelProvider(), structuralFeature,
-								currentValues);
+								getCurrentValues());
 					} else if (instanceClass
 							.isAssignableFrom(ParameterBinding.class)) {
 						return createParameterBindingCellEditor(parent,
 								getLabelProvider(), structuralFeature,
-								currentValues);
+								getCurrentValues());
 					}
 				}
 				return super.createPropertyEditor(parent);
 			}
+
+			private Collection<?> getCurrentValues() {
+				Object value = itemPropertyDescriptor.getPropertyValue(object);
+				Collection<?> currentValues;
+				if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
+					value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
+							.getEditableValue(value);
+				}
+				if (value instanceof Collection) {
+					currentValues = (Collection<?>) value;
+				} else {
+					currentValues = new ArrayList<Object>();
+				}
+				return currentValues;
+			}
+
 		};
 	}
 
-	private class MultiFeatureCreationCellEditor extends
+	protected class MultiFeatureCreationCellEditor extends
 			ExtendedDialogCellEditor {
 		protected EStructuralFeature structuralFeature;
 		protected List<Property> properties = new ArrayList<Property>();
@@ -196,6 +203,8 @@ public class CustomPropertySource extends PropertySource {
 	private MultiFeatureCreationCellEditor createParameterCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
+		Resource resource = ((EObject) object).eResource();
+		
 		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
@@ -203,7 +212,6 @@ public class CustomPropertySource extends PropertySource {
 
 		RootNode rootNode = getRootNodeElement();
 		if (rootNode != null) {
-			// We must convert this list into List<EClassifier>
 			List<EDataType> ecoreDataTypes = rootNode.getEcoreDataTypes();
 
 			EDataType[] array = ecoreDataTypes.toArray(new EDataType[] {});
@@ -222,9 +230,9 @@ public class CustomPropertySource extends PropertySource {
 				parameterNameValidator));
 		parameterCellEditor.setTextProvider(new ParameterTextProvider(
 				labelProvider));
-		parameterCellEditor.addProperty(new Property(
+		parameterCellEditor.addProperty(new Property(resource,
 				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
-		parameterCellEditor.addProperty(new Property(
+		parameterCellEditor.addProperty(new Property(resource,
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
 		return parameterCellEditor;
@@ -233,6 +241,8 @@ public class CustomPropertySource extends PropertySource {
 	private MultiFeatureCreationCellEditor createTextualExpressionCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
+		Resource resource = ((EObject) object).eResource();
+
 		MultiFeatureCreationCellEditor textualExpressionCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
@@ -241,15 +251,17 @@ public class CustomPropertySource extends PropertySource {
 
 		textualExpressionCellEditor
 				.addProperty(new Property(
+						resource,
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						new TextPropertyEditor(adapterFactory, true, true)));
 
-		textualExpressionCellEditor.addProperty(new Property(
+		textualExpressionCellEditor.addProperty(new Property(resource,
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
 				new TextPropertyEditor(adapterFactory)));
 
 		textualExpressionCellEditor
 				.addProperty(new Property(
+						resource,
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
 						new TextPropertyEditor(adapterFactory)));
 
@@ -259,6 +271,7 @@ public class CustomPropertySource extends PropertySource {
 	private CellEditor createClockConstraintCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
 			Collection<?> currentValues) {
+		Resource resource = ((EObject) object).eResource();
 
 		MultiFeatureCreationCellEditor clockConstraintCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
@@ -266,9 +279,10 @@ public class CustomPropertySource extends PropertySource {
 		ComboPropertyEditor clockPropertyEditor = new ComboPropertyEditor(
 				adapterFactory);
 		clockPropertyEditor.setLabelProvider(labelProvider);
+
 		// TODO:
 		// clockPropertyEditor.setChoices(choices);
-		clockConstraintCellEditor.addProperty(new Property(
+		clockConstraintCellEditor.addProperty(new Property(resource,
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
 				clockPropertyEditor));
 
@@ -277,13 +291,13 @@ public class CustomPropertySource extends PropertySource {
 		operatorPropertyEditor.setLabelProvider(labelProvider);
 		// TODO:
 		// operatorPropertyEditor.setChoices(choices);
-		clockConstraintCellEditor.addProperty(new Property(
+		clockConstraintCellEditor.addProperty(new Property(resource,
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
 				operatorPropertyEditor));
 
 		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor(
 				adapterFactory);
-		clockConstraintCellEditor.addProperty(new Property(
+		clockConstraintCellEditor.addProperty(new Property(resource,
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
 				boundPropertyEditor));
 		return clockConstraintCellEditor;
@@ -292,6 +306,7 @@ public class CustomPropertySource extends PropertySource {
 	private CellEditor createParameterBindingCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
 			Collection<?> currentValues) {
+		Resource resource = ((EObject) object).eResource();
 
 		MultiFeatureCreationCellEditor parameterBindingCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
@@ -301,7 +316,7 @@ public class CustomPropertySource extends PropertySource {
 		invocationEditor.setLabelProvider(labelProvider);
 		// TODO:
 		// clockPropertyEditor.setChoices(choices);
-		parameterBindingCellEditor.addProperty(new Property(
+		parameterBindingCellEditor.addProperty(new Property(resource,
 				CallsPackage.Literals.PARAMETER_BINDING__INVOCATION,
 				invocationEditor));
 
@@ -310,13 +325,13 @@ public class CustomPropertySource extends PropertySource {
 		parameterEditor.setLabelProvider(labelProvider);
 		// TODO:
 		// operatorPropertyEditor.setChoices(choices);
-		parameterBindingCellEditor.addProperty(new Property(
+		parameterBindingCellEditor.addProperty(new Property(resource,
 				CallsPackage.Literals.PARAMETER_BINDING__PARAMETER,
 				parameterEditor));
 
 		TextPropertyEditor valueExpressionEditor = new TextPropertyEditor(
 				adapterFactory);
-		parameterBindingCellEditor.addProperty(new Property(
+		parameterBindingCellEditor.addProperty(new Property(resource,
 				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
 				valueExpressionEditor));
 		return parameterBindingCellEditor;

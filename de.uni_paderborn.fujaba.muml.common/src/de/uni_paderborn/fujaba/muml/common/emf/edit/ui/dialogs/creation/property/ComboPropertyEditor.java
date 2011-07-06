@@ -1,11 +1,14 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
@@ -19,6 +22,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * A PropertyEditor using a ComboBox with predefined choices.
@@ -46,7 +51,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	/**
 	 * The list of valid choices to show in the ComboBox.
 	 */
-	protected List<?> choices;
+	protected Collection<?> choices;
 
 	/**
 	 * Creates this ComboPropertyEditor.
@@ -107,9 +112,9 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	@Override
 	public void setDefaultValue() {
 		Object selectedElement = null;
-		List<?> choices = getChoices();
+		Collection<?> choices = getChoices();
 		if (choices != null && !choices.isEmpty()) {
-			selectedElement = choices.get(0);
+			selectedElement = choices.iterator().next();
 		}
 		comboViewer.setSelection(new StructuredSelection(
 				new Object[] { selectedElement }));
@@ -140,11 +145,10 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * 
 	 * @return The choices for the viewer.
 	 */
-	public List<?> getChoices() {
+	public Collection<?> getChoices() {
 		if (choices == null) {
-			choices = ECollections.EMPTY_ELIST;
-//			EObject helperObject = EcoreUtil.create();
-//			choices = property.getPossibleChoices(helperObject);
+			choices = property.getReachableObjects();
+			choices.remove(null);
 		}
 		return choices;
 	}
@@ -155,7 +159,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * @param choices
 	 *            The choices to use for the viewer.
 	 */
-	public void setChoices(List<?> choices) {
+	public void setChoices(Collection<?> choices) {
 		this.choices = choices;
 	}
 

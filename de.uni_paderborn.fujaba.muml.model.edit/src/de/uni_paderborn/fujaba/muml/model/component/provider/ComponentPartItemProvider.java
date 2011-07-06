@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberNavigatedObjectPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart} object.
@@ -207,7 +207,7 @@ public class ComponentPartItemProvider
 //				 getString("_UI_CardinalityPropertyCategory"),
 //				 null));
 
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_lowerBound_feature"), getString(
@@ -218,7 +218,7 @@ public class ComponentPartItemProvider
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, ComponentPackage.Literals.COMPONENT_PART__CARDINALITY));
 		
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_upperBound_feature"), getString(

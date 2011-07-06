@@ -28,10 +28,9 @@ import org.storydriven.modeling.expressions.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockConstraintBoundPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint} object.
@@ -75,20 +74,41 @@ public class ClockConstraintItemProvider
 		return itemPropertyDescriptors;
 	}
 
-	/**
-	 * This adds a property descriptor for the NaturalNumber feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+/**
+	 * This adds a property descriptor for the Bound feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	protected void addBoundPropertyDescriptor(Object object) {
-
-		itemPropertyDescriptors.add(new ClockConstraintBoundPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				"NaturalNumber", "The bound of the clock constraint",
-				CorePackage.Literals.NATURAL_NUMBER__VALUE, true, false, true,
-				null, null, null));
+//		itemPropertyDescriptors.add
+//			(createItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_ClockConstraint_bound_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_bound_feature", "_UI_ClockConstraint_type"),
+//				 RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+//				 true,
+//				 false,
+//				 false,
+//				 null,
+//				 null,
+//				 null));
+		itemPropertyDescriptors
+				.add(new NaturalNumberPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ClockConstraint_bound_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ClockConstraint_bound_feature", "_UI_ClockConstraint_type"),
+						RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null
+						));
 
 	}
 

@@ -30,10 +30,10 @@ import org.storydriven.modeling.calls.CallsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.RelativeDeadlinePropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition} object.
@@ -291,6 +291,7 @@ public class TransitionItemProvider
 				 null,
 				 null));
 	}
+
 /**
 	 * This adds a property descriptor for the Relative Deadline feature.
 	 * <!-- begin-user-doc -->
@@ -311,9 +312,10 @@ public class TransitionItemProvider
 //				 null,
 //				 getString("_UI_RelativeDeadlinePropertyCategory"),
 //				 null));
-
+		
+		
 		itemPropertyDescriptors
-				.add(new RelativeDeadlinePropertyDescriptor(
+				.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -322,11 +324,16 @@ public class TransitionItemProvider
 								"_UI_Deadline_lowerBound_feature",
 								"_UI_Deadline_type"),
 						RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
-						true, false, true, null,
-						getString("_UI_RelativeDeadlinePropertyCategory"), null));
+						true,
+						false,
+						true,
+						null,
+						getString("_UI_RelativeDeadlinePropertyCategory"),
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE));
 
 		itemPropertyDescriptors
-				.add(new RelativeDeadlinePropertyDescriptor(
+				.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -335,8 +342,14 @@ public class TransitionItemProvider
 								"_UI_Deadline_upperBound_feature",
 								"_UI_Deadline_type"),
 						RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
-						true, false, true, null,
-						getString("_UI_RelativeDeadlinePropertyCategory"), null));
+						true,
+						false,
+						true,
+						null,
+						getString("_UI_RelativeDeadlinePropertyCategory"),
+						null,
+						RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE));
+
 	}
 
 	/**

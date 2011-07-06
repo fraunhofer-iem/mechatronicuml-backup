@@ -5,10 +5,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+
+import de.uni_paderborn.fujaba.common.descriptor.INavigatedObjectPropertyDescriptor;
 
 /**
  * An abstract implementation of a property editor. Should be subclassed to
@@ -227,16 +230,31 @@ public abstract class AbstractPropertyEditor {
 	 *            The object to set the value for.
 	 */
 	public void setPropertyValue(EObject object) {
+		IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor(object);
+		if (itemPropertyDescriptor != null) {
+			itemPropertyDescriptor.setPropertyValue(object, getValue());
+		}
+	}
+
+	private IItemPropertyDescriptor getItemPropertyDescriptor(EObject object) {
 		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
 				object, IItemPropertySource.class);
 		if (ips != null) {
-			IItemPropertyDescriptor itemPropertyDescriptor = ips
-					.getPropertyDescriptor(object, property.getFeature());
-
-			if (itemPropertyDescriptor != null) {
-				itemPropertyDescriptor.setPropertyValue(object, getValue());
+			List<IItemPropertyDescriptor> itemPropertyDescriptors = ips
+					.getPropertyDescriptors(object);
+			for (IItemPropertyDescriptor itemPropertyDescriptor : itemPropertyDescriptors) {
+				Object descriptorFeature = itemPropertyDescriptor
+						.getFeature(object);
+				if (itemPropertyDescriptor instanceof INavigatedObjectPropertyDescriptor) {
+					descriptorFeature = ((INavigatedObjectPropertyDescriptor) itemPropertyDescriptor)
+							.getNavigationFeature();
+				}
+				if (descriptorFeature.equals(property.getFeature())) {
+					return itemPropertyDescriptor;
+				}
 			}
 		}
+		return null;
 	}
 
 	/**

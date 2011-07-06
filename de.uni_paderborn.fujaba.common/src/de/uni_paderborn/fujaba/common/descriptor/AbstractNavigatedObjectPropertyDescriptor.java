@@ -5,6 +5,7 @@ import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 /**
@@ -14,16 +15,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
  * 
  */
 public abstract class AbstractNavigatedObjectPropertyDescriptor extends
-		ItemPropertyDescriptor {
+		ItemPropertyDescriptor implements INavigatedObjectPropertyDescriptor {
 
 	/**
 	 * Constructs this NavigatedObjectPropertyDescriptor.
 	 */
-	public AbstractNavigatedObjectPropertyDescriptor(AdapterFactory adapterFactory,
-			ResourceLocator resourceLocator, String displayName,
-			String description, EStructuralFeature feature, boolean isSettable,
-			boolean multiLine, boolean sortChoices, Object staticImage,
-			String category, String[] filterFlags) {
+	public AbstractNavigatedObjectPropertyDescriptor(
+			AdapterFactory adapterFactory, ResourceLocator resourceLocator,
+			String displayName, String description, EStructuralFeature feature,
+			boolean isSettable, boolean multiLine, boolean sortChoices,
+			Object staticImage, String category, String[] filterFlags) {
 		super(adapterFactory, resourceLocator, displayName, description,
 				feature, isSettable, multiLine, sortChoices, staticImage,
 				category, filterFlags);
@@ -47,19 +48,18 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 		if (oldObject == null) {
 			newObject = createNewObject();
 		} else {
-			// It is no good style to create a copy, just to fire the
-			// notification.
-			
-			// newObject = EcoreUtil.copy(oldObject);
 
-			// We reuse the old object.
-			newObject = oldObject;
+			// TODO: It is no good style to create a copy, just to fire the
+			// notification.
+			// newObject = oldObject;
+			newObject = EcoreUtil.copy(oldObject);
+
 		}
 
- 		configureObject(newObject, (EStructuralFeature) getFeature(this), value);
+		configureObject(newObject, (EStructuralFeature) getFeature(this), value);
 
 		// We could use this hack to send the notification:
-		setNavigatedObject(object, null);
+		// setNavigatedObject(object, null);
 
 		//
 		// Another possibility would be to install a DerivedAttributeAdapter in
@@ -96,7 +96,8 @@ public abstract class AbstractNavigatedObjectPropertyDescriptor extends
 
 	protected Object getObjectValue(EObject navigatedObject,
 			EStructuralFeature feature) {
-		if (feature.getContainerClass().isAssignableFrom(navigatedObject.getClass())) {
+		if (feature.getContainerClass().isAssignableFrom(
+				navigatedObject.getClass())) {
 			return navigatedObject.eGet(feature);
 		}
 		if (feature.isMany()) {

@@ -5,8 +5,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
@@ -17,29 +17,15 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * @author bingo
  * 
  */
-public class NaturalNumberPropertyDescriptor extends
-		DefaultNavigatedObjectPropertyDescriptor {
+public class NaturalNumberPropertyDescriptor extends ItemPropertyDescriptor {
 
 	public NaturalNumberPropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,
 			String description, EStructuralFeature feature, boolean isSettable,
 			boolean multiLine, boolean sortChoices, Object staticImage,
-			String category, String[] filterFlags,
-			EStructuralFeature navigatedFeature) {
+			String category, String[] filterFlags) {
 		super(adapterFactory, resourceLocator, displayName, description, feature,
-				isSettable, multiLine, sortChoices, staticImage, category, filterFlags,
-				navigatedFeature);
-	}
-
-	public NaturalNumberPropertyDescriptor(AdapterFactory adapterFactory,
-			ResourceLocator resourceLocator, String displayName,
-			String description, EStructuralFeature feature, boolean isSettable,
-			boolean multiLine, boolean sortChoices, Object staticImage,
-			String category, String[] filterFlags,
-			EStructuralFeature navigatedFeature, EClass instanceClass) {
-		super(adapterFactory, resourceLocator, displayName, description, feature,
-				isSettable, multiLine, sortChoices, staticImage, category, filterFlags,
-				navigatedFeature, instanceClass);
+				isSettable, multiLine, sortChoices, staticImage, category, filterFlags);
 	}
 
 	@Override
@@ -48,13 +34,12 @@ public class NaturalNumberPropertyDescriptor extends
 	}
 
 	@Override
-	protected void configureObject(EObject newObject,
-			EStructuralFeature feature, Object value) {
+	public void setPropertyValue(Object object, Object value) {
 		NaturalNumber naturalNumber = CoreFactory.eINSTANCE
 				.createNaturalNumber();
 		naturalNumber.setValue((String) value);
 		
-		super.configureObject(newObject, feature, naturalNumber);
+		super.setPropertyValue(object, naturalNumber);
 	}
 
 }

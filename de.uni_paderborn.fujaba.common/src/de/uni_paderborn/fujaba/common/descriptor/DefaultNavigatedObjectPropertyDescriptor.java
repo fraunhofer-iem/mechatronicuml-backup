@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class DefaultNavigatedObjectPropertyDescriptor extends
 		AbstractNavigatedObjectPropertyDescriptor {
 
-	private EStructuralFeature navigatedFeature;
+	private EStructuralFeature navigationFeature;
 	private EClass instanceClass;
 
 	public DefaultNavigatedObjectPropertyDescriptor(
@@ -18,10 +18,10 @@ public class DefaultNavigatedObjectPropertyDescriptor extends
 			String displayName, String description, EStructuralFeature feature,
 			boolean isSettable, boolean multiLine, boolean sortChoices,
 			Object staticImage, String category, String[] filterFlags,
-			EStructuralFeature navigatedFeature) {
+			EStructuralFeature navigationFeature) {
 		this(adapterFactory, resourceLocator, displayName, description,
 				feature, isSettable, multiLine, sortChoices, staticImage,
-				category, filterFlags, navigatedFeature, (EClass) navigatedFeature.getEType());
+				category, filterFlags, navigationFeature, (EClass) navigationFeature.getEType());
 	}
 	
 	public DefaultNavigatedObjectPropertyDescriptor(
@@ -29,17 +29,17 @@ public class DefaultNavigatedObjectPropertyDescriptor extends
 			String displayName, String description, EStructuralFeature feature,
 			boolean isSettable, boolean multiLine, boolean sortChoices,
 			Object staticImage, String category, String[] filterFlags,
-			EStructuralFeature navigatedFeature, EClass instanceClass) {
+			EStructuralFeature navigationFeature, EClass instanceClass) {
 		super(adapterFactory, resourceLocator, displayName, description,
 				feature, isSettable, multiLine, sortChoices, staticImage,
 				category, filterFlags);
-		this.navigatedFeature = navigatedFeature;
+		this.navigationFeature = navigationFeature;
 		this.instanceClass = instanceClass;
 	}
 
 	@Override
 	protected EObject getNavigatedObject(Object object) {
-		return (EObject) ((EObject) object).eGet(navigatedFeature);
+		return (EObject) ((EObject) object).eGet(navigationFeature);
 	}
 
 	@Override
@@ -53,7 +53,12 @@ public class DefaultNavigatedObjectPropertyDescriptor extends
 
 	@Override
 	protected void setNavigatedObject(Object object, EObject newObject) {
-		((EObject) object).eSet(navigatedFeature, newObject);
+		((EObject) object).eSet(navigationFeature, newObject);
+	}
+
+	@Override
+	public EStructuralFeature getNavigationFeature() {
+		return navigationFeature;
 	}
 
 }

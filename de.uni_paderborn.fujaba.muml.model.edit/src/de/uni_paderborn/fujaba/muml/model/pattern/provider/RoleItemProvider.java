@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberNavigatedObjectPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -234,7 +234,7 @@ public class RoleItemProvider
 //				 getString("_UI_CardinalityPropertyCategory"),
 //				 null));
 
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_lowerBound_feature"), getString(
@@ -245,7 +245,7 @@ public class RoleItemProvider
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, PatternPackage.Literals.ROLE__CARDINALITY));
 
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_upperBound_feature"), getString(
