@@ -32,29 +32,29 @@ public interface ContinuousPort extends Port {
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Decides the direction of a continous port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind
-	 * @see #setKind(ContinousPortDirectionKind)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind
+	 * @see #setKind(ContinuousPortDirectionKind)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getContinuousPort_Kind()
 	 * @model required="true"
 	 * @generated
 	 */
-	ContinousPortDirectionKind getKind();
+	ContinuousPortDirectionKind getKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind
 	 * @see #getKind()
 	 * @generated
 	 */
-	void setKind(ContinousPortDirectionKind value);
+	void setKind(ContinuousPortDirectionKind value);
 } // ContinuousPort

@@ -104,7 +104,7 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the continuous functionality of a port.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
-            eType="#//model/component/ContinousPortDirectionKind">
+            eType="#//model/component/ContinuousPortDirectionKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Decides the direction of a continous port."/>
           </eAnnotations>
@@ -304,7 +304,7 @@
           <details key="documentation" value="This class represents a hybrid port which acts as a A/D or an D/A converter.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="ContinousPortDirectionKind">
+      <eClassifiers xsi:type="ecore:EEnum" name="ContinuousPortDirectionKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Decides the direction of a continous port."/>
         </eAnnotations>

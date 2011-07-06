@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +37,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ContinousPortDirectionKind KIND_EDEFAULT = ContinousPortDirectionKind.IN;
+	protected static final ContinuousPortDirectionKind KIND_EDEFAULT = ContinuousPortDirectionKind.IN;
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * @generated
 	 * @ordered
 	 */
-	protected ContinousPortDirectionKind kind = KIND_EDEFAULT;
+	protected ContinuousPortDirectionKind kind = KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,7 +72,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContinousPortDirectionKind getKind() {
+	public ContinuousPortDirectionKind getKind() {
 		return kind;
 	}
 
@@ -80,8 +81,8 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKind(ContinousPortDirectionKind newKind) {
-		ContinousPortDirectionKind oldKind = kind;
+	public void setKind(ContinuousPortDirectionKind newKind) {
+		ContinuousPortDirectionKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.CONTINUOUS_PORT__KIND, oldKind, kind));
@@ -110,7 +111,7 @@ public class ContinuousPortImpl extends PortImpl implements ContinuousPort {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.CONTINUOUS_PORT__KIND:
-				setKind((ContinousPortDirectionKind)newValue);
+				setKind((ContinuousPortDirectionKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

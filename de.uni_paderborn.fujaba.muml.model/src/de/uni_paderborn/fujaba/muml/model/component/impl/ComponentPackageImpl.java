@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
@@ -168,7 +169,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum continousPortDirectionKindEEnum = null;
+	private EEnum continuousPortDirectionKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -703,8 +704,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getContinousPortDirectionKind() {
-		return continousPortDirectionKindEEnum;
+	public EEnum getContinuousPortDirectionKind() {
+		return continuousPortDirectionKindEEnum;
 	}
 
 	/**
@@ -798,7 +799,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
-		continousPortDirectionKindEEnum = createEEnum(CONTINOUS_PORT_DIRECTION_KIND);
+		continuousPortDirectionKindEEnum = createEEnum(CONTINUOUS_PORT_DIRECTION_KIND);
 	}
 
 	/**
@@ -876,7 +877,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getPort_Component(), this.getComponent(), this.getComponent_Ports(), "component", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousPortEClass, ContinuousPort.class, "ContinuousPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContinuousPort_Kind(), this.getContinousPortDirectionKind(), "kind", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContinuousPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, ContinuousPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discretePortEClass, DiscretePort.class, "DiscretePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscretePort_Refines(), thePatternPackage.getRole(), thePatternPackage.getRole_Port(), "refines", null, 0, 1, DiscretePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -927,9 +928,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		addEEnumLiteral(componentKindEEnum, ComponentKind.HYBRID_COMPONENT);
 		addEEnumLiteral(componentKindEEnum, ComponentKind.HARDWARE_COMPONENT);
 
-		initEEnum(continousPortDirectionKindEEnum, ContinousPortDirectionKind.class, "ContinousPortDirectionKind");
-		addEEnumLiteral(continousPortDirectionKindEEnum, ContinousPortDirectionKind.IN);
-		addEEnumLiteral(continousPortDirectionKindEEnum, ContinousPortDirectionKind.OUT);
+		initEEnum(continuousPortDirectionKindEEnum, ContinuousPortDirectionKind.class, "ContinuousPortDirectionKind");
+		addEEnumLiteral(continuousPortDirectionKindEEnum, ContinuousPortDirectionKind.IN);
+		addEEnumLiteral(continuousPortDirectionKindEEnum, ContinuousPortDirectionKind.OUT);
 
 		// Create resource
 		createResource(eNS_URI);

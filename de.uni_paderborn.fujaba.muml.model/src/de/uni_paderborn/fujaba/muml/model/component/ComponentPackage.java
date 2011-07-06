@@ -1560,14 +1560,14 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_KIND = 14;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind <em>Continous Port Direction Kind</em>}' enum.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinousPortDirectionKind()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINOUS_PORT_DIRECTION_KIND = 15;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 15;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -2083,14 +2083,14 @@ public interface ComponentPackage extends EPackage {
 	EEnum getComponentKind();
 
 	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind <em>Continous Port Direction Kind</em>}'.
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Continous Port Direction Kind</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind
+	 * @return the meta object for enum '<em>Continuous Port Direction Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind
 	 * @generated
 	 */
-	EEnum getContinousPortDirectionKind();
+	EEnum getContinuousPortDirectionKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2529,14 +2529,14 @@ public interface ComponentPackage extends EPackage {
 		EEnum COMPONENT_KIND = eINSTANCE.getComponentKind();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind <em>Continous Port Direction Kind</em>}' enum.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.ContinousPortDirectionKind
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinousPortDirectionKind()
+		 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 		 * @generated
 		 */
-		EEnum CONTINOUS_PORT_DIRECTION_KIND = eINSTANCE.getContinousPortDirectionKind();
+		EEnum CONTINUOUS_PORT_DIRECTION_KIND = eINSTANCE.getContinuousPortDirectionKind();
 
 	}
 
