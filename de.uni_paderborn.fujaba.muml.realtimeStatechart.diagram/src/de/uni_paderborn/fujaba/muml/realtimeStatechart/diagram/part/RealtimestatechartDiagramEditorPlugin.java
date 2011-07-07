@@ -118,6 +118,14 @@ public class RealtimestatechartDiagramEditorPlugin extends AbstractUIPlugin {
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
+
+		// BEGIN: Customized by bingo
+		// Added to allow creation of custom ItemProviderFactories for cases, in
+		// which edit code of dependent meta-models cannot be changed.
+		de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+				.fillItemProviderFactories(factories);
+		// END: Customized
+
 		return new ComposedAdapterFactory(factories);
 	}
 
