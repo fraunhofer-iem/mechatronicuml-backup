@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -7,6 +8,13 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.operations.OperationHistoryFactory;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -18,7 +26,20 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.ui.util.DiagramEditorUtil;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+import de.uni_paderborn.fujaba.common.descriptor.INavigatedObjectPropertyDescriptor;
 
 /**
  * A Property to show in the MultiFeatureCreationDialog.
@@ -30,9 +51,16 @@ public class Property {
 	/**
 	 * The structural feature of the property.
 	 */
-	private EStructuralFeature feature;
+	protected EStructuralFeature feature;
 
-	private Resource resource;
+	protected Resource resource;
+
+	protected TransactionalEditingDomain editingDomain;
+
+	/**
+	 * The AdapterFactory to create an ItemPropertyDescritor.
+	 */
+	protected AdapterFactory adapterFactory;
 
 	/**
 	 * The property editor to use.
@@ -48,10 +76,13 @@ public class Property {
 	 *            The property editor to use.
 	 */
 	public Property(Resource resource, EStructuralFeature feature,
-			AbstractPropertyEditor propertyEditor) {
+			AdapterFactory adapterFactory, AbstractPropertyEditor propertyEditor) {
 		this.resource = resource;
 		this.feature = feature;
 		this.propertyEditor = propertyEditor;
+		this.adapterFactory = adapterFactory;
+		editingDomain = TransactionUtil.getEditingDomain(resource);
+
 		propertyEditor.init(this);
 	}
 
@@ -139,6 +170,63 @@ public class Property {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Sets the current value for the object passed.
+	 * 
+	 * @param object
+	 *            The object to set the value for.
+	 * @throws ExecutionException
+	 */
+	public void setPropertyValue(final EObject object, final Object value)
+			throws ExecutionException {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
+				editingDomain,
+				"MultiFeatureCreationDialog -> setPropertyValue()",
+				Collections.EMPTY_LIST) {
+			protected CommandResult doExecuteWithResult(
+					IProgressMonitor monitor, IAdaptable info)
+					throws ExecutionException {
+
+				IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor(object);
+				if (itemPropertyDescriptor != null) {
+					itemPropertyDescriptor.setPropertyValue(object, value);
+				}
+
+				return CommandResult.newOKCommandResult();
+			}
+		};
+
+		OperationHistoryFactory.getOperationHistory().execute(command, null,
+				null);
+		// } catch (ExecutionException e) {
+		// // FujabaNewwizardPlugin.getDefault().logError(
+		////					"Unable to create model and diagram", e); //$NON-NLS-1$
+		// }
+		//
+
+	}
+
+	private IItemPropertyDescriptor getItemPropertyDescriptor(EObject object) {
+		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
+				object, IItemPropertySource.class);
+		if (ips != null) {
+			List<IItemPropertyDescriptor> itemPropertyDescriptors = ips
+					.getPropertyDescriptors(object);
+			for (IItemPropertyDescriptor itemPropertyDescriptor : itemPropertyDescriptors) {
+				if (isValidItemPropertyDescriptor(itemPropertyDescriptor,
+						object)) {
+					return itemPropertyDescriptor;
+				}
+			}
+		}
+		return null;
+	}
+
+	protected boolean isValidItemPropertyDescriptor(
+			IItemPropertyDescriptor itemPropertyDescriptor, Object object) {
+		return itemPropertyDescriptor.getFeature(object).equals(feature);
 	}
 
 }

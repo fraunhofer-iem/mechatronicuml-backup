@@ -37,6 +37,8 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * The Viewer for the ComboBox.
 	 */
 	protected ComboViewer comboViewer;
+	
+	protected AdapterFactory adapterFactory;
 
 	/**
 	 * The ContentProvider for the Viewer.
@@ -60,7 +62,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 *            The AdapterFactory to use to create the ContentProvider.
 	 */
 	public ComboPropertyEditor(AdapterFactory adapterFactory) {
-		super(adapterFactory);
+		this.adapterFactory = adapterFactory;
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
 	}
 

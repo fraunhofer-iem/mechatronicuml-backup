@@ -88,13 +88,14 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlug
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.emf.edit.provider.ComposedAdapterFactory createAdapterFactory() {
 		«EXPAND CodeStyle::newGenericInstance('factories', 'java.util.ArrayList', 'org.eclipse.emf.common.notify.AdapterFactory') FOR editorGen.diagram»();
-		fillItemProviderFactories(factories);
 		
 		// BEGIN: Customized by bingo
 		// Added to allow creation of custom ItemProviderFactories for cases, in
 		// which edit code of dependent meta-models cannot be changed.
 		de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories.fillItemProviderFactories(factories);
 		// END: Customized
+
+		fillItemProviderFactories(factories);
 		
 		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
 	}

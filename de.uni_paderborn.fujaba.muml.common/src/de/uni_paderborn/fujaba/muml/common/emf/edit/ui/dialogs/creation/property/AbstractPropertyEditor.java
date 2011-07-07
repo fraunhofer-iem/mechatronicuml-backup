@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -44,11 +46,6 @@ public abstract class AbstractPropertyEditor {
 	protected Property property;
 
 	/**
-	 * The AdapterFactory to use, when creating an ItemPropertyDescritor.
-	 */
-	protected AdapterFactory adapterFactory;
-
-	/**
 	 * The list of registered Validators to use, when revalidating.
 	 */
 	protected List<IValidator> validators = new ArrayList<IValidator>();
@@ -62,25 +59,18 @@ public abstract class AbstractPropertyEditor {
 	/**
 	 * Constructs this AbstractPropertyEditor.
 	 * 
-	 * @param adapterFactory
-	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
 	 */
-	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
-		this(adapterFactory, false);
+	public AbstractPropertyEditor() {
 	}
 
 	/**
 	 * Constructs this AbstractPropertyEditor.
 	 * 
-	 * @param adapterFactory
-	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
 	 * @param extendVertically
 	 *            <code>true</code>, if the control should extend vertically and
 	 *            take more place.
 	 */
-	public AbstractPropertyEditor(AdapterFactory adapterFactory,
-			boolean extendVertically) {
-		this.adapterFactory = adapterFactory;
+	public AbstractPropertyEditor(boolean extendVertically) {
 		this.extendVertically = extendVertically;
 	}
 
@@ -221,40 +211,6 @@ public abstract class AbstractPropertyEditor {
 				validationListener.validationOccurred(valid);
 			}
 		}
-	}
-
-	/**
-	 * Sets the current value for the object passed.
-	 * 
-	 * @param object
-	 *            The object to set the value for.
-	 */
-	public void setPropertyValue(EObject object) {
-		IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor(object);
-		if (itemPropertyDescriptor != null) {
-			itemPropertyDescriptor.setPropertyValue(object, getValue());
-		}
-	}
-
-	private IItemPropertyDescriptor getItemPropertyDescriptor(EObject object) {
-		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
-				object, IItemPropertySource.class);
-		if (ips != null) {
-			List<IItemPropertyDescriptor> itemPropertyDescriptors = ips
-					.getPropertyDescriptors(object);
-			for (IItemPropertyDescriptor itemPropertyDescriptor : itemPropertyDescriptors) {
-				Object descriptorFeature = itemPropertyDescriptor
-						.getFeature(object);
-				if (itemPropertyDescriptor instanceof INavigatedObjectPropertyDescriptor) {
-					descriptorFeature = ((INavigatedObjectPropertyDescriptor) itemPropertyDescriptor)
-							.getNavigationFeature();
-				}
-				if (descriptorFeature.equals(property.getFeature())) {
-					return itemPropertyDescriptor;
-				}
-			}
-		}
-		return null;
 	}
 
 	/**

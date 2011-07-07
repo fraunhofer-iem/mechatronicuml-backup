@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -378,9 +379,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 			public void widgetSelected(SelectionEvent event) {
 				EObject newObject = EcoreUtil.create(instanceClass);
 
-				for (Property property : properties) {
-					property.getPropertyEditor().setPropertyValue(newObject);
-				}
+				applyProperties(newObject);
 
 				values.getChildren().add(newObject);
 				rebuildTextualParameterLine();
@@ -404,10 +403,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 				if (index > -1) {
 					EObject newObject = EcoreUtil.copy(oldObject);
 
-					for (Property property : properties) {
-						property.getPropertyEditor()
-								.setPropertyValue(newObject);
-					}
+					applyProperties(newObject);
 
 					// configureParameter((EParameter) newParameter,
 					// txtName.getText(), getSelectedType());
@@ -622,6 +618,17 @@ public class MultiFeatureCreationDialog extends Dialog {
 		return container;
 	}
 
+	protected void applyProperties(EObject object) {
+		for (Property property : properties) {
+			AbstractPropertyEditor editor = property.getPropertyEditor();
+			try {
+				property.setPropertyValue(object, editor.getValue());
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 	/**
 	 * Clears the TextStyle of the passed StyledText control.
 	 * 

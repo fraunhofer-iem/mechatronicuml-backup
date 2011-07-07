@@ -31,25 +31,17 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 
 	/**
 	 * Constructs this TextPropertyEditor.
-	 * 
-	 * @param adapterFactory
-	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
 	 */
-	public TextPropertyEditor(AdapterFactory adapterFactory) {
-		super(adapterFactory);
+	public TextPropertyEditor() {
 	}
 
 	/**
 	 * Constructs this TextPropertyEditor.
 	 * 
-	 * @param adapterFactory
-	 *            The AdapterFactory to use to create ItemPropertyDescriptors.
-	 * 
 	 * @param multiLine
 	 *            The multiLine attribute for the StyledText.
 	 */
-	public TextPropertyEditor(AdapterFactory adapterFactory, boolean multiLine) {
-		super(adapterFactory);
+	public TextPropertyEditor(boolean multiLine) {
 		this.multiLine = multiLine;
 	}
 
@@ -66,7 +58,7 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	 */
 	public TextPropertyEditor(AdapterFactory adapterFactory,
 			boolean extendVertically, boolean multiLine) {
-		super(adapterFactory, extendVertically);
+		super(extendVertically);
 		this.multiLine = multiLine;
 	}
 

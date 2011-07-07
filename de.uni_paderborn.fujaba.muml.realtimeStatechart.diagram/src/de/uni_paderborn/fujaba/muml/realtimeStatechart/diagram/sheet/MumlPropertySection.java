@@ -2,13 +2,13 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.sheet;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+import java.util.List;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.ui.provider.PropertySource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
@@ -101,17 +101,27 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 	 * @generated
 	 */
 	protected AdapterFactory getAdapterFactory(Object object) {
-		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
-			return ((AdapterFactoryEditingDomain) getEditingDomain())
-					.getAdapterFactory();
-		}
-		TransactionalEditingDomain editingDomain = TransactionUtil
-				.getEditingDomain(object);
+		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
 		if (editingDomain != null) {
-			return ((AdapterFactoryEditingDomain) editingDomain)
-					.getAdapterFactory();
+			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
+			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+			de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+					.fillItemProviderFactories(factories);
+			factories.add(defaultFactory);
+			return new ComposedAdapterFactory(factories);
 		}
 		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected AdapterFactoryEditingDomain getEditingDomainFor(Object object) {
+		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
+			return (AdapterFactoryEditingDomain) getEditingDomain();
+		}
+		return (AdapterFactoryEditingDomain) TransactionUtil
+				.getEditingDomain(object);
 	}
 
 }

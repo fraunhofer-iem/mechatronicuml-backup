@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.common.sheet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -40,8 +39,10 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.MultiFea
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterNameValidator;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterTextParser;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterTextProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.ComboPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.NavigatedProperty;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
@@ -203,8 +204,7 @@ public class CustomPropertySource extends PropertySource {
 	private MultiFeatureCreationCellEditor createParameterCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
-		Resource resource = ((EObject) object).eResource();
-		
+
 		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
@@ -219,7 +219,7 @@ public class CustomPropertySource extends PropertySource {
 		}
 
 		IValidator parameterNameValidator = new ParameterNameValidator();
-		TextPropertyEditor nameEditor = new TextPropertyEditor(adapterFactory);
+		TextPropertyEditor nameEditor = new TextPropertyEditor();
 		nameEditor.addValidator(parameterNameValidator);
 
 		ComboPropertyEditor typeEditor = new ComboPropertyEditor(adapterFactory);
@@ -230,9 +230,9 @@ public class CustomPropertySource extends PropertySource {
 				parameterNameValidator));
 		parameterCellEditor.setTextProvider(new ParameterTextProvider(
 				labelProvider));
-		parameterCellEditor.addProperty(new Property(resource,
+		parameterCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
-		parameterCellEditor.addProperty(new Property(resource,
+		parameterCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
 		return parameterCellEditor;
@@ -241,7 +241,6 @@ public class CustomPropertySource extends PropertySource {
 	private MultiFeatureCreationCellEditor createTextualExpressionCellEditor(
 			Composite parent, ILabelProvider labelProvider,
 			EStructuralFeature structuralFeature, Collection<?> currentValues) {
-		Resource resource = ((EObject) object).eResource();
 
 		MultiFeatureCreationCellEditor textualExpressionCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
@@ -250,20 +249,18 @@ public class CustomPropertySource extends PropertySource {
 				.setInstanceClass(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 
 		textualExpressionCellEditor
-				.addProperty(new Property(
-						resource,
+				.addProperty(createProperty(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						new TextPropertyEditor(adapterFactory, true, true)));
 
-		textualExpressionCellEditor.addProperty(new Property(resource,
+		textualExpressionCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
-				new TextPropertyEditor(adapterFactory)));
+				new TextPropertyEditor()));
 
 		textualExpressionCellEditor
-				.addProperty(new Property(
-						resource,
+				.addProperty(createProperty(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE_VERSION,
-						new TextPropertyEditor(adapterFactory)));
+						new TextPropertyEditor()));
 
 		return textualExpressionCellEditor;
 	}
@@ -271,7 +268,6 @@ public class CustomPropertySource extends PropertySource {
 	private CellEditor createClockConstraintCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
 			Collection<?> currentValues) {
-		Resource resource = ((EObject) object).eResource();
 
 		MultiFeatureCreationCellEditor clockConstraintCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
@@ -280,24 +276,20 @@ public class CustomPropertySource extends PropertySource {
 				adapterFactory);
 		clockPropertyEditor.setLabelProvider(labelProvider);
 
-		// TODO:
-		// clockPropertyEditor.setChoices(choices);
-		clockConstraintCellEditor.addProperty(new Property(resource,
+		clockConstraintCellEditor.addProperty(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
 				clockPropertyEditor));
 
 		ComboPropertyEditor operatorPropertyEditor = new ComboPropertyEditor(
 				adapterFactory);
 		operatorPropertyEditor.setLabelProvider(labelProvider);
-		// TODO:
-		// operatorPropertyEditor.setChoices(choices);
-		clockConstraintCellEditor.addProperty(new Property(resource,
+
+		clockConstraintCellEditor.addProperty(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
 				operatorPropertyEditor));
 
-		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor(
-				adapterFactory);
-		clockConstraintCellEditor.addProperty(new Property(resource,
+		TextPropertyEditor boundPropertyEditor = new TextPropertyEditor();
+		clockConstraintCellEditor.addProperty(createProperty(
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
 				boundPropertyEditor));
 		return clockConstraintCellEditor;
@@ -306,35 +298,44 @@ public class CustomPropertySource extends PropertySource {
 	private CellEditor createParameterBindingCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
 			Collection<?> currentValues) {
-		Resource resource = ((EObject) object).eResource();
 
 		MultiFeatureCreationCellEditor parameterBindingCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
-		ComboPropertyEditor invocationEditor = new ComboPropertyEditor(
-				adapterFactory);
-		invocationEditor.setLabelProvider(labelProvider);
-		// TODO:
-		// clockPropertyEditor.setChoices(choices);
-		parameterBindingCellEditor.addProperty(new Property(resource,
-				CallsPackage.Literals.PARAMETER_BINDING__INVOCATION,
-				invocationEditor));
-
 		ComboPropertyEditor parameterEditor = new ComboPropertyEditor(
 				adapterFactory);
 		parameterEditor.setLabelProvider(labelProvider);
-		// TODO:
-		// operatorPropertyEditor.setChoices(choices);
-		parameterBindingCellEditor.addProperty(new Property(resource,
+
+		parameterBindingCellEditor.addProperty(createProperty(
 				CallsPackage.Literals.PARAMETER_BINDING__PARAMETER,
 				parameterEditor));
 
-		TextPropertyEditor valueExpressionEditor = new TextPropertyEditor(
-				adapterFactory);
-		parameterBindingCellEditor.addProperty(new Property(resource,
-				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				valueExpressionEditor));
+		TextPropertyEditor valueExpressionValueEditor = new TextPropertyEditor();
+		parameterBindingCellEditor.addProperty(createNavigatedProperty(
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
+				valueExpressionValueEditor, CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION));
+		
+		ComboPropertyEditor valueExpressionTypeEditor = new ComboPropertyEditor(adapterFactory);
+		parameterBindingCellEditor.addProperty(createNavigatedProperty(
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
+				valueExpressionTypeEditor, CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION));
+		valueExpressionTypeEditor.setLabelProvider(labelProvider);
+
 		return parameterBindingCellEditor;
+	}
+
+	private Property createProperty(EStructuralFeature feature,
+			AbstractPropertyEditor propertyEditor) {
+		Resource resource = ((EObject) object).eResource();
+		return new Property(resource, feature, adapterFactory, propertyEditor);
+	}
+
+	private Property createNavigatedProperty(EStructuralFeature feature,
+			AbstractPropertyEditor propertyEditor,
+			EStructuralFeature navigatedFeature) {
+		Resource resource = ((EObject) object).eResource();
+		return new NavigatedProperty(resource, feature, adapterFactory,
+				propertyEditor, navigatedFeature);
 	}
 
 }
