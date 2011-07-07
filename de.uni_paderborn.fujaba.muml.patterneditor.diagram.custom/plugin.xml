@@ -18,7 +18,7 @@
     
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
   	  <wizard
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       category="de.fujaba/de.fujaba.diagrams"
   	     icon="icons/PatternDiagram.gif"
   	     class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.part.CustomPatternDiagramCreationWizard"

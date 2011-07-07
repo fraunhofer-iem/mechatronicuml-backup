@@ -4,7 +4,7 @@
 
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
   	  <wizard
-           category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       category="de.fujaba/de.fujaba.diagrams"
            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"
            icon="icons/MessageInterfaceDiagram.gif"
            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.part.CustomMessageinterfaceDiagramCreationWizard"

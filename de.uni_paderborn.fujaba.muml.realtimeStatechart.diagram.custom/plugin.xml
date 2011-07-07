@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	       category="de.fujaba/de.fujaba.diagrams"
             class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.part.CustomRealtimeStatechartDiagramCreationWizard"
             icon="icons/StatechartFile.gif"
             id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.realtimestatechartwizard"
