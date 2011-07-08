@@ -30,13 +30,23 @@
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'messagetype'"/>
+            </initializers>
+          </domainInitializer>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
+              xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="messageinterface.gmfgraph#MessageTypeExpr"/>
-            <features
-                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+            <viewExpression
+                body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.containedParameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.eType.oclIsUndefined() or parameter.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')&#xA;"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

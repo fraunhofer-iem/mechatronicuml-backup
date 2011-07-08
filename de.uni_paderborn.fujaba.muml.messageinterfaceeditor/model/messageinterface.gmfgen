@@ -63,13 +63,21 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageInterface/messageTypes"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5003"
           editPartClassName="MessageTypeNameEditPart"
           itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageTypeNameViewFactory"
-          readOnly="true">
+          notationViewFactoryClassName="MessageTypeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -77,11 +85,8 @@
             getterName="getFigureMessageTypeExprLable"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
-        </modelFacet>
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.0"/>
       </labels>
     </childNodes>
     <topLevelNodes
@@ -132,7 +137,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
+            parser="//@labelParsers/@implementations.1">
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -309,12 +314,29 @@
   </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
+  <expressionProviders>
+    <providers
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="'messagetype'"/>
+      <expressions
+          body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.containedParameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.eType.oclIsUndefined() or parameter.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')&#xA;"/>
+    </providers>
+  </expressionProviders>
   <labelParsers
       className="MessageinterfaceParserProvider"
       extensibleViaService="true">
     <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
+        className="MessageTypeLabelExpressionLabelParser5003"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType"/>
+    </implementations>
+    <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

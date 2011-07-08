@@ -72,6 +72,11 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public MessageinterfaceDiagramEditorPlugin() {
 	}
 
@@ -94,6 +99,7 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 		adapterFactory = null;
 		linkConstraints = null;
 		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -110,7 +116,16 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+
+		// BEGIN: Customized by bingo
+		// Added to allow creation of custom ItemProviderFactories for cases, in
+		// which edit code of dependent meta-models cannot be changed.
+		de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+				.fillItemProviderFactories(factories);
+		// END: Customized
+
 		fillItemProviderFactories(factories);
+
 		return new ComposedAdapterFactory(factories);
 	}
 
@@ -267,6 +282,21 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 	public void setElementInitializers(
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory getMumlOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setMumlOCLFactory(
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**
