@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -25,6 +26,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -63,8 +66,52 @@ public class DeadlineItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUpperBoundPropertyDescriptor(object);
+			addLowerBoundPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Upper Bound feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUpperBoundPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Deadline_upperBound_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Deadline_upperBound_feature", "_UI_Deadline_type"),
+			RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
+			true,
+			false,
+			false,
+			null,
+			null,
+			null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lower Bound feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addLowerBoundPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Deadline_lowerBound_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Deadline_lowerBound_feature", "_UI_Deadline_type"),
+			RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
+			true,
+			false,
+			false,
+			null,
+			null,
+			null));
 	}
 
 	/**

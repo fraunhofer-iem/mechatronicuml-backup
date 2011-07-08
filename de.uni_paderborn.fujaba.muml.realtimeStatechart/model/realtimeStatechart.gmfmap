@@ -235,67 +235,76 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionClockResetExpr"/>
       <viewExpression
-          body="self.clockResets->iterate(clockReset; result : String = '' | &#xA;(&#xA;&#x9;if result = '' then '' else result.concat(', ') endif&#xA;).concat(if clockReset.name.oclIsUndefined() then 'null' else clockReset.name endif).concat(':=0'))"/>
+          body="'{resets: '.concat(&#xA;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat('}')"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionAbsoluteDeadlineExpr"/>
       <viewExpression
-          body="self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' | &#xA;(&#xA;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(if absoluteDeadline.clock.name.oclIsUndefined() then '' else absoluteDeadline.clock.name endif).concat(' in [').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then 'null' else absoluteDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;&#x9;).concat(',').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then 'null' else absoluteDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;))&#xA;"/>
+          body="self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;(if result = '' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(']')&#xA;)"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionRelativeDeadlineExpr"/>
       <viewExpression
           body="'['.concat(&#xA;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;).concat(',').concat(&#xA;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;).concat(']')"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionEventExpr"/>
       <viewExpression
-          body="'{'.concat(&#xA;&#x9;OrderedSet { OrderedSet { self.triggerMessageEvent }, OrderedSet{ self.raiseMessageEvent } }->iterate(events; eventsResults : String = '' | (&#xA;&#x9;&#x9;(if eventsResults = '' then '' else eventsResults.concat('} / {') endif).concat(&#xA;&#x9;&#x9;&#x9;events->iterate(event; singleEventResult : String = '' | &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;(if singleEventResult = '' then '' else singleEventResult.concat(', ') endif).concat(event.message.callee.oclAsType(msgiface::MessageType).name).concat('(').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;event.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(':').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)).concat(')')&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;))&#xA;&#x9;))&#xA;).concat('}')&#xA;&#xA;&#xA;"/>
+          body="if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;(&#xA;&#x9;&#x9;if self.triggerMessageEvent.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.triggerMessageEvent.name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;if self.triggerMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;endif&#xA;&#xA;&#x9;).concat(')')&#xA;endif"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionGuardExpr"/>
       <viewExpression
-          body="'guard'"/>
+          body="'['.concat(&#xA;&#x9;if self.guard.oclIsUndefined() or self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText&#xA;&#x9;endif&#xA;).concat(']')"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionActionExpr"/>
       <viewExpression
-          body="'transitionAction'"/>
+          body="'('.concat(&#xA;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;self.action.name&#xA;&#x9;endif&#xA;).concat(')')"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionClockConstraintExpr"/>
       <viewExpression
           body="'['.concat(&#xA;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#xA;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;))&#xA;).concat(']')"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionSafetyTransition"/>
       <viewExpression
           body="if not safe then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;endif"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:ExpressionLabelMapping">
+        xsi:type="gmfmap:ExpressionLabelMapping"
+        readOnly="true">
       <diagramLabel
           href="realtimeStatechart.gmfgraph#TransitionSynchronization"/>
       <viewExpression
-          body="if self.synchronization.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name.concat('(').concat(&#xA;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat('&quot; : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).valueType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')').concat(&#xA;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;endif"/>
+          body="if self.synchronization.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;(&#xA;&#x9;&#x9;if self.synchronization.callee.oclAsType(SynchronizationChannel).name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'('&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value).concat('&quot;')&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;')'&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;endif"/>
     </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>

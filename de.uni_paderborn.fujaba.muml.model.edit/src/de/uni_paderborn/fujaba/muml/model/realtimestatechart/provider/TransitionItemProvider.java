@@ -81,6 +81,7 @@ public class TransitionItemProvider
 			addTriggerMessageEventPropertyDescriptor(object);
 			addRaiseMessageEventPropertyDescriptor(object);
 			addClockConstraintsPropertyDescriptor(object);
+			addAbsoluteDeadlinesPropertyDescriptor(object);
 			addRelativeDeadlinePropertyDescriptor(object);
 			addSafePropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
@@ -279,23 +280,19 @@ public class TransitionItemProvider
 			}
 		};
 
-		itemPropertyDescriptors
-				.add(new DefaultChainedPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						SDMPackage.Literals.NAMED_ELEMENT__NAME,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						getString("_UI_TriggerMessageEventPropertyCategory"),
-						null,
-						rootPropertyDescriptor));
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_NamedElement_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+			SDMPackage.Literals.NAMED_ELEMENT__NAME,
+			true,
+			false,
+			false,
+			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			getString("_UI_TriggerMessageEventPropertyCategory"),
+			null,
+			rootPropertyDescriptor));
 		
 		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -311,8 +308,7 @@ public class TransitionItemProvider
 			 null,
 			 rootPropertyDescriptor);
 		
-		itemPropertyDescriptors.add
-		(new DefaultChainedPropertyDescriptor(
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_Message_instanceOf_feature"),
@@ -325,6 +321,20 @@ public class TransitionItemProvider
 			 getString("_UI_TriggerMessageEventPropertyCategory"),
 			 null,
 			 messagePropertyDescriptor));
+		
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Invocation_ownedParameterBindings_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Invocation_ownedParameterBindings_feature", "_UI_Invocation_type"),
+			CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+			true,
+			false,
+			false,
+			null,
+			getString("_UI_TriggerMessageEventPropertyCategory"),
+			null,
+			messagePropertyDescriptor));
 	}
 
 	/**
@@ -363,6 +373,28 @@ public class TransitionItemProvider
 				 getString("_UI_Transition_clockConstraints_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_clockConstraints_feature", "_UI_Transition_type"),
 				 RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+/**
+	 * This adds a property descriptor for the Absolute Deadlines feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbsoluteDeadlinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_absoluteDeadlines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_absoluteDeadlines_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES,
 				 true,
 				 false,
 				 false,

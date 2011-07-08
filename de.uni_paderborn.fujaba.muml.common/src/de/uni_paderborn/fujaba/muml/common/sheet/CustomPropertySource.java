@@ -45,6 +45,7 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -90,8 +91,6 @@ public class CustomPropertySource extends PropertySource {
 						return createEDataTypeCellEditor(eDataType, parent);
 
 					} else if (instanceClass.isAssignableFrom(EParameter.class)) {
-
-						// itemPropertyDescriptor.getPropertyValue(itemPropertyDescriptor)
 						return createParameterCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
@@ -107,6 +106,11 @@ public class CustomPropertySource extends PropertySource {
 					} else if (instanceClass
 							.isAssignableFrom(ParameterBinding.class)) {
 						return createParameterBindingCellEditor(parent,
+								getLabelProvider(), structuralFeature,
+								getCurrentValues());
+					} else if (instanceClass
+							.isAssignableFrom(AbsoluteDeadline.class)) {
+						return createAbsoluteDeadlineCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
 					}
@@ -313,14 +317,42 @@ public class CustomPropertySource extends PropertySource {
 		parameterBindingCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
 				valueExpressionValueEditor));
-		
-		ComboPropertyEditor valueExpressionTypeEditor = new ComboPropertyEditor(adapterFactory);
+
+		ComboPropertyEditor valueExpressionTypeEditor = new ComboPropertyEditor(
+				adapterFactory);
 		parameterBindingCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
 				valueExpressionTypeEditor));
 		valueExpressionTypeEditor.setLabelProvider(labelProvider);
 
 		return parameterBindingCellEditor;
+	}
+
+	private CellEditor createAbsoluteDeadlineCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
+			Collection<?> currentValues) {
+
+		MultiFeatureCreationCellEditor absoluteDeadlineCellEditor = new MultiFeatureCreationCellEditor(
+				parent, labelProvider, structuralFeature, currentValues);
+
+		ComboPropertyEditor clockTypeEditor = new ComboPropertyEditor(
+				adapterFactory);
+		absoluteDeadlineCellEditor.addProperty(createProperty(
+				RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE__CLOCK,
+				clockTypeEditor));
+		clockTypeEditor.setLabelProvider(labelProvider);
+
+		TextPropertyEditor lowerBoundValueEditor = new TextPropertyEditor();
+		absoluteDeadlineCellEditor.addProperty(createProperty(
+				RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
+				lowerBoundValueEditor));
+
+		TextPropertyEditor upperBoundValueEditor = new TextPropertyEditor();
+		absoluteDeadlineCellEditor.addProperty(createProperty(
+				RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
+				upperBoundValueEditor));
+
+		return absoluteDeadlineCellEditor;
 	}
 
 	private Property createProperty(EStructuralFeature feature,
