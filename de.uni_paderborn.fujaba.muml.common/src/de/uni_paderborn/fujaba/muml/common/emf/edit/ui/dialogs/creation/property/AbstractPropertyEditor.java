@@ -3,17 +3,8 @@ package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.propert
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-
-import de.uni_paderborn.fujaba.common.descriptor.INavigatedObjectPropertyDescriptor;
 
 /**
  * An abstract implementation of a property editor. Should be subclassed to

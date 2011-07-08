@@ -10,7 +10,8 @@ import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.provider.ParameterBindingItemProvider;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 
 public class CustomParameterBindingItemProvider extends
 		ParameterBindingItemProvider {
@@ -65,54 +66,40 @@ public class CustomParameterBindingItemProvider extends
 	 * @generated NOT
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-//				((ComposeableAdapterFactory) adapterFactory)
-//						.getRootAdapterFactory(),
-//				getResourceLocator(),
-//				getString("_UI_ParameterBinding_valueExpression_feature"),
-//				getString("_UI_PropertyDescriptor_description",
-//						"_UI_ParameterBinding_valueExpression_feature",
-//						"_UI_ParameterBinding_type"),
-//				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-//				true, false, false, null, null, null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ParameterBinding_valueExpression_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_ParameterBinding_valueExpression_feature",
+						"_UI_ParameterBinding_type"),
+				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+				true, false, false, null, null, null);
 
-		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_LiteralExpression_value_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_LiteralExpression_value_feature",
-								"_UI_LiteralExpression_type"),
-						ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
-						true,
-						false,
-						false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null,
-						null,
-						CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-						ExpressionsPackage.Literals.LITERAL_EXPRESSION));
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_LiteralExpression_value_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_LiteralExpression_value_feature",
+						"_UI_LiteralExpression_type"),
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE, true,
+				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null, ExpressionsPackage.Literals.LITERAL_EXPRESSION,
+				rootPropertyDescriptor));
 
-		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_LiteralExpression_valueType_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_LiteralExpression_valueType_feature",
-								"_UI_LiteralExpression_type"),
-						ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-						true,
-						false,
-						true,
-						null,
-						null,
-						null,
-						CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-						ExpressionsPackage.Literals.LITERAL_EXPRESSION));
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_LiteralExpression_valueType_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_LiteralExpression_valueType_feature",
+						"_UI_LiteralExpression_type"),
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
+				true, false, true, null, null, null,
+				ExpressionsPackage.Literals.LITERAL_EXPRESSION,
+				rootPropertyDescriptor));
 	}
 	
 

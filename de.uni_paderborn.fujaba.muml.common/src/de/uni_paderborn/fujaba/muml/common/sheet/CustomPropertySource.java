@@ -42,7 +42,6 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.paramete
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.ComboPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.NavigatedProperty;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
@@ -311,14 +310,14 @@ public class CustomPropertySource extends PropertySource {
 				parameterEditor));
 
 		TextPropertyEditor valueExpressionValueEditor = new TextPropertyEditor();
-		parameterBindingCellEditor.addProperty(createNavigatedProperty(
+		parameterBindingCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
-				valueExpressionValueEditor, CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION));
+				valueExpressionValueEditor));
 		
 		ComboPropertyEditor valueExpressionTypeEditor = new ComboPropertyEditor(adapterFactory);
-		parameterBindingCellEditor.addProperty(createNavigatedProperty(
+		parameterBindingCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-				valueExpressionTypeEditor, CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION));
+				valueExpressionTypeEditor));
 		valueExpressionTypeEditor.setLabelProvider(labelProvider);
 
 		return parameterBindingCellEditor;
@@ -328,14 +327,6 @@ public class CustomPropertySource extends PropertySource {
 			AbstractPropertyEditor propertyEditor) {
 		Resource resource = ((EObject) object).eResource();
 		return new Property(resource, feature, adapterFactory, propertyEditor);
-	}
-
-	private Property createNavigatedProperty(EStructuralFeature feature,
-			AbstractPropertyEditor propertyEditor,
-			EStructuralFeature navigatedFeature) {
-		Resource resource = ((EObject) object).eResource();
-		return new NavigatedProperty(resource, feature, adapterFactory,
-				propertyEditor, navigatedFeature);
 	}
 
 }
