@@ -2,9 +2,11 @@ package de.uni_paderborn.fujaba.common.descriptor;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 public abstract class AbstractChainedPropertyDescriptor extends
@@ -41,11 +43,8 @@ public abstract class AbstractChainedPropertyDescriptor extends
 			// recursively ask the parent PropertyDescriptor for the property
 			// value of its own feature.
 			// Note: getPropertyValue() internally calls getValue() again.
-			Object value = parent.getPropertyValue(object);
-			if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
-				value = ((ItemPropertyDescriptor.PropertyValueWrapper) value).getEditableValue(value);
-			}
-			realObject = (EObject) value; 
+			Object value = getWrappedValue(parent.getPropertyValue(object));
+			realObject = (EObject) value;
 		}
 
 		if (realObject != null) {
@@ -61,18 +60,73 @@ public abstract class AbstractChainedPropertyDescriptor extends
 
 	@Override
 	public void setPropertyValue(Object object, Object value) {
+		boolean notified = false;
+
 		if (parent != null) {
-			Object realObject = parent.getPropertyValue(object);
-			if (realObject instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
-				realObject = ((ItemPropertyDescriptor.PropertyValueWrapper) realObject).getEditableValue(value);
-			}
+			Object realObject = getWrappedValue(parent.getPropertyValue(object));
 			if (realObject == null) {
 				realObject = parent.createObject();
 				parent.setPropertyValue(object, realObject);
+			} else {
+				// Notify recursively to root
+				parent.notifyObject(object);
 			}
 			object = realObject;
 		}
+		
+		// Get the real old value from EMF (for the notification)
+		Object oldValue = super.getValue((EObject) object, this.feature);
+
+
+		// Set the new value
 		doSetValue(object, value);
+		
+		// Notify
+		if (!notified) {
+			// Get the real new value from EMF (for the notification)
+			Object newValue = super.getValue((EObject) object, this.feature);
+			doNotifyObject(object, oldValue, newValue);
+		}
+	}
+	
+	public void notifyObject(Object object) {
+		if (parent != null) {
+			// TODO: nicht object übergeben, da der parent PropertyDescriptor ein anderes objekt erwartet!!
+			parent.notifyObject(object);
+		}
+		Object value = getValue((EObject) object, feature);
+		doNotifyObject(object, value, value);
+	}
+
+	public void doNotifyObject(Object object, Object oldValue, Object newValue) {
+		// TODO: This solution does not yet work.
+//		int eventType = Notification.SET;
+//		if (feature.isMany()) {
+//			// TODO: Is this always working correctly?
+//			eventType = Notification.ADD_MANY;
+//		}
+//
+//		if (object instanceof InternalEObject) {
+//			((InternalEObject) object).eNotify(new ENotificationImpl(
+//					(InternalEObject) object, eventType, feature, oldValue,
+//					newValue));
+//		}
+		
+		// TODO: Hack to get this working quickly...
+		if (feature.isMany()) {
+			// TODO
+		} else {
+			super.setPropertyValue(object, null);
+			super.setPropertyValue(object, newValue);
+		}
+	}
+
+	private Object getWrappedValue(Object value) {
+		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
+			value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
+					.getEditableValue(value);
+		}
+		return value;
 	}
 
 	@Override

@@ -75,7 +75,7 @@ public class CustomParameterBindingItemProvider extends
 						"_UI_ParameterBinding_valueExpression_feature",
 						"_UI_ParameterBinding_type"),
 				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				true, false, false, null, null, null);
+				true, false, false, null, null, null, ExpressionsPackage.Literals.LITERAL_EXPRESSION);
 
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)

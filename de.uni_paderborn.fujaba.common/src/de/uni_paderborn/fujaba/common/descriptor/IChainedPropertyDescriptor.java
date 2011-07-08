@@ -11,4 +11,5 @@ public interface IChainedPropertyDescriptor extends IItemPropertyDescriptor {
 	Object doGetValue(EObject object, EStructuralFeature feature);
 	void doSetValue(Object object, Object value);
 	Object createObject();
+	void notifyObject(Object object);
 }
