@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class TimeInvariantCreateCommand extends EditElementCommand {
+public class SynchronizationChannelCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public TimeInvariantCreateCommand(CreateElementRequest req) {
+	public SynchronizationChannelCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,11 +50,14 @@ public class TimeInvariantCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createRegion();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createSynchronizationChannel();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
-		owner.getRegions().add(newElement);
+		owner.getChannels().add(newElement);
+
+		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
+				.getInstance().init_SynchronizationChannel_3005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +69,7 @@ public class TimeInvariantCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

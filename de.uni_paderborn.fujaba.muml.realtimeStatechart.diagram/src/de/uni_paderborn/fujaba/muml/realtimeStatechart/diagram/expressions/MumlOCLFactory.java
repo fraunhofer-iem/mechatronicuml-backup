@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[17];
+		this.expressions = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlAbstractExpression[18];
 	}
 
 	/**
@@ -51,11 +51,12 @@ public class MumlOCLFactory {
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
 					"\'State\'", //$NON-NLS-1$
-					"\'entry / \'.concat(if self.action.oclIsUndefined() then \'null\' else self.action.name endif)", //$NON-NLS-1$
+					"\'entry / \'.concat(if self.action.oclIsUndefined() then \'\' else self.action.name endif)", //$NON-NLS-1$
 					"\'action\'", //$NON-NLS-1$
-					"\'do / \'.concat(if self.action.oclIsUndefined() then \'null\' else self.action.name endif)", //$NON-NLS-1$
-					"\'exit / \'.concat(if self.action.oclIsUndefined() then \'null\' else self.action.name endif)", //$NON-NLS-1$
-					"if self.clock.name.oclIsUndefined() or self.operator.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.clock.name.concat(\' \').concat(\'self.operator\').concat(\' \').concat(\n\t\tif self.bound.oclIsUndefined() then\n\t\t\t\'null\'\n\t\telse\n\t\t\tself.bound.toString()\n\t\tendif\n\t)\nendif", //$NON-NLS-1$
+					"\'do / \'.concat(if self.action.oclIsUndefined() then \'\' else self.action.name endif)", //$NON-NLS-1$
+					"\'exit / \'.concat(if self.action.oclIsUndefined() then \'\' else self.action.name endif)", //$NON-NLS-1$
+					"(\n\tif self.clock.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.clock.name\n\tendif\n).concat(\' \').concat(\n\tif self.operator.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tlet array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{\n\t\t\tTuple{s = \'<\', d = modeling::expressions::ComparingOperator::LESS },\n\t\t\tTuple{s = \'\u2264\', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },\n\t\t\tTuple{s = \'=\', d = modeling::expressions::ComparingOperator::EQUAL },\n\t\t\tTuple{s = \'\u2265\', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },\n\t\t\tTuple{s = \'>\', d = modeling::expressions::ComparingOperator::GREATER },\n\t\t\tTuple{s = \'\u2260\', d = modeling::expressions::ComparingOperator::UNEQUAL },\n\t\t\tTuple{s = \'regexp\', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }\n\t\t} in array->any(t | t.d = self.operator).s\n\tendif\n).concat(\' \').concat(\n\tif self.bound.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.bound.toString()\n\tendif\n)", //$NON-NLS-1$
+					"\'channel\'", //$NON-NLS-1$
 					"(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\n\t\'(\'.concat(\n\t\tself.containedParameters->iterate(param; result : String = \'\' | \n\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t\tparam.name.concat(\' : \').concat(\n\t\t\t\t\tif param.eType.oclIsUndefined() then\n\t\t\t\t\t\t\'null\'\n\t\t\t\t\telse\n\t\t\t\t\t\tparam.eType.name\n\t\t\t\t\tendif\n\t\t\t\t)\n\t\t\t)\n\t\t)\n\t).concat(\')\')\n)", //$NON-NLS-1$
 					"\'c\'", //$NON-NLS-1$
 					"self.clockResets->iterate(clockReset; result : String = \'\' | \n(\n\tif result = \'\' then \'\' else result.concat(\', \') endif\n).concat(if clockReset.name.oclIsUndefined() then \'null\' else clockReset.name endif).concat(\':=0\'))", //$NON-NLS-1$

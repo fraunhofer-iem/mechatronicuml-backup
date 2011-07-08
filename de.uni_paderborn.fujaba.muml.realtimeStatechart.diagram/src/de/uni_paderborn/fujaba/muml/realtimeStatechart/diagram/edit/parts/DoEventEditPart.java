@@ -1,9 +1,8 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
-import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -14,8 +13,11 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -24,12 +26,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class TimeInvariantEditPart extends ShapeNodeEditPart {
+public class DoEventEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3006;
+	public static final int VISUAL_ID = 3002;
 
 	/**
 	 * @generated
@@ -44,7 +46,7 @@ public class TimeInvariantEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public TimeInvariantEditPart(View view) {
+	public DoEventEditPart(View view) {
 		super(view);
 	}
 
@@ -55,7 +57,7 @@ public class TimeInvariantEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.TimeInvariantItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.DoEventItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -91,21 +93,70 @@ public class TimeInvariantEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new RegionFigure();
+		return primaryShape = new StateEventFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public RegionFigure getPrimaryShape() {
-		return (RegionFigure) primaryShape;
+	public StateEventFigure getPrimaryShape() {
+		return (StateEventFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureStateEventLabel());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		return getContentPane();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
 		return result;
 	}
 
@@ -133,6 +184,11 @@ public class TimeInvariantEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -185,22 +241,60 @@ public class TimeInvariantEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class RegionFigure extends RectangleFigure {
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public class StateEventFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		public RegionFigure() {
+		private WrappingLabel fFigureStateEventLabel;
 
-			BorderLayout layoutThis = new BorderLayout();
+		/**
+		 * @generated
+		 */
+		public StateEventFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = false;
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(false);
-			this.setLineStyle(Graphics.LINE_DASH);
+			this.setOutline(false);
+			createContents();
+		}
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(1), getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(1)));
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fFigureStateEventLabel = new WrappingLabel();
+			fFigureStateEventLabel.setText("");
+
+			GridData constraintFFigureStateEventLabel = new GridData();
+			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStateEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateEventLabel.horizontalIndent = 0;
+			constraintFFigureStateEventLabel.horizontalSpan = 1;
+			constraintFFigureStateEventLabel.verticalSpan = 1;
+			constraintFFigureStateEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStateEventLabel, constraintFFigureStateEventLabel);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureStateEventLabel() {
+			return fFigureStateEventLabel;
 		}
 
 	}

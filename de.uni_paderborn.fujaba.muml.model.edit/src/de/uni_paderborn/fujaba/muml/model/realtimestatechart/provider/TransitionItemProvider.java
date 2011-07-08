@@ -28,6 +28,7 @@ import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.calls.CallsFactory;
 import org.storydriven.modeling.calls.CallsPackage;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -491,7 +492,8 @@ public class TransitionItemProvider
 				 false,
 				 null,
 				 getString("_UI_GuardPropertyCategory"),
-				 null);
+				 null,
+				 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 		
 
 		itemPropertyDescriptors

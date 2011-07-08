@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class SynchroChannel2CreateCommand extends EditElementCommand {
+public class DoEventCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public SynchroChannel2CreateCommand(CreateElementRequest req) {
+	public DoEventCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

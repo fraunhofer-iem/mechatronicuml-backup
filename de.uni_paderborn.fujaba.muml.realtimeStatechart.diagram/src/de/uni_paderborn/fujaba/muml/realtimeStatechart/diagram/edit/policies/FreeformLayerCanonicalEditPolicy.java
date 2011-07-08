@@ -298,7 +298,7 @@ public class FreeformLayerCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannel2EditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
 						.getDoEvent_3002ContainedLinks(view));
@@ -320,7 +320,7 @@ public class FreeformLayerCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchroChannelEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
 						.getClockConstraint_3004ContainedLinks(view));
@@ -331,7 +331,7 @@ public class FreeformLayerCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EEAction2EditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
 						.getSynchronizationChannel_3005ContainedLinks(view));
@@ -342,7 +342,7 @@ public class FreeformLayerCanonicalEditPolicy extends CanonicalEditPolicy {
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TimeInvariantEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
 						.getRegion_3006ContainedLinks(view));

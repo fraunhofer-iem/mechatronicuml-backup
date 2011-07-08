@@ -26,12 +26,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class SynchroChannel2EditPart extends ShapeNodeEditPart {
+public class ClockConstraintEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3004;
 
 	/**
 	 * @generated
@@ -46,7 +46,7 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public SynchroChannel2EditPart(View view) {
+	public ClockConstraintEditPart(View view) {
 		super(view);
 	}
 
@@ -57,7 +57,7 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.SynchroChannel2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ClockConstraintItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -93,23 +93,23 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new DoActionFigure();
+		return primaryShape = new ClockConstraintFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public DoActionFigure getPrimaryShape() {
-		return (DoActionFigure) primaryShape;
+	public ClockConstraintFigure getPrimaryShape() {
+		return (ClockConstraintFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureDoActionLabel());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureTimeInvariantExpr());
 			return true;
 		}
 		return false;
@@ -119,7 +119,7 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) {
 			return true;
 		}
 		return false;
@@ -243,23 +243,23 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class DoActionFigure extends RectangleFigure {
+	public class ClockConstraintFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureDoActionLabel;
+		private WrappingLabel fFigureTimeInvariantExpr;
 
 		/**
 		 * @generated
 		 */
-		public DoActionFigure() {
+		public ClockConstraintFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -275,26 +275,27 @@ public class SynchroChannel2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureDoActionLabel = new WrappingLabel();
-			fFigureDoActionLabel.setText("");
+			fFigureTimeInvariantExpr = new WrappingLabel();
+			fFigureTimeInvariantExpr.setText("");
 
-			GridData constraintFFigureDoActionLabel = new GridData();
-			constraintFFigureDoActionLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureDoActionLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureDoActionLabel.horizontalIndent = 0;
-			constraintFFigureDoActionLabel.horizontalSpan = 1;
-			constraintFFigureDoActionLabel.verticalSpan = 1;
-			constraintFFigureDoActionLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureDoActionLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureDoActionLabel, constraintFFigureDoActionLabel);
+			GridData constraintFFigureTimeInvariantExpr = new GridData();
+			constraintFFigureTimeInvariantExpr.verticalAlignment = GridData.CENTER;
+			constraintFFigureTimeInvariantExpr.horizontalAlignment = GridData.FILL;
+			constraintFFigureTimeInvariantExpr.horizontalIndent = 0;
+			constraintFFigureTimeInvariantExpr.horizontalSpan = 1;
+			constraintFFigureTimeInvariantExpr.verticalSpan = 1;
+			constraintFFigureTimeInvariantExpr.grabExcessHorizontalSpace = true;
+			constraintFFigureTimeInvariantExpr.grabExcessVerticalSpace = false;
+			this.add(fFigureTimeInvariantExpr,
+					constraintFFigureTimeInvariantExpr);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureDoActionLabel() {
-			return fFigureDoActionLabel;
+		public WrappingLabel getFigureTimeInvariantExpr() {
+			return fFigureTimeInvariantExpr;
 		}
 
 	}

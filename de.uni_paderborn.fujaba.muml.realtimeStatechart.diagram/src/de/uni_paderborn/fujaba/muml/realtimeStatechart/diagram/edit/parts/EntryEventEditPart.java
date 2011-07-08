@@ -93,23 +93,23 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new EEActionFigure();
+		return primaryShape = new StateEventFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public EEActionFigure getPrimaryShape() {
-		return (EEActionFigure) primaryShape;
+	public StateEventFigure getPrimaryShape() {
+		return (StateEventFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureEEActionLabel());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureStateEventLabel());
 			return true;
 		}
 		return false;
@@ -119,7 +119,7 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -243,23 +243,23 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class EEActionFigure extends RectangleFigure {
+	public class StateEventFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureEEActionLabel;
+		private WrappingLabel fFigureStateEventLabel;
 
 		/**
 		 * @generated
 		 */
-		public EEActionFigure() {
+		public StateEventFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -275,26 +275,26 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureEEActionLabel = new WrappingLabel();
-			fFigureEEActionLabel.setText("");
+			fFigureStateEventLabel = new WrappingLabel();
+			fFigureStateEventLabel.setText("");
 
-			GridData constraintFFigureEEActionLabel = new GridData();
-			constraintFFigureEEActionLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureEEActionLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureEEActionLabel.horizontalIndent = 0;
-			constraintFFigureEEActionLabel.horizontalSpan = 1;
-			constraintFFigureEEActionLabel.verticalSpan = 1;
-			constraintFFigureEEActionLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureEEActionLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureEEActionLabel, constraintFFigureEEActionLabel);
+			GridData constraintFFigureStateEventLabel = new GridData();
+			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStateEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateEventLabel.horizontalIndent = 0;
+			constraintFFigureStateEventLabel.horizontalSpan = 1;
+			constraintFFigureStateEventLabel.verticalSpan = 1;
+			constraintFFigureStateEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStateEventLabel, constraintFFigureStateEventLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureEEActionLabel() {
-			return fFigureEEActionLabel;
+		public WrappingLabel getFigureStateEventLabel() {
+			return fFigureStateEventLabel;
 		}
 
 	}

@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -24,12 +26,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class SynchroChannelEditPart extends ShapeNodeEditPart {
+public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3004;
+	public static final int VISUAL_ID = 3005;
 
 	/**
 	 * @generated
@@ -44,7 +46,7 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public SynchroChannelEditPart(View view) {
+	public SynchronizationChannelEditPart(View view) {
 		super(view);
 	}
 
@@ -55,7 +57,7 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.SynchroChannelItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.SynchronizationChannelItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -91,23 +93,24 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new TimeInvariantFigure();
+		return primaryShape = new SynchronizationChannelFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public TimeInvariantFigure getPrimaryShape() {
-		return (TimeInvariantFigure) primaryShape;
+	public SynchronizationChannelFigure getPrimaryShape() {
+		return (SynchronizationChannelFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureTimeInvariantExpr());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureSynchronizationChannelLabel());
 			return true;
 		}
 		return false;
@@ -117,7 +120,7 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) {
 			return true;
 		}
 		return false;
@@ -241,23 +244,29 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 	}
 
 	/**
 	 * @generated
 	 */
-	public class TimeInvariantFigure extends RectangleFigure {
+	public class SynchronizationChannelFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTimeInvariantExpr;
+		private WrappingLabel fFigureSynchronizationChannelLabel;
 
 		/**
 		 * @generated
 		 */
-		public TimeInvariantFigure() {
+		public SynchronizationChannelFigure() {
+
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = false;
+			this.setLayoutManager(layoutThis);
+
 			this.setOutline(false);
 			createContents();
 		}
@@ -267,18 +276,27 @@ public class SynchroChannelEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureTimeInvariantExpr = new WrappingLabel();
-			fFigureTimeInvariantExpr.setText("");
+			fFigureSynchronizationChannelLabel = new WrappingLabel();
+			fFigureSynchronizationChannelLabel.setText("");
 
-			this.add(fFigureTimeInvariantExpr);
+			GridData constraintFFigureSynchronizationChannelLabel = new GridData();
+			constraintFFigureSynchronizationChannelLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureSynchronizationChannelLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureSynchronizationChannelLabel.horizontalIndent = 0;
+			constraintFFigureSynchronizationChannelLabel.horizontalSpan = 1;
+			constraintFFigureSynchronizationChannelLabel.verticalSpan = 1;
+			constraintFFigureSynchronizationChannelLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureSynchronizationChannelLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureSynchronizationChannelLabel,
+					constraintFFigureSynchronizationChannelLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTimeInvariantExpr() {
-			return fFigureTimeInvariantExpr;
+		public WrappingLabel getFigureSynchronizationChannelLabel() {
+			return fFigureSynchronizationChannelLabel;
 		}
 
 	}

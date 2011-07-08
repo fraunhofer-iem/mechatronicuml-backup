@@ -79,7 +79,7 @@ public class SynchronizationChannelLabelExpressionLabelParser5002 implements
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						6,
+						7,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getSynchronizationChannel(), null).evaluate(
 						target);

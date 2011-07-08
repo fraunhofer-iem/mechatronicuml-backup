@@ -13,7 +13,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="State"
-          description="Creation of a state">
+          description="Creates a new State">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/c_state16.gif"
@@ -22,7 +22,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Transition"
-          description="Creation of a transition">
+          description="Creates a new Transition">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/transition16.gif"
@@ -31,7 +31,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Clock"
-          description="Creation of a clock for a statechart">
+          description="Creates a new Clock">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/clock.gif"
@@ -45,8 +45,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Time Invariant"
-          description="Creation of a time invariant">
+          title="Clock Constraint"
+          description="Creates a new Clock Constraint">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/clock.gif"
@@ -55,7 +55,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Entry Action"
-          description="Creation of a entry action">
+          description="Creates an EntryAction">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/entry_action16.gif"
@@ -64,7 +64,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Do Action"
-          description="Creation of a do action">
+          description="Creates a Do Action">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/do_action16.gif"
@@ -73,7 +73,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Exit Action"
-          description="Creation of a exit action">
+          description="Creates an Exit Action">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/exit_action16.gif"
@@ -81,20 +81,20 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Region"
-          description="Creation of a region for a state">
+          title="Synchronization Channel"
+          description="Creates a new Synchronization Channel">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/andState.gif"
+            path="icon/xAction.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Synchronization Channel"
-          description="Creation of a synchronization channel">
+          title="Region"
+          description="Creates an inner Region for a State">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/xAction.gif"
+            path="icon/andState.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
     </tools>

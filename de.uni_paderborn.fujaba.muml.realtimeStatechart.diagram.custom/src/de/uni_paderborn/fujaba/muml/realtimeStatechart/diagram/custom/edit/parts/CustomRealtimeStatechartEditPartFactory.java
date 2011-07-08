@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
@@ -30,6 +31,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomStateEditPart(view);
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);
+			case StateCompoundCompartmentEditPart.VISUAL_ID:
+				return new CustomStateCompoundCompartmentEditPart(view);
 			default:
 				break;
 			}

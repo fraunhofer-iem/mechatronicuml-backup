@@ -277,33 +277,33 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getStateName_5003Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID:
 			return getClockName_5004Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID:
-			return getEntryEventLabel_5008Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
-			return getDoEventLabel_5005Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID:
-			return getExitEventLabel_5009Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getClockConstraintLabel_5001Parser();
+			return getEntryEventLabel_5008Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getSynchronizationChannelLabel_5002Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionPriorityEditPart.VISUAL_ID:
-			return getTransitionLabel_6001Parser();
+			return getDoEventLabel_5005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getTransitionLabel_6002Parser();
+			return getExitEventLabel_5009Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-			return getTransitionLabel_6003Parser();
+			return getClockConstraintLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-			return getTransitionLabel_6004Parser();
+			return getSynchronizationChannelLabel_5002Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-			return getTransitionLabel_6005Parser();
+			return getTransitionLabel_6001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-			return getTransitionLabel_6006Parser();
+			return getTransitionLabel_6002Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-			return getTransitionLabel_6007Parser();
+			return getTransitionLabel_6003Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
-			return getTransitionLabel_6008Parser();
+			return getTransitionLabel_6004Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID:
+			return getTransitionLabel_6005Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID:
+			return getTransitionLabel_6006Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID:
+			return getTransitionLabel_6007Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID:
+			return getTransitionLabel_6008Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID:
 			return getTransitionLabel_6009Parser();
 		}
 		return null;

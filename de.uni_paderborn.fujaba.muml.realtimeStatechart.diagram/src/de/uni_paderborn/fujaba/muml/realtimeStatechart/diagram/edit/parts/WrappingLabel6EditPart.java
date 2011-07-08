@@ -49,7 +49,7 @@ public class WrappingLabel6EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6005;
+	public static final int VISUAL_ID = 6001;
 
 	/**
 	 * @generated
@@ -107,7 +107,7 @@ public class WrappingLabel6EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.MIDDLE;
+		return ConnectionLocator.SOURCE;
 	}
 
 	/**
