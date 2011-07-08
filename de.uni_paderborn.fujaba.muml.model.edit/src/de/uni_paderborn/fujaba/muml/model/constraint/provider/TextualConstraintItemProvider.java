@@ -25,7 +25,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.expressions.ExpressionsFactory;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.Correctness;
 import de.uni_paderborn.fujaba.muml.model.constraint.TextualConstraint;
@@ -77,21 +78,21 @@ public class TextualConstraintItemProvider
 	 * @generated NOT
 	 */
 	protected void addTextualExpressionPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_TextualConstraint_textualExpression_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
-//				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
-//				 true,
-//				 false,
-//				 false,
-//				 null,
-//				 getString("_UI_TextualExpressionPropertyCategory"),
-//				 null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TextualConstraint_textualExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextualConstraint_textualExpression_feature", "_UI_TextualConstraint_type"),
+				 ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_TextualExpressionPropertyCategory"),
+				 null);
+
 		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
+				.add(new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -106,10 +107,10 @@ public class TextualConstraintItemProvider
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						getString("_UI_TextualExpressionPropertyCategory"),
 						null,
-						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
+						rootPropertyDescriptor));
 
 		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
+				.add(new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -124,10 +125,10 @@ public class TextualConstraintItemProvider
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						getString("_UI_TextualExpressionPropertyCategory"),
 						null,
-						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
+						rootPropertyDescriptor));
 
 		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
+				.add(new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -143,7 +144,7 @@ public class TextualConstraintItemProvider
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						getString("_UI_TextualExpressionPropertyCategory"),
 						null,
-						ConstraintPackage.Literals.TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION));
+						rootPropertyDescriptor));
 
 	}
 

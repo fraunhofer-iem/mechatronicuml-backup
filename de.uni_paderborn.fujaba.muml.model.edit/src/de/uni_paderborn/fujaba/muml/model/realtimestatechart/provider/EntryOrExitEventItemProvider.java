@@ -23,7 +23,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
 
-import de.uni_paderborn.fujaba.common.descriptor.DefaultNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -99,21 +100,21 @@ public class EntryOrExitEventItemProvider
 	 * @generated NOT
 	 */
 	protected void addActionPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_EntryOrExitEvent_action_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
-//				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
-//				 true,
-//				 false,
-//				 false,
-//				 null,
-//				 null,
-//				 null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntryOrExitEvent_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntryOrExitEvent_action_feature", "_UI_EntryOrExitEvent_type"),
+				 RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null);
+
 		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
+				.add(new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -126,10 +127,10 @@ public class EntryOrExitEventItemProvider
 						null,
 						null,
 						null,
-						RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION));
+						rootPropertyDescriptor));
 
 		itemPropertyDescriptors
-				.add(new DefaultNavigatedObjectPropertyDescriptor(
+				.add(new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -142,7 +143,7 @@ public class EntryOrExitEventItemProvider
 						null,
 						null,
 						null,
-						RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION));
+						rootPropertyDescriptor));
 	}
 
 	/**

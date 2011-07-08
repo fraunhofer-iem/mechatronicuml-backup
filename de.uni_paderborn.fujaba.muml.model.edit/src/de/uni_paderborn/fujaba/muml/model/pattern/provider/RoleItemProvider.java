@@ -24,11 +24,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
@@ -220,21 +221,17 @@ public class RoleItemProvider
 	 * @generated NOT
 	 */
 	protected void addCardinalityPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_Role_cardinality_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_Role_cardinality_feature", "_UI_Role_type"),
-//				 PatternPackage.Literals.ROLE__CARDINALITY,
-//				 true,
-//				 false,
-//				 false,
-//				 null,
-//				 getString("_UI_CardinalityPropertyCategory"),
-//				 null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Role_cardinality_feature"), getString(
+						"_UI_PropertyDescriptor_description",
+						"_UI_Role_cardinality_feature", "_UI_Role_type"),
+				PatternPackage.Literals.ROLE__CARDINALITY, true, false, false,
+				null, getString("_UI_CardinalityPropertyCategory"), null);
 
-		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_lowerBound_feature"), getString(
@@ -243,9 +240,9 @@ public class RoleItemProvider
 						"_UI_Cardinality_type"),
 				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, PatternPackage.Literals.ROLE__CARDINALITY));
+				null, rootPropertyDescriptor));
 
-		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_upperBound_feature"), getString(
@@ -254,7 +251,7 @@ public class RoleItemProvider
 						"_UI_Cardinality_type"),
 				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, PatternPackage.Literals.ROLE__CARDINALITY));
+				null, rootPropertyDescriptor));
 	}
 
 	/**

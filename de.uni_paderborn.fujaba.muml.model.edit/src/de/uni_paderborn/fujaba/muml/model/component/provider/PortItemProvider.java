@@ -26,11 +26,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberNavigatedObjectPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Port} object.
@@ -128,21 +130,20 @@ public class PortItemProvider
 	 * @generated NOT
 	 */
 	protected void addCardinalityPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_Port_cardinality_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
-//				 ComponentPackage.Literals.PORT__CARDINALITY,
-//				 true,
-//				 false,
-//				 false,
-//				 null,
-//				 getString("_UI_CardinalityPropertyCategory"),
-//				 null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__CARDINALITY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_CardinalityPropertyCategory"),
+				 null);
 
-		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_lowerBound_feature"), getString(
@@ -151,9 +152,9 @@ public class PortItemProvider
 						"_UI_Cardinality_type"),
 				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, ComponentPackage.Literals.PORT__CARDINALITY));
+				null, rootPropertyDescriptor));
 		
-		itemPropertyDescriptors.add(new NaturalNumberNavigatedObjectPropertyDescriptor(
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_Cardinality_upperBound_feature"), getString(
@@ -162,7 +163,7 @@ public class PortItemProvider
 						"_UI_Cardinality_type"),
 				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, ComponentPackage.Literals.PORT__CARDINALITY));
+				null, rootPropertyDescriptor));
 	}
 
 
