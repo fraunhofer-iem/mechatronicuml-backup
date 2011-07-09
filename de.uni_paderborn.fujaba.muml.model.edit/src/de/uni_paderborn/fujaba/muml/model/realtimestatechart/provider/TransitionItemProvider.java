@@ -319,7 +319,7 @@ public class TransitionItemProvider
 	 * This adds a property descriptor for the Raise Message Event feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addRaiseMessageEventPropertyDescriptor(Object object) {
 		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(

@@ -33,8 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='body'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='self.cardinality.lowerBound->notEmpty()'"
+ * @model
  * @generated
  */
 public interface Port extends NamedElement, CommentableElement, ConstrainableElement {

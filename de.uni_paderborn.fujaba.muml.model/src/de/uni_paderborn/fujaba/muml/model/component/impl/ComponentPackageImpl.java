@@ -956,19 +956,31 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });											
+		   });																	
 		addAnnotation
-		  (portEClass, 
+		  (continuousPortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "body"
-		   });																
+			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
+		   });											
+		addAnnotation
+		  (hardwarePortEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "LowerBoundMustBeOne UpperBoundMustBeOne"
+		   });		
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });																														
+		   });																													
+		addAnnotation
+		  (hybridPortEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
+		   });				
 	}
 
 	/**
@@ -978,13 +990,21 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																			
 		addAnnotation
-		  (portEClass, 
+		  (continuousPortEClass, 
 		   source, 
 		   new String[] {
-			 "body", "self.cardinality.lowerBound->notEmpty()"
-		   });																
+			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
+			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
+		   });									
+		addAnnotation
+		  (hardwarePortEClass, 
+		   source, 
+		   new String[] {
+			 "LowerBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 1\n\tendif\n)",
+			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
+		   });					
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -999,6 +1019,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
 		   });																					
+		addAnnotation
+		  (hybridPortEClass, 
+		   source, 
+		   new String[] {
+			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
+			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
+		   });			
 	}
 
 } //ComponentPackageImpl

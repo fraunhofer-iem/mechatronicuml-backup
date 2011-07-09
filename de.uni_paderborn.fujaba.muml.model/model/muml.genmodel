@@ -18,9 +18,9 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/HYBRID_COMPONENT"/>
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ComponentKind/HARDWARE_COMPONENT"/>
         </genEnums>
-        <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/component/ContinousPortDirectionKind">
-          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ContinousPortDirectionKind/IN"/>
-          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ContinousPortDirectionKind/OUT"/>
+        <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//model/component/ContinuousPortDirectionKind">
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ContinuousPortDirectionKind/IN"/>
+          <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/component/ContinuousPortDirectionKind/OUT"/>
         </genEnums>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/Component">
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/ports"/>
@@ -269,8 +269,8 @@
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//model/realtimestatechart/EventKind/TRIGGER"/>
         </genEnums>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Deadline">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/upperBound"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/lowerBound"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/upperBound"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Deadline/lowerBound"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/AbsoluteDeadline">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -317,12 +317,12 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/statechart"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/clockResets"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/triggerMessageEvent"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/raiseMessageEvent"/>
+          <genFeatures notify="false" createChild="false" propertyCategory="Trigger MessageEvent"
+              propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/triggerMessageEvent"/>
+          <genFeatures notify="false" createChild="false" propertyCategory="Raise MessageEvent"
+              propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/raiseMessageEvent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/clockConstraints"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
+          <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/absoluteDeadlines"/>
           <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="Relative Deadline"
               ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/relativeDeadline"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/safe"/>
@@ -343,7 +343,7 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Action/expressions"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent/message"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/AsynchronousMessageEvent/message"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/DoEvent">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/DoEvent/action"/>

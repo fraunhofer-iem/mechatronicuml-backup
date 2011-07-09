@@ -65,14 +65,8 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/ConstrainableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="body"/>
-        </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="body" value="self.cardinality.lowerBound->notEmpty()"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
             eType="#//model/core/Cardinality" containment="true">
@@ -102,6 +96,13 @@
       <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//model/component/Port">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the continuous functionality of a port.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
             eType="#//model/component/ContinuousPortDirectionKind">
@@ -145,6 +146,13 @@
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="#//model/component/Port">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This is concrete port specification which provides the functionality of a hardware port.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="LowerBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="LowerBoundMustBeOne UpperBoundMustBeOne"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ComponentPart" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
@@ -302,6 +310,13 @@
       <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/ContinuousPort #//model/component/DiscretePort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a A/D or an D/A converter.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="ContinuousPortDirectionKind">
@@ -1047,7 +1062,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="triggerMessageEvent"
-            eType="#//model/realtimestatechart/AsynchronousMessageEvent" derived="true">
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
@@ -1056,7 +1072,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="raiseMessageEvent"
-            eType="#//model/realtimestatechart/AsynchronousMessageEvent" derived="true">
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
@@ -1101,7 +1118,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//model/realtimestatechart/TransitionEvent" transient="true" containment="true"/>
+            eType="#//model/realtimestatechart/TransitionEvent" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//model/realtimestatechart/Action"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
