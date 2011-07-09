@@ -459,7 +459,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="TransitionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionPriorityFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionEventExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionRelativeDeadlineExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockConstraintExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionGuardExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionClockResetExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionActionExprLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSafetyTransitionLabel; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionSynchroExprLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionPriorityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionPriorityFigure.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionPriorityFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionEventExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionEventExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionEventExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionAbsoluteDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionAbsoluteDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionAbsoluteDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionRelativeDeadlineExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionRelativeDeadlineExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionRelativeDeadlineExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockConstraintExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockConstraintExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockConstraintExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionGuardExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionGuardExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionGuardExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionClockResetExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionClockResetExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionClockResetExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionActionExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionActionExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionActionExprLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSafetyTransitionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSafetyTransitionLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSafetyTransitionLabel);&#xA;&#xA;&#xA;&#xA;fFigureTransitionSynchroExprLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionSynchroExprLabel.setText(&quot;-&quot;);&#xA;&#xA;this.add(fFigureTransitionSynchroExprLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xA;&#x9;&#x9;de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();&#xA;&#xA;&#xA;df.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;df.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionPriorityFigure() {&#xA;&#x9;&#x9;return fFigureTransitionPriorityFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionEventExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionEventExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionAbsoluteDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionRelativeDeadlineExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockConstraintExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockConstraintExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionGuardExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionGuardExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionClockResetExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionClockResetExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionActionExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionActionExprLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSafetyTransitionLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSafetyTransitionLabel;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionSynchroExprLabel() {&#xA;&#x9;&#x9;return fFigureTransitionSynchroExprLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TransitionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTransitionDeadlineLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TransitionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setSourceDecoration(createSourceDecoration());&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureTransitionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTransitionDeadlineLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureTransitionDeadlineLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTransitionDeadlineLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createSourceDecoration() {&#xA;&#x9;&#x9;de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration df = new de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration();&#xA;&#xA;&#xA;df.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;df.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionLabelFigure() {&#xA;&#x9;&#x9;return fFigureTransitionLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTransitionDeadlineLabelFigure() {&#xA;&#x9;&#x9;return fFigureTransitionDeadlineLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
@@ -478,13 +478,12 @@
           editPartClassName="WrappingLabel6EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true"
-          alignment="SOURCE">
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionClockResetExprLabel"
+            getterName="getFigureTransitionLabelFigure"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
@@ -499,162 +498,20 @@
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
           notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true"
-          alignment="SOURCE">
+          readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionAbsoluteDeadlineExprLabel"
+            getterName="getFigureTransitionDeadlineLabelFigure"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
               xsi:type="gmfgen:LabelOffsetAttributes"
-              y="50"/>
+              y="20"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.7"/>
-      </labels>
-      <labels
-          visualID="6003"
-          editPartClassName="WrappingLabel8EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true"
-          alignment="SOURCE">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionRelativeDeadlineExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="50"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.8"/>
-      </labels>
-      <labels
-          visualID="6004"
-          editPartClassName="WrappingLabel9EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionEventExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.9"/>
-      </labels>
-      <labels
-          visualID="6005"
-          editPartClassName="WrappingLabel10EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel10ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionGuardExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.10"/>
-      </labels>
-      <labels
-          visualID="6006"
-          editPartClassName="WrappingLabel11EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel11ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionActionExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.11"/>
-      </labels>
-      <labels
-          visualID="6007"
-          editPartClassName="WrappingLabel12EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel12ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionClockConstraintExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.12"/>
-      </labels>
-      <labels
-          visualID="6008"
-          editPartClassName="WrappingLabel13EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel13ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionSafetyTransitionLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.13"/>
-      </labels>
-      <labels
-          visualID="6009"
-          editPartClassName="WrappingLabel14EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel14ItemSemanticEditPolicy"
-          notationViewFactoryClassName="TransitionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTransitionSynchroExprLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:LabelOffsetAttributes"
-              y="-20"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.14"/>
       </labels>
     </links>
     <compartments
@@ -899,23 +756,9 @@
       <expressions
           body="'c'"/>
       <expressions
-          body="'{resets: '.concat(&#xA;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat('}')"/>
+          body="(&#xA;-- Synchronizations&#xA;&#xA;&#x9;if self.synchronization.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.synchronization.callee.oclAsType(SynchronizationChannel).name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'('&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value).concat('&quot;')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;')'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Trigger Event&#xA;&#xA;&#x9;if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.triggerMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Constraints&#xA;&#xA;&#x9;if self.clockConstraints->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;))&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Guard&#xA;&#xA;&#x9;if self.guard.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Slash (only shown, if one of the next parts is not null&#xA;&#xA;&#x9;if self.action.oclIsUndefined() and self.raiseMessageEvent.oclIsUndefined() and self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' / '&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Action&#xA;&#xA;&#x9;if self.action.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'('.concat(&#xA;&#x9;&#x9;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.action.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;&#xA;-- Raise Event&#xA;&#xA;&#x9;if self.raiseMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#xA;&#x9;&#x9;).concat(')')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Resets&#xA;&#xA;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{resets: '.concat(&#xA;&#x9;&#x9;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('}')&#xA;&#x9;endif&#xA;)"/>
       <expressions
-          body="self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;(if result = '' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(']')&#xA;)"/>
-      <expressions
-          body="'['.concat(&#xA;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;).concat(',').concat(&#xA;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;).concat(']')"/>
-      <expressions
-          body="if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;(&#xA;&#x9;&#x9;if self.triggerMessageEvent.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.triggerMessageEvent.name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;if self.triggerMessageEvent.message.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.ownedParameterBindings->iterate(binding; bindingResult : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if bindingResult = '' then '' else bindingResult.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;endif&#xA;&#xA;&#x9;).concat(')')&#xA;endif"/>
-      <expressions
-          body="'['.concat(&#xA;&#x9;if self.guard.oclIsUndefined() or self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;self.guard.oclAsType(modeling::expressions::TextualExpression).expressionText&#xA;&#x9;endif&#xA;).concat(']')"/>
-      <expressions
-          body="'('.concat(&#xA;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;self.action.name&#xA;&#x9;endif&#xA;).concat(')')"/>
-      <expressions
-          body="'['.concat(&#xA;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#xA;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;))&#xA;).concat(']')"/>
-      <expressions
-          body="if not safe then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;'&lt;&lt;safetyTransition>>'&#xD;&#xA;endif"/>
-      <expressions
-          body="if self.synchronization.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;(&#xA;&#x9;&#x9;if self.synchronization.callee.oclAsType(SynchronizationChannel).name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.synchronization.callee.oclAsType(SynchronizationChannel).name&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'('&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;self.synchronization.ownedParameterBindings->iterate(&#xA;&#x9;&#x9;&#x9;binding; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;if binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'&quot;'.concat(binding.valueExpression.oclAsType(modeling::expressions::LiteralExpression).value).concat('&quot;')&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.ownedParameterBindings->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;')'&#xA;&#x9;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;endif"/>
+          body="(&#xA;&#xA;-- Relative Deadline&#xA;&#xA;&#x9;if self.relativeDeadline.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Absolute Deadlines&#xA;&#xA;&#x9;self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;&#x9;(if result = '\n' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;)"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -976,62 +819,6 @@
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
         className="TransitionLabelExpressionLabelParser6002"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.2/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.11">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.3/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6004"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.4/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6005"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.13">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.5/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6006"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.6/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6007"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.7/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6008"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@links.0/@labels.8/@modelFacet"
-        className="TransitionLabelExpressionLabelParser6009"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Transition"/>
     </implementations>

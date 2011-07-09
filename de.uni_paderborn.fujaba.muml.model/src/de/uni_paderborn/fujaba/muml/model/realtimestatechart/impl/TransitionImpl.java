@@ -7,7 +7,9 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import java.util.Collection;
+import java.util.Iterator;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -32,12 +34,11 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
@@ -536,10 +537,27 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setTriggerMessageEvent(AsynchronousMessageEvent newTriggerMessageEvent) {
-		TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTriggerMessageEvent);
+		// TRIGGER_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTriggerMessageEvent);
+		if (newTriggerMessageEvent != null) {
+			Assert.isLegal(
+					newTriggerMessageEvent.getKind() == EventKind.TRIGGER,
+					"This AsynchronousMessageEvent does not have an EventType of TRIGGER.");
+		}
+
+		Iterator<TransitionEvent> it = getEvents().iterator();
+		while (it.hasNext()) {
+			TransitionEvent event = it.next();
+			if (event instanceof AsynchronousMessageEvent && event.getKind() == EventKind.TRIGGER) {
+				it.remove();
+			}
+		}
+		
+		if (newTriggerMessageEvent != null) {
+			getEvents().add(newTriggerMessageEvent);
+		}
 	}
 
 	/**
@@ -563,10 +581,26 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setRaiseMessageEvent(AsynchronousMessageEvent newRaiseMessageEvent) {
-		RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRaiseMessageEvent);
+		// RAISE_MESSAGE_EVENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newRaiseMessageEvent);
+		if (newRaiseMessageEvent != null) {
+			Assert.isLegal(newRaiseMessageEvent.getKind() == EventKind.RAISE,
+					"This AsynchronousMessageEvent does not have an EventType of RAISE.");
+		}
+
+		Iterator<TransitionEvent> it = getEvents().iterator();
+		while (it.hasNext()) {
+			TransitionEvent event = it.next();
+			if (event instanceof AsynchronousMessageEvent && event.getKind() == EventKind.RAISE) {
+				it.remove();
+			}
+		}
+		
+		if (newRaiseMessageEvent != null) {
+			getEvents().add(newRaiseMessageEvent);
+		}
 	}
 
 	/**
@@ -774,15 +808,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__ACTION, newAction, newAction));
-	}
-
-	private Synchronization getSynchronizationSafely() {
-		Synchronization synchronization = getSynchronization();
-		if (synchronization == null) {
-			synchronization =RealtimestatechartFactory.eINSTANCE.createSynchronization();
-			setSynchronization(synchronization);
-		}
-		return synchronization;
 	}
 
 	/**

@@ -1,12 +1,17 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts;
 
+import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
@@ -89,6 +94,41 @@ public class MessageInterfaceSuperTypeEditPart extends ConnectionNodeEditPart
 			return df;
 		}
 
+	}
+
+	/**
+	 * Handles the property changed event.
+	 * It additionally tests, if the source/target feature was changed and updates
+	 * the Connection's visualization accordingly.
+	 * @param event The property changed event.
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+
+		// Fix for MechatronicUML BUG #17:
+		// Connection does not refresh, after changing its source or target via
+		// Properties View.
+		EObject sourceElement = null;
+		if (getSource() instanceof GraphicalEditPart) {
+			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
+					.getElement();
+		}
+		EObject targetElement = null;
+		if (getTarget() instanceof GraphicalEditPart) {
+			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
+					.getElement();
+		}
+		if (notification.getOldValue() == sourceElement
+				|| notification.getOldValue() == targetElement) {
+			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+					.getRegisteredEditPolicies(getDiagramView().getElement());
+			for (CanonicalEditPolicy editPolicy : editPolicies) {
+				editPolicy.refresh();
+			}
+		}
+
+		super.handleNotificationEvent(notification);
 	}
 
 }

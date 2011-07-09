@@ -91,7 +91,7 @@ public class TransitionItemProvider
 		return itemPropertyDescriptors;
 	}
 
-/**
+	/**
 	 * This adds a property descriptor for the Synchronization feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,28 +230,6 @@ public class TransitionItemProvider
 				 null));
 	}
 
-///**
-//	 * This adds a property descriptor for the Trigger Message Event feature.
-//	 * <!-- begin-user-doc -->
-//	 * <!-- end-user-doc -->
-//	 * @generated
-//	 */
-//	protected void addTriggerMessageEventPropertyDescriptor(Object object) {
-//		itemPropertyDescriptors.add
-//			(createItemPropertyDescriptor
-//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-//				 getResourceLocator(),
-//				 getString("_UI_Transition_triggerMessageEvent_feature"),
-//				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_triggerMessageEvent_feature", "_UI_Transition_type"),
-//				 RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT,
-//				 true,
-//				 false,
-//				 true,
-//				 null,
-//				 getString("_UI_TriggerMessageEventPropertyCategory"),
-//				 null));
-//	}
-
 	/**
 	 * This adds a property descriptor for the Trigger Message Event feature.
 	 * <!-- begin-user-doc -->
@@ -344,9 +322,8 @@ public class TransitionItemProvider
 	 * @generated
 	 */
 	protected void addRaiseMessageEventPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Transition_raiseMessageEvent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_raiseMessageEvent_feature", "_UI_Transition_type"),
@@ -356,7 +333,72 @@ public class TransitionItemProvider
 				 true,
 				 null,
 				 getString("_UI_RaiseMessageEventPropertyCategory"),
-				 null));
+				 null)
+		{
+			@Override
+			public Object createObject() {
+				AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) super
+						.createObject();
+				messageEvent.setKind(EventKind.RAISE);
+				return messageEvent;
+			}
+		};
+
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_NamedElement_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+			SDMPackage.Literals.NAMED_ELEMENT__NAME,
+			true,
+			false,
+			false,
+			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			getString("_UI_RaiseMessageEventPropertyCategory"),
+			null,
+			rootPropertyDescriptor));
+		
+		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_AsynchronousMessageEvent_message_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_AsynchronousMessageEvent_message_feature", "_UI_AsynchronousMessageEvent_type"),
+			 RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_RaiseMessageEventPropertyCategory"),
+			 null,
+			 rootPropertyDescriptor);
+		
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Message_instanceOf_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Message_instanceOf_feature", "_UI_Message_type"),
+			 RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
+			 true,
+			 false,
+			 true,
+			 null,
+			 getString("_UI_RaiseMessageEventPropertyCategory"),
+			 null,
+			 messagePropertyDescriptor));
+		
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Invocation_ownedParameterBindings_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Invocation_ownedParameterBindings_feature", "_UI_Invocation_type"),
+			CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+			true,
+			false,
+			false,
+			null,
+			getString("_UI_RaiseMessageEventPropertyCategory"),
+			null,
+			messagePropertyDescriptor));
 	}
 
 	/**

@@ -172,48 +172,16 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="TransitionFigure"
-          sourceDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.10"
-          targetDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.11">
+          sourceDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.2"
+          targetDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.3">
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionPriorityLabel"
-            text="-"/>
+            name="TransitionLabelFigure"
+            text=""/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TransitionEventExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionAbsoluteDeadlineExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionRelativeDeadlineExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionClockConstraintExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionGuardExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionClockResetExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionActionExprLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionSafetyTransitionLabel"
-            text="-"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="TransitionSynchroExprLabel"
-            text="-"/>
+            name="TransitionDeadlineLabelFigure"
+            text=""/>
         <children
             xsi:type="gmfgraph:CustomDecoration"
             name="TransitionPriority"
@@ -228,35 +196,9 @@
             name="TransitionArrow"/>
       </actualFigure>
       <accessors
-          accessor="getFigureTransitionPriorityFigure"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
       <accessors
-          accessor="getFigureTransitionEventExprLabel"
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
-      <accessors
-          accessor="getFigureTransitionAbsoluteDeadlineExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
-      <accessors
-          accessor="getFigureTransitionRelativeDeadlineExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.3"/>
-      <accessors
-          accessor="getFigureTransitionClockConstraintExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.4"/>
-      <accessors
-          accessor="getFigureTransitionGuardExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.5"/>
-      <accessors
-          accessor="getFigureTransitionClockResetExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.6"/>
-      <accessors
-          accessor="getFigureTransitionActionExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.7"/>
-      <accessors
-          accessor="getFigureTransitionSafetyTransitionLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.8"/>
-      <accessors
-          accessor="getFigureTransitionSynchroExprLabel"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.9"/>
     </descriptors>
     <descriptors
         name="HistoryFigure">
@@ -433,19 +375,19 @@
       figure="StateFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <labels
-      name="TransitionPriority"
+      name="TransitionLabel"
       figure="TransitionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
+        alignment="CENTER"/>
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
-        y="20"/>
+        y="-20"/>
   </labels>
   <labels
-      name="TransitionEventExpr"
+      name="TransitionDeadlineLabel"
       figure="TransitionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.1">
@@ -454,109 +396,16 @@
         alignment="CENTER"/>
     <facets
         xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
+        y="20"/>
   </labels>
   <labels
-      name="TransitionActionExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.7">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="TransitionAbsoluteDeadlineExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.2">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="50"/>
-  </labels>
-  <labels
-      name="TransitionRelativeDeadlineExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.3">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="50"/>
-  </labels>
-  <labels
-      name="TransitionClockConstraintExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.4">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="TransitionGuardExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.5">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="TransitionClockResetExpr"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.6">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="TransitionSafetyTransition"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.8">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="TransitionSynchronization"
-      figure="TransitionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.9">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="CENTER"/>
-    <facets
-        xsi:type="gmfgraph:LabelOffsetFacet"
-        y="-20"/>
-  </labels>
-  <labels
-      name="ClockName"
+      name="ClockNameLabel"
       figure="StateFigure"
       resizeConstraint="NONE"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels
-      name="StateName"
+      name="StateNameLabel"
       figure="StateFigure"
       resizeConstraint="NONE"
       elementIcon="false"

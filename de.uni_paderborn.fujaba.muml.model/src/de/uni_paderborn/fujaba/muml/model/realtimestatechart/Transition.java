@@ -181,7 +181,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
 	 * @see #setTriggerMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerMessageEvent()
-	 * @model derived="true"
+	 * @model transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
@@ -209,7 +209,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
 	 * @see #setRaiseMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaiseMessageEvent()
-	 * @model derived="true"
+	 * @model transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
@@ -387,7 +387,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_Events()
-	 * @model containment="true" transient="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<TransitionEvent> getEvents();

@@ -77,21 +77,21 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/muml/model/pattern?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_1000); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/pattern?Role", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/core?ConstrainableElement?constraint", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RectangleEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/constraint?TextualConstraint", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.TextualConstraint_2002); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/core?ConstrainableElement?constraint", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?http:///de/uni_paderborn/fujaba/muml/model/pattern?CoordinationPattern", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/pattern?RoleConnector", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/pattern?Role", de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -148,16 +148,16 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		}
 		switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
-			return getCoordinationPattern_1000Text(view);
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			return getRole_2001Text(view);
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
-			return getConstrainableElementConstraint_4002Text(view);
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RectangleEditPart.VISUAL_ID:
 			return getTextualConstraint_2002Text(view);
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ConstrainableElementConstraintEditPart.VISUAL_ID:
+			return getConstrainableElementConstraint_4002Text(view);
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
+			return getCoordinationPattern_1000Text(view);
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return getRoleConnector_4001Text(view);
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
+			return getRole_2001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
