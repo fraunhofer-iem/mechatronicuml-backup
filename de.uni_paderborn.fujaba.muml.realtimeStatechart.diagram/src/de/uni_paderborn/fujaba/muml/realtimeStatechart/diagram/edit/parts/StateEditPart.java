@@ -426,11 +426,16 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private PolylineShape fFigureInitialStateLine;
+		private PolylineShape fFigureInitialStateArrow;
 		/**
 		 * @generated
 		 */
 		private Ellipse fFigureInitialStateEllipse;
+
+		/**
+		 * @generated
+		 */
+		private de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure fFigureInitialStateArc;
 
 		/**
 		 * @generated
@@ -447,19 +452,19 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureInitialStateLine = new PolylineShape();
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(30)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(29),
-					getMapMode().DPtoLP(25)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(30)));
-			fFigureInitialStateLine.addPoint(new Point(getMapMode().DPtoLP(25),
-					getMapMode().DPtoLP(31)));
+			fFigureInitialStateArc = new de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure();
 
-			this.add(fFigureInitialStateLine);
+			this.add(fFigureInitialStateArc);
+
+			fFigureInitialStateArrow = new PolylineShape();
+			fFigureInitialStateArrow.addPoint(new Point(
+					getMapMode().DPtoLP(27), getMapMode().DPtoLP(8)));
+			fFigureInitialStateArrow.addPoint(new Point(
+					getMapMode().DPtoLP(32), getMapMode().DPtoLP(13)));
+			fFigureInitialStateArrow.addPoint(new Point(
+					getMapMode().DPtoLP(34), getMapMode().DPtoLP(6)));
+
+			this.add(fFigureInitialStateArrow);
 
 			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
 			initialStateFigureContainer0.setFill(false);
@@ -471,9 +476,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 			fFigureInitialStateEllipse = new Ellipse();
 			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
 
-			initialStateFigureContainer0.add(fFigureInitialStateEllipse,
-					new Rectangle(getMapMode().DPtoLP(0), getMapMode()
-							.DPtoLP(0), getMapMode().DPtoLP(10), getMapMode()
+			initialStateFigureContainer0.add(
+					fFigureInitialStateEllipse,
+					new Rectangle(getMapMode().DPtoLP(10), getMapMode().DPtoLP(
+							0), getMapMode().DPtoLP(10), getMapMode()
 							.DPtoLP(10)));
 
 			fFigureStateContainer = new RectangleFigure();
@@ -604,8 +610,8 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public PolylineShape getFigureInitialStateLine() {
-			return fFigureInitialStateLine;
+		public PolylineShape getFigureInitialStateArrow() {
+			return fFigureInitialStateArrow;
 		}
 
 		/**
@@ -613,6 +619,13 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 */
 		public Ellipse getFigureInitialStateEllipse() {
 			return fFigureInitialStateEllipse;
+		}
+
+		/**
+		 * @generated
+		 */
+		public de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure getFigureInitialStateArc() {
+			return fFigureInitialStateArc;
 		}
 
 	}

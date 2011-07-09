@@ -15,23 +15,21 @@
         <layout
             xsi:type="gmfgraph:StackLayout"/>
         <children
+            xsi:type="gmfgraph:CustomFigure"
+            name="InitialStateArc"
+            qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure"/>
+        <children
             xsi:type="gmfgraph:Polyline"
-            name="InitialStateLine">
+            name="InitialStateArrow">
           <template
-              x="5"
-              y="5"/>
+              x="27"
+              y="8"/>
           <template
-              x="30"
-              y="30"/>
+              x="32"
+              y="13"/>
           <template
-              x="29"
-              y="25"/>
-          <template
-              x="30"
-              y="30"/>
-          <template
-              x="25"
-              y="31"/>
+              x="34"
+              y="6"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -45,7 +43,8 @@
               name="InitialStateEllipse">
             <layoutData
                 xsi:type="gmfgraph:XYLayoutData">
-              <topLeft/>
+              <topLeft
+                  x="10"/>
               <size
                   dx="10"
                   dy="10"/>
@@ -133,23 +132,25 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateNameLabel"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.1/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getFigureStateCompartmentActionsFigure"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
       <accessors
           accessor="getFigureStateCompartmentRegions"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
-      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="RegionFigure">

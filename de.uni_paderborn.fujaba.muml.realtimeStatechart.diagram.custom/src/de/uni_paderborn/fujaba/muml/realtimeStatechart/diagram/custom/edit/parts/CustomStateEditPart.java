@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PolylineShape;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.notation.View;
@@ -47,15 +50,31 @@ public class CustomStateEditPart extends StateEditPart {
 		
 		public CustomStateFigure(boolean initialState, boolean finalState) {
 			super();
+			initializeArc();
 			setInitial(initialState);
 			setFinal(finalState);
 		}
+		
+		protected void initializeArc() {
+			PolylineShape fFigureInitialStateArc = getFigureInitialStateArc();
+			fFigureInitialStateArc.addPoint(new Point(getMapMode().DPtoLP(13),
+					getMapMode().DPtoLP(6)));
+			fFigureInitialStateArc.addPoint(new Point(
+					getMapMode().DPtoLP(30), getMapMode().DPtoLP(13)));
+		}
+
+		@Override
+		public void paint(Graphics graphics) {
+			// TODO Auto-generated method stub
+			super.paint(graphics);
+		}
 
 		public void setInitial(boolean initialState) {
-			getFigureInitialStateLine().setVisible(initialState);
+			getFigureInitialStateArrow().setVisible(initialState);
+			getFigureInitialStateArc().setVisible(initialState);
 			MarginBorder marginBorder;
 			if (initialState) {
-				marginBorder = new MarginBorder(0, 30, 0, 0);
+				marginBorder = new MarginBorder(13, 0, 0, 0);
 			} else {
 				marginBorder = new MarginBorder(0, 0, 0, 0);
 			}
