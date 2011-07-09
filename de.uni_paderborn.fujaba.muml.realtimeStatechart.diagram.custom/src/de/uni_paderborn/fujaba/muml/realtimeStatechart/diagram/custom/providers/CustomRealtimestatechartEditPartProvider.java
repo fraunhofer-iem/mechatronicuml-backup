@@ -10,10 +10,10 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlEdi
  * @author braund
  * 
  */
-public class CustomRealtimeStatechartEditPartProvider extends
+public class CustomRealtimestatechartEditPartProvider extends
 		MumlEditPartProvider {
 
-	public CustomRealtimeStatechartEditPartProvider() {
+	public CustomRealtimestatechartEditPartProvider() {
 		setFactory(new CustomRealtimeStatechartEditPartFactory());
 		setAllowCaching(true);
 	}
