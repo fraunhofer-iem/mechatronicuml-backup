@@ -78,7 +78,7 @@ public class WrappingLabel7EditPart extends LabelEditPart implements
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID),
-				new Point(0, 50));
+				new Point(0, 20));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class WrappingLabel7EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.SOURCE;
+		return ConnectionLocator.MIDDLE;
 	}
 
 	/**

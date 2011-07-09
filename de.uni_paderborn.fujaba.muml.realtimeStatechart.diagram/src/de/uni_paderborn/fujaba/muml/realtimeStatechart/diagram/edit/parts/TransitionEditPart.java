@@ -47,55 +47,13 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionClockResetExprLabel());
+							.getFigureTransitionLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureTransitionAbsoluteDeadlineExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionRelativeDeadlineExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionEventExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionGuardExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionActionExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionClockConstraintExprLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionSafetyTransitionLabel());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureTransitionSynchroExprLabel());
+							.getFigureTransitionDeadlineLabelFigure());
 			return true;
 		}
 		return false;
@@ -119,27 +77,6 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel11EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel12EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel13EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel14EditPart) {
 			return true;
 		}
 		return false;
@@ -183,43 +120,11 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTransitionPriorityFigure;
+		private WrappingLabel fFigureTransitionLabelFigure;
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTransitionEventExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionAbsoluteDeadlineExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionRelativeDeadlineExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionClockConstraintExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionGuardExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionClockResetExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionActionExprLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionSafetyTransitionLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureTransitionSynchroExprLabel;
+		private WrappingLabel fFigureTransitionDeadlineLabelFigure;
 
 		/**
 		 * @generated
@@ -236,55 +141,15 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		 */
 		private void createContents() {
 
-			fFigureTransitionPriorityFigure = new WrappingLabel();
-			fFigureTransitionPriorityFigure.setText("-");
+			fFigureTransitionLabelFigure = new WrappingLabel();
+			fFigureTransitionLabelFigure.setText("");
 
-			this.add(fFigureTransitionPriorityFigure);
+			this.add(fFigureTransitionLabelFigure);
 
-			fFigureTransitionEventExprLabel = new WrappingLabel();
-			fFigureTransitionEventExprLabel.setText("-");
+			fFigureTransitionDeadlineLabelFigure = new WrappingLabel();
+			fFigureTransitionDeadlineLabelFigure.setText("");
 
-			this.add(fFigureTransitionEventExprLabel);
-
-			fFigureTransitionAbsoluteDeadlineExprLabel = new WrappingLabel();
-			fFigureTransitionAbsoluteDeadlineExprLabel.setText("-");
-
-			this.add(fFigureTransitionAbsoluteDeadlineExprLabel);
-
-			fFigureTransitionRelativeDeadlineExprLabel = new WrappingLabel();
-			fFigureTransitionRelativeDeadlineExprLabel.setText("-");
-
-			this.add(fFigureTransitionRelativeDeadlineExprLabel);
-
-			fFigureTransitionClockConstraintExprLabel = new WrappingLabel();
-			fFigureTransitionClockConstraintExprLabel.setText("-");
-
-			this.add(fFigureTransitionClockConstraintExprLabel);
-
-			fFigureTransitionGuardExprLabel = new WrappingLabel();
-			fFigureTransitionGuardExprLabel.setText("-");
-
-			this.add(fFigureTransitionGuardExprLabel);
-
-			fFigureTransitionClockResetExprLabel = new WrappingLabel();
-			fFigureTransitionClockResetExprLabel.setText("-");
-
-			this.add(fFigureTransitionClockResetExprLabel);
-
-			fFigureTransitionActionExprLabel = new WrappingLabel();
-			fFigureTransitionActionExprLabel.setText("-");
-
-			this.add(fFigureTransitionActionExprLabel);
-
-			fFigureTransitionSafetyTransitionLabel = new WrappingLabel();
-			fFigureTransitionSafetyTransitionLabel.setText("-");
-
-			this.add(fFigureTransitionSafetyTransitionLabel);
-
-			fFigureTransitionSynchroExprLabel = new WrappingLabel();
-			fFigureTransitionSynchroExprLabel.setText("-");
-
-			this.add(fFigureTransitionSynchroExprLabel);
+			this.add(fFigureTransitionDeadlineLabelFigure);
 
 		}
 
@@ -312,71 +177,15 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTransitionPriorityFigure() {
-			return fFigureTransitionPriorityFigure;
+		public WrappingLabel getFigureTransitionLabelFigure() {
+			return fFigureTransitionLabelFigure;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTransitionEventExprLabel() {
-			return fFigureTransitionEventExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionAbsoluteDeadlineExprLabel() {
-			return fFigureTransitionAbsoluteDeadlineExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionRelativeDeadlineExprLabel() {
-			return fFigureTransitionRelativeDeadlineExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionClockConstraintExprLabel() {
-			return fFigureTransitionClockConstraintExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionGuardExprLabel() {
-			return fFigureTransitionGuardExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionClockResetExprLabel() {
-			return fFigureTransitionClockResetExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionActionExprLabel() {
-			return fFigureTransitionActionExprLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionSafetyTransitionLabel() {
-			return fFigureTransitionSafetyTransitionLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureTransitionSynchroExprLabel() {
-			return fFigureTransitionSynchroExprLabel;
+		public WrappingLabel getFigureTransitionDeadlineLabelFigure() {
+			return fFigureTransitionDeadlineLabelFigure;
 		}
 
 	}

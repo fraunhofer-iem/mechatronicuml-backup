@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.notation.View;
@@ -41,6 +42,12 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	}
 	
 	public class CustomTransitionFigure extends TransitionFigure {
+
+		public CustomTransitionFigure() {
+			super();
+			getFigureTransitionDeadlineLabelFigure().setTextWrap(true);
+			getFigureTransitionDeadlineLabelFigure().setTextJustification(PositionConstants.CENTER);
+		}
 
 		public void setPriority(int priority) {
 			TransitionPriorityDecoration priorityDecoration = (TransitionPriorityDecoration) getSourceDecoration();
