@@ -117,7 +117,16 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+
+		// BEGIN: Customized by bingo
+		// Added to allow creation of custom ItemProviderFactories for cases, in
+		// which edit code of dependent meta-models cannot be changed.
+		de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+				.fillItemProviderFactories(factories);
+		// END: Customized
+
 		fillItemProviderFactories(factories);
+
 		return new ComposedAdapterFactory(factories);
 	}
 
