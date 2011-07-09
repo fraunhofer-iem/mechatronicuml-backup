@@ -22,13 +22,13 @@
             xsi:type="gmfgraph:Polyline"
             name="InitialStateArrow">
           <template
-              x="27"
+              x="26"
               y="8"/>
           <template
-              x="32"
+              x="31"
               y="13"/>
           <template
-              x="34"
+              x="33"
               y="6"/>
         </children>
         <children

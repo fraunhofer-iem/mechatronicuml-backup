@@ -458,11 +458,11 @@ public class StateEditPart extends ShapeNodeEditPart {
 
 			fFigureInitialStateArrow = new PolylineShape();
 			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(27), getMapMode().DPtoLP(8)));
+					getMapMode().DPtoLP(26), getMapMode().DPtoLP(8)));
 			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(32), getMapMode().DPtoLP(13)));
+					getMapMode().DPtoLP(31), getMapMode().DPtoLP(13)));
 			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(34), getMapMode().DPtoLP(6)));
+					getMapMode().DPtoLP(33), getMapMode().DPtoLP(6)));
 
 			this.add(fFigureInitialStateArrow);
 

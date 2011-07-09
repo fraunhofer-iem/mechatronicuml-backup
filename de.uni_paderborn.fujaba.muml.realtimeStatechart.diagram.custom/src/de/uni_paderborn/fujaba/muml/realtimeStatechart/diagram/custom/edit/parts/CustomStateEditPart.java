@@ -58,9 +58,9 @@ public class CustomStateEditPart extends StateEditPart {
 		protected void initializeArc() {
 			PolylineShape fFigureInitialStateArc = getFigureInitialStateArc();
 			fFigureInitialStateArc.addPoint(new Point(getMapMode().DPtoLP(13),
-					getMapMode().DPtoLP(6)));
+					getMapMode().DPtoLP(9)));
 			fFigureInitialStateArc.addPoint(new Point(
-					getMapMode().DPtoLP(30), getMapMode().DPtoLP(13)));
+					getMapMode().DPtoLP(30), getMapMode().DPtoLP(16)));
 		}
 
 		@Override
