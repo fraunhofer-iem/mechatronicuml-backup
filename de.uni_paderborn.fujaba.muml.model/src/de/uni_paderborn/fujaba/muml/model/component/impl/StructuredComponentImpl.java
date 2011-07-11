@@ -201,5 +201,16 @@ public class StructuredComponentImpl extends ComponentImpl implements Structured
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String toString() {
+
+		return "Structured_Component_"+getName();
+	}
 
 } //StructuredComponentImpl

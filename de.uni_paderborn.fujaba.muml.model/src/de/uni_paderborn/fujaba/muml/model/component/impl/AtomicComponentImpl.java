@@ -195,5 +195,16 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String toString() {
+
+		return "Atomic_Component_"+getName();
+	}
 
 } //AtomicComponentImpl
