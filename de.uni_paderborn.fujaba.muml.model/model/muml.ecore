@@ -210,7 +210,7 @@
             <details key="derivation" value="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -989,7 +989,11 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//model/realtimestatechart/StateEvent" containment="true"/>
+            eType="#//model/realtimestatechart/StateEvent" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference contains all state events of this state. State events are currently entry,&#xD;&#xA;do, and exit events."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
             upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1065,7 +1069,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1075,7 +1079,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1286,12 +1290,6 @@
             <details key="documentation" value="The clocks of this realtime statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks" eType="#//model/realtimestatechart/helper/Iterator"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
@@ -1300,6 +1298,12 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="availableClocks" upperBound="-1"
+            eType="#//model/realtimestatechart/Clock" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
