@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 
 import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import org.storydriven.modeling.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
  * @model
  * @generated
  */
-public interface ConnectorInstance extends BehavioralConnector {
+public interface ConnectorInstance extends ExtendableElement, BehavioralConnector {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.

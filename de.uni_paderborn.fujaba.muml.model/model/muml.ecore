@@ -614,7 +614,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//model/component/BehavioralConnector">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/component/BehavioralConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>

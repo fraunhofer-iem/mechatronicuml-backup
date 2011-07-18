@@ -175,7 +175,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The trigger event of this transition.
-	 * \todosd{ocl: implement derived}
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
@@ -203,7 +202,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The event which is raised upon activiation of this transition.
-	 * \todosd{ocl: implement derived}
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raise Message Event</em>' reference.

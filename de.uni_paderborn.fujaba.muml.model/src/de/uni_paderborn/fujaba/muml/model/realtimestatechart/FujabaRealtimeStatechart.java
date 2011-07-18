@@ -30,9 +30,9 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -148,30 +148,20 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	EList<Clock> getClocks();
 
 	/**
-	 * Returns the value of the '<em><b>Available Clocks</b></em>' attribute.
+	 * Returns the value of the '<em><b>Available Clocks</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Available Clocks</em>' attribute.
-	 * @see #setAvailableClocks(Iterator)
+	 * @return the value of the '<em>Available Clocks</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_AvailableClocks()
-	 * @model dataType="de.uni_paderborn.fujaba.muml.model.realtimestatechart.helper.Iterator" derived="true"
+	 * @model derived="true"
 	 * @generated
 	 */
-	Iterator getAvailableClocks();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Available Clocks</em>' attribute.
-	 * @see #getAvailableClocks()
-	 * @generated
-	 */
-	void setAvailableClocks(Iterator value);
+	EList<Clock> getAvailableClocks();
 
 	/**
 	 * Returns the value of the '<em><b>History</b></em>' attribute.

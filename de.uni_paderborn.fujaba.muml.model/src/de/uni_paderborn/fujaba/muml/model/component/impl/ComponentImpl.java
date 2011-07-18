@@ -494,8 +494,13 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 */
 	@Override
 	public String toString() {
+		if (eIsProxy()) return super.toString();
 
-		return getName();
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentImpl

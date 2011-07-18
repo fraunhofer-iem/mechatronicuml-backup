@@ -492,6 +492,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		// Add supertypes to classes
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		connectorInstanceEClass.getESuperTypes().add(theComponentPackage.getBehavioralConnector());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());

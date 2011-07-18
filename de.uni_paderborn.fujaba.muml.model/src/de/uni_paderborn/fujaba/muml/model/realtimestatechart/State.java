@@ -206,6 +206,10 @@ public interface State extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This reference contains all state events of this state. State events are currently entry,
+	 * do, and exit events.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Events</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Events()
 	 * @model containment="true"

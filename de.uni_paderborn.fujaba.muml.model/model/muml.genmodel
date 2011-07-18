@@ -373,9 +373,9 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/vertices"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eClass"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/history"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/eventQueueSize"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/availableClocks"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryOrExitPoint"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Event">

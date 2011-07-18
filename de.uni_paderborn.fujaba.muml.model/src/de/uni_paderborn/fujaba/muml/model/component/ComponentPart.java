@@ -160,7 +160,6 @@ public interface ComponentPart extends CommentableElement {
 	 * component.
 	 * Because this feature is derived, transient, volatile the model file
 	 * will not store the ports in this feature.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
 	 * @see #isSetPortsDerived()
