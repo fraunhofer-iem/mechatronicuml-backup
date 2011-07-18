@@ -6,7 +6,6 @@ import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 
 /**
  * A CreationWizard for Pattern diagrams. It implements the abstract creation
@@ -46,51 +45,6 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditor.ID;
 
 	}
-//
-//	@Override
-//	protected EObject createInitialModel() {
-//		CoordinationPattern coordinationPattern = createCoordinationPattern();
-//		Role role1 = createRole();
-//		Role role2 = createRole();
-//		
-//		coordinationPattern.getRoles().add(role1);
-//		coordinationPattern.getRoles().add(role2);
-//		
-//		RoleConnector roleConnector = PatternFactory.eINSTANCE.createRoleConnector();
-//		roleConnector.setSource(role1);
-//		roleConnector.setTarget(role2);
-//		
-//		PatternDiagram patternDiagram = PatterneditorFactory.eINSTANCE
-//			.createPatternDiagram();
-//		
-//		patternDiagram.setCoordinationPattern(coordinationPattern);
-//		
-//		
-//		for (Role role : coordinationPattern.getRoles()) {
-//			patternDiagram.getRoles().add(role);
-//		}
-//		
-//		patternDiagram.getRoleConnectors().add(roleConnector);
-//		
-//		return patternDiagram;
-//	}
-//
-//	private Role createRole() {
-//		Role role = PatternFactory.eINSTANCE.createRole();
-//		Cardinality cardinality = CoreFactory.eINSTANCE.createCardinality();
-//		NaturalNumber lowerBound = CoreFactory.eINSTANCE.createNaturalNumber();
-//		NaturalNumber upperBound = CoreFactory.eINSTANCE.createNaturalNumber();
-//		lowerBound.setValue(1);
-//		upperBound.setValue(1);
-//		cardinality.setLowerBound(lowerBound);
-//		cardinality.setUpperBound(upperBound);
-//		role.setCardinality(cardinality);
-//		return role;
-//	}
-//
-//	private CoordinationPattern createCoordinationPattern() {
-//		return PatternFactory.eINSTANCE.createCoordinationPattern();
-//	}
 
 	@Override
 	protected String getModelElementCategoryKey() {
@@ -99,7 +53,7 @@ public class CustomPatternDiagramCreationWizard extends FujabaDiagramNewWizard {
 
 	@Override
 	protected ExtendableElement createDiagramElement() {
-		return PatternFactory.eINSTANCE.createCoordinationPattern();
+		return null;
 	}
 
 }

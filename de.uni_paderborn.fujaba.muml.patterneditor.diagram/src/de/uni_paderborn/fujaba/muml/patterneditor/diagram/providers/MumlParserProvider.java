@@ -23,20 +23,20 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser roleName_5001Parser;
+	private IParser coordinationPatternName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRoleName_5001Parser() {
-		if (roleName_5001Parser == null) {
+	private IParser getCoordinationPatternName_5001Parser() {
+		if (coordinationPatternName_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers.MessageFormatParser(
 					features);
-			roleName_5001Parser = parser;
+			coordinationPatternName_5001Parser = parser;
 		}
-		return roleName_5001Parser;
+		return coordinationPatternName_5001Parser;
 	}
 
 	/**
@@ -44,8 +44,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-			return getRoleName_5001Parser();
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
+			return getCoordinationPatternName_5001Parser();
 		}
 		return null;
 	}

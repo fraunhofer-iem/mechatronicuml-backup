@@ -10,35 +10,8 @@
         title="de">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="RoleConnector"
-          description="Create new RoleConnector">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="CoordinationPattern"
           description="Create new CoordinationPattern">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Role"
-          description="Create new Role">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ConstraintLink"
-          description="Create new ConstraintLink">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

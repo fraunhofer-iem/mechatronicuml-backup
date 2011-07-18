@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface PatternPackage extends EPackage {
@@ -200,13 +201,31 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN__CONNECTORS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Role1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__ROLE1 = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Role2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PATTERN__ROLE2 = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Coordination Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PATTERN_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COORDINATION_PATTERN_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
@@ -441,6 +460,28 @@ public interface PatternPackage extends EPackage {
 	EReference getCoordinationPattern_Connectors();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1 <em>Role1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role1</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1()
+	 * @see #getCoordinationPattern()
+	 * @generated
+	 */
+	EReference getCoordinationPattern_Role1();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2 <em>Role2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role2</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2()
+	 * @see #getCoordinationPattern()
+	 * @generated
+	 */
+	EReference getCoordinationPattern_Role2();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -638,6 +679,22 @@ public interface PatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COORDINATION_PATTERN__CONNECTORS = eINSTANCE.getCoordinationPattern_Connectors();
+
+		/**
+		 * The meta object literal for the '<em><b>Role1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PATTERN__ROLE1 = eINSTANCE.getCoordinationPattern_Role1();
+
+		/**
+		 * The meta object literal for the '<em><b>Role2</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PATTERN__ROLE2 = eINSTANCE.getCoordinationPattern_Role2();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.

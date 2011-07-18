@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+
 /**
  * @generated
  */
@@ -41,10 +43,6 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container = (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) getElementToEdit();
-		if (container.getRoles().size() >= 2) {
-			return false;
-		}
 		return true;
 
 	}
@@ -54,14 +52,14 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.pattern.Role newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
-				.createRole();
+		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
+				.createCoordinationPattern();
 
-		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern owner = (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) getElementToEdit();
-		owner.getRoles().add(newElement);
+		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
+		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_Role_2001(newElement);
+				.getInstance().init_CoordinationPattern_2003(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -73,7 +71,7 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.pattern.Role newElement,
+			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

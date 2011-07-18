@@ -8,10 +8,10 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDi
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.part,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers,
  de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.part,
+ de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers,
  de.uni_paderborn.fujaba.muml.patterneditor.diagram.sheet,
  de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers
 Require-Bundle: org.eclipse.core.runtime,
@@ -37,18 +37,17 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.patterneditor;visibility:=reexport,
- org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport,
- org.storydriven.modeling;visibility:=reexport,
- org.storydriven.modeling.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.model.edit;visibility:=reexport,
- org.eclipse.gef;visibility:=reexport,
- org.eclipse.emf.validation;visibility:=reexport,
- org.eclipse.ocl.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  de.fujaba.modelinstance;visibility:=reexport,
  de.fujaba.modelinstance.edit;visibility:=reexport,
+ org.storydriven.modeling;visibility:=reexport,
+ org.storydriven.modeling.edit;visibility:=reexport,
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.eclipse.emf.validation;visibility:=reexport,
+ org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

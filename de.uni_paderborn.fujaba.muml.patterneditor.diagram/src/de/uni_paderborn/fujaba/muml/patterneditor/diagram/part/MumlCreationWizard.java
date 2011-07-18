@@ -93,7 +93,7 @@ public class MumlCreationWizard extends Wizard implements INewWizard {
 		this.selection = selection;
 		setWindowTitle(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.MumlCreationWizardTitle);
 		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewPatternWizard.gif")); //$NON-NLS-1$
+				.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 

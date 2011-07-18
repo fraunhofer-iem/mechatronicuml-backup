@@ -25,6 +25,8 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1 <em>Role1</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2 <em>Role2</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +79,37 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	 * @generated
 	 */
 	void setConnectors(RoleConnector value);
+
+	/**
+	 * Returns the value of the '<em><b>Role1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role1</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role1</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Role1()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if roles->isEmpty() then\r\n\tnull\r\nelse\r\n\troles->first()\r\nendif'"
+	 * @generated
+	 */
+	Role getRole1();
+
+	/**
+	 * Returns the value of the '<em><b>Role2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Role2</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role2</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Role2()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if roles->size() < 2 then\r\n\tnull\r\nelse\r\n\troles->last()\r\nendif'"
+	 * @generated
+	 */
+	Role getRole2();
 
 } // CoordinationPattern

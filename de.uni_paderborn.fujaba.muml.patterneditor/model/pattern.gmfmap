@@ -7,111 +7,187 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+        href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connectors"/>
           <newElementInitializers>
             <initializers
-                xsi:type="gmfmap:ReferenceNewElementSpec">
+                xsi:type="gmfmap:FeatureValueSpec">
               <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
-              <newElementInitializers>
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                  <value
-                      body="1"/>
-                </initializers>
-              </newElementInitializers>
-            </initializers>
-            <initializers
-                xsi:type="gmfmap:ReferenceNewElementSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
-              <newElementInitializers>
-                <initializers
-                    xsi:type="gmfmap:FeatureValueSpec">
-                  <feature
-                      xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                  <value
-                      body="1"/>
-                </initializers>
-              </newElementInitializers>
+                  xsi:type="ecore:EAttribute"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/bidirectional"/>
+              <value
+                  body="false"/>
             </initializers>
           </newElementInitializers>
         </initializers>
+        <initializers
+            xsi:type="gmfmap:ReferenceNewElementSpec">
+          <feature
+              xsi:type="ecore:EReference"
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'role1'"/>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
+              <value
+                  body="self.coordinationPattern.connectors->any(true)"/>
+            </initializers>
+            <elementClass
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+          </newElementInitializers>
+          <newElementInitializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'role2'"/>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                      <value
+                          body="1"/>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
+              <value
+                  body="self.coordinationPattern.connectors->any(true)"/>
+            </initializers>
+            <elementClass
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+          </newElementInitializers>
+        </initializers>
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <value
+              body="'pattern'"/>
+        </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern=""
+          editorPattern=""
+          editPattern="">
         <diagramLabel
-            href="pattern.gmfgraph#RoleName"/>
+            href="pattern.gmfgraph#CoordinationPatternName"/>
         <features
             href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pattern.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="pattern.gmfgraph#Role"/>
+          href="pattern.gmfgraph#CoordinationPattern"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ConstrainableElement/constraint"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/constraint/TextualConstraint"/>
-      <diagramNode
-          href="pattern.gmfgraph#TextualConstraint"/>
-    </ownedChild>
-  </nodes>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connectors"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
-    <diagramLink
-        href="pattern.gmfgraph#RoleConnector"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/source"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/target"/>
-  </links>
-  <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.3"/>
-    <diagramLink
-        href="pattern.gmfgraph#ConstraintLink"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ConstrainableElement/constraint"/>
-  </links>
   <diagram>
     <diagramCanvas
         href="pattern.gmfgraph#patterneditor"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
+        href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
         href="pattern.gmftool#//@palette"/>
   </diagram>

@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -37,6 +38,8 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getRole1 <em>Role1</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.CoordinationPatternImpl#getRole2 <em>Role2</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +75,26 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 * @ordered
 	 */
 	protected RoleConnector connectors;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRole1() <em>Role1</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRole1()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLE1__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.COORDINATION_PATTERN__ROLE1).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getRole2() <em>Role2</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRole2()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLE2__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PatternPackage.Literals.COORDINATION_PATTERN__ROLE2).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,6 +187,42 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Role getRole1() {
+		return (Role)ROLE1__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role basicGetRole1() {
+		return (Role)ROLE1__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role getRole2() {
+		return (Role)ROLE2__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Role basicGetRole2() {
+		return (Role)ROLE2__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -212,6 +271,12 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return getRoles();
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
 				return getConnectors();
+			case PatternPackage.COORDINATION_PATTERN__ROLE1:
+				if (resolve) return getRole1();
+				return basicGetRole1();
+			case PatternPackage.COORDINATION_PATTERN__ROLE2:
+				if (resolve) return getRole2();
+				return basicGetRole2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +340,10 @@ public class CoordinationPatternImpl extends NamedElementImpl implements Coordin
 				return roles != null && !roles.isEmpty();
 			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
 				return connectors != null;
+			case PatternPackage.COORDINATION_PATTERN__ROLE1:
+				return ROLE1__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case PatternPackage.COORDINATION_PATTERN__ROLE2:
+				return ROLE2__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

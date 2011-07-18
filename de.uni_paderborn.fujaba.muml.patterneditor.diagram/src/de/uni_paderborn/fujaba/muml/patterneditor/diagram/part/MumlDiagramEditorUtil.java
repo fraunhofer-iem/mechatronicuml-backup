@@ -49,6 +49,9 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstanceFactory;
+
 /**
  * @generated
  */
@@ -175,7 +178,7 @@ public class MumlDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern model = createInitialModel();
+				ModelElementCategory model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
@@ -225,9 +228,8 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern createInitialModel() {
-		return de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
-				.createCoordinationPattern();
+	private static ModelElementCategory createInitialModel() {
+		return ModelinstanceFactory.eINSTANCE.createModelElementCategory();
 	}
 
 	/**
@@ -236,8 +238,7 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static void attachModelToResource(
-			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern model,
+	private static void attachModelToResource(ModelElementCategory model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

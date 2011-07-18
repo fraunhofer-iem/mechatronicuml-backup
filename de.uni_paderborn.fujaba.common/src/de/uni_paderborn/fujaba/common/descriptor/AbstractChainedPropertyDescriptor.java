@@ -113,11 +113,21 @@ public abstract class AbstractChainedPropertyDescriptor extends
 //		}
 		
 		// TODO: Hack to get this working quickly...
-		if (feature.isMany()) {
-			// TODO
-		} else {
-			super.setPropertyValue(object, null);
-			super.setPropertyValue(object, newValue);
+		if (oldValue.equals(newValue)) {
+			if (feature.isMany()) {
+				// TODO
+			} else if (feature.isChangeable()) {
+				try {
+					super.setPropertyValue(object, null);
+				} catch	(Exception e) {
+					
+				}
+				try {
+					super.setPropertyValue(object, newValue);
+				} catch (Exception e) {
+					
+				}
+			}
 		}
 	}
 

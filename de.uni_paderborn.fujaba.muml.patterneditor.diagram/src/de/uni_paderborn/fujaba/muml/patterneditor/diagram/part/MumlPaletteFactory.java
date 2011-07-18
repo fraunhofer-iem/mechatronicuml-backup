@@ -8,7 +8,6 @@ import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
@@ -32,70 +31,22 @@ public class MumlPaletteFactory {
 		PaletteGroup paletteContainer = new PaletteGroup(
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.De1Group_title);
 		paletteContainer.setId("createDe1Group"); //$NON-NLS-1$
-		paletteContainer.add(createRoleConnector1CreationTool());
-		paletteContainer.add(createCoordinationPattern2CreationTool());
-		paletteContainer.add(createRole3CreationTool());
-		paletteContainer.add(createConstraintLink4CreationTool());
+		paletteContainer.add(createCoordinationPattern1CreationTool());
 		return paletteContainer;
 	}
 
 	/**
 	 * @generated
 	 */
-	private ToolEntry createRoleConnector1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.RoleConnector1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.RoleConnector1CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001));
-		entry.setId("createRoleConnector1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCoordinationPattern2CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern2CreationTool_desc,
-				null, null) {
-		};
-		entry.setId("createCoordinationPattern2CreationTool"); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createRole3CreationTool() {
+	private ToolEntry createCoordinationPattern1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.Role3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.Role3CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPattern1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001));
-		entry.setId("createRole3CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003));
+		entry.setId("createCoordinationPattern1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_2001));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createConstraintLink4CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.ConstraintLink4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.ConstraintLink4CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002));
-		entry.setId("createConstraintLink4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.ConstrainableElementConstraint_4002));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -124,35 +75,6 @@ public class MumlPaletteFactory {
 		 */
 		public Tool createTool() {
 			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
-			tool.setProperties(getToolProperties());
-			return tool;
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private static class LinkToolEntry extends ToolEntry {
-
-		/**
-		 * @generated
-		 */
-		private final List<IElementType> relationshipTypes;
-
-		/**
-		 * @generated
-		 */
-		private LinkToolEntry(String title, String description,
-				List<IElementType> relationshipTypes) {
-			super(title, description, null, null);
-			this.relationshipTypes = relationshipTypes;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Tool createTool() {
-			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}

@@ -29,7 +29,9 @@ Export-Package: «editorGen.diagram.editPartsPackageName»,
  «editorGen.diagram.editCommandsPackageName»,
  «editorGen.editor.packageName»,
  «editorGen.diagram.providersPackageName»,
+«IF editorGen.labelParsers->notEmpty()-»
  «editorGen.diagram.parsersPackageName»,
+«ENDIF-»
  «editorGen.propertySheet.packageName»
 Require-Bundle: org.eclipse.core.runtime,
 «IF editorGen.application = null-»

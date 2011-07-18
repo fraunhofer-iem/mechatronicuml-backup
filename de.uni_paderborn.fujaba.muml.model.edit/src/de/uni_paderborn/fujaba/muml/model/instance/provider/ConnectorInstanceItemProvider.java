@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.BehavioralConnectorItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -40,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * @generated
  */
 public class ConnectorInstanceItemProvider
-	extends ExtendableElementItemProvider
+	extends BehavioralConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -68,57 +69,11 @@ public class ConnectorInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBehaviorPropertyDescriptor(object);
-			addConnectorClassPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addParentComponentInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_behavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BehavioralConnector_connectorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralConnector_connectorClass_feature", "_UI_BehavioralConnector_type"),
-				 ComponentPackage.Literals.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

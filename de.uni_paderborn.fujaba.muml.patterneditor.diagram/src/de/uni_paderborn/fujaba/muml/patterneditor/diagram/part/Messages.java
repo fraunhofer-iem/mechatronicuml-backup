@@ -248,87 +248,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RoleConnector1CreationTool_title;
+	public static String CoordinationPattern1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String RoleConnector1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CoordinationPattern2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CoordinationPattern2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Role3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Role3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ConstraintLink4CreationTool_desc;
+	public static String CoordinationPattern1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_TextualConstraint_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ConstrainableElementConstraint_4002_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_2001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_2001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_CoordinationPattern_1000_links;
 
 	/**
 	 * @generated

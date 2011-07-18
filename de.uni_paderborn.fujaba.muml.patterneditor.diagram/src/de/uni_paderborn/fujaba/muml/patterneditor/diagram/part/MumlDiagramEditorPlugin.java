@@ -26,6 +26,7 @@ import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
 import org.storydriven.modeling.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.modeling.provider.SDMItemProviderAdapterFactory;
 import org.storydriven.modeling.templates.provider.TemplatesItemProviderAdapterFactory;
+
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
@@ -62,11 +63,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
-
-	/**
-	 * @generated
-	 */
 	private de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -97,7 +93,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		linkConstraints = null;
 		initializers = null;
 		oclFactory = null;
 		instance = null;
@@ -252,21 +247,6 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
-	}
-
-	/**
-	 * @generated
-	 */
-	public de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return linkConstraints;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLinkConstraints(
-			de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
-		this.linkConstraints = lc;
 	}
 
 	/**

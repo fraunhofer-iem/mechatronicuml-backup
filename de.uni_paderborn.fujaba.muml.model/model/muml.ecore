@@ -746,6 +746,11 @@
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern"
         nsPrefix="pattern">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//model/component/BehavioralConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
@@ -788,6 +793,20 @@
             eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationPattern">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role1" lowerBound="1"
+            eType="#//model/pattern/Role" changeable="false" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if roles->isEmpty() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->first()&#xD;&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="role2" lowerBound="1"
+            eType="#//model/pattern/Role" changeable="false" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if roles->size() &lt; 2 then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;roles->last()&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

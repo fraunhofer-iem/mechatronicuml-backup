@@ -6,6 +6,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstancePackage;
+
 /**
  * This registry is used to determine which type of visual object should be
  * created for the corresponding Diagram, Node, ChildNode or Link represented
@@ -83,9 +86,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-				.getCoordinationPattern().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) domainElement)) {
+		if (ModelinstancePackage.eINSTANCE.getModelElementCategory()
+				.isSuperTypeOf(domainElement.eClass())
+				&& isDiagram((ModelElementCategory) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -119,13 +122,9 @@ public class MumlVisualIDRegistry {
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.PatternDiagramEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-					.getRole().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
-			}
-			if (de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage.eINSTANCE
-					.getTextualConstraint().isSuperTypeOf(
+					.getCoordinationPattern().isSuperTypeOf(
 							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RectangleEditPart.VISUAL_ID;
+				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -159,12 +158,9 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RectangleEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -179,10 +175,6 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
-			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID;
-		}
 		return -1;
 	}
 
@@ -192,8 +184,7 @@ public class MumlVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern element) {
+	private static boolean isDiagram(ModelElementCategory element) {
 		return true;
 	}
 

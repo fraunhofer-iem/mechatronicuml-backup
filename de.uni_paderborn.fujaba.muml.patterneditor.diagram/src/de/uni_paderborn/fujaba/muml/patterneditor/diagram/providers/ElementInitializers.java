@@ -14,42 +14,132 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Role_2001(
-			de.uni_paderborn.fujaba.muml.model.pattern.Role instance) {
+	public void init_CoordinationPattern_2003(
+			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createCardinality();
-			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
+					.createRoleConnector();
+			instance.setConnectors(newInstance_0_0);
+			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_0_0);
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRoleConnector(), null).evaluate(
+							newInstance_0_0);
+			newInstance_0_0.setBidirectional(((Boolean) value_0_0_0)
+					.booleanValue());
 
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_0_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
-
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+			de.uni_paderborn.fujaba.muml.model.pattern.Role newInstance_1_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
+					.createRole();
+			instance.getRoles().add(newInstance_1_0);
+			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							1,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRole(), null).evaluate(newInstance_1_0);
+			newInstance_1_0.setName((String) value_1_0_0);
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createCardinality();
+			newInstance_1_0.setCardinality(newInstance_1_0_1_0);
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_0_1_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0_1_0.setLowerBound(newInstance_1_0_1_0_0_0);
+			Object value_1_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							2,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_1_0);
+							newInstance_1_0_1_0_0_0);
 
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_1_0_0,
+			value_1_0_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_0_1_0_0_0_0,
 							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
+			newInstance_1_0_1_0_0_0.setValue(((Long) value_1_0_1_0_0_0_0)
+					.longValue());
 
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_0_1_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0_1_0.setUpperBound(newInstance_1_0_1_0_1_0);
+			Object value_1_0_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							3,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_0_1_0_1_0);
+
+			value_1_0_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_0_1_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_0_1_0_1_0.setValue(((Long) value_1_0_1_0_1_0_0)
+					.longValue());
+
+			Object value_1_0_2 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							4,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRole(), null).evaluate(newInstance_1_0);
+			newInstance_1_0
+					.setRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_0_2);
+
+			de.uni_paderborn.fujaba.muml.model.pattern.Role newInstance_1_1 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
+					.createRole();
+			instance.getRoles().add(newInstance_1_1);
+			Object value_1_1_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRole(), null).evaluate(newInstance_1_1);
+			newInstance_1_1.setName((String) value_1_1_0);
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_1_1_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createCardinality();
+			newInstance_1_1.setCardinality(newInstance_1_1_1_0);
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_1_1_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_1_1_0.setLowerBound(newInstance_1_1_1_0_0_0);
+			Object value_1_1_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							6,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_1_1_0_0_0);
+
+			value_1_1_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_1_1_0_0_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_1_1_0_0_0.setValue(((Long) value_1_1_1_0_0_0_0)
+					.longValue());
+
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_1_1_1_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_1_1_0.setUpperBound(newInstance_1_1_1_0_1_0);
+			Object value_1_1_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							7,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_1_1_0_1_0);
+
+			value_1_1_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_1_1_1_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_1_1_0_1_0.setValue(((Long) value_1_1_1_0_1_0_0)
+					.longValue());
+
+			Object value_1_1_2 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							8,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getRole(), null).evaluate(newInstance_1_1);
+			newInstance_1_1
+					.setRoleConnector((de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector) value_1_1_2);
+
+			Object value_2 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							9,
+							de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
+									.getCoordinationPattern(), null).evaluate(
+							instance);
+			instance.setName((String) value_2);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

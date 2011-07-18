@@ -235,9 +235,14 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/RoleConnector/coordinationPattern"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/pattern/CoordinationPattern">
-          <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/roles"/>
-          <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/connectors"/>
+          <genFeatures property="None" notify="false" createChild="false" propertyDescription="Role"
+              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Role Connector"
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/connectors"/>
+          <genFeatures notify="false" createChild="false" propertyCategory="Role 1"
+              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/role1"/>
+          <genFeatures children="true" createChild="true" propertyCategory="Role 2"
+              propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/CoordinationPattern/role2"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/pattern/Role">
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
