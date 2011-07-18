@@ -238,6 +238,13 @@ public class CustomPropertySource extends PropertySource {
 		parameterCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
+		parameterCellEditor.addProperty(createProperty(
+				EcorePackage.Literals.ETYPED_ELEMENT__LOWER_BOUND,
+				new TextPropertyEditor()));
+		parameterCellEditor.addProperty(createProperty(
+				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
+				new TextPropertyEditor()));
+
 		return parameterCellEditor;
 	}
 

@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.propert
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
@@ -125,7 +126,23 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	 */
 	@Override
 	protected Object doGetValue() {
-		return styledText.getText();
+		EClassifier type = property.getFeature().getEType();
+		String text = styledText.getText();
+
+		try {
+			// TODO: Implement this in a more generic way.
+			if (int.class.isAssignableFrom(type.getInstanceClass())) {
+				return Integer.parseInt(text);
+			} else if (float.class.isAssignableFrom(type.getInstanceClass())) {
+				return Float.parseFloat(text);
+			} else if (double.class.isAssignableFrom(type.getInstanceClass())) {
+				return Double.parseDouble(text);
+			}
+		} catch (NumberFormatException nfe) {
+			return -1;
+		}
+		// if (type.getInstanceClass())
+		return text;
 	}
 
 	/**

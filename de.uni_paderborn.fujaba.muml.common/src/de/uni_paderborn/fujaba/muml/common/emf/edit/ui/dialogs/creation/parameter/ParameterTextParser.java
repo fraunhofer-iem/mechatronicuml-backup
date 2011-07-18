@@ -56,13 +56,19 @@ public class ParameterTextParser implements ITextParser {
 			if (!s.isEmpty()) {
 				String[] parts = s.split("\\:");
 				EClassifier type = null;
+				int bounds[] = new int[] { 1, 1 };
 				if (parts.length > 1) {
 					int leadingWhitespacesType = parts[1].length()
 							- parts[1].concat("A").trim().length() + 1;
 					int startType = pos + parts[0].length()
 							+ leadingWhitespacesType + 1; // Add one for the
 															// colon
-					type = getTypeClassifierByName(parts[1].trim(), true);
+
+					String typeString = parts[1].trim();
+
+					typeString = parseParameterType(typeString, bounds);
+
+					type = getTypeClassifierByName(typeString, true);
 					if (type == null && !parts[1].trim().isEmpty()) {
 						if (returnedErrorRanges != null) {
 							returnedErrorRanges.add(new Range(startType,
@@ -81,7 +87,8 @@ public class ParameterTextParser implements ITextParser {
 				} else {
 					EParameter parameter = EcoreFactory.eINSTANCE
 							.createEParameter();
-					configureParameter(parameter, parts[0].trim(), type);
+					configureParameter(parameter, parts[0].trim(), type,
+							bounds[0], bounds[1]);
 					returnedParameters.add(parameter);
 
 					Range selectionRange = new Range(pos, s.length());
@@ -93,6 +100,38 @@ public class ParameterTextParser implements ITextParser {
 			pos += s.length() + 1; // Add one for the comma-delimiter.
 		}
 		return returnedParameters;
+	}
+
+	private String parseParameterType(String typeString, int bounds[]) {
+
+		int openingBracket = typeString.indexOf('[');
+		int closingBracket = typeString.indexOf(']', openingBracket);
+		if (openingBracket != -1 && closingBracket != -1
+				&& closingBracket - openingBracket > 1) {
+
+			String cardinality = typeString.substring(openingBracket + 1,
+					closingBracket);
+
+			int dots = cardinality.indexOf("..");
+			if (dots != -1) {
+				bounds[0] = parseCardinality(cardinality.substring(0, dots));
+
+				bounds[1] = parseCardinality(cardinality.substring(dots + 2,
+						cardinality.length()));
+			} else {
+				bounds[0] = bounds[1] = parseCardinality(cardinality);
+			}
+			return typeString.substring(0, openingBracket);
+		}
+		return typeString;
+	}
+
+	private int parseCardinality(String string) {
+		try {
+			return Integer.parseInt(string);
+		} catch (NumberFormatException e) {
+			return -1;
+		}
 	}
 
 	/**
@@ -128,14 +167,16 @@ public class ParameterTextParser implements ITextParser {
 	 *            The name to set.
 	 * @param type
 	 *            The EType to set.
+	 * @param cardinality
+	 * @param upperBound
 	 */
 	private void configureParameter(EParameter parameter, String name,
-			EClassifier type) {
+			EClassifier type, int lowerBound, int upperBound) {
 		parameter.setName(name);
-//		parameter.setLowerBound(1);
-//		parameter.setUpperBound(1);
-//		parameter.setUnique(true);
-//		parameter.setOrdered(true);
+		parameter.setLowerBound(lowerBound);
+		parameter.setUpperBound(upperBound);
+		// parameter.setUnique(true);
+		parameter.setOrdered(true);
 		parameter.setEType(type);
 	}
 
