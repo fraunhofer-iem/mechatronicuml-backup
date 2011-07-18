@@ -28,12 +28,12 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 		IFigure diagram = super.createFigure();
 		
 		
-//		historyFigure = new CustomHistoryFigure();
-//		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
-//		diagram.add(historyFigure);
-//		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
-//				.getElement();
-//		updateHistoryState(statechart.isHistory());
+		historyFigure = new CustomHistoryFigure();
+		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
+		diagram.add(historyFigure);
+		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
+				.getElement();
+		updateHistoryState(statechart.isHistory());
 
 		return diagram;
 	}
