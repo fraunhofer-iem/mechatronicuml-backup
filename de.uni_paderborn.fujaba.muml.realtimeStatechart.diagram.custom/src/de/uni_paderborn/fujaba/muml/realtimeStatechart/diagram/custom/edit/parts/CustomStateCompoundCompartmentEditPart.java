@@ -48,6 +48,8 @@ public class CustomStateCompoundCompartmentEditPart extends
 			int value2 = Integer.MAX_VALUE;
 			if (o1 != null) {
 				value1 = getValue(o1);
+			}
+			if (o2 != null) {
 				value2 = getValue(o2);
 			}
 			int result = value1 - value2;
