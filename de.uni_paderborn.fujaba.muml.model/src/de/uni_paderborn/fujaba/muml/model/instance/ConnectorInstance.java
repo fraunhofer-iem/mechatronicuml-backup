@@ -33,7 +33,7 @@ import org.storydriven.modeling.ExtendableElement;
  * @model
  * @generated
  */
-public interface ConnectorInstance extends ExtendableElement, BehavioralConnector {
+public interface ConnectorInstance extends BehavioralConnector, ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.

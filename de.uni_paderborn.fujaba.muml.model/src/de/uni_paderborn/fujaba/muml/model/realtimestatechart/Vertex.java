@@ -73,12 +73,13 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this state belongs to.
+	 * \todoib{Should be 1..1, but GMF needs 0..1 here!}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getVertex_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices
-	 * @model opposite="vertices" required="true" transient="false"
+	 * @model opposite="vertices" transient="false"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechart();

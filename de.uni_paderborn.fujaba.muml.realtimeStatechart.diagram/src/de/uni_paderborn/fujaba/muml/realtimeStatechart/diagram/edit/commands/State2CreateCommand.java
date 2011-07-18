@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ClockCreateCommand extends EditElementCommand {
+public class State2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ClockCreateCommand(CreateElementRequest req) {
+	public State2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,14 +50,14 @@ public class ClockCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-				.createClock();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createState();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart) getElementToEdit();
-		owner.getClocks().add(newElement);
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
+		owner.getVertices().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_Clock_2002(newElement);
+				.getInstance().init_State_3009(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -69,7 +69,7 @@ public class ClockCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

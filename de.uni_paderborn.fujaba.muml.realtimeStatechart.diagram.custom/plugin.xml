@@ -14,7 +14,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditor"
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.part.CustomRealtimestatechartDiagramEditor"
             contributorClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramActionBarContributor"
             default="true"
             extensions="realtimestatechart_diagram"

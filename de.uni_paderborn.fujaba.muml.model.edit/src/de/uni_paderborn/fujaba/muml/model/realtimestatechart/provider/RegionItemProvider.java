@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -129,6 +130,8 @@ public class RegionItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__VERTICES);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__TRANSITIONS);
 		}
 		return childrenFeatures;
 	}
@@ -188,6 +191,8 @@ public class RegionItemProvider
 				return;
 			case RealtimestatechartPackage.REGION__ANNOTATION:
 			case RealtimestatechartPackage.REGION__EXTENSION:
+			case RealtimestatechartPackage.REGION__VERTICES:
+			case RealtimestatechartPackage.REGION__TRANSITIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -207,11 +212,6 @@ public class RegionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
@@ -219,6 +219,46 @@ public class RegionItemProvider
 			(createChildParameter
 				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createState()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createStateEntryOrExitPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createEntryPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createExitPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createStateEntryPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__VERTICES,
+				 RealtimestatechartFactory.eINSTANCE.createStateExitPoint()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__TRANSITIONS,
+				 RealtimestatechartFactory.eINSTANCE.createTransition()));
 	}
 
 }

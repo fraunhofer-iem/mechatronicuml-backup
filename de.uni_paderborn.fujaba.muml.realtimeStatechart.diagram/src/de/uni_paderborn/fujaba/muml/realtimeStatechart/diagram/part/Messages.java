@@ -283,16 +283,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Clock3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Clock3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String ClockConstraint1CreationTool_title;
 
 	/**
@@ -363,7 +353,37 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String RegionFujabaRealtimeStatechartCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StateCompoundCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String StateRegionCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_FujabaRealtimeStatechart_1000_links;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3009_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_State_3009_outgoinglinks;
 
 	/**
 	 * @generated
@@ -374,11 +394,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Transition_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_FujabaRealtimeStatechart_1000_links;
 
 	/**
 	 * @generated

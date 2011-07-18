@@ -210,7 +210,7 @@
             <details key="derivation" value="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
+            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -614,7 +614,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/component/BehavioralConnector">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="#//model/component/BehavioralConnector ../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>
@@ -890,10 +890,10 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents clocks of a realtime statechart."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/clocks">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
+            eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/clocks">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The realtime statechart this clock belongs to.&#xD;&#xA;\todosd{is this info necessary?}"/>
+            <details key="documentation" value="The realtime statechart this clock belongs to.&#xA;\todoib{Should be 1..1, but GMF needs 0..1 here!}&#xD;&#xA;\todosd{is this info necessary?}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -911,6 +911,26 @@
             eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/regions">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The state this region is embedded."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+            eType="#//model/realtimestatechart/Vertex" volatile="true" transient="true"
+            derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The derived states of the realtime statechart."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="-- we only derive states, if the selected statechart is different to our parentState's statechart&#xA;-- this ensures that no endless recursion happens, when creating child-editparts for the states.&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.vertices&#xD;&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+            eType="#//model/realtimestatechart/Transition" volatile="true" transient="true"
+            derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The derived states of the realtime statechart."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="-- we only derive transitions, if the selected statechart is different to our parentState's statechart&#xA;-- (consistently to Region.vertices; see comments in derivation there for details)&#xA;&#xA;if self.statechart.oclIsUndefined() or self.statechart = self.parentState.statechart then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.statechart.transitions&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -989,11 +1009,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//model/realtimestatechart/StateEvent" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference contains all state events of this state. State events are currently entry,&#xD;&#xA;do, and exit events."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+            eType="#//model/realtimestatechart/StateEvent" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
             upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1017,10 +1033,10 @@
             <details key="documentation" value="The incoming transitions of this vertex"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
-            eType="#//model/realtimestatechart/FujabaRealtimeStatechart" eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/vertices">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/FujabaRealtimeStatechart"
+            eOpposite="#//model/realtimestatechart/FujabaRealtimeStatechart/vertices">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The realtime statechart this state belongs to."/>
+            <details key="documentation" value="The realtime statechart this state belongs to.&#xA;\todoib{Should be 1..1, but GMF needs 0..1 here!}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1069,7 +1085,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1079,7 +1095,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1290,6 +1306,12 @@
             <details key="documentation" value="The clocks of this realtime statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableClocks" eType="#//model/realtimestatechart/helper/Iterator"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
@@ -1298,12 +1320,6 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="availableClocks" upperBound="-1"
-            eType="#//model/realtimestatechart/Clock" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Available clocks are all clocks that were defined in this statechart or in ancestor statecharts.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

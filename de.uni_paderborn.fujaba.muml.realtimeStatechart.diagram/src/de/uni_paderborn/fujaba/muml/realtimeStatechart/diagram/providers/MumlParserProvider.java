@@ -42,25 +42,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser clockName_5004Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getClockName_5004Parser() {
-		if (clockName_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
-					features);
-			clockName_5004Parser = parser;
-		}
-		return clockName_5004Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5008 entryEventLabel_5008Parser;
 
 	/**
@@ -136,6 +117,25 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser stateName_5010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateName_5010Parser() {
+		if (stateName_5010Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			stateName_5010Parser = parser;
+		}
+		return stateName_5010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6001 transitionLabel_6001Parser;
 
 	/**
@@ -170,8 +170,6 @@ public class MumlParserProvider extends AbstractProvider implements
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5003Parser();
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockNameEditPart.VISUAL_ID:
-			return getClockName_5004Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getEntryEventLabel_5008Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
@@ -182,6 +180,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getClockConstraintLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 			return getSynchronizationChannelLabel_5002Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateName2EditPart.VISUAL_ID:
+			return getStateName_5010Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getTransitionLabel_6001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:

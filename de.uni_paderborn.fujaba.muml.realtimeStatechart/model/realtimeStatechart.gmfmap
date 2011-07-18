@@ -175,7 +175,8 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.0/@ownedChild/@compartments.1">
+          compartment="//@nodes.0/@ownedChild/@compartments.1"
+          referencedChild="//@nodes.0/@ownedChild/@children.5/@ownedChild">
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/regions"/>
         <ownedChild>
@@ -186,6 +187,17 @@
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.5"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#Region"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.5/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/vertices"/>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.5/@ownedChild/@children.0">
+            <compartment
+                href="realtimeStatechart.gmfgraph#FujabaRealtimeStatechartCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments
@@ -198,37 +210,6 @@
         <compartment
             href="realtimeStatechart.gmfgraph#RegionCompartment"/>
       </compartments>
-    </ownedChild>
-  </nodes>
-  <nodes>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/clocks"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Clock"/>
-      <domainInitializer
-          xsi:type="gmfmap:FeatureSeqInitializer">
-        <initializers
-            xsi:type="gmfmap:FeatureValueSpec">
-          <feature
-              xsi:type="ecore:EAttribute"
-              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-          <value
-              body="'c'"/>
-        </initializers>
-      </domainInitializer>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="realtimeStatechart.gmfgraph#ClockNameLabel"/>
-        <features
-            href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-      </labelMappings>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.2"/>
-      <diagramNode
-          href="realtimeStatechart.gmfgraph#Clock"/>
     </ownedChild>
   </nodes>
   <links>

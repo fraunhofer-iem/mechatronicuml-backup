@@ -333,13 +333,31 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PARENT_STATE = PRIORITIZABLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Vertices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__VERTICES = PRIORITIZABLE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__TRANSITIONS = PRIORITIZABLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 5;
+	int REGION_FEATURE_COUNT = PRIORITIZABLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.VertexImpl <em>Vertex</em>}' class.
@@ -1408,13 +1426,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Available Clocks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>History</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__HISTORY = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 5;
+	int FUJABA_REALTIME_STATECHART__HISTORY = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Event Queue Size</b></em>' attribute.
@@ -1423,16 +1450,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Available Clocks</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
+	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
@@ -2256,6 +2274,28 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRegion_ParentState();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices <em>Vertices</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Vertices</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getVertices()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EReference getRegion_Vertices();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions <em>Transitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region#getTransitions()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EReference getRegion_Transitions();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2915,15 +2955,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getFujabaRealtimeStatechart_Clocks();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Available Clocks</em>'.
+	 * @return the meta object for the attribute '<em>Available Clocks</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks()
 	 * @see #getFujabaRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getFujabaRealtimeStatechart_AvailableClocks();
+	EAttribute getFujabaRealtimeStatechart_AvailableClocks();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}'.
@@ -3261,6 +3301,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REGION__PARENT_STATE = eINSTANCE.getRegion_ParentState();
+
+		/**
+		 * The meta object literal for the '<em><b>Vertices</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION__VERTICES = eINSTANCE.getRegion_Vertices();
+
+		/**
+		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION__TRANSITIONS = eINSTANCE.getRegion_Transitions();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl <em>State</em>}' class.
@@ -3775,12 +3831,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference FUJABA_REALTIME_STATECHART__CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_Clocks();
 
 		/**
-		 * The meta object literal for the '<em><b>Available Clocks</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Available Clocks</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
+		EAttribute FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS = eINSTANCE.getFujabaRealtimeStatechart_AvailableClocks();
 
 		/**
 		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.

@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.notation.View;
@@ -24,12 +26,15 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 	@Override
 	protected IFigure createFigure() {
 		IFigure diagram = super.createFigure();
-		historyFigure = new CustomHistoryFigure();
-		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
-		diagram.add(historyFigure);
-		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
-				.getElement();
-		updateHistoryState(statechart.isHistory());
+		
+		
+//		historyFigure = new CustomHistoryFigure();
+//		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
+//		diagram.add(historyFigure);
+//		FujabaRealtimeStatechart statechart = (FujabaRealtimeStatechart) getNotationView()
+//				.getElement();
+//		updateHistoryState(statechart.isHistory());
+
 		return diagram;
 	}
 

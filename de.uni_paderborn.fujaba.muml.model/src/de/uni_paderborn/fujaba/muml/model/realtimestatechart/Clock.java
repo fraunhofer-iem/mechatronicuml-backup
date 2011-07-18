@@ -40,13 +40,14 @@ public interface Clock extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this clock belongs to.
+	 * \todoib{Should be 1..1, but GMF needs 0..1 here!}
 	 * \todosd{is this info necessary?}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' container reference.
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getClock_Statechart()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks
-	 * @model opposite="clocks" required="true" transient="false"
+	 * @model opposite="clocks" transient="false"
 	 * @generated
 	 */
 	FujabaRealtimeStatechart getStatechart();

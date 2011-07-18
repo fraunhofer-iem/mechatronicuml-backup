@@ -28,15 +28,6 @@
             path="icon/transition16.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Clock"
-          description="Creates a new Clock">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icon/clock.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
-      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

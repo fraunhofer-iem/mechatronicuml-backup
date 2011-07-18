@@ -7,15 +7,23 @@ import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 public class TransitionPriorityDecoration extends Ellipse implements RotatableDecoration {
 
-	WrappingLabel priorityLabel;
+	static final Font PRIORITY_LABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 8, SWT.NORMAL);
+	
+	private WrappingLabel priorityLabel;
 	
 	public TransitionPriorityDecoration() {
 		this.setLayoutManager(new StackLayout());
 		priorityLabel = new WrappingLabel("0");
-		priorityLabel.setBorder(new MarginBorder(4, 7, 4, 7));
+		priorityLabel.setBorder(new MarginBorder(2, 5, 2, 5));
+		priorityLabel.setFont(PRIORITY_LABEL_FONT);
 		this.add(priorityLabel);
 	}
 

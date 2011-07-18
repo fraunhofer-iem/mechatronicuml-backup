@@ -39,9 +39,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,6 +99,26 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	protected EList<Clock> clocks;
 
 	/**
+	 * The default value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iterator AVAILABLE_CLOCKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAvailableClocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iterator availableClocks = AVAILABLE_CLOCKS_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #isHistory() <em>History</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,16 +157,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAvailableClocks() <em>Available Clocks</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAvailableClocks()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Clock> availableClocks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,11 +316,20 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Clock> getAvailableClocks() {
-		if (availableClocks == null) {
-			availableClocks = new EObjectResolvingEList<Clock>(Clock.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS);
-		}
+	public Iterator getAvailableClocks() {
 		return availableClocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAvailableClocks(Iterator newAvailableClocks) {
+		Iterator oldAvailableClocks = availableClocks;
+		availableClocks = newAvailableClocks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS, oldAvailableClocks, availableClocks));
 	}
 
 	/**
@@ -418,12 +437,12 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return basicGetEClass();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				return getClocks();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return getAvailableClocks();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				return isHistory();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				return getEventQueueSize();
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				return getAvailableClocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -455,15 +474,14 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				getClocks().clear();
 				getClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks((Iterator)newValue);
+				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				setHistory((Boolean)newValue);
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize((Integer)newValue);
-				return;
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				getAvailableClocks().clear();
-				getAvailableClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -492,14 +510,14 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
 				return;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				setAvailableClocks(AVAILABLE_CLOCKS_EDEFAULT);
+				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				setHistory(HISTORY_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				getAvailableClocks().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -523,12 +541,12 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return eClass != null;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
+				return AVAILABLE_CLOCKS_EDEFAULT == null ? availableClocks != null : !AVAILABLE_CLOCKS_EDEFAULT.equals(availableClocks);
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 				return history != HISTORY_EDEFAULT;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
-				return availableClocks != null && !availableClocks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -543,7 +561,9 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (history: ");
+		result.append(" (availableClocks: ");
+		result.append(availableClocks);
+		result.append(", history: ");
 		result.append(history);
 		result.append(", eventQueueSize: ");
 		result.append(eventQueueSize);

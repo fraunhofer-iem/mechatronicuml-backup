@@ -135,15 +135,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStateCompartmentActionsFigure();
+			IFigure pane = getPrimaryShape().getFigureCompoundCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStateCompartmentRegions();
+			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -160,15 +159,14 @@ public class StateEditPart extends ShapeNodeEditPart {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureStateCompartmentActionsFigure();
+			IFigure pane = getPrimaryShape().getFigureCompoundCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureStateCompartmentRegions();
+			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
 					.getFigure());
@@ -202,10 +200,10 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart) {
-			return getPrimaryShape().getFigureStateCompartmentActionsFigure();
+			return getPrimaryShape().getFigureCompoundCompartment();
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
-			return getPrimaryShape().getFigureStateCompartmentRegions();
+			return getPrimaryShape().getFigureRegionsCompartment();
 		}
 		return getContentPane();
 	}
@@ -214,7 +212,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 90);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -322,6 +320,9 @@ public class StateEditPart extends ShapeNodeEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4001);
 		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4001);
+		}
 		return types;
 	}
 
@@ -332,6 +333,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4001) {
 			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_2001);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3009);
 		}
 		return types;
 	}
@@ -352,6 +354,7 @@ public class StateEditPart extends ShapeNodeEditPart {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4001) {
 			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_2001);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3009);
 		}
 		return types;
 	}
@@ -406,11 +409,11 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureStateCompartmentActionsFigure;
+		private RectangleFigure fFigureCompoundCompartment;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureStateCompartmentRegions;
+		private RectangleFigure fFigureRegionsCompartment;
 		/**
 		 * @generated
 		 */
@@ -431,7 +434,6 @@ public class StateEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private Ellipse fFigureInitialStateEllipse;
-
 		/**
 		 * @generated
 		 */
@@ -535,33 +537,33 @@ public class StateEditPart extends ShapeNodeEditPart {
 			stateFigure2.add(fFigureStateNameLabel,
 					constraintFFigureStateNameLabel);
 
-			fFigureStateCompartmentActionsFigure = new RectangleFigure();
-			fFigureStateCompartmentActionsFigure.setOutline(false);
+			fFigureCompoundCompartment = new RectangleFigure();
+			fFigureCompoundCompartment.setOutline(false);
 
-			GridData constraintFFigureStateCompartmentActionsFigure = new GridData();
-			constraintFFigureStateCompartmentActionsFigure.verticalAlignment = GridData.CENTER;
-			constraintFFigureStateCompartmentActionsFigure.horizontalAlignment = GridData.FILL;
-			constraintFFigureStateCompartmentActionsFigure.horizontalIndent = 0;
-			constraintFFigureStateCompartmentActionsFigure.horizontalSpan = 1;
-			constraintFFigureStateCompartmentActionsFigure.verticalSpan = 1;
-			constraintFFigureStateCompartmentActionsFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureStateCompartmentActionsFigure.grabExcessVerticalSpace = false;
-			stateFigure2.add(fFigureStateCompartmentActionsFigure,
-					constraintFFigureStateCompartmentActionsFigure);
+			GridData constraintFFigureCompoundCompartment = new GridData();
+			constraintFFigureCompoundCompartment.verticalAlignment = GridData.CENTER;
+			constraintFFigureCompoundCompartment.horizontalAlignment = GridData.FILL;
+			constraintFFigureCompoundCompartment.horizontalIndent = 0;
+			constraintFFigureCompoundCompartment.horizontalSpan = 1;
+			constraintFFigureCompoundCompartment.verticalSpan = 1;
+			constraintFFigureCompoundCompartment.grabExcessHorizontalSpace = true;
+			constraintFFigureCompoundCompartment.grabExcessVerticalSpace = false;
+			stateFigure2.add(fFigureCompoundCompartment,
+					constraintFFigureCompoundCompartment);
 
-			fFigureStateCompartmentRegions = new RectangleFigure();
-			fFigureStateCompartmentRegions.setOutline(false);
+			fFigureRegionsCompartment = new RectangleFigure();
+			fFigureRegionsCompartment.setOutline(false);
 
-			GridData constraintFFigureStateCompartmentRegions = new GridData();
-			constraintFFigureStateCompartmentRegions.verticalAlignment = GridData.FILL;
-			constraintFFigureStateCompartmentRegions.horizontalAlignment = GridData.FILL;
-			constraintFFigureStateCompartmentRegions.horizontalIndent = 0;
-			constraintFFigureStateCompartmentRegions.horizontalSpan = 1;
-			constraintFFigureStateCompartmentRegions.verticalSpan = 1;
-			constraintFFigureStateCompartmentRegions.grabExcessHorizontalSpace = true;
-			constraintFFigureStateCompartmentRegions.grabExcessVerticalSpace = true;
-			stateFigure2.add(fFigureStateCompartmentRegions,
-					constraintFFigureStateCompartmentRegions);
+			GridData constraintFFigureRegionsCompartment = new GridData();
+			constraintFFigureRegionsCompartment.verticalAlignment = GridData.FILL;
+			constraintFFigureRegionsCompartment.horizontalAlignment = GridData.FILL;
+			constraintFFigureRegionsCompartment.horizontalIndent = 0;
+			constraintFFigureRegionsCompartment.horizontalSpan = 1;
+			constraintFFigureRegionsCompartment.verticalSpan = 1;
+			constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;
+			constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;
+			stateFigure2.add(fFigureRegionsCompartment,
+					constraintFFigureRegionsCompartment);
 
 		}
 
@@ -575,15 +577,15 @@ public class StateEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureStateCompartmentActionsFigure() {
-			return fFigureStateCompartmentActionsFigure;
+		public RectangleFigure getFigureCompoundCompartment() {
+			return fFigureCompoundCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureStateCompartmentRegions() {
-			return fFigureStateCompartmentRegions;
+		public RectangleFigure getFigureRegionsCompartment() {
+			return fFigureRegionsCompartment;
 		}
 
 		/**

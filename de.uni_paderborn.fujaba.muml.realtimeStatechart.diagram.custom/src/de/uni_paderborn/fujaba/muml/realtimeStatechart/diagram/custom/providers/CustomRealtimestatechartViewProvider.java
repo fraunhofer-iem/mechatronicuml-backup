@@ -4,8 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -21,6 +26,20 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualID
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider;
 
 public class CustomRealtimestatechartViewProvider extends MumlViewProvider {
+
+	@Override
+	protected boolean provides(CreateEdgeViewOperation op) {
+		return super.provides(op);
+	}
+
+	@Override
+	public Edge createEdge(IAdaptable semanticAdapter, View containerView,
+			String semanticHint, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		// TODO Auto-generated method stub
+		return super.createEdge(semanticAdapter, containerView, semanticHint, index,
+				persisted, preferencesHint);
+	}
 
 	private static final String STATE_COMPOUND_COMPARTMENT_TYPE = MumlVisualIDRegistry
 			.getType(StateCompoundCompartmentEditPart.VISUAL_ID);
