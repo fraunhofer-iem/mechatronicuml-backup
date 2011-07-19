@@ -50,6 +50,14 @@
    </extension>
 -->
 
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provider.CustomMessageinterfaceParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+
+
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram">
