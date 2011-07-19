@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -27,6 +28,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.ParameterBinding;
 import org.storydriven.modeling.expressions.Expression;
@@ -377,8 +379,8 @@ public class CustomPropertySource extends PropertySource {
 		MultiFeatureCreationCellEditor clocksCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 		clocksCellEditor.addProperty(createProperty(
-				EcorePackage.Literals.ENAMED_ELEMENT__NAME, new TextPropertyEditor()));
-		
+				SDMPackage.Literals.NAMED_ELEMENT__NAME, new TextPropertyEditor()));
+	
 		return clocksCellEditor;
 	}
 

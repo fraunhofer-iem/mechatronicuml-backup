@@ -227,7 +227,8 @@ public class Property {
 
 	protected boolean isValidItemPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor, Object object) {
-		return itemPropertyDescriptor.getFeature(object).equals(feature);
+		Object descriptorFeature = itemPropertyDescriptor.getFeature(object);
+		return descriptorFeature.equals(feature);
 	}
 
 }

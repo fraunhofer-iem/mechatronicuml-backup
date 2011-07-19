@@ -84,12 +84,8 @@ public class ClockItemProvider
 	public String getText(Object object) {
 		Clock clock = (Clock) object;
 		StringBuffer buffer = new StringBuffer();
-		if (clock.getStatechart() != null) {
-			String statechartName = "null";
-			if (clock.getStatechart().getName() != null) {
-				statechartName = clock.getStatechart().getName();
-			}
-			buffer.append(statechartName);
+		if (clock.getStatechart() != null && clock.getStatechart().getName() != null) {
+			buffer.append(clock.getStatechart().getName());
 			buffer.append(": ");
 		}
 		if (clock.getName() != null) {

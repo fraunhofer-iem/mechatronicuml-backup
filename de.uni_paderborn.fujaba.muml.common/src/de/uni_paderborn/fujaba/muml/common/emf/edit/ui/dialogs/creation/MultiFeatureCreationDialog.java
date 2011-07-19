@@ -593,24 +593,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 		parameterTableViewer.setSelection(new StructuredSelection(
 				new Object[] {}));
 
-		// TODO:
-		// // Initialize typeComboViewer
-		// typeComboViewer.setContentProvider(contentProvider);
-		// typeComboViewer.setLabelProvider(labelProvider);
-		// typeComboViewer.addFilter(new ViewerFilter() {
-		// @Override
-		// public boolean select(Viewer viewer, Object parentElement,
-		// Object element) {
-		// return element instanceof EDataType;
-		// }
-		// });
-		//
-		// txtName.setText("");
-		//
-		// typeComboViewer.setInput(new
-		// ItemProvider(itemProvidersAdapterFactory,
-		// typeChoices));
-
 		for (Property property : properties) {
 			property.getPropertyEditor().setDefaultValue();
 		}
