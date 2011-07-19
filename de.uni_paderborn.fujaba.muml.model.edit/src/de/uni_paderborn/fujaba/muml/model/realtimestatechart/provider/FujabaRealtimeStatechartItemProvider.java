@@ -67,6 +67,7 @@ public class FujabaRealtimeStatechartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEmbeddingRegionPropertyDescriptor(object);
+			addClocksPropertyDescriptor(object);
 			addAvailableClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
@@ -91,6 +92,28 @@ public class FujabaRealtimeStatechartItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Clocks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClocksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FujabaRealtimeStatechart_clocks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_clocks_feature", "_UI_FujabaRealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__CLOCKS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

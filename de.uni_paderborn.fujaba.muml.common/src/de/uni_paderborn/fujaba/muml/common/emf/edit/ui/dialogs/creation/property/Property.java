@@ -46,6 +46,9 @@ public class Property {
 	protected Resource resource;
 
 	protected TransactionalEditingDomain editingDomain;
+	
+	protected String displayName;
+
 
 	/**
 	 * The AdapterFactory to create an ItemPropertyDescritor.
@@ -75,7 +78,7 @@ public class Property {
 
 		propertyEditor.init(this);
 	}
-
+	
 	/**
 	 * Gets the structural feature of this property.
 	 * 
@@ -100,8 +103,16 @@ public class Property {
 	 * @return The display name.
 	 */
 	public String getDisplayName() {
-		return feature.getName().substring(0, 1).toUpperCase()
+		if (displayName == null) {
+			displayName = feature.getName().substring(0, 1).toUpperCase()
 				+ feature.getName().substring(1);
+		}
+		return displayName;
+	}
+	
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	public Collection<?> getReachableObjects() {

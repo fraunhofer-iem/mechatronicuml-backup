@@ -112,15 +112,18 @@ public class ParameterTextParser implements ITextParser {
 			String cardinality = typeString.substring(openingBracket + 1,
 					closingBracket);
 
-			int dots = cardinality.indexOf("..");
-			if (dots != -1) {
-				bounds[0] = parseCardinality(cardinality.substring(0, dots));
+			// Commented out the following. It was necessary for a syntax like
+			// EInt[1..2], which is not desired currently. 
 
-				bounds[1] = parseCardinality(cardinality.substring(dots + 2,
-						cardinality.length()));
-			} else {
+//			int dots = cardinality.indexOf("..");
+//			if (dots != -1) {
+//				bounds[0] = parseCardinality(cardinality.substring(0, dots));
+//
+//				bounds[1] = parseCardinality(cardinality.substring(dots + 2,
+//						cardinality.length()));
+//			} else {
 				bounds[0] = bounds[1] = parseCardinality(cardinality);
-			}
+//			}
 			return typeString.substring(0, openingBracket);
 		}
 		return typeString;
@@ -175,7 +178,7 @@ public class ParameterTextParser implements ITextParser {
 		parameter.setName(name);
 		parameter.setLowerBound(lowerBound);
 		parameter.setUpperBound(upperBound);
-		// parameter.setUnique(true);
+//		 parameter.setUnique(true);
 		parameter.setOrdered(true);
 		parameter.setEType(type);
 	}

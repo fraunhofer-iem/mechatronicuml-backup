@@ -46,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -86,31 +87,35 @@ public class CustomPropertySource extends PropertySource {
 
 					Class<?> instanceClass = structuralFeature.getEType()
 							.getInstanceClass();
-					if (instanceClass.isAssignableFrom(NaturalNumber.class)) {
+					if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
-					} else if (instanceClass.isAssignableFrom(EParameter.class)) {
+					} else if (EParameter.class.isAssignableFrom(instanceClass)) {
 						return createParameterCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
-					} else if (instanceClass.isAssignableFrom(Expression.class)) {
+					} else if (Expression.class.isAssignableFrom(instanceClass)) {
 						return createTextualExpressionCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
-					} else if (instanceClass
-							.isAssignableFrom(ClockConstraint.class)) {
+					} else if (ClockConstraint.class
+							.isAssignableFrom(instanceClass)) {
 						return createClockConstraintCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
-					} else if (instanceClass
-							.isAssignableFrom(ParameterBinding.class)) {
+					} else if (ParameterBinding.class
+							.isAssignableFrom(instanceClass)) {
 						return createParameterBindingCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
-					} else if (instanceClass
-							.isAssignableFrom(AbsoluteDeadline.class)) {
+					} else if (AbsoluteDeadline.class
+							.isAssignableFrom(instanceClass)) {
 						return createAbsoluteDeadlineCellEditor(parent,
+								getLabelProvider(), structuralFeature,
+								getCurrentValues());
+					} else if (Clock.class.isAssignableFrom(instanceClass)) {
+						return createClocksCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
 					}
@@ -238,12 +243,14 @@ public class CustomPropertySource extends PropertySource {
 		parameterCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
-		parameterCellEditor.addProperty(createProperty(
+		Property lowerBoundProperty = createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__LOWER_BOUND,
-				new TextPropertyEditor()));
-		parameterCellEditor.addProperty(createProperty(
-				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
-				new TextPropertyEditor()));
+				new TextPropertyEditor());
+		lowerBoundProperty.setDisplayName("Cardinality");
+		parameterCellEditor.addProperty(lowerBoundProperty);
+//		parameterCellEditor.addProperty(createProperty(
+//				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
+//				new TextPropertyEditor()));
 
 		return parameterCellEditor;
 	}
@@ -361,6 +368,20 @@ public class CustomPropertySource extends PropertySource {
 
 		return absoluteDeadlineCellEditor;
 	}
+	
+
+	private CellEditor createClocksCellEditor(Composite parent,
+			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
+			Collection<?> currentValues) {
+
+		MultiFeatureCreationCellEditor clocksCellEditor = new MultiFeatureCreationCellEditor(
+				parent, labelProvider, structuralFeature, currentValues);
+		clocksCellEditor.addProperty(createProperty(
+				EcorePackage.Literals.ENAMED_ELEMENT__NAME, new TextPropertyEditor()));
+		
+		return clocksCellEditor;
+	}
+
 
 	private Property createProperty(EStructuralFeature feature,
 			AbstractPropertyEditor propertyEditor) {

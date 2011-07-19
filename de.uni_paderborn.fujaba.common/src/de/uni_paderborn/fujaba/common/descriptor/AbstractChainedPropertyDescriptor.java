@@ -2,11 +2,9 @@ package de.uni_paderborn.fujaba.common.descriptor;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 public abstract class AbstractChainedPropertyDescriptor extends
@@ -27,6 +25,15 @@ public abstract class AbstractChainedPropertyDescriptor extends
 				category, filterFlags);
 	}
 
+	/**
+	 * Returns a unique id that consists of all id's of PropertyDescriptor in
+	 * the chain. This way the id is unique for a chain.
+	 * 
+	 * @param object
+	 *            The object.
+	 * 
+	 * @return The unique id.
+	 */
 	@Override
 	public String getId(Object object) {
 		String id = "";
@@ -99,7 +106,7 @@ public abstract class AbstractChainedPropertyDescriptor extends
 	}
 
 	public void doNotifyObject(Object object, Object oldValue, Object newValue) {
-		// TODO: This solution does not yet work.
+		// TODO: This solution does not yet work, but should be preferred.
 //		int eventType = Notification.SET;
 //		if (feature.isMany()) {
 //			// TODO: Is this always working correctly?
@@ -112,9 +119,14 @@ public abstract class AbstractChainedPropertyDescriptor extends
 //					newValue));
 //		}
 		
-		// TODO: Hack to get this working quickly...
-		if (oldValue.equals(newValue)) {
-			if (feature.isMany()) {
+		// TODO: It follows a hack to get this working quickly...
+
+		// Test, if oldValue equals newValue. If not, we do not need to notify,
+		// because setting the new value will send a notification later.
+		if (oldValue == newValue
+				|| (oldValue != null && oldValue.equals(newValue))
+				|| (newValue != null && newValue.equals(oldValue))) {
+			if (feature.isMany() && feature.isChangeable()) {
 				// TODO
 			} else if (feature.isChangeable()) {
 				try {
@@ -131,7 +143,14 @@ public abstract class AbstractChainedPropertyDescriptor extends
 		}
 	}
 
-	private Object getWrappedValue(Object value) {
+	/**
+	 * Auxiliary method to unwrap a value.
+	 * 
+	 * @param value
+	 *            The PropertyValueWrapper.
+	 * @return The wrapped value.
+	 */
+	private static Object getWrappedValue(Object value) {
 		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
 			value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
 					.getEditableValue(value);

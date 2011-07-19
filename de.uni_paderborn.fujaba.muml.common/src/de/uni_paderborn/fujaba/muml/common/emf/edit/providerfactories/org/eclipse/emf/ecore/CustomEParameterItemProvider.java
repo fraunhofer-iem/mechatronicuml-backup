@@ -21,10 +21,14 @@ public class CustomEParameterItemProvider extends EParameterItemProvider {
 		if (eParameter.getEType() != null) {
 			result.append("[");
 			result.append(getCardinalityString(eParameter.getLowerBound()));
-			if (eParameter.getLowerBound() != eParameter.getUpperBound()) {
-				result.append("..");
-				result.append(getCardinalityString(eParameter.getUpperBound()));
-			}
+
+			// Commented out the following. It was necessary for a syntax like
+			// EInt[1..2], which is not desired currently. 
+			
+//			if (eParameter.getLowerBound() != eParameter.getUpperBound()) {
+//				result.append("..");
+//				result.append(getCardinalityString(eParameter.getUpperBound()));
+//			}
 			result.append("]");
 		}
 

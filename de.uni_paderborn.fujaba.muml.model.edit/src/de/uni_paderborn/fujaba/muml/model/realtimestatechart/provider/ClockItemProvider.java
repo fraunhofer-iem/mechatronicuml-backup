@@ -82,13 +82,22 @@ public class ClockItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		// Comment by Ingo Budde:
-		// TODO: I commented out the getId() part, as this attribute was removed.
-		String label = ((Clock) object).getStatechart().getName() + ": "
-				+ ((Clock) object).getName() /* + "_" + ((Clock)object).getId() */;
-		return label == null || label.length() == 0 ? getString("_UI_Clock_type")
-				:
-			getString("_UI_Clock_type") + " " + label;
+		Clock clock = (Clock) object;
+		StringBuffer buffer = new StringBuffer();
+		if (clock.getStatechart() != null) {
+			String statechartName = "null";
+			if (clock.getStatechart().getName() != null) {
+				statechartName = clock.getStatechart().getName();
+			}
+			buffer.append(statechartName);
+			buffer.append(": ");
+		}
+		if (clock.getName() != null) {
+			buffer.append(clock.getName());
+		}
+
+		return buffer.length() == 0 ? getString("_UI_Clock_type")
+				: getString("_UI_Clock_type") + " " + buffer.toString();
 	}
 
 	/**

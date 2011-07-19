@@ -7,14 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,6 +26,9 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.activities.ActivitiesFactory;
 import org.storydriven.modeling.calls.CallsFactory;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 
@@ -98,12 +99,11 @@ public class RegionItemProvider
 	 * This adds a property descriptor for the Statechart feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		IChainedPropertyDescriptor statechartPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Region_statechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Region_statechart_feature", "_UI_Region_type"),
@@ -113,7 +113,23 @@ public class RegionItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null);
+		
+		itemPropertyDescriptors.add(statechartPropertyDescriptor);
+		
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_FujabaRealtimeStatechart_clocks_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_clocks_feature", "_UI_FujabaRealtimeStatechart_type"),
+			 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__CLOCKS,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_StatechartPropertyCategory"),
+			 null,
+			 statechartPropertyDescriptor));
 	}
 
 	/**

@@ -629,6 +629,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 			}
 		}
 	}
+
 	/**
 	 * Clears the TextStyle of the passed StyledText control.
 	 * 

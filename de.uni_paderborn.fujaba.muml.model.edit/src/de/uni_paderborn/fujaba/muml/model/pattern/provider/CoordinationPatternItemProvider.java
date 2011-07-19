@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
@@ -107,8 +108,9 @@ public class CoordinationPatternItemProvider
 	 * @generated
 	 */
 	protected void addConnectorsPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_CoordinationPattern_connectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_connectors_feature", "_UI_CoordinationPattern_type"),
@@ -118,21 +120,7 @@ public class CoordinationPatternItemProvider
 				 false,
 				 null,
 				 getString("_UI_RoleConnectorPropertyCategory"),
-				 null);
-		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_RoleConnector_bidirectional_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_bidirectional_feature", "_UI_RoleConnector_type"),
-			 PatternPackage.Literals.ROLE_CONNECTOR__BIDIRECTIONAL,
-			 true,
-			 false,
-			 false,
-			 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-			 getString("_UI_RoleConnectorPropertyCategory"),
-			 null,
-			 rootPropertyDescriptor));
+				 null));
 	}
 
 	/**
@@ -170,6 +158,20 @@ public class CoordinationPatternItemProvider
 				 null,
 				 category,
 				 null);
+		
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_NamedElement_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				category,
+				null,
+				rootPropertyDescriptor));
 
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),

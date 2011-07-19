@@ -26,7 +26,7 @@ public class CustomHistoryFigure extends Ellipse {
 	private void createContents() {
 
 		WrappingLabel historyLabel0 = new WrappingLabel();
-		historyLabel0.setText("H*");
+		historyLabel0.setText("H");
 
 		GridData constraintHistoryLabel0 = new GridData();
 		constraintHistoryLabel0.verticalAlignment = GridData.CENTER;
