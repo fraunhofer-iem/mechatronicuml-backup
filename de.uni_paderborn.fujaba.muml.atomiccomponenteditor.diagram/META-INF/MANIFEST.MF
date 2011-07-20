@@ -7,8 +7,8 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.AtomiccomponentDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts, 
- de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies, 
+Export-Package: de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part,
  de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers,

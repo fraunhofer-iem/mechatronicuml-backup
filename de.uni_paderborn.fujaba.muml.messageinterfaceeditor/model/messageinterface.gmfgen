@@ -67,7 +67,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.0">
+              value="//@expressionProviders/@providers.0/@expressions.1">
             <feature
                 href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
@@ -119,6 +119,15 @@
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
           visualID="5005"
@@ -318,6 +327,8 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
+          body="'Interface'"/>
+      <expressions
           body="'messagetype'"/>
       <expressions
           body="(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat('(').concat(&#xA;&#x9;self.containedParameters->iterate(&#xA;&#x9;&#x9;parameter; result : String = '' | (if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;).concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;if parameter.eType.oclIsUndefined() or parameter.eType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;)&#xA;).concat(')')&#xA;"/>
@@ -330,7 +341,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.0/@modelFacet"
         className="MessageTypeLabelExpressionLabelParser5003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType"/>
     </implementations>

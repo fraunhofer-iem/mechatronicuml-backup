@@ -64,6 +64,15 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
     </childNodes>
     <childNodes
@@ -499,6 +508,8 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
+          body="'portinstance'"/>
+      <expressions
           body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
       <expressions
           body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(' : ').concat(&#xD;&#xA;&#x9;if self.componentType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.componentType.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
@@ -510,7 +521,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
         className="ComponentInstanceLabelExpressionLabelParser5001"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance"/>
     </implementations>
@@ -518,7 +529,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"
         className="ComponentInstanceLabelExpressionLabelParser5002"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.1">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.2">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance"/>
     </implementations>

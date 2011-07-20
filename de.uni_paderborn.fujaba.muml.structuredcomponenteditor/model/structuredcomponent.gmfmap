@@ -72,6 +72,14 @@
                 </initializers>
               </newElementInitializers>
             </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'port'"/>
+            </initializers>
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -128,6 +136,14 @@
                   </newElementInitializers>
                 </initializers>
               </newElementInitializers>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'port'"/>
             </initializers>
           </domainInitializer>
           <tool
@@ -186,6 +202,14 @@
                 </initializers>
               </newElementInitializers>
             </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'port'"/>
+            </initializers>
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -242,6 +266,14 @@
                   </newElementInitializers>
                 </initializers>
               </newElementInitializers>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'port'"/>
             </initializers>
           </domainInitializer>
           <tool

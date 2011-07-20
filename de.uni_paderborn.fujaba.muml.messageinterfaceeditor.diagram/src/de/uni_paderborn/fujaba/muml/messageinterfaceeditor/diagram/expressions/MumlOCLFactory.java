@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlAbstractExpression[2];
+		this.expressions = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlAbstractExpression[3];
 	}
 
 	/**
@@ -50,6 +50,7 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
+					"\'Interface\'", //$NON-NLS-1$
 					"\'messagetype\'", //$NON-NLS-1$
 					"(\n\tif self.name.oclIsUndefined() then\n\t\t\'null\'\n\telse\n\t\tself.name\n\tendif\n).concat(\'(\').concat(\n\tself.containedParameters->iterate(\n\t\tparameter; result : String = \'\' | (if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n\t\t\t(\n\t\t\t\tif parameter.name.oclIsUndefined() then\n\t\t\t\t\t\'null\'\n\t\t\t\telse\n\t\t\t\t\tparameter.name\n\t\t\t\tendif\n\t\t\t).concat(\' : \').concat(\n\t\t\t\tif parameter.eType.oclIsUndefined() or parameter.eType.name.oclIsUndefined() then\n\t\t\t\t\t\'null\'\n\t\t\t\telse\n\t\t\t\t\tparameter.eType.name\n\t\t\t\tendif\n\t\t\t)\n\t\t)\n\t)\n).concat(\')\')\n", //$NON-NLS-1$
 			};

@@ -29,7 +29,10 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	 * The multiLine attribute for the StyledText.
 	 */
 	protected boolean multiLine;
-	
+
+	/**
+	 * The default value for the property.
+	 */
 	protected String defaultValue = "";
 
 	/**
@@ -154,11 +157,11 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 	public void applyDefaultValue() {
 		styledText.setText(defaultValue);
 	}
-	
+
 	public void setDefaultValue(String newDefaultValue) {
 		this.defaultValue = newDefaultValue;
 	}
-	
+
 	public String getDefaultValue() {
 		return defaultValue;
 	}

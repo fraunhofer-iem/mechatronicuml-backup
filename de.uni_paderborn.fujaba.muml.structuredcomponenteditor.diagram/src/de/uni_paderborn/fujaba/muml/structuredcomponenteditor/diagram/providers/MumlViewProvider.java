@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers
 import java.util.ArrayList;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
@@ -201,6 +202,19 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
+	protected org.eclipse.swt.graphics.RGB getForegroundColorFromPrefs(
+			IPreferenceStore prefStore) {
+
+		// Deactivated access to the PreferenceStore.
+		// return PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+
+		// All lines should be black, to fix bug #46 of Mechatronic UML.
+		return ColorConstants.black.getRGB();
+	}
+
+	/**
+	 * @generated
+	 */
 	public Diagram createDiagram(IAdaptable semanticAdapter,
 			String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
@@ -300,8 +314,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -352,8 +365,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -395,8 +407,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -438,8 +449,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -481,8 +491,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -524,8 +533,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -571,8 +579,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -614,8 +621,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -657,8 +663,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -700,8 +705,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -751,8 +755,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -803,8 +806,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		org.eclipse.swt.graphics.RGB lineRGB = getForegroundColorFromPrefs(prefStore);
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));

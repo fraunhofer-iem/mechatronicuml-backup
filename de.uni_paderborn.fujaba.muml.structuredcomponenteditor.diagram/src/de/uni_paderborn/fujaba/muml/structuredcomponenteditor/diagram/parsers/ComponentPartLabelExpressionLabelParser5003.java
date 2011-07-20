@@ -78,7 +78,7 @@ public class ComponentPartLabelExpressionLabelParser5003 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						18,
+						22,
 						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 								.getComponentPart(), null).evaluate(target);
 		return String.valueOf(result);

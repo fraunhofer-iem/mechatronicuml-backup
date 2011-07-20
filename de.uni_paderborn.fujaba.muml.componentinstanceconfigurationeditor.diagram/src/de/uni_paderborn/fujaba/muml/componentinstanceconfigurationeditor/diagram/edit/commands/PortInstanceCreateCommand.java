@@ -56,6 +56,9 @@ public class PortInstanceCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) getElementToEdit();
 		owner.getPortInstances().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
+				.getInstance().init_PortInstance_3005(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

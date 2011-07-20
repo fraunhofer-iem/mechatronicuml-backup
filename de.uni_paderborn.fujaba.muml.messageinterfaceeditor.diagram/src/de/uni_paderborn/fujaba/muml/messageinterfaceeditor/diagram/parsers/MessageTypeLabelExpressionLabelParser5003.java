@@ -78,7 +78,7 @@ public class MessageTypeLabelExpressionLabelParser5003 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						2,
 						de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
 								.getMessageType(), null).evaluate(target);
 		return String.valueOf(result);

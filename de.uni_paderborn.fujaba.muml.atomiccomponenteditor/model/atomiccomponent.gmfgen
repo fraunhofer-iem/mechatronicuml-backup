@@ -99,6 +99,12 @@
               </initializers>
             </newElementInitializers>
           </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.2">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+          </initializers>
         </modelElementInitializer>
       </modelFacet>
     </childNodes>
@@ -148,7 +154,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.2">
+                      value="//@expressionProviders/@providers.0/@expressions.3">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -161,13 +167,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.3">
+                      value="//@expressionProviders/@providers.0/@expressions.4">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.5">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -218,7 +230,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.4">
+                      value="//@expressionProviders/@providers.0/@expressions.6">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -231,13 +243,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.5">
+                      value="//@expressionProviders/@providers.0/@expressions.7">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.8">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -288,7 +306,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.6">
+                      value="//@expressionProviders/@providers.0/@expressions.9">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -301,13 +319,19 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.7">
+                      value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.11">
+            <feature
+                href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
           </initializers>
         </modelElementInitializer>
       </modelFacet>
@@ -506,17 +530,25 @@
       <expressions
           body="1"/>
       <expressions
-          body="1"/>
+          body="'port'"/>
       <expressions
           body="1"/>
       <expressions
           body="1"/>
       <expressions
-          body="1"/>
+          body="'port'"/>
       <expressions
           body="1"/>
       <expressions
           body="1"/>
+      <expressions
+          body="'port'"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="1"/>
+      <expressions
+          body="'port'"/>
     </providers>
   </expressionProviders>
   <labelParsers

@@ -57,6 +57,9 @@ public class MessageInterfaceCreateCommand extends EditElementCommand {
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
+		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
+				.getInstance().init_MessageInterface_2003(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

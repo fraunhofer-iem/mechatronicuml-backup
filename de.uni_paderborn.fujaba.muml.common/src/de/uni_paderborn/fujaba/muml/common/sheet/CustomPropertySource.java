@@ -230,6 +230,7 @@ public class CustomPropertySource extends PropertySource {
 
 		IValidator parameterNameValidator = new ParameterNameValidator();
 		TextPropertyEditor nameEditor = new TextPropertyEditor();
+		nameEditor.setDefaultValue("parameter");
 		nameEditor.addValidator(parameterNameValidator);
 
 		ComboPropertyEditor typeEditor = new ComboPropertyEditor(adapterFactory);
