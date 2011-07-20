@@ -17,18 +17,22 @@ public class CustomEParameterItemProvider extends EParameterItemProvider {
 	public String getText(Object object) {
 		EParameter eParameter = (EParameter) object;
 		StringBuffer result = new StringBuffer(super.getText(object));
-		
-		if (eParameter.getEType() != null) {
+
+		if (eParameter.getEType() != null && eParameter.isMany()) {
 			result.append("[");
-			result.append(getCardinalityString(eParameter.getLowerBound()));
 
 			// Commented out the following. It was necessary for a syntax like
-			// EInt[1..2], which is not desired currently. 
+			// EInt[1..2], which is not desired currently.
+
+			// result.append(getCardinalityString(eParameter.getLowerBound()));
+			// if (eParameter.getLowerBound() != eParameter.getUpperBound()) {
+			// result.append("..");
+			// result.append(getCardinalityString(eParameter.getUpperBound()));
+			// }
 			
-//			if (eParameter.getLowerBound() != eParameter.getUpperBound()) {
-//				result.append("..");
-//				result.append(getCardinalityString(eParameter.getUpperBound()));
-//			}
+			// Instead we just display the upper bound.
+			result.append(getCardinalityString(eParameter.getUpperBound()));
+			
 			result.append("]");
 		}
 
