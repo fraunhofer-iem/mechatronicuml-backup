@@ -245,9 +245,11 @@ public class CustomPropertySource extends PropertySource {
 		parameterCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
+		TextPropertyEditor upperBoundEditor = new TextPropertyEditor();
+		upperBoundEditor.setDefaultValue("1");
 		Property upperBoundProperty = createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
-				new TextPropertyEditor());
+				upperBoundEditor);
 		upperBoundProperty.setDisplayName("Cardinality");
 		parameterCellEditor.addProperty(upperBoundProperty);
 

@@ -594,7 +594,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 				new Object[] {}));
 
 		for (Property property : properties) {
-			property.getPropertyEditor().setDefaultValue();
+			property.getPropertyEditor().applyDefaultValue();
 		}
 
 		return container;

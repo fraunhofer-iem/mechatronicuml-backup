@@ -251,5 +251,5 @@ public abstract class AbstractPropertyEditor {
 	/**
 	 * Sets a default (or empty) value for the control.
 	 */
-	public abstract void setDefaultValue();
+	public abstract void applyDefaultValue();
 }

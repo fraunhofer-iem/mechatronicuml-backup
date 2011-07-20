@@ -112,7 +112,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * Selects the first element in the ComboBox, if it exists.
 	 */
 	@Override
-	public void setDefaultValue() {
+	public void applyDefaultValue() {
 		Object selectedElement = null;
 		Collection<?> choices = getChoices();
 		if (choices != null && !choices.isEmpty()) {
