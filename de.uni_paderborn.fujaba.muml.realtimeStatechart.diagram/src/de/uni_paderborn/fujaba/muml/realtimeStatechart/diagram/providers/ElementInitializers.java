@@ -72,6 +72,24 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_Region_3006(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							8,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getRegion(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_State_3009(
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State instance) {
 		try {

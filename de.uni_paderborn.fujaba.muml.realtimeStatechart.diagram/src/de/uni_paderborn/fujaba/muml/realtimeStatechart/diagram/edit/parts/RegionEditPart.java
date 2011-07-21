@@ -1,23 +1,33 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts;
 
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -112,6 +122,21 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureRegionNameLabel());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureRegionPriorityLabel());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureRegionVariablesLabel());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureFujabaRealtimeStatechartCompartment();
@@ -127,6 +152,15 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureFujabaRealtimeStatechartCompartment();
@@ -258,16 +292,32 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class RegionFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureRegionVariablesLabel;
+		private RectangleFigure fFigureFujabaRealtimeStatechartCompartment;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureFujabaRealtimeStatechartCompartment;
+		private WrappingLabel fFigureRegionNameLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureRegionPriorityLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureRegionVariablesLabel;
 
 		/**
 		 * @generated
@@ -307,13 +357,13 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			layoutRegionTitleArea0.makeColumnsEqualWidth = false;
 			regionTitleArea0.setLayoutManager(layoutRegionTitleArea0);
 
-			WrappingLabel regionNameLabel1 = new WrappingLabel();
-			regionNameLabel1.setText("name");
+			fFigureRegionNameLabel = new WrappingLabel();
+			fFigureRegionNameLabel.setText("");
 
-			regionTitleArea0.add(regionNameLabel1);
+			regionTitleArea0.add(fFigureRegionNameLabel);
 
 			fFigureRegionVariablesLabel = new WrappingLabel();
-			fFigureRegionVariablesLabel.setText("text");
+			fFigureRegionVariablesLabel.setText("");
 
 			GridData constraintFFigureRegionVariablesLabel = new GridData();
 			constraintFFigureRegionVariablesLabel.verticalAlignment = GridData.CENTER;
@@ -331,16 +381,16 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			regionTitleArea0.add(regionPriority1);
 			regionPriority1.setLayoutManager(new StackLayout());
 
-			WrappingLabel regionPriorityLabel2 = new WrappingLabel();
-			regionPriorityLabel2.setText("3");
+			fFigureRegionPriorityLabel = new WrappingLabel();
+			fFigureRegionPriorityLabel.setText("");
 
-			regionPriorityLabel2.setFont(REGIONPRIORITYLABEL2_FONT);
+			fFigureRegionPriorityLabel.setFont(FFIGUREREGIONPRIORITYLABEL_FONT);
 
-			regionPriorityLabel2.setBorder(new MarginBorder(getMapMode()
+			fFigureRegionPriorityLabel.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(2),
 					getMapMode().DPtoLP(5)));
 
-			regionPriority1.add(regionPriorityLabel2);
+			regionPriority1.add(fFigureRegionPriorityLabel);
 
 			fFigureFujabaRealtimeStatechartCompartment = new RectangleFigure();
 			fFigureFujabaRealtimeStatechartCompartment.setFill(false);
@@ -362,15 +412,29 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureRegionVariablesLabel() {
-			return fFigureRegionVariablesLabel;
+		public RectangleFigure getFigureFujabaRealtimeStatechartCompartment() {
+			return fFigureFujabaRealtimeStatechartCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureFujabaRealtimeStatechartCompartment() {
-			return fFigureFujabaRealtimeStatechartCompartment;
+		public WrappingLabel getFigureRegionNameLabel() {
+			return fFigureRegionNameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureRegionPriorityLabel() {
+			return fFigureRegionPriorityLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureRegionVariablesLabel() {
+			return fFigureRegionVariablesLabel;
 		}
 
 	}
@@ -378,7 +442,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font REGIONPRIORITYLABEL2_FONT = new Font(
+	static final Font FFIGUREREGIONPRIORITYLABEL_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 8, SWT.NORMAL);
 

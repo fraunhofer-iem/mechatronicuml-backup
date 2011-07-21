@@ -117,6 +117,59 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser regionName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRegionName_5011Parser() {
+		if (regionName_5011Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			regionName_5011Parser = parser;
+		}
+		return regionName_5011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser regionPriority_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRegionPriority_5012Parser() {
+		if (regionPriority_5012Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getPrioritizable_Priority() };
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
+					features);
+			regionPriority_5012Parser = parser;
+		}
+		return regionPriority_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5013 regionLabel_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRegionLabel_5013Parser() {
+		if (regionLabel_5013Parser == null) {
+			regionLabel_5013Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5013();
+		}
+		return regionLabel_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stateName_5010Parser;
 
 	/**
@@ -180,6 +233,12 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getClockConstraintLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
 			return getSynchronizationChannelLabel_5002Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
+			return getRegionName_5011Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
+			return getRegionPriority_5012Parser();
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
+			return getRegionLabel_5013Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateName2EditPart.VISUAL_ID:
 			return getStateName_5010Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:

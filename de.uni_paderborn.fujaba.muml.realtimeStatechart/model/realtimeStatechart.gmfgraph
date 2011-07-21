@@ -176,11 +176,11 @@
           <children
               xsi:type="gmfgraph:Label"
               name="RegionNameLabel"
-              text="name"/>
+              text=""/>
           <children
               xsi:type="gmfgraph:Label"
               name="RegionVariablesLabel"
-              text="text">
+              text="">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
@@ -194,7 +194,7 @@
             <children
                 xsi:type="gmfgraph:Label"
                 name="RegionPriorityLabel"
-                text="3">
+                text="">
               <font
                   xsi:type="gmfgraph:BasicFont"
                   height="8"/>
@@ -223,10 +223,14 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
-      <accessors
           accessor="getFigureFujabaRealtimeStatechartCompartment"
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="TransitionFigure">
@@ -410,7 +414,7 @@
   <compartments
       name="FujabaRealtimeStatechartCompartment"
       figure="RegionFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="TransitionLabel"
       figure="TransitionFigure"
@@ -461,4 +465,19 @@
       figure="StateEventFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels
+      name="RegionNameLabel"
+      figure="RegionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="RegionPriorityLabel"
+      figure="RegionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels
+      name="RegionVariablesLabel"
+      figure="RegionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.3"/>
 </gmfgraph:Canvas>
