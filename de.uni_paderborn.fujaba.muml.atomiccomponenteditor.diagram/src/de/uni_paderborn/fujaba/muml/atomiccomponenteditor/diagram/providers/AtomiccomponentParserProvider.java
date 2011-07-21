@@ -42,10 +42,94 @@ public class AtomiccomponentParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser hybridPortName_5003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getHybridPortName_5003Parser() {
+		if (hybridPortName_5003Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			hybridPortName_5003Parser = parser;
+		}
+		return hybridPortName_5003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser discretePortName_5004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDiscretePortName_5004Parser() {
+		if (discretePortName_5004Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			discretePortName_5004Parser = parser;
+		}
+		return discretePortName_5004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser continuousPortName_5005Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getContinuousPortName_5005Parser() {
+		if (continuousPortName_5005Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			continuousPortName_5005Parser = parser;
+		}
+		return continuousPortName_5005Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser hardwarePortName_5006Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getHardwarePortName_5006Parser() {
+		if (hardwarePortName_5006Parser == null) {
+			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			hardwarePortName_5006Parser = parser;
+		}
+		return hardwarePortName_5006Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
 			return getAtomicComponentName_5002Parser();
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID:
+			return getHybridPortName_5003Parser();
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
+			return getDiscretePortName_5004Parser();
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
+			return getContinuousPortName_5005Parser();
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortNameEditPart.VISUAL_ID:
+			return getHardwarePortName_5006Parser();
 		}
 		return null;
 	}

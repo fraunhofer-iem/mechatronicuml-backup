@@ -109,6 +109,24 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5006"
+          editPartClassName="HybridPortNameEditPart"
+          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HybridPortNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -185,6 +203,24 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5007"
+          editPartClassName="DiscretePortNameEditPart"
+          itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="DiscretePortNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -261,6 +297,24 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5008"
+          editPartClassName="ContinuousPortNameEditPart"
+          itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ContinuousPortNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -337,6 +391,24 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5009"
+          editPartClassName="HardwarePortNameEditPart"
+          itemSemanticEditPolicyClassName="HardwarePortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HardwarePortNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3005"
@@ -424,7 +496,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"/>
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
     </childNodes>
     <childNodes
@@ -756,7 +828,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.1">
+            parser="//@labelParsers/@implementations.0">
           <metaFeatures
               href="../../org.storydriven.modeling/model/sdm.uml.genmodel#//modeling/NamedElement/name"/>
         </modelFacet>
@@ -1017,6 +1089,9 @@
       className="StructuredcomponentParserProvider"
       extensibleViaService="true">
     <implementations
+        xsi:type="gmfgen:PredefinedParser"
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+    <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet"
         className="ComponentPartLabelExpressionLabelParser5003"
@@ -1024,9 +1099,6 @@
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ComponentPart"/>
     </implementations>
-    <implementations
-        xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

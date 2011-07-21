@@ -92,6 +92,13 @@
                   body="'port'"/>
             </initializers>
           </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="atomiccomponent.gmfgraph#PortExternalLabel"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="atomiccomponent.gmftool#//@palette/@tools.1/@tools.2"/>
@@ -157,6 +164,13 @@
                   body="'port'"/>
             </initializers>
           </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="atomiccomponent.gmfgraph#PortExternalLabel"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="atomiccomponent.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -222,6 +236,13 @@
                   body="'port'"/>
             </initializers>
           </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="atomiccomponent.gmfgraph#PortExternalLabel"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="atomiccomponent.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -287,6 +308,13 @@
                   body="'port'"/>
             </initializers>
           </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="atomiccomponent.gmfgraph#PortExternalLabel"/>
+            <features
+                href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="atomiccomponent.gmftool#//@palette/@tools.1/@tools.3"/>

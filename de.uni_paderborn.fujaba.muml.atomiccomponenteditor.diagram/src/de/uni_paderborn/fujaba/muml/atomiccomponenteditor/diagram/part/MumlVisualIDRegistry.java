@@ -192,6 +192,26 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			break;
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HardwarePortNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}

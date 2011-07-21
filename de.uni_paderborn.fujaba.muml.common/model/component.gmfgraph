@@ -406,5 +406,11 @@
         </children>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="PortExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="PortExternalLabelFigure"/>
+    </descriptors>
   </figures>
 </gmfgraph:Canvas>
