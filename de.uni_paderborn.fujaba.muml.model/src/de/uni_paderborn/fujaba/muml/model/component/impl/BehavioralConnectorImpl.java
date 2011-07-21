@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -30,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
  */
 public abstract class BehavioralConnectorImpl extends BehavioralElementImpl implements BehavioralConnector {
 	/**
-	 * The cached value of the '{@link #getConnectorClass() <em>Connector Class</em>}' reference.
+	 * The cached value of the '{@link #getConnectorClass() <em>Connector Class</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConnectorClass()
@@ -64,14 +65,6 @@ public abstract class BehavioralConnectorImpl extends BehavioralElementImpl impl
 	 * @generated
 	 */
 	public EClass getConnectorClass() {
-		if (connectorClass != null && connectorClass.eIsProxy()) {
-			InternalEObject oldConnectorClass = (InternalEObject)connectorClass;
-			connectorClass = (EClass)eResolveProxy(oldConnectorClass);
-			if (connectorClass != oldConnectorClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
-			}
-		}
 		return connectorClass;
 	}
 
@@ -80,8 +73,14 @@ public abstract class BehavioralConnectorImpl extends BehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass basicGetConnectorClass() {
-		return connectorClass;
+	public NotificationChain basicSetConnectorClass(EClass newConnectorClass, NotificationChain msgs) {
+		EClass oldConnectorClass = connectorClass;
+		connectorClass = newConnectorClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, oldConnectorClass, newConnectorClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -90,10 +89,31 @@ public abstract class BehavioralConnectorImpl extends BehavioralElementImpl impl
 	 * @generated
 	 */
 	public void setConnectorClass(EClass newConnectorClass) {
-		EClass oldConnectorClass = connectorClass;
-		connectorClass = newConnectorClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
+		if (newConnectorClass != connectorClass) {
+			NotificationChain msgs = null;
+			if (connectorClass != null)
+				msgs = ((InternalEObject)connectorClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, null, msgs);
+			if (newConnectorClass != null)
+				msgs = ((InternalEObject)newConnectorClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, null, msgs);
+			msgs = basicSetConnectorClass(newConnectorClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS, newConnectorClass, newConnectorClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS:
+				return basicSetConnectorClass(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -105,8 +125,7 @@ public abstract class BehavioralConnectorImpl extends BehavioralElementImpl impl
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS:
-				if (resolve) return getConnectorClass();
-				return basicGetConnectorClass();
+				return getConnectorClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

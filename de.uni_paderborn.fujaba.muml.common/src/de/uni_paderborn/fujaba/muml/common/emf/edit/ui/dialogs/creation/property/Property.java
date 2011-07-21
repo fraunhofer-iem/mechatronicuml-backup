@@ -43,12 +43,16 @@ public class Property {
 	 */
 	protected EStructuralFeature feature;
 
+	/**
+	 * The resource to find reachable objects and to use to set the property
+	 * value.
+	 */
 	protected Resource resource;
 
-	protected TransactionalEditingDomain editingDomain;
-	
+	/**
+	 * The display name for this property.
+	 */
 	protected String displayName;
-
 
 	/**
 	 * The AdapterFactory to create an ItemPropertyDescritor.
@@ -63,8 +67,13 @@ public class Property {
 	/**
 	 * Constructs this Property.
 	 * 
+	 * @param resource
+	 *            The resource to find reachable objects and to use to set the
+	 *            property value.
 	 * @param feature
 	 *            The structural feature of this property.
+	 * @param adapterFactory
+	 *            The AdapterFactory to create an ItemPropertyDescritor.
 	 * @param propertyEditor
 	 *            The property editor to use.
 	 */
@@ -74,11 +83,10 @@ public class Property {
 		this.feature = feature;
 		this.propertyEditor = propertyEditor;
 		this.adapterFactory = adapterFactory;
-		editingDomain = TransactionUtil.getEditingDomain(resource);
 
 		propertyEditor.init(this);
 	}
-	
+
 	/**
 	 * Gets the structural feature of this property.
 	 * 
@@ -105,16 +113,26 @@ public class Property {
 	public String getDisplayName() {
 		if (displayName == null) {
 			displayName = feature.getName().substring(0, 1).toUpperCase()
-				+ feature.getName().substring(1);
+					+ feature.getName().substring(1);
 		}
 		return displayName;
 	}
-	
 
+	/**
+	 * Sets the display name for this feature.
+	 * 
+	 * @param displayName
+	 *            The display name to set.
+	 */
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
 
+	/**
+	 * Returns all reachable objects for this property.
+	 * 
+	 * @return The reachable objects.
+	 */
 	public Collection<?> getReachableObjects() {
 		// partly copied from
 		// org.eclipse.emf.edit.provider.ItemPropertyDescriptor
@@ -150,6 +168,15 @@ public class Property {
 		return Collections.EMPTY_LIST;
 	}
 
+	/**
+	 * Convenience method to return all reachable objects of the given type.
+	 * 
+	 * @param resource
+	 *            The resource search within.
+	 * @param eType
+	 *            The type for the objects.
+	 * @return The reachable objects.
+	 */
 	public static Collection<EObject> getReachableObjectsOfType(
 			Resource resource, EClassifier eType) {
 		// Partly copied from
@@ -178,10 +205,18 @@ public class Property {
 	 * 
 	 * @param object
 	 *            The object to set the value for.
+	 * @param value
+	 *            The value to set.
 	 * @throws ExecutionException
+	 *             If the set operation could not be performed.
 	 */
 	public void setPropertyValue(final EObject object, final Object value)
 			throws ExecutionException {
+
+		// Get editing domain
+		TransactionalEditingDomain editingDomain = TransactionUtil
+				.getEditingDomain(resource);
+
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
 				editingDomain,
 				"MultiFeatureCreationDialog -> setPropertyValue()",
@@ -209,7 +244,14 @@ public class Property {
 
 	}
 
-	private IItemPropertyDescriptor getItemPropertyDescriptor(EObject object) {
+	/**
+	 * Gets the property descriptor for this property and the given object.
+	 * 
+	 * @param object
+	 *            The object to get a property descriptor for.
+	 * @return The property descriptor.
+	 */
+	protected IItemPropertyDescriptor getItemPropertyDescriptor(EObject object) {
 		IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
 				object, IItemPropertySource.class);
 		if (ips != null) {
@@ -225,6 +267,16 @@ public class Property {
 		return null;
 	}
 
+	/**
+	 * Decides whether the ItemPropertyDescriptor is valid for this property and
+	 * the given object.
+	 * 
+	 * @param itemPropertyDescriptor
+	 *            The ItemPropertyDescriptor to test.
+	 * @param object
+	 *            The object.
+	 * @return <code>true</code>, if the property descriptor is valid.
+	 */
 	protected boolean isValidItemPropertyDescriptor(
 			IItemPropertyDescriptor itemPropertyDescriptor, Object object) {
 		Object descriptorFeature = itemPropertyDescriptor.getFeature(object);

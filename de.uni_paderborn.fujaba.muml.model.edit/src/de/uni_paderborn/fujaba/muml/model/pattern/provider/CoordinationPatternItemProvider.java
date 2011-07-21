@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -201,7 +202,7 @@ public class CoordinationPatternItemProvider
 			 null,
 			 rootPropertyDescriptor));
 		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+		IChainedPropertyDescriptor eClassPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_Role_eClass_feature"),
@@ -213,7 +214,22 @@ public class CoordinationPatternItemProvider
 			 null,
 			 category,
 			 null,
-			 rootPropertyDescriptor));
+			 rootPropertyDescriptor);
+
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_EClass_eAttributes_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
+			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
+			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
+			 true,
+			 false,
+			 false,
+			 null,
+			 category,
+			 null,
+			 eClassPropertyDescriptor));
 		
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -243,7 +259,7 @@ public class CoordinationPatternItemProvider
 			 null,
 			 rootPropertyDescriptor));
 		
-		IChainedPropertyDescriptor role1CardinalityPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+		IChainedPropertyDescriptor cardinalityPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
 				getString("_UI_Role_cardinality_feature"),
@@ -269,7 +285,7 @@ public class CoordinationPatternItemProvider
 				null,
 				category,
 				null, 
-				role1CardinalityPropertyDescriptor));
+				cardinalityPropertyDescriptor));
 
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
@@ -283,7 +299,7 @@ public class CoordinationPatternItemProvider
 				null,
 				category,
 				null,
-				role1CardinalityPropertyDescriptor));
+				cardinalityPropertyDescriptor));
 		
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),

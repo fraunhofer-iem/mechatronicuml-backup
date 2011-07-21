@@ -102,25 +102,25 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	void setCoordinationPattern(CoordinationPattern value);
 
 	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' reference.
+	 * Returns the value of the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class of this role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' reference.
+	 * @return the value of the '<em>EClass</em>' containment reference.
 	 * @see #setEClass(EClass)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_EClass()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EClass getEClass();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' reference.
+	 * @param value the new value of the '<em>EClass</em>' containment reference.
 	 * @see #getEClass()
 	 * @generated
 	 */

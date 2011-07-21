@@ -1,10 +1,13 @@
 package de.uni_paderborn.fujaba.common.descriptor;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 public abstract class AbstractChainedPropertyDescriptor extends
@@ -80,66 +83,18 @@ public abstract class AbstractChainedPropertyDescriptor extends
 			}
 			object = realObject;
 		}
-		
-		// Get the real old value from EMF (for the notification)
-		Object oldValue = super.getValue((EObject) object, this.feature);
 
+		// Get the real old value from EMF (for the notification)
+		Object oldValue = super.getValue((EObject) object, getFeatureToNotify());
 
 		// Set the new value
 		doSetValue(object, value);
-		
+
 		// Notify
 		if (!notified) {
 			// Get the real new value from EMF (for the notification)
-			Object newValue = super.getValue((EObject) object, this.feature);
+			Object newValue = super.getValue((EObject) object, getFeatureToNotify());
 			doNotifyObject(object, oldValue, newValue);
-		}
-	}
-	
-	public void notifyObject(Object object) {
-		if (parent != null) {
-			// TODO: nicht object übergeben, da der parent PropertyDescriptor ein anderes objekt erwartet!!
-			parent.notifyObject(object);
-		}
-		Object value = getValue((EObject) object, feature);
-		doNotifyObject(object, value, value);
-	}
-
-	public void doNotifyObject(Object object, Object oldValue, Object newValue) {
-		// TODO: This solution does not yet work, but should be preferred.
-//		int eventType = Notification.SET;
-//		if (feature.isMany()) {
-//			// TODO: Is this always working correctly?
-//			eventType = Notification.ADD_MANY;
-//		}
-//
-//		if (object instanceof InternalEObject) {
-//			((InternalEObject) object).eNotify(new ENotificationImpl(
-//					(InternalEObject) object, eventType, feature, oldValue,
-//					newValue));
-//		}
-		
-		// TODO: It follows a hack to get this working quickly...
-
-		// Test, if oldValue equals newValue. If not, we do not need to notify,
-		// because setting the new value will send a notification later.
-		if (oldValue == newValue
-				|| (oldValue != null && oldValue.equals(newValue))
-				|| (newValue != null && newValue.equals(oldValue))) {
-			if (feature.isMany() && feature.isChangeable()) {
-				// TODO
-			} else if (feature.isChangeable()) {
-				try {
-					super.setPropertyValue(object, null);
-				} catch	(Exception e) {
-					
-				}
-				try {
-					super.setPropertyValue(object, newValue);
-				} catch (Exception e) {
-					
-				}
-			}
 		}
 	}
 
@@ -173,6 +128,35 @@ public abstract class AbstractChainedPropertyDescriptor extends
 	}
 
 	@Override
+	public boolean isPropertySet(Object object) {
+		Object realObject = object;
+		if (parent != null) {
+			// ask the parent PropertyDescriptor for the property
+			// value of its feature
+			Object value = getWrappedValue(parent.getPropertyValue(object));
+			realObject = value;
+		}
+
+		if (realObject != null) {
+			return doIsPropertySet(realObject);
+		}
+
+		return false;
+	}
+	public boolean doIsPropertySet(Object object) {
+		return super.isPropertySet(object);
+	}
+
+	@Override
+	public void notifyObject(Object object) {
+		if (parent != null) {
+			parent.notifyObject(object);
+		}
+		Object value = getValue((EObject) object, feature);
+		doNotifyObject(object, value, value);
+	}
+
+	@Override
 	public abstract Object createObject();
 
 	@Override
@@ -183,6 +167,51 @@ public abstract class AbstractChainedPropertyDescriptor extends
 	@Override
 	public void setParentDescriptor(IChainedPropertyDescriptor parent) {
 		this.parent = parent;
+	}
+
+	public void doNotifyObject(Object object, Object oldValue, Object newValue) {
+		EStructuralFeature featureToNotify = getFeatureToNotify();
+		
+		
+		// TODO: This solution does not yet work, but should be preferred.
+		// int eventType = Notification.SET;
+		// if (featureToNotify()) {
+		// // TODO: Is this always working correctly?
+		// eventType = Notification.ADD_MANY;
+		// }
+		//
+		// if (object instanceof InternalEObject) {
+		// ((InternalEObject) object).eNotify(new ENotificationImpl(
+		// (InternalEObject) object, eventType, featureToNotify, oldValue,
+		// newValue));
+		// }
+
+		// TODO: It follows a hack to get this working quickly...
+
+		// Test, if oldValue equals newValue. If not, we do not need to notify,
+		// because setting the new value will send a notification later.
+		if (oldValue == newValue
+				|| (oldValue != null && oldValue.equals(newValue))
+				|| (newValue != null && newValue.equals(oldValue))) {
+			if (featureToNotify.isMany() && featureToNotify.isChangeable()) {
+				// TODO
+			} else if (featureToNotify.isChangeable()) {
+				try {
+					super.setPropertyValue(object, null);
+				} catch (Exception e) {
+
+				}
+				try {
+					super.setPropertyValue(object, newValue);
+				} catch (Exception e) {
+
+				}
+			}
+		}
+	}
+
+	protected EStructuralFeature getFeatureToNotify() {
+		return feature;
 	}
 
 }

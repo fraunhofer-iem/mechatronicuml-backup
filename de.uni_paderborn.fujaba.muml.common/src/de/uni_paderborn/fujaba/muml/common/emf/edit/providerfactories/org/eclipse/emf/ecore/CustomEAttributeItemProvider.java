@@ -1,19 +1,17 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.org.eclipse.emf.ecore;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.emf.ecore.provider.EParameterItemProvider;
+import org.eclipse.emf.ecore.provider.EAttributeItemProvider;
 
-public class CustomEParameterItemProvider extends EParameterItemProvider {
+public class CustomEAttributeItemProvider extends EAttributeItemProvider {
 
-	public CustomEParameterItemProvider(AdapterFactory adapterFactory) {
+	public CustomEAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
-	/**
-	 * Overridden to add the cardinality.
-	 */
+	// Overridden to add the cardinality.
 	@Override
 	public String getText(Object object) {
 		ETypedElement eTypedElement = (ETypedElement) object;

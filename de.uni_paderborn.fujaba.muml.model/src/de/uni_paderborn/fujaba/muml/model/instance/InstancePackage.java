@@ -169,7 +169,7 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE__BEHAVIOR = ComponentPackage.BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -369,7 +369,7 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -478,7 +478,7 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

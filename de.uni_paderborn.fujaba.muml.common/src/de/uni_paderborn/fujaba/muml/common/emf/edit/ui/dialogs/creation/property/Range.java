@@ -24,6 +24,16 @@ public class Range {
 	}
 
 	/**
+	 * Constructs this range by copying the given range.
+	 * 
+	 * @param range
+	 *            The range to copy.
+	 */
+	public Range(Range range) {
+		this(range.getStart(), range.getLength());
+	}
+
+	/**
 	 * Constructs this range.
 	 * 
 	 * @param start
@@ -86,5 +96,37 @@ public class Range {
 	 */
 	public void decrementLength() {
 		length--;
+	}
+
+	/**
+	 * Find out, if the length is zero.
+	 * 
+	 * @return <code>true</code>, if the Range is empty.
+	 */
+	public boolean isEmpty() {
+		return length == 0;
+	}
+
+	/**
+	 * Gets a copied Range, which is moved by the given offset.
+	 * 
+	 * @param offset
+	 *            The offset to move the Range by.
+	 * @return The new range.
+	 */
+	public Range getMoved(int offset) {
+		Range moved = new Range(this);
+		moved.move(offset);
+		return moved;
+	}
+
+	/**
+	 * Moves this Range by the given offset.
+	 * 
+	 * @param offset
+	 *            The offset to move this Range by.
+	 */
+	public void move(int offset) {
+		setStart(getStart() + offset);
 	}
 }

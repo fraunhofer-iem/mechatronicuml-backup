@@ -555,7 +555,7 @@ public class TransitionItemProvider
 	 * @generated NOT
 	 */
 	protected void addGuardPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+		DefaultChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Transition_guard_feature"),
@@ -566,8 +566,8 @@ public class TransitionItemProvider
 				 false,
 				 null,
 				 getString("_UI_GuardPropertyCategory"),
-				 null,
-				 ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
+				 null);
+		rootPropertyDescriptor.setInstanceClass(ExpressionsPackage.Literals.TEXTUAL_EXPRESSION);
 		
 
 		itemPropertyDescriptors
@@ -583,7 +583,6 @@ public class TransitionItemProvider
 						null,
 						getString("_UI_GuardPropertyCategory"),
 						null,
-						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION,
 						rootPropertyDescriptor));
 
 		itemPropertyDescriptors
@@ -599,7 +598,6 @@ public class TransitionItemProvider
 						null,
 						getString("_UI_GuardPropertyCategory"),
 						null,
-						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION,
 						rootPropertyDescriptor));
 
 		itemPropertyDescriptors
@@ -615,7 +613,6 @@ public class TransitionItemProvider
 						null,
 						getString("_UI_GuardPropertyCategory"),
 						null,
-						org.storydriven.modeling.expressions.ExpressionsPackage.Literals.TEXTUAL_EXPRESSION,
 						rootPropertyDescriptor));
 	}
 

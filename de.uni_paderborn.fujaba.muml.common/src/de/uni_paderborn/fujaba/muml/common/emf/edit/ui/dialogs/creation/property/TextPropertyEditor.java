@@ -158,10 +158,22 @@ public class TextPropertyEditor extends AbstractPropertyEditor {
 		styledText.setText(defaultValue);
 	}
 
+	/**
+	 * Sets the default value for this text property editor. It will be used,
+	 * when initializing the text control.
+	 * 
+	 * @param newDefaultValue
+	 *            The new default value.
+	 */
 	public void setDefaultValue(String newDefaultValue) {
 		this.defaultValue = newDefaultValue;
 	}
 
+	/**
+	 * Gets the default value for this text property editor.
+	 * 
+	 * @return The default value.
+	 */
 	public String getDefaultValue() {
 		return defaultValue;
 	}

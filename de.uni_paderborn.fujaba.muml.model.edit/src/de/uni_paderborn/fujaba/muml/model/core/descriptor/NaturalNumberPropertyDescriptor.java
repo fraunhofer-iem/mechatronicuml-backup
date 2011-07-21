@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.model.core.descriptor;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
@@ -23,8 +22,8 @@ public class NaturalNumberPropertyDescriptor extends
 			IChainedPropertyDescriptor parent) {
 		super(adapterFactory, resourceLocator, displayName, description,
 				feature, isSettable, multiLine, sortChoices, staticImage,
-				category, filterFlags, CorePackage.Literals.NATURAL_NUMBER,
-				parent);
+				category, filterFlags, parent);
+		setInstanceClass(CorePackage.Literals.NATURAL_NUMBER);
 	}
 
 	public NaturalNumberPropertyDescriptor(AdapterFactory adapterFactory,
@@ -39,11 +38,9 @@ public class NaturalNumberPropertyDescriptor extends
 
 	@Override
 	public Object createObject() {
-		Assert.isTrue(
-				false,
+		throw new UnsupportedOperationException(
 				"Tried to use NaturalNumberPropretyDescriptor as parent for another PropertyDescriptor.\n"
 						+ "This is not possible, as NaturalNumberPropretyDescriptor creates Strings, which cannot be used as input object for another ItemPropertyDescriptor.");
-		return null;
 	}
 
 	@Override
@@ -56,9 +53,9 @@ public class NaturalNumberPropertyDescriptor extends
 	}
 
 	@Override
-	public void doSetValue(Object object, Object value) {
+	public void doSetValue(Object object, Object newValue) {
 		NaturalNumber naturalNumber = CoreFactory.eINSTANCE.createNaturalNumber();
-		naturalNumber.setValue((String) value);
+		naturalNumber.setValue((String) newValue);
 		super.doSetValue(object, naturalNumber);
 	}
 

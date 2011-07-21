@@ -1,16 +1,14 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders;
 
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
 
 /**
- * An ITextProvider is able to provide a text for a set of objects.
+ * An IMultiTextProvider is able to provide a text for a set of objects.
  **/
-public interface ITextProvider {
+public interface IMultiLabelProvider {
 
 	/**
 	 * Provides a text for the set of passed objects.
@@ -23,7 +21,7 @@ public interface ITextProvider {
 	 * 
 	 * @return The representing text.
 	 */
-	String getText(List<EObject> objects,
-			Map<EObject, Range> returnedTextSelections);
+	String getText(List<Object> objects,
+			Map<Object, Range> returnedTextSelections);
 
 }

@@ -47,15 +47,17 @@ public class CustomParameterBindingItemProvider extends
 	 */
 	protected void addInvocationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ParameterBinding_invocation_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ParameterBinding_invocation_feature",
-						"_UI_ParameterBinding_type"),
-				CallsPackage.Literals.PARAMETER_BINDING__INVOCATION, true,
-				false, false, null, null, null));
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ParameterBinding_invocation_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBinding_invocation_feature", "_UI_ParameterBinding_type"),
+			 CallsPackage.Literals.PARAMETER_BINDING__INVOCATION,
+			 true,
+			 false,
+			 false,
+			 null,
+			 null,
+			 null));
 	}
 
 
@@ -66,41 +68,47 @@ public class CustomParameterBindingItemProvider extends
 	 * @generated NOT
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_ParameterBinding_valueExpression_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_ParameterBinding_valueExpression_feature",
-						"_UI_ParameterBinding_type"),
-				CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
-				true, false, false, null, null, null, ExpressionsPackage.Literals.LITERAL_EXPRESSION);
+		DefaultChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ParameterBinding_valueExpression_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ParameterBinding_valueExpression_feature", "_UI_ParameterBinding_type"),
+			 CallsPackage.Literals.PARAMETER_BINDING__VALUE_EXPRESSION,
+			 true,
+			 false,
+			 false,
+			 null,
+			 null,
+			 null);
+		rootPropertyDescriptor.setInstanceClass(ExpressionsPackage.Literals.LITERAL_EXPRESSION);
 
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_LiteralExpression_value_feature"), getString(
-						"_UI_PropertyDescriptor_description",
-						"_UI_LiteralExpression_value_feature",
-						"_UI_LiteralExpression_type"),
-				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE, true,
-				false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null, ExpressionsPackage.Literals.LITERAL_EXPRESSION,
-				rootPropertyDescriptor));
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_LiteralExpression_value_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_value_feature", "_UI_LiteralExpression_type"),
+			 ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE,
+			 true,
+			 false,
+			 false,
+			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			 null,
+			 null,
+			 rootPropertyDescriptor));
 
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_LiteralExpression_valueType_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_LiteralExpression_valueType_feature",
-						"_UI_LiteralExpression_type"),
-				ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
-				true, false, true, null, null, null,
-				ExpressionsPackage.Literals.LITERAL_EXPRESSION,
-				rootPropertyDescriptor));
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_LiteralExpression_valueType_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_LiteralExpression_valueType_feature", "_UI_LiteralExpression_type"),
+			 ExpressionsPackage.Literals.LITERAL_EXPRESSION__VALUE_TYPE,
+			 true,
+			 false,
+			 true,
+			 null,
+			 null,
+			 null,
+			 rootPropertyDescriptor));
 	}
-	
 
 }

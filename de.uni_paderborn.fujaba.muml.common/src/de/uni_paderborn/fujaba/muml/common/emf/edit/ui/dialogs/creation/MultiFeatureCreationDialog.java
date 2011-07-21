@@ -48,6 +48,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.IMultiLabelProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidationListener;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
@@ -69,67 +71,62 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 * A field, which remembers, if the values currently entered are valid.
 	 */
 
-	protected boolean validInput;
+	private boolean validInput;
 
 	/**
 	 * The text parser for the structural feature. It can parse a String to
 	 * create new objects.
 	 */
-	protected ITextParser textParser;
+	private IMultiTextParser textParser;
 
 	/**
 	 * The text provider for the structural feature. It can and provide a text
 	 * for a set of existing objects.
 	 */
-	protected ITextProvider textProvider;
+	private IMultiLabelProvider textProvider;
 
 	/**
 	 * The LabelProvider used to get Labels for Parameters and typeClassifiers.
 	 */
-	protected ILabelProvider labelProvider;
+	private ILabelProvider labelProvider;
 
 	/**
 	 * The ContentProvider to access items of an ItemProvider.
 	 */
-	protected IContentProvider contentProvider;
+	private IContentProvider contentProvider;
 
 	/**
 	 * The instance class of the objects to create.
 	 */
-	protected EClass instanceClass;
+	private EClass instanceClass;
 
 	/**
 	 * The properties to display.
 	 */
-	protected List<Property> properties;
-
-	/**
-	 * The AdapterFactory to use to create ItemPropertyDescriptors.
-	 */
-	protected AdapterFactory adapterFactory;
+	private List<Property> properties;
 
 	/**
 	 * Stores the Parameters currently set; they can be accessed using
 	 * values.getChildren().
 	 */
-	protected ItemProvider values;
+	private ItemProvider values;
 
 	/**
 	 * The Object containing the StructuralFeature, we are setting the values
 	 * for.
 	 */
-	protected EObject containerObject;
+	private EObject containerObject;
 
 	/**
 	 * The StructuralFeature that we set the values for.
 	 */
-	protected EStructuralFeature structuralFeature;
+	private EStructuralFeature structuralFeature;
 
 	/**
 	 * The areas in the Parameter-Line Textfield that contain certain
 	 * Parameters.
 	 */
-	protected Map<EObject, Range> textRanges;
+	private Map<Object, Range> textRanges;
 
 	// Note: We store Listeners in order to be able to remove/add them
 	// afterwards.
@@ -139,54 +136,54 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 * the Parameter List and updates the Parameter-Line Textfield selection
 	 * accordingly.
 	 */
-	protected ISelectionChangedListener parameterSelectionToRangeListener;
+	private ISelectionChangedListener parameterSelectionToRangeListener;
 
 	/**
 	 * A SelectionChangedListener, which is notified about selection changes in
 	 * the Parameter List and updates the enable-status of the Buttons "Up",
 	 * "Down" and "Modify" accordingly.
 	 */
-	protected ISelectionChangedListener parameterSelectionToButtonEnablementListener;
+	private ISelectionChangedListener parameterSelectionToButtonEnablementListener;
 
 	/**
 	 * A ModifyListener, which is notified when the Parameter-Line Text was
 	 * edited by the user.
 	 */
-	protected ModifyListener txtParameterLineModifyListener;
+	private ModifyListener txtParameterLineModifyListener;
 
 	/**
 	 * A CaretListener, which is notified when the user changes the
 	 * Caret-Position in the Parameter-Line Textfield.
 	 */
-	protected CaretListener txtParameterLineCaretListener;
+	private CaretListener txtParameterLineCaretListener;
 
 	/**
 	 * The result, which can be accessed using getResult(), after the dialog was
 	 * closed.
 	 */
-	protected EList<?> result;
+	private EList<?> result;
 
 	// UI-Controls:
 
 	/**
 	 * The Parameters-List TableViewer.
 	 */
-	protected TableViewer parameterTableViewer;
+	private TableViewer parameterTableViewer;
 
 	/**
 	 * The textual Parameter-Line Textfield.
 	 */
-	protected StyledText txtParameterLine;
+	private StyledText txtParameterLine;
 
 	/**
 	 * The Modify-Button.
 	 */
-	protected Button btnModify;
+	private Button btnModify;
 
 	/**
 	 * The Create-Button.
 	 */
-	protected Button btnCreate;
+	private Button btnCreate;
 
 	/**
 	 * Constructs this MultiFeatureCreationDialog.
@@ -199,19 +196,28 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 *            The object containing the <code>structuralFeature</code>.
 	 * @param structuralFeature
 	 *            The StructuralFeature to set values for.
+	 * @param currentValues
+	 *            The current objects of the feature.
+	 * @param adapterFactory
+	 *            The adapter factory for content providers, item providers and
+	 *            ItemPropertyDescriptors.
+	 * @param properties
+	 *            The list of properties to display.
 	 * @param textParser
 	 *            The TextParser that is able to create objects represented by a
 	 *            text.
 	 * @param textProvider
 	 *            The TextProvider that is able to build a text for a set of
 	 *            objects.
+	 * @param instanceClass
+	 *            The instance class to create new objects.
 	 * 
 	 */
 	public MultiFeatureCreationDialog(Shell parentShell,
 			ILabelProvider labelProvider, EObject containerObject,
 			EStructuralFeature structuralFeature, Collection<?> currentValues,
 			AdapterFactory adapterFactory, List<Property> properties,
-			ITextParser textParser, ITextProvider textProvider,
+			IMultiTextParser textParser, IMultiLabelProvider textProvider,
 			EClass instanceClass) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
@@ -222,7 +228,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 		this.textProvider = textProvider;
 		this.instanceClass = instanceClass;
 		this.properties = properties;
-		this.adapterFactory = adapterFactory;
 
 		this.values = new ItemProvider(adapterFactory, currentValues);
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
@@ -284,7 +289,7 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 		for (Property property : properties) {
 			Label lblName = new Label(grpParameterProps, SWT.NONE);
-			lblName.setLayoutData(new GridData(SWT.LEFT, SWT.TOP, false,
+			lblName.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false,
 					false, 1, 1));
 			lblName.setText(property.getDisplayName() + ":");
 
@@ -551,10 +556,10 @@ public class MultiFeatureCreationDialog extends Dialog {
 
 					String text = txtParameterLine.getText();
 
-					Map<EObject, Range> newRanges = new HashMap<EObject, Range>();
+					Map<Object, Range> newRanges = new HashMap<Object, Range>();
 					List<Range> newErrorRanges = new ArrayList<Range>();
-					List<EObject> newObjects = textParser.createObjects(text,
-							newRanges, newErrorRanges);
+					List<Object> newObjects = textParser.createObjects(
+							text.toCharArray(), newRanges, newErrorRanges);
 
 					clearTextStyle(txtParameterLine);
 					markErrors(txtParameterLine, newErrorRanges);
@@ -600,6 +605,12 @@ public class MultiFeatureCreationDialog extends Dialog {
 		return container;
 	}
 
+	/**
+	 * Applies the properties to the given object.
+	 * 
+	 * @param object
+	 *            The object to apply the properties to.
+	 */
 	protected void applyProperties(EObject object) {
 		for (Property property : properties) {
 			AbstractPropertyEditor editor = property.getPropertyEditor();
@@ -625,6 +636,14 @@ public class MultiFeatureCreationDialog extends Dialog {
 		styledText.setStyleRange(styleRange);
 	}
 
+	/**
+	 * Marks errors in the given StyledText-Control.
+	 * 
+	 * @param styledText
+	 *            The control to mark errors in.
+	 * @param errorRanges
+	 *            The list of error ranges.
+	 */
 	protected void markErrors(StyledText styledText, List<Range> errorRanges) {
 		for (Range range : errorRanges) {
 			StyleRange errorStyle = new StyleRange();
@@ -705,12 +724,10 @@ public class MultiFeatureCreationDialog extends Dialog {
 	 */
 	private void rebuildTextualParameterLine() {
 		if (textProvider != null) {
-			textRanges = new HashMap<EObject, Range>();
+			textRanges = new HashMap<Object, Range>();
 
-			@SuppressWarnings("unchecked")
-			String text = textProvider.getText(
-					(EList<EObject>) (EList<?>) values.getChildren(),
-					textRanges);
+			String text = textProvider
+					.getText(values.getChildren(), textRanges);
 
 			setParameterLine(text);
 		}
@@ -763,20 +780,6 @@ public class MultiFeatureCreationDialog extends Dialog {
 		}
 		return null;
 	}
-
-	// /**
-	// * Returns the parameter type currently selected within the ComboBox.
-	// *
-	// * @return The Classifier to use as parameter type.
-	// */
-	// private EClassifier getSelectedType() {
-	// if (typeComboViewer.getSelection() instanceof StructuredSelection) {
-	// IStructuredSelection selection = (IStructuredSelection) typeComboViewer
-	// .getSelection();
-	// return (EClassifier) selection.getFirstElement();
-	// }
-	// return null;
-	// }
 
 	@Override
 	protected Point getInitialSize() {

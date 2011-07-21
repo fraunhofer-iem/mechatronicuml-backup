@@ -9,7 +9,7 @@ public interface IChainedPropertyDescriptor extends IItemPropertyDescriptor {
 
 	void setParentDescriptor(IChainedPropertyDescriptor next);
 	Object doGetValue(EObject object, EStructuralFeature feature);
-	void doSetValue(Object object, Object value);
+	void doSetValue(Object object, Object newValue);
 	Object createObject();
 	void notifyObject(Object object);
 }

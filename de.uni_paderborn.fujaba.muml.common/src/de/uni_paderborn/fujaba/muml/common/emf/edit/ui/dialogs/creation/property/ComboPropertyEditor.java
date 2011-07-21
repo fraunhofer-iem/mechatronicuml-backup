@@ -1,14 +1,8 @@
 package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
@@ -23,8 +17,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-
 /**
  * A PropertyEditor using a ComboBox with predefined choices.
  * 
@@ -37,7 +29,10 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * The Viewer for the ComboBox.
 	 */
 	protected ComboViewer comboViewer;
-	
+
+	/**
+	 * The AdapterFactory to create an ItemProvider with.
+	 */
 	protected AdapterFactory adapterFactory;
 
 	/**
@@ -59,7 +54,7 @@ public class ComboPropertyEditor extends AbstractPropertyEditor {
 	 * Creates this ComboPropertyEditor.
 	 * 
 	 * @param adapterFactory
-	 *            The AdapterFactory to use to create the ContentProvider.
+	 *            The AdapterFactory to create an ItemProvider with.
 	 */
 	public ComboPropertyEditor(AdapterFactory adapterFactory) {
 		this.adapterFactory = adapterFactory;

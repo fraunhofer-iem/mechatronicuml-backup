@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -15,7 +16,6 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -35,17 +35,18 @@ import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.ITextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.ITextProvider;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.MultiFeatureCreationDialog;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterNameValidator;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterTextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter.ParameterTextProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.identifier.IdentifierValidator;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.DefaultMultiLabelProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.IMultiLabelProvider;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.DefaultMultiTextParser;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.IMultiTextParser;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.ComboPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.typedelement.DefaultTypedElementParser;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
@@ -94,9 +95,9 @@ public class CustomPropertySource extends PropertySource {
 						return createEDataTypeCellEditor(eDataType, parent);
 
 					} else if (EParameter.class.isAssignableFrom(instanceClass)) {
-						return createParameterCellEditor(parent,
+						return createTypedElementCellEditor(parent,
 								getLabelProvider(), structuralFeature,
-								getCurrentValues());
+								getCurrentValues(), ",", ", ");
 					} else if (Expression.class.isAssignableFrom(instanceClass)) {
 						return createTextualExpressionCellEditor(parent,
 								getLabelProvider(), structuralFeature,
@@ -120,6 +121,10 @@ public class CustomPropertySource extends PropertySource {
 						return createClocksCellEditor(parent,
 								getLabelProvider(), structuralFeature,
 								getCurrentValues());
+					} else if (EAttribute.class.isAssignableFrom(instanceClass)) {
+						return createTypedElementCellEditor(parent,
+								getLabelProvider(), structuralFeature,
+								getCurrentValues(), ";", "; ");
 					}
 				}
 				return super.createPropertyEditor(parent);
@@ -147,8 +152,8 @@ public class CustomPropertySource extends PropertySource {
 			ExtendedDialogCellEditor {
 		protected EStructuralFeature structuralFeature;
 		protected List<Property> properties = new ArrayList<Property>();
-		protected ITextParser textParser;
-		protected ITextProvider textProvider;
+		protected IMultiTextParser textParser;
+		protected IMultiLabelProvider textProvider;
 		protected EClass instanceClass;
 		protected Collection<?> currentValues;
 
@@ -162,11 +167,11 @@ public class CustomPropertySource extends PropertySource {
 			instanceClass = (EClass) structuralFeature.getEType();
 		}
 
-		public void setTextParser(ITextParser textParser) {
+		public void setMultiTextParser(IMultiTextParser textParser) {
 			this.textParser = textParser;
 		}
 
-		public void setTextProvider(ITextProvider textProvider) {
+		public void setMultiLabelProvider(IMultiLabelProvider textProvider) {
 			this.textProvider = textProvider;
 		}
 
@@ -209,52 +214,6 @@ public class CustomPropertySource extends PropertySource {
 			return (RootNode) contents.get(0);
 		}
 		return null;
-	}
-
-	private MultiFeatureCreationCellEditor createParameterCellEditor(
-			Composite parent, ILabelProvider labelProvider,
-			EStructuralFeature structuralFeature, Collection<?> currentValues) {
-
-		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
-				parent, labelProvider, structuralFeature, currentValues);
-
-		List<EClassifier> choices = null;
-
-		RootNode rootNode = getRootNodeElement();
-		if (rootNode != null) {
-			List<EDataType> ecoreDataTypes = rootNode.getEcoreDataTypes();
-
-			EDataType[] array = ecoreDataTypes.toArray(new EDataType[] {});
-			choices = Arrays.asList((EClassifier[]) array);
-		}
-
-		IValidator parameterNameValidator = new ParameterNameValidator();
-		TextPropertyEditor nameEditor = new TextPropertyEditor();
-		nameEditor.setDefaultValue("parameter");
-		nameEditor.addValidator(parameterNameValidator);
-
-		ComboPropertyEditor typeEditor = new ComboPropertyEditor(adapterFactory);
-		typeEditor.setLabelProvider(labelProvider);
-		typeEditor.setChoices(choices);
-
-		parameterCellEditor.setTextParser(new ParameterTextParser(choices,
-				parameterNameValidator));
-		parameterCellEditor.setTextProvider(new ParameterTextProvider(
-				labelProvider));
-		parameterCellEditor.addProperty(createProperty(
-				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
-		parameterCellEditor.addProperty(createProperty(
-				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
-
-		TextPropertyEditor upperBoundEditor = new TextPropertyEditor();
-		upperBoundEditor.setDefaultValue("1");
-		Property upperBoundProperty = createProperty(
-				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
-				upperBoundEditor);
-		upperBoundProperty.setDisplayName("Cardinality");
-		parameterCellEditor.addProperty(upperBoundProperty);
-
-		return parameterCellEditor;
 	}
 
 	private MultiFeatureCreationCellEditor createTextualExpressionCellEditor(
@@ -370,7 +329,6 @@ public class CustomPropertySource extends PropertySource {
 
 		return absoluteDeadlineCellEditor;
 	}
-	
 
 	private CellEditor createClocksCellEditor(Composite parent,
 			ILabelProvider labelProvider, EStructuralFeature structuralFeature,
@@ -379,11 +337,62 @@ public class CustomPropertySource extends PropertySource {
 		MultiFeatureCreationCellEditor clocksCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 		clocksCellEditor.addProperty(createProperty(
-				SDMPackage.Literals.NAMED_ELEMENT__NAME, new TextPropertyEditor()));
-	
+				SDMPackage.Literals.NAMED_ELEMENT__NAME,
+				new TextPropertyEditor()));
+
 		return clocksCellEditor;
 	}
 
+	private MultiFeatureCreationCellEditor createTypedElementCellEditor(
+			Composite parent, ILabelProvider labelProvider,
+			EStructuralFeature structuralFeature, Collection<?> currentValues, String parserSplitElement, String labelProviderSplitElement) {
+
+		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
+				parent, labelProvider, structuralFeature, currentValues);
+
+		List<EClassifier> choices = null;
+
+		RootNode rootNode = getRootNodeElement();
+		if (rootNode != null) {
+			List<EDataType> ecoreDataTypes = rootNode.getEcoreDataTypes();
+
+			EDataType[] array = ecoreDataTypes.toArray(new EDataType[] {});
+			choices = Arrays.asList((EClassifier[]) array);
+		}
+
+		IValidator identifierValidator = new IdentifierValidator();
+
+		DefaultMultiTextParser multiTextParser = new DefaultMultiTextParser(
+				parserSplitElement, new DefaultTypedElementParser(choices,
+						identifierValidator, (EClass) structuralFeature.getEType()));
+
+		IMultiLabelProvider multiLabelProvider = new DefaultMultiLabelProvider(labelProviderSplitElement, labelProvider);
+
+		TextPropertyEditor nameEditor = new TextPropertyEditor();
+		nameEditor.setDefaultValue(structuralFeature.getEType().getName());
+		nameEditor.addValidator(identifierValidator);
+
+		ComboPropertyEditor typeEditor = new ComboPropertyEditor(adapterFactory);
+		typeEditor.setLabelProvider(labelProvider);
+		typeEditor.setChoices(choices);
+
+		parameterCellEditor.setMultiTextParser(multiTextParser);
+		parameterCellEditor.setMultiLabelProvider(multiLabelProvider);
+		parameterCellEditor.addProperty(createProperty(
+				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
+		parameterCellEditor.addProperty(createProperty(
+				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
+
+		TextPropertyEditor upperBoundEditor = new TextPropertyEditor();
+		upperBoundEditor.setDefaultValue("1");
+		Property upperBoundProperty = createProperty(
+				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
+				upperBoundEditor);
+		upperBoundProperty.setDisplayName("Cardinality");
+		parameterCellEditor.addProperty(upperBoundProperty);
+
+		return parameterCellEditor;
+	}
 
 	private Property createProperty(EStructuralFeature feature,
 			AbstractPropertyEditor propertyEditor) {

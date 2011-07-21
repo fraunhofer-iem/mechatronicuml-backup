@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -152,12 +153,11 @@ public class RoleItemProvider
 	 * This adds a property descriptor for the EClass feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addEClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Role_eClass_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_eClass_feature", "_UI_Role_type"),
@@ -166,8 +166,24 @@ public class RoleItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
+				 getString("_UI_EClassPropertyCategory"),
+				 null);
+
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_EClass_eAttributes_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
+			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
+			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_EClassPropertyCategory"),
+			 null,
+			 rootPropertyDescriptor));
+		
 	}
 
 	/**

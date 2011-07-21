@@ -133,7 +133,7 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__PORTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,7 +242,7 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -650,7 +650,7 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -941,7 +941,7 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1068,7 +1068,7 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1141,7 +1141,7 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1178,7 +1178,7 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE__BEHAVIOR = BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1242,7 +1242,7 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1324,7 +1324,7 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1532,7 +1532,7 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1591,10 +1591,10 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponent_Ports();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EClass</em>'.
+	 * @return the meta object for the containment reference '<em>EClass</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getEClass()
 	 * @see #getComponent()
 	 * @generated
@@ -1763,10 +1763,10 @@ public interface ComponentPackage extends EPackage {
 	EReference getDiscretePort_RoleAndAdaptationBehavior();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EClass</em>'.
+	 * @return the meta object for the containment reference '<em>EClass</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass()
 	 * @see #getDiscretePort()
 	 * @generated
@@ -2052,10 +2052,10 @@ public interface ComponentPackage extends EPackage {
 	EClass getBehavioralConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector#getConnectorClass <em>Connector Class</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector#getConnectorClass <em>Connector Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector Class</em>'.
+	 * @return the meta object for the containment reference '<em>Connector Class</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector#getConnectorClass()
 	 * @see #getBehavioralConnector()
 	 * @generated
@@ -2133,7 +2133,7 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
 
 		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EClass</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2269,7 +2269,7 @@ public interface ComponentPackage extends EPackage {
 		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
 
 		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>EClass</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2501,7 +2501,7 @@ public interface ComponentPackage extends EPackage {
 		EClass BEHAVIORAL_CONNECTOR = eINSTANCE.getBehavioralConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Connector Class</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

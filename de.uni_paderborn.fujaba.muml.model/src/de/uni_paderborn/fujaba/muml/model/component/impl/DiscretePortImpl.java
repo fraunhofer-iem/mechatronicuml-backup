@@ -107,7 +107,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	protected Behavior roleAndAdaptationBehavior;
 
 	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEClass()
@@ -365,14 +365,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @generated
 	 */
 	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject)eClass;
-			eClass = (EClass)eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__ECLASS, oldEClass, eClass));
-			}
-		}
 		return eClass;
 	}
 
@@ -381,8 +373,14 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass basicGetEClass() {
-		return eClass;
+	public NotificationChain basicSetEClass(EClass newEClass, NotificationChain msgs) {
+		EClass oldEClass = eClass;
+		eClass = newEClass;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__ECLASS, oldEClass, newEClass);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -391,10 +389,17 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @generated
 	 */
 	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__ECLASS, oldEClass, eClass));
+		if (newEClass != eClass) {
+			NotificationChain msgs = null;
+			if (eClass != null)
+				msgs = ((InternalEObject)eClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DISCRETE_PORT__ECLASS, null, msgs);
+			if (newEClass != null)
+				msgs = ((InternalEObject)newEClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DISCRETE_PORT__ECLASS, null, msgs);
+			msgs = basicSetEClass(newEClass, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__ECLASS, newEClass, newEClass));
 	}
 
 	/**
@@ -428,6 +433,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				return basicSetRefines(null, msgs);
+			case ComponentPackage.DISCRETE_PORT__ECLASS:
+				return basicSetEClass(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -458,8 +465,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
 			case ComponentPackage.DISCRETE_PORT__ECLASS:
-				if (resolve) return getEClass();
-				return basicGetEClass();
+				return getEClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

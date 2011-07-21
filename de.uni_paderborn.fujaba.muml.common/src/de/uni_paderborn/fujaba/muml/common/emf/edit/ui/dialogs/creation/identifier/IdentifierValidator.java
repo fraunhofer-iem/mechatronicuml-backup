@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parameter;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +9,13 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextValidationStatus;
 
 /**
- * A Validator, which checks if the parameter name contains only valid
+ * A Validator, which checks if the identifier string contains only valid
  * characters.
  * 
  * @author bingo
  * 
  */
-public class ParameterNameValidator implements IValidator {
+public class IdentifierValidator implements IValidator {
 
 	@Override
 	public IValidationStatus validate(Object object) {
