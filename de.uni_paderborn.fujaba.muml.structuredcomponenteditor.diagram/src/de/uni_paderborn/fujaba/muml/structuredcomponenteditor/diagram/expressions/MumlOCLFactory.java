@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[23];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[27];
 	}
 
 	/**
@@ -66,12 +66,16 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
+					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
+					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
+					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
+					"\'port\'", //$NON-NLS-1$
 					"if self.componentType.oclIsUndefined() then\n\t\'null\'\nelse\n\tself.componentType.name\nendif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

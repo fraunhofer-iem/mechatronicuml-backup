@@ -52,11 +52,11 @@ public class CustomPortItemSemanticEditPolicy extends
 	@Override
 	public Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Delegation_4003 == req
+		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Delegation_4001 == req
 				.getElementType()) {
 			return getGEFWrapper(getDelegationCreateCommand(req));
 		}
-		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Assembly_4004 == req
+		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Assembly_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(getAssemblyCreateCommand(req));
 		}

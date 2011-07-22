@@ -51,7 +51,7 @@ public class HybridPortNameEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5006;
+	public static final int VISUAL_ID = 5001;
 
 	/**
 	 * @generated
@@ -327,9 +327,9 @@ public class HybridPortNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3007,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3001,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID));

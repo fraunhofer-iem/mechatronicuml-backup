@@ -16,7 +16,7 @@ public class DelegationItemSemanticEditPolicy
 	 */
 	public DelegationItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Delegation_4003);
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.Delegation_4001);
 	}
 
 	/**

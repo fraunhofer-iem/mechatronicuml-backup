@@ -124,6 +124,26 @@ public class MumlVisualIDRegistry {
 				return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID;
 			}
 			break;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getStateEntryPoint().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getStateExitPoint().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getStateEntryPoint().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getStateExitPoint().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID;
+			}
+			break;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getEntryEvent().isSuperTypeOf(domainElement.eClass())) {
@@ -230,6 +250,12 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
@@ -278,6 +304,12 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

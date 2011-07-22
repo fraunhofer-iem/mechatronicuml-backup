@@ -21,7 +21,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -93,14 +96,14 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new SynchronizationChannelFigure();
+		return primaryShape = new StateItemFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public SynchronizationChannelFigure getPrimaryShape() {
-		return (SynchronizationChannelFigure) primaryShape;
+	public StateItemFigure getPrimaryShape() {
+		return (StateItemFigure) primaryShape;
 	}
 
 	/**
@@ -109,8 +112,7 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureSynchronizationChannelLabel());
+					.setLabel(getPrimaryShape().getFigureStateEventLabel());
 			return true;
 		}
 		return false;
@@ -250,17 +252,17 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class SynchronizationChannelFigure extends RectangleFigure {
+	public class StateItemFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureSynchronizationChannelLabel;
+		private WrappingLabel fFigureStateEventLabel;
 
 		/**
 		 * @generated
 		 */
-		public SynchronizationChannelFigure() {
+		public StateItemFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -276,29 +278,37 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureSynchronizationChannelLabel = new WrappingLabel();
-			fFigureSynchronizationChannelLabel.setText("");
+			fFigureStateEventLabel = new WrappingLabel();
+			fFigureStateEventLabel.setText("");
 
-			GridData constraintFFigureSynchronizationChannelLabel = new GridData();
-			constraintFFigureSynchronizationChannelLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureSynchronizationChannelLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureSynchronizationChannelLabel.horizontalIndent = 0;
-			constraintFFigureSynchronizationChannelLabel.horizontalSpan = 1;
-			constraintFFigureSynchronizationChannelLabel.verticalSpan = 1;
-			constraintFFigureSynchronizationChannelLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureSynchronizationChannelLabel.grabExcessVerticalSpace = false;
-			this.add(fFigureSynchronizationChannelLabel,
-					constraintFFigureSynchronizationChannelLabel);
+			fFigureStateEventLabel.setFont(FFIGURESTATEEVENTLABEL_FONT);
+
+			GridData constraintFFigureStateEventLabel = new GridData();
+			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStateEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateEventLabel.horizontalIndent = 0;
+			constraintFFigureStateEventLabel.horizontalSpan = 1;
+			constraintFFigureStateEventLabel.verticalSpan = 1;
+			constraintFFigureStateEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStateEventLabel, constraintFFigureStateEventLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureSynchronizationChannelLabel() {
-			return fFigureSynchronizationChannelLabel;
+		public WrappingLabel getFigureStateEventLabel() {
+			return fFigureStateEventLabel;
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURESTATEEVENTLABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 8, SWT.NORMAL);
 
 }

@@ -16,4 +16,3 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.model;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram;bundle-version="1.0.0",
  de.fujaba.newwizard;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.actions

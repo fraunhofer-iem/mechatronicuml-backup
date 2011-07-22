@@ -285,70 +285,29 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="ClockConstraintFigure">
+        name="StateItemFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ClockConstraintFigure"
+          name="StateItemFigure"
           outline="false">
         <layout
             xsi:type="gmfgraph:GridLayout"
             equalWidth="false"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="ClockConstraintLabel">
+            name="StateItemLabel">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
               horizontalAlignment="FILL"/>
-        </children>
-      </actualFigure>
-      <accessors
-          accessor="getFigureTimeInvariantExpr"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="SynchronizationChannelFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="SynchronizationChannelFigure"
-          outline="false">
-        <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="SynchronizationChannelLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              horizontalAlignment="FILL"/>
-        </children>
-      </actualFigure>
-      <accessors
-          accessor="getFigureSynchronizationChannelLabel"
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="StateEventFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="StateEventFigure"
-          outline="false">
-        <layout
-            xsi:type="gmfgraph:GridLayout"
-            equalWidth="false"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="StateEventLabel">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              horizontalAlignment="FILL"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              height="8"/>
         </children>
       </actualFigure>
       <accessors
           accessor="getFigureStateEventLabel"
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="FujabaRealtimeStatechartFigure">
@@ -356,36 +315,61 @@
           xsi:type="gmfgraph:Rectangle"
           name="FujabaRealtimeStatechartFigure"/>
     </descriptors>
+    <descriptors
+        name="StateEntryPointFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="StateEntryPointFigure"/>
+    </descriptors>
+    <descriptors
+        name="StateExitPointFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="StateExitPointFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:ScalablePolygon">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
+          <template/>
+          <template
+              x="2"
+              y="2"/>
+          <template
+              x="1"
+              y="1"/>
+          <template
+              y="2"/>
+          <template
+              x="2"/>
+          <template
+              x="1"
+              y="1"/>
+        </children>
+      </actualFigure>
+    </descriptors>
   </figures>
   <nodes
       name="StateNode"
-      figure="StateFigure"/>
+      figure="StateFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="40"
+          dy="40"/>
+    </facets>
+  </nodes>
   <nodes
       name="Region"
       figure="RegionFigure"/>
   <nodes
-      name="SynchronizationChannel"
-      figure="SynchronizationChannelFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
-    </facets>
-  </nodes>
-  <nodes
-      name="StateEvent"
-      figure="StateEventFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="-1"
-          dy="-1"/>
-    </facets>
-  </nodes>
-  <nodes
-      name="ClockConstraint"
-      figure="ClockConstraintFigure">
+      name="StateItem"
+      figure="StateItemFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -396,6 +380,28 @@
   <nodes
       name="FujabaRealtimeStatechart"
       figure="FujabaRealtimeStatechartFigure"/>
+  <nodes
+      name="StateEntryPoint"
+      figure="StateEntryPointFigure"
+      affixedParentSide="WEST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="25"
+          dy="25"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="StateExitPoint"
+      figure="StateExitPointFigure"
+      affixedParentSide="EAST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="25"
+          dy="25"/>
+    </facets>
+  </nodes>
   <connections
       name="Transition"
       figure="TransitionFigure">
@@ -440,31 +446,16 @@
         y="20"/>
   </labels>
   <labels
-      name="ClockNameLabel"
-      figure="StateFigure"
-      resizeConstraint="NONE"
-      elementIcon="false"/>
-  <labels
       name="StateNameLabel"
       figure="StateFigure"
       resizeConstraint="NONE"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
-      name="ClockConstraintLabel"
-      figure="ClockConstraintFigure"
+      name="StateItemLabel"
+      figure="StateItemFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.4/@accessors.0"/>
-  <labels
-      name="SynchronizationChannelLabel"
-      figure="SynchronizationChannelFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <labels
-      name="StateEventLabel"
-      figure="StateEventFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
   <labels
       name="RegionNameLabel"
       figure="RegionFigure"

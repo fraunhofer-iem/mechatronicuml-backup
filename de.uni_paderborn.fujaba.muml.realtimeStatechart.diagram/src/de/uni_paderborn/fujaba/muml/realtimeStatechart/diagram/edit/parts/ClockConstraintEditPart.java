@@ -21,7 +21,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -93,14 +96,14 @@ public class ClockConstraintEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ClockConstraintFigure();
+		return primaryShape = new StateItemFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ClockConstraintFigure getPrimaryShape() {
-		return (ClockConstraintFigure) primaryShape;
+	public StateItemFigure getPrimaryShape() {
+		return (StateItemFigure) primaryShape;
 	}
 
 	/**
@@ -109,7 +112,7 @@ public class ClockConstraintEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureTimeInvariantExpr());
+					.setLabel(getPrimaryShape().getFigureStateEventLabel());
 			return true;
 		}
 		return false;
@@ -249,17 +252,17 @@ public class ClockConstraintEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ClockConstraintFigure extends RectangleFigure {
+	public class StateItemFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureTimeInvariantExpr;
+		private WrappingLabel fFigureStateEventLabel;
 
 		/**
 		 * @generated
 		 */
-		public ClockConstraintFigure() {
+		public StateItemFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -275,29 +278,37 @@ public class ClockConstraintEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureTimeInvariantExpr = new WrappingLabel();
-			fFigureTimeInvariantExpr.setText("");
+			fFigureStateEventLabel = new WrappingLabel();
+			fFigureStateEventLabel.setText("");
 
-			GridData constraintFFigureTimeInvariantExpr = new GridData();
-			constraintFFigureTimeInvariantExpr.verticalAlignment = GridData.CENTER;
-			constraintFFigureTimeInvariantExpr.horizontalAlignment = GridData.FILL;
-			constraintFFigureTimeInvariantExpr.horizontalIndent = 0;
-			constraintFFigureTimeInvariantExpr.horizontalSpan = 1;
-			constraintFFigureTimeInvariantExpr.verticalSpan = 1;
-			constraintFFigureTimeInvariantExpr.grabExcessHorizontalSpace = true;
-			constraintFFigureTimeInvariantExpr.grabExcessVerticalSpace = false;
-			this.add(fFigureTimeInvariantExpr,
-					constraintFFigureTimeInvariantExpr);
+			fFigureStateEventLabel.setFont(FFIGURESTATEEVENTLABEL_FONT);
+
+			GridData constraintFFigureStateEventLabel = new GridData();
+			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStateEventLabel.horizontalAlignment = GridData.FILL;
+			constraintFFigureStateEventLabel.horizontalIndent = 0;
+			constraintFFigureStateEventLabel.horizontalSpan = 1;
+			constraintFFigureStateEventLabel.verticalSpan = 1;
+			constraintFFigureStateEventLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStateEventLabel.grabExcessVerticalSpace = false;
+			this.add(fFigureStateEventLabel, constraintFFigureStateEventLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureTimeInvariantExpr() {
-			return fFigureTimeInvariantExpr;
+		public WrappingLabel getFigureStateEventLabel() {
+			return fFigureStateEventLabel;
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURESTATEEVENTLABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 8, SWT.NORMAL);
 
 }

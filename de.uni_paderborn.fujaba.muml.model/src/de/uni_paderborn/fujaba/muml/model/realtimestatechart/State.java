@@ -214,16 +214,16 @@ public interface State extends Vertex {
 	EList<StateEvent> getEvents();
 
 	/**
-	 * Returns the value of the '<em><b>State Entry Or Exit Points</b></em>' reference list.
+	 * Returns the value of the '<em><b>State Entry Or Exit Points</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryOrExitPoint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>State Entry Or Exit Points</em>' reference list.
+	 * @return the value of the '<em>State Entry Or Exit Points</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_StateEntryOrExitPoints()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<StateEntryOrExitPoint> getStateEntryOrExitPoints();

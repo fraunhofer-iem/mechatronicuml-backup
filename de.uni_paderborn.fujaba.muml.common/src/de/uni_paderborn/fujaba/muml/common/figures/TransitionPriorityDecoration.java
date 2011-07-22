@@ -29,7 +29,9 @@ public class TransitionPriorityDecoration extends Ellipse implements RotatableDe
 
 	@Override
 	public void setBounds(Rectangle rect) {
-		rect.setLocation(rect.getLocation().translate(rect.getSize().getScaled(1.0f / 2.0f).negate()));
+		Point location = rect.getLocation();
+		location.translate(rect.getSize().getScaled(1.0f / 2.0f).negate());
+		rect.setLocation(location);
 		super.setBounds(rect);
 	}
 

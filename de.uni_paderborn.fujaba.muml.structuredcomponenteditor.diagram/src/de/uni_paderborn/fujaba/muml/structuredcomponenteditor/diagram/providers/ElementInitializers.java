@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3007(
+	public void init_HybridPort_3001(
 			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -65,7 +65,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3008(
+	public void init_DiscretePort_3002(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -117,7 +117,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_ContinuousPort_3009(
+	public void init_ContinuousPort_3003(
 			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -169,7 +169,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HardwarePort_3010(
+	public void init_HardwarePort_3004(
 			de.uni_paderborn.fujaba.muml.model.component.HardwarePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -266,7 +266,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3011(
+	public void init_HybridPort_3006(
 			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -302,6 +302,12 @@ public class ElementInitializers {
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
+			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							16,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getHybridPort(), null).evaluate(instance);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -311,7 +317,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3012(
+	public void init_DiscretePort_3007(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
@@ -322,7 +328,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							17,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -336,55 +342,10 @@ public class ElementInitializers {
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							17,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_1_0);
-
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_1_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
-
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_ContinuousPort_3013(
-			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
-		try {
-			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createCardinality();
-			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							18,
 							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_0_0);
-
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_0_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
-
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							19,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 
 			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression
@@ -392,6 +353,13 @@ public class ElementInitializers {
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
+			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							19,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getDiscretePort(), null)
+					.evaluate(instance);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -401,8 +369,8 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HardwarePort_3014(
-			de.uni_paderborn.fujaba.muml.model.component.HardwarePort instance) {
+	public void init_ContinuousPort_3008(
+			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createCardinality();
@@ -437,6 +405,65 @@ public class ElementInitializers {
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
+			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							22,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getContinuousPort(), null).evaluate(
+							instance);
+			instance.setName((String) value_1);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_HardwarePort_3009(
+			de.uni_paderborn.fujaba.muml.model.component.HardwarePort instance) {
+		try {
+			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createCardinality();
+			instance.setCardinality(newInstance_0_0);
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
+			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							23,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_0_0_0_0);
+
+			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_0_0_0_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
+
+			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							24,
+							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_0_0_1_0);
+
+			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression
+					.performCast(value_0_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
+
+			Object value_1 = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							25,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getHardwarePort(), null)
+					.evaluate(instance);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

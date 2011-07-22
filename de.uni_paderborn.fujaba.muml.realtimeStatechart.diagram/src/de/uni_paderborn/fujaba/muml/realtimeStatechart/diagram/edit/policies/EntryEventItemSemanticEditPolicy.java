@@ -20,7 +20,7 @@ public class EntryEventItemSemanticEditPolicy
 	 */
 	public EntryEventItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3007);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3001);
 	}
 
 	/**

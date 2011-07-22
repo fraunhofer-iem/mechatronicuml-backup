@@ -57,7 +57,7 @@ public class HardwarePortCreateCommand extends EditElementCommand {
 		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
-				.getInstance().init_HardwarePort_3010(newElement);
+				.getInstance().init_HardwarePort_3004(newElement);
 
 		doConfigure(newElement, monitor, info);
 

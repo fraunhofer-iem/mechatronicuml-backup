@@ -55,7 +55,7 @@ public class StructuredComponentComponentCompartmentCanonicalEditPolicy extends
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
-				.getStructuredComponentComponentCompartment_7003SemanticChildren(viewObject);
+				.getStructuredComponentComponentCompartment_7001SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -88,7 +88,7 @@ public class StructuredComponentComponentCompartmentCanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
-				.getStructuredComponentComponentCompartment_7003SemanticChildren((View) getHost()
+				.getStructuredComponentComponentCompartment_7001SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

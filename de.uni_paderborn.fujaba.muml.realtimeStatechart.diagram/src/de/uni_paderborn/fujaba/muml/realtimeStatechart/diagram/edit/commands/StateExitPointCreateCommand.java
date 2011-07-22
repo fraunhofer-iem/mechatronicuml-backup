@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands;
+package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class Port2CreateCommand extends EditElementCommand {
+public class StateExitPointCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Port2CreateCommand(CreateElementRequest req) {
+	public StateExitPointCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,11 +50,14 @@ public class Port2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.Port newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
-				.createPort();
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+				.createStateExitPoint();
 
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
-		owner.getPortsDerived().add(newElement);
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
+		owner.getStateEntryOrExitPoints().add(newElement);
+
+		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
+				.getInstance().init_StateExitPoint_3009(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +69,7 @@ public class Port2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.Port newElement,
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

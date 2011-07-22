@@ -1,10 +1,12 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.part;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 import org.storydriven.modeling.ExtendableElement;
 
+import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.newwizard.diagrams.FujabaDiagramNewWizard;
 
 /**
@@ -56,6 +58,15 @@ public class CustomStructuredcomponentDiagramCreationWizard extends
 	@Override
 	protected ExtendableElement createDiagramElement() {
 		return null;
+	}
+
+	@Override
+	public boolean isValidDiagramElement(EObject object) {
+		if (object instanceof ModelElementCategory) {
+			ModelElementCategory category = (ModelElementCategory) object;
+			return getModelElementCategoryKey().equals(category.getKey());
+		}
+		return false;
 	}
 
 }

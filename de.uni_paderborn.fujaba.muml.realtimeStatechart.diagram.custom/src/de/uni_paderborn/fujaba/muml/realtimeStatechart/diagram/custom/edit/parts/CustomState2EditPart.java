@@ -4,6 +4,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
@@ -12,10 +13,28 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.polic
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart;
 
 public class CustomState2EditPart extends State2EditPart {
-	private StateBehaviour stateBehaviour = new StateBehaviour();
+	private StateBehavior stateBehavior = new StateBehavior();
 
 	public CustomState2EditPart(View view) {
 		super(view);
+	}
+
+	@Override
+	protected NodeFigure createNodePlate() {
+		return stateBehavior.createNodePlate();
+	}
+
+
+	@Override
+	public void activate() {
+		stateBehavior.setEditPart(this);
+		super.activate();
+	}
+
+	@Override
+	public void deactivate() {
+		stateBehavior.setEditPart(null);
+		super.deactivate();
 	}
 
 	@Override
@@ -35,18 +54,18 @@ public class CustomState2EditPart extends State2EditPart {
 		PolyarcFigure initialStateArc = stateFigure.getFigureInitialStateArc();
 		PolylineShape initialStateArrow = stateFigure
 				.getFigureInitialStateArrow();
-		stateBehaviour.setStateInnerFigures(getMapMode(), initialStateArc,
+		stateBehavior.setStateInnerFigures(getMapMode(), initialStateArc,
 				initialStateArrow, stateFigure.getFigureStateContainer(),
 				stateFigure.getFigureInitialStateEllipse(),
 				stateFigure.getFigureInnerContainer());
-		stateBehaviour.setInitialState(state.isInitial());
-		stateBehaviour.setFinalState(state.isFinal());
+		stateBehavior.setInitialState(state.isInitial());
+		stateBehavior.setFinalState(state.isFinal());
 		return primaryShape;
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		stateBehaviour.handleNotificationEvent(notification);
+		stateBehavior.handleNotificationEvent(notification);
 
 		super.handleNotificationEvent(notification);
 	}

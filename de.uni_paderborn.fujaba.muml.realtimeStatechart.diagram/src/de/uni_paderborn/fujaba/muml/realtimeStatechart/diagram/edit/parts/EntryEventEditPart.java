@@ -21,7 +21,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
@@ -31,7 +34,7 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3007;
+	public static final int VISUAL_ID = 3001;
 
 	/**
 	 * @generated
@@ -93,14 +96,14 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new StateEventFigure();
+		return primaryShape = new StateItemFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public StateEventFigure getPrimaryShape() {
-		return (StateEventFigure) primaryShape;
+	public StateItemFigure getPrimaryShape() {
+		return (StateItemFigure) primaryShape;
 	}
 
 	/**
@@ -249,7 +252,7 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class StateEventFigure extends RectangleFigure {
+	public class StateItemFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -259,7 +262,7 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public StateEventFigure() {
+		public StateItemFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -277,6 +280,8 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 
 			fFigureStateEventLabel = new WrappingLabel();
 			fFigureStateEventLabel.setText("");
+
+			fFigureStateEventLabel.setFont(FFIGURESTATEEVENTLABEL_FONT);
 
 			GridData constraintFFigureStateEventLabel = new GridData();
 			constraintFFigureStateEventLabel.verticalAlignment = GridData.CENTER;
@@ -298,5 +303,12 @@ public class EntryEventEditPart extends ShapeNodeEditPart {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	static final Font FFIGURESTATEEVENTLABEL_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 8, SWT.NORMAL);
 
 }

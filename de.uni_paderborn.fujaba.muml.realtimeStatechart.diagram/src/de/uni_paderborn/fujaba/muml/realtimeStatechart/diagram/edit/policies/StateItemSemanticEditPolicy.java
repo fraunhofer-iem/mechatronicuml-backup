@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
@@ -28,6 +29,23 @@ public class StateItemSemanticEditPolicy
 	public StateItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_2001);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateEntryPoint_3008 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.StateEntryPointCreateCommand(
+					req));
+		}
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.StateExitPoint_3009 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.StateExitPointCreateCommand(
+					req));
+		}
+		return super.getCreateCommand(req);
 	}
 
 	/**
@@ -82,6 +100,70 @@ public class StateItemSemanticEditPolicy
 			Node node = (Node) nit.next();
 			switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
+				for (Iterator<?> it = node.getTargetEdges().iterator(); it
+						.hasNext();) {
+					Edge incomingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+				}
+				for (Iterator<?> it = node.getSourceEdges().iterator(); it
+						.hasNext();) {
+					Edge outgoingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
+				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+				break;
+			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
+				for (Iterator<?> it = node.getTargetEdges().iterator(); it
+						.hasNext();) {
+					Edge incomingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								incomingLink));
+						continue;
+					}
+				}
+				for (Iterator<?> it = node.getSourceEdges().iterator(); it
+						.hasNext();) {
+					Edge outgoingLink = (Edge) it.next();
+					if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(
+								outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
+				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
+						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+				break;
 			case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {

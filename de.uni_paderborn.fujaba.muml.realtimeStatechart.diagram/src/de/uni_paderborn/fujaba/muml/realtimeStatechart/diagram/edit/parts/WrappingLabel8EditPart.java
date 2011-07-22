@@ -48,7 +48,7 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5013;
+	public static final int VISUAL_ID = 5012;
 
 	/**
 	 * @generated

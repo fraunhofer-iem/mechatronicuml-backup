@@ -48,7 +48,7 @@ public class WrappingLabel5EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5008;
 
 	/**
 	 * @generated
@@ -503,7 +503,7 @@ public class WrappingLabel5EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

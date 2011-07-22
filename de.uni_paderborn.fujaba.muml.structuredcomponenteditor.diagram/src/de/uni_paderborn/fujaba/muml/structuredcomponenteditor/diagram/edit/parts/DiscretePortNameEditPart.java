@@ -51,7 +51,7 @@ public class DiscretePortNameEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5007;
+	public static final int VISUAL_ID = 5002;
 
 	/**
 	 * @generated
@@ -327,9 +327,9 @@ public class DiscretePortNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3008,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3002,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));

@@ -51,7 +51,7 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5008;
+	public static final int VISUAL_ID = 5003;
 
 	/**
 	 * @generated
@@ -327,9 +327,9 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3009,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3003,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID));

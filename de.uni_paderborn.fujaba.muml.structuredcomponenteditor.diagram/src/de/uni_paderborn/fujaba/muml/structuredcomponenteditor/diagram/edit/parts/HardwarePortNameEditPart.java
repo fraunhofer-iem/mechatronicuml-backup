@@ -51,7 +51,7 @@ public class HardwarePortNameEditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5004;
 
 	/**
 	 * @generated
@@ -327,9 +327,9 @@ public class HardwarePortNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.HardwarePort_3010,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.HardwarePort_3004,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HardwarePortNameEditPart.VISUAL_ID));

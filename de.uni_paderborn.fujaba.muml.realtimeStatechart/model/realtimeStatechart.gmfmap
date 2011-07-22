@@ -45,7 +45,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#StateEventLabel"/>
+                href="realtimeStatechart.gmfgraph#StateItemLabel"/>
             <viewExpression
                 body="'entry / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
           </labelMappings>
@@ -53,7 +53,7 @@
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#StateEvent"/>
+              href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
       </children>
       <children
@@ -86,7 +86,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#StateEventLabel"/>
+                href="realtimeStatechart.gmfgraph#StateItemLabel"/>
             <viewExpression
                 body="'do / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
           </labelMappings>
@@ -94,7 +94,7 @@
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#StateEvent"/>
+              href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
       </children>
       <children
@@ -108,7 +108,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#StateEventLabel"/>
+                href="realtimeStatechart.gmfgraph#StateItemLabel"/>
             <viewExpression
                 body="'exit / '.concat(if self.action.oclIsUndefined() then '' else self.action.name endif)"/>
           </labelMappings>
@@ -116,7 +116,7 @@
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#StateEvent"/>
+              href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
       </children>
       <children
@@ -130,7 +130,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#ClockConstraintLabel"/>
+                href="realtimeStatechart.gmfgraph#StateItemLabel"/>
             <viewExpression
                 body="(&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.clock.name&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.operator.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;let array : Set(Tuple(s : String, d : modeling::expressions::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = modeling::expressions::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≤', d = modeling::expressions::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '=', d = modeling::expressions::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≥', d = modeling::expressions::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '>', d = modeling::expressions::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≠', d = modeling::expressions::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = modeling::expressions::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;} in array->any(t | t.d = self.operator).s&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.bound.toString()&#xA;&#x9;endif&#xA;)"/>
           </labelMappings>
@@ -138,7 +138,7 @@
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.0"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#ClockConstraint"/>
+              href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
       </children>
       <children
@@ -163,7 +163,7 @@
               xsi:type="gmfmap:ExpressionLabelMapping"
               readOnly="true">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#SynchronizationChannelLabel"/>
+                href="realtimeStatechart.gmfgraph#StateItemLabel"/>
             <viewExpression
                 body="(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.containedParameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.eType.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.eType.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;)"/>
           </labelMappings>
@@ -171,7 +171,7 @@
               xsi:type="gmftool:CreationTool"
               href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.4"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#SynchronizationChannel"/>
+              href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
       </children>
       <children
@@ -233,6 +233,54 @@
             <compartment
                 href="realtimeStatechart.gmfgraph#FujabaRealtimeStatechartCompartment"/>
           </compartments>
+        </ownedChild>
+      </children>
+      <children>
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'entrypoint'"/>
+            </initializers>
+          </domainInitializer>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.6"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#StateEntryPoint"/>
+        </ownedChild>
+      </children>
+      <children>
+        <containmentFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryOrExitPoints"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              <value
+                  body="'exitpoint'"/>
+            </initializers>
+          </domainInitializer>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.7"/>
+          <diagramNode
+              href="realtimeStatechart.gmfgraph#StateExitPoint"/>
         </ownedChild>
       </children>
       <compartments

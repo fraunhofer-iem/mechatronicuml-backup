@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts;
 
 import java.util.List;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -21,7 +22,7 @@ public class AssemblyEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4004;
+	public static final int VISUAL_ID = 4002;
 
 	/**
 	 * @generated
@@ -93,5 +94,4 @@ public class AssemblyEditPart extends ConnectionNodeEditPart implements
 
 		super.handleNotificationEvent(notification);
 	}
-
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
@@ -18,10 +19,12 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
@@ -42,13 +45,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ComponentPartNameComponentNameDeriveEditPart extends
-		CompartmentEditPart implements ITextAwareEditPart {
+public class DiscretePortName2EditPart extends LabelEditPart implements
+		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5003;
+	public static final int VISUAL_ID = 5006;
 
 	/**
 	 * @generated
@@ -73,7 +76,17 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	/**
 	 * @generated
 	 */
-	public ComponentPartNameComponentNameDeriveEditPart(View view) {
+	static {
+		registerSnapBackPosition(
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortName2EditPart.VISUAL_ID),
+				new Point(0, 0));
+	}
+
+	/**
+	 * @generated
+	 */
+	public DiscretePortName2EditPart(View view) {
 		super(view);
 	}
 
@@ -82,14 +95,40 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
 		installEditPolicy(
-				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.NodeLabelDragPolicy());
+				EditPolicy.SELECTION_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
+	}
+
+	/**
+	 * @generated
+	 */
+	public IBorderItemLocator getBorderItemLocator() {
+		IFigure parentFigure = getFigure().getParent();
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
+			Object constraint = parentFigure.getLayoutManager().getConstraint(
+					getFigure());
+			return (IBorderItemLocator) constraint;
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshBounds() {
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Height())).intValue();
+		getBorderItemLocator()
+				.setConstraint(new Rectangle(x, y, width, height));
 	}
 
 	/**
@@ -139,7 +178,7 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrappingLabel figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -226,7 +265,7 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -288,12 +327,12 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.StructuredcomponentParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.ComponentPart_3005,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3007,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartNameComponentNameDeriveEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortName2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -503,23 +542,7 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addNotationalListeners() {
-		super.addNotationalListeners();
-		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeNotationalListeners() {
-		super.removeNotationalListeners();
-		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
+		return getPrimaryView();
 	}
 
 	/**
@@ -569,8 +592,16 @@ public class ComponentPartNameComponentNameDeriveEditPart extends
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel() method
-		return null;
+		IFigure label = createFigurePrim();
+		defaultText = getLabelTextHelper(label);
+		return label;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure createFigurePrim() {
+		return new WrappingLabel();
 	}
 
 }

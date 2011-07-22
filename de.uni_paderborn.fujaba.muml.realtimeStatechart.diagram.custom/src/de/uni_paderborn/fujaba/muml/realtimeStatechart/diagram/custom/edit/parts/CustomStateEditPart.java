@@ -3,6 +3,8 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
@@ -10,10 +12,34 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
 
 public class CustomStateEditPart extends StateEditPart {
-	private StateBehaviour stateBehaviour = new StateBehaviour();
+	private StateBehavior stateBehavior = new StateBehavior();
 
 	public CustomStateEditPart(View view) {
 		super(view);
+	}
+
+	@Override
+	protected NodeFigure createNodePlate() {
+		return stateBehavior.createNodePlate();
+	}
+
+	@Override
+	public void activate() {
+		stateBehavior.setEditPart(this);
+		super.activate();
+	}
+
+	@Override
+	public void deactivate() {
+		stateBehavior.setEditPart(null);
+		super.deactivate();
+	}
+
+	@Override
+	protected boolean addFixedChild(EditPart childEditPart) {
+		boolean result = super.addFixedChild(childEditPart);
+		stateBehavior.afterAddFixedChild(childEditPart);
+		return result;
 	}
 
 	protected IFigure createNodeShape() {
@@ -24,18 +50,18 @@ public class CustomStateEditPart extends StateEditPart {
 		PolyarcFigure initialStateArc = stateFigure.getFigureInitialStateArc();
 		PolylineShape initialStateArrow = stateFigure
 				.getFigureInitialStateArrow();
-		stateBehaviour.setStateInnerFigures(getMapMode(), initialStateArc,
+		stateBehavior.setStateInnerFigures(getMapMode(), initialStateArc,
 				initialStateArrow, stateFigure.getFigureStateContainer(),
 				stateFigure.getFigureInitialStateEllipse(),
 				stateFigure.getFigureInnerContainer());
-		stateBehaviour.setInitialState(state.isInitial());
-		stateBehaviour.setFinalState(state.isFinal());
+		stateBehavior.setInitialState(state.isInitial());
+		stateBehavior.setFinalState(state.isFinal());
 		return primaryShape;
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		stateBehaviour.handleNotificationEvent(notification);
+		stateBehavior.handleNotificationEvent(notification);
 
 		super.handleNotificationEvent(notification);
 	}

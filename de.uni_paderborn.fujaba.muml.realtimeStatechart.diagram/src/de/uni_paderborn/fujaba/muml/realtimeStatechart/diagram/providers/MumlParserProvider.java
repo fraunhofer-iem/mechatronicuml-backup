@@ -42,16 +42,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5008 entryEventLabel_5008Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004 entryEventLabel_5004Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEntryEventLabel_5008Parser() {
-		if (entryEventLabel_5008Parser == null) {
-			entryEventLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5008();
+	private IParser getEntryEventLabel_5004Parser() {
+		if (entryEventLabel_5004Parser == null) {
+			entryEventLabel_5004Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.EntryEventLabelExpressionLabelParser5004();
 		}
-		return entryEventLabel_5008Parser;
+		return entryEventLabel_5004Parser;
 	}
 
 	/**
@@ -72,118 +72,118 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5009 exitEventLabel_5009Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006 exitEventLabel_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getExitEventLabel_5009Parser() {
-		if (exitEventLabel_5009Parser == null) {
-			exitEventLabel_5009Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5009();
+	private IParser getExitEventLabel_5006Parser() {
+		if (exitEventLabel_5006Parser == null) {
+			exitEventLabel_5006Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ExitEventLabelExpressionLabelParser5006();
 		}
-		return exitEventLabel_5009Parser;
+		return exitEventLabel_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5001 clockConstraintLabel_5001Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007 clockConstraintLabel_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getClockConstraintLabel_5001Parser() {
-		if (clockConstraintLabel_5001Parser == null) {
-			clockConstraintLabel_5001Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5001();
+	private IParser getClockConstraintLabel_5007Parser() {
+		if (clockConstraintLabel_5007Parser == null) {
+			clockConstraintLabel_5007Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.ClockConstraintLabelExpressionLabelParser5007();
 		}
-		return clockConstraintLabel_5001Parser;
+		return clockConstraintLabel_5007Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5002 synchronizationChannelLabel_5002Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008 synchronizationChannelLabel_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getSynchronizationChannelLabel_5002Parser() {
-		if (synchronizationChannelLabel_5002Parser == null) {
-			synchronizationChannelLabel_5002Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5002();
+	private IParser getSynchronizationChannelLabel_5008Parser() {
+		if (synchronizationChannelLabel_5008Parser == null) {
+			synchronizationChannelLabel_5008Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.SynchronizationChannelLabelExpressionLabelParser5008();
 		}
-		return synchronizationChannelLabel_5002Parser;
+		return synchronizationChannelLabel_5008Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser regionName_5011Parser;
+	private IParser regionName_5010Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionName_5011Parser() {
-		if (regionName_5011Parser == null) {
+	private IParser getRegionName_5010Parser() {
+		if (regionName_5010Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			regionName_5011Parser = parser;
+			regionName_5010Parser = parser;
 		}
-		return regionName_5011Parser;
+		return regionName_5010Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser regionPriority_5012Parser;
+	private IParser regionPriority_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionPriority_5012Parser() {
-		if (regionPriority_5012Parser == null) {
+	private IParser getRegionPriority_5011Parser() {
+		if (regionPriority_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getPrioritizable_Priority() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			regionPriority_5012Parser = parser;
+			regionPriority_5011Parser = parser;
 		}
-		return regionPriority_5012Parser;
+		return regionPriority_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5013 regionLabel_5013Parser;
+	private de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012 regionLabel_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionLabel_5013Parser() {
-		if (regionLabel_5013Parser == null) {
-			regionLabel_5013Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5013();
+	private IParser getRegionLabel_5012Parser() {
+		if (regionLabel_5012Parser == null) {
+			regionLabel_5012Parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.RegionLabelExpressionLabelParser5012();
 		}
-		return regionLabel_5013Parser;
+		return regionLabel_5012Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser stateName_5010Parser;
+	private IParser stateName_5009Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStateName_5010Parser() {
-		if (stateName_5010Parser == null) {
+	private IParser getStateName_5009Parser() {
+		if (stateName_5009Parser == null) {
 			EAttribute[] features = new EAttribute[] { SDMPackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
-			stateName_5010Parser = parser;
+			stateName_5009Parser = parser;
 		}
-		return stateName_5010Parser;
+		return stateName_5009Parser;
 	}
 
 	/**
@@ -224,23 +224,23 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID:
 			return getStateName_5003Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getEntryEventLabel_5008Parser();
+			return getEntryEventLabel_5004Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getDoEventLabel_5005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getExitEventLabel_5009Parser();
+			return getExitEventLabel_5006Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID:
-			return getClockConstraintLabel_5001Parser();
+			return getClockConstraintLabel_5007Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-			return getSynchronizationChannelLabel_5002Parser();
+			return getSynchronizationChannelLabel_5008Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
-			return getRegionName_5011Parser();
+			return getRegionName_5010Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
-			return getRegionPriority_5012Parser();
+			return getRegionPriority_5011Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
-			return getRegionLabel_5013Parser();
+			return getRegionLabel_5012Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateName2EditPart.VISUAL_ID:
-			return getStateName_5010Parser();
+			return getStateName_5009Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getTransitionLabel_6001Parser();
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:

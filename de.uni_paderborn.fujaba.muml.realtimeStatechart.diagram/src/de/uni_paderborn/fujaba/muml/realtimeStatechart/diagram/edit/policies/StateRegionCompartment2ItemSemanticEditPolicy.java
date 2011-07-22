@@ -15,7 +15,7 @@ public class StateRegionCompartment2ItemSemanticEditPolicy
 	 */
 	public StateRegionCompartment2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3009);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3007);
 	}
 
 	/**

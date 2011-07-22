@@ -371,8 +371,7 @@
               href="structuredcomponent.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="structuredcomponent.gmfgraph#ComponentPart"/>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
             <ownedChild>
@@ -420,16 +419,27 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  <value
+                      body="'port'"/>
+                </initializers>
               </domainInitializer>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.2"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#PortExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <diagramNode
-                  href="structuredcomponent.gmfgraph#Port"/>
+                  href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#Port"/>
             </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
             <ownedChild>
@@ -477,16 +487,27 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  <value
+                      body="'port'"/>
+                </initializers>
               </domainInitializer>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.0"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#PortExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <diagramNode
-                  href="structuredcomponent.gmfgraph#Port"/>
+                  href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#Port"/>
             </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.2/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
             <ownedChild>
@@ -534,16 +555,27 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  <value
+                      body="'port'"/>
+                </initializers>
               </domainInitializer>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.1"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#PortExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <diagramNode
-                  href="structuredcomponent.gmfgraph#Port"/>
+                  href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#Port"/>
             </ownedChild>
           </children>
-          <children
-              referencedChild="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.3/@ownedChild">
+          <children>
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
             <ownedChild>
@@ -591,12 +623,24 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+                  <value
+                      body="'port'"/>
+                </initializers>
               </domainInitializer>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.3"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#PortExternalLabel"/>
+                <features
+                    href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+              </labelMappings>
               <diagramNode
-                  href="structuredcomponent.gmfgraph#Port"/>
+                  href="../../de.uni_paderborn.fujaba.muml.atomiccomponenteditor/model/atomiccomponent.gmfgraph#Port"/>
             </ownedChild>
           </children>
         </ownedChild>

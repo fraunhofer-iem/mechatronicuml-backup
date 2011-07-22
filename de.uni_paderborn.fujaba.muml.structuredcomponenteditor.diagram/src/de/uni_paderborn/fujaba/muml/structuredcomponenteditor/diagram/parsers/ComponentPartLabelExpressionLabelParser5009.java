@@ -23,11 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ComponentPartLabelExpressionLabelParser5003 implements IParser {
+public class ComponentPartLabelExpressionLabelParser5009 implements IParser {
 	/**
 	 * @generated
 	 */
-	public ComponentPartLabelExpressionLabelParser5003() {
+	public ComponentPartLabelExpressionLabelParser5009() {
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class ComponentPartLabelExpressionLabelParser5003 implements IParser {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						22,
+						26,
 						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 								.getComponentPart(), null).evaluate(target);
 		return String.valueOf(result);
