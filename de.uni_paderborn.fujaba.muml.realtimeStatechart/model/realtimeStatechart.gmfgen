@@ -722,9 +722,9 @@
         canonicalEditPolicyClassName="StateRegionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
+        canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0"
-        listLayout="false">
+        node="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -777,9 +777,9 @@
         canonicalEditPolicyClassName="StateRegionCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="RegionCompartment"
+        canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.6"
-        listLayout="false">
+        node="//@diagram/@childNodes.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -813,7 +813,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Clock Constraint"
             description="Creates a new Clock Constraint"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/clock.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/clock2.gif"
             genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -843,19 +843,19 @@
             xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creates an inner Region for a State"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/andState.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/region.gif"
             genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Entry Point"
             description="Create State Entry Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/c_state16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/state_entry_point.gif"
             genNodes="//@diagram/@childNodes.7"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Exit Point"
             description="Create State Exit Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/c_state16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart/icon/state_exit_point.gif"
             genNodes="//@diagram/@childNodes.8"/>
       </groups>
     </palette>

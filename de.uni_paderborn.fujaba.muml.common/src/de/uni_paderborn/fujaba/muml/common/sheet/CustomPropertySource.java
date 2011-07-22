@@ -87,44 +87,48 @@ public class CustomPropertySource extends PropertySource {
 				if (object instanceof EObject
 						&& feature instanceof EStructuralFeature) {
 					final EStructuralFeature structuralFeature = (EStructuralFeature) feature;
+					if (structuralFeature.isMany()) {
+						Class<?> instanceClass = structuralFeature.getEType()
+								.getInstanceClass();
+						if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
+							EDataType eDataType = EcorePackage.Literals.ESTRING;
+							return createEDataTypeCellEditor(eDataType, parent);
 
-					Class<?> instanceClass = structuralFeature.getEType()
-							.getInstanceClass();
-					if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
-						EDataType eDataType = EcorePackage.Literals.ESTRING;
-						return createEDataTypeCellEditor(eDataType, parent);
-
-					} else if (EParameter.class.isAssignableFrom(instanceClass)) {
-						return createTypedElementCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues(), ",", ", ");
-					} else if (Expression.class.isAssignableFrom(instanceClass)) {
-						return createTextualExpressionCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues());
-					} else if (ClockConstraint.class
-							.isAssignableFrom(instanceClass)) {
-						return createClockConstraintCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues());
-					} else if (ParameterBinding.class
-							.isAssignableFrom(instanceClass)) {
-						return createParameterBindingCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues());
-					} else if (AbsoluteDeadline.class
-							.isAssignableFrom(instanceClass)) {
-						return createAbsoluteDeadlineCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues());
-					} else if (Clock.class.isAssignableFrom(instanceClass)) {
-						return createClocksCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues());
-					} else if (EAttribute.class.isAssignableFrom(instanceClass)) {
-						return createTypedElementCellEditor(parent,
-								getLabelProvider(), structuralFeature,
-								getCurrentValues(), ";", "; ");
+						} else if (EParameter.class
+								.isAssignableFrom(instanceClass)) {
+							return createTypedElementCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues(), ",", ", ");
+						} else if (Expression.class
+								.isAssignableFrom(instanceClass)) {
+							return createTextualExpressionCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues());
+						} else if (ClockConstraint.class
+								.isAssignableFrom(instanceClass)) {
+							return createClockConstraintCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues());
+						} else if (ParameterBinding.class
+								.isAssignableFrom(instanceClass)) {
+							return createParameterBindingCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues());
+						} else if (AbsoluteDeadline.class
+								.isAssignableFrom(instanceClass)) {
+							return createAbsoluteDeadlineCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues());
+						} else if (Clock.class.isAssignableFrom(instanceClass)) {
+							return createClocksCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues());
+						} else if (EAttribute.class
+								.isAssignableFrom(instanceClass)) {
+							return createTypedElementCellEditor(parent,
+									getLabelProvider(), structuralFeature,
+									getCurrentValues(), ";", "; ");
+						}
 					}
 				}
 				return super.createPropertyEditor(parent);
@@ -345,7 +349,8 @@ public class CustomPropertySource extends PropertySource {
 
 	private MultiFeatureCreationCellEditor createTypedElementCellEditor(
 			Composite parent, ILabelProvider labelProvider,
-			EStructuralFeature structuralFeature, Collection<?> currentValues, String parserSplitElement, String labelProviderSplitElement) {
+			EStructuralFeature structuralFeature, Collection<?> currentValues,
+			String parserSplitElement, String labelProviderSplitElement) {
 
 		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
@@ -364,9 +369,11 @@ public class CustomPropertySource extends PropertySource {
 
 		DefaultMultiTextParser multiTextParser = new DefaultMultiTextParser(
 				parserSplitElement, new DefaultTypedElementParser(choices,
-						identifierValidator, (EClass) structuralFeature.getEType()));
+						identifierValidator,
+						(EClass) structuralFeature.getEType()));
 
-		IMultiLabelProvider multiLabelProvider = new DefaultMultiLabelProvider(labelProviderSplitElement, labelProvider);
+		IMultiLabelProvider multiLabelProvider = new DefaultMultiLabelProvider(
+				labelProviderSplitElement, labelProvider);
 
 		TextPropertyEditor nameEditor = new TextPropertyEditor();
 		nameEditor.setDefaultValue(structuralFeature.getEType().getName());

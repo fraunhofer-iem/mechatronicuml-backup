@@ -40,7 +40,7 @@
           description="Creates a new Clock Constraint">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/clock.gif"
+            path="icon/clock2.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
       <tools
@@ -85,7 +85,7 @@
           description="Creates an inner Region for a State">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/andState.gif"
+            path="icon/region.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
       <tools
@@ -94,7 +94,7 @@
           description="Create State Entry Point">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/c_state16.gif"
+            path="icon/state_entry_point.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
       <tools
@@ -103,7 +103,7 @@
           description="Create State Exit Point">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icon/c_state16.gif"
+            path="icon/state_exit_point.gif"
             bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart"/>
       </tools>
     </tools>

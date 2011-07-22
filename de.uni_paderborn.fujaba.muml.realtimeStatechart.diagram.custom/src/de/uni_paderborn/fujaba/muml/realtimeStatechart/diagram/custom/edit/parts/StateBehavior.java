@@ -147,7 +147,7 @@ public class StateBehavior {
 						editPart.getMainFigure(),
 						locator.getPreferredSideOfParent());
 			}
-			// This magical -1 fixes a bug that the border item cannot lie at
+			// This magical -1 fixes a bug that the border item cannot reside at
 			// the top border...
 			int magicalVerticalOffset = verticalOffset - 1;
 			customLocator.setBorderItemOffset(DEFAULT_BORDER_ITEM_OFFSET

@@ -415,7 +415,6 @@
   <compartments
       name="RegionCompartment"
       figure="StateFigure"
-      collapsible="true"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="FujabaRealtimeStatechartCompartment"
