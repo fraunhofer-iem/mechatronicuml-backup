@@ -87,7 +87,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	public class CustomComponentMultiFigure extends ComponentMultiFigure {
 		public CustomComponentMultiFigure() {
 			super();
-			this.getFigureComponentNameFigure().setTextUnderline(true);
+//			this.getFigureComponentNameFigure().setTextUnderline(true);
 			setPartMulti(false);
 		}
 
