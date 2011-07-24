@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -24,7 +25,6 @@ public class CustomState2EditPart extends State2EditPart {
 		return stateBehavior.createNodePlate();
 	}
 
-
 	@Override
 	public void activate() {
 		stateBehavior.setEditPart(this);
@@ -38,13 +38,20 @@ public class CustomState2EditPart extends State2EditPart {
 	}
 
 	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CustomState2ItemSemanticEditPolicy());
-
+	protected boolean addFixedChild(EditPart childEditPart) {
+		boolean result = super.addFixedChild(childEditPart);
+		stateBehavior.afterAddFixedChild(childEditPart);
+		return result;
 	}
+//
+//	@Override
+//	protected void createDefaultEditPolicies() {
+//		super.createDefaultEditPolicies();
+//		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
+//		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+//				new CustomState2ItemSemanticEditPolicy());
+//
+//	}
 
 	protected IFigure createNodeShape() {
 		State state = (State) getNotationView().getElement();
