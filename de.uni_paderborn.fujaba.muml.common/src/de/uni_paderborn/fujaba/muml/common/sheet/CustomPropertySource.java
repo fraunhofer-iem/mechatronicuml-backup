@@ -87,15 +87,15 @@ public class CustomPropertySource extends PropertySource {
 				if (object instanceof EObject
 						&& feature instanceof EStructuralFeature) {
 					final EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-					if (structuralFeature.isMany()) {
-						Class<?> instanceClass = structuralFeature.getEType()
-								.getInstanceClass();
-						if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
-							EDataType eDataType = EcorePackage.Literals.ESTRING;
-							return createEDataTypeCellEditor(eDataType, parent);
+					Class<?> instanceClass = structuralFeature.getEType()
+							.getInstanceClass();
+					
+					if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
+						EDataType eDataType = EcorePackage.Literals.ESTRING;
+						return createEDataTypeCellEditor(eDataType, parent);
 
-						} else if (EParameter.class
-								.isAssignableFrom(instanceClass)) {
+					} else if (structuralFeature.isMany()) {
+						if (EParameter.class.isAssignableFrom(instanceClass)) {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), structuralFeature,
 									getCurrentValues(), ",", ", ");

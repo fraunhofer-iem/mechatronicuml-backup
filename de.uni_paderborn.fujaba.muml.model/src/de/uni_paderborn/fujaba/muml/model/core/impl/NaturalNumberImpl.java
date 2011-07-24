@@ -162,7 +162,7 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * @generated NOT
 	 */
 	public void setValue(String value) {
-		if (!value.equals("*")) {
+		if (value != null && !value.equals("*")) {
 			try {
 				setValue(Long.parseLong(value));
 				return;
