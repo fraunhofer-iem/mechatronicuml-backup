@@ -7,9 +7,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.common.action,
  de.uni_paderborn.fujaba.muml.common.command,
  de.uni_paderborn.fujaba.muml.common.edit.parts,
- de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories,
+ de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider,
  de.uni_paderborn.fujaba.muml.common.figures,
- de.uni_paderborn.fujaba.muml.common.sheet,
  de.uni_paderborn.fujaba.muml.common.wizard
 Require-Bundle: org.eclipse.draw2d;bundle-version="3.6.1",
  org.eclipse.gmf.runtime.draw2d.ui;bundle-version="1.4.1",

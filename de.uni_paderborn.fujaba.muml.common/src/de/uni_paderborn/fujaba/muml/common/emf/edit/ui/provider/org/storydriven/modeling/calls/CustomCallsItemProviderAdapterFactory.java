@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.org.storydriven.modeling.calls;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.org.storydriven.modeling.calls;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.storydriven.modeling.calls.provider.CallsItemProviderAdapterFactory;
