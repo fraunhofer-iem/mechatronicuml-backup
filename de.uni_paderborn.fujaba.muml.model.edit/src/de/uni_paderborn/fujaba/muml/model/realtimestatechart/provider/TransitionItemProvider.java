@@ -762,6 +762,11 @@ public class TransitionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(SDMPackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(SDMPackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
