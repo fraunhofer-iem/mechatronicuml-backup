@@ -120,7 +120,7 @@ public class MessageinterfaceDiagramEditorPlugin extends AbstractUIPlugin {
 		// BEGIN: Customized by bingo
 		// Added to allow creation of custom ItemProviderFactories for cases, in
 		// which edit code of dependent meta-models cannot be changed.
-		de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+		de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories
 				.fillItemProviderFactories(factories);
 		// END: Customized
 

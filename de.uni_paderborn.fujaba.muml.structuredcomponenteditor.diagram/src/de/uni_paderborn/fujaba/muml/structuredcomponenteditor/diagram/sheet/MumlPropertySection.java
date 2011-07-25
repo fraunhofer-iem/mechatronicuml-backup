@@ -106,7 +106,7 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 		if (editingDomain != null) {
 			AdapterFactory defaultFactory = editingDomain.getAdapterFactory();
 			List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-			de.uni_paderborn.fujaba.muml.common.emf.edit.providerfactories.CustomItemProviderFactories
+			de.uni_paderborn.fujaba.muml.common.emf.edit.ui.provider.CustomItemProviderFactories
 					.fillItemProviderFactories(factories);
 			factories.add(defaultFactory);
 			return new ComposedAdapterFactory(factories);
