@@ -214,7 +214,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http:///de/fujaba/muml/modelinstance">
+      <metamodel nsURI="http://de.fujaba.modelinstance">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"

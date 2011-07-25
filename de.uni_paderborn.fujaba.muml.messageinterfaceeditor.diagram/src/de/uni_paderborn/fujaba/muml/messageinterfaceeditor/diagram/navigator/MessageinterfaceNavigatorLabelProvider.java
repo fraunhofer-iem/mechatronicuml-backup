@@ -83,7 +83,7 @@ public class MessageinterfaceNavigatorLabelProvider extends LabelProvider
 					"Navigator?TopLevelNode?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterface_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http:///de/fujaba/muml/modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://de.fujaba.modelinstance?ModelElementCategory", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceSuperTypeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http:///de/uni_paderborn/fujaba/muml/model/msgiface?MessageInterface?superType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageInterfaceSuperType_4003); //$NON-NLS-1$
