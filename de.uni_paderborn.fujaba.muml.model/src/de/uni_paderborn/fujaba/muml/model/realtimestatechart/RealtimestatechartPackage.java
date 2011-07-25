@@ -596,7 +596,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__EVENTS = VERTEX_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>State Entry Or Exit Points</b></em>' containment reference list.
+	 * The feature id for the '<em><b>State Entry Or Exit Points</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2394,10 +2394,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_Events();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>State Entry Or Exit Points</em>'.
+	 * @return the meta object for the reference list '<em>State Entry Or Exit Points</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints()
 	 * @see #getState()
 	 * @generated
@@ -3393,7 +3393,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__EVENTS = eINSTANCE.getState_Events();
 
 		/**
-		 * The meta object literal for the '<em><b>State Entry Or Exit Points</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>State Entry Or Exit Points</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

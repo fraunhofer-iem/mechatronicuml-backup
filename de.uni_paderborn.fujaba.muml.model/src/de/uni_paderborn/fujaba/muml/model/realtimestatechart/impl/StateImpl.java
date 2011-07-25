@@ -207,7 +207,7 @@ public class StateImpl extends VertexImpl implements State {
 	protected EList<StateEvent> events;
 
 	/**
-	 * The cached value of the '{@link #getStateEntryOrExitPoints() <em>State Entry Or Exit Points</em>}' containment reference list.
+	 * The cached value of the '{@link #getStateEntryOrExitPoints() <em>State Entry Or Exit Points</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStateEntryOrExitPoints()
@@ -440,7 +440,7 @@ public class StateImpl extends VertexImpl implements State {
 	 */
 	public EList<StateEntryOrExitPoint> getStateEntryOrExitPoints() {
 		if (stateEntryOrExitPoints == null) {
-			stateEntryOrExitPoints = new EObjectContainmentEList<StateEntryOrExitPoint>(StateEntryOrExitPoint.class, this, RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS);
+			stateEntryOrExitPoints = new EObjectResolvingEList<StateEntryOrExitPoint>(StateEntryOrExitPoint.class, this, RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS);
 		}
 		return stateEntryOrExitPoints;
 	}
@@ -547,8 +547,6 @@ public class StateImpl extends VertexImpl implements State {
 				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__EVENTS:
 				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
-				return ((InternalEList<?>)getStateEntryOrExitPoints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

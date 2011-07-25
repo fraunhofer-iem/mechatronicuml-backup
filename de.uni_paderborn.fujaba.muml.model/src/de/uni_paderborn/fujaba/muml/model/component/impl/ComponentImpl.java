@@ -93,7 +93,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected EList<Port> ports;
 
 	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' containment reference.
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEClass()
@@ -202,6 +202,14 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @generated
 	 */
 	public EClass getEClass() {
+		if (eClass != null && eClass.eIsProxy()) {
+			InternalEObject oldEClass = (InternalEObject)eClass;
+			eClass = (EClass)eResolveProxy(oldEClass);
+			if (eClass != oldEClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.COMPONENT__ECLASS, oldEClass, eClass));
+			}
+		}
 		return eClass;
 	}
 
@@ -210,14 +218,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEClass(EClass newEClass, NotificationChain msgs) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__ECLASS, oldEClass, newEClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public EClass basicGetEClass() {
+		return eClass;
 	}
 
 	/**
@@ -226,17 +228,10 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @generated
 	 */
 	public void setEClass(EClass newEClass) {
-		if (newEClass != eClass) {
-			NotificationChain msgs = null;
-			if (eClass != null)
-				msgs = ((InternalEObject)eClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.COMPONENT__ECLASS, null, msgs);
-			if (newEClass != null)
-				msgs = ((InternalEObject)newEClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.COMPONENT__ECLASS, null, msgs);
-			msgs = basicSetEClass(newEClass, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__ECLASS, newEClass, newEClass));
+		EClass oldEClass = eClass;
+		eClass = newEClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__ECLASS, oldEClass, eClass));
 	}
 
 	/**
@@ -317,8 +312,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__PORTS:
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__ECLASS:
-				return basicSetEClass(null, msgs);
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return ((InternalEList<?>)getReferencingComponentParts()).basicRemove(otherEnd, msgs);
 		}
@@ -340,7 +333,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__PORTS:
 				return getPorts();
 			case ComponentPackage.COMPONENT__ECLASS:
-				return getEClass();
+				if (resolve) return getEClass();
+				return basicGetEClass();
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return getReferencingComponentParts();
 			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:

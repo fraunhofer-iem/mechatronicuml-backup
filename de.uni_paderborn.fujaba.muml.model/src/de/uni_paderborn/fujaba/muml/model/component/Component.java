@@ -59,25 +59,25 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	EList<Port> getPorts();
 
 	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' containment reference.
+	 * Returns the value of the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' containment reference.
+	 * @return the value of the '<em>EClass</em>' reference.
 	 * @see #setEClass(EClass)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_EClass()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EClass getEClass();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' containment reference.
+	 * @param value the new value of the '<em>EClass</em>' reference.
 	 * @see #getEClass()
 	 * @generated
 	 */

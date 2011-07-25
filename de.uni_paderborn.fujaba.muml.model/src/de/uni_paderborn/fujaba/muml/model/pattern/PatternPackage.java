@@ -83,7 +83,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR__BEHAVIOR = ComponentPackage.BEHAVIORAL_CONNECTOR__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' containment reference.
+	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -301,7 +301,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE__COORDINATION_PATTERN = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' containment reference.
+	 * The feature id for the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -514,10 +514,10 @@ public interface PatternPackage extends EPackage {
 	EReference getRole_CoordinationPattern();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>EClass</em>'.
+	 * @return the meta object for the reference '<em>EClass</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass()
 	 * @see #getRole()
 	 * @generated
@@ -723,7 +723,7 @@ public interface PatternPackage extends EPackage {
 		EReference ROLE__COORDINATION_PATTERN = eINSTANCE.getRole_CoordinationPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

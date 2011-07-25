@@ -90,7 +90,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected RoleConnector roleConnector;
 
 	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' containment reference.
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEClass()
@@ -309,6 +309,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @generated
 	 */
 	public EClass getEClass() {
+		if (eClass != null && eClass.eIsProxy()) {
+			InternalEObject oldEClass = (InternalEObject)eClass;
+			eClass = (EClass)eResolveProxy(oldEClass);
+			if (eClass != oldEClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ECLASS, oldEClass, eClass));
+			}
+		}
 		return eClass;
 	}
 
@@ -317,14 +325,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEClass(EClass newEClass, NotificationChain msgs) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ECLASS, oldEClass, newEClass);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public EClass basicGetEClass() {
+		return eClass;
 	}
 
 	/**
@@ -333,17 +335,10 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @generated
 	 */
 	public void setEClass(EClass newEClass) {
-		if (newEClass != eClass) {
-			NotificationChain msgs = null;
-			if (eClass != null)
-				msgs = ((InternalEObject)eClass).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PatternPackage.ROLE__ECLASS, null, msgs);
-			if (newEClass != null)
-				msgs = ((InternalEObject)newEClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PatternPackage.ROLE__ECLASS, null, msgs);
-			msgs = basicSetEClass(newEClass, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ECLASS, newEClass, newEClass));
+		EClass oldEClass = eClass;
+		eClass = newEClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ECLASS, oldEClass, eClass));
 	}
 
 	/**
@@ -596,8 +591,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicSetRoleConnector(null, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return basicSetCoordinationPattern(null, msgs);
-			case PatternPackage.ROLE__ECLASS:
-				return basicSetEClass(null, msgs);
 			case PatternPackage.ROLE__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case PatternPackage.ROLE__PORT:
@@ -638,7 +631,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern();
 			case PatternPackage.ROLE__ECLASS:
-				return getEClass();
+				if (resolve) return getEClass();
+				return basicGetEClass();
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
 				if (resolve) return getSenderMessageInterface();
 				return basicGetSenderMessageInterface();
