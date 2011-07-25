@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.msgiface.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
+import de.uni_paderborn.fujaba.muml.model.msgiface.util.MsgifaceValidator;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -131,6 +133,15 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		thePatternPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theMsgifacePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return MsgifaceValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theMsgifacePackage.freeze();
@@ -261,7 +272,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageInterface_SuperType(), this.getMessageInterface(), null, "superType", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 1, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -272,6 +283,8 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -289,7 +302,31 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });						
+		   });					
+		addAnnotation
+		  (messageInterfaceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames"
+		   });				
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		addAnnotation
+		  (messageInterfaceEClass, 
+		   source, 
+		   new String[] {
+			 "NoSelfGeneralization", "self.superType->forAll(x|x<>self)",
+			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
+			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)"
+		   });					
 	}
 
 } //MsgifacePackageImpl

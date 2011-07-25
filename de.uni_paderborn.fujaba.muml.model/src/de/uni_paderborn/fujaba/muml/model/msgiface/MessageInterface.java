@@ -27,7 +27,8 @@ import org.storydriven.modeling.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageInterface()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NoSelfGeneralization='self.superType->forAll(x|x<>self)' NoBidirectionalGeneralization='self.superType->forAll(x|x.superType->forAll(y|y<>self))' UniqueMessageTypeNames='self.messageTypes->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames'"
  * @generated
  */
 public interface MessageInterface extends NamedElement {
@@ -60,7 +61,7 @@ public interface MessageInterface extends NamedElement {
 	 * @return the value of the '<em>Message Types</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage#getMessageInterface_MessageTypes()
 	 * @see de.uni_paderborn.fujaba.muml.model.msgiface.MessageType#getMessageInterface
-	 * @model opposite="messageInterface" containment="true"
+	 * @model opposite="messageInterface" containment="true" required="true"
 	 * @generated
 	 */
 	EList<MessageType> getMessageTypes();

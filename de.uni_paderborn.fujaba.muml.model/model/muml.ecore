@@ -1519,14 +1519,23 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a message interface. A message interface specifies which messages are allowed to be sent or received by a port or role."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="NoSelfGeneralization" value="self.superType->forAll(x|x&lt;>self)"/>
+          <details key="NoBidirectionalGeneralization" value="self.superType->forAll(x|x.superType->forAll(y|y&lt;>self))"/>
+          <details key="UniqueMessageTypeNames" value="self.messageTypes->isUnique(name)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames"/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="superType" upperBound="-1"
             eType="#//model/msgiface/MessageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The set of message interfaces this message interface inherits from. This message&#xD;&#xA;interface contains all message types that are defined by the super types and their&#xD;&#xA;super types."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" upperBound="-1"
-            eType="#//model/msgiface/MessageType" containment="true" eOpposite="#//model/msgiface/MessageType/messageInterface">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" lowerBound="1"
+            upperBound="-1" eType="#//model/msgiface/MessageType" containment="true"
+            eOpposite="#//model/msgiface/MessageType/messageInterface">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The message types being defined in this message interface."/>
           </eAnnotations>
