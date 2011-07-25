@@ -272,7 +272,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageInterfaceEClass, MessageInterface.class, "MessageInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageInterface_SuperType(), this.getMessageInterface(), null, "superType", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 1, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInterface_MessageTypes(), this.getMessageType(), this.getMessageType_MessageInterface(), "messageTypes", null, 0, -1, MessageInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageType_MessageInterface(), this.getMessageInterface(), this.getMessageInterface_MessageTypes(), "messageInterface", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -307,7 +307,7 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		  (messageInterfaceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames"
+			 "constraints", "NoSelfGeneralization NoBidirectionalGeneralization UniqueMessageTypeNames NoMessageTypeOrNotAtLeastTwoGeneralizations"
 		   });				
 	}
 
@@ -325,7 +325,8 @@ public class MsgifacePackageImpl extends EPackageImpl implements MsgifacePackage
 		   new String[] {
 			 "NoSelfGeneralization", "self.superType->forAll(x|x<>self)",
 			 "NoBidirectionalGeneralization", "self.superType->forAll(x|x.superType->forAll(y|y<>self))",
-			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)"
+			 "UniqueMessageTypeNames", "self.messageTypes->isUnique(name)",
+			 "NoMessageTypeOrNotAtLeastTwoGeneralizations", "self.messageTypes->size()>=1 or self.superType->size()>=2"
 		   });					
 	}
 

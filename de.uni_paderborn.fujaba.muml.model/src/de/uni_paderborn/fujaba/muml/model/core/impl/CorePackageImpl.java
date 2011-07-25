@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
@@ -29,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Infinity;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage;
@@ -173,6 +175,15 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theRealtimestatechartPackage.initializePackageContents();
 		theHelperPackage.initializePackageContents();
 		theMsgifacePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theCorePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return CoreValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theCorePackage.freeze();
@@ -498,6 +509,52 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });											
+		addAnnotation
+		  (cardinalityEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
+		   });																						
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		addAnnotation
+		  (cardinalityEClass, 
+		   source, 
+		   new String[] {
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
+		   });																					
 	}
 
 } //CorePackageImpl

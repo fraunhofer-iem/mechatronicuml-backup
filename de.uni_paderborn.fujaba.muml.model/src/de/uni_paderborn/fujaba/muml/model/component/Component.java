@@ -38,6 +38,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)'"
  * @generated
  */
 public interface Component extends NamedElement, CommentableElement, ConstrainableElement {

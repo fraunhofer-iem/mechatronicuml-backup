@@ -49,7 +49,7 @@ public interface StructuredComponent extends Component {
 	 * @return the value of the '<em>Embedded Parts</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent_EmbeddedParts()
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getParentComponent
-	 * @model opposite="parentComponent" containment="true"
+	 * @model opposite="parentComponent" containment="true" required="true"
 	 * @generated
 	 */
 	EList<ComponentPart> getEmbeddedParts();

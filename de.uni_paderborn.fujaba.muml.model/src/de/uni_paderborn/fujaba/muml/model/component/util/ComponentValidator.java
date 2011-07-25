@@ -148,7 +148,46 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponent(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(component, diagnostics, context);
+		if (!validate_NoCircularContainment(component, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(component, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniquePortNames constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "self.ports->isUnique(name)";
+
+	/**
+	 * Validates the UniquePortNames constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponent_UniquePortNames(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.COMPONENT,
+				 component,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniquePortNames",
+				 COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -157,7 +196,17 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateContinuousComponent(ContinuousComponent continuousComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(continuousComponent, diagnostics, context);
+		if (!validate_NoCircularContainment(continuousComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(continuousComponent, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -484,7 +533,17 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStructuredComponent(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structuredComponent, diagnostics, context);
+		if (!validate_NoCircularContainment(structuredComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -493,7 +552,17 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAtomicComponent(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(atomicComponent, diagnostics, context);
+		if (!validate_NoCircularContainment(atomicComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(atomicComponent, diagnostics, context);
+		return result;
 	}
 
 	/**

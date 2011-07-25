@@ -117,6 +117,7 @@ public class MsgifaceValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateMessageInterface_NoSelfGeneralization(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMessageInterface_NoBidirectionalGeneralization(messageInterface, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMessageInterface_UniqueMessageTypeNames(messageInterface, diagnostics, context);
+		if (result || diagnostics != null) result &= validateMessageInterface_NoMessageTypeOrNotAtLeastTwoGeneralizations(messageInterface, diagnostics, context);
 		return result;
 	}
 
@@ -202,6 +203,35 @@ public class MsgifaceValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueMessageTypeNames",
 				 MESSAGE_INTERFACE__UNIQUE_MESSAGE_TYPE_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NoMessageTypeOrNotAtLeastTwoGeneralizations constraint of '<em>Message Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MESSAGE_INTERFACE__NO_MESSAGE_TYPE_OR_NOT_AT_LEAST_TWO_GENERALIZATIONS__EEXPRESSION = "self.messageTypes->size()>=1 or self.superType->size()>=2";
+
+	/**
+	 * Validates the NoMessageTypeOrNotAtLeastTwoGeneralizations constraint of '<em>Message Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageInterface_NoMessageTypeOrNotAtLeastTwoGeneralizations(MessageInterface messageInterface, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MsgifacePackage.Literals.MESSAGE_INTERFACE,
+				 messageInterface,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoMessageTypeOrNotAtLeastTwoGeneralizations",
+				 MESSAGE_INTERFACE__NO_MESSAGE_TYPE_OR_NOT_AT_LEAST_TWO_GENERALIZATIONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
