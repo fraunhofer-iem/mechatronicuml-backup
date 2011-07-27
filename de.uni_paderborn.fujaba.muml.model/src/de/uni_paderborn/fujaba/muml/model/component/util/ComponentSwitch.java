@@ -206,6 +206,7 @@ public class ComponentSwitch<T> {
 			case ComponentPackage.CONNECTOR_TYPE: {
 				ConnectorType connectorType = (ConnectorType)theEObject;
 				T result = caseConnectorType(connectorType);
+				if (result == null) result = caseExtendableElement(connectorType);
 				if (result == null) result = caseBehavioralConnector(connectorType);
 				if (result == null) result = caseBehavioralElement(connectorType);
 				if (result == null) result = defaultCase(theEObject);
@@ -215,6 +216,7 @@ public class ComponentSwitch<T> {
 				Assembly assembly = (Assembly)theEObject;
 				T result = caseAssembly(assembly);
 				if (result == null) result = caseConnectorType(assembly);
+				if (result == null) result = caseExtendableElement(assembly);
 				if (result == null) result = caseBehavioralConnector(assembly);
 				if (result == null) result = caseBehavioralElement(assembly);
 				if (result == null) result = defaultCase(theEObject);
@@ -224,6 +226,7 @@ public class ComponentSwitch<T> {
 				Delegation delegation = (Delegation)theEObject;
 				T result = caseDelegation(delegation);
 				if (result == null) result = caseConnectorType(delegation);
+				if (result == null) result = caseExtendableElement(delegation);
 				if (result == null) result = caseBehavioralConnector(delegation);
 				if (result == null) result = caseBehavioralElement(delegation);
 				if (result == null) result = defaultCase(theEObject);

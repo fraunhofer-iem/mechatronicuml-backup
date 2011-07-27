@@ -1132,33 +1132,6 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR = 12;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl <em>Connector Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1169,13 +1142,31 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE = 9;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_TYPE__ANNOTATION = SDMPackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_TYPE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__BEHAVIOR = BEHAVIORAL_CONNECTOR__BEHAVIOR;
+	int CONNECTOR_TYPE__BEHAVIOR = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
@@ -1184,7 +1175,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__CONNECTOR_CLASS = BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS;
+	int CONNECTOR_TYPE__CONNECTOR_CLASS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
@@ -1193,7 +1184,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__FROM_PORT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 0;
+	int CONNECTOR_TYPE__FROM_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>To Port</b></em>' reference.
@@ -1202,7 +1193,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__TO_PORT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
+	int CONNECTOR_TYPE__TO_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1211,7 +1202,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__PARENT_COMPONENT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+	int CONNECTOR_TYPE__PARENT_COMPONENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Connector Type</em>' class.
@@ -1220,7 +1211,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
+	int CONNECTOR_TYPE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
@@ -1231,6 +1222,24 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	int ASSEMBLY = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY__EXTENSION = CONNECTOR_TYPE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -1315,6 +1324,24 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION = 11;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION__EXTENSION = CONNECTOR_TYPE__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1376,6 +1403,33 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.

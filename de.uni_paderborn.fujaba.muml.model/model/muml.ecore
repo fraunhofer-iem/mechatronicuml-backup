@@ -243,7 +243,7 @@
           <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xA;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="#//model/component/BehavioralConnector">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/component/BehavioralConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This abstract class is the common super class of delegations and assemblies."/>
         </eAnnotations>

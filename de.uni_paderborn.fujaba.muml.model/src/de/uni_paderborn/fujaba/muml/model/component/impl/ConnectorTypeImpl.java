@@ -6,17 +6,26 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.modeling.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +34,8 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getConnectorClass <em>Connector Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getFromPort <em>From Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getToPort <em>To Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getParentComponent <em>Parent Component</em>}</li>
@@ -33,7 +44,27 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
  *
  * @generated
  */
-public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implements ConnectorType {
+public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements ConnectorType {
+	/**
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Behavior> behavior;
+
+	/**
+	 * The cached value of the '{@link #getConnectorClass() <em>Connector Class</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected EClass connectorClass;
+
 	/**
 	 * The cached value of the '{@link #getFromPort() <em>From Port</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -71,6 +102,56 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentPackage.Literals.CONNECTOR_TYPE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Behavior> getBehavior() {
+		if (behavior == null) {
+			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.CONNECTOR_TYPE__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
+		}
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConnectorClass() {
+		if (connectorClass != null && connectorClass.eIsProxy()) {
+			InternalEObject oldConnectorClass = (InternalEObject)connectorClass;
+			connectorClass = (EClass)eResolveProxy(oldConnectorClass);
+			if (connectorClass != oldConnectorClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
+			}
+		}
+		return connectorClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass basicGetConnectorClass() {
+		return connectorClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnectorClass(EClass newConnectorClass) {
+		EClass oldConnectorClass = connectorClass;
+		connectorClass = newConnectorClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
 	}
 
 	/**
@@ -239,9 +320,12 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				if (fromPort != null)
 					msgs = ((InternalEObject)fromPort).eInverseRemove(this, ComponentPackage.PORT__OUTGOING_CONNECTORS, Port.class, msgs);
@@ -266,6 +350,8 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				return basicSetFromPort(null, msgs);
 			case ComponentPackage.CONNECTOR_TYPE__TO_PORT:
@@ -298,6 +384,11 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				return getBehavior();
+			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
+				if (resolve) return getConnectorClass();
+				return basicGetConnectorClass();
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				if (resolve) return getFromPort();
 				return basicGetFromPort();
@@ -315,9 +406,17 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				getBehavior().clear();
+				getBehavior().addAll((Collection<? extends Behavior>)newValue);
+				return;
+			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
+				setConnectorClass((EClass)newValue);
+				return;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				setFromPort((Port)newValue);
 				return;
@@ -339,6 +438,12 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				getBehavior().clear();
+				return;
+			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
+				setConnectorClass((EClass)null);
+				return;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				setFromPort((Port)null);
 				return;
@@ -360,6 +465,10 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
+				return behavior != null && !behavior.isEmpty();
+			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
+				return connectorClass != null;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				return fromPort != null;
 			case ComponentPackage.CONNECTOR_TYPE__TO_PORT:
@@ -368,6 +477,50 @@ public abstract class ConnectorTypeImpl extends BehavioralConnectorImpl implemen
 				return getParentComponent() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == BehavioralElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				default: return -1;
+			}
+		}
+		if (baseClass == BehavioralConnector.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS: return ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == BehavioralElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.CONNECTOR_TYPE__BEHAVIOR;
+				default: return -1;
+			}
+		}
+		if (baseClass == BehavioralConnector.class) {
+			switch (baseFeatureID) {
+				case ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS: return ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ConnectorTypeImpl
