@@ -223,6 +223,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateState_NoRegionsOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniquePrioritiesOfOutgoingTransitions(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniquePrioritiesOfRegions(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_UniqueChannelNames(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_UniqueRegionNames(state, diagnostics, context);
 		return result;
 	}
 
@@ -395,6 +397,64 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniquePrioritiesOfRegions",
 				 STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniqueChannelNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE__UNIQUE_CHANNEL_NAMES__EEXPRESSION = "self.channels->isUnique(name)";
+
+	/**
+	 * Validates the UniqueChannelNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateState_UniqueChannelNames(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE,
+				 state,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueChannelNames",
+				 STATE__UNIQUE_CHANNEL_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniqueRegionNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "self.regions->isUnique(name)";
+
+	/**
+	 * Validates the UniqueRegionNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateState_UniqueRegionNames(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE,
+				 state,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueRegionNames",
+				 STATE__UNIQUE_REGION_NAMES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

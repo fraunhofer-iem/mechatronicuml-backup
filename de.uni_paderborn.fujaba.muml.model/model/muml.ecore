@@ -973,7 +973,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions"/>
+          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
@@ -985,6 +985,8 @@
           <details key="NoRegionsOfFinalState" value="self.final implies self.regions->isEmpty()"/>
           <details key="UniquePrioritiesOfOutgoingTransitions" value="self.outgoingTransitions->isUnique(priority) "/>
           <details key="UniquePrioritiesOfRegions" value="self.regions->isUnique(priority)"/>
+          <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
+          <details key="UniqueRegionNames" value="self.regions->isUnique(name)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
             eType="#//model/realtimestatechart/Region" containment="true" eOpposite="#//model/realtimestatechart/Region/parentState">
@@ -1122,7 +1124,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1132,7 +1134,7 @@
             eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{ocl: implement derived}&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
+            <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()&#xA;"/>
@@ -1153,13 +1155,13 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="relativeDeadline" eType="#//model/realtimestatechart/RelativeDeadline"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="a transition can have one relative deadline&#xD;&#xA;\todosd{delete? can be described by an absolute deadline}"/>
+            <details key="documentation" value="a transition can have one relative deadline"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="safe" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todosd{Rename to safety?}&#xD;&#xA;\todosd{What is a safety transition? Do we need that for failure propagation?}"/>
+            <details key="documentation" value="Needed for failure propagation."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -1356,7 +1358,7 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+            <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

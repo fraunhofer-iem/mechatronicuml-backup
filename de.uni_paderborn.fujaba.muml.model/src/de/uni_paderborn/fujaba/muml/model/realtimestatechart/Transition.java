@@ -175,7 +175,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The trigger event of this transition.
-	 * \todosd{ocl: implement derived}
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
@@ -203,7 +202,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The event which is raised upon activiation of this transition.
-	 * \todosd{ocl: implement derived}
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
@@ -269,7 +267,6 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * a transition can have one relative deadline
-	 * \todosd{delete? can be described by an absolute deadline}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Relative Deadline</em>' containment reference.
 	 * @see #setRelativeDeadline(RelativeDeadline)
@@ -295,8 +292,7 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{Rename to safety?}
-	 * \todosd{What is a safety transition? Do we need that for failure propagation?}
+	 * Needed for failure propagation.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Safe</em>' attribute.
 	 * @see #setSafe(boolean)

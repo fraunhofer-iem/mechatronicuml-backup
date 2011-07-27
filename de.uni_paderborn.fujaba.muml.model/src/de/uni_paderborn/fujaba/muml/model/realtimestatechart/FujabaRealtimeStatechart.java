@@ -205,7 +205,6 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * <!-- begin-model-doc -->
 	 * The size of the event queue of this port. It defines the maximum number of events
 	 * that may be temporarily buffered by the port.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Event Queue Size</em>' attribute.
 	 * @see #setEventQueueSize(int)
