@@ -753,7 +753,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HardwarePortIstance" eSuperTypes="#//model/instance/PortInstance"/>
       <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//model/instance/PortInstance"/>
-      <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//model/instance/ContinuousPortInstance #//model/instance/DiscretePortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance #//model/instance/ContinuousPortInstance"/>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" abstract="true"
           eSuperTypes="#//model/instance/PortInstance"/>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance"/>
