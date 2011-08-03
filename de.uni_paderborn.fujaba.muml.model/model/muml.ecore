@@ -299,7 +299,7 @@
           <details key="documentation" value="Abstract super class for all connectors that have an associated behavior. The &#xD;&#xA;behavior is specified as a real-time statechart."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/ContinuousPort #//model/component/DiscretePort">
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DiscretePort #//model/component/ContinuousPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a A/D or an D/A converter.&#xD;&#xA;\todosd{Add attributes and references in future releases.}"/>
         </eAnnotations>
@@ -592,7 +592,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package instance contains all classes for building configurations of component instances.&#xD;&#xA;&#xD;&#xA;Component instances are built from component types and connected by connectors. The resulting structure is a component instance configuration."/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/instance/BehavioralElementInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a component instance. It is an instantiation of a component."/>
         </eAnnotations>
@@ -622,7 +622,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/component/BehavioralConnector">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement #//model/component/BehavioralConnector #//model/instance/BehavioralElementInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>
@@ -650,9 +650,9 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/instance/BehavioralElementInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A port instance is a port of a component at instance level."/>
+          <details key="documentation" value="A port instance is a port of a component at instance level.&#xD;&#xA;\todosd{Make abstract, but beware of the Editor!}"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
             eType="#//model/component/Port">
@@ -750,6 +750,54 @@
             <details key="documentation" value="The set of connector instances of a component instance configuration."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortIstance" eSuperTypes="#//model/instance/PortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//model/instance/PortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//model/instance/ContinuousPortInstance #//model/instance/DiscretePortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" abstract="true"
+          eSuperTypes="#//model/instance/PortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="subPortInstances" upperBound="-1"
+            eType="#//model/instance/DiscreteSinglePortInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehaviorInstance"
+            lowerBound="1" eType="#//model/instance/BehaviorInstance" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BehaviorInstance" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
+            eType="#//model/core/Behavior"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementInstance"
+            lowerBound="1" eType="#//model/instance/BehavioralElementInstance" eOpposite="#//model/instance/BehavioralElementInstance/behaviorInstance"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechartInstance"
+          eSuperTypes="#//model/instance/BehaviorInstance">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" lowerBound="1"
+            eType="#//model/realtimestatechart/FujabaRealtimeStatechart"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedSubStatecharts"
+            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance"
+            eOpposite="#//model/instance/FujabaRealtimeStatechartInstance/parentStatechart"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referencedSubStatecharts"
+            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allSubStatecharts"
+            upperBound="-1" eType="#//model/instance/FujabaRealtimeStatechartInstance"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="\todosd{odl: implement derived, union of embedded and referenced}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parentStatechart" lowerBound="1"
+            eType="#//model/instance/FujabaRealtimeStatechartInstance" eOpposite="#//model/instance/FujabaRealtimeStatechartInstance/embeddedSubStatecharts"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="BehavioralElementInstance" abstract="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorInstance" lowerBound="1"
+            upperBound="-1" eType="#//model/instance/BehaviorInstance" containment="true"
+            eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementType"
+            lowerBound="1" eType="#//model/core/BehavioralElement"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern"
