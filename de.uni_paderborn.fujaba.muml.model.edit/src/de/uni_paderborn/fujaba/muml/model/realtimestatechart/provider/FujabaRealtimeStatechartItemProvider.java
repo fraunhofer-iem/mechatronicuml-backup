@@ -323,11 +323,6 @@ public class FujabaRealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__ECLASS,
-				 EcoreFactory.eINSTANCE.createEClass()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__CLOCKS,
 				 RealtimestatechartFactory.eINSTANCE.createClock()));
 	}

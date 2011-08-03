@@ -305,29 +305,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntryOrExitEventItemProvider entryOrExitEventItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntryOrExitEventAdapter() {
-		if (entryOrExitEventItemProvider == null) {
-			entryOrExitEventItemProvider = new EntryOrExitEventItemProvider(this);
-		}
-
-		return entryOrExitEventItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,7 +689,6 @@ public class RealtimestatechartItemProviderAdapterFactory extends Realtimestatec
 		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (asynchronousMessageEventItemProvider != null) asynchronousMessageEventItemProvider.dispose();
 		if (doEventItemProvider != null) doEventItemProvider.dispose();
-		if (entryOrExitEventItemProvider != null) entryOrExitEventItemProvider.dispose();
 		if (synchronizationChannelItemProvider != null) synchronizationChannelItemProvider.dispose();
 		if (synchronizationItemProvider != null) synchronizationItemProvider.dispose();
 		if (fujabaRealtimeStatechartItemProvider != null) fujabaRealtimeStatechartItemProvider.dispose();

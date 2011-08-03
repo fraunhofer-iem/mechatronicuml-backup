@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
  *
  * @generated
  */
-public class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitEvent {
+public abstract class EntryOrExitEventImpl extends StateEventImpl implements EntryOrExitEvent {
 	/**
 	 * The cached value of the '{@link #getClockResets() <em>Clock Resets</em>}' reference list.
 	 * <!-- begin-user-doc -->

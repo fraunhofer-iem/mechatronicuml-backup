@@ -434,7 +434,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 
@@ -452,7 +451,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEAttribute(getNaturalNumber_Value(), ecorePackage.getELong(), "value", null, 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNaturalNumber_Infinity(), ecorePackage.getEBoolean(), "infinity", null, 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(naturalNumberEClass, theEcorePackage.getEObject(), "getValueAsObject", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(naturalNumberEClass, ecorePackage.getEObject(), "getValueAsObject", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		EOperation op = addEOperation(naturalNumberEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getInfinity(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -465,7 +464,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEOperation(naturalNumberEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCardinality_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -488,7 +487,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEOperation(infinityEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(infinityEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, -1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

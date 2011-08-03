@@ -91,7 +91,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 			case RealtimestatechartPackage.ACTION: return createAction();
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT: return createAsynchronousMessageEvent();
 			case RealtimestatechartPackage.DO_EVENT: return createDoEvent();
-			case RealtimestatechartPackage.ENTRY_OR_EXIT_EVENT: return createEntryOrExitEvent();
 			case RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL: return createSynchronizationChannel();
 			case RealtimestatechartPackage.SYNCHRONIZATION: return createSynchronization();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART: return createFujabaRealtimeStatechart();
@@ -241,16 +240,6 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	public DoEvent createDoEvent() {
 		DoEventImpl doEvent = new DoEventImpl();
 		return doEvent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntryOrExitEvent createEntryOrExitEvent() {
-		EntryOrExitEventImpl entryOrExitEvent = new EntryOrExitEventImpl();
-		return entryOrExitEvent;
 	}
 
 	/**

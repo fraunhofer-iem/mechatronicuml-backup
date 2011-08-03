@@ -322,11 +322,6 @@ public class StateItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.STATE__EVENTS,
-				 RealtimestatechartFactory.eINSTANCE.createEntryOrExitEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__EVENTS,
 				 RealtimestatechartFactory.eINSTANCE.createEntryEvent()));
 
 		newChildDescriptors.add

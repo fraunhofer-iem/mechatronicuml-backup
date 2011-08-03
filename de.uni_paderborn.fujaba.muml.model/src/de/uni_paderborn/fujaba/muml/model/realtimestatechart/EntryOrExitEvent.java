@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryOrExitEvent()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EntryOrExitEvent extends StateEvent {
