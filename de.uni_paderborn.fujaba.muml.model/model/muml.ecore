@@ -575,11 +575,12 @@
             <details key="documentation" value="The behavioral element this statechart belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The eClass of the Behavior serves to store all attributes as well as all operations that may be used in the behavior specification. Manipulation of the attribute values or invocation of the operations is done within the realtime statechart."/>
-          </eAnnotations>
-        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
@@ -772,6 +773,8 @@
             eType="#//model/core/Behavior"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementInstance"
             lowerBound="1" eType="#//model/instance/BehavioralElementInstance" eOpposite="#//model/instance/BehavioralElementInstance/behaviorInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attributeBindings"
+            upperBound="-1" eType="#//model/instance/AttributeBinding" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechartInstance"
           eSuperTypes="#//model/instance/BehaviorInstance">
@@ -798,6 +801,13 @@
             eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementType"
             lowerBound="1" eType="#//model/core/BehavioralElement"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeBinding">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
+            eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
+            containment="true"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern"
