@@ -577,10 +577,18 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
             eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EOperation"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of EOperations as signatures of helper functions. These operations&#xD;&#xA;may be called by the behavior specification and may access the attributes of&#xD;&#xA;the behavior specification. The EOperations are contained in the behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
             eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A behavior may define a set of EAttributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
@@ -769,12 +777,27 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehaviorInstance" abstract="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This is an abstract super class for all instances of behaviors. In MechatronicUML,&#xD;&#xA;we use instances of behaviors because, e.g., the behavior of a multi-port is &#xD;&#xA;instantiated multiple times. Then, all instances may specify an own assignment&#xD;&#xA;of initial values to the attributes."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
-            eType="#//model/core/Behavior"/>
+            eType="#//model/core/Behavior">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The behavior which is instantiated here. For each behavior, multiple instance&#xD;&#xA;may be created."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementInstance"
-            lowerBound="1" eType="#//model/instance/BehavioralElementInstance" eOpposite="#//model/instance/BehavioralElementInstance/behaviorInstance"/>
+            lowerBound="1" eType="#//model/instance/BehavioralElementInstance" eOpposite="#//model/instance/BehavioralElementInstance/behaviorInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This reference points to the behavioral element instance that this behavior &#xD;&#xA;instance belongs to. Each behavior instance belongs to exactly one behavioral&#xD;&#xA;element instance and defines its behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attributeBindings"
-            upperBound="-1" eType="#//model/instance/AttributeBinding" containment="true"/>
+            upperBound="-1" eType="#//model/instance/AttributeBinding" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The attributes bindings define an assignment of initial values to the attributes&#xD;&#xA;of the behavior of this behavior instance. There may only be one attribute &#xD;&#xA;binding for each attribute of the respective behavior, but there may be no &#xD;&#xA;attribute binding for an attribute which is not contained in the behavior."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="FujabaRealtimeStatechartInstance"
           eSuperTypes="#//model/instance/BehaviorInstance">
@@ -796,18 +819,40 @@
             eType="#//model/instance/FujabaRealtimeStatechartInstance" eOpposite="#//model/instance/FujabaRealtimeStatechartInstance/embeddedSubStatecharts"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="BehavioralElementInstance" abstract="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This is an abstract super class for all instances of behavioral elements. The &#xD;&#xA;behavioral element instance contains the instances of all its behaviors."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorInstance" lowerBound="1"
             upperBound="-1" eType="#//model/instance/BehaviorInstance" containment="true"
-            eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance"/>
+            eOpposite="#//model/instance/BehaviorInstance/behavioralElementInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="These are the behavior instances of the behavioral element instance. A &#xD;&#xA;behavioral element instance has more than one behavior instance in case&#xD;&#xA;that a behavior may be hierarchically composed as it is the case for &#xD;&#xA;real-time statecharts. Then, all instances that do not directly have a behavioral&#xD;&#xA;element instance are contained in the behaviorInstance reference of the &#xD;&#xA;nearest ancestor."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="behavioralElementType"
-            lowerBound="1" eType="#//model/core/BehavioralElement"/>
+            lowerBound="1" eType="#//model/core/BehavioralElement">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The BehavioralElement which is instantiated by this BehavioralElementInstance.&#xD;&#xA;There may be multiple instances for the same BehavioralElement in one model."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="AttributeBinding">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The AttributeBinding is used to assign initial values to the attributes of a &#xD;&#xA;behavior instance. For each attribute of the respective behavior, at most one &#xD;&#xA;AttributeBinding may be specified. The AttributeBinding references the&#xD;&#xA;attribute and assigns an arbitrary expression as a value. The expression must &#xD;&#xA;evaluate to the same type as the attribute type."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute"/>
+            eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EAttribute">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The attribute for which a value is assigned."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
             eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression"
-            containment="true"/>
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The expression defining the initial value for this attribute. The expression must&#xD;&#xA;evaluate to the same type as the attribute in this attribute assignment."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="pattern" nsURI="http:///de/uni_paderborn/fujaba/muml/model/pattern"
