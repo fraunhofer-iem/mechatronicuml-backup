@@ -426,7 +426,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_rZWCNL3iEeC5yPArnjG7yg" type="3002" source="_rYu-NL3iEeC5yPArnjG7yg" target="_rYtwEL3iEeC5yPArnjG7yg">
     <children xmi:type="notation:Node" xmi:id="_rZWpQL3iEeC5yPArnjG7yg" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpQb3iEeC5yPArnjG7yg" x="36" y="-47"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpQb3iEeC5yPArnjG7yg" x="-86" y="-12"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_rZWpQr3iEeC5yPArnjG7yg" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpQ73iEeC5yPArnjG7yg" x="5" y="-47"/>
@@ -440,7 +440,7 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_rZWpRL3iEeC5yPArnjG7yg" type="3002" source="_rYu-NL3iEeC5yPArnjG7yg" target="_rYtwEL3iEeC5yPArnjG7yg">
     <children xmi:type="notation:Node" xmi:id="_rZWpSL3iEeC5yPArnjG7yg" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpSb3iEeC5yPArnjG7yg" x="68" y="-16"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpSb3iEeC5yPArnjG7yg" x="-65" y="-11"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_rZWpSr3iEeC5yPArnjG7yg" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rZWpS73iEeC5yPArnjG7yg" x="37" y="-16"/>
