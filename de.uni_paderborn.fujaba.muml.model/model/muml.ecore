@@ -1016,7 +1016,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames"/>
+          <details key="constraints" value="OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
@@ -1030,6 +1030,7 @@
           <details key="UniquePrioritiesOfRegions" value="self.regions->isUnique(priority)"/>
           <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
           <details key="UniqueRegionNames" value="self.regions->isUnique(name)"/>
+          <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants->forAll(bound.value >= 0)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
             eType="#//model/realtimestatechart/Region" containment="true" eOpposite="#//model/realtimestatechart/Region/parentState">
