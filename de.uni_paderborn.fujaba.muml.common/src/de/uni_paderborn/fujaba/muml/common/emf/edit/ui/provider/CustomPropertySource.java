@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -81,52 +82,59 @@ public class CustomPropertySource extends PropertySource {
 					return null;
 				}
 
-				Object feature = itemPropertyDescriptor
+				Object f = itemPropertyDescriptor
 						.getFeature(itemPropertyDescriptor);
 
 				if (object instanceof EObject
-						&& feature instanceof EStructuralFeature) {
-					final EStructuralFeature structuralFeature = (EStructuralFeature) feature;
-					Class<?> instanceClass = structuralFeature.getEType()
+						&& f instanceof EStructuralFeature) {
+					final EStructuralFeature feature = (EStructuralFeature) f;
+					Class<?> instanceClass = feature.getEType()
 							.getInstanceClass();
+
+					// We only allow creating new objects, if the Reference is a containment reference.
+					boolean createMany = true;
+					if (feature instanceof EReference) {
+						EReference reference = (EReference) feature;
+						createMany = reference.isContainment();
+					}
 					
 					if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
-					} else if (structuralFeature.isMany()) {
+					} else if (feature.isMany() && createMany) {
 						if (EParameter.class.isAssignableFrom(instanceClass)) {
 							return createTypedElementCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues(), ",", ", ");
 						} else if (Expression.class
 								.isAssignableFrom(instanceClass)) {
 							return createTextualExpressionCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (ClockConstraint.class
 								.isAssignableFrom(instanceClass)) {
 							return createClockConstraintCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (ParameterBinding.class
 								.isAssignableFrom(instanceClass)) {
 							return createParameterBindingCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (AbsoluteDeadline.class
 								.isAssignableFrom(instanceClass)) {
 							return createAbsoluteDeadlineCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (Clock.class.isAssignableFrom(instanceClass)) {
 							return createClocksCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues());
 						} else if (EAttribute.class
 								.isAssignableFrom(instanceClass)) {
 							return createTypedElementCellEditor(parent,
-									getLabelProvider(), structuralFeature,
+									getLabelProvider(), feature,
 									getCurrentValues(), ";", "; ");
 						}
 					}
