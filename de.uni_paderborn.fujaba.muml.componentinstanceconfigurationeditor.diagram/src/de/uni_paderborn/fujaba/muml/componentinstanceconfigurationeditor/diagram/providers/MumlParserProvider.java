@@ -21,31 +21,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5002 componentInstanceLabel_5002Parser;
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser componentInstanceLabel_5002Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getComponentInstanceLabel_5002Parser() {
 		if (componentInstanceLabel_5002Parser == null) {
-			componentInstanceLabel_5002Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5002();
+			componentInstanceLabel_5002Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser();
 		}
 		return componentInstanceLabel_5002Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5001 componentInstanceLabel_5001Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getComponentInstanceLabel_5001Parser() {
-		if (componentInstanceLabel_5001Parser == null) {
-			componentInstanceLabel_5001Parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ComponentInstanceLabelExpressionLabelParser5001();
-		}
-		return componentInstanceLabel_5001Parser;
 	}
 
 	/**
@@ -55,8 +40,6 @@ public class MumlParserProvider extends AbstractProvider implements
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getComponentInstanceLabel_5002Parser();
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getComponentInstanceLabel_5001Parser();
 		}
 		return null;
 	}

@@ -3,12 +3,10 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -26,17 +24,11 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case PortInstanceEditPart.VISUAL_ID:
-				return new CustomPortInstanceEditPart(view);
-				
-			case PortInstance2EditPart.VISUAL_ID:
-				return new CustomPortInstance2EditPart(view);
+			case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
+				return new CustomDiscreteSinglePortInstanceEditPart(view);
 				
 			case ComponentInstanceEditPart.VISUAL_ID:
 				return new CustomComponentInstanceEditPart(view);
-				
-			case ComponentInstance2EditPart.VISUAL_ID:
-				return new CustomComponentInstance2EditPart(view);
 		
 			case ComponentInstanceComponentCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentInstanceComponentCompartmentEditPart(

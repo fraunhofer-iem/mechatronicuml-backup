@@ -44,8 +44,6 @@ public class CustomComponentinstanceconfigurationParserProvider extends
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getComponentInstanceLabel_5002Parser();
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getComponentInstanceLabel_5001Parser();
 		}
 		return null;
 	}

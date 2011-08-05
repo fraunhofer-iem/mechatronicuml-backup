@@ -28,11 +28,47 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Port"
-          description="Create new Port">
+          title="DiscreteSinglePortInstance"
+          description="Create new PortInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/Port.gif"
+            path="icons/DiscretePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="DiscreteMultiPortInstance"
+          description="Create new PortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/DiscretePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HardwarePortInstance"
+          description="Create new PortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HardwarePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ContinuousPortInstance"
+          description="Create new PortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ContinuousPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybirdPortInstance"
+          description="Create new PortInstance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

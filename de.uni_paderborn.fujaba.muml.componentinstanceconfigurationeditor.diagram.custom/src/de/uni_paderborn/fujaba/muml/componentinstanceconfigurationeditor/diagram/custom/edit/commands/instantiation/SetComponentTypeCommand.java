@@ -13,13 +13,19 @@ import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
@@ -266,13 +272,27 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			}
 		}
 
+		// Create a multi port instance in case one is needed
+		DiscreteMultiPortInstance multiPortInstance = null;
+		if(lowerBound > 1){
+			multiPortInstance = 
+				InstanceFactory.eINSTANCE.createDiscreteMultiPortInstance();
+			
+			multiPortInstance.setPortType(port);
+			multiPortInstance.setName(componentInstance.getName() + port.getName());
+			multiPortInstance.setComponentInstance(componentInstance);
+		}
+		
 		// Create as many PortInstances as the Port's lowerBound requires.
 		for (long i = 0; i < lowerBound; i++) {
-			PortInstance portInstance = InstanceFactory.eINSTANCE
-					.createPortInstance();
+			PortInstance portInstance = createSinglePortInstance(port);
 			portInstance.setPortType(port);
 			portInstance.setName(componentInstance.getName() + port.getName() + i);
 			portInstance.setComponentInstance(componentInstance);
+			
+			if(multiPortInstance != null){
+				multiPortInstance.getSubPortInstances().add((DiscreteSinglePortInstance)portInstance);
+			}
 
 		}
 		return newInstances;
@@ -359,4 +379,20 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return connectorInstance;
 	}
 
+	private PortInstance createSinglePortInstance(Port port){
+		if(port instanceof DiscretePort){
+			return InstanceFactory.eINSTANCE
+			.createDiscreteSinglePortInstance();
+		}else if(port instanceof HardwarePort){
+			return InstanceFactory.eINSTANCE
+			.createHardwarePortIstance();
+		}else if(port instanceof ContinuousPort){
+			return InstanceFactory.eINSTANCE
+			.createContinuousPortInstance();
+		}else if(port instanceof HybridPort){
+			InstanceFactory.eINSTANCE
+			.createHybridPortInstance();
+		}
+		return null;
+	}
 }

@@ -13,19 +13,19 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomAssemblyInstanceReorientCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceCreateCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.commands.CustomDelegationInstanceReorientCommand;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.PortInstance2ItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteSinglePortInstanceItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
- * A customized PortInstance2ItemSemanticEditPolicy. We create our customized Delegation
+ * A customized PortInstanceItemSemanticEditPolicy. We create our customized Delegation
  * and Assembly-CreateCommands here.
  * 
  * @author bingo
  * 
  */
-public class CustomPortInstance2ItemSemanticEditPolicy extends
-		PortInstance2ItemSemanticEditPolicy {
+public class CustomDiscreteSinglePortInstanceItemSemanticEditPolicy extends
+DiscreteSinglePortInstanceItemSemanticEditPolicy {
 
 	// TODO: Can we forbid deleting the view element.
 	/**

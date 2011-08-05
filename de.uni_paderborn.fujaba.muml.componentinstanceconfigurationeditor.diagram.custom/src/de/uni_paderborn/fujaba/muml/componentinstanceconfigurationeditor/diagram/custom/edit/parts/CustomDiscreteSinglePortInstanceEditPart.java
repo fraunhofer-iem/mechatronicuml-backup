@@ -13,8 +13,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.common.edit.parts.PortInstanceBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortGraphicalNodeEditPolicy;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomPortInstance2ItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.PortInstance2EditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.edit.policies.CustomDiscreteSinglePortInstanceItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;;
 
 /**
  * A customized PortEditPart. It is responsible for ports around
@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram
  * @author bingo
  * 
  */
-public class CustomPortInstance2EditPart extends PortInstance2EditPart {
+public class CustomDiscreteSinglePortInstanceEditPart extends DiscreteSinglePortInstanceEditPart {
 
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
@@ -36,7 +36,7 @@ public class CustomPortInstance2EditPart extends PortInstance2EditPart {
 	 * @param view
 	 *            The graphical model.
 	 */
-	public CustomPortInstance2EditPart(View view) {
+	public CustomDiscreteSinglePortInstanceEditPart(View view) {
 		super(view);
 
 	}
@@ -134,7 +134,7 @@ public class CustomPortInstance2EditPart extends PortInstance2EditPart {
 				new CustomPortGraphicalNodeEditPolicy());
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CustomPortInstance2ItemSemanticEditPolicy());
+				new CustomDiscreteSinglePortInstanceItemSemanticEditPolicy());
 
 	}
 
