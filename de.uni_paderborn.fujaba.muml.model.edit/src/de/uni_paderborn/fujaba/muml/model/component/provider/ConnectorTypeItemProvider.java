@@ -61,7 +61,6 @@ public class ConnectorTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehaviorPropertyDescriptor(object);
-			addConnectorClassPropertyDescriptor(object);
 			addFromPortPropertyDescriptor(object);
 			addToPortPropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
@@ -88,28 +87,6 @@ public class ConnectorTypeItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BehavioralConnector_connectorClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralConnector_connectorClass_feature", "_UI_BehavioralConnector_type"),
-				 ComponentPackage.Literals.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ConnectorClassPropertyCategory"),
 				 null));
 	}
 

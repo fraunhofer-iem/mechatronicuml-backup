@@ -72,7 +72,6 @@ public class ComponentItemProvider
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
-			addEClassPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
 			addMustImplementReceiverInterfacesPropertyDescriptor(object);
 			addMustImplementSenderInterfacesPropertyDescriptor(object);
@@ -144,42 +143,6 @@ public class ComponentItemProvider
 				 null,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the EClass feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addEClassPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Component_eClass_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Component_eClass_feature", "_UI_Component_type"),
-			 ComponentPackage.Literals.COMPONENT__ECLASS,
-			 true,
-			 false,
-			 true,
-			 null,
-			 null,
-			 null);
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_EClass_eAttributes_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
-			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
-			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
-			 true,
-			 false,
-			 false,
-			 null,
-			 getString("_UI_EClassPropertyCategory"),
-			 null,
-			 rootPropertyDescriptor));
 	}
 
 	/**

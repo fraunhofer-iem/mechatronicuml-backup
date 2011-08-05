@@ -73,7 +73,6 @@ public class RoleItemProvider
 			addConstraintPropertyDescriptor(object);
 			addBehaviorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
-			addEClassPropertyDescriptor(object);
 			addSenderMessageInterfacePropertyDescriptor(object);
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
@@ -149,42 +148,7 @@ public class RoleItemProvider
 				 null));
 	}
 
-	/**
-	 * This adds a property descriptor for the EClass feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addEClassPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_eClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_eClass_feature", "_UI_Role_type"),
-				 PatternPackage.Literals.ROLE__ECLASS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_EClassPropertyCategory"),
-				 null);
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_EClass_eAttributes_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
-			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
-			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
-			 true,
-			 false,
-			 false,
-			 null,
-			 getString("_UI_EClassPropertyCategory"),
-			 null,
-			 rootPropertyDescriptor));
-		
-	}
+	
 
 	/**
 	 * This adds a property descriptor for the Sender Message Interface feature.

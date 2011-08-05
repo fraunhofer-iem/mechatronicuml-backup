@@ -73,7 +73,6 @@ public class CoordinationPatternItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConstraintPropertyDescriptor(object);
-			addConnectorsPropertyDescriptor(object);
 			addRole1PropertyDescriptor(object);
 			addRole2PropertyDescriptor(object);
 		}
@@ -99,28 +98,6 @@ public class CoordinationPatternItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CoordinationPattern_connectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationPattern_connectors_feature", "_UI_CoordinationPattern_type"),
-				 PatternPackage.Literals.COORDINATION_PATTERN__CONNECTORS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_RoleConnectorPropertyCategory"),
 				 null));
 	}
 
@@ -202,34 +179,6 @@ public class CoordinationPatternItemProvider
 			 null,
 			 rootPropertyDescriptor));
 		
-		IChainedPropertyDescriptor eClassPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Role_eClass_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Role_eClass_feature", "_UI_Role_type"),
-			 PatternPackage.Literals.ROLE__ECLASS,
-			 true,
-			 false,
-			 true,
-			 null,
-			 category,
-			 null,
-			 rootPropertyDescriptor);
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_EClass_eAttributes_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
-			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
-			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
-			 true,
-			 false,
-			 false,
-			 null,
-			 category,
-			 null,
-			 eClassPropertyDescriptor));
 		
 		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -328,7 +277,7 @@ public class CoordinationPatternItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTORS);
+			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR);
 			childrenFeatures.add(PatternPackage.Literals.COORDINATION_PATTERN__ROLE2);
 		}
 		return childrenFeatures;
@@ -384,7 +333,7 @@ public class CoordinationPatternItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CoordinationPattern.class)) {
-			case PatternPackage.COORDINATION_PATTERN__CONNECTORS:
+			case PatternPackage.COORDINATION_PATTERN__CONNECTOR:
 			case PatternPackage.COORDINATION_PATTERN__ROLE2:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -405,7 +354,7 @@ public class CoordinationPatternItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTORS,
+				(PatternPackage.Literals.COORDINATION_PATTERN__CONNECTOR,
 				 PatternFactory.eINSTANCE.createRoleConnector()));
 
 		newChildDescriptors.add

@@ -68,7 +68,6 @@ public class DiscretePortItemProvider
 			addReceiverMessageInterfacePropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
-			addEClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -205,41 +204,6 @@ public class DiscretePortItemProvider
 				 null));
 	}
 
-	/**
-	 * This adds a property descriptor for the EClass feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addEClassPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_DiscretePort_eClass_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_eClass_feature", "_UI_DiscretePort_type"),
-			 ComponentPackage.Literals.DISCRETE_PORT__ECLASS,
-			 true,
-			 false,
-			 true,
-			 null,
-			 null,
-			 null);
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_EClass_eAttributes_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
-			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
-			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
-			 true,
-			 false,
-			 false,
-			 null,
-			 getString("_UI_EClassPropertyCategory"),
-			 null,
-			 rootPropertyDescriptor));
-	}
 
 	/**
 	 * This returns DiscretePort.gif.

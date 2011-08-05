@@ -21,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -34,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  * @generated
  */
 public class HybridPortItemProvider
-	extends ContinuousPortItemProvider
+	extends DiscretePortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -62,182 +64,31 @@ public class HybridPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBehaviorPropertyDescriptor(object);
-			addRefinesPropertyDescriptor(object);
-			addSenderMessageInterfacePropertyDescriptor(object);
-			addReceiverMessageInterfacePropertyDescriptor(object);
-			addAdaptationBehaviorPropertyDescriptor(object);
-			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
-			addEClassPropertyDescriptor(object);
+			addKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Behavior feature.
+	 * This adds a property descriptor for the Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBehaviorPropertyDescriptor(Object object) {
+	protected void addKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_BehavioralElement_behavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
+				 getString("_UI_ContinuousPort_kind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContinuousPort_kind_feature", "_UI_ContinuousPort_type"),
+				 ComponentPackage.Literals.CONTINUOUS_PORT__KIND,
 				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Refines feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRefinesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_refines_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_refines_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__REFINES,
-				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Sender Message Interface feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_senderMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_senderMessageInterface_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Receiver Message Interface feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_receiverMessageInterface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageInterface_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Adaptation Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAdaptationBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_adaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_adaptationBehavior_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__ADAPTATION_BEHAVIOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Role And Adaptation Behavior feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRoleAndAdaptationBehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_roleAndAdaptationBehavior_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-	/**
-	 * This adds a property descriptor for the EClass feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addEClassPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_DiscretePort_eClass_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_eClass_feature", "_UI_DiscretePort_type"),
-			 ComponentPackage.Literals.DISCRETE_PORT__ECLASS,
-			 true,
-			 false,
-			 true,
-			 null,
-			 null,
-			 null);
-
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_EClass_eAttributes_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_EClass_eAttributes_feature", "_UI_EClass_type"),
-			 EcorePackage.Literals.ECLASS__EATTRIBUTES,
-			 EcorePackage.Literals.ECLASS__ESTRUCTURAL_FEATURES,
-			 true,
-			 false,
-			 false,
-			 null,
-			 getString("_UI_EClassPropertyCategory"),
-			 null,
-			 rootPropertyDescriptor));
 	}
 
 	/**
@@ -275,6 +126,12 @@ public class HybridPortItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(HybridPort.class)) {
+			case ComponentPackage.HYBRID_PORT__KIND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

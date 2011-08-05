@@ -121,29 +121,6 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortInstanceItemProvider portInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortInstanceAdapter() {
-		if (portInstanceItemProvider == null) {
-			portInstanceItemProvider = new PortInstanceItemProvider(this);
-		}
-
-		return portInstanceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,6 +187,167 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		}
 
 		return componentInstanceConfigurationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HardwarePortIstanceItemProvider hardwarePortIstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHardwarePortIstanceAdapter() {
+		if (hardwarePortIstanceItemProvider == null) {
+			hardwarePortIstanceItemProvider = new HardwarePortIstanceItemProvider(this);
+		}
+
+		return hardwarePortIstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContinuousPortInstanceItemProvider continuousPortInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContinuousPortInstanceAdapter() {
+		if (continuousPortInstanceItemProvider == null) {
+			continuousPortInstanceItemProvider = new ContinuousPortInstanceItemProvider(this);
+		}
+
+		return continuousPortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HybridPortInstanceItemProvider hybridPortInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHybridPortInstanceAdapter() {
+		if (hybridPortInstanceItemProvider == null) {
+			hybridPortInstanceItemProvider = new HybridPortInstanceItemProvider(this);
+		}
+
+		return hybridPortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DiscreteSinglePortInstanceItemProvider discreteSinglePortInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDiscreteSinglePortInstanceAdapter() {
+		if (discreteSinglePortInstanceItemProvider == null) {
+			discreteSinglePortInstanceItemProvider = new DiscreteSinglePortInstanceItemProvider(this);
+		}
+
+		return discreteSinglePortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DiscreteMultiPortInstanceItemProvider discreteMultiPortInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDiscreteMultiPortInstanceAdapter() {
+		if (discreteMultiPortInstanceItemProvider == null) {
+			discreteMultiPortInstanceItemProvider = new DiscreteMultiPortInstanceItemProvider(this);
+		}
+
+		return discreteMultiPortInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FujabaRealtimeStatechartInstanceItemProvider fujabaRealtimeStatechartInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFujabaRealtimeStatechartInstanceAdapter() {
+		if (fujabaRealtimeStatechartInstanceItemProvider == null) {
+			fujabaRealtimeStatechartInstanceItemProvider = new FujabaRealtimeStatechartInstanceItemProvider(this);
+		}
+
+		return fujabaRealtimeStatechartInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeBindingItemProvider attributeBindingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeBindingAdapter() {
+		if (attributeBindingItemProvider == null) {
+			attributeBindingItemProvider = new AttributeBindingItemProvider(this);
+		}
+
+		return attributeBindingItemProvider;
 	}
 
 	/**
@@ -313,10 +451,16 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	public void dispose() {
 		if (componentInstanceItemProvider != null) componentInstanceItemProvider.dispose();
 		if (connectorInstanceItemProvider != null) connectorInstanceItemProvider.dispose();
-		if (portInstanceItemProvider != null) portInstanceItemProvider.dispose();
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
 		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
+		if (hardwarePortIstanceItemProvider != null) hardwarePortIstanceItemProvider.dispose();
+		if (continuousPortInstanceItemProvider != null) continuousPortInstanceItemProvider.dispose();
+		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
+		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
+		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
+		if (fujabaRealtimeStatechartInstanceItemProvider != null) fujabaRealtimeStatechartInstanceItemProvider.dispose();
+		if (attributeBindingItemProvider != null) attributeBindingItemProvider.dispose();
 	}
 
 }

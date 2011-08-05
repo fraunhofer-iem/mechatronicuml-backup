@@ -64,12 +64,35 @@ public class ComponentInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBehavioralElementTypePropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
 			addEmbeddedInstancesPropertyDescriptor(object);
 			addConnectorInstancesPropertyDescriptor(object);
 			addPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Behavioral Element Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBehavioralElementTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BehavioralElementInstance_behavioralElementType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElementInstance_behavioralElementType_feature", "_UI_BehavioralElementInstance_type"),
+				 InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -172,6 +195,7 @@ public class ComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
@@ -229,6 +253,7 @@ public class ComponentInstanceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
+			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
 			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
@@ -248,6 +273,11 @@ public class ComponentInstanceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE,
+				 InstanceFactory.eINSTANCE.createFujabaRealtimeStatechartInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -272,7 +302,27 @@ public class ComponentInstanceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
-				 InstanceFactory.eINSTANCE.createPortInstance()));
+				 InstanceFactory.eINSTANCE.createHardwarePortIstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createContinuousPortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createHybridPortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createDiscreteSinglePortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
+				 InstanceFactory.eINSTANCE.createDiscreteMultiPortInstance()));
 	}
 
 	/**

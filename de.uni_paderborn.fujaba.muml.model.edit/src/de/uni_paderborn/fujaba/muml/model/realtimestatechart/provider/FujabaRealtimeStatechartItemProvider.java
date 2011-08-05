@@ -199,7 +199,6 @@ public class FujabaRealtimeStatechartItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__VERTICES);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__ECLASS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__CLOCKS);
 		}
 		return childrenFeatures;
@@ -262,7 +261,6 @@ public class FujabaRealtimeStatechartItemProvider
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
