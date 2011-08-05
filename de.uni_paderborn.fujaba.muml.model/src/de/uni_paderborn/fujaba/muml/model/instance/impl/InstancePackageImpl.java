@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
@@ -20,10 +21,20 @@ import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding;
+import de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
@@ -84,6 +95,76 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	private EClass componentInstanceConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hardwarePortIstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass continuousPortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hybridPortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discretePortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteSinglePortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteMultiPortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behaviorInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fujabaRealtimeStatechartInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass behavioralElementInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeBindingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -402,6 +483,222 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getHardwarePortIstance() {
+		return hardwarePortIstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getContinuousPortInstance() {
+		return continuousPortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getHybridPortInstance() {
+		return hybridPortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscretePortInstance() {
+		return discretePortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscreteSinglePortInstance() {
+		return discreteSinglePortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscreteMultiPortInstance() {
+		return discreteMultiPortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteMultiPortInstance_SubPortInstances() {
+		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteMultiPortInstance_AdaptationBehaviorInstance() {
+		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehaviorInstance() {
+		return behaviorInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehaviorInstance_Behavior() {
+		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehaviorInstance_BehavioralElementInstance() {
+		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehaviorInstance_AttributeBindings() {
+		return (EReference)behaviorInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFujabaRealtimeStatechartInstance() {
+		return fujabaRealtimeStatechartInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFujabaRealtimeStatechartInstance_Statechart() {
+		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts() {
+		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts() {
+		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFujabaRealtimeStatechartInstance_AllSubStatecharts() {
+		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFujabaRealtimeStatechartInstance_ParentStatechart() {
+		return (EReference)fujabaRealtimeStatechartInstanceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBehavioralElementInstance() {
+		return behavioralElementInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehavioralElementInstance_BehaviorInstance() {
+		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehavioralElementInstance_BehavioralElementType() {
+		return (EReference)behavioralElementInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttributeBinding() {
+		return attributeBindingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeBinding_Attribute() {
+		return (EReference)attributeBindingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAttributeBinding_Value() {
+		return (EReference)attributeBindingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InstanceFactory getInstanceFactory() {
 		return (InstanceFactory)getEFactoryInstance();
 	}
@@ -455,6 +752,40 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		componentInstanceConfigurationEClass = createEClass(COMPONENT_INSTANCE_CONFIGURATION);
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES);
+
+		hardwarePortIstanceEClass = createEClass(HARDWARE_PORT_ISTANCE);
+
+		continuousPortInstanceEClass = createEClass(CONTINUOUS_PORT_INSTANCE);
+
+		hybridPortInstanceEClass = createEClass(HYBRID_PORT_INSTANCE);
+
+		discretePortInstanceEClass = createEClass(DISCRETE_PORT_INSTANCE);
+
+		discreteSinglePortInstanceEClass = createEClass(DISCRETE_SINGLE_PORT_INSTANCE);
+
+		discreteMultiPortInstanceEClass = createEClass(DISCRETE_MULTI_PORT_INSTANCE);
+		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES);
+		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE);
+
+		behaviorInstanceEClass = createEClass(BEHAVIOR_INSTANCE);
+		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIOR);
+		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
+		createEReference(behaviorInstanceEClass, BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS);
+
+		fujabaRealtimeStatechartInstanceEClass = createEClass(FUJABA_REALTIME_STATECHART_INSTANCE);
+		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__STATECHART);
+		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__EMBEDDED_SUB_STATECHARTS);
+		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__REFERENCED_SUB_STATECHARTS);
+		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__ALL_SUB_STATECHARTS);
+		createEReference(fujabaRealtimeStatechartInstanceEClass, FUJABA_REALTIME_STATECHART_INSTANCE__PARENT_STATECHART);
+
+		behavioralElementInstanceEClass = createEClass(BEHAVIORAL_ELEMENT_INSTANCE);
+		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
+		createEReference(behavioralElementInstanceEClass, BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE);
+
+		attributeBindingEClass = createEClass(ATTRIBUTE_BINDING);
+		createEReference(attributeBindingEClass, ATTRIBUTE_BINDING__ATTRIBUTE);
+		createEReference(attributeBindingEClass, ATTRIBUTE_BINDING__VALUE);
 	}
 
 	/**
@@ -485,6 +816,9 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -492,13 +826,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		// Add supertypes to classes
 		componentInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
+		componentInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		connectorInstanceEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		connectorInstanceEClass.getESuperTypes().add(theComponentPackage.getBehavioralConnector());
+		connectorInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		portInstanceEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
+		portInstanceEClass.getESuperTypes().add(this.getBehavioralElementInstance());
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
+		hardwarePortIstanceEClass.getESuperTypes().add(this.getPortInstance());
+		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
+		hybridPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
+		hybridPortInstanceEClass.getESuperTypes().add(this.getContinuousPortInstance());
+		discretePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
+		discreteSinglePortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
+		discreteMultiPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
+		fujabaRealtimeStatechartInstanceEClass.getESuperTypes().add(this.getBehaviorInstance());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentInstanceEClass, ComponentInstance.class, "ComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -513,7 +858,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getConnectorInstance_ParentComponentInstance(), this.getComponentInstance(), this.getComponentInstance_ConnectorInstances(), "parentComponentInstance", null, 0, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorInstance_ConnectorType(), theComponentPackage.getConnectorType(), null, "connectorType", null, 0, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -531,6 +876,40 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(componentInstanceConfigurationEClass, ComponentInstanceConfiguration.class, "ComponentInstanceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentInstanceConfiguration_ComponentInstances(), this.getComponentInstance(), null, "componentInstances", null, 0, -1, ComponentInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstanceConfiguration_ConnectorInstances(), this.getConnectorInstance(), null, "connectorInstances", null, 0, -1, ComponentInstanceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hardwarePortIstanceEClass, HardwarePortIstance.class, "HardwarePortIstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(continuousPortInstanceEClass, ContinuousPortInstance.class, "ContinuousPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(hybridPortInstanceEClass, HybridPortInstance.class, "HybridPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(discretePortInstanceEClass, DiscretePortInstance.class, "DiscretePortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(discreteSinglePortInstanceEClass, DiscreteSinglePortInstance.class, "DiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(discreteMultiPortInstanceEClass, DiscreteMultiPortInstance.class, "DiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteMultiPortInstance_SubPortInstances(), this.getDiscreteSinglePortInstance(), null, "subPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteMultiPortInstance_AdaptationBehaviorInstance(), this.getBehaviorInstance(), null, "adaptationBehaviorInstance", null, 1, 1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(behaviorInstanceEClass, BehaviorInstance.class, "BehaviorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehaviorInstance_Behavior(), theCorePackage.getBehavior(), null, "behavior", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorInstance_BehavioralElementInstance(), this.getBehavioralElementInstance(), this.getBehavioralElementInstance_BehaviorInstance(), "behavioralElementInstance", null, 1, 1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorInstance_AttributeBindings(), this.getAttributeBinding(), null, "attributeBindings", null, 0, -1, BehaviorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fujabaRealtimeStatechartInstanceEClass, FujabaRealtimeStatechartInstance.class, "FujabaRealtimeStatechartInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFujabaRealtimeStatechartInstance_Statechart(), theRealtimestatechartPackage.getFujabaRealtimeStatechart(), null, "statechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), this.getFujabaRealtimeStatechartInstance_ParentStatechart(), "embeddedSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), null, "referencedSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechartInstance_AllSubStatecharts(), this.getFujabaRealtimeStatechartInstance(), null, "allSubStatecharts", null, 0, -1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFujabaRealtimeStatechartInstance_ParentStatechart(), this.getFujabaRealtimeStatechartInstance(), this.getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts(), "parentStatechart", null, 1, 1, FujabaRealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(behavioralElementInstanceEClass, BehavioralElementInstance.class, "BehavioralElementInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehavioralElementInstance_BehaviorInstance(), this.getBehaviorInstance(), this.getBehaviorInstance_BehavioralElementInstance(), "behaviorInstance", null, 1, -1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElementInstance_BehavioralElementType(), theCorePackage.getBehavioralElement(), null, "behavioralElementType", null, 1, 1, BehavioralElementInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(attributeBindingEClass, AttributeBinding.class, "AttributeBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttributeBinding_Attribute(), ecorePackage.getEAttribute(), null, "attribute", null, 1, 1, AttributeBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttributeBinding_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, AttributeBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -557,7 +936,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																														
+		   });																																											
 	}
 
 	/**
@@ -591,7 +970,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "connectorType.oclAsType(component::Delegation)"
-		   });			
+		   });											
+		addAnnotation
+		  (getFujabaRealtimeStatechartInstance_AllSubStatecharts(), 
+		   source, 
+		   new String[] {
+			 "derivation", "embeddedSubStatecharts -> union(referencedSubStatecharts)"
+		   });						
 	}
 
 } //InstancePackageImpl

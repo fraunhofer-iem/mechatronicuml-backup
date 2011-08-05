@@ -28,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
@@ -103,32 +102,6 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * @generated
 	 */
 	EList<Vertex> getVertices();
-
-	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The class belonging to this realtime statechart. Variables declared in the class might be manipulated by the statechart. Methods declared in the class might be executed by the statechart as side effects of the transition.
-	 * \todosd{ocl: implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' reference.
-	 * @see #setEClass(EClass)
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_EClass()
-	 * @model derived="true"
-	 * @generated
-	 */
-	EClass getEClass();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEClass <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' reference.
-	 * @see #getEClass()
-	 * @generated
-	 */
-	void setEClass(EClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Clocks</b></em>' containment reference list.

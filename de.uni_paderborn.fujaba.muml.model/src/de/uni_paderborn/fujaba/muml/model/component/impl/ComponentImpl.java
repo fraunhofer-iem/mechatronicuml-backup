@@ -42,7 +42,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
@@ -91,16 +90,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @ordered
 	 */
 	protected EList<Port> ports;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
 
 	/**
 	 * The cached value of the '{@link #getReferencingComponentParts() <em>Referencing Component Parts</em>}' reference list.
@@ -201,44 +190,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject)eClass;
-			eClass = (EClass)eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.COMPONENT__ECLASS, oldEClass, eClass));
-			}
-		}
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__ECLASS, oldEClass, eClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ComponentPart> getReferencingComponentParts() {
 		if (referencingComponentParts == null) {
 			referencingComponentParts = new EObjectWithInverseResolvingEList<ComponentPart>(ComponentPart.class, this, ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS, ComponentPackage.COMPONENT_PART__COMPONENT_TYPE);
@@ -332,9 +283,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return getConstraint();
 			case ComponentPackage.COMPONENT__PORTS:
 				return getPorts();
-			case ComponentPackage.COMPONENT__ECLASS:
-				if (resolve) return getEClass();
-				return basicGetEClass();
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return getReferencingComponentParts();
 			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
@@ -364,9 +312,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				getPorts().addAll((Collection<? extends Port>)newValue);
-				return;
-			case ComponentPackage.COMPONENT__ECLASS:
-				setEClass((EClass)newValue);
 				return;
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				getReferencingComponentParts().clear();
@@ -401,9 +346,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				return;
-			case ComponentPackage.COMPONENT__ECLASS:
-				setEClass((EClass)null);
-				return;
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				getReferencingComponentParts().clear();
 				return;
@@ -431,8 +373,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return constraint != null && !constraint.isEmpty();
 			case ComponentPackage.COMPONENT__PORTS:
 				return ports != null && !ports.isEmpty();
-			case ComponentPackage.COMPONENT__ECLASS:
-				return eClass != null;
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return referencingComponentParts != null && !referencingComponentParts.isEmpty();
 			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:

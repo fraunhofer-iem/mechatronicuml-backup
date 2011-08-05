@@ -225,6 +225,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateState_UniquePrioritiesOfRegions(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniqueChannelNames(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniqueRegionNames(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_BoundOfInvariantGreaterOrEqualZero(state, diagnostics, context);
 		return result;
 	}
 
@@ -455,6 +456,35 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueRegionNames",
 				 STATE__UNIQUE_REGION_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the BoundOfInvariantGreaterOrEqualZero constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.invariants->forAll(bound.value >= 0)";
+
+	/**
+	 * Validates the BoundOfInvariantGreaterOrEqualZero constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateState_BoundOfInvariantGreaterOrEqualZero(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE,
+				 state,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "BoundOfInvariantGreaterOrEqualZero",
+				 STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

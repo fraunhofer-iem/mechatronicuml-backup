@@ -133,22 +133,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__PORTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__ECLASS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__REFERENCING_COMPONENT_PARTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT__REFERENCING_COMPONENT_PARTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
@@ -157,7 +148,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
@@ -166,7 +157,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -175,7 +166,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
@@ -240,15 +231,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_COMPONENT__PORTS = COMPONENT__PORTS;
-
-	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__ECLASS = COMPONENT__ECLASS;
 
 	/**
 	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
@@ -650,22 +632,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = PORT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__ECLASS = PORT_FEATURE_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 7;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -941,15 +914,6 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT__ECLASS = COMPONENT__ECLASS;
-
-	/**
 	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1068,15 +1032,6 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT__ECLASS = COMPONENT__ECLASS;
-
-	/**
 	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1169,22 +1124,13 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE__BEHAVIOR = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__CONNECTOR_CLASS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__FROM_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_TYPE__FROM_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>To Port</b></em>' reference.
@@ -1193,7 +1139,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__TO_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int CONNECTOR_TYPE__TO_PORT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1202,7 +1148,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__PARENT_COMPONENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int CONNECTOR_TYPE__PARENT_COMPONENT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Connector Type</em>' class.
@@ -1211,7 +1157,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int CONNECTOR_TYPE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
@@ -1249,15 +1195,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSEMBLY__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__CONNECTOR_CLASS = CONNECTOR_TYPE__CONNECTOR_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
@@ -1351,15 +1288,6 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION__BEHAVIOR = CONNECTOR_TYPE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__CONNECTOR_CLASS = CONNECTOR_TYPE__CONNECTOR_CLASS;
-
-	/**
 	 * The feature id for the '<em><b>From Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1414,22 +1342,13 @@ public interface ComponentPackage extends EPackage {
 	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.
@@ -1448,7 +1367,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ANNOTATION = CONTINUOUS_PORT__ANNOTATION;
+	int HYBRID_PORT__ANNOTATION = DISCRETE_PORT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1457,7 +1376,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__EXTENSION = CONTINUOUS_PORT__EXTENSION;
+	int HYBRID_PORT__EXTENSION = DISCRETE_PORT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1466,7 +1385,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__NAME = CONTINUOUS_PORT__NAME;
+	int HYBRID_PORT__NAME = DISCRETE_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1475,7 +1394,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__COMMENT = CONTINUOUS_PORT__COMMENT;
+	int HYBRID_PORT__COMMENT = DISCRETE_PORT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -1484,7 +1403,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CONSTRAINT = CONTINUOUS_PORT__CONSTRAINT;
+	int HYBRID_PORT__CONSTRAINT = DISCRETE_PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -1493,7 +1412,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CARDINALITY = CONTINUOUS_PORT__CARDINALITY;
+	int HYBRID_PORT__CARDINALITY = DISCRETE_PORT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
@@ -1502,7 +1421,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__INCOMING_CONNECTORS = CONTINUOUS_PORT__INCOMING_CONNECTORS;
+	int HYBRID_PORT__INCOMING_CONNECTORS = DISCRETE_PORT__INCOMING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
@@ -1511,7 +1430,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__OUTGOING_CONNECTORS = CONTINUOUS_PORT__OUTGOING_CONNECTORS;
+	int HYBRID_PORT__OUTGOING_CONNECTORS = DISCRETE_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1520,16 +1439,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__COMPONENT = CONTINUOUS_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__KIND = CONTINUOUS_PORT__KIND;
+	int HYBRID_PORT__COMPONENT = DISCRETE_PORT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
@@ -1538,7 +1448,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 0;
+	int HYBRID_PORT__BEHAVIOR = DISCRETE_PORT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
@@ -1547,7 +1457,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__REFINES = CONTINUOUS_PORT_FEATURE_COUNT + 1;
+	int HYBRID_PORT__REFINES = DISCRETE_PORT__REFINES;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -1556,7 +1466,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__SENDER_MESSAGE_INTERFACE = CONTINUOUS_PORT_FEATURE_COUNT + 2;
+	int HYBRID_PORT__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -1565,7 +1475,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE = CONTINUOUS_PORT_FEATURE_COUNT + 3;
+	int HYBRID_PORT__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT__RECEIVER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1574,7 +1484,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 4;
+	int HYBRID_PORT__ADAPTATION_BEHAVIOR = DISCRETE_PORT__ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -1583,16 +1493,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = CONTINUOUS_PORT_FEATURE_COUNT + 5;
+	int HYBRID_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>EClass</b></em>' reference.
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__ECLASS = CONTINUOUS_PORT_FEATURE_COUNT + 6;
+	int HYBRID_PORT__KIND = DISCRETE_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
@@ -1601,7 +1511,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = CONTINUOUS_PORT_FEATURE_COUNT + 7;
+	int HYBRID_PORT_FEATURE_COUNT = DISCRETE_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
@@ -1643,17 +1553,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_Ports();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EClass</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getEClass()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_EClass();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.
@@ -1815,17 +1714,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscretePort_RoleAndAdaptationBehavior();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EClass</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_EClass();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HardwarePort <em>Hardware Port</em>}'.
@@ -2106,17 +1994,6 @@ public interface ComponentPackage extends EPackage {
 	EClass getBehavioralConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector#getConnectorClass <em>Connector Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector Class</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector#getConnectorClass()
-	 * @see #getBehavioralConnector()
-	 * @generated
-	 */
-	EReference getBehavioralConnector_ConnectorClass();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort <em>Hybrid Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2185,14 +2062,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
-
-		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__ECLASS = eINSTANCE.getComponent_EClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Referencing Component Parts</b></em>' reference list feature.
@@ -2321,14 +2190,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscretePort_RoleAndAdaptationBehavior();
-
-		/**
-		 * The meta object literal for the '<em><b>EClass</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__ECLASS = eINSTANCE.getDiscretePort_EClass();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HardwarePortImpl <em>Hardware Port</em>}' class.
@@ -2553,14 +2414,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BEHAVIORAL_CONNECTOR = eINSTANCE.getBehavioralConnector();
-
-		/**
-		 * The meta object literal for the '<em><b>Connector Class</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS = eINSTANCE.getBehavioralConnector_ConnectorClass();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.

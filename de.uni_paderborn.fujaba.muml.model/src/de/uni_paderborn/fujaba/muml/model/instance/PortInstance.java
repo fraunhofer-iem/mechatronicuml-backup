@@ -35,10 +35,10 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface PortInstance extends NamedElement, CommentableElement {
+public interface PortInstance extends NamedElement, CommentableElement, BehavioralElementInstance {
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

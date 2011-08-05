@@ -105,13 +105,31 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__NAME = SDMPackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__BEHAVIOR_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_INSTANCE__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Instances</b></em>' containment reference list.
@@ -120,7 +138,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__EMBEDDED_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_INSTANCE__EMBEDDED_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
@@ -129,7 +147,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
@@ -138,7 +156,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -147,7 +165,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -187,13 +205,22 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE__BEHAVIOR = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__CONNECTOR_CLASS = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -202,7 +229,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__SOURCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_INSTANCE__SOURCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -211,7 +238,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__TARGET = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int CONNECTOR_INSTANCE__TARGET = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
@@ -220,7 +247,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
@@ -229,7 +256,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__CONNECTOR_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int CONNECTOR_INSTANCE__CONNECTOR_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Connector Instance</em>' class.
@@ -238,7 +265,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int CONNECTOR_INSTANCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
@@ -287,13 +314,31 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__COMMENT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__BEHAVIOR_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__PORT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PORT_INSTANCE__PORT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
@@ -302,7 +347,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__COMPONENT_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PORT_INSTANCE__COMPONENT_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -311,7 +356,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -320,7 +365,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
@@ -329,7 +374,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
@@ -338,7 +383,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
@@ -347,7 +392,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
@@ -387,13 +432,22 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_INSTANCE__CONNECTOR_CLASS = CONNECTOR_INSTANCE__CONNECTOR_CLASS;
+	int ASSEMBLY_INSTANCE__BEHAVIOR_INSTANCE = CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = CONNECTOR_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -496,13 +550,22 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE__BEHAVIOR = CONNECTOR_INSTANCE__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Connector Class</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__CONNECTOR_CLASS = CONNECTOR_INSTANCE__CONNECTOR_CLASS;
+	int DELEGATION_INSTANCE__BEHAVIOR_INSTANCE = CONNECTOR_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = CONNECTOR_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -612,6 +675,998 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl <em>Hardware Port Istance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortIstance()
+	 * @generated
+	 */
+	int HARDWARE_PORT_ISTANCE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__NAME = PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__COMMENT = PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__BEHAVIOR_INSTANCE = PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The number of structural features of the '<em>Hardware Port Istance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT_ISTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getContinuousPortInstance()
+	 * @generated
+	 */
+	int CONTINUOUS_PORT_INSTANCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__NAME = PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__BEHAVIOR_INSTANCE = PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The number of structural features of the '<em>Continuous Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl <em>Discrete Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscretePortInstance()
+	 * @generated
+	 */
+	int DISCRETE_PORT_INSTANCE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__NAME = PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__BEHAVIOR_INSTANCE = PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHybridPortInstance()
+	 * @generated
+	 */
+	int HYBRID_PORT_INSTANCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__NAME = DISCRETE_PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__BEHAVIOR_INSTANCE = DISCRETE_PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = DISCRETE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__PORT_TYPE = DISCRETE_PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteSinglePortInstance()
+	 * @generated
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__NAME = DISCRETE_PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__BEHAVIOR_INSTANCE = DISCRETE_PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = DISCRETE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__PORT_TYPE = DISCRETE_PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Single Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteMultiPortInstance()
+	 * @generated
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__NAME = DISCRETE_PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__BEHAVIOR_INSTANCE = DISCRETE_PORT_INSTANCE__BEHAVIOR_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = DISCRETE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__PORT_TYPE = DISCRETE_PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Sub Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Adaptation Behavior Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Multi Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl <em>Behavior Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getBehaviorInstance()
+	 * @generated
+	 */
+	int BEHAVIOR_INSTANCE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_INSTANCE__BEHAVIOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Behavior Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_INSTANCE_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl <em>Fujaba Realtime Statechart Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__BEHAVIOR = BEHAVIOR_INSTANCE__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS;
+
+	/**
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__STATECHART = BEHAVIOR_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Embedded Sub Statecharts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__EMBEDDED_SUB_STATECHARTS = BEHAVIOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Referenced Sub Statecharts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__REFERENCED_SUB_STATECHARTS = BEHAVIOR_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>All Sub Statecharts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__ALL_SUB_STATECHARTS = BEHAVIOR_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Parent Statechart</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE__PARENT_STATECHART = BEHAVIOR_INSTANCE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Fujaba Realtime Statechart Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = BEHAVIOR_INSTANCE_FEATURE_COUNT + 5;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl <em>Behavioral Element Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getBehavioralElementInstance()
+	 * @generated
+	 */
+	int BEHAVIORAL_ELEMENT_INSTANCE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Behavioral Element Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIORAL_ELEMENT_INSTANCE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAttributeBinding()
+	 * @generated
+	 */
+	int ATTRIBUTE_BINDING = 15;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_BINDING__ATTRIBUTE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_BINDING__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Attribute Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE_BINDING_FEATURE_COUNT = 2;
 
 
 	/**
@@ -884,6 +1939,260 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstanceConfiguration_ConnectorInstances();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance <em>Hardware Port Istance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hardware Port Istance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance
+	 * @generated
+	 */
+	EClass getHardwarePortIstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Continuous Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance
+	 * @generated
+	 */
+	EClass getContinuousPortInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance <em>Hybrid Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hybrid Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance
+	 * @generated
+	 */
+	EClass getHybridPortInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance <em>Discrete Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance
+	 * @generated
+	 */
+	EClass getDiscretePortInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Single Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance
+	 * @generated
+	 */
+	EClass getDiscreteSinglePortInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Multi Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance
+	 * @generated
+	 */
+	EClass getDiscreteMultiPortInstance();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sub Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances()
+	 * @see #getDiscreteMultiPortInstance()
+	 * @generated
+	 */
+	EReference getDiscreteMultiPortInstance_SubPortInstances();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getAdaptationBehaviorInstance <em>Adaptation Behavior Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Adaptation Behavior Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getAdaptationBehaviorInstance()
+	 * @see #getDiscreteMultiPortInstance()
+	 * @generated
+	 */
+	EReference getDiscreteMultiPortInstance_AdaptationBehaviorInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance <em>Behavior Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavior Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance
+	 * @generated
+	 */
+	EClass getBehaviorInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Behavior</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavior()
+	 * @see #getBehaviorInstance()
+	 * @generated
+	 */
+	EReference getBehaviorInstance_Behavior();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance <em>Behavioral Element Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Behavioral Element Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getBehavioralElementInstance()
+	 * @see #getBehaviorInstance()
+	 * @generated
+	 */
+	EReference getBehaviorInstance_BehavioralElementInstance();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getAttributeBindings <em>Attribute Bindings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attribute Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance#getAttributeBindings()
+	 * @see #getBehaviorInstance()
+	 * @generated
+	 */
+	EReference getBehaviorInstance_AttributeBindings();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance <em>Fujaba Realtime Statechart Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fujaba Realtime Statechart Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance
+	 * @generated
+	 */
+	EClass getFujabaRealtimeStatechartInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getStatechart <em>Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getStatechart()
+	 * @see #getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechartInstance_Statechart();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getEmbeddedSubStatecharts <em>Embedded Sub Statecharts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Embedded Sub Statecharts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getEmbeddedSubStatecharts()
+	 * @see #getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getReferencedSubStatecharts <em>Referenced Sub Statecharts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Referenced Sub Statecharts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getReferencedSubStatecharts()
+	 * @see #getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getAllSubStatecharts <em>All Sub Statecharts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Sub Statecharts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getAllSubStatecharts()
+	 * @see #getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechartInstance_AllSubStatecharts();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getParentStatechart <em>Parent Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getParentStatechart()
+	 * @see #getFujabaRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getFujabaRealtimeStatechartInstance_ParentStatechart();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance <em>Behavioral Element Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavioral Element Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance
+	 * @generated
+	 */
+	EClass getBehavioralElementInstance();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehaviorInstance <em>Behavior Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Behavior Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehaviorInstance()
+	 * @see #getBehavioralElementInstance()
+	 * @generated
+	 */
+	EReference getBehavioralElementInstance_BehaviorInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehavioralElementType <em>Behavioral Element Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Behavioral Element Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance#getBehavioralElementType()
+	 * @see #getBehavioralElementInstance()
+	 * @generated
+	 */
+	EReference getBehavioralElementInstance_BehavioralElementType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding <em>Attribute Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Attribute Binding</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding
+	 * @generated
+	 */
+	EClass getAttributeBinding();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getAttribute()
+	 * @see #getAttributeBinding()
+	 * @generated
+	 */
+	EReference getAttributeBinding_Attribute();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding#getValue()
+	 * @see #getAttributeBinding()
+	 * @generated
+	 */
+	EReference getAttributeBinding_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,6 +2425,218 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ConnectorInstances();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl <em>Hardware Port Istance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortIstance()
+		 * @generated
+		 */
+		EClass HARDWARE_PORT_ISTANCE = eINSTANCE.getHardwarePortIstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getContinuousPortInstance()
+		 * @generated
+		 */
+		EClass CONTINUOUS_PORT_INSTANCE = eINSTANCE.getContinuousPortInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHybridPortInstance()
+		 * @generated
+		 */
+		EClass HYBRID_PORT_INSTANCE = eINSTANCE.getHybridPortInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl <em>Discrete Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscretePortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscretePortInstance()
+		 * @generated
+		 */
+		EClass DISCRETE_PORT_INSTANCE = eINSTANCE.getDiscretePortInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteSinglePortInstance()
+		 * @generated
+		 */
+		EClass DISCRETE_SINGLE_PORT_INSTANCE = eINSTANCE.getDiscreteSinglePortInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDiscreteMultiPortInstance()
+		 * @generated
+		 */
+		EClass DISCRETE_MULTI_PORT_INSTANCE = eINSTANCE.getDiscreteMultiPortInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Port Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES = eINSTANCE.getDiscreteMultiPortInstance_SubPortInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Adaptation Behavior Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_MULTI_PORT_INSTANCE__ADAPTATION_BEHAVIOR_INSTANCE = eINSTANCE.getDiscreteMultiPortInstance_AdaptationBehaviorInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl <em>Behavior Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.BehaviorInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getBehaviorInstance()
+		 * @generated
+		 */
+		EClass BEHAVIOR_INSTANCE = eINSTANCE.getBehaviorInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavior</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOR_INSTANCE__BEHAVIOR = eINSTANCE.getBehaviorInstance_Behavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavioral Element Instance</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE = eINSTANCE.getBehaviorInstance_BehavioralElementInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute Bindings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOR_INSTANCE__ATTRIBUTE_BINDINGS = eINSTANCE.getBehaviorInstance_AttributeBindings();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl <em>Fujaba Realtime Statechart Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.FujabaRealtimeStatechartInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getFujabaRealtimeStatechartInstance()
+		 * @generated
+		 */
+		EClass FUJABA_REALTIME_STATECHART_INSTANCE = eINSTANCE.getFujabaRealtimeStatechartInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Statechart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART_INSTANCE__STATECHART = eINSTANCE.getFujabaRealtimeStatechartInstance_Statechart();
+
+		/**
+		 * The meta object literal for the '<em><b>Embedded Sub Statecharts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART_INSTANCE__EMBEDDED_SUB_STATECHARTS = eINSTANCE.getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts();
+
+		/**
+		 * The meta object literal for the '<em><b>Referenced Sub Statecharts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART_INSTANCE__REFERENCED_SUB_STATECHARTS = eINSTANCE.getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts();
+
+		/**
+		 * The meta object literal for the '<em><b>All Sub Statecharts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART_INSTANCE__ALL_SUB_STATECHARTS = eINSTANCE.getFujabaRealtimeStatechartInstance_AllSubStatecharts();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Statechart</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUJABA_REALTIME_STATECHART_INSTANCE__PARENT_STATECHART = eINSTANCE.getFujabaRealtimeStatechartInstance_ParentStatechart();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl <em>Behavioral Element Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.BehavioralElementInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getBehavioralElementInstance()
+		 * @generated
+		 */
+		EClass BEHAVIORAL_ELEMENT_INSTANCE = eINSTANCE.getBehavioralElementInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavior Instance</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE = eINSTANCE.getBehavioralElementInstance_BehaviorInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavioral Element Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = eINSTANCE.getBehavioralElementInstance_BehavioralElementType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AttributeBindingImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAttributeBinding()
+		 * @generated
+		 */
+		EClass ATTRIBUTE_BINDING = eINSTANCE.getAttributeBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_BINDING__ATTRIBUTE = eINSTANCE.getAttributeBinding_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE_BINDING__VALUE = eINSTANCE.getAttributeBinding_Value();
 
 	}
 

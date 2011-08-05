@@ -106,6 +106,46 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createComponentInstanceConfigurationAdapter();
 			}
 			@Override
+			public Adapter caseHardwarePortIstance(HardwarePortIstance object) {
+				return createHardwarePortIstanceAdapter();
+			}
+			@Override
+			public Adapter caseContinuousPortInstance(ContinuousPortInstance object) {
+				return createContinuousPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseHybridPortInstance(HybridPortInstance object) {
+				return createHybridPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscretePortInstance(DiscretePortInstance object) {
+				return createDiscretePortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteSinglePortInstance(DiscreteSinglePortInstance object) {
+				return createDiscreteSinglePortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
+				return createDiscreteMultiPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseBehaviorInstance(BehaviorInstance object) {
+				return createBehaviorInstanceAdapter();
+			}
+			@Override
+			public Adapter caseFujabaRealtimeStatechartInstance(FujabaRealtimeStatechartInstance object) {
+				return createFujabaRealtimeStatechartInstanceAdapter();
+			}
+			@Override
+			public Adapter caseBehavioralElementInstance(BehavioralElementInstance object) {
+				return createBehavioralElementInstanceAdapter();
+			}
+			@Override
+			public Adapter caseAttributeBinding(AttributeBinding object) {
+				return createAttributeBindingAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -226,6 +266,146 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentInstanceConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance <em>Hardware Port Istance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance
+	 * @generated
+	 */
+	public Adapter createHardwarePortIstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance
+	 * @generated
+	 */
+	public Adapter createContinuousPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance <em>Hybrid Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance
+	 * @generated
+	 */
+	public Adapter createHybridPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance <em>Discrete Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance
+	 * @generated
+	 */
+	public Adapter createDiscretePortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteSinglePortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteMultiPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance <em>Behavior Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance
+	 * @generated
+	 */
+	public Adapter createBehaviorInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance <em>Fujaba Realtime Statechart Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance
+	 * @generated
+	 */
+	public Adapter createFujabaRealtimeStatechartInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance <em>Behavioral Element Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance
+	 * @generated
+	 */
+	public Adapter createBehavioralElementInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding <em>Attribute Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding
+	 * @generated
+	 */
+	public Adapter createAttributeBindingAdapter() {
 		return null;
 	}
 

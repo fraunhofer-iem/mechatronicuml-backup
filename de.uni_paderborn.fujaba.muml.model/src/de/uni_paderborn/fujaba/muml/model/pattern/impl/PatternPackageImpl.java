@@ -218,7 +218,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationPattern_Connectors() {
+	public EReference getCoordinationPattern_Connector() {
 		return (EReference)coordinationPatternEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -272,7 +272,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_EClass() {
+	public EReference getRole_SenderMessageInterface() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -281,7 +281,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_SenderMessageInterface() {
+	public EReference getRole_ReceiverMessageInterface() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -290,7 +290,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_ReceiverMessageInterface() {
+	public EReference getRole_Cardinality() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -299,7 +299,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_Cardinality() {
+	public EReference getRole_Port() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -308,7 +308,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_Port() {
+	public EReference getRole_AdaptationBehavior() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -317,17 +317,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_AdaptationBehavior() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRole_RoleAndAdaptationBehavior() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(8);
+		return (EReference)roleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -366,14 +357,13 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 
 		coordinationPatternEClass = createEClass(COORDINATION_PATTERN);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ROLES);
-		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__CONNECTORS);
+		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__CONNECTOR);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ROLE1);
 		createEReference(coordinationPatternEClass, COORDINATION_PATTERN__ROLE2);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__COORDINATION_PATTERN);
-		createEReference(roleEClass, ROLE__ECLASS);
 		createEReference(roleEClass, ROLE__SENDER_MESSAGE_INTERFACE);
 		createEReference(roleEClass, ROLE__RECEIVER_MESSAGE_INTERFACE);
 		createEReference(roleEClass, ROLE__CARDINALITY);
@@ -428,18 +418,17 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEAttribute(getRoleConnector_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 0, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_Source(), this.getRole(), this.getRole_RoleConnector(), "source", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_Target(), this.getRole(), null, "target", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleConnector_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Connectors(), "coordinationPattern", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleConnector_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Connector(), "coordinationPattern", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationPatternEClass, CoordinationPattern.class, "CoordinationPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationPattern_Roles(), this.getRole(), this.getRole_CoordinationPattern(), "roles", null, 2, 2, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationPattern_Connectors(), this.getRoleConnector(), this.getRoleConnector_CoordinationPattern(), "connectors", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationPattern_Connector(), this.getRoleConnector(), this.getRoleConnector_CoordinationPattern(), "connector", null, 1, 1, CoordinationPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_Role1(), this.getRole(), null, "role1", null, 1, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getCoordinationPattern_Role2(), this.getRole(), null, "role2", null, 1, 1, CoordinationPattern.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "roleConnector", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CoordinationPattern(), this.getCoordinationPattern(), this.getCoordinationPattern_Roles(), "coordinationPattern", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_EClass(), ecorePackage.getEClass(), null, "eClass", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -472,7 +461,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																			
+		   });																		
 	}
 
 	/**
@@ -494,7 +483,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if roles->size() < 2 then\r\n\tnull\r\nelse\r\n\troles->last()\r\nendif"
-		   });									
+		   });								
 	}
 
 } //PatternPackageImpl

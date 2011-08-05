@@ -68,10 +68,16 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 		switch (eClass.getClassifierID()) {
 			case InstancePackage.COMPONENT_INSTANCE: return createComponentInstance();
 			case InstancePackage.CONNECTOR_INSTANCE: return createConnectorInstance();
-			case InstancePackage.PORT_INSTANCE: return createPortInstance();
 			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
 			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
+			case InstancePackage.HARDWARE_PORT_ISTANCE: return createHardwarePortIstance();
+			case InstancePackage.CONTINUOUS_PORT_INSTANCE: return createContinuousPortInstance();
+			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
+			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
+			case InstancePackage.FUJABA_REALTIME_STATECHART_INSTANCE: return createFujabaRealtimeStatechartInstance();
+			case InstancePackage.ATTRIBUTE_BINDING: return createAttributeBinding();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -102,16 +108,6 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance createPortInstance() {
-		PortInstanceImpl portInstance = new PortInstanceImpl();
-		return portInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AssemblyInstance createAssemblyInstance() {
 		AssemblyInstanceImpl assemblyInstance = new AssemblyInstanceImpl();
 		return assemblyInstance;
@@ -135,6 +131,76 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	public ComponentInstanceConfiguration createComponentInstanceConfiguration() {
 		ComponentInstanceConfigurationImpl componentInstanceConfiguration = new ComponentInstanceConfigurationImpl();
 		return componentInstanceConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HardwarePortIstance createHardwarePortIstance() {
+		HardwarePortIstanceImpl hardwarePortIstance = new HardwarePortIstanceImpl();
+		return hardwarePortIstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContinuousPortInstance createContinuousPortInstance() {
+		ContinuousPortInstanceImpl continuousPortInstance = new ContinuousPortInstanceImpl();
+		return continuousPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HybridPortInstance createHybridPortInstance() {
+		HybridPortInstanceImpl hybridPortInstance = new HybridPortInstanceImpl();
+		return hybridPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSinglePortInstance createDiscreteSinglePortInstance() {
+		DiscreteSinglePortInstanceImpl discreteSinglePortInstance = new DiscreteSinglePortInstanceImpl();
+		return discreteSinglePortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteMultiPortInstance createDiscreteMultiPortInstance() {
+		DiscreteMultiPortInstanceImpl discreteMultiPortInstance = new DiscreteMultiPortInstanceImpl();
+		return discreteMultiPortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FujabaRealtimeStatechartInstance createFujabaRealtimeStatechartInstance() {
+		FujabaRealtimeStatechartInstanceImpl fujabaRealtimeStatechartInstance = new FujabaRealtimeStatechartInstanceImpl();
+		return fujabaRealtimeStatechartInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AttributeBinding createAttributeBinding() {
+		AttributeBindingImpl attributeBinding = new AttributeBindingImpl();
+		return attributeBinding;
 	}
 
 	/**

@@ -39,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getEClass <em>EClass</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,16 +104,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected Behavior roleAndAdaptationBehavior;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -364,44 +353,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject)eClass;
-			eClass = (EClass)eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__ECLASS, oldEClass, eClass));
-			}
-		}
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__ECLASS, oldEClass, eClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -457,9 +408,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
-			case ComponentPackage.DISCRETE_PORT__ECLASS:
-				if (resolve) return getEClass();
-				return basicGetEClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -492,9 +440,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__ECLASS:
-				setEClass((EClass)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -525,9 +470,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
-			case ComponentPackage.DISCRETE_PORT__ECLASS:
-				setEClass((EClass)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -552,8 +494,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return adaptationBehavior != null;
 			case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
-			case ComponentPackage.DISCRETE_PORT__ECLASS:
-				return eClass != null;
 		}
 		return super.eIsSet(featureID);
 	}

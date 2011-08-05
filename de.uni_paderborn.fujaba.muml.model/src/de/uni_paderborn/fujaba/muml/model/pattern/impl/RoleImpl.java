@@ -46,7 +46,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
@@ -88,16 +87,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * @ordered
 	 */
 	protected RoleConnector roleConnector;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
 
 	/**
 	 * The cached value of the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
@@ -301,44 +290,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__COORDINATION_PATTERN, newCoordinationPattern, newCoordinationPattern));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject)eClass;
-			eClass = (EClass)eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__ECLASS, oldEClass, eClass));
-			}
-		}
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__ECLASS, oldEClass, eClass));
 	}
 
 	/**
@@ -630,9 +581,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return basicGetRoleConnector();
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern();
-			case PatternPackage.ROLE__ECLASS:
-				if (resolve) return getEClass();
-				return basicGetEClass();
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
 				if (resolve) return getSenderMessageInterface();
 				return basicGetSenderMessageInterface();
@@ -675,9 +623,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)newValue);
-				return;
-			case PatternPackage.ROLE__ECLASS:
-				setEClass((EClass)newValue);
 				return;
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
 				setSenderMessageInterface((MessageInterface)newValue);
@@ -722,9 +667,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				setCoordinationPattern((CoordinationPattern)null);
 				return;
-			case PatternPackage.ROLE__ECLASS:
-				setEClass((EClass)null);
-				return;
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
 				setSenderMessageInterface((MessageInterface)null);
 				return;
@@ -763,8 +705,6 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				return roleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
 				return getCoordinationPattern() != null;
-			case PatternPackage.ROLE__ECLASS:
-				return eClass != null;
 			case PatternPackage.ROLE__SENDER_MESSAGE_INTERFACE:
 				return senderMessageInterface != null;
 			case PatternPackage.ROLE__RECEIVER_MESSAGE_INTERFACE:

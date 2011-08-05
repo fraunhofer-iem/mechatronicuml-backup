@@ -247,7 +247,7 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCoordinationPattern != null)
-				msgs = ((InternalEObject)newCoordinationPattern).eInverseAdd(this, PatternPackage.COORDINATION_PATTERN__CONNECTORS, CoordinationPattern.class, msgs);
+				msgs = ((InternalEObject)newCoordinationPattern).eInverseAdd(this, PatternPackage.COORDINATION_PATTERN__CONNECTOR, CoordinationPattern.class, msgs);
 			msgs = basicSetCoordinationPattern(newCoordinationPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -300,7 +300,7 @@ public class RoleConnectorImpl extends BehavioralConnectorImpl implements RoleCo
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PatternPackage.ROLE_CONNECTOR__COORDINATION_PATTERN:
-				return eInternalContainer().eInverseRemove(this, PatternPackage.COORDINATION_PATTERN__CONNECTORS, CoordinationPattern.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PatternPackage.COORDINATION_PATTERN__CONNECTOR, CoordinationPattern.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

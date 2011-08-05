@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
@@ -59,31 +58,6 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * @generated
 	 */
 	EList<Port> getPorts();
-
-	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The class of a component serves to store all attributes of the component as well as all methods that might be executed in a local context. Manipulation of the attribute values or invocation of the methods is done within the realtime statechart of the component.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' reference.
-	 * @see #setEClass(EClass)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_EClass()
-	 * @model
-	 * @generated
-	 */
-	EClass getEClass();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getEClass <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' reference.
-	 * @see #getEClass()
-	 * @generated
-	 */
-	void setEClass(EClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Referencing Component Parts</b></em>' reference list.

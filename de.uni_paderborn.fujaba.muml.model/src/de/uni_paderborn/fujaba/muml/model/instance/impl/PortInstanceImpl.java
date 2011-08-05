@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -23,6 +24,9 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -37,6 +41,8 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
@@ -48,7 +54,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *
  * @generated
  */
-public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
+public abstract class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +74,26 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBehaviorInstance() <em>Behavior Instance</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehaviorInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BehaviorInstance> behaviorInstance;
+
+	/**
+	 * The cached value of the '{@link #getBehavioralElementType() <em>Behavioral Element Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavioralElementType()
+	 * @generated
+	 * @ordered
+	 */
+	protected BehavioralElement behavioralElementType;
 
 	/**
 	 * The cached value of the '{@link #getPortType() <em>Port Type</em>}' reference.
@@ -179,6 +205,56 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<BehaviorInstance> getBehaviorInstance() {
+		if (behaviorInstance == null) {
+			behaviorInstance = new EObjectContainmentWithInverseEList<BehaviorInstance>(BehaviorInstance.class, this, InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE, InstancePackage.BEHAVIOR_INSTANCE__BEHAVIORAL_ELEMENT_INSTANCE);
+		}
+		return behaviorInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehavioralElement getBehavioralElementType() {
+		if (behavioralElementType != null && behavioralElementType.eIsProxy()) {
+			InternalEObject oldBehavioralElementType = (InternalEObject)behavioralElementType;
+			behavioralElementType = (BehavioralElement)eResolveProxy(oldBehavioralElementType);
+			if (behavioralElementType != oldBehavioralElementType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE, oldBehavioralElementType, behavioralElementType));
+			}
+		}
+		return behavioralElementType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehavioralElement basicGetBehavioralElementType() {
+		return behavioralElementType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavioralElementType(BehavioralElement newBehavioralElementType) {
+		BehavioralElement oldBehavioralElementType = behavioralElementType;
+		behavioralElementType = newBehavioralElementType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE, oldBehavioralElementType, behavioralElementType));
 	}
 
 	/**
@@ -329,6 +405,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -349,6 +427,8 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return basicSetComponentInstance(null, msgs);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
@@ -383,6 +463,11 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				return getComment();
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				return getBehaviorInstance();
+			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
+				if (resolve) return getBehavioralElementType();
+				return basicGetBehavioralElementType();
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				if (resolve) return getPortType();
 				return basicGetPortType();
@@ -414,6 +499,13 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				setComment((String)newValue);
 				return;
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				getBehaviorInstance().clear();
+				getBehaviorInstance().addAll((Collection<? extends BehaviorInstance>)newValue);
+				return;
+			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
+				setBehavioralElementType((BehavioralElement)newValue);
+				return;
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				setPortType((Port)newValue);
 				return;
@@ -443,6 +535,12 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				getBehaviorInstance().clear();
+				return;
+			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
+				setBehavioralElementType((BehavioralElement)null);
+				return;
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				setPortType((Port)null);
 				return;
@@ -469,6 +567,10 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE:
+				return behaviorInstance != null && !behaviorInstance.isEmpty();
+			case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE:
+				return behavioralElementType != null;
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 				return portType != null;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
@@ -498,6 +600,13 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 				default: return -1;
 			}
 		}
+		if (baseClass == BehavioralElementInstance.class) {
+			switch (derivedFeatureID) {
+				case InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE;
+				case InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -511,6 +620,13 @@ public class PortInstanceImpl extends NamedElementImpl implements PortInstance {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case SDMPackage.COMMENTABLE_ELEMENT__COMMENT: return InstancePackage.PORT_INSTANCE__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == BehavioralElementInstance.class) {
+			switch (baseFeatureID) {
+				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE: return InstancePackage.PORT_INSTANCE__BEHAVIOR_INSTANCE;
+				case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE: return InstancePackage.PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 				default: return -1;
 			}
 		}

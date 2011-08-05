@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}</li>
  * </ul>
  * </p>
  *
@@ -166,30 +165,5 @@ public interface DiscretePort extends Port, BehavioralElement {
 	 * @generated
 	 */
 	void setRoleAndAdaptationBehavior(Behavior value);
-
-	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The class of this port storing attributes and methods local to the port. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' reference.
-	 * @see #setEClass(EClass)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_EClass()
-	 * @model
-	 * @generated
-	 */
-	EClass getEClass();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getEClass <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' reference.
-	 * @see #getEClass()
-	 * @generated
-	 */
-	void setEClass(EClass value);
 
 } // DiscretePort

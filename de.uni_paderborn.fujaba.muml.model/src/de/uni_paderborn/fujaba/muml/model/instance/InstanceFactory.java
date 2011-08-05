@@ -44,15 +44,6 @@ public interface InstanceFactory extends EFactory {
 	ConnectorInstance createConnectorInstance();
 
 	/**
-	 * Returns a new object of class '<em>Port Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Instance</em>'.
-	 * @generated
-	 */
-	PortInstance createPortInstance();
-
-	/**
 	 * Returns a new object of class '<em>Assembly Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +69,69 @@ public interface InstanceFactory extends EFactory {
 	 * @generated
 	 */
 	ComponentInstanceConfiguration createComponentInstanceConfiguration();
+
+	/**
+	 * Returns a new object of class '<em>Hardware Port Istance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hardware Port Istance</em>'.
+	 * @generated
+	 */
+	HardwarePortIstance createHardwarePortIstance();
+
+	/**
+	 * Returns a new object of class '<em>Continuous Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Continuous Port Instance</em>'.
+	 * @generated
+	 */
+	ContinuousPortInstance createContinuousPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Hybrid Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hybrid Port Instance</em>'.
+	 * @generated
+	 */
+	HybridPortInstance createHybridPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Discrete Single Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Single Port Instance</em>'.
+	 * @generated
+	 */
+	DiscreteSinglePortInstance createDiscreteSinglePortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Discrete Multi Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Multi Port Instance</em>'.
+	 * @generated
+	 */
+	DiscreteMultiPortInstance createDiscreteMultiPortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Fujaba Realtime Statechart Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fujaba Realtime Statechart Instance</em>'.
+	 * @generated
+	 */
+	FujabaRealtimeStatechartInstance createFujabaRealtimeStatechartInstance();
+
+	/**
+	 * Returns a new object of class '<em>Attribute Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Attribute Binding</em>'.
+	 * @generated
+	 */
+	AttributeBinding createAttributeBinding();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -103,6 +103,7 @@ public class InstanceSwitch<T> {
 				ComponentInstance componentInstance = (ComponentInstance)theEObject;
 				T result = caseComponentInstance(componentInstance);
 				if (result == null) result = caseNamedElement(componentInstance);
+				if (result == null) result = caseBehavioralElementInstance(componentInstance);
 				if (result == null) result = caseExtendableElement(componentInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -112,6 +113,7 @@ public class InstanceSwitch<T> {
 				T result = caseConnectorInstance(connectorInstance);
 				if (result == null) result = caseExtendableElement(connectorInstance);
 				if (result == null) result = caseBehavioralConnector(connectorInstance);
+				if (result == null) result = caseBehavioralElementInstance(connectorInstance);
 				if (result == null) result = caseBehavioralElement(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -121,6 +123,7 @@ public class InstanceSwitch<T> {
 				T result = casePortInstance(portInstance);
 				if (result == null) result = caseNamedElement(portInstance);
 				if (result == null) result = caseCommentableElement(portInstance);
+				if (result == null) result = caseBehavioralElementInstance(portInstance);
 				if (result == null) result = caseExtendableElement(portInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -131,6 +134,7 @@ public class InstanceSwitch<T> {
 				if (result == null) result = caseConnectorInstance(assemblyInstance);
 				if (result == null) result = caseExtendableElement(assemblyInstance);
 				if (result == null) result = caseBehavioralConnector(assemblyInstance);
+				if (result == null) result = caseBehavioralElementInstance(assemblyInstance);
 				if (result == null) result = caseBehavioralElement(assemblyInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -141,6 +145,7 @@ public class InstanceSwitch<T> {
 				if (result == null) result = caseConnectorInstance(delegationInstance);
 				if (result == null) result = caseExtendableElement(delegationInstance);
 				if (result == null) result = caseBehavioralConnector(delegationInstance);
+				if (result == null) result = caseBehavioralElementInstance(delegationInstance);
 				if (result == null) result = caseBehavioralElement(delegationInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -149,6 +154,101 @@ public class InstanceSwitch<T> {
 				ComponentInstanceConfiguration componentInstanceConfiguration = (ComponentInstanceConfiguration)theEObject;
 				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
 				if (result == null) result = caseExtendableElement(componentInstanceConfiguration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.HARDWARE_PORT_ISTANCE: {
+				HardwarePortIstance hardwarePortIstance = (HardwarePortIstance)theEObject;
+				T result = caseHardwarePortIstance(hardwarePortIstance);
+				if (result == null) result = casePortInstance(hardwarePortIstance);
+				if (result == null) result = caseNamedElement(hardwarePortIstance);
+				if (result == null) result = caseCommentableElement(hardwarePortIstance);
+				if (result == null) result = caseBehavioralElementInstance(hardwarePortIstance);
+				if (result == null) result = caseExtendableElement(hardwarePortIstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.CONTINUOUS_PORT_INSTANCE: {
+				ContinuousPortInstance continuousPortInstance = (ContinuousPortInstance)theEObject;
+				T result = caseContinuousPortInstance(continuousPortInstance);
+				if (result == null) result = casePortInstance(continuousPortInstance);
+				if (result == null) result = caseNamedElement(continuousPortInstance);
+				if (result == null) result = caseCommentableElement(continuousPortInstance);
+				if (result == null) result = caseBehavioralElementInstance(continuousPortInstance);
+				if (result == null) result = caseExtendableElement(continuousPortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.HYBRID_PORT_INSTANCE: {
+				HybridPortInstance hybridPortInstance = (HybridPortInstance)theEObject;
+				T result = caseHybridPortInstance(hybridPortInstance);
+				if (result == null) result = caseDiscretePortInstance(hybridPortInstance);
+				if (result == null) result = caseContinuousPortInstance(hybridPortInstance);
+				if (result == null) result = casePortInstance(hybridPortInstance);
+				if (result == null) result = caseNamedElement(hybridPortInstance);
+				if (result == null) result = caseCommentableElement(hybridPortInstance);
+				if (result == null) result = caseBehavioralElementInstance(hybridPortInstance);
+				if (result == null) result = caseExtendableElement(hybridPortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.DISCRETE_PORT_INSTANCE: {
+				DiscretePortInstance discretePortInstance = (DiscretePortInstance)theEObject;
+				T result = caseDiscretePortInstance(discretePortInstance);
+				if (result == null) result = casePortInstance(discretePortInstance);
+				if (result == null) result = caseNamedElement(discretePortInstance);
+				if (result == null) result = caseCommentableElement(discretePortInstance);
+				if (result == null) result = caseBehavioralElementInstance(discretePortInstance);
+				if (result == null) result = caseExtendableElement(discretePortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: {
+				DiscreteSinglePortInstance discreteSinglePortInstance = (DiscreteSinglePortInstance)theEObject;
+				T result = caseDiscreteSinglePortInstance(discreteSinglePortInstance);
+				if (result == null) result = caseDiscretePortInstance(discreteSinglePortInstance);
+				if (result == null) result = casePortInstance(discreteSinglePortInstance);
+				if (result == null) result = caseNamedElement(discreteSinglePortInstance);
+				if (result == null) result = caseCommentableElement(discreteSinglePortInstance);
+				if (result == null) result = caseBehavioralElementInstance(discreteSinglePortInstance);
+				if (result == null) result = caseExtendableElement(discreteSinglePortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: {
+				DiscreteMultiPortInstance discreteMultiPortInstance = (DiscreteMultiPortInstance)theEObject;
+				T result = caseDiscreteMultiPortInstance(discreteMultiPortInstance);
+				if (result == null) result = caseDiscretePortInstance(discreteMultiPortInstance);
+				if (result == null) result = casePortInstance(discreteMultiPortInstance);
+				if (result == null) result = caseNamedElement(discreteMultiPortInstance);
+				if (result == null) result = caseCommentableElement(discreteMultiPortInstance);
+				if (result == null) result = caseBehavioralElementInstance(discreteMultiPortInstance);
+				if (result == null) result = caseExtendableElement(discreteMultiPortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.BEHAVIOR_INSTANCE: {
+				BehaviorInstance behaviorInstance = (BehaviorInstance)theEObject;
+				T result = caseBehaviorInstance(behaviorInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.FUJABA_REALTIME_STATECHART_INSTANCE: {
+				FujabaRealtimeStatechartInstance fujabaRealtimeStatechartInstance = (FujabaRealtimeStatechartInstance)theEObject;
+				T result = caseFujabaRealtimeStatechartInstance(fujabaRealtimeStatechartInstance);
+				if (result == null) result = caseBehaviorInstance(fujabaRealtimeStatechartInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.BEHAVIORAL_ELEMENT_INSTANCE: {
+				BehavioralElementInstance behavioralElementInstance = (BehavioralElementInstance)theEObject;
+				T result = caseBehavioralElementInstance(behavioralElementInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case InstancePackage.ATTRIBUTE_BINDING: {
+				AttributeBinding attributeBinding = (AttributeBinding)theEObject;
+				T result = caseAttributeBinding(attributeBinding);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -243,6 +343,156 @@ public class InstanceSwitch<T> {
 	 * @generated
 	 */
 	public T caseComponentInstanceConfiguration(ComponentInstanceConfiguration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hardware Port Istance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hardware Port Istance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHardwarePortIstance(HardwarePortIstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Continuous Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Continuous Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContinuousPortInstance(ContinuousPortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hybrid Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hybrid Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHybridPortInstance(HybridPortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscretePortInstance(DiscretePortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteSinglePortInstance(DiscreteSinglePortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehaviorInstance(BehaviorInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fujaba Realtime Statechart Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFujabaRealtimeStatechartInstance(FujabaRealtimeStatechartInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehavioralElementInstance(BehavioralElementInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Attribute Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Attribute Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAttributeBinding(AttributeBinding object) {
 		return null;
 	}
 

@@ -242,8 +242,8 @@ public class ComponentSwitch<T> {
 			case ComponentPackage.HYBRID_PORT: {
 				HybridPort hybridPort = (HybridPort)theEObject;
 				T result = caseHybridPort(hybridPort);
-				if (result == null) result = caseContinuousPort(hybridPort);
 				if (result == null) result = caseDiscretePort(hybridPort);
+				if (result == null) result = caseContinuousPort(hybridPort);
 				if (result == null) result = casePort(hybridPort);
 				if (result == null) result = caseBehavioralElement(hybridPort);
 				if (result == null) result = caseNamedElement(hybridPort);

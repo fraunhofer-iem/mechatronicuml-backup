@@ -111,7 +111,7 @@ public interface RoleConnector extends BehavioralConnector {
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -120,8 +120,8 @@ public interface RoleConnector extends BehavioralConnector {
 	 * @return the value of the '<em>Coordination Pattern</em>' container reference.
 	 * @see #setCoordinationPattern(CoordinationPattern)
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRoleConnector_CoordinationPattern()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors
-	 * @model opposite="connectors" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector
+	 * @model opposite="connector" required="true" transient="false"
 	 * @generated
 	 */
 	CoordinationPattern getCoordinationPattern();

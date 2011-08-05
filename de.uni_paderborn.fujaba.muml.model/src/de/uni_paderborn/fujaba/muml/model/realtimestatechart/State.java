@@ -36,8 +36,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvarianPerClock='self.invariants->isUnique(clock)' OneInitialState='self.statechart.vertices.oclAsType(State)->one(s|  s.initial)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.regions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.regions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.regions->isUnique(name)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvarianPerClock='self.invariants->isUnique(clock)' OneInitialState='self.statechart.vertices.oclAsType(State)->one(s|  s.initial)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.regions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.regions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.regions->isUnique(name)' BoundOfInvariantGreaterOrEqualZero='self.invariants->forAll(bound.value >= 0)'"
  * @generated
  */
 public interface State extends Vertex {

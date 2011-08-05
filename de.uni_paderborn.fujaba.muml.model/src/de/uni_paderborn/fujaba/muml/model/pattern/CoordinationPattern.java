@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRoles <em>Roles</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector <em>Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole1 <em>Role1</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getRole2 <em>Role2</em>}</li>
  * </ul>
@@ -53,7 +53,7 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	EList<Role> getRoles();
 
 	/**
-	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Connector</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern <em>Coordination Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,24 +61,24 @@ public interface CoordinationPattern extends NamedElement, ConstrainableElement 
 	 * Each coordination pattern has exactly one role connector.
 	 * Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Connectors</em>' containment reference.
-	 * @see #setConnectors(RoleConnector)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Connectors()
+	 * @return the value of the '<em>Connector</em>' containment reference.
+	 * @see #setConnector(RoleConnector)
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getCoordinationPattern_Connector()
 	 * @see de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getCoordinationPattern
 	 * @model opposite="coordinationPattern" containment="true" required="true"
 	 * @generated
 	 */
-	RoleConnector getConnectors();
+	RoleConnector getConnector();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnectors <em>Connectors</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern#getConnector <em>Connector</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connectors</em>' containment reference.
-	 * @see #getConnectors()
+	 * @param value the new value of the '<em>Connector</em>' containment reference.
+	 * @see #getConnector()
 	 * @generated
 	 */
-	void setConnectors(RoleConnector value);
+	void setConnector(RoleConnector value);
 
 	/**
 	 * Returns the value of the '<em><b>Role1</b></em>' reference.

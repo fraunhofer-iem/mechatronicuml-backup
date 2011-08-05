@@ -31,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCardinality <em>Cardinality</em>}</li>
@@ -100,31 +99,6 @@ public interface Role extends NamedElement, ConstrainableElement, BehavioralElem
 	 * @generated
 	 */
 	void setCoordinationPattern(CoordinationPattern value);
-
-	/**
-	 * Returns the value of the '<em><b>EClass</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The class of this role storing attributes and methods local to the role. Attributes can be manipulated and methods can be invoked by the Real-Time Statechart of this role.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EClass</em>' reference.
-	 * @see #setEClass(EClass)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getRole_EClass()
-	 * @model
-	 * @generated
-	 */
-	EClass getEClass();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getEClass <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EClass</em>' reference.
-	 * @see #getEClass()
-	 * @generated
-	 */
-	void setEClass(EClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.

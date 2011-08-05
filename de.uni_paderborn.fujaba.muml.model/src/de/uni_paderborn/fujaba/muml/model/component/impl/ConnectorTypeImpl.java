@@ -35,7 +35,6 @@ import java.util.Collection;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getConnectorClass <em>Connector Class</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getFromPort <em>From Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getToPort <em>To Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl#getParentComponent <em>Parent Component</em>}</li>
@@ -54,16 +53,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 	 * @ordered
 	 */
 	protected EList<Behavior> behavior;
-
-	/**
-	 * The cached value of the '{@link #getConnectorClass() <em>Connector Class</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnectorClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass connectorClass;
 
 	/**
 	 * The cached value of the '{@link #getFromPort() <em>From Port</em>}' reference.
@@ -114,44 +103,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.CONNECTOR_TYPE__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
 		}
 		return behavior;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConnectorClass() {
-		if (connectorClass != null && connectorClass.eIsProxy()) {
-			InternalEObject oldConnectorClass = (InternalEObject)connectorClass;
-			connectorClass = (EClass)eResolveProxy(oldConnectorClass);
-			if (connectorClass != oldConnectorClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
-			}
-		}
-		return connectorClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetConnectorClass() {
-		return connectorClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnectorClass(EClass newConnectorClass) {
-		EClass oldConnectorClass = connectorClass;
-		connectorClass = newConnectorClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS, oldConnectorClass, connectorClass));
 	}
 
 	/**
@@ -386,9 +337,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 		switch (featureID) {
 			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
 				return getBehavior();
-			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
-				if (resolve) return getConnectorClass();
-				return basicGetConnectorClass();
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				if (resolve) return getFromPort();
 				return basicGetFromPort();
@@ -414,9 +362,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 				getBehavior().clear();
 				getBehavior().addAll((Collection<? extends Behavior>)newValue);
 				return;
-			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
-				setConnectorClass((EClass)newValue);
-				return;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				setFromPort((Port)newValue);
 				return;
@@ -441,9 +386,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
 				getBehavior().clear();
 				return;
-			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
-				setConnectorClass((EClass)null);
-				return;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				setFromPort((Port)null);
 				return;
@@ -467,8 +409,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 		switch (featureID) {
 			case ComponentPackage.CONNECTOR_TYPE__BEHAVIOR:
 				return behavior != null && !behavior.isEmpty();
-			case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS:
-				return connectorClass != null;
 			case ComponentPackage.CONNECTOR_TYPE__FROM_PORT:
 				return fromPort != null;
 			case ComponentPackage.CONNECTOR_TYPE__TO_PORT:
@@ -494,7 +434,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 		}
 		if (baseClass == BehavioralConnector.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS: return ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS;
 				default: return -1;
 			}
 		}
@@ -516,7 +455,6 @@ public abstract class ConnectorTypeImpl extends ExtendableElementImpl implements
 		}
 		if (baseClass == BehavioralConnector.class) {
 			switch (baseFeatureID) {
-				case ComponentPackage.BEHAVIORAL_CONNECTOR__CONNECTOR_CLASS: return ComponentPackage.CONNECTOR_TYPE__CONNECTOR_CLASS;
 				default: return -1;
 			}
 		}

@@ -37,7 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getVertices <em>Vertices</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEClass <em>EClass</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isHistory <em>History</em>}</li>
@@ -77,16 +76,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected EList<Vertex> vertices;
-
-	/**
-	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected EClass eClass;
 
 	/**
 	 * The cached value of the '{@link #getClocks() <em>Clocks</em>}' containment reference list.
@@ -266,44 +255,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEClass() {
-		if (eClass != null && eClass.eIsProxy()) {
-			InternalEObject oldEClass = (InternalEObject)eClass;
-			eClass = (EClass)eResolveProxy(oldEClass);
-			if (eClass != oldEClass) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, oldEClass, eClass));
-			}
-		}
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass basicGetEClass() {
-		return eClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEClass(EClass newEClass) {
-		EClass oldEClass = eClass;
-		eClass = newEClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS, oldEClass, eClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Clock> getClocks() {
 		if (clocks == null) {
 			clocks = new EObjectContainmentWithInverseEList<Clock>(Clock.class, this, RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS, RealtimestatechartPackage.CLOCK__STATECHART);
@@ -432,9 +383,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return getTransitions();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
 				return getVertices();
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
-				if (resolve) return getEClass();
-				return basicGetEClass();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				return getClocks();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
@@ -466,9 +414,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
 				getVertices().clear();
 				getVertices().addAll((Collection<? extends Vertex>)newValue);
-				return;
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
-				setEClass((EClass)newValue);
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
@@ -504,9 +449,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
 				getVertices().clear();
 				return;
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
-				setEClass((EClass)null);
-				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
 				return;
@@ -537,8 +479,6 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return transitions != null && !transitions.isEmpty();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__VERTICES:
 				return vertices != null && !vertices.isEmpty();
-			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__ECLASS:
-				return eClass != null;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:

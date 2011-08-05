@@ -8,14 +8,20 @@ package de.uni_paderborn.fujaba.muml.model.core.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +31,8 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +48,25 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * @ordered
 	 */
 	protected BehavioralElement behavioralElement;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EOperation> operations;
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EAttribute> attributes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,6 +152,30 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EOperation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList<EOperation>(EOperation.class, this, CorePackage.BEHAVIOR__OPERATIONS);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EAttribute> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectContainmentEList<EAttribute>(EAttribute.class, this, CorePackage.BEHAVIOR__ATTRIBUTES);
+		}
+		return attributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -146,6 +197,10 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 		switch (featureID) {
 			case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT:
 				return basicSetBehavioralElement(null, msgs);
+			case CorePackage.BEHAVIOR__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+			case CorePackage.BEHAVIOR__ATTRIBUTES:
+				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,6 +216,10 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 			case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT:
 				if (resolve) return getBehavioralElement();
 				return basicGetBehavioralElement();
+			case CorePackage.BEHAVIOR__OPERATIONS:
+				return getOperations();
+			case CorePackage.BEHAVIOR__ATTRIBUTES:
+				return getAttributes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,11 +229,20 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)newValue);
+				return;
+			case CorePackage.BEHAVIOR__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends EOperation>)newValue);
+				return;
+			case CorePackage.BEHAVIOR__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends EAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,6 +259,12 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 			case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT:
 				setBehavioralElement((BehavioralElement)null);
 				return;
+			case CorePackage.BEHAVIOR__OPERATIONS:
+				getOperations().clear();
+				return;
+			case CorePackage.BEHAVIOR__ATTRIBUTES:
+				getAttributes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -205,6 +279,10 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 		switch (featureID) {
 			case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT:
 				return behavioralElement != null;
+			case CorePackage.BEHAVIOR__OPERATIONS:
+				return operations != null && !operations.isEmpty();
+			case CorePackage.BEHAVIOR__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

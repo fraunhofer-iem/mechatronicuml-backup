@@ -1042,7 +1042,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFujabaRealtimeStatechart_EClass() {
+	public EReference getFujabaRealtimeStatechart_Clocks() {
 		return (EReference)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1051,17 +1051,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFujabaRealtimeStatechart_Clocks() {
-		return (EReference)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getFujabaRealtimeStatechart_AvailableClocks() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1070,7 +1061,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getFujabaRealtimeStatechart_History() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1079,7 +1070,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getFujabaRealtimeStatechart_EventQueueSize() {
-		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)fujabaRealtimeStatechartEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1369,7 +1360,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__EMBEDDING_REGION);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__TRANSITIONS);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__VERTICES);
-		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__ECLASS);
 		createEReference(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__CLOCKS);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS);
 		createEAttribute(fujabaRealtimeStatechartEClass, FUJABA_REALTIME_STATECHART__HISTORY);
@@ -1567,7 +1557,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getFujabaRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_Vertices(), this.getVertex(), this.getVertex_Statechart(), "vertices", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFujabaRealtimeStatechart_EClass(), ecorePackage.getEClass(), null, "eClass", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getFujabaRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_AvailableClocks(), theHelperPackage.getIterator(), "availableClocks", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFujabaRealtimeStatechart_History(), ecorePackage.getEBoolean(), "history", null, 0, 1, FujabaRealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1641,7 +1630,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames"
+			 "constraints", "OneInvarianPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero"
 		   });																			
 		addAnnotation
 		  (transitionEClass, 
@@ -1654,7 +1643,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates MinOneState"
-		   });																									
+		   });																								
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
@@ -1712,7 +1701,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",
 			 "UniquePrioritiesOfRegions", "self.regions->isUnique(priority)",
 			 "UniqueChannelNames", "self.channels->isUnique(name)",
-			 "UniqueRegionNames", "self.regions->isUnique(name)"
+			 "UniqueRegionNames", "self.regions->isUnique(name)",
+			 "BoundOfInvariantGreaterOrEqualZero", "self.invariants->forAll(bound.value >= 0)"
 		   });																			
 		addAnnotation
 		  (transitionEClass, 
@@ -1739,7 +1729,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "UniqueNameOfStates", "self.vertices.oclAsType(State)->isUnique(name) ",
 			 "MinOneState", "self.vertices.oclAsType(State)->notEmpty()"
-		   });																												
+		   });																											
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 

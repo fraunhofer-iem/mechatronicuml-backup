@@ -361,6 +361,24 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBehavior_Operations() {
+		return (EReference)behaviorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBehavior_Attributes() {
+		return (EReference)behaviorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoreFactory getCoreFactory() {
 		return (CoreFactory)getEFactoryInstance();
 	}
@@ -408,6 +426,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		behaviorEClass = createEClass(BEHAVIOR);
 		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
+		createEReference(behaviorEClass, BEHAVIOR__OPERATIONS);
+		createEReference(behaviorEClass, BEHAVIOR__ATTRIBUTES);
 	}
 
 	/**
@@ -505,6 +525,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavior_Operations(), ecorePackage.getEOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavior_Attributes(), ecorePackage.getEAttribute(), null, "attributes", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -537,7 +559,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																						
+		   });																								
 	}
 
 	/**
@@ -553,7 +575,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });																					
+		   });																							
 	}
 
 } //CorePackageImpl
