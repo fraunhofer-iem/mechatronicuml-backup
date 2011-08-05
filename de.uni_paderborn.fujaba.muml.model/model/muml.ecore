@@ -760,19 +760,46 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortIstance" eSuperTypes="#//model/instance/PortInstance"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//model/instance/PortInstance"/>
-      <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance #//model/instance/ContinuousPortInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortIstance" eSuperTypes="#//model/instance/PortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a hardware port at instance level. The port type of an hardware&#xD;&#xA;port instance must be a hardware port."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//model/instance/PortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a continuous port at instance level. The port type of a&#xD;&#xA;continuous port instance must be a continuous port."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance #//model/instance/ContinuousPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a hybrid port at instance level. The port type of a hybrid &#xD;&#xA;port instance must be a hybrid port."/>
+        </eAnnotations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" abstract="true"
-          eSuperTypes="#//model/instance/PortInstance"/>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance"/>
+          eSuperTypes="#//model/instance/PortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
+        </eAnnotations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a discrete single port at instance level as well as a sub-port instance&#xD;&#xA;of a multi-port instance. Each single port instance references its behavior instance.&#xD;&#xA;When used as a sub-port instance, the instance references its role behavior instance. "/>
+        </eAnnotations>
+      </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a multi-port at instance level. For each multi-port of a&#xD;&#xA;component, there exists exactly one multi-port instance in the respective component &#xD;&#xA;instance at all times. That instance references an instance of the statechart of the&#xD;&#xA;multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance&#xD;&#xA;also references all sub-port instances of the multi-port instance."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subPortInstances" upperBound="-1"
-            eType="#//model/instance/DiscreteSinglePortInstance"/>
+            eType="#//model/instance/DiscreteSinglePortInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="adaptationBehaviorInstance"
             lowerBound="1" eType="#//model/instance/BehaviorInstance" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="\todosd{ocl: implement derived}"/>
+            <details key="documentation" value="This is an instance of the adaptation behavior of the multi-port instance. An&#xD;&#xA;instance of the adaptation behavior is instantiated at all times.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
