@@ -53,11 +53,11 @@ public class MumlOCLFactory {
 					"\'role1\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"self.coordinationPattern.connectors->any(true)", //$NON-NLS-1$
+					"self.coordinationPattern.connector->any(true)", //$NON-NLS-1$
 					"\'role2\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"self.coordinationPattern.connectors->any(true)", //$NON-NLS-1$
+					"self.coordinationPattern.connector->any(true)", //$NON-NLS-1$
 					"\'pattern\'", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

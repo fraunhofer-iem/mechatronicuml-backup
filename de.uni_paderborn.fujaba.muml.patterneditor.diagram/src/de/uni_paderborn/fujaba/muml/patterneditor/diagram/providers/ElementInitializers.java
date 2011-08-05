@@ -19,7 +19,7 @@ public class ElementInitializers {
 		try {
 			de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
 					.createRoleConnector();
-			instance.setConnectors(newInstance_0_0);
+			instance.setConnector(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,

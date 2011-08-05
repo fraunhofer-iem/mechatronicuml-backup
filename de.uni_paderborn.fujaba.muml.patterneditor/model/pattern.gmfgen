@@ -62,7 +62,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connectors"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connector"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -291,7 +291,7 @@
       <expressions
           body="1"/>
       <expressions
-          body="self.coordinationPattern.connectors->any(true)"/>
+          body="self.coordinationPattern.connector->any(true)"/>
       <expressions
           body="'role2'"/>
       <expressions
@@ -299,7 +299,7 @@
       <expressions
           body="1"/>
       <expressions
-          body="self.coordinationPattern.connectors->any(true)"/>
+          body="self.coordinationPattern.connector->any(true)"/>
       <expressions
           body="'pattern'"/>
     </providers>

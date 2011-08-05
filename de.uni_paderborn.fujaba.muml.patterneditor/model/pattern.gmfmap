@@ -17,7 +17,7 @@
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connectors"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connector"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
@@ -89,7 +89,7 @@
                   xsi:type="ecore:EReference"
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
               <value
-                  body="self.coordinationPattern.connectors->any(true)"/>
+                  body="self.coordinationPattern.connector->any(true)"/>
             </initializers>
             <elementClass
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
@@ -149,7 +149,7 @@
                   xsi:type="ecore:EReference"
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/roleConnector"/>
               <value
-                  body="self.coordinationPattern.connectors->any(true)"/>
+                  body="self.coordinationPattern.connector->any(true)"/>
             </initializers>
             <elementClass
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
