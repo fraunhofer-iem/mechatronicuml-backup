@@ -75,7 +75,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ComponentPackage.CONTINUOUS_COMPONENT: return createContinuousComponent();
-			case ComponentPackage.PORT: return createPort();
 			case ComponentPackage.CONTINUOUS_PORT: return createContinuousPort();
 			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
 			case ComponentPackage.HARDWARE_PORT: return createHardwarePort();
@@ -132,16 +131,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public ContinuousComponent createContinuousComponent() {
 		ContinuousComponentImpl continuousComponent = new ContinuousComponentImpl();
 		return continuousComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
 	}
 
 	/**

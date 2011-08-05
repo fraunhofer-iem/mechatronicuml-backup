@@ -291,11 +291,6 @@ public class ComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ComponentFactory.eINSTANCE.createPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
 				 ComponentFactory.eINSTANCE.createContinuousPort()));
 
 		newChildDescriptors.add

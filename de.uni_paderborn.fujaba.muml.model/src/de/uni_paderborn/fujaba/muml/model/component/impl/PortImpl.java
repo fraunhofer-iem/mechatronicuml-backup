@@ -50,7 +50,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
  *
  * @generated
  */
-public class PortImpl extends NamedElementImpl implements Port {
+public abstract class PortImpl extends NamedElementImpl implements Port {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->

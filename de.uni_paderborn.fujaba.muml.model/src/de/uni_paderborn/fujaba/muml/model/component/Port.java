@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Port extends NamedElement, CommentableElement, ConstrainableElement {
