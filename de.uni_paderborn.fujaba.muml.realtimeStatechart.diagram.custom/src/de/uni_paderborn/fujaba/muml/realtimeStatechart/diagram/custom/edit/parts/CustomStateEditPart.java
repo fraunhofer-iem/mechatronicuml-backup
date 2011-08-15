@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.emf.common.notify.Notification;
@@ -45,6 +46,7 @@ public class CustomStateEditPart extends StateEditPart {
 	protected IFigure createNodeShape() {
 		State state = (State) getNotationView().getElement();
 		StateFigure stateFigure = new StateFigure();
+		stateFigure.getFigureInitialStateEllipse().setBackgroundColor(ColorConstants.black);
 		primaryShape = stateFigure;
 
 		PolyarcFigure initialStateArc = stateFigure.getFigureInitialStateArc();

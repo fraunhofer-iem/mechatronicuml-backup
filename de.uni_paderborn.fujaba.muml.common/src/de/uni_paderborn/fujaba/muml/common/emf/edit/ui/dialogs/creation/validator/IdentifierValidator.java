@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.identifier;
+package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.validator;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -936,7 +936,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																																											
+		   });																																																							
 	}
 
 	/**
@@ -970,13 +970,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "connectorType.oclAsType(component::Delegation)"
-		   });											
+		   });																						
 		addAnnotation
 		  (getFujabaRealtimeStatechartInstance_AllSubStatecharts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "embeddedSubStatecharts -> union(referencedSubStatecharts)"
-		   });						
+		   });							
 	}
 
 } //InstancePackageImpl

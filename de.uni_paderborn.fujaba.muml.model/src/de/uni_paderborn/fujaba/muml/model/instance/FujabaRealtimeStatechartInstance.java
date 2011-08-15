@@ -15,6 +15,14 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Fujaba Realtime Statechart Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents an instance of a FujabaRealtimeStatechart. The meta-model
+ * contains instances of statecharts because, in case of a multi-port, a statechart
+ * contains a dynamic number of regions and, thus, a dynamic number of statechart
+ * instances. In addition, each statechart instance may have a different initial
+ * assigment of values to its attributes.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -39,6 +47,9 @@ public interface FujabaRealtimeStatechartInstance extends BehaviorInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The statechart which is instantiated here.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Statechart</em>' reference.
 	 * @see #setStatechart(FujabaRealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getFujabaRealtimeStatechartInstance_Statechart()
@@ -67,6 +78,10 @@ public interface FujabaRealtimeStatechartInstance extends BehaviorInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This reference contains all instances of statecharts that are contained in 
+	 * regions of the currently active state of this statechart.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded Sub Statecharts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getFujabaRealtimeStatechartInstance_EmbeddedSubStatecharts()
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance#getParentStatechart
@@ -84,6 +99,11 @@ public interface FujabaRealtimeStatechartInstance extends BehaviorInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * In case of a component statechart instance, all statechart instances of the port
+	 * instances are held in this reference.  In case of a multi-port statechart instance,
+	 * all statechart instances of the sub-port instances are held in this reference.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Referenced Sub Statecharts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getFujabaRealtimeStatechartInstance_ReferencedSubStatecharts()
 	 * @model
@@ -97,7 +117,10 @@ public interface FujabaRealtimeStatechartInstance extends BehaviorInstance {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * \todosd{odl: implement derived, union of embedded and referenced}
+	 * This reference returns all statechart instances that are contained in this
+	 * statechart instance. The instances may either be contained as sub-statecharts
+	 * or referenced. Thus, this reference is a union of embeddedSubStatecharts
+	 * and referencedSubStatecharts.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Sub Statecharts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getFujabaRealtimeStatechartInstance_AllSubStatecharts()
@@ -116,6 +139,11 @@ public interface FujabaRealtimeStatechartInstance extends BehaviorInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * In case of a sub-statechart, this reference points to the parent statechart instance.
+	 * This reference will be null for all top-level statechart instances and for all
+	 * referenced statechart instances.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent Statechart</em>' reference.
 	 * @see #setParentStatechart(FujabaRealtimeStatechartInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getFujabaRealtimeStatechartInstance_ParentStatechart()

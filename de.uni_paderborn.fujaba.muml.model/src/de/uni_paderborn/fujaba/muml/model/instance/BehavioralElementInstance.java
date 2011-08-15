@@ -20,6 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-model-doc -->
  * This is an abstract super class for all instances of behavioral elements. The 
  * behavioral element instance contains the instances of all its behaviors.
+ * 
+ * In case of a DiscreteMultiPortInstance, this reference contains the statechart
+ * for the multi-role as well as the adaptation statechart. In case of a 
+ * ComponentInstance, this reference contains the component statechart instance
+ * as well as all synchronization statechart instances.
  * <!-- end-model-doc -->
  *
  * <p>

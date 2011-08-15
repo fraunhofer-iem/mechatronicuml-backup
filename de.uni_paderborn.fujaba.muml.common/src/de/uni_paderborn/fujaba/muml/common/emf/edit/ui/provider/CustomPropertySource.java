@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -37,7 +36,6 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.MultiFeatureCreationDialog;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.identifier.IdentifierValidator;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.DefaultMultiLabelProvider;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.IMultiLabelProvider;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.DefaultMultiTextParser;
@@ -48,6 +46,8 @@ import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.typedelement.DefaultTypedElementParser;
+import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.validator.IdentifierValidator;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
@@ -86,53 +86,54 @@ public class CustomPropertySource extends PropertySource {
 						.getFeature(itemPropertyDescriptor);
 
 				if (object instanceof EObject
-						&& f instanceof EStructuralFeature) {
+						&& f instanceof EStructuralFeature
+						&& ((EStructuralFeature) f).getEType() instanceof EClass) {
 					final EStructuralFeature feature = (EStructuralFeature) f;
-					Class<?> instanceClass = feature.getEType()
-							.getInstanceClass();
+					EClass eClass = (EClass) feature.getEType();
 
-					// We only allow creating new objects, if the Reference is a containment reference.
-					boolean createMany = true;
+					// We only allow creating new objects, if the Reference is a
+					// containment reference.
+					boolean createAllowed = true;
 					if (feature instanceof EReference) {
 						EReference reference = (EReference) feature;
-						createMany = reference.isContainment();
+						createAllowed = reference.isContainment();
 					}
-					
-					if (NaturalNumber.class.isAssignableFrom(instanceClass)) {
+
+					if (CorePackage.Literals.NATURAL_NUMBER.isSuperTypeOf(eClass)) {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
-					} else if (feature.isMany() && createMany) {
-						if (EParameter.class.isAssignableFrom(instanceClass)) {
+					} else if (feature.isMany() && createAllowed) {
+						if (EcorePackage.Literals.EPARAMETER
+								.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues(), ",", ", ");
-						} else if (Expression.class
-								.isAssignableFrom(instanceClass)) {
+						} else if (ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(eClass)) {
 							return createTextualExpressionCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (ClockConstraint.class
-								.isAssignableFrom(instanceClass)) {
+						} else if (RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT.isSuperTypeOf(eClass)) {
 							return createClockConstraintCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (ParameterBinding.class
-								.isAssignableFrom(instanceClass)) {
+						} else if (CallsPackage.Literals.PARAMETER_BINDING.isSuperTypeOf(eClass)) {
 							return createParameterBindingCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (AbsoluteDeadline.class
-								.isAssignableFrom(instanceClass)) {
+						} else if (RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE.isSuperTypeOf(eClass)) {
 							return createAbsoluteDeadlineCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (Clock.class.isAssignableFrom(instanceClass)) {
+						} else if (RealtimestatechartPackage.Literals.CLOCK.isSuperTypeOf(eClass)) {
 							return createClocksCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (EAttribute.class
-								.isAssignableFrom(instanceClass)) {
+						} else if (EcorePackage.Literals.EATTRIBUTE.isSuperTypeOf(eClass)) {
+							return createTypedElementCellEditor(parent,
+									getLabelProvider(), feature,
+									getCurrentValues(), ";", "; ");
+						} else if (EcorePackage.Literals.EOPERATION.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues(), ";", "; ");
@@ -360,7 +361,7 @@ public class CustomPropertySource extends PropertySource {
 			EStructuralFeature structuralFeature, Collection<?> currentValues,
 			String parserSplitElement, String labelProviderSplitElement) {
 
-		MultiFeatureCreationCellEditor parameterCellEditor = new MultiFeatureCreationCellEditor(
+		MultiFeatureCreationCellEditor typedElementCellEditor = new MultiFeatureCreationCellEditor(
 				parent, labelProvider, structuralFeature, currentValues);
 
 		List<EClassifier> choices = null;
@@ -391,11 +392,11 @@ public class CustomPropertySource extends PropertySource {
 		typeEditor.setLabelProvider(labelProvider);
 		typeEditor.setChoices(choices);
 
-		parameterCellEditor.setMultiTextParser(multiTextParser);
-		parameterCellEditor.setMultiLabelProvider(multiLabelProvider);
-		parameterCellEditor.addProperty(createProperty(
+		typedElementCellEditor.setMultiTextParser(multiTextParser);
+		typedElementCellEditor.setMultiLabelProvider(multiLabelProvider);
+		typedElementCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ENAMED_ELEMENT__NAME, nameEditor));
-		parameterCellEditor.addProperty(createProperty(
+		typedElementCellEditor.addProperty(createProperty(
 				EcorePackage.Literals.ETYPED_ELEMENT__ETYPE, typeEditor));
 
 		TextPropertyEditor upperBoundEditor = new TextPropertyEditor();
@@ -404,9 +405,9 @@ public class CustomPropertySource extends PropertySource {
 				EcorePackage.Literals.ETYPED_ELEMENT__UPPER_BOUND,
 				upperBoundEditor);
 		upperBoundProperty.setDisplayName("Cardinality");
-		parameterCellEditor.addProperty(upperBoundProperty);
+		typedElementCellEditor.addProperty(upperBoundProperty);
 
-		return parameterCellEditor;
+		return typedElementCellEditor;
 	}
 
 	private Property createProperty(EStructuralFeature feature,

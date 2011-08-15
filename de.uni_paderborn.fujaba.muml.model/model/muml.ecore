@@ -1188,7 +1188,8 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
             eType="#//model/realtimestatechart/StateEvent" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
-            upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint">
+            upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint"
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts."/>
           </eAnnotations>
