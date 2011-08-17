@@ -788,7 +788,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a multi-port at instance level. For each multi-port of a&#xD;&#xA;component, there exists exactly one multi-port instance in the respective component &#xD;&#xA;instance at all times. That instance references an instance of the statechart of the&#xD;&#xA;multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance&#xD;&#xA;also references all sub-port instances of the multi-port instance."/>
+          <details key="documentation" value="This class represents a multi-port at instance level. For each multi-port of a&#xD;&#xA;component, there exists exactly one multi-port instance in the respective component &#xD;&#xA;instance at all times. That instance references an instance of the statechart of the&#xD;&#xA;multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance&#xD;&#xA;also references all sub-port instances of the multi-port instance. The DiscreteMultiPortInstance&#xD;&#xA;has no visual representation in the concrete syntax. It is represented by its sub-roles."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="subPortInstances" upperBound="-1"
             eType="#//model/instance/DiscreteSinglePortInstance">
