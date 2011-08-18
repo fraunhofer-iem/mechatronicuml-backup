@@ -300,7 +300,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		for (long i = 0; i < lowerBound; i++) {
 			PortInstance portInstance = createSinglePortInstance(port);
 			portInstance.setPortType(port);
-			portInstance.setName(port.getName() + i);
+			portInstance.setName(port.getName() + (i+1));
 			portInstance.setComponentInstance(componentInstance);
 			
 			if(multiPortInstance != null ){

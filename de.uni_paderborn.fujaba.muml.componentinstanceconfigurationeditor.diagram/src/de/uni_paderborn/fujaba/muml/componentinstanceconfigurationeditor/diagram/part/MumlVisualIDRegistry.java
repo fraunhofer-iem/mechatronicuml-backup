@@ -132,11 +132,6 @@ public class MumlVisualIDRegistry {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-					.getDiscreteMultiPortInstance().isSuperTypeOf(
-							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID;
-			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID;
@@ -192,9 +187,6 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID == nodeVisualID) {

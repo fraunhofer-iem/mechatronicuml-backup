@@ -80,11 +80,6 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 				continue;
 			}
-			if (visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
 			if (visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
@@ -117,8 +112,6 @@ public class MumlDiagramUpdater {
 			return getComponentInstance_2004ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID:
 			return getHardwarePortIstance_3008ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-			return getDiscreteMultiPortInstance_3009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_3010ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
@@ -144,8 +137,6 @@ public class MumlDiagramUpdater {
 			return getComponentInstance_2004IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID:
 			return getHardwarePortIstance_3008IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-			return getDiscreteMultiPortInstance_3009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_3010IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
@@ -171,8 +162,6 @@ public class MumlDiagramUpdater {
 			return getComponentInstance_2004OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID:
 			return getHardwarePortIstance_3008OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-			return getDiscreteMultiPortInstance_3009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return getDiscreteSinglePortInstance_3010OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
@@ -212,14 +201,6 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getHardwarePortIstance_3008ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getDiscreteMultiPortInstance_3009ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -278,23 +259,6 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getHardwarePortIstance_3008IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance modelElement = (de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_AssemblyInstance_4003(
-				modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_DelegationInstance_4004(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getDiscreteMultiPortInstance_3009IncomingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance modelElement = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -387,19 +351,6 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getHardwarePortIstance_3008OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance modelElement = (de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyInstance_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_DelegationInstance_4004(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> getDiscreteMultiPortInstance_3009OutgoingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance modelElement = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyInstance_4003(modelElement));

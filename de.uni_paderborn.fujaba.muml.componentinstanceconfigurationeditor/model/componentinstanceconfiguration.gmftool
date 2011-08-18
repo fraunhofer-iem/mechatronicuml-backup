@@ -28,16 +28,16 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="DiscreteSinglePortInstance"
-          description="Create new PortInstance">
+          title="DelegationInstance"
+          description="Create new DelegationInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/DiscretePort.gif"
+            path="icons/Assembly.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="DiscreteMultiPortInstance"
+          title="DiscreteSinglePortInstance"
           description="Create new PortInstance">
         <smallIcon
             xsi:type="gmftool:BundleImage"

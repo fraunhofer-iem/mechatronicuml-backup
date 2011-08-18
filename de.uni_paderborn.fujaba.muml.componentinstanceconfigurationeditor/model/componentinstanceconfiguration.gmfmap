@@ -52,30 +52,6 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
-          <domainInitializer
-              xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EAttribute"
-                  href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
-              <value
-                  body="'portinstance'"/>
-            </initializers>
-          </domainInitializer>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
-          <diagramNode
-              href="componentinstanceconfiguration.gmfgraph#Port"/>
-        </ownedChild>
-      </children>
-      <children>
-        <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
-        <ownedChild>
-          <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
@@ -171,6 +147,9 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DelegationInstance"/>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
         href="componentinstanceconfiguration.gmfgraph#Delegation"/>
     <sourceMetaFeature

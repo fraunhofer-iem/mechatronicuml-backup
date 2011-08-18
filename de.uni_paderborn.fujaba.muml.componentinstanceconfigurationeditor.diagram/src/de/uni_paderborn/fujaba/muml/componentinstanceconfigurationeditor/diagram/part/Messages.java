@@ -268,22 +268,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String DiscreteSinglePortInstance3CreationTool_title;
+	public static String DelegationInstance3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteSinglePortInstance3CreationTool_desc;
+	public static String DelegationInstance3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteMultiPortInstance4CreationTool_title;
+	public static String DiscreteSinglePortInstance4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DiscreteMultiPortInstance4CreationTool_desc;
+	public static String DiscreteSinglePortInstance4CreationTool_desc;
 
 	/**
 	 * @generated
@@ -364,16 +364,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DiscreteMultiPortInstance_3009_outgoinglinks;
 
 	/**
 	 * @generated
