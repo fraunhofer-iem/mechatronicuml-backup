@@ -63,7 +63,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 	}
 
-	public ComponentInstance createComponentInstance(Component component) {
+	private ComponentInstance createComponentInstance(Component component) {
 
 		ComponentInstance newInstance = InstanceFactory.eINSTANCE
 				.createComponentInstance();
@@ -74,7 +74,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return newInstance;
 	}
 
-	public void configureComponentInstance(ComponentInstance newInstance,
+	private void configureComponentInstance(ComponentInstance newInstance,
 			Component component) {
 
 		CompoundCommand compoundCommand = new CompoundCommand();
@@ -237,7 +237,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
-	public void createComponentPartInstance(ComponentInstance parentInstance,
+	private void createComponentPartInstance(ComponentInstance parentInstance,
 			ComponentPart componentPart) {
 
 		// Find out the lowerBound of the component part's cardinality.
@@ -258,11 +258,11 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
-	public List<PortInstance> createPortInstances(Port port,
+	private List<PortInstance> createPortInstances(Port port,
 			ComponentInstance componentInstance) {
 		List<PortInstance> newInstances = new ArrayList<PortInstance>();
 
-		// Find out the lowerBound of the Port's Cardinality.
+		// determine the lowerBound of the Port's Cardinality.
 		long lowerBound = 0;
 		Cardinality cardinality = port.getCardinality();
 		if (cardinality != null) {
@@ -271,15 +271,28 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				lowerBound = lowerBoundNumber.getValue();
 			}
 		}
+		
+		// determine the upperBound of the Port's Cardinality.
+		long upperBound = 0;
+		if (cardinality != null) {
+			NaturalNumber upperBoundNumber = cardinality.getUpperBound();
+			if (upperBoundNumber != null) {
+				if(upperBoundNumber.isInfinity()){
+					upperBound=2;
+				}else{
+					upperBound = upperBoundNumber.getValue();
+				}
+			}
+		}
 
 		// Create a multi port instance in case one is needed
 		DiscreteMultiPortInstance multiPortInstance = null;
-		if(lowerBound > 1){
+		if(upperBound > 1){
 			multiPortInstance = 
 				InstanceFactory.eINSTANCE.createDiscreteMultiPortInstance();
 			
 			multiPortInstance.setPortType(port);
-			multiPortInstance.setName(componentInstance.getName() + port.getName());
+			multiPortInstance.setName(port.getName());
 			multiPortInstance.setComponentInstance(componentInstance);
 		}
 		
@@ -287,10 +300,10 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		for (long i = 0; i < lowerBound; i++) {
 			PortInstance portInstance = createSinglePortInstance(port);
 			portInstance.setPortType(port);
-			portInstance.setName(componentInstance.getName() + port.getName() + i);
+			portInstance.setName(port.getName() + i);
 			portInstance.setComponentInstance(componentInstance);
 			
-			if(multiPortInstance != null){
+			if(multiPortInstance != null ){
 				multiPortInstance.getSubPortInstances().add((DiscreteSinglePortInstance)portInstance);
 			}
 
@@ -306,7 +319,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
-	public void createConnectorInstance(ConnectorType connectorType,
+	private void createConnectorInstance(ConnectorType connectorType,
 			List<PortInstance> portInstanceList) {
 		PortInstance toPortInstance = null;
 		PortInstance fromPortInstance = null;
