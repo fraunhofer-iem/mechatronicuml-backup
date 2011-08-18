@@ -46,7 +46,7 @@ public class CustomDelegationInstanceReorientCommand extends
 			ComponentInstance targetComponentInstance = getNewTarget()
 					.getComponentInstance();
 
-			if (!sourceComponentInstance.getEmbeddedInstances().contains(
+			if (!sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
 					targetComponentInstance)) {
 				return false;
 			}

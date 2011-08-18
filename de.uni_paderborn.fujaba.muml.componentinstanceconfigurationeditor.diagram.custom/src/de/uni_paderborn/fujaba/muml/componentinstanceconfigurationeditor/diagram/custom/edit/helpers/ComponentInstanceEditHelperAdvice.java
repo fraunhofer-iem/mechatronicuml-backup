@@ -89,24 +89,30 @@ public class ComponentInstanceEditHelperAdvice extends AbstractEditHelperAdvice 
 
 				while (!instances.isEmpty()) {
 					ComponentInstance componentInstance = instances.pop();
-					componentInstance.getEmbeddedInstances().clear();
+					if (componentInstance.getEmbeddedCIC() != null) {
+						componentInstance.getEmbeddedCIC()
+								.getComponentInstances().clear();
 
-					Component componentType = componentInstance
-							.getComponentType();
+						Component componentType = componentInstance
+								.getComponentType();
 
-					if (componentType instanceof StructuredComponent) {
-						List<ComponentPart> componentParts = ((StructuredComponent) componentType)
-								.getEmbeddedParts();
+						if (componentType instanceof StructuredComponent) {
+							List<ComponentPart> componentParts = ((StructuredComponent) componentType)
+									.getEmbeddedParts();
 
-						for (ComponentPart componentPart : componentParts) {
-							ComponentInstance partInstance = InstanceFactory.eINSTANCE.createComponentInstance();
-							partInstance.setComponentType(componentPart.getComponentType());
-							componentInstance.getEmbeddedInstances().add(partInstance);
-							instances.add(partInstance);
+							for (ComponentPart componentPart : componentParts) {
+								ComponentInstance partInstance = InstanceFactory.eINSTANCE
+										.createComponentInstance();
+								partInstance.setComponentType(componentPart
+										.getComponentType());
+								componentInstance.getEmbeddedCIC()
+										.getComponentInstances()
+										.add(partInstance);
+								instances.add(partInstance);
+							}
 						}
 					}
 				}
-
 				return CommandResult.newOKCommandResult(instanceToConfigure);
 			}
 

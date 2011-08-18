@@ -53,6 +53,11 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType DiscreteSinglePortInstance_2005 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType HardwarePortIstance_3008 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HardwarePortIstance_3008"); //$NON-NLS-1$
 
 	/**
@@ -201,6 +206,11 @@ public class MumlElementTypes {
 							.getComponentInstance());
 
 			elements.put(
+					DiscreteSinglePortInstance_2005,
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+							.getDiscreteSinglePortInstance());
+
+			elements.put(
 					HardwarePortIstance_3008,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getHardwarePortIstance());
@@ -248,6 +258,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_1000);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstance_2004);
+			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_2005);
 			KNOWN_ELEMENT_TYPES.add(HardwarePortIstance_3008);
 			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_3010);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPortInstance_3011);
@@ -267,6 +278,8 @@ public class MumlElementTypes {
 			return ComponentInstanceConfiguration_1000;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			return ComponentInstance_2004;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+			return DiscreteSinglePortInstance_2005;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortIstanceEditPart.VISUAL_ID:
 			return HardwarePortIstance_3008;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:

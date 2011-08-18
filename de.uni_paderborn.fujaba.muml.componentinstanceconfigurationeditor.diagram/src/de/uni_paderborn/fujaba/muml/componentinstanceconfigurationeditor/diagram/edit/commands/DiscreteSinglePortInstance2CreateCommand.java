@@ -15,12 +15,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComponentInstance2CreateCommand extends EditElementCommand {
+public class DiscreteSinglePortInstance2CreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ComponentInstance2CreateCommand(CreateElementRequest req) {
+	public DiscreteSinglePortInstance2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,11 +51,14 @@ public class ComponentInstance2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
-				.createComponentInstance();
+		de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+				.createDiscreteSinglePortInstance();
 
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) getElementToEdit();
-		owner.getEmbeddedInstances().add(newElement);
+		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getElementToEdit();
+		owner.getParentPortInstancesDerived().add(newElement);
+
+		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers
+				.getInstance().init_DiscreteSinglePortInstance_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +70,7 @@ public class ComponentInstance2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance newElement,
+			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

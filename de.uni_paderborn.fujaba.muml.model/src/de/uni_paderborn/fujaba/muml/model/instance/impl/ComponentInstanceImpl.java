@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.instance.BehaviorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.BehavioralElementInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
@@ -38,8 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getBehaviorInstance <em>Behavior Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedInstances <em>Embedded Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -78,24 +78,14 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	protected Component componentType;
 
 	/**
-	 * The cached value of the '{@link #getEmbeddedInstances() <em>Embedded Instances</em>}' containment reference list.
+	 * The cached value of the '{@link #getEmbeddedCIC() <em>Embedded CIC</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEmbeddedInstances()
+	 * @see #getEmbeddedCIC()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ComponentInstance> embeddedInstances;
-
-	/**
-	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnectorInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorInstance> connectorInstances;
+	protected ComponentInstanceConfiguration embeddedCIC;
 
 	/**
 	 * The cached value of the '{@link #getPortInstances() <em>Port Instances</em>}' containment reference list.
@@ -219,11 +209,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ComponentInstance> getEmbeddedInstances() {
-		if (embeddedInstances == null) {
-			embeddedInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
-		}
-		return embeddedInstances;
+	public ComponentInstanceConfiguration getEmbeddedCIC() {
+		return embeddedCIC;
 	}
 
 	/**
@@ -231,11 +218,33 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConnectorInstance> getConnectorInstances() {
-		if (connectorInstances == null) {
-			connectorInstances = new EObjectContainmentWithInverseEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES, InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE);
+	public NotificationChain basicSetEmbeddedCIC(ComponentInstanceConfiguration newEmbeddedCIC, NotificationChain msgs) {
+		ComponentInstanceConfiguration oldEmbeddedCIC = embeddedCIC;
+		embeddedCIC = newEmbeddedCIC;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, oldEmbeddedCIC, newEmbeddedCIC);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return connectorInstances;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmbeddedCIC(ComponentInstanceConfiguration newEmbeddedCIC) {
+		if (newEmbeddedCIC != embeddedCIC) {
+			NotificationChain msgs = null;
+			if (embeddedCIC != null)
+				msgs = ((InternalEObject)embeddedCIC).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
+			if (newEmbeddedCIC != null)
+				msgs = ((InternalEObject)newEmbeddedCIC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
+			msgs = basicSetEmbeddedCIC(newEmbeddedCIC, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC, newEmbeddedCIC, newEmbeddedCIC));
 	}
 
 	/**
@@ -261,8 +270,6 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorInstance()).basicAdd(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
 		}
@@ -279,10 +286,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
 				return ((InternalEList<?>)getBehaviorInstance()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-				return ((InternalEList<?>)getEmbeddedInstances()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
+				return basicSetEmbeddedCIC(null, msgs);
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
 		}
@@ -305,10 +310,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-				return getEmbeddedInstances();
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				return getConnectorInstances();
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
+				return getEmbeddedCIC();
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return getPortInstances();
 		}
@@ -334,13 +337,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-				getEmbeddedInstances().clear();
-				getEmbeddedInstances().addAll((Collection<? extends ComponentInstance>)newValue);
-				return;
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
+				setEmbeddedCIC((ComponentInstanceConfiguration)newValue);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
@@ -367,11 +365,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				setComponentType((Component)null);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-				getEmbeddedInstances().clear();
-				return;
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
+				setEmbeddedCIC((ComponentInstanceConfiguration)null);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
@@ -394,10 +389,8 @@ public class ComponentInstanceImpl extends NamedElementImpl implements Component
 				return behavioralElementType != null;
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_TYPE:
 				return componentType != null;
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-				return embeddedInstances != null && !embeddedInstances.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
-				return connectorInstances != null && !connectorInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
+				return embeddedCIC != null;
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return portInstances != null && !portInstances.isEmpty();
 		}

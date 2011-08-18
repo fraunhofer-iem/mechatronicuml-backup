@@ -47,7 +47,7 @@ public class CustomDelegationInstanceCreateCommand extends
 			ComponentInstance targetComponentInstance = getTarget()
 					.getComponentInstance();
 
-			if (!sourceComponentInstance.getEmbeddedInstances().contains(
+			if (!sourceComponentInstance.getEmbeddedCIC().getComponentInstances().contains(
 					targetComponentInstance)) {
 				return false;
 			}

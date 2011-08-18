@@ -25,6 +25,7 @@ import org.storydriven.modeling.ExtendableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,5 +63,42 @@ public interface ComponentInstanceConfiguration extends ExtendableElement {
 	 * @generated
 	 */
 	EList<ConnectorInstance> getConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Port Instances Derived</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port instances of the component instance which is
+	 * containing this component instance configuration are derived.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Parent Port Instances Derived</em>' reference list.
+	 * @see #isSetParentPortInstancesDerived()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_ParentPortInstancesDerived()
+	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='getParentPortInstances()\r\n'"
+	 * @generated
+	 */
+	EList<PortInstance> getParentPortInstancesDerived();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}' reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Parent Port Instances Derived</em>' reference list is set.
+	 * @see #getParentPortInstancesDerived()
+	 * @generated
+	 */
+	boolean isSetParentPortInstancesDerived();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(eContainer() instanceof ComponentInstance){\r\n\treturn ((ComponentInstance)eContainer()).getPortInstances();\r\n}\r\nreturn new org.eclipse.emf.common.util.BasicEList<PortInstance>();\r\n'"
+	 * @generated
+	 */
+	EList<PortInstance> getParentPortInstances();
 
 } // ComponentInstanceConfiguration

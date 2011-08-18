@@ -611,17 +611,10 @@
             <details key="documentation" value="The component type of which this instance is derived."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedInstances"
-            upperBound="-1" eType="#//model/instance/ComponentInstance" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedCIC" eType="#//model/instance/ComponentInstanceConfiguration"
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component instances that are embedded in this component instance."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
-            upperBound="-1" eType="#//model/instance/ConnectorInstance" containment="true"
-            eOpposite="#//model/instance/ConnectorInstance/parentComponentInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connector instances that connect the component part instances of this component instance."/>
+            <details key="documentation" value="The component instances and connector instances that are embedded in this component instance&#xD;&#xA;are contained by the component instance configuration."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
@@ -647,12 +640,6 @@
             <details key="documentation" value="The port instance this connector instance leads to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponentInstance"
-            eType="#//model/instance/ComponentInstance" eOpposite="#//model/instance/ComponentInstance/connectorInstances">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component instance that this component instance is embedded in. Component instances may be embedded into other component instances. At type level embedded component instances are called component parts."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" eType="#//model/component/ConnectorType">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector type of this connector instance."/>
@@ -670,7 +657,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
-            lowerBound="1" eType="#//model/instance/ComponentInstance" eOpposite="#//model/instance/ComponentInstance/portInstances">
+            eType="#//model/instance/ComponentInstance" eOpposite="#//model/instance/ComponentInstance/portInstances">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component instance this port instance belongs to."/>
           </eAnnotations>
@@ -747,6 +734,11 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration."/>
         </eAnnotations>
+        <eOperations name="getParentPortInstances" upperBound="-1" eType="#//model/instance/PortInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="if(eContainer() instanceof ComponentInstance){&#xD;&#xA;&#x9;return ((ComponentInstance)eContainer()).getPortInstances();&#xD;&#xA;}&#xD;&#xA;return new org.eclipse.emf.common.util.BasicEList&lt;PortInstance>();&#xD;&#xA;"/>
+          </eAnnotations>
+        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances"
             upperBound="-1" eType="#//model/instance/ComponentInstance" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -757,6 +749,16 @@
             upperBound="-1" eType="#//model/instance/ConnectorInstance" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The set of connector instances of a component instance configuration."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parentPortInstancesDerived"
+            upperBound="-1" eType="#//model/instance/PortInstance" changeable="false"
+            volatile="true" transient="true" unsettable="true" derived="true" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="getParentPortInstances()&#xD;&#xA;"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The port instances of the component instance which is&#xD;&#xA;containing this component instance configuration are derived."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

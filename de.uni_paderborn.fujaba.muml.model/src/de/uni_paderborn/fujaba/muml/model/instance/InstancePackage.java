@@ -132,22 +132,13 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Embedded Instances</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__EMBEDDED_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE__CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE__EMBEDDED_CIC = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' containment reference list.
@@ -156,7 +147,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_INSTANCE__PORT_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
@@ -165,7 +156,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
@@ -241,22 +232,13 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE__TARGET = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__CONNECTOR_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int CONNECTOR_INSTANCE__CONNECTOR_TYPE = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Connector Instance</em>' class.
@@ -265,7 +247,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
+	int CONNECTOR_INSTANCE_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
@@ -468,15 +450,6 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__PARENT_COMPONENT_INSTANCE = CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE;
-
-	/**
 	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,15 +559,6 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Parent Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_INSTANCE__PARENT_COMPONENT_INSTANCE = CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE;
-
-	/**
 	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,13 +632,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Parent Port Instances Derived</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = SDMPackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**
@@ -1691,26 +1664,15 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedInstances <em>Embedded Instances</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Embedded Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedInstances()
+	 * @return the meta object for the containment reference '<em>Embedded CIC</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC()
 	 * @see #getComponentInstance()
 	 * @generated
 	 */
-	EReference getComponentInstance_EmbeddedInstances();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Connector Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances()
-	 * @see #getComponentInstance()
-	 * @generated
-	 */
-	EReference getComponentInstance_ConnectorInstances();
+	EReference getComponentInstance_EmbeddedCIC();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
@@ -1754,17 +1716,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConnectorInstance_Target();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent Component Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance()
-	 * @see #getConnectorInstance()
-	 * @generated
-	 */
-	EReference getConnectorInstance_ParentComponentInstance();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType <em>Connector Type</em>}'.
@@ -1937,6 +1888,17 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstanceConfiguration_ConnectorInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parent Port Instances Derived</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived()
+	 * @see #getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getComponentInstanceConfiguration_ParentPortInstancesDerived();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance <em>Hardware Port Istance</em>}'.
@@ -2233,20 +2195,12 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_TYPE = eINSTANCE.getComponentInstance_ComponentType();
 
 		/**
-		 * The meta object literal for the '<em><b>Embedded Instances</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Embedded CIC</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE__EMBEDDED_INSTANCES = eINSTANCE.getComponentInstance_EmbeddedInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Connector Instances</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_INSTANCE__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstance_ConnectorInstances();
+		EReference COMPONENT_INSTANCE__EMBEDDED_CIC = eINSTANCE.getComponentInstance_EmbeddedCIC();
 
 		/**
 		 * The meta object literal for the '<em><b>Port Instances</b></em>' containment reference list feature.
@@ -2281,14 +2235,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTOR_INSTANCE__TARGET = eINSTANCE.getConnectorInstance_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent Component Instance</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE = eINSTANCE.getConnectorInstance_ParentComponentInstance();
 
 		/**
 		 * The meta object literal for the '<em><b>Connector Type</b></em>' reference feature.
@@ -2425,6 +2371,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ConnectorInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Port Instances Derived</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED = eINSTANCE.getComponentInstanceConfiguration_ParentPortInstancesDerived();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl <em>Hardware Port Istance</em>}' class.

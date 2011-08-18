@@ -18,7 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * component, there exists exactly one multi-port instance in the respective component 
  * instance at all times. That instance references an instance of the statechart of the
  * multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance
- * also references all sub-port instances of the multi-port instance.
+ * also references all sub-port instances of the multi-port instance. The DiscreteMultiPortInstance
+ * has no visual representation in the concrete syntax. It is represented by its sub-roles.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -19,8 +19,8 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -35,12 +35,12 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class ContinuousPortInstanceEditPart extends AbstractBorderItemEditPart {
+public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3011;
+	public static final int VISUAL_ID = 2005;
 
 	/**
 	 * @generated
@@ -55,7 +55,7 @@ public class ContinuousPortInstanceEditPart extends AbstractBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public ContinuousPortInstanceEditPart(View view) {
+	public DiscreteSinglePortInstance2EditPart(View view) {
 		super(view);
 	}
 
@@ -64,11 +64,9 @@ public class ContinuousPortInstanceEditPart extends AbstractBorderItemEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.ContinuousPortInstanceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteSinglePortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -119,9 +117,6 @@ public class ContinuousPortInstanceEditPart extends AbstractBorderItemEditPart {
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
-
-		//FIXME: workaround for #154536
-		result.getBounds().setSize(result.getPreferredSize());
 		return result;
 	}
 

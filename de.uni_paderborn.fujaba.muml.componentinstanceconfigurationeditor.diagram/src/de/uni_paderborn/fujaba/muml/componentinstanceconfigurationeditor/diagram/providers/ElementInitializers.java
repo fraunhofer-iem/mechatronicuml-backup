@@ -12,6 +12,25 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_DiscreteSinglePortInstance_2005(
+			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+									.getDiscreteSinglePortInstance(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_HardwarePortIstance_3008(
 			de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance instance) {
 		try {

@@ -40,7 +40,8 @@ public class CustomComponentInstanceEditPart extends ComponentInstanceEditPart {
 			EReference reference = (EReference) feature;
 			if (reference.getContainerClass() == ComponentInstance.class) {
 				int featureID = notification.getFeatureID(ComponentInstance.class);
-				if (featureID == InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES) {
+				//TODO: it was COMPONENT_INSTANCE__CONNECTOR_INSTANCES
+				if (featureID == InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC) {
 					// ((CanonicalEditPolicy)getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE)).refresh();
 					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 							.getRegisteredEditPolicies(this.getDiagramView()

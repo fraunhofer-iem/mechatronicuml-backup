@@ -45,7 +45,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getParentComponentInstance <em>Parent Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl#getConnectorType <em>Connector Type</em>}</li>
  * </ul>
  * </p>
@@ -319,47 +318,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentInstance getParentComponentInstance() {
-		if (eContainerFeatureID() != InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE) return null;
-		return (ComponentInstance)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParentComponentInstance(ComponentInstance newParentComponentInstance, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentComponentInstance, InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentComponentInstance(ComponentInstance newParentComponentInstance) {
-		if (newParentComponentInstance != eInternalContainer() || (eContainerFeatureID() != InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE && newParentComponentInstance != null)) {
-			if (EcoreUtil.isAncestor(this, newParentComponentInstance))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentComponentInstance != null)
-				msgs = ((InternalEObject)newParentComponentInstance).eInverseAdd(this, InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES, ComponentInstance.class, msgs);
-			msgs = basicSetParentComponentInstance(newParentComponentInstance, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE, newParentComponentInstance, newParentComponentInstance));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ConnectorType getConnectorType() {
 		if (connectorType != null && connectorType.eIsProxy()) {
 			InternalEObject oldConnectorType = (InternalEObject)connectorType;
@@ -414,10 +372,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 				if (target != null)
 					msgs = ((InternalEObject)target).eInverseRemove(this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, PortInstance.class, msgs);
 				return basicSetTarget((PortInstance)otherEnd, msgs);
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentComponentInstance((ComponentInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -438,24 +392,8 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 				return basicSetSource(null, msgs);
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
 				return basicSetTarget(null, msgs);
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				return basicSetParentComponentInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				return eInternalContainer().eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES, ComponentInstance.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -479,8 +417,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				return getParentComponentInstance();
 			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
 				if (resolve) return getConnectorType();
 				return basicGetConnectorType();
@@ -514,9 +450,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
 				setTarget((PortInstance)newValue);
 				return;
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				setParentComponentInstance((ComponentInstance)newValue);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
 				setConnectorType((ConnectorType)newValue);
 				return;
@@ -547,9 +480,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
 				setTarget((PortInstance)null);
 				return;
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				setParentComponentInstance((ComponentInstance)null);
-				return;
 			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
 				setConnectorType((ConnectorType)null);
 				return;
@@ -575,8 +505,6 @@ public class ConnectorInstanceImpl extends ExtendableElementImpl implements Conn
 				return source != null;
 			case InstancePackage.CONNECTOR_INSTANCE__TARGET:
 				return target != null;
-			case InstancePackage.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE:
-				return getParentComponentInstance() != null;
 			case InstancePackage.CONNECTOR_INSTANCE__CONNECTOR_TYPE:
 				return connectorType != null;
 		}

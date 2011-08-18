@@ -11,6 +11,7 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -20,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +58,16 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	 * @ordered
 	 */
 	protected EList<ConnectorInstance> connectorInstances;
+
+	/**
+	 * The cached setting delegate for the '{@link #getParentPortInstancesDerived() <em>Parent Port Instances Derived</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentPortInstancesDerived()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PARENT_PORT_INSTANCES_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,6 +117,38 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<PortInstance> getParentPortInstancesDerived() {
+		return (EList<PortInstance>)PARENT_PORT_INSTANCES_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetParentPortInstancesDerived() {
+		return PARENT_PORT_INSTANCES_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PortInstance> getParentPortInstances() {
+		if(eContainer() instanceof ComponentInstance){
+			return ((ComponentInstance)eContainer()).getPortInstances();
+		}
+		return new org.eclipse.emf.common.util.BasicEList<PortInstance>();
+		
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -127,6 +172,8 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 				return getComponentInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return getConnectorInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
+				return getParentPortInstancesDerived();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,6 +229,8 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 				return componentInstances != null && !componentInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return connectorInstances != null && !connectorInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
+				return isSetParentPortInstancesDerived();
 		}
 		return super.eIsSet(featureID);
 	}

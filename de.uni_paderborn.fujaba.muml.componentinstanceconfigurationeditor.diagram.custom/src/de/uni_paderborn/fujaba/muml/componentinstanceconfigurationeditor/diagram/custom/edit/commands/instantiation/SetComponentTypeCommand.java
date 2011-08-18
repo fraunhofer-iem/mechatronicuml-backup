@@ -94,6 +94,12 @@ public class SetComponentTypeCommand extends AbstractCommand {
 			// instantiate component parts
 			if (component instanceof StructuredComponent) {
 				StructuredComponent structuredComponent = (StructuredComponent) component;
+
+				// create component instance configuration for the embedded
+				// parts of the new instance
+				newInstance.setEmbeddedCIC(InstanceFactory.eINSTANCE
+						.createComponentInstanceConfiguration());
+
 				for (ComponentPart componentPart : structuredComponent
 						.getEmbeddedParts()) {
 					createComponentPartInstance(newInstance, componentPart);
@@ -102,8 +108,9 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				// instantiate the connector types
 				for (ConnectorType connectorType : structuredComponent
 						.getConnectors()) {
-					//this list is needed for identifying later on which concrete port instances needed to be connected 
-					//with the new generated connector instance
+					// this list is needed for identifying later on which
+					// concrete port instances needed to be connected
+					// with the new generated connector instance
 					List<PortInstance> portInstances = getAllDirectContainedPortInstances(newInstance);
 					// have to be added because of possible delegation
 					// connectors
@@ -116,9 +123,11 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
-	//computes the lowest cardinality. But the lowest cardinality of the port or part should be online considered
-	//if the port or port can appear multiple times.
-	//if non of them is appearing multiple times we know we have to instantiate the connector instance online once
+	// computes the lowest cardinality. But the lowest cardinality of the port
+	// or part should be online considered
+	// if the port or port can appear multiple times.
+	// if non of them is appearing multiple times we know we have to instantiate
+	// the connector instance online once
 	private long getLowestCardinality(ConnectorType connectorType) {
 
 		long cardinality = -1;
@@ -174,8 +183,10 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		}
 	}
 
-	//computes with the help of the parent component (comp) the part of the port's component
-	//is needed to get the cardinality of the part, to know how often the connector instance needs to be instantiated
+	// computes with the help of the parent component (comp) the part of the
+	// port's component
+	// is needed to get the cardinality of the part, to know how often the
+	// connector instance needs to be instantiated
 	private ComponentPart getAccordingPart(Component comp, Port port) {
 
 		List<ComponentPart> parts = port.getComponent()
@@ -190,13 +201,14 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return null;
 	}
 
-	//computes all ports of the embedded component instances, here is no recursive call needed
+	// computes all ports of the embedded component instances, here is no
+	// recursive call needed
 	private List<PortInstance> getAllDirectContainedPortInstances(
 			ComponentInstance compInstance) {
 		ArrayList<PortInstance> portInstanceList = new ArrayList<PortInstance>();
 
-		for (ComponentInstance tmpCompInstance : compInstance
-				.getEmbeddedInstances()) {
+		for (ComponentInstance tmpCompInstance : compInstance.getEmbeddedCIC()
+				.getComponentInstances()) {
 			for (PortInstance tmpPortInstance : tmpCompInstance
 					.getPortInstances()) {
 				portInstanceList.add(tmpPortInstance);
@@ -206,7 +218,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return portInstanceList;
 	}
 
-	//for cleaning up the model
+	// for cleaning up the model
 	private void destroyContents(ComponentInstance newInstance,
 			CompoundCommand compoundCommand) {
 
@@ -227,13 +239,16 @@ public class SetComponentTypeCommand extends AbstractCommand {
 					new DestroyElementRequest(portInstance, false))));
 		}
 
-		// Destroy all embedded instances...
-		for (ComponentInstance componentInstance : newInstance
-				.getEmbeddedInstances()) {
-			destroyContents(componentInstance, compoundCommand);
+		if (newInstance.getEmbeddedCIC() != null) {
+			// Destroy all embedded instances...
+			for (ComponentInstance componentInstance : newInstance
+					.getEmbeddedCIC().getComponentInstances()) {
+				destroyContents(componentInstance, compoundCommand);
 
-			compoundCommand.add(new ICommandProxy(new DestroyElementCommand(
-					new DestroyElementRequest(componentInstance, false))));
+				compoundCommand.add(new ICommandProxy(
+						new DestroyElementCommand(new DestroyElementRequest(
+								componentInstance, false))));
+			}
 		}
 	}
 
@@ -254,7 +269,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		for (long i = 0; i < lowerBound; i++) {
 			ComponentInstance newInstance = createComponentInstance(componentPart
 					.getComponentType());
-			parentInstance.getEmbeddedInstances().add(newInstance);
+			parentInstance.getEmbeddedCIC().getComponentInstances()
+					.add(newInstance);
 		}
 	}
 
@@ -271,15 +287,15 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				lowerBound = lowerBoundNumber.getValue();
 			}
 		}
-		
+
 		// determine the upperBound of the Port's Cardinality.
 		long upperBound = 0;
 		if (cardinality != null) {
 			NaturalNumber upperBoundNumber = cardinality.getUpperBound();
 			if (upperBoundNumber != null) {
-				if(upperBoundNumber.isInfinity()){
-					upperBound=2;
-				}else{
+				if (upperBoundNumber.isInfinity()) {
+					upperBound = 2;
+				} else {
 					upperBound = upperBoundNumber.getValue();
 				}
 			}
@@ -287,24 +303,25 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		// Create a multi port instance in case one is needed
 		DiscreteMultiPortInstance multiPortInstance = null;
-		if(upperBound > 1){
-			multiPortInstance = 
-				InstanceFactory.eINSTANCE.createDiscreteMultiPortInstance();
-			
+		if (upperBound > 1) {
+			multiPortInstance = InstanceFactory.eINSTANCE
+					.createDiscreteMultiPortInstance();
+
 			multiPortInstance.setPortType(port);
 			multiPortInstance.setName(port.getName());
 			multiPortInstance.setComponentInstance(componentInstance);
 		}
-		
+
 		// Create as many PortInstances as the Port's lowerBound requires.
 		for (long i = 0; i < lowerBound; i++) {
 			PortInstance portInstance = createSinglePortInstance(port);
 			portInstance.setPortType(port);
-			portInstance.setName(port.getName() + (i+1));
+			portInstance.setName(port.getName() + (i + 1));
 			portInstance.setComponentInstance(componentInstance);
-			
-			if(multiPortInstance != null ){
-				multiPortInstance.getSubPortInstances().add((DiscreteSinglePortInstance)portInstance);
+
+			if (multiPortInstance != null) {
+				multiPortInstance.getSubPortInstances().add(
+						(DiscreteSinglePortInstance) portInstance);
 			}
 
 		}
@@ -326,7 +343,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		Port toPort = connectorType.getToPort();
 		Port fromPort = connectorType.getFromPort();
-		
+
 		for (PortInstance portInstance : portInstanceList) {
 
 			if (toPortInstance != null && fromPortInstance != null) {
@@ -349,13 +366,16 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 			newInstance.setSource(fromPortInstance);
 			newInstance.setTarget(toPortInstance);
-			newInstance.setParentComponentInstance(componentInstance);
+			
+			componentInstance.getEmbeddedCIC().getConnectorInstances().add(newInstance);
 		}
 
 	}
 
-	//in case connector instances of the same type have to be instantiated several times because of occurring cardinality
-	//we need to know whether given the port instance is already connected to a connector instance of the given connector type
+	// in case connector instances of the same type have to be instantiated
+	// several times because of occurring cardinality
+	// we need to know whether given the port instance is already connected to a
+	// connector instance of the given connector type
 	private boolean isConnectorInstanceAlreadyInstanciated(
 			ConnectorType connectorType, PortInstance portInstance) {
 
@@ -375,7 +395,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 
 		return false;
 	}
-	
+
 	private ConnectorInstance createConnectorInstance(
 			ConnectorType connectorType) {
 		ConnectorInstance connectorInstance = null;
@@ -392,19 +412,15 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		return connectorInstance;
 	}
 
-	private PortInstance createSinglePortInstance(Port port){
-		if(port instanceof DiscretePort){
-			return InstanceFactory.eINSTANCE
-			.createDiscreteSinglePortInstance();
-		}else if(port instanceof HardwarePort){
-			return InstanceFactory.eINSTANCE
-			.createHardwarePortIstance();
-		}else if(port instanceof ContinuousPort){
-			return InstanceFactory.eINSTANCE
-			.createContinuousPortInstance();
-		}else if(port instanceof HybridPort){
-			InstanceFactory.eINSTANCE
-			.createHybridPortInstance();
+	private PortInstance createSinglePortInstance(Port port) {
+		if (port instanceof DiscretePort) {
+			return InstanceFactory.eINSTANCE.createDiscreteSinglePortInstance();
+		} else if (port instanceof HardwarePort) {
+			return InstanceFactory.eINSTANCE.createHardwarePortIstance();
+		} else if (port instanceof ContinuousPort) {
+			return InstanceFactory.eINSTANCE.createContinuousPortInstance();
+		} else if (port instanceof HybridPort) {
+			InstanceFactory.eINSTANCE.createHybridPortInstance();
 		}
 		return null;
 	}

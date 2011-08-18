@@ -66,8 +66,6 @@ public class ComponentInstanceItemProvider
 
 			addBehavioralElementTypePropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
-			addEmbeddedInstancesPropertyDescriptor(object);
-			addConnectorInstancesPropertyDescriptor(object);
 			addPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -118,50 +116,6 @@ public class ComponentInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Embedded Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmbeddedInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_embeddedInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_embeddedInstances_feature", "_UI_ComponentInstance_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_connectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_connectorInstances_feature", "_UI_ComponentInstance_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Port Instances feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,8 +150,7 @@ public class ComponentInstanceItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(InstancePackage.Literals.BEHAVIORAL_ELEMENT_INSTANCE__BEHAVIOR_INSTANCE);
-			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES);
-			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_CIC);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
 		}
 		return childrenFeatures;
@@ -254,8 +207,7 @@ public class ComponentInstanceItemProvider
 
 		switch (notification.getFeatureID(ComponentInstance.class)) {
 			case InstancePackage.COMPONENT_INSTANCE__BEHAVIOR_INSTANCE:
-			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_INSTANCES:
-			case InstancePackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE__EMBEDDED_CIC:
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -281,23 +233,8 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_INSTANCES,
-				 InstanceFactory.eINSTANCE.createComponentInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createConnectorInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createAssemblyInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createDelegationInstance()));
+				(InstancePackage.Literals.COMPONENT_INSTANCE__EMBEDDED_CIC,
+				 InstanceFactory.eINSTANCE.createComponentInstanceConfiguration()));
 
 		newChildDescriptors.add
 			(createChildParameter

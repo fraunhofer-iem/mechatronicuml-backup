@@ -24,8 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedInstances <em>Embedded Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -61,36 +60,30 @@ public interface ComponentInstance extends NamedElement, BehavioralElementInstan
 	void setComponentType(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Embedded Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance}.
+	 * Returns the value of the '<em><b>Embedded CIC</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The component instances that are embedded in this component instance.
+	 * The component instances and connector instances that are embedded in this component instance
+	 * are contained by the component instance configuration.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Embedded Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_EmbeddedInstances()
+	 * @return the value of the '<em>Embedded CIC</em>' containment reference.
+	 * @see #setEmbeddedCIC(ComponentInstanceConfiguration)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_EmbeddedCIC()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ComponentInstance> getEmbeddedInstances();
+	ComponentInstanceConfiguration getEmbeddedCIC();
 
 	/**
-	 * Returns the value of the '<em><b>Connector Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}'.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The connector instances that connect the component part instances of this component instance.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Connector Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstance_ConnectorInstances()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance
-	 * @model opposite="parentComponentInstance" containment="true"
+	 * @param value the new value of the '<em>Embedded CIC</em>' containment reference.
+	 * @see #getEmbeddedCIC()
 	 * @generated
 	 */
-	EList<ConnectorInstance> getConnectorInstances();
+	void setEmbeddedCIC(ComponentInstanceConfiguration value);
 
 	/**
 	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.

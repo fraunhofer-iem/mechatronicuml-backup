@@ -74,7 +74,6 @@ public class ConnectorInstanceItemProvider
 			addBehavioralElementTypePropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
-			addParentComponentInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -162,28 +161,6 @@ public class ConnectorInstanceItemProvider
 				 false,
 				 false,
 				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Component Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentComponentInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorInstance_parentComponentInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorInstance_parentComponentInstance_feature", "_UI_ConnectorInstance_type"),
-				 InstancePackage.Literals.CONNECTOR_INSTANCE__PARENT_COMPONENT_INSTANCE,
-				 false,
-				 false,
-				 false,
 				 null,
 				 null,
 				 null));

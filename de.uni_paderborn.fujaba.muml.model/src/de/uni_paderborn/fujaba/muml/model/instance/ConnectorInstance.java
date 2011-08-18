@@ -24,7 +24,6 @@ import org.storydriven.modeling.ExtendableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getSource <em>Source</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getTarget <em>Target</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType <em>Connector Type</em>}</li>
  * </ul>
  * </p>
@@ -87,33 +86,6 @@ public interface ConnectorInstance extends ExtendableElement, BehavioralConnecto
 	 * @generated
 	 */
 	void setTarget(PortInstance value);
-
-	/**
-	 * Returns the value of the '<em><b>Parent Component Instance</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The component instance that this component instance is embedded in. Component instances may be embedded into other component instances. At type level embedded component instances are called component parts.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parent Component Instance</em>' container reference.
-	 * @see #setParentComponentInstance(ComponentInstance)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getConnectorInstance_ParentComponentInstance()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getConnectorInstances
-	 * @model opposite="connectorInstances" transient="false"
-	 * @generated
-	 */
-	ComponentInstance getParentComponentInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getParentComponentInstance <em>Parent Component Instance</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Component Instance</em>' container reference.
-	 * @see #getParentComponentInstance()
-	 * @generated
-	 */
-	void setParentComponentInstance(ComponentInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Connector Type</b></em>' reference.
