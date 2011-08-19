@@ -258,20 +258,6 @@ public class TransitionItemProvider
 			}
 		};
 
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_NamedElement_name_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-			SDMPackage.Literals.NAMED_ELEMENT__NAME,
-			true,
-			false,
-			false,
-			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-			getString("_UI_TriggerMessageEventPropertyCategory"),
-			null,
-			rootPropertyDescriptor));
-		
 		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
@@ -344,20 +330,6 @@ public class TransitionItemProvider
 			}
 		};
 
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
-			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_NamedElement_name_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-			SDMPackage.Literals.NAMED_ELEMENT__NAME,
-			true,
-			false,
-			false,
-			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-			getString("_UI_RaiseMessageEventPropertyCategory"),
-			null,
-			rootPropertyDescriptor));
-		
 		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),

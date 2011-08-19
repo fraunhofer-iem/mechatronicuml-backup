@@ -27,34 +27,13 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.TransitionEvent;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.AsynchronousMessageEventImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AsynchronousMessageEventImpl extends NamedElementImpl implements AsynchronousMessageEvent {
-	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EventKind KIND_EDEFAULT = EventKind.RAISE;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected EventKind kind = KIND_EDEFAULT;
-
+public class AsynchronousMessageEventImpl extends TransitionEventImpl implements AsynchronousMessageEvent {
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -82,27 +61,6 @@ public class AsynchronousMessageEventImpl extends NamedElementImpl implements As
 	@Override
 	protected EClass eStaticClass() {
 		return RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EventKind getKind() {
-		return kind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setKind(EventKind newKind) {
-		EventKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND, oldKind, kind));
 	}
 
 	/**
@@ -170,8 +128,6 @@ public class AsynchronousMessageEventImpl extends NamedElementImpl implements As
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND:
-				return getKind();
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				return getMessage();
 		}
@@ -186,9 +142,6 @@ public class AsynchronousMessageEventImpl extends NamedElementImpl implements As
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND:
-				setKind((EventKind)newValue);
-				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				setMessage((Message)newValue);
 				return;
@@ -204,9 +157,6 @@ public class AsynchronousMessageEventImpl extends NamedElementImpl implements As
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND:
-				setKind(KIND_EDEFAULT);
-				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				setMessage((Message)null);
 				return;
@@ -222,70 +172,10 @@ public class AsynchronousMessageEventImpl extends NamedElementImpl implements As
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND:
-				return kind != KIND_EDEFAULT;
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				return message != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Event.class) {
-			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND: return RealtimestatechartPackage.EVENT__KIND;
-				default: return -1;
-			}
-		}
-		if (baseClass == TransitionEvent.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Event.class) {
-			switch (baseFeatureID) {
-				case RealtimestatechartPackage.EVENT__KIND: return RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND;
-				default: return -1;
-			}
-		}
-		if (baseClass == TransitionEvent.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
-		result.append(kind);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AsynchronousMessageEventImpl

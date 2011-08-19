@@ -65,7 +65,7 @@ public interface ComponentInstanceConfiguration extends ExtendableElement {
 	EList<ConnectorInstance> getConnectorInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Parent Port Instances Derived</b></em>' reference list.
+	 * Returns the value of the '<em><b>Parent Port Instances Derived</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,20 +73,20 @@ public interface ComponentInstanceConfiguration extends ExtendableElement {
 	 * The port instances of the component instance which is
 	 * containing this component instance configuration are derived.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Parent Port Instances Derived</em>' reference list.
+	 * @return the value of the '<em>Parent Port Instances Derived</em>' containment reference list.
 	 * @see #isSetParentPortInstancesDerived()
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_ParentPortInstancesDerived()
-	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='getParentPortInstances()\r\n'"
 	 * @generated
 	 */
 	EList<PortInstance> getParentPortInstancesDerived();
 
 	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}' reference list is set.
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstancesDerived <em>Parent Port Instances Derived</em>}' containment reference list is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Parent Port Instances Derived</em>' reference list is set.
+	 * @return whether the value of the '<em>Parent Port Instances Derived</em>' containment reference list is set.
 	 * @see #getParentPortInstancesDerived()
 	 * @generated
 	 */

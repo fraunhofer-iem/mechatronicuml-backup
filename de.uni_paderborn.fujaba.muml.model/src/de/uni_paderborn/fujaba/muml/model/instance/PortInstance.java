@@ -76,7 +76,7 @@ public interface PortInstance extends NamedElement, CommentableElement, Behavior
 	 * @see #setComponentInstance(ComponentInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ComponentInstance()
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance#getPortInstances
-	 * @model opposite="portInstances" required="true" transient="false"
+	 * @model opposite="portInstances" transient="false"
 	 * @generated
 	 */
 	ComponentInstance getComponentInstance();

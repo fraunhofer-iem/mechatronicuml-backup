@@ -33,7 +33,7 @@ import org.storydriven.modeling.NamedElement;
  * @model
  * @generated
  */
-public interface AsynchronousMessageEvent extends NamedElement, TransitionEvent {
+public interface AsynchronousMessageEvent extends TransitionEvent {
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

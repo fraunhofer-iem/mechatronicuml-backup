@@ -1448,7 +1448,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		transitionEClass.getESuperTypes().add(this.getPrioritizable());
 		transitionEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
 		actionEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
-		asynchronousMessageEventEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		asynchronousMessageEventEClass.getESuperTypes().add(this.getTransitionEvent());
 		doEventEClass.getESuperTypes().add(this.getStateEvent());
 		entryOrExitEventEClass.getESuperTypes().add(this.getStateEvent());

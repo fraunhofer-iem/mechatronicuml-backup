@@ -1362,7 +1362,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AsynchronousMessageEvent" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement #//model/realtimestatechart/TransitionEvent">
+      <eClassifiers xsi:type="ecore:EClass" name="AsynchronousMessageEvent" eSuperTypes="#//model/realtimestatechart/TransitionEvent">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An AsynchronousMessageEvent is a TransitionEvent that corresponds to &#xD;&#xA;receiving or sending a message. They are used to model asynchronous &#xD;&#xA;communication between realtime statecharts. A trigger events specifies&#xD;&#xA;that the corresponding message has to be received for the transition to be&#xD;&#xA;enabled, a raised event specifies that the corresponding message will be &#xD;&#xA;sent upon execution of the transition. "/>
         </eAnnotations>

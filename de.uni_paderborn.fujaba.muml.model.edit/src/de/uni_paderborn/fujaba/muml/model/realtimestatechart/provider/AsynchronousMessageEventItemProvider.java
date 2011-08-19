@@ -27,6 +27,7 @@ import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
  * @generated
  */
 public class AsynchronousMessageEventItemProvider
-	extends NamedElementItemProvider
+	extends TransitionEventItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -65,32 +66,9 @@ public class AsynchronousMessageEventItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addKindPropertyDescriptor(object);
 			addMessagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Kind feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKindPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Event_kind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Event_kind_feature", "_UI_Event_type"),
-				 RealtimestatechartPackage.Literals.EVENT__KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -164,7 +142,8 @@ public class AsynchronousMessageEventItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AsynchronousMessageEvent)object).getName();
+		EventKind labelValue = ((AsynchronousMessageEvent)object).getKind();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_AsynchronousMessageEvent_type") :
 			getString("_UI_AsynchronousMessageEvent_type") + " " + label;
@@ -182,9 +161,6 @@ public class AsynchronousMessageEventItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AsynchronousMessageEvent.class)) {
-			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -207,17 +183,6 @@ public class AsynchronousMessageEventItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
 				 RealtimestatechartFactory.eINSTANCE.createMessage()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
 	}
 
 }

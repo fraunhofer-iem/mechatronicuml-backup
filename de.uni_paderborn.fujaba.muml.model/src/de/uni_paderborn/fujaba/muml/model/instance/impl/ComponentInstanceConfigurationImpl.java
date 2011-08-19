@@ -60,7 +60,7 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 	protected EList<ConnectorInstance> connectorInstances;
 
 	/**
-	 * The cached setting delegate for the '{@link #getParentPortInstancesDerived() <em>Parent Port Instances Derived</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getParentPortInstancesDerived() <em>Parent Port Instances Derived</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParentPortInstancesDerived()
@@ -156,6 +156,8 @@ public class ComponentInstanceConfigurationImpl extends ExtendableElementImpl im
 				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
 				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED:
+				return ((InternalEList<?>)getParentPortInstancesDerived()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

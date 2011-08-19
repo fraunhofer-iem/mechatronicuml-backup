@@ -197,9 +197,7 @@ public class RealtimestatechartSwitch<T> {
 			case RealtimestatechartPackage.ASYNCHRONOUS_MESSAGE_EVENT: {
 				AsynchronousMessageEvent asynchronousMessageEvent = (AsynchronousMessageEvent)theEObject;
 				T result = caseAsynchronousMessageEvent(asynchronousMessageEvent);
-				if (result == null) result = caseNamedElement(asynchronousMessageEvent);
 				if (result == null) result = caseTransitionEvent(asynchronousMessageEvent);
-				if (result == null) result = caseExtendableElement(asynchronousMessageEvent);
 				if (result == null) result = caseEvent(asynchronousMessageEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
