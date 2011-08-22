@@ -66,7 +66,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>

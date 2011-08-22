@@ -392,13 +392,13 @@
             title="DelegationInstance"
             description="Create new DelegationInstance"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif"
-            genNodes="//@diagram/@childNodes.1"
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="DiscreteSinglePortInstance"
             description="Create new PortInstance"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif"
+            genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="HardwarePortInstance"
