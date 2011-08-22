@@ -732,7 +732,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration"
           eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration."/>
+          <details key="documentation" value="This class encapsules represents a configuration.&#xD;&#xA;&#xD;&#xA;It contains all component instances and connector instances that belong to a concrete configuration.&#xD;&#xA;&#xD;&#xA;\todosd{implement ocl derived for parent port isntances derived}"/>
         </eAnnotations>
         <eOperations name="getParentPortInstances" upperBound="-1" eType="#//model/instance/PortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
