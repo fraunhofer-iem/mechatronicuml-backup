@@ -38,6 +38,7 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	/**
 	 * Returns the value of the '<em><b>Sub Port Instances</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance <em>Multi Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sub Port Instances</em>' reference list isn't clear,
@@ -50,7 +51,8 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sub Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_SubPortInstances()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance
+	 * @model opposite="multiPortInstance"
 	 * @generated
 	 */
 	EList<DiscreteSinglePortInstance> getSubPortInstances();

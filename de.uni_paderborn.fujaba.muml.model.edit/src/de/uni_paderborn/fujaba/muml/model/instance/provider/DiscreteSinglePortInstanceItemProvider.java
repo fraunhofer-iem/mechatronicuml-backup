@@ -9,12 +9,14 @@ package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -57,8 +59,31 @@ public class DiscreteSinglePortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMultiPortInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Multi Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMultiPortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteSinglePortInstance_multiPortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteSinglePortInstance_multiPortInstance_feature", "_UI_DiscreteSinglePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

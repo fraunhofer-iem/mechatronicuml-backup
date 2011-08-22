@@ -222,7 +222,10 @@
         <genClasses ecoreClass="muml.ecore#//model/instance/ContinuousPortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/HybridPortInstance"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/DiscretePortInstance"/>
-        <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+        <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteSinglePortInstance">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"/>
+        </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteMultiPortInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
