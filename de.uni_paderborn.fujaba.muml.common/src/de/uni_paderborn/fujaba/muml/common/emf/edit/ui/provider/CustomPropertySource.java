@@ -99,7 +99,8 @@ public class CustomPropertySource extends PropertySource {
 						createAllowed = reference.isContainment();
 					}
 
-					if (CorePackage.Literals.NATURAL_NUMBER.isSuperTypeOf(eClass)) {
+					if (CorePackage.Literals.NATURAL_NUMBER
+							.isSuperTypeOf(eClass)) {
 						EDataType eDataType = EcorePackage.Literals.ESTRING;
 						return createEDataTypeCellEditor(eDataType, parent);
 
@@ -109,31 +110,38 @@ public class CustomPropertySource extends PropertySource {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues(), ",", ", ");
-						} else if (ExpressionsPackage.Literals.EXPRESSION.isSuperTypeOf(eClass)) {
+						} else if (ExpressionsPackage.Literals.EXPRESSION
+								.isSuperTypeOf(eClass)) {
 							return createTextualExpressionCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT.isSuperTypeOf(eClass)) {
+						} else if (RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT
+								.isSuperTypeOf(eClass)) {
 							return createClockConstraintCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (CallsPackage.Literals.PARAMETER_BINDING.isSuperTypeOf(eClass)) {
+						} else if (CallsPackage.Literals.PARAMETER_BINDING
+								.isSuperTypeOf(eClass)) {
 							return createParameterBindingCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE.isSuperTypeOf(eClass)) {
+						} else if (RealtimestatechartPackage.Literals.ABSOLUTE_DEADLINE
+								.isSuperTypeOf(eClass)) {
 							return createAbsoluteDeadlineCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (RealtimestatechartPackage.Literals.CLOCK.isSuperTypeOf(eClass)) {
+						} else if (RealtimestatechartPackage.Literals.CLOCK
+								.isSuperTypeOf(eClass)) {
 							return createClocksCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues());
-						} else if (EcorePackage.Literals.EATTRIBUTE.isSuperTypeOf(eClass)) {
+						} else if (EcorePackage.Literals.EATTRIBUTE
+								.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues(), ";", "; ");
-						} else if (EcorePackage.Literals.EOPERATION.isSuperTypeOf(eClass)) {
+						} else if (EcorePackage.Literals.EOPERATION
+								.isSuperTypeOf(eClass)) {
 							return createTypedElementCellEditor(parent,
 									getLabelProvider(), feature,
 									getCurrentValues(), ";", "; ");
@@ -243,6 +251,10 @@ public class CustomPropertySource extends PropertySource {
 				.addProperty(createProperty(
 						ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__EXPRESSION_TEXT,
 						new TextPropertyEditor(adapterFactory, true, true)));
+
+		textualExpressionCellEditor.addProperty(createProperty(
+				SDMPackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				new TextPropertyEditor(adapterFactory, true, true)));
 
 		textualExpressionCellEditor.addProperty(createProperty(
 				ExpressionsPackage.Literals.TEXTUAL_EXPRESSION__LANGUAGE,
