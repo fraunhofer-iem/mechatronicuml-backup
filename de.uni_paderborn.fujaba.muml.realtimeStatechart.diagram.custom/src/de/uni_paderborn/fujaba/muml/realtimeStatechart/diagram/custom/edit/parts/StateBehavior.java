@@ -189,6 +189,7 @@ public class StateBehavior {
 				return points;
 			}
 		};
+		plate.setMinimumSize(new Dimension(0, 0));
 		return plate;
 	}
 
