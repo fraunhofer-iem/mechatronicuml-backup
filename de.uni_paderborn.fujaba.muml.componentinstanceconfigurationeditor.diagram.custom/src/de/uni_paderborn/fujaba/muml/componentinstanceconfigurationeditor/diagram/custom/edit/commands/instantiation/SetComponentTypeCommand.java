@@ -350,7 +350,8 @@ public class SetComponentTypeCommand extends AbstractCommand {
 				break;
 			} else if (portInstance.getPortType() == toPort) {
 				if (!isConnectorInstanceAlreadyInstanciated(connectorType,
-						portInstance)) {
+						portInstance) && !(portInstance instanceof DiscreteMultiPortInstance)) {
+					
 					toPortInstance = portInstance;
 				}
 			} else if (portInstance.getPortType() == fromPort) {
