@@ -673,26 +673,6 @@
             <details key="documentation" value="The component instance this port instance belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
-            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
-            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;endif"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorInstances"
             upperBound="-1" eType="#//model/instance/ConnectorInstance" eOpposite="#//model/instance/ConnectorInstance/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -793,6 +773,26 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
         </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageInterface"
+            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageInterface&#xA;endif"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageInterface"
+            eType="#//model/msgiface/MessageInterface" changeable="false" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageInterface&#xA;endif"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

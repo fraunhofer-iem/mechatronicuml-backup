@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl;
@@ -59,8 +60,8 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 					PortInstance.class)) {
 				int featureID = notification
 						.getFeatureID(PortInstanceImpl.class);
-				if (featureID == InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
-						|| featureID == InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE) {
+				if (featureID == InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE
+						|| featureID == InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE) {
 					updatePortType();
 				}
 			}
@@ -87,10 +88,13 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 	public PortType getPortType() {
 		MessageInterface receiverMessageInterface = null;
 		MessageInterface senderMessageInterface = null;
-		if (portInstance != null) {
-			receiverMessageInterface = portInstance
-					.getReceiverMessageInterface();
-			senderMessageInterface = portInstance.getSenderMessageInterface();
+		
+		if (portInstance != null &&
+				portInstance instanceof DiscretePortInstance){
+			
+			receiverMessageInterface = ((DiscretePortInstance)portInstance
+					).getReceiverMessageInterface();
+			senderMessageInterface = ((DiscretePortInstance)portInstance).getSenderMessageInterface();
 		}
 		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
 		if (receiverMessageInterface != null && senderMessageInterface != null) {

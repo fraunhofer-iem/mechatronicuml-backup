@@ -357,7 +357,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortInstance_SenderMessageInterface() {
+	public EReference getPortInstance_IncomingConnectorInstances() {
 		return (EReference)portInstanceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -366,26 +366,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortInstance_ReceiverMessageInterface() {
-		return (EReference)portInstanceEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPortInstance_IncomingConnectorInstances() {
-		return (EReference)portInstanceEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPortInstance_OutgoingConnectorInstances() {
-		return (EReference)portInstanceEClass.getEStructuralFeatures().get(5);
+		return (EReference)portInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -503,6 +485,24 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 */
 	public EClass getDiscretePortInstance() {
 		return discretePortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscretePortInstance_ReceiverMessageInterface() {
+		return (EReference)discretePortInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscretePortInstance_SenderMessageInterface() {
+		return (EReference)discretePortInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -735,8 +735,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		portInstanceEClass = createEClass(PORT_INSTANCE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__PORT_TYPE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__COMPONENT_INSTANCE);
-		createEReference(portInstanceEClass, PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
-		createEReference(portInstanceEClass, PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
 		createEReference(portInstanceEClass, PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES);
 		createEReference(portInstanceEClass, PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES);
 
@@ -759,6 +757,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		hybridPortInstanceEClass = createEClass(HYBRID_PORT_INSTANCE);
 
 		discretePortInstanceEClass = createEClass(DISCRETE_PORT_INSTANCE);
+		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE);
+		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE);
 
 		discreteSinglePortInstanceEClass = createEClass(DISCRETE_SINGLE_PORT_INSTANCE);
 		createEReference(discreteSinglePortInstanceEClass, DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
@@ -814,8 +814,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		// Obtain other dependent packages
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
-		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
+		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
@@ -859,8 +859,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 0, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortInstance_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPortInstance_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_IncomingConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_Target(), "incomingConnectorInstances", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_OutgoingConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_Source(), "outgoingConnectorInstances", null, 0, -1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -885,6 +883,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEClass(hybridPortInstanceEClass, HybridPortInstance.class, "HybridPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(discretePortInstanceEClass, DiscretePortInstance.class, "DiscretePortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscretePortInstance_ReceiverMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "receiverMessageInterface", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortInstance_SenderMessageInterface(), theMsgifacePackage.getMessageInterface(), null, "senderMessageInterface", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteSinglePortInstanceEClass, DiscreteSinglePortInstance.class, "DiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteSinglePortInstance_MultiPortInstance(), this.getDiscreteMultiPortInstance(), this.getDiscreteMultiPortInstance_SubPortInstances(), "multiPortInstance", null, 0, 1, DiscreteSinglePortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -948,19 +948,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";															
-		addAnnotation
-		  (getPortInstance_SenderMessageInterface(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif"
-		   });			
-		addAnnotation
-		  (getPortInstance_ReceiverMessageInterface(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).receiverMessageInterface\nendif"
-		   });							
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																			
 		addAnnotation
 		  (getAssemblyInstance_AssemblyType(), 
 		   source, 
@@ -978,7 +966,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "getParentPortInstances()\r\n"
-		   });																				
+		   });							
+		addAnnotation
+		  (getDiscretePortInstance_ReceiverMessageInterface(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).receiverMessageInterface\nendif"
+		   });			
+		addAnnotation
+		  (getDiscretePortInstance_SenderMessageInterface(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif"
+		   });																
 		addAnnotation
 		  (getFujabaRealtimeStatechartInstance_AllSubStatecharts(), 
 		   source, 

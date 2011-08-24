@@ -9,12 +9,14 @@ package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -57,8 +59,54 @@ public class DiscretePortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addReceiverMessageInterfacePropertyDescriptor(object);
+			addSenderMessageInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortInstance_receiverMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_receiverMessageInterface_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sender Message Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSenderMessageInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePortInstance_senderMessageInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePortInstance_senderMessageInterface_feature", "_UI_DiscretePortInstance_type"),
+				 InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

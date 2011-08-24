@@ -332,31 +332,13 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__COMPONENT_INSTANCE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
@@ -365,7 +347,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
@@ -374,7 +356,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int PORT_INSTANCE_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
@@ -733,24 +715,6 @@ public interface InstancePackage extends EPackage {
 	int HARDWARE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -858,24 +822,6 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
@@ -987,24 +933,6 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1023,13 +951,31 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
@@ -1114,24 +1060,6 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1148,6 +1076,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
@@ -1241,24 +1187,6 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1275,6 +1203,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_SINGLE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port Instance</b></em>' reference.
@@ -1377,24 +1323,6 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1411,6 +1339,24 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_MULTI_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Port Instances</b></em>' reference list.
@@ -1770,28 +1716,6 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_ComponentInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface()
-	 * @see #getPortInstance()
-	 * @generated
-	 */
-	EReference getPortInstance_SenderMessageInterface();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface()
-	 * @see #getPortInstance()
-	 * @generated
-	 */
-	EReference getPortInstance_ReceiverMessageInterface();
-
-	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1948,6 +1872,28 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiscretePortInstance();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Receiver Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getReceiverMessageInterface()
+	 * @see #getDiscretePortInstance()
+	 * @generated
+	 */
+	EReference getDiscretePortInstance_ReceiverMessageInterface();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sender Message Interface</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance#getSenderMessageInterface()
+	 * @see #getDiscretePortInstance()
+	 * @generated
+	 */
+	EReference getDiscretePortInstance_SenderMessageInterface();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
@@ -2291,22 +2237,6 @@ public interface InstancePackage extends EPackage {
 		EReference PORT_INSTANCE__COMPONENT_INSTANCE = eINSTANCE.getPortInstance_ComponentInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_SenderMessageInterface();
-
-		/**
-		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getPortInstance_ReceiverMessageInterface();
-
-		/**
 		 * The meta object literal for the '<em><b>Incoming Connector Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2439,6 +2369,22 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DISCRETE_PORT_INSTANCE = eINSTANCE.getDiscretePortInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortInstance_ReceiverMessageInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Sender Message Interface</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = eINSTANCE.getDiscretePortInstance_SenderMessageInterface();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.

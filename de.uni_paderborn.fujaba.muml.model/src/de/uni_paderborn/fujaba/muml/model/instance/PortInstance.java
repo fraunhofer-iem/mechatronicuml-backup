@@ -27,8 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
@@ -90,40 +88,6 @@ public interface PortInstance extends NamedElement, CommentableElement, Behavior
 	 * @generated
 	 */
 	void setComponentInstance(ComponentInstance value);
-
-	/**
-	 * Returns the value of the '<em><b>Sender Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The sender message interface defines which messages this port instance sends.
-	 * It is derived from the sender message interface of its port.
-	 * \todosd{ocl: implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sender Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_SenderMessageInterface()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).senderMessageInterface\nendif'"
-	 * @generated
-	 */
-	MessageInterface getSenderMessageInterface();
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The receiver message interface defines which messages this port instance receives
-	 * It is derived from the receiver message interface of its port.
-	 * \todosd{ocl: implement derived}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Interface</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getPortInstance_ReceiverMessageInterface()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\n\tnull\nelse\n\tportType.oclAsType(component::DiscretePort).receiverMessageInterface\nendif'"
-	 * @generated
-	 */
-	MessageInterface getReceiverMessageInterface();
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Connector Instances</b></em>' reference list.

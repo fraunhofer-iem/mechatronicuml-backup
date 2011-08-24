@@ -45,8 +45,6 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getBehavioralElementType <em>Behavioral Element Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getSenderMessageInterface <em>Sender Message Interface</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getReceiverMessageInterface <em>Receiver Message Interface</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}</li>
  * </ul>
@@ -104,26 +102,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	 * @ordered
 	 */
 	protected Port portType;
-
-	/**
-	 * The cached setting delegate for the '{@link #getSenderMessageInterface() <em>Sender Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSenderMessageInterface()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getReceiverMessageInterface() <em>Receiver Message Interface</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageInterface()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getIncomingConnectorInstances() <em>Incoming Connector Instances</em>}' reference list.
@@ -341,42 +319,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageInterface getSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetSenderMessageInterface() {
-		return (MessageInterface)SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface getReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageInterface basicGetReceiverMessageInterface() {
-		return (MessageInterface)RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ConnectorInstance> getIncomingConnectorInstances() {
 		if (incomingConnectorInstances == null) {
 			incomingConnectorInstances = new EObjectWithInverseResolvingEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES, InstancePackage.CONNECTOR_INSTANCE__TARGET);
@@ -473,12 +415,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 				return basicGetPortType();
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return getComponentInstance();
-			case InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
-				if (resolve) return getSenderMessageInterface();
-				return basicGetSenderMessageInterface();
-			case InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
-				if (resolve) return getReceiverMessageInterface();
-				return basicGetReceiverMessageInterface();
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
 				return getIncomingConnectorInstances();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
@@ -575,10 +511,6 @@ public abstract class PortInstanceImpl extends NamedElementImpl implements PortI
 				return portType != null;
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return getComponentInstance() != null;
-			case InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE:
-				return SENDER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE:
-				return RECEIVER_MESSAGE_INTERFACE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES:
 				return incomingConnectorInstances != null && !incomingConnectorInstances.isEmpty();
 			case InstancePackage.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES:
