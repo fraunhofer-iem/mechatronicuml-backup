@@ -34,26 +34,26 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				
-			case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
-				return new CustomPortInstanceEditPart(view);
+//			case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
+//				return new CustomPortInstanceEditPart(view);
 				
 			case HardwarePortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				
-			case HardwarePortInstance2EditPart.VISUAL_ID:
-				return new CustomPortInstanceEditPart(view);
+//			case HardwarePortInstance2EditPart.VISUAL_ID:
+//				return new CustomPortInstanceEditPart(view);
 				
 			case ContinuousPortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				
-			case ContinuousPortInstance2EditPart.VISUAL_ID:
-				return new CustomPortInstanceEditPart(view);
+//			case ContinuousPortInstance2EditPart.VISUAL_ID:
+//				return new CustomPortInstanceEditPart(view);
 				
 			case HybridPortInstanceEditPart.VISUAL_ID:
 				return new CustomPortInstanceEditPart(view);
 				
-			case HybridPortInstance2EditPart.VISUAL_ID:
-				return new CustomPortInstanceEditPart(view);
+//			case HybridPortInstance2EditPart.VISUAL_ID:
+//				return new CustomPortInstanceEditPart(view);
 				
 			case ComponentInstanceEditPart.VISUAL_ID:
 				return new CustomComponentInstanceEditPart(view);
