@@ -31,14 +31,14 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HardwarePortIstance_3008(
-			de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance instance) {
+	public void init_HardwarePortInstance_3013(
+			de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-									.getHardwarePortIstance(), null).evaluate(
+									.getHardwarePortInstance(), null).evaluate(
 							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {

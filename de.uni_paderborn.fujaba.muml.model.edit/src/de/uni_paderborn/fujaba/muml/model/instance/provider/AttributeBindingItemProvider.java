@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
@@ -177,6 +178,11 @@ public class AttributeBindingItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(InstancePackage.Literals.ATTRIBUTE_BINDING__VALUE,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -16,12 +16,15 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
 
+import org.storydriven.modeling.activities.ActivitiesPackage;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -97,6 +100,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass behaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass activityCallExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -379,6 +389,24 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getActivityCallExpression() {
+		return activityCallExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActivityCallExpression_Activity() {
+		return (EReference)activityCallExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CoreFactory getCoreFactory() {
 		return (CoreFactory)getEFactoryInstance();
 	}
@@ -428,6 +456,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
 		createEReference(behaviorEClass, BEHAVIOR__OPERATIONS);
 		createEReference(behaviorEClass, BEHAVIOR__ATTRIBUTES);
+
+		activityCallExpressionEClass = createEClass(ACTIVITY_CALL_EXPRESSION);
+		createEReference(activityCallExpressionEClass, ACTIVITY_CALL_EXPRESSION__ACTIVITY);
 	}
 
 	/**
@@ -456,6 +487,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Obtain other dependent packages
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -465,6 +498,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getNamedElement());
 		abstractRealtimeStatechartEClass.getESuperTypes().add(theSDMPackage.getCommentableElement());
 		abstractRealtimeStatechartEClass.getESuperTypes().add(this.getBehavior());
+		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -528,6 +562,9 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getBehavior_Operations(), ecorePackage.getEOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavior_Attributes(), ecorePackage.getEAttribute(), null, "attributes", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActivityCallExpression_Activity(), theActivitiesPackage.getExceptionVariable(), null, "activity", null, 1, 1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -559,7 +596,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																								
+		   });																										
 	}
 
 	/**
@@ -575,7 +612,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((self.lowerBound.value <= self.upperBound.value) and self.lowerBound.infinity=false and self.upperBound.infinity=false) or (self.lowerBound.infinity=true and self.upperBound.infinity=true)"
-		   });																							
+		   });																									
 	}
 
 } //CorePackageImpl

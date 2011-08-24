@@ -189,7 +189,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2005,3008,3010,3011,3012"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2004,2005,3013,3010,3011,3012"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004"/>
       </viewProvider>
    </extension>
@@ -202,7 +202,7 @@
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2004,2005,3008,3010,3011,3012"/>
+            <method name="getType()" value="2004,2005,3013,3010,3011,3012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4003,4004"/>
@@ -269,12 +269,12 @@
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HardwarePortIstance_3008"
-               name="%metatype.name.HardwarePortIstance_3008"
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HardwarePortInstance_3013"
+               name="%metatype.name.HardwarePortInstance_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="HardwarePortIstance"
-               edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.HardwarePortIstanceEditHelper">
-            <param name="semanticHint" value="3008"/>
+               eclass="HardwarePortInstance"
+               edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.HardwarePortInstanceEditHelper">
+            <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance">
@@ -342,7 +342,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_1000"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstance_2004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HardwarePortIstance_3008"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HardwarePortInstance_3013"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3011"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3012"/>

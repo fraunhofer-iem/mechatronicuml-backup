@@ -417,7 +417,7 @@ public class SetComponentTypeCommand extends AbstractCommand {
 		if (port instanceof DiscretePort) {
 			return InstanceFactory.eINSTANCE.createDiscreteSinglePortInstance();
 		} else if (port instanceof HardwarePort) {
-			return InstanceFactory.eINSTANCE.createHardwarePortIstance();
+			return InstanceFactory.eINSTANCE.createHardwarePortInstance();
 		} else if (port instanceof ContinuousPort) {
 			return InstanceFactory.eINSTANCE.createContinuousPortInstance();
 		} else if (port instanceof HybridPort) {

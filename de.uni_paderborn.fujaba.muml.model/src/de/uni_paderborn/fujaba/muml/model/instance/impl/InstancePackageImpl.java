@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.modeling.SDMPackage;
-
 import org.storydriven.modeling.expressions.ExpressionsPackage;
+
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.FujabaRealtimeStatechartInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -101,7 +101,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hardwarePortIstanceEClass = null;
+	private EClass hardwarePortInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -474,8 +474,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHardwarePortIstance() {
-		return hardwarePortIstanceEClass;
+	public EClass getHardwarePortInstance() {
+		return hardwarePortInstanceEClass;
 	}
 
 	/**
@@ -752,7 +752,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES);
 		createEReference(componentInstanceConfigurationEClass, COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED);
 
-		hardwarePortIstanceEClass = createEClass(HARDWARE_PORT_ISTANCE);
+		hardwarePortInstanceEClass = createEClass(HARDWARE_PORT_INSTANCE);
 
 		continuousPortInstanceEClass = createEClass(CONTINUOUS_PORT_INSTANCE);
 
@@ -836,7 +836,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		assemblyInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		delegationInstanceEClass.getESuperTypes().add(this.getConnectorInstance());
 		componentInstanceConfigurationEClass.getESuperTypes().add(theSDMPackage.getExtendableElement());
-		hardwarePortIstanceEClass.getESuperTypes().add(this.getPortInstance());
+		hardwarePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		continuousPortInstanceEClass.getESuperTypes().add(this.getPortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getContinuousPortInstance());
@@ -878,7 +878,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		addEOperation(componentInstanceConfigurationEClass, this.getPortInstance(), "getParentPortInstances", 0, -1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(hardwarePortIstanceEClass, HardwarePortIstance.class, "HardwarePortIstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(hardwarePortInstanceEClass, HardwarePortInstance.class, "HardwarePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(continuousPortInstanceEClass, ContinuousPortInstance.class, "ContinuousPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -26,6 +26,7 @@ import org.storydriven.modeling.activities.expressions.ExpressionsFactory;
 import org.storydriven.modeling.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -175,6 +176,11 @@ public class ActionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

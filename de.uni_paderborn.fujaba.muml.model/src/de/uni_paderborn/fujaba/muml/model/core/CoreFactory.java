@@ -53,6 +53,15 @@ public interface CoreFactory extends EFactory {
 	Infinity createInfinity();
 
 	/**
+	 * Returns a new object of class '<em>Activity Call Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Activity Call Expression</em>'.
+	 * @generated
+	 */
+	ActivityCallExpression createActivityCallExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

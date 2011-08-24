@@ -106,8 +106,8 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createComponentInstanceConfigurationAdapter();
 			}
 			@Override
-			public Adapter caseHardwarePortIstance(HardwarePortIstance object) {
-				return createHardwarePortIstanceAdapter();
+			public Adapter caseHardwarePortInstance(HardwarePortInstance object) {
+				return createHardwarePortInstanceAdapter();
 			}
 			@Override
 			public Adapter caseContinuousPortInstance(ContinuousPortInstance object) {
@@ -270,16 +270,16 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance <em>Hardware Port Istance</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance <em>Hardware Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance
 	 * @generated
 	 */
-	public Adapter createHardwarePortIstanceAdapter() {
+	public Adapter createHardwarePortInstanceAdapter() {
 		return null;
 	}
 

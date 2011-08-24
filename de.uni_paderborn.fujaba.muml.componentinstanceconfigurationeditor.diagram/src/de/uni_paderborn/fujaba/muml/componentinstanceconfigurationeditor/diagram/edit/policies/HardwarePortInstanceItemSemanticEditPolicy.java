@@ -16,16 +16,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HardwarePortIstanceItemSemanticEditPolicy
+public class HardwarePortInstanceItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public HardwarePortIstanceItemSemanticEditPolicy() {
+	public HardwarePortInstanceItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortIstance_3008);
+				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.MumlElementTypes.HardwarePortInstance_3013);
 	}
 
 	/**

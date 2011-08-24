@@ -651,14 +651,14 @@ public interface InstancePackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl <em>Hardware Port Istance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl <em>Hardware Port Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortIstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortInstance()
 	 * @generated
 	 */
-	int HARDWARE_PORT_ISTANCE = 6;
+	int HARDWARE_PORT_INSTANCE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -667,7 +667,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+	int HARDWARE_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -676,7 +676,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+	int HARDWARE_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -685,7 +685,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__NAME = PORT_INSTANCE__NAME;
+	int HARDWARE_PORT_INSTANCE__NAME = PORT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -694,7 +694,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__COMMENT = PORT_INSTANCE__COMMENT;
+	int HARDWARE_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Behavior Instance</b></em>' containment reference list.
@@ -703,7 +703,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__BEHAVIOR_INSTANCE = PORT_INSTANCE__BEHAVIOR_INSTANCE;
+	int HARDWARE_PORT_INSTANCE__BEHAVIOR_INSTANCE = PORT_INSTANCE__BEHAVIOR_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element Type</b></em>' reference.
@@ -712,7 +712,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
+	int HARDWARE_PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE = PORT_INSTANCE__BEHAVIORAL_ELEMENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
@@ -721,7 +721,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
+	int HARDWARE_PORT_INSTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
@@ -730,7 +730,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
+	int HARDWARE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Interface</b></em>' reference.
@@ -739,7 +739,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
+	int HARDWARE_PORT_INSTANCE__SENDER_MESSAGE_INTERFACE = PORT_INSTANCE__SENDER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Interface</b></em>' reference.
@@ -748,7 +748,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
+	int HARDWARE_PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE = PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
@@ -757,7 +757,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
+	int HARDWARE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
@@ -766,16 +766,16 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
+	int HARDWARE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
 
 	/**
-	 * The number of structural features of the '<em>Hardware Port Istance</em>' class.
+	 * The number of structural features of the '<em>Hardware Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT_ISTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
+	int HARDWARE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.
@@ -1910,14 +1910,14 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstanceConfiguration_ParentPortInstancesDerived();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance <em>Hardware Port Istance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance <em>Hardware Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hardware Port Istance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance
+	 * @return the meta object for class '<em>Hardware Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance
 	 * @generated
 	 */
-	EClass getHardwarePortIstance();
+	EClass getHardwarePortInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
@@ -2401,14 +2401,14 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES_DERIVED = eINSTANCE.getComponentInstanceConfiguration_ParentPortInstancesDerived();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl <em>Hardware Port Istance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl <em>Hardware Port Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortIstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortIstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.HardwarePortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getHardwarePortInstance()
 		 * @generated
 		 */
-		EClass HARDWARE_PORT_ISTANCE = eINSTANCE.getHardwarePortIstance();
+		EClass HARDWARE_PORT_INSTANCE = eINSTANCE.getHardwarePortInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.

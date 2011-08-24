@@ -28,7 +28,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortIstance"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers

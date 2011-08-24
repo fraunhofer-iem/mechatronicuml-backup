@@ -104,6 +104,8 @@ public class CoreValidator extends EObjectValidator {
 				return validateAbstractRealtimeStatechart((AbstractRealtimeStatechart)value, diagnostics, context);
 			case CorePackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
+			case CorePackage.ACTIVITY_CALL_EXPRESSION:
+				return validateActivityCallExpression((ActivityCallExpression)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -209,6 +211,15 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateBehavior(Behavior behavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(behavior, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateActivityCallExpression(ActivityCallExpression activityCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(activityCallExpression, diagnostics, context);
 	}
 
 	/**

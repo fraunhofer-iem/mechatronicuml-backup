@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.instance;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Hardware Port Istance</b></em>'.
+ * A representation of the model object '<em><b>Hardware Port Instance</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -18,9 +18,9 @@ package de.uni_paderborn.fujaba.muml.model.instance;
  * <!-- end-model-doc -->
  *
  *
- * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getHardwarePortIstance()
+ * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getHardwarePortInstance()
  * @model
  * @generated
  */
-public interface HardwarePortIstance extends PortInstance {
-} // HardwarePortIstance
+public interface HardwarePortInstance extends PortInstance {
+} // HardwarePortInstance

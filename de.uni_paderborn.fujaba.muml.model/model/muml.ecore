@@ -590,6 +590,17 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An Expression that represents an activity."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="activity" ordered="false"
+            lowerBound="1" eType="ecore:EClass ../../org.storydriven.modeling/model/sdm.ecore#//activities/ExceptionVariable">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
     </eSubpackages>
     <eSubpackages name="instance" nsURI="http:///de/uni_paderborn/fujaba/muml/model/instance"
         nsPrefix="instance">
@@ -762,7 +773,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortIstance" eSuperTypes="#//model/instance/PortInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="HardwarePortInstance" eSuperTypes="#//model/instance/PortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hardware port at instance level. The port type of an hardware&#xD;&#xA;port instance must be a hardware port."/>
         </eAnnotations>

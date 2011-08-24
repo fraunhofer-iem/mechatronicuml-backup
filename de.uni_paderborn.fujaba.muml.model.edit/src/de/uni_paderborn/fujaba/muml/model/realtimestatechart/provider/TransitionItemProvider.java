@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -766,6 +767,11 @@ public class TransitionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE,
 				 RealtimestatechartFactory.eINSTANCE.createRelativeDeadline()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

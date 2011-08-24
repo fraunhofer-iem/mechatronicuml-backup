@@ -18,6 +18,8 @@ import org.storydriven.modeling.ExtendableElement;
  * This class encapsules represents a configuration.
  * 
  * It contains all component instances and connector instances that belong to a concrete configuration.
+ * 
+ * \todosd{implement ocl derived for parent port isntances derived}
  * <!-- end-model-doc -->
  *
  * <p>

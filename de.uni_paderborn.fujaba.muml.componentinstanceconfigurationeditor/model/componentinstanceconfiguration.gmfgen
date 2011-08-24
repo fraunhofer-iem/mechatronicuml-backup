@@ -34,20 +34,19 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3008"
-        editPartClassName="HardwarePortIstanceEditPart"
-        itemSemanticEditPolicyClassName="HardwarePortIstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="HardwarePortIstanceViewFactory"
-        canonicalEditPolicyClassName="HardwarePortIstanceCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HardwarePortIstanceGraphicalNodeEditPolicy"
-        createCommandClassName="HardwarePortIstanceCreateCommand"
+        visualID="3013"
+        editPartClassName="HardwarePortInstanceEditPart"
+        itemSemanticEditPolicyClassName="HardwarePortInstanceItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="HardwarePortInstanceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HardwarePortInstanceGraphicalNodeEditPolicy"
+        createCommandClassName="HardwarePortInstanceCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="HardwarePortIstanceEditHelper"/>
+          editHelperClassName="HardwarePortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -59,7 +58,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortIstance"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortInstance"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature

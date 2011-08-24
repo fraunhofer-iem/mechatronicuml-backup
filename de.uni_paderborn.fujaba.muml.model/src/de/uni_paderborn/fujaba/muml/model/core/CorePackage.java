@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.modeling.SDMPackage;
+import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -383,6 +384,79 @@ public interface CorePackage extends EPackage {
 	int BEHAVIOR_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ActivityCallExpressionImpl <em>Activity Call Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ActivityCallExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getActivityCallExpression()
+	 * @generated
+	 */
+	int ACTIVITY_CALL_EXPRESSION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__TYPE = ExpressionsPackage.EXPRESSION__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__GENERIC_TYPE = ExpressionsPackage.EXPRESSION__GENERIC_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Activity Call Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,6 +670,27 @@ public interface CorePackage extends EPackage {
 	EReference getBehavior_Attributes();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression <em>Activity Call Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Activity Call Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression
+	 * @generated
+	 */
+	EClass getActivityCallExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Activity</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity()
+	 * @see #getActivityCallExpression()
+	 * @generated
+	 */
+	EReference getActivityCallExpression_Activity();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -790,6 +885,24 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIOR__ATTRIBUTES = eINSTANCE.getBehavior_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ActivityCallExpressionImpl <em>Activity Call Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ActivityCallExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getActivityCallExpression()
+		 * @generated
+		 */
+		EClass ACTIVITY_CALL_EXPRESSION = eINSTANCE.getActivityCallExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_CALL_EXPRESSION__ACTIVITY = eINSTANCE.getActivityCallExpression_Activity();
 
 	}
 

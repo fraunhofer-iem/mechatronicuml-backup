@@ -6,27 +6,27 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance;
+import de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Hardware Port Istance</b></em>'.
+ * An implementation of the model object '<em><b>Hardware Port Instance</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class HardwarePortIstanceImpl extends PortInstanceImpl implements HardwarePortIstance {
+public class HardwarePortInstanceImpl extends PortInstanceImpl implements HardwarePortInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HardwarePortIstanceImpl() {
+	protected HardwarePortInstanceImpl() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class HardwarePortIstanceImpl extends PortInstanceImpl implements Hardwar
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return InstancePackage.Literals.HARDWARE_PORT_ISTANCE;
+		return InstancePackage.Literals.HARDWARE_PORT_INSTANCE;
 	}
 
-} //HardwarePortIstanceImpl
+} //HardwarePortInstanceImpl

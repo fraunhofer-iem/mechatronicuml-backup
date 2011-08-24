@@ -66,6 +66,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.NATURAL_NUMBER: return createNaturalNumber();
 			case CorePackage.CARDINALITY: return createCardinality();
 			case CorePackage.INFINITY: return createInfinity();
+			case CorePackage.ACTIVITY_CALL_EXPRESSION: return createActivityCallExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -99,6 +100,16 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public Infinity createInfinity() {
 		InfinityImpl infinity = new InfinityImpl();
 		return infinity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActivityCallExpression createActivityCallExpression() {
+		ActivityCallExpressionImpl activityCallExpression = new ActivityCallExpressionImpl();
+		return activityCallExpression;
 	}
 
 	/**

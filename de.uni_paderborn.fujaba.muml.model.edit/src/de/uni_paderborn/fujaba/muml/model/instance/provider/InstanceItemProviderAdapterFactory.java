@@ -190,26 +190,26 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HardwarePortIstanceItemProvider hardwarePortIstanceItemProvider;
+	protected HardwarePortInstanceItemProvider hardwarePortInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortIstance}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.HardwarePortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createHardwarePortIstanceAdapter() {
-		if (hardwarePortIstanceItemProvider == null) {
-			hardwarePortIstanceItemProvider = new HardwarePortIstanceItemProvider(this);
+	public Adapter createHardwarePortInstanceAdapter() {
+		if (hardwarePortInstanceItemProvider == null) {
+			hardwarePortInstanceItemProvider = new HardwarePortInstanceItemProvider(this);
 		}
 
-		return hardwarePortIstanceItemProvider;
+		return hardwarePortInstanceItemProvider;
 	}
 
 	/**
@@ -454,7 +454,7 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
 		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
 		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
-		if (hardwarePortIstanceItemProvider != null) hardwarePortIstanceItemProvider.dispose();
+		if (hardwarePortInstanceItemProvider != null) hardwarePortInstanceItemProvider.dispose();
 		if (continuousPortInstanceItemProvider != null) continuousPortInstanceItemProvider.dispose();
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();

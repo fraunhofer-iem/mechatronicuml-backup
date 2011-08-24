@@ -358,22 +358,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_HardwarePortIstance_3008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HardwarePortIstance_3008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_incominglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_DiscreteSinglePortInstance_3010_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HardwarePortInstance_3013_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HardwarePortInstance_3013_outgoinglinks;
 
 	/**
 	 * @generated
