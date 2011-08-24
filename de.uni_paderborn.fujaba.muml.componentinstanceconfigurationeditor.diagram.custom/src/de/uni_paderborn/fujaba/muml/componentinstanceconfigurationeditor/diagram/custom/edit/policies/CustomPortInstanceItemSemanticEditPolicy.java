@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @author bingo
  * 
  */
-public class CustomDiscreteSinglePortInstanceItemSemanticEditPolicy extends
+public class CustomPortInstanceItemSemanticEditPolicy extends
 DiscreteSinglePortInstanceItemSemanticEditPolicy {
 
 	// TODO: Can we forbid deleting the view element.

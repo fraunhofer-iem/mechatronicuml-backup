@@ -35,12 +35,12 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
+public class HardwarePortInstance2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2005;
+	public static final int VISUAL_ID = 2006;
 
 	/**
 	 * @generated
@@ -55,7 +55,7 @@ public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public DiscreteSinglePortInstance2EditPart(View view) {
+	public HardwarePortInstance2EditPart(View view) {
 		super(view);
 	}
 
@@ -66,7 +66,7 @@ public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteSinglePortInstance2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.HardwarePortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

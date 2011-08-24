@@ -130,7 +130,70 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
     <ownedChild>
       <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <value
+              body="'portinstance'"/>
+        </initializers>
+      </domainInitializer>
+      <diagramNode
+          href="componentinstanceconfiguration.gmfgraph#Port"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+    <ownedChild>
+      <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <value
+              body="'portinstance'"/>
+        </initializers>
+      </domainInitializer>
+      <diagramNode
+          href="componentinstanceconfiguration.gmfgraph#Port"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ContinuousPortInstance"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement/name"/>
+          <value
+              body="'portinstance'"/>
+        </initializers>
+      </domainInitializer>
+      <diagramNode
+          href="componentinstanceconfiguration.gmfgraph#Port"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
