@@ -6,15 +6,15 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomComponentPartItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
-
-
 
 /**
  * A customized EditPart for ComponentParts. A customized Figure will be used,
@@ -24,6 +24,14 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
  * 
  */
 public class CustomComponentPartEditPart extends ComponentPartEditPart {
+
+	@Override
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+				new CustomComponentPartItemSemanticEditPolicy());
+	}
 
 	public CustomComponentPartEditPart(View view) {
 		super(view);
@@ -87,7 +95,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	public class CustomComponentMultiFigure extends ComponentMultiFigure {
 		public CustomComponentMultiFigure() {
 			super();
-//			this.getFigureComponentNameFigure().setTextUnderline(true);
+			// this.getFigureComponentNameFigure().setTextUnderline(true);
 			setPartMulti(false);
 		}
 
