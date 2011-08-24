@@ -408,6 +408,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Transition_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Transition_4002_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_StateExitPoint_3009_incominglinks;
 
 	/**

@@ -95,4 +95,14 @@
         visualID="6002"
         queryText="true"/>
   </linkTraces>
+  <linkTraces
+      visualID="4002"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart' and _eClass_.name = 'Transition')">
+    <linkLabelTraces
+        visualID="6003"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6004"
+        queryText="true"/>
+  </linkTraces>
 </trace:TraceModel>

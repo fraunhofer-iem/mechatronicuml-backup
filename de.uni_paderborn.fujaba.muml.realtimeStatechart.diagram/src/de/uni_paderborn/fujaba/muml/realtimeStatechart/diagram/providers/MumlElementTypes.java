@@ -103,6 +103,11 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType Transition_4002 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.Transition_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -270,6 +275,11 @@ public class MumlElementTypes {
 					Transition_4001,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getTransition());
+
+			elements.put(
+					Transition_4002,
+					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+							.getTransition());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -299,6 +309,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StateEntryPoint_3008);
 			KNOWN_ELEMENT_TYPES.add(StateExitPoint_3009);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
+			KNOWN_ELEMENT_TYPES.add(Transition_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -332,6 +343,8 @@ public class MumlElementTypes {
 			return StateExitPoint_3009;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID:
+			return Transition_4002;
 		}
 		return null;
 	}
