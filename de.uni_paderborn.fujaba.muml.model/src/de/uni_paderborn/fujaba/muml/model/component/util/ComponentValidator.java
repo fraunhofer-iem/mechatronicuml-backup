@@ -320,7 +320,46 @@ public class ComponentValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiscretePort(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discretePort, diagnostics, context);
+		if (!validate_NoCircularContainment(discretePort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(discretePort, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AtLeastOneMessageInterface constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION = "not self.senderMessageInterface.oclIsUndefined() or not self.receiverMessageInterface.oclIsUndefined()";
+
+	/**
+	 * Validates the AtLeastOneMessageInterface constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_AtLeastOneMessageInterface(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtLeastOneMessageInterface",
+				 DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -646,6 +685,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageInterface(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHybridPort_LowerBoundMustBeZeroOrOne(hybridPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateHybridPort_UpperBoundMustBeOne(hybridPort, diagnostics, context);
 		return result;

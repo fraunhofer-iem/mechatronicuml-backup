@@ -33,7 +33,8 @@ import org.eclipse.emf.ecore.EClass;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageInterface'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageInterface='not self.senderMessageInterface.oclIsUndefined() or not self.receiverMessageInterface.oclIsUndefined()'"
  * @generated
  */
 public interface DiscretePort extends Port, BehavioralElement {
