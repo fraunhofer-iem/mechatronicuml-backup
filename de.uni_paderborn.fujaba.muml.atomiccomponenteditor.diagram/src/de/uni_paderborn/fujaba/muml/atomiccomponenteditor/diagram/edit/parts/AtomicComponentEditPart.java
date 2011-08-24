@@ -351,21 +351,15 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigureComponentNameFigure;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureChildren;
 
 		/**
 		 * @generated
 		 */
 		public ComponentFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
+			this.setLayoutManager(new StackLayout());
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+					getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -374,43 +368,17 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure container0 = new RectangleFigure();
-			container0.setFill(false);
-			container0.setOutline(false);
-			container0.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5)));
+			RectangleFigure componentIconRectangle0 = new RectangleFigure();
+			componentIconRectangle0.setFill(false);
+			componentIconRectangle0.setOutline(false);
 
-			GridData constraintContainer0 = new GridData();
-			constraintContainer0.verticalAlignment = GridData.BEGINNING;
-			constraintContainer0.horizontalAlignment = GridData.FILL;
-			constraintContainer0.horizontalIndent = 0;
-			constraintContainer0.horizontalSpan = 1;
-			constraintContainer0.verticalSpan = 1;
-			constraintContainer0.grabExcessHorizontalSpace = true;
-			constraintContainer0.grabExcessVerticalSpace = false;
-			this.add(container0, constraintContainer0);
+			this.add(componentIconRectangle0);
 
-			GridLayout layoutContainer0 = new GridLayout();
-			layoutContainer0.numColumns = 2;
-			layoutContainer0.makeColumnsEqualWidth = false;
-			container0.setLayoutManager(layoutContainer0);
-
-			fFigureComponentNameFigure = new WrappingLabel();
-			fFigureComponentNameFigure.setText("");
-
-			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
-
-			GridData constraintFFigureComponentNameFigure = new GridData();
-			constraintFFigureComponentNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureComponentNameFigure.horizontalIndent = 0;
-			constraintFFigureComponentNameFigure.horizontalSpan = 1;
-			constraintFFigureComponentNameFigure.verticalSpan = 1;
-			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = false;
-			container0.add(fFigureComponentNameFigure,
-					constraintFFigureComponentNameFigure);
+			GridLayout layoutComponentIconRectangle0 = new GridLayout();
+			layoutComponentIconRectangle0.numColumns = 1;
+			layoutComponentIconRectangle0.makeColumnsEqualWidth = false;
+			componentIconRectangle0
+					.setLayoutManager(layoutComponentIconRectangle0);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
@@ -426,10 +394,10 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure1.horizontalIndent = 0;
 			constraintComponentIconFigure1.horizontalSpan = 1;
 			constraintComponentIconFigure1.verticalSpan = 1;
-			constraintComponentIconFigure1.grabExcessHorizontalSpace = false;
+			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-			container0
-					.add(componentIconFigure1, constraintComponentIconFigure1);
+			componentIconRectangle0.add(componentIconFigure1,
+					constraintComponentIconFigure1);
 
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
@@ -472,19 +440,33 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
-			fFigureChildren = new RectangleFigure();
-			fFigureChildren.setFill(false);
-			fFigureChildren.setOutline(false);
+			RectangleFigure componentNameRectangle0 = new RectangleFigure();
+			componentNameRectangle0.setFill(false);
+			componentNameRectangle0.setOutline(false);
 
-			GridData constraintFFigureChildren = new GridData();
-			constraintFFigureChildren.verticalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalAlignment = GridData.FILL;
-			constraintFFigureChildren.horizontalIndent = 0;
-			constraintFFigureChildren.horizontalSpan = 1;
-			constraintFFigureChildren.verticalSpan = 1;
-			constraintFFigureChildren.grabExcessHorizontalSpace = true;
-			constraintFFigureChildren.grabExcessVerticalSpace = true;
-			this.add(fFigureChildren, constraintFFigureChildren);
+			this.add(componentNameRectangle0);
+
+			GridLayout layoutComponentNameRectangle0 = new GridLayout();
+			layoutComponentNameRectangle0.numColumns = 1;
+			layoutComponentNameRectangle0.makeColumnsEqualWidth = false;
+			componentNameRectangle0
+					.setLayoutManager(layoutComponentNameRectangle0);
+
+			fFigureComponentNameFigure = new WrappingLabel();
+			fFigureComponentNameFigure.setText("");
+
+			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
+
+			GridData constraintFFigureComponentNameFigure = new GridData();
+			constraintFFigureComponentNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentNameFigure.horizontalIndent = 0;
+			constraintFFigureComponentNameFigure.horizontalSpan = 1;
+			constraintFFigureComponentNameFigure.verticalSpan = 1;
+			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
+			componentNameRectangle0.add(fFigureComponentNameFigure,
+					constraintFFigureComponentNameFigure);
 
 		}
 
@@ -493,13 +475,6 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureChildren() {
-			return fFigureChildren;
 		}
 
 	}

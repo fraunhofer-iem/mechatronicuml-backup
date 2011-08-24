@@ -444,7 +444,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure3.horizontalIndent = 0;
 			constraintComponentIconFigure3.horizontalSpan = 1;
 			constraintComponentIconFigure3.verticalSpan = 1;
-			constraintComponentIconFigure3.grabExcessHorizontalSpace = false;
+			constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure3.grabExcessVerticalSpace = false;
 			container2
 					.add(componentIconFigure3, constraintComponentIconFigure3);

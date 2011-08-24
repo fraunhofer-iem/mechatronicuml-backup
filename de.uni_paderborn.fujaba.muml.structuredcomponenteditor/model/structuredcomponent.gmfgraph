@@ -6,7 +6,7 @@
   <nodes
       name="Component">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

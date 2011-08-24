@@ -122,14 +122,14 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentFigure();
+		return primaryShape = new StructuredComponentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentFigure getPrimaryShape() {
-		return (ComponentFigure) primaryShape;
+	public StructuredComponentFigure getPrimaryShape() {
+		return (StructuredComponentFigure) primaryShape;
 	}
 
 	/**
@@ -362,7 +362,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentFigure extends RectangleFigure {
+	public class StructuredComponentFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -376,7 +376,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		public ComponentFigure() {
+		public StructuredComponentFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -420,7 +420,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 
 			GridData constraintFFigureComponentNameFigure = new GridData();
 			constraintFFigureComponentNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.BEGINNING;
 			constraintFFigureComponentNameFigure.horizontalIndent = 0;
 			constraintFFigureComponentNameFigure.horizontalSpan = 1;
 			constraintFFigureComponentNameFigure.verticalSpan = 1;
@@ -443,7 +443,7 @@ public class StructuredComponentEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure1.horizontalIndent = 0;
 			constraintComponentIconFigure1.horizontalSpan = 1;
 			constraintComponentIconFigure1.verticalSpan = 1;
-			constraintComponentIconFigure1.grabExcessHorizontalSpace = false;
+			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
 			container0
 					.add(componentIconFigure1, constraintComponentIconFigure1);

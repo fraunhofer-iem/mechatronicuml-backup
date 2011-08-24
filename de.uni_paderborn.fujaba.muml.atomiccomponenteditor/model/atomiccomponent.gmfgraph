@@ -15,17 +15,6 @@
     </facets>
   </nodes>
   <nodes
-      name="ComponentPart">
-    <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentMultiFigure"/>
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="130"
-          dy="47"/>
-    </facets>
-  </nodes>
-  <nodes
       name="Port"
       affixedParentSide="NORTH">
     <figure
@@ -47,11 +36,6 @@
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
-  <compartments
-      name="ComponentCompartment">
-    <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ComponentFigure"/>
-  </compartments>
   <labels
       name="ComponentName"
       elementIcon="false">

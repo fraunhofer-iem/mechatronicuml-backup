@@ -79,7 +79,7 @@
               </children>
               <children
                   xsi:type="gmfgraph:FigureRef"
-                  figure="//@figures.0/@descriptors.4/@actualFigure"/>
+                  figure="//@figures.0/@descriptors.5/@actualFigure"/>
             </children>
           </children>
         </children>
@@ -90,7 +90,7 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="ComponentFigure">
+        name="StructuredComponentFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="ComponentFigure">
@@ -125,13 +125,14 @@
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
                 grabExcessHorizontalSpace="true"
-                verticalAlignment="BEGINNING"/>
+                verticalAlignment="BEGINNING"
+                horizontalAlignment="BEGINNING"/>
             <font
                 xsi:type="gmfgraph:BasicFont"/>
           </children>
           <children
               xsi:type="gmfgraph:FigureRef"
-              figure="//@figures.0/@descriptors.4/@actualFigure"/>
+              figure="//@figures.0/@descriptors.5/@actualFigure"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -150,6 +151,58 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="ComponentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ComponentFigure">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ComponentIconRectangle"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              equalWidth="false"/>
+          <children
+              xsi:type="gmfgraph:FigureRef"
+              figure="//@figures.0/@descriptors.5/@actualFigure"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ComponentNameRectangle"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              equalWidth="false"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ComponentNameFigure"
+              text="">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"
+                horizontalAlignment="FILL"/>
+            <font
+                xsi:type="gmfgraph:BasicFont"/>
+          </children>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="ConnectorFigure">
@@ -308,25 +361,25 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.1/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.2/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.3/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.4"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.4"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.1"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.2"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.3"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.3"/>
     </descriptors>
     <descriptors
         name="ComponentIconFigure">
@@ -337,6 +390,7 @@
           fill="false">
         <layoutData
             xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
             verticalAlignment="BEGINNING"
             horizontalAlignment="END"/>
         <layout

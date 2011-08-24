@@ -338,11 +338,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		createCompartment(
-				node,
-				de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceComponentCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
 		return node;
 	}
 
@@ -812,38 +807,6 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	 */
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
-		rv.setType(hint);
-		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
-		return rv;
-	}
-
-	/**
-	 * @generated
-	 */
-	private Node createCompartment(View owner, String hint,
-			boolean canCollapse, boolean hasTitle, boolean canSort,
-			boolean canFilter) {
-		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
-		//rv.setShowTitle(showTitle);
-		//rv.setCollapsed(isCollapsed);
-		Node rv;
-		if (canCollapse) {
-			rv = NotationFactory.eINSTANCE.createBasicCompartment();
-		} else {
-			rv = NotationFactory.eINSTANCE.createDecorationNode();
-		}
-		if (hasTitle) {
-			TitleStyle ts = NotationFactory.eINSTANCE.createTitleStyle();
-			ts.setShowTitle(true);
-			rv.getStyles().add(ts);
-		}
-		if (canSort) {
-			rv.getStyles().add(NotationFactory.eINSTANCE.createSortingStyle());
-		}
-		if (canFilter) {
-			rv.getStyles()
-					.add(NotationFactory.eINSTANCE.createFilteringStyle());
-		}
 		rv.setType(hint);
 		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
 		return rv;

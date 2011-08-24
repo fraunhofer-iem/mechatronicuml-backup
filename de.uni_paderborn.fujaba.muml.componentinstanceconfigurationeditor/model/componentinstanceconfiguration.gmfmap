@@ -119,10 +119,6 @@
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>
       </children>
-      <compartments>
-        <compartment
-            href="componentinstanceconfiguration.gmfgraph#ComponentCompartment"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
