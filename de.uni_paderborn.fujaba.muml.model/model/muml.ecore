@@ -214,6 +214,12 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts.&#xD;&#xA;&#xD;&#xA;Component types are implemented as a variation of the composite design pattern. &#xD;&#xA;Concerning the composite pattern this class represents the role &quot;composite&quot;. &#xD;&#xA;However structured components do not contain component types directly like &#xD;&#xA;in the original composite pattern. Instead they contain component parts which &#xD;&#xA;are typed by component types. The reason for this is to get a clear distinction&#xD;&#xA; between the component type level and the component instance level."/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="UniqueComponentPartsWithinStructuredComponent" value="self.embeddedParts->isUnique(p | p.componentType)"/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
             upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
             eOpposite="#//model/component/ComponentPart/parentComponent">

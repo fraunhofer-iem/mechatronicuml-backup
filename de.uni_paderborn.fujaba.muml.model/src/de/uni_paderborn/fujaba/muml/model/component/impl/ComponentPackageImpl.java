@@ -947,7 +947,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });																												
+		   });													
+		addAnnotation
+		  (structuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueComponentPartsWithinStructuredComponent"
+		   });																		
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 
@@ -997,7 +1003,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
-		   });																				
+		   });					
+		addAnnotation
+		  (structuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueComponentPartsWithinStructuredComponent", "self.embeddedParts->isUnique(p | p.componentType)"
+		   });																		
 		addAnnotation
 		  (hybridPortEClass, 
 		   source, 

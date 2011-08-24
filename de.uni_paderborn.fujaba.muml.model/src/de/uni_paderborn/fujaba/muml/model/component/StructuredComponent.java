@@ -33,7 +33,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentPartsWithinStructuredComponent'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentPartsWithinStructuredComponent='self.embeddedParts->isUnique(p | p.componentType)'"
  * @generated
  */
 public interface StructuredComponent extends Component {
