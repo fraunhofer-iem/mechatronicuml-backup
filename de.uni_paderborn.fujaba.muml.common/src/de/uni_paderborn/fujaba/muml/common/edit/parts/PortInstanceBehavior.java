@@ -8,6 +8,10 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.component.HardwarePort;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl;
@@ -25,12 +29,13 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 		super(editPart);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public void activate() {
 		EObject element = editPart.getNotationView().getElement();
 		if (element instanceof PortInstance) {
-			portInstance = (PortInstance) editPart.getNotationView().getElement();
+			portInstance = (PortInstance) editPart.getNotationView()
+					.getElement();
 		}
 		super.activate();
 	}
@@ -50,8 +55,10 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 		Object feature = notification.getFeature();
 		if (feature instanceof EReference) {
 			EReference reference = (EReference) feature;
-			if (reference.getContainerClass().isAssignableFrom(PortInstance.class)) {
-				int featureID = notification.getFeatureID(PortInstanceImpl.class);
+			if (reference.getContainerClass().isAssignableFrom(
+					PortInstance.class)) {
+				int featureID = notification
+						.getFeatureID(PortInstanceImpl.class);
 				if (featureID == InstancePackage.PORT_INSTANCE__RECEIVER_MESSAGE_INTERFACE
 						|| featureID == InstancePackage.PORT_INSTANCE__SENDER_MESSAGE_INTERFACE) {
 					updatePortType();
@@ -62,6 +69,17 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 
 	@Override
 	public PortKind getPortKind() {
+		if (portInstance.getPortType() instanceof DiscretePort &&
+				!(portInstance.getPortType() instanceof ContinuousPort)) {
+			return CustomPortFigure.PortKind.DISCRETE;
+		} else if (portInstance.getPortType() instanceof HardwarePort) {
+			return CustomPortFigure.PortKind.HARDWARE;
+		} else if (portInstance.getPortType() instanceof ContinuousPort &&
+				!(portInstance.getPortType() instanceof DiscretePort)) {
+			return CustomPortFigure.PortKind.CONTINUOUS;
+		} else if (portInstance.getPortType() instanceof HybridPort) {
+			return CustomPortFigure.PortKind.HYBRID;
+		}
 		return null;
 	}
 
@@ -70,7 +88,8 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 		MessageInterface receiverMessageInterface = null;
 		MessageInterface senderMessageInterface = null;
 		if (portInstance != null) {
-			receiverMessageInterface = portInstance.getReceiverMessageInterface();
+			receiverMessageInterface = portInstance
+					.getReceiverMessageInterface();
 			senderMessageInterface = portInstance.getSenderMessageInterface();
 		}
 		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
