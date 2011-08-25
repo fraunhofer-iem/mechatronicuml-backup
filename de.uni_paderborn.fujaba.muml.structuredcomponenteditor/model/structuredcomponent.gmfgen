@@ -7,7 +7,7 @@
     diagramFileExtension="structuredcomponent_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
-    templateDirectory="/de.uni_paderborn.fujaba.muml.common/gmf-templates"
+    templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
     pluginDirectory="/de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram/src">
   <diagram
       visualID="1000"
