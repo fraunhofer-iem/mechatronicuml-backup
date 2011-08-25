@@ -22,7 +22,7 @@ public class HardwarePortBehavior extends AbstractPortBehavior {
 
 	@Override
 	public CustomPortFigure.PortType getPortType() {
-		CustomPortFigure.PortType type = CustomPortFigure.PortType.INOUT_PORT;
+		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
 		return type;
 	}
 
