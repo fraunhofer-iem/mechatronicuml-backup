@@ -42,7 +42,7 @@ public interface BehavioralElement extends EObject {
 	 * @see #setBehavior(Behavior)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavioralElement_Behavior()
 	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement
-	 * @model opposite="behavioralElement" required="true"
+	 * @model opposite="behavioralElement"
 	 * @generated
 	 */
 	Behavior getBehavior();

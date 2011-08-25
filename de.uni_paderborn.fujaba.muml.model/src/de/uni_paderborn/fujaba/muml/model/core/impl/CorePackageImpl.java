@@ -544,7 +544,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 1, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstrainableElement_Constraint(), theConstraintPackage.getConstraint(), theConstraintPackage.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
