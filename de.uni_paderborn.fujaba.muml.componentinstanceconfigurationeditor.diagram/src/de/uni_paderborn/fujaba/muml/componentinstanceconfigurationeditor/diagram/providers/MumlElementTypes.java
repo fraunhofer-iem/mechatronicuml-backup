@@ -221,9 +221,9 @@ public class MumlElementTypes {
 							.getComponentInstance());
 
 			elements.put(
-					HardwarePortInstance_2006,
+					HybridPortInstance_2008,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-							.getHardwarePortInstance());
+							.getHybridPortInstance());
 
 			elements.put(
 					DiscreteSinglePortInstance_2005,
@@ -236,14 +236,14 @@ public class MumlElementTypes {
 							.getContinuousPortInstance());
 
 			elements.put(
-					HybridPortInstance_2008,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-							.getHybridPortInstance());
-
-			elements.put(
-					HardwarePortInstance_3013,
+					HardwarePortInstance_2006,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getHardwarePortInstance());
+
+			elements.put(
+					HybridPortInstance_3012,
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+							.getHybridPortInstance());
 
 			elements.put(
 					DiscreteSinglePortInstance_3010,
@@ -256,9 +256,9 @@ public class MumlElementTypes {
 							.getContinuousPortInstance());
 
 			elements.put(
-					HybridPortInstance_3012,
+					HardwarePortInstance_3013,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-							.getHybridPortInstance());
+							.getHardwarePortInstance());
 
 			elements.put(
 					AssemblyInstance_4003,
@@ -288,14 +288,14 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_1000);
 			KNOWN_ELEMENT_TYPES.add(ComponentInstance_2004);
-			KNOWN_ELEMENT_TYPES.add(HardwarePortInstance_2006);
+			KNOWN_ELEMENT_TYPES.add(HybridPortInstance_2008);
 			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_2005);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPortInstance_2007);
-			KNOWN_ELEMENT_TYPES.add(HybridPortInstance_2008);
-			KNOWN_ELEMENT_TYPES.add(HardwarePortInstance_3013);
+			KNOWN_ELEMENT_TYPES.add(HardwarePortInstance_2006);
+			KNOWN_ELEMENT_TYPES.add(HybridPortInstance_3012);
 			KNOWN_ELEMENT_TYPES.add(DiscreteSinglePortInstance_3010);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPortInstance_3011);
-			KNOWN_ELEMENT_TYPES.add(HybridPortInstance_3012);
+			KNOWN_ELEMENT_TYPES.add(HardwarePortInstance_3013);
 			KNOWN_ELEMENT_TYPES.add(AssemblyInstance_4003);
 			KNOWN_ELEMENT_TYPES.add(DelegationInstance_4004);
 		}
@@ -311,22 +311,22 @@ public class MumlElementTypes {
 			return ComponentInstanceConfiguration_1000;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceEditPart.VISUAL_ID:
 			return ComponentInstance_2004;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart.VISUAL_ID:
-			return HardwarePortInstance_2006;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
+			return HybridPortInstance_2008;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_2005;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 			return ContinuousPortInstance_2007;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID:
-			return HybridPortInstance_2008;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID:
-			return HardwarePortInstance_3013;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstance2EditPart.VISUAL_ID:
+			return HardwarePortInstance_2006;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
+			return HybridPortInstance_3012;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID:
 			return DiscreteSinglePortInstance_3010;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID:
 			return ContinuousPortInstance_3011;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID:
-			return HybridPortInstance_3012;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HardwarePortInstanceEditPart.VISUAL_ID:
+			return HardwarePortInstance_3013;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
 			return AssemblyInstance_4003;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:

@@ -28,7 +28,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -42,7 +42,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>
@@ -100,7 +100,7 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstance/portInstances"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -114,7 +114,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="componentinstanceconfiguration.gmfgraph#Port"/>
         </ownedChild>
@@ -126,7 +126,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -189,7 +189,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HybridPortInstance"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/HardwarePortInstance"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers

@@ -34,20 +34,20 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3013"
-        editPartClassName="HardwarePortInstanceEditPart"
-        itemSemanticEditPolicyClassName="HardwarePortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="HardwarePortInstanceViewFactory"
-        canonicalEditPolicyClassName="HardwarePortInstanceCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HardwarePortInstanceGraphicalNodeEditPolicy"
-        createCommandClassName="HardwarePortInstanceCreateCommand"
+        visualID="3012"
+        editPartClassName="HybridPortInstanceEditPart"
+        itemSemanticEditPolicyClassName="HybridPortInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortInstanceViewFactory"
+        canonicalEditPolicyClassName="HybridPortInstanceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HybridPortInstanceGraphicalNodeEditPolicy"
+        createCommandClassName="HybridPortInstanceCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="HardwarePortInstanceEditHelper"/>
+          editHelperClassName="HybridPortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -59,7 +59,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortInstance"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
@@ -163,20 +163,20 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3012"
-        editPartClassName="HybridPortInstanceEditPart"
-        itemSemanticEditPolicyClassName="HybridPortInstanceItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortInstanceViewFactory"
-        canonicalEditPolicyClassName="HybridPortInstanceCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HybridPortInstanceGraphicalNodeEditPolicy"
-        createCommandClassName="HybridPortInstanceCreateCommand"
+        visualID="3013"
+        editPartClassName="HardwarePortInstanceEditPart"
+        itemSemanticEditPolicyClassName="HardwarePortInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="HardwarePortInstanceViewFactory"
+        canonicalEditPolicyClassName="HardwarePortInstanceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HardwarePortInstanceGraphicalNodeEditPolicy"
+        createCommandClassName="HardwarePortInstanceCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="HybridPortInstanceEditHelper"/>
+          editHelperClassName="HardwarePortInstanceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PortFigure"
@@ -188,7 +188,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortInstance"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstance/portInstances"/>
         <childMetaFeature
@@ -256,13 +256,13 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2006"
-        editPartClassName="HardwarePortInstance2EditPart"
-        itemSemanticEditPolicyClassName="HardwarePortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="HardwarePortInstanceViewFactory"
-        canonicalEditPolicyClassName="HardwarePortInstance2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HardwarePortInstance2GraphicalNodeEditPolicy"
-        createCommandClassName="HardwarePortInstance2CreateCommand">
+        visualID="2008"
+        editPartClassName="HybridPortInstance2EditPart"
+        itemSemanticEditPolicyClassName="HybridPortInstance2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortInstanceViewFactory"
+        canonicalEditPolicyClassName="HybridPortInstance2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HybridPortInstance2GraphicalNodeEditPolicy"
+        createCommandClassName="HybridPortInstance2CreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -279,7 +279,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortInstance"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
         <childMetaFeature
@@ -376,13 +376,13 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2008"
-        editPartClassName="HybridPortInstance2EditPart"
-        itemSemanticEditPolicyClassName="HybridPortInstance2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="HybridPortInstanceViewFactory"
-        canonicalEditPolicyClassName="HybridPortInstance2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="HybridPortInstance2GraphicalNodeEditPolicy"
-        createCommandClassName="HybridPortInstance2CreateCommand">
+        visualID="2006"
+        editPartClassName="HardwarePortInstance2EditPart"
+        itemSemanticEditPolicyClassName="HardwarePortInstance2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="HardwarePortInstanceViewFactory"
+        canonicalEditPolicyClassName="HardwarePortInstance2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HardwarePortInstance2GraphicalNodeEditPolicy"
+        createCommandClassName="HardwarePortInstance2CreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -399,7 +399,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HardwarePortInstance"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ComponentInstanceConfiguration/parentPortInstancesDerived"/>
         <childMetaFeature
@@ -505,7 +505,7 @@
             title="HardwarePortInstance"
             description="Create new PortInstance"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HardwarePort.gif"
-            genNodes="//@diagram/@childNodes.0"/>
+            genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ContinuousPortInstance"
@@ -517,7 +517,7 @@
             title="HybirdPortInstance"
             description="Create new PortInstance"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
-            genNodes="//@diagram/@childNodes.3"/>
+            genNodes="//@diagram/@childNodes.0"/>
       </groups>
     </palette>
     <preferencePages
