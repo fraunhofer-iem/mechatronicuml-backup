@@ -42,18 +42,6 @@
             <details key="documentation" value="This association contains all component parts which have this component as their type."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementReceiverInterfaces"
-            upperBound="-1" eType="#//model/msgiface/MessageInterface">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as received message interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="mustImplementSenderInterfaces"
-            upperBound="-1" eType="#//model/msgiface/MessageInterface">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This reference points to all message interfaces that this component must implement&#xD;&#xA;as sender message interfaces via one of its ports. This reference has been used by the&#xD;&#xA;PG Mauritius to enable creation of sequence diagrams without having modeled&#xD;&#xA;the complete component structure including all interfaces (see FDays 08 paper)."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentType" eType="#//model/component/ComponentKind">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute specifies the kind of the component. A component may be either&#xD;&#xA;discrete software component, a continuous component, a hybrid component &#xD;&#xA;or a hardware component."/>

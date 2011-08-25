@@ -187,7 +187,7 @@ public interface InstancePackage extends EPackage {
 	int CONNECTOR_INSTANCE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -387,7 +387,7 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -496,7 +496,7 @@ public interface InstancePackage extends EPackage {
 	int DELEGATION_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

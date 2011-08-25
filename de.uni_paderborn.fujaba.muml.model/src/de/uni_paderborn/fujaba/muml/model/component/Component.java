@@ -30,8 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Component#getComponentType <em>Component Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,39 +76,33 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	EList<ComponentPart> getReferencingComponentParts();
 
 	/**
-	 * Returns the value of the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.
+	 * Returns the value of the '<em><b>Component Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This reference points to all message interfaces that this component must implement
-	 * as received message interfaces via one of its ports. This reference has been used by the
-	 * PG Mauritius to enable creation of sequence diagrams without having modeled
-	 * the complete component structure including all interfaces (see FDays 08 paper).
+	 * This attribute specifies the kind of the component. A component may be either
+	 * discrete software component, a continuous component, a hybrid component 
+	 * or a hardware component.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Must Implement Receiver Interfaces</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementReceiverInterfaces()
+	 * @return the value of the '<em>Component Type</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentKind
+	 * @see #setComponentType(ComponentKind)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_ComponentType()
 	 * @model
 	 * @generated
 	 */
-	EList<MessageInterface> getMustImplementReceiverInterfaces();
+	ComponentKind getComponentType();
 
 	/**
-	 * Returns the value of the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface}.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getComponentType <em>Component Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This reference points to all message interfaces that this component must implement
-	 * as sender message interfaces via one of its ports. This reference has been used by the
-	 * PG Mauritius to enable creation of sequence diagrams without having modeled
-	 * the complete component structure including all interfaces (see FDays 08 paper).
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Must Implement Sender Interfaces</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponent_MustImplementSenderInterfaces()
-	 * @model
+	 * @param value the new value of the '<em>Component Type</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentKind
+	 * @see #getComponentType()
 	 * @generated
 	 */
-	EList<MessageInterface> getMustImplementSenderInterfaces();
+	void setComponentType(ComponentKind value);
 
 } // Component

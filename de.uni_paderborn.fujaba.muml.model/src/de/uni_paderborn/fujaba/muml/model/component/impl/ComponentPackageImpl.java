@@ -298,17 +298,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_MustImplementReceiverInterfaces() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComponent_MustImplementSenderInterfaces() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(3);
+	public EAttribute getComponent_ComponentType() {
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -711,8 +702,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		componentEClass = createEClass(COMPONENT);
 		createEReference(componentEClass, COMPONENT__PORTS);
 		createEReference(componentEClass, COMPONENT__REFERENCING_COMPONENT_PARTS);
-		createEReference(componentEClass, COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES);
-		createEReference(componentEClass, COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES);
+		createEAttribute(componentEClass, COMPONENT__COMPONENT_TYPE);
 
 		continuousComponentEClass = createEClass(CONTINUOUS_COMPONENT);
 		createEAttribute(continuousComponentEClass, CONTINUOUS_COMPONENT__XML_FILE_NAME);
@@ -797,8 +787,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Obtain other dependent packages
 		SDMPackage theSDMPackage = (SDMPackage)EPackage.Registry.INSTANCE.getEPackage(SDMPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
+		MsgifacePackage theMsgifacePackage = (MsgifacePackage)EPackage.Registry.INSTANCE.getEPackage(MsgifacePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -832,8 +822,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_ReferencingComponentParts(), this.getComponentPart(), this.getComponentPart_ComponentType(), "referencingComponentParts", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_MustImplementReceiverInterfaces(), theMsgifacePackage.getMessageInterface(), null, "mustImplementReceiverInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_MustImplementSenderInterfaces(), theMsgifacePackage.getMessageInterface(), null, "mustImplementSenderInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_ComponentType(), this.getComponentKind(), "componentType", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(continuousComponentEClass, ContinuousComponent.class, "ContinuousComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContinuousComponent_XMLFileName(), ecorePackage.getEString(), "xMLFileName", null, 0, 1, ContinuousComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -929,7 +918,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniquePortNames"
-		   });															
+		   });														
 		addAnnotation
 		  (continuousPortEClass, 
 		   source, 
@@ -981,7 +970,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniquePortNames", "self.ports->isUnique(name)"
-		   });															
+		   });														
 		addAnnotation
 		  (continuousPortEClass, 
 		   source, 
@@ -993,7 +982,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneMessageInterface", "not self.senderMessageInterface.oclIsUndefined() or not self.receiverMessageInterface.oclIsUndefined()"
+			 "AtLeastOneMessageInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
 		   });						
 		addAnnotation
 		  (hardwarePortEClass, 

@@ -46,14 +46,14 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  */
 public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Behavior> behavior;
+	protected Behavior behavior;
 
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
@@ -129,11 +129,59 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Behavior> getBehavior() {
-		if (behavior == null) {
-			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, ComponentPackage.DISCRETE_PORT__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DISCRETE_PORT__BEHAVIOR, oldBehavior, behavior));
+			}
 		}
 		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(Behavior newBehavior) {
+		if (newBehavior != behavior) {
+			NotificationChain msgs = null;
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -358,7 +406,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
+				if (behavior != null)
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				if (refines != null)
 					msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
@@ -376,7 +426,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
+				return basicSetBehavior(null, msgs);
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				return basicSetRefines(null, msgs);
 		}
@@ -392,7 +442,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				return getBehavior();
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				if (resolve) return getRefines();
 				return basicGetRefines();
@@ -422,8 +473,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				getBehavior().clear();
-				getBehavior().addAll((Collection<? extends Behavior>)newValue);
+				setBehavior((Behavior)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)newValue);
@@ -453,7 +503,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				getBehavior().clear();
+				setBehavior((Behavior)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)null);
@@ -483,7 +533,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
-				return behavior != null && !behavior.isEmpty();
+				return behavior != null;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				return refines != null;
 			case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_INTERFACE:

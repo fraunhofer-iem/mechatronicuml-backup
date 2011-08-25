@@ -73,8 +73,7 @@ public class ComponentItemProvider
 			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
-			addMustImplementReceiverInterfacesPropertyDescriptor(object);
-			addMustImplementSenderInterfacesPropertyDescriptor(object);
+			addComponentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,45 +167,23 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Must Implement Receiver Interfaces feature.
+	 * This adds a property descriptor for the Component Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMustImplementReceiverInterfacesPropertyDescriptor(Object object) {
+	protected void addComponentTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementReceiverInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementReceiverInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES,
+				 getString("_UI_Component_componentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentType_feature", "_UI_Component_type"),
+				 ComponentPackage.Literals.COMPONENT__COMPONENT_TYPE,
 				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Must Implement Sender Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMustImplementSenderInterfacesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_mustImplementSenderInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mustImplementSenderInterfaces_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES,
-				 true,
 				 false,
-				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -268,6 +245,7 @@ public class ComponentItemProvider
 
 		switch (notification.getFeatureID(Component.class)) {
 			case ComponentPackage.COMPONENT__COMMENT:
+			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT__PORTS:

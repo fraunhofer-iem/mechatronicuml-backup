@@ -31,20 +31,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BehavioralElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Behavior</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Behavior}.
+	 * Returns the value of the '<em><b>Behavior</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The real-time statechart that defines the behavior of this behavioral element.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Behavior</em>' reference list.
+	 * @return the value of the '<em>Behavior</em>' reference.
+	 * @see #setBehavior(Behavior)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavioralElement_Behavior()
 	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement
-	 * @model opposite="behavioralElement"
+	 * @model opposite="behavioralElement" required="true"
 	 * @generated
 	 */
-	EList<Behavior> getBehavior();
+	Behavior getBehavior();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior <em>Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Behavior</em>' reference.
+	 * @see #getBehavior()
+	 * @generated
+	 */
+	void setBehavior(Behavior value);
 
 } // BehavioralElement

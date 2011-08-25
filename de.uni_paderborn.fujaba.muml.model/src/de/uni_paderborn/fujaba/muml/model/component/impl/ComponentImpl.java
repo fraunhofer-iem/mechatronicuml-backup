@@ -23,6 +23,7 @@ import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
@@ -43,8 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.msgiface.MessageInterface;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentImpl#getComponentType <em>Component Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,24 +102,24 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected EList<ComponentPart> referencingComponentParts;
 
 	/**
-	 * The cached value of the '{@link #getMustImplementReceiverInterfaces() <em>Must Implement Receiver Interfaces</em>}' reference list.
+	 * The default value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMustImplementReceiverInterfaces()
+	 * @see #getComponentType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MessageInterface> mustImplementReceiverInterfaces;
+	protected static final ComponentKind COMPONENT_TYPE_EDEFAULT = ComponentKind.SOFTWARE_COMPONENT;
 
 	/**
-	 * The cached value of the '{@link #getMustImplementSenderInterfaces() <em>Must Implement Sender Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMustImplementSenderInterfaces()
+	 * @see #getComponentType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MessageInterface> mustImplementSenderInterfaces;
+	protected ComponentKind componentType = COMPONENT_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,11 +202,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageInterface> getMustImplementReceiverInterfaces() {
-		if (mustImplementReceiverInterfaces == null) {
-			mustImplementReceiverInterfaces = new EObjectResolvingEList<MessageInterface>(MessageInterface.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES);
-		}
-		return mustImplementReceiverInterfaces;
+	public ComponentKind getComponentType() {
+		return componentType;
 	}
 
 	/**
@@ -214,11 +211,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageInterface> getMustImplementSenderInterfaces() {
-		if (mustImplementSenderInterfaces == null) {
-			mustImplementSenderInterfaces = new EObjectResolvingEList<MessageInterface>(MessageInterface.class, this, ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES);
-		}
-		return mustImplementSenderInterfaces;
+	public void setComponentType(ComponentKind newComponentType) {
+		ComponentKind oldComponentType = componentType;
+		componentType = newComponentType == null ? COMPONENT_TYPE_EDEFAULT : newComponentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__COMPONENT_TYPE, oldComponentType, componentType));
 	}
 
 	//	/**
@@ -285,10 +282,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return getPorts();
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return getReferencingComponentParts();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
-				return getMustImplementReceiverInterfaces();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
-				return getMustImplementSenderInterfaces();
+			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
+				return getComponentType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,13 +312,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				getReferencingComponentParts().clear();
 				getReferencingComponentParts().addAll((Collection<? extends ComponentPart>)newValue);
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
-				getMustImplementReceiverInterfaces().clear();
-				getMustImplementReceiverInterfaces().addAll((Collection<? extends MessageInterface>)newValue);
-				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
-				getMustImplementSenderInterfaces().clear();
-				getMustImplementSenderInterfaces().addAll((Collection<? extends MessageInterface>)newValue);
+			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
+				setComponentType((ComponentKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -349,11 +339,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				getReferencingComponentParts().clear();
 				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
-				getMustImplementReceiverInterfaces().clear();
-				return;
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
-				getMustImplementSenderInterfaces().clear();
+			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
+				setComponentType(COMPONENT_TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -375,10 +362,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ports != null && !ports.isEmpty();
 			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
 				return referencingComponentParts != null && !referencingComponentParts.isEmpty();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES:
-				return mustImplementReceiverInterfaces != null && !mustImplementReceiverInterfaces.isEmpty();
-			case ComponentPackage.COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES:
-				return mustImplementSenderInterfaces != null && !mustImplementSenderInterfaces.isEmpty();
+			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
+				return componentType != COMPONENT_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -439,6 +424,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
+		result.append(", componentType: ");
+		result.append(componentType);
 		result.append(')');
 		return result.toString();
 	}

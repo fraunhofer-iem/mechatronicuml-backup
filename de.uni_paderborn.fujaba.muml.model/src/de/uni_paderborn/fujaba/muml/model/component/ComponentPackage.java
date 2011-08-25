@@ -142,22 +142,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__REFERENCING_COMPONENT_PARTS = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT__COMPONENT_TYPE = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -166,7 +157,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_FEATURE_COUNT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.
@@ -242,22 +233,13 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
+	int CONTINUOUS_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>XML File Name</b></em>' attribute.
@@ -578,7 +560,7 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__COMPONENT = PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -923,22 +905,13 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
+	int STRUCTURED_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Parts</b></em>' containment reference list.
@@ -1041,25 +1014,16 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__REFERENCING_COMPONENT_PARTS = COMPONENT__REFERENCING_COMPONENT_PARTS;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list.
+	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES;
+	int ATOMIC_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1115,7 +1079,7 @@ public interface ComponentPackage extends EPackage {
 	int CONNECTOR_TYPE__EXTENSION = SDMPackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1188,7 +1152,7 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY__EXTENSION = CONNECTOR_TYPE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1279,7 +1243,7 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION__EXTENSION = CONNECTOR_TYPE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1333,7 +1297,7 @@ public interface ComponentPackage extends EPackage {
 	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1442,7 +1406,7 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__COMPONENT = DISCRETE_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1566,26 +1530,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponent_ReferencingComponentParts();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces <em>Must Implement Receiver Interfaces</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getComponentType <em>Component Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Must Implement Receiver Interfaces</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementReceiverInterfaces()
+	 * @return the meta object for the attribute '<em>Component Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getComponentType()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_MustImplementReceiverInterfaces();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces <em>Must Implement Sender Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Must Implement Sender Interfaces</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Component#getMustImplementSenderInterfaces()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_MustImplementSenderInterfaces();
+	EAttribute getComponent_ComponentType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousComponent <em>Continuous Component</em>}'.
@@ -2072,20 +2025,12 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT__REFERENCING_COMPONENT_PARTS = eINSTANCE.getComponent_ReferencingComponentParts();
 
 		/**
-		 * The meta object literal for the '<em><b>Must Implement Receiver Interfaces</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Component Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__MUST_IMPLEMENT_RECEIVER_INTERFACES = eINSTANCE.getComponent_MustImplementReceiverInterfaces();
-
-		/**
-		 * The meta object literal for the '<em><b>Must Implement Sender Interfaces</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__MUST_IMPLEMENT_SENDER_INTERFACES = eINSTANCE.getComponent_MustImplementSenderInterfaces();
+		EAttribute COMPONENT__COMPONENT_TYPE = eINSTANCE.getComponent_ComponentType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousComponentImpl <em>Continuous Component</em>}' class.

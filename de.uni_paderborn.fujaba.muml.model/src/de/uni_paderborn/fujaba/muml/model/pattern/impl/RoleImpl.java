@@ -69,14 +69,14 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference list.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Behavior> behavior;
+	protected Behavior behavior;
 
 	/**
 	 * The cached value of the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
@@ -184,11 +184,59 @@ public class RoleImpl extends NamedElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Behavior> getBehavior() {
-		if (behavior == null) {
-			behavior = new EObjectWithInverseResolvingEList<Behavior>(Behavior.class, this, PatternPackage.ROLE__BEHAVIOR, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT);
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PatternPackage.ROLE__BEHAVIOR, oldBehavior, behavior));
+			}
 		}
 		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(Behavior newBehavior) {
+		if (newBehavior != behavior) {
+			NotificationChain msgs = null;
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -511,7 +559,9 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case PatternPackage.ROLE__BEHAVIOR:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehavior()).basicAdd(otherEnd, msgs);
+				if (behavior != null)
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				if (roleConnector != null)
 					msgs = ((InternalEObject)roleConnector).eInverseRemove(this, PatternPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
@@ -537,7 +587,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case PatternPackage.ROLE__BEHAVIOR:
-				return ((InternalEList<?>)getBehavior()).basicRemove(otherEnd, msgs);
+				return basicSetBehavior(null, msgs);
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				return basicSetRoleConnector(null, msgs);
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
@@ -575,7 +625,8 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return getConstraint();
 			case PatternPackage.ROLE__BEHAVIOR:
-				return getBehavior();
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				if (resolve) return getRoleConnector();
 				return basicGetRoleConnector();
@@ -615,8 +666,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 			case PatternPackage.ROLE__BEHAVIOR:
-				getBehavior().clear();
-				getBehavior().addAll((Collection<? extends Behavior>)newValue);
+				setBehavior((Behavior)newValue);
 				return;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)newValue);
@@ -659,7 +709,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 				getConstraint().clear();
 				return;
 			case PatternPackage.ROLE__BEHAVIOR:
-				getBehavior().clear();
+				setBehavior((Behavior)null);
 				return;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)null);
@@ -700,7 +750,7 @@ public class RoleImpl extends NamedElementImpl implements Role {
 			case PatternPackage.ROLE__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
 			case PatternPackage.ROLE__BEHAVIOR:
-				return behavior != null && !behavior.isEmpty();
+				return behavior != null;
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 				return roleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:

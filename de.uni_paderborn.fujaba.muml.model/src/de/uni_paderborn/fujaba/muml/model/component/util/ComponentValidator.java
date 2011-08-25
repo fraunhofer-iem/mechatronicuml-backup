@@ -339,7 +339,7 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION = "not self.senderMessageInterface.oclIsUndefined() or not self.receiverMessageInterface.oclIsUndefined()";
+	protected static final String DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_INTERFACE__EEXPRESSION = "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())";
 
 	/**
 	 * Validates the AtLeastOneMessageInterface constraint of '<em>Discrete Port</em>'.

@@ -74,7 +74,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE_CONNECTOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -265,7 +265,7 @@ public interface PatternPackage extends EPackage {
 	int ROLE__CONSTRAINT = SDMPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

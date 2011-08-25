@@ -173,7 +173,7 @@ public interface CorePackage extends EPackage {
 	int BEHAVIORAL_ELEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference list.
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -541,10 +541,10 @@ public interface CorePackage extends EPackage {
 	EClass getBehavioralElement();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior <em>Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Behavior</em>'.
+	 * @return the meta object for the reference '<em>Behavior</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement#getBehavior()
 	 * @see #getBehavioralElement()
 	 * @generated
@@ -785,7 +785,7 @@ public interface CorePackage extends EPackage {
 		EClass BEHAVIORAL_ELEMENT = eINSTANCE.getBehavioralElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavior</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
