@@ -28,7 +28,6 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 
 	public PortInstanceBehavior(AbstractBorderItemEditPart editPart) {
 		super(editPart);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -70,17 +69,17 @@ public class PortInstanceBehavior extends AbstractBasePortBehavior {
 
 	@Override
 	public PortKind getPortKind() {
-		if (portInstance.getPortType() instanceof DiscretePort &&
-				!(portInstance.getPortType() instanceof ContinuousPort)) {
-			return CustomPortFigure.PortKind.DISCRETE;
-		} else if (portInstance.getPortType() instanceof HardwarePort) {
-			return CustomPortFigure.PortKind.HARDWARE;
-		} else if (portInstance.getPortType() instanceof ContinuousPort &&
-				!(portInstance.getPortType() instanceof DiscretePort)) {
-			return CustomPortFigure.PortKind.CONTINUOUS;
-		} else if (portInstance.getPortType() instanceof HybridPort) {
-			return CustomPortFigure.PortKind.HYBRID;
-		}
+//		if (portInstance.getPortType() instanceof DiscretePort &&
+//				!(portInstance.getPortType() instanceof ContinuousPort)) {
+//			return CustomPortFigure.PortKind.DISCRETE;
+//		} else if (portInstance.getPortType() instanceof HardwarePort) {
+//			return CustomPortFigure.PortKind.HARDWARE;
+//		} else if (portInstance.getPortType() instanceof ContinuousPort &&
+//				!(portInstance.getPortType() instanceof DiscretePort)) {
+//			return CustomPortFigure.PortKind.CONTINUOUS;
+//		} else if (portInstance.getPortType() instanceof HybridPort) {
+//			return CustomPortFigure.PortKind.HYBRID;
+//		}
 		return null;
 	}
 
