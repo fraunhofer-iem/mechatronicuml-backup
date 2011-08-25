@@ -530,7 +530,7 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Abstract super class for all elements that have a behavior."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
             eType="#//model/core/Behavior" eOpposite="#//model/core/Behavior/behavioralElement">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The real-time statechart that defines the behavior of this behavioral element."/>
@@ -551,7 +551,7 @@
       <eClassifiers xsi:type="ecore:EClass" name="AbstractRealtimeStatechart" abstract="true"
           eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement ../../org.storydriven.modeling/model/sdm.ecore#//CommentableElement #//model/core/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents a realtime statechart.&#xD;&#xA;TODO-SD: All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling."/>
+          <details key="documentation" value="This class represents a realtime statechart.&#xD;&#xA;\todosd{All references should moved to FujabaRealtimeStatechart, because an AbstractRealtimeStatechart abstracts from the concrete modeling.}"/>
         </eAnnotations>
         <eOperations name="getHighestParentStatechart" eType="#//model/core/AbstractRealtimeStatechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
