@@ -120,7 +120,7 @@
           <details key="constraints" value="AtLeastOneMessageInterface"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="AtLeastOneMessageInterface" value="not self.senderMessageInterface.oclIsUndefined() or not self.receiverMessageInterface.oclIsUndefined()"/>
+          <details key="AtLeastOneMessageInterface" value="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
             eOpposite="#//model/pattern/Role/port">
