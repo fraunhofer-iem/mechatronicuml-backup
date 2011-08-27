@@ -1,10 +1,14 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.parts;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart;
@@ -26,8 +30,7 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 	@Override
 	protected IFigure createFigure() {
 		IFigure diagram = super.createFigure();
-		
-		
+
 		historyFigure = new CustomHistoryFigure();
 		historyFigure.setSize(ELLIPSE_RADIUS * 2, ELLIPSE_RADIUS * 2);
 		diagram.add(historyFigure);
@@ -53,7 +56,20 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 					}
 				}
 			}
+
 		}
+
+		// BEGIN: Bugfix (MechatronicUML)
+		// TODO: Create Bug for this and reference its ID
+		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+				.getRegisteredEditPolicies(this.getDiagramView().getElement());
+		for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
+				.hasNext();) {
+			CanonicalEditPolicy nextEditPolicy = it.next();
+			nextEditPolicy.refresh();
+		}
+		// END: Bugfix
+
 		super.handleNotificationEvent(notification);
 	}
 

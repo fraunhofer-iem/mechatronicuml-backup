@@ -846,10 +846,12 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) linkObject;
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
@@ -877,10 +879,12 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) linkObject;
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
@@ -912,10 +916,12 @@ public class MumlDiagramUpdater {
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) setting
 					.getEObject();
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
 					.getSource();
 			result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor(
@@ -945,10 +951,12 @@ public class MumlDiagramUpdater {
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) setting
 					.getEObject();
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
 					.getSource();
 			result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor(
@@ -987,10 +995,12 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) linkObject;
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
@@ -1034,10 +1044,12 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition link = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) linkObject;
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
+			// BEGIN: Bugfix (MechatronicUML)
+			// TODO: Create Bug for this and reference its ID
+			// if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			//	continue;
+			// }
+			// END: Bugfix
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex dst = link
 					.getTarget();
 			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex src = link
