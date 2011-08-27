@@ -302,11 +302,15 @@ public class RegionImpl extends PrioritizableImpl implements Region {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	public EList<Vertex> getVertices() {
-		return (EList<Vertex>)VERTICES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+//		return (EList<Vertex>)VERTICES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		if (getStatechart() != null) {
+			return getStatechart().getVertices();
+		}
+		return (EList<Vertex>) ECollections.EMPTY_ELIST;
 	}
 
 	/**
