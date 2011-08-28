@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateE
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.Transition2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry;
 
@@ -39,6 +40,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomState2EditPart(view);
 			case TransitionEditPart.VISUAL_ID:
 				return new CustomTransitionEditPart(view);
+			case Transition2EditPart.VISUAL_ID:
+				return new CustomTransition2EditPart(view);
 			case StateCompoundCompartmentEditPart.VISUAL_ID:
 				return new CustomStateCompoundCompartmentEditPart(view);
 			case StateRegionCompartmentEditPart.VISUAL_ID:
