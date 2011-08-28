@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core;
 
+import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ExceptionVariable;
 
 import org.storydriven.modeling.expressions.Expression;
@@ -39,12 +40,12 @@ public interface ActivityCallExpression extends Expression {
 	 * Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Activity</em>' reference.
-	 * @see #setActivity(ExceptionVariable)
+	 * @see #setActivity(Activity)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getActivityCallExpression_Activity()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	ExceptionVariable getActivity();
+	Activity getActivity();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression#getActivity <em>Activity</em>}' reference.
@@ -54,6 +55,6 @@ public interface ActivityCallExpression extends Expression {
 	 * @see #getActivity()
 	 * @generated
 	 */
-	void setActivity(ExceptionVariable value);
+	void setActivity(Activity value);
 
 } // ActivityCallExpression

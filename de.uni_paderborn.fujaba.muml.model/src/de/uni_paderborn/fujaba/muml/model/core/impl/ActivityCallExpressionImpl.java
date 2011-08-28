@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.storydriven.modeling.activities.Activity;
 import org.storydriven.modeling.activities.ExceptionVariable;
 
 import org.storydriven.modeling.expressions.impl.ExpressionImpl;
@@ -42,7 +43,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 * @ordered
 	 */
-	protected ExceptionVariable activity;
+	protected Activity activity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,10 +69,10 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExceptionVariable getActivity() {
+	public Activity getActivity() {
 		if (activity != null && activity.eIsProxy()) {
 			InternalEObject oldActivity = (InternalEObject)activity;
-			activity = (ExceptionVariable)eResolveProxy(oldActivity);
+			activity = (Activity)eResolveProxy(oldActivity);
 			if (activity != oldActivity) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
@@ -85,7 +86,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExceptionVariable basicGetActivity() {
+	public Activity basicGetActivity() {
 		return activity;
 	}
 
@@ -94,8 +95,8 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActivity(ExceptionVariable newActivity) {
-		ExceptionVariable oldActivity = activity;
+	public void setActivity(Activity newActivity) {
+		Activity oldActivity = activity;
 		activity = newActivity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
@@ -125,7 +126,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				setActivity((ExceptionVariable)newValue);
+				setActivity((Activity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,7 +141,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CorePackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				setActivity((ExceptionVariable)null);
+				setActivity((Activity)null);
 				return;
 		}
 		super.eUnset(featureID);
