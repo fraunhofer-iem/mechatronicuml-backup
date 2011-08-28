@@ -59,17 +59,6 @@ public class CustomFujabaRealtimeStatechartEditPart extends
 
 		}
 
-		// BEGIN: Bugfix (MechatronicUML)
-		// TODO: Create Bug for this and reference its ID
-		List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-				.getRegisteredEditPolicies(this.getDiagramView().getElement());
-		for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
-				.hasNext();) {
-			CanonicalEditPolicy nextEditPolicy = it.next();
-			nextEditPolicy.refresh();
-		}
-		// END: Bugfix
-
 		super.handleNotificationEvent(notification);
 	}
 
