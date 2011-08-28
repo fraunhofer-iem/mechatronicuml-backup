@@ -26,10 +26,7 @@
           <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/ports"/>
           <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/referencingComponentParts"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/mustImplementReceiverInterfaces"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/Component/mustImplementSenderInterfaces"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/Component/componentType"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/ContinuousComponent">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ContinuousComponent/xMLFileName"/>
@@ -165,7 +162,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/securityLevel"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/utilisation"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/scheduleDocument"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/embedded"/>
+          <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/AbstractRealtimeStatechart/embedded"/>
           <genOperations ecoreOperation="muml.ecore#//model/core/AbstractRealtimeStatechart/getHighestParentStatechart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/Behavior">

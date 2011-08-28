@@ -72,7 +72,6 @@ public class AbstractRealtimeStatechartItemProvider
 			addSecurityLevelPropertyDescriptor(object);
 			addUtilisationPropertyDescriptor(object);
 			addScheduleDocumentPropertyDescriptor(object);
-			addEmbeddedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -227,28 +226,6 @@ public class AbstractRealtimeStatechartItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Embedded feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmbeddedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractRealtimeStatechart_embedded_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractRealtimeStatechart_embedded_feature", "_UI_AbstractRealtimeStatechart_type"),
-				 CorePackage.Literals.ABSTRACT_REALTIME_STATECHART__EMBEDDED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
