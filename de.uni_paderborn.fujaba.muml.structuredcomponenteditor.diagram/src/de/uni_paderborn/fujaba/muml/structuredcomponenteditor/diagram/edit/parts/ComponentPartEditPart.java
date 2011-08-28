@@ -394,41 +394,27 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			this.add(fFigureInnerRectContainer);
 			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
-			RectangleFigure rect1 = new RectangleFigure();
-
-			fFigureInnerRectContainer.add(rect1);
-			rect1.setLayoutManager(new StackLayout());
-
-			RectangleFigure container2 = new RectangleFigure();
-			container2.setFill(false);
-			container2.setOutline(false);
-			container2.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
+			RectangleFigure componentFigure1 = new RectangleFigure();
+			componentFigure1.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 
-			rect1.add(container2);
+			fFigureInnerRectContainer.add(componentFigure1);
+			componentFigure1.setLayoutManager(new StackLayout());
 
-			GridLayout layoutContainer2 = new GridLayout();
-			layoutContainer2.numColumns = 2;
-			layoutContainer2.makeColumnsEqualWidth = false;
-			container2.setLayoutManager(layoutContainer2);
+			RectangleFigure componentIconRectangle2 = new RectangleFigure();
+			componentIconRectangle2.setFill(false);
+			componentIconRectangle2.setOutline(false);
 
-			fFigureComponentNameFigure = new WrappingLabel();
-			fFigureComponentNameFigure.setText("");
+			componentFigure1.add(componentIconRectangle2);
 
-			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
-
-			GridData constraintFFigureComponentNameFigure = new GridData();
-			constraintFFigureComponentNameFigure.verticalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureComponentNameFigure.horizontalIndent = 0;
-			constraintFFigureComponentNameFigure.horizontalSpan = 1;
-			constraintFFigureComponentNameFigure.verticalSpan = 1;
-			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = false;
-			container2.add(fFigureComponentNameFigure,
-					constraintFFigureComponentNameFigure);
+			GridLayout layoutComponentIconRectangle2 = new GridLayout();
+			layoutComponentIconRectangle2.numColumns = 1;
+			layoutComponentIconRectangle2.makeColumnsEqualWidth = false;
+			componentIconRectangle2
+					.setLayoutManager(layoutComponentIconRectangle2);
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
@@ -446,8 +432,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure3.verticalSpan = 1;
 			constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure3.grabExcessVerticalSpace = false;
-			container2
-					.add(componentIconFigure3, constraintComponentIconFigure3);
+			componentIconRectangle2.add(componentIconFigure3,
+					constraintComponentIconFigure3);
 
 			componentIconFigure3.setLayoutManager(new StackLayout());
 
@@ -489,6 +475,34 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			componentIconInner24.add(d15, new Rectangle(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
+
+			RectangleFigure componentNameRectangle2 = new RectangleFigure();
+			componentNameRectangle2.setFill(false);
+			componentNameRectangle2.setOutline(false);
+
+			componentFigure1.add(componentNameRectangle2);
+
+			GridLayout layoutComponentNameRectangle2 = new GridLayout();
+			layoutComponentNameRectangle2.numColumns = 1;
+			layoutComponentNameRectangle2.makeColumnsEqualWidth = false;
+			componentNameRectangle2
+					.setLayoutManager(layoutComponentNameRectangle2);
+
+			fFigureComponentNameFigure = new WrappingLabel();
+			fFigureComponentNameFigure.setText("");
+
+			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
+
+			GridData constraintFFigureComponentNameFigure = new GridData();
+			constraintFFigureComponentNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentNameFigure.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentNameFigure.horizontalIndent = 0;
+			constraintFFigureComponentNameFigure.horizontalSpan = 1;
+			constraintFFigureComponentNameFigure.verticalSpan = 1;
+			constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
+			componentNameRectangle2.add(fFigureComponentNameFigure,
+					constraintFFigureComponentNameFigure);
 
 		}
 
