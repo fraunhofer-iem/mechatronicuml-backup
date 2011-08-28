@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -324,11 +323,19 @@ public class RoleItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Role)object).getName();
+		Role role = (Role) object;
+		StringBuffer b = new StringBuffer();
+		if (role.getCoordinationPattern() != null
+				&& role.getCoordinationPattern().getName() != null) {
+			b.append(role.getCoordinationPattern().getName());
+			b.append('.');
+		}
+		b.append(role.getName());
+		String label = b.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Role_type") :
 			getString("_UI_Role_type") + " " + label;
