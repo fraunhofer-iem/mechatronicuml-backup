@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteDrawer;
+import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
@@ -22,20 +23,35 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createRealtimeStatechart1Group());
-		paletteRoot.add(createRealtimeState2Group());
+		paletteRoot.add(createDefault1Group());
+		paletteRoot.add(createRealtimeStatechart2Group());
+		paletteRoot.add(createRealtimeState3Group());
+	}
+
+	/**
+	 * Creates "Default" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createDefault1Group() {
+		PaletteGroup paletteContainer = new PaletteGroup(
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Default1Group_title);
+		paletteContainer.setId("createDefault1Group"); //$NON-NLS-1$
+		paletteContainer
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Default1Group_desc);
+		paletteContainer.add(createStatechart1CreationTool());
+		return paletteContainer;
 	}
 
 	/**
 	 * Creates "Realtime Statechart" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeStatechart1Group() {
+	private PaletteContainer createRealtimeStatechart2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_title);
-		paletteContainer.setId("createRealtimeStatechart1Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart2Group_title);
+		paletteContainer.setId("createRealtimeStatechart2Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart1Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeStatechart2Group_desc);
 		paletteContainer.add(createState1CreationTool());
 		paletteContainer.add(createTransition2CreationTool());
 		return paletteContainer;
@@ -45,12 +61,12 @@ public class MumlPaletteFactory {
 	 * Creates "Realtime State" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createRealtimeState2Group() {
+	private PaletteContainer createRealtimeState3Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_title);
-		paletteContainer.setId("createRealtimeState2Group"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState3Group_title);
+		paletteContainer.setId("createRealtimeState3Group"); //$NON-NLS-1$
 		paletteContainer
-				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState2Group_desc);
+				.setDescription(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.RealtimeState3Group_desc);
 		paletteContainer.add(createClockConstraint1CreationTool());
 		paletteContainer.add(createEntryAction2CreationTool());
 		paletteContainer.add(createDoAction3CreationTool());
@@ -65,9 +81,22 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createStatechart1CreationTool() {
+		ToolEntry entry = new ToolEntry(
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Statechart1CreationTool_desc,
+				null, null) {
+		};
+		entry.setId("createStatechart1CreationTool"); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createState1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_2001);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_2003);
 		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3007);
 		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.State1CreationTool_title,
@@ -102,11 +131,13 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClockConstraint1CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ClockConstraint_3004);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3005);
 		NodeToolEntry entry = new NodeToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.ClockConstraint1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.ClockConstraint1CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ClockConstraint_3004));
+				types);
 		entry.setId("createClockConstraint1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/clock2.gif")); //$NON-NLS-1$
@@ -166,15 +197,14 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSynchronizationChannel5CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		ToolEntry entry = new ToolEntry(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.SynchronizationChannel5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.SynchronizationChannel5CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3005));
+				null, null) {
+		};
 		entry.setId("createSynchronizationChannel5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/xAction.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

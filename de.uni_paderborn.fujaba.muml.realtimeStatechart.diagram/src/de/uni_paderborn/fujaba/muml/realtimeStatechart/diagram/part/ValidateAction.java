@@ -120,7 +120,7 @@ public class ValidateAction extends Action {
 		final View fview = view;
 		TransactionalEditingDomain txDomain = TransactionUtil
 				.getEditingDomain(view);
-		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.RealtimestatechartValidationProvider
+		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlValidationProvider
 				.runWithConstraints(txDomain, new Runnable() {
 
 					public void run() {

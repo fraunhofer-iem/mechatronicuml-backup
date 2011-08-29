@@ -48,6 +48,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelinstanceFactory;
 
 /**
  * @generated
@@ -181,7 +183,7 @@ public class MumlDiagramEditorUtil {
 				Diagram diagram = ViewService
 						.createDiagram(
 								model,
-								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID,
+								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID,
 								de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);

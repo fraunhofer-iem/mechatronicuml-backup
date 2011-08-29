@@ -9,14 +9,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.policies.CustomRegionFujabaRealtimeStatechartCompartmentItemSemanticEditPolicy;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
 
-public class CustomRegionFujabaRealtimeStatechartCompartmentEditPart extends
-		RegionFujabaRealtimeStatechartCompartmentEditPart {
+public class CustomRegionRegionContentsCompartmentEditPart extends
+		RegionRegionContentsCompartmentEditPart {
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-
 
 		// BEGIN: Bugfix (MechatronicUML)
 		// TODO: Create Bug for this and reference its ID
@@ -32,7 +31,7 @@ public class CustomRegionFujabaRealtimeStatechartCompartmentEditPart extends
 		super.handleNotificationEvent(event);
 	}
 
-	public CustomRegionFujabaRealtimeStatechartCompartmentEditPart(View view) {
+	public CustomRegionRegionContentsCompartmentEditPart(View view) {
 		super(view);
 	}
 

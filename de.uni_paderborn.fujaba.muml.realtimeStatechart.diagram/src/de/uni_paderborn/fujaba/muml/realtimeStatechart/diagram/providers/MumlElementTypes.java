@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import de.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * @generated
@@ -46,10 +47,12 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType FujabaRealtimeStatechart_1000 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.FujabaRealtimeStatechart_1000"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType State_2001 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2001"); //$NON-NLS-1$
+	public static final IElementType State_2003 = getElementType("de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2003"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -222,7 +225,7 @@ public class MumlElementTypes {
 							.getFujabaRealtimeStatechart());
 
 			elements.put(
-					State_2001,
+					State_2003,
 					de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getState());
 
@@ -298,7 +301,7 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(FujabaRealtimeStatechart_1000);
-			KNOWN_ELEMENT_TYPES.add(State_2001);
+			KNOWN_ELEMENT_TYPES.add(State_2003);
 			KNOWN_ELEMENT_TYPES.add(EntryEvent_3001);
 			KNOWN_ELEMENT_TYPES.add(DoEvent_3002);
 			KNOWN_ELEMENT_TYPES.add(ExitEvent_3003);
@@ -319,10 +322,10 @@ public class MumlElementTypes {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return FujabaRealtimeStatechart_1000;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return State_2001;
+			return State_2003;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return EntryEvent_3001;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:

@@ -24,8 +24,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RegionFujabaRealtimeStatechartCompartmentCanonicalEditPolicy
-		extends CanonicalEditPolicy {
+public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
+		CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -55,7 +55,7 @@ public class RegionFujabaRealtimeStatechartCompartmentCanonicalEditPolicy
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRegionFujabaRealtimeStatechartCompartment_7003SemanticChildren(viewObject);
+				.getRegionRegionContentsCompartment_7003SemanticChildren(viewObject);
 		for (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -88,7 +88,7 @@ public class RegionFujabaRealtimeStatechartCompartmentCanonicalEditPolicy
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> childDescriptors = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getRegionFujabaRealtimeStatechartCompartment_7003SemanticChildren((View) getHost()
+				.getRegionRegionContentsCompartment_7003SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

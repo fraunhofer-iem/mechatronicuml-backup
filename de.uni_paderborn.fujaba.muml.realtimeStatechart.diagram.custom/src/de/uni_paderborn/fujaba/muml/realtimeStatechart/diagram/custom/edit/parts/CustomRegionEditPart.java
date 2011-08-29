@@ -31,9 +31,9 @@ public class CustomRegionEditPart extends RegionEditPart {
 
 		public CustomRegionFigure() {
 			super();
-			getFigureRegionVariablesLabel().setAlignment(
+			getFigureStatechartVariablesLabel().setAlignment(
 					PositionConstants.RIGHT);
-			getFigureRegionVariablesLabel().setTextJustification(
+			getFigureStatechartVariablesLabel().setTextJustification(
 					PositionConstants.RIGHT);
 		}
 	}

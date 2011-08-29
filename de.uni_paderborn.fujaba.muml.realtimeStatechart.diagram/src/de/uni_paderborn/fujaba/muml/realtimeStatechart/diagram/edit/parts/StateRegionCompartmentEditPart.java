@@ -21,7 +21,7 @@ public class StateRegionCompartmentEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7002;
+	public static final int VISUAL_ID = 7010;
 
 	/**
 	 * @generated

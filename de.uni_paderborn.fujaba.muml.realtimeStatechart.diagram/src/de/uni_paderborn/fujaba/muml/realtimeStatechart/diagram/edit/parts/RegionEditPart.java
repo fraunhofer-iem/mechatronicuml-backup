@@ -15,11 +15,15 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -114,7 +118,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureRegionNameLabel());
+					.setLabel(getPrimaryShape().getFigureStatechartNameLabel());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart) {
@@ -122,16 +126,17 @@ public class RegionEditPart extends ShapeNodeEditPart {
 					.setLabel(getPrimaryShape().getFigureRegionPriorityLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureRegionVariablesLabel());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureStatechartVariablesLabel());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureFujabaRealtimeStatechartCompartment();
+					.getFigureRegionContentsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) childEditPart)
+			pane.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -148,14 +153,14 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureFujabaRealtimeStatechartCompartment();
+					.getFigureRegionContentsCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) childEditPart)
+			pane.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -186,9 +191,8 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart) {
-			return getPrimaryShape()
-					.getFigureFujabaRealtimeStatechartCompartment();
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
+			return getPrimaryShape().getFigureRegionContentsCompartment();
 		}
 		return getContentPane();
 	}
@@ -295,19 +299,22 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureFujabaRealtimeStatechartCompartment;
+		private RectangleFigure fFigureRegionContentsCompartment;
+
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureRegionNameLabel;
+		private WrappingLabel fFigureStatechartNameLabel;
+
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureStatechartVariablesLabel;
+
 		/**
 		 * @generated
 		 */
 		private WrappingLabel fFigureRegionPriorityLabel;
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureRegionVariablesLabel;
 
 		/**
 		 * @generated
@@ -327,48 +334,73 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
-			RectangleFigure regionTitleArea0 = new RectangleFigure();
-			regionTitleArea0.setFill(false);
-			regionTitleArea0.setOutline(false);
+			RectangleFigure regionTitleAreaFigure0 = new RectangleFigure();
+			regionTitleAreaFigure0.setFill(false);
+			regionTitleAreaFigure0.setOutline(false);
 
-			GridData constraintRegionTitleArea0 = new GridData();
-			constraintRegionTitleArea0.verticalAlignment = GridData.CENTER;
-			constraintRegionTitleArea0.horizontalAlignment = GridData.FILL;
-			constraintRegionTitleArea0.horizontalIndent = 0;
-			constraintRegionTitleArea0.horizontalSpan = 1;
-			constraintRegionTitleArea0.verticalSpan = 1;
-			constraintRegionTitleArea0.grabExcessHorizontalSpace = true;
-			constraintRegionTitleArea0.grabExcessVerticalSpace = false;
-			this.add(regionTitleArea0, constraintRegionTitleArea0);
+			GridData constraintRegionTitleAreaFigure0 = new GridData();
+			constraintRegionTitleAreaFigure0.verticalAlignment = GridData.CENTER;
+			constraintRegionTitleAreaFigure0.horizontalAlignment = GridData.FILL;
+			constraintRegionTitleAreaFigure0.horizontalIndent = 0;
+			constraintRegionTitleAreaFigure0.horizontalSpan = 1;
+			constraintRegionTitleAreaFigure0.verticalSpan = 1;
+			constraintRegionTitleAreaFigure0.grabExcessHorizontalSpace = true;
+			constraintRegionTitleAreaFigure0.grabExcessVerticalSpace = false;
+			this.add(regionTitleAreaFigure0, constraintRegionTitleAreaFigure0);
 
-			GridLayout layoutRegionTitleArea0 = new GridLayout();
-			layoutRegionTitleArea0.numColumns = 3;
-			layoutRegionTitleArea0.makeColumnsEqualWidth = false;
-			regionTitleArea0.setLayoutManager(layoutRegionTitleArea0);
+			GridLayout layoutRegionTitleAreaFigure0 = new GridLayout();
+			layoutRegionTitleAreaFigure0.numColumns = 2;
+			layoutRegionTitleAreaFigure0.makeColumnsEqualWidth = false;
+			regionTitleAreaFigure0
+					.setLayoutManager(layoutRegionTitleAreaFigure0);
 
-			fFigureRegionNameLabel = new WrappingLabel();
-			fFigureRegionNameLabel.setText("");
+			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
-			regionTitleArea0.add(fFigureRegionNameLabel);
+			RectangleFigure statechartTitleAreaFigure1 = new RectangleFigure();
+			statechartTitleAreaFigure1.setFill(false);
+			statechartTitleAreaFigure1.setOutline(false);
 
-			fFigureRegionVariablesLabel = new WrappingLabel();
-			fFigureRegionVariablesLabel.setText("");
+			GridData constraintStatechartTitleAreaFigure1 = new GridData();
+			constraintStatechartTitleAreaFigure1.verticalAlignment = GridData.CENTER;
+			constraintStatechartTitleAreaFigure1.horizontalAlignment = GridData.FILL;
+			constraintStatechartTitleAreaFigure1.horizontalIndent = 0;
+			constraintStatechartTitleAreaFigure1.horizontalSpan = 1;
+			constraintStatechartTitleAreaFigure1.verticalSpan = 1;
+			constraintStatechartTitleAreaFigure1.grabExcessHorizontalSpace = true;
+			constraintStatechartTitleAreaFigure1.grabExcessVerticalSpace = false;
+			regionTitleAreaFigure0.add(statechartTitleAreaFigure1,
+					constraintStatechartTitleAreaFigure1);
 
-			GridData constraintFFigureRegionVariablesLabel = new GridData();
-			constraintFFigureRegionVariablesLabel.verticalAlignment = GridData.CENTER;
-			constraintFFigureRegionVariablesLabel.horizontalAlignment = GridData.FILL;
-			constraintFFigureRegionVariablesLabel.horizontalIndent = 0;
-			constraintFFigureRegionVariablesLabel.horizontalSpan = 1;
-			constraintFFigureRegionVariablesLabel.verticalSpan = 1;
-			constraintFFigureRegionVariablesLabel.grabExcessHorizontalSpace = true;
-			constraintFFigureRegionVariablesLabel.grabExcessVerticalSpace = false;
-			regionTitleArea0.add(fFigureRegionVariablesLabel,
-					constraintFFigureRegionVariablesLabel);
+			GridLayout layoutStatechartTitleAreaFigure1 = new GridLayout();
+			layoutStatechartTitleAreaFigure1.numColumns = 2;
+			layoutStatechartTitleAreaFigure1.makeColumnsEqualWidth = false;
+			statechartTitleAreaFigure1
+					.setLayoutManager(layoutStatechartTitleAreaFigure1);
+
+			fFigureStatechartNameLabel = new WrappingLabel();
+			fFigureStatechartNameLabel.setText("");
+
+			statechartTitleAreaFigure1.add(fFigureStatechartNameLabel);
+
+			fFigureStatechartVariablesLabel = new WrappingLabel();
+			fFigureStatechartVariablesLabel.setText("");
+
+			GridData constraintFFigureStatechartVariablesLabel = new GridData();
+			constraintFFigureStatechartVariablesLabel.verticalAlignment = GridData.CENTER;
+			constraintFFigureStatechartVariablesLabel.horizontalAlignment = GridData.END;
+			constraintFFigureStatechartVariablesLabel.horizontalIndent = 0;
+			constraintFFigureStatechartVariablesLabel.horizontalSpan = 1;
+			constraintFFigureStatechartVariablesLabel.verticalSpan = 1;
+			constraintFFigureStatechartVariablesLabel.grabExcessHorizontalSpace = true;
+			constraintFFigureStatechartVariablesLabel.grabExcessVerticalSpace = false;
+			statechartTitleAreaFigure1.add(fFigureStatechartVariablesLabel,
+					constraintFFigureStatechartVariablesLabel);
 
 			Ellipse regionPriority1 = new Ellipse();
 
-			regionTitleArea0.add(regionPriority1);
+			regionTitleAreaFigure0.add(regionPriority1);
 			regionPriority1.setLayoutManager(new StackLayout());
 
 			fFigureRegionPriorityLabel = new WrappingLabel();
@@ -382,35 +414,42 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			regionPriority1.add(fFigureRegionPriorityLabel);
 
-			fFigureFujabaRealtimeStatechartCompartment = new RectangleFigure();
-			fFigureFujabaRealtimeStatechartCompartment.setFill(false);
-			fFigureFujabaRealtimeStatechartCompartment.setOutline(false);
+			fFigureRegionContentsCompartment = new RectangleFigure();
+			fFigureRegionContentsCompartment.setFill(false);
+			fFigureRegionContentsCompartment.setOutline(false);
 
-			GridData constraintFFigureFujabaRealtimeStatechartCompartment = new GridData();
-			constraintFFigureFujabaRealtimeStatechartCompartment.verticalAlignment = GridData.FILL;
-			constraintFFigureFujabaRealtimeStatechartCompartment.horizontalAlignment = GridData.FILL;
-			constraintFFigureFujabaRealtimeStatechartCompartment.horizontalIndent = 0;
-			constraintFFigureFujabaRealtimeStatechartCompartment.horizontalSpan = 1;
-			constraintFFigureFujabaRealtimeStatechartCompartment.verticalSpan = 1;
-			constraintFFigureFujabaRealtimeStatechartCompartment.grabExcessHorizontalSpace = true;
-			constraintFFigureFujabaRealtimeStatechartCompartment.grabExcessVerticalSpace = true;
-			this.add(fFigureFujabaRealtimeStatechartCompartment,
-					constraintFFigureFujabaRealtimeStatechartCompartment);
+			GridData constraintFFigureRegionContentsCompartment = new GridData();
+			constraintFFigureRegionContentsCompartment.verticalAlignment = GridData.FILL;
+			constraintFFigureRegionContentsCompartment.horizontalAlignment = GridData.FILL;
+			constraintFFigureRegionContentsCompartment.horizontalIndent = 0;
+			constraintFFigureRegionContentsCompartment.horizontalSpan = 1;
+			constraintFFigureRegionContentsCompartment.verticalSpan = 1;
+			constraintFFigureRegionContentsCompartment.grabExcessHorizontalSpace = true;
+			constraintFFigureRegionContentsCompartment.grabExcessVerticalSpace = true;
+			this.add(fFigureRegionContentsCompartment,
+					constraintFFigureRegionContentsCompartment);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureFujabaRealtimeStatechartCompartment() {
-			return fFigureFujabaRealtimeStatechartCompartment;
+		public RectangleFigure getFigureRegionContentsCompartment() {
+			return fFigureRegionContentsCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureRegionNameLabel() {
-			return fFigureRegionNameLabel;
+		public WrappingLabel getFigureStatechartNameLabel() {
+			return fFigureStatechartNameLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureStatechartVariablesLabel() {
+			return fFigureStatechartVariablesLabel;
 		}
 
 		/**
@@ -418,13 +457,6 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 */
 		public WrappingLabel getFigureRegionPriorityLabel() {
 			return fFigureRegionPriorityLabel;
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureRegionVariablesLabel() {
-			return fFigureRegionVariablesLabel;
 		}
 
 	}

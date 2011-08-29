@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RealtimestatechartValidationProvider {
+public class MumlValidationProvider {
 
 	/**
 	 * @generated
@@ -57,7 +57,7 @@ public class RealtimestatechartValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID
+					&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 							.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 									.getModelID((View) object));
 		}

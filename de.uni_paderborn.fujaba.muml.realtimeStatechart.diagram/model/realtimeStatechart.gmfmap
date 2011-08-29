@@ -31,9 +31,9 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
-          href="realtimeStatechart.gmfgraph#StateNode"/>
+          href="realtimeStatechart.gmfgraph#State"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -51,7 +51,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.1"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
@@ -92,7 +92,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.2"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
@@ -114,7 +114,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.3"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
@@ -136,7 +136,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
@@ -169,7 +169,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.4"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.0"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateItem"/>
         </ownedChild>
@@ -219,7 +219,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.5"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.5"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#Region"/>
           <children
@@ -231,7 +231,7 @@
           <compartments
               children="//@nodes.0/@ownedChild/@children.5/@ownedChild/@children.0">
             <compartment
-                href="realtimeStatechart.gmfgraph#FujabaRealtimeStatechartCompartment"/>
+                href="realtimeStatechart.gmfgraph#RegionContentsCompartment"/>
           </compartments>
         </ownedChild>
       </children>
@@ -254,7 +254,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.6"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.6"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateEntryPoint"/>
         </ownedChild>
@@ -278,7 +278,7 @@
           </domainInitializer>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.7"/>
+              href="realtimeStatechart.gmftool#//@palette/@tools.2/@tools.7"/>
           <diagramNode
               href="realtimeStatechart.gmfgraph#StateExitPoint"/>
         </ownedChild>
@@ -318,7 +318,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/FujabaRealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
         href="realtimeStatechart.gmfgraph#Transition"/>
     <sourceMetaFeature
@@ -351,7 +351,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
     <diagramLink
         href="realtimeStatechart.gmfgraph#Transition"/>
     <sourceMetaFeature

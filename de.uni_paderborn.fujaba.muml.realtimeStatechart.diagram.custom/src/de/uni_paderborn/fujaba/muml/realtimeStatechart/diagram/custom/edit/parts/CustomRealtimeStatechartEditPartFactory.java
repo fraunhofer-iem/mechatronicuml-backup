@@ -3,10 +3,9 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionFujabaRealtimeStatechartCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.State2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateCompoundCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart;
@@ -32,8 +31,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
-				return new CustomFujabaRealtimeStatechartEditPart(view);
+//			case FujabaRealtimeStatechartEditPart.VISUAL_ID:
+//				return new CustomFujabaRealtimeStatechartEditPart(view);
 			case StateEditPart.VISUAL_ID:
 				return new CustomStateEditPart(view);
 			case State2EditPart.VISUAL_ID:
@@ -52,8 +51,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomStateExitPointEditPart(view);
 			case RegionEditPart.VISUAL_ID:
 				return new CustomRegionEditPart(view);
-			case RegionFujabaRealtimeStatechartCompartmentEditPart.VISUAL_ID:
-				return new CustomRegionFujabaRealtimeStatechartCompartmentEditPart(view);
+			case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
+				return new CustomRegionRegionContentsCompartmentEditPart(view);
 
 			default:
 				break;

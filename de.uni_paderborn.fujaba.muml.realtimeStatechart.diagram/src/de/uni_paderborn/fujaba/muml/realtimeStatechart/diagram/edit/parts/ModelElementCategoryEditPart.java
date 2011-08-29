@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class FujabaRealtimeStatechartEditPart extends DiagramEditPart {
+public class ModelElementCategoryEditPart extends DiagramEditPart {
 
 	/**
 	 * @generated
@@ -31,7 +31,7 @@ public class FujabaRealtimeStatechartEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public FujabaRealtimeStatechartEditPart(View view) {
+	public ModelElementCategoryEditPart(View view) {
 		super(view);
 	}
 
@@ -42,10 +42,10 @@ public class FujabaRealtimeStatechartEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.FreeformLayerItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.FreeformLayerCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy());
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 

@@ -45,9 +45,9 @@ public class CustomRealtimestatechartViewProvider extends MumlViewProvider {
 			.getType(StateCompoundCompartmentEditPart.VISUAL_ID);
 
 	@Override
-	public Node createState_2001(EObject domainElement, View containerView,
+	public Node createState_2003(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Node stateNode = super.createState_2001(domainElement, containerView,
+		Node stateNode = super.createState_2003(domainElement, containerView,
 				index, persisted, preferencesHint);
 
 		// Configure Compound Compartment

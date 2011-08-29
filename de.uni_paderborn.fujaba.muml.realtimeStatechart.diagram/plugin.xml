@@ -169,7 +169,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
@@ -182,16 +182,16 @@
             <method name="getType()" value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+            <method name="getType()" value="2003,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5003,5004,5005,5006,5007,5008,5010,5011,5012,5009"/>
+            <method name="getType()" value="5016,5004,5005,5006,5007,5008,5010,5011,5012,5009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004,7005"/>
+            <method name="getType()" value="7009,7010,7003,7004,7005"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -201,9 +201,9 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart" id="FujabaRealtimeStatechart_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2001"/>
-         <context elements="FujabaRealtimeStatechart_1000,State_2001"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart" id="FujabaRealtimeStatechart_1000"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart" id="State_2003"/>
+         <context elements="FujabaRealtimeStatechart_1000,State_2003"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -229,18 +229,18 @@
                name="%metatype.name.FujabaRealtimeStatechart_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="FujabaRealtimeStatechart"
-               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.FujabaRealtimeStatechartEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.ModelElementCategoryEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2001"
-               name="%metatype.name.State_2001"
+               id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2003"
+               name="%metatype.name.State_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="State"
                edithelper="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.helpers.StateEditHelper">
-            <param name="semanticHint" value="2001"/>
+            <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http:///de/uni_paderborn/fujaba/muml/model/realtimestatechart">
@@ -308,7 +308,7 @@
                id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_3007"
                name="%metatype.name.State_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2001"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2003"/>
             <param name="semanticHint" value="3007"/>
          </specializationType>
       </metamodel>
@@ -364,7 +364,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.FujabaRealtimeStatechart_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.State_2003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.EntryEvent_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.DoEvent_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.ExitEvent_3003"/>
@@ -523,7 +523,7 @@
                <and>
                   <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart"/>
+                     <instanceof value="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -558,8 +558,8 @@
       <persistent value="true"/>
    </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.RealtimestatechartValidationDecoratorProvider">
-         <Priority name="Medium"/>
+      <decoratorProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlValidationDecoratorProvider">
+         <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
       </decoratorProvider>

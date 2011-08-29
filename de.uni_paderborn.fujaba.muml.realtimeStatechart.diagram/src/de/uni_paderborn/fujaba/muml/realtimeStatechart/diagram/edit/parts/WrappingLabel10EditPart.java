@@ -49,7 +49,7 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6004;
+	public static final int VISUAL_ID = 6003;
 
 	/**
 	 * @generated
@@ -78,7 +78,7 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID),
-				new Point(-10, 20));
+				new Point(0, -20));
 	}
 
 	/**
@@ -100,14 +100,14 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(
 				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.LinkLabelDragPolicy());
+				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.SOURCE;
+		return ConnectionLocator.MIDDLE;
 	}
 
 	/**

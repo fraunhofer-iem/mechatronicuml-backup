@@ -6,6 +6,119 @@
   <figures
       name="statechart gallary">
     <descriptors
+        name="StatechartFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="StatechartFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@descriptors.1/@actualFigure"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StatechartContentsCompartment"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFigureStatechartNameLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureStatechartVariablesLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="StatechartTitleAreaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StatechartTitleAreaFigure"
+          outline="false"
+          fill="false">
+        <layoutData
+            xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
+            horizontalAlignment="FILL"/>
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            numColumns="2"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StatechartNameLabel"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="StatechartVariablesLabel"
+            text="">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="END"/>
+        </children>
+      </actualFigure>
+      <accessors
+          accessor="getFigureStatechartNameLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureStatechartVariablesLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors
+        name="RegionTitleAreaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="RegionTitleAreaFigure"
+          outline="false"
+          fill="false">
+        <layoutData
+            xsi:type="gmfgraph:GridLayoutData"
+            grabExcessHorizontalSpace="true"
+            horizontalAlignment="FILL"/>
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            numColumns="2"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@descriptors.1/@actualFigure"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="RegionPriority">
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="RegionPriorityLabel"
+              text="">
+            <font
+                xsi:type="gmfgraph:BasicFont"
+                height="8"/>
+            <border
+                xsi:type="gmfgraph:MarginBorder">
+              <insets
+                  top="2"
+                  left="5"
+                  bottom="2"
+                  right="5"/>
+            </border>
+          </children>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
+    </descriptors>
+    <descriptors
         name="StateFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -132,25 +245,25 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateNameLabel"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
       <accessors
           accessor="getFigureCompoundCompartment"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
       <accessors
           accessor="getFigureRegionsCompartment"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -161,57 +274,11 @@
         <layout
             xsi:type="gmfgraph:GridLayout"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="RegionTitleArea"
-            outline="false"
-            fill="false">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              horizontalAlignment="FILL"/>
-          <layout
-              xsi:type="gmfgraph:GridLayout"
-              numColumns="3"
-              equalWidth="false"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="RegionNameLabel"
-              text=""/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="RegionVariablesLabel"
-              text="">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                horizontalAlignment="FILL"/>
-          </children>
-          <children
-              xsi:type="gmfgraph:Ellipse"
-              name="RegionPriority">
-            <layout
-                xsi:type="gmfgraph:StackLayout"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="RegionPriorityLabel"
-                text="">
-              <font
-                  xsi:type="gmfgraph:BasicFont"
-                  height="8"/>
-              <border
-                  xsi:type="gmfgraph:MarginBorder">
-                <insets
-                    top="2"
-                    left="5"
-                    bottom="2"
-                    right="5"/>
-              </border>
-            </children>
-          </children>
-        </children>
+            xsi:type="gmfgraph:FigureRef"
+            figure="//@figures.0/@descriptors.2/@actualFigure"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="FujabaRealtimeStatechartCompartment"
+            name="RegionContentsCompartment"
             outline="false"
             fill="false">
           <layoutData
@@ -223,22 +290,25 @@
         </children>
       </actualFigure>
       <accessors
-          accessor="getFigureFujabaRealtimeStatechartCompartment"
+          accessor="getFigureRegionContentsCompartment"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureStatechartNameLabel"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureStatechartVariablesLabel"
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureRegionPriorityLabel"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="TransitionFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="TransitionFigure"
-          sourceDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.2"
-          targetDecoration="//@figures.0/@descriptors.2/@actualFigure/@children.3">
+          sourceDecoration="//@figures.0/@descriptors.5/@actualFigure/@children.2"
+          targetDecoration="//@figures.0/@descriptors.5/@actualFigure/@children.3">
         <children
             xsi:type="gmfgraph:Label"
             name="TransitionLabelFigure"
@@ -261,9 +331,9 @@
             name="TransitionArrow"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="HistoryFigure">
@@ -307,13 +377,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateEventLabel"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="FujabaRealtimeStatechartFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="FujabaRealtimeStatechartFigure"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="StateEntryPointFigure">
@@ -355,7 +419,10 @@
     </descriptors>
   </figures>
   <nodes
-      name="StateNode"
+      name="Statechart"
+      figure="StatechartFigure"/>
+  <nodes
+      name="State"
       figure="StateFigure">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
@@ -377,9 +444,6 @@
           dy="-1"/>
     </facets>
   </nodes>
-  <nodes
-      name="FujabaRealtimeStatechart"
-      figure="FujabaRealtimeStatechartFigure"/>
   <nodes
       name="StateEntryPoint"
       figure="StateEntryPointFigure"
@@ -411,20 +475,24 @@
   <compartments
       name="CompoundCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <compartments
       name="RegionCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.2"/>
   <compartments
-      name="FujabaRealtimeStatechartCompartment"
+      name="RegionContentsCompartment"
       figure="RegionFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <compartments
+      name="StatechartContentsCompartment"
+      figure="StatechartFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <labels
       name="TransitionLabel"
       figure="TransitionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.0">
+      accessor="//@figures.0/@descriptors.5/@accessors.0">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="CENTER"/>
@@ -436,7 +504,7 @@
       name="TransitionDeadlineLabel"
       figure="TransitionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.2/@accessors.1">
+      accessor="//@figures.0/@descriptors.5/@accessors.1">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"/>
     <facets
@@ -449,25 +517,35 @@
       figure="StateFigure"
       resizeConstraint="NONE"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
       name="StateItemLabel"
       figure="StateItemFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="RegionNameLabel"
       figure="RegionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
-  <labels
-      name="RegionPriorityLabel"
-      figure="RegionFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.1"/>
   <labels
       name="RegionVariablesLabel"
       figure="RegionFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.2"/>
+  <labels
+      name="RegionPriorityLabel"
+      figure="RegionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.3"/>
+  <labels
+      name="StatechartNameLabel"
+      figure="StatechartFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels
+      name="StatechartVariablesLabel"
+      figure="StatechartFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.4/@accessors.2"/>
 </gmfgraph:Canvas>

@@ -32,7 +32,7 @@ public class CustomRealtimeStatechartDiagramCreationWizard extends
 
 	@Override
 	protected String getModelId() {
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID;
+		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID;
 	}
 
 	@Override

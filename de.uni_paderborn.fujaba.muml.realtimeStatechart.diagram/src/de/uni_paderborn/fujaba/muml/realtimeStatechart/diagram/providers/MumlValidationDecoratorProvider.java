@@ -41,8 +41,8 @@ import org.eclipse.ui.PlatformUI;
 /**
  * @generated
  */
-public class RealtimestatechartValidationDecoratorProvider extends
-		AbstractProvider implements IDecoratorProvider {
+public class MumlValidationDecoratorProvider extends AbstractProvider implements
+		IDecoratorProvider {
 
 	/**
 	 * @generated
@@ -102,7 +102,7 @@ public class RealtimestatechartValidationDecoratorProvider extends
 				.getDecoratorTarget();
 		View view = (View) decoratorTarget.getAdapter(View.class);
 		return view != null
-				&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.FujabaRealtimeStatechartEditPart.MODEL_ID
+				&& de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 						.equals(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 								.getModelID(view));
 	}
