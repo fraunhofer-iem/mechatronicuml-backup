@@ -166,11 +166,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint);
 		EObject domainElement = getSemanticElement(op.getSemanticAdapter());
-		if (domainElement != null
-				&& visualID != de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getLinkWithClassVisualID(domainElement)) {
-			return false; // visual id for link EClass should match visual id from element type
-		}
+
+		// BEGIN: Bugfix (MechatronicUML)
+		// TODO: Create Bug for this and reference its ID
+		// if (domainElement != null && visualID != de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry.getLinkWithClassVisualID(domainElement)) {
+		//	return false; // visual id for link EClass should match visual id from element type
+		// }
+		// END: Bugfix 
+
 		return true;
 	}
 
