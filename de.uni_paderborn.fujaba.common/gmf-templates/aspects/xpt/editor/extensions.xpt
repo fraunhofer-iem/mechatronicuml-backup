@@ -1,0 +1,11 @@
+«AROUND extensions FOR gmfgen::GenEditorGenerator»
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <context
+         description="%context.description"
+         id="«editor.contextID»"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+«ENDAROUND»

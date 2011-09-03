@@ -1,0 +1,15 @@
+«AROUND doSaveAs FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public void doSaveAs() {
+	performSaveAs(new org.eclipse.core.runtime.NullProgressMonitor());
+}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+@Override
+public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	ValidateAction.runValidation(getDiagramEditPart(), getDiagramEditPart()
+			.getDiagramView());
+	super.doSave(progressMonitor);
+}
+
+«ENDAROUND»

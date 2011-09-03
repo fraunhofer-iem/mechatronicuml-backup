@@ -1,0 +1,48 @@
+«EXTENSION xpt::diagram::Utils»
+
+«AROUND fields FOR gmfgen::TypeLinkModelFacet»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final org.eclipse.emf.ecore.EObject source;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final org.eclipse.emf.ecore.EObject target;
+«IF hasContainerOtherThanSource(self)»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» container;
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND containerAccessor FOR gmfgen::TypeLinkModelFacet-»
+«IF hasContainerOtherThanSource(self)-»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» getContainer() {
+		if (container == null) {
+			container = deduceContainer();
+		}
+		return container;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment(
+		'Default approach is to traverse ancestors of the source to find instance of container.\n' + 
+		'Modify with appropriate logic.'
+	)»
+	protected «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» deduceContainer() {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (org.eclipse.emf.ecore.EObject element = source; element != null; element = element.eContainer()) {
+			if («EXPAND MetaModel::IsInstance('element') FOR containmentMetaFeature.genClass») {
+				return «EXPAND MetaModel::CastEObject('element') FOR containmentMetaFeature.genClass»;
+			}
+		}
+		return null;
+	}
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND _init FOR gmfgen::TypeLinkModelFacet-»
+	this.source = source;
+	this.target = target;
+«ENDAROUND»

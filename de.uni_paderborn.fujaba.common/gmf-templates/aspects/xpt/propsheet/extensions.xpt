@@ -1,0 +1,15 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«AROUND section FOR gmfgen::GenCustomPropertyTab-»
+«IF iD = 'domain'-»
+
+«ELSE-»
+         <propertySection
+            id="property.section.«iD»" 
+            tab="property.tab.«iD»"
+«EXPAND filter FOR filter-»
+            class="«getQualifiedClassName()»">
+«EXPAND input FOR filter-»
+         </propertySection>
+«ENDIF-»
+«ENDAROUND»
