@@ -205,7 +205,7 @@
             <details key="derivation" value="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+            <details key="documentation" value="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -564,6 +564,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This attribute specifies whether this realtime statechart is embedded into a region or not.&#xD;&#xA;\todosd{ocl: implement derived}"/>
