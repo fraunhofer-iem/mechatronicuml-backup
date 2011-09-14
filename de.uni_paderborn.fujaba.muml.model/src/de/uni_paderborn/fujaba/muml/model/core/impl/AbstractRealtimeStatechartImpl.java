@@ -170,16 +170,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	protected static final boolean EMBEDDED_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isEmbedded() <em>Embedded</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEmbedded()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean embedded = EMBEDDED_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -372,19 +362,9 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 	 * @generated
 	 */
 	public boolean isEmbedded() {
-		return embedded;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEmbedded(boolean newEmbedded) {
-		boolean oldEmbedded = embedded;
-		embedded = newEmbedded;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED, oldEmbedded, embedded));
+		// TODO: implement this method to return the 'Embedded' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -493,9 +473,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument((String)newValue);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
-				setEmbedded((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -529,9 +506,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				setScheduleDocument(SCHEDULE_DOCUMENT_EDEFAULT);
 				return;
-			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
-				setEmbedded(EMBEDDED_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -559,7 +533,7 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__SCHEDULE_DOCUMENT:
 				return SCHEDULE_DOCUMENT_EDEFAULT == null ? scheduleDocument != null : !SCHEDULE_DOCUMENT_EDEFAULT.equals(scheduleDocument);
 			case CorePackage.ABSTRACT_REALTIME_STATECHART__EMBEDDED:
-				return embedded != EMBEDDED_EDEFAULT;
+				return isEmbedded() != EMBEDDED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -630,8 +604,6 @@ public abstract class AbstractRealtimeStatechartImpl extends NamedElementImpl im
 		result.append(utilisation);
 		result.append(", scheduleDocument: ");
 		result.append(scheduleDocument);
-		result.append(", embedded: ");
-		result.append(embedded);
 		result.append(')');
 		return result.toString();
 	}

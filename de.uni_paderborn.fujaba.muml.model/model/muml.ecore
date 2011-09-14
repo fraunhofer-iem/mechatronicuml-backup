@@ -1154,19 +1154,19 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="doEvent" eType="#//model/realtimestatechart/DoEvent"
-            derived="true" containment="true">
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The do event. It is executed periodically while the corresponding state is active.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="exitEvent" eType="#//model/realtimestatechart/ExitEvent"
-            derived="true" containment="true">
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The exit action is exectuted once when the corresponding state is left.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="entryEvent" eType="#//model/realtimestatechart/EntryEvent"
-            derived="true" containment="true">
+            containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The entry action is exectuted once when the corresponding state is entered.&#xD;&#xA;\todosd{ocl: implement derived}"/>
           </eAnnotations>
@@ -1206,8 +1206,16 @@
             <details key="documentation" value="The synchronization channels provided by this state."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
-            eType="#//model/realtimestatechart/StateEvent" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="events" ordered="false"
+            upperBound="-1" eType="#//model/realtimestatechart/StateEvent" changeable="false"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="(entryEvent.oclAsType(StateEvent) -> asSet() -> union(exitEvent.oclAsType(StateEvent) -> asSet())) -> union(doEvent.oclAsType(StateEvent) -> asSet())"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived reference returns all StateEvents of this state. The StateEvents of&#xD;&#xA;this state are all entry-, do- and exit-Events."/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="stateEntryOrExitPoints"
             upperBound="-1" eType="#//model/realtimestatechart/StateEntryOrExitPoint"
             containment="true">

@@ -199,14 +199,14 @@ public class StateImpl extends VertexImpl implements State {
 	protected EList<SynchronizationChannel> channels;
 
 	/**
-	 * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
+	 * The cached setting delegate for the '{@link #getEvents() <em>Events</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEvents()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<StateEvent> events;
+	protected EStructuralFeature.Internal.SettingDelegate EVENTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.STATE__EVENTS).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getStateEntryOrExitPoints() <em>State Entry Or Exit Points</em>}' containment reference list.
@@ -438,11 +438,9 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<StateEvent> getEvents() {
-		if (events == null) {
-			events = new EObjectContainmentEList<StateEvent>(StateEvent.class, this, RealtimestatechartPackage.STATE__EVENTS);
-		}
-		return events;
+		return (EList<StateEvent>)EVENTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -575,8 +573,6 @@ public class StateImpl extends VertexImpl implements State {
 				return ((InternalEList<?>)getInvariants()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.STATE__EVENTS:
-				return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				return ((InternalEList<?>)getStateEntryOrExitPoints()).basicRemove(otherEnd, msgs);
 		}
@@ -663,10 +659,6 @@ public class StateImpl extends VertexImpl implements State {
 				getChannels().clear();
 				getChannels().addAll((Collection<? extends SynchronizationChannel>)newValue);
 				return;
-			case RealtimestatechartPackage.STATE__EVENTS:
-				getEvents().clear();
-				getEvents().addAll((Collection<? extends StateEvent>)newValue);
-				return;
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				getStateEntryOrExitPoints().clear();
 				getStateEntryOrExitPoints().addAll((Collection<? extends StateEntryOrExitPoint>)newValue);
@@ -713,9 +705,6 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				getChannels().clear();
 				return;
-			case RealtimestatechartPackage.STATE__EVENTS:
-				getEvents().clear();
-				return;
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				getStateEntryOrExitPoints().clear();
 				return;
@@ -752,7 +741,7 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return channels != null && !channels.isEmpty();
 			case RealtimestatechartPackage.STATE__EVENTS:
-				return events != null && !events.isEmpty();
+				return EVENTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				return stateEntryOrExitPoints != null && !stateEntryOrExitPoints.isEmpty();
 			case RealtimestatechartPackage.STATE__SIMPLE:

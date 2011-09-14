@@ -72,7 +72,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Do Event</em>' containment reference.
 	 * @see #setDoEvent(DoEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_DoEvent()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	DoEvent getDoEvent();
@@ -98,7 +98,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Exit Event</em>' containment reference.
 	 * @see #setExitEvent(ExitEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_ExitEvent()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	ExitEvent getExitEvent();
@@ -124,7 +124,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Entry Event</em>' containment reference.
 	 * @see #setEntryEvent(EntryEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_EntryEvent()
-	 * @model containment="true" derived="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EntryEvent getEntryEvent();
@@ -199,7 +199,7 @@ public interface State extends Vertex {
 	EList<SynchronizationChannel> getChannels();
 
 	/**
-	 * Returns the value of the '<em><b>Events</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Events</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -207,9 +207,14 @@ public interface State extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Events</em>' containment reference list.
+	 * <!-- begin-model-doc -->
+	 * This derived reference returns all StateEvents of this state. The StateEvents of
+	 * this state are all entry-, do- and exit-Events.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Events</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Events()
-	 * @model containment="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='(entryEvent.oclAsType(StateEvent) -> asSet() -> union(exitEvent.oclAsType(StateEvent) -> asSet())) -> union(doEvent.oclAsType(StateEvent) -> asSet())'"
 	 * @generated
 	 */
 	EList<StateEvent> getEvents();

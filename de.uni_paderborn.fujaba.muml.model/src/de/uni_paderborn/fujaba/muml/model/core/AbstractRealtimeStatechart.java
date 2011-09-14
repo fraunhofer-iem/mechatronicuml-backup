@@ -115,6 +115,7 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 
 	/**
 	 * Returns the value of the '<em><b>Embedded</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -122,22 +123,11 @@ public interface AbstractRealtimeStatechart extends NamedElement, CommentableEle
 	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded</em>' attribute.
-	 * @see #setEmbedded(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getAbstractRealtimeStatechart_Embedded()
-	 * @model derived="true"
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	boolean isEmbedded();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart#isEmbedded <em>Embedded</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Embedded</em>' attribute.
-	 * @see #isEmbedded()
-	 * @generated
-	 */
-	void setEmbedded(boolean value);
 
 	/**
 	 * <!-- begin-user-doc -->

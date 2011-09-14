@@ -587,7 +587,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__CHANNELS = VERTEX_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Events</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2383,10 +2383,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_Channels();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Events</em>'.
+	 * @return the meta object for the reference list '<em>Events</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents()
 	 * @see #getState()
 	 * @generated
@@ -3396,7 +3396,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference STATE__CHANNELS = eINSTANCE.getState_Channels();
 
 		/**
-		 * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Events</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
