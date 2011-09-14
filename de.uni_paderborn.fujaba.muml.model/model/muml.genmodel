@@ -450,19 +450,7 @@
         </genClasses>
         <nestedGenPackages prefix="Helper" basePackage="de.uni_paderborn.fujaba.muml.model.realtimestatechart"
             disposableProviderFactory="true" ecorePackage="muml.ecore#//model/realtimestatechart/helper">
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/MyMap">
-            <genTypeParameters ecoreTypeParameter="muml.ecore#//model/realtimestatechart/helper/MyMap/key"/>
-            <genTypeParameters ecoreTypeParameter="muml.ecore#//model/realtimestatechart/helper/MyMap/value"/>
-          </genDataTypes>
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/Map"/>
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/Vector"/>
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/Set">
-            <genTypeParameters ecoreTypeParameter="muml.ecore#//model/realtimestatechart/helper/Set/UMLClock"/>
-          </genDataTypes>
           <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/Iterator"/>
-          <genDataTypes ecoreDataType="muml.ecore#//model/realtimestatechart/helper/MyList">
-            <genTypeParameters ecoreTypeParameter="muml.ecore#//model/realtimestatechart/helper/MyList/elements"/>
-          </genDataTypes>
         </nestedGenPackages>
       </nestedGenPackages>
       <nestedGenPackages prefix="Msgiface" basePackage="de.uni_paderborn.fujaba.muml.model"

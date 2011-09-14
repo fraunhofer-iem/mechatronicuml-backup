@@ -47,42 +47,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType myMapEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType mapEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType vectorEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType setEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EDataType iteratorEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType myListEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -176,53 +141,8 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getMyMap() {
-		return myMapEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getMap() {
-		return mapEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getVector() {
-		return vectorEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getSet() {
-		return setEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getIterator() {
 		return iteratorEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getMyList() {
-		return myListEDataType;
 	}
 
 	/**
@@ -253,12 +173,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		isCreated = true;
 
 		// Create data types
-		myMapEDataType = createEDataType(MY_MAP);
-		mapEDataType = createEDataType(MAP);
-		vectorEDataType = createEDataType(VECTOR);
-		setEDataType = createEDataType(SET);
 		iteratorEDataType = createEDataType(ITERATOR);
-		myListEDataType = createEDataType(MY_LIST);
 	}
 
 	/**
@@ -285,12 +200,7 @@ public class HelperPackageImpl extends EPackageImpl implements HelperPackage {
 		setNsURI(eNS_URI);
 
 		// Initialize data types
-		initEDataType(myMapEDataType, HashMap.class, "MyMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(mapEDataType, Map.class, "Map", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(vectorEDataType, Vector.class, "Vector", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(setEDataType, Set.class, "Set", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(iteratorEDataType, Iterator.class, "Iterator", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(myListEDataType, List.class, "MyList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //HelperPackageImpl
