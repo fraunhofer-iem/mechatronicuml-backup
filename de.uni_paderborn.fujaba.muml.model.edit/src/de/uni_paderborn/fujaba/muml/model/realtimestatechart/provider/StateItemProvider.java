@@ -67,6 +67,7 @@ public class StateItemProvider
 			addFinalPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addStateEntryOrExitPointsPropertyDescriptor(object);
+			addSimplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -182,6 +183,28 @@ public class StateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Simple feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSimplePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_simple_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_simple_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__SIMPLE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -258,6 +281,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__INITIAL:
 			case RealtimestatechartPackage.STATE__FINAL:
 			case RealtimestatechartPackage.STATE__URGENT:
+			case RealtimestatechartPackage.STATE__SIMPLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__REGIONS:

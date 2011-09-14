@@ -1214,6 +1214,16 @@
             <details key="documentation" value="A state references its entry and exit points. They can only exist, if a state embeds one or more statecharts."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="simple" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            unsettable="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="regions -> isEmpty()"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A state is simple if it does not contain a region with an embedded substatechart."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.modeling/model/sdm.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1513,6 +1523,16 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventQueueSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The size of the event queue of this port. It defines the maximum number of events&#xD;&#xA;that may be temporarily buffered by the port."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="flat" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute allows to checks whether a statechart is flat or not. In a&#xD;&#xA;flat statechart, none of the contained states contains a regions with an embedded&#xD;&#xA;substatechart."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

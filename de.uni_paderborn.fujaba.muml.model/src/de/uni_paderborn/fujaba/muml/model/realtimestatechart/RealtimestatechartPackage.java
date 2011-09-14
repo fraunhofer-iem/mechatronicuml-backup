@@ -605,13 +605,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__STATE_ENTRY_OR_EXIT_POINTS = VERTEX_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Simple</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__SIMPLE = VERTEX_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 12;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -1473,13 +1482,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Flat</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUJABA_REALTIME_STATECHART__FLAT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Fujaba Realtime Statechart</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 7;
+	int FUJABA_REALTIME_STATECHART_FEATURE_COUNT = CorePackage.ABSTRACT_REALTIME_STATECHART_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2387,6 +2405,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_StateEntryOrExitPoints();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple <em>Simple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Simple</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple()
+	 * @see #getState()
+	 * @generated
+	 */
+	EAttribute getState_Simple();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isInitial <em>Initial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2959,6 +2988,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getFujabaRealtimeStatechart_EventQueueSize();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat <em>Flat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Flat</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat()
+	 * @see #getFujabaRealtimeStatechart()
+	 * @generated
+	 */
+	EAttribute getFujabaRealtimeStatechart_Flat();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitPoint <em>Entry Or Exit Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3370,6 +3410,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__STATE_ENTRY_OR_EXIT_POINTS = eINSTANCE.getState_StateEntryOrExitPoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Simple</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE__SIMPLE = eINSTANCE.getState_Simple();
 
 		/**
 		 * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
@@ -3816,6 +3864,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE = eINSTANCE.getFujabaRealtimeStatechart_EventQueueSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Flat</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUJABA_REALTIME_STATECHART__FLAT = eINSTANCE.getFujabaRealtimeStatechart_Flat();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitPointImpl <em>Entry Or Exit Point</em>}' class.

@@ -71,6 +71,7 @@ public class FujabaRealtimeStatechartItemProvider
 			addAvailableClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
+			addFlatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -186,6 +187,28 @@ public class FujabaRealtimeStatechartItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Flat feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFlatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FujabaRealtimeStatechart_flat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FujabaRealtimeStatechart_flat_feature", "_UI_FujabaRealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__FLAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -257,6 +280,7 @@ public class FujabaRealtimeStatechartItemProvider
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__HISTORY:
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__FLAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__TRANSITIONS:

@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -50,6 +51,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChan
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.StateImpl#isSimple <em>Simple</em>}</li>
  * </ul>
  * </p>
  *
@@ -215,6 +217,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EList<StateEntryOrExitPoint> stateEntryOrExitPoints;
+
+	/**
+	 * The cached setting delegate for the '{@link #isSimple() <em>Simple</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSimple()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SIMPLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.STATE__SIMPLE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -450,6 +462,24 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSimple() {
+		return (Boolean)SIMPLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetSimple() {
+		return SIMPLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isInitial() {
 		return initial;
 	}
@@ -585,6 +615,8 @@ public class StateImpl extends VertexImpl implements State {
 				return getEvents();
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				return getStateEntryOrExitPoints();
+			case RealtimestatechartPackage.STATE__SIMPLE:
+				return isSimple();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -723,6 +755,8 @@ public class StateImpl extends VertexImpl implements State {
 				return events != null && !events.isEmpty();
 			case RealtimestatechartPackage.STATE__STATE_ENTRY_OR_EXIT_POINTS:
 				return stateEntryOrExitPoints != null && !stateEntryOrExitPoints.isEmpty();
+			case RealtimestatechartPackage.STATE__SIMPLE:
+				return isSetSimple();
 		}
 		return super.eIsSet(featureID);
 	}

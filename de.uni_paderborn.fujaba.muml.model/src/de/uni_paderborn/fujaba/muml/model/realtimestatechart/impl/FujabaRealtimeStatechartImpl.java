@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -41,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.FujabaRealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,6 +148,16 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * @ordered
 	 */
 	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #isFlat() <em>Flat</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isFlat()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FLAT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.FUJABA_REALTIME_STATECHART__FLAT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -330,6 +342,15 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isFlat() {
+		return (Boolean)FLAT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -391,6 +412,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return isHistory();
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				return getEventQueueSize();
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__FLAT:
+				return isFlat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -487,6 +510,8 @@ public class FujabaRealtimeStatechartImpl extends AbstractRealtimeStatechartImpl
 				return history != HISTORY_EDEFAULT;
 			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__EVENT_QUEUE_SIZE:
 				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
+			case RealtimestatechartPackage.FUJABA_REALTIME_STATECHART__FLAT:
+				return FLAT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

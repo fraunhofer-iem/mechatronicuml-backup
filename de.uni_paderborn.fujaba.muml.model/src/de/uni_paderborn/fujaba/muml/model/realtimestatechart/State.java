@@ -32,6 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getChannels <em>Channels</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStateEntryOrExitPoints <em>State Entry Or Exit Points</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple <em>Simple</em>}</li>
  * </ul>
  * </p>
  *
@@ -227,6 +228,33 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	EList<StateEntryOrExitPoint> getStateEntryOrExitPoints();
+
+	/**
+	 * Returns the value of the '<em><b>Simple</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A state is simple if it does not contain a region with an embedded substatechart.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Simple</em>' attribute.
+	 * @see #isSetSimple()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Simple()
+	 * @model default="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='regions -> isEmpty()'"
+	 * @generated
+	 */
+	boolean isSimple();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#isSimple <em>Simple</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Simple</em>' attribute is set.
+	 * @see #isSimple()
+	 * @generated
+	 */
+	boolean isSetSimple();
 
 	/**
 	 * Returns the value of the '<em><b>Initial</b></em>' attribute.

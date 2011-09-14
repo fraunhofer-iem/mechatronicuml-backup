@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.core.AbstractRealtimeStatechart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.FujabaRealtimeStatechart#isFlat <em>Flat</em>}</li>
  * </ul>
  * </p>
  *
@@ -196,5 +197,23 @@ public interface FujabaRealtimeStatechart extends AbstractRealtimeStatechart {
 	 * @generated
 	 */
 	void setEventQueueSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Flat</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute allows to checks whether a statechart is flat or not. In a
+	 * flat statechart, none of the contained states contains a regions with an embedded
+	 * substatechart.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Flat</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getFujabaRealtimeStatechart_Flat()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))'"
+	 * @generated
+	 */
+	boolean isFlat();
 
 } // FujabaRealtimeStatechart
