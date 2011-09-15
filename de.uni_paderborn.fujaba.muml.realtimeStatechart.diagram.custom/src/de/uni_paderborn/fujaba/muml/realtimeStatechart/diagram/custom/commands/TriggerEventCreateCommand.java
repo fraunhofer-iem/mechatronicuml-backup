@@ -72,7 +72,7 @@ public class TriggerEventCreateCommand extends EditElementCommand {
 
 		Transition owner = (Transition) getElementToEdit();
 
-		owner.setTriggerMessageEvent(newElement);
+		owner.getEvents().add(newElement);
 
 		// TODO: Fix this old code.
 		/*

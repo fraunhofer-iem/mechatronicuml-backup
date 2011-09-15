@@ -72,7 +72,7 @@ public class RaisedEventCreateCommand extends EditElementCommand {
 	
 		Transition owner = (Transition) getElementToEdit();
 
-		owner.setRaiseMessageEvent(newElement);
+		owner.getEvents().add(newElement);
 
 		// TODO: Fix this old code
 /*

@@ -178,23 +178,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Trigger Message Event</em>' reference.
-	 * @see #setTriggerMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_TriggerMessageEvent()
-	 * @model transient="true" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::TRIGGER).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getTriggerMessageEvent();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getTriggerMessageEvent <em>Trigger Message Event</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Trigger Message Event</em>' reference.
-	 * @see #getTriggerMessageEvent()
-	 * @generated
-	 */
-	void setTriggerMessageEvent(AsynchronousMessageEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Raise Message Event</b></em>' reference.
@@ -205,23 +194,12 @@ public interface Transition extends Prioritizable, ExtendableElement {
 	 * \todosd{discuss for v0.2: change cardinality to 0..*}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Raise Message Event</em>' reference.
-	 * @see #setRaiseMessageEvent(AsynchronousMessageEvent)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_RaiseMessageEvent()
-	 * @model transient="true" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent)->first()\n'"
 	 * @generated
 	 */
 	AsynchronousMessageEvent getRaiseMessageEvent();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getRaiseMessageEvent <em>Raise Message Event</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Raise Message Event</em>' reference.
-	 * @see #getRaiseMessageEvent()
-	 * @generated
-	 */
-	void setRaiseMessageEvent(AsynchronousMessageEvent value);
 
 	/**
 	 * Returns the value of the '<em><b>Clock Constraints</b></em>' containment reference list.

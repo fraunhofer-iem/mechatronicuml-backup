@@ -1299,8 +1299,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="triggerMessageEvent"
-            eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
-            transient="true" derived="true">
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The trigger event of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>
@@ -1309,8 +1309,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="raiseMessageEvent"
-            eType="#//model/realtimestatechart/AsynchronousMessageEvent" volatile="true"
-            transient="true" derived="true">
+            eType="#//model/realtimestatechart/AsynchronousMessageEvent" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The event which is raised upon activiation of this transition.&#xD;&#xA;\todosd{discuss for v0.2: change cardinality to 0..*}"/>
           </eAnnotations>

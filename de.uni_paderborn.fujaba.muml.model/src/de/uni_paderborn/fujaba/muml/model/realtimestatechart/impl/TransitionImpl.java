@@ -1014,12 +1014,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				getClockResets().clear();
 				getClockResets().addAll((Collection<? extends Clock>)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
-				setTriggerMessageEvent((AsynchronousMessageEvent)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
-				setRaiseMessageEvent((AsynchronousMessageEvent)newValue);
-				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
 				getClockConstraints().addAll((Collection<? extends ClockConstraint>)newValue);
@@ -1079,12 +1073,6 @@ public class TransitionImpl extends PrioritizableImpl implements Transition {
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
-				return;
-			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
-				setTriggerMessageEvent((AsynchronousMessageEvent)null);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
-				setRaiseMessageEvent((AsynchronousMessageEvent)null);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				getClockConstraints().clear();
