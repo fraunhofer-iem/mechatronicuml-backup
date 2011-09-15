@@ -1780,7 +1780,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getMessage_InstanceOf(), 
 		   source, 
 		   new String[] {
-			 "derivation", "callee.oclAsType(MessageType)"
+			 "derivation", "callee.oclAsType(msgiface::MessageType)"
 		   });										
 		addAnnotation
 		  (entryPointEClass, 

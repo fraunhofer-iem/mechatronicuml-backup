@@ -1601,7 +1601,7 @@
             <details key="documentation" value="Retrieves the message type this message is typed over."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="callee.oclAsType(MessageType)"/>
+            <details key="derivation" value="callee.oclAsType(msgiface::MessageType)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

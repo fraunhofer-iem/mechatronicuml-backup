@@ -43,7 +43,7 @@ public interface Message extends Invocation {
 	 * @return the value of the '<em>Instance Of</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getMessage_InstanceOf()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee.oclAsType(MessageType)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee.oclAsType(msgiface::MessageType)'"
 	 * @generated
 	 */
 	MessageType getInstanceOf();
