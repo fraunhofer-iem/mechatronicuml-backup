@@ -1,12 +1,12 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.validator;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.validator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidationStatus;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextValidationStatus;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidationStatus;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextValidationStatus;
 
 /**
  * A Validator, which checks if the identifier string contains only valid

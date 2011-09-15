@@ -1,9 +1,9 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.parsers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
 /**
  * Default implementation of IMultiTextParser, it requires a split element to

@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation;
+package de.uni_paderborn.fujaba.common.emf.edit.ui;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,12 +48,12 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.IMultiLabelProvider;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.IMultiTextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidationListener;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.AbstractPropertyEditor;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidationListener;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Property;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
 /**
  * 

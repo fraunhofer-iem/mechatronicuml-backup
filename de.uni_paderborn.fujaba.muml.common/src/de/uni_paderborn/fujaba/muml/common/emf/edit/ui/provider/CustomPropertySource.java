@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
@@ -30,28 +29,22 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.storydriven.modeling.SDMPackage;
 import org.storydriven.modeling.calls.CallsPackage;
-import org.storydriven.modeling.calls.ParameterBinding;
-import org.storydriven.modeling.expressions.Expression;
 import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.MultiFeatureCreationDialog;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.DefaultMultiLabelProvider;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.labelproviders.IMultiLabelProvider;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.DefaultMultiTextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers.IMultiTextParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.AbstractPropertyEditor;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.ComboPropertyEditor;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.IValidator;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Property;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.TextPropertyEditor;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.typedelement.DefaultTypedElementParser;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.validator.IdentifierValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.MultiFeatureCreationDialog;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.DefaultMultiLabelProvider;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.labelproviders.IMultiLabelProvider;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.DefaultMultiTextParser;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.parsers.IMultiTextParser;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.AbstractPropertyEditor;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.ComboPropertyEditor;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.IValidator;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Property;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.TextPropertyEditor;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.typedelement.DefaultTypedElementParser;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.validator.IdentifierValidator;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
 public class CustomPropertySource extends PropertySource {

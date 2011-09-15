@@ -1,4 +1,5 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.property;
+
 
 /**
  * A Range, which has a starting position and a length.

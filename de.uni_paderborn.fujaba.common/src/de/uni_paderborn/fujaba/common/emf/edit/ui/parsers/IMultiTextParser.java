@@ -1,9 +1,9 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.parsers;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.parsers;
 
 import java.util.List;
 import java.util.Map;
 
-import de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property.Range;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.property.Range;
 
 /**
  * An IMultiTextParser is able to parse a text in order to create new objects

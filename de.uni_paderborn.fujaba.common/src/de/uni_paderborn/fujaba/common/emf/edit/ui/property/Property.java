@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.property;
 
 import java.util.ArrayList;
 import java.util.Arrays;

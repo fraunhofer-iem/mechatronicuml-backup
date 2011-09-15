@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.emf.edit.ui.dialogs.creation.property;
+package de.uni_paderborn.fujaba.common.emf.edit.ui.property;
 
 /**
  * A Listener, which will be notified, if a validation occurred.
