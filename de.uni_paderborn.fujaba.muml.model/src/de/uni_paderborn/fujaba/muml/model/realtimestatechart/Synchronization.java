@@ -36,25 +36,14 @@ public interface Synchronization extends Invocation {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * the channel that is used by the synchronization
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sync Channel</em>' reference.
-	 * @see #setSyncChannel(SynchronizationChannel)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getSynchronization_SyncChannel()
-	 * @model required="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee.oclAsType(SynchronizationChannel)'"
 	 * @generated
 	 */
 	SynchronizationChannel getSyncChannel();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization#getSyncChannel <em>Sync Channel</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sync Channel</em>' reference.
-	 * @see #getSyncChannel()
-	 * @generated
-	 */
-	void setSyncChannel(SynchronizationChannel value);
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.

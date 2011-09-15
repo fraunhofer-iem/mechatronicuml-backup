@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
@@ -31,15 +32,14 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
  */
 public class MessageImpl extends InvocationImpl implements Message {
 	/**
-	 * The cached value of the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
+	 * The cached setting delegate for the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstanceOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageType instanceOf;
-
+	protected EStructuralFeature.Internal.SettingDelegate INSTANCE_OF__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +65,7 @@ public class MessageImpl extends InvocationImpl implements Message {
 	 * @generated
 	 */
 	public MessageType getInstanceOf() {
-		if (instanceOf != null && instanceOf.eIsProxy()) {
-			InternalEObject oldInstanceOf = (InternalEObject)instanceOf;
-			instanceOf = (MessageType)eResolveProxy(oldInstanceOf);
-			if (instanceOf != oldInstanceOf) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.MESSAGE__INSTANCE_OF, oldInstanceOf, instanceOf));
-			}
-		}
-		return instanceOf;
+		return (MessageType)INSTANCE_OF__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -82,19 +74,7 @@ public class MessageImpl extends InvocationImpl implements Message {
 	 * @generated
 	 */
 	public MessageType basicGetInstanceOf() {
-		return instanceOf;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInstanceOf(MessageType newInstanceOf) {
-		MessageType oldInstanceOf = instanceOf;
-		instanceOf = newInstanceOf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.MESSAGE__INSTANCE_OF, oldInstanceOf, instanceOf));
+		return (MessageType)INSTANCE_OF__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -118,40 +98,10 @@ public class MessageImpl extends InvocationImpl implements Message {
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				setInstanceOf((MessageType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				setInstanceOf((MessageType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.MESSAGE__INSTANCE_OF:
-				return instanceOf != null;
+				return INSTANCE_OF__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

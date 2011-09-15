@@ -39,25 +39,13 @@ public interface Message extends Invocation {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Retrieves the message type this message is typed over.
-	 * 
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Instance Of</em>' reference.
-	 * @see #setInstanceOf(MessageType)
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getMessage_InstanceOf()
-	 * @model required="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='callee.oclAsType(MessageType)'"
 	 * @generated
 	 */
 	MessageType getInstanceOf();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message#getInstanceOf <em>Instance Of</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instance Of</em>' reference.
-	 * @see #getInstanceOf()
-	 * @generated
-	 */
-	void setInstanceOf(MessageType value);
 
 } // Message

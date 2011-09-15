@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
@@ -33,14 +34,14 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationKind
  */
 public class SynchronizationImpl extends InvocationImpl implements Synchronization {
 	/**
-	 * The cached value of the '{@link #getSyncChannel() <em>Sync Channel</em>}' reference.
+	 * The cached setting delegate for the '{@link #getSyncChannel() <em>Sync Channel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSyncChannel()
 	 * @generated
 	 * @ordered
 	 */
-	protected SynchronizationChannel syncChannel;
+	protected EStructuralFeature.Internal.SettingDelegate SYNC_CHANNEL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL).getSettingDelegate();
 
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -87,15 +88,7 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * @generated
 	 */
 	public SynchronizationChannel getSyncChannel() {
-		if (syncChannel != null && syncChannel.eIsProxy()) {
-			InternalEObject oldSyncChannel = (InternalEObject)syncChannel;
-			syncChannel = (SynchronizationChannel)eResolveProxy(oldSyncChannel);
-			if (syncChannel != oldSyncChannel) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL, oldSyncChannel, syncChannel));
-			}
-		}
-		return syncChannel;
+		return (SynchronizationChannel)SYNC_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -104,19 +97,7 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	 * @generated
 	 */
 	public SynchronizationChannel basicGetSyncChannel() {
-		return syncChannel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSyncChannel(SynchronizationChannel newSyncChannel) {
-		SynchronizationChannel oldSyncChannel = syncChannel;
-		syncChannel = newSyncChannel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL, oldSyncChannel, syncChannel));
+		return (SynchronizationChannel)SYNC_CHANNEL__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -165,9 +146,6 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
-				setSyncChannel((SynchronizationChannel)newValue);
-				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				setKind((SynchronizationKind)newValue);
 				return;
@@ -183,9 +161,6 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
-				setSyncChannel((SynchronizationChannel)null);
-				return;
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
@@ -202,7 +177,7 @@ public class SynchronizationImpl extends InvocationImpl implements Synchronizati
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RealtimestatechartPackage.SYNCHRONIZATION__SYNC_CHANNEL:
-				return syncChannel != null;
+				return SYNC_CHANNEL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.SYNCHRONIZATION__KIND:
 				return kind != KIND_EDEFAULT;
 		}
