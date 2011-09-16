@@ -11,8 +11,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.modeling.calls.CallsPackage;
 import org.storydriven.modeling.calls.impl.InvocationImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -47,6 +50,11 @@ public class MessageImpl extends InvocationImpl implements Message {
 	 */
 	protected MessageImpl() {
 		super();
+		// Install a notification adapter that informs the
+		// derived reference, whenever one of the dependent features
+		// was modified
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF);
+		portsDerivedAdapter.addLocalDependency(CallsPackage.Literals.INVOCATION__CALLEE);
 	}
 
 	/**
