@@ -7,12 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -33,12 +33,14 @@ import org.storydriven.modeling.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition} object.
@@ -238,7 +240,7 @@ public class TransitionItemProvider
 	 * @generated NOT
 	 */
 	protected void addTriggerMessageEventPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+		TransitionMessageEventPropertyDescriptor rootPropertyDescriptor = new TransitionMessageEventPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
@@ -246,18 +248,12 @@ public class TransitionItemProvider
 				getString("_UI_PropertyDescriptor_description",
 						"_UI_Transition_triggerMessageEvent_feature",
 						"_UI_Transition_type"),
-				RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT,
+				RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
 				true, false, true, null,
-				getString("_UI_TriggerMessageEventPropertyCategory"), null) {
-
-			@Override
-			public Object createObject() {
-				AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) super
-						.createObject();
-				messageEvent.setKind(EventKind.TRIGGER);
-				return messageEvent;
-			}
-		};
+				getString("_UI_TriggerMessageEventPropertyCategory"), null);
+		
+		rootPropertyDescriptor.setInstanceClass(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT);
+		rootPropertyDescriptor.setEventKind(EventKind.TRIGGER);
 
 		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -309,27 +305,21 @@ public class TransitionItemProvider
 	 * @generated NOT
 	 */
 	protected void addRaiseMessageEventPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+		TransitionMessageEventPropertyDescriptor rootPropertyDescriptor = new TransitionMessageEventPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Transition_raiseMessageEvent_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_raiseMessageEvent_feature", "_UI_Transition_type"),
-				 RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT,
+				 RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
 				 true,
 				 false,
 				 true,
 				 null,
 				 getString("_UI_RaiseMessageEventPropertyCategory"),
-				 null)
-		{
-			@Override
-			public Object createObject() {
-				AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) super
-						.createObject();
-				messageEvent.setKind(EventKind.RAISE);
-				return messageEvent;
-			}
-		};
+				 null);
+		
+		rootPropertyDescriptor.setInstanceClass(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT);
+		rootPropertyDescriptor.setEventKind(EventKind.RAISE);
 
 		IChainedPropertyDescriptor messagePropertyDescriptor = new DefaultChainedPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),

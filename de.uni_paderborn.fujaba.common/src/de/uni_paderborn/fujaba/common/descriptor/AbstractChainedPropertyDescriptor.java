@@ -40,7 +40,11 @@ public abstract class AbstractChainedPropertyDescriptor extends
 		if (parent != null) {
 			id += parent.getId(object);
 		}
-		return id + super.getId(object);
+		return id + getMyId(object );
+	}
+	
+	public String getMyId(Object object) {
+		return super.getId(object);
 	}
 
 	@Override
@@ -102,7 +106,7 @@ public abstract class AbstractChainedPropertyDescriptor extends
 	 *            The PropertyValueWrapper.
 	 * @return The wrapped value.
 	 */
-	private static Object getWrappedValue(Object value) {
+	protected static Object getWrappedValue(Object value) {
 		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
 			value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
 					.getEditableValue(value);
