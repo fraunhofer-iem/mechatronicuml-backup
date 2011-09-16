@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -35,11 +34,11 @@ import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescripto
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.MessageInstanceOfPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
 
 /**
@@ -269,7 +268,7 @@ public class TransitionItemProvider
 			 null,
 			 rootPropertyDescriptor);
 		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+		itemPropertyDescriptors.add(new MessageInstanceOfPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_Message_instanceOf_feature"),
@@ -335,7 +334,7 @@ public class TransitionItemProvider
 			 null,
 			 rootPropertyDescriptor);
 		
-		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor(
+		itemPropertyDescriptors.add(new MessageInstanceOfPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_Message_instanceOf_feature"),
